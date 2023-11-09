@@ -24,7 +24,7 @@ function Example() {
       {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
       <IonReorderGroup disabled={false} onIonItemReorder={handleReorder}>
         {items.map((item) => (
-          <IonItem>
+          <IonItem key={item}>
             <IonLabel>Item {item}</IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
