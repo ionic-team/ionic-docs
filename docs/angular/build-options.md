@@ -484,6 +484,14 @@ import { Component } from '@angular/core';
 export class TestComponent {}
 ```
 
+10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular` module specifiers for import recommendations.
+
+```json title=".vscode/settings.json"
+{
+  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+}
+```
+
 ### NgModule-based Applications
 
 Follow these steps if your Angular application is still using the NgModule architecture, but you want to adopt Ionic UI components as standalone components now.
@@ -652,4 +660,12 @@ import { TestComponent } from './test.component';
   ],
   declarations: [TestComponent]
 })
+```
+
+10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular` module specifiers for import recommendations.
+
+```json title=".vscode/settings.json"
+{
+  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+}
 ```
