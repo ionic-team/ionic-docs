@@ -61,9 +61,13 @@ import Wrapper from '@site/static/usage/v7/reorder/wrapper/index.md';
 
 ## Updating Data
 
-When the `complete` method is called on the reorder group with no parameters, the DOM nodes will be reordered. If the items are rendered from an array of data that needs to be sorted, this can result in the data and DOM being out of sync. In order to sort the array upon completion of the reorder, the array should be passed as a parameter to the `complete` method. The `complete` method will sort the array and return it so it can be reassigned.
+When the `complete` method is called on the reorder group with no parameters, the DOM nodes will be reordered. If the items are rendered from an array of data that needs to be sorted, this can result in the data and DOM being out of sync.
+
+In order to sort the array upon completion of the reorder, the array should be passed as a parameter to the `complete` method. The `complete` method will sort the array and return it so it can be reassigned. Note that passing the array will prevent Ionic from reordering the DOM nodes.
 
 In some cases, it may be necessary for an app to reorder both the array and the DOM nodes on its own. If this is required, `false` should be passed as a parameter to the `complete` method. This will prevent Ionic from reordering any DOM nodes inside of the reorder group.
+
+Regardless of the approach taken, a stable identity should be provided to reorder items if provided in a loop. This means using `trackBy` for Angular, and `key` for React and Vue.
 
 import UpdatingData from '@site/static/usage/v7/reorder/updating-data/index.md';
 
