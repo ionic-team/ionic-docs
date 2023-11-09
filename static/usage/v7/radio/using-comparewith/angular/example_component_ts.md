@@ -31,5 +31,9 @@ export class ExampleComponent {
   handleChange(ev) {
     console.log('Current value:', JSON.stringify(ev.target.value));
   }
+
+  trackItems(index: number, item: any) {
+    return item.id;
+  }
 }
 ```
