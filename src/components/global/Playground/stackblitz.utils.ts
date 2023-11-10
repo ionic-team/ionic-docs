@@ -124,7 +124,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
   const appModule = 'src/app/app.module.ts';
   const files = {
     'src/main.ts': defaultFiles[0],
-    'src/polyfills.ts': `import 'zone.js/dist/zone';`,
+    'src/polyfills.ts': `import 'zone.js';`,
     [appModule]: defaultFiles[1],
     'src/app/app.component.ts': defaultFiles[2],
     'src/app/app.component.css': defaultFiles[3],
