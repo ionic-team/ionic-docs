@@ -17,19 +17,7 @@
   </ion-footer>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonContent, IonFooter, IonTitle, IonToast, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonContent,
-      IonFooter,
-      IonTitle,
-      IonToast,
-      IonToolbar,
-    },
-  });
 </script>
 ```
