@@ -49,14 +49,20 @@ export function useAlternatePageUtils(): {
     baseUrl,
   });
 
+  const formattedBaseUrl = applyTrailingSlash(baseUrl, {
+    trailingSlash,
+    baseUrl,
+  });
+
   const baseUrlUnlocalized = currentLocale === defaultLocale ? baseUrl : baseUrl.replace(`/${currentLocale}/`, '/');
 
-  const pathnameSuffix = canonicalPathname.replace(baseUrl, '');
+  const pathnameSuffix = canonicalPathname.replace(formattedBaseUrl, '');
 
   console.log('pathNameSuffix', {
     pathnameSuffix,
     canonicalPathname,
     baseUrl,
+    formattedBaseUrl,
   });
 
   function getLocalizedBaseUrl(locale: string) {
