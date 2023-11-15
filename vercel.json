@@ -1,5 +1,6 @@
 {
   "trailingSlash": false,
+  "cleanUrls": true,
   "redirects": [
     { "source": "/", "destination": "/docs/" },
     {
@@ -68,7 +69,7 @@
     { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
   ],
   "rewrites": [
-    { "source": "/docs", "destination": "/" },
+    { "source": "/docs/", "destination": "/" },
     { "source": "/docs/:match*", "destination": "/:match*" }
   ]
 }
