@@ -49,39 +49,24 @@ export function useAlternatePageUtils(): {
     baseUrl,
   });
 
-  const baseUrlUnlocalized =
-    currentLocale === defaultLocale
-      ? baseUrl
-      : baseUrl.replace(`/${currentLocale}/`, '/');
-
+  const baseUrlUnlocalized = currentLocale === defaultLocale ? baseUrl : baseUrl.replace(`/${currentLocale}/`, '/');
 
   const pathnameSuffix = canonicalPathname.replace(baseUrl, '');
 
   console.log('pathNameSuffix', {
     pathnameSuffix,
     canonicalPathname,
-    baseUrl
+    baseUrl,
   });
 
-  
   function getLocalizedBaseUrl(locale: string) {
-    return locale === defaultLocale
-      ? `${baseUrlUnlocalized}`
-      : `${baseUrlUnlocalized}${locale}/`;
+    return locale === defaultLocale ? `${baseUrlUnlocalized}` : `${baseUrlUnlocalized}${locale}/`;
   }
 
   // TODO support correct alternate url when localized site is deployed on
   // another domain
-  function createUrl({
-    locale,
-    fullyQualified,
-  }: {
-    locale: string;
-    fullyQualified: boolean;
-  }) {
-    return `${fullyQualified ? url : ''}${getLocalizedBaseUrl(
-      locale,
-    )}${pathnameSuffix}`;
+  function createUrl({ locale, fullyQualified }: { locale: string; fullyQualified: boolean }) {
+    return `${fullyQualified ? url : ''}${getLocalizedBaseUrl(locale)}${pathnameSuffix}`;
   }
 
   return { createUrl };
