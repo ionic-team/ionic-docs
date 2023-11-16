@@ -99,7 +99,7 @@ npm install @ionic/pwa-elements
 
 After installation, open up the project in your code editor of choice.
 
-Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
+Next, import `@ionic/pwa-elements` by editing `src/index.tsx`.
 
 ```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
