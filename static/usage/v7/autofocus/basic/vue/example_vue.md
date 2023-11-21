@@ -22,7 +22,11 @@
     setup() {
       const input = ref();
       onIonViewDidEnter(() => {
-        input.value.$el.setFocus();
+        requestAnimationFrame(() => {
+          // We need requestAnimationFrame here because of
+          // https://github.com/ionic-team/ionic-framework/issues/24434
+          input.value.$el.setFocus();
+        });
       });
       return { input };
     },
