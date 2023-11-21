@@ -13,7 +13,7 @@
       "schedule": ["on the first day of the month"]
     },
     {
-      "matchPackagePatterns": ["react-router", "react-router-dom"],
+      "matchPackageNames": ["react-router", "react-router-dom"],
       "groupName": "react-router",
       "allowedVersions": "^5.0.0"
     },
