@@ -26,6 +26,7 @@ module.exports = {
         'developing/hardware-back-button',
         'developing/keyboard',
         'developing/config',
+        'developing/autofocus',
       ],
     },
     {

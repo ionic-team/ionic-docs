@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autofocus</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-input autofocus placeholder="with `autofocus`"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input id="set-focus-input" placeholder="using `.setFocus()`"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-app>
+    <script>
+      window.addEventListener('appload', () => {
+        document.querySelector('#set-focus-input').setFocus();
+      });
+    </script>
+  </body>
+</html>
