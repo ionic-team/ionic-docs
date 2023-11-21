@@ -14,15 +14,14 @@
 </template>
 
 <script lang="ts">
-  import { IonInput, IonItem, IonList, IonPage, IonRouterOutlet, onIonViewWillEnter } from '@ionic/vue';
+  import { IonInput, IonItem, IonList, IonPage, IonRouterOutlet, onIonViewDidEnter } from '@ionic/vue';
   import { ref } from 'vue';
 
   export default {
     components: { IonInput, IonItem, IonList, IonPage, IonRouterOutlet },
     setup() {
       const input = ref();
-      onIonViewWillEnter(() => {
-        // TODO: not sure why this isn't working. onIonViewWillEnter is getting triggered
+      onIonViewDidEnter(() => {
         input.value.$el.setFocus();
       });
       return { input };

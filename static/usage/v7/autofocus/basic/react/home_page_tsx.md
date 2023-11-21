@@ -1,12 +1,11 @@
 ```tsx
 import React, { useRef } from 'react';
-import { IonInput, IonItem, IonList, IonPage, useIonViewWillEnter } from '@ionic/react';
+import { IonInput, IonItem, IonList, IonPage, useIonViewDidEnter } from '@ionic/react';
 
 const HomePage = () => {
   const input = useRef<HTMLIonInputElement>(null);
 
-  useIonViewWillEnter(() => {
-    console.log('useIonViewWillEnter');
+  useIonViewDidEnter(() => {
     input.current?.setFocus();
   });
 

@@ -9,7 +9,7 @@ import { IonInput } from '@ionic/angular';
 })
 export class ExampleComponent {
   @ViewChild('input') input: IonInput;
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     this.input.setFocus();
   }
 }
