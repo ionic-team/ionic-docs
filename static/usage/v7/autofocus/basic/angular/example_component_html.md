@@ -1,10 +1,10 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-input autofocus placeholder="with `autofocus`"></ion-input>
+    <ion-input [autofocus]="true" label="Autofocus" labelPlacement="floating"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input #input placeholder="using `.setFocus()`"></ion-input>
+    <ion-input #input label="setFocus" labelPlacement="floating"></ion-input>
   </ion-item>
 </ion-list>
 ```

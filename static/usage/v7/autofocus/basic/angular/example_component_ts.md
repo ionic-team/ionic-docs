@@ -8,7 +8,8 @@ import { IonInput } from '@ionic/angular';
   styleUrls: ['example.component.css'],
 })
 export class ExampleComponent {
-  @ViewChild('input') input: IonInput;
+  @ViewChild('input') input!: IonInput;
+
   ionViewDidEnter() {
     this.input.setFocus();
   }

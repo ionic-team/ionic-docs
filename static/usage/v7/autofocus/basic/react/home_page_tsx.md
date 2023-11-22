@@ -13,10 +13,10 @@ const HomePage = () => {
     <IonPage>
       <IonList>
         <IonItem>
-          <IonInput autofocus placeholder="with `autofocus`"></IonInput>
+          <IonInput autofocus={true} label="Autofocus" labelPlacement="floating"></IonInput>
         </IonItem>
         <IonItem>
-          <IonInput ref={input} placeholder="using `.setFocus()`"></IonInput>
+          <IonInput ref={input} label="setFocus" labelPlacement="floating"></IonInput>
         </IonItem>
       </IonList>
     </IonPage>

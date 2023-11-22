@@ -4,32 +4,26 @@
     <ion-router-outlet></ion-router-outlet>
     <ion-list>
       <ion-item>
-        <ion-input autofocus placeholder="with `autofocus`"></ion-input>
+        <ion-input :autofocus="true" label="Autofocus" label-placement="floating"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input ref="input" placeholder="using `.setFocus()`"></ion-input>
+        <ion-input ref="input" label="setFocus" labelPlacement="floating"></ion-input>
       </ion-item>
     </ion-list>
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonInput, IonItem, IonList, IonPage, IonRouterOutlet, onIonViewDidEnter } from '@ionic/vue';
   import { ref } from 'vue';
 
-  export default {
-    components: { IonInput, IonItem, IonList, IonPage, IonRouterOutlet },
-    setup() {
-      const input = ref();
-      onIonViewDidEnter(() => {
-        requestAnimationFrame(() => {
-          // We need requestAnimationFrame here because of
-          // https://github.com/ionic-team/ionic-framework/issues/24434
-          input.value.$el.setFocus();
-        });
-      });
-      return { input };
-    },
-  };
+  const input = ref();
+  onIonViewDidEnter(() => {
+    requestAnimationFrame(() => {
+      // requestAnimationFrame is currently required due to:
+      // https://github.com/ionic-team/ionic-framework/issues/24434
+      input.value.$el.setFocus();
+    });
+  });
 </script>
 ```
