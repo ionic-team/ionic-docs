@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autofocus</title>
+    <title>setFocus</title>
     <link rel="stylesheet" href="../../../common.css" />
     <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
@@ -15,19 +15,19 @@
       <ion-content>
         <ion-list>
           <ion-item>
-            <ion-input autofocus="true" label="Autofocus" label-placement="floating"></ion-input>
+            <ion-button onclick="setFocus()">Click to set focus</ion-button>
           </ion-item>
           <ion-item>
-            <ion-input id="set-focus-input" label="setFocus" label-placement="floating"></ion-input>
+            <ion-input label="Email" label-placement="floating"></ion-input>
           </ion-item>
         </ion-list>
       </ion-content>
     </ion-app>
     <script>
-      window.addEventListener('appload', () => {
-        const input = document.querySelector('#set-focus-input');
+      function setFocus() {
+        const input = document.querySelector('ion-input');
         input.setFocus();
-      });
+      }
     </script>
   </body>
 </html>
