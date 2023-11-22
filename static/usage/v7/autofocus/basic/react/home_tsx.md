@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { IonInput, IonItem, IonList, IonPage, useIonViewDidEnter } from '@ionic/react';
 
-const HomePage = () => {
+const Home = () => {
   const input = useRef<HTMLIonInputElement>(null);
 
   useIonViewDidEnter(() => {
@@ -23,5 +23,5 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;
 ```

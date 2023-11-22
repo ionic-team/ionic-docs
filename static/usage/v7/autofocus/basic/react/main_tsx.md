@@ -5,19 +5,18 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import { Route, Redirect } from 'react-router';
 
-import HomePage from './pages/HomePage';
+import Home from './pages/Home';
 
 function Example() {
   return (
     <IonReactRouter>
       <IonRouterOutlet>
-        <Redirect exact path="/" to="/home" />
-        {/*
-          Use the render method to reduce the number of renders your component will have due to a route change.
-
-          Use the component prop when your component depends on the RouterComponentProps passed in automatically.
-        */}
-        <Route path="/home" render={() => <HomePage />} exact={true} />
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
       </IonRouterOutlet>
     </IonReactRouter>
   );

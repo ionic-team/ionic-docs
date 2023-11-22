@@ -16,7 +16,7 @@ import vue_example_vue from './vue/example_vue.md';
 import vue_router_ts from './vue/router_ts.md';
 
 import react_main_tsx from './react/main_tsx.md';
-import react_home_page_tsx from './react/home_page_tsx.md';
+import react_home_tsx from './react/home_tsx.md';
 
 <Playground
   version="7"
@@ -32,8 +32,8 @@ import react_home_page_tsx from './react/home_page_tsx.md';
     },
     angular: {
       files: {
-        'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
+        'src/app/example.component.html': angular_example_component_html,
         'src/app/app.module.ts': angular_app_module_ts,
         'src/app/app.component.html': angular_app_component_html,
         'src/app/app.component.ts': angular_app_component_ts,
@@ -42,8 +42,8 @@ import react_home_page_tsx from './react/home_page_tsx.md';
     },
     react: {
       files: {
+        'src/pages/Home.tsx': react_home_tsx,
         'src/main.tsx': react_main_tsx,
-        'src/pages/HomePage.tsx': react_home_page_tsx,
       },
     },
   }}
