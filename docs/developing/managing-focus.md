@@ -19,7 +19,7 @@ The `autofocus` attribute is a standard HTML attribute that allows developers to
 
 ## Managing Focus
 
-Ionic provides a `setFocus` API that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
+Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
 
 - The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
 - The `didPresent` lifecycle event for overlays when an overlay is presented.
