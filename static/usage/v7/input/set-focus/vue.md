@@ -6,7 +6,7 @@
         <ion-button @click="setFocus">Click to set focus</ion-button>
       </ion-item>
       <ion-item>
-        <ion-input ref="input" label="Email" labelPlacement="floating"></ion-input>
+        <ion-input ref="input" label="Email" label-placement="floating"></ion-input>
       </ion-item>
     </ion-list>
   </ion-page>

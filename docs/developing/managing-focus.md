@@ -13,12 +13,6 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## Autofocus Attribute
-
-The `autofocus` attribute is a standard HTML attribute that allows developers to set focus to an element when a page loads. This attribute is commonly used to set focus to the first input element on a page. However, the `autofocus` attribute can cause issues in routing applications when navigating between pages. This is because the `autofocus` attribute will set focus to the element when the page loads, but will not set focus to the element when the page is revisited.
-
-## Managing Focus
-
 Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
 
 - The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
@@ -26,14 +20,18 @@ Ionic provides a `setFocus` API on components such as [Input](../api/input), [Se
 - The `appload` event for vanilla JavaScript applications when the application loads.
 - The result of a user gesture or interaction.
 
-### Platform Restrictions
+## Why not autofocus?
+
+The `autofocus` attribute is a standard HTML attribute that allows developers to set focus to an element when a page loads. This attribute is commonly used to set focus to the first input element on a page. However, the `autofocus` attribute can cause issues in routing applications when navigating between pages. This is because the `autofocus` attribute will set focus to the element when the page loads, but will not set focus to the element when the page is revisited. Learn more about the `autofocus` attribute in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus).
+
+## Platform Restrictions
 
 There are platform restrictions you should be aware of when using the `setFocus` API, including:
 
 1. Android requires user interaction before setting focus to an element. This can be as simple as a user tapping on the screen.
 2. Interactive elements can only focused a result of a user gesture on Mobile Safari (iOS), such as calling `setFocus` as the result of a button click.
 
-### Basic Usage
+## Basic Usage
 
 The example below demonstrates how to use the `setFocus` API to request focus on an input when the user clicks a button.
 
@@ -41,7 +39,7 @@ import Basic from '@site/static/usage/v7/input/set-focus/index.md';
 
 <Basic />
 
-### Routing
+## Routing
 
 Developers can use the `ionViewDidEnter` lifecycle event to set focus to an element when a page is entered.
 
@@ -105,7 +103,7 @@ export default Home;
 ```html
 <template>
   <ion-page>
-    <ion-input ref="input" label="setFocus" labelPlacement="floating"></ion-input>
+    <ion-input ref="input" label="setFocus" label-placement="floating"></ion-input>
   </ion-page>
 </template>
 
@@ -128,7 +126,7 @@ export default Home;
 </Tabs>
 ````
 
-### Overlays
+## Overlays
 
 Developers can use the `didPresent` lifecycle event to set focus to an element when an overlay is presented.
 
@@ -194,7 +192,7 @@ export class ExampleComponent {
 
 ```tsx
 import React, { useRef } from 'react';
-import { IonInput, IonModal, IonPage } from '@ionic/react';
+import { IonInput, IonModal } from '@ionic/react';
 
 const Home = () => {
   const input = useRef<HTMLIonInputElement>(null);
@@ -204,11 +202,9 @@ const Home = () => {
   };
 
   return (
-    <IonPage>
-      <IonModal onDidPresent={onDidPresent}>
-        <IonInput ref={input}></IonInput>
-      </IonModal>
-    </IonPage>
+    <IonModal onDidPresent={onDidPresent}>
+      <IonInput ref={input}></IonInput>
+    </IonModal>
   );
 };
 
@@ -220,15 +216,13 @@ export default Home;
 
 ```html
 <template>
-  <ion-page>
-    <ion-modal @didPresent="onDidPresent">
-      <ion-input ref="input"></ion-input>
-    </ion-modal>
-  </ion-page>
+  <ion-modal @didPresent="onDidPresent">
+    <ion-input ref="input"></ion-input>
+  </ion-modal>
 </template>
 
 <script setup lang="ts">
-  import { IonInput, IonPage, IonModal } from '@ionic/vue';
+  import { IonInput, IonModal } from '@ionic/vue';
   import { ref } from 'vue';
 
   const input = ref();
