@@ -18,6 +18,14 @@
       "allowedVersions": "^5.0.0"
     },
     {
+      "matchPackageNames": ["vite", "@vitejs/plugin-react"],
+      "groupName": "vite-react"
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/plugin-vue"],
+      "groupName": "vite-vue"
+    },
+    {
       "matchPackagePatterns": ["@ionic/"],
       "allowedVersions": "^6.0.0",
       "groupName": "ionic",
