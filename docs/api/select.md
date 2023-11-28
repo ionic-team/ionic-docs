@@ -179,7 +179,7 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
-If slot content is meant to be interacted witih, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 
 import StartEndSlots from '@site/static/usage/v7/select/start-end-slots/index.md';
 
