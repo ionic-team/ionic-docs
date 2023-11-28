@@ -19,11 +19,15 @@
 
   export default defineComponent({
     components: {
-      IonButton, IonIcon, IonInput, IonItem, IonList,
+      IonButton,
+      IonIcon,
+      IonInput,
+      IonItem,
+      IonList,
     },
     setup() {
-      return { eye, lockClosed }
-    }
+      return { eye, lockClosed };
+    },
   });
 </script>
 ```

@@ -22,11 +22,16 @@
 
   export default defineComponent({
     components: {
-      IonButton, IonIcon, IonItem, IonList, IonSelect, IonSelectOption
+      IonButton,
+      IonIcon,
+      IonItem,
+      IonList,
+      IonSelect,
+      IonSelectOption,
     },
     setup() {
-      return { eye, leaf }
-    }
+      return { eye, leaf };
+    },
   });
 </script>
 ```
