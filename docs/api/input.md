@@ -154,7 +154,7 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
-If slot content is meant to be interactive, it should be wrapped in an interactable element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
