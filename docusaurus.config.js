@@ -146,10 +146,8 @@ module.exports = {
         {
           type: 'doc',
           docId: 'updating/7-0',
-          label: 'Ionic v7.0.0 Upgrade Guide',
+          label: 'Ionic v7 アップグレードガイド',
           position: 'left',
-          text: 'Ionic v7 アップグレードガイド',
-          href: `/updating/7-0`,
           className: 'cta',
         },
         {
