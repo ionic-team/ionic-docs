@@ -28247,7 +28247,7 @@
           "mutable": false,
           "attr": "position",
           "reflectToAttr": false,
-          "docs": "画面上のトーストの開始位置。positionAnchor`プロパティを使ってさらに微調整できる。",
+          "docs": "画面上のトーストの開始位置。 `positionAnchor`プロパティを使ってさらに微調整できます。",
           "docsTags": [],
           "default": "'bottom'",
           "values": [
