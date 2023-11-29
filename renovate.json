@@ -18,6 +18,10 @@
       "allowedVersions": "^5.0.0"
     },
     {
+      "matchPackageNames": ["react", "react-dom"],
+      "groupName": "react",
+    },
+    {
       "matchPackagePatterns": ["@ionic/"],
       "allowedVersions": "^6.0.0",
       "groupName": "ionic",
