@@ -21,7 +21,7 @@
   ],
   "inputs": [
     {
-      "name": "type",
+      "name": "schematic",
       "summary": "The type of feature (e.g. `page`, `component`, `directive`, `service`)",
       "required": true
     },

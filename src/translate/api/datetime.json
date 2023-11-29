@@ -683,7 +683,7 @@
       "mutable": false,
       "attr": "readonly",
       "reflectToAttr": false,
-      "docs": "If `true`, the datetime appears normal but is not interactive.",
+      "docs": "If `true`, the datetime appears normal but the selected date cannot be changed.",
       "docsTags": [],
       "default": "false",
       "values": [

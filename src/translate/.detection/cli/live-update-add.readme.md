@@ -1,4 +1,4 @@
-This command adds the Appflow Live Update plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.
+This command adds the Ionic Live Updates plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.
 
 For Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.
 

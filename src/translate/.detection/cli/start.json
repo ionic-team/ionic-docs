@@ -4,7 +4,7 @@
     "ionic"
   ],
   "summary": "Create a new project",
-  "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.",
+  "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using a different JavaScript Framework. Use `--list` to see all project types and templates.",
   "footnotes": [],
   "groups": [],
   "exampleCommands": [
@@ -12,11 +12,8 @@
     "ionic start --list",
     "ionic start myApp",
     "ionic start myApp blank",
-    "ionic start myApp tabs --cordova",
     "ionic start myApp tabs --capacitor",
-    "ionic start myApp super --type=ionic-angular",
-    "ionic start myApp blank --type=ionic1",
-    "ionic start cordovaApp tabs --cordova",
+    "ionic start myApp list --type=vue",
     "ionic start \"My App\" blank",
     "ionic start \"Conference App\" https://github.com/ionic-team/ionic-conference-app"
   ],
@@ -49,7 +46,7 @@
     {
       "name": "type",
       "type": "string",
-      "summary": "Type of project to start (e.g. `vue`, `angular`, `react`, `ionic-angular`, `ionic1`)",
+      "summary": "Type of project to start (e.g. `vue`, `angular`, `angular-standalone`, `react`)",
       "groups": [],
       "aliases": [],
       "spec": {

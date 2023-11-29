@@ -30,6 +30,17 @@
       }
     },
     {
+      "name": "inline",
+      "type": "boolean",
+      "summary": "Use inline source maps (only available on capacitor 4.2.0+)",
+      "default": false,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
       "name": "prod",
       "type": "boolean",
       "summary": "Flag to use the `production` configuration",
@@ -44,7 +55,7 @@
     {
       "name": "configuration",
       "type": "string",
-      "summary": "Specify the configuration to use",
+      "summary": "Specify the configuration to use.",
       "groups": [
         "advanced",
         "cordova"

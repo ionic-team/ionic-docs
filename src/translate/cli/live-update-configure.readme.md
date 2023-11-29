@@ -1,4 +1,4 @@
-This command overrides configuration for the Appflow Live Update plugin (`cordova-plugin-ionic`) in Capacitor projects.
+This command overrides configuration for the Ionic Live Updates plugin (`cordova-plugin-ionic`) in Capacitor projects.
 
 For Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.
 
