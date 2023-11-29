@@ -3,8 +3,8 @@ import React, { RefObject, forwardRef, useEffect, useMemo, useRef, useState } fr
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
+import { useColorMode } from '@docusaurus/theme-common';
 import { ConsoleItem, Mode, UsageTarget } from './playground.types';
-import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
-import { useScrollPositionBlocker } from '@docusaurus/theme-common';
+import { useScrollPositionBlocker } from '@docusaurus/theme-common/internal';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 const ControlButton = forwardRef(
@@ -168,7 +168,7 @@ export default function Playground({
     return;
   }
 
-  const { isDarkTheme } = useThemeContext();
+  const { colorMode } = useColorMode();
 
   /**
    * When deploying, Docusaurus builds the app in an SSR environment.
@@ -243,6 +243,7 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(colorMode === 'dark');
   const [mdConsoleItems, setMDConsoleItems] = useState<ConsoleItem[]>([]);
   const [iosConsoleItems, setiOSConsoleItems] = useState<ConsoleItem[]>([]);
 
@@ -352,6 +353,10 @@ export default function Playground({
       postDarkThemeMessage();
     }
   };
+
+  useEffect(() => {
+    setIsDarkTheme(colorMode === 'dark');
+  }, [colorMode]);
 
   useEffect(() => {
     /**

@@ -10,12 +10,12 @@ This document provides an overview of how to test an application built with `@io
 
 ## Introduction
 
-Testing is an important part of the development process, and it helps to ensure that an application is working as intended. In `@ionic/react`, testing is done using a combination of tools and libraries, including Jest, React Testing Library, Playwright or Cypress.
+Testing is an important part of the development process, and it helps to ensure that an application is working as intended. In `@ionic/react`, testing is done using a combination of tools and libraries, including Jest or Vitest, React Testing Library, Playwright or Cypress.
 
 ## Types of Tests
 
 There are two types of tests that can be written:
 
-**Unit Tests**: Unit tests are used to test individual functions and components in isolation. [Jest](https://jestjs.io) and [React Testing Library](https://testing-library.com) are commonly used for unit testing.
+**Unit Tests**: Unit tests are used to test individual functions and components in isolation. [Jest](https://jestjs.io), [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com) are commonly used for unit testing.
 
 **Integration Tests**: Integration tests are used to test how different components work together. [Cypress](https://www.cypress.io) or [Playwright](https://playwright.dev) are commonly used for integration testing.

@@ -104,7 +104,7 @@ Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
 ```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader after the platform has been bootstrapped
+// Call the element loader before the render call
 defineCustomElements(window);
 ```
 

@@ -38,12 +38,6 @@
       }
     }
 
-    .end {
-      @media (max-width: 996px) {
-        display: none;
-      }
-    }
-
     > .container {
       > .row {
         > .col {
@@ -51,6 +45,18 @@
           justify-content: center;
 
           min-width: 0;
+
+          // Docs Demo
+          &.col--4 {
+            @media (max-width: 1364px) {
+              // The docs demo is hidden on mobile and tablet.
+              // Since the docs demo is the only thing in the right column,
+              // the column should be hidden as well.
+              // Otherwise, it will be a blank column, making it
+              // look like there is a lot of empty space.
+              display: none;
+            }
+          }
         }
       }
     }
@@ -64,7 +70,7 @@
     }
   }
 
-  [class*='docItemCol_'] {
+  [class^='docItemCol_'] {
     margin-inline-start: auto;
     margin-inline-end: auto;
   }

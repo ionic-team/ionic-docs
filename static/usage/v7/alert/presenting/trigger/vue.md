@@ -3,9 +3,9 @@
   <ion-button id="present-alert">Click Me</ion-button>
   <ion-alert
     trigger="present-alert"
-    header="Alert"
-    sub-header="Important message"
-    message="This is an alert!"
+    header="A Short Title Is Best"
+    sub-header="A Sub Header Is Optional"
+    message="A message should be a short, complete sentence."
     :buttons="alertButtons"
   ></ion-alert>
 </template>
@@ -13,6 +13,6 @@
 <script lang="ts" setup>
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  const alertButtons = ['OK'];
+  const alertButtons = ['Action'];
 </script>
 ```

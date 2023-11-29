@@ -23,5 +23,9 @@ export class ExampleComponent {
     // After complete is called the items will be in the new order
     console.log('After complete', this.items);
   }
+
+  trackItems(index: number, itemNumber: number) {
+    return itemNumber;
+  }
 }
 ```

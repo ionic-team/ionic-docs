@@ -109,9 +109,9 @@ Make sure to return the `deletePhoto` function so it is as a part of the hook AP
 
 ```tsx
 return {
-  deletePhoto,
   photos,
   takePhoto,
+  deletePhoto,
 };
 ```
 

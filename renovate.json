@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
   "packageRules": [
     {
       "matchPackagePatterns": ["@ionic/"],
@@ -13,7 +13,7 @@
       "schedule": ["on the first day of the month"]
     },
     {
-      "matchPackagePatterns": ["react-router", "react-router-dom"],
+      "matchPackageNames": ["react-router", "react-router-dom"],
       "groupName": "react-router",
       "allowedVersions": "^5.0.0"
     },
