@@ -113,6 +113,41 @@ export class HomePage {
 }
 ```
 
+Icons can also be registered in entry points such as `app.component.ts` to avoid the need to call `addIcons` multiple times. Developers should be aware that the initial application chunk may increase because the registered icons will need to be loaded at application start. However, if your application uses a small number of icons the impact of this may be minimal.
+
+```typescript title="app.component.ts"
+import { Component } from '@angular/core';
+import { addIcons } from 'ionicons';
+import { logoIonic } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  standalone: true,
+})
+export class AppComponent {
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ logoIonic });
+  }
+}
+```
+
+Icons registered in an application entry point can then be referenced by name anywhere in the application.
+
+```html title="home.page.html"
+<!-- 
+  logoIonic was registered in app.component.ts instead of home.page.ts,
+  but it can still be used in home.page.html.
+-->
+<ion-icon name="logo-ionic"></ion-icon>
+```
+
 **Routing**
 
 Developers who wish to use `routerLink`, `routerAction`, or `routerDirection` on Ionic components should import the `IonRouterLink` directive. Developers who wish to use these routing features on anchor (`<a>`) elements should import `IonRouterLinkWithHref` instead.
@@ -218,6 +253,40 @@ export class HomePage {
 }
 ```
 
+Icons can also be registered in entry points such as `app.component.ts` to avoid the need to call `addIcons` multiple times. Developers should be aware that the initial application chunk may increase because the registered icons will need to be loaded at application start. However, if your application uses a small number of icons the impact of this may be minimal.
+
+```typescript title="app.component.ts"
+import { Component } from '@angular/core';
+import { addIcons } from 'ionicons';
+import { logoIonic } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+})
+export class AppComponent {
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ logoIonic });
+  }
+}
+```
+
+Icons registered in an application entry point can then be referenced by name anywhere in the application.
+
+```html title="home.page.html"
+<!-- 
+  logoIonic was registered in app.component.ts instead of home.page.ts,
+  but it can still be used in home.page.html.
+-->
+<ion-icon name="logo-ionic"></ion-icon>
+```
+
 **Routing**
 
 Developers who wish to use `routerLink`, `routerAction`, or `routerDirection` on Ionic components should import the `IonRouterLink` directive. Developers who wish to use these routing features on anchor (`<a>`) elements should import `IonRouterLinkWithHref` instead.
@@ -283,9 +352,17 @@ export class AppModule {}
 
 ## Migrating from Modules to Standalone
 
+:::tip
+Try our automated utility for migrating to standalone!
+
+See https://github.com/ionic-team/ionic-angular-standalone-codemods for instructions on how to get started. All issues related to the migration utility should be filed on the linked repo.
+:::
+
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.
 
 Migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
+
+Developers are encouraged to try the [automated migration utility](https://github.com/ionic-team/ionic-angular-standalone-codemods), though they can also follow the steps below if they would like to manually migrate their applications.
 
 ### Standalone-based Applications
 
@@ -405,6 +482,14 @@ import { Component } from '@angular/core';
   ],
 })
 export class TestComponent {}
+```
+
+10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular` module specifiers for import recommendations.
+
+```json title=".vscode/settings.json"
+{
+  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+}
 ```
 
 ### NgModule-based Applications
@@ -575,4 +660,12 @@ import { TestComponent } from './test.component';
   ],
   declarations: [TestComponent]
 })
+```
+
+10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular` module specifiers for import recommendations.
+
+```json title=".vscode/settings.json"
+{
+  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+}
 ```

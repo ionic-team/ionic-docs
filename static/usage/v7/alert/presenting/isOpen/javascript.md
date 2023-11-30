@@ -1,11 +1,15 @@
 ```html
 <ion-button onclick="alert.isOpen = true">Click Me</ion-button>
-<ion-alert header="Alert" sub-header="Important message" message="This is an alert!"></ion-alert>
+<ion-alert
+  header="A Short Title Is Best"
+  sub-header="A Sub Header Is Optional"
+  message="A message should be a short, complete sentence."
+></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
 
-  alert.buttons = ['OK'];
+  alert.buttons = ['Action'];
   alert.addEventListener('ionAlertDidDismiss', () => {
     alert.isOpen = false;
   });

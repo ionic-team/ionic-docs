@@ -51,8 +51,11 @@ html[data-theme='dark'] {
   [class^='admonitionHeading_'] {
     text-transform: capitalize;
 
-    &:first-letter {
-      text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    [class^='admonitionIcon_'] {
+      display: none;
     }
   }
 

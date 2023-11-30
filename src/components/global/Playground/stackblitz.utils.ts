@@ -124,7 +124,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
   const appModule = 'src/app/app.module.ts';
   const files = {
     'src/main.ts': defaultFiles[0],
-    'src/polyfills.ts': `import 'zone.js/dist/zone';`,
+    'src/polyfills.ts': `import 'zone.js';`,
     [appModule]: defaultFiles[1],
     'src/app/app.component.ts': defaultFiles[2],
     'src/app/app.component.css': defaultFiles[3],
@@ -179,6 +179,9 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/package.json',
       'react/package-lock.json',
       'react/index.html',
+      'react/vite.config.js',
+      'react/browserslistrc',
+      'react/eslintrc.js',
     ],
     options.version
   );
@@ -194,7 +197,10 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 
   const appTsx = 'src/App.tsx';
   const files = {
-    'public/index.html': defaultFiles[6],
+    '.eslintrc.js': defaultFiles[9],
+    '.browserslistrc': defaultFiles[8],
+    'vite.config.js': defaultFiles[7],
+    'index.html': defaultFiles[6],
     'src/index.tsx': defaultFiles[0],
     [appTsx]: defaultFiles[1],
     'src/main.tsx': code,

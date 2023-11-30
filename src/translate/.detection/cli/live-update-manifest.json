@@ -4,7 +4,7 @@
     "ionic",
     "live-update"
   ],
-  "summary": "Generates a manifest file for the Live Update service from a built app directory",
+  "summary": "Generates a manifest file for the Ionic Live Updates service from a built app directory",
   "description": "",
   "footnotes": [],
   "groups": [

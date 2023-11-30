@@ -37,7 +37,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -186,7 +186,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -258,6 +258,17 @@
           }
         },
         {
+          "name": "inline",
+          "type": "boolean",
+          "summary": "Use inline source maps (only available on capacitor 4.2.0+)",
+          "default": false,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
@@ -272,7 +283,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -494,7 +505,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -566,6 +577,17 @@
           }
         },
         {
+          "name": "inline",
+          "type": "boolean",
+          "summary": "Use inline source maps  (only available on capacitor 4.1.0+)",
+          "default": false,
+          "groups": [],
+          "aliases": [],
+          "spec": {
+            "value": "true/false"
+          }
+        },
+        {
           "name": "prod",
           "type": "boolean",
           "summary": "Flag to use the `production` configuration",
@@ -580,7 +602,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -988,7 +1010,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -1298,7 +1320,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -1605,7 +1627,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -1907,7 +1929,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use",
+          "summary": "Specify the configuration to use.",
           "groups": [
             "advanced",
             "cordova"
@@ -2481,7 +2503,7 @@
       ],
       "inputs": [
         {
-          "name": "type",
+          "name": "schematic",
           "summary": "機能の種類（例：`page`、`component`、`directive`、`service`）を指定します。",
           "required": true
         },
@@ -2567,7 +2589,7 @@
         {
           "name": "type",
           "type": "string",
-          "summary": "Type of project (e.g. `angular`, `react`, `vue`, `custom`)",
+          "summary": "Type of project (e.g. `angular`, `angular-standalone`, `react`, `vue`, `custom`, `vue-vite`, `react-vite`)",
           "groups": [],
           "aliases": [],
           "spec": {
@@ -2759,17 +2781,17 @@
         "ionic",
         "live-update"
       ],
-      "summary": "Adds Appflow Live Update plugin to the project",
-      "description": "This command adds the Appflow Live Update plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
+      "summary": "Adds Ionic Live Updates plugin to the project",
+      "description": "This command adds the Ionic Live Updates plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
       "footnotes": [],
       "groups": [
         "paid"
       ],
       "exampleCommands": [
         "ionic live-update add ",
-        "ionic live-update add --app-id=abcd1234 --channel-name=\"main\" --update-method=background",
+        "ionic live-update add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
         "ionic live-update add --max-store=2 --min-background-duration=30",
-        "ionic live-update add --app-id=abcd1234 --channel-name=\"main\" --update-method=background --max-store=2 --min-background-duration=30"
+        "ionic live-update add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30"
       ],
       "aliases": [],
       "inputs": [],
@@ -2839,17 +2861,17 @@
         "ionic",
         "live-update"
       ],
-      "summary": "Overrides Appflow Live Update configuration",
-      "description": "This command overrides configuration for the Appflow Live Update plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.",
+      "summary": "Overrides Ionic Live Updates plugin configuration",
+      "description": "This command overrides configuration for the Ionic Live Updates plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.",
       "footnotes": [],
       "groups": [
         "paid"
       ],
       "exampleCommands": [
         "ionic live-update configure ",
-        "ionic live-update configure --app-id=abcd1234 --channel-name=\"main\" --update-method=background",
+        "ionic live-update configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
         "ionic live-update configure --max-store=2 --min-background-duration=30",
-        "ionic live-update configure --app-id=abcd1234 --channel-name=\"main\" --update-method=background --max-store=2 --min-background-duration=30",
+        "ionic live-update configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30",
         "ionic live-update configure android",
         "ionic live-update configure ios"
       ],
@@ -2925,7 +2947,7 @@
         "ionic",
         "live-update"
       ],
-      "summary": "Generates a manifest file for the Live Update service from a built app directory",
+      "summary": "Generates a manifest file for the Ionic Live Updates service from a built app directory",
       "description": "",
       "footnotes": [],
       "groups": [
@@ -3765,7 +3787,7 @@
         "ionic"
       ],
       "summary": "Create a new project",
-      "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.",
+      "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using a different JavaScript Framework. Use `--list` to see all project types and templates.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -3773,11 +3795,8 @@
         "ionic start --list",
         "ionic start myApp",
         "ionic start myApp blank",
-        "ionic start myApp tabs --cordova",
         "ionic start myApp tabs --capacitor",
-        "ionic start myApp super --type=ionic-angular",
-        "ionic start myApp blank --type=ionic1",
-        "ionic start cordovaApp tabs --cordova",
+        "ionic start myApp list --type=vue",
         "ionic start \"My App\" blank",
         "ionic start \"Conference App\" https://github.com/ionic-team/ionic-conference-app"
       ],
@@ -3810,7 +3829,7 @@
         {
           "name": "type",
           "type": "string",
-          "summary": "Type of project to start (e.g. `vue`, `angular`, `react`, `ionic-angular`, `ionic1`)",
+          "summary": "Type of project to start (e.g. `vue`, `angular`, `angular-standalone`, `react`)",
           "groups": [],
           "aliases": [],
           "spec": {

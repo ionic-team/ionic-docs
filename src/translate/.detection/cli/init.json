@@ -27,7 +27,7 @@
     {
       "name": "type",
       "type": "string",
-      "summary": "Type of project (e.g. `angular`, `react`, `vue`, `custom`)",
+      "summary": "Type of project (e.g. `angular`, `angular-standalone`, `react`, `vue`, `custom`, `vue-vite`, `react-vite`)",
       "groups": [],
       "aliases": [],
       "spec": {

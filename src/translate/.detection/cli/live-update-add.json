@@ -4,17 +4,17 @@
     "ionic",
     "live-update"
   ],
-  "summary": "Adds Appflow Live Update plugin to the project",
-  "description": "This command adds the Appflow Live Update plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
+  "summary": "Adds Ionic Live Updates plugin to the project",
+  "description": "This command adds the Ionic Live Updates plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
   "footnotes": [],
   "groups": [
     "paid"
   ],
   "exampleCommands": [
     "ionic live-update add ",
-    "ionic live-update add --app-id=abcd1234 --channel-name=\"main\" --update-method=background",
+    "ionic live-update add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
     "ionic live-update add --max-store=2 --min-background-duration=30",
-    "ionic live-update add --app-id=abcd1234 --channel-name=\"main\" --update-method=background --max-store=2 --min-background-duration=30"
+    "ionic live-update add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30"
   ],
   "aliases": [],
   "inputs": [],

@@ -28247,7 +28247,7 @@
           "mutable": false,
           "attr": "position",
           "reflectToAttr": false,
-          "docs": "画面上のトーストの開始位置。`positionAnchor` プロパティを使ってさらに微調整できます。",
+          "docs": "画面上のトーストの開始位置。 `positionAnchor`プロパティを使ってさらに微調整できます。",
           "docsTags": [],
           "default": "'bottom'",
           "values": [
@@ -28283,7 +28283,7 @@
           "mutable": false,
           "attr": "position-anchor",
           "reflectToAttr": false,
-          "docs": "トーストの位置を固定する要素。直接参照するか、要素のIDを指定します。 `position=\"bottom\"` の場合、トーストは選択した要素の上に表示されます。 `position=\"top\"` の場合、トーストは選択した要素の下に位置します。 `position=\"middle\"` の場合、`positionAnchor`の値は無視されます。",
+          "docs": "トーストの位置を固定する要素。直接参照するか、要素のIDを指定します。position=\"bottom\"`の場合、トーストは選択した要素の上に表示されます。position=\"top\"`の場合、トーストは選択した要素の下に位置します。position=\"middle\"`の場合、`positionAnchor`の値は無視される。",
           "docsTags": [],
           "values": [
             {

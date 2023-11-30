@@ -3,9 +3,9 @@
   <ion-button @click="setOpen(true)">Click Me</ion-button>
   <ion-alert
     :is-open="isOpen"
-    header="Alert"
-    sub-header="Important message"
-    message="This is an alert!"
+    header="A Short Title Is Best"
+    sub-header="A Sub Header Is Optional"
+    message="A message should be a short, complete sentence."
     :buttons="alertButtons"
     @didDismiss="setOpen(false)"
   ></ion-alert>
@@ -16,7 +16,7 @@
   import { IonAlert, IonButton } from '@ionic/vue';
 
   const isOpen = ref(false);
-  const alertButtons = ['OK'];
+  const alertButtons = ['Action'];
 
   const setOpen = (state: boolean) => {
     isOpen.value = state;

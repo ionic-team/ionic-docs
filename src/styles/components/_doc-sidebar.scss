@@ -160,8 +160,6 @@ html[data-theme='dark'] {
     flex-direction: row-reverse;
     justify-content: flex-end;
 
-    flex: initial;
-
     &::after {
       background: var(--ifm-menu-link-sublist-icon) center / var(--dropdown-icon-width) var(--dropdown-icon-height);
       background-repeat: no-repeat;

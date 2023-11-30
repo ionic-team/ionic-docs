@@ -3,7 +3,7 @@
   <ion-list>
     <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
     <ion-reorder-group :disabled="false" @ionItemReorder="handleReorder($event)">
-      <ion-item v-for="item in items">
+      <ion-item v-for="item in items" :key="item">
         <ion-label> Item {{ item }} </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
