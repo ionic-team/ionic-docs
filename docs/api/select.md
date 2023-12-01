@@ -175,7 +175,7 @@ import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/
 
 ## Start and End Slots
 
-The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the input.
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
 
 :::note
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
