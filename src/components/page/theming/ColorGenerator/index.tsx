@@ -17,8 +17,8 @@ const ColorGenerator = (props) => {
     success: generateColor('#2dd36f'),
     warning: generateColor('#ffc409'),
     danger: generateColor('#eb445a'),
-    medium: generateColor('#92949c'),
     light: generateColor('#f4f5f8'),
+    medium: generateColor('#92949c'),
     dark: generateColor('#222428'),
   });
 
