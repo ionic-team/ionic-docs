@@ -152,11 +152,13 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the input.
 
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+:::note
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
-
-Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+:::
 
 import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md';
 
