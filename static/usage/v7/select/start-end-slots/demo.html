@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
 
     <style>
+      /**
+       * This is to deal with a bug in 7.6 where a select in a list/item
+       * wrapped in a flex container will shrink to 0 width. When the bug
+       * is fixed, we can remove this.
+       */
       ion-list {
         min-width: 400px;
       }
