@@ -30,7 +30,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       {
-        // Will be passed to @docusaurus/plugin-content-docs (false to disable)
+        // Will be passed to @docusaurus/plugin-content-docs (false to disable).
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
@@ -60,7 +60,7 @@ module.exports = {
             },
           },
         },
-        // Will be passed to @docusaurus/plugin-google-tag-manager
+        // Will be passed to @docusaurus/plugin-google-tag-manager.
         googleTagManager: {
           containerId: 'GTM-TKMGCBC',
         },
