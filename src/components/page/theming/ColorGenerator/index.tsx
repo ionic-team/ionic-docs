@@ -19,6 +19,7 @@ const ColorGenerator = (props) => {
     danger: generateColor('#eb445a'),
     medium: generateColor('#92949c'),
     light: generateColor('#f4f5f8'),
+    dark: generateColor('#222428'),
   });
 
   const [activeColor, setActiveColor] = useState(null);
