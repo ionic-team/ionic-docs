@@ -60,6 +60,10 @@ module.exports = {
             },
           },
         },
+        // Will be passed to @docusaurus/plugin-google-tag-manager
+        googleTagManager: {
+          containerId: 'GTM-TKMGCBC',
+        },
         // Will be passed to @docusaurus/theme-classic.
         theme: {
           customCss: [
@@ -269,9 +273,6 @@ module.exports = {
         },
       ],
     },
-    tagManager: {
-      trackingID: 'GTM-TKMGCBC',
-    },
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/5a1c93592c6475fb230bfcb8a9666b72b331638b/packages/generate-prism-languages/index.ts#L9-L24
@@ -297,7 +298,6 @@ module.exports = {
         },
       },
     ],
-    '@ionic-internal/docusaurus-plugin-tag-manager',
     function (context, options) {
       return {
         name: 'ionic-docs-ads',
