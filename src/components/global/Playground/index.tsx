@@ -563,9 +563,7 @@ export default function Playground({
              * explicitly check for when the code is empty to use this workaround.
              */
             const el = document.createElement('div');
-            el.innerHTML = hostRef.current!.querySelector<HTMLElement>(
-              `#${getCodeSnippetId(usageTarget, fileName)} code`
-            ).innerHTML;
+            el.innerHTML = codeBlock.innerHTML;
             code = el.outerText;
           }
           return {
