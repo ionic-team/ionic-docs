@@ -12,7 +12,7 @@ import ColorInput from '../ColorInput';
 const ColorGenerator = (props) => {
   const [colors, setColors] = useState({
     primary: generateColor('#3880ff'),
-    secondary: generateColor('#5260ff'),
+    secondary: generateColor('#3dc2ff'),
     tertiary: generateColor('#5260ff'),
     success: generateColor('#2dd36f'),
     warning: generateColor('#ffc409'),
