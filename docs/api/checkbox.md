@@ -2,12 +2,12 @@
 title: "ion-checkbox"
 ---
 
-import Props from '@ionic-internal/component-api/v7/checkbox/props.md';
-import Events from '@ionic-internal/component-api/v7/checkbox/events.md';
-import Methods from '@ionic-internal/component-api/v7/checkbox/methods.md';
-import Parts from '@ionic-internal/component-api/v7/checkbox/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/checkbox/slots.md';
+import Props from '@ionic-internal/component-api/v8/checkbox/props.md';
+import Events from '@ionic-internal/component-api/v8/checkbox/events.md';
+import Methods from '@ionic-internal/component-api/v8/checkbox/methods.md';
+import Parts from '@ionic-internal/component-api/v8/checkbox/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/checkbox/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/checkbox/slots.md';
 
 <head>
   <title>ion-checkbox: Ionic App Checkbox to Select Multiple Options</title>
@@ -23,7 +23,7 @@ Checkboxes allow the selection of multiple options from a set of options. They a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
+import Basic from '@site/static/usage/v8/checkbox/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
-import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/checkbox/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -43,7 +43,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
+import Alignment from '@site/static/usage/v8/checkbox/alignment/index.md';
 
 <Alignment />
 
@@ -51,7 +51,7 @@ import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
 
 Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
-import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
+import Justify from '@site/static/usage/v8/checkbox/justify/index.md';
 
 <Justify />
 
@@ -62,7 +62,7 @@ import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 
 ## Indeterminate Checkboxes
 
-import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
+import Indeterminate from '@site/static/usage/v8/checkbox/indeterminate/index.md';
 
 <Indeterminate />
 
@@ -70,7 +70,7 @@ import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/checkbox/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -106,7 +106,7 @@ Developers can perform this migration one checkbox at a time. While developers c
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-checkbox`. The placement of the label can be configured using the `labelPlacement` property on `ion-checkbox`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-checkbox`.
 
-import Migration from '@site/static/usage/v7/checkbox/migration/index.md';
+import Migration from '@site/static/usage/v8/checkbox/migration/index.md';
 
 <Migration />
   

@@ -53,11 +53,16 @@ module.exports = {
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
           exclude: ['README.md'],
-          lastVersion: 'current',
+          lastVersion: 'v7',
           versions: {
             current: {
-              label: 'v7',
+              label: 'v8 (beta)',
+              banner: 'unreleased',
+              path: 'v8'
             },
+            v7: {
+              label: 'v7'
+            }
           },
         },
         // Will be passed to @docusaurus/theme-classic.
