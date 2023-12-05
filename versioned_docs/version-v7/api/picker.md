@@ -1,6 +1,7 @@
 ---
-title: "ion-picker"
+title: 'ion-picker'
 ---
+
 import Props from '@ionic-internal/component-api/v7/picker/props.md';
 import Events from '@ionic-internal/component-api/v7/picker/events.md';
 import Methods from '@ionic-internal/component-api/v7/picker/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
 
 <head>
   <title>ion-picker: A Dialog That Displays Buttons and Columns</title>
-  <meta name="description" content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport." />
+  <meta
+    name="description"
+    content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -127,19 +131,25 @@ interface PickerOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

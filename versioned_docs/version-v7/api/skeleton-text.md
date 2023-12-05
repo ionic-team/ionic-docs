@@ -1,6 +1,7 @@
 ---
-title: "ion-skeleton-text"
+title: 'ion-skeleton-text'
 ---
+
 import Props from '@ionic-internal/component-api/v7/skeleton-text/props.md';
 import Events from '@ionic-internal/component-api/v7/skeleton-text/events.md';
 import Methods from '@ionic-internal/component-api/v7/skeleton-text/methods.md';
@@ -10,14 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/skeleton-text/slots.md';
 
 <head>
   <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>
-  <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
+  <meta
+    name="description"
+    content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-
 
 Skeleton Text is a component for rendering placeholder content. The element will render a gray block at the specified width.
 
@@ -36,19 +38,25 @@ import CSSProps from '@site/static/usage/v7/skeleton-text/theming/css-properties
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

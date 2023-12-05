@@ -1,6 +1,7 @@
 ---
-title: "ion-alert"
+title: 'ion-alert'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,7 +14,10 @@ import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed." />
+  <meta
+    name="description"
+    content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -57,7 +61,6 @@ Optionally, a `role` property can be added to a button, such as `cancel`. If a `
 import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 <Buttons />
-
 
 ## Inputs
 
@@ -106,7 +109,7 @@ import Customization from '@site/static/usage/v7/alert/customization/index.md';
 <Customization />
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 ## Accessibility
@@ -180,7 +183,6 @@ const alert = await alertController.create({
 </TabItem>
 
 </Tabs>
-
 
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
@@ -281,7 +283,6 @@ interface AlertButton {
 }
 ```
 
-
 ### AlertInput
 
 ```typescript
@@ -305,7 +306,6 @@ interface AlertInput {
   tabindex?: number;
 }
 ```
-
 
 ### AlertOptions
 
@@ -332,19 +332,25 @@ interface AlertOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

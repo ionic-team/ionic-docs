@@ -1,5 +1,5 @@
 ---
-title: "ion-avatar"
+title: 'ion-avatar'
 ---
 
 import Props from '@ionic-internal/component-api/v7/avatar/props.md';
@@ -11,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>
-  <meta name="description" content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element." />
+  <meta
+    name="description"
+    content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -49,19 +52,25 @@ import CSSProps from '@site/static/usage/v7/avatar/theming/css-properties/index.
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

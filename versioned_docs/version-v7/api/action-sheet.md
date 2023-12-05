@@ -1,6 +1,7 @@
 ---
-title: "ion-action-sheet"
+title: 'ion-action-sheet'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,13 +14,15 @@ import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
-  <meta name="description" content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices." />
+  <meta
+    name="description"
+    content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
-
 
 An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.
 
@@ -280,19 +283,25 @@ interface ActionSheetOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

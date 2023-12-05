@@ -1,6 +1,7 @@
 ---
-title: "ion-modal"
+title: 'ion-modal'
 ---
+
 import Props from '@ionic-internal/component-api/v7/modal/props.md';
 import Events from '@ionic-internal/component-api/v7/modal/events.md';
 import Methods from '@ionic-internal/component-api/v7/modal/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/modal/slots.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
-  <meta name="description" content="ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components." />
+  <meta
+    name="description"
+    content="ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -54,7 +58,7 @@ When entering data into a modal, it is often desirable to have a way of preventi
 There are two different ways of using the `canDismiss` property: setting a boolean value or setting a callback function.
 
 :::note
- Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
+Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
 :::
 
 ### Setting a boolean value
@@ -100,7 +104,7 @@ import CanDismissChildStateExample from '@site/static/usage/v7/modal/can-dismiss
 <CanDismissChildStateExample />
 
 ## Types of modals
- 
+
 ### Card Modal
 
 Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
@@ -156,15 +160,14 @@ import SheetHandleBehaviorExample from '@site/static/usage/v7/modal/sheet/handle
 Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
 :::
-
 
 :::note
- `ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
+`ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
 :::
 
-``` 
+```
 ion-modal.stack-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
@@ -193,8 +196,8 @@ import CustomDialogs from '@site/static/usage/v7/modal/custom-dialogs/index.md';
 
 A few things to keep in mind when creating custom dialogs:
 
-* `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
-* Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
+- `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
+- Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
 
 ## Interfaces
 
@@ -227,6 +230,7 @@ interface ModalOptions {
   handle?: boolean;
 }
 ```
+
 ### ModalCustomEvent
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
@@ -244,7 +248,6 @@ interface ModalCustomEvent extends CustomEvent {
 | Key   | Function            |
 | ----- | ------------------- |
 | `Esc` | Dismisses the modal |
-
 
 ### Labels
 
@@ -284,26 +287,32 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 - This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the modal, and the contents will be rendered automatically.
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can pass the contents to be rendered into the modal, and the contents will be rendered automatically.
 
 - This feature only works with inline modals. Modals created with the `modalController` are not created ahead of time, so the inner contents are not created either.
 
 - Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the modal is mounted, not when the modal is presented.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-accordion-group"
+title: 'ion-accordion-group'
 ---
+
 import Props from '@ionic-internal/component-api/v7/accordion-group/props.md';
 import Events from '@ionic-internal/component-api/v7/accordion-group/events.md';
 import Methods from '@ionic-internal/component-api/v7/accordion-group/methods.md';
@@ -15,7 +16,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
 
 See the [Accordion](./accordion) documentation for more information.
-
 
 ## Interfaces
 
@@ -38,22 +38,26 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

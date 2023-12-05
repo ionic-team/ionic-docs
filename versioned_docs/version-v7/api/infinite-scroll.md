@@ -1,5 +1,5 @@
 ---
-title: "ion-infinite-scroll"
+title: 'ion-infinite-scroll'
 ---
 
 import Props from '@ionic-internal/component-api/v7/infinite-scroll/props.md';
@@ -11,11 +11,13 @@ import Slots from '@ionic-internal/component-api/v7/infinite-scroll/slots.md';
 
 <head>
   <title>ion-infinite-scroll: Infinite Scroller Action Component</title>
-  <meta name="description" content="The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page." />
+  <meta
+    name="description"
+    content="The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
 
 The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.
 
@@ -67,12 +69,8 @@ For example, when rendering a collection of items in an `ion-list`:
 ```html
 <ion-content role="feed">
   <ion-list>
-    <ion-item role="article">
-      First item
-    </ion-item>
-    <ion-item role="article">
-      Second item
-    </ion-item>
+    <ion-item role="article"> First item </ion-item>
+    <ion-item role="article"> Second item </ion-item>
     ...
   </ion-list>
 
@@ -97,19 +95,25 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

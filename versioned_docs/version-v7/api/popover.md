@@ -1,6 +1,7 @@
 ---
-title: "ion-popover"
+title: 'ion-popover'
 ---
+
 import Props from '@ionic-internal/component-api/v7/popover/props.md';
 import Events from '@ionic-internal/component-api/v7/popover/events.md';
 import Methods from '@ionic-internal/component-api/v7/popover/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
-  <meta name="description" content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices." />
+  <meta
+    name="description"
+    content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.
 
@@ -34,7 +37,7 @@ Using a popover inline is useful when you do not want to explicitly wire up clic
 
 If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
 
-### Angular 
+### Angular
 
 Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
 
@@ -51,7 +54,7 @@ Since the component you passed in needs to be created when the popover is presen
 A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
 
 :::note
- Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
 :::
 
 import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigger/index.md';
@@ -63,7 +66,6 @@ import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigg
 Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
-
 
 import IsOpenTrigger from '@site/static/usage/v7/popover/presenting/inline-isopen/index.md';
 
@@ -87,19 +89,17 @@ import ControllerExample from '@site/static/usage/v7/popover/presenting/controll
 
 <ControllerExample />
 
-
 ## Styling
 
 Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 import Styling from '@site/static/usage/v7/popover/customization/styling/index.md';
 
 <Styling />
-
 
 ## Positioning
 
@@ -113,7 +113,7 @@ Regardless of what you choose for your reference point, you can position a popov
 
 ### Alignment
 
-The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property. 
+The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property.
 
 ### Side and Alignment Demo
 
@@ -142,13 +142,12 @@ When using `ion-popover` inline, you can nested popovers to create nested dropdo
 You can use the `dismissOnSelect` property to automatically close the popover when the popover content has been clicked. This behavior does not apply when clicking a trigger element for another popover.
 
 :::note
- Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
+Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
 :::
 
 import NestedPopover from '@site/static/usage/v7/popover/nested/index.md';
 
 <NestedPopover />
-
 
 ## Interfaces
 
@@ -172,7 +171,7 @@ interface PopoverOptions {
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
-  
+
   size?: PopoverSize;
   dismissOnSelect?: boolean;
   reference?: PositionReference;
@@ -181,7 +180,6 @@ interface PopoverOptions {
   arrow?: boolean;
 }
 ```
-
 
 ## Types
 
@@ -201,24 +199,23 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 `ion-popover` has basic keyboard support for navigating between focusable elements inside of the popover. The following table details what each key does:
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Esc`              | Closes the popover. |
-| `Space` or `Enter` | Clicks the focusable element. |
-
+| Key                | Function                                       |
+| ------------------ | ---------------------------------------------- |
+| `Tab`              | Moves focus to the next focusable element.     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element. |
+| `Esc`              | Closes the popover.                            |
+| `Space` or `Enter` | Clicks the focusable element.                  |
 
 `ion-popover` has full arrow key support for navigating between `ion-item` elements with the `button` property. The most common use case for this is as a dropdown menu in a desktop-focused application. In addition to the basic keyboard support, the following table details arrow key support for dropdown menus:
 
-| Key                | Function                                                       |
-| ------------------ | -------------------------------------------------------------- |
-| `ArrowUp`          | Moves focus to the previous focusable element.                 |
-| `ArrowDown`        | Moves focus to the next focusable element.                     |
-| `Home`             | Moves focus to the first focusable element.                    |
-| `End`              | Moves focus to the last focusable element.                     |
-| `ArrowLeft`        | When used in a child popover, closes the popover and returns focus to the parent popover. |
-| `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
+| Key                                | Function                                                                                  |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- |
+| `ArrowUp`                          | Moves focus to the previous focusable element.                                            |
+| `ArrowDown`                        | Moves focus to the next focusable element.                                                |
+| `Home`                             | Moves focus to the first focusable element.                                               |
+| `End`                              | Moves focus to the last focusable element.                                                |
+| `ArrowLeft`                        | When used in a child popover, closes the popover and returns focus to the parent popover. |
+| `Space`, `Enter`, and `ArrowRight` | When focusing a trigger element, opens the associated popover.                            |
 
 ## Performance
 
@@ -234,26 +231,32 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 - This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can pass the contents to be rendered into the popover, and the contents will be rendered automatically.
 
 - This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
 
 - Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

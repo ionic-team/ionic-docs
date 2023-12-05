@@ -1,14 +1,13 @@
 ---
-title: "ion-breadcrumbs"
+title: 'ion-breadcrumbs'
 ---
+
 import Props from '@ionic-internal/component-api/v7/breadcrumbs/props.md';
 import Events from '@ionic-internal/component-api/v7/breadcrumbs/events.md';
 import Methods from '@ionic-internal/component-api/v7/breadcrumbs/methods.md';
 import Parts from '@ionic-internal/component-api/v7/breadcrumbs/parts.md';
 import CustomProps from '@ionic-internal/component-api/v7/breadcrumbs/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/breadcrumbs/slots.md';
-
-
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -84,21 +83,26 @@ import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/i
 
 <CSSProps />
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

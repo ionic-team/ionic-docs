@@ -1,6 +1,7 @@
 ---
-title: "ion-toolbar"
+title: 'ion-toolbar'
 ---
+
 import Props from '@ionic-internal/component-api/v7/toolbar/props.md';
 import Events from '@ionic-internal/component-api/v7/toolbar/events.md';
 import Methods from '@ionic-internal/component-api/v7/toolbar/methods.md';
@@ -10,18 +11,19 @@ import Slots from '@ionic-internal/component-api/v7/toolbar/slots.md';
 
 <head>
   <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
-  <meta name="description" content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content." />
+  <meta
+    name="description"
+    content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Toolbars are generally positioned above or below content and provide content and actions for the current screen. When placed within the [content](./content), toolbars will scroll with the content.
 
 Toolbars can contain several different components including titles, buttons, icons, back buttons, menu buttons, searchbars, segments, progress bars, and more.
-
 
 ## Basic Usage
 
@@ -30,7 +32,6 @@ It is recommended to put a toolbar inside of a [header](./header) or [footer](./
 import Basic from '@site/static/usage/v7/toolbar/basic/index.md';
 
 <Basic />
-
 
 ## Buttons in Toolbars
 
@@ -42,7 +43,6 @@ import Buttons from '@site/static/usage/v7/toolbar/buttons/index.md';
 
 <Buttons />
 
-
 ## Searchbars in Toolbars
 
 A [searchbar](./searchbar) can be placed inside of a toolbar to search through the content. It should be the only child component of the toolbar, and will take up the full width and height.
@@ -50,7 +50,6 @@ A [searchbar](./searchbar) can be placed inside of a toolbar to search through t
 import Searchbars from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 <Searchbars />
-
 
 ## Segments in Toolbars
 
@@ -60,7 +59,6 @@ import Segments from '@site/static/usage/v7/toolbar/segments/index.md';
 
 <Segments />
 
-
 ## Progress Bars in Toolbars
 
 A [progress bar](./progress-bar) is used as a loading indicator to show an ongoing process in an app. Progress bars can be placed with any other components inside of a toolbar as they will align with the bottom of the toolbar.
@@ -68,7 +66,6 @@ A [progress bar](./progress-bar) is used as a loading indicator to show an ongoi
 import ProgressBars from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 
 <ProgressBars />
-
 
 ## Theming
 
@@ -84,26 +81,30 @@ import CSSProps from '@site/static/usage/v7/toolbar/theming/css-properties/index
 
 <CSSProps />
 
-
 ## Borders
 
-In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
-
+In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top. In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

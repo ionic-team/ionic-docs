@@ -1,6 +1,7 @@
 ---
-title: "ion-fab-list"
+title: 'ion-fab-list'
 ---
+
 import Props from '@ionic-internal/component-api/v7/fab-list/props.md';
 import Events from '@ionic-internal/component-api/v7/fab-list/events.md';
 import Methods from '@ionic-internal/component-api/v7/fab-list/methods.md';
@@ -17,19 +18,25 @@ The fab list component is a container for multiple [fab buttons](./fab-button). 
 For usage examples, see the [fab documentation](./fab).
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-input"
+title: 'ion-input'
 ---
+
 import Props from '@ionic-internal/component-api/v7/input/props.md';
 import Events from '@ionic-internal/component-api/v7/input/events.md';
 import Methods from '@ionic-internal/component-api/v7/input/methods.md';
@@ -10,23 +11,23 @@ import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
-  <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards." />
+  <meta
+    name="description"
+    content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
 The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.
-
 
 ## Basic Usage
 
 import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 <Basic />
-
 
 ## Types
 
@@ -78,7 +79,6 @@ import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 <Clear />
 
-
 ## Filled Inputs
 
 Material Design offers filled styles for an input. The `fill` property on the input can be set to either `"solid"` or `"outline"`.
@@ -90,7 +90,6 @@ Filled inputs can be used on iOS by setting Input's `mode` to `md`.
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />
-
 
 ## Helper & Error Text
 
@@ -209,21 +208,26 @@ interface InputCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

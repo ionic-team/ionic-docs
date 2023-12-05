@@ -1,6 +1,7 @@
 ---
-title: "ion-tabs"
+title: 'ion-tabs'
 ---
+
 import Props from '@ionic-internal/component-api/v7/tabs/props.md';
 import Events from '@ionic-internal/component-api/v7/tabs/events.md';
 import Methods from '@ionic-internal/component-api/v7/tabs/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/tabs/slots.md';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
-  <meta name="description" content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps." />
+  <meta
+    name="description"
+    content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -46,7 +50,6 @@ Ionic has guides on best practices for routing patterns with tabs. Check out the
 
 :::
 
-
 ## Interfaces
 
 ### TabsCustomEvent
@@ -61,19 +64,25 @@ interface TabsCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-menu"
+title: 'ion-menu'
 ---
+
 import Props from '@ionic-internal/component-api/v7/menu/props.md';
 import Events from '@ionic-internal/component-api/v7/menu/events.md';
 import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API." />
+  <meta
+    name="description"
+    content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The menu component is a navigation drawer that slides in from the side of the current view. By default, it uses the start side, making it slide in from the left for LTR and right for RTL, but the side can be overridden. The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
 
@@ -28,7 +31,6 @@ import Basic from '@site/static/usage/v7/menu/basic/index.md';
 
 <Basic />
 
-
 ## Menu Toggle
 
 The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
@@ -37,7 +39,6 @@ import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 <MenuToggle />
 
-
 ## Menu Types
 
 The `type` property can be used to customize how menus display in your application.
@@ -45,7 +46,6 @@ The `type` property can be used to customize how menus display in your applicati
 import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
-
 
 ## Menu Sides
 
@@ -57,7 +57,6 @@ import Sides from '@site/static/usage/v7/menu/sides/index.md';
 
 <Sides />
 
-
 ## Multiple Menus
 
 When multiple menus exist on the same side, we need refer to them by ID instead of side. Otherwise, the wrong menu may be activated.
@@ -65,7 +64,6 @@ When multiple menus exist on the same side, we need refer to them by ID instead 
 import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 
 <Multiple />
-
 
 ## Theming
 
@@ -88,23 +86,26 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

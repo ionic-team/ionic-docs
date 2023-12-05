@@ -1,6 +1,7 @@
 ---
-title: "ion-note"
+title: 'ion-note'
 ---
+
 import Props from '@ionic-internal/component-api/v7/note/props.md';
 import Events from '@ionic-internal/component-api/v7/note/events.md';
 import Methods from '@ionic-internal/component-api/v7/note/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/note/slots.md';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>
-  <meta name="description" content="ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps." />
+  <meta
+    name="description"
+    content="ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -45,21 +49,26 @@ import CSSProps from '@site/static/usage/v7/note/theming/css-properties/index.md
 
 <CSSProps />
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-button"
+title: 'ion-button'
 ---
+
 import Props from '@ionic-internal/component-api/v7/button/props.md';
 import Events from '@ionic-internal/component-api/v7/button/events.md';
 import Methods from '@ionic-internal/component-api/v7/button/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/button/slots.md';
 
 <head>
   <title>ion-button: Style Buttons with Custom CSS Properties</title>
-  <meta name="description" content="ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties." />
+  <meta
+    name="description"
+    content="ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -40,7 +44,6 @@ This property lets you specify the shape of the button. By default, buttons are 
 import Shape from '@site/static/usage/v7/button/shape/index.md';
 
 <Shape />
-
 
 ## Fill
 
@@ -97,19 +100,25 @@ import TextWrapping from '@site/static/usage/v7/button/text-wrapping/index.md';
 <TextWrapping />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

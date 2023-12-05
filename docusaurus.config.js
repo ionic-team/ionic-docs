@@ -58,11 +58,11 @@ module.exports = {
             current: {
               label: 'v8 (beta)',
               banner: 'unreleased',
-              path: 'v8'
+              path: 'v8',
             },
             v7: {
-              label: 'v7'
-            }
+              label: 'v7',
+            },
           },
         },
         // Will be passed to @docusaurus/theme-classic.

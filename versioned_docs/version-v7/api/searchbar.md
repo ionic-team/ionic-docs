@@ -1,6 +1,7 @@
 ---
-title: "ion-searchbar"
+title: 'ion-searchbar'
 ---
+
 import Props from '@ionic-internal/component-api/v7/searchbar/props.md';
 import Events from '@ionic-internal/component-api/v7/searchbar/events.md';
 import Methods from '@ionic-internal/component-api/v7/searchbar/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/searchbar/slots.md';
 
 <head>
   <title>ion-searchbar: Search Bar for Searching a Collection</title>
-  <meta name="description" content="Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays." />
+  <meta
+    name="description"
+    content="Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -19,13 +23,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content. A searchbar should be used instead of an input to search lists.
 
-
 ## Basic Usage
 
 import Basic from '@site/static/usage/v7/searchbar/basic/index.md';
 
 <Basic />
-
 
 ## Search Icon
 
@@ -35,7 +37,6 @@ import SearchIcon from '@site/static/usage/v7/searchbar/search-icon/index.md';
 
 <SearchIcon />
 
-
 ## Clear Button
 
 A clear button is displayed when a searchbar has a value or upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. By default, the clear button is set to show when focusing the searchbar, but it can be set to always show or never show. The icon inside of the clear button can also be customized to any [Ionicon](https://ionic.io/ionicons/).
@@ -43,7 +44,6 @@ A clear button is displayed when a searchbar has a value or upon entering input 
 import ClearButton from '@site/static/usage/v7/searchbar/clear-button/index.md';
 
 <ClearButton />
-
 
 ## Cancel Button
 
@@ -53,16 +53,15 @@ import CancelButton from '@site/static/usage/v7/searchbar/cancel-button/index.md
 
 <CancelButton />
 
-
 ## Searchbars in Toolbars
 
 Searchbars are styled to look native when placed inside of a toolbar. In iOS, searchbars should be placed in their own toolbar, under a toolbar that contains the page title. In Material Design, searchbars are either persistently displayed in their own toolbar, or expand over a toolbar containing the page title.
 
 <!-- Reuse the playground from the Toolbar directory -->
+
 import Toolbar from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 <Toolbar />
-
 
 ## Debounce
 
@@ -71,7 +70,6 @@ A debounce can be set on the searchbar in order to delay triggering the `ionInpu
 import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
 
 <Debounce />
-
 
 ## Theming
 
@@ -88,7 +86,6 @@ Searchbar uses scoped encapsulation, which means it will automatically scope its
 import CSSProps from '@site/static/usage/v7/searchbar/theming/css-properties/index.md';
 
 <CSSProps />
-
 
 ## Keyboard Display
 
@@ -121,21 +118,26 @@ interface SearchbarCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

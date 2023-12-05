@@ -1,6 +1,7 @@
 ---
-title: "ion-radio"
+title: 'ion-radio'
 ---
+
 import Props from '@ionic-internal/component-api/v7/radio/props.md';
 import Events from '@ionic-internal/component-api/v7/radio/events.md';
 import Methods from '@ionic-internal/component-api/v7/radio/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
   <title>ion-radio: Radio Component for iOS and Android</title>
-  <meta name="description" content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation." />
+  <meta
+    name="description"
+    content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Radios should be used inside of a [radio group](./radio-group). Pressing a radio will check it and uncheck the previously selected radio, if there is one. They can also be checked programmatically by setting the value property of the parent radio group to the value of the radio.
 
@@ -30,7 +33,7 @@ import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.  This property mirrors the flexbox `flex-direction` property.
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
 import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
 
@@ -68,7 +71,6 @@ import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md
 
 <EmptySelection />
 
-
 ## Theming
 
 ### Colors
@@ -102,7 +104,6 @@ Using the modern syntax involves removing the `ion-label` and passing the label 
 import Migration from '@site/static/usage/v7/radio/migration/index.md';
 
 <Migration />
-  
 
 :::note
 In past versions of Ionic, `ion-item` was required for `ion-radio` to function properly. Starting in Ionic 7.0, `ion-radio` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-radio` to function properly.
@@ -112,22 +113,26 @@ In past versions of Ionic, `ion-item` was required for `ion-radio` to function p
 
 Ionic uses heuristics to detect if an app is using the modern radio syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-radio` to `true` to force that instance of the radio to use the legacy syntax.
 
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

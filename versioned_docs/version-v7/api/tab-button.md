@@ -1,6 +1,7 @@
 ---
-title: "ion-tab-button"
+title: 'ion-tab-button'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,19 +12,13 @@ import Parts from '@ionic-internal/component-api/v7/tab-button/parts.md';
 import CustomProps from '@ionic-internal/component-api/v7/tab-button/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/tab-button/slots.md';
 
-
-
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 A tab button is a UI component that is placed inside of a [tab bar](tab-bar.md). The tab button can specify the layout of the icon and label and connect to a [tab view](tab.md).
 
 See the [tabs documentation](tabs.md) for more details on configuring tabs.
-
-
-
 
 ## Usage
 
@@ -58,9 +53,7 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -108,9 +101,7 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -149,9 +140,7 @@ export const TabButtonExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -184,50 +173,49 @@ export const TabButtonExample: React.FC = () => (
 </template>
 
 <script>
-import { 
-  IonIcon, 
-  IonLabel, 
-  IonTabBar, 
-  IonTabButton, 
-  IonTabs
-} from '@ionic/vue';
-import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
+  import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonIcon, 
-    IonLabel, 
-    IonTabBar, 
-    IonTabButton, 
-    IonTabs
-  },
-  setup() {
-    return { calendar, informationCircle, map, personCircle }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonIcon,
+      IonLabel,
+      IonTabBar,
+      IonTabButton,
+      IonTabs,
+    },
+    setup() {
+      return { calendar, informationCircle, map, personCircle };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
 </Tabs>
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

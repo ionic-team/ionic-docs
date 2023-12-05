@@ -1,5 +1,5 @@
 ---
-title: "ion-thumbnail"
+title: 'ion-thumbnail'
 ---
 
 import Props from '@ionic-internal/component-api/v7/thumbnail/props.md';
@@ -11,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>
-  <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
+  <meta
+    name="description"
+    content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -43,19 +46,25 @@ import CSSProps from '@site/static/usage/v7/thumbnail/theming/css-properties/ind
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

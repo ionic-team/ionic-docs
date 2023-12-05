@@ -1,6 +1,7 @@
 ---
-title: "ion-range"
+title: 'ion-range'
 ---
+
 import Props from '@ionic-internal/component-api/v7/range/props.md';
 import Events from '@ionic-internal/component-api/v7/range/events.md';
 import Methods from '@ionic-internal/component-api/v7/range/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/range/slots.md';
 
 <head>
   <title>ion-range: Range Slider Knob Controls with Labels</title>
-  <meta name="description" content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side." />
+  <meta
+    name="description"
+    content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
 
@@ -144,7 +147,6 @@ import Migration from '@site/static/usage/v7/range/migration/index.md';
 
 <Migration />
 
-
 :::note
 In past versions of Ionic, `ion-item` was required for `ion-range` to function properly. Starting in Ionic 7.0, `ion-range` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-range` to function properly.
 :::
@@ -152,7 +154,6 @@ In past versions of Ionic, `ion-item` was required for `ion-range` to function p
 ### Using the Legacy Syntax
 
 Ionic uses heuristics to detect if an app is using the modern range syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-range` to `true` to force that instance of the range to use the legacy syntax.
-
 
 ## Interfaces
 
@@ -196,24 +197,29 @@ interface RangeCustomEvent extends CustomEvent {
 ### RangeValue
 
 ```typescript
-type RangeValue = number | { lower: number, upper: number };
+type RangeValue = number | { lower: number; upper: number };
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

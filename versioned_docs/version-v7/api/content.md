@@ -1,6 +1,7 @@
 ---
-title: "ion-content"
+title: 'ion-content'
 ---
+
 import Props from '@ionic-internal/component-api/v7/content/props.md';
 import Events from '@ionic-internal/component-api/v7/content/events.md';
 import Methods from '@ionic-internal/component-api/v7/content/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable Component for Ionic App Content</title>
-  <meta name="description" content="ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps." />
+  <meta
+    name="description"
+    content="ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The content component provides an easy to use content area with some useful methods
 to control the scrollable area. There should only be one content in a single
@@ -24,13 +27,11 @@ view.
 
 Content, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).
 
-
 ## Basic Usage
 
 import Basic from '@site/static/usage/v7/content/basic/index.md';
 
 <Basic />
-
 
 ## Header & Footer
 
@@ -40,7 +41,6 @@ import HeaderFooter from '@site/static/usage/v7/content/header-footer/index.md';
 
 <HeaderFooter />
 
-
 ## Fullscreen Content
 
 By default, content fills the space between a [header](./header) and [footer](./footer) but does not go behind them. In certain cases, it may be desired to have the content scroll behind the header and footer, such as when the `translucent` property is set on either of them, or `opacity` is set on the toolbar. This can be achieved by setting the `fullscreen` property on the content to `true`.
@@ -48,7 +48,6 @@ By default, content fills the space between a [header](./header) and [footer](./
 import Fullscreen from '@site/static/usage/v7/content/fullscreen/index.md';
 
 <Fullscreen />
-
 
 ## Fixed Content
 
@@ -73,7 +72,6 @@ Scroll events are disabled by default for content due to performance. However, t
 import ScrollEvents from '@site/static/usage/v7/content/scroll-events/index.md';
 
 <ScrollEvents />
-
 
 ## Theming
 
@@ -159,21 +157,26 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

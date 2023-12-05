@@ -20,7 +20,6 @@ import Basic from '@site/static/usage/v7/icon/basic/index.md';
 
 <Basic />
 
-
 ## Accessibility
 
 Icons that are purely decorative content should have <code>aria-hidden="true"</code>. This will not visually hide the icon, but it will hide the element from assistive technology.
@@ -28,7 +27,6 @@ Icons that are purely decorative content should have <code>aria-hidden="true"</c
 ```html
 <ion-icon name="heart" aria-hidden="true"></ion-icon>
 ```
-
 
 If the icon is interactive, it should have alternate text defined by adding an <code>aria-label</code>.
 

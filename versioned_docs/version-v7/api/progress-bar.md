@@ -1,6 +1,7 @@
 ---
-title: "ion-progress-bar"
+title: 'ion-progress-bar'
 ---
+
 import Props from '@ionic-internal/component-api/v7/progress-bar/props.md';
 import Events from '@ionic-internal/component-api/v7/progress-bar/events.md';
 import Methods from '@ionic-internal/component-api/v7/progress-bar/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/progress-bar/slots.md';
 
 <head>
   <title>ion-progress-bar: App Progress Bar for Loading Indicator</title>
-  <meta name="description" content="ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates." />
+  <meta
+    name="description"
+    content="ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.
 
@@ -36,7 +39,6 @@ import Buffer from '@site/static/usage/v7/progress-bar/buffer/index.md';
 
 <Buffer />
 
-
 ## Indeterminate
 
 The indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.
@@ -45,14 +47,13 @@ import Indeterminate from '@site/static/usage/v7/progress-bar/indeterminate/inde
 
 <Indeterminate />
 
-
 ## Progress Bars in Toolbars
 
 <!-- Reuse the playground from the Toolbar directory -->
+
 import Toolbar from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 
 <Toolbar />
-
 
 ## Theming
 
@@ -62,13 +63,11 @@ import Colors from '@site/static/usage/v7/progress-bar/theming/colors/index.md';
 
 <Colors />
 
-
 ### CSS Custom Properties
 
 import CSSProps from '@site/static/usage/v7/progress-bar/theming/css-properties/index.md';
 
 <CSSProps />
-
 
 ### CSS Shadow Parts
 
@@ -76,21 +75,26 @@ import CSSParts from '@site/static/usage/v7/progress-bar/theming/css-shadow-part
 
 <CSSParts />
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
