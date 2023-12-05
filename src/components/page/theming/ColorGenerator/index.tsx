@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import styles from './styles.module.scss';
 
@@ -12,13 +12,14 @@ import ColorInput from '../ColorInput';
 const ColorGenerator = (props) => {
   const [colors, setColors] = useState({
     primary: generateColor('#3880ff'),
-    secondary: generateColor('#5260ff'),
+    secondary: generateColor('#3dc2ff'),
     tertiary: generateColor('#5260ff'),
     success: generateColor('#2dd36f'),
     warning: generateColor('#ffc409'),
     danger: generateColor('#eb445a'),
-    medium: generateColor('#92949c'),
     light: generateColor('#f4f5f8'),
+    medium: generateColor('#92949c'),
+    dark: generateColor('#222428'),
   });
 
   const [activeColor, setActiveColor] = useState(null);
@@ -48,6 +49,7 @@ const ColorGenerator = (props) => {
 
           return (
             <li
+              key={name}
               className={clsx(styles.item, { [styles.isOpen]: isOpen })}
               onClick={() => setActiveColor(activeColor === name ? null : name)}
             >
@@ -96,7 +98,7 @@ const ColorGenerator = (props) => {
           :root {'{'}
           {'\n'}
           {Object.entries(colors).map(([name, color], i) => (
-            <>
+            <Fragment key={i}>
               {'\t'}--ion-color-{name}: {color.value};{'\n'}
               {'\t'}--ion-color-{name}-rgb: {color.valueRgb};{'\n'}
               {'\t'}--ion-color-{name}-contrast: {color.contrast};{'\n'}
@@ -104,7 +106,7 @@ const ColorGenerator = (props) => {
               {'\t'}--ion-color-{name}-shade: {color.shade};{'\n'}
               {'\t'}--ion-color-{name}-tint: {color.tint};{'\n'}
               {'\n'}
-            </>
+            </Fragment>
           ))}
           {'}'}
           {'\n'}
