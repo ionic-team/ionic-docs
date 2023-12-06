@@ -119,7 +119,7 @@ import RespondingToInteractionExample from '@site/static/usage/v7/select/basic/r
 
 When using objects for select values, it is possible for the identities of these objects to change if they are coming from a server or database, while the selected value's identity remains the same. For example, this can occur when an existing record with the desired object value is loaded into the select, but the newly retrieved select options now have different identities. This will result in the select appearing to have no value at all, even though the original selection in still intact.
 
-By default, the select uses object equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+By default, the select uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
 ### Using compareWith
 
@@ -172,6 +172,20 @@ Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert
 import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
+
+## Start and End Slots
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/select/start-end-slots/index.md';
+
+<StartEndSlots />
 
 ## Customization
 
