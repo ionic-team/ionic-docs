@@ -1,12 +1,12 @@
 ---
 title: "ion-picker"
 ---
-import Props from '@ionic-internal/component-api/v7/picker/props.md';
-import Events from '@ionic-internal/component-api/v7/picker/events.md';
-import Methods from '@ionic-internal/component-api/v7/picker/methods.md';
-import Parts from '@ionic-internal/component-api/v7/picker/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/picker/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
+import Props from '@ionic-internal/component-api/v8/picker/props.md';
+import Events from '@ionic-internal/component-api/v8/picker/events.md';
+import Methods from '@ionic-internal/component-api/v8/picker/methods.md';
+import Parts from '@ionic-internal/component-api/v8/picker/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
 
 <head>
   <title>ion-picker: A Dialog That Displays Buttons and Columns</title>
@@ -23,7 +23,7 @@ A Picker is a dialog that displays a row of buttons and columns underneath. It a
 
 `ion-picker` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Picker.
 
-import Trigger from '@site/static/usage/v7/picker/inline/trigger/index.md';
+import Trigger from '@site/static/usage/v8/picker/inline/trigger/index.md';
 
 <Trigger />
 
@@ -33,7 +33,7 @@ The `isOpen` property on `ion-picker` allows developers to control the presentat
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Picker is dismissed. Developers should listen for the `ionPickerDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-picker` from being tightly coupled with the state of the application. With a one way data binding, the Picker only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Picker needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
-import IsOpen from '@site/static/usage/v7/picker/inline/isOpen/index.md';
+import IsOpen from '@site/static/usage/v8/picker/inline/isOpen/index.md';
 
 <IsOpen />
 
@@ -41,7 +41,7 @@ import IsOpen from '@site/static/usage/v7/picker/inline/isOpen/index.md';
 
 The `pickerController` can be used in situations where more control is needed over when the Picker is presented and dismissed.
 
-import Controller from '@site/static/usage/v7/picker/controller/index.md';
+import Controller from '@site/static/usage/v8/picker/controller/index.md';
 
 <Controller />
 
@@ -49,7 +49,7 @@ import Controller from '@site/static/usage/v7/picker/controller/index.md';
 
 The `columns` property can be used to display a Picker with multiple columns of different options.
 
-import MultipleColumn from '@site/static/usage/v7/picker/multiple-column/index.md';
+import MultipleColumn from '@site/static/usage/v8/picker/multiple-column/index.md';
 
 <MultipleColumn />
 

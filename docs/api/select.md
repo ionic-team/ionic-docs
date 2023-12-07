@@ -1,12 +1,12 @@
 ---
 title: "ion-select"
 ---
-import Props from '@ionic-internal/component-api/v7/select/props.md';
-import Events from '@ionic-internal/component-api/v7/select/events.md';
-import Methods from '@ionic-internal/component-api/v7/select/methods.md';
-import Parts from '@ionic-internal/component-api/v7/select/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/select/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/select/slots.md';
+import Props from '@ionic-internal/component-api/v8/select/props.md';
+import Events from '@ionic-internal/component-api/v8/select/events.md';
+import Methods from '@ionic-internal/component-api/v8/select/methods.md';
+import Parts from '@ionic-internal/component-api/v8/select/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/select/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
@@ -38,7 +38,7 @@ Select has several options for supplying a label for the component:
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
-import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/select/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -46,7 +46,7 @@ import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.m
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
-import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v8/select/label-slot/index.md';
 
 <LabelSlot />
 
@@ -54,7 +54,7 @@ import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
 
 If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
 
-import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v8/select/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
@@ -64,7 +64,7 @@ By default, the select allows the user to select only one option. The alert inte
 
 Keyboard interactions for single selection are described in the [Keyboard Interactions](#single-selection-1) section below.
 
-import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v8/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
@@ -80,7 +80,7 @@ The `action-sheet` interface is not supported with multiple selection.
 
 Keyboard interactions for multiple selection are described in the [Keyboard Interactions](#multiple-selection-1) section below.
 
-import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v8/select/basic/multiple-selection/index.md';
 
 <MultipleSelectionExample />
 
@@ -90,20 +90,20 @@ By default, select uses [ion-alert](alert.md) to open up the overlay of options 
 
 ### Alert
 
-import AlertExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
+import AlertExample from '@site/static/usage/v8/select/basic/single-selection/index.md';
 
 <AlertExample />
 
 
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/v7/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v8/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v8/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
@@ -111,7 +111,7 @@ import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/inde
 
 The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
 
-import RespondingToInteractionExample from '@site/static/usage/v7/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v8/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
@@ -123,13 +123,13 @@ By default, the select uses object equality (`===`) to determine if an option is
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v8/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v8/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
 
@@ -137,7 +137,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/selec
   
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
-import JustifyExample from '@site/static/usage/v7/select/justify/index.md';
+import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
 <JustifyExample />
 
@@ -147,7 +147,7 @@ Material Design offers filled styles for a select. The `fill` property on the se
 
 Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
 
-import FillExample from '@site/static/usage/v7/select/fill/index.md';
+import FillExample from '@site/static/usage/v8/select/fill/index.md';
 
 <FillExample />
 
@@ -157,7 +157,7 @@ The alert supports two buttons: `Cancel` and `OK`. Each button's text can be cus
 
 The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
 
-import ButtonTextExample from '@site/static/usage/v7/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v8/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
@@ -169,7 +169,7 @@ See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), an
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
-import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v8/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
@@ -183,7 +183,7 @@ As mentioned, the `ion-select` element consists only of the value(s), or placeho
 
 Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
 
-import StylingSelectExample from '@site/static/usage/v7/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v8/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
@@ -201,7 +201,7 @@ However, the Select Option does set a class for easier styling and allows for th
 
 The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
 
-import CustomToggleIconsExample from '@site/static/usage/v7/select/customization/custom-toggle-icons/index.md';
+import CustomToggleIconsExample from '@site/static/usage/v8/select/customization/custom-toggle-icons/index.md';
 
 <CustomToggleIconsExample />
 
@@ -211,7 +211,7 @@ By default, when the select is open, the toggle icon will automatically rotate o
 
 The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
 
-import IconFlipBehaviorExample from '@site/static/usage/v7/select/customization/icon-flip-behavior/index.md';
+import IconFlipBehaviorExample from '@site/static/usage/v8/select/customization/icon-flip-behavior/index.md';
 
 <IconFlipBehaviorExample />
 
@@ -219,7 +219,7 @@ import IconFlipBehaviorExample from '@site/static/usage/v7/select/customization/
 
 Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
 
-import TypeaheadExample from '@site/static/usage/v7/select/typeahead/index.md';
+import TypeaheadExample from '@site/static/usage/v8/select/typeahead/index.md';
 
 <TypeaheadExample />
 
@@ -258,7 +258,7 @@ Using the modern syntax involves two steps:
 1. Remove `ion-label` and use the `label` property on `ion-select` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-select`.
 2. Move any usage of `fill` and `shape` from `ion-item` on to `ion-select`.
 
-import Migration from '@site/static/usage/v7/select/migration/index.md';
+import Migration from '@site/static/usage/v8/select/migration/index.md';
 
 <Migration />
 

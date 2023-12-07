@@ -1,12 +1,12 @@
 ---
 title: "ion-menu"
 ---
-import Props from '@ionic-internal/component-api/v7/menu/props.md';
-import Events from '@ionic-internal/component-api/v7/menu/events.md';
-import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
-import Parts from '@ionic-internal/component-api/v7/menu/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/menu/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
+import Props from '@ionic-internal/component-api/v8/menu/props.md';
+import Events from '@ionic-internal/component-api/v8/menu/events.md';
+import Methods from '@ionic-internal/component-api/v8/menu/methods.md';
+import Parts from '@ionic-internal/component-api/v8/menu/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/menu/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
@@ -24,7 +24,7 @@ The menu element should be a sibling to the root content element. There can be a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/menu/basic/index.md';
+import Basic from '@site/static/usage/v8/menu/basic/index.md';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v7/menu/basic/index.md';
 
 The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
 
-import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v8/menu/toggle/index.md';
 
 <MenuToggle />
 
@@ -42,7 +42,7 @@ import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 The `type` property can be used to customize how menus display in your application.
 
-import MenuType from '@site/static/usage/v7/menu/type/index.md';
+import MenuType from '@site/static/usage/v8/menu/type/index.md';
 
 <MenuType />
 
@@ -53,7 +53,7 @@ Menus are displayed on the `"start"` side by default. In apps that use left-to-r
 
 If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
 
-import Sides from '@site/static/usage/v7/menu/sides/index.md';
+import Sides from '@site/static/usage/v8/menu/sides/index.md';
 
 <Sides />
 
@@ -62,7 +62,7 @@ import Sides from '@site/static/usage/v7/menu/sides/index.md';
 
 When multiple menus exist on the same side, we need refer to them by ID instead of side. Otherwise, the wrong menu may be activated.
 
-import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
+import Multiple from '@site/static/usage/v8/menu/multiple/index.md';
 
 <Multiple />
 
@@ -71,7 +71,7 @@ import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/v7/menu/theming/index.md';
+import Theming from '@site/static/usage/v8/menu/theming/index.md';
 
 <Theming />
 
