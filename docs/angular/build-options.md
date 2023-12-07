@@ -175,6 +175,17 @@ export class HomePage {}
 <ion-button routerLink="/foo" routerDirection="root">Go to Foo Page</ion-button>
 ```
 
+**Testing**
+
+Ionic Angular's standalone components use ES Modules. As a result, developers using Jest should ensure that ES Modules are transpiled to a format that Jest can use. Developers using Jest should add the following to their Jest config:
+
+```json
+{
+  ...,
+  "transformIgnorePatterns": ["node_modules/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)/)"]
+}
+```
+
 ### Usage with NgModule-based Applications
 
 :::caution
