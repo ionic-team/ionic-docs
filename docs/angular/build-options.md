@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Build Options
 
 Developers have two options for using Ionic components: Standalone or Modules. This guide covers both options as well as the benefits and downsides of each approach.
@@ -179,12 +182,22 @@ export class HomePage {}
 
 Ionic Angular's standalone components use ES Modules. As a result, developers using Jest should ensure that ES Modules are transpiled to a format that Jest can use. Developers using Jest should add the following to their Jest config:
 
+<Tabs groupId="package-manager" defaultValue="npm" values={[{ value: 'npm', label: 'npm' }, { value: 'pnpm', label: 'pnpm' }]}>
+<TabItem value="npm">
+
 ```json
-{
-  ...,
-  "transformIgnorePatterns": ["node_modules/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)/)"]
-}
+
+"transformIgnorePatterns": ["<rootDir>/node_modules/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)/)"]
 ```
+</TabItem>
+<TabItem value="pnpm">
+
+```json
+
+"transformIgnorePatterns": ["<rootDir>/node_modules/.pnpm/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)@)"]
+```
+</TabItem>
+</Tabs>
 
 ### Usage with NgModule-based Applications
 
@@ -325,6 +338,28 @@ export class HomePageModule {}
 ```html title="home.page.html"
 <ion-button routerLink="/foo" routerDirection="root">Go to Foo Page</ion-button>
 ```
+
+**Testing**
+
+Ionic Angular's standalone components use ES Modules. As a result, developers using Jest should ensure that ES Modules are transpiled to a format that Jest can use. Developers using Jest should add the following to their Jest config:
+
+<Tabs groupId="package-manager" defaultValue="npm" values={[{ value: 'npm', label: 'npm' }, { value: 'pnpm', label: 'pnpm' }]}>
+<TabItem value="npm">
+
+```json
+
+"transformIgnorePatterns": ["<rootDir>/node_modules/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)/)"]
+```
+</TabItem>
+<TabItem value="pnpm">
+
+```json
+
+"transformIgnorePatterns": ["<rootDir>/node_modules/.pnpm/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)@)"]
+```
+</TabItem>
+</Tabs>
+
 
 ## Modules
 
