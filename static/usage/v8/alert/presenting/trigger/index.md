@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/alert/presenting/trigger/demo.html"
+  src="usage/v8/alert/presenting/trigger/demo.html"
 />

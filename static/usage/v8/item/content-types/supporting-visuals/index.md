@@ -13,6 +13,6 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/item/content-types/supporting-visuals/demo.html"
+  src="usage/v8/item/content-types/supporting-visuals/demo.html"
   size="250px"
 />

@@ -8,7 +8,7 @@ import angular from './angular.md';
 <Playground
   version="7"
   code={{ javascript, react, vue, angular }}
-  src="usage/v7/input/fill/demo.html"
+  src="usage/v8/input/fill/demo.html"
   size="250px"
   mode="md"
 />

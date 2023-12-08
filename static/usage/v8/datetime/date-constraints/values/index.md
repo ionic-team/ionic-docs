@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="7"
   size="medium"
   code={{ javascript, react, vue, angular }}
-  src="usage/v7/datetime/date-constraints/values/demo.html"
+  src="usage/v8/datetime/date-constraints/values/demo.html"
 />

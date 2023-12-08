@@ -14,5 +14,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/toast/icon/demo.html"
+  src="usage/v8/toast/icon/demo.html"
 />

@@ -30,5 +30,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v7/alert/customization/demo.html"
+  src="usage/v8/alert/customization/demo.html"
 />

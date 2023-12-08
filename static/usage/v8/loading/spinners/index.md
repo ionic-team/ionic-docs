@@ -13,5 +13,5 @@ import vue from './vue.md';
     vue,
     angular,
   }}
-  src="usage/v7/loading/spinners/demo.html"
+  src="usage/v8/loading/spinners/demo.html"
 />

@@ -13,5 +13,5 @@ import react from './react.md';
     angular,
     react,
   }}
-  src="usage/v7/input/set-focus/demo.html"
+  src="usage/v8/input/set-focus/demo.html"
 />

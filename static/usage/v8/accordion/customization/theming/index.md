@@ -29,5 +29,5 @@ import angular_global_css from './angular/global_css.md';
     },
   }}
   size="250px"
-  src="usage/v7/accordion/customization/theming/demo.html"
+  src="usage/v8/accordion/customization/theming/demo.html"
 />

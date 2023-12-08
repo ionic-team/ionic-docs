@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/keyboard/enterkeyhint/demo.html"
+  src="usage/v8/keyboard/enterkeyhint/demo.html"
 />

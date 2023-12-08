@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/grid/offset/demo.html"
+  src="usage/v8/grid/offset/demo.html"
   size="200px"
 />

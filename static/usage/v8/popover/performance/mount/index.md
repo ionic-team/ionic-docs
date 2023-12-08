@@ -14,5 +14,5 @@ import angular from './angular.md';
     angular,
   }}
   size="medium"
-  src="usage/v7/popover/performance/mount/demo.html"
+  src="usage/v8/popover/performance/mount/demo.html"
 />

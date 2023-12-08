@@ -28,7 +28,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/content/fixed/demo.html"
+  src="usage/v8/content/fixed/demo.html"
   includeIonContent={false}
   devicePreview={true}
 />

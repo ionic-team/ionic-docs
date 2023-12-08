@@ -13,7 +13,7 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/toast/position-anchor/demo.html"
+  src="usage/v8/toast/position-anchor/demo.html"
   devicePreview={true}
   includeIonContent={false}
 />

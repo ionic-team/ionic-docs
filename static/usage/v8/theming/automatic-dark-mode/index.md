@@ -44,7 +44,7 @@ import variables_css from './theme/variables_css.md';
       },
     },
   }}
-  src="usage/v7/theming/automatic-dark-mode/demo.html"
+  src="usage/v8/theming/automatic-dark-mode/demo.html"
   devicePreview
   includeIonContent={false}
 />

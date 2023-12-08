@@ -20,7 +20,7 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v7/picker/inline/isOpen/demo.html"
+  src="usage/v8/picker/inline/isOpen/demo.html"
   size="medium"
   showConsole={true}
 />

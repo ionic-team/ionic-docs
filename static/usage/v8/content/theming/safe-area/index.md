@@ -30,7 +30,7 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v7/content/theming/safe-area/demo.html"
+  src="usage/v8/content/theming/safe-area/demo.html"
   devicePreview
   includeIonContent={false}
 />

@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/card/list/demo.html"
+  src="usage/v8/card/list/demo.html"
   size="400px"
 />

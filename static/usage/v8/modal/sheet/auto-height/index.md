@@ -27,7 +27,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/modal/sheet/auto-height/demo.html"
+  src="usage/v8/modal/sheet/auto-height/demo.html"
   devicePreview
   includeIonContent={false}
 />

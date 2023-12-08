@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/ripple-effect/basic/demo.html"
+  src="usage/v8/ripple-effect/basic/demo.html"
   size="300px"
 />

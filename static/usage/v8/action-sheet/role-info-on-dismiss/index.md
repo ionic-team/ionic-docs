@@ -30,7 +30,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/action-sheet/role-info-on-dismiss/demo.html"
+  src="usage/v8/action-sheet/role-info-on-dismiss/demo.html"
   devicePreview
   showConsole
 />

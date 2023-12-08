@@ -13,7 +13,7 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/toast/inline/basic/demo.html"
+  src="usage/v8/toast/inline/basic/demo.html"
   devicePreview
   includeIonContent={false}
 />

@@ -30,6 +30,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/animations/preference-based/demo.html"
+  src="usage/v8/animations/preference-based/demo.html"
   devicePreview={true}
 />

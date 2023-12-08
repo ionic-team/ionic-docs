@@ -13,6 +13,6 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/accordion/basic/demo.html"
+  src="usage/v8/accordion/basic/demo.html"
   size="210px"
 />

@@ -30,6 +30,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/datetime/styling/wheel-styling/demo.html"
+  src="usage/v8/datetime/styling/wheel-styling/demo.html"
   size="250px"
 />

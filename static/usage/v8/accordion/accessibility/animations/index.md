@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/accordion/accessibility/animations/demo.html"
+  src="usage/v8/accordion/accessibility/animations/demo.html"
 />

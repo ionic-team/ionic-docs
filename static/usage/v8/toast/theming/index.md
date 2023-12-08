@@ -30,5 +30,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v7/toast/theming/demo.html"
+  src="usage/v8/toast/theming/demo.html"
 />

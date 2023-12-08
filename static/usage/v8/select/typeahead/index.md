@@ -46,7 +46,7 @@ import angular_types_ts from './angular/angular_types_ts.md';
       },
     },
   }}
-  src="usage/v7/select/typeahead/demo.html"
+  src="usage/v8/select/typeahead/demo.html"
   devicePreview
   includeIonContent={false}
 />

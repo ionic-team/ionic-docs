@@ -21,6 +21,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/select/objects-as-values/multiple-selection/demo.html"
+  src="usage/v8/select/objects-as-values/multiple-selection/demo.html"
   showConsole={true}
 />

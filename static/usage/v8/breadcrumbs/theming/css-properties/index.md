@@ -27,5 +27,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/breadcrumbs/theming/css-properties/demo.html"
+  src="usage/v8/breadcrumbs/theming/css-properties/demo.html"
 />

@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/input/counter-alignment/demo.html"
+  src="usage/v8/input/counter-alignment/demo.html"
 />

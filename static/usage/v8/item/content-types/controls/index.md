@@ -13,7 +13,7 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/item/content-types/controls/demo.html"
+  src="usage/v8/item/content-types/controls/demo.html"
   includeIonContent={false}
   devicePreview={true}
 />

@@ -20,5 +20,5 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v7/range/pins/demo.html"
+  src="usage/v8/range/pins/demo.html"
 />
