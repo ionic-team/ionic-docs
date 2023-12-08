@@ -6,7 +6,7 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{ javascript, react, vue, angular }}
   src="usage/v8/toolbar/searchbars/demo.html"
   devicePreview

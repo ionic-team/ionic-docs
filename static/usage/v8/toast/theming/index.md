@@ -11,7 +11,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_global_css from './angular/global_css.md';
 
 <Playground
-  version="7"
+  version="8"
   devicePreview
   code={{
     javascript,

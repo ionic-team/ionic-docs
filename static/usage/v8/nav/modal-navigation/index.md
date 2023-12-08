@@ -20,7 +20,7 @@ import vue_page_two from './vue/page_two_vue.md';
 import vue_page_three from './vue/page_three_vue.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     angular: {
