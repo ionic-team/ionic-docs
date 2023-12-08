@@ -27,22 +27,36 @@ To enroll in the Apple Developer Program, follow the instructions [listed here](
 If the iOS platform is not already added, be sure to add it:
 
 ```shell
-ionic cordova platform add ios
+ionic cap add ios
 ```
 
 With the platform added, run the build command with the `--prod` flag:
 
 ```shell
-ionic cordova build ios --prod
+ionic build --prod
 ```
 
-This will generate the minified code for the web portion of an app and copy it over the iOS code base.
+This will generate the minified code for the web portion of an app.
 
-From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
+For this first build, and after you make any binary changes like adding a plugin, use the sync command:
 
-:::tip
-You can also have a release build generated automatically by using the `--release` flag.
-:::
+```shell
+npx cap sync ios
+```
+
+This will also copy the minified web code over. However, if your build is only source change then you can just copy the minified web files using:
+
+```shell
+npx cap copy ios
+```
+
+From here, the project is now managed as if it was a native Xcode app (because it is).
+
+Open the project in `./ios/` to start Xcode:
+
+```shell
+npx cap open ios
+```
 
 ## Generating Signing Certs
 
