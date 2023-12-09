@@ -33,7 +33,11 @@ import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
 
 ## Theming
 
-Theming usage. This should show how to use a combination of CSS Variables and targeting slotted content.
+### CSS Variables
+
+import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Picker in Modal
 
