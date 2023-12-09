@@ -41,7 +41,9 @@ import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.
 
 ## Picker in Modal
 
-Using the picker in a modal to replicate the overlay behavior.
+import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
+
+<ModalExample />
 
 ## Properties
 <Props />
