@@ -19,6 +19,28 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
 
+:::note
+
+Preview the playground with device emulation to test swipe gestures.
+
+:::
+
+import Basic from '@site/static/usage/v8/picker/basic/index.md';
+
+<Basic />
+
+## Prefix & Suffice
+
+Prefix and suffix usage.
+
+## Theming
+
+Theming usage. This should show how to use a combination of CSS Variables and targeting slotted content.
+
+## Picker in Modal
+
+Using the picker in a modal to replicate the overlay behavior.
+
 ## Properties
 <Props />
 
