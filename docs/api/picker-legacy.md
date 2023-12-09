@@ -17,6 +17,12 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
+:::warning Deprecation Notice
+
+`ion-picker-legacy` is deprecated and will be removed in the next major release. Migrate to [`ion-picker`](./picker.md) as soon as possible.
+
+:::
+
 A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
 
 ## Inline Pickers (Recommended)
