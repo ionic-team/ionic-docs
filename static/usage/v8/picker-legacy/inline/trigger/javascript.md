@@ -1,9 +1,9 @@
 ```html
-<ion-button onclick="picker.isOpen = true">Open</ion-button>
-<ion-picker></ion-picker>
+<ion-button id="open-picker">Open</ion-button>
+<ion-picker-legacy trigger="open-picker"></ion-picker-legacy>
 
 <script>
-  var picker = document.querySelector('ion-picker');
+  var picker = document.querySelector('ion-picker-legacy');
 
   picker.columns = [
     {
@@ -41,9 +41,5 @@
       },
     },
   ];
-
-  picker.addEventListener('ionPickerDidDismiss', (ev) => {
-    picker.isOpen = false;
-  });
 </script>
 ```

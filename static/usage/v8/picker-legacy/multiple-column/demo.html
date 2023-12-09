@@ -1,17 +1,34 @@
-```html
-<template>
-  <ion-button id="open-picker">Open</ion-button>
-  <ion-picker trigger="open-picker" :columns="pickerColumns" :buttons="pickerButtons"></ion-picker>
-</template>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picker Legacy | Multiple Columns</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@7.5.8-dev.11701806358.1ca1b519/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@7.5.8-dev.11701806358.1ca1b519/css/ionic.bundle.css"
+    />
+  </head>
 
-<script>
-  import { IonButton, IonPicker } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-button id="open-picker">Open</ion-button>
+          <ion-picker-legacy trigger="open-picker"></ion-picker-legacy>
+        </div>
+      </ion-content>
+    </ion-app>
+    <script>
+      const picker = document.querySelector('ion-picker-legacy');
 
-  export default defineComponent({
-    components: { IonButton, IonPicker },
-    setup() {
-      const pickerColumns = [
+      picker.columns = [
         {
           name: 'meat',
           options: [
@@ -65,7 +82,7 @@
         },
       ];
 
-      const pickerButtons = [
+      picker.buttons = [
         {
           text: 'Cancel',
           role: 'cancel',
@@ -77,9 +94,6 @@
           },
         },
       ];
-
-      return { pickerColumns, pickerButtons };
-    },
-  });
-</script>
-```
+    </script>
+  </body>
+</html>

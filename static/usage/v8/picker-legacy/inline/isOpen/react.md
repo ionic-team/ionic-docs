@@ -1,13 +1,16 @@
 ```tsx
-import React from 'react';
-import { IonButton, IonPicker } from '@ionic/react';
+import React, { useState } from 'react';
+import { IonButton, IonPickerLegacy } from '@ionic/react';
 
 function Example() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-      <IonButton id="open-picker">Open</IonButton>
-      <IonPicker
-        trigger="open-picker"
+      <IonButton onClick={() => setIsOpen(true)}>Open</IonButton>
+      <IonPickerLegacy
+        isOpen={isOpen}
+        onDidDismiss={() => setIsOpen(false)}
         columns={[
           {
             name: 'languages',
@@ -43,7 +46,7 @@ function Example() {
             },
           },
         ]}
-      ></IonPicker>
+      ></IonPickerLegacy>
     </>
   );
 }

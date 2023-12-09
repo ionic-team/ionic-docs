@@ -3,24 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Picker | isOpen</title>
+    <title>Picker Legacy | Trigger</title>
     <link rel="stylesheet" href="../../../../common.css" />
     <script src="../../../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@7.5.8-dev.11701806358.1ca1b519/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@7.5.8-dev.11701806358.1ca1b519/css/ionic.bundle.css"
+    />
   </head>
 
   <body>
     <ion-app>
       <ion-content>
         <div class="container">
-          <ion-button onclick="picker.isOpen = true">Open</ion-button>
-          <ion-picker></ion-picker>
+          <ion-button id="open-picker">Open</ion-button>
+          <ion-picker-legacy trigger="open-picker"></ion-picker-legacy>
         </div>
       </ion-content>
     </ion-app>
     <script>
-      var picker = document.querySelector('ion-picker');
+      const picker = document.querySelector('ion-picker-legacy');
 
       picker.columns = [
         {
@@ -58,10 +64,6 @@
           },
         },
       ];
-
-      picker.addEventListener('ionPickerDidDismiss', (ev) => {
-        picker.isOpen = false;
-      });
     </script>
   </body>
 </html>

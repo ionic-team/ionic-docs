@@ -1,20 +1,20 @@
 ```html
 <template>
   <ion-button @click="setOpen(true)">Open</ion-button>
-  <ion-picker
+  <ion-picker-legacy
     :is-open="isOpen"
     :columns="pickerColumns"
     :buttons="pickerButtons"
     @didDismiss="setOpen(false)"
-  ></ion-picker>
+  ></ion-picker-legacy>
 </template>
 
 <script lang="ts">
-  import { IonButton, IonPicker } from '@ionic/vue';
+  import { IonButton, IonPickerLegacy } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
-    components: { IonButton, IonPicker },
+    components: { IonButton, IonPickerLegacy },
     setup() {
       const isOpen = ref(false);
 

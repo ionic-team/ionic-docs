@@ -1,15 +1,15 @@
 ```html
 <template>
   <ion-button id="open-picker">Open</ion-button>
-  <ion-picker trigger="open-picker" :columns="pickerColumns" :buttons="pickerButtons"></ion-picker>
+  <ion-picker-legacy trigger="open-picker" :columns="pickerColumns" :buttons="pickerButtons"></ion-picker-legacy>
 </template>
 
 <script>
-  import { IonButton, IonPicker } from '@ionic/vue';
+  import { IonButton, IonPickerLegacy } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonButton, IonPicker },
+    components: { IonButton, IonPickerLegacy },
     setup() {
       const pickerColumns = [
         {

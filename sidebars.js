@@ -319,7 +319,7 @@ module.exports = {
       type: 'category',
       label: 'Date & Time Pickers',
       collapsed: false,
-      items: ['api/datetime', 'api/datetime-button', 'api/picker'],
+      items: ['api/datetime', 'api/datetime-button', 'api/picker-legacy'],
     },
     {
       type: 'category',

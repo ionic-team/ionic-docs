@@ -1,12 +1,12 @@
 ```tsx
 import React from 'react';
-import { IonButton, IonPicker } from '@ionic/react';
+import { IonButton, IonPickerLegacy } from '@ionic/react';
 
 function Example() {
   return (
     <>
       <IonButton id="open-picker">Open</IonButton>
-      <IonPicker
+      <IonPickerLegacy
         trigger="open-picker"
         columns={[
           {
@@ -73,7 +73,7 @@ function Example() {
             },
           },
         ]}
-      ></IonPicker>
+      ></IonPickerLegacy>
     </>
   );
 }
