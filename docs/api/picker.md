@@ -19,19 +19,17 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
 
-:::note
-
-Preview the playground with device emulation to test swipe gestures.
-
-:::
-
 import Basic from '@site/static/usage/v8/picker/basic/index.md';
 
 <Basic />
 
-## Prefix & Suffice
+## Prefix & Suffix Content
 
-Prefix and suffix usage.
+Use the `prefix` and `suffix` slots to add additional content to the picker.
+
+import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
+
+<PrefixSuffix />
 
 ## Theming
 
