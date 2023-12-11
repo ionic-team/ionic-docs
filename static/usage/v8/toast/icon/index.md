@@ -6,7 +6,7 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
+  version="8"
   devicePreview
   code={{
     javascript,
@@ -14,5 +14,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/toast/icon/demo.html"
+  src="usage/v8/toast/icon/demo.html"
 />

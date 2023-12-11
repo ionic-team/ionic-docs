@@ -11,7 +11,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     react: {
@@ -28,7 +28,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/refresher/custom-scroll-target/demo.html"
+  src="usage/v8/refresher/custom-scroll-target/demo.html"
   devicePreview
   includeIonContent={false}
 />

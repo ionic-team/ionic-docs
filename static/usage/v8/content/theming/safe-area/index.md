@@ -12,7 +12,7 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_global_css from './angular/global_css.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     react: {
@@ -30,7 +30,7 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v7/content/theming/safe-area/demo.html"
+  src="usage/v8/content/theming/safe-area/demo.html"
   devicePreview
   includeIonContent={false}
 />

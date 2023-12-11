@@ -12,7 +12,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     react: {
@@ -30,6 +30,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/animations/gesture/demo.html"
+  src="usage/v8/animations/gesture/demo.html"
   devicePreview={true}
 />

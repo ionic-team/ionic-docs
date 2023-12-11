@@ -6,12 +6,12 @@ import vue from './vue.md';
 import react from './react.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     vue,
     angular,
     react,
   }}
-  src="usage/v7/input/set-focus/demo.html"
+  src="usage/v8/input/set-focus/demo.html"
 />

@@ -13,7 +13,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_global_css from './angular/global_css.md';
 
 <Playground
-  version="7"
+  version="8"
   size="450px"
   code={{
     javascript,
@@ -31,5 +31,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v7/datetime/theming/demo.html"
+  src="usage/v8/datetime/theming/demo.html"
 />

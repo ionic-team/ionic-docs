@@ -88,6 +88,6 @@ import react_search_page_tsx from './react/search_page_tsx.md';
       },
     },
   }}
-  src="usage/v7/tabs/router/demo.html"
+  src="usage/v8/tabs/router/demo.html"
   devicePreview
 />
