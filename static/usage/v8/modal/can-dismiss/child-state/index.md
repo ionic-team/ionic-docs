@@ -13,7 +13,7 @@ import angular_child_component_ts from './angular/child_component_ts.md';
 import angular_app_module_ts from './angular/app_module_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     react: {
       files: {
@@ -37,6 +37,6 @@ import angular_app_module_ts from './angular/app_module_ts.md';
       },
     },
   }}
-  src="usage/v7/modal/can-dismiss/child-state/demo.html"
+  src="usage/v8/modal/can-dismiss/child-state/demo.html"
   devicePreview
 />

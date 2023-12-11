@@ -8,7 +8,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     react,
@@ -21,6 +21,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="320px"
-  src="usage/v7/accordion/listen-changes/demo.html"
+  src="usage/v8/accordion/listen-changes/demo.html"
   showConsole={true}
 />

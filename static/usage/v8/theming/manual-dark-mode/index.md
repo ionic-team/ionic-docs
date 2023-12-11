@@ -14,7 +14,7 @@ import angular_global_css from './angular/global_css.md';
 import variables_css from './theme/variables_css.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript: {
       files: {
@@ -44,7 +44,7 @@ import variables_css from './theme/variables_css.md';
       },
     },
   }}
-  src="usage/v7/theming/manual-dark-mode/demo.html"
+  src="usage/v8/theming/manual-dark-mode/demo.html"
   devicePreview
   includeIonContent={false}
 />

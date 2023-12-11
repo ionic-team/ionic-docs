@@ -6,14 +6,14 @@ import react from './react.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     react,
     vue,
     angular,
   }}
-  src="usage/v7/modal/sheet/handle-behavior/demo.html"
+  src="usage/v8/modal/sheet/handle-behavior/demo.html"
   devicePreview
   includeIonContent={false}
 />

@@ -11,7 +11,7 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   size="400px"
   code={{
     javascript,
@@ -30,5 +30,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/select/customization/icon-flip-behavior/demo.html"
+  src="usage/v8/select/customization/icon-flip-behavior/demo.html"
 />

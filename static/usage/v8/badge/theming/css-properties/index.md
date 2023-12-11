@@ -10,7 +10,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="7"
+  version="8"
   size="300px"
   code={{
     javascript,
@@ -28,5 +28,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/badge/theming/css-properties/demo.html"
+  src="usage/v8/badge/theming/css-properties/demo.html"
 />
