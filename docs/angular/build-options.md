@@ -189,6 +189,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 
 "transformIgnorePatterns": ["<rootDir>/node_modules/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)/)"]
 ```
+
 </TabItem>
 <TabItem value="pnpm">
 
@@ -196,6 +197,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 
 "transformIgnorePatterns": ["<rootDir>/node_modules/.pnpm/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)@)"]
 ```
+
 </TabItem>
 </Tabs>
 
@@ -350,6 +352,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 
 "transformIgnorePatterns": ["<rootDir>/node_modules/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)/)"]
 ```
+
 </TabItem>
 <TabItem value="pnpm">
 
@@ -357,9 +360,9 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 
 "transformIgnorePatterns": ["<rootDir>/node_modules/.pnpm/(?!(@ionic/angular|@ionic/core|ionicons|@stencil/core|@angular/*)@)"]
 ```
+
 </TabItem>
 </Tabs>
-
 
 ## Modules
 
