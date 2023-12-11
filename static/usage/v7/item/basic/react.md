@@ -15,7 +15,7 @@ function Example() {
           consectetur adipiscing elit.
         </IonLabel>
       </IonItem>
-      
+
       <IonItem>
         <IonLabel class="ion-text-nowrap">
           Multi-line text that should ellipsis when it is too long to fit on one line. Lorem ipsum dolor sit amet,
