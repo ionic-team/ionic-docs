@@ -18,6 +18,10 @@
       "allowedVersions": "^5.0.0"
     },
     {
+      "matchPackageNames": ["react", "react-dom"],
+      "groupName": "react"
+    },
+    {
       "matchPackageNames": ["vite", "@vitejs/plugin-react"],
       "groupName": "vite-react",
       "matchFileNames": [
