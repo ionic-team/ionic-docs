@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@ionic/angular": "7.5.8-dev.11702320396.1294c304",
-    "@ionic/core": "7.5.8-dev.11702320396.1294c304",
+    "@ionic/angular": "^7.0.0",
+    "@ionic/core": "^7.0.0",
     "@angular/platform-browser-dynamic": "17.0.4"
   }
 }

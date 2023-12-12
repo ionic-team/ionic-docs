@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@ionic/core": "7.5.8-dev.11702320396.1294c304"
+    "@ionic/core": "^7.0.0"
   }
 }
