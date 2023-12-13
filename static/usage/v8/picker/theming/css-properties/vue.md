@@ -38,7 +38,7 @@
 </style>
 <template>
   <ion-picker>
-    <ion-picker-column>
+    <ion-picker-column value="red">
       <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
       <ion-picker-column-option :value.attr="'red'">Red</ion-picker-column-option>
       <ion-picker-column-option :value.attr="'blue'">Blue</ion-picker-column-option>

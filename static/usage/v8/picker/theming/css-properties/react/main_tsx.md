@@ -9,7 +9,7 @@ function Example() {
   return (
     <>
       <IonPicker>
-        <IonPickerColumn>
+        <IonPickerColumn value="red">
           <IonPickerColumnOption value="" disabled={true}>
             --
           </IonPickerColumnOption>

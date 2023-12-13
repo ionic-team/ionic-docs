@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <IonPicker>
-        <IonPickerColumn>
+        <IonPickerColumn value="javascript">
           <IonPickerColumnOption value="" disabled={true}>
             --
           </IonPickerColumnOption>
