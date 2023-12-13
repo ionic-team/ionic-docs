@@ -10,7 +10,7 @@ import angular_global_css from './angular/global_css.md';
 import angular_example_component_html from './angular/example_component_html.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     vue,
@@ -27,7 +27,7 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v7/modal/custom-dialogs/demo.html"
+  src="usage/v8/modal/custom-dialogs/demo.html"
   devicePreview
   includeIonContent={false}
 />

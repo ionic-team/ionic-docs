@@ -3,6 +3,7 @@ ion-datetime {
   --background: rgb(245, 235, 247);
   --background-rgb: 245, 235, 247;
   --wheel-highlight-background: rgb(218, 216, 255);
+  --wheel-highlight-border-radius: 48px;
   --wheel-fade-background-rgb: 245, 235, 247;
 }
 

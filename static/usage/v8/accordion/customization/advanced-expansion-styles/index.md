@@ -12,7 +12,7 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript,
     react: {
@@ -31,5 +31,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="250px"
-  src="usage/v7/accordion/customization/advanced-expansion-styles/demo.html"
+  src="usage/v8/accordion/customization/advanced-expansion-styles/demo.html"
 />

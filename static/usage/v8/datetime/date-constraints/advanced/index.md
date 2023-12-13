@@ -8,7 +8,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   size="medium"
   code={{
     javascript,
@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/datetime/date-constraints/advanced/demo.html"
+  src="usage/v8/datetime/date-constraints/advanced/demo.html"
 />
