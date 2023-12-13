@@ -1,5 +1,7 @@
 ```html
-<ion-modal #modal [isOpen]="true" (didDismiss)="onDidDismiss($event)">
+<ion-button id="open-modal">Open modal</ion-button>
+<ion-modal #modal trigger="open-modal" [isOpen]="true" initialBreakpoint="0.5" (didDismiss)="onDidDismiss($event)">
+  <ion-content>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="modal.dismiss(null, 'cancel')">Cancel</ion-button>
@@ -16,6 +18,7 @@
       <ion-picker-column-option value="rust">Rust</ion-picker-column-option>
       <ion-picker-column-option value="c#">C#</ion-picker-column-option>
     </ion-picker-column>
+    </ion-content>
   </ion-picker>
 </ion-modal>
 ```

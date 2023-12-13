@@ -4,7 +4,6 @@ import javascript from './javascript.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
-import angular_example_component_css from './angular/example_component_css.md';
 
 import react from './react.md';
 import vue from './vue.md';
@@ -19,11 +18,11 @@ import vue from './vue.md';
       files: {
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
-        'src/app/example.component.css': angular_example_component_css,
       },
     },
   }}
   src="usage/v8/picker/modal/demo.html"
   size="medium"
   showConsole={true}
+  devicePreview={true}
 />
