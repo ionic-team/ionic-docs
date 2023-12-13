@@ -1,4 +1,11 @@
 ```css
+ion-picker {
+  --highlight-background: #383a3e;
+  --highlight-border-radius: 50px;
+
+  --fade-background-rgb: 220, 221, 231;
+}
+
 ion-picker-column-option {
   text-transform: uppercase;
   background-size: auto auto;
