@@ -9,15 +9,15 @@ import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
 
 <head>
-  <title>ion-picker: A Dialog That Displays Buttons and Columns</title>
-  <meta name="description" content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport." />
+  <title>ion-picker: Display a list of options in columns</title>
+  <meta name="description" content="A Picker displays one or more columns with options for users to choose from." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+A Picker displays one or more columns with options for users to choose from.
 
 import Basic from '@site/static/usage/v8/picker/basic/index.md';
 

@@ -1,10 +1,10 @@
 ```html
 <style>
   ion-picker {
-    --highlight-background: #383a3e;
+    --highlight-background: var(--ion-color-dark);
     --highlight-border-radius: 50px;
 
-    --fade-background-rgb: 220, 221, 231;
+    --fade-background-rgb: var(--ion-color-light-rgb);
   }
 
   ion-picker-column-option {
