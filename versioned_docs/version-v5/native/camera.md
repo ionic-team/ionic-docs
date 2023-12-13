@@ -24,7 +24,7 @@ Requires the Cordova plugin: `cordova-plugin-camera`. For more info, please see 
 </config-file>
 ```
 
-inside of the <platform name='ios> section
+inside of the `<platform name='ios'>` section
 
 <p>
   <a href="https://github.com/apache/cordova-plugin-camera" target="_blank" rel="noopener" className="git-link">
@@ -76,14 +76,7 @@ inside of the <platform name='ios> section
   <TabItem value="Enterprise">
     <blockquote>
       Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a class="btn" href="https://ionic.io/docs/premier-plugins">
-        Learn More
-      </a> or if you're interested in an enterprise version of this plugin <a
-        class="btn"
-        href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine"
-      >
-        Contact Us
-      </a>
+      <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
