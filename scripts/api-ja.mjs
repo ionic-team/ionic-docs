@@ -1,10 +1,10 @@
-const fetch = require('node-fetch');
-const fs = require('fs');
-const path = require('path');
-const { api: apiOverrides } = require('./data/meta-override.json');
-const utils = require('./utils');
+import fetch from 'node-fetch';
+import { writeFileSync, existsSync } from 'fs';
+import { resolve, join } from 'path';
+import { api as apiOverrides } from './data/meta-override.json';
+import { getHeadTag } from './utils.mjs';
 
-const DEMOS_PATH = path.resolve('static/demos');
+const DEMOS_PATH = resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
@@ -37,7 +37,7 @@ function writePage(page) {
   data = data.replace(COMPONENT_LINK_REGEXP, '($1.md$2)');
 
   const path = `i18n/ja/docusaurus-plugin-content-docs/current/api/${page.tag.slice(4)}.md`;
-  fs.writeFileSync(path, data);
+  writeFileSync(path, data);
 }
 
 function renderFrontmatter({ tag }) {
@@ -46,7 +46,7 @@ function renderFrontmatter({ tag }) {
   };
 
   const demoPath = `api/${tag.slice(4)}/index.html`;
-  if (fs.existsSync(path.join(DEMOS_PATH, demoPath))) {
+  if (existsSync(join(DEMOS_PATH, demoPath))) {
     frontmatter.demoUrl = `/docs/demos/${demoPath}`;
     frontmatter.demoSourceUrl = `https://github.com/ionic-team/ionic-docs/tree/main/static/demos/${demoPath}`;
   }
@@ -59,7 +59,7 @@ ${Object.entries(frontmatter)
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-${utils.getHeadTag(apiOverrides[tag])}
+${getHeadTag(apiOverrides[tag])}
 `;
 }
 

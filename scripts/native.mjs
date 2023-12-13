@@ -1,5 +1,5 @@
-const fs = require('fs');
-const fetch = require('node-fetch');
+import { writeFileSync } from 'fs';
+import fetch from 'node-fetch';
 
 // replace with latest once it's relased
 const tag = 'latest';
@@ -37,8 +37,8 @@ async function buildPluginApiDocs(pluginId) {
   const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;
 
-  fs.writeFileSync(`docs/native/${fileName}`, apiContent);
-  fs.writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
+  writeFileSync(`docs/native/${fileName}`, apiContent);
+  writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
 }
 
 function createApiPage(pluginId, readme, pkgJson) {
@@ -48,8 +48,17 @@ function createApiPage(pluginId, readme, pkgJson) {
   const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
   const sidebarLabel = toTitleCase(pluginId);
 
-  // removes JSDoc HTML comments as they break docusauurs
-  readme = readme.replaceAll(/<!--.*-->/g, '');
+  /**
+   * - removes JSDoc HTML comments as they break docusauurs
+   * - The { character is used for opening JavaScript expressions. 
+   * MDX will now fail if what you put inside {expression} that is 
+   * not a valid expression: replace it by escaping it with a backslash. 
+   * Only do this for { characters that are inside <code> blocks.
+   */
+  readme = readme.replaceAll(/<!--.*-->/g, '').replace(/<code>(.*?)<\/code>/g, (_match, p1) => {
+    // Replace { with \{ inside the matched <code> content
+    return `<code>${p1.replace(/{/g, '\\{')}</code>`;
+  });
 
   return `
 ---
