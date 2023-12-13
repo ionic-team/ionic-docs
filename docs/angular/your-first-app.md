@@ -126,8 +126,6 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/img/guides/first-app-cap-ng/email-photogallery.gif)
-
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
@@ -158,10 +156,39 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
-      <ion-icon name="camera"></ion-icon>
+      <ion-icon [icon]="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+```
+
+At this point, you will notice a `Failed to construct 'URL': Invalid base URL` error in the console of your app. Open the `tab2.page.ts` file and import the `camera` icon from `ionicons/icons` and assign it to the `camera` class variable.
+
+```ts
+import { Component } from '@angular/core';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton, IonIcon } from '@ionic/angular/standalone';
+import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { camera } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: true,
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    ExploreContainerComponent,
+  ],
+})
+export class Tab2Page {
+  camera = camera;
+}
 ```
 
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
