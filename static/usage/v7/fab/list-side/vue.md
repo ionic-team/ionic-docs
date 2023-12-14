@@ -33,16 +33,8 @@
   </ion-fab>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
   import { add, chevronBack, chevronDown, chevronForward, chevronUp } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonFab, IonFabButton, IonFabList, IonIcon },
-    setup() {
-      return { add, chevronBack, chevronDown, chevronForward, chevronUp };
-    },
-  });
 </script>
 ```
