@@ -15,12 +15,7 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonCheckbox, IonItem, IonList } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonCheckbox, IonItem, IonList },
-  });
 </script>
 ```
