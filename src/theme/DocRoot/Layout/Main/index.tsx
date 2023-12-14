@@ -6,10 +6,9 @@
  */
 
 import React from 'react';
-import Main from '@theme-original/DocPage/Layout/Main';
-import type {Props} from '@theme/DocPage/Layout/Main';
-
+import Main from '@theme-original/DocRoot/Layout/Main';
 import Navbar from '@theme/Navbar';
+import type {Props} from '@theme/DocRoot/Layout/Main';
 
 export default function MainWrapper(props: Props): JSX.Element {
   return (
