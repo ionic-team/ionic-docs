@@ -21,12 +21,7 @@
   </ion-toolbar>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonButtons, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonButtons, IonTitle, IonToolbar },
-  });
 </script>
 ```
