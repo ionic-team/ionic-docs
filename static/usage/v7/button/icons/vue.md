@@ -15,16 +15,8 @@
   </ion-button>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonIcon } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { star } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: { IonButton, IonIcon },
-    setup() {
-      return { star };
-    },
-  });
 </script>
 ```
