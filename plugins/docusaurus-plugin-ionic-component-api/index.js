@@ -45,12 +45,15 @@ module.exports = function (context, options) {
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
+
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
       let npmTag = 'latest';
       if (currentVersion.banner === 'unreleased') {
-        npmTag = 'next';
+        // TODO create a ticket to re-enable this once v8 is released.
+        // npmTag = 'next';
+        npmTag = '7.5.8-dev.11702398696.1ab62ea9';
       } else if (currentVersion.path !== undefined) {
         npmTag = currentVersion.path.slice(1);
       }
