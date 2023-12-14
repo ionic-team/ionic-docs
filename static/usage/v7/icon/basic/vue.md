@@ -6,16 +6,8 @@
   <ion-icon :icon="logoIonic" size="large" color="primary"></ion-icon>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonIcon } from '@ionic/vue';
   import { logoIonic } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon },
-    setup() {
-      return { logoIonic };
-    },
-  });
 </script>
 ```
