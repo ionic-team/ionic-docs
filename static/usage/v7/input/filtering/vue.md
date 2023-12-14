@@ -12,35 +12,28 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonInput, IonItem, IonList } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonInput, IonItem, IonList },
-    setup() {
-      const ionInputEl = ref();
-      const inputModel = ref('');
-      const onInput = (ev) => {
-        const value = ev.target!.value;
+  const ionInputEl = ref();
+  const inputModel = ref('');
+  const onInput = (ev) => {
+    const value = ev.target!.value;
 
-        // Removes non alphanumeric characters
-        const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
+    // Removes non alphanumeric characters
+    const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
 
-        /**
-         * Update both the state variable and
-         * the component to keep them in sync.
-         */
-        inputModel.value = filteredValue;
+    /**
+     * Update both the state variable and
+     * the component to keep them in sync.
+     */
+    inputModel.value = filteredValue;
 
-        const inputCmp = ionInputEl.value;
-        if (inputCmp !== undefined) {
-          inputCmp.$el.value = filteredValue;
-        }
-      };
-
-      return { ionInputEl, inputModel, onInput };
-    },
-  });
+    const inputCmp = ionInputEl.value;
+    if (inputCmp !== undefined) {
+      inputCmp.$el.value = filteredValue;
+    }
+  };
 </script>
 ```
