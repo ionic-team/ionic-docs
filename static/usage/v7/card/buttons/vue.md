@@ -15,12 +15,7 @@
   </ion-card>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle },
-  });
 </script>
 ```
