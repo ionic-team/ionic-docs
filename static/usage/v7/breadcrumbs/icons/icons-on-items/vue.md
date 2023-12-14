@@ -41,16 +41,8 @@
   </ion-breadcrumbs>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { camera, film, flash, home } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel },
-    setup() {
-      return { camera, film, flash, home };
-    },
-  });
 </script>
 ```

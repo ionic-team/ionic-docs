@@ -23,26 +23,19 @@
   </ion-popover>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/vue';
   import Popover from './Popover.vue';
+  import { ref } from 'vue';
 
-  export default {
-    components: { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover },
-    data() {
-      return {
-        popoverOpen: false,
-        collapsedBreadcrumbs: [],
-        event: null,
-      };
-    },
-    methods: {
-      presentPopover(e: Event) {
-        this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
-        this.event = e;
-        this.popoverOpen = true;
-      },
-    },
-  };
+  const popoverOpen = ref(false);
+  const collapsedBreadcrumbs = ref([]);
+  const event = ref(null);
+
+  function presentPopover(e: Event) {
+    this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
+    this.event = e;
+    this.popoverOpen = true;
+  }
 </script>
 ```
