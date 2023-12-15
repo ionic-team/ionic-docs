@@ -21,12 +21,7 @@
   </ion-split-pane>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonContent, IonHeader, IonMenu, IonSplitPane, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonContent, IonHeader, IonMenu, IonSplitPane, IonTitle, IonToolbar },
-  });
 </script>
 ```
