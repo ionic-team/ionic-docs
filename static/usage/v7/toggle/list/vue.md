@@ -13,12 +13,7 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonItem, IonList, IonToggle } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonList, IonToggle },
-  });
 </script>
 ```
