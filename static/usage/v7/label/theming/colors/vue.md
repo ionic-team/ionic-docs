@@ -12,12 +12,7 @@
   <ion-label color="dark">Dark</ion-label>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonLabel },
-  });
 </script>
 ```
