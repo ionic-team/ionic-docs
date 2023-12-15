@@ -45,7 +45,7 @@
       };
 
       const radioGroupEl = document.querySelector('ion-radio-group');
-      radioGroupEl.compareWith = (a, b) => a.value === b.value;
+      radioGroupEl.compareWith = compareWithFn;
 
       foods.forEach((option, i) => {
         const radio = document.createElement('ion-radio');
