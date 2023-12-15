@@ -23,11 +23,8 @@ Cordova Plugin that wraps CleverTap SDK for Android and iOS
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
-    <p>
-      If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer
-      premium advisory services for both community plugins and premier plugins.
-    </p>
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
@@ -57,7 +54,7 @@ Cordova Plugin that wraps CleverTap SDK for Android and iOS
   <TabItem value="Enterprise">
     <blockquote>
       Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>

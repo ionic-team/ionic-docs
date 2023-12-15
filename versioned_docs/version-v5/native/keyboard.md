@@ -15,7 +15,7 @@ Keyboard plugin for Cordova.
 Requires Cordova plugin: `cordova-plugin-ionic-keyboard`. For more info, please see the [Keyboard plugin docs](https://github.com/ionic-team/cordova-plugin-ionic-keyboard).
 
 <p>
-  <a ref="https://github.com/ionic-team/cordova-plugin-ionic-keyboard" target="_blank" rel="noopener" className="git-link">github.com/ionic-team/cordova-plugin-ionic-keyboard</a>
+  <a href="https://github.com/ionic-team/cordova-plugin-ionic-keyboard" target="_blank" rel="noopener" className="git-link">github.com/ionic-team/cordova-plugin-ionic-keyboard</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -25,11 +25,8 @@ Requires Cordova plugin: `cordova-plugin-ionic-keyboard`. For more info, please 
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
-    <p>
-      If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer
-      premium advisory services for both community plugins and premier plugins.
-    </p>
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
@@ -61,7 +58,7 @@ Requires Cordova plugin: `cordova-plugin-ionic-keyboard`. For more info, please 
   <TabItem value="Enterprise">
     <blockquote>
       Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>

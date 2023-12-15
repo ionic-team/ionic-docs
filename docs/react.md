@@ -20,8 +20,8 @@ import DocsCards from '@components/global/DocsCards';
 
 <PageStyles>
 
-<div class='flex main-flex'>
-  <div class="pull-left">
+<div className='flex main-flex'>
+  <div className="pull-left">
   <h1>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h1>
 
 - ✓ 100+ mobile optimized React UI components
@@ -32,8 +32,8 @@ import DocsCards from '@components/global/DocsCards';
 
   </div>
 
-  <div class="pull-right">
-  <img src={require('@site/static/img/frameworks/react-logo.png').default} />
+  <div className="pull-right">
+  <img src="/docs/img/frameworks/react-logo.png" />
   </div>
 </div>
 
@@ -43,9 +43,9 @@ Ionic React is native React version of Ionic Framework, the free, open source SD
 
 It's everything you need to ship award-winning apps for any platform, with React.
 
-<div class="flex" >
+<div className="flex" >
 
-<div class="pull-left">
+<div className="pull-left">
 
 ## Amazing Design
 
@@ -55,15 +55,15 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 </div>
 
-<div class="pull-right">
+<div className="pull-right">
   <img src="/docs/icons/feature-guide-components-icon.png" />
 </div>
 
 </div>
 
-<div class="flex reverse" >
+<div className="flex reverse" >
 
-<div class="pull-left">
+<div className="pull-left">
 
 ## Familiar tooling
 
@@ -72,15 +72,15 @@ Compatible with React version 16.8 and above.
 
 </div>
 
-<div class="pull-right">
-  <img src={require('@site/static/img/frameworks/react-cli.png').default} class="cli" />
+<div className="pull-right">
+  <img src="/docs/img/frameworks/react-cli.png" className="cli" />
 </div>
 
 </div>
 
-<div class="flex">
+<div className="flex">
 
-<div class="pull-left">
+<div className="pull-left">
 
 ## More than mobile
 
@@ -88,15 +88,15 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 
 </div>
 
-<div class="pull-right">
-  <img src={require('@site/static/img/native-platforms/group-shot.png').default} />
+<div className="pull-right">
+  <img src="/docs/img/native-platforms/group-shot.png" />
 </div>
 
 </div>
 
-<div class="flex reverse">
+<div className="flex reverse">
 
-  <div class="pull-left">
+  <div className="pull-left">
 
 ## Just React
 
@@ -104,8 +104,8 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 
   </div>
 
-<div class="pull-right">
-  <img src={require('@site/static/img/frameworks/react.svg').default} />
+<div className="pull-right">
+  <img src="/docs/img/frameworks/react.svg" />
 </div>
 
 </div>
