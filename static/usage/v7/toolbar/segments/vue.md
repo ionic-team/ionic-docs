@@ -14,12 +14,7 @@
   </ion-header>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonHeader, IonLabel, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonHeader, IonLabel, IonSegment, IonSegmentButton, IonTitle, IonToolbar },
-  });
 </script>
 ```
