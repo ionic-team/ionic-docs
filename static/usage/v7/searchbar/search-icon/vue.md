@@ -4,16 +4,8 @@
   <ion-searchbar :search-icon="searchCircle" placeholder="Custom Search Icon"></ion-searchbar>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonSearchbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { searchCircle } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: { IonSearchbar },
-    setup() {
-      return { searchCircle };
-    },
-  });
 </script>
 ```
