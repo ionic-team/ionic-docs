@@ -21,18 +21,8 @@
   </p>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonIcon, IonText } from '@ionic/vue';
   import { warning } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon, IonText },
-    setup() {
-      return {
-        warning,
-      };
-    },
-  });
 </script>
 ```
