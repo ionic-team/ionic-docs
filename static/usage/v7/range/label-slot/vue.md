@@ -5,12 +5,7 @@
   </ion-range>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonRange, IonText } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRange, IonText },
-  });
 </script>
 ```

@@ -15,12 +15,7 @@
   <ion-range label-placement="stacked" label="Stacked Label"></ion-range>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonRange } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRange },
-  });
 </script>
 ```

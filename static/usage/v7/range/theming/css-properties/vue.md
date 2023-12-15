@@ -16,12 +16,7 @@
   <ion-range aria-label="Custom range" :value="50" :pin="true"></ion-range>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonRange } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRange },
-  });
 </script>
 ```
