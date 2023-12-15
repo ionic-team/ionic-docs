@@ -39,7 +39,7 @@
   <ion-button @click="setLoaded(!loaded)">Toggle</ion-button>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonButton,
     IonIcon,
@@ -51,28 +51,9 @@
     IonThumbnail,
   } from '@ionic/vue';
   import { musicalNotes } from 'ionicons/icons';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonListHeader,
-      IonSkeletonText,
-      IonThumbnail,
-    },
-    setup() {
-      const loaded = ref(false);
-      const setLoaded = (state: boolean) => (loaded.value = state);
-      return {
-        loaded,
-        musicalNotes,
-        setLoaded,
-      };
-    },
-  });
+  const loaded = ref(false);
+  const setLoaded = (state: boolean) => (loaded.value = state);
 </script>
 ```
