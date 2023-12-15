@@ -6,13 +6,8 @@
   </ion-popover>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonPopover } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonPopover },
-  });
 </script>
 
 <style>
