@@ -32,12 +32,7 @@
   </ion-item-divider>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonItemDivider, IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItemDivider, IonLabel },
-  });
 </script>
 ```
