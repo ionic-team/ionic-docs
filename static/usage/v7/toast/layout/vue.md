@@ -17,21 +17,13 @@
   ></ion-toast>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonToast } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonToast },
-    setup() {
-      const toastButtons = [
-        {
-          text: 'Action With Long Text'
-        }
-      ]
-
-      return toastButtons }
-    }
-  });
+  const toastButtons = [
+    {
+      text: 'Action With Long Text',
+    },
+  ];
 </script>
 ```
