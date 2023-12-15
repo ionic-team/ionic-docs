@@ -39,21 +39,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonCheckbox, IonContent, IonHeader, IonInput, IonItem, IonList, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonCheckbox,
-      IonContent,
-      IonHeader,
-      IonInput,
-      IonItem,
-      IonList,
-      IonTitle,
-      IonToolbar,
-    },
-  });
 </script>
 ```

@@ -13,13 +13,8 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonItem, IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonLabel },
-  });
 </script>
 
 <style>

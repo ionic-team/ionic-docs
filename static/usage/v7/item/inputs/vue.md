@@ -43,7 +43,7 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonCheckbox,
     IonInput,
@@ -54,10 +54,5 @@
     IonSelectOption,
     IonToggle,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonCheckbox, IonInput, IonItem, IonLabel, IonRange, IonSelect, IonSelectOption, IonToggle },
-  });
 </script>
 ```
