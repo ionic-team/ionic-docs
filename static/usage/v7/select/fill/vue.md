@@ -15,12 +15,7 @@
   </ion-select>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonSelect, IonSelectOption } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonSelect, IonSelectOption },
-  });
 </script>
 ```
