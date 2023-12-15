@@ -9,6 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import { IonAvatar, IonItem, IonLabel } from '@ionic/vue';
+  import { IonAvatar, IonItem, IonLabel } from '@ionic/vue';
 </script>
 ```

@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { IonAvatar } from '@ionic/vue';
+  import { IonAvatar } from '@ionic/vue';
 </script>
 
 <style scoped>

@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
-import { caretBack } from 'ionicons/icons';
+  import { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
+  import { caretBack } from 'ionicons/icons';
 </script>
 ```
