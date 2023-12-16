@@ -499,32 +499,6 @@ export default function Playground({
     };
   }, [isBrowser, isInView]);
 
-  useEffect(() => {
-    const codeSnips = {};
-    Object.keys(code).forEach((key) => {
-      if (typeof code[key] === 'function') {
-        /**
-         * Instantiates the React component from the MDX content for
-         * single-file playground examples.
-         */
-        const DynamicComponent = code[key];
-        codeSnips[key] = <DynamicComponent />;
-      } else if (typeof code[key] === 'object') {
-        /**
-         * Instantiates the list of React components from the MDX content for
-         * multi-file playground examples.
-         */
-        const fileSnippets = {};
-        for (const fileName of Object.keys(code[key].files)) {
-          const DynamicFileComponent = code[key].files[fileName];
-          fileSnippets[`${fileName}`] = <DynamicFileComponent />;
-        }
-        codeSnips[key] = fileSnippets;
-      }
-    });
-    setCodeSnippets(codeSnips);
-  }, []);
-
   const isIOS = ionicMode === Mode.iOS;
   const isMD = ionicMode === Mode.MD;
 
@@ -615,6 +589,32 @@ export default function Playground({
         break;
     }
   }
+
+  useEffect(() => {
+    const codeSnips = {};
+    Object.keys(code).forEach((key) => {
+      if (typeof code[key] === 'function') {
+        /**
+         * Instantiates the React component from the MDX content for
+         * single-file playground examples.
+         */
+        const DynamicComponent = code[key];
+        codeSnips[key] = <DynamicComponent />;
+      } else if (typeof code[key] === 'object') {
+        /**
+         * Instantiates the list of React components from the MDX content for
+         * multi-file playground examples.
+         */
+        const fileSnippets = {};
+        for (const fileName of Object.keys(code[key].files)) {
+          const DynamicFileComponent = code[key].files[fileName];
+          fileSnippets[`${fileName}`] = <DynamicFileComponent />;
+        }
+        codeSnips[key] = fileSnippets;
+      }
+    });
+    setCodeSnippets(codeSnips);
+  }, []);
 
   function getCodeSnippetId(usageTarget: string, fileName: string) {
     let fileNameId = fileName;
