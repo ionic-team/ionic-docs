@@ -1,220 +1,102 @@
 ---
-title: Runtime Issues
+title: Native Errors
 ---
 
 <head>
-  <title>Solve App Runtime Issues: Blank App, Plugins Not Working, etc.</title>
+  <title>Native App Errors: How to Resolve Native Errors on Ionic Apps</title>
   <meta
     name="description"
-    content="There are many causes of app runtime issues. Read how to solve issues such as a blank app, plugins not working, Angular change detection, and more with Ionic."
+    content="Review native app errors including code signing, Xcode build error 65, and clashing Google Play Services versions. Learn to resolve native errors on Ionic apps."
   />
 </head>
 
-## Blank App
-
-:::note
-I have no errors in my app. Why does it show a blank screen?
-:::
-
-There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
-
-- Polyfills are not included for older browser/versions of android
-
-For projects with `@angular/cli@7.3` or above, polyfills will automatically be included. For project created before that, polyfills need to be manually enabled.
-
-In `src/polyfills.ts`, you must enabled all ES6 polyfills for Android 4.4 support.
-
-Alternatively, a project could be updated to use the latest release of the `@angular/cli` package & `@angular-devkit` packages and include the `es5BrowserSupport` option in the `angular.json`'s build options object:
-
-```diff
-        "input": "src/global.scss"
-      }
-    ],
--   "scripts": []
-+   "scripts": [],
-+   "es5BrowserSupport": true
-  },
-  "configurations": {
-    "production": {
-```
-
-This will automatically include the polyfills for older browsers that need them.
-
-## Directive Not Working
-
-:::note
-Why is my custom component/directive not working?
-:::
-
-There are a few things you can check. Make sure:
-
-- Your selector doesn't have any misspellings.
-- You're using the selector correctly as an attribute, element or class.
-- Your selector has the proper syntax:
-  - `[attr]` if it's an attribute selector
-  - `element` if it's an element selector
-  - `.class` if it's a class selector
-
-Here's an example using an attribute selector:
-
-```tsx
-@Directive({
-  selector: '[my-dir]' // <-- [my-dir] because it is an attribute
-})                     // Could be my-dir, [my-dir], .my-dir
-class MyDir {
-  constructor() {
-    console.log('I'm alive!');
-  }
-}
-
-@Component({
-  // We add my-dir as an attribute to match the directive's selector
-  template: `<div my-dir>Hello World</div>`,
-
-  // Alternatively, if you were attaching the directive to an element it would be:
-  // template: `<my-dir>Hello World</my-dir>`
-  // and if you were attaching by class the template would be:
-  // template: `<div class="my-dir">Hello World</div>`
-
-  directives: [MyDir] // <-- Don't forget me! (only if your ionic-angular version is below RC0)
-})
-class MyPage { }
-```
-
-## Click Delays
-
-:::note
-Why is there a delay on my click event?
-:::
-
-In general, we recommend only adding `(click)` events to elements that are
-normally clickable. This includes `<button>` and `<a>` elements. This improves
-accessibility as a screen reader will be able to tell that the element is
-clickable.
-
-However, you may need to add a `(click)` event to an element that is not
-normally clickable. When you do this you may experience a `300ms` delay from the
-time you click the element to the event firing. To remove this delay, you can
-add the `tappable` attribute to your element.
-
-```html
-<div tappable (click)="doClick()">I am clickable!</div>
-```
-
-## Angular Change Detection
-
-:::note
-Why does Angular change detection run very frequently when my components are initializing?
-:::
-
-Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/)
-which helps it determine when to run change detection.
-
-As of zone.js `0.8.27`, certain APIs for Web Components also cause change
-detection to run. This can have the undesirable side effect of your app
-slowing down when a large number of components are initializing.
-
-To prevent this from happening, the zone.js flag that manages this portion of
-change detection can be disabled. In the `src` directory of your application,
-create a file called `zone-flags.ts`. Place the following code into the file:
-
-```tsx
-(window as any).__Zone_disable_customElements = true;
-```
-
-The `zone-flags.ts` file then needs to be imported into your application's
-`polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
-
-```tsx
-...
-
-import './zone-flags.ts';
-import 'zone.js/dist/zone'; // Included with Angular CLI
-
-...
-```
-
-This change will only affect applications that depend on zone.js `0.8.27` or
-newer. Older versions will not be affected by this change.
-
-:::note
-This flag is automatically included when creating an Ionic app via
-:::
-the Ionic CLI.
-
-## Cordova plugins not working in the browser
-
-At some point in your development you may, try to call Cordova plugin, but get a
-warning:
+## Code Signing errors
 
 ```shell
-[Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
-available. Make sure to include cordova.js or run in a device/simulator
-(app.bundle.js, line 83388)
+Code Signing Error: Failed to create provisioning profile. The app ID "com.csform.ionic.yellow" cannot be registered to your development team. Change your bundle identifier to a unique string to try again. Code Signing Error: No profiles for 'com.csform.ionic.yellow' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.csform.ionic.yellow'. Code Signing Error: Code signing is required for product type 'Application' in SDK 'iOS 11.1'
 ```
 
-This happens when you try to call a native plugin, but Cordova isn't available.
-Thankfully, Ionic Native will print out a nice warning, instead of an error.
+Running an app on an iOS device requires a provisioning profile. If a provisioning profile has not been created yet follow these directions:
 
-In other cases where the plugin is not being used through Ionic Native, plugins
-can print a much more obscure warning.
+1. <strong>Set the [Package ID](../reference/glossary.md#package-id).</strong>
+
+   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+
+   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+
+2. <strong>
+     Open the project in <b>Xcode</b>.
+   </strong>
+
+   For Capacitor, run the following to open the app in Xcode:
+
+   ```shell
+   $ ionic capacitor open ios
+   ```
+
+   For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
+
+3. <strong>
+     In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section,
+     verify that the Package ID that was set matches the Bundle Identifier.
+   </strong>
+
+   ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+
+4. <strong>
+     In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is
+     enabled.
+   </strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning
+   and signing.
+
+   ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
+
+## Xcode build error 65
 
 ```shell
-EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
-(evaluating 'navigator.camera.getPicture')
+Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/ionitron/projects/my-project/platforms/ios/cordova/build-debug.xcconfig,-workspace,SC project.xcworkspace,-scheme,SC project,-configuration,Debug,-sdk,iphonesimulator,-destination,platform=iOS Simulator,name=iPhone X,build,CONFIGURATION_BUILD_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/emulator,SHARED_PRECOMPS_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/sharedpch
 ```
 
-If this happens, test the plugin on a real device or simulator.
+This error is an error code from Xcode that can be caused by provisioning issues or outdated cordova dependencies. To fix this error first make sure a provisioning profile has been generated using the above instructions and then try to [run the app from Xcode](../developing/ios.md#running-with-xcode).
 
-## Multiple instances of a provider
+If this does not fix the error then run the following commands:
 
-If you inject a provider in every component because you want it available to all
-of them you will end up with multiple instances of the provider. You should
-inject the provider once in the parent component if you want it to be available
-to the child components.
-
-```tsx
-let id = 0;
-export class MyService {
-  id: number;
-
-  constructor() {
-    this.id = id++;
-  }
-}
-
-@Component({
-  selector: 'my-component',
-  template: 'Hello World',
-  providers: [MyService], // <-- Creates a new instance of MyService :(
-}) // Unnecessary because MyService is in App's providers
-class MyComp {
-  // id is 1, s is a different MyService instance than MyApp
-  constructor(s: MyService) {
-    console.log('MyService id is: ' + s.id);
-  }
-}
-
-@Component({
-  template: '<my-component></my-component>',
-  providers: [MyService], // MyService only needs to be here
-  directives: [MyComp],
-})
-class MyApp {
-  // id is 0
-  constructor(s: MyService) {
-    console.log('MyService id is: ' + s.id);
-  }
-}
+```shell
+rm -rf node_modules
+rm -rf platform
+npm i
+ionic cordova platform add ios
+ionic cordova prepare ios
+ionic cordova build ios --prod
 ```
 
-<!-- This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. -->
-## Accessing `this` in a function callback returns `undefined` {#accessing-this}
+Once these commands have been ran a fresh build can be done.
 
-Certain components, such as [counterFormatter on ion-input](../api/input#counterformatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that developers bind the correct `this` value if they plan to access `this` from within the context of the callback. Developers may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
+## Clashing Google Play Services versions
 
-The first way to bind `this` is to use the `bind()` method on a function instance. If a developer wanted to pass a callback called `counterFormatterFn`, then they would write `counterFormatterFn.bind(this)`.
+```shell
+Error: more than one library with package name com.google.android.gms
+```
 
-The second way to bind `this` is to use an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) when defining the callback. This works because JavaScript does not create a new `this` binding for arrow functions.
+This error is caused by two separate plugins trying to use different versions of the `Google Play Services`. To fix this issue make sure you are running `cordova` version `7.1.0` or higher and `cordova-android` `6.3.0` or higher. To install latest `cordova` run:
 
-See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this for more information on how `this` works in JavaScript.
+```shell
+npm install cordova@latest
+```
+
+and to update `cordova-android` run:
+
+```shell
+cordova platform update android
+```
+
+Plugins that depend on `Google Play Services` can now be updated to use the same version. For example, if `pluginA` uses version 11.0 and `pluginB` uses version 15.0 they can be updated to use the same version with the following snippet in the `config.xml` file:
+
+```xml
+<plugin name="pluginA" spec="npm">
+  <variable name="PLAY_SERVICES_VERSION" value="15.0.0"/>
+</plugin>
+<plugin name="pluginB" spec="npm">
+  <variable name="PLAY_SERVICES_VERSION" value="15.0.0" />
+</plugin>
+```
