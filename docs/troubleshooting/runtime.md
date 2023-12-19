@@ -218,4 +218,4 @@ The first way to bind `this` is to use the `bind()` method on a function instanc
 
 The second way to bind `this` is to use an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) when defining the callback. This works because JavaScript does not create a new `this` binding for arrow functions.
 
-See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this for more information on how `this` works in JavaScript.
+See its [MDN page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) for more information on how `this` works in JavaScript.
