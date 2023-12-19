@@ -43,6 +43,21 @@ There are four hard requirements for publishing an app on the Windows app store
 npm install -g electron-windows-store
 ```
 
+## Quick Setup
+
+You can quickly provision an electron environment with capacitor using the [@capacitor-community/electron](https://github.com/capacitor-community/electron) plugin then running the following commands
+
+```shell
+npm install @capacitor-community/electron
+
+ionic build
+# Add the electron platform to capacitor
+ionic capacitor add electron
+
+# Start the application locally
+ionic capacitor open electron
+```
+
 ### Publishing
 
 Like macOS, Electron has a detailed guide on how to publish an app for Windows. Please review [the docs here](https://electronjs.org/docs/tutorial/windows-store-guide)
