@@ -38,7 +38,6 @@
     selectEl.appendChild(selectOption);
   });
 
-  const valueLabel = document.querySelector('ion-text');
   selectEl.addEventListener('ionChange', () => {
     console.log('Current value:', JSON.stringify(selectEl.value));
   });

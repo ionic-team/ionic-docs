@@ -119,7 +119,7 @@ import RespondingToInteractionExample from '@site/static/usage/v7/select/basic/r
 
 Selectの値にオブジェクトを使用する場合、Selectの値のidentityはそのままで、サーバやデータベースから取得したオブジェクトのidentityが変わってしまうことがあります。例えば、希望するオブジェクト値を持つ既存のレコードがSelectに読み込まれたが、新しく取得されたselectオプションのIDが異なる場合、このようなことが起こりえます。その結果、Selectは、元のSelectがそのまま残っているにもかかわらず、全く値がないように見えることになります。
 
-デフォルトでは、Selectはオブジェクトの等質性(`===`)を使用してオプションが選択されているかどうかを判断します。これは `compareWith` プロパティにプロパティ名または関数を指定することでオーバーライドすることができます。
+デフォルトでは、Select はオプションが選択されているかどうかを決定するために厳密な等式 (`===`) を使用します。これは、プロパティ名または関数を `compareWith` プロパティに指定することでオーバーライドできます。
 
 ### Using compareWith
 
@@ -172,6 +172,20 @@ Selectはalert、action sheet、popoverインタフェースを使用するの�
 import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
+
+## Start and End Slots
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/select/start-end-slots/index.md';
+
+<StartEndSlots />
 
 ## カスタマイズ
 

@@ -207,3 +207,15 @@ class MyApp {
   }
 }
 ```
+
+<!-- This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. -->
+
+## Accessing `this` in a function callback returns `undefined` {#accessing-this}
+
+Certain components, such as [counterFormatter on ion-input](../api/input#counterformatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
+
+The first way to bind `this` is to use the `bind()` method on a function instance. If you want to pass a callback called `counterFormatterFn`, then you would write `counterFormatterFn.bind(this)`.
+
+The second way to bind `this` is to use an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) when defining the callback. This works because JavaScript does not create a new `this` binding for arrow functions.
+
+See its [MDN page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) for more information on how `this` works in JavaScript.
