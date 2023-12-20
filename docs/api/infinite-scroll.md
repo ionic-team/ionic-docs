@@ -43,7 +43,7 @@ import CustomContent from '@site/static/usage/v7/infinite-scroll/custom-infinite
 
 ## Usage with Virtual Scroll
 
-Infinite scroll requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+Infinite scroll requires a scroll container. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
 
 ```html
 <ion-content scroll-y="false">
@@ -55,6 +55,12 @@ Infinite scroll requires a scroll container to function. When using a virtual sc
   </ion-infinite-scroll>
 </ion-content>
 ```
+
+:::note
+
+`virtual-scroll-element` refers to scroll container responsible for scrolling the content. This may be a component provided directly by the virtual scroll solution you are using.
+
+:::
 
 ## Accessibility
 
