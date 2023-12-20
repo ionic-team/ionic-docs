@@ -56,9 +56,9 @@ npx cap sync ios
 npx cap copy ios
 ```
 
-From here, the project is now managed as if it was a native Xcode app (because it is).
+ここから、プロジェクトはあたかもXcodeのネイティブアプリであるかのように管理することができます（実際そうなのです）。
 
-Open the project in `./ios/` to start Xcode:
+Xcodeで `./ios/` からプロジェクトを開いてください：
 
 ```shell
 npx cap open ios
@@ -67,7 +67,7 @@ npx cap open ios
 </TabItem>
 <TabItem value="cordova" label="Cordova">
 
-If the iOS platform is not already added, be sure to add it:
+iOSプラットフォームがまだ追加されていない場合は、必ず追加してください：
 
 ```shell
 ionic cordova platform add ios
