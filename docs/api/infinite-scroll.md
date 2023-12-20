@@ -58,7 +58,7 @@ Infinite scroll requires a scroll container. When using a virtual scrolling solu
 
 :::note
 
-`virtual-scroll-element` refers to scroll container responsible for scrolling the content. This may be a component provided directly by the virtual scroll solution you are using.
+`virtual-scroll-element` refers to the scroll container responsible for scrolling the content. This may be a component provided directly by the virtual scroll solution you are using.
 
 :::
 
