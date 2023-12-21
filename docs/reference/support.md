@@ -44,7 +44,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
-|    v8     |           v16           |          v17.2          |   4.9.3+   |  
+|    v8     |           v16           |          v17.x          |   4.9.3+   |  
 |    v7     |           v14           |        v17.x[^2]        |    4.6+    |
 |    v6     |           v12           |        v15.x[^1]        |    4.0+    |
 |    v5     |          v8.2           |          v12.x          |    3.5+    |
