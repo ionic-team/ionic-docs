@@ -40,8 +40,8 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 
 |   Browser   | Ionic v8 | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: | :------: | :------: |
-| **Chrome**  |    89+   |   79+    |   60+    |    ✔     |    ✔     |
-| **Safari**  |    15+   |   14+    |   13+    |    ✔     |    ✔     |
-|  **Edge**   |    89+   |   79+    |   79+    |   79+    |    ✔     |
-| **Firefox** |    75+   |   70+    |   63+    |    ✔     |    ✔     |
-|  **IE 11**  |   **X**  |   **X**   |  **X**   |  **X**   |  **X**   |
+| **Chrome**  |   89+    |   79+    |   60+    |    ✔     |    ✔     |
+| **Safari**  |   15+    |   14+    |   13+    |    ✔     |    ✔     |
+|  **Edge**   |   89+    |   79+    |   79+    |   79+    |    ✔     |
+| **Firefox** |   75+    |   70+    |   63+    |    ✔     |    ✔     |
+|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |  **X**   |
