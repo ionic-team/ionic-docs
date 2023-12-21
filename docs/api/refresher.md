@@ -67,6 +67,28 @@ The native refreshers can be disabled by setting the `pullingIcon` on the [refre
 
 Refresher requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
 
+Developers should apply the following CSS to the scrollable container. This CSS adds a "rubber band" scrolling effect on iOS which allows the native iOS refresher to work properly:
+
+```css
+.ion-content-scroll-host::before,
+.ion-content-scroll-host::after {
+  position: absolute;
+  
+  width: 1px;
+  height: 1px;
+  
+  content: "";
+}
+
+.ion-content-scroll-host::before {
+  bottom: -1px;
+}
+
+.ion-content-scroll-host::after {
+  top: -1px;
+}
+```
+
 import CustomScrollTarget from '@site/static/usage/v8/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
