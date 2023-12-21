@@ -71,11 +71,11 @@ Developers should apply the following CSS to the scrollable container. This CSS 
 .ion-content-scroll-host::before,
 .ion-content-scroll-host::after {
   position: absolute;
-  
+
   width: 1px;
   height: 1px;
-  
-  content: "";
+
+  content: '';
 }
 
 .ion-content-scroll-host::before {
