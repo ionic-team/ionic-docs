@@ -139,6 +139,7 @@ Ionic is actively developed and maintained full-time by a core team, and its eco
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
+<!-- prettier-ignore -->
 - <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
 - <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
 - <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!

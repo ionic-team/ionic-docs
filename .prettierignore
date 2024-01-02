@@ -5,6 +5,7 @@ scripts/bak
 
 docs/api
 docs/native
+versioned_docs/version-v*/native
 docs/cli/commands
 
 static/code/stackblitz
