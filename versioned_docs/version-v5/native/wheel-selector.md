@@ -13,8 +13,7 @@ import CodeBlock from '@theme/CodeBlock';
 Native wheel selector for Cordova (Android/iOS).
 
 <p>
-  <a href="https://github.com/jasonmamy/cordova-wheel-selector-plugin" target="_blank" rel="noopener" className="git-link">github.com/jasonmamy/cordova-wheel-selector-plugin
-  </a>
+  <a href="https://github.com/jasonmamy/cordova-wheel-selector-plugin" target="_blank" rel="noopener" className="git-link">github.com/jasonmamy/cordova-wheel-selector-plugin</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>

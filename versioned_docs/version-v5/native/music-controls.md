@@ -15,8 +15,7 @@ Display a 'media' notification with play/pause, previous, next buttons, allowing
 Handle also headset event (plug, unplug, headset button).
 
 <p>
-  <a href="https://github.com/ghenry22/cordova-plugin-music-controls2" target="_blank" rel="noopener" className="git-link">github.com/ghenry22/cordova-plugin-music-controls2
-  </a>
+  <a href="https://github.com/ghenry22/cordova-plugin-music-controls2" target="_blank" rel="noopener" className="git-link">github.com/ghenry22/cordova-plugin-music-controls2</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
