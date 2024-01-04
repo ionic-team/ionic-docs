@@ -26,7 +26,7 @@ import DocsCards from '@components/global/DocsCards';
   </div>
 
   <div className="pull-right">
-  <img src={require('@site/static/img/frameworks/react-logo.png').default} />
+  <img src="/docs/img/frameworks/react-logo.png" />
   </div>
 </div>
 
@@ -66,7 +66,7 @@ Compatible with React version 16.8 and above.
 </div>
 
 <div className="pull-right">
-  <img src={require('@site/static/img/frameworks/react-cli.png').default} className="cli" />
+  <img src="/docs/img/frameworks/react-cli.png" className="cli" />
 </div>
 
 </div>
@@ -82,7 +82,7 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 </div>
 
 <div className="pull-right">
-  <img src={require('@site/static/img/native-platforms/group-shot.png').default} />
+  <img src="/docs/img/native-platforms/group-shot.png" />
 </div>
 
 </div>
@@ -98,7 +98,7 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
   </div>
 
 <div className="pull-right">
-  <img src={require('@site/static/img/frameworks/react.svg').default} />
+  <img src="/docs/img/frameworks/react.svg" />
 </div>
 
 </div>
