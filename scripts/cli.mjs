@@ -1,7 +1,7 @@
-const fs = require('fs');
-const utils = require('./utils');
-const cliJSON = require('./data/translated-cli.json');
-const { cli: cliOverrides } = require('./data/meta-override.json');
+import { writeFileSync } from 'fs';
+import * as utils from './utils.mjs';
+import cliJSON from './data/cli.json' assert { type: 'json' };
+import cliOverrides from './data/meta-override.json' assert { type: 'json' };
 
 const commandToKebab = (str) =>
   str
@@ -12,8 +12,9 @@ const commandToKebab = (str) =>
 
 (async function () {
   // console.log(cliJSON);
+  const { commands } = cliJSON;
 
-  cliJSON.commands.map(writePage);
+  commands.map(writePage);
 })();
 
 function writePage(page) {
@@ -27,8 +28,8 @@ function writePage(page) {
   ].join('');
 
   const path = `cli/commands/${commandToKebab(page.name)}.md`;
-  fs.writeFileSync(`docs/${path}`, data);
-  fs.writeFileSync(`versioned_docs/version-v6/${path}`, data);
+  writeFileSync(`docs/${path}`, data);
+  writeFileSync(`versioned_docs/version-v6/${path}`, data);
 }
 
 function renderFrontmatter({ name, groups }) {

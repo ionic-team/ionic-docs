@@ -15,7 +15,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "generate-markdown": "node scripts/native && concurrently \"node scripts/cli\" \"node scripts/release-notes\"",
+    "generate-markdown": "node scripts/native.mjs && concurrently \"node scripts/cli.mjs\" \"node scripts/release-notes.mjs\"",
     "lint": "npm run prettier -- --write --cache",
     "serve": "docusaurus serve",
     "playground:new": "hygen playground new",
