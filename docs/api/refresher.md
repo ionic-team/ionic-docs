@@ -67,6 +67,28 @@ iOSとMaterial Designのネイティブリフレッシュ機能は、Ionicのデ
 
 Refresher が機能するためには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
+Developers should apply the following CSS to the scrollable container. This CSS adds a "rubber band" scrolling effect on iOS which allows the native iOS refresher to work properly:
+
+```css
+.ion-content-scroll-host::before,
+.ion-content-scroll-host::after {
+  position: absolute;
+  
+  width: 1px;
+  height: 1px;
+  
+  content: "";
+}
+
+.ion-content-scroll-host::before {
+  bottom: -1px;
+}
+
+.ion-content-scroll-host::after {
+  top: -1px;
+}
+```
+
 import CustomScrollTarget from '@site/static/usage/v7/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
