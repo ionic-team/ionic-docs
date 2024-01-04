@@ -24,7 +24,7 @@ Requires the Cordova plugin: `cordova-plugin-camera`. For more info, please see 
 </config-file>
 ```
 
-inside of the <platform name='ios> section
+inside of the `<platform name='ios'>` section
 
 <p>
   <a href="https://github.com/apache/cordova-plugin-camera" target="_blank" rel="noopener" className="git-link">github.com/apache/cordova-plugin-camera</a>
