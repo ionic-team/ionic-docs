@@ -28,7 +28,7 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 
 ### Usage with Standalone-based Applications
 
-:::caution
+:::warning
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 
@@ -177,7 +177,7 @@ export class HomePage {}
 
 ### Usage with NgModule-based Applications
 
-:::caution
+:::warning
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 

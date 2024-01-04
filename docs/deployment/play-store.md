@@ -33,7 +33,7 @@ $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg
 
 このコマンドを実行し、プロンプトに答えると、カレントディレクトリに `my-release-key.keystore` という名前のファイルが作成されます。
 
-:::caution
+:::warning
 このファイルを保存し、安全な場所に保管してください。このファイルを紛失すると、Google Play ストアはこのアプリのアップデートを受け付けません!
 :::
 
