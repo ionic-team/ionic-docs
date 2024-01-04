@@ -112,14 +112,8 @@ If you are using any version of **`cordova-android`** below `10.0.0`, install th
 
 ### Gradle
 
-<a href="https://gradle.org/" target="_blank">
-  Gradle
-</a> is the build tool used in Android apps and must be installed separately. See the <a
-  href="https://gradle.org/install/"
-  target="_blank"
->
-  install page
-</a> for details.
+<!-- prettier-ignore -->
+<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
 
 ## Project Setup
 
