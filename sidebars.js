@@ -187,12 +187,7 @@ module.exports = {
       type: 'category',
       label: 'Deployment',
       collapsed: false,
-      items: [
-        'deployment/app-store',
-        'deployment/play-store',
-        'deployment/progressive-web-app',
-        'deployment/desktop-app',
-      ],
+      items: ['deployment/app-store', 'deployment/play-store', 'deployment/progressive-web-app'],
     },
     {
       type: 'category',
