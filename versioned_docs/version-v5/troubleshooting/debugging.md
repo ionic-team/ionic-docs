@@ -6,7 +6,7 @@
   src="https://www.youtube.com/embed/akh6V6Yw1lw"
   frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
+  allowfullscreen
 ></iframe>
 
 ## Live Reload

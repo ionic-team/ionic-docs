@@ -21,7 +21,7 @@ Here’s the finished app running on all 3 platforms:
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
   frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
+  allowfullscreen
 ></iframe>
 
 ## What We'll Build

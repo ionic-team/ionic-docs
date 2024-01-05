@@ -105,7 +105,7 @@ Now comes the fun part: testing out the native app on your device! For iOS, the 
       scrolling="no"
       class="wistia_embed"
       name="wistia_embed"
-      allowFullScreen
+      allowfullscreen
       mozallowFullScreen
       webkitallowFullScreen
       oallowFullScreen
@@ -134,7 +134,7 @@ In the upper right hand corner, click the Play button. Select your connected dev
       scrolling="no"
       class="wistia_embed"
       name="wistia_embed"
-      allowFullScreen
+      allowfullscreen
       mozallowFullScreen
       webkitallowFullScreen
       oallowFullScreen
