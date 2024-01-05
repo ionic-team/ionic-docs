@@ -75,10 +75,10 @@ xlarge
 xsmall
 
 allowtransparency
-mozallowFullScreen
-msallowFullScreen
-oallowFullScreen
-webkitallowFullScreen
+mozallowfullscreen
+msallowfullscreen
+oallowfullscreen
+webkitallowfullscreen
 
 ionicframework
 browserslistrc
