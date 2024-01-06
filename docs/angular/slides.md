@@ -279,6 +279,22 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
 :::
 
+::: note
+https://swiperjs.com/element#events says "All Swiper events are available as native DOM events but with lowercase names and swiper prefix (prefix configurable with events-prefix). So you need to prefix the (init) method with either **swiper** or another prefix of your choice. 
+
+```
+<swiper-container 
+  (swiperinit)="mySlidesDidInitFunction()" // default event prefix is "swiper"
+
+  OR 
+
+<swiper-container                          // set event prefix to "whatever"
+  events-prefix="whatever" 
+  (whateverinit)="mySlidesDidInitFunction()"
+```
+
+:::
+
 ## Methods
 
 Most methods have been removed in favor of directly accessing the properties of the Swiper instance. To access the Swiper instance, first get a reference to the `<swiper-container>` element (such as through `ViewChild`), then access its `swiper` prop:
