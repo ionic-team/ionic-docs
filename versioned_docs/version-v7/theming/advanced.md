@@ -30,7 +30,7 @@ The `theme-color` meta controls the interface theme when running in a web browse
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
 
 ```html
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#0054e9" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
@@ -154,7 +154,7 @@ What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, 
 
 ```scss
 // Background color, shade, and tint
-$background: #3880ff;
+$background: #0054e9;
 $background-shade: mix(#000, $background, 12%);
 $background-tint: mix(#fff, $background, 10%);
 
@@ -168,7 +168,7 @@ After running through the Sass compiler, the colors will have the following valu
 
 | Variable            | Value                                          |
 | ------------------- | ---------------------------------------------- |
-| `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
+| `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
 | `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
 | `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |
 | `$text`             | <CodeColor color="#444444">#444444</CodeColor> |

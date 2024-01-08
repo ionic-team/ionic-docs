@@ -139,12 +139,12 @@ To customize the look and feel of the components, Ionic has CSS variables you ca
 
 ```css title="main.css"
 :root {
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary: #0054e9;
+  --ion-color-primary-rgb: 0, 84, 233;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #004acd;
+  --ion-color-primary-tint: #1a65eb;
 
   --ion-color-secondary: #0cd1e8;
   --ion-color-secondary-rgb: 12, 209, 232;
