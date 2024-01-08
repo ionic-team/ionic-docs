@@ -37,7 +37,7 @@ import DocsCards from '@components/global/DocsCards';
   </div>
 </div>
 
-### Build awesome apps across mobile, desktop, and web, with the React you know and love.
+### Build awesome apps across mobile and web, with the React you know and love.
 
 Ionic React is native React version of Ionic Framework, the free, open source SDK powering millions of mission-critical apps all over the world.
 

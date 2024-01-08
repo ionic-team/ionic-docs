@@ -67,7 +67,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Icons" href="api/icon" img="/icons/feature-component-icons-icon.png">
-  <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
+  <p>Beautifully designed icons for use in web, iOS, and Android apps.</p>
 </DocsCard>
 
 <DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
