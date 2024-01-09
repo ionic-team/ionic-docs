@@ -169,8 +169,8 @@ After running through the Sass compiler, the colors will have the following valu
 | Variable            | Value                                          |
 | ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
-| `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
-| `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |
+| `$background-shade` | <CodeColor color="#004acd">#004acd</CodeColor> |
+| `$background-tint`  | <CodeColor color="#1a65eb">#1a65eb</CodeColor> |
 | `$text`             | <CodeColor color="#444444">#444444</CodeColor> |
 | `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
 | `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |
