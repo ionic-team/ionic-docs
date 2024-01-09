@@ -135,7 +135,7 @@ For more information on routing and navigation in Ionic React, see [here](/docs/
 
 ### Customize the Theme
 
-To customize the look and feel of the components, Ionic has CSS variables you can override to provide a theme for your components. Set these in your main CSS file. You can find the colors defined in `src/theme/variables.scss`.
+To customize the look and feel of the components, Ionic has CSS variables you can [override](https://ionicframework.com/docs/theming/colors#modifying-colors) to provide a theme for your components. Set these in your main CSS file.
 
 For more info on theming your Ionic app, see the guide [here](/docs/theming/themes).
 
