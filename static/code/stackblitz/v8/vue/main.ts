@@ -22,4 +22,15 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/**
+ * Ionic Dark Theme
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+// import '@ionic/vue/css/themes/dark.always.css';
+// import '@ionic/vue/css/themes/dark.class.css';
+import '@ionic/vue/css/themes/dark.system.css';
+
 createApp(App).use(IonicVue).mount('#app');
