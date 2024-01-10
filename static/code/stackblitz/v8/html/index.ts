@@ -28,9 +28,9 @@ import './theme/variables.css';
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-// import "@ionic/core/css/themes/dark.always.css";
-// import "@ionic/core/css/themes/dark.class.css";
-import "@ionic/core/css/themes/dark.system.css";
+// import '@ionic/core/css/themes/dark.always.css';
+// import '@ionic/core/css/themes/dark.class.css';
+import '@ionic/core/css/themes/dark.system.css';
 
 defineCustomElements();
 
