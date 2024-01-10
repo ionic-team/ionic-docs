@@ -3,8 +3,8 @@ title: Introduction to Ionic
 sidebar_label: Overview
 slug: /
 hide_table_of_contents: true
-demoUrl: https://docs-demo.ionic.io/
-demoSourceUrl: https://github.com/ionic-team/docs-demo
+demoUrl: https://ionic-docs-demo-v7.vercel.app/
+demoSourceUrl: https://github.com/ionic-team/docs-demo/tree/7.x
 ---
 
 import DocsCard from '@components/global/DocsCard';
