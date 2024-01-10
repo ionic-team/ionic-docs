@@ -21,6 +21,17 @@ import '@ionic/core/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/**
+ * Ionic Dark Theme
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+// import "@ionic/core/css/themes/dark.always.css";
+// import "@ionic/core/css/themes/dark.class.css";
+import "@ionic/core/css/themes/dark.system.css";
+
 defineCustomElements();
 
 (window as any).loadingController = loadingController;
