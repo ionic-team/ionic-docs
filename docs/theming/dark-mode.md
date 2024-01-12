@@ -73,7 +73,7 @@ The demo below prioritizes the site's theme over the system settings. If your sy
 Not sure how to change the system settings? Here's [how to enable dark mode on Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
 :::
 
-import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode/index.md';
+import AutomaticDarkMode from '@site/static/usage/v8/theming/automatic-dark-mode/index.md';
 
 <AutomaticDarkMode />
 
@@ -81,7 +81,7 @@ import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode
 
 In addition to adding the `dark` class to the `<body>` when the media query changes, the class can be added by the app, such as when a user changes a toggle, to switch between the light and dark themes:
 
-import ManualDarkMode from '@site/static/usage/v7/theming/manual-dark-mode/index.md';
+import ManualDarkMode from '@site/static/usage/v8/theming/manual-dark-mode/index.md';
 
 <ManualDarkMode />
 

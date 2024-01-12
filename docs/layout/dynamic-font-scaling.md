@@ -14,7 +14,7 @@ If you are testing on Chrome for Android, make sure ["Accessibility Page Zoom"](
 
 Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-device) guide to set your preferred font size, and watch the text in the demo below grow or shrink according to your preferences.
 
-import DynamicFontScaling from '@site/static/usage/v7/layout/dynamic-font-scaling/index.md';
+import DynamicFontScaling from '@site/static/usage/v8/layout/dynamic-font-scaling/index.md';
 
 <DynamicFontScaling />
 
