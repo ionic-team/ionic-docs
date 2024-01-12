@@ -18,9 +18,6 @@ import '@ionic/core/css/text-transformation.css';
 import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 /**
  * Ionic Dark Theme
  * -----------------------------------------------------
@@ -31,6 +28,9 @@ import './theme/variables.css';
 // import '@ionic/core/css/themes/dark.always.css';
 // import '@ionic/core/css/themes/dark.class.css';
 import '@ionic/core/css/themes/dark.system.css';
+
+/* Theme variables */
+import './theme/variables.css';
 
 defineCustomElements();
 

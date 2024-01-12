@@ -19,9 +19,6 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 /**
  * Ionic Dark Theme
  * -----------------------------------------------------
@@ -32,5 +29,8 @@ import './theme/variables.css';
 // import '@ionic/vue/css/themes/dark.always.css';
 // import '@ionic/vue/css/themes/dark.class.css';
 import '@ionic/vue/css/themes/dark.system.css';
+
+/* Theme variables */
+import './theme/variables.css';
 
 createApp(App).use(IonicVue).mount('#app');
