@@ -31,9 +31,9 @@ export class ExampleComponent implements OnInit {
     this.toggleDarkTheme(ev.detail.checked);
   }
 
-  // Add or remove the "dark" class on the document body
+  // Add or remove the "ion-theme-dark" class on the html element
   toggleDarkTheme(shouldAdd) {
-    document.body.classList.toggle('dark', shouldAdd);
+    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
   }
 }
 ```

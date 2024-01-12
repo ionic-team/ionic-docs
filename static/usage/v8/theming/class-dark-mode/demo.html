@@ -8,6 +8,7 @@
     <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.6.2-dev.11704998705.1e1f9850/css/themes/dark.class.css" />
   </head>
 
   <body>
@@ -68,22 +69,34 @@
       const toggle = document.querySelector('#themeToggle');
 
       // Listen for the toggle check/uncheck to toggle the dark theme
-      toggle.addEventListener('ionChange', (ev) => toggleDarkTheme(ev.detail.checked));
+      toggle.addEventListener('ionChange', (ev) => {
+        toggleDarkTheme(ev.detail.checked);
+      });
+
+      // Use matchMedia to check the user preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+      // Initialize the dark theme based on the initial
+      // value of the prefers-color-scheme media query
+      initializeDarkTheme(prefersDark.matches);
+
+      // Listen for changes to the prefers-color-scheme media query
+      prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
+
+      // Check/uncheck the toggle and update the theme based on isDark
+      function initializeDarkTheme(isDark) {
+        toggle.checked = isDark;
+        toggleDarkTheme(isDark);
+      }
 
       // Called by the media query to check/uncheck the toggle
       function checkToggle(shouldCheck) {
         toggle.checked = shouldCheck;
       }
 
-      // Add or remove the "dark" class on the document body
+      // Add or remove the "ion-theme-dark" class on the html element
       function toggleDarkTheme(shouldAdd) {
-        document.body.classList.toggle('dark', shouldAdd);
-      }
-
-      // Check/uncheck the toggle and update the theme based on isDark
-      function initializeDarkTheme(isDark) {
-        toggle.checked = isDark;
-        toggleDarkTheme(isDark);
+        document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
       }
 
       // Demo only code below
@@ -104,32 +117,33 @@
 
     <style>
       /*
-       * Optional CSS
-       * -----------------------------------
-       */
+      * Optional CSS
+      * -----------------------------------
+      */
+
+      /* This is added for the flashing that happens when toggling between themes */
+      ion-item {
+        --transition: none;
+      }
 
       /* This sets a different background and item background in light mode on ios */
-      .ios body {
-        --ion-background-color: #f2f2f6;
+      html.ios {
+        --ion-background-color: var(--ion-color-step-50, #f2f2f6);
         --ion-toolbar-background: var(--ion-background-color);
         --ion-item-background: #fff;
       }
 
       /* This sets a different background and item background in light mode on md */
-      .md body {
-        --ion-background-color: #f9f9f9;
+      html.md {
+        --ion-background-color: var(--ion-color-step-100, #f9f9f9);
         --ion-toolbar-background: var(--ion-background-color);
         --ion-item-background: #fff;
       }
 
-      /* This sets a different item background in dark mode on ios */
-      .ios body.dark {
+      /* This sets a different item background in dark mode on ios and md */
+      .ion-theme-dark.ios,
+      .ion-theme-dark.md {
         --ion-item-background: #1c1c1d;
-      }
-
-      /* This is added for the flashing that happens when toggling between themes */
-      ion-item {
-        --transition: none;
       }
     </style>
   </body>

@@ -17,7 +17,7 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list inset="true">
     <ion-item>
-      <ion-toggle id="themeToggle" justify="space-between">Dark Mode</ion-toggle>
+      <ion-toggle justify="space-between" id="themeToggle">Dark Mode</ion-toggle>
     </ion-item>
   </ion-list>
 
@@ -79,9 +79,9 @@
     toggle.checked = shouldCheck;
   }
 
-  // Add or remove the "dark" class on the document body
+  // Add or remove the "ion-theme-dark" class on the html element
   function toggleDarkTheme(shouldAdd) {
-    document.body.classList.toggle('dark', shouldAdd);
+    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
   }
 </script>
 
@@ -91,23 +91,29 @@
    * -----------------------------------
    */
 
+  /* This is added for the flashing that happens when toggling between themes */
+  ion-item {
+    --transition: none;
+  }
+
   /* This sets a different background and item background in light mode on ios */
-  .ios body {
-    --ion-background-color: #f2f2f6;
+  html.ios {
+    --ion-background-color: var(--ion-color-step-50, #f2f2f6);
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
   /* This sets a different background and item background in light mode on md */
-  .md body {
-    --ion-background-color: #f9f9f9;
+  html.md {
+    --ion-background-color: var(--ion-color-step-100, #f9f9f9);
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
-  /* This is added for the flashing that happens when toggling between themes */
-  ion-item {
-    --transition: none;
+  /* This sets a different item background in dark mode on ios and md */
+  .ion-theme-dark.ios,
+  .ion-theme-dark.md {
+    --ion-item-background: #1c1c1d;
   }
 </style>
 ```
