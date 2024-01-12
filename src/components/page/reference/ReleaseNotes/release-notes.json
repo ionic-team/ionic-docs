@@ -1,5 +1,12 @@
 [
   {
+    "name": "v7.6.4",
+    "published_at": "January 10 2024",
+    "tag_name": "v7.6.4",
+    "type": "patch",
+    "version": "7.6.4"
+  },
+  {
     "name": "v7.6.3",
     "published_at": "January 3 2024",
     "tag_name": "v7.6.3",
@@ -40,12 +47,5 @@
     "tag_name": "v7.5.7",
     "type": "patch",
     "version": "7.5.7"
-  },
-  {
-    "name": "v7.5.6",
-    "published_at": "November 21 2023",
-    "tag_name": "v7.5.6",
-    "type": "patch",
-    "version": "7.5.6"
   }
 ]
