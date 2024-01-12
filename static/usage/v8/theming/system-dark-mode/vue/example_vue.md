@@ -83,47 +83,42 @@
       IonToolbar,
     },
     setup() {
-      // Use matchMedia to check the user preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-      // Add or remove the "dark" class on the document body
-      const toggleDarkTheme = (shouldAdd) => {
-        document.body.classList.toggle('dark', shouldAdd);
-      };
-
-      toggleDarkTheme(prefersDark.matches);
-
-      // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
-
-      return { personCircle, personCircleOutline, sunnyOutline, sunny, toggleDarkTheme };
+      return { personCircle, personCircleOutline, sunnyOutline, sunny };
     },
   });
 </script>
 
 <style>
   /*
-  * Optional CSS
-  * -----------------------------------
-  */
+   * Optional CSS
+   * -----------------------------------
+   */
+
+  /* This is added for the flashing that happens when toggling between themes */
+  ion-item {
+    --transition: none;
+  }
 
   /* This sets a different background and item background in light mode on ios */
-  .ios body {
-    --ion-background-color: #f2f2f6;
+  .ios {
+    --ion-background-color: var(--ion-color-step-50, #f2f2f6);
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
   /* This sets a different background and item background in light mode on md */
-  .md body {
-    --ion-background-color: #f9f9f9;
+  .md {
+    --ion-background-color: var(--ion-color-step-100, #f9f9f9);
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
-  /* This is added for the flashing that happens when toggling between themes */
-  ion-item {
-    --transition: none;
+  /* This sets a different item background in dark mode on ios and md */
+  @media (prefers-color-scheme: dark) {
+    .ios,
+    .md {
+      --ion-item-background: #1c1c1d;
+    }
   }
 </style>
 ```

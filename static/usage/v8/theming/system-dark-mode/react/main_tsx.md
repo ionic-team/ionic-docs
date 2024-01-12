@@ -1,5 +1,5 @@
 ```tsx
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   IonBackButton,
   IonButton,
@@ -22,21 +22,6 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 import './main.css';
 
 function Example() {
-  // Add or remove the "dark" class on the document body
-  const toggleDarkTheme = (shouldAdd: boolean) => {
-    document.body.classList.toggle('dark', shouldAdd);
-  };
-
-  useEffect(() => {
-    // Use matchMedia to check the user preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-    toggleDarkTheme(prefersDark.matches);
-
-    // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
-  }, []);
-
   return (
     <>
       <IonHeader class="ion-no-border">
