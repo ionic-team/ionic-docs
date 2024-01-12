@@ -18,6 +18,17 @@ import '@ionic/core/css/text-transformation.css';
 import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
+/**
+ * Ionic Dark Theme
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+// import '@ionic/core/css/themes/dark.always.css';
+// import '@ionic/core/css/themes/dark.class.css';
+import '@ionic/core/css/themes/dark.system.css';
+
 /* Theme variables */
 import './theme/variables.css';
 

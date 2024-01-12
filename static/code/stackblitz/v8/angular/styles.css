@@ -24,3 +24,14 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 @import "~@ionic/angular/css/display.css";
+
+/**
+ * Ionic Dark Theme
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "~@ionic/angular/css/themes/dark.always.css"; */
+/* @import "~@ionic/angular/css/themes/dark.class.css"; */
+@import "~@ionic/angular/css/themes/dark.system.css";
