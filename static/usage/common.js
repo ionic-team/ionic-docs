@@ -16,9 +16,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const { data } = ev;
 
     if (data.darkMode) {
-      document.body.classList.add('dark');
+      document.documentElement.classList.add('ion-theme-dark');
     } else {
-      document.body.classList.remove('dark');
+      document.documentElement.classList.remove('ion-theme-dark');
     }
   });
 
