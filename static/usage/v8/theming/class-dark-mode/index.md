@@ -24,7 +24,7 @@ import variables_css from './theme/variables_css.md';
       files: {
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
-        'theme/variables.css': variables_css
+        'theme/variables.css': variables_css,
       },
     },
     react: {
@@ -32,14 +32,14 @@ import variables_css from './theme/variables_css.md';
         'src/App.tsx': react_app_tsx,
         'src/main.tsx': react_main_tsx,
         'src/main.css': react_main_css,
-        'src/theme/variables.css': variables_css
+        'src/theme/variables.css': variables_css,
       },
     },
     vue: {
       files: {
         'src/components/Example.vue': vue_example,
         'src/main.ts': vue_main_ts,
-        'src/theme/variables.css': variables_css
+        'src/theme/variables.css': variables_css,
       },
     },
     angular: {
@@ -48,7 +48,7 @@ import variables_css from './theme/variables_css.md';
         'src/app/example.component.ts': angular_example_component_ts,
         'src/global.css': angular_global_css,
         'src/styles.css': angular_styles_css,
-        'src/theme/variables.css': variables_css
+        'src/theme/variables.css': variables_css,
       },
     },
   }}
