@@ -1,13 +1,6 @@
 ```css
-/*
- * Optional CSS
- * -----------------------------------
- */
-
-/* This is added for the flashing that happens when toggling between themes */
-ion-item {
-  --transition: none;
-}
+/* Ionic Variables and Theming. For more info, please see:
+http://ionicframework.com/docs/theming/ */
 
 /* This sets a different background and item background for the dark theme on ios */
 html.ios body {

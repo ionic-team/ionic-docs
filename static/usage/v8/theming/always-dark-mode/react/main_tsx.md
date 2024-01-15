@@ -19,8 +19,6 @@ import {
 } from '@ionic/react';
 import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
 
-import './main.css';
-
 function Example() {
   return (
     <>
