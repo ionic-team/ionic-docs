@@ -4,6 +4,9 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <title>Dark Mode to Change Color Schemes and CSS Properties</title>
   <meta
@@ -14,76 +17,166 @@ inlineHtmlPreviews: true
 
 Ionic makes it easy to change the themes of your app, including supporting dark color schemes. Dark mode is a display setting that changes all of an app's views to a dark theme. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
 
-## Using Media Queries
+## Enabling Dark Theme
 
-The modern way to enable dark mode is by using the [CSS media query for the user's preferred color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). This media query will hook into the system setting of the user's device and apply the theme if dark mode is enabled. Ionic Framework starters use this method to include the dark theme.
+There are three provided ways to enable the dark theme in an app: **always**, based on **system** settings, or by using a **class**.
 
-```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode variables go here */
-  }
-}
-```
+### Always
 
-The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). Users will not be able to benefit from having the dark theme applied using this media query in certain browsers, however, the dark theme can still be applied by using a [CSS class fallback](#css-class-fallback) if support for older browsers is needed.
+The default theme provided with Ionic Framework is a light theme, consisting of a light background and dark text. However, the default theme can be changed to the dark theme by importing the following stylesheet in the appropriate files:
 
-## CSS Class Fallback
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
-As a fallback method for devices that don't support the media query, the dark mode can be applied by styling a CSS selector and applying the class to the document body.
+<TabItem value="angular">
 
 ```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode variables go here */
-  }
-}
-
-/* Fallback for older browsers or manual mode */
-body.dark {
-  /* Dark mode variables go here */
-}
+@import '~@ionic/angular/css/themes/dark.always.css';
 ```
 
-With the variables targeting the `body.dark` selector, all that is needed now is to add the class to the `<body>` in the app. This can be done in a variety of ways depending on the framework your app is built with.
+</TabItem>
+<TabItem value="javascript">
 
-Notice that the variables should be in both places in this example. We can [use JavaScript](#combining-with-javascript) in order to avoid setting the variables in two places.
-
-## Combining with JavaScript
-
-In order to keep the CSS variables written once and avoid having to update them in multiple places, the `dark` class can be added when the value of the `prefers-color-scheme` media query is `dark`. Here's what the CSS would look like:
-
-```css
-body.dark {
-  /* Dark mode variables go here */
-}
+```ts
+import '@ionic/core/css/themes/dark.always.css';
 ```
 
-Notice that the variables above are only in the `body.dark` selector now, and the `prefers-color-scheme` media query has been removed.
+</TabItem>
+<TabItem value="react">
 
-### Automatically Enable Dark Mode
+```tsx
+import '@ionic/react/css/themes/dark.always.css';
+```
 
-The `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). This will allow dark mode to still work based on the user's preference.
+</TabItem>
+<TabItem value="vue">
 
-:::note
-The demo below prioritizes the site's theme over the system settings. If your system settings are set to something other than the site's theme when the demo loads, it will match the site's theme. Try changing the system preferences on your device between light & dark mode to see it change.
+```ts
+import '@ionic/vue/css/themes/dark.always.css';
+```
+
+</TabItem>
+
+</Tabs>
+
+This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector.
+
+:::caution Important
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `html` element.
 :::
 
-:::info
-Not sure how to change the system settings? Here's [how to enable dark mode on Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+:::info Demo
+This demo will always display the dark theme, regardless of the system settings for dark mode.
 :::
 
-import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode/index.md';
+import AlwaysDarkMode from '@site/static/usage/v8/theming/always-dark-mode/index.md';
 
-<AutomaticDarkMode />
+<AlwaysDarkMode />
 
-### Manually Toggle Dark Mode
+### System
 
-In addition to adding the `dark` class to the `<body>` when the media query changes, the class can be added by the app, such as when a user changes a toggle, to switch between the light and dark themes:
+The system approach to enable dark mode involves checking the system settings for the user's preferred color scheme. This is the default when starting a new Ionic Framework app. Importing the following stylesheet in the appropriate file will automatically retrieve the user's preference from the system settings and apply the dark theme when dark mode is preferred:
 
-import ManualDarkMode from '@site/static/usage/v7/theming/manual-dark-mode/index.md';
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
-<ManualDarkMode />
+<TabItem value="angular">
+
+```css
+@import '~@ionic/angular/css/themes/dark.system.css';
+```
+
+</TabItem>
+<TabItem value="javascript">
+
+```ts
+import '@ionic/core/css/themes/dark.system.css';
+```
+
+</TabItem>
+<TabItem value="react">
+
+```tsx
+import '@ionic/react/css/themes/dark.system.css';
+```
+
+</TabItem>
+<TabItem value="vue">
+
+```ts
+import '@ionic/vue/css/themes/dark.system.css';
+```
+
+</TabItem>
+
+</Tabs>
+
+This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`. The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). If support for older browser is required, we recommend using the [class](#class) approach.
+
+:::caution Important
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `html` element.
+:::
+
+:::info Demo
+This demo uses the system settings to decide when to show dark mode.
+
+Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
+:::
+
+import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index.md';
+
+<SystemDarkMode />
+
+### Class
+
+While the previous approaches are excellent for enabling the dark theme through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the dark theme conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a dark theme class file. This file applies the dark theme when a specific class is added to an app. Importing the following stylesheet into the appropriate file will provide the necessary styles for using the dark theme with the class:
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```css
+@import '~@ionic/angular/css/themes/dark.class.css';
+```
+
+</TabItem>
+<TabItem value="javascript">
+
+```ts
+import '@ionic/core/css/themes/dark.class.css';
+```
+
+</TabItem>
+<TabItem value="react">
+
+```tsx
+import '@ionic/react/css/themes/dark.class.css';
+```
+
+</TabItem>
+<TabItem value="vue">
+
+```ts
+import '@ionic/vue/css/themes/dark.class.css';
+```
+
+</TabItem>
+
+</Tabs>
+
+This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the `.ion-theme-dark` selector, which must be applied to the app by the developer.
+
+:::caution Important
+The `.ion-theme-dark` class **must** be added to the `html` element in order to work with the imported dark theme.
+:::
+
+:::info Demo
+This demo combines site settings, system settings, and the toggle to decide when to show dark mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
+
+Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
+:::
+
+import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.md';
+
+<ClassDarkMode />
 
 ## Adjusting System UI Components
 
