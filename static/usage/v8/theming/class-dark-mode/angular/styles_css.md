@@ -29,7 +29,7 @@
 /**
  * Ionic Dark Theme
  * -----------------------------------------------------
- * For more info, please see:
+ * For more information, please see:
  * https://ionicframework.com/docs/theming/dark-mode
  */
 

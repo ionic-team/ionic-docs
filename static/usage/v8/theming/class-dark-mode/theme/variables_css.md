@@ -1,6 +1,10 @@
 ```css
-/* Ionic Variables and Theming. For more info, please see:
-http://ionicframework.com/docs/theming/ */
+/* Ionic Variables and Theming
+ * ---------------------------------------------------------------
+ * Any overrides to theme variables should be placed in this file.
+ * For more information, please see:
+ * http://ionicframework.com/docs/theming/
+ */
 
 /* This sets a different background and item background in light mode on ios */
 html.ios {
