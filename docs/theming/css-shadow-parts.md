@@ -67,9 +67,8 @@ Shadow Parts は、開発者がシャドウツリーの外側から、シャド�
 
 ### How ::part works
 
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">
-  `::part()`
-</a> 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。
+<!-- prettier-ignore -->
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。
 
 `ion-select` は、値が選択されていないときにテキストをスタイル付けするための `placeholder` Part を公開していることが分かっているので、次のようにカスタマイズすることができます。
 

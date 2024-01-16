@@ -24,9 +24,8 @@ iOS デバイスでアプリケーションを実行するには、プロビジ�
 
    Cordova の場合、`config.xml` ファイルを開き、ルート要素 `<widget>` の `id` 属性を修正します。よりくわしい情報は [Cordova ドキュメント](https://cordova.apache.org/docs/en/latest/config_ref/#widget) をご参照ください。
 
-2. <strong>
-     プロジェクトを <b>Xcode</b> で開く。
-   </strong>
+<!-- prettier-ignore -->
+2. <strong>プロジェクトを <b>Xcode</b> で開く。</strong>
 
    Capacitor の場合、以下を実行し Xcode でアプリケーションを開いてください:
 
@@ -36,17 +35,13 @@ iOS デバイスでアプリケーションを実行するには、プロビジ�
 
    Cordova の場合、Xcode 開きます。**File** &raquo; **Open** からアプリケーションを見つけます。アプリケーション内の `platforms/ios` ディレクトリを開きます。
 
-3. <strong>
-     <b>プロジェクト ナビゲーター</b>で、プロジェクトのルートを選択しエディタでプロジェクトを開きます。 **Identity**
-     セクションで、設定された Package ID がバンドル識別子と一致することを確認します。
-   </strong>
+<!-- prettier-ignore -->
+3. <strong><b>プロジェクト ナビゲーター</b>で、プロジェクトのルートを選択しエディタでプロジェクトを開きます。 **Identity** セクションで、設定された Package ID がバンドル識別子と一致することを確認します。</strong>
 
    ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
 
-4. <strong>
-     同じプロジェクトエディタの <b>署名</b> セクションで、<b>Automatically manage signing</b> が
-     有効になっていることを確認します。
-   </strong> 次に、Team から開発チームを選択します。開発チームがあれば、Xcode は プロビジョニングと署名を自動的に準備しようとします。
+<!-- prettier-ignore -->
+4. <strong>同じプロジェクトエディタの <b>署名</b> セクションで、<b>Automatically manage signing</b> が 有効になっていることを確認します。</strong> 次に、Team から開発チームを選択します。開発チームがあれば、Xcode は プロビジョニングと署名を自動的に準備しようとします。
 
    ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
 

@@ -19,7 +19,7 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
 ></iframe>

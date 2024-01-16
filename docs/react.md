@@ -20,8 +20,8 @@ import DocsCards from '@components/global/DocsCards';
 
 <PageStyles>
 
-<div class='flex main-flex'>
-  <div class="pull-left">
+<div className='flex main-flex'>
+  <div className="pull-left">
   <h1>コードひとつで <br/> あらゆるプラットフォーム <br/> <strong>まさにReact</strong></h1>
 
 - ✓ 100 以上のモバイルに最適化された React UI コンポーネント
@@ -32,7 +32,7 @@ import DocsCards from '@components/global/DocsCards';
 
   </div>
 
-  <div class="pull-right">
+  <div className="pull-right">
   <img src={require('@site/static/img/frameworks/react-logo.png').default} />
   </div>
 </div>
@@ -43,9 +43,9 @@ Ionic React は、Ionic Framework のネイティブ React バージョンで、
 
 React を使用して、あらゆるプラットフォーム向けに受賞歴のあるアプリを出荷するために必要なすべてが揃っています。
 
-<div class="flex" >
+<div className="flex" >
 
-<div class="pull-left">
+<div className="pull-left">
 
 ## すばらしいデザイン
 
@@ -55,15 +55,15 @@ React を使用して、あらゆるプラットフォーム向けに受賞歴�
 
 </div>
 
-<div class="pull-right">
+<div className="pull-right">
   <img src="/docs/icons/feature-guide-components-icon.png" />
 </div>
 
 </div>
 
-<div class="flex reverse" >
+<div className="flex reverse" >
 
-<div class="pull-left">
+<div className="pull-left">
 
 ## 使い慣れたツール
 
@@ -72,15 +72,15 @@ React バージョン 16.8 以降に対応しています。
 
 </div>
 
-<div class="pull-right">
-  <img src={require('@site/static/img/frameworks/react-cli.png').default} class="cli" />
+<div className="pull-right">
+  <img src={require('@site/static/img/frameworks/react-cli.png').default} className="cli" />
 </div>
 
 </div>
 
-<div class="flex">
+<div className="flex">
 
-<div class="pull-left">
+<div className="pull-left">
 
 ## More than mobile
 
@@ -88,15 +88,15 @@ React バージョン 16.8 以降に対応しています。
 
 </div>
 
-<div class="pull-right">
+<div className="pull-right">
   <img src={require('@site/static/img/native-platforms/group-shot.png').default} />
 </div>
 
 </div>
 
-<div class="flex reverse">
+<div className="flex reverse">
 
-  <div class="pull-left">
+  <div className="pull-left">
 
 ## まさに React
 
@@ -104,7 +104,7 @@ React バージョン 16.8 以降に対応しています。
 
   </div>
 
-<div class="pull-right">
+<div className="pull-right">
   <img src={require('@site/static/img/frameworks/react.svg').default} />
 </div>
 
