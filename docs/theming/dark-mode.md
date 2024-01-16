@@ -210,96 +210,246 @@ For developers looking to customize the theme color under the status bar in Safa
 
 ## Ionic Dark Theme
 
-Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
+Ionic has a recommended dark theme that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [class](#class). Each of these methods involves importing the dark theme file with the corresponding name.
 
-1. Changing the default [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement the dark background in the `body.dark` selector.
-2. Setting variables for the dark theme on `ios` devices.
-3. Setting variables for the dark theme on `md` devices.
+The contents of each file are included below for reference. These variables are set by importing the relevant dark theme file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
 
-The following code can be copied and pasted into an app's global CSS file to get Ionic's dark theme. We are [using the CSS media query](#using-media-queries) to enable dark mode. If older browser support is required, use the method described in the [combining with JavaScript](#combining-with-javascript) section.
+<Tabs groupId="darkFiles" defaultValue="always" values={[{ value: 'always', label: 'Always (dark.always.css)' }, { value: 'system', label: 'System (dark.system.css)' }, { value: 'class', label: 'Class (dark.class.css)' }]}>
 
-:::info
-For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
+<TabItem value="always">
+
+The **always** dark theme behaves in the following ways:
+
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark theme in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+2. Setting variables for the dark theme on `ios` devices using the `:root.ios` selector.
+3. Setting variables for the dark theme on `md` devices using the `:root.md` selector.
+
+:::caution
+It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
+:::
+
+```css
+:root {
+  --ion-color-primary: #4d8dff;
+  --ion-color-primary-rgb: 77, 141, 255;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #447ce0;
+  --ion-color-primary-tint: #5f98ff;
+
+  --ion-color-secondary: #62bdff;
+  --ion-color-secondary-rgb: 98, 189, 255;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+  --ion-color-secondary-shade: #56a6e0;
+  --ion-color-secondary-tint: #72c4ff;
+
+  --ion-color-tertiary: #8482fb;
+  --ion-color-tertiary-rgb: 132, 130, 251;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #7472dd;
+  --ion-color-tertiary-tint: #908ffb;
+
+  --ion-color-success: #2dd55b;
+  --ion-color-success-rgb: 45, 213, 91;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #28bb50;
+  --ion-color-success-tint: #42d96b;
+
+  --ion-color-warning: #ffce31;
+  --ion-color-warning-rgb: 255, 206, 49;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0b52b;
+  --ion-color-warning-tint: #ffd346;
+
+  --ion-color-danger: #f56570;
+  --ion-color-danger-rgb: 245, 101, 112;
+  --ion-color-danger-contrast: #000000;
+  --ion-color-danger-contrast-rgb: 0, 0, 0;
+  --ion-color-danger-shade: #d85963;
+  --ion-color-danger-tint: #f6747e;
+
+  --ion-color-dark: #f3f3f3;
+  --ion-color-dark-rgb: 243, 243, 243;
+  --ion-color-dark-contrast: #000000;
+  --ion-color-dark-contrast-rgb: 0, 0, 0;
+  --ion-color-dark-shade: #d6d6d6;
+  --ion-color-dark-tint: #f4f4f4;
+
+  --ion-color-medium: #959595;
+  --ion-color-medium-rgb: 149, 149, 149;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #838383;
+  --ion-color-medium-tint: #a0a0a0;
+
+  --ion-color-light: #2f2f2f;
+  --ion-color-light-rgb: 47, 47, 47;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255, 255, 255;
+  --ion-color-light-shade: #292929;
+  --ion-color-light-tint: #444444;
+}
+
+:root.ios {
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0, 0, 0;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-color-step-50: #0d0d0d;
+  --ion-color-step-100: #1a1a1a;
+  --ion-color-step-150: #262626;
+  --ion-color-step-200: #333333;
+  --ion-color-step-250: #404040;
+  --ion-color-step-300: #4d4d4d;
+  --ion-color-step-350: #595959;
+  --ion-color-step-400: #666666;
+  --ion-color-step-450: #737373;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #8c8c8c;
+  --ion-color-step-600: #999999;
+  --ion-color-step-650: #a6a6a6;
+  --ion-color-step-700: #b3b3b3;
+  --ion-color-step-750: #bfbfbf;
+  --ion-color-step-800: #cccccc;
+  --ion-color-step-850: #d9d9d9;
+  --ion-color-step-900: #e6e6e6;
+  --ion-color-step-950: #f2f2f2;
+
+  --ion-item-background: #000000;
+  --ion-card-background: #1c1c1d;
+}
+
+:root.ios ion-modal {
+  --ion-background-color: var(--ion-color-step-100);
+  --ion-toolbar-background: var(--ion-color-step-150);
+  --ion-toolbar-border-color: var(--ion-color-step-250);
+}
+
+:root.md {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-border-color: #222222;
+
+  --ion-color-step-50: #1e1e1e;
+  --ion-color-step-100: #2a2a2a;
+  --ion-color-step-150: #363636;
+  --ion-color-step-200: #414141;
+  --ion-color-step-250: #4d4d4d;
+  --ion-color-step-300: #595959;
+  --ion-color-step-350: #656565;
+  --ion-color-step-400: #717171;
+  --ion-color-step-450: #7d7d7d;
+  --ion-color-step-500: #898989;
+  --ion-color-step-550: #949494;
+  --ion-color-step-600: #a0a0a0;
+  --ion-color-step-650: #acacac;
+  --ion-color-step-700: #b8b8b8;
+  --ion-color-step-750: #c4c4c4;
+  --ion-color-step-800: #d0d0d0;
+  --ion-color-step-850: #dbdbdb;
+  --ion-color-step-900: #e7e7e7;
+  --ion-color-step-950: #f3f3f3;
+
+  --ion-item-background: #1e1e1e;
+  --ion-toolbar-background: #1f1f1f;
+  --ion-tab-bar-background: #1f1f1f;
+  --ion-card-background: #1e1e1e;
+}
+```
+
+</TabItem>
+
+<TabItem value="system">
+
+The **system** dark theme behaves in the following ways:
+
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark theme in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+2. Setting variables for the dark theme on `ios` devices using the `:root.ios` selector.
+3. Setting variables for the dark theme on `md` devices using the `:root.md` selector.
+4. Only applies these variables when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`.
+
+:::caution
+It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
 :::
 
 ```css
 @media (prefers-color-scheme: dark) {
-  /*
-   * Dark Colors
-   * -------------------------------------------
-   */
+  :root {
+    --ion-color-primary: #4d8dff;
+    --ion-color-primary-rgb: 77, 141, 255;
+    --ion-color-primary-contrast: #000000;
+    --ion-color-primary-contrast-rgb: 0, 0, 0;
+    --ion-color-primary-shade: #447ce0;
+    --ion-color-primary-tint: #5f98ff;
 
-  body {
-    --ion-color-primary: #428cff;
-    --ion-color-primary-rgb: 66, 140, 255;
-    --ion-color-primary-contrast: #ffffff;
-    --ion-color-primary-contrast-rgb: 255, 255, 255;
-    --ion-color-primary-shade: #3a7be0;
-    --ion-color-primary-tint: #5598ff;
+    --ion-color-secondary: #62bdff;
+    --ion-color-secondary-rgb: 98, 189, 255;
+    --ion-color-secondary-contrast: #000000;
+    --ion-color-secondary-contrast-rgb: 0, 0, 0;
+    --ion-color-secondary-shade: #56a6e0;
+    --ion-color-secondary-tint: #72c4ff;
 
-    --ion-color-secondary: #50c8ff;
-    --ion-color-secondary-rgb: 80, 200, 255;
-    --ion-color-secondary-contrast: #ffffff;
-    --ion-color-secondary-contrast-rgb: 255, 255, 255;
-    --ion-color-secondary-shade: #46b0e0;
-    --ion-color-secondary-tint: #62ceff;
+    --ion-color-tertiary: #8482fb;
+    --ion-color-tertiary-rgb: 132, 130, 251;
+    --ion-color-tertiary-contrast: #000000;
+    --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+    --ion-color-tertiary-shade: #7472dd;
+    --ion-color-tertiary-tint: #908ffb;
 
-    --ion-color-tertiary: #6a64ff;
-    --ion-color-tertiary-rgb: 106, 100, 255;
-    --ion-color-tertiary-contrast: #ffffff;
-    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-    --ion-color-tertiary-shade: #5d58e0;
-    --ion-color-tertiary-tint: #7974ff;
-
-    --ion-color-success: #2fdf75;
-    --ion-color-success-rgb: 47, 223, 117;
+    --ion-color-success: #2dd55b;
+    --ion-color-success-rgb: 45, 213, 91;
     --ion-color-success-contrast: #000000;
     --ion-color-success-contrast-rgb: 0, 0, 0;
-    --ion-color-success-shade: #29c467;
-    --ion-color-success-tint: #44e283;
+    --ion-color-success-shade: #28bb50;
+    --ion-color-success-tint: #42d96b;
 
-    --ion-color-warning: #ffd534;
-    --ion-color-warning-rgb: 255, 213, 52;
+    --ion-color-warning: #ffce31;
+    --ion-color-warning-rgb: 255, 206, 49;
     --ion-color-warning-contrast: #000000;
     --ion-color-warning-contrast-rgb: 0, 0, 0;
-    --ion-color-warning-shade: #e0bb2e;
-    --ion-color-warning-tint: #ffd948;
+    --ion-color-warning-shade: #e0b52b;
+    --ion-color-warning-tint: #ffd346;
 
-    --ion-color-danger: #ff4961;
-    --ion-color-danger-rgb: 255, 73, 97;
-    --ion-color-danger-contrast: #ffffff;
-    --ion-color-danger-contrast-rgb: 255, 255, 255;
-    --ion-color-danger-shade: #e04055;
-    --ion-color-danger-tint: #ff5b71;
+    --ion-color-danger: #f56570;
+    --ion-color-danger-rgb: 245, 101, 112;
+    --ion-color-danger-contrast: #000000;
+    --ion-color-danger-contrast-rgb: 0, 0, 0;
+    --ion-color-danger-shade: #d85963;
+    --ion-color-danger-tint: #f6747e;
 
-    --ion-color-dark: #f4f5f8;
-    --ion-color-dark-rgb: 244, 245, 248;
+    --ion-color-dark: #f3f3f3;
+    --ion-color-dark-rgb: 243, 243, 243;
     --ion-color-dark-contrast: #000000;
     --ion-color-dark-contrast-rgb: 0, 0, 0;
-    --ion-color-dark-shade: #d7d8da;
-    --ion-color-dark-tint: #f5f6f9;
+    --ion-color-dark-shade: #d6d6d6;
+    --ion-color-dark-tint: #f4f4f4;
 
-    --ion-color-medium: #989aa2;
-    --ion-color-medium-rgb: 152, 154, 162;
+    --ion-color-medium: #959595;
+    --ion-color-medium-rgb: 149, 149, 149;
     --ion-color-medium-contrast: #000000;
     --ion-color-medium-contrast-rgb: 0, 0, 0;
-    --ion-color-medium-shade: #86888f;
-    --ion-color-medium-tint: #a2a4ab;
+    --ion-color-medium-shade: #838383;
+    --ion-color-medium-tint: #a0a0a0;
 
-    --ion-color-light: #222428;
-    --ion-color-light-rgb: 34, 36, 40;
+    --ion-color-light: #2f2f2f;
+    --ion-color-light-rgb: 47, 47, 47;
     --ion-color-light-contrast: #ffffff;
     --ion-color-light-contrast-rgb: 255, 255, 255;
-    --ion-color-light-shade: #1e2023;
-    --ion-color-light-tint: #383a3e;
+    --ion-color-light-shade: #292929;
+    --ion-color-light-tint: #444444;
   }
 
-  /*
-   * iOS Dark Theme
-   * -------------------------------------------
-   */
-
-  .ios body {
+  :root.ios {
     --ion-background-color: #000000;
     --ion-background-color-rgb: 0, 0, 0;
 
@@ -327,22 +477,16 @@ For more information on the variables that are being changed, including other va
     --ion-color-step-950: #f2f2f2;
 
     --ion-item-background: #000000;
-
     --ion-card-background: #1c1c1d;
   }
 
-  .ios ion-modal {
+  :root.ios ion-modal {
     --ion-background-color: var(--ion-color-step-100);
     --ion-toolbar-background: var(--ion-color-step-150);
     --ion-toolbar-border-color: var(--ion-color-step-250);
   }
 
-  /*
-   * Material Design Dark Theme
-   * -------------------------------------------
-   */
-
-  .md body {
+  :root.md {
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18, 18, 18;
 
@@ -372,12 +516,168 @@ For more information on the variables that are being changed, including other va
     --ion-color-step-950: #f3f3f3;
 
     --ion-item-background: #1e1e1e;
-
     --ion-toolbar-background: #1f1f1f;
-
     --ion-tab-bar-background: #1f1f1f;
-
     --ion-card-background: #1e1e1e;
   }
 }
 ```
+
+</TabItem>
+
+<TabItem value="class">
+
+The **class** dark theme behaves in the following ways:
+
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark theme in the `.ion-theme-dark` selector. The `.ion-theme-dark` class must be added to the `html` element in an app.
+2. Setting variables for the dark theme on `ios` devices using the `.ion-theme-dark.ios` selector.
+3. Setting variables for the dark theme on `md` devices using the `.ion-theme-dark.md` selector.
+
+:::caution
+It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `.ion-theme-dark` selector. A higher specificity selector, such as `.ion-theme-dark.ios`, is required.
+:::
+
+```css
+.ion-theme-dark {
+  --ion-color-primary: #4d8dff;
+  --ion-color-primary-rgb: 77, 141, 255;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #447ce0;
+  --ion-color-primary-tint: #5f98ff;
+
+  --ion-color-secondary: #62bdff;
+  --ion-color-secondary-rgb: 98, 189, 255;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+  --ion-color-secondary-shade: #56a6e0;
+  --ion-color-secondary-tint: #72c4ff;
+
+  --ion-color-tertiary: #8482fb;
+  --ion-color-tertiary-rgb: 132, 130, 251;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #7472dd;
+  --ion-color-tertiary-tint: #908ffb;
+
+  --ion-color-success: #2dd55b;
+  --ion-color-success-rgb: 45, 213, 91;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #28bb50;
+  --ion-color-success-tint: #42d96b;
+
+  --ion-color-warning: #ffce31;
+  --ion-color-warning-rgb: 255, 206, 49;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0b52b;
+  --ion-color-warning-tint: #ffd346;
+
+  --ion-color-danger: #f56570;
+  --ion-color-danger-rgb: 245, 101, 112;
+  --ion-color-danger-contrast: #000000;
+  --ion-color-danger-contrast-rgb: 0, 0, 0;
+  --ion-color-danger-shade: #d85963;
+  --ion-color-danger-tint: #f6747e;
+
+  --ion-color-dark: #f3f3f3;
+  --ion-color-dark-rgb: 243, 243, 243;
+  --ion-color-dark-contrast: #000000;
+  --ion-color-dark-contrast-rgb: 0, 0, 0;
+  --ion-color-dark-shade: #d6d6d6;
+  --ion-color-dark-tint: #f4f4f4;
+
+  --ion-color-medium: #959595;
+  --ion-color-medium-rgb: 149, 149, 149;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #838383;
+  --ion-color-medium-tint: #a0a0a0;
+
+  --ion-color-light: #2f2f2f;
+  --ion-color-light-rgb: 47, 47, 47;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255, 255, 255;
+  --ion-color-light-shade: #292929;
+  --ion-color-light-tint: #444444;
+}
+
+.ion-theme-dark.ios {
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0, 0, 0;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-color-step-50: #0d0d0d;
+  --ion-color-step-100: #1a1a1a;
+  --ion-color-step-150: #262626;
+  --ion-color-step-200: #333333;
+  --ion-color-step-250: #404040;
+  --ion-color-step-300: #4d4d4d;
+  --ion-color-step-350: #595959;
+  --ion-color-step-400: #666666;
+  --ion-color-step-450: #737373;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #8c8c8c;
+  --ion-color-step-600: #999999;
+  --ion-color-step-650: #a6a6a6;
+  --ion-color-step-700: #b3b3b3;
+  --ion-color-step-750: #bfbfbf;
+  --ion-color-step-800: #cccccc;
+  --ion-color-step-850: #d9d9d9;
+  --ion-color-step-900: #e6e6e6;
+  --ion-color-step-950: #f2f2f2;
+
+  --ion-item-background: #000000;
+  --ion-card-background: #1c1c1d;
+}
+
+.ion-theme-dark.ios ion-modal {
+  --ion-background-color: var(--ion-color-step-100);
+  --ion-toolbar-background: var(--ion-color-step-150);
+  --ion-toolbar-border-color: var(--ion-color-step-250);
+}
+
+.ion-theme-dark.md {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-border-color: #222222;
+
+  --ion-color-step-50: #1e1e1e;
+  --ion-color-step-100: #2a2a2a;
+  --ion-color-step-150: #363636;
+  --ion-color-step-200: #414141;
+  --ion-color-step-250: #4d4d4d;
+  --ion-color-step-300: #595959;
+  --ion-color-step-350: #656565;
+  --ion-color-step-400: #717171;
+  --ion-color-step-450: #7d7d7d;
+  --ion-color-step-500: #898989;
+  --ion-color-step-550: #949494;
+  --ion-color-step-600: #a0a0a0;
+  --ion-color-step-650: #acacac;
+  --ion-color-step-700: #b8b8b8;
+  --ion-color-step-750: #c4c4c4;
+  --ion-color-step-800: #d0d0d0;
+  --ion-color-step-850: #dbdbdb;
+  --ion-color-step-900: #e7e7e7;
+  --ion-color-step-950: #f3f3f3;
+
+  --ion-item-background: #1e1e1e;
+  --ion-toolbar-background: #1f1f1f;
+  --ion-tab-bar-background: #1f1f1f;
+  --ion-card-background: #1e1e1e;
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+
