@@ -33,16 +33,12 @@ Build native-powered app experiences with a collection of open source and premiu
 
 <DocsCards>
   <DocsCard header="Capacitor plugins" img="/img/native/capacitor@2x.png" href="https://capacitorjs.com/docs/plugins">
-    <p>
-      A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our
-      recommended native solution.
-    </p>
+    <!-- prettier-ignore -->
+    <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
   </DocsCard>
   <DocsCard header="Cordova plugins" img="/img/native/cordova@2x.png" href="/native/community">
-    <p>
-      A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a
-      consistent API and naming convention.
-    </p>
+    <!-- prettier-ignore -->
+    <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
   </DocsCard>
 </DocsCards>
 

@@ -41,9 +41,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>
-    Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
-  </p>
+  <!-- prettier-ignore -->
+  <p>Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</p>
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
