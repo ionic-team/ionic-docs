@@ -81,7 +81,7 @@ The system approach to enable dark mode involves checking the system settings fo
 <TabItem value="angular">
 
 ```css
-@import '~@ionic/angular/css/themes/dark.system.css';
+@import '@ionic/angular/css/themes/dark.system.css';
 ```
 
 </TabItem>
