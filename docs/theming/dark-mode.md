@@ -60,17 +60,15 @@ import '@ionic/vue/css/themes/dark.always.css';
 
 This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector.
 
-:::caution Important
-Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
-:::
-
-:::info Demo
-This demo will always display the dark theme, regardless of the system settings for dark mode.
-:::
+The following example will always display the dark theme, regardless of the system settings for dark mode.
 
 import AlwaysDarkMode from '@site/static/usage/v8/theming/always-dark-mode/index.md';
 
 <AlwaysDarkMode />
+
+:::caution Important
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
+:::
 
 ### System
 
@@ -111,19 +109,15 @@ import '@ionic/vue/css/themes/dark.system.css';
 
 This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`. The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). If support for older browser is required, we recommend using the [class](#class) approach.
 
-:::caution Important
-Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
-:::
-
-:::info Demo
-This demo uses the system settings to decide when to show dark mode.
-
-Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
-:::
+The following example uses the system settings to decide when to show dark mode. Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
 
 import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index.md';
 
 <SystemDarkMode />
+
+:::caution Important
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
+:::
 
 ### Class
 
@@ -164,19 +158,17 @@ import '@ionic/vue/css/themes/dark.class.css';
 
 This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the `.ion-theme-dark` selector, which must be applied to the app by the developer.
 
-:::caution Important
-The `.ion-theme-dark` class **must** be added to the `html` element in order to work with the imported dark theme.
-:::
-
-:::info Demo
-This demo combines site settings, system settings, and the toggle to decide when to show dark mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
+The following example combines site settings, system settings, and the toggle to decide when to show dark mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
 
 Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
-:::
 
 import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.md';
 
 <ClassDarkMode />
+
+:::caution Important
+The `.ion-theme-dark` class **must** be added to the `html` element in order to work with the imported dark theme.
+:::
 
 ## Adjusting System UI Components
 
