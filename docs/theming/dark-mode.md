@@ -30,7 +30,7 @@ The default theme provided with Ionic Framework is a light theme, consisting of 
 <TabItem value="angular">
 
 ```css
-@import '~@ionic/angular/css/themes/dark.always.css';
+@import '@ionic/angular/css/themes/dark.always.css';
 ```
 
 </TabItem>
@@ -134,7 +134,7 @@ While the previous approaches are excellent for enabling the dark theme through 
 <TabItem value="angular">
 
 ```css
-@import '~@ionic/angular/css/themes/dark.class.css';
+@import '@ionic/angular/css/themes/dark.class.css';
 ```
 
 </TabItem>
