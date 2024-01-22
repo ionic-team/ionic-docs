@@ -34,6 +34,6 @@
  */
 
 @import '@ionic/angular/css/themes/dark.always.css';
-/* @import "~@ionic/angular/css/themes/dark.class.css"; */
+/* @import "@ionic/angular/css/themes/dark.class.css"; */
 /* @import '@ionic/angular/css/themes/dark.system.css'; */
 ```
