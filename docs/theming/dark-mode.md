@@ -109,7 +109,11 @@ import '@ionic/vue/css/themes/dark.system.css';
 
 This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`. The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). If support for older browser is required, we recommend using the [class](#class) approach.
 
-The following example uses the system settings to decide when to show dark mode. Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
+The following example uses the system settings to decide when to show dark mode.
+
+:::info
+Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
+:::
 
 import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index.md';
 
@@ -160,7 +164,9 @@ This sets the [application colors](/docs/theming/themes#application-colors) and 
 
 The following example combines site settings, system settings, and the toggle to decide when to show dark mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
 
+:::info
 Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
+:::
 
 import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.md';
 
