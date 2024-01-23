@@ -1,3 +1,4 @@
+```ts
 import { createApp } from 'vue';
 import { IonicVue } from '@ionic/vue';
 
@@ -27,10 +28,11 @@ import '@ionic/vue/css/display.css';
  */
 
 // import '@ionic/vue/css/themes/dark.always.css';
-// import '@ionic/vue/css/themes/dark.class.css';
-import '@ionic/vue/css/themes/dark.system.css';
+import '@ionic/vue/css/themes/dark.class.css';
+// import '@ionic/vue/css/themes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
 
 createApp(App).use(IonicVue).mount('#app');
+```

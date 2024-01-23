@@ -1,3 +1,10 @@
+const linkElement = document.createElement('link');
+
+linkElement.rel = 'stylesheet';
+linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@7.6.2-dev.11705355381.14b22962/css/themes/dark.class.css';
+
+document.head.appendChild(linkElement);
+
 /**
  * Wait for the initial HTML document to be
  * loaded and parsed before adding the message
@@ -16,9 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const { data } = ev;
 
     if (data.darkMode) {
-      document.body.classList.add('dark');
+      document.documentElement.classList.add('ion-theme-dark');
     } else {
-      document.body.classList.remove('dark');
+      document.documentElement.classList.remove('ion-theme-dark');
     }
   });
 

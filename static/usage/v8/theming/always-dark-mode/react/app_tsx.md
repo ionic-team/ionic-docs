@@ -1,3 +1,4 @@
+```tsx
 import React from 'react';
 import { setupIonicReact, IonApp } from '@ionic/react';
 
@@ -24,9 +25,9 @@ import '@ionic/react/css/display.css';
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-// import '@ionic/react/css/themes/dark.always.css';
+import '@ionic/react/css/themes/dark.always.css';
 // import '@ionic/react/css/themes/dark.class.css';
-import '@ionic/react/css/themes/dark.system.css';
+// import '@ionic/react/css/themes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
@@ -42,3 +43,4 @@ export default function App() {
     </IonApp>
   );
 }
+```

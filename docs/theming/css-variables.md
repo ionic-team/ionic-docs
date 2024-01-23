@@ -31,12 +31,12 @@ When using the Ionic CLI to start an Angular project, the `src/theme/variables.s
 }
 
 /* Set text color of the entire app for iOS only */
-.ios {
+:root.ios {
   --ion-text-color: #000;
 }
 
 /* Set text color of the entire app for Material Design only */
-.md {
+:root.md {
   --ion-text-color: #222;
 }
 ```

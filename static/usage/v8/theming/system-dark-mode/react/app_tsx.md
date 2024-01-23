@@ -1,3 +1,4 @@
+```tsx
 import React from 'react';
 import { setupIonicReact, IonApp } from '@ionic/react';
 
@@ -42,3 +43,4 @@ export default function App() {
     </IonApp>
   );
 }
+```
