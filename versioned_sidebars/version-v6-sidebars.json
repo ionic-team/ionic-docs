@@ -1,5 +1,5 @@
 {
-  "version-v6/docs": [
+  "docs": [
     {
       "type": "category",
       "label": "Getting Started",
@@ -7,31 +7,31 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/index"
+          "id": "index"
         },
         {
           "type": "doc",
-          "id": "version-v6/intro/upgrading-to-ionic-6"
+          "id": "intro/upgrading-to-ionic-6"
         },
         {
           "type": "doc",
-          "id": "version-v6/intro/environment"
+          "id": "intro/environment"
         },
         {
           "type": "doc",
-          "id": "version-v6/intro/cli"
+          "id": "intro/cli"
         },
         {
           "type": "doc",
-          "id": "version-v6/intro/cdn"
+          "id": "intro/cdn"
         },
         {
           "type": "doc",
-          "id": "version-v6/intro/vscode-extension"
+          "id": "intro/vscode-extension"
         },
         {
           "type": "doc",
-          "id": "version-v6/intro/next"
+          "id": "intro/next"
         }
       ],
       "collapsible": true
@@ -43,39 +43,39 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/developing/starting"
+          "id": "developing/starting"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/previewing"
+          "id": "developing/previewing"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/scaffolding"
+          "id": "developing/scaffolding"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/ios"
+          "id": "developing/ios"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/android"
+          "id": "developing/android"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/tips"
+          "id": "developing/tips"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/hardware-back-button"
+          "id": "developing/hardware-back-button"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/keyboard"
+          "id": "developing/keyboard"
         },
         {
           "type": "doc",
-          "id": "version-v6/developing/config"
+          "id": "developing/config"
         }
       ],
       "collapsible": true
@@ -87,7 +87,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/layout/structure"
+          "id": "layout/structure"
         },
         {
           "type": "link",
@@ -96,11 +96,11 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/layout/global-stylesheets"
+          "id": "layout/global-stylesheets"
         },
         {
           "type": "doc",
-          "id": "version-v6/layout/css-utilities"
+          "id": "layout/css-utilities"
         }
       ],
       "collapsible": true
@@ -112,39 +112,39 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/theming/basics"
+          "id": "theming/basics"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/platform-styles"
+          "id": "theming/platform-styles"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/css-variables"
+          "id": "theming/css-variables"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/css-shadow-parts"
+          "id": "theming/css-shadow-parts"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/colors"
+          "id": "theming/colors"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/themes"
+          "id": "theming/themes"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/dark-mode"
+          "id": "theming/dark-mode"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/advanced"
+          "id": "theming/advanced"
         },
         {
           "type": "doc",
-          "id": "version-v6/theming/color-generator"
+          "id": "theming/color-generator"
         }
       ],
       "collapsible": true
@@ -156,7 +156,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/angular/overview"
+          "id": "angular/overview"
         },
         {
           "type": "category",
@@ -164,35 +164,35 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app"
+              "id": "angular/your-first-app"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/taking-photos"
+              "id": "angular/your-first-app/taking-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/saving-photos"
+              "id": "angular/your-first-app/saving-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/loading-photos"
+              "id": "angular/your-first-app/loading-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/adding-mobile"
+              "id": "angular/your-first-app/adding-mobile"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/deploying-mobile"
+              "id": "angular/your-first-app/deploying-mobile"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/live-reload"
+              "id": "angular/your-first-app/live-reload"
             },
             {
               "type": "doc",
-              "id": "version-v6/angular/your-first-app/distribute"
+              "id": "angular/your-first-app/distribute"
             }
           ],
           "collapsible": true,
@@ -200,39 +200,39 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/lifecycle"
+          "id": "angular/lifecycle"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/navigation"
+          "id": "angular/navigation"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/virtual-scroll"
+          "id": "angular/virtual-scroll"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/slides"
+          "id": "angular/slides"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/platform"
+          "id": "angular/platform"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/testing"
+          "id": "angular/testing"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/storage"
+          "id": "angular/storage"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/performance"
+          "id": "angular/performance"
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/pwa"
+          "id": "angular/pwa"
         }
       ],
       "collapsible": true
@@ -244,11 +244,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/react"
+          "id": "react"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/quickstart"
+          "id": "react/quickstart"
         },
         {
           "type": "category",
@@ -256,35 +256,35 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app"
+              "id": "react/your-first-app"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/taking-photos"
+              "id": "react/your-first-app/taking-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/saving-photos"
+              "id": "react/your-first-app/saving-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/loading-photos"
+              "id": "react/your-first-app/loading-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/adding-mobile"
+              "id": "react/your-first-app/adding-mobile"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/deploying-mobile"
+              "id": "react/your-first-app/deploying-mobile"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/live-reload"
+              "id": "react/your-first-app/live-reload"
             },
             {
               "type": "doc",
-              "id": "version-v6/react/your-first-app/distribute"
+              "id": "react/your-first-app/distribute"
             }
           ],
           "collapsible": true,
@@ -292,43 +292,43 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/react/lifecycle"
+          "id": "react/lifecycle"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/navigation"
+          "id": "react/navigation"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/virtual-scroll"
+          "id": "react/virtual-scroll"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/slides"
+          "id": "react/slides"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/platform"
+          "id": "react/platform"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/pwa"
+          "id": "react/pwa"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/overlays"
+          "id": "react/overlays"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/storage"
+          "id": "react/storage"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/testing"
+          "id": "react/testing"
         },
         {
           "type": "doc",
-          "id": "version-v6/react/performance"
+          "id": "react/performance"
         }
       ],
       "collapsible": true
@@ -340,11 +340,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/vue/overview"
+          "id": "vue/overview"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/quickstart"
+          "id": "vue/quickstart"
         },
         {
           "type": "category",
@@ -352,35 +352,35 @@
           "items": [
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app"
+              "id": "vue/your-first-app"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/taking-photos"
+              "id": "vue/your-first-app/taking-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/saving-photos"
+              "id": "vue/your-first-app/saving-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/loading-photos"
+              "id": "vue/your-first-app/loading-photos"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/adding-mobile"
+              "id": "vue/your-first-app/adding-mobile"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/deploying-mobile"
+              "id": "vue/your-first-app/deploying-mobile"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/live-reload"
+              "id": "vue/your-first-app/live-reload"
             },
             {
               "type": "doc",
-              "id": "version-v6/vue/your-first-app/distribute"
+              "id": "vue/your-first-app/distribute"
             }
           ],
           "collapsible": true,
@@ -388,47 +388,47 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/lifecycle"
+          "id": "vue/lifecycle"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/navigation"
+          "id": "vue/navigation"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/virtual-scroll"
+          "id": "vue/virtual-scroll"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/slides"
+          "id": "vue/slides"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/utility-functions"
+          "id": "vue/utility-functions"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/platform"
+          "id": "vue/platform"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/pwa"
+          "id": "vue/pwa"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/storage"
+          "id": "vue/storage"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/testing"
+          "id": "vue/testing"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/troubleshooting"
+          "id": "vue/troubleshooting"
         },
         {
           "type": "doc",
-          "id": "version-v6/vue/performance"
+          "id": "vue/performance"
         }
       ],
       "collapsible": true
@@ -440,11 +440,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/utilities/animations"
+          "id": "utilities/animations"
         },
         {
           "type": "doc",
-          "id": "version-v6/utilities/gestures"
+          "id": "utilities/gestures"
         }
       ],
       "collapsible": true
@@ -456,19 +456,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/deployment/app-store"
+          "id": "deployment/app-store"
         },
         {
           "type": "doc",
-          "id": "version-v6/deployment/play-store"
+          "id": "deployment/play-store"
         },
         {
           "type": "doc",
-          "id": "version-v6/deployment/progressive-web-app"
+          "id": "deployment/progressive-web-app"
         },
         {
           "type": "doc",
-          "id": "version-v6/deployment/desktop-app"
+          "id": "deployment/desktop-app"
         }
       ],
       "collapsible": true
@@ -480,7 +480,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/techniques/security"
+          "id": "techniques/security"
         }
       ],
       "collapsible": true
@@ -492,23 +492,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/troubleshooting/debugging"
+          "id": "troubleshooting/debugging"
         },
         {
           "type": "doc",
-          "id": "version-v6/troubleshooting/build"
+          "id": "troubleshooting/build"
         },
         {
           "type": "doc",
-          "id": "version-v6/troubleshooting/runtime"
+          "id": "troubleshooting/runtime"
         },
         {
           "type": "doc",
-          "id": "version-v6/troubleshooting/native"
+          "id": "troubleshooting/native"
         },
         {
           "type": "doc",
-          "id": "version-v6/troubleshooting/cors"
+          "id": "troubleshooting/cors"
         }
       ],
       "collapsible": true
@@ -520,19 +520,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/core-concepts/fundamentals"
+          "id": "core-concepts/fundamentals"
         },
         {
           "type": "doc",
-          "id": "version-v6/core-concepts/cross-platform"
+          "id": "core-concepts/cross-platform"
         },
         {
           "type": "doc",
-          "id": "version-v6/core-concepts/webview"
+          "id": "core-concepts/webview"
         },
         {
           "type": "doc",
-          "id": "version-v6/core-concepts/what-are-progressive-web-apps"
+          "id": "core-concepts/what-are-progressive-web-apps"
         }
       ],
       "collapsible": true
@@ -544,11 +544,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/contributing/how-to-contribute"
+          "id": "contributing/how-to-contribute"
         },
         {
           "type": "doc",
-          "id": "version-v6/contributing/coc"
+          "id": "contributing/coc"
         }
       ],
       "collapsible": true
@@ -560,15 +560,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/reference/glossary"
+          "id": "reference/glossary"
         },
         {
           "type": "doc",
-          "id": "version-v6/reference/versioning"
+          "id": "reference/versioning"
         },
         {
           "type": "doc",
-          "id": "version-v6/reference/release-notes"
+          "id": "reference/release-notes"
         },
         {
           "type": "link",
@@ -577,21 +577,21 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/reference/support"
+          "id": "reference/support"
         },
         {
           "type": "doc",
-          "id": "version-v6/reference/browser-support"
+          "id": "reference/browser-support"
         },
         {
           "type": "doc",
-          "id": "version-v6/reference/migration"
+          "id": "reference/migration"
         }
       ],
       "collapsible": true
     }
   ],
-  "version-v6/api": [
+  "api": [
     {
       "type": "category",
       "label": "Getting Started",
@@ -599,7 +599,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/components"
+          "id": "components"
         }
       ],
       "collapsible": true
@@ -611,7 +611,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/action-sheet"
+          "id": "api/action-sheet"
         }
       ],
       "collapsible": true
@@ -623,11 +623,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/accordion"
+          "id": "api/accordion"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/accordion-group"
+          "id": "api/accordion-group"
         }
       ],
       "collapsible": true
@@ -639,7 +639,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/alert"
+          "id": "api/alert"
         }
       ],
       "collapsible": true
@@ -651,7 +651,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/badge"
+          "id": "api/badge"
         }
       ],
       "collapsible": true
@@ -663,11 +663,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/breadcrumb"
+          "id": "api/breadcrumb"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/breadcrumbs"
+          "id": "api/breadcrumbs"
         }
       ],
       "collapsible": true
@@ -679,11 +679,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/button"
+          "id": "api/button"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/ripple-effect"
+          "id": "api/ripple-effect"
         }
       ],
       "collapsible": true
@@ -695,23 +695,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/card"
+          "id": "api/card"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/card-content"
+          "id": "api/card-content"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/card-header"
+          "id": "api/card-header"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/card-subtitle"
+          "id": "api/card-subtitle"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/card-title"
+          "id": "api/card-title"
         }
       ],
       "collapsible": true
@@ -723,7 +723,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/checkbox"
+          "id": "api/checkbox"
         }
       ],
       "collapsible": true
@@ -735,7 +735,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/chip"
+          "id": "api/chip"
         }
       ],
       "collapsible": true
@@ -747,11 +747,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/app"
+          "id": "api/app"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/content"
+          "id": "api/content"
         }
       ],
       "collapsible": true
@@ -763,15 +763,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/datetime"
+          "id": "api/datetime"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/datetime-button"
+          "id": "api/datetime-button"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/picker"
+          "id": "api/picker"
         }
       ],
       "collapsible": true
@@ -783,15 +783,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/fab"
+          "id": "api/fab"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/fab-button"
+          "id": "api/fab-button"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/fab-list"
+          "id": "api/fab-list"
         }
       ],
       "collapsible": true
@@ -803,15 +803,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/grid"
+          "id": "api/grid"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/col"
+          "id": "api/col"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/row"
+          "id": "api/row"
         }
       ],
       "collapsible": true
@@ -823,11 +823,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/infinite-scroll"
+          "id": "api/infinite-scroll"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/infinite-scroll-content"
+          "id": "api/infinite-scroll-content"
         }
       ],
       "collapsible": true
@@ -839,7 +839,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/icon"
+          "id": "api/icon"
         }
       ],
       "collapsible": true
@@ -851,11 +851,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/input"
+          "id": "api/input"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/textarea"
+          "id": "api/textarea"
         }
       ],
       "collapsible": true
@@ -867,35 +867,35 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/item"
+          "id": "api/item"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/item-divider"
+          "id": "api/item-divider"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/item-group"
+          "id": "api/item-group"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/item-sliding"
+          "id": "api/item-sliding"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/item-options"
+          "id": "api/item-options"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/item-option"
+          "id": "api/item-option"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/label"
+          "id": "api/label"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/note"
+          "id": "api/note"
         }
       ],
       "collapsible": true
@@ -907,15 +907,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/list"
+          "id": "api/list"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/list-header"
+          "id": "api/list-header"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/virtual-scroll"
+          "id": "api/virtual-scroll"
         }
       ],
       "collapsible": true
@@ -927,19 +927,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/avatar"
+          "id": "api/avatar"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/icon"
+          "id": "api/icon"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/img"
+          "id": "api/img"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/thumbnail"
+          "id": "api/thumbnail"
         }
       ],
       "collapsible": true
@@ -951,19 +951,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/menu"
+          "id": "api/menu"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/menu-button"
+          "id": "api/menu-button"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/menu-toggle"
+          "id": "api/menu-toggle"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/split-pane"
+          "id": "api/split-pane"
         }
       ],
       "collapsible": true
@@ -975,11 +975,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/modal"
+          "id": "api/modal"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/backdrop"
+          "id": "api/backdrop"
         }
       ],
       "collapsible": true
@@ -991,11 +991,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/nav"
+          "id": "api/nav"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/nav-link"
+          "id": "api/nav-link"
         }
       ],
       "collapsible": true
@@ -1007,7 +1007,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/popover"
+          "id": "api/popover"
         }
       ],
       "collapsible": true
@@ -1019,19 +1019,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/loading"
+          "id": "api/loading"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/progress-bar"
+          "id": "api/progress-bar"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/skeleton-text"
+          "id": "api/skeleton-text"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/spinner"
+          "id": "api/spinner"
         }
       ],
       "collapsible": true
@@ -1043,11 +1043,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/radio"
+          "id": "api/radio"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/radio-group"
+          "id": "api/radio-group"
         }
       ],
       "collapsible": true
@@ -1059,7 +1059,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/range"
+          "id": "api/range"
         }
       ],
       "collapsible": true
@@ -1071,11 +1071,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/refresher"
+          "id": "api/refresher"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/refresher-content"
+          "id": "api/refresher-content"
         }
       ],
       "collapsible": true
@@ -1087,11 +1087,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/reorder"
+          "id": "api/reorder"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/reorder-group"
+          "id": "api/reorder-group"
         }
       ],
       "collapsible": true
@@ -1103,23 +1103,23 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/router"
+          "id": "api/router"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/router-link"
+          "id": "api/router-link"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/router-outlet"
+          "id": "api/router-outlet"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/route"
+          "id": "api/route"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/route-redirect"
+          "id": "api/route-redirect"
         }
       ],
       "collapsible": true
@@ -1131,7 +1131,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/searchbar"
+          "id": "api/searchbar"
         }
       ],
       "collapsible": true
@@ -1143,11 +1143,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/segment"
+          "id": "api/segment"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/segment-button"
+          "id": "api/segment-button"
         }
       ],
       "collapsible": true
@@ -1159,11 +1159,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/select"
+          "id": "api/select"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/select-option"
+          "id": "api/select-option"
         }
       ],
       "collapsible": true
@@ -1175,11 +1175,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/slides"
+          "id": "api/slides"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/slide"
+          "id": "api/slide"
         }
       ],
       "collapsible": true
@@ -1191,19 +1191,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/tabs"
+          "id": "api/tabs"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/tab"
+          "id": "api/tab"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/tab-bar"
+          "id": "api/tab-bar"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/tab-button"
+          "id": "api/tab-button"
         }
       ],
       "collapsible": true
@@ -1215,7 +1215,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/toast"
+          "id": "api/toast"
         }
       ],
       "collapsible": true
@@ -1227,7 +1227,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/toggle"
+          "id": "api/toggle"
         }
       ],
       "collapsible": true
@@ -1239,27 +1239,27 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/toolbar"
+          "id": "api/toolbar"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/header"
+          "id": "api/header"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/footer"
+          "id": "api/footer"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/title"
+          "id": "api/title"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/buttons"
+          "id": "api/buttons"
         },
         {
           "type": "doc",
-          "id": "version-v6/api/back-button"
+          "id": "api/back-button"
         }
       ],
       "collapsible": true
@@ -1271,7 +1271,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api/text"
+          "id": "api/text"
         }
       ],
       "collapsible": true
@@ -1283,13 +1283,13 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/api"
+          "id": "api"
         }
       ],
       "collapsible": true
     }
   ],
-  "version-v6/cli": [
+  "cli": [
     {
       "type": "category",
       "label": "CLI Documentation",
@@ -1297,19 +1297,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/cli"
+          "id": "cli"
         },
         {
           "type": "doc",
-          "id": "version-v6/cli/configuration"
+          "id": "cli/configuration"
         },
         {
           "type": "doc",
-          "id": "version-v6/cli/livereload"
+          "id": "cli/livereload"
         },
         {
           "type": "doc",
-          "id": "version-v6/cli/using-a-proxy"
+          "id": "cli/using-a-proxy"
         },
         {
           "type": "link",
@@ -1332,7 +1332,7 @@
       "collapsible": true
     }
   ],
-  "version-v6/native": [
+  "native": [
     {
       "type": "category",
       "label": "Getting Started",
@@ -1340,15 +1340,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-v6/native"
+          "id": "native"
         },
         {
           "type": "doc",
-          "id": "version-v6/native-setup"
+          "id": "native-setup"
         },
         {
           "type": "doc",
-          "id": "version-v6/native-faq"
+          "id": "native-faq"
         }
       ],
       "collapsible": true

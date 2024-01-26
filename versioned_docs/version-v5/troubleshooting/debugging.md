@@ -4,9 +4,9 @@
   width="560"
   height="315"
   src="https://www.youtube.com/embed/akh6V6Yw1lw"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 ## Live Reload
@@ -45,9 +45,8 @@ The app preview may not automatically appear when you open Chrome Developer Tool
 
 ## Debugging with Visual Studio locally in Chrome (both Android & iOS)
 
-<a href="https://code.visualstudio.com/" target="_blank">
-  Visual Studio Code
-</a> can also be used to debug an Ionic app running in the Chrome web browser.{' '}
+<!-- prettier-ignore -->
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> can also be used to debug an Ionic app running in the Chrome web browser.{' '}
 
 To do this, run your app in the browser using `ionic serve`. Take note of the port that your app is running on. Next, open your Ionic project using Visual Studio Code.
 
@@ -59,13 +58,11 @@ In the debug target dropdown menu, select **Launch against Chrome**, then click 
 
 ## Debugging with Visual Studio Code in Android
 
-<a href="https://code.visualstudio.com/" target="_blank">
-  Visual Studio Code
-</a> has a dedicated plugin for debugging apps that run in an Android WebView.
+<!-- prettier-ignore -->
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> has a dedicated plugin for debugging apps that run in an Android WebView.
 
-<a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">
-  The plugin
-</a> creates a bridge between the device and the Visual Studio Code developer tools and permits debugging right from the
+<!-- prettier-ignore -->
+<a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">The plugin</a> creates a bridge between the device and the Visual Studio Code developer tools and permits debugging right from the
 editor.
 
 In order to use this plugin to debug your Ionic apps, first install it then start your app in the Android emulator or connect your Android device and run the app. You may need to enable USB debugging on your Android device.

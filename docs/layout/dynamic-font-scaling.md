@@ -26,7 +26,7 @@ This feature is currently opt-in on iOS. However, it will be enabled by default 
 
 Dynamic Font Scaling is already enabled by default on Android. Developers can enable it on iOS using the following steps:
 
-1. Ensure that the [typography.css](./global-stylesheets#typographycss) file is imported.
+1. Ensure that the [typography.css](/docs/layout/global-stylesheets#typographycss) file is imported.
 2. Add the following CSS to a global stylesheet:
 
 ```css
