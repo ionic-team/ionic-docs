@@ -230,6 +230,26 @@ app.listen(3000, () => {
 });
 ```
 
+#### Working with the WordPress API on iOS
+
+By default, WordPress will strip out the custom protocols (eg `capacitor:` / `ionic:`) that iOS uses, leaving a blank string, which fails the CORS tests. 
+
+Add this snippet to the `functions.php` file on the WordPres site to work around this:
+
+```php
+/**
+ * Allow cors requests for Ionic iOS app support
+ */
+add_filter('kses_allowed_protocols', 'allow_custom_ionic_cors_protocols');
+
+function allow_custom_ionic_cors_protocols($protocols)
+{
+    $protocols[] = 'ionic';
+    $protocols[] = 'capacitor';
+    return $protocols;
+}
+```
+
 ### B. Working around CORS in a server you can't control
 
 #### Don't leak your keys!
