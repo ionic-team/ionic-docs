@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
-  <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards." />
+  <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It integrates with the keyboard on mobile devices." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.
+The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input and integrates with the keyboard on mobile devices.
 
 
 ## Basic Usage
@@ -147,6 +147,22 @@ import Masking from '@site/static/usage/v8/input/mask/index.md';
 Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/taiga-family/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
 
 :::
+
+## Start and End Slots (experimental)
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the input.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md';
+
+<StartEndSlots />
 
 ## Theming
 

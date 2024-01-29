@@ -33,13 +33,13 @@ html[data-theme='dark'] {
 
 //overrides
 #__docusaurus {
-  [class^='searchBox_'] {
+  [class^='navbarSearchContainer_'] {
     flex-grow: 1;
     max-width: 14rem;
   }
 
   @media (max-width: 996px) {
-    [class^='searchBox_'] {
+    [class^='navbarSearchContainer_'] {
       position: static;
       right: initial;
     }

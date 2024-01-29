@@ -10,7 +10,7 @@ title: Migrating From IonSlides to Swiper.js
   />
 </head>
 
-:::caution Looking for `IonSlides`?
+:::warning Looking for `IonSlides`?
 
 `IonSlides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
 

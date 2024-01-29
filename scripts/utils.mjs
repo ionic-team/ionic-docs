@@ -1,6 +1,6 @@
-const unified = require('unified');
-const markdown = require('remark-parse');
-const html = require('remark-html');
+import {unified} from 'unified';
+import markdown from 'remark-parse';
+import html from 'remark-html';
 
 function renderMarkdown(markdownString) {
   return unified().use(markdown).use(html).processSync(markdownString);
@@ -77,7 +77,7 @@ function getHeadTag({ title: metaTitle, description: metaDescription } = {}) {
 </head>`;
 }
 
-module.exports = {
+export {
   gitBranchSVG,
   renderMarkdown,
   renderReference,
