@@ -282,12 +282,11 @@ For brevity, we are excluding repeating parts of our component, like the functio
     <ion-content>
       <ion-list>
         <ion-item>
-          <ion-checkbox slot="start"></ion-checkbox>
-          <ion-label>
+          <ion-checkbox label-placement="end" justify="start">
             <h1>Create Idea</h1>
             <ion-note>Run Idea By Brandy</ion-note>
-          </ion-label>
-          <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+          </ion-checkbox>
+          <ion-badge color="success" slot="end">5 Days</ion-badge>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -301,7 +300,6 @@ For brevity, we are excluding repeating parts of our component, like the functio
     IonContent,
     IonHeader,
     IonItem,
-    IonLabel,
     IonList,
     IonNote,
     IonPage,
@@ -315,16 +313,15 @@ Here in our `IonContent`, we are adding an `IonList` and a much more involved `I
 
 ```html
 <ion-item>
-  <ion-checkbox slot="start"></ion-checkbox>
-  <ion-label>
+  <ion-checkbox label-placement="end" justify="start">
     <h1>Create Idea</h1>
     <ion-note>Run Idea By Brandy</ion-note>
-  </ion-label>
-  <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+  </ion-checkbox>
+  <ion-badge color="success" slot="end">5 Days</ion-badge>
 </ion-item>
 ```
 
-Looking at our code, we have a special attribute called slot. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
+Looking at our code, we have a special attribute called slot. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
 
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
@@ -353,7 +350,6 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
     IonHeader,
     IonIcon,
     IonItem,
-    IonLabel,
     IonList,
     IonNote,
     IonPage,

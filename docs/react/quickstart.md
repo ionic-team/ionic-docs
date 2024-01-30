@@ -171,7 +171,7 @@ When creating your own pages, don't forget to have `IonPage` be the root compone
 Our current content is relatively simple but does not contain anything that could be used in a real app, so let's change that.
 
 :::note
-For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
+For brevity, we're excluding repeating parts of our component, like the function declaration or import statements for other components.
 :::
 
 ```tsx
@@ -180,11 +180,10 @@ For brevity, we're excluding repeating part of our component, like the function 
   <IonContent>
     <IonList>
       <IonItem>
-        <IonCheckbox slot="start" />
-        <IonLabel>
+        <IonCheckbox labelPlacement="end" justify="start">
           <h1>Create Idea</h1>
           <IonNote>Run Idea by Brandy</IonNote>
-        </IonLabel>
+        </IonCheckbox>
         <IonBadge color="success" slot="end">
           5 Days
         </IonBadge>
@@ -198,20 +197,17 @@ Here in our `IonContent`, we're adding an `IonList` and a much more involved `Io
 
 ```tsx
 <IonItem>
-  <IonCheckbox slot="start" />
-  <IonLabel>
+  <IonCheckbox labelPlacement="end" justify="start">
     <h1>Create Idea</h1>
     <IonNote>Run Idea by Brandy</IonNote>
-  </IonLabel>
+  </IonCheckbox>
   <IonBadge color="success" slot="end">
     5 Days
   </IonBadge>
 </IonItem>
 ```
 
-Item is important as it clearly shows the mix of React concepts and Web Component concepts. The first clear example of a React concept is self-closing tags for React Components in `IonCheckbox`. This is just a simpler way of writing components that do not contain any child content.
-
-From the Web Components side, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a React API, but a web standards API.
+Item is important as it clearly shows the mix of React concepts and Web Component concepts. From the Web Components side, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a React API, but a web standards API.
 
 Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
 
