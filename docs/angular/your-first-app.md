@@ -77,6 +77,12 @@ Next, create an Ionic Angular app that uses the “Tabs” starter template and 
 ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
+:::note
+
+When prompted to choose between `NgModules` and `Standalone`, opt for `NgModules` as this tutorial follows the `NgModules` approach.
+
+:::
+
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
 
 Next, change into the app folder:
