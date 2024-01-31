@@ -205,8 +205,7 @@
       "items": [
         "deployment/app-store",
         "deployment/play-store",
-        "deployment/progressive-web-app",
-        "deployment/desktop-app"
+        "deployment/progressive-web-app"
       ]
     },
     {

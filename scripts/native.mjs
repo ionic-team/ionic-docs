@@ -51,9 +51,9 @@ function createApiPage(pluginId, readme, pkgJson) {
 
   /**
    * - removes JSDoc HTML comments as they break docusauurs
-   * - The { character is used for opening JavaScript expressions. 
-   * MDX will now fail if what you put inside {expression} that is 
-   * not a valid expression: replace it by escaping it with a backslash. 
+   * - The { character is used for opening JavaScript expressions.
+   * MDX will now fail if what you put inside {expression} that is
+   * not a valid expression: replace it by escaping it with a backslash.
    * Only do this for { characters that are inside <code> blocks.
    */
   readme = readme.replaceAll(/<!--.*-->/g, '').replace(/<code>(.*?)<\/code>/g, (_match, p1) => {
