@@ -56,16 +56,17 @@ While the application and stepped variables in the themes section are useful for
 
 ### Application Variables
 
-| Name                      | Description                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| `--ion-font-family`       | Font family of the app                                                                     |
-| `--ion-statusbar-padding` | Statusbar padding top of the app                                                           |
-| `--ion-safe-area-top`     | Adjust the safe area inset top of the app                                                  |
-| `--ion-safe-area-right`   | Adjust the safe area inset right of the app                                                |
-| `--ion-safe-area-bottom`  | Adjust the safe area inset bottom of the app                                               |
-| `--ion-safe-area-left`    | Adjust the safe area inset left of the app                                                 |
-| `--ion-margin`            | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)    |
-| `--ion-padding`           | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding) |
+| Name                        | Description                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `--ion-font-family`         | Font family of the app                                                                               |
+| `--ion-statusbar-padding`   | Statusbar padding top of the app                                                                     |
+| `--ion-safe-area-top`       | Adjust the safe area inset top of the app                                                            |
+| `--ion-safe-area-right`     | Adjust the safe area inset right of the app                                                          |
+| `--ion-safe-area-bottom`    | Adjust the safe area inset bottom of the app                                                         |
+| `--ion-safe-area-left`      | Adjust the safe area inset left of the app                                                           |
+| `--ion-margin`              | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)              |
+| `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)           |
+| `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
 
 ### Grid Variables
 
