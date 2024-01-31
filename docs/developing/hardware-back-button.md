@@ -19,26 +19,35 @@ The hardware back button is found on most Android devices. In native application
 The hardware back button refers to the physical back button on an Android device and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices.
 :::
 
-## Hardware Back Button in Capacitor and Cordova
+## Overview
 
-:::note
-The `@capacitor/app` package must be installed in Capacitor apps to use the hardware back button.
-:::
-
-When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
+Ionic Framework emits an `ionBackButton` event when a user presses the hardware back button in supported environments.
 
 When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
 
-There are situations where you might want to have multiple handlers fired. Each handler callback passes in a function as a parameter that can be used to tell the framework to call the next handler.
+There are situations where you might want to have multiple handlers fired. Each handler callback passes in a function as a parameter that can be used to tell Ionic to call the next handler.
 
-## Hardware Back Button in a Browser
+## Support
 
-When running your app in a mobile browser or as a PWA, hardware back button customization will be limited. This is because Capacitor and Cordova expose additional features that are not exposed in a normal web browser. For example, closing overlays and menus via the hardware back button are functionalities that are currently not supported when running your app in a mobile browser. These are known limitations and do not currently have straightforward solutions.
+The table below shows how hardware back button support varies by environment.
+
+| Environment | Status                                                                                                    |
+| ----------- | --------------------------------------------------------------------------------------------------------- |
+| Capacitor   | Supported only when the `@capacitor/app` package is installed.                                            |
+| Cordova     | Supported                                                                                                 |
+| Browser     | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+| PWA         | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+
+### Hardware Back Button in a Browser or a PWA
+
+Ionic has experimental support for handling the hardware back button in a browser or a PWA by setting [`experimentalCloseWatcher: true` in the IonicConfig](./config.md). When this feature is enabled, Ionic will use the [Close Watcher API](https://github.com/WICG/close-watcher) to pass any close requests through the `ionBackButton` event. This includes pressing the hardware back button to navigate or the Escape key to dismiss a modal.
+
+Chrome has support for Close Watcher starting in [Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120).
 
 For complete hardware back button support, we recommend using Capacitor or Cordova.
 
 :::note
-The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA.
+The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA if Close Watcher is unsupported or `experimentalCloseWatcher` is `false`.
 :::
 
 ## Basic Usage
