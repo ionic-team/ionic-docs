@@ -32,7 +32,7 @@ The current status of each Ionic Framework version is:
 |   V1    |  End of Support  | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
 
 - **Maintenance**: Only critical bug and security fixes. No major feature improvements.
-- **Extended Support**: For teams and organizations that require additional long term support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
+- **Extended Support**: For teams and organizations that require additional long term maintenance support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
 
 ## Compatibility Recommendations
 

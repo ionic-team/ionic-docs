@@ -1,10 +1,11 @@
 src/theme/DocItem
-src/theme/DocPage
+src/theme/DocRoot
 legacy-stencil-components
 scripts/bak
 
 docs/api
 docs/native
+versioned_docs/version-v*/native
 docs/cli/commands
 
 static/code/stackblitz

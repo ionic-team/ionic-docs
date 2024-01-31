@@ -9,7 +9,7 @@ const BASE_URL = '/docs';
 module.exports = {
   title: 'Ionic Documentation',
   tagline:
-    'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
+    'Ionic is the app platform for web developers. Build amazing mobile and web apps with one shared code base and open web standards',
   url: 'https://ionicframework.com',
   baseUrl: `${BASE_URL}/`,
   i18n: {
@@ -38,6 +38,7 @@ module.exports = {
             if (locale != 'en') {
               return 'https://crowdin.com/project/ionic-docs';
             }
+            let match;
             if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
             }
@@ -280,7 +281,7 @@ module.exports = {
     },
     prism: {
       theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/5a1c93592c6475fb230bfcb8a9666b72b331638b/packages/generate-prism-languages/index.ts#L9-L24
+      // https://github.com/FormidableLabs/prism-react-renderer/blob/e6d323332b0363a633407fabab47b608088e3a4d/packages/generate-prism-languages/index.ts#L9-L25
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {

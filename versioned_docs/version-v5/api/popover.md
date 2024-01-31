@@ -16,6 +16,11 @@ import Slots from '@ionic-internal/component-api/v5/popover/slots.md';
 
 # ion-popover
 
+:::warning
+Popovers in Ionic v5 may collide with the [popover](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover)
+feature on newer versions of browsers which can cause Ionic's popovers to not render. We recommend upgrading to the latest version of Ionic to avoid this issue.
+:::
+
 A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.
 
 ## Presenting

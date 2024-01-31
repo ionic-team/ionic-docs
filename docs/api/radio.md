@@ -36,6 +36,14 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 <LabelPlacement />
 
+## Object Value References
+
+By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+
+import UsingComparewith from '@site/static/usage/v7/radio/using-comparewith/index.md';
+
+<UsingComparewith />
+
 ## Alignment
 
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
