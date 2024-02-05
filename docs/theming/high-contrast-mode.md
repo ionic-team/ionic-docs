@@ -65,6 +65,10 @@ The following example will always display the high contrast light theme, regardl
 import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-contrast-mode/index.md';
 
 <AlwaysHighContrastMode />
+  
+:::caution Important
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
+:::
 
 ### System
 
