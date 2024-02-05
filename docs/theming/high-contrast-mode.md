@@ -118,6 +118,10 @@ Not sure how to change the system settings? Here's how to enable high contrast m
 import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
 
 <SystemHighContrastMode />
+  
+:::caution
+The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the high contrast dark theme must be imported after `dark.system.css`. Otherwise, the standard contrast theme will take priority.
+:::
 
 ### Class
 
@@ -171,6 +175,10 @@ Not sure how to change the system settings? Here's how to enable high contrast m
 import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
 
 <ClassHighContrastMode />
+  
+:::caution Important
+The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the high contrast dark theme must be imported after `dark.class.css`. Otherwise, the standard contrast theme will take priority.
+:::
 
 :::caution Important
 The `.ion-theme-high-contrast` class **must** be added to the `html` element in order to work with the imported high contrast theme.
@@ -228,72 +236,3 @@ It is important to pay attention to the specificity if you want to override any 
 </TabItem>
 
 </Tabs>
-
-## Troubleshooting
-
-### Application always showing either standard or high contrast themes
-
-If your application is always showing standard contrast themes, here are a few things to check to verify your application is correctly configured to use high contrast mode.
-
-1. Verify that you have imported the theme files in the correct order. For example, the high contrast dark theme should always be imported after the standard contrast dark theme, otherwise the standard contrast theme will take priority. Similarly, verify that the high contrast light theme is imported after [core.css](../layout/global-stylesheets#corecss). Here is an example usage for conditionally applying the high contrast theme while accounting for the standard contrast theme:
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```js
-// Import standard contrast first
-@import '@ionic/angular/css/core.css';
-@import '@ionic/angular/css/themes/dark.system.css';
-
-// Import high contrast second
-@import '@ionic/angular/css/themes/high-contrast.system.css';
-@import '@ionic/angular/css/themes/high-contrast-dark.system.css';
-
-```
-
-</TabItem>
-<TabItem value="javascript">
-
-```js
-// Import standard contrast first
-import '@ionic/core/css/core.css';
-import '@ionic/core/css/themes/dark.system.css';
-
-// Import high contrast second
-import '@ionic/core/css/themes/high-contrast.system.css';
-import '@ionic/core/css/themes/high-contrast-dark.system.css';
-```
-
-</TabItem>
-<TabItem value="react">
-
-```js
-// Import standard contrast first
-import '@ionic/react/css/core.css';
-import '@ionic/react/css/themes/dark.system.css';
-
-// Import high contrast second
-import '@ionic/react/css/themes/high-contrast.system.css';
-import '@ionic/react/css/themes/high-contrast-dark.system.css';
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```js
-// Import standard contrast first
-import '@ionic/vue/css/core.css';
-import '@ionic/vue/css/themes/dark.system.css';
-
-// Import high contrast second
-import '@ionic/vue/css/themes/high-contrast.system.css';
-import '@ionic/vue/css/themes/high-contrast-dark.system.css';
-```
-
-</TabItem>
-
-</Tabs>
-
-
-2. When applying the high contrast mode based on the system settings, verify that the target device supports the [`prefers-contrast` media query](https://caniuse.com/?search=prefers-contrast).
