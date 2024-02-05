@@ -57,6 +57,7 @@ module.exports = {
         'theming/colors',
         'theming/themes',
         'theming/dark-mode',
+        'theming/high-contrast-mode',
         'theming/advanced',
         'theming/color-generator',
       ],
