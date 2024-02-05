@@ -321,7 +321,7 @@ Here in our `IonContent`, we are adding an `IonList` and a much more involved `I
 </ion-item>
 ```
 
-Looking at our code, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a Vue API, but a web standards API, and it is used across many Ionic Framework components. Additionally, this is different from the slots API you may recall from Vue 2. (For more information on slots, see the MDN docs [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).)
+Looking at our code, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a Vue API, but a web standards API, and it is used across many Ionic Framework components. Additionally, this is different from the slots API you may recall from Vue 2. (For more information on slots, [see the MDN docs here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).)
 
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 

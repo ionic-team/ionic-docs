@@ -207,7 +207,7 @@ Here in our `IonContent`, we're adding an `IonList` and a much more involved `Io
 </IonItem>
 ```
 
-Looking at our code, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a React API, but a web standards API, and it is used in many Ionic Framework components. (For more information on slots, see the MDN docs [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).)
+Looking at our code, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a React API, but a web standards API, and it is used in many Ionic Framework components. (For more information on slots, [see the MDN docs here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).)
 
 Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
 
