@@ -23,7 +23,7 @@ There are three provided ways to enable the high contrast theme in an app: **alw
 
 ### Always
 
-The default theme provided with Ionic Framework also uses the default color contrast levels. The high contrast theme can be enabled by importing the following stylesheet in the appropriate files:
+The default theme provided with Ionic Framework also uses the default color contrast levels. The high contrast theme can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast theme regardless of a user's preference for high contrast.
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -60,15 +60,11 @@ import '@ionic/vue/css/themes/high-contrast.always.css';
 
 This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector. The high contrast dark theme can be applied by importing `high-contrast-dark.always.css` instead of `high-contrast.always.css`.
 
-The following example will always display the high contrast light theme, regardless of the system settings for high contrast or dark mode.
+The following example will always display the high contrast light theme, regardless of the user's preference for high contrast or dark mode.
 
 import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-contrast-mode/index.md';
 
 <AlwaysHighContrastMode />
-
-:::caution Important
-Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
-:::
 
 ### System
 
