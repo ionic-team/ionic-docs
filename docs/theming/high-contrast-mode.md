@@ -17,6 +17,10 @@ import TabItem from '@theme/TabItem';
 
 Ionic ships with themes for increased contrast for users with low vision. These themes work by increasing the contrast between foreground content, such as text, and background content, such as UI components. Ionic provides light and dark variants for high contrast.
 
+## Overview
+
+Ionic's high contrast theme works by improving contrast between the foreground and the background. The [Ionic colors](./colors) have been updated to meet [Level AAA as defined by Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component  against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
+
 ## Enabling High Contrast Theme
 
 There are three provided ways to enable the high contrast theme in an app: **always**, based on **system** settings, or by using a **class**.
@@ -200,10 +204,6 @@ The **always** high contrast theme behaves in the following ways:
 2. Setting variables for the high contrast theme on `ios` devices using the `:root.ios` selector.
 3. Setting variables for the high contrast theme on `md` devices using the `:root.md` selector.
 
-:::caution
-It is important to pay attention to the specificity if you want to override any of the Ionic high contrast theme variables. For example, because the `--ion-item-background` variable is set for each mode in the high contrast dark theme, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
-:::
-
 </TabItem>
 
 <TabItem value="system">
@@ -213,11 +213,7 @@ The **system** high contrast theme behaves in the following ways:
 1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast theme in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
 2. Setting variables for the high contrast theme on `ios` devices using the `:root.ios` selector.
 3. Setting variables for the high contrast theme on `md` devices using the `:root.md` selector.
-4. Only applies these variables when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`.
-
-:::caution
-It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode in the high contrast dark theme, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
-:::
+4. Only applies these variables when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`.
 
 </TabItem>
 
@@ -225,13 +221,9 @@ It is important to pay attention to the specificity if you want to override any 
 
 The **class** high contrast theme behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast theme in the `.ion-theme-dark` selector. The `.ion-theme-dark` class must be added to the `html` element in an app.
-2. Setting variables for the high contrast theme on `ios` devices using the `.ion-theme-dark.ios` selector.
-3. Setting variables for the high contrast theme on `md` devices using the `.ion-theme-dark.md` selector.
-
-:::caution
-It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode in the high contrast dark theme, it cannot be overridden in the `.ion-theme-dark` selector. A higher specificity selector, such as `.ion-theme-dark.ios`, is required.
-:::
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast theme in the `.ion-theme-high-contrast` selector. The `.ion-theme-high-contrast` class must be added to the `html` element in an app.
+2. Setting variables for the high contrast theme on `ios` devices using the `.ion-theme-high-contrast.ios` selector.
+3. Setting variables for the high contrast theme on `md` devices using the `.ion-theme-high-contrast.md` selector.
 
 </TabItem>
 
