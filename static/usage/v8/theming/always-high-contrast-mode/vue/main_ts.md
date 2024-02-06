@@ -31,8 +31,6 @@ import '@ionic/vue/css/themes/high-contrast.always.css';
 // import '@ionic/vue/css/themes/high-contrast.class.css';
 // import '@ionic/vue/css/themes/high-contrast.system.css';
 
-/* Theme variables */
-import './theme/variables.css';
 
 createApp(App).use(IonicVue).mount('#app');
 ```

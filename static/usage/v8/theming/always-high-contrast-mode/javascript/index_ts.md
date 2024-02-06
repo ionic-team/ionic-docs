@@ -28,8 +28,5 @@ import '@ionic/core/css/themes/high-contrast.always.css';
 // import '@ionic/core/css/themes/high-contrast.class.css';
 // import '@ionic/core/css/themes/high-contrast.system.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 defineCustomElements();
 ```

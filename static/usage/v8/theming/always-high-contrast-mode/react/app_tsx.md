@@ -29,9 +29,6 @@ import '@ionic/react/css/themes/high-contrast.always.css';
 // import '@ionic/react/css/themes/high-contrast.class.css';
 // import '@ionic/react/css/themes/high-contrast.system.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 import Example from './main';
 
 setupIonicReact();
