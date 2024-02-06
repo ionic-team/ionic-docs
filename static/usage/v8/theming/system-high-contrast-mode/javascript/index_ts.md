@@ -27,8 +27,5 @@ import '@ionic/core/css/display.css';
 import '@ionic/core/css/themes/high-contrast.system.css';
 import '@ionic/core/css/themes/high-contrast-dark.system.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 defineCustomElements();
 ```

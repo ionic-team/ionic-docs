@@ -30,8 +30,5 @@ import '@ionic/vue/css/display.css';
 import '@ionic/vue/css/themes/high-contrast.system.css';
 import '@ionic/vue/css/themes/high-contrast-dark.system.css';
 
-/* Theme variables */
-import './theme/variables.css';
-
 createApp(App).use(IonicVue).mount('#app');
 ```
