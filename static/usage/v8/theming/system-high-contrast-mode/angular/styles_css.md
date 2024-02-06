@@ -27,12 +27,14 @@
 @import '@ionic/angular/css/display.css';
 
 /**
- * Ionic High Contrast Theme
+ * Ionic Dark and High Contrast Themes
  * -----------------------------------------------------
  * For more information, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
-
+ 
+@import '@ionic/angular/css/themes/dark.system.css';
 @import '@ionic/angular/css/themes/high-contrast.system.css';
 @import '@ionic/angular/css/themes/high-contrast-dark.system.css';
 ```

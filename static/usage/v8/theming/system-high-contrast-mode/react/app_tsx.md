@@ -19,12 +19,14 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /**
- * Ionic High Contrast Theme
+ * Ionic Dark and High Contrast Themes
  * -----------------------------------------------------
  * For more information, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
-
+ 
+import '@ionic/react/css/themes/dark.system.css';
 import '@ionic/react/css/themes/high-contrast.system.css';
 import '@ionic/react/css/themes/high-contrast-dark.system.css';
 
