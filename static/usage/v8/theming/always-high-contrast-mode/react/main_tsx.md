@@ -36,7 +36,7 @@ function Example() {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent color="light">
         <IonListHeader>Appearance</IonListHeader>
         <IonList inset={true}>
           <IonItem button={true}>Text Size</IonItem>

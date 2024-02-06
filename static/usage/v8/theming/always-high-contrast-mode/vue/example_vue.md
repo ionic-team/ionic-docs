@@ -14,7 +14,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content color="light">
     <ion-list-header>Appearance</ion-list-header>
     <ion-list :inset="true">
       <ion-item :button="true">Text Size</ion-item>
