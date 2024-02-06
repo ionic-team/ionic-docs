@@ -19,7 +19,7 @@ Ionic ships with themes for increased contrast for users with low vision. These 
 
 ## Overview
 
-Ionic's high contrast theme works by improving contrast between the foreground and the background. The [Ionic colors](./colors) have been updated to meet [Level AAA as defined by Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
+The [Ionic colors](./colors) in the high contrast theme have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) as defined by the Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
 
 ## Enabling High Contrast Theme
 
