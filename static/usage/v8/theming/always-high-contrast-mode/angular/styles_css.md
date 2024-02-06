@@ -34,6 +34,4 @@
  */
 
 @import '@ionic/angular/css/themes/high-contrast.always.css';
-// @import '@ionic/angular/css/themes/high-contrast.class.css';
-// @import '@ionic/angular/css/themes/high-contrast.system.css';
 ```

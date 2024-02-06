@@ -26,8 +26,6 @@ import '@ionic/react/css/display.css';
  */
 
 import '@ionic/react/css/themes/high-contrast.always.css';
-// import '@ionic/react/css/themes/high-contrast.class.css';
-// import '@ionic/react/css/themes/high-contrast.system.css';
 
 import Example from './main';
 
