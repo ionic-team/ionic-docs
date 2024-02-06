@@ -27,7 +27,7 @@ import '@ionic/vue/css/display.css';
  * https://ionicframework.com/docs/theming/dark-mode
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
- 
+
 import '@ionic/vue/css/themes/dark.system.css';
 import '@ionic/vue/css/themes/high-contrast.system.css';
 import '@ionic/vue/css/themes/high-contrast-dark.system.css';

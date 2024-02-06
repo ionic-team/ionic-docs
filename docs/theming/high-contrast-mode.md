@@ -19,7 +19,7 @@ Ionic ships with themes for increased contrast for users with low vision. These 
 
 ## Overview
 
-Ionic's high contrast theme works by improving contrast between the foreground and the background. The [Ionic colors](./colors) have been updated to meet [Level AAA as defined by Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component  against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
+Ionic's high contrast theme works by improving contrast between the foreground and the background. The [Ionic colors](./colors) have been updated to meet [Level AAA as defined by Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
 
 ## Enabling High Contrast Theme
 
@@ -122,9 +122,8 @@ Not sure how to change the system settings? Here's how to enable high contrast m
 import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
 
 <SystemHighContrastMode />
-  
-:::caution
-The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the high contrast dark theme must be imported after `dark.system.css`. Otherwise, the standard contrast theme will take priority.
+:::caution The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the
+high contrast dark theme must be imported after `dark.system.css`. Otherwise, the standard contrast theme will take priority.
 :::
 
 ### Class
@@ -179,10 +178,9 @@ Not sure how to change the system settings? Here's how to enable high contrast m
 import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
 
 <ClassHighContrastMode />
-  
-:::caution Important
-The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the high contrast dark theme must be imported after `dark.class.css`. Otherwise, the standard contrast theme will take priority.
-:::
+:::caution Important The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss),
+and the high contrast dark theme must be imported after `dark.class.css`. Otherwise, the standard contrast theme will take
+priority. :::
 
 :::caution Important
 The `.ion-theme-high-contrast` class **must** be added to the `html` element in order to work with the imported high contrast theme.

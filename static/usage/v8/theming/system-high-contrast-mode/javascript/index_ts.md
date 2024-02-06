@@ -24,7 +24,7 @@ import '@ionic/core/css/display.css';
  * https://ionicframework.com/docs/theming/dark-mode
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
- 
+
 import '@ionic/core/css/themes/dark.system.css';
 import '@ionic/core/css/themes/high-contrast.system.css';
 import '@ionic/core/css/themes/high-contrast-dark.system.css';
