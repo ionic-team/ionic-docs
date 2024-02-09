@@ -116,7 +116,7 @@
 
       // Check/uncheck the toggle and update the themes
       const initializeDarkTheme = (isDark) => {
-        themeToggle.value = isDark;
+        darkThemeToggle.value = isDark;
         toggleDarkTheme(isDark);
       };
 
