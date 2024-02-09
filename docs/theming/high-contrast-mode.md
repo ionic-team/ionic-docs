@@ -74,6 +74,8 @@ import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-co
 
 The system approach to enabling high contrast mode involves checking the system settings for the user's preferred contrast. This is the default when starting a new Ionic Framework app. Importing the following stylesheets in the appropriate file will automatically retrieve the user's preference from the system settings and apply the high contrast theme when high contrast is preferred.
 
+The system's dark mode preference will also be checked to show either the light or dark variant of the high contrast theme.
+
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
