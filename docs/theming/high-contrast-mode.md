@@ -17,7 +17,7 @@ Ionic offers themes with increased contrast for users with low vision. These the
 
 ## Overview
 
-The [Ionic colors](./colors) in the high contrast theme have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) as defined by the Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
+The default theme in Ionic provides [Ionic colors](./colors) that meet [Level AA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) as defined by Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The [Ionic colors](./colors) in the high contrast theme have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. The theme also seeks to improve the contrast of UI components such as the border on an Item. However, Ionic's high contrast theme prioritizes text. This means that if increasing the contrast of a UI component against the page background would significantly reduce the contrast of the component's text against the component's background, the UI component contrast will not be modified.
 
 ## Enabling High Contrast Theme
 
@@ -25,7 +25,7 @@ There are three provided ways to enable the high contrast theme in an app: **alw
 
 ### Always
 
-The default theme provided with Ionic Framework uses lower color contrast levels. The high contrast theme can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast theme regardless of the system settings for contrast preference.
+The high contrast theme can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast theme regardless of the system settings for contrast preference.
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
