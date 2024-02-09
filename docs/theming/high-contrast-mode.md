@@ -33,29 +33,33 @@ The default theme provided with Ionic Framework uses lower color contrast levels
 
 <TabItem value="angular">
 
-```css
-@import '@ionic/angular/css/themes/high-contrast.always.css';
+```typescript
+@import '@ionic/angular/css/themes/high-contrast.always.css'; // Light theme
+// @import '@ionic/angular/css/themes/high-contrast.always.css'; // Dark theme
 ```
 
 </TabItem>
 <TabItem value="javascript">
 
-```ts
-import '@ionic/core/css/themes/high-contrast.always.css';
+```typescript
+import '@ionic/core/css/themes/high-contrast.always.css'; // Light theme
+// import '@ionic/core/css/themes/high-contrast-dark.always.css'; // Dark theme
 ```
 
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-import '@ionic/react/css/themes/high-contrast.always.css';
+import '@ionic/react/css/themes/high-contrast.always.css'; // Light theme
+// import '@ionic/react/css/themes/high-contrast-dark.always.css'; // Dark theme
 ```
 
 </TabItem>
 <TabItem value="vue">
 
-```ts
-import '@ionic/vue/css/themes/high-contrast.always.css';
+```typescript
+import '@ionic/vue/css/themes/high-contrast.always.css'; // Light theme
+// import '@ionic/vue/css/themes/high-contrast-dark.always.css'; // Dark theme
 ```
 
 </TabItem>
