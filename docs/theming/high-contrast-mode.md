@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-Ionic ships with themes for increased contrast for users with low vision. These themes work by increasing the contrast between foreground content, such as text, and background content, such as UI components. Ionic provides light and dark variants for high contrast.
+Ionic offers themes with increased contrast for users with low vision. These themes work by amplifying the contrast between foreground content, such as text, and background content, such as UI components. Ionic provides both light and dark variants for achieving high contrast.
 
 ## Overview
 
