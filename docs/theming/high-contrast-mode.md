@@ -126,7 +126,9 @@ Not sure how to change the system settings? Here's how to enable high contrast m
 import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
 
 <SystemHighContrastMode />
-:::caution The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the
+
+:::caution
+The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the
 high contrast dark theme must be imported after `dark.system.css`. Otherwise, the standard contrast theme will take priority.
 :::
 
@@ -182,10 +184,12 @@ Not sure how to change the system settings? Here's how to enable high contrast m
 import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
 
 <ClassHighContrastMode />
+
 :::caution
 The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss),
 and the high contrast dark theme must be imported after `dark.class.css`. Otherwise, the standard contrast theme will take
-priority. :::
+priority.
+:::
 
 :::caution
 The `.ion-theme-high-contrast` class **must** be added to the `html` element in order to work with the imported high contrast theme.
