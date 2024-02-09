@@ -27,7 +27,7 @@ There are three provided ways to enable the high contrast theme in an app: **alw
 
 ### Always
 
-The default theme provided with Ionic Framework also uses the default color contrast levels. The high contrast theme can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast theme regardless of a user's preference for high contrast.
+The default theme provided with Ionic Framework uses lower color contrast levels. The high contrast theme can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast theme regardless of the system settings for contrast preference.
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
