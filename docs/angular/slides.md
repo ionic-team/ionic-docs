@@ -256,27 +256,27 @@ To migrate, we would change the name of the event to `slidechange`:
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Angular:
 
-| ion-slides Event          | Swiper Event                 |
-| ------------------------- | ---------------------------- |
-| `ionSlideWillChange`      | `slidechangetransitionstart` |
-| `ionSlideDidChange`       | `slidechangetransitionend`   |
-| `ionSlideDoubleTap`       | `doubletap`                  |
-| `ionSlideDrag`            | `slidermove`                 |
-| `ionSlideNextStart`       | `slidenexttransitionstart`   |
-| `ionSlideNextEnd`         | `slidenexttransitionend`     |
-| `ionSlidePrevStart`       | `slideprevtransitionstart`   |
-| `ionSlidePrevEnd`         | `slideprevtransitionend`     |
-| `ionSlideReachStart`      | `reachbeginning`             |
-| `ionSlideReachEnd`        | `reachend`                   |
-| `ionSlideTap`             | `tap`                        |
-| `ionSlideTouchStart`      | `touchstart`                 |
-| `ionSlideTouchEnd`        | `touchend`                   |
-| `ionSlideTransitionStart` | `transitionstart`            |
-| `ionSlideTransitionEnd`   | `transitionend`              |
-| `ionSlidesDidLoad`        | `init`                       |
+| ion-slides Event          | Swiper Event                       |
+| ------------------------- | ---------------------------------- |
+| `ionSlideWillChange`      | `swiperslidechangetransitionstart` |
+| `ionSlideDidChange`       | `swiperslidechange`                |
+| `ionSlideDoubleTap`       | `swiperdoubletap`                  |
+| `ionSlideDrag`            | `swiperslidermove`                 |
+| `ionSlideNextStart`       | `swiperslidenexttransitionstart`   |
+| `ionSlideNextEnd`         | `swiperslidenexttransitionend`     |
+| `ionSlidePrevStart`       | `swiperslideprevtransitionstart`   |
+| `ionSlidePrevEnd`         | `swiperslideprevtransitionend`     |
+| `ionSlideReachStart`      | `swiperreachbeginning`             |
+| `ionSlideReachEnd`        | `swiperreachend`                   |
+| `ionSlideTap`             | `swipertap`                        |
+| `ionSlideTouchStart`      | `swipertouchstart`                 |
+| `ionSlideTouchEnd`        | `swipertouchend`                   |
+| `ionSlideTransitionStart` | `swipertransitionstart`            |
+| `ionSlideTransitionEnd`   | `swipertransitionend`              |
+| `ionSlidesDidLoad`        | `swiperinit`                       |
 
 :::note
-All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
+All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a> and should be lowercased and prefixed with the word `swiper`.
 :::
 
 ## Methods
