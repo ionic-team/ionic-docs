@@ -37,7 +37,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レイヤーの構�
 </DocsCard>
 
 <DocsCard header="Button" href="api/button" icon="/icons/component-button-icon.png">
-  <p>Buttonを使ってユーザが行動を起こすことができます。これはアプリと対話したり、移動したりするのに不可欠な方法です。</p>
+  <p>Buttonを使ってユーザが行動を起こせます。アプリと対話したり、移動したりするのに不可欠な方法です。</p>
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">

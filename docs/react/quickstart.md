@@ -207,7 +207,7 @@ const Home: React.FC = () => {
 </IonItem>
 ```
 
-コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るためのキーとなる。これはReactのAPIではなく、Web標準のAPIで、多くのIonic Frameworkのコンポーネントで使われています。(slotの詳細については、[こちらのMDNドキュメントを参照](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot))
+コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るためのキーとなる。これは React の API ではなく、Web 標準の API で、多くの Ionic Framework のコンポーネントで使われています。(slot の詳細については、[こちらの MDN ドキュメントを参照](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot))
 
 Ionic Framework の別のコンポーネントである FAB（フローティング・アクション・ボタン）を見てみましょう。FAB は、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。この FAB には、FAB、FAB ボタンおよびアイコンの 3 つのコンポーネントが必要です。
 
@@ -380,7 +380,7 @@ export const IconExample: React.FC = () => {
 
 ## Build a Native App
 
-これで、UIコンポーネントやナビゲーションなど、Ionic Reactアプリの基本を押さえることができました。Ionicのコンポーネントの素晴らしいところは、iOS、Android、PWAなど、どこでも動作することです。モバイルやそれ以外へのデプロイには、Ionicのクロスプラットフォームアプリランタイム [Capacitor](https://capacitorjs.com) を使用しています。これは、一貫性のあるウェブに特化したAPIセットを提供し、アプリを可能な限りウェブ標準に近づけながら、それをサポートするプラットフォーム上でリッチなネイティブデバイス機能にアクセスできるようにします。
+これで、UI コンポーネントやナビゲーションなど、Ionic React アプリの基本を押さえることができました。Ionic のコンポーネントの素晴らしいところは、iOS、Android、PWA など、どこでも動作することです。モバイルやそれ以外へのデプロイには、Ionic のクロスプラットフォームアプリランタイム [Capacitor](https://capacitorjs.com) を使用しています。これは、一貫性のあるウェブに特化した API セットを提供し、アプリを可能な限りウェブ標準に近づけながら、それをサポートするプラットフォーム上でリッチなネイティブデバイス機能にアクセスできるようにします。
 
 ネイティブ機能を追加するのは簡単で、最初にプロジェクトに Capacitor を追加します:
 

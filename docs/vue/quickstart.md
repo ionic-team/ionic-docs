@@ -323,7 +323,7 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 </ion-item>
 ```
 
-コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るための鍵です。これはVueのAPIではなく、Web標準のAPIで、多くのIonic Frameworkコンポーネントで使われています。また、これはVue 2で使用されたslots APIとは異なります（slotsの詳細については、[MDNのドキュメントを参照してください](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)）。
+コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るための鍵です。これは Vue の API ではなく、Web 標準の API で、多くの Ionic Framework コンポーネントで使われています。また、これは Vue 2 で使用された slots API とは異なります（slots の詳細については、[MDN のドキュメントを参照してください](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)）。
 
 Ionic Framework の別のコンポーネントである FAB（フローティング・アクション・ボタン）を見てみましょう。FAB は、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。この FAB には、FAB、FAB ボタンおよびアイコンの 3 つのコンポーネントが必要です。
 

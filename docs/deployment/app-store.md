@@ -30,7 +30,7 @@ Apple Developer Program への登録は、[このガイド](https://developer.ap
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
 
-iOSプラットフォームがまだ追加されていない場合は、必ず追加してください：
+iOS プラットフォームがまだ追加されていない場合は、必ず追加してください：
 
 ```shell
 ionic cap add ios
@@ -42,23 +42,23 @@ With the platform added, run the build command with the `--prod` flag:
 ionic build --prod
 ```
 
-これによって、アプリのウェブ部分のminifiedされたコードが生成されます。
+これによって、アプリのウェブ部分の minified されたコードが生成されます。
 
-この最初のビルドと、プラグインの追加などバイナリーの変更を行った後は、syncコマンドを使用します：
+この最初のビルドと、プラグインの追加などバイナリーの変更を行った後は、sync コマンドを使用します：
 
 ```shell
 npx cap sync ios
 ```
 
-これにより、minifiedされたWebアセットもコピーされます。しかし、ビルドがソースの変更だけであれば、minifiedされたウェブファイルをコピーするだけですみます：
+これにより、minified された Web アセットもコピーされます。しかし、ビルドがソースの変更だけであれば、minified されたウェブファイルをコピーするだけですみます：
 
 ```shell
 npx cap copy ios
 ```
 
-ここから、プロジェクトはあたかもXcodeのネイティブアプリであるかのように管理することができます（実際そうなのです）。
+ここから、プロジェクトはあたかも Xcode のネイティブアプリであるかのように管理することができます（実際そうなのです）。
 
-Xcodeで `./ios/` からプロジェクトを開いてください：
+Xcode で `./ios/` からプロジェクトを開いてください：
 
 ```shell
 npx cap open ios
@@ -67,7 +67,7 @@ npx cap open ios
 </TabItem>
 <TabItem value="cordova" label="Cordova">
 
-iOSプラットフォームがまだ追加されていない場合は、必ず追加してください：
+iOS プラットフォームがまだ追加されていない場合は、必ず追加してください：
 
 ```shell
 ionic cordova platform add ios
