@@ -1,4 +1,4 @@
 {
   "extends": "@docusaurus/tsconfig",
-  "exclude": ["static/code/stackblitz/"]
+  "exclude": ["static/code/stackblitz/"],
 }

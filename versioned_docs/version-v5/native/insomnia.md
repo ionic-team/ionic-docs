@@ -13,7 +13,7 @@ import CodeBlock from '@theme/CodeBlock';
 Prevent the screen of the mobile device from falling asleep.
 
 <p>
-  <a href="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin" target="_blank" rel="noopener" className="git-link">github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin</a>
+  <a href="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin" target="_blank" el="noopener" className="git-link">github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -23,7 +23,7 @@ Prevent the screen of the mobile device from falling asleep.
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

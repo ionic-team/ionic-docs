@@ -13,7 +13,8 @@ import CodeBlock from '@theme/CodeBlock';
 This plugin retrives the SMS which arrive without requiring READ permissions.
 
 <p>
-  <a href="https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master" target="_blank" rel="noopener" className="git-link">github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master</a>
+  <a href="https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master" target="_blank" rel="noopener" className="git-link"
+  >github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -23,7 +24,7 @@ This plugin retrives the SMS which arrive without requiring READ permissions.
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

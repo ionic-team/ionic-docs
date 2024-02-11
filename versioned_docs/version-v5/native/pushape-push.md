@@ -30,7 +30,7 @@ For TypeScript users, see the [Pushape plugin docs about using TypeScript for cu
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

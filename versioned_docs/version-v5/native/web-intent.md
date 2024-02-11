@@ -13,7 +13,7 @@ import CodeBlock from '@theme/CodeBlock';
 This Plugin provides a general purpose shim layer for the Android intent mechanism, exposing various ways to handle sending and receiving intents.
 
 <p>
-  <a href="https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent" target="_blank" rel="noopener" className="git-link">github.com/darryncampbell/darryncampbell-cordova-plugin-intent</a>
+  <a href="https://github.com/darryncampbell/ darryncampbell-cordova-plugin-intent" target="_blank" rel="noopener" className="git-link">github.com/darryncampbell/darryncampbell-cordova-plugin-intent</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -23,7 +23,7 @@ This Plugin provides a general purpose shim layer for the Android intent mechani
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

@@ -15,8 +15,7 @@ Using Android 4.0+, you can use true full screen in "lean mode", the way you see
 In Android 4.4+, however, you can now enter true full screen, fully interactive immersive mode. In this mode, your app will remain in true full screen until you choose otherwise; users can swipe down from the top of the screen to temporarily display the system UI.
 
 <p>
-  <a
-    href="https://github.com/mesmotronic/cordova-plugin-fullscreen" target="_blank" rel="noopener" className="git-link">github.com/mesmotronic/cordova-plugin-fullscreen</a>
+  <a href="https://github.com/mesmotronic/cordova-plugin-fullscreen" target="_blank" rel="noopener" className="git-link">github.com/mesmotronic/cordova-plugin-fullscreen</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -26,7 +25,7 @@ In Android 4.4+, however, you can now enter true full screen, fully interactive 
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-inputコンポーネントは、カスタム・スタイル設定と追加機能を持つHTMLのInput要素のラッパーです。HTML Inputとほとんど同じプロパティーを受け入れますが、デスクトップ・デバイスでは優れた動作をし、モバイル・デバイスではキーボードと統合されます。
+input コンポーネントは、HTML input 要素のラッパーで、カスタムスタイルと追加機能を備えています。HTML入力と同じプロパティのほとんどを受け入れ、モバイルデバイスのキーボードと統合します。
 
 
 ## 基本的な使い方
@@ -148,9 +148,25 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 
 :::
 
+## Start and End Slots (experimental)
+
+`start`スロットと `end`スロットはInputの両側にアイコン、ボタン、接頭辞/接尾辞テキストを配置するために使用することができます。
+
+この機能は [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) のシミュレート版に依存しているため、実験的なものであることに注意してください。そのため、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md';
+
+<StartEndSlots />
+
 ## テーマ
 
-### Colors
+### 配色
 
 `color`プロパティを設定すると、各Inputのカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
 

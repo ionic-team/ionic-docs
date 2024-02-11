@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
 import * as utils from './utils.mjs';
-import cliJSON from './data/cli.json' assert { type: 'json' };
+import cliJSON from './data/translated-cli.json' assert { type: 'json' };
 import cliOverrides from './data/meta-override.json' assert { type: 'json' };
 
 const commandToKebab = (str) =>

@@ -15,7 +15,7 @@ Showing camera preview in HTML
 Requires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git`. For more info, please see the [Cordova Camera Preview docs](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview).
 
 <p>
-  <a href="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview" target="_blank" rel="noopener" className="git-link">github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview</a>
+  <a href="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview" arget="_blank" rel="noopener" className="git-link">github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -25,7 +25,7 @@ Requires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordo
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

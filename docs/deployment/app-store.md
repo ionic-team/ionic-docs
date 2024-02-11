@@ -3,6 +3,9 @@ title: iOS App Storeへの開発
 sidebar_label: iOS App Store
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <title>iOS App Storeでのリリース: Apple App Store Deployment for Ionic</title>
   <meta
@@ -24,7 +27,47 @@ Apple Developer Program への登録は、[このガイド](https://developer.ap
 
 ## リリースビルドの作成
 
-iOS プラットフォームがまだ追加されていない場合は、必ず追加してください。
+<Tabs groupId="runtime">
+<TabItem value="capacitor" label="Capacitor" default>
+
+iOSプラットフォームがまだ追加されていない場合は、必ず追加してください：
+
+```shell
+ionic cap add ios
+```
+
+With the platform added, run the build command with the `--prod` flag:
+
+```shell
+ionic build --prod
+```
+
+これによって、アプリのウェブ部分のminifiedされたコードが生成されます。
+
+この最初のビルドと、プラグインの追加などバイナリーの変更を行った後は、syncコマンドを使用します：
+
+```shell
+npx cap sync ios
+```
+
+これにより、minifiedされたWebアセットもコピーされます。しかし、ビルドがソースの変更だけであれば、minifiedされたウェブファイルをコピーするだけですみます：
+
+```shell
+npx cap copy ios
+```
+
+ここから、プロジェクトはあたかもXcodeのネイティブアプリであるかのように管理することができます（実際そうなのです）。
+
+Xcodeで `./ios/` からプロジェクトを開いてください：
+
+```shell
+npx cap open ios
+```
+
+</TabItem>
+<TabItem value="cordova" label="Cordova">
+
+iOSプラットフォームがまだ追加されていない場合は、必ず追加してください：
 
 ```shell
 ionic cordova platform add ios
@@ -43,6 +86,9 @@ ionic cordova build ios --prod
 :::tip
 `release`フラグを使えば、リリースビルドを自動的に生成させることもできます。
 :::
+
+</TabItem>
+</Tabs>
 
 ## 署名証明書の生成
 

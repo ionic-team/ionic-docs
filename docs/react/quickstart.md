@@ -180,11 +180,10 @@ const Home: React.FC = () => {
   <IonContent>
     <IonList>
       <IonItem>
-        <IonCheckbox slot="start" />
-        <IonLabel>
+        <IonCheckbox labelPlacement="end" justify="start">
           <h1>Create Idea</h1>
           <IonNote>Run Idea by Brandy</IonNote>
-        </IonLabel>
+        </IonCheckbox>
         <IonBadge color="success" slot="end">
           5 Days
         </IonBadge>
@@ -198,20 +197,17 @@ const Home: React.FC = () => {
 
 ```tsx
 <IonItem>
-  <IonCheckbox slot="start" />
-  <IonLabel>
+  <IonCheckbox labelPlacement="end" justify="start">
     <h1>Create Idea</h1>
     <IonNote>Run Idea by Brandy</IonNote>
-  </IonLabel>
+  </IonCheckbox>
   <IonBadge color="success" slot="end">
     5 Days
   </IonBadge>
 </IonItem>
 ```
 
-Item は React の概念と Web Component の概念が混在していることを明確に示す重要な要素です。React の概念の最初の明確な例は、 `IonCheckbox` の React コンポーネントの自己終了タグです。これは、子コンテンツを含まないコンポーネントを記述する単純な方法です。
-
-Web コンポーネント側には、 `slot` という特殊な属性があります。これは、レンダリング時に `IonItem` に `IonCheckbox` を配置する場所を知らせるためのキーです。これは React API ではなく、Web 標準 API です。
+コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るためのキーとなる。これはReactのAPIではなく、Web標準のAPIで、多くのIonic Frameworkのコンポーネントで使われています。(slotの詳細については、[こちらのMDNドキュメントを参照](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot))
 
 Ionic Framework の別のコンポーネントである FAB（フローティング・アクション・ボタン）を見てみましょう。FAB は、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。この FAB には、FAB、FAB ボタンおよびアイコンの 3 つのコンポーネントが必要です。
 
@@ -384,7 +380,7 @@ export const IconExample: React.FC = () => {
 
 ## Build a Native App
 
-UI コンポーネントやナビゲーションなど、Ionic React アプリの基本的な部分はすでに完成しています。Ionic Framework のコンポーネントの素晴らしいところは、iOS、Android、PWA を含むどこでも動作することです。モバイル、デスクトップ、その他にもデプロイするために、Ionic のクロスプラットフォームライブラリ [Capacitor](https://capacitorjs.com) を使用することができます。一貫性のある Web に特化した API セットを提供することで、 Web 標準をサポートするプラットフォーム上の豊富なネイティブデバイス機能にアクセスしながら、アプリケーションを可能な限り Web 標準に近づけることが可能になります。
+これで、UIコンポーネントやナビゲーションなど、Ionic Reactアプリの基本を押さえることができました。Ionicのコンポーネントの素晴らしいところは、iOS、Android、PWAなど、どこでも動作することです。モバイルやそれ以外へのデプロイには、Ionicのクロスプラットフォームアプリランタイム [Capacitor](https://capacitorjs.com) を使用しています。これは、一貫性のあるウェブに特化したAPIセットを提供し、アプリを可能な限りウェブ標準に近づけながら、それをサポートするプラットフォーム上でリッチなネイティブデバイス機能にアクセスできるようにします。
 
 ネイティブ機能を追加するのは簡単で、最初にプロジェクトに Capacitor を追加します:
 

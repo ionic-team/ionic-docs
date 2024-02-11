@@ -15,8 +15,7 @@ It is based on the cordova plugin developed by @tobspr: https://github.com/tobsp
 This plugin works on all android versions, but we can only detect notches starting from Android 9.
 
 <p>
-  <a
-    href="https://github.com/tobspr/cordova-plugin-android-notch.git" target="_blank" rel="noopener" className="git-link">github.com/tobspr/cordova-plugin-android-notch.git</a>
+  <a href="https://github.com/tobspr/cordova-plugin-android-notch.git" target="_blank" el="noopener" className="git-link">github.com/tobspr/cordova-plugin-android-notch.git</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -26,7 +25,7 @@ This plugin works on all android versions, but we can only detect notches starti
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

@@ -25,7 +25,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-wrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
+アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-nowrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
 
 import Basic from '@site/static/usage/v7/item/basic/index.md';
 

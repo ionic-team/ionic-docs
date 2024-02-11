@@ -433,12 +433,8 @@ export default function Playground({
          * Load the stored mode and/or usage target, if present
          * from previously being toggled.
          */
-        if (isBrowser) {
-          const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
-          if (storedMode) setIonicMode(storedMode);
-          const storedUsageTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
-          if (storedUsageTarget) setUsageTarget(storedUsageTarget);
-        }
+        setIonicMode(getDefaultMode());
+        setUsageTarget(getDefaultUsageTarget());
 
         /**
          * If the iframes weren't already loaded, load them now.
@@ -546,10 +542,30 @@ export default function Playground({
 
     if (hasUsageTargetOptions) {
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
-        .map((fileName) => ({
-          [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
-            .outerText,
-        }))
+        .map((fileName) => {
+          const codeBlock = hostRef.current!.querySelector<HTMLElement>(
+            `#${getCodeSnippetId(usageTarget, fileName)} code`
+          );
+          let code = codeBlock.outerText;
+
+          if (code.trim().length === 0) {
+            /**
+             * Safari has an issue where accessing the `outerText` on a non-visible
+             * DOM element results in a string with only whitespace. To work around this,
+             * we create a clone of the element, not attached to the DOM, and parse
+             * the outerText from that.
+             *
+             * Only in Safari does this persist whitespace & line breaks, so we
+             * explicitly check for when the code is empty to use this workaround.
+             */
+            const el = document.createElement('div');
+            el.innerHTML = codeBlock.innerHTML;
+            code = el.outerText;
+          }
+          return {
+            [fileName]: code,
+          };
+        })
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
       editorOptions.dependencies = (code[usageTarget] as UsageTargetOptions).dependencies;
     }

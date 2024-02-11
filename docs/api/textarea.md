@@ -109,6 +109,22 @@ import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/
 
 <ClearOnEditPlayground />
 
+## Start and End Slots (experimental)
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the textarea.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/textarea/start-end-slots/index.md';
+
+<StartEndSlots />
+
 ## レガシーtextarea構文からの移行
 
 Ionic 7.0では、よりシンプルなtextareaの構文が導入されました。この新しい構文は、textareaを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者の体験を向上させます。
