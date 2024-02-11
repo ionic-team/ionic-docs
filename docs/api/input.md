@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-inputコンポーネントは、カスタム・スタイル設定と追加機能を持つHTMLのInput要素のラッパーです。HTML Inputとほとんど同じプロパティーを受け入れますが、デスクトップ・デバイスでは優れた動作をし、モバイル・デバイスではキーボードと統合されます。
+input コンポーネントは、HTML input 要素のラッパーで、カスタムスタイルと追加機能を備えています。HTML入力と同じプロパティのほとんどを受け入れ、モバイルデバイスのキーボードと統合します。
 
 
 ## 基本的な使い方

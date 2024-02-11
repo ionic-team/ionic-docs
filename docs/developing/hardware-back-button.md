@@ -19,26 +19,35 @@ import TabItem from '@theme/TabItem';
 ハードウェアの 「戻る」 ボタンとは Android デバイスの物理的な 「戻る」 ボタンのことであり、ブラウザの 「戻る」 ボタンや `ion-back-button` ボタンと混同しないでください。このガイドの情報は、Android デバイスにのみ適用されます。
 :::
 
-## Capacitor と Cordova における戻るボタン
+## 概要
 
-:::note
-The `@capacitor/app` package must be installed in Capacitor apps to use the hardware back button.
-:::
-
-When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
+Ionic Frameworkは、サポートされている環境でユーザーがハードウェアの戻るボタンを押すと、`ionBackButton`イベントを発行します。
 
 `ionBackButton` イベントを監視して、起動するハンドラを登録できます。このハンドラは、アプリケーションの終了や確認ダイアログのオープンなどのアクションを実行できます。各ハンドラには優先順位を割り当てる必要があります。既定では、ハードウェアの戻るボタンを押すごとに 1 つのハンドラだけが起動されます。優先順位の値は、どのコールバックを呼び出すかを決定するために使用されます。これが便利なのは、モーダルを開いている場合、ハードウェアの戻るボタンを押したときにモーダルが閉じられたり、アプリが後方に移動したりしないようにしたいからです。一度に 1 つのハンドラだけを実行すると、モーダルを閉じることができますが、戻るにはハードウェアの戻るボタンをもう一度押す必要があります。
 
 複数のハンドラを起動したい場合があります。各ハンドラのコールバックは、フレームワークに次のハンドラを呼び出すように指示するために使用できるパラメーターとして関数を渡します。
 
-## ブラウザにおける戻るボタン
+## Support
 
-モバイルブラウザーや PWA でアプリを実行する場合、ハードウェアのバックボタンカスタマイズは制限されます。これは、Capacitor と Cordova が、通常の Web ブラウザでは公開されないデバイス API を利用しているために違いがあります。例えば、ハードウェアバックボタンを使ってオーバーレイやメニューを閉じる機能は、モバイルブラウザでアプリを実行しているときにはサポートされていません。これらは既知の制限であり、現時点では簡単な解決策はありません。
+The table below shows how hardware back button support varies by environment.
+
+| Environment | Status                                                                                                    |
+| ----------- | --------------------------------------------------------------------------------------------------------- |
+| Capacitor   | Supported only when the `@capacitor/app` package is installed.                                            |
+| Cordova     | Supported                                                                                                 |
+| Browser     | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+| PWA         | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+
+### Hardware Back Button in a Browser or a PWA
+
+Ionic has experimental support for handling the hardware back button in a browser or a PWA by setting [`experimentalCloseWatcher: true` in the IonicConfig](./config.md). When this feature is enabled, Ionic will use the [Close Watcher API](https://github.com/WICG/close-watcher) to pass any close requests through the `ionBackButton` event. This includes pressing the hardware back button to navigate or the Escape key to dismiss a modal.
+
+Chrome has support for Close Watcher starting in [Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120).
 
 ハードウェアバックボタンを完全にサポートするには、Capacitor または Cordova の使用をお勧めします。
 
 :::note
-ブラウザや PWA で実行してる時、 `ionBackButton` イベントは実行されません。
+The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA if Close Watcher is unsupported or `experimentalCloseWatcher` is `false`.
 :::
 
 ## Basic Usage

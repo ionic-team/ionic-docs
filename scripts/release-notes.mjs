@@ -1,11 +1,12 @@
-const { outputJson } = require('fs-extra');
-const fetch = require('node-fetch');
-const { resolve } = require('path');
-const semver = require('semver');
-const { URL } = require('url');
+import pkg from 'fs-extra';
+import fetch from 'node-fetch';
+import { resolve } from 'path';
+import { compare } from 'semver';
+import { URL } from 'url';
 
-const { renderMarkdown } = require('./utils.js');
+import { renderMarkdown } from './utils.mjs';
 
+const __dirname = new URL('.', import.meta.url).pathname;
 const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/ReleaseNotes/release-notes.json');
 
 // export default {
@@ -42,7 +43,7 @@ const getReleases = async () => {
           return releasePattern.test(release.tag_name);
         })
         .map((release) => {
-          const body = renderMarkdown(release.body.replace(/^#.*/, '')).contents;
+          const body = renderMarkdown(release.body.replace(/^#.*/, '')).value;
           const published_at = parseDate(release.published_at);
           const version = release.tag_name.replace('v', '');
           const type = getVersionType(version);
@@ -58,7 +59,7 @@ const getReleases = async () => {
           };
         })
         .sort((a, b) => {
-          return -semver.compare(a.tag_name, b.tag_name);
+          return -compare(a.tag_name, b.tag_name);
         });
     } else {
       console.error('There was an issue getting releases:', releases);
@@ -95,6 +96,7 @@ function getVersionType(version) {
 }
 
 async function run() {
+  const { outputJson } = pkg;
   outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 });
 }
 

@@ -175,7 +175,7 @@ import { LoginComponent } from './login.component';
 
 ## Standalone Components
 
-:::caution Experimental API
+:::warning Experimental API
 
 Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later. This feature may change before it is stable.
 

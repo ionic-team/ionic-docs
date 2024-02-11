@@ -19,9 +19,9 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 :::note
@@ -76,6 +76,12 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 ```shell
 ionic start photo-gallery tabs --type=angular --capacitor
 ```
+
+:::note
+
+`NgModules` と `Standalone` のどちらかを選択するプロンプトが表示されたら、このチュートリアルは `NgModules` のアプローチに従っているので、`NgModules` を選択する。
+
+:::
 
 このスタータープロジェクトには、Ionic 開発のために事前に構成された 3 つのページとベストプラクティスが用意されています。共通の構成要素がすでに配置されているため、機能を簡単に追加できます！
 

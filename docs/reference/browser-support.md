@@ -12,7 +12,7 @@ title: ブラウザサポート
 
 Ionic の本来の目標は、HTML、CSS、JavaScript といった Web 技術を使用してモバイルアプリを開発することを簡単にすることでした。Ionic はこのウェブテクノロジーの基盤により、ウェブ、iOS、Android、ブラウザ、PWA など、どこでも実行できます。
 
-## モバイルブラウザ
+## モバイルプラットフォーム
 
 [スタイルの適用](../core-concepts/fundamentals.md#adaptive-styling)を追求するために, Ionic は以下のモバイルプラットフォームを完全にサポート、テストしています。:
 
@@ -33,9 +33,9 @@ Android 5.0 から、Webview は Android から独立して更新できる別の
 
 デバイスが実行している WebView のバージョンを調べるには、Chrome Dev Tools を使用してアプリケーションを検査する際に、コンソールに`window.navigator.userAgent`を記録してください。
 
-## デスクトップブラウザ
+## ブラウザ
 
-Ionic はウェブ技術をベースにしているため、モバイルデバイスと同じようにデスクトップブラウザーでも動作します。デスクトップのレイアウトについては、[クロスプラットフォーム](../core-concepts/cross-platform.md#desktop)を参照してください。
+Ionic はこれらのブラウザをサポートしています:
 
 |   Browser   | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: | :------: |

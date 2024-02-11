@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-:::caution Looking for `ion-slides`?
+:::warning Looking for `ion-slides`?
 `ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
 :::
 

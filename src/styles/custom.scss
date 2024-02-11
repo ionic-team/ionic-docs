@@ -11,7 +11,7 @@
 @use './components/back-to-top-button';
 @use './components/code';
 @use './components/doc-item';
-@use './components/doc-page';
+@use './components/doc-root';
 @use './components/doc-sidebar';
 @use './components/edit-this-page';
 @use './components/markdown';
@@ -153,14 +153,22 @@ iframe {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.git-link svg {
-  height: 1em;
-  width: 1em;
-  vertical-align: -0.1em;
+.git-link {
+  &::before {
+    content: '';
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100% 100%;
+    mask-image: url(../../static/icons/code-branch.svg);
+    vertical-align: -0.1em;
+    margin-inline-end: 5px;
+  }
 }
-.git-link path {
-  fill: currentColor;
-}
+
 
 .cordova-ee-card {
   max-width: 100%;
