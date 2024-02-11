@@ -3,7 +3,12 @@
   "encapsulation": "none",
   "tag": "ion-refresher",
   "docs": "",
-  "docsTags": [],
+  "docsTags": [
+    {
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    }
+  ],
   "usage": {},
   "props": [
     {
@@ -48,6 +53,27 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {

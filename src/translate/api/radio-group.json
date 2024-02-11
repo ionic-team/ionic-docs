@@ -29,6 +29,42 @@
       "required": false
     },
     {
+      "name": "compareWith",
+      "type": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+      "complexType": {
+        "original": "string | RadioGroupCompareFn | null",
+        "resolved": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+        "references": {
+          "RadioGroupCompareFn": {
+            "location": "import",
+            "path": "./radio-group-interface",
+            "id": "src/components/radio-group/radio-group-interface.ts::RadioGroupCompareFn"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "compare-with",
+      "reflectToAttr": false,
+      "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-radio-group. When not specified, the default behavior will use strict\nequality (===) for comparison.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((currentValue: any, compareValue: any) => boolean)"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "name",
       "type": "string",
       "complexType": {

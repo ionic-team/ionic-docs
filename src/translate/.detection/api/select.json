@@ -13,6 +13,14 @@
       "text": "label - The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
     },
     {
+      "name": "slot",
+      "text": "start - Content to display at the leading edge of the select."
+    },
+    {
+      "name": "slot",
+      "text": "end - Content to display at the trailing edge of the select."
+    },
+    {
       "name": "part",
       "text": "placeholder - The text displayed in the select when there is no value."
     },
@@ -140,7 +148,7 @@
       "mutable": false,
       "attr": "compare-with",
       "reflectToAttr": false,
-      "docs": "A property name or function used to compare object values",
+      "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-select. When not specified, the default behavior will use strict\nequality (===) for comparison.",
       "docsTags": [],
       "values": [
         {
@@ -634,13 +642,9 @@
         "signature": "(event?: UIEvent) => Promise<any>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "event The user interface event that called the open."
-              }
-            ],
-            "text": "The user interface event that called the open."
+            "name": "event",
+            "type": "UIEvent | undefined",
+            "docs": "The user interface event that called the open."
           }
         ],
         "references": {
@@ -660,7 +664,13 @@
         "return": "Promise<any>"
       },
       "signature": "open(event?: UIEvent) => Promise<any>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "event",
+          "type": "UIEvent | undefined",
+          "docs": "The user interface event that called the open."
+        }
+      ],
       "docs": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
       "docsTags": [
         {
@@ -828,8 +838,16 @@
   ],
   "slots": [
     {
+      "name": "end",
+      "docs": "Content to display at the trailing edge of the select."
+    },
+    {
       "name": "label",
       "docs": "The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+    },
+    {
+      "name": "start",
+      "docs": "Content to display at the leading edge of the select."
     }
   ],
   "parts": [

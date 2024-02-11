@@ -43,6 +43,10 @@
     {
       "name": "part",
       "text": "bar-active - The active part of the bar."
+    },
+    {
+      "name": "part",
+      "text": "label - The label text describing the range."
     }
   ],
   "usage": {},
@@ -413,7 +417,7 @@
       },
       "mutable": false,
       "reflectToAttr": false,
-      "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.",
+      "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
       "docsTags": [],
       "default": "(value: number): number => Math.round(value)",
       "values": [
@@ -720,6 +724,10 @@
     {
       "name": "knob",
       "docs": "The handle that is used to drag the range."
+    },
+    {
+      "name": "label",
+      "docs": "The label text describing the range."
     },
     {
       "name": "pin",

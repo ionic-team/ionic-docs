@@ -18,6 +18,10 @@
     },
     {
       "name": "part",
+      "text": "label - The label text describing the radio."
+    },
+    {
+      "name": "part",
       "text": "mark - The checkmark or dot used to indicate the checked state."
     }
   ],
@@ -357,6 +361,10 @@
     {
       "name": "container",
       "docs": "The container for the radio mark."
+    },
+    {
+      "name": "label",
+      "docs": "The label text describing the radio."
     },
     {
       "name": "mark",

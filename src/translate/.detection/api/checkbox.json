@@ -18,6 +18,10 @@
     },
     {
       "name": "part",
+      "text": "label - The label text describing the checkbox."
+    },
+    {
+      "name": "part",
       "text": "mark - The checkmark used to indicate the checked state."
     }
   ],
@@ -457,6 +461,10 @@
     {
       "name": "container",
       "docs": "The container for the checkbox mark."
+    },
+    {
+      "name": "label",
+      "docs": "The label text describing the checkbox."
     },
     {
       "name": "mark",

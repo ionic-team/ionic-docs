@@ -11,6 +11,14 @@
     {
       "name": "slot",
       "text": "label - The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+    },
+    {
+      "name": "slot",
+      "text": "start - Content to display at the leading edge of the textarea. (EXPERIMENTAL)"
+    },
+    {
+      "name": "slot",
+      "text": "end - Content to display at the trailing edge of the textarea. (EXPERIMENTAL)"
     }
   ],
   "usage": {},
@@ -70,7 +78,7 @@
       "mutable": false,
       "attr": "autofocus",
       "reflectToAttr": false,
-      "docs": "This Boolean attribute lets you specify that a form control should have input focus when the page loads.",
+      "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
       "docsTags": [],
       "default": "false",
       "values": [
@@ -225,7 +233,7 @@
       },
       "mutable": false,
       "reflectToAttr": false,
-      "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
+      "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
       "docsTags": [],
       "values": [
         {
@@ -888,7 +896,7 @@
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
-      "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.",
+      "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
       "docsTags": []
     }
   ],
@@ -1062,8 +1070,16 @@
   ],
   "slots": [
     {
+      "name": "end",
+      "docs": "Content to display at the trailing edge of the textarea. (EXPERIMENTAL)"
+    },
+    {
       "name": "label",
       "docs": "The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+    },
+    {
+      "name": "start",
+      "docs": "Content to display at the leading edge of the textarea. (EXPERIMENTAL)"
     }
   ],
   "parts": [],

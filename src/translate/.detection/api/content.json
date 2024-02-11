@@ -239,31 +239,19 @@
         "signature": "(x: number, y: number, duration: number) => Promise<void>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "x The amount to scroll by on the horizontal axis."
-              }
-            ],
-            "text": "The amount to scroll by on the horizontal axis."
+            "name": "x",
+            "type": "number",
+            "docs": "The amount to scroll by on the horizontal axis."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "y The amount to scroll by on the vertical axis."
-              }
-            ],
-            "text": "The amount to scroll by on the vertical axis."
+            "name": "y",
+            "type": "number",
+            "docs": "The amount to scroll by on the vertical axis."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "duration The amount of time to take scrolling by that amount."
-              }
-            ],
-            "text": "The amount of time to take scrolling by that amount."
+            "name": "duration",
+            "type": "number",
+            "docs": "The amount of time to take scrolling by that amount."
           }
         ],
         "references": {
@@ -275,7 +263,23 @@
         "return": "Promise<void>"
       },
       "signature": "scrollByPoint(x: number, y: number, duration: number) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "x",
+          "type": "number",
+          "docs": "The amount to scroll by on the horizontal axis."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "docs": "The amount to scroll by on the vertical axis."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "docs": "The amount of time to take scrolling by that amount."
+        }
+      ],
       "docs": "Scroll by a specified X/Y distance in the component.",
       "docsTags": [
         {
@@ -302,13 +306,9 @@
         "signature": "(duration?: number) => Promise<void>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
-              }
-            ],
-            "text": "The amount of time to take scrolling to the bottom. Defaults to `0`."
+            "name": "duration",
+            "type": "number",
+            "docs": "The amount of time to take scrolling to the bottom. Defaults to `0`."
           }
         ],
         "references": {
@@ -320,7 +320,13 @@
         "return": "Promise<void>"
       },
       "signature": "scrollToBottom(duration?: number) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "duration",
+          "type": "number",
+          "docs": "The amount of time to take scrolling to the bottom. Defaults to `0`."
+        }
+      ],
       "docs": "Scroll to the bottom of the component.",
       "docsTags": [
         {
@@ -339,31 +345,19 @@
         "signature": "(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "x The point to scroll to on the horizontal axis."
-              }
-            ],
-            "text": "The point to scroll to on the horizontal axis."
+            "name": "x",
+            "type": "number | null | undefined",
+            "docs": "The point to scroll to on the horizontal axis."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "y The point to scroll to on the vertical axis."
-              }
-            ],
-            "text": "The point to scroll to on the vertical axis."
+            "name": "y",
+            "type": "number | null | undefined",
+            "docs": "The point to scroll to on the vertical axis."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
-              }
-            ],
-            "text": "The amount of time to take scrolling to that point. Defaults to `0`."
+            "name": "duration",
+            "type": "number",
+            "docs": "The amount of time to take scrolling to that point. Defaults to `0`."
           }
         ],
         "references": {
@@ -375,7 +369,23 @@
         "return": "Promise<void>"
       },
       "signature": "scrollToPoint(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "x",
+          "type": "number | null | undefined",
+          "docs": "The point to scroll to on the horizontal axis."
+        },
+        {
+          "name": "y",
+          "type": "number | null | undefined",
+          "docs": "The point to scroll to on the vertical axis."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "docs": "The amount of time to take scrolling to that point. Defaults to `0`."
+        }
+      ],
       "docs": "Scroll to a specified X/Y location in the component.",
       "docsTags": [
         {
@@ -402,13 +412,9 @@
         "signature": "(duration?: number) => Promise<void>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
-              }
-            ],
-            "text": "The amount of time to take scrolling to the top. Defaults to `0`."
+            "name": "duration",
+            "type": "number",
+            "docs": "The amount of time to take scrolling to the top. Defaults to `0`."
           }
         ],
         "references": {
@@ -420,7 +426,13 @@
         "return": "Promise<void>"
       },
       "signature": "scrollToTop(duration?: number) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "duration",
+          "type": "number",
+          "docs": "The amount of time to take scrolling to the top. Defaults to `0`."
+        }
+      ],
       "docs": "Scroll to the top of the component.",
       "docsTags": [
         {
