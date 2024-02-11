@@ -71,7 +71,6 @@
     "@docusaurus/module-type-aliases": "^3.0.0",
     "@docusaurus/tsconfig": "^3.0.0",
     "@ionic/prettier-config": "^3.0.0",
-    "@types/react": "^17.0.37",
     "@types/react": "^18.2.29",
     "cspell": "^6.31.3",
     "deepl": "^1.0.13",
