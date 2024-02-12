@@ -19,7 +19,7 @@ Ionic makes it easy to change the themes of your app, including supporting dark 
 
 ## Enabling Dark Theme
 
-There are three provided ways to enable the dark theme in an app: **always**, based on **system** settings, or by using a **class**.
+There are three provided ways to enable the dark theme in an app: **always**, based on **system** settings, or by using a CSS **class**.
 
 ### Always
 

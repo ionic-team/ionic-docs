@@ -21,7 +21,7 @@ The default theme in Ionic provides [Ionic colors](./colors) that meet [Level AA
 
 ## Enabling High Contrast Theme
 
-There are three provided ways to enable the high contrast theme in an app: **always**, based on **system** settings, or by using a **class**.
+There are three provided ways to enable the high contrast theme in an app: **always**, based on **system** settings, or by using a CSS **class**.
 
 ### Always
 
