@@ -23,10 +23,10 @@ import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
 
 <intro-end />
 
-Add native functionality to your app with Capacitor, a native runtime built by the Ionic team. Install the core packages and easily add them to your project. Capacitor has a wide range of capabilities that developers can use to access features like the device file system, camera, and native location services. All of this is powered by a unified TypeScript API that automatically handles platform differences.
+Ionicチームによって構築されたネイティブライブラリ、Capacitorを使ってアプリにネイティブ機能を追加しましょう。コアパッケージをインストールして、プロジェクトに簡単に追加できます。Capacitorには、開発者がデバイスのファイルシステム、カメラ、ネイティブの位置情報サービスなどの機能にアクセスするために使用できる幅広い機能があります。これらはすべて、プラットフォームの違いを自動的に処理する統一されたTypeScript APIによって提供されています。
 
-While the core features of Capacitor are free and open source, some enterprises might find themselves needing more features or custom third-party integrations. If you need such additional features, check out the [Ionic Enterprise SDK](https://ionic.io/enterprise-sdk).
+Capacitorのコア機能は無料でオープンソースですが、企業によってはより多くの機能やカスタムサードパーティ統合が必要になるかもしれません。そのような追加機能が必要な場合は、 [Ionic Enterprise SDK](https://ionic.io/enterprise-sdk) をチェックしてください。
 
 <NativeEnterpriseCard />
 
-> Looking for older Cordova plugins? Visit their new home at [Awesome Cordova Plugins.](https://danielsogl.gitbook.io/awesome-cordova-plugins/)
+> 古いCordovaプラグインをお探しですか？新しいホーム [Awesome Cordova Plugins.](https://danielsogl.gitbook.io/awesome-cordova-plugins/) をご覧ください。

@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Capacitor Plugins | Capacitor Core Plugins for Ionic Apps</title>
+  <title>Capacitorプラグイン | Ionicアプリ用のCapacitor Coreプラグイン</title>
   <meta
     name="description"
     content="Capacitor offers a collection APIs that make adding native functionality to your Ionic app as simple as using any JavaScript library."
@@ -21,23 +21,23 @@ import TabItem from '@theme/TabItem';
   `}</style>
 </head>
 
-Getting started with Capacitor is fairly straight forward for Ionic developers. Adding plugins to your project is no different than adding any dependencies you may need to a project.
+Capacitorを使い始めるのは、Ionic開発者にとってかなり簡単です。プロジェクトにプラグインを追加するのは、プロジェクトに必要な依存関係を追加するのと変わりません。
 <intro-end />
 
-## Install
+## インストール
 
-To install a plugin, find the plugin you want to use and install it using your package manager, like npm:
+プラグインをインストールするには、使いたいプラグインを見つけ、npmなどのパッケージマネージャーを使ってインストールする：
 
 ```shell
 # Install the Capacitor Plugins
 $ npm install @capacitor/camera
 ```
 
-## Usage
+## 使い方
 
-Once installed, plugins can be imported into a component and you can call the native functionality directly from your code.
+一度インストールすれば、プラグインをコンポーネントにインポートし、コードから直接ネイティブ機能を呼び出すことができます。
 
-Using the [Camera plugin](native/camera.md) as an example, first install it:
+[Camera plugin](native/camera.md)を例にして、まずインストールしてみましょう：
 
 ````mdx-code-block
 <Tabs
