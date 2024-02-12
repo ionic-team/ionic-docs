@@ -17,7 +17,7 @@ Ionic offers themes with increased contrast for users with low vision. These the
 
 ## Overview
 
-The default theme in Ionic provides [Ionic colors](./colors) that meet [Level AA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) as defined by Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The [Ionic colors](./colors) in the high contrast theme have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. Notably, improvements have been made to the contrast of UI components, including border, text, and background colors. However, it's important to note that within the high contrast theme, priority is given to text legibility. This means that if adjusting the contrast of a UI component against the page background would significantly compromise the contrast between the component's text and its background, the contrast of the UI component background will remain unchanged.
+The default theme in Ionic provides [Ionic colors](./colors.md) that meet [Level AA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) as defined by Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The [Ionic colors](./colors.md) in the high contrast theme have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. Notably, improvements have been made to the contrast of UI components, including border, text, and background colors. However, it's important to note that within the high contrast theme, priority is given to text legibility. This means that if adjusting the contrast of a UI component against the page background would significantly compromise the contrast between the component's text and its background, the contrast of the UI component background will remain unchanged.
 
 ## Enabling High Contrast Theme
 
@@ -128,7 +128,7 @@ import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-co
 <SystemHighContrastMode />
 
 :::caution
-The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss), and the
+The high contrast light theme must be imported after [core.css](../layout/global-stylesheets.md#corecss), and the
 high contrast dark theme must be imported after `dark.system.css`. Otherwise, the standard contrast theme will take priority.
 :::
 
@@ -173,7 +173,7 @@ import '@ionic/vue/css/themes/high-contrast-dark.class.css';
 
 </Tabs>
 
-This approach activates the high contrast theme when the `.ion-theme-high-contrast` class is set on the `html` element. This class must be applied by the developer. This can be combined with the [`.ion-theme-dark` class](./dark-mode#css-class) to conditionally apply the high contrast dark theme.
+This approach activates the high contrast theme when the `.ion-theme-high-contrast` class is set on the `html` element. This class must be applied by the developer. This can be combined with the [`.ion-theme-dark` class](./dark-mode.md#css-class) to conditionally apply the high contrast dark theme.
 
 The following example combines site settings, system settings, and the toggle to decide when to show high contrast mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
 
@@ -186,7 +186,7 @@ import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-cont
 <ClassHighContrastMode />
 
 :::caution
-The high contrast light theme must be imported after [core.css](../layout/global-stylesheets#corecss),
+The high contrast light theme must be imported after [core.css](../layout/global-stylesheets.md#corecss),
 and the high contrast dark theme must be imported after `dark.class.css`. Otherwise, the standard contrast theme will take
 priority.
 :::
