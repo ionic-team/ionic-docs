@@ -141,7 +141,7 @@
 
       // Listen for the toggle check/uncheck to toggle the high contrast theme
       const highContrastChange = (ev: ToggleCustomEvent) => {
-        toggleDarkTheme(ev.detail.checked);
+        toggleHighContrastTheme(ev.detail.checked);
       };
 
       return {
