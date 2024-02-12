@@ -107,7 +107,7 @@ import '@ionic/vue/css/themes/dark.system.css';
 
 </Tabs>
 
-This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`. The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). If support for older browser is required, we recommend using the [class](#class) approach.
+This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`. The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). If support for older browser is required, we recommend using the [CSS class](#css-class) approach.
 
 The following example uses the system settings to decide when to show dark mode.
 
@@ -123,7 +123,7 @@ import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index
 Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
-### Class
+### CSS Class
 
 While the previous approaches are excellent for enabling the dark theme through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the dark theme conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a dark theme class file. This file applies the dark theme when a specific class is added to an app. Importing the following stylesheet into the appropriate file will provide the necessary styles for using the dark theme with the class:
 
@@ -208,7 +208,7 @@ For developers looking to customize the theme color under the status bar in Safa
 
 ## Ionic Dark Theme
 
-Ionic has a recommended dark theme that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [class](#class). Each of these methods involves importing the dark theme file with the corresponding name.
+Ionic has a recommended dark theme that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the dark theme file with the corresponding name.
 
 The contents of each file are included below for reference. These variables are set by importing the relevant dark theme file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
 

@@ -115,7 +115,7 @@ import '@ionic/vue/css/themes/high-contrast-dark.system.css';
 
 </Tabs>
 
-This approach activates the high contrast theme when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`. The `prefers-contrast` media query is supported by [all modern browsers](https://caniuse.com/?search=prefers-contrast). If support for an older browser is required, we recommend using the [class](#class) approach.
+This approach activates the high contrast theme when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`. The `prefers-contrast` media query is supported by [all modern browsers](https://caniuse.com/?search=prefers-contrast). If support for an older browser is required, we recommend using the [CSS class](#css-class) approach.
 
 The following example uses the system settings to decide when to show high contrast mode.
 
@@ -132,7 +132,7 @@ The high contrast light theme must be imported after [core.css](../layout/global
 high contrast dark theme must be imported after `dark.system.css`. Otherwise, the standard contrast theme will take priority.
 :::
 
-### Class
+### CSS Class
 
 While the previous approaches are excellent for enabling the high contrast theme through file imports alone, there are scenarios where you may need more control over where it is applied. In cases where you need to apply the high contrast theme conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a high contrast theme class file. This file applies the high contrast theme when a specific class is added to an app. Importing the following stylesheets into the appropriate file will provide the necessary styles for using the high contrast theme with the class:
 
@@ -173,7 +173,7 @@ import '@ionic/vue/css/themes/high-contrast-dark.class.css';
 
 </Tabs>
 
-This approach activates the high contrast theme when the `.ion-theme-high-contrast` class is set on the `html` element. This class must be applied by the developer. This can be combined with the [`.ion-theme-dark` class](./dark-mode#class) to conditionally apply the high contrast dark theme.
+This approach activates the high contrast theme when the `.ion-theme-high-contrast` class is set on the `html` element. This class must be applied by the developer. This can be combined with the [`.ion-theme-dark` class](./dark-mode#css-class) to conditionally apply the high contrast dark theme.
 
 The following example combines site settings, system settings, and the toggle to decide when to show high contrast mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
 
@@ -197,7 +197,7 @@ The `.ion-theme-high-contrast` class **must** be added to the `html` element in 
 
 ## Customizing Ionic High Contrast Theme
 
-Ionic has a recommended high contrast theme that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [class](#class). Each of these methods involves importing the high contrast theme file with the corresponding name.
+Ionic has a recommended high contrast theme that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the high contrast theme file with the corresponding name.
 
 The theme variables are set by importing the relevant high contrast theme file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
 
