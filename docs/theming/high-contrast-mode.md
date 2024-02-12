@@ -201,9 +201,13 @@ Ionic has a recommended high contrast theme that can be enabled in three differe
 
 The theme variables are set by importing the relevant high contrast theme file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
 
-<Tabs groupId="highContrastFile" defaultValue="always" values={[{ value: 'always', label: 'Always (high-contrast.always.css)' }, { value: 'system', label: 'System (high-contrast.system.css)' }, { value: 'class', label: 'Class (high-contrast.class.css)' }]}>
+The following provides details on how to customize the high contrast theme depending on how it was applied in an application.
+
+<Tabs groupId="highContrastFile" defaultValue="always" values={[{ value: 'always', label: 'Always' }, { value: 'system', label: 'System' }, { value: 'class', label: 'Class' }]}>
 
 <TabItem value="always">
+
+The **always** high contrast theme can be accessed by importing `high-contrast.always.css` for the light variant and `high-contrast-dark.always.css` for the dark variant.
 
 The **always** high contrast theme behaves in the following ways:
 
@@ -215,6 +219,8 @@ The **always** high contrast theme behaves in the following ways:
 
 <TabItem value="system">
 
+The **system** high contrast theme can be accessed by importing `high-contrast.system.css` for the light variant and `high-contrast-dark.system.css` for the dark variant.
+
 The **system** high contrast theme behaves in the following ways:
 
 1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast theme in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
@@ -225,6 +231,8 @@ The **system** high contrast theme behaves in the following ways:
 </TabItem>
 
 <TabItem value="class">
+
+The **class** high contrast theme can be accessed by importing `high-contrast.class.css` for the light variant and `high-contrast-dark.class.css` for the dark variant.
 
 The **class** high contrast theme behaves in the following ways:
 
