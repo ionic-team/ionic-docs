@@ -29,4 +29,4 @@ Capacitorのコア機能は無料でオープンソースですが、企業に�
 
 <NativeEnterpriseCard />
 
-> 古いCordovaプラグインをお探しですか？新しいホーム [Awesome Cordova Plugins.](https://danielsogl.gitbook.io/awesome-cordova-plugins/) をご覧ください。
+> 古い Cordova プラグインをお探しですか？新しいホーム [Awesome Cordova Plugins.](https://danielsogl.gitbook.io/awesome-cordova-plugins/) をご覧ください。
