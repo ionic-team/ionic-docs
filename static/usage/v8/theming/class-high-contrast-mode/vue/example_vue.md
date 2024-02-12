@@ -121,7 +121,7 @@
       };
 
       const initializeHighContrastTheme = (isHighContrast) => {
-        highContrastToggle.value = isHighContrast;
+        highContrastThemeToggle.value = isHighContrast;
         toggleHighContrastTheme(isHighContrast);
       };
 
