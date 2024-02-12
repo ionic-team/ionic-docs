@@ -134,7 +134,7 @@ high contrast dark theme must be imported after `dark.system.css`. Otherwise, th
 
 ### Class
 
-While the previous approaches are excellent for enabling the high contrast theme through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the high contrast theme conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a high contrast theme class file. This file applies the high contrast theme when a specific class is added to an app. Importing the following stylesheets into the appropriate file will provide the necessary styles for using the high contrast theme with the class:
+While the previous approaches are excellent for enabling the high contrast theme through file imports alone, there are scenarios where you may need more control over where it is applied. In cases where you need to apply the high contrast theme conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a high contrast theme class file. This file applies the high contrast theme when a specific class is added to an app. Importing the following stylesheets into the appropriate file will provide the necessary styles for using the high contrast theme with the class:
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
