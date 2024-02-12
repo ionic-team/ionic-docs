@@ -5,7 +5,7 @@ title: APIインデックス
 import APIList from '@components/page/api/APIList';
 
 <head>
-  <title>API Index | すべての API カスタム要素の Ionic Docs API Index</title>
+  <title>API Index | API カスタム要素の Ionic Docs API Index</title>
   <meta
     name="description"
     content="Ionic Docs API Indexの各コンポーネントは、1つまたは複数のカスタム要素で構成され、それぞれがメソッド、イベント、CSSカスタムプロパティを公開します。"
