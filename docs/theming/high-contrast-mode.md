@@ -31,7 +31,7 @@ The high contrast theme can be enabled by importing the following stylesheet in 
 
 <TabItem value="angular">
 
-```typescript
+```css
 @import '@ionic/angular/css/themes/high-contrast.always.css'; // Light theme
 // @import '@ionic/angular/css/themes/high-contrast.always.css'; // Dark theme
 ```
