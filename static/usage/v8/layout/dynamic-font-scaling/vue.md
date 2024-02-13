@@ -89,10 +89,4 @@
     },
   });
 </script>
-
-<style>
-  html {
-    --ion-dynamic-font: var(--ion-default-dynamic-font);
-  }
-</style>
 ```

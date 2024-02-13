@@ -42,10 +42,4 @@
     <ion-title>Footer</ion-title>
   </ion-toolbar>
 </ion-footer>
-
-<style>
-  html {
-    --ion-dynamic-font: var(--ion-default-dynamic-font);
-  }
-</style>
 ```
