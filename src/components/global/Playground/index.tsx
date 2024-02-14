@@ -433,12 +433,8 @@ export default function Playground({
          * Load the stored mode and/or usage target, if present
          * from previously being toggled.
          */
-        if (isBrowser) {
-          const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
-          if (storedMode) setIonicMode(storedMode);
-          const storedUsageTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
-          if (storedUsageTarget) setUsageTarget(storedUsageTarget);
-        }
+        setIonicMode(getDefaultMode());
+        setUsageTarget(getDefaultUsageTarget());
 
         /**
          * If the iframes weren't already loaded, load them now.
@@ -591,14 +587,15 @@ export default function Playground({
   }
 
   useEffect(() => {
-    const codeSnippets = {};
+    const codeSnips = {};
     Object.keys(code).forEach((key) => {
       if (typeof code[key] === 'function') {
         /**
          * Instantiates the React component from the MDX content for
          * single-file playground examples.
          */
-        codeSnippets[key] = code[key]({});
+        const DynamicComponent = code[key];
+        codeSnips[key] = <DynamicComponent />;
       } else if (typeof code[key] === 'object') {
         /**
          * Instantiates the list of React components from the MDX content for
@@ -606,12 +603,13 @@ export default function Playground({
          */
         const fileSnippets = {};
         for (const fileName of Object.keys(code[key].files)) {
-          fileSnippets[`${fileName}`] = code[key].files[fileName]({});
+          const DynamicFileComponent = code[key].files[fileName];
+          fileSnippets[`${fileName}`] = <DynamicFileComponent />;
         }
-        codeSnippets[key] = fileSnippets;
+        codeSnips[key] = fileSnippets;
       }
     });
-    setCodeSnippets(codeSnippets);
+    setCodeSnippets(codeSnips);
   }, []);
 
   function getCodeSnippetId(usageTarget: string, fileName: string) {

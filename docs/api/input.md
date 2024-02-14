@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
-  <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards." />
+  <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It integrates with the keyboard on mobile devices." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.
+The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input and integrates with the keyboard on mobile devices.
 
 
 ## Basic Usage
