@@ -15,11 +15,11 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "generate-markdown": "node scripts/native.mjs && concurrently \"node scripts/cli.mjs\" \"node scripts/release-notes.mjs\"",
-    "lint": "npm run prettier -- --write --cache",
+    "lint": "npm run prettier -- --write",
     "serve": "docusaurus serve",
     "playground:new": "hygen playground new",
     "prestart": "npm run generate-markdown",
-    "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md}\"",
+    "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md}\" --cache",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle",
     "spellcheck": "cspell --no-progress \"**/*.md\""
