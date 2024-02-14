@@ -246,6 +246,18 @@ import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
+## Format Options
+
+You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatObjects` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatObjects` is not provided, default formats will be used for dates and times.
+
+If `timeZone` or `timeZoneName` are provided, they will be ignored, and the time zone will be set to UTC. This ensures that the displayed value matches the selected value, rather than being converted to the user's current time zone.
+
+Be careful with the options you provide, as they may not match the selected presentation. For example, providing `minute: 'numeric'` for a presentation of `month` may lead to unexpected behavior, displaying a month where only a time might be expected.
+
+import FormatOptions from '@site/static/usage/v7/datetime/format-options/index.md';
+
+<FormatOptions />
+
 ## Multiple Date Selection
 
 If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
