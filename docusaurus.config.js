@@ -325,4 +325,11 @@ module.exports = {
   ],
   customFields: {},
   themes: [],
+  scripts: [
+    "var beamer_config = { product_id : 'mUvQtqly31065' };",
+    {
+      src: 'https://app.getbeamer.com/js/beamer-embed.js',
+      defer: true,
+    },
+  ]
 };
