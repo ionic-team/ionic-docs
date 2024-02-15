@@ -1,7 +1,7 @@
 ```html
 <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
-<ion-modal keep-contents-mounted="{true}">
+<ion-modal keep-contents-mounted="true">
   <ion-datetime id="datetime" presentation="date-time" value="2023-11-02T01:22:00"></ion-datetime>
 </ion-modal>
 
