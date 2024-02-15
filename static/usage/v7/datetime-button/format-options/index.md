@@ -7,6 +7,7 @@ import angular from './angular.md';
 
 <Playground
   version="7"
+  size="large"
   code={{
     javascript,
     react,
