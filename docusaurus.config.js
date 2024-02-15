@@ -322,14 +322,28 @@ module.exports = {
         versions: VERSIONS_JSON,
       },
     ],
+    function (context, options) {
+      return {
+        name: 'beamer',
+        injectHtmlTags({content}) {
+          return {
+            // For performance, Beamer recommends injecting these scripts at the very bottom of the <body>
+            // Thus, custom plugin is required here to use postBodyTags
+            postBodyTags: [
+              `<script>var beamer_config = { product_id : 'mUvQtqly31065' };</script>`,
+              {
+                tagName: 'script',
+                attributes: {
+                  src: 'https://app.getbeamer.com/js/beamer-embed.js',
+                  defer: 'defer',
+                }
+              }
+            ]
+          };
+        }
+      };
+    },
   ],
   customFields: {},
   themes: [],
-  scripts: [
-    "var beamer_config = { product_id : 'mUvQtqly31065' };",
-    {
-      src: 'https://app.getbeamer.com/js/beamer-embed.js',
-      defer: true,
-    },
-  ]
 };
