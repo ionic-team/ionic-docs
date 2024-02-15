@@ -56,7 +56,7 @@ For more information on how Angular manages change propagation with `ngFor` see 
 
 ## From the Community
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 [High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
@@ -66,7 +66,7 @@ For more information on how Angular manages change propagation with `ngFor` see 
 
 [Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 :::note
 Do you have a guide you'd like to share? Click the _Edit this page_ button below.
