@@ -272,7 +272,7 @@ By default, `ion-datetime` does not show any header or title associated with the
 
 ## Format Options
 
-You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatObjects` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatObjects` is not provided, default formats will be used for dates and times.
+You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatOptions` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatOptions` is not provided, default formats will be used for dates and times.
 
 If `timeZone` or `timeZoneName` are provided, they will be ignored, and the time zone will be set to UTC. This ensures that the displayed value matches the selected value, rather than being converted to the user's current time zone.
 
