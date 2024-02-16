@@ -1,6 +1,5 @@
 ---
 title: Structure
-initialTab: 'preview'
 ---
 
 import DocsCard from '@components/global/DocsCard';

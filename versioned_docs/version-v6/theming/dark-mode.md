@@ -1,7 +1,5 @@
 ---
 title: Dark Mode
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 import Codepen from '@components/global/Codepen';
