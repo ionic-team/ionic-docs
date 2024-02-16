@@ -208,7 +208,7 @@ class MyApp {
 }
 ```
 
-<!-- This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. -->
+{/* This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. */}
 
 ## Accessing `this` in a function callback returns `undefined` {#accessing-this}
 

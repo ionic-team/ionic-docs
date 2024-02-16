@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
 
 :::note
-Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
+Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation.mdx), [React](../react/navigation.mdx), and [Vue](../vue/navigation.mdx) for framework-specific routing solutions.
 :::
 
 Apps should have a single `ion-router` component in the codebase.

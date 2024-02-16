@@ -140,7 +140,7 @@ The `router-link` attribute can be set on any Ionic Vue component, and the route
 
 The `router-direction` attribute accepts values of `forward`, `back`, or `none` and is used to control the direction of the page transition.
 
-The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. See the [Animations documentation](../utilities/animations) for more information on using animations in Ionic Vue.
+The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. See the [Animations documentation](../utilities/animations.mdx) for more information on using animations in Ionic Vue.
 
 ```html
 <ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">Click Me</ion-button>
@@ -192,7 +192,7 @@ The example above has the app navigate to `/page2` with a custom animation that 
 `useIonRouter` uses the Vue `inject()` function and should only be used inside of your `setup()` function.
 :::
 
-See the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
+See the [useIonRouter documentation](./utility-functions.mdx#router) for more details as well as type information.
 
 ### Navigating using `router.go`
 
@@ -574,11 +574,11 @@ Components presented via `IonModal` or `IonPopover` do not typically need an `Io
 
 ### useIonRouter
 
-▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions#useionrouterresult)
+▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions.mdx#useionrouterresult)
 
 Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) function from Vue.
 
-For example usages, please refer to our [Utility Functions](utility-functions#useionrouter).
+For example usages, please refer to our [Utility Functions](utility-functions.mdx#useionrouter).
 
 ## URL Parameters
 

@@ -28,7 +28,7 @@ See the [grid](./grid) documentation for more information.
 
 ## Row Alignment
 
-By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities#flex-container-properties) that can be applied to a row to customize this behavior.
+By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities.mdx#flex-container-properties) that can be applied to a row to customize this behavior.
 
 ## Properties
 
