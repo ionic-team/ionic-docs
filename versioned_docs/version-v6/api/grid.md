@@ -42,7 +42,7 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 
 ## Default Breakpoints
 
-The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
+The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced.mdx#variables-in-media-queries).
 
 | Name | Value  | Width Property | Offset Property | Push Property | Pull Property | Description                          |
 | ---- | ------ | -------------- | --------------- | ------------- | ------------- | ------------------------------------ |
@@ -148,7 +148,7 @@ import PushPullResponsive from '@site/static/usage/v6/grid/push-pull-responsive/
 
 ### Vertical Alignment
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities#flex-container-properties).
+All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.mdx#flex-container-properties).
 
 import VerticalAlignment from '@site/static/usage/v6/grid/vertical-alignment/index.md';
 
@@ -156,7 +156,7 @@ import VerticalAlignment from '@site/static/usage/v6/grid/vertical-alignment/ind
 
 ### Horizontal Alignment
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.md#flex-container-properties).
+All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.mdx#flex-container-properties).
 
 import HorizontalAlignment from '@site/static/usage/v6/grid/horizontal-alignment/index.md';
 

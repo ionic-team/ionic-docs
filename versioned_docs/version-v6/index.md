@@ -24,7 +24,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Ionic is an open source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview), [React](react), and [Vue](vue/overview).
 
-Get started building by [installing Ionic](intro/cli.md) or following our [First App Tutorial](intro/next.md#build-your-first-app) to learn the main concepts.
+Get started building by [installing Ionic](intro/cli.mdx) or following our [First App Tutorial](intro/next.mdx#build-your-first-app) to learn the main concepts.
 
 <intro-end />
 
@@ -58,11 +58,11 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
 
 ## Overview
 
-Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview), [React](react), or [Vue](vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview), [React](react), or [Vue](vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.mdx). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
-Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with [Adaptive Styling](theming/platform-styles.md), Ionic apps look and feel at home on every device.
+Ionic is the only mobile app stack that enables web developers to build apps for all major app stores and the mobile web from a single codebase. And with [Adaptive Styling](theming/platform-styles.mdx), Ionic apps look and feel at home on every device.
 
 ### A focus on performance
 
@@ -84,7 +84,7 @@ Build and deploy apps that work across multiple platforms, such as native iOS, A
 
 ### Web Standards-based
 
-Ionic is built on top of reliable, [standardized web technologies](reference/glossary.md#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
+Ionic is built on top of reliable, [standardized web technologies](reference/glossary.mdx#web-standards): HTML, CSS, and JavaScript, using modern Web APIs such as Custom Elements and Shadow DOM. Because of this, Ionic components have a stable API, and aren't at the whim of a single platform vendor.
 
 ### Beautiful Design
 

@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v6/text/basic/index.md';
 
 ## Theming
 
-The text component can be customized by changing any of the default [colors](../../theming/colors) Ionic provides.
+The text component can be customized by changing any of the default [colors](../theming/colors.mdx) Ionic provides.
 
 ## Properties
 

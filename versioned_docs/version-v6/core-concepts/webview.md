@@ -12,13 +12,13 @@ title: Web View
 
 Web Views power web apps on native devices.
 
-The Web View is automatically provided for apps integrated with [Capacitor](../reference/glossary#capacitor).
+The Web View is automatically provided for apps integrated with [Capacitor](../reference/glossary.mdx#capacitor).
 
-For [Cordova](../reference/glossary#cordova), Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a>. The plugin is provided by default when using the Ionic CLI.
+For [Cordova](../reference/glossary.mdx#cordova), Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a>. The plugin is provided by default when using the Ionic CLI.
 
 ## What is a Web View?
 
-Ionic apps are built using [web technologies](../reference/glossary#web-standards) and are rendered using Web Views, which are a full screen and full-powered web browser.
+Ionic apps are built using [web technologies](../reference/glossary.mdx#web-standards) and are rendered using Web Views, which are a full screen and full-powered web browser.
 
 Modern Web Views offer many built-in <a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a> for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
 
@@ -28,7 +28,7 @@ The Ionic Web View plugin is specialized for modern JavaScript apps. For both iO
 
 ### CORS
 
-Web Views enforce [CORS](../reference/glossary#cors), so it's important that external services properly handle cross-origin requests. See the [CORS FAQs](../troubleshooting/cors) for information on dealing with CORS in Ionic apps.
+Web Views enforce [CORS](../reference/glossary.mdx#cors), so it's important that external services properly handle cross-origin requests. See the [CORS FAQs](../troubleshooting/cors.mdx) for information on dealing with CORS in Ionic apps.
 
 ### File Protocol
 
