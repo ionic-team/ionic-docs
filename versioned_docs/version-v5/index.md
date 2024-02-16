@@ -13,7 +13,7 @@ import DocsCards from '@components/global/DocsCards';
 
 # Ionic Framework
 
-Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview), [React](react), and [Vue](vue/overview).
+Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.mdx), [React](react.mdx), and [Vue](vue/overview.mdx).
 
 Get started building by [installing Ionic](intro/cli.mdx) or following our [First App Tutorial](intro/next.mdx#build-your-first-app) to learn the main concepts.
 
@@ -49,7 +49,7 @@ Get started building by [installing Ionic](intro/cli.mdx) or following our [Firs
 
 ## Overview
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview), [React](react), or [Vue](vue/overview). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.mdx). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.mdx), [React](react.mdx), or [Vue](vue/overview.mdx). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
