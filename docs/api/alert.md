@@ -113,7 +113,7 @@ import Customization from '@site/static/usage/v7/alert/customization/index.md';
 
 ### Screen Readers
 
-Alerts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the alert is being used in an app.
+Alerts set aria properties in order to be [accessible](../reference/glossary.mdx#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the alert is being used in an app.
 
 #### Role
 

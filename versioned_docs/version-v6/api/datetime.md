@@ -315,7 +315,7 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 ## Theming
 
-Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
+Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors.mdx#new-color-creator) and the [Stepped Color Generator](../theming/themes.mdx#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 

@@ -296,7 +296,7 @@ Developers can provide their own buttons for advanced custom behavior.
 
 Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
 
-When specifying colors, any valid CSS color format can be used. This includes hex codes, `rgba`, [color variables](../theming/colors), etc.
+When specifying colors, any valid CSS color format can be used. This includes hex codes, `rgba`, [color variables](../theming/colors.mdx), etc.
 
 To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
 
@@ -320,7 +320,7 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 ### Global Theming
 
-Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
+Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes.mdx#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 

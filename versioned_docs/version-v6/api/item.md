@@ -57,7 +57,7 @@ This feature is not enabled by default on clickable items for the `md` mode, but
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](/docs/theming/css-variables) for more information.
+See the [theming documentation](/docs/theming/css-variables.mdx) for more information.
 
 -->
 

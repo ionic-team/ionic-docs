@@ -99,7 +99,7 @@ import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-
 
 ### Screen Readers
 
-Action Sheets set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the action sheet is being used in an app.
+Action Sheets set aria properties in order to be [accessible](../reference/glossary.mdx#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the action sheet is being used in an app.
 
 #### Role
 

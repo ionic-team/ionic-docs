@@ -27,7 +27,7 @@ See the [grid](./grid) documentation for more information.
 
 ## Column Alignment
 
-By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
+By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities.mdx#flex-item-properties) that can be applied to a column to customize this behavior.
 
 ## Properties
 

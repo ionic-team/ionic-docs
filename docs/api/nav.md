@@ -22,7 +22,7 @@ Nav is a standalone component for loading arbitrary components and pushing new c
 Unlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. For example, you should not push a new component to `ion-nav` and expect the URL to update. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL.
 
 :::note
-`ion-nav` is not meant to be used for routing.  Instead, see the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation), or [`ion-router`](./router) for vanilla JavaScript projects.
+`ion-nav` is not meant to be used for routing.  Instead, see the routing guides for [Angular](../angular/navigation.mdx), [React](../react/navigation.mdx), and [Vue](../vue/navigation.mdx), or [`ion-router`](./router) for vanilla JavaScript projects.
 :::
 
 ## Using NavLink

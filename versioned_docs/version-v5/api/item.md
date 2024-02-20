@@ -36,7 +36,7 @@ This feature is not enabled by default on clickable items for the `md` mode, but
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](../theming/css-variables.md) for more information.
+See the [theming documentation](../theming/css-variables.mdx) for more information.
 
 -->
 
@@ -54,7 +54,7 @@ The below chart details the item slots and where it will place the element insid
 
 ### Text Alignment
 
-Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.md) for classes that can be added to `<ion-item>` to transform the text.
+Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.mdx) for classes that can be added to `<ion-item>` to transform the text.
 
 ## Input Highlight
 

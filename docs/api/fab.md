@@ -43,7 +43,7 @@ import Positioning from '@site/static/usage/v7/fab/positioning/index.md';
 
 ### Safe Area
 
-If there is no `ion-header` or `ion-footer` component, the fab may be covered by a device's notch, status bar, or other device UI. In these cases, the [safe area](/docs/theming/advanced#safe-area-padding) on the top and bottom is not taken into account. This can be adjusted by using the [`--ion-safe-area-(dir)` variables](/docs/theming/advanced#application-variables).
+If there is no `ion-header` or `ion-footer` component, the fab may be covered by a device's notch, status bar, or other device UI. In these cases, the [safe area](/docs/theming/advanced.mdx#safe-area-padding) on the top and bottom is not taken into account. This can be adjusted by using the [`--ion-safe-area-(dir)` variables](/docs/theming/advanced.mdx#application-variables).
 
 When using a fab with `vertical` set to `"top"` without an `ion-header`, the top margin needs to be set:
 

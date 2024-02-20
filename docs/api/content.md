@@ -22,7 +22,7 @@ The content component provides an easy to use content area with some useful meth
 to control the scrollable area. There should only be one content in a single
 view.
 
-Content, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).
+Content, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities.mdx) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).
 
 
 ## Basic Usage
@@ -97,7 +97,7 @@ import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index
 
 ### Safe Area Padding
 
-The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/theming/advanced#safe-area-padding). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.md#application-variables).
+The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/theming/advanced.mdx#safe-area-padding). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.mdx#application-variables).
 
 The most common use case for this is to apply padding to the top of the content to account for the status bar. This can be done by setting the `padding-top` property to the value of the `--ion-safe-area-top` variable.
 
