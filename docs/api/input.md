@@ -170,6 +170,10 @@ import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md'
 
 Setting the `color` property changes the color palette for each input. On `ios` mode, this property changes the caret color. On `md` mode, this property changes the caret color and the highlight/underline color.
 
+:::note
+The `color` property does *not* change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
+:::
+
 import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
 <Colors />
