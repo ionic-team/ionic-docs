@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 :::note
 Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
 
-See the [Angular Platform Documentation](../angular/platform) for the types of platforms you can detect.
+See the [Angular Platform Documentation](../../../angular/platform.mdx) for the types of platforms you can detect.
 :::
 
 ```ts title="app.module.ts"
@@ -36,7 +36,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 <TabItem value="react">
 
 :::note
-See the [React Platform Documentation](../react/platform) for the types of platforms you can detect.
+See the [React Platform Documentation](../../../react/platform.mdx) for the types of platforms you can detect.
 :::
 
 ```tsx title="App.tsx"
@@ -51,7 +51,7 @@ setupIonicReact({
 <TabItem value="vue">
 
 :::note
-See the [Vue Platform Documentation](../vue/platform) for the types of platforms you can detect.
+See the [Vue Platform Documentation](../../../vue/platform.mdx) for the types of platforms you can detect.
 :::
 
 ```ts title="main.ts"

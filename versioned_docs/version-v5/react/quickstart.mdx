@@ -1,15 +1,8 @@
 ---
-title: Intro Ionic React Quickstart
 sidebar_label: Quickstart
 ---
 
-<head>
-  <title>Intro to Ionic React Quickstart Using Ionic CLI: React Basics</title>
-  <meta
-    name="description"
-    content="Intro to React Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
-  />
-</head>
+# Intro Ionic React Quickstart
 
 ## What is Ionic Framework?
 
@@ -21,7 +14,7 @@ In this guide, we'll go over the basics of both React and Ionic, including any I
 
 ## Creating a project with the Ionic CLI
 
-To get started, let's install the latest version of the Ionic CLI.
+To begin, let's install the latest version of the Ionic CLI.
 
 ```shell
 npm install -g @ionic/cli
@@ -94,7 +87,7 @@ The next import is from `react-router-dom`. We're importing Route, which is how 
 
 Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonApp`, `IonRouterOutlet`, and `IonReactRouter`.
 
-`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have a deeper guide that goes over these differences in our [React Navigation Docs](navigation.md).
+`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have a deeper guide that goes over these differences in our [React Navigation Docs](navigation.mdx).
 
 The last important import is the `Home` component import. This is a component that we will be able to navigate to in our app. We'll look at the navigation part a bit later.
 
@@ -171,7 +164,7 @@ When creating your own pages, don't forget to have `IonPage` be the root compone
 Our current content is relatively simple but does not contain anything that could be used in a real app, so let's change that.
 
 :::note
-For brevity, we're excluding repeating parts of our component, like the function declaration or import statements for other components.
+For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
 :::
 
 ```tsx
@@ -180,10 +173,11 @@ For brevity, we're excluding repeating parts of our component, like the function
   <IonContent>
     <IonList>
       <IonItem>
-        <IonCheckbox labelPlacement="end" justify="start">
+        <IonCheckbox slot="start" />
+        <IonLabel>
           <h1>Create Idea</h1>
           <IonNote>Run Idea by Brandy</IonNote>
-        </IonCheckbox>
+        </IonLabel>
         <IonBadge color="success" slot="end">
           5 Days
         </IonBadge>
@@ -197,17 +191,20 @@ Here in our `IonContent`, we're adding an `IonList` and a much more involved `Io
 
 ```tsx
 <IonItem>
-  <IonCheckbox labelPlacement="end" justify="start">
+  <IonCheckbox slot="start" />
+  <IonLabel>
     <h1>Create Idea</h1>
     <IonNote>Run Idea by Brandy</IonNote>
-  </IonCheckbox>
+  </IonLabel>
   <IonBadge color="success" slot="end">
     5 Days
   </IonBadge>
 </IonItem>
 ```
 
-Looking at our code, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a React API, but a web standards API, and it is used in many Ionic Framework components. (For more information on slots, [see the MDN docs here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).)
+Item is important as it clearly shows the mix of React concepts and Web Component concepts. The first clear example of a React concept is self-closing tags for React Components in `IonCheckbox`. This is just a simpler way of writing components that do not contain any child content.
+
+From the Web Components side, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a React API, but a web standards API.
 
 Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
 
@@ -231,21 +228,19 @@ import { add } from ‘ionicons/icons’;
 
 On our main `IonFab`, we're setting its positioning with the vertical and horizontal attributes. We're also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
 
-Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's `useHistory` hook API. Thankfully the `useHistory` hook makes this easy since it can be imported from the react-router package.
+Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's navigation API. Thankfully since this is rendered in a Router/Route context, we have access to React Routers APIs via Props passed to our Home component.
 
 ```tsx
 import { add } from 'ionicons/icons';
-import { useHistory } from 'react-router';
 ...
-const Home: React.FC<RouteComponentProps> = () => {
-  const history = useHistory();
+const Home: React.FC<RouteComponentProps> = (props) => {
   return (
     <IonPage>
       <IonHeader>...</IonHeader>
       <IonContent>
         <IonList>...</IonList>
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton onClick={() => history.push('/new')}>
+          <IonFabButton onClick={() => props.history.push('/new')}>
             <IonIcon icon={add} />
           </IonFabButton>
         </IonFab>
@@ -316,7 +311,7 @@ export default NewItem;
 ```
 
 :::note
-Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.mdx#ionpage) for more information.
 :::
 
 The content here is pretty straight forward and should look similar to the `Home` component. What is new is the `IonBackButton` component. This is used to navigate back to the previous route. Pretty straight forward? Ok, but what if we reload the page?
@@ -341,46 +336,9 @@ return (
 
 Here, when we reload, if there is no app history present, we'll be able to navigate back to our home route.
 
-## Adding Icons
-
-Ionic React comes with (https://ionic.io/ionicons/) pre-installed. All you need to do is import the icon of your choice from the `ionicons` package, and pass it to an `IonIcon` component through the `icon` prop:
-
-```tsx
-import React from 'react';
-import { IonButton, IonContent, IonIcon } from '@ionic/react';
-import { camera } from 'ionicons/icons';
-
-export const IconExample: React.FC = () => {
-  <IonContent>
-    <IonButton>
-      <IonIcon icon={camera} />
-      Take Picture
-    </IonButton>
-  </IonContent>;
-};
-```
-
-Note that for React, we are passing the imported SVG reference, **not** the icon name as a string.
-
-Developers also have the option of setting different icons based upon the mode:
-
-```tsx
-import React from 'react';
-import { IonButton, IonContent, IonIcon } from '@ionic/react';
-import { logoAndroid, logoApple } from 'ionicons/icons';
-
-export const IconExample: React.FC = () => {
-  <IonContent>
-    <IonButton>
-      <IonIcon ios={logoApple} md={logoAndroid} />
-    </IonButton>
-  </IonContent>;
-};
-```
-
 ## Build a Native App
 
-We now have the basics of an Ionic React app down, including some UI components and navigation. The great thing about Ionic’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+We now have the basics of an Ionic React app down, including some UI components and navigation. The great thing about Ionic’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
 
 Adding native functionality is easy. First, add Capacitor to your project:
 
@@ -443,7 +401,7 @@ export default Home;
 
 ## Where to go from here
 
-This guide covered the basics of creating an Ionic React app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic apps with React and Capacitor, follow our [First App guide](your-first-app.md).
+This guide covered the basics of creating an Ionic React app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic apps with React and Capacitor, follow our [First App guide](your-first-app.mdx).
 
 For a more detailed look at Ionic’s components, check out the [component API pages](https://ionicframework.com/docs/components). For more details on React, review the [React Docs](https://reactjs.org/). To keep building native features, see the [Capacitor docs](https://capacitorjs.com/docs/).
 
