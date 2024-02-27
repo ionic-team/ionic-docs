@@ -1,7 +1,7 @@
 const linkElement = document.createElement('link');
 
 linkElement.rel = 'stylesheet';
-linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@7.6.2-dev.11705355381.14b22962/css/themes/dark.class.css';
+linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@next/css/themes/dark.class.css';
 
 document.head.appendChild(linkElement);
 
