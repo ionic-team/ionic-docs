@@ -1,6 +1,5 @@
 ---
-initialTab: 'preview'
-inlineHtmlPreviews: true
+title: CSS Utilities
 ---
 
 # CSS Utilities
