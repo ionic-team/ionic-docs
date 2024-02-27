@@ -208,6 +208,10 @@ While this is not a complete list, here are some guidelines to follow when using
 
 * For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
 
+* If adding buttons to a toast, always provide alternative ways of completing the actions associated with each button. This ensures that even if the toast dismisses before a user can read it, they can still complete the actions shown in the toast.
+
+* Avoid showing a toast with buttons from inside another overlay such as a [modal](./modal). Modals and other overlays implement [focus trapping](./modal#focus-trapping) that will prevent screen readers from moving focus to the toast to complete the actions. This may be confusing for users since the toast will still be announced by screen readers. This is true even if alternative ways of completing the actions associated with each button are implemented. Consider creating a [live region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) within the focus-trapped modal instead of using a toast.
+
 ## Interfaces
 
 ### ToastButton

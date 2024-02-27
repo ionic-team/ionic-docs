@@ -1,7 +1,6 @@
 ---
+title: Advanced Theming
 sidebar_label: Advanced
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
