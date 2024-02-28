@@ -6,7 +6,7 @@
   src="https://www.youtube.com/embed/akh6V6Yw1lw"
   frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 ## Live Reload
@@ -63,6 +63,7 @@ In the debug target dropdown menu, select **Launch against Chrome**, then click 
 
 <!-- prettier-ignore -->
 <a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">The plugin</a> creates a bridge between the device and the Visual Studio Code developer tools and permits debugging right from the
+editor.
 
 In order to use this plugin to debug your Ionic apps, first install it then start your app in the Android emulator or connect your Android device and run the app. You may need to enable USB debugging on your Android device.
 

@@ -37,12 +37,11 @@ Ionic アプリは、コンポーネントと呼ばれる高レイヤーの構�
 </DocsCard>
 
 <DocsCard header="Button" href="api/button" icon="/icons/component-button-icon.png">
-  <p>
-    Buttonを使ってユーザが行動を起こすことができます。これはアプリと対話したり、移動したりするのに不可欠な方法です。
-  </p>
+  <p>Buttonを使ってユーザが行動を起こせます。アプリと対話したり、移動したりするのに不可欠な方法です。</p>
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
+  <!-- prettier-ignore -->
   <p>Cardは重要なコンテンツを表示するのに最適な方法で、画像、ボタン、テキストなどを含めることができます。</p>
 </DocsCard>
 
@@ -71,7 +70,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レイヤーの構�
 </DocsCard>
 
 <DocsCard header="Icons" href="api/icon" img="/icons/feature-component-icons-icon.png">
-  <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
+  <p>ウェブ、iOS、Androidアプリで使える美しいデザインのアイコン。</p>
 </DocsCard>
 
 <DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">

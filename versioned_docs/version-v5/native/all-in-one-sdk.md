@@ -16,8 +16,7 @@ Paytm All-in-One SDK enables payment acceptance via Paytm wallet, Paytm Payments
 For more information about Paytm All-in-One SDK, please visit https://developer.paytm.com/docs/all-in-one-sdk/hybrid-apps/cordova/
 
 <p>
-  <a
-    href="https://github.com/paytm/paytm-allinonesdk-ionic-cordova.git" target="_blank" rel="noopener" className="git-link">github.com/paytm/paytm-allinonesdk-ionic-cordova.git</a>
+  <a href="https://github.com/paytm/paytm-allinonesdk-ionic-cordova.git" target="_blank" rel="noopener" className="git-link">github.com/paytm/paytm-allinonesdk-ionic-cordova.git</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -27,7 +26,7 @@ For more information about Paytm All-in-One SDK, please visit https://developer.
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

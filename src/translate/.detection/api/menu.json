@@ -198,8 +198,9 @@
         "signature": "(animated?: boolean) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "animated",
+            "type": "boolean",
+            "docs": ""
           }
         ],
         "references": {
@@ -211,7 +212,13 @@
         "return": "Promise<boolean>"
       },
       "signature": "close(animated?: boolean) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "animated",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
       "docs": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
       "docsTags": []
     },
@@ -269,8 +276,9 @@
         "signature": "(animated?: boolean) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "animated",
+            "type": "boolean",
+            "docs": ""
           }
         ],
         "references": {
@@ -282,7 +290,13 @@
         "return": "Promise<boolean>"
       },
       "signature": "open(animated?: boolean) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "animated",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
       "docs": "Opens the menu. If the menu is already open or it can't be opened,\nit returns `false`.",
       "docsTags": []
     },
@@ -296,12 +310,14 @@
         "signature": "(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "shouldOpen",
+            "type": "boolean",
+            "docs": ""
           },
           {
-            "tags": [],
-            "text": ""
+            "name": "animated",
+            "type": "boolean",
+            "docs": ""
           }
         ],
         "references": {
@@ -313,7 +329,18 @@
         "return": "Promise<boolean>"
       },
       "signature": "setOpen(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "shouldOpen",
+          "type": "boolean",
+          "docs": ""
+        },
+        {
+          "name": "animated",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
       "docs": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
       "docsTags": []
     },
@@ -327,8 +354,9 @@
         "signature": "(animated?: boolean) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "animated",
+            "type": "boolean",
+            "docs": ""
           }
         ],
         "references": {
@@ -340,7 +368,13 @@
         "return": "Promise<boolean>"
       },
       "signature": "toggle(animated?: boolean) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "animated",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
       "docs": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
       "docsTags": []
     }
@@ -413,11 +447,6 @@
     {
       "event": "click",
       "capture": true,
-      "passive": false
-    },
-    {
-      "event": "keydown",
-      "capture": false,
       "passive": false
     }
   ],

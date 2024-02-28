@@ -795,22 +795,14 @@
             "signature": "(data?: any, role?: string) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -822,7 +814,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            }
+          ],
           "docs": "アクションシートのオーバーレイが提示された後、それを解除します。",
           "docsTags": [
             {
@@ -1623,22 +1626,14 @@
             "signature": "(data?: any, role?: string) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -1650,7 +1645,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            }
+          ],
           "docs": "アラートオーバーレイが表示された後、解除します。",
           "docsTags": [
             {
@@ -4950,6 +4956,10 @@
         },
         {
           "name": "part",
+          "text": "label - The label text describing the checkbox."
+        },
+        {
+          "name": "part",
           "text": "mark - The checkmark used to indicate the checked state."
         }
       ],
@@ -5389,6 +5399,10 @@
         {
           "name": "container",
           "docs": "チェックボックスマークのコンテナです。"
+        },
+        {
+          "name": "label",
+          "docs": "The label text describing the checkbox."
         },
         {
           "name": "mark",
@@ -6456,31 +6470,19 @@
             "signature": "(x: number, y: number, duration: number) => Promise<void>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "x The amount to scroll by on the horizontal axis."
-                  }
-                ],
-                "text": "The amount to scroll by on the horizontal axis."
+                "name": "x",
+                "type": "number",
+                "docs": "The amount to scroll by on the horizontal axis."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "y The amount to scroll by on the vertical axis."
-                  }
-                ],
-                "text": "The amount to scroll by on the vertical axis."
+                "name": "y",
+                "type": "number",
+                "docs": "The amount to scroll by on the vertical axis."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "duration The amount of time to take scrolling by that amount."
-                  }
-                ],
-                "text": "The amount of time to take scrolling by that amount."
+                "name": "duration",
+                "type": "number",
+                "docs": "The amount of time to take scrolling by that amount."
               }
             ],
             "references": {
@@ -6492,7 +6494,23 @@
             "return": "Promise<void>"
           },
           "signature": "scrollByPoint(x: number, y: number, duration: number) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "x",
+              "type": "number",
+              "docs": "The amount to scroll by on the horizontal axis."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "docs": "The amount to scroll by on the vertical axis."
+            },
+            {
+              "name": "duration",
+              "type": "number",
+              "docs": "The amount of time to take scrolling by that amount."
+            }
+          ],
           "docs": "コンポーネントを指定したX/Y距離だけスクロールさせる。",
           "docsTags": [
             {
@@ -6519,13 +6537,9 @@
             "signature": "(duration?: number) => Promise<void>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
-                  }
-                ],
-                "text": "The amount of time to take scrolling to the bottom. Defaults to `0`."
+                "name": "duration",
+                "type": "number",
+                "docs": "The amount of time to take scrolling to the bottom. Defaults to `0`."
               }
             ],
             "references": {
@@ -6537,7 +6551,13 @@
             "return": "Promise<void>"
           },
           "signature": "scrollToBottom(duration?: number) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "duration",
+              "type": "number",
+              "docs": "The amount of time to take scrolling to the bottom. Defaults to `0`."
+            }
+          ],
           "docs": "コンポーネントの一番下までスクロールします。",
           "docsTags": [
             {
@@ -6556,31 +6576,19 @@
             "signature": "(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "x The point to scroll to on the horizontal axis."
-                  }
-                ],
-                "text": "The point to scroll to on the horizontal axis."
+                "name": "x",
+                "type": "number | null | undefined",
+                "docs": "The point to scroll to on the horizontal axis."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "y The point to scroll to on the vertical axis."
-                  }
-                ],
-                "text": "The point to scroll to on the vertical axis."
+                "name": "y",
+                "type": "number | null | undefined",
+                "docs": "The point to scroll to on the vertical axis."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
-                  }
-                ],
-                "text": "The amount of time to take scrolling to that point. Defaults to `0`."
+                "name": "duration",
+                "type": "number",
+                "docs": "The amount of time to take scrolling to that point. Defaults to `0`."
               }
             ],
             "references": {
@@ -6592,7 +6600,23 @@
             "return": "Promise<void>"
           },
           "signature": "scrollToPoint(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "x",
+              "type": "number | null | undefined",
+              "docs": "The point to scroll to on the horizontal axis."
+            },
+            {
+              "name": "y",
+              "type": "number | null | undefined",
+              "docs": "The point to scroll to on the vertical axis."
+            },
+            {
+              "name": "duration",
+              "type": "number",
+              "docs": "The amount of time to take scrolling to that point. Defaults to `0`."
+            }
+          ],
           "docs": "コンポーネント内の指定したX/Y位置までスクロールします。",
           "docsTags": [
             {
@@ -6619,13 +6643,9 @@
             "signature": "(duration?: number) => Promise<void>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
-                  }
-                ],
-                "text": "The amount of time to take scrolling to the top. Defaults to `0`."
+                "name": "duration",
+                "type": "number",
+                "docs": "The amount of time to take scrolling to the top. Defaults to `0`."
               }
             ],
             "references": {
@@ -6637,7 +6657,13 @@
             "return": "Promise<void>"
           },
           "signature": "scrollToTop(duration?: number) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "duration",
+              "type": "number",
+              "docs": "The amount of time to take scrolling to the top. Defaults to `0`."
+            }
+          ],
           "docs": "コンポーネントの上部にスクロールします。",
           "docsTags": [
             {
@@ -7663,7 +7689,7 @@
           "mutable": false,
           "attr": "readonly",
           "reflectToAttr": false,
-          "docs": "`true`の場合、datetimeは正常に表示されるが、インタラクティブにはなりません。",
+          "docs": "true`の場合、日付は正常に表示されるが、選択された日付は変更できない。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -7805,7 +7831,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "選択された日付の数を示すヘッダーテキストをフォーマットするために使用されるコールバックです。選択された日付が0または1以上の場合のみ使用されます（つまり、ちょうど1の場合は未使用です）。デフォルトでは、ヘッダーテキストは \"numberOfDates days \"に設定されています。",
+          "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
           "docsTags": [],
           "values": [
             {
@@ -7890,8 +7916,9 @@
             "signature": "(closeOverlay?: boolean) => Promise<void>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "closeOverlay",
+                "type": "boolean",
+                "docs": ""
               }
             ],
             "references": {
@@ -7903,7 +7930,13 @@
             "return": "Promise<void>"
           },
           "signature": "cancel(closeOverlay?: boolean) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "closeOverlay",
+              "type": "boolean",
+              "docs": ""
+            }
+          ],
           "docs": "ionCancel イベントを発行し、オプションで datetime が表示されたポップオーバーまたはモーダルを閉じます。",
           "docsTags": []
         },
@@ -7917,8 +7950,9 @@
             "signature": "(closeOverlay?: boolean) => Promise<void>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "closeOverlay",
+                "type": "boolean",
+                "docs": ""
               }
             ],
             "references": {
@@ -7930,7 +7964,13 @@
             "return": "Promise<void>"
           },
           "signature": "confirm(closeOverlay?: boolean) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "closeOverlay",
+              "type": "boolean",
+              "docs": ""
+            }
+          ],
           "docs": "選択されたdatetimeの値を確認し、`value`プロパティを更新し、オプションでdatetimeが表示されていたポップオーバーまたはモーダルを閉じます。",
           "docsTags": []
         },
@@ -7944,8 +7984,9 @@
             "signature": "(startDate?: string) => Promise<void>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "startDate",
+                "type": "string | undefined",
+                "docs": ""
               }
             ],
             "references": {
@@ -7957,7 +7998,13 @@
             "return": "Promise<void>"
           },
           "signature": "reset(startDate?: string) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "startDate",
+              "type": "string | undefined",
+              "docs": ""
+            }
+          ],
           "docs": "datetimeの内部状態をリセットするが、値は更新しません。有効なISO-8601文字列を渡すと、コンポーネントの状態は指定した日付にリセットされます。値が提供されない場合、内部状態はmin、max、todayのクランプされた値にリセットされます。",
           "docsTags": []
         }
@@ -9653,6 +9700,14 @@
         {
           "name": "slot",
           "text": "label - The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+        },
+        {
+          "name": "slot",
+          "text": "start - Content to display at the leading edge of the input. (EXPERIMENTAL)"
+        },
+        {
+          "name": "slot",
+          "text": "end - Content to display at the trailing edge of the input. (EXPERIMENTAL)"
         }
       ],
       "usage": {},
@@ -9987,7 +10042,7 @@
           "mutable": false,
           "attr": "autofocus",
           "reflectToAttr": false,
-          "docs": "この Boolean 属性により、ページロード時にフォームコントロールにInputフォーカスが当たるように指定することができます。",
+          "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -10142,7 +10197,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "カウンターのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、カウンターのテキストは\"itemLength / maxLength\"に設定されています。",
+          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
           "docsTags": [],
           "values": [
             {
@@ -10974,7 +11029,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-input` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい場合は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。",
+          "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": []
         }
       ],
@@ -11148,8 +11203,16 @@
       ],
       "slots": [
         {
+          "name": "end",
+          "docs": "Content to display at the trailing edge of the input. (EXPERIMENTAL)"
+        },
+        {
           "name": "label",
           "docs": "入力に関連付けるラベルテキスト。labelPlacement`プロパティを使用すると、入力に対してラベルを配置する位置を制御することができる。ラベルをカスタム HTML でレンダリングする必要がある場合に使用します。(EXPERIMENTAL)"
+        },
+        {
+          "name": "start",
+          "docs": "Content to display at the leading edge of the input. (EXPERIMENTAL)"
         }
       ],
       "parts": [],
@@ -11944,13 +12007,9 @@
             "signature": "(side: Side | undefined) => Promise<void>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "side The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
-                  }
-                ],
-                "text": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+                "name": "side",
+                "type": "Side | undefined",
+                "docs": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
               }
             ],
             "references": {
@@ -11967,7 +12026,13 @@
             "return": "Promise<void>"
           },
           "signature": "open(side: Side | undefined) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "side",
+              "type": "Side | undefined",
+              "docs": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+            }
+          ],
           "docs": "スライド式の項目を開く。",
           "docsTags": [
             {
@@ -13721,22 +13786,14 @@
             "signature": "(data?: any, role?: string) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -13748,7 +13805,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            }
+          ],
           "docs": "ローディングオーバーレイが提示された後、それを解除します。",
           "docsTags": [
             {
@@ -14648,8 +14716,9 @@
             "signature": "(animated?: boolean) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "animated",
+                "type": "boolean",
+                "docs": ""
               }
             ],
             "references": {
@@ -14661,7 +14730,13 @@
             "return": "Promise<boolean>"
           },
           "signature": "close(animated?: boolean) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "animated",
+              "type": "boolean",
+              "docs": ""
+            }
+          ],
           "docs": "メニューを閉じる。メニューが既に閉じられていたり、閉じることができない場合は、`false`を返します。",
           "docsTags": []
         },
@@ -14719,8 +14794,9 @@
             "signature": "(animated?: boolean) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "animated",
+                "type": "boolean",
+                "docs": ""
               }
             ],
             "references": {
@@ -14732,7 +14808,13 @@
             "return": "Promise<boolean>"
           },
           "signature": "open(animated?: boolean) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "animated",
+              "type": "boolean",
+              "docs": ""
+            }
+          ],
           "docs": "メニューを開く。メニューが既に開いているか、開くことができない場合は、`false`を返します。",
           "docsTags": []
         },
@@ -14746,12 +14828,14 @@
             "signature": "(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "shouldOpen",
+                "type": "boolean",
+                "docs": ""
               },
               {
-                "tags": [],
-                "text": ""
+                "name": "animated",
+                "type": "boolean",
+                "docs": ""
               }
             ],
             "references": {
@@ -14763,7 +14847,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "setOpen(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "shouldOpen",
+              "type": "boolean",
+              "docs": ""
+            },
+            {
+              "name": "animated",
+              "type": "boolean",
+              "docs": ""
+            }
+          ],
           "docs": "ボタンを開いたり閉じたりします。操作が正常に完了しない場合は `false` を返します。",
           "docsTags": []
         },
@@ -14777,8 +14872,9 @@
             "signature": "(animated?: boolean) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "animated",
+                "type": "boolean",
+                "docs": ""
               }
             ],
             "references": {
@@ -14790,7 +14886,13 @@
             "return": "Promise<boolean>"
           },
           "signature": "toggle(animated?: boolean) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "animated",
+              "type": "boolean",
+              "docs": ""
+            }
+          ],
           "docs": "メニューを切り替えます。メニューが既に開かれている場合は閉じようとし、そうでない場合は開こうとします。操作が正常に完了しない場合は、`false`を返します。",
           "docsTags": []
         }
@@ -14863,11 +14965,6 @@
         {
           "event": "click",
           "capture": true,
-          "passive": false
-        },
-        {
-          "event": "keydown",
-          "capture": false,
           "passive": false
         }
       ],
@@ -15063,7 +15160,7 @@
           "mutable": false,
           "attr": "can-dismiss",
           "reflectToAttr": false,
-          "docs": "モーダルが `dismiss` メソッドを呼び出したときに、終了できるかどうかを決定します。  値が `true` または値の関数が `true` を返す場合、モーダルは終了しようとするときに閉じます。値が `false` または値の関数が `false` を返す場合、モーダルは終了しようとしたときに閉じません。",
+          "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -15418,22 +15515,14 @@
             "signature": "(data?: any, role?: string) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
               }
             ],
             "references": {
@@ -15449,7 +15538,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+            }
+          ],
           "docs": "モーダルオーバーレイが表示された後、それを解除します。",
           "docsTags": [
             {
@@ -15582,8 +15682,9 @@
             "signature": "(breakpoint: number) => Promise<void>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "breakpoint",
+                "type": "number",
+                "docs": ""
               }
             ],
             "references": {
@@ -15595,7 +15696,13 @@
             "return": "Promise<void>"
           },
           "signature": "setCurrentBreakpoint(breakpoint: number) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "breakpoint",
+              "type": "number",
+              "docs": ""
+            }
+          ],
           "docs": "シートスタイルモーダルを特定のブレークポイントに移動します。ブレークポイントの値は、 `breakpoints` 配列で定義された値でなければなりません。",
           "docsTags": []
         }
@@ -16173,13 +16280,9 @@
             "signature": "(view?: ViewController) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "view The view to check."
-                  }
-                ],
-                "text": "The view to check."
+                "name": "view",
+                "type": "ViewController | undefined",
+                "docs": "The view to check."
               }
             ],
             "references": {
@@ -16196,7 +16299,13 @@
             "return": "Promise<boolean>"
           },
           "signature": "canGoBack(view?: ViewController) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "view",
+              "type": "ViewController | undefined",
+              "docs": "The view to check."
+            }
+          ],
           "docs": "現在のビューが戻ることができる場合は `true` を返します。",
           "docsTags": [
             {
@@ -16242,13 +16351,9 @@
             "signature": "(index: number) => Promise<ViewController | undefined>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "index The index of the view."
-                  }
-                ],
-                "text": "The index of the view."
+                "name": "index",
+                "type": "number",
+                "docs": "The index of the view."
               }
             ],
             "references": {
@@ -16265,7 +16370,13 @@
             "return": "Promise<ViewController | undefined>"
           },
           "signature": "getByIndex(index: number) => Promise<ViewController | undefined>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "index",
+              "type": "number",
+              "docs": "The index of the view."
+            }
+          ],
           "docs": "指定されたインデックスにあるビューを取得します。",
           "docsTags": [
             {
@@ -16284,13 +16395,9 @@
             "signature": "(view?: ViewController) => Promise<ViewController | undefined>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "view The view to get."
-                  }
-                ],
-                "text": "The view to get."
+                "name": "view",
+                "type": "ViewController | undefined",
+                "docs": "The view to get."
               }
             ],
             "references": {
@@ -16307,7 +16414,13 @@
             "return": "Promise<ViewController | undefined>"
           },
           "signature": "getPrevious(view?: ViewController) => Promise<ViewController | undefined>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "view",
+              "type": "ViewController | undefined",
+              "docs": "The view to get."
+            }
+          ],
           "docs": "前のビューを取得します。",
           "docsTags": [
             {
@@ -16326,49 +16439,29 @@
             "signature": "<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "insertIndex The index to insert the component at in the stack."
-                  }
-                ],
-                "text": "The index to insert the component at in the stack."
+                "name": "insertIndex",
+                "type": "number",
+                "docs": "The index to insert the component at in the stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "component The component to insert into the navigation stack."
-                  }
-                ],
-                "text": "The component to insert into the navigation stack."
+                "name": "component",
+                "type": "T",
+                "docs": "The component to insert into the navigation stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "componentProps Any properties of the component."
-                  }
-                ],
-                "text": "Any properties of the component."
+                "name": "componentProps",
+                "type": "ComponentProps<T> | null | undefined",
+                "docs": "Any properties of the component."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16404,7 +16497,33 @@
             "return": "Promise<boolean>"
           },
           "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "insertIndex",
+              "type": "number",
+              "docs": "The index to insert the component at in the stack."
+            },
+            {
+              "name": "component",
+              "type": "T",
+              "docs": "The component to insert into the navigation stack."
+            },
+            {
+              "name": "componentProps",
+              "type": "ComponentProps<T> | null | undefined",
+              "docs": "Any properties of the component."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "指定されたインデックスのナビゲーションスタックにコンポーネントを挿入します。これは、ナビゲーションスタックの任意の位置にコンポーネントを追加するのに便利です。",
           "docsTags": [
             {
@@ -16439,40 +16558,24 @@
             "signature": "(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "insertIndex The index to insert the components at in the stack."
-                  }
-                ],
-                "text": "The index to insert the components at in the stack."
+                "name": "insertIndex",
+                "type": "number",
+                "docs": "The index to insert the components at in the stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "insertComponents The components to insert into the navigation stack."
-                  }
-                ],
-                "text": "The components to insert into the navigation stack."
+                "name": "insertComponents",
+                "type": "NavComponentWithProps<any>[] | NavComponent[]",
+                "docs": "The components to insert into the navigation stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16504,7 +16607,28 @@
             "return": "Promise<boolean>"
           },
           "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "insertIndex",
+              "type": "number",
+              "docs": "The index to insert the components at in the stack."
+            },
+            {
+              "name": "insertComponents",
+              "type": "NavComponentWithProps<any>[] | NavComponent[]",
+              "docs": "The components to insert into the navigation stack."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "指定されたインデックスのナビゲーションスタックにコンポーネントの配列を挿入します。配列の最後のコンポーネントはビューとしてインスタンス化され、アニメーションしてアクティブビューになります。",
           "docsTags": [
             {
@@ -16535,22 +16659,14 @@
             "signature": "(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16572,7 +16688,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "pop(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "ナビゲーションスタックからコンポーネントをポップオフします。現在のコンポーネントからナビゲートして戻る。",
           "docsTags": [
             {
@@ -16595,31 +16722,19 @@
             "signature": "(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "indexOrViewCtrl The index or view controller to pop to."
-                  }
-                ],
-                "text": "The index or view controller to pop to."
+                "name": "indexOrViewCtrl",
+                "type": "number | ViewController",
+                "docs": "The index or view controller to pop to."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16651,7 +16766,23 @@
             "return": "Promise<boolean>"
           },
           "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "indexOrViewCtrl",
+              "type": "number | ViewController",
+              "docs": "The index or view controller to pop to."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "ナビゲーションスタック内の特定のインデックスにポップします。",
           "docsTags": [
             {
@@ -16678,22 +16809,14 @@
             "signature": "(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16715,7 +16838,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "popToRoot(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "スタックのルートまで戻ってナビゲートする、それがどんなに遠くても。",
           "docsTags": [
             {
@@ -16738,40 +16872,24 @@
             "signature": "<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "component The component to push onto the navigation stack."
-                  }
-                ],
-                "text": "The component to push onto the navigation stack."
+                "name": "component",
+                "type": "T",
+                "docs": "The component to push onto the navigation stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "componentProps Any properties of the component."
-                  }
-                ],
-                "text": "Any properties of the component."
+                "name": "componentProps",
+                "type": "ComponentProps<T> | null | undefined",
+                "docs": "Any properties of the component."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16807,7 +16925,28 @@
             "return": "Promise<boolean>"
           },
           "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "component",
+              "type": "T",
+              "docs": "The component to push onto the navigation stack."
+            },
+            {
+              "name": "componentProps",
+              "type": "ComponentProps<T> | null | undefined",
+              "docs": "Any properties of the component."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "新しいコンポーネントを現在のナビゲーションスタックにプッシュします。追加情報があれば、オブジェクトとして一緒に渡す。この追加情報には、NavParamsからアクセスできます。",
           "docsTags": [
             {
@@ -16838,40 +16977,24 @@
             "signature": "(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "startIndex The number to begin removal at."
-                  }
-                ],
-                "text": "The number to begin removal at."
+                "name": "startIndex",
+                "type": "number",
+                "docs": "The number to begin removal at."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "removeCount The number of components to remove."
-                  }
-                ],
-                "text": "The number of components to remove."
+                "name": "removeCount",
+                "type": "number",
+                "docs": "The number of components to remove."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16893,7 +17016,28 @@
             "return": "Promise<boolean>"
           },
           "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "startIndex",
+              "type": "number",
+              "docs": "The number to begin removal at."
+            },
+            {
+              "name": "removeCount",
+              "type": "number",
+              "docs": "The number of components to remove."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "指定されたインデックスにあるコンポーネントをナビゲーションスタックから削除します。",
           "docsTags": [
             {
@@ -16924,31 +17068,19 @@
             "signature": "(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "views The list of views to set as the navigation stack."
-                  }
-                ],
-                "text": "The list of views to set as the navigation stack."
+                "name": "views",
+                "type": "NavComponentWithProps<any>[] | NavComponent[]",
+                "docs": "The list of views to set as the navigation stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -16980,7 +17112,23 @@
             "return": "Promise<boolean>"
           },
           "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "views",
+              "type": "NavComponentWithProps<any>[] | NavComponent[]",
+              "docs": "The list of views to set as the navigation stack."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "現在のナビゲーションスタックのビューを設定し、最後のビューにナビゲートします。デフォルトではアニメーションは無効になっていますが、ナビゲーションコントローラーにオプションを渡すことで有効にすることができます。ナビゲーションパラメーターは、配列内の各ページに渡すこともできます。",
           "docsTags": [
             {
@@ -17007,40 +17155,24 @@
             "signature": "<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "component The component to set as the root of the navigation stack."
-                  }
-                ],
-                "text": "The component to set as the root of the navigation stack."
+                "name": "component",
+                "type": "T",
+                "docs": "The component to set as the root of the navigation stack."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "componentProps Any properties of the component."
-                  }
-                ],
-                "text": "Any properties of the component."
+                "name": "componentProps",
+                "type": "ComponentProps<T> | null | undefined",
+                "docs": "Any properties of the component."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "opts The navigation options."
-                  }
-                ],
-                "text": "The navigation options."
+                "name": "opts",
+                "type": "NavOptions | null | undefined",
+                "docs": "The navigation options."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "done The transition complete function."
-                  }
-                ],
-                "text": "The transition complete function."
+                "name": "done",
+                "type": "TransitionDoneFn | undefined",
+                "docs": "The transition complete function."
               }
             ],
             "references": {
@@ -17076,7 +17208,28 @@
             "return": "Promise<boolean>"
           },
           "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "component",
+              "type": "T",
+              "docs": "The component to set as the root of the navigation stack."
+            },
+            {
+              "name": "componentProps",
+              "type": "ComponentProps<T> | null | undefined",
+              "docs": "Any properties of the component."
+            },
+            {
+              "name": "opts",
+              "type": "NavOptions | null | undefined",
+              "docs": "The navigation options."
+            },
+            {
+              "name": "done",
+              "type": "TransitionDoneFn | undefined",
+              "docs": "The transition complete function."
+            }
+          ],
           "docs": "現在のナビゲーションスタックのルートをコンポーネントに設定します。",
           "docsTags": [
             {
@@ -17623,22 +17776,14 @@
             "signature": "(data?: any, role?: string) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -17650,7 +17795,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            }
+          ],
           "docs": "ピッカー・オーバーレイが表示された後、それを解除します。",
           "docsTags": [
             {
@@ -17673,13 +17829,9 @@
             "signature": "(name: string) => Promise<PickerColumn | undefined>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "name The name of the column."
-                  }
-                ],
-                "text": "The name of the column."
+                "name": "name",
+                "type": "string",
+                "docs": "The name of the column."
               }
             ],
             "references": {
@@ -17696,7 +17848,13 @@
             "return": "Promise<PickerColumn | undefined>"
           },
           "signature": "getColumn(name: string) => Promise<PickerColumn | undefined>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "name",
+              "type": "string",
+              "docs": "The name of the column."
+            }
+          ],
           "docs": "指定された名前に一致するカラムを取得します。",
           "docsTags": [
             {
@@ -18655,31 +18813,19 @@
             "signature": "(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
-                  }
-                ],
-                "text": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+                "name": "dismissParentPopover",
+                "type": "boolean",
+                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
               }
             ],
             "references": {
@@ -18695,7 +18841,23 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+            },
+            {
+              "name": "dismissParentPopover",
+              "type": "boolean",
+              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+            }
+          ],
           "docs": "ポップオーバーオーバーレイが提示された後、それを解除します。",
           "docsTags": [
             {
@@ -18784,8 +18946,9 @@
             "signature": "(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "event",
+                "type": "MouseEvent | TouchEvent | PointerEvent | CustomEvent<any> | undefined",
+                "docs": ""
               }
             ],
             "references": {
@@ -18817,7 +18980,13 @@
             "return": "Promise<void>"
           },
           "signature": "present(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "event",
+              "type": "MouseEvent | TouchEvent | PointerEvent | CustomEvent<any> | undefined",
+              "docs": ""
+            }
+          ],
           "docs": "ポップオーバーが作成された後に、ポップオーバーを表示します。開発者は、マウス、タッチ、またはポインタイベントを渡すことで、そのイベントがディスパッチされた場所と相対的にポップオーバーを配置することができます。",
           "docsTags": []
         }
@@ -19333,6 +19502,42 @@
           "required": false
         },
         {
+          "name": "compareWith",
+          "type": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+          "complexType": {
+            "original": "string | RadioGroupCompareFn | null",
+            "resolved": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+            "references": {
+              "RadioGroupCompareFn": {
+                "location": "import",
+                "path": "./radio-group-interface",
+                "id": "src/components/radio-group/radio-group-interface.ts::RadioGroupCompareFn"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "compare-with",
+          "reflectToAttr": false,
+          "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-radio-group. When not specified, the default behavior will use strict\nequality (===) for comparison.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "((currentValue: any, compareValue: any) => boolean)"
+            },
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "name",
           "type": "string",
           "complexType": {
@@ -19437,6 +19642,10 @@
         {
           "name": "part",
           "text": "container - The container for the radio mark."
+        },
+        {
+          "name": "part",
+          "text": "label - The label text describing the radio."
         },
         {
           "name": "part",
@@ -19781,6 +19990,10 @@
           "docs": "ラジオマークの入れ物です。"
         },
         {
+          "name": "label",
+          "docs": "The label text describing the radio."
+        },
+        {
           "name": "mark",
           "docs": "チェックされた状態を示すために使用されるチェックマークまたはドットです。"
         }
@@ -19840,6 +20053,10 @@
         {
           "name": "part",
           "text": "bar-active - The active part of the bar."
+        },
+        {
+          "name": "part",
+          "text": "label - The label text describing the range."
         }
       ],
       "usage": {},
@@ -20210,7 +20427,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "ピンのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、ピンのテキストは `Math.round(value)` に設定されます。",
+          "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
           "docsTags": [],
           "default": "(value: number): number => Math.round(value)",
           "values": [
@@ -20519,6 +20736,10 @@
           "docs": "範囲をドラッグする際に使用するハンドル。"
         },
         {
+          "name": "label",
+          "docs": "The label text describing the range."
+        },
+        {
           "name": "pin",
           "docs": "ノブの上に表示されるカウンターです。"
         },
@@ -20732,7 +20953,12 @@
       "encapsulation": "none",
       "tag": "ion-refresher",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -20777,6 +21003,27 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -21036,13 +21283,9 @@
             "signature": "(listOrReorder?: boolean | any[]) => Promise<any>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
-                  }
-                ],
-                "text": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+                "name": "listOrReorder",
+                "type": "boolean | any[] | undefined",
+                "docs": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
               }
             ],
             "references": {
@@ -21054,7 +21297,13 @@
             "return": "Promise<any>"
           },
           "signature": "complete(listOrReorder?: boolean | any[]) => Promise<any>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "listOrReorder",
+              "type": "boolean | any[] | undefined",
+              "docs": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+            }
+          ],
           "docs": "再注文操作を完了します。ionItemReorder` イベントで呼び出す必要がある。  アイテムのリストが渡された場合、リストは適切な順序に並び替えられ、返される。  パラメータが渡されない場合、または `true` が渡された場合、並べ替えは完了し、アイテムはドラッグされた位置に留まります。 `false`が渡された場合、並び替えは完了し、アイテムは元の位置に跳ね返されます。",
           "docsTags": [
             {
@@ -21181,22 +21430,14 @@
             "signature": "(x: number, y: number) => Promise<() => void>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "x The horizontal coordinate of where the ripple should start."
-                  }
-                ],
-                "text": "The horizontal coordinate of where the ripple should start."
+                "name": "x",
+                "type": "number",
+                "docs": "The horizontal coordinate of where the ripple should start."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "y The vertical coordinate of where the ripple should start."
-                  }
-                ],
-                "text": "The vertical coordinate of where the ripple should start."
+                "name": "y",
+                "type": "number",
+                "docs": "The vertical coordinate of where the ripple should start."
               }
             ],
             "references": {
@@ -21208,7 +21449,18 @@
             "return": "Promise<() => void>"
           },
           "signature": "addRipple(x: number, y: number) => Promise<() => void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "x",
+              "type": "number",
+              "docs": "The horizontal coordinate of where the ripple should start."
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "docs": "The vertical coordinate of where the ripple should start."
+            }
+          ],
           "docs": "親要素に波及効果を付加します。",
           "docsTags": [
             {
@@ -21957,26 +22209,19 @@
             "signature": "(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "path The path to navigate to."
-                  }
-                ],
-                "text": "The path to navigate to."
+                "name": "path",
+                "type": "string",
+                "docs": "The path to navigate to."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "direction The direction of the animation. Defaults to `\"forward\"`."
-                  }
-                ],
-                "text": "The direction of the animation. Defaults to `\"forward\"`."
+                "name": "direction",
+                "type": "\"root\" | \"back\" | \"forward\"",
+                "docs": "The direction of the animation. Defaults to `\"forward\"`."
               },
               {
-                "tags": [],
-                "text": ""
+                "name": "animation",
+                "type": "AnimationBuilder | undefined",
+                "docs": ""
               }
             ],
             "references": {
@@ -21998,7 +22243,23 @@
             "return": "Promise<boolean>"
           },
           "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "path",
+              "type": "string",
+              "docs": "The path to navigate to."
+            },
+            {
+              "name": "direction",
+              "type": "\"root\" | \"back\" | \"forward\"",
+              "docs": "The direction of the animation. Defaults to `\"forward\"`."
+            },
+            {
+              "name": "animation",
+              "type": "AnimationBuilder | undefined",
+              "docs": ""
+            }
+          ],
           "docs": "指定されたパスに移動します。",
           "docsTags": [
             {
@@ -22973,7 +23234,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-searchbar` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい開発者は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。",
+          "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": []
         }
       ],
@@ -23840,6 +24101,14 @@
           "text": "label - The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
         },
         {
+          "name": "slot",
+          "text": "start - Content to display at the leading edge of the select."
+        },
+        {
+          "name": "slot",
+          "text": "end - Content to display at the trailing edge of the select."
+        },
+        {
           "name": "part",
           "text": "placeholder - The text displayed in the select when there is no value."
         },
@@ -23967,7 +24236,7 @@
           "mutable": false,
           "attr": "compare-with",
           "reflectToAttr": false,
-          "docs": "オブジェクトの値を比較するために使用されるプロパティ名または関数。",
+          "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-select. When not specified, the default behavior will use strict\nequality (===) for comparison.",
           "docsTags": [],
           "values": [
             {
@@ -24461,13 +24730,9 @@
             "signature": "(event?: UIEvent) => Promise<any>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "event The user interface event that called the open."
-                  }
-                ],
-                "text": "The user interface event that called the open."
+                "name": "event",
+                "type": "UIEvent | undefined",
+                "docs": "The user interface event that called the open."
               }
             ],
             "references": {
@@ -24487,7 +24752,13 @@
             "return": "Promise<any>"
           },
           "signature": "open(event?: UIEvent) => Promise<any>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "event",
+              "type": "UIEvent | undefined",
+              "docs": "The user interface event that called the open."
+            }
+          ],
           "docs": "セレクトオーバーレイを開きます。オーバーレイは `ion-select` の `interface` プロパティによって、アラート、アクションシート、ポップオーバーのいずれかになります。",
           "docsTags": [
             {
@@ -24655,8 +24926,16 @@
       ],
       "slots": [
         {
+          "name": "end",
+          "docs": "Content to display at the trailing edge of the select."
+        },
+        {
           "name": "label",
           "docs": "セレクトに関連付けるラベルテキスト。labelPlacement`プロパティを使用して、selectに対するラベルの位置を制御します。ラベルをカスタムHTMLでレンダリングする必要がある場合に使用します。"
+        },
+        {
+          "name": "start",
+          "docs": "Content to display at the leading edge of the select."
         }
       ],
       "parts": [
@@ -26307,13 +26586,9 @@
             "signature": "(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
-                  }
-                ],
-                "text": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+                "name": "tab",
+                "type": "string | HTMLIonTabElement",
+                "docs": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
               }
             ],
             "references": {
@@ -26329,7 +26604,13 @@
             "return": "Promise<HTMLIonTabElement | undefined>"
           },
           "signature": "getTab(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "tab",
+              "type": "string | HTMLIonTabElement",
+              "docs": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+            }
+          ],
           "docs": "特定のタブを `tab` プロパティの値または要素参照で取得する。このメソッドは vanilla JavaScript プロジェクトでのみ利用可能です。Angular、React、Vue のタブの実装は、それぞれのフレームワークのルータと結合しています。",
           "docsTags": [
             {
@@ -26348,13 +26629,9 @@
             "signature": "(tab: string | HTMLIonTabElement) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
-                  }
-                ],
-                "text": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+                "name": "tab",
+                "type": "string | HTMLIonTabElement",
+                "docs": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
               }
             ],
             "references": {
@@ -26370,7 +26647,13 @@
             "return": "Promise<boolean>"
           },
           "signature": "select(tab: string | HTMLIonTabElement) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "tab",
+              "type": "string | HTMLIonTabElement",
+              "docs": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+            }
+          ],
           "docs": "タブを `tab` プロパティの値または要素参照で選択する。このメソッドはバニラJavaScriptプロジェクトでのみ利用可能です。Angular、React、Vue のタブの実装は、それぞれのフレームワークのルータと結合しています。",
           "docsTags": [
             {
@@ -26555,6 +26838,14 @@
         {
           "name": "slot",
           "text": "label - The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+        },
+        {
+          "name": "slot",
+          "text": "start - Content to display at the leading edge of the textarea. (EXPERIMENTAL)"
+        },
+        {
+          "name": "slot",
+          "text": "end - Content to display at the trailing edge of the textarea. (EXPERIMENTAL)"
         }
       ],
       "usage": {},
@@ -26614,7 +26905,7 @@
           "mutable": false,
           "attr": "autofocus",
           "reflectToAttr": false,
-          "docs": "この Boolean 属性により、ページロード時にフォームコントロールにInputフォーカスが当たるように指定することができます。",
+          "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -26769,7 +27060,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "カウンターのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、カウンターのテキストは\"itemLength / maxLength\"に設定されています。",
+          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
           "docsTags": [],
           "values": [
             {
@@ -27432,7 +27723,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-textarea` のネイティブ `textarea` にフォーカスを設定します。グローバルな `textarea.focus()` の代わりに、このメソッドを使用します。",
+          "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": []
         }
       ],
@@ -27606,8 +27897,16 @@
       ],
       "slots": [
         {
+          "name": "end",
+          "docs": "Content to display at the trailing edge of the textarea. (EXPERIMENTAL)"
+        },
+        {
           "name": "label",
           "docs": "テキストエリアに関連付けるラベルテキスト。labelPlacement`プロパティを使用して、textareaに対するラベルの位置を制御する。ラベルをカスタム HTML でレンダリングする必要がある場合に使用します。(実験的)"
+        },
+        {
+          "name": "start",
+          "docs": "Content to display at the leading edge of the textarea. (EXPERIMENTAL)"
         }
       ],
       "parts": [],
@@ -28300,6 +28599,37 @@
           "required": false
         },
         {
+          "name": "swipeGesture",
+          "type": "\"vertical\" | undefined",
+          "complexType": {
+            "original": "ToastSwipeGestureDirection",
+            "resolved": "\"vertical\" | undefined",
+            "references": {
+              "ToastSwipeGestureDirection": {
+                "location": "import",
+                "path": "./toast-interface",
+                "id": "src/components/toast/toast-interface.ts::ToastSwipeGestureDirection"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "swipe-gesture",
+          "reflectToAttr": false,
+          "docs": "If set to 'vertical', the Toast can be dismissed with\na swipe gesture. The swipe direction is determined by\nthe value of the `position` property:\n`top`: The Toast can be swiped up to dismiss.\n`bottom`: The Toast can be swiped down to dismiss.\n`middle`: The Toast can be swiped up or down to dismiss.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "vertical",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "translucent",
           "type": "boolean",
           "complexType": {
@@ -28357,22 +28687,14 @@
             "signature": "(data?: any, role?: string) => Promise<boolean>",
             "parameters": [
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "data Any data to emit in the dismiss events."
-                  }
-                ],
-                "text": "Any data to emit in the dismiss events."
+                "name": "data",
+                "type": "any",
+                "docs": "Any data to emit in the dismiss events."
               },
               {
-                "tags": [
-                  {
-                    "name": "param",
-                    "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
-                  }
-                ],
-                "text": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "name": "role",
+                "type": "string | undefined",
+                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -28389,7 +28711,18 @@
             "return": "Promise<boolean>"
           },
           "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "docs": "Any data to emit in the dismiss events."
+            },
+            {
+              "name": "role",
+              "type": "string | undefined",
+              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            }
+          ],
           "docs": "トーストのオーバーレイが提示された後、それを解除します。",
           "docsTags": [
             {
@@ -28778,6 +29111,10 @@
         {
           "name": "part",
           "text": "handle - The toggle handle, or knob, used to change the checked state."
+        },
+        {
+          "name": "part",
+          "text": "label - The label text describing the toggle."
         }
       ],
       "usage": {},
@@ -29230,6 +29567,10 @@
         {
           "name": "handle",
           "docs": "チェックした状態を変更するために使用するトグルハンドル（つまみ）です。"
+        },
+        {
+          "name": "label",
+          "docs": "The label text describing the toggle."
         },
         {
           "name": "track",

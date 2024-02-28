@@ -284,12 +284,11 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
     <ion-content>
       <ion-list>
         <ion-item>
-          <ion-checkbox slot="start"></ion-checkbox>
-          <ion-label>
+          <ion-checkbox label-placement="end" justify="start">
             <h1>Create Idea</h1>
             <ion-note>Run Idea By Brandy</ion-note>
-          </ion-label>
-          <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+          </ion-checkbox>
+          <ion-badge color="success" slot="end">5 Days</ion-badge>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -303,7 +302,6 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
     IonContent,
     IonHeader,
     IonItem,
-    IonLabel,
     IonList,
     IonNote,
     IonPage,
@@ -317,16 +315,15 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 
 ```html
 <ion-item>
-  <ion-checkbox slot="start"></ion-checkbox>
-  <ion-label>
+  <ion-checkbox label-placement="end" justify="start">
     <h1>Create Idea</h1>
     <ion-note>Run Idea By Brandy</ion-note>
-  </ion-label>
-  <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+  </ion-checkbox>
+  <ion-badge color="success" slot="end">5 Days</ion-badge>
 </ion-item>
 ```
 
-コードを見ると、 `slot` という特殊な属性があります。これは、レンダリング時に `IonCheckbox` を配置する場所を `IonItem` に知らせるためのキーです。これは Vue API ではなく、Web 標準 API です。また、Vue 2 の slot API とは異なります。
+コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るための鍵です。これは Vue の API ではなく、Web 標準の API で、多くの Ionic Framework コンポーネントで使われています。また、これは Vue 2 で使用された slots API とは異なります（slots の詳細については、[MDN のドキュメントを参照してください](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)）。
 
 Ionic Framework の別のコンポーネントである FAB（フローティング・アクション・ボタン）を見てみましょう。FAB は、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。この FAB には、FAB、FAB ボタンおよびアイコンの 3 つのコンポーネントが必要です。
 
@@ -355,7 +352,6 @@ Ionic Framework の別のコンポーネントである FAB（フローティン
     IonHeader,
     IonIcon,
     IonItem,
-    IonLabel,
     IonList,
     IonNote,
     IonPage,
@@ -672,7 +668,7 @@ The configuration above will prevent all files from being prefetched and, instea
 
 ## Build a Native App
 
-We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
 
 Adding native functionality is easy. First, add Capacitor to your project:
 

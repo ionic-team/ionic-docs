@@ -18,8 +18,7 @@ All the information captured is available in the App Center portal for you to an
 For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/crashes/cordova
 
 <p>
-  <a
-    href="https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-crashes" target="_blank" rel="noopener" className="git-link">github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-crashes</a>
+  <a href="https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-crashes" target="_blank" rel="noopener" className="git-link">github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-crashes</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -29,7 +28,7 @@ For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/crashes
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

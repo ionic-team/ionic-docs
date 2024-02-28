@@ -84,26 +84,19 @@
         "signature": "(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "path The path to navigate to."
-              }
-            ],
-            "text": "The path to navigate to."
+            "name": "path",
+            "type": "string",
+            "docs": "The path to navigate to."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "direction The direction of the animation. Defaults to `\"forward\"`."
-              }
-            ],
-            "text": "The direction of the animation. Defaults to `\"forward\"`."
+            "name": "direction",
+            "type": "\"root\" | \"back\" | \"forward\"",
+            "docs": "The direction of the animation. Defaults to `\"forward\"`."
           },
           {
-            "tags": [],
-            "text": ""
+            "name": "animation",
+            "type": "AnimationBuilder | undefined",
+            "docs": ""
           }
         ],
         "references": {
@@ -125,7 +118,23 @@
         "return": "Promise<boolean>"
       },
       "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "path",
+          "type": "string",
+          "docs": "The path to navigate to."
+        },
+        {
+          "name": "direction",
+          "type": "\"root\" | \"back\" | \"forward\"",
+          "docs": "The direction of the animation. Defaults to `\"forward\"`."
+        },
+        {
+          "name": "animation",
+          "type": "AnimationBuilder | undefined",
+          "docs": ""
+        }
+      ],
       "docs": "Navigate to the specified path.",
       "docsTags": [
         {

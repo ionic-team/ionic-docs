@@ -15,7 +15,7 @@ For displaying read-only web content.
 Requires Cordova plugin: `cordova-plugin-safariviewcontroller`. For more info, please see the [Safari View Controller plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller).
 
 <p>
-  <a href="https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller" target="_blank" rel="noopener"className="git-link">github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller</a>
+  <a href="https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller" target="_blank" rel="noopener" className="git-link">github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -25,7 +25,7 @@ Requires Cordova plugin: `cordova-plugin-safariviewcontroller`. For more info, p
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

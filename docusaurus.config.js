@@ -37,6 +37,7 @@ module.exports = {
             if (locale != 'en') {
               return 'https://crowdin.com/project/ionic-docs';
             }
+            let match;
             if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
             }

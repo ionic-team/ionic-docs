@@ -14,7 +14,7 @@ Opens the file picker on iOS for the user to select a file, returns a file URI.
 Allows the user to upload files from iCloud
 
 <p>
-  <a href="https://github.com/iampossible/Cordova-DocPicker" target="_blank" rel="noopener" className="git-link">github.com/iampossible/Cordova-DocPicker</a>
+  <a href="https://github.com/iampossible/Cordova-DocPicker" target="_blank" rel="noopener" className="git-link">github.com/iampossible/</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -24,7 +24,7 @@ Allows the user to upload files from iCloud
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

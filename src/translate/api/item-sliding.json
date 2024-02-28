@@ -128,13 +128,9 @@
         "signature": "(side: Side | undefined) => Promise<void>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "side The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
-              }
-            ],
-            "text": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+            "name": "side",
+            "type": "Side | undefined",
+            "docs": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
           }
         ],
         "references": {
@@ -151,7 +147,13 @@
         "return": "Promise<void>"
       },
       "signature": "open(side: Side | undefined) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "side",
+          "type": "Side | undefined",
+          "docs": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+        }
+      ],
       "docs": "Open the sliding item.",
       "docsTags": [
         {

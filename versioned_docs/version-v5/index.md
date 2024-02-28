@@ -128,7 +128,7 @@ Ionic Framework is actively developed and maintained full-time by a core team, a
 
 ### Join the Community
 
-There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
+There are millions of Ionic developers in o ver 200 countries worldwide. Here are some ways to join:
 
 <!-- prettier-ignore -->
 - <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.

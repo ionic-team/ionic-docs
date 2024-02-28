@@ -5,13 +5,13 @@ title: APIインデックス
 import APIList from '@components/page/api/APIList';
 
 <head>
-  <title>API Index | Ionic Docs API Index for all API Custom Elements</title>
+  <title>API Index | API カスタム要素の Ionic Docs API Index</title>
   <meta
     name="description"
-    content="Each component in the Ionic Docs API Index consists of one or more custom elements—which each, in turn, may expose methods, events, and CSS custom properties."
+    content="Ionic Docs API Indexの各コンポーネントは、1つまたは複数のカスタム要素で構成され、それぞれがメソッド、イベント、CSSカスタムプロパティを公開します。"
   />
 </head>
 
-Each Ionic [component](/docs/components) consists of one or more [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). Each custom element, in turn, may expose properties, methods, events, and CSS custom properties.
+各 Ionic の [コンポーネント](/docs/components) は、1 つ以上の [カスタム要素](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) から構成されます。各カスタム要素は順番に、プロパティ、メソッド、イベント、および CSS カスタムプロパティを公開できます。
 
 <APIList sidebar={require('@site/sidebars.js').default} />

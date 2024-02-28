@@ -132,7 +132,7 @@
       "mutable": false,
       "attr": "can-dismiss",
       "reflectToAttr": false,
-      "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.",
+      "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
       "docsTags": [],
       "default": "true",
       "values": [
@@ -487,22 +487,14 @@
         "signature": "(data?: any, role?: string) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "data Any data to emit in the dismiss events."
-              }
-            ],
-            "text": "Any data to emit in the dismiss events."
+            "name": "data",
+            "type": "any",
+            "docs": "Any data to emit in the dismiss events."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
-              }
-            ],
-            "text": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+            "name": "role",
+            "type": "string | undefined",
+            "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
           }
         ],
         "references": {
@@ -518,7 +510,18 @@
         "return": "Promise<boolean>"
       },
       "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": "Any data to emit in the dismiss events."
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+        }
+      ],
       "docs": "Dismiss the modal overlay after it has been presented.",
       "docsTags": [
         {
@@ -651,8 +654,9 @@
         "signature": "(breakpoint: number) => Promise<void>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "breakpoint",
+            "type": "number",
+            "docs": ""
           }
         ],
         "references": {
@@ -664,7 +668,13 @@
         "return": "Promise<void>"
       },
       "signature": "setCurrentBreakpoint(breakpoint: number) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "breakpoint",
+          "type": "number",
+          "docs": ""
+        }
+      ],
       "docs": "Move a sheet style modal to a specific breakpoint. The breakpoint value must\nbe a value defined in your `breakpoints` array.",
       "docsTags": []
     }

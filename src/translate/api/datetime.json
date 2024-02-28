@@ -825,7 +825,7 @@
       },
       "mutable": false,
       "reflectToAttr": false,
-      "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".",
+      "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
       "docsTags": [],
       "values": [
         {
@@ -910,8 +910,9 @@
         "signature": "(closeOverlay?: boolean) => Promise<void>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "closeOverlay",
+            "type": "boolean",
+            "docs": ""
           }
         ],
         "references": {
@@ -923,7 +924,13 @@
         "return": "Promise<void>"
       },
       "signature": "cancel(closeOverlay?: boolean) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "closeOverlay",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
       "docs": "Emits the ionCancel event and\noptionally closes the popover\nor modal that the datetime was\npresented in.",
       "docsTags": []
     },
@@ -937,8 +944,9 @@
         "signature": "(closeOverlay?: boolean) => Promise<void>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "closeOverlay",
+            "type": "boolean",
+            "docs": ""
           }
         ],
         "references": {
@@ -950,7 +958,13 @@
         "return": "Promise<void>"
       },
       "signature": "confirm(closeOverlay?: boolean) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "closeOverlay",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
       "docs": "Confirms the selected datetime value, updates the\n`value` property, and optionally closes the popover\nor modal that the datetime was presented in.",
       "docsTags": []
     },
@@ -964,8 +978,9 @@
         "signature": "(startDate?: string) => Promise<void>",
         "parameters": [
           {
-            "tags": [],
-            "text": ""
+            "name": "startDate",
+            "type": "string | undefined",
+            "docs": ""
           }
         ],
         "references": {
@@ -977,7 +992,13 @@
         "return": "Promise<void>"
       },
       "signature": "reset(startDate?: string) => Promise<void>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "startDate",
+          "type": "string | undefined",
+          "docs": ""
+        }
+      ],
       "docs": "Resets the internal state of the datetime but does not update the value.\nPassing a valid ISO-8601 string will reset the state of the component to the provided date.\nIf no value is provided, the internal state will be reset to the clamped value of the min, max and today.",
       "docsTags": []
     }

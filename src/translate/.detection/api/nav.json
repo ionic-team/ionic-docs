@@ -164,13 +164,9 @@
         "signature": "(view?: ViewController) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "view The view to check."
-              }
-            ],
-            "text": "The view to check."
+            "name": "view",
+            "type": "ViewController | undefined",
+            "docs": "The view to check."
           }
         ],
         "references": {
@@ -187,7 +183,13 @@
         "return": "Promise<boolean>"
       },
       "signature": "canGoBack(view?: ViewController) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "view",
+          "type": "ViewController | undefined",
+          "docs": "The view to check."
+        }
+      ],
       "docs": "Returns `true` if the current view can go back.",
       "docsTags": [
         {
@@ -233,13 +235,9 @@
         "signature": "(index: number) => Promise<ViewController | undefined>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "index The index of the view."
-              }
-            ],
-            "text": "The index of the view."
+            "name": "index",
+            "type": "number",
+            "docs": "The index of the view."
           }
         ],
         "references": {
@@ -256,7 +254,13 @@
         "return": "Promise<ViewController | undefined>"
       },
       "signature": "getByIndex(index: number) => Promise<ViewController | undefined>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "index",
+          "type": "number",
+          "docs": "The index of the view."
+        }
+      ],
       "docs": "Get the view at the specified index.",
       "docsTags": [
         {
@@ -275,13 +279,9 @@
         "signature": "(view?: ViewController) => Promise<ViewController | undefined>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "view The view to get."
-              }
-            ],
-            "text": "The view to get."
+            "name": "view",
+            "type": "ViewController | undefined",
+            "docs": "The view to get."
           }
         ],
         "references": {
@@ -298,7 +298,13 @@
         "return": "Promise<ViewController | undefined>"
       },
       "signature": "getPrevious(view?: ViewController) => Promise<ViewController | undefined>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "view",
+          "type": "ViewController | undefined",
+          "docs": "The view to get."
+        }
+      ],
       "docs": "Get the previous view.",
       "docsTags": [
         {
@@ -317,49 +323,29 @@
         "signature": "<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "insertIndex The index to insert the component at in the stack."
-              }
-            ],
-            "text": "The index to insert the component at in the stack."
+            "name": "insertIndex",
+            "type": "number",
+            "docs": "The index to insert the component at in the stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "component The component to insert into the navigation stack."
-              }
-            ],
-            "text": "The component to insert into the navigation stack."
+            "name": "component",
+            "type": "T",
+            "docs": "The component to insert into the navigation stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "componentProps Any properties of the component."
-              }
-            ],
-            "text": "Any properties of the component."
+            "name": "componentProps",
+            "type": "ComponentProps<T> | null | undefined",
+            "docs": "Any properties of the component."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -395,7 +381,33 @@
         "return": "Promise<boolean>"
       },
       "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "insertIndex",
+          "type": "number",
+          "docs": "The index to insert the component at in the stack."
+        },
+        {
+          "name": "component",
+          "type": "T",
+          "docs": "The component to insert into the navigation stack."
+        },
+        {
+          "name": "componentProps",
+          "type": "ComponentProps<T> | null | undefined",
+          "docs": "Any properties of the component."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Inserts a component into the navigation stack at the specified index.\nThis is useful to add a component at any point in the navigation stack.",
       "docsTags": [
         {
@@ -430,40 +442,24 @@
         "signature": "(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "insertIndex The index to insert the components at in the stack."
-              }
-            ],
-            "text": "The index to insert the components at in the stack."
+            "name": "insertIndex",
+            "type": "number",
+            "docs": "The index to insert the components at in the stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "insertComponents The components to insert into the navigation stack."
-              }
-            ],
-            "text": "The components to insert into the navigation stack."
+            "name": "insertComponents",
+            "type": "NavComponentWithProps<any>[] | NavComponent[]",
+            "docs": "The components to insert into the navigation stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -495,7 +491,28 @@
         "return": "Promise<boolean>"
       },
       "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "insertIndex",
+          "type": "number",
+          "docs": "The index to insert the components at in the stack."
+        },
+        {
+          "name": "insertComponents",
+          "type": "NavComponentWithProps<any>[] | NavComponent[]",
+          "docs": "The components to insert into the navigation stack."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
       "docsTags": [
         {
@@ -526,22 +543,14 @@
         "signature": "(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -563,7 +572,18 @@
         "return": "Promise<boolean>"
       },
       "signature": "pop(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
       "docsTags": [
         {
@@ -586,31 +606,19 @@
         "signature": "(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "indexOrViewCtrl The index or view controller to pop to."
-              }
-            ],
-            "text": "The index or view controller to pop to."
+            "name": "indexOrViewCtrl",
+            "type": "number | ViewController",
+            "docs": "The index or view controller to pop to."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -642,7 +650,23 @@
         "return": "Promise<boolean>"
       },
       "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "indexOrViewCtrl",
+          "type": "number | ViewController",
+          "docs": "The index or view controller to pop to."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Pop to a specific index in the navigation stack.",
       "docsTags": [
         {
@@ -669,22 +693,14 @@
         "signature": "(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -706,7 +722,18 @@
         "return": "Promise<boolean>"
       },
       "signature": "popToRoot(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Navigate back to the root of the stack, no matter how far back that is.",
       "docsTags": [
         {
@@ -729,40 +756,24 @@
         "signature": "<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "component The component to push onto the navigation stack."
-              }
-            ],
-            "text": "The component to push onto the navigation stack."
+            "name": "component",
+            "type": "T",
+            "docs": "The component to push onto the navigation stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "componentProps Any properties of the component."
-              }
-            ],
-            "text": "Any properties of the component."
+            "name": "componentProps",
+            "type": "ComponentProps<T> | null | undefined",
+            "docs": "Any properties of the component."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -798,7 +809,28 @@
         "return": "Promise<boolean>"
       },
       "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "component",
+          "type": "T",
+          "docs": "The component to push onto the navigation stack."
+        },
+        {
+          "name": "componentProps",
+          "type": "ComponentProps<T> | null | undefined",
+          "docs": "Any properties of the component."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Push a new component onto the current navigation stack. Pass any additional\ninformation along as an object. This additional information is accessible\nthrough NavParams.",
       "docsTags": [
         {
@@ -829,40 +861,24 @@
         "signature": "(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "startIndex The number to begin removal at."
-              }
-            ],
-            "text": "The number to begin removal at."
+            "name": "startIndex",
+            "type": "number",
+            "docs": "The number to begin removal at."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "removeCount The number of components to remove."
-              }
-            ],
-            "text": "The number of components to remove."
+            "name": "removeCount",
+            "type": "number",
+            "docs": "The number of components to remove."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -884,7 +900,28 @@
         "return": "Promise<boolean>"
       },
       "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "startIndex",
+          "type": "number",
+          "docs": "The number to begin removal at."
+        },
+        {
+          "name": "removeCount",
+          "type": "number",
+          "docs": "The number of components to remove."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Removes a component from the navigation stack at the specified index.",
       "docsTags": [
         {
@@ -915,31 +952,19 @@
         "signature": "(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "views The list of views to set as the navigation stack."
-              }
-            ],
-            "text": "The list of views to set as the navigation stack."
+            "name": "views",
+            "type": "NavComponentWithProps<any>[] | NavComponent[]",
+            "docs": "The list of views to set as the navigation stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -971,7 +996,23 @@
         "return": "Promise<boolean>"
       },
       "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "views",
+          "type": "NavComponentWithProps<any>[] | NavComponent[]",
+          "docs": "The list of views to set as the navigation stack."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
       "docsTags": [
         {
@@ -998,40 +1039,24 @@
         "signature": "<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "component The component to set as the root of the navigation stack."
-              }
-            ],
-            "text": "The component to set as the root of the navigation stack."
+            "name": "component",
+            "type": "T",
+            "docs": "The component to set as the root of the navigation stack."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "componentProps Any properties of the component."
-              }
-            ],
-            "text": "Any properties of the component."
+            "name": "componentProps",
+            "type": "ComponentProps<T> | null | undefined",
+            "docs": "Any properties of the component."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "opts The navigation options."
-              }
-            ],
-            "text": "The navigation options."
+            "name": "opts",
+            "type": "NavOptions | null | undefined",
+            "docs": "The navigation options."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "done The transition complete function."
-              }
-            ],
-            "text": "The transition complete function."
+            "name": "done",
+            "type": "TransitionDoneFn | undefined",
+            "docs": "The transition complete function."
           }
         ],
         "references": {
@@ -1067,7 +1092,28 @@
         "return": "Promise<boolean>"
       },
       "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "component",
+          "type": "T",
+          "docs": "The component to set as the root of the navigation stack."
+        },
+        {
+          "name": "componentProps",
+          "type": "ComponentProps<T> | null | undefined",
+          "docs": "Any properties of the component."
+        },
+        {
+          "name": "opts",
+          "type": "NavOptions | null | undefined",
+          "docs": "The navigation options."
+        },
+        {
+          "name": "done",
+          "type": "TransitionDoneFn | undefined",
+          "docs": "The transition complete function."
+        }
+      ],
       "docs": "Set the root for the current navigation stack to a component.",
       "docsTags": [
         {

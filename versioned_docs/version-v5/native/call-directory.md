@@ -14,7 +14,7 @@ This plugin can add phone numbers to an Callkit call directory extension. Call `
 to process the changes in the call directory extension.
 
 <p>
-  <a href="https://github.com/GEDYSIntraWare/cordova-plugin-call-directory" target="_blank" el="noopener" className="git-link">github.com/GEDYSIntraWare/cordova-plugin-call-directory</a>
+  <a href="https://github.com/GEDYSIntraWare/cordova-plugin-call-directory" target="_blank" rel="noopener" className="git-link">github.com/GEDYSIntraWare/cordova-plugin-call-directory</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -24,7 +24,7 @@ to process the changes in the call directory extension.
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

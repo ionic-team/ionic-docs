@@ -14,7 +14,7 @@ Detect if the app is running in debug mode or not.
 Debug mode is when the app is built and installed locally via xcode / eclipse / the cordova cli etc, compared to release mode when the app was downloaded from the app / play store via an end user.
 
 <p>
-  <a href="https://github.com/mattlewis92/cordova-plugin-is-debug" target="_blank" rel="noopener" className="git-link">]github.com/mattlewis92/cordova-plugin-is-debug</a>
+  <a href="https://github.com/mattlewis92/cordova-plugin-is-debug" target="_blank" rel="noopener" className="git-link">github.com/mattlewis92/cordova-plugin-is-debug</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -24,7 +24,7 @@ Debug mode is when the app is built and installed locally via xcode / eclipse / 
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

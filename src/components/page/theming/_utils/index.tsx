@@ -13,9 +13,10 @@ export const generateColor = (value: string): ColorVariable => {
   const contrast = color.contrast();
   const tint = color.tint();
   const shade = color.shade();
+  const formattedValue = value.startsWith('#') ? value : `#${value}`;
 
   return {
-    value,
+    value: formattedValue,
     valueRgb: rgbToString(color.rgb),
     contrast: contrast.hex,
     contrastRgb: rgbToString(contrast.rgb),

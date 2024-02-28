@@ -534,6 +534,37 @@
       "required": false
     },
     {
+      "name": "swipeGesture",
+      "type": "\"vertical\" | undefined",
+      "complexType": {
+        "original": "ToastSwipeGestureDirection",
+        "resolved": "\"vertical\" | undefined",
+        "references": {
+          "ToastSwipeGestureDirection": {
+            "location": "import",
+            "path": "./toast-interface",
+            "id": "src/components/toast/toast-interface.ts::ToastSwipeGestureDirection"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "swipe-gesture",
+      "reflectToAttr": false,
+      "docs": "If set to 'vertical', the Toast can be dismissed with\na swipe gesture. The swipe direction is determined by\nthe value of the `position` property:\n`top`: The Toast can be swiped up to dismiss.\n`bottom`: The Toast can be swiped down to dismiss.\n`middle`: The Toast can be swiped up or down to dismiss.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "vertical",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "translucent",
       "type": "boolean",
       "complexType": {
@@ -591,22 +622,14 @@
         "signature": "(data?: any, role?: string) => Promise<boolean>",
         "parameters": [
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "data Any data to emit in the dismiss events."
-              }
-            ],
-            "text": "Any data to emit in the dismiss events."
+            "name": "data",
+            "type": "any",
+            "docs": "Any data to emit in the dismiss events."
           },
           {
-            "tags": [
-              {
-                "name": "param",
-                "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
-              }
-            ],
-            "text": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            "name": "role",
+            "type": "string | undefined",
+            "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
           }
         ],
         "references": {
@@ -623,7 +646,18 @@
         "return": "Promise<boolean>"
       },
       "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "data",
+          "type": "any",
+          "docs": "Any data to emit in the dismiss events."
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
+          "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ],
       "docs": "Dismiss the toast overlay after it has been presented.",
       "docsTags": [
         {

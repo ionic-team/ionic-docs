@@ -606,6 +606,18 @@
     },
     {
       "type": "category",
+      "label": "Action Sheet",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "api/action-sheet"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
       "label": "Accordion",
       "collapsed": false,
       "items": [
@@ -840,6 +852,18 @@
         {
           "type": "doc",
           "id": "api/infinite-scroll-content"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Icons",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "api/icon"
         }
       ],
       "collapsible": true

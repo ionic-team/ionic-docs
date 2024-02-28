@@ -43,7 +43,7 @@ const getReleases = async () => {
           return releasePattern.test(release.tag_name);
         })
         .map((release) => {
-          const body = renderMarkdown(release.body.replace(/^#.*/, '')).contents;
+          const body = renderMarkdown(release.body.replace(/^#.*/, '')).value;
           const published_at = parseDate(release.published_at);
           const version = release.tag_name.replace('v', '');
           const type = getVersionType(version);

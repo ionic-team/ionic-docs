@@ -13,7 +13,7 @@ import CodeBlock from '@theme/CodeBlock';
 Cordova plugin for Firebase Authentication
 
 <p>
-  <a href="https://github.com/chemerisuk/cordova-plugin-firebase-authentication" target="_blank" el="noopener" className="git-link">github.com/chemerisuk/cordova-plugin-firebase-authentication</a>
+  <a href="https://github.com/chemerisuk/cordova-plugin-firebase-authentication" target="_blank" rel="noopener" className="git-link">github.com/chemerisuk/cordova-plugin-firebase-authentication</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -23,7 +23,7 @@ Cordova plugin for Firebase Authentication
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

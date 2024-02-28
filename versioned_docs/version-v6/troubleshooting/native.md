@@ -41,7 +41,8 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
    ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
 
 <!-- prettier-ignore -->
-4. <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.</strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+4. <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.
+   </strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
    ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
 

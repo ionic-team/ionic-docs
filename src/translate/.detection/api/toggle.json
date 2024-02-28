@@ -19,6 +19,10 @@
     {
       "name": "part",
       "text": "handle - The toggle handle, or knob, used to change the checked state."
+    },
+    {
+      "name": "part",
+      "text": "label - The label text describing the toggle."
     }
   ],
   "usage": {},
@@ -471,6 +475,10 @@
     {
       "name": "handle",
       "docs": "The toggle handle, or knob, used to change the checked state."
+    },
+    {
+      "name": "label",
+      "docs": "The label text describing the toggle."
     },
     {
       "name": "track",
