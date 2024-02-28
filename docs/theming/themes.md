@@ -58,10 +58,12 @@ While updating the background (`--ion-background-color`) and text (`--ion-text-c
 
 In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor color="#404040">#404040</CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor color="#f2f2f2">#f2f2f2</CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-By default, the Ionic stepped colors start at the default background color value <CodeColor color="#ffffff">#ffffff</CodeColor> and mix with the text color value <CodeColor color="#000000">#000000</CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
+Ionic provides separate step colors for text and background colors so they can be updated separately. This is useful for components that use both text and background stepped colors and allows us to effectively implement the [high contrast theme](./high-contrast-mode).
+
+By default, the Ionic text stepped colors start at the default text color value <CodeColor color="#000000">#000000</CodeColor> and mix with the background color value <CodeColor color="#ffffff">#ffffff</CodeColor> using an increasing percentage. The Ionic background stepped colors start at the default background color value <CodeColor color="#ffffff">#ffffff</CodeColor> and mix with the text color value <CodeColor color="#000000">#000000</CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 
 ## Stepped Color Generator
 
 Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
 
-<SteppedColorGenerator />
+<SteppedColorGenerator useTextAndBackgroundStepColors={true} />
