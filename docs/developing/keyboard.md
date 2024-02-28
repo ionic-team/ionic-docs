@@ -27,7 +27,7 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 ### Usage
 
-import Inputmode from '@site/static/usage/v7/keyboard/inputmode/index.md';
+import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.md';
 
 <Inputmode />
 
@@ -45,7 +45,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ### Usage
 
-import Enterkeyhint from '@site/static/usage/v7/keyboard/enterkeyhint/index.md';
+import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
 
 <Enterkeyhint />
 

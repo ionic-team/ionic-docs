@@ -1,12 +1,12 @@
 ---
 title: "ion-item-divider"
 ---
-import Props from '@ionic-internal/component-api/v7/item-divider/props.md';
-import Events from '@ionic-internal/component-api/v7/item-divider/events.md';
-import Methods from '@ionic-internal/component-api/v7/item-divider/methods.md';
-import Parts from '@ionic-internal/component-api/v7/item-divider/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/item-divider/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/item-divider/slots.md';
+import Props from '@ionic-internal/component-api/v8/item-divider/props.md';
+import Events from '@ionic-internal/component-api/v8/item-divider/events.md';
+import Methods from '@ionic-internal/component-api/v8/item-divider/methods.md';
+import Parts from '@ionic-internal/component-api/v8/item-divider/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/item-divider/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/item-divider/slots.md';
 
 <head>
   <title>ion-item-divider: Item Divider Block Element for Ionic Apps</title>
@@ -23,7 +23,7 @@ Item dividers are block elements that can be used to separate [items](./item) in
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/item-divider/basic/index.md';
+import Basic from '@site/static/usage/v8/item-divider/basic/index.md';
 
 <Basic />
 
@@ -32,14 +32,14 @@ import Basic from '@site/static/usage/v7/item-divider/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/item-divider/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/item-divider/theming/colors/index.md';
 
 <Colors />
 
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v7/item-divider/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/item-divider/theming/css-properties/index.md';
 
 <CSSProps />
 

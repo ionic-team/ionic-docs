@@ -18,6 +18,7 @@ In pursuit of [adaptive styling](../core-concepts/fundamentals.md#adaptive-styli
 
 | Framework |        Android         |  iOS  |
 | :-------: | :--------------------: | :---: |
+| Ionic v8  | 5.1+ with Chromium 89+ | 15.0+ |
 | Ionic v7  | 5.1+ with Chromium 79+ | 14.0+ |
 | Ionic v6  | 5.0+ with Chromium 60+ | 13.0+ |
 | Ionic v5  |          5.0+          | 11.0+ |
@@ -37,10 +38,10 @@ To figure out what version of the webview a device is running, log `window.navig
 
 Ionic supports the following browsers:
 
-|   Browser   | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
-| :---------: | :------: | :------: | :------: | :------: |
-| **Chrome**  |   79+    |   60+    |    ✔     |    ✔     |
-| **Safari**  |   14+    |   13+    |    ✔     |    ✔     |
-|  **Edge**   |   79+    |   79+    |   79+    |    ✔     |
-| **Firefox** |   70+    |   63+    |    ✔     |    ✔     |
-|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |
+|   Browser   | Ionic v8 | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
+| :---------: | :------: | :------: | :------: | :------: | :------: |
+| **Chrome**  |   89+    |   79+    |   60+    |    ✔     |    ✔     |
+| **Safari**  |   15+    |   14+    |   13+    |    ✔     |    ✔     |
+|  **Edge**   |   89+    |   79+    |   79+    |   79+    |    ✔     |
+| **Firefox** |   75+    |   70+    |   63+    |    ✔     |    ✔     |
+|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |  **X**   |

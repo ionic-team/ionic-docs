@@ -10,7 +10,7 @@ module.exports = {
       type: 'category',
       label: 'Upgrade Guides',
       collapsed: false,
-      items: ['updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
+      items: ['updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
     },
     {
       type: 'category',
@@ -57,6 +57,7 @@ module.exports = {
         'theming/colors',
         'theming/themes',
         'theming/dark-mode',
+        'theming/high-contrast-mode',
         'theming/advanced',
         'theming/color-generator',
       ],
@@ -314,7 +315,14 @@ module.exports = {
       type: 'category',
       label: 'Date & Time Pickers',
       collapsed: false,
-      items: ['api/datetime', 'api/datetime-button', 'api/picker'],
+      items: [
+        'api/datetime',
+        'api/datetime-button',
+        'api/picker',
+        'api/picker-column',
+        'api/picker-column-option',
+        'api/picker-legacy',
+      ],
     },
     {
       type: 'category',

@@ -4,12 +4,12 @@ title: "ion-toast"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v7/toast/props.md';
-import Events from '@ionic-internal/component-api/v7/toast/events.md';
-import Methods from '@ionic-internal/component-api/v7/toast/methods.md';
-import Parts from '@ionic-internal/component-api/v7/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
+import Props from '@ionic-internal/component-api/v8/toast/props.md';
+import Events from '@ionic-internal/component-api/v8/toast/events.md';
+import Methods from '@ionic-internal/component-api/v8/toast/methods.md';
+import Parts from '@ionic-internal/component-api/v8/toast/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/toast/slots.md';
 
 <head>
   <title>ion-toast: A Dismissible App Notification Alert Component</title>
@@ -26,7 +26,7 @@ A Toast is a subtle notification commonly used in modern applications. It can be
 
 `ion-toast` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the toast.
 
-import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/index.md';
+import InlineToastTriggerExample from '@site/static/usage/v8/toast/inline/basic/index.md';
 
 <InlineToastTriggerExample />
 
@@ -36,13 +36,13 @@ The `isOpen` property on `ion-toast` allows developers to control the presentati
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the toast is dismissed. Developers should listen for the `ionToastDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-toast` from being tightly coupled with the state of the application. With a one way data binding, the toast only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the toast needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
-import InlineToastIsOpenExample from '@site/static/usage/v7/toast/inline/is-open/index.md';
+import InlineToastIsOpenExample from '@site/static/usage/v8/toast/inline/is-open/index.md';
 
 <InlineToastIsOpenExample />
 
 ## Controller Toasts
 
-import ControllerExample from '@site/static/usage/v7/toast/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v8/toast/presenting/controller/index.md';
 
 <ControllerExample />
 
@@ -56,7 +56,7 @@ Pressing the hardware back button does not dismiss toasts since they are not sup
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 
-import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
+import ButtonsPlayground from '@site/static/usage/v8/toast/buttons/index.md';
 
 <ButtonsPlayground />
 
@@ -68,7 +68,7 @@ Toasts can be positioned at the top, bottom or middle of the viewport. The posit
 
 If a toast is presented alongside navigation elements such as a header, footer, or [FAB](./fab.md), the toast may overlap these elements by default. This can be fixed using the `positionAnchor` property, which takes either an element reference or an ID. The toast will be positioned relative to the chosen element, appearing below it when using `position="top"` or above it when using `position="bottom"`. When using `position="middle"`, the `positionAnchor` property is ignored.
 
-import PositionAnchor from '@site/static/usage/v7/toast/position-anchor/index.md';
+import PositionAnchor from '@site/static/usage/v8/toast/position-anchor/index.md';
 
 <PositionAnchor />
 
@@ -84,7 +84,7 @@ import SwipeGesture from '@site/static/usage/v7/toast/swipe-gesture/index.md';
 
 Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
 
-import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
+import StackedPlayground from '@site/static/usage/v8/toast/layout/index.md';
 
 <StackedPlayground />
 
@@ -92,13 +92,13 @@ import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
 
 An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.md) instead.
 
-import IconPlayground from '@site/static/usage/v7/toast/icon/index.md';
+import IconPlayground from '@site/static/usage/v8/toast/icon/index.md';
 
 <IconPlayground />
 
 ## Theming
 
-import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v8/toast/theming/index.md';
 
 <ThemingPlayground />
 

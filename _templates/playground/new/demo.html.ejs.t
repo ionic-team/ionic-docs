@@ -8,8 +8,8 @@ to: "<%= `static/usage/v${version}/${name}/${path}/demo.html` %>"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= h.changeCase.titleCase(name) %></title>
-    <link rel="stylesheet" href="<%= directoryChanges %>../../../common.css" />
-    <script src="<%= directoryChanges %>../../../common.js"></script>
+    <link rel="stylesheet" href="<%= directoryChanges %>../../common.css" />
+    <script src="<%= directoryChanges %>../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/css/ionic.bundle.css" /><% if (css){ %>
 
