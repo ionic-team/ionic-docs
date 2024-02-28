@@ -15,6 +15,11 @@ const VERSIONS_JSON = require('./versions.json');
  * that are built with Docusaurus. The
  * Ionic v3 and v4 docs are built with other tools, so those
  * versions are not included here.
+ *
+ * Note that the urls specified in this file should
+ * NOT have a trailing slash otherwise users will
+ * briefly get a 404 Page Not Found error before
+ * the docuementation website loads.
  */
 const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
 
