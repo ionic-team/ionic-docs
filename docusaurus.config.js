@@ -18,10 +18,7 @@ const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
  * containing the version name at index 0 and
  * the archive url at index 1.
  */
-const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(
-  0,
-  5,
-);
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
 
 const BASE_URL = '/docs';
 
@@ -184,22 +181,20 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [
-            ...ArchivedVersionsDropdownItems.map(
-              ([versionName, versionUrl]) => ({
-                label: versionName,
-                /**
-                 * Use "to" instead of "href" so the
-                 * external URL icon does not show up.
-                 */
-                to: versionUrl,
-                /**
-                 * Just like the version docs in this project,
-                 * we want to archived versions to open in the
-                 * same tab.
-                 */
-                target: '_self'
-              }),
-            ),
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              /**
+               * Use "to" instead of "href" so the
+               * external URL icon does not show up.
+               */
+              to: versionUrl,
+              /**
+               * Just like the version docs in this project,
+               * we want to archived versions to open in the
+               * same tab.
+               */
+              target: '_self',
+            })),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
