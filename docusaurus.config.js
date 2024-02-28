@@ -10,6 +10,11 @@ const VERSIONS_JSON = require('./versions.json');
  * Building a large number of docs sites at once can cause
  * out of memory issues, so archiving old docs sites
  * allow us to keep memory usage and build times low.
+ *
+ * Note that this file is only for versions of the Ionic Docs
+ * that are built with Docusaurus. The
+ * Ionic v3 and v4 docs are built with other tools, so those
+ * versions are not included here.
  */
 const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
 
