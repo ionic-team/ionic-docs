@@ -4,6 +4,25 @@ const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
 
+/**
+ * Old versions of the Ionic Docs are archived so
+ * that we do not need to re-build it every time we deploy.
+ * Building a large number of docs sites at once can cause
+ * out of memory issues, so archiving old docs sites
+ * allow us to keep memory usage and build times low.
+ */
+const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
+
+/**
+ * This returns an array where each entry is an array
+ * containing the version name at index 0 and
+ * the archive url at index 1.
+ */
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(
+  0,
+  5,
+);
+
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -165,6 +184,22 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [
+            ...ArchivedVersionsDropdownItems.map(
+              ([versionName, versionUrl]) => ({
+                label: versionName,
+                /**
+                 * Use "to" instead of "href" so the
+                 * external URL icon does not show up.
+                 */
+                to: versionUrl,
+                /**
+                 * Just like the version docs in this project,
+                 * we want to archived versions to open in the
+                 * same tab.
+                 */
+                target: '_self'
+              }),
+            ),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
