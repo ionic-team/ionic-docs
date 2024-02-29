@@ -370,9 +370,9 @@ module.exports = {
     function (context, options) {
       return {
         name: 'beamer',
-        injectHtmlTags({content}) {
+        injectHtmlTags({ content }) {
           // Only inject Beamer when deployed to production, so we don't use up Beamer "users"
-          if (process.env.NODE_ENV === "production") {
+          if (process.env.NODE_ENV === 'production') {
             return {
               // For performance, Beamer recommends injecting these scripts at the very bottom of the <body>
               // Thus, custom plugin is required here to use postBodyTags
@@ -383,12 +383,12 @@ module.exports = {
                   attributes: {
                     src: 'https://app.getbeamer.com/js/beamer-embed.js',
                     defer: 'defer',
-                  }
-                }
-              ]
+                  },
+                },
+              ],
             };
           }
-        }
+        },
       };
     },
   ],
