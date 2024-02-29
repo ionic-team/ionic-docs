@@ -102,7 +102,7 @@ The `ion-slides` component had additional styling that helped create a native lo
 ```css
 swiper-container {
   --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
-  --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+  --swiper-pagination-color: var(--ion-color-primary, #0054e9);
   --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
   --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
   --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);

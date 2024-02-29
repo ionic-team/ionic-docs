@@ -62,6 +62,10 @@
     "static/code/stackblitz/v7/angular/package.json",
     "static/code/stackblitz/v7/html/package.json",
     "static/code/stackblitz/v7/react/package.json",
-    "static/code/stackblitz/v7/vue/package.json"
+    "static/code/stackblitz/v7/vue/package.json",
+    "static/code/stackblitz/v8/angular/package.json",
+    "static/code/stackblitz/v8/html/package.json",
+    "static/code/stackblitz/v8/react/package.json",
+    "static/code/stackblitz/v8/vue/package.json"
   ]
 }
