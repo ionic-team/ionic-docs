@@ -127,7 +127,7 @@ Now the `App` does not really have a lot to modify here. It's a basic example of
 
 Currently, the `Home` component looks like so:
 
-![](/img/guides/react/first-app/home-route.png)
+![Screenshot of a web browser displaying the Ionic React Home component with a blank page and a message prompting to start with Ionic UI Components.](/img/guides/react/first-app/home-route.png "Ionic React Home Component")
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
