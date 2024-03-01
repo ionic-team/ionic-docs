@@ -189,7 +189,7 @@ Now the `App` component does not really have a lot to modify here. It is a basic
 
 Currently, the `Home` component looks like so:
 
-![](/img/guides/vue/first-app/home-route.png)
+![Screenshot of the Ionic Vue blank starter home page displayed in a web browser.](/img/guides/vue/first-app/home-route.png "Ionic Vue Blank Starter Home Page")
 
 ```html
 <template>
