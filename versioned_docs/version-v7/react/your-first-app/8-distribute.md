@@ -93,7 +93,7 @@ For access to the ability to create a Native Configuration, you will need to be 
 
 ## What’s Next?
 
-Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to you users devices!
+Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to your users devices!
 
 There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature run the the build and deploy process again through Appflow to get it out to your users.
 
