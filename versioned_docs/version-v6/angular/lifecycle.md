@@ -13,7 +13,7 @@ sidebar_label: Lifecycle
 
 This guide covers how the page life cycle works in an app built with Ionic and Angular.
 
-![Ionic life cycle events demo](/img/guides/lifecycle/ioniclifecycle.png)
+![](/img/guides/lifecycle/ioniclifecycle.png)
 
 ## Angular Life Cycle Events
 
@@ -47,7 +47,7 @@ The difference between `ionViewWillEnter` and `ionViewDidEnter` is when they fir
 
 For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called directly before the transition away from the current page begins, and `ionViewDidLeave` does not get called until after the new page gets successfully transitioned into (after the new pages `ionViewDidEnter` fires).
 
-![Ionic life cycle events demo](/img/guides/lifecycle/ioniclifecycle.gif)
+![](/img/guides/lifecycle/ioniclifecycle.gif)
 
 ## How Ionic Handles the Life of a Page
 

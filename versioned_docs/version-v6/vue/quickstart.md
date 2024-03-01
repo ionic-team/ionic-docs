@@ -185,7 +185,7 @@ Now the `App` component does not really have a lot to modify here. It is a basic
 
 Currently, the `Home` component looks like so:
 
-![Vue home component](/img/guides/vue/first-app/home-route.png)
+![](/img/guides/vue/first-app/home-route.png)
 
 ```html
 <template>

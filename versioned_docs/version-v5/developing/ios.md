@@ -30,7 +30,7 @@ All iOS apps must be code signed, even for development. Luckily, Xcode makes thi
 
 Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
 
-![Xcode Accounts](/img/installation/ios-xcode-accounts.png)
+![](/img/installation/ios-xcode-accounts.png)
 
 ### Creating an iOS Simulator
 
@@ -38,7 +38,7 @@ The iOS simulator emulates iOS devices on Macs. The following documentation is a
 
 Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
 
-![iOS Simulators](/img/installation/ios-xcode-simulators-setup.png)
+![](/img/installation/ios-xcode-simulators-setup.png)
 
 ## Cordova Setup
 
@@ -166,7 +166,7 @@ If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences
 If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
 :::
 
-![Safari Web Inspector](/img/running/ios-safari-web-inspector-timelines.png)
+![](/img/running/ios-safari-web-inspector-timelines.png)
 
 ### Viewing Native Logs
 
@@ -176,4 +176,4 @@ If running with Xcode, native logs can be found in the Xcode **Console**.
 If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 :::
 
-![Xcode Console](/img/running/ios-xcode-console.png)
+![](/img/running/ios-xcode-console.png)
