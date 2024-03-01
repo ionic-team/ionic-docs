@@ -70,7 +70,7 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
 
 Save the file, and if it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
-![](/img/guides/first-app-cap-ng/camera-web.png)
+![Screenshot of a photo gallery app displaying a selfie taken with the camera feature.](/img/guides/first-app-cap-ng/camera-web.png "Photo Gallery Selfie Example")
 
 _(Your selfie is probably much better than mine)_
 
