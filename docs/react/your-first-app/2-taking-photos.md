@@ -72,7 +72,7 @@ const Tab2: React.FC = () => {
 
 Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
-![](/img/guides/first-app-cap-ng/camera-web.png)
+![A person smiling for a selfie displayed in a photo gallery interface on a web application.](/img/guides/first-app-cap-ng/camera-web.png "Webcam Selfie in Photo Gallery")
 
 _(Your selfie is probably much better than mine)_
 
