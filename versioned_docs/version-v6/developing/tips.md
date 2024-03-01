@@ -122,7 +122,7 @@ By default, when an app is viewed in the browser, Ionic will apply the `md` mode
 This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
 :::
 
-![](/img/faq/tips/change-device-platform.png)
+![Screenshot of a browser's device toolbar showing the selection of iPhone X with resolution and battery percentage.](/img/faq/tips/change-device-platform.png "Device Platform Change in Browser")
 
 Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
 
