@@ -4,7 +4,7 @@ Previously, we converted our single use Camera app into an epic photo gallery. N
 
 Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
 
-![Chart showcasing Ionic's nine default color options with hex codes.](/img/guides/first-app-v4/theming-defaults.png "Ionic Default Color Palette")
+![A chart showing Ionic's nine default colors with their hex codes.](/img/guides/first-app-v4/theming-defaults.png "Ionic Default Color Palette")
 
 You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
 

@@ -2,7 +2,7 @@
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
-![Before and after screenshots of an Ionic app showing the transformation from a basic Tab Two page to a Photo Gallery page.](/img/guides/first-app-v3/gallery-combined.png "Ionic Photo Gallery App Transformation")
+![Screenshot showing the Ionic app's transformation from a blank 'Tab Two' to a 'Photo Gallery' with images.](/img/guides/first-app-v3/gallery-combined.png "Ionic App Before and After Photo Gallery")
 
 It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 

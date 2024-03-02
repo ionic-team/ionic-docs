@@ -31,7 +31,7 @@ Download Android Studio from the <a href="https://developer.android.com/studio/"
 
 Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
 
-![Screenshot of the Android Studio SDK Components Setup screen with options to install various SDK components.](/img/installation/android-studio-sdk-setup.png "Android Studio SDK Components Setup")
+![Android Studio SDK Components Setup screen showing the Android SDK and API 28: Android 9.0 (Pie) selected for installation.](/img/installation/android-studio-sdk-setup.png "Android Studio SDK Components Setup")
 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 

@@ -168,7 +168,7 @@ $ git push ionic master
 
 Log into the [Appflow dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. You’ll see this newest commit begin to build immediately. Since we assigned the Appflow plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
 
-![Screenshot showing the Deploy Builds section in Appflow with a commit labeled 'change name to Photo Viewer' assigned to the master channel.](/img/guides/first-app-v3/deploy-channel.png "Appflow Deploy Channel")
+![Screenshot showing the Deploy Builds section in the Appflow dashboard.](/img/guides/first-app-v3/deploy-channel.png "Appflow Deploy Builds")
 
 A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like.
 

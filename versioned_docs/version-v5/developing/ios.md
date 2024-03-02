@@ -91,12 +91,12 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 <!-- prettier-ignore -->
 1. <strong>In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.</strong>
 
-   ![Xcode project editor showing the Identity section with the Package ID and Bundle Identifier fields.](/img/running/ios-xcode-identity-setup.png "Xcode Project Identity Setup")
+   ![Screenshot of Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png "Xcode Identity Section")
 
 <!-- prettier-ignore -->
 1. <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.</strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
-   ![Xcode project editor displaying the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png "Xcode Project Signing Setup")
+   ![Screenshot of Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png "Xcode Signing Section")
 
 ## Running with Xcode
 
@@ -120,7 +120,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 1. <strong>In Xcode, select a target simulator or device and click the play button.</strong>
 
-   ![Xcode toolbar with the play button highlighted, indicating how to run the app on a selected simulator or device.](/img/running/ios-xcode-play-button-area.png "Xcode Play Button Area")
+   ![Xcode toolbar with the play button and the active scheme for an iPhone simulator.](/img/running/ios-xcode-play-button-area.png "Xcode Play Button and Active Scheme")
 
 ## Running with the Ionic CLI
 
@@ -166,7 +166,7 @@ If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences
 If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
 :::
 
-![Safari Web Inspector window showing the Timelines tab for debugging an iOS app.](/img/running/ios-safari-web-inspector-timelines.png "Safari Web Inspector Timelines")
+![Safari Web Inspector window showing the Timelines tab for performance profiling of an iOS app.](/img/running/ios-safari-web-inspector-timelines.png "Safari Web Inspector Timelines")
 
 ### Viewing Native Logs
 

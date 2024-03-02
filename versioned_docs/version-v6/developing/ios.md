@@ -96,11 +96,11 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
 1. **In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.**
 
-   ![Xcode project editor showing the Identity section with fields for Display Name and Bundle Identifier.](/img/running/ios-xcode-identity-setup.png "Xcode Project Identity Settings")
+   ![Screenshot of Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png "Xcode Identity Section")
 
 1. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
-   ![Xcode project editor displaying the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png "Xcode Project Signing Settings")
+   ![Screenshot of Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png "Xcode Signing Section")
 
 ## Running with Xcode
 
@@ -181,4 +181,4 @@ If running with Xcode, native logs can be found in the Xcode **Console**.
 If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 :::
 
-![Xcode console output displaying logs from an iOS app running on a simulator.](/img/running/ios-xcode-console.png "Xcode Console Logs")
+![Xcode Console output displaying logs from an iOS app running on a simulator.](/img/running/ios-xcode-console.png "Xcode Console Logs")

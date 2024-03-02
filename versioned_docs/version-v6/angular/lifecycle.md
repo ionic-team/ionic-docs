@@ -47,7 +47,7 @@ The difference between `ionViewWillEnter` and `ionViewDidEnter` is when they fir
 
 For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called directly before the transition away from the current page begins, and `ionViewDidLeave` does not get called until after the new page gets successfully transitioned into (after the new pages `ionViewDidEnter` fires).
 
-![Animated demonstration of Ionic page life cycle events in a browser console.](/img/guides/lifecycle/ioniclifecycle.gif "Ionic Lifecycle Animation")
+![Animated sequence showing Ionic page life cycle events in a console log as a page transition occurs.](/img/guides/lifecycle/ioniclifecycle.gif "Ionic Lifecycle Animation")
 
 ## How Ionic Handles the Life of a Page
 

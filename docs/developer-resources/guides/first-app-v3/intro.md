@@ -76,7 +76,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs: “Home”, “About”, and “Contact.” Click on the About tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform the About page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
-![Animated GIF demonstrating the addition of photo gallery functionality to the Ionic app's 'About' page.](/img/guides/first-app-v3/email-photogallery.gif "Ionic Photo Gallery Functionality")
+![Animated GIF demonstrating the LiveReload feature in Ionic, showing real-time updates in the app after code changes.](/img/guides/first-app-v3/email-photogallery.gif "Ionic LiveReload Feature Demonstration")
 
 Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/pages/about/about.html`. We see:
 

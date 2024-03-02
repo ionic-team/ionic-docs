@@ -78,7 +78,7 @@ const { takePhoto } = usePhotoGallery();
 
 Save the file. Start the development server via `ionic serve` if it is not already running. In your browser, on the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
-![Screenshot of a photo gallery application displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png "Webcam Selfie in Photo Gallery")
+![Screenshot of a photo gallery app displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png "Webcam Selfie in Photo Gallery")
 
 _(Your selfie is probably much better than mine)_
 

@@ -69,15 +69,15 @@ If you haven't made the switch to Android app bundles yet, you will need to opt 
 First, create a new app in the Google Play Console. In order to enable app signing, you'll need to navigate to the new release screen, on one of the Production, Open testing, closed testing, or internal testing pages.
 Select the Create new release button as seen below (it doesn't matter which release type, since you don't have to actually go through with creating a new release right now):
 
-![Google Play Console interface showing the 'Create new release' button in the Production section.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-release-1024x561.png "Google Play Console New Release Creation")
+![Screenshot of Google Play Console's Production tab with arrow pointing to the 'Create new release' button.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-release-1024x561.png "Google Play Console New Release Creation")
 
 Under the App integrity section, click the **Change app signing key** button:
 
-![Google Play Console's App integrity section with the 'Change app signing key' button visible.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-signingkey.png "Google Play Console Change App Signing Key Option")
+![Screenshot of Google Play Console's App integrity section with the 'Change app signing key' button highlighted.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-signingkey.png "Google Play Console Change App Signing Key Option")
 
 Next, select the **Export and upload a key from Java Keystore** option. This is the only way in which you can retain the key and have Google Play use it for signing. If you're using Appflow to build Android apps in the cloud, this is also the required option so you can upload the keystore file to Appflow.
 
-![Google Play Console showing the option to 'Export and upload a key from Java Keystore' during app signing.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-export-1024x564.png "Google Play Console Export and Upload Key from Java Keystore")
+![Screenshot of the Google Play Console showing the option to 'Export and upload a key from Java Keystore'.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-export-1024x564.png "Google Play Console Export and Upload Key Option")
 
 Follow the instructions on the screen to generate the Keystore and you can use the same Keystore file to sign your app in the Appflow dashboard as well. If you need any help generating the Keystore file, you can refer to our docs [here](https://ionic.io/docs/appflow/package/credentials#android-certificates).
 Once the generated zip file has been uploaded, you're all set! Build an AAB binary signed with the keystore file then upload it to Google Play.
@@ -140,7 +140,7 @@ Making a developer account with Google Play costs $25 USD.
 
 Once a developer account has been created, go ahead and click the `Create an Application`
 
-![Screenshot of the Google Play Console with a 'CREATE APPLICATION' button highlighted.](/img/publishing/newAppGPlay.png "Google Play Console Create Application Button")
+![Screenshot of the Google Play Store Developer Console with the 'CREATE APPLICATION' button highlighted.](/img/publishing/newAppGPlay.png "Google Play Store Create Application Button")
 
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release AAB/APK that was generated and publish the app.

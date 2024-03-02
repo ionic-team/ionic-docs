@@ -8,7 +8,7 @@ Ionic has nine default colors, defined as CSS variables, that can be used to cha
 
 You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
 
-![A detailed view of customizable properties for the primary color in Ionic.](/img/guides/first-app-v4/theming-properties.png "Ionic Color Customization Properties")
+![Table detailing the properties for customizing the primary color in Ionic, including base, contrast, shade, and tint.](/img/guides/first-app-v4/theming-properties.png "Ionic Color Customization Properties")
 
 You can find these colors defined in `src/theme/variables.scss`.
 
@@ -31,7 +31,7 @@ The easiest and most powerful way to create custom color palettes for your appâ€
 
 But wait, thereâ€™s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
 
-![Screenshots comparing the native styles of an Ionic app on iOS and Android platforms.](/img/guides/first-app-v3/ion-lab-comparison.png "Ionic Platform Specific Styles Comparison")
+![Screenshots comparing the native look of an Ionic app on iOS and Android platforms.](/img/guides/first-app-v3/ion-lab-comparison.png "Ionic Platform Specific Styles Comparison")
 
 In our app, this is clearly visible in how the header and the icons are styled.
 
@@ -49,7 +49,7 @@ imports: [
 
 Now, the iOS version of our app has a Material Design skin!
 
-![A screenshot showing an Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png "Ionic Material Design Styling on iOS")
+![Screenshot showing an Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png "Ionic Material Design Styling on iOS")
 
 Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
 

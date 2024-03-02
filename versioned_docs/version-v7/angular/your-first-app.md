@@ -126,7 +126,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Animated GIF showing the live reload feature in the Ionic Photo Gallery app within a code editor and web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif "Ionic Photo Gallery App Live Reload")
+![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif "Live Reload Feature in Ionic App")
 
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 

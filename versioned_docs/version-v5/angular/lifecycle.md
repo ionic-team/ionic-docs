@@ -6,7 +6,7 @@ sidebar_label: Lifecycle
 
 This guide covers how the page life cycle works in an app built with Ionic and Angular.
 
-![Diagram illustrating the Ionic page life cycle events and their sequence.](/img/guides/lifecycle/ioniclifecycle.png "Ionic Lifecycle Diagram")
+![Flowchart illustrating the Ionic page life cycle events and their sequence.](/img/guides/lifecycle/ioniclifecycle.png "Ionic Lifecycle Diagram")
 
 ## Angular Life Cycle Events
 

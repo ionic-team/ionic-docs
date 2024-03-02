@@ -74,7 +74,7 @@ Follow the same process to add the other two Keys required of the Camera plugin:
 
 Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
 
-![Xcode interface displaying the Signing & Capabilities tab for an iOS app project with a selected development team.](/img/guides/first-app-cap-ng/xcode-signing.png "Xcode Signing & Capabilities")
+![Screenshot of the Xcode interface displaying the Signing & Capabilities tab for an iOS app project.](/img/guides/first-app-cap-ng/xcode-signing.png "Xcode Signing & Capabilities")
 
 With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
 
@@ -96,7 +96,7 @@ ionic cap open android
 
 Similar to iOS, we must enable the correct permissions to use the Camera. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
 
-![Android Studio editor showing the AndroidManifest.xml file with camera permissions highlighted.](/img/guides/first-app-cap-ng/android-manifest.png "AndroidManifest.xml Permissions")
+![Android Studio editor showing the AndroidManifest.xml file with camera permissions.](/img/guides/first-app-cap-ng/android-manifest.png "Android Manifest Permissions")
 
 Scroll to the `Permissions` section and ensure these entries are included:
 
@@ -107,11 +107,11 @@ Scroll to the `Permissions` section and ensure these entries are included:
 
 Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
 
-![Android Studio interface with the Run button highlighted, ready to launch the app on a connected device.](/img/guides/first-app-cap-ng/android-device.png "Android Studio Run Configuration")
+![Screenshot of the Android Studio interface with arrows pointing to the Run button and the connected device.](/img/guides/first-app-cap-ng/android-device.png "Android Studio Run Configuration")
 
 Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
 
-![Two Android phones side by side, one showing the camera permission prompt and the other displaying a photo taken with the app.](/img/guides/first-app-cap-ng/android-permissions-photo.png "Android Camera Permission Prompt and Photo Result")
+![Two Android phones side by side, one showing the camera permission prompt and the other displaying a photo taken with the app.](/img/guides/first-app-cap-ng/android-permissions-photo.png "Android Permissions and Photo Capture")
 
 Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
 

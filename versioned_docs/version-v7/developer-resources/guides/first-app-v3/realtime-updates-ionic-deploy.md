@@ -168,7 +168,7 @@ $ git push ionic master
 
 Log into the [Appflow dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. You’ll see this newest commit begin to build immediately. Since we assigned the Appflow plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
 
-![Screenshot showing the Deploy Builds section with a commit labeled 'change name to Photo Viewer' assigned to the Master channel.](/img/guides/first-app-v3/deploy-channel.png "Appflow Deploy Channel")
+![Screenshot showing the Deploy Builds section in the Appflow dashboard.](/img/guides/first-app-v3/deploy-channel.png "Appflow Deploy Builds")
 
 A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like.
 
@@ -180,7 +180,7 @@ What if you deploy a change, then realize that there is a bug? Or perhaps you’
 
 On the Deploy Builds page, click the “Assign to Channel” button on the previous commit, then click “Deploy.” App users will be reverted to the previous version, and our “Photo Gallery” name has been restored.
 
-![Screenshot displaying the Deploy Builds section with a commit labeled 'set name to Photo Gallery' being assigned to the Master channel for rollback.](/img/guides/first-app-v3/deploy-revertChange.png "Appflow Deploy Revert Change")
+![Screenshot of the Deploy Builds section in Appflow with a commit labeled 'set name to Photo Gallery' being assigned to the master channel for rollback.](/img/guides/first-app-v3/deploy-revertChange.png "Appflow Deploy Revert Change")
 
 This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
 

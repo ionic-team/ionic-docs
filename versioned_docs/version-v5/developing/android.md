@@ -31,7 +31,7 @@ By default, the latest stable SDK Platform is installed, which includes a collec
 
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
 
-![Android Studio SDK Manager with various Android SDK platform packages and system images listed for installation.](/img/installation/android-studio-sdk.png "Android Studio SDK Manager")
+![Screenshot of the Android Studio SDK Manager showing installed and available SDK packages.](/img/installation/android-studio-sdk.png "Android Studio SDK Manager")
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -71,7 +71,7 @@ Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to 
 
 AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
 
-![Android Studio AVD Manager screen with options to create and manage Android Virtual Devices.](/img/installation/android-studio-avd-setup.png "Android Studio AVD Manager")
+![Screenshot of the Android Studio AVD Manager with the option to create a new Android Virtual Device.](/img/installation/android-studio-avd-setup.png "Android Studio AVD Manager")
 
 Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
@@ -153,7 +153,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
-![Android Studio interface highlighting the Run button area used to launch the app on a simulator or device.](/img/running/android-studio-run-button-area.png "Android Studio Run Button Area")
+![Screenshot highlighting the run button area in Android Studio to build and run an Android app.](/img/running/android-studio-run-button-area.png "Android Studio Run Button Area")
 
 ### Live reload
 
@@ -189,7 +189,7 @@ Chrome has web developer tool support for Android simulators and devices. Go to 
 Make sure your application is running on the device or simulator, or it will not show up in the list.
 :::
 
-![Chrome DevTools Devices page showing available Android devices for debugging.](/img/running/android-chrome-devtools.png "Chrome DevTools for Android")
+![Screenshot of Chrome DevTools showing a list of devices available for inspection.](/img/running/android-chrome-devtools.png "Chrome DevTools for Android")
 
 ### Viewing Native Logs
 
@@ -199,7 +199,7 @@ If running with Android Studio, native logs can be found in **Logcat**.
 If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
 :::
 
-![Android Studio Logcat window displaying real-time system logs from an Android device.](/img/running/android-studio-logcat.png "Android Studio Logcat")
+![Screenshot of the Logcat window in Android Studio displaying logs from an Android device.](/img/running/android-studio-logcat.png "Android Studio Logcat")
 
 You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
 
