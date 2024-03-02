@@ -30,7 +30,7 @@ All iOS apps must be code signed, even for development. Luckily, Xcode makes thi
 
 Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
 
-![Screenshot of Xcode Preferences showing the Accounts section with an Apple ID selected.](/img/installation/ios-xcode-accounts.png "Xcode Preferences Accounts")
+![Screenshot of Xcode Preferences showing the Accounts section with an Apple ID selected.](/img/installation/ios-xcode-accounts.png 'Xcode Preferences Accounts')
 
 ### Creating an iOS Simulator
 
@@ -38,7 +38,7 @@ The iOS simulator emulates iOS devices on Macs. The following documentation is a
 
 Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
 
-![Xcode window displaying Devices and Simulators setup with an iPhone X simulator selected.](/img/installation/ios-xcode-simulators-setup.png "Xcode Devices and Simulators Setup")
+![Xcode window displaying Devices and Simulators setup with an iPhone X simulator selected.](/img/installation/ios-xcode-simulators-setup.png 'Xcode Devices and Simulators Setup')
 
 ## Cordova Setup
 
@@ -120,7 +120,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 1. <strong>In Xcode, select a target simulator or device and click the play button.</strong>
 
-   ![Xcode toolbar with the play button and the active scheme for an iPhone simulator.](/img/running/ios-xcode-play-button-area.png "Xcode Play Button and Active Scheme")
+   ![Xcode toolbar with the play button and the active scheme for an iPhone simulator.](/img/running/ios-xcode-play-button-area.png 'Xcode Play Button and Active Scheme')
 
 ## Running with the Ionic CLI
 
@@ -166,7 +166,7 @@ If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences
 If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
 :::
 
-![Safari Web Inspector window showing the Timelines tab for performance profiling of an iOS app.](/img/running/ios-safari-web-inspector-timelines.png "Safari Web Inspector Timelines")
+![Safari Web Inspector window showing the Timelines tab for performance profiling of an iOS app.](/img/running/ios-safari-web-inspector-timelines.png 'Safari Web Inspector Timelines')
 
 ### Viewing Native Logs
 
@@ -176,4 +176,4 @@ If running with Xcode, native logs can be found in the Xcode **Console**.
 If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 :::
 
-![Xcode Console output displaying logs from an iOS app running on a simulator.](/img/running/ios-xcode-console.png "Xcode Console Logs")
+![Xcode Console output displaying logs from an iOS app running on a simulator.](/img/running/ios-xcode-console.png 'Xcode Console Logs')
