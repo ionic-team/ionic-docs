@@ -34,7 +34,7 @@ The example below demonstrates how to use `theme-color` to style the browser int
 
 | Light Mode                                                                             | Dark Mode                                                                            |
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| ![Application with theme-color meta in light mode](/img/theming/theme-color-light.png) | ![Application with theme-color meta in dark mode](/img/theming/theme-color-dark.png) |
+| ![](/img/theming/theme-color-light.png) | ![](/img/theming/theme-color-dark.png) |
 
 The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
 

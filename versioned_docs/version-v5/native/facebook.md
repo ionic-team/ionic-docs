@@ -20,11 +20,11 @@ Requires Cordova plugin: `cordova-plugin-facebook-connect`. For more info, pleas
 
 To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).
 
-[![fb-getstarted-1](/img/docs/native/Facebook/1.png)](https://developers.facebook.com/apps/)
+[![](/img/docs/native/Facebook/1.png)](https://developers.facebook.com/apps/)
 
 Retrieve the `App ID` and `App Name`.
 
-[![fb-getstarted-2](/img/docs/native/Facebook/2.png)](https://developers.facebook.com/apps/)
+[![](/img/docs/native/Facebook/2.png)](https://developers.facebook.com/apps/)
 
 Then type in the following command in your Terminal, where APP_ID and APP_NAME are the values from the Facebook Developer portal.
 
@@ -34,11 +34,11 @@ Then type in the following command in your Terminal, where APP_ID and APP_NAME a
 
 After, you'll need to add the native platforms you'll be using to your app in the Facebook Developer portal under your app's Settings:
 
-[![fb-getstarted-3](/img/docs/native/Facebook/3.png)](https://developers.facebook.com/apps/)
+[![](/img/docs/native/Facebook/3.png)](https://developers.facebook.com/apps/)
 
 Click `'Add Platform'`.
 
-[![fb-getstarted-4](/img/docs/native/Facebook/4.png)](https://developers.facebook.com/apps/)
+[![](/img/docs/native/Facebook/4.png)](https://developers.facebook.com/apps/)
 
 At this point you'll need to open your project's [`config.xml`](https://cordova.apache.org/docs/en/latest/config_ref/index.html) file, found in the root directory of your project.
 
@@ -54,13 +54,13 @@ You can also edit the `id` to whatever you'd like it to be.
 
 Under 'Bundle ID', add the `id` from your `config.xml` file:
 
-[![fb-getstarted-5](/img/docs/native/Facebook/5.png)](https://developers.facebook.com/apps/)
+[![](/img/docs/native/Facebook/5.png)](https://developers.facebook.com/apps/)
 
 #### Android Install
 
 Under 'Google Play Package Name', add the `id` from your `config.xml` file:
 
-[![fb-getstarted-6](/img/docs/native/Facebook/6.png)](https://developers.facebook.com/apps/)
+[![](/img/docs/native/Facebook/6.png)](https://developers.facebook.com/apps/)
 
 And that's it! You can now make calls to Facebook using the plugin.
 
