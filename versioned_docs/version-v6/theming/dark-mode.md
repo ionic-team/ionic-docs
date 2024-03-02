@@ -139,7 +139,7 @@ color-scheme: light dark;
 
 | Default scrollbar                                                        | Scrollbar with `color-scheme`                                        |
 | ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| ![](/img/theming/color-scheme-light.png) | ![](/img/theming/color-scheme-dark.png) |
+| ![Screenshot of a default light-themed scrollbar in an application interface.](/img/theming/color-scheme-light.png "Default scrollbar appearance without dark mode") | ![Screenshot of a dark-themed scrollbar in an application interface with dark mode enabled.](/img/theming/color-scheme-dark.png "Scrollbar appearance with dark mode 'color-scheme' applied") |
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 
