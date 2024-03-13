@@ -168,11 +168,9 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description |
-| --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
-
-`;
+| Name | Description | Bubbles |
+| --- | --- | --- |
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
 function renderMethods({ methods }) {
