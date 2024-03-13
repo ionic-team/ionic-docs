@@ -26,8 +26,8 @@
 }
 
 /* This sets a different item background when dark mode is enabled on ios and md */
-.ion-theme-dark.ios,
-.ion-theme-dark.md {
+.ion-palette-dark.ios,
+.ion-palette-dark.md {
   --ion-item-background: #1c1c1d;
 }
 ```

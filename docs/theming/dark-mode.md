@@ -13,43 +13,43 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-Ionic makes it easy to change the themes of your app, including supporting dark color schemes. Dark mode is a display setting that changes all of an app's views to a dark theme. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
+Ionic makes it easy to change the palettes of your app, including supporting dark color schemes. Dark mode is a display setting that changes all of an app's views to a dark palette. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
 
-## Enabling Dark Theme
+## Enabling Dark Palette
 
-There are three provided ways to enable the dark theme in an app: **always**, based on **system** settings, or by using a CSS **class**.
+There are three provided ways to enable the dark palette in an app: **always**, based on **system** settings, or by using a CSS **class**.
 
 ### Always
 
-The default theme provided with Ionic Framework is a light theme, consisting of a light background and dark text. However, the default theme can be changed to the dark theme by importing the following stylesheet in the appropriate files:
+The default palette provided with Ionic Framework is a light palette, consisting of a light background and dark text. However, the default palette can be changed to the dark palette by importing the following stylesheet in the appropriate files:
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```css
-@import '@ionic/angular/css/themes/dark.always.css';
+@import '@ionic/angular/css/palettes/dark.always.css';
 ```
 
 </TabItem>
 <TabItem value="javascript">
 
 ```ts
-import '@ionic/core/css/themes/dark.always.css';
+import '@ionic/core/css/palettes/dark.always.css';
 ```
 
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-import '@ionic/react/css/themes/dark.always.css';
+import '@ionic/react/css/palettes/dark.always.css';
 ```
 
 </TabItem>
 <TabItem value="vue">
 
 ```ts
-import '@ionic/vue/css/themes/dark.always.css';
+import '@ionic/vue/css/palettes/dark.always.css';
 ```
 
 </TabItem>
@@ -58,47 +58,47 @@ import '@ionic/vue/css/themes/dark.always.css';
 
 This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector.
 
-The following example will always display the dark theme, regardless of the system settings for dark mode.
+The following example will always display the dark palette, regardless of the system settings for dark mode.
 
 import AlwaysDarkMode from '@site/static/usage/v8/theming/always-dark-mode/index.md';
 
 <AlwaysDarkMode />
 
 :::caution Important
-Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
 ### System
 
-The system approach to enable dark mode involves checking the system settings for the user's preferred color scheme. This is the default when starting a new Ionic Framework app. Importing the following stylesheet in the appropriate file will automatically retrieve the user's preference from the system settings and apply the dark theme when dark mode is preferred:
+The system approach to enable dark mode involves checking the system settings for the user's preferred color scheme. This is the default when starting a new Ionic Framework app. Importing the following stylesheet in the appropriate file will automatically retrieve the user's preference from the system settings and apply the dark palette when dark mode is preferred:
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```css
-@import '@ionic/angular/css/themes/dark.system.css';
+@import '@ionic/angular/css/palettes/dark.system.css';
 ```
 
 </TabItem>
 <TabItem value="javascript">
 
 ```ts
-import '@ionic/core/css/themes/dark.system.css';
+import '@ionic/core/css/palettes/dark.system.css';
 ```
 
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-import '@ionic/react/css/themes/dark.system.css';
+import '@ionic/react/css/palettes/dark.system.css';
 ```
 
 </TabItem>
 <TabItem value="vue">
 
 ```ts
-import '@ionic/vue/css/themes/dark.system.css';
+import '@ionic/vue/css/palettes/dark.system.css';
 ```
 
 </TabItem>
@@ -118,49 +118,49 @@ import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index
 <SystemDarkMode />
 
 :::caution Important
-Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark theme, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
+Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
 ### CSS Class
 
-While the previous approaches are excellent for enabling the dark theme through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the dark theme conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a dark theme class file. This file applies the dark theme when a specific class is added to an app. Importing the following stylesheet into the appropriate file will provide the necessary styles for using the dark theme with the class:
+While the previous approaches are excellent for enabling the dark palette through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the dark palette conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a dark palette class file. This file applies the dark palette when a specific class is added to an app. Importing the following stylesheet into the appropriate file will provide the necessary styles for using the dark palette with the class:
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```css
-@import '@ionic/angular/css/themes/dark.class.css';
+@import '@ionic/angular/css/palettes/dark.class.css';
 ```
 
 </TabItem>
 <TabItem value="javascript">
 
 ```ts
-import '@ionic/core/css/themes/dark.class.css';
+import '@ionic/core/css/palettes/dark.class.css';
 ```
 
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-import '@ionic/react/css/themes/dark.class.css';
+import '@ionic/react/css/palettes/dark.class.css';
 ```
 
 </TabItem>
 <TabItem value="vue">
 
 ```ts
-import '@ionic/vue/css/themes/dark.class.css';
+import '@ionic/vue/css/palettes/dark.class.css';
 ```
 
 </TabItem>
 
 </Tabs>
 
-This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the `.ion-theme-dark` selector, which must be applied to the app by the developer.
+This sets the [application colors](/docs/theming/themes#application-colors) and [stepped colors](/docs/theming/themes#stepped-colors) on the `.ion-palette-dark` selector, which must be applied to the app by the developer.
 
-The following example combines site settings, system settings, and the toggle to decide when to show dark mode. The site's theme takes precedence over system settings. If your system settings differ from the site's theme when the demo loads, it will use the site's theme.
+The following example combines site settings, system settings, and the toggle to decide when to show dark mode. The site's palette takes precedence over system settings. If your system settings differ from the site's palette when the demo loads, it will use the site's palette.
 
 :::info
 Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
@@ -171,12 +171,12 @@ import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.m
 <ClassDarkMode />
 
 :::caution Important
-The `.ion-theme-dark` class **must** be added to the `html` element in order to work with the imported dark theme.
+The `.ion-palette-dark` class **must** be added to the `html` element in order to work with the imported dark palette.
 :::
 
 ## Adjusting System UI Components
 
-When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+When developing a dark palette, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
 
 While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
 
@@ -204,24 +204,24 @@ For more information regarding `color-scheme` please see https://web.dev/color-s
 For developers looking to customize the theme color under the status bar in Safari on iOS 15 or the toolbar in Safari on macOS, see [`theme-color` Meta](./advanced.md#theme-color-meta).
 :::
 
-## Ionic Dark Theme
+## Ionic Dark Palette
 
-Ionic has a recommended dark theme that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the dark theme file with the corresponding name.
+Ionic has a recommended dark palette that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the dark palette file with the corresponding name.
 
-The contents of each file are included below for reference. These variables are set by importing the relevant dark theme file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
+The contents of each file are included below for reference. These variables are set by importing the relevant dark palette file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
 
 <Tabs groupId="darkFiles" defaultValue="always" values={[{ value: 'always', label: 'Always (dark.always.css)' }, { value: 'system', label: 'System (dark.system.css)' }, { value: 'class', label: 'Class (dark.class.css)' }]}>
 
 <TabItem value="always">
 
-The **always** dark theme behaves in the following ways:
+The **always** dark palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark theme in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
-2. Setting variables for the dark theme on `ios` devices using the `:root.ios` selector.
-3. Setting variables for the dark theme on `md` devices using the `:root.md` selector.
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+2. Setting variables for the dark palette on `ios` devices using the `:root.ios` selector.
+3. Setting variables for the dark palette on `md` devices using the `:root.md` selector.
 
 :::caution
-It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
+It is important to pay attention to the specificity if you want to override any of the Ionic dark palette variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
 :::
 
 ```css
@@ -367,15 +367,15 @@ It is important to pay attention to the specificity if you want to override any 
 
 <TabItem value="system">
 
-The **system** dark theme behaves in the following ways:
+The **system** dark palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark theme in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
-2. Setting variables for the dark theme on `ios` devices using the `:root.ios` selector.
-3. Setting variables for the dark theme on `md` devices using the `:root.md` selector.
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+2. Setting variables for the dark palette on `ios` devices using the `:root.ios` selector.
+3. Setting variables for the dark palette on `md` devices using the `:root.md` selector.
 4. Only applies these variables when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`.
 
 :::caution
-It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
+It is important to pay attention to the specificity if you want to override any of the Ionic dark palette variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `:root` selector. A higher specificity selector, such as `:root.ios`, is required.
 :::
 
 ```css
@@ -523,18 +523,18 @@ It is important to pay attention to the specificity if you want to override any 
 
 <TabItem value="class">
 
-The **class** dark theme behaves in the following ways:
+The **class** dark palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark theme in the `.ion-theme-dark` selector. The `.ion-theme-dark` class must be added to the `html` element in an app.
-2. Setting variables for the dark theme on `ios` devices using the `.ion-theme-dark.ios` selector.
-3. Setting variables for the dark theme on `md` devices using the `.ion-theme-dark.md` selector.
+1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `.ion-palette-dark` selector. The `.ion-palette-dark` class must be added to the `html` element in an app.
+2. Setting variables for the dark palette on `ios` devices using the `.ion-palette-dark.ios` selector.
+3. Setting variables for the dark palette on `md` devices using the `.ion-palette-dark.md` selector.
 
 :::caution
-It is important to pay attention to the specificity if you want to override any of the Ionic dark theme variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `.ion-theme-dark` selector. A higher specificity selector, such as `.ion-theme-dark.ios`, is required.
+It is important to pay attention to the specificity if you want to override any of the Ionic dark palette variables. For example, because the `--ion-item-background` variable is set for each mode, it cannot be overridden in the `.ion-palette-dark` selector. A higher specificity selector, such as `.ion-palette-dark.ios`, is required.
 :::
 
 ```css
-.ion-theme-dark {
+.ion-palette-dark {
   --ion-color-primary: #4d8dff;
   --ion-color-primary-rgb: 77, 141, 255;
   --ion-color-primary-contrast: #000000;
@@ -599,7 +599,7 @@ It is important to pay attention to the specificity if you want to override any 
   --ion-color-light-tint: #444444;
 }
 
-.ion-theme-dark.ios {
+.ion-palette-dark.ios {
   --ion-background-color: #000000;
   --ion-background-color-rgb: 0, 0, 0;
 
@@ -630,13 +630,13 @@ It is important to pay attention to the specificity if you want to override any 
   --ion-card-background: #1c1c1d;
 }
 
-.ion-theme-dark.ios ion-modal {
+.ion-palette-dark.ios ion-modal {
   --ion-background-color: var(--ion-color-step-100);
   --ion-toolbar-background: var(--ion-color-step-150);
   --ion-toolbar-border-color: var(--ion-color-step-250);
 }
 
-.ion-theme-dark.md {
+.ion-palette-dark.md {
   --ion-background-color: #121212;
   --ion-background-color-rgb: 18, 18, 18;
 
