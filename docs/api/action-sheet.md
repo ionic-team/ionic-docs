@@ -4,12 +4,12 @@ title: "ion-action-sheet"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v7/action-sheet/props.md';
-import Events from '@ionic-internal/component-api/v7/action-sheet/events.md';
-import Methods from '@ionic-internal/component-api/v7/action-sheet/methods.md';
-import Parts from '@ionic-internal/component-api/v7/action-sheet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/action-sheet/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
+import Props from '@ionic-internal/component-api/v8/action-sheet/props.md';
+import Events from '@ionic-internal/component-api/v8/action-sheet/events.md';
+import Methods from '@ionic-internal/component-api/v8/action-sheet/methods.md';
+import Parts from '@ionic-internal/component-api/v8/action-sheet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/action-sheet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
@@ -27,7 +27,7 @@ An Action Sheet is a dialog that displays a set of options. It appears on top of
 
 `ion-action-sheet` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Action Sheet.
 
-import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md';
+import Trigger from '@site/static/usage/v8/action-sheet/inline/trigger/index.md';
 
 <Trigger />
 
@@ -37,7 +37,7 @@ The `isOpen` property on `ion-action-sheet` allows developers to control the pre
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Action Sheet is dismissed. Developers should listen for the `ionActionSheetDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-action-sheet` from being tightly coupled with the state of the application. With a one way data binding, the Action Sheet only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Action Sheet needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
-import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
+import IsOpen from '@site/static/usage/v8/action-sheet/inline/isOpen/index.md';
 
 <IsOpen />
 
@@ -45,7 +45,7 @@ import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
 
 The `actionSheetController` can be used in situations where more control is needed over when the Action Sheet is presented and dismissed.
 
-import Controller from '@site/static/usage/v7/action-sheet/controller/index.md';
+import Controller from '@site/static/usage/v8/action-sheet/controller/index.md';
 
 <Controller />
 
@@ -59,7 +59,7 @@ A button can also be passed data via the `data` property on `ActionSheetButton`.
 
 When the `didDismiss` event is fired, the `data` and `role` fields of the event detail can be used to gather information about how the Action Sheet was dismissed.
 
-import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/index.md';
+import RoleInfo from '@site/static/usage/v8/action-sheet/role-info-on-dismiss/index.md';
 
 <RoleInfo />
 
@@ -83,7 +83,7 @@ We recommend passing a custom class to `cssClass` in the `create` method and usi
 }
 ```
 
-import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md';
+import Styling from '@site/static/usage/v8/action-sheet/theming/styling/index.md';
 
 <Styling />
 
@@ -91,7 +91,7 @@ import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md
 
 Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
 
-import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-properties/index.md';
+import CssCustomProperties from '@site/static/usage/v8/action-sheet/theming/css-properties/index.md';
 
 <CssCustomProperties />
 

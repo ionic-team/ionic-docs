@@ -4,6 +4,32 @@ const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
 
+/**
+ * Old versions of the Ionic Docs are archived so
+ * that we do not need to re-build it every time we deploy.
+ * Building a large number of docs sites at once can cause
+ * out of memory issues, so archiving old docs sites
+ * allow us to keep memory usage and build times low.
+ *
+ * Note that this file is only for versions of the Ionic Docs
+ * that are built with Docusaurus. The
+ * Ionic v3 and v4 docs are built with other tools, so those
+ * versions are not included here.
+ *
+ * Note that the urls specified in this file should
+ * NOT have a trailing slash otherwise users will
+ * briefly get a 404 Page Not Found error before
+ * the docuementation website loads.
+ */
+const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
+
+/**
+ * This returns an array where each entry is an array
+ * containing the version name at index 0 and
+ * the archive url at index 1.
+ */
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
+
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -54,9 +80,14 @@ module.exports = {
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
           exclude: ['README.md'],
-          lastVersion: 'current',
+          lastVersion: 'v7',
           versions: {
             current: {
+              label: 'v8 (beta)',
+              banner: 'unreleased',
+              path: 'v8',
+            },
+            v7: {
               label: 'v7',
             },
           },
@@ -160,6 +191,20 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              /**
+               * Use "to" instead of "href" so the
+               * external URL icon does not show up.
+               */
+              to: versionUrl,
+              /**
+               * Just like the version docs in this project,
+               * we want to archived versions to open in the
+               * same tab.
+               */
+              target: '_self',
+            })),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
@@ -322,6 +367,30 @@ module.exports = {
         versions: VERSIONS_JSON,
       },
     ],
+    function (context, options) {
+      return {
+        name: 'beamer',
+        injectHtmlTags({ content }) {
+          // Only inject Beamer when deployed to production, so we don't use up Beamer "users"
+          if (process.env.NODE_ENV === 'production') {
+            return {
+              // For performance, Beamer recommends injecting these scripts at the very bottom of the <body>
+              // Thus, custom plugin is required here to use postBodyTags
+              postBodyTags: [
+                `<script>var beamer_config = { product_id : 'mUvQtqly31065' };</script>`,
+                {
+                  tagName: 'script',
+                  attributes: {
+                    src: 'https://app.getbeamer.com/js/beamer-embed.js',
+                    defer: 'defer',
+                  },
+                },
+              ],
+            };
+          }
+        },
+      };
+    },
   ],
   customFields: {},
   themes: [],

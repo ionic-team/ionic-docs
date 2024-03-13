@@ -1,12 +1,12 @@
 ---
 title: "ion-tabs"
 ---
-import Props from '@ionic-internal/component-api/v7/tabs/props.md';
-import Events from '@ionic-internal/component-api/v7/tabs/events.md';
-import Methods from '@ionic-internal/component-api/v7/tabs/methods.md';
-import Parts from '@ionic-internal/component-api/v7/tabs/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/tabs/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/tabs/slots.md';
+import Props from '@ionic-internal/component-api/v8/tabs/props.md';
+import Events from '@ionic-internal/component-api/v8/tabs/events.md';
+import Methods from '@ionic-internal/component-api/v8/tabs/methods.md';
+import Parts from '@ionic-internal/component-api/v8/tabs/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/tabs/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/tabs/slots.md';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
@@ -36,7 +36,7 @@ Using `ion-tabs` within Angular, React or Vue requires the use of the `ion-route
 
 Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the url. This is the most common pattern for tabs navigation.
 
-import Router from '@site/static/usage/v7/tabs/router/index.md';
+import Router from '@site/static/usage/v8/tabs/router/index.md';
 
 <Router />
 

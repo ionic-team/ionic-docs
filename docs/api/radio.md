@@ -1,12 +1,12 @@
 ---
 title: "ion-radio"
 ---
-import Props from '@ionic-internal/component-api/v7/radio/props.md';
-import Events from '@ionic-internal/component-api/v7/radio/events.md';
-import Methods from '@ionic-internal/component-api/v7/radio/methods.md';
-import Parts from '@ionic-internal/component-api/v7/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
+import Props from '@ionic-internal/component-api/v8/radio/props.md';
+import Events from '@ionic-internal/component-api/v8/radio/events.md';
+import Methods from '@ionic-internal/component-api/v8/radio/methods.md';
+import Parts from '@ionic-internal/component-api/v8/radio/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
 
 <head>
   <title>ion-radio: Radio Component for iOS and Android</title>
@@ -24,7 +24,7 @@ When radios are inside of a radio group, only one radio will be checked at any t
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/radio/basic/index.md';
+import Basic from '@site/static/usage/v8/radio/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control.  This property mirrors the flexbox `flex-direction` property.
 
-import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -52,7 +52,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Alignment from '@site/static/usage/v7/radio/alignment/index.md';
+import Alignment from '@site/static/usage/v8/radio/alignment/index.md';
 
 <Alignment />
 
@@ -60,7 +60,7 @@ import Alignment from '@site/static/usage/v7/radio/alignment/index.md';
 
 Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
-import Justify from '@site/static/usage/v7/radio/justify/index.md';
+import Justify from '@site/static/usage/v8/radio/justify/index.md';
 
 <Justify />
 
@@ -72,7 +72,7 @@ import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
 By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
 
-import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md';
+import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md';
 
 <EmptySelection />
 
@@ -81,19 +81,19 @@ import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/radio/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/radio/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v7/radio/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/radio/theming/css-properties/index.md';
 
 <CSSProps />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v8/radio/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
@@ -107,7 +107,7 @@ Developers can perform this migration one radio at a time. While developers can 
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-radio`. The placement of the label can be configured using the `labelPlacement` property on `ion-radio`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-radio`.
 
-import Migration from '@site/static/usage/v7/radio/migration/index.md';
+import Migration from '@site/static/usage/v8/radio/migration/index.md';
 
 <Migration />
   

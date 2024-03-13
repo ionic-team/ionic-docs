@@ -2,8 +2,6 @@
 
 Dynamic Font Scaling is a feature that allows users to choose the size of the text displayed on the screen. This helps users who need larger text for better readability, and it also accommodates users who can read smaller text.
 
-Dynamic Font Scaling is supported on Android, iOS, and iPadOS starting in Ionic v7.5.
-
 ## Try It Out
 
 :::tip
@@ -14,39 +12,15 @@ If you are testing on Chrome for Android, make sure ["Accessibility Page Zoom"](
 
 Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-device) guide to set your preferred font size, and watch the text in the demo below grow or shrink according to your preferences.
 
-import DynamicFontScaling from '@site/static/usage/v7/layout/dynamic-font-scaling/index.md';
+import DynamicFontScaling from '@site/static/usage/v8/layout/dynamic-font-scaling/index.md';
 
 <DynamicFontScaling />
 
-## Enabling Dynamic Font Scaling in Ionic
-
-:::info
-This feature is currently opt-in on iOS. However, it will be enabled by default starting in Ionic 8 at which point the following CSS will no longer be necessary.
-:::
-
-Dynamic Font Scaling is already enabled by default on Android. Developers can enable it on iOS using the following steps:
-
-1. Ensure that the [typography.css](/docs/layout/global-stylesheets#typographycss) file is imported.
-2. Add the following CSS to a global stylesheet:
-
-```css
-html {
-  --ion-dynamic-font: var(--ion-default-dynamic-font);
-}
-```
-
-:::note
-Under the hood, Ionic sets the following CSS on iOS devices to enable Dynamic Font Scaling:
-
-```css
-html {
-  font: var(--ion-dynamic-font);
-}
-```
-
-:::
-
 ## Using Dynamic Font Scaling
+
+### Enabling in an Application
+
+Dynamic Font Scaling is enabled by default as long as the [typography.css](/docs/layout/global-stylesheets#typographycss) file is imported. Importing this file will define the `--ion-dynamic-font` variable which will activate Dynamic Font Scaling. While not recommended, developers can opt-out of Dynamic Font Scaling by setting this variable to `initial` in their application code.
 
 ### Integrating Custom Components
 
@@ -192,7 +166,7 @@ The Chrome Web Browser on Android has some limitations with respecting system-le
 There are a number of reasons why Dynamic Font Scaling may not have any effect on an app. The following list, while not exhaustive, provides some things to check to debug why Dynamic Font Scaling is not working.
 
 1. Verify that your version of Ionic supports Dynamic Font Scaling. Dynamic Font Scaling was added starting in Ionic v7.5.
-2. Dynamic Font Scaling is opt-in on iOS in Ionic 7. Verify that the proper CSS has been set. See [Enabling Dynamic Font Scaling in Ionic](#enabling-dynamic-font-scaling-in-ionic) for more information.
+2. Verify that the [typography.css](/docs/layout/global-stylesheets#typographycss) file has been imported. This file is required for Dynamic Font Scaling to work.
 3. Verify that your code does not override the root element's default font size. Manually setting a font size on the root element will prevent Dynamic Font Scaling from working as intended.
 4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. See [Integrating Custom Components](#integrating-custom-components) for more information.
 5. Verify "Accessibility Page Zoom" is enabled if using Chrome for Android. See [Chrome for Android](#chrome-for-android) for more information.

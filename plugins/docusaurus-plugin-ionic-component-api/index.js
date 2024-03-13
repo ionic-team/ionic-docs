@@ -46,6 +46,7 @@ module.exports = function (context, options) {
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
+
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
