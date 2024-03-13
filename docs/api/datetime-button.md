@@ -39,7 +39,7 @@ The localized text on `ion-datetime-button` is determined by the `locale` proper
 
 You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. See [Datetime Format Options](./datetime#format-options) for more details.
 
-import FormatOptions from '@site/static/usage/v7/datetime-button/format-options/index.md';
+import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
 
 <FormatOptions />
 
