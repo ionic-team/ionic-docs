@@ -14,11 +14,7 @@ import {
 } from '@ionic/react';
 import { OverlayEventDetail } from '@ionic/core/components';
 
-const ModalExample = ({
-  dismiss,
-}: {
-  dismiss: (data?: string | null | undefined | number, role?: string) => void;
-}) => {
+const ModalExample = ({ dismiss }: { dismiss: (data?: string | null | undefined | number, role?: string) => void }) => {
   const inputRef = useRef<HTMLIonInputElement>(null);
   return (
     <IonPage>
