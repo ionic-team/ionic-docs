@@ -15,9 +15,9 @@ import {
 import { OverlayEventDetail } from '@ionic/core/components';
 
 const ModalExample = ({
-  onDismiss,
+  dismiss,
 }: {
-  onDismiss: (data?: string | null | undefined | number, role?: string) => void;
+  dismiss: (data?: string | null | undefined | number, role?: string) => void;
 }) => {
   const inputRef = useRef<HTMLIonInputElement>(null);
   return (
@@ -25,13 +25,13 @@ const ModalExample = ({
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonButton color="medium" onClick={() => onDismiss(null, 'cancel')}>
+            <IonButton color="medium" onClick={() => dismiss(null, 'cancel')}>
               Cancel
             </IonButton>
           </IonButtons>
           <IonTitle>Welcome</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')} strong={true}>
+            <IonButton onClick={() => dismiss(inputRef.current?.value, 'confirm')} strong={true}>
               Confirm
             </IonButton>
           </IonButtons>
@@ -48,7 +48,7 @@ const ModalExample = ({
 
 function Example() {
   const [present, dismiss] = useIonModal(ModalExample, {
-    onDismiss: (data: string, role: string) => dismiss(data, role),
+    dismiss: (data: string, role: string) => dismiss(data, role),
   });
   const [message, setMessage] = useState('This modal example uses the modalController to present and dismiss modals.');
 
