@@ -23,37 +23,37 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 import './main.css';
 
 function Example() {
-  const [darkThemeToggle, setDarkThemeToggle] = useState(false);
-  const [highContrastThemeToggle, setHighContrastThemeToggle] = useState(false);
+  const [darkPaletteToggle, setDarkPaletteToggle] = useState(false);
+  const [highContrastPaletteToggle, setHighContrastPaletteToggle] = useState(false);
 
-  // Listen for the toggle check/uncheck to toggle the themes
-  const darkThemeToggleChange = (ev: ToggleCustomEvent) => {
-    toggleDarkTheme(ev.detail.checked);
+  // Listen for the toggle check/uncheck to toggle the palettes
+  const darkPaletteToggleChange = (ev: ToggleCustomEvent) => {
+    toggleDarkPalette(ev.detail.checked);
   };
 
-  const highContrastThemeToggleChange = (ev: ToggleCustomEvent) => {
-    toggleHighContrastTheme(ev.detail.checked);
+  const highContrastPaletteToggleChange = (ev: ToggleCustomEvent) => {
+    toggleHighContrastPalette(ev.detail.checked);
   };
 
-  // Add or remove the "ion-theme-dark" class on the html element
-  const toggleDarkTheme = (shouldAdd: boolean) => {
-    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
+  // Add or remove the "ion-palette-dark" class on the html element
+  const toggleDarkPalette = (shouldAdd: boolean) => {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   };
 
-  // Add or remove the "ion-theme-high-contrast" class on the html element
-  const toggleHighContrastTheme = (shouldAdd: boolean) => {
-    document.documentElement.classList.toggle('ion-theme-high-contrast', shouldAdd);
+  // Add or remove the "ion-palette-high-contrast" class on the html element
+  const toggleHighContrastPalette = (shouldAdd: boolean) => {
+    document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
   };
 
-  // Check/uncheck the toggle and update the theme
-  const initializeDarkTheme = (isDark: boolean) => {
-    setDarkThemeToggle(isDark);
-    toggleDarkTheme(isDark);
+  // Check/uncheck the toggle and update the palette
+  const initializeDarkPalette = (isDark: boolean) => {
+    setDarkPaletteToggle(isDark);
+    toggleDarkPalette(isDark);
   };
 
-  const initializeHighContrastTheme = (isHighContrast: boolean) => {
-    setHighContrastThemeToggle(isHighContrast);
-    toggleHighContrastTheme(isHighContrast);
+  const initializeHighContrastPalette = (isHighContrast: boolean) => {
+    setHighContrastPaletteToggle(isHighContrast);
+    toggleHighContrastPalette(isHighContrast);
   };
 
   useEffect(() => {
@@ -61,19 +61,19 @@ function Example() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
 
-    // Initialize the dark theme based on the initial
+    // Initialize the dark palette based on the initial
     // value of the media queries
-    initializeDarkTheme(prefersDark.matches);
-    initializeHighContrastTheme(prefersHighContrast.matches);
+    initializeDarkPalette(prefersDark.matches);
+    initializeHighContrastPalette(prefersHighContrast.matches);
 
     // Listen for changes to the media queries
-    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
-    prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastTheme(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
+    prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
   }, []);
 
   return (
     <>
-      <IonHeader class="ion-no-border">
+      <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
@@ -91,14 +91,14 @@ function Example() {
         <IonListHeader>Appearance</IonListHeader>
         <IonList inset={true}>
           <IonItem>
-            <IonToggle checked={darkThemeToggle} onIonChange={darkThemeToggleChange} justify="space-between">
+            <IonToggle checked={darkPaletteToggle} onIonChange={darkPaletteToggleChange} justify="space-between">
               Dark Mode
             </IonToggle>
           </IonItem>
           <IonItem>
             <IonToggle
-              checked={highContrastThemeToggle}
-              onIonChange={highContrastThemeToggleChange}
+              checked={highContrastPaletteToggle}
+              onIonChange={highContrastPaletteToggleChange}
               justify="space-between"
             >
               High Contrast Mode

@@ -1,5 +1,5 @@
 ```html
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
@@ -17,14 +17,14 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list [inset]="true">
     <ion-item>
-      <ion-toggle [(ngModel)]="darkThemeToggle" (ionChange)="darkThemeToggleChange($event)" justify="space-between"
+      <ion-toggle [(ngModel)]="darkPaletteToggle" (ionChange)="darkPaletteToggleChange($event)" justify="space-between"
         >Dark Mode</ion-toggle
       >
     </ion-item>
     <ion-item>
       <ion-toggle
-        [(ngModel)]="highContrastThemeToggle"
-        (ionChange)="highContrastThemeToggleChange($event)"
+        [(ngModel)]="highContrastPaletteToggle"
+        (ionChange)="highContrastPaletteToggleChange($event)"
         justify="space-between"
         >High Contrast Mode</ion-toggle
       >

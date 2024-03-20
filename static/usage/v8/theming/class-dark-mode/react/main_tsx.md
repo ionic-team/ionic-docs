@@ -23,34 +23,34 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 import './main.css';
 
 function Example() {
-  const [themeToggle, setThemeToggle] = useState(false);
+  const [paletteToggle, setPaletteToggle] = useState(false);
 
-  // Listen for the toggle check/uncheck to toggle the dark theme
+  // Listen for the toggle check/uncheck to toggle the dark palette
   const toggleChange = (ev: ToggleCustomEvent) => {
-    toggleDarkTheme(ev.detail.checked);
+    toggleDarkPalette(ev.detail.checked);
   };
 
-  // Add or remove the "ion-theme-dark" class on the html element
-  const toggleDarkTheme = (shouldAdd: boolean) => {
-    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
+  // Add or remove the "ion-palette-dark" class on the html element
+  const toggleDarkPalette = (shouldAdd: boolean) => {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   };
 
-  // Check/uncheck the toggle and update the theme based on isDark
-  const initializeDarkTheme = (isDark: boolean) => {
-    setThemeToggle(isDark);
-    toggleDarkTheme(isDark);
+  // Check/uncheck the toggle and update the palette based on isDark
+  const initializeDarkPalette = (isDark: boolean) => {
+    setPaletteToggle(isDark);
+    toggleDarkPalette(isDark);
   };
 
   useEffect(() => {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Initialize the dark theme based on the initial
+    // Initialize the dark palette based on the initial
     // value of the prefers-color-scheme media query
-    initializeDarkTheme(prefersDark.matches);
+    initializeDarkPalette(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
   }, []);
 
   return (
@@ -73,7 +73,7 @@ function Example() {
         <IonListHeader>Appearance</IonListHeader>
         <IonList inset={true}>
           <IonItem>
-            <IonToggle checked={themeToggle} onIonChange={toggleChange} justify="space-between">
+            <IonToggle checked={paletteToggle} onIonChange={toggleChange} justify="space-between">
               Dark Mode
             </IonToggle>
           </IonItem>

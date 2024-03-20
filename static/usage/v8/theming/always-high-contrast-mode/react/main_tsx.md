@@ -22,7 +22,7 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 function Example() {
   return (
     <>
-      <IonHeader class="ion-no-border">
+      <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
