@@ -25,14 +25,14 @@
       "matchPackageNames": ["vite", "@vitejs/plugin-react"],
       "groupName": "vite-react",
       "matchFileNames": [
-        "static/code/stackblitz/*/react/package.json"
+        "static/code/stackblitz/**/react/package.json"
       ]
     },
     {
       "matchPackageNames": ["vite", "@vitejs/plugin-vue"],
       "groupName": "vite-vue",
       "matchFileNames": [
-        "static/code/stackblitz/*/vue/package.json"
+        "static/code/stackblitz/**/vue/package.json"
       ]
     },
     {
