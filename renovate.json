@@ -4,6 +4,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["@ionic/"],
+      "minimumReleaseAge": "0 days",
       "groupName": "ionic",
       "schedule": ["every weekday before 11am"]
     },
