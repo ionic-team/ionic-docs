@@ -73,7 +73,7 @@ function Example() {
 
   return (
     <>
-      <IonHeader class="ion-no-border">
+      <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
