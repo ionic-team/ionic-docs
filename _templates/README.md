@@ -26,7 +26,7 @@ Once you've generated your playground, you need to add it to the main markdown f
 ```
 ## Feature
 
-import Feature from '@site/static/usage/v7/button/feature/index.md';
+import Feature from '@site/static/usage/v8/button/feature/index.md';
 
 <Feature />
 ```
