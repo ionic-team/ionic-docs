@@ -277,7 +277,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 
 :::note
 All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
-All events need to have a prefix of `swiper`, it is configurable via events-prefix parameter). [Read more](https://swiperjs.com/element#events).
+All events need to have a prefix of `swiper`, it is configurable via `events-prefix` parameter. [Read more](https://swiperjs.com/element#events).
 :::
 
 ## Methods
