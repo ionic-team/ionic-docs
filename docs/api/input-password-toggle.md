@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/input-password-toggle/slots.
 
 <head>
   <title>ion-input-password-toggle: Toggle the visibility of a password in Input</title>
-  <meta name="description" content="ion-input-password-toggle is a companion component to ion-input. It allows users to toggle the visibilty of text in a password input." />
+  <meta name="description" content="ion-input-password-toggle is a companion component to ion-input. It allows users to toggle the visibility of text in a password input." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The InputPasswordToggle component is a companion component to [Input](./input). It allows users to toggle the visibilty of text in a password input.
+The InputPasswordToggle component is a companion component to [Input](./input). It allows users to toggle the visibility of text in a password input.
 
 
 ## Basic Usage
