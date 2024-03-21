@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <!-- TODO revert this to use "next" before merging -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@8.0.0-dev.11711035263.183d2423/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@8.0.0-dev.11711035263.183d2423/css/ionic.bundle.css"
+    />
+
+    <style>
+      ion-input.custom-input {
+        width: fit-content;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-input class="custom-input" type="password" label="Password" value="NeverGonnaGiveYouUp">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>
