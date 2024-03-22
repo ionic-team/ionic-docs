@@ -1,5 +1,5 @@
 ---
-title: Hide Contrast Mode
+title: High Contrast Mode
 ---
 
 import Tabs from '@theme/Tabs';
