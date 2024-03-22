@@ -20,8 +20,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The InputPasswordToggle component is a companion component to [Input](./input). It allows users to toggle the visibility of text in a password input.
 
-
 ## Basic Usage
+
+:::info
+InputPasswordToggle must be used with an [Input](./input) that has its [`type`](./input/#type) property set to either `'text'` or `'password'`.
+
+Using any other `type` will cause a warning to be logged.
+:::
+
 
 import Basic from '@site/static/usage/v8/input-password-toggle/basic/index.md';
 
