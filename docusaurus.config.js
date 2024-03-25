@@ -46,6 +46,7 @@ module.exports = {
       ja: { label: '日本語' },
     },
   },
+  trailingSlash: false,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/meta/favicon-96x96.png',
