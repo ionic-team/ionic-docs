@@ -12,7 +12,7 @@ Ionic apps are built using [web technologies](../reference/glossary.md#web-stand
 
 Modern Web Views offer many built-in <a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a> for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
 
-![webview architecture](/img/building/webview-architecture.png)
+![Diagram illustrating the architecture of a Web View in Ionic apps, showing the bridge between native app components and web components.](/img/building/webview-architecture.png 'Web View Architecture Diagram')
 
 The Ionic Web View plugin is specialized for modern JavaScript apps. For both iOS and Android, app files are always hosted using the `http://` protocol with an optimized HTTP server that runs on the local device.
 
