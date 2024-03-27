@@ -52,9 +52,7 @@ module.exports = function (context, options) {
 
       let npmTag = 'latest';
       if (currentVersion.banner === 'unreleased') {
-        // TODO NOW - Revert this to "next" prior to merge
-        // this was changed so the new component shows up in the docs
-        npmTag = '8.0.0-dev.11711035263.183d2423';
+        npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
         npmTag = currentVersion.path.slice(1);
       }
