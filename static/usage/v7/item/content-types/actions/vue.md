@@ -150,7 +150,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonAvatar,
     IonContent,
@@ -165,27 +165,6 @@
     IonTitle,
     IonToolbar,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { pin, share, trash } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: {
-      IonAvatar,
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonItemOptions,
-      IonItemOption,
-      IonItemSliding,
-      IonLabel,
-      IonList,
-      IonTitle,
-      IonToolbar,
-    },
-    setup() {
-      return { pin, share, trash };
-    },
-  });
 </script>
 ```

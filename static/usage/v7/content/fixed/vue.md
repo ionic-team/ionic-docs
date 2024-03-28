@@ -54,13 +54,8 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonContent } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonContent },
-  });
 </script>
 
 <style scoped>

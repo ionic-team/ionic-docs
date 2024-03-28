@@ -37,37 +37,25 @@
   </ion-list>
 </template>
 
-<script>
+<script lang="ts" setup>
   import { IonItem, IonLabel, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonItem, IonLabel, IonList, IonSelect, IonSelectOption },
-    setup() {
-      const customAlertOptions = {
-        header: 'Pizza Toppings',
-        subHeader: 'Select your favorite topping',
-        message: 'Choose only one',
-        translucent: true,
-      };
+  const customAlertOptions = {
+    header: 'Pizza Toppings',
+    subHeader: 'Select your favorite topping',
+    message: 'Choose only one',
+    translucent: true,
+  };
 
-      const customPopoverOptions = {
-        header: 'Hair Color',
-        subHeader: 'Select your hair color',
-        message: 'Only select your dominant hair color',
-      };
+  const customPopoverOptions = {
+    header: 'Hair Color',
+    subHeader: 'Select your hair color',
+    message: 'Only select your dominant hair color',
+  };
 
-      const customActionSheetOptions = {
-        header: 'Colors',
-        subHeader: 'Select your favorite color',
-      };
-
-      return {
-        customAlertOptions,
-        customPopoverOptions,
-        customActionSheetOptions,
-      };
-    },
-  });
+  const customActionSheetOptions = {
+    header: 'Colors',
+    subHeader: 'Select your favorite color',
+  };
 </script>
 ```

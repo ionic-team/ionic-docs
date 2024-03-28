@@ -67,12 +67,7 @@
   </ion-footer>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonContent, IonFooter, IonTitle, IonToolbar },
-  });
 </script>
 ```

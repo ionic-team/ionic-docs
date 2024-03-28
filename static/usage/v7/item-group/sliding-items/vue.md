@@ -67,7 +67,7 @@
   </ion-item-group>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonItem,
     IonItemDivider,
@@ -77,10 +77,5 @@
     IonItemSliding,
     IonLabel,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonItemDivider, IonItemGroup, IonItemOption, IonItemOptions, IonItemSliding, IonLabel },
-  });
 </script>
 ```

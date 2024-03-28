@@ -11,12 +11,7 @@
   <ion-progress-bar type="indeterminate" color="dark"></ion-progress-bar>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonProgressBar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonProgressBar },
-  });
 </script>
 ```

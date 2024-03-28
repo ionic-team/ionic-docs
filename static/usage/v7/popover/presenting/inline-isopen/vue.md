@@ -6,24 +6,16 @@
   </ion-popover>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonContent, IonPopover } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonContent, IonPopover },
-    data() {
-      return {
-        popoverOpen: false,
-        event: null,
-      };
-    },
-    methods: {
-      openPopover(e: Event) {
-        this.event = e;
-        this.popoverOpen = true;
-      },
-    },
-  });
+  const popoverOpen = ref(false);
+  const event = ref(null);
+
+  function openPopover(e: Event) {
+    this.event = e;
+    this.popoverOpen = true;
+  }
 </script>
 ```

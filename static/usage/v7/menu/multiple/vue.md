@@ -43,42 +43,34 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonContent, IonHeader, IonMenu, IonPage, IonTitle, IonToolbar, menuController } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonContent, IonHeader, IonMenu, IonPage, IonTitle, IonToolbar, menuController },
-    setup() {
-      const openFirstMenu = async () => {
-        /**
-         * Open the menu by menu-id
-         * We refer to the menu using an ID
-         * because multiple "start" menus exist.
-         */
-        await menuController.open('first-menu');
-      };
+  const openFirstMenu = async () => {
+    /**
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
+     */
+    await menuController.open('first-menu');
+  };
 
-      const openSecondMenu = async () => {
-        /**
-         * Open the menu by menu-id
-         * We refer to the menu using an ID
-         * because multiple "start" menus exist.
-         */
-        await menuController.open('second-menu');
-      };
+  const openSecondMenu = async () => {
+    /**
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
+     */
+    await menuController.open('second-menu');
+  };
 
-      const openEndMenu = async () => {
-        /**
-         * Open the menu by side
-         * We can refer to the menu by side
-         * here because only one "end" menu exists
-         */
-        await menuController.open('end');
-      };
-
-      return { openFirstMenu, openSecondMenu, openEndMenu };
-    },
-  });
+  const openEndMenu = async () => {
+    /**
+     * Open the menu by side
+     * We can refer to the menu by side
+     * here because only one "end" menu exists
+     */
+    await menuController.open('end');
+  };
 </script>
 ```

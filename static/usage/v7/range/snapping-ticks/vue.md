@@ -3,12 +3,7 @@
   <ion-range aria-label="Range with ticks" :ticks="true" :snaps="true" :min="0" :max="10"></ion-range>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonRange } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRange },
-  });
 </script>
 ```

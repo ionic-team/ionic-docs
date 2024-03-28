@@ -8,13 +8,8 @@
   </ion-breadcrumbs>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonBreadcrumb, IonBreadcrumbs },
-  });
 </script>
 
 <style>

@@ -9,46 +9,33 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonItem,
-      IonList,
-      IonRadio,
-      IonRadioGroup,
+  const foods = [
+    {
+      id: 1,
+      name: 'Apples',
+      type: 'fruit',
     },
-    data() {
-      return {
-        foods: [
-          {
-            id: 1,
-            name: 'Apples',
-            type: 'fruit',
-          },
-          {
-            id: 2,
-            name: 'Carrots',
-            type: 'vegetable',
-          },
-          {
-            id: 3,
-            name: 'Cupcakes',
-            type: 'dessert',
-          },
-        ],
-      };
+    {
+      id: 2,
+      name: 'Carrots',
+      type: 'vegetable',
     },
-    methods: {
-      compareWith(o1, o2) {
-        return o1.id === o2.id;
-      },
-      handleChange(ev) {
-        console.log('Current value:', JSON.stringify(ev.detail.value));
-      },
+    {
+      id: 3,
+      name: 'Cupcakes',
+      type: 'dessert',
     },
-  });
+  ];
+
+  function compareWith(o1, o2) {
+    return o1.id === o2.id;
+  }
+
+  function handleChange(ev) {
+    console.log('Current value:', JSON.stringify(ev.detail.value));
+  }
 </script>
 ```

@@ -12,12 +12,7 @@
   <ion-searchbar color="dark" placeholder="Dark"></ion-searchbar>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonSearchbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonSearchbar },
-  });
 </script>
 ```

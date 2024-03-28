@@ -3,12 +3,7 @@
   <ion-range aria-label="Dual Knobs Range" :dual-knobs="true" :value="{ lower: 20, upper: 80 }"></ion-range>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonContent, IonRange } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonContent, IonRange },
-  });
 </script>
 ```

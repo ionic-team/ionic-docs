@@ -10,12 +10,7 @@
   </ion-item>
 </template>
 
-<script>
+<script lang="ts" setup>
   import { IonItem, IonTextarea } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonTextarea },
-  });
 </script>
 ```
