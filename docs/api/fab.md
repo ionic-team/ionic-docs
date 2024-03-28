@@ -67,6 +67,16 @@ import SafeArea from '@site/static/usage/v8/fab/safe-area/index.md';
 
 <SafeArea />
 
+### Relative to Infinite List
+
+In scenarios where a view contains many interactive elements, such as an infinitely-scrolling list, it may be challenging for users to navigate to the Floating Action Button (FAB) if it is placed below all the items in the DOM.
+
+By setting the `fixedSlotPlacement` prop on the `ion-content` component to `beforeContent`, the FAB will be placed before the main content in the DOM. This ensures that when users navigate using the keyboard, they will reach the FAB before navigating to the other interactive elements, making it easier for them to access the FAB.
+
+import BeforeContent from '@site/static/usage/v8/fab/before-content/index.md';
+
+<BeforeContent />
+
 ## Button Sizing
 
 Setting the `size` property of the main fab button to `"small"` will render it at a mini size. Note that this property will not have an effect when used with the inner fab buttons.
