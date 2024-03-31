@@ -1,12 +1,12 @@
 ---
 title: "ion-searchbar"
 ---
-import Props from '@ionic-internal/component-api/v7/searchbar/props.md';
-import Events from '@ionic-internal/component-api/v7/searchbar/events.md';
-import Methods from '@ionic-internal/component-api/v7/searchbar/methods.md';
-import Parts from '@ionic-internal/component-api/v7/searchbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/searchbar/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/searchbar/slots.md';
+import Props from '@ionic-internal/component-api/v8/searchbar/props.md';
+import Events from '@ionic-internal/component-api/v8/searchbar/events.md';
+import Methods from '@ionic-internal/component-api/v8/searchbar/methods.md';
+import Parts from '@ionic-internal/component-api/v8/searchbar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/searchbar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/searchbar/slots.md';
 
 <head>
   <title>ion-searchbar: Search Bar for Searching a Collection</title>
@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/searchbar/basic/index.md';
+import Basic from '@site/static/usage/v8/searchbar/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/searchbar/basic/index.md';
 
 検索バーのInputフィールドの左に表示される検索アイコンです。任意の [Ionicon](https://ionic.io/ionicons/) にカスタマイズすることが可能です。
 
-import SearchIcon from '@site/static/usage/v7/searchbar/search-icon/index.md';
+import SearchIcon from '@site/static/usage/v8/searchbar/search-icon/index.md';
 
 <SearchIcon />
 
@@ -40,7 +40,7 @@ import SearchIcon from '@site/static/usage/v7/searchbar/search-icon/index.md';
 
 検索バーに値があるとき、または検索バーのテキストフィールドに入力があったときに、クリアボタンが表示されます。クリアボタンをクリックすると、テキストフィールドは消去され、入力はフォーカスされたままになります。デフォルトでは、クリアボタンは検索バーをフォーカスしたときに表示されるように設定されていますが、常に表示する、または全く表示しないように設定することができます。また、クリアボタン内のアイコンは、任意の[Ionicon](https://ionic.io/ionicons/)にカスタマイズすることができます。
 
-import ClearButton from '@site/static/usage/v7/searchbar/clear-button/index.md';
+import ClearButton from '@site/static/usage/v8/searchbar/clear-button/index.md';
 
 <ClearButton />
 
@@ -49,7 +49,7 @@ import ClearButton from '@site/static/usage/v7/searchbar/clear-button/index.md';
 
 キャンセルボタンを有効にすると、クリックすると入力がクリアされ、フォーカスが失われます。デフォルトでは、キャンセルボタンは表示されないように設定されていますが、常に表示するように設定したり、検索バーにフォーカスが当たったときのみ表示するように設定したりすることができます。キャンセルボタンは `ios` モードではテキストとして、`md` モードではアイコンとして表示されます。テキストとアイコンはそれぞれ別のプロパティでカスタマイズでき、アイコンは任意の[Ionicon](https://ionic.io/ionicons/)を使用することができます。
 
-import CancelButton from '@site/static/usage/v7/searchbar/cancel-button/index.md';
+import CancelButton from '@site/static/usage/v8/searchbar/cancel-button/index.md';
 
 <CancelButton />
 
@@ -59,7 +59,7 @@ import CancelButton from '@site/static/usage/v7/searchbar/cancel-button/index.md
 検索バーは、ツールバーの中に配置されたときにネイティブに見えるようにスタイルされています。iOSでは、検索バーは、ページタイトルを含むツールバーの下にある、独自のツールバーに配置されるべきです。Material Designでは、検索バーは、独自のツールバーに永続的に表示されるか、ページタイトルを含むツールバーの上に展開されるかのいずれかです。
 
 <!-- Reuse the playground from the Toolbar directory -->
-import Toolbar from '@site/static/usage/v7/toolbar/searchbars/index.md';
+import Toolbar from '@site/static/usage/v8/toolbar/searchbars/index.md';
 
 <Toolbar />
 
@@ -68,7 +68,7 @@ import Toolbar from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 検索バーにDebounceを設定して、`ionInput`イベントのトリガーを遅延させることができます。これは、入力に文字が入力されるたびにデータを要求するのではなく、要求を出すのを待つために使うことができるので、データを問い合わせるときに便利です。
 
-import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
+import Debounce from '@site/static/usage/v8/searchbar/debounce/index.md';
 
 <Debounce />
 
@@ -77,7 +77,7 @@ import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/searchbar/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/searchbar/theming/colors/index.md';
 
 <Colors />
 
@@ -85,7 +85,7 @@ import Colors from '@site/static/usage/v7/searchbar/theming/colors/index.md';
 
 検索バーは、スコープをつけてカプセル化されています。これは、実行時に各スタイルに追加のクラスを付加することで、CSSを自動的にスコープ化することを意味します。CSSでscopedセレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
 
-import CSSProps from '@site/static/usage/v7/searchbar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/searchbar/theming/css-properties/index.md';
 
 <CSSProps />
 

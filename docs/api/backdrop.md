@@ -1,12 +1,12 @@
 ---
 title: "ion-backdrop"
 ---
-import Props from '@ionic-internal/component-api/v7/backdrop/props.md';
-import Events from '@ionic-internal/component-api/v7/backdrop/events.md';
-import Methods from '@ionic-internal/component-api/v7/backdrop/methods.md';
-import Parts from '@ionic-internal/component-api/v7/backdrop/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/backdrop/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/backdrop/slots.md';
+import Props from '@ionic-internal/component-api/v8/backdrop/props.md';
+import Events from '@ionic-internal/component-api/v8/backdrop/events.md';
+import Methods from '@ionic-internal/component-api/v8/backdrop/methods.md';
+import Parts from '@ionic-internal/component-api/v8/backdrop/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/backdrop/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/backdrop/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -18,7 +18,7 @@ Backdropは、他のコンポーネントをオーバーレイするためフル
 
 Backdropは、その後ろのコンテンツをクリックしたりタップしたりするのを防ぎます。デフォルトでは透明なので、下のデモではCSSで見えるようにしています。
 
-import Basic from '@site/static/usage/v7/backdrop/basic/index.md';
+import Basic from '@site/static/usage/v8/backdrop/basic/index.md';
 
 <Basic />
 
@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v7/backdrop/basic/index.md';
 
 コンテンツに `z-index` を設定し、背景よりも高い位置に表示させることができます（デフォルトは `2` です）。
 
-import Styling from '@site/static/usage/v7/backdrop/styling/index.md';
+import Styling from '@site/static/usage/v8/backdrop/styling/index.md';
 
 <Styling />
 

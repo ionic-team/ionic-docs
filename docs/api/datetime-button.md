@@ -1,12 +1,12 @@
 ---
 title: "ion-datetime-button"
 ---
-import Props from '@ionic-internal/component-api/v7/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v7/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v7/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v7/datetime-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/datetime-button/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/datetime-button/slots.md';
+import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
+import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
+import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.md';
+import Parts from '@ionic-internal/component-api/v8/datetime-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/datetime-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
@@ -27,13 +27,21 @@ Angular、React、VueなどのJavaScriptフレームワークでDatetime Button�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
 
 <Basic />
 
 ## ローカライゼーション
 
 `ion-datetime-button` のローカライズされたテキストは、関連する `ion-datetime` インスタンスの `locale` プロパティによって決まります。詳しくは、[Datetime Localization](./datetime#localization) を参照してください。
+
+## Format Options
+
+Datetimeインスタンスに`formatOptions`を指定することで、Datetime Buttonの日付と時刻の書式をカスタマイズすることができます。詳細は[Datetime Format Options](./datetime#format-options)を参照してください。
+
+import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
+
+<FormatOptions />
 
 ## モーダルやポップオーバーと使う
 

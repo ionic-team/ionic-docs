@@ -11,15 +11,15 @@ import ColorInput from '../ColorInput';
 
 const ColorGenerator = (props) => {
   const [colors, setColors] = useState({
-    primary: generateColor('#3880ff'),
-    secondary: generateColor('#3dc2ff'),
-    tertiary: generateColor('#5260ff'),
-    success: generateColor('#2dd36f'),
+    primary: generateColor('#0054e9'),
+    secondary: generateColor('#0163aa'),
+    tertiary: generateColor('#6030ff'),
+    success: generateColor('#2dd55b'),
     warning: generateColor('#ffc409'),
-    danger: generateColor('#eb445a'),
-    light: generateColor('#f4f5f8'),
-    medium: generateColor('#92949c'),
-    dark: generateColor('#222428'),
+    danger: generateColor('#c5000f'),
+    light: generateColor('#f6f8fc'),
+    medium: generateColor('#5f5f5f'),
+    dark: generateColor('#2f2f2f'),
   });
 
   const [activeColor, setActiveColor] = useState(null);

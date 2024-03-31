@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 
 ### Usage
 
-import Inputmode from '@site/static/usage/v7/keyboard/inputmode/index.md';
+import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.md';
 
 <Inputmode />
 
@@ -46,7 +46,7 @@ import Inputmode from '@site/static/usage/v7/keyboard/inputmode/index.md';
 
 ### Usage
 
-import Enterkeyhint from '@site/static/usage/v7/keyboard/enterkeyhint/index.md';
+import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
 
 <Enterkeyhint />
 

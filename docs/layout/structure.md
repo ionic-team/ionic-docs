@@ -1,6 +1,5 @@
 ---
 title: 構造
-initialTab: 'preview'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -22,7 +21,7 @@ Ionic Framework は、アプリを構成するために使用できるいくつ�
 
 最もシンプルなレイアウトは、[header](../api/header.md) と [content](../api/content.md) で構成されています。アプリのほとんどのページは、一般的にこの 2 つを備えていますが、コンテンツを使用するためにヘッダーは必要ではありません。
 
-import Header from '@site/static/usage/v7/header/basic/index.md';
+import Header from '@site/static/usage/v8/header/basic/index.md';
 
 <Header />
 
@@ -30,7 +29,7 @@ import Header from '@site/static/usage/v7/header/basic/index.md';
 
 ヘッダーのツールバーがコンテンツの上に表示されるのに対して、フッターはコンテンツの下に表示されます。ヘッダーとフッターは、同じページで併用することも可能です。
 
-import Footer from '@site/static/usage/v7/footer/basic/index.md';
+import Footer from '@site/static/usage/v8/footer/basic/index.md';
 
 <Footer />
 
@@ -38,7 +37,7 @@ import Footer from '@site/static/usage/v7/footer/basic/index.md';
 
 水平な [タブ](../api/tabs.md) からなるレイアウトを使用すると、ユーザーはコンテンツビューをすばやく切り替えることができます。各タブには、[router outlet](../api/router-outlet.md) や [nav](../api/nav.md) を使用して、静的コンテンツやナビゲーション・スタックを含めることができます。
 
-import Tabs from '@site/static/usage/v7/tabs/router/index.md';
+import Tabs from '@site/static/usage/v8/tabs/router/index.md';
 
 <Tabs />
 
@@ -46,7 +45,7 @@ import Tabs from '@site/static/usage/v7/tabs/router/index.md';
 
 モバイルアプリの標準的なレイアウトには、ボタンをクリックするか、横からスワイプして開くことで サイドメニュー [menu](../api/menu.md) を切り替えられる機能が含まれています。サイドメニューは一般的にナビゲーションのために使用されますが、任意のコンテンツを含むことができます。
 
-import Menu from '@site/static/usage/v7/menu/basic/index.md';
+import Menu from '@site/static/usage/v8/menu/basic/index.md';
 
 <Menu />
 
@@ -58,6 +57,6 @@ import Menu from '@site/static/usage/v7/menu/basic/index.md';
 
 ここで重要なのは、分割ペインで指定した `contentId` と一致する `id` を持つ要素が、常に表示されるメインコンテンツとなることです。これは、[nav](../api/nav.md)、[router outlet](../api/router-outlet.md) または [tabs](../api/tabs.md) など、どの要素でもかまいません。
 
-import SplitPane from '@site/static/usage/v7/split-pane/basic/index.md';
+import SplitPane from '@site/static/usage/v8/split-pane/basic/index.md';
 
 <SplitPane />

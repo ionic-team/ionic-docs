@@ -22,6 +22,7 @@ The current status of each Ionic Framework version is:
 
 | Version |      Status      |   Released   | Maintenance Ends | Ext. Support Ends |
 | :-----: | :--------------: | :----------: | :--------------: | :---------------: |
+|   V8    |   Pre-Release    |     TBD      |       TBD        |        TBD        |
 |   V7    |    **Active**    | Mar 29, 2023 |       TBD        |        TBD        |
 |   V6    | Extended Support | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
 |   V5    |  End of Support  | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
@@ -43,6 +44,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
+|    v8     |           v16           |          v17.x          |   4.9.3+   |
 |    v7     |           v14           |        v17.x[^2]        |    4.6+    |
 |    v6     |           v12           |        v15.x[^1]        |    4.0+    |
 |    v5     |          v8.2           |          v12.x          |    3.5+    |
@@ -62,6 +64,7 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
+|    v8     |          v17+          |    3.7+    |
 |    v7     |          v17+          |    3.7+    |
 |    v6     |          v17+          |    3.7+    |
 |    v5     |         v16.8+         |    3.7+    |
@@ -71,6 +74,7 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 | Framework | Required Vue Version | TypeScript |
 | :-------: | :------------------: | :--------: |
+|    v8     |       v3.0.6+        |    3.9+    |
 |    v7     |       v3.0.6+        |    3.9+    |
 |    v6     |       v3.0.6+        |    3.9+    |
 |    v5     |        v3.0+         |    3.9+    |

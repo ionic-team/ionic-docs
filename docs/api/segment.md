@@ -1,12 +1,12 @@
 ---
 title: "ion-segment"
 ---
-import Props from '@ionic-internal/component-api/v7/segment/props.md';
-import Events from '@ionic-internal/component-api/v7/segment/events.md';
-import Methods from '@ionic-internal/component-api/v7/segment/methods.md';
-import Parts from '@ionic-internal/component-api/v7/segment/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/segment/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/segment/slots.md';
+import Props from '@ionic-internal/component-api/v8/segment/props.md';
+import Events from '@ionic-internal/component-api/v8/segment/events.md';
+import Methods from '@ionic-internal/component-api/v8/segment/methods.md';
+import Parts from '@ionic-internal/component-api/v8/segment/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/segment/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/segment/slots.md';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
@@ -27,7 +27,7 @@ Segmentsは、関連するボタンのグループを水平方向の行に表示
 
 セグメントは[セグメントボタン](./segment-button)からなり、各ボタンには`value`プロパティが設定されています。セグメントの `value` プロパティをボタンの値と一致させることで、そのボタンを選択することができます。また、セグメントを無効にすることで、ユーザがセグメントと対話できないようにすることができます。
 
-import Basic from '@site/static/usage/v7/segment/basic/index.md';
+import Basic from '@site/static/usage/v8/segment/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/v7/segment/basic/index.md';
 
 デフォルトでは、セグメントはスクロールできません。各セグメントボタンの幅は固定で、セグメントボタンの数を画面幅で割って幅を決定します。これにより、各セグメントボタンがスクロールすることなく画面に表示されることが保証されます。そのため、ラベルが長いセグメントボタンは、一部が切れてしまうことがあります。これを避けるために、短いラベルを使用するか、`scrollable` プロパティを `true` に設定してスクロール可能なセグメントに変更することをお勧めします。これはセグメントを水平方向にスクロールさせますが、各セグメントボタンの幅を変更することができます。
 
-import Scrollable from '@site/static/usage/v7/segment/scrollable/index.md';
+import Scrollable from '@site/static/usage/v8/segment/scrollable/index.md';
 
 <Scrollable />
 
@@ -44,7 +44,7 @@ import Scrollable from '@site/static/usage/v7/segment/scrollable/index.md';
 ## Segments in Toolbars
 
 <!-- Reuse the playground from the Toolbar directory -->
-import Toolbar from '@site/static/usage/v7/toolbar/segments/index.md';
+import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 
 <Toolbar />
 
@@ -53,13 +53,13 @@ import Toolbar from '@site/static/usage/v7/toolbar/segments/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/segment/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/segment/theming/colors/index.md';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v7/segment/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/segment/theming/css-properties/index.md';
 
 <CSSProps />
 

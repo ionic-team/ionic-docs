@@ -1,12 +1,12 @@
 ---
 title: "ion-list-header"
 ---
-import Props from '@ionic-internal/component-api/v7/list-header/props.md';
-import Events from '@ionic-internal/component-api/v7/list-header/events.md';
-import Methods from '@ionic-internal/component-api/v7/list-header/methods.md';
-import Parts from '@ionic-internal/component-api/v7/list-header/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/list-header/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/list-header/slots.md';
+import Props from '@ionic-internal/component-api/v8/list-header/props.md';
+import Events from '@ionic-internal/component-api/v8/list-header/events.md';
+import Methods from '@ionic-internal/component-api/v8/list-header/methods.md';
+import Parts from '@ionic-internal/component-api/v8/list-header/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/list-header/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/list-header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/list-header/basic/index.md';
+import Basic from '@site/static/usage/v8/list-header/basic/index.md';
 
 <Basic />
 
@@ -26,7 +26,7 @@ import Basic from '@site/static/usage/v7/list-header/basic/index.md';
 
 リストのヘッダーに [button](./button) を配置すると、リストの一部を表示し、ボタンで全リストにリダイレクトするのに便利です。
 
-import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
+import Buttons from '@site/static/usage/v8/list-header/buttons/index.md';
 
 <Buttons />
 
@@ -35,7 +35,7 @@ import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
 
 リストヘッダーは、デフォルトでは下部のボーダーが表示されません。 `lines` プロパティを `"full"` または `"inset"` に変更すると、それぞれ全幅のボーダーまたは左paddingを伴う挿入ボーダーが表示されます。
 
-import Lines from '@site/static/usage/v7/list-header/lines/index.md';
+import Lines from '@site/static/usage/v8/list-header/lines/index.md';
 
 <Lines />
 
@@ -43,13 +43,13 @@ import Lines from '@site/static/usage/v7/list-header/lines/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/list-header/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/list-header/theming/colors/index.md';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/list-header/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -16,10 +16,14 @@ export default function ColorGenerator(props) {
   const [backgroundColor, setBackgroundColor] = useState('#ffffff');
   const [textColor, setTextColor] = useState('#000000');
 
-  const [steppedColors, setSteppedColors] = useState(generateSteppedColors(backgroundColor, textColor));
+  const [textSteppedColors, setTextSteppedColors] = useState(generateSteppedColors(textColor, backgroundColor));
+  const [backgroundSteppedColors, setBackgroundSteppedColors] = useState(
+    generateSteppedColors(backgroundColor, textColor)
+  );
 
   useEffect(() => {
-    setSteppedColors(generateSteppedColors(backgroundColor, textColor));
+    setTextSteppedColors(generateSteppedColors(textColor, backgroundColor));
+    setBackgroundSteppedColors(generateSteppedColors(backgroundColor, textColor));
   }, [backgroundColor, textColor]);
 
   return (
@@ -43,11 +47,15 @@ export default function ColorGenerator(props) {
           {'\t'}--ion-text-color: <CodeColor color={textColor}>{textColor}</CodeColor>;{'\n'}
           {'\t'}--ion-text-color-rgb: <CodeColor color={textColor}>{new Color(textColor).toList()}</CodeColor>;{'\n'}
           {'\n'}
-          {steppedColors.map((color, i) => (
-            <>
-              {'\t'}--ion-color-step-{(i + 1) * 50}: <CodeColor color={color}>{color}</CodeColor>;{'\n'}
-            </>
-          ))}
+          {/*
+            Ionic v8+ uses separate step colors for text and background.
+            We use a single component here for all versions of the docs, so newer
+            versions of the docs opt-in to showing separate step colors
+            using the useTextAndBackgroundStepColors property.
+          */}
+          {props.useTextAndBackgroundStepColors &&
+            renderSeparateTextAndBackgroundColors(textSteppedColors, backgroundSteppedColors)}
+          {!props.useTextAndBackgroundStepColors && renderCombinedColors(backgroundSteppedColors)}
           {'}'}
           {'\n'}
         </code>
@@ -55,3 +63,37 @@ export default function ColorGenerator(props) {
     </div>
   );
 }
+
+/**
+ * Render `--ion-text-color-step-*` and `--ion-background-color-step-*` tokens.
+ * Use this for Ionic v8+ documentation.
+ */
+const renderSeparateTextAndBackgroundColors = (textSteppedColors: string[], backgroundSteppedColors: string[]) => {
+  return [
+    textSteppedColors.map((color, i) => (
+      <>
+        {'\t'}--ion-text-color-step-{(i + 1) * 50}: <CodeColor color={color}>{color}</CodeColor>;{'\n'}
+      </>
+    )),
+    '\n',
+    backgroundSteppedColors.map((color, i) => (
+      <>
+        {'\t'}--ion-background-color-step-{(i + 1) * 50}: <CodeColor color={color}>{color}</CodeColor>;{'\n'}
+      </>
+    )),
+  ];
+};
+
+/**
+ * Render `--ion-color-step-*` tokens.
+ * Use this for Ionic v4-v7 documentation.
+ */
+const renderCombinedColors = (steppedColors: string[]) => {
+  return [
+    steppedColors.map((color, i) => (
+      <>
+        {'\t'}--ion-color-step-{(i + 1) * 50}: <CodeColor color={color}>{color}</CodeColor>;{'\n'}
+      </>
+    )),
+  ];
+};

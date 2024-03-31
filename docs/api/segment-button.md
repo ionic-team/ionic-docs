@@ -1,12 +1,12 @@
 ---
 title: "ion-segment-button"
 ---
-import Props from '@ionic-internal/component-api/v7/segment-button/props.md';
-import Events from '@ionic-internal/component-api/v7/segment-button/events.md';
-import Methods from '@ionic-internal/component-api/v7/segment-button/methods.md';
-import Parts from '@ionic-internal/component-api/v7/segment-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/segment-button/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/segment-button/slots.md';
+import Props from '@ionic-internal/component-api/v8/segment-button/props.md';
+import Events from '@ionic-internal/component-api/v8/segment-button/events.md';
+import Methods from '@ionic-internal/component-api/v8/segment-button/methods.md';
+import Parts from '@ionic-internal/component-api/v8/segment-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/segment-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/segment-button/slots.md';
 
 <head>
   <title>ion-segment-button | Segment Button Icon and Segment Value</title>
@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/segment-button/basic/index.md';
+import Basic from '@site/static/usage/v8/segment-button/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v7/segment-button/basic/index.md';
 
 `layout`プロパティは、デフォルトで `"icon-top"` に設定されています。セグメントボタンにアイコンとラベルの両方がある場合、アイコンはラベルの上に表示されます。この動作は `layout` プロパティを `"icon-bottom"`, `"icon-start"`, `"icon-end"` に設定することで変更可能で、それぞれアイコンをラベルの下、ラベルの先頭（LTRでは左、RTLでは右）、ラベルの末尾（LTRでは右、RTLでは左）に表示することができます。
 
-import Layout from '@site/static/usage/v7/segment-button/layout/index.md';
+import Layout from '@site/static/usage/v8/segment-button/layout/index.md';
 
 <Layout />
 
@@ -40,14 +40,14 @@ import Layout from '@site/static/usage/v7/segment-button/layout/index.md';
 ## テーマ
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v7/segment-button/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v8/segment-button/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v7/segment-button/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/segment-button/theming/css-properties/index.md';
 
 <CSSProps />
 

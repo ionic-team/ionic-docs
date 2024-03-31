@@ -1,12 +1,12 @@
 ---
 title: "ion-list"
 ---
-import Props from '@ionic-internal/component-api/v7/list/props.md';
-import Events from '@ionic-internal/component-api/v7/list/events.md';
-import Methods from '@ionic-internal/component-api/v7/list/methods.md';
-import Parts from '@ionic-internal/component-api/v7/list/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/list/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/list/slots.md';
+import Props from '@ionic-internal/component-api/v8/list/props.md';
+import Events from '@ionic-internal/component-api/v8/list/events.md';
+import Methods from '@ionic-internal/component-api/v8/list/methods.md';
+import Parts from '@ionic-internal/component-api/v8/list/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/list/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/list/slots.md';
 
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>
@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/list/basic/index.md';
+import Basic from '@site/static/usage/v8/list/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v7/list/basic/index.md';
 
 リストに `inset` プロパティを追加すると、リストの周囲にマージンが適用されます。また、`ios`モードでは、リストに角丸が追加されます。
 
-import Inset from '@site/static/usage/v7/list/inset/index.md';
+import Inset from '@site/static/usage/v8/list/inset/index.md';
 
 <Inset />
 
@@ -41,7 +41,7 @@ import Inset from '@site/static/usage/v7/list/inset/index.md';
 
 リストに `lines` プロパティを追加すると、リスト内のすべてのアイテムの下側のボーダーを調整することができます。 `"full"`に設定すると全幅のボーダーが表示され、`"inset"`に設定すると左paddingで調整されたボーダーが表示され、`none"`に設定するとボーダーが表示されません。リスト内のアイテムに `lines` プロパティが設定されている場合は、リスト上のプロパティよりもそちらが優先されます。
 
-import Lines from '@site/static/usage/v7/list/lines/index.md';
+import Lines from '@site/static/usage/v8/list/lines/index.md';
 
 <Lines />
 

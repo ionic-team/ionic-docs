@@ -1,12 +1,12 @@
 ---
 title: "ion-title"
 ---
-import Props from '@ionic-internal/component-api/v7/title/props.md';
-import Events from '@ionic-internal/component-api/v7/title/events.md';
-import Methods from '@ionic-internal/component-api/v7/title/methods.md';
-import Parts from '@ionic-internal/component-api/v7/title/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/title/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/title/slots.md';
+import Props from '@ionic-internal/component-api/v8/title/props.md';
+import Events from '@ionic-internal/component-api/v8/title/events.md';
+import Methods from '@ionic-internal/component-api/v8/title/methods.md';
+import Parts from '@ionic-internal/component-api/v8/title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/title/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
@@ -22,7 +22,7 @@ Titleは、[ツールバー](./toolbar)のタイトルを設定するテキス�
 
 ## Basic
 
-import Basic from '@site/static/usage/v7/title/basic/index.md';
+import Basic from '@site/static/usage/v8/title/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ This feature is only available for iOS.
 
 :::
 
-import CollapsibleLargeTitle from '@site/static/usage/v7/title/collapsible-large-title/basic/index.md';
+import CollapsibleLargeTitle from '@site/static/usage/v8/title/collapsible-large-title/basic/index.md';
 
 <CollapsibleLargeTitle />
 
@@ -45,7 +45,7 @@ import CollapsibleLargeTitle from '@site/static/usage/v7/title/collapsible-large
 [buttons](./buttons.md)コンポーネントは、[`collapse`](./buttons.md#collapse)プロパティと共に使用すると、ツールバーが折りたたまれたときにヘッダーに追加表示することができます。
 
 
-import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
@@ -61,7 +61,7 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsibl
 
 ## CSSカスタムプロパティ
 
-import CSSCustomProperties from '@site/static/usage/v7/title/theming/css-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v8/title/theming/css-properties/index.md';
 
 <CSSCustomProperties />
 

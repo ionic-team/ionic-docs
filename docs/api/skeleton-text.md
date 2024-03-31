@@ -1,12 +1,12 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Props from '@ionic-internal/component-api/v7/skeleton-text/props.md';
-import Events from '@ionic-internal/component-api/v7/skeleton-text/events.md';
-import Methods from '@ionic-internal/component-api/v7/skeleton-text/methods.md';
-import Parts from '@ionic-internal/component-api/v7/skeleton-text/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/skeleton-text/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/skeleton-text/slots.md';
+import Props from '@ionic-internal/component-api/v8/skeleton-text/props.md';
+import Events from '@ionic-internal/component-api/v8/skeleton-text/events.md';
+import Methods from '@ionic-internal/component-api/v8/skeleton-text/methods.md';
+import Parts from '@ionic-internal/component-api/v8/skeleton-text/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/skeleton-text/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/skeleton-text/slots.md';
 
 <head>
   <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>
@@ -23,7 +23,7 @@ Skeleton Textは、placeholderコンテンツをレンダリングするため�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
+import Basic from '@site/static/usage/v8/skeleton-text/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v7/skeleton-text/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/skeleton-text/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -1,8 +1,6 @@
 ---
 title: 高度なカスタマイズ
 sidebar_label: 高度なカスタマイズ
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
@@ -30,7 +28,7 @@ CSS ベースのテーマ設定では、CSS ファイルをロードするか、
 以下の例では、iOS 15 でブラウザのインターフェイスをスタイルするために `theme-color` を使用する方法を示しています。
 
 ```html
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#0054e9" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
@@ -56,16 +54,17 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 
 ### Application Variables
 
-| Name                      | Description                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| `--ion-font-family`       | Font family of the app                                                                     |
-| `--ion-statusbar-padding` | Statusbar padding top of the app                                                           |
-| `--ion-safe-area-top`     | Adjust the safe area inset top of the app                                                  |
-| `--ion-safe-area-right`   | Adjust the safe area inset right of the app                                                |
-| `--ion-safe-area-bottom`  | Adjust the safe area inset bottom of the app                                               |
-| `--ion-safe-area-left`    | Adjust the safe area inset left of the app                                                 |
-| `--ion-margin`            | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)    |
-| `--ion-padding`           | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding) |
+| Name                        | Description                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `--ion-font-family`         | Font family of the app                                                                               |
+| `--ion-statusbar-padding`   | Statusbar padding top of the app                                                                     |
+| `--ion-safe-area-top`       | Adjust the safe area inset top of the app                                                            |
+| `--ion-safe-area-right`     | Adjust the safe area inset right of the app                                                          |
+| `--ion-safe-area-bottom`    | Adjust the safe area inset bottom of the app                                                         |
+| `--ion-safe-area-left`      | Adjust the safe area inset left of the app                                                           |
+| `--ion-margin`              | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)              |
+| `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)           |
+| `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
 
 ### Grid Variables
 
@@ -154,7 +153,7 @@ Sass の組み込み関数を使用して簡単に色を変更することは可
 
 ```scss
 // Background color, shade, and tint
-$background: #3880ff;
+$background: #0054e9;
 $background-shade: mix(#000, $background, 12%);
 $background-tint: mix(#fff, $background, 10%);
 
@@ -168,9 +167,9 @@ After running through the Sass compiler, the colors will have the following valu
 
 | Variable            | Value                                          |
 | ------------------- | ---------------------------------------------- |
-| `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
-| `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
-| `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |
+| `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
+| `$background-shade` | <CodeColor color="#004acd">#004acd</CodeColor> |
+| `$background-tint`  | <CodeColor color="#1a65eb">#1a65eb</CodeColor> |
 | `$text`             | <CodeColor color="#444444">#444444</CodeColor> |
 | `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
 | `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |

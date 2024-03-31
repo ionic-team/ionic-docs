@@ -17,7 +17,7 @@ Ionic は、アプリケーション全体のデフォルトテーマを変更�
 
 ### アプリケーションの配色
 
-アプリケーションの配色は、Ionic の複数の場所で使用されています。ダークテーマや、ブランディングにあったテーマを簡単に作成することができます。
+アプリケーションカラーは、Ionicの複数の場所で使用されています。これらは、ブランドにマッチしたダークパレットやテーマを簡単に作成するのに便利です。
 
 背景とテキストの色変数は、RGB である必要があります: <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. なぜ `rgb` プロパティも必要であるかは [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。
 
@@ -54,14 +54,16 @@ Ionic は、アプリケーション全体のデフォルトテーマを変更�
 
 Ionic テーマをカスタマイズするためのさまざまな方法を検討した結果、1 つの背景色またはテキスト色しか使用できないことがわかりました。デザイン全体を通して重要性と深度を暗示するためには、背景色とテキスト色の色合いを変える必要があります。このパターンに対応するために、ステップカラーを作成しました。
 
-背景色 (`--ion-background-color`) と テキストカラー (`--ion-text-color`) の変数を更新すると、ほとんどのアプリコンポーネントの外観が変わりますが、見逃したり壊れたりする可能性のある特定の Ionic コンポーネントがあります。ダークテーマを適用するとき、これはより明白になります。
+background変数（--ion-background-color`）とtext変数（--ion-text-color`）を更新すると、ほとんどのコンポーネントでアプリの見た目が変わりますが、特定のIonicコンポーネントでは見た目が崩れたり、壊れたりすることがあります。これは、暗いパレットを適用するとより明らかになります。
 
 一部のコンポーネントでは、背景よりも暗い、またはテキストよりも明るい色合いを使用しています。たとえば、item の見出しテキストは、私たちのデフォルトのテキストカラーよりも数段階明るい色である <CodeColor color="#404040">#404040</CodeColor> になります。一方、ローディングコンポーネントの背景は白よりも濃い色 <CodeColor color="#f2f2f2">#f2f2f2</CodeColor> になります。私達はこれらのわずかな変化を定義するために、ステップカラーを利用します。アプリケーションの背景色やテキストの色を更新するときは、ステップカラーを更新することが重要です。
 
-デフォルトでは、Ionic のステップカラーはデフォルトの背景色の値 <CodeColor color="#ffffff">#ffffff</CodeColor> で始まります。 そしてテキストカラー値 <CodeColor color="#000000">#000000</CodeColor> を混ぜるために使います。ステップカラーの完全なリストは、以下のジェネレータに表示されています。
+Ionicでは、テキストカラーと背景カラーを別々に更新できるように、別々のステップカラーを提供しています。これは、テキストと背景の両方のステップカラーを使用するコンポーネントに便利で、[ハイコントラストパレット](./high-contrast-mode)を効果的に実装できます。
+
+デフォルトでは、Ionicの段階的なテキストカラーは、デフォルトのテキストカラー値<CodeColor color="#000000">#000000</CodeColor> から始まり、背景カラー値<CodeColor color="#ffffff">#ffffff</CodeColor> と増加するパーセンテージで混合します。Ionic の背景の段階的な色は、デフォルトの背景色値 <CodeColor color="#ffffff">#ffffff</CodeColor> から始まり、増加する割合でテキスト色値 <CodeColor color="#000000">#000000</CodeColor> と混ざります。ステップカラーの完全なリストは、以下のジェネレータに示されています。
 
 ## Stepped Color Generator
 
-Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
+アプリのカスタム背景色とテキスト色のテーマを作成します。以下の背景色またはテキスト色の16進数値を更新し、生成されたコードをIonicプロジェクトに直接コピー＆ペーストしてください。
 
-<SteppedColorGenerator />
+<SteppedColorGenerator useTextAndBackgroundStepColors={true} />

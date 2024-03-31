@@ -4,12 +4,12 @@ title: "ion-alert"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v7/alert/props.md';
-import Events from '@ionic-internal/component-api/v7/alert/events.md';
-import Methods from '@ionic-internal/component-api/v7/alert/methods.md';
-import Parts from '@ionic-internal/component-api/v7/alert/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/alert/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
+import Props from '@ionic-internal/component-api/v8/alert/props.md';
+import Events from '@ionic-internal/component-api/v8/alert/events.md';
+import Methods from '@ionic-internal/component-api/v8/alert/methods.md';
+import Parts from '@ionic-internal/component-api/v8/alert/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/alert/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 `ion-alert` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、アラートを表示するために必要なハンドラの数を減らすことができます。
 
-import Trigger from '@site/static/usage/v7/alert/presenting/trigger/index.md';
+import Trigger from '@site/static/usage/v8/alert/presenting/trigger/index.md';
 
 <Trigger />
 
@@ -36,7 +36,7 @@ import Trigger from '@site/static/usage/v7/alert/presenting/trigger/index.md';
 
 `isOpen` は一方通行のデータバインディングを使用しているため、アラートが解除されたときに自動的に `false` に設定されることはありません。開発者は `ionAlertDidDismiss` または `didDismiss` イベントを待ち、`isOpen` を `false` に設定する必要があります。この理由は、`ion-alert` の内部がアプリケーションの状態と密接に結合するのを防ぐためである。一方通行のデータバインディングでは、アラートはリアクティブ変数が提供するブーリアン値だけを気にすればよい。双方向のデータバインディングでは、アラートはブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にする可能性があります。
 
-import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
+import IsOpen from '@site/static/usage/v8/alert/presenting/isOpen/index.md';
 
 <IsOpen />
 
@@ -44,7 +44,7 @@ import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
 
 `alertController`は、アラートを表示するタイミングや解除するタイミングをより細かく制御する必要がある場合に使用することができる。
 
-import Controller from '@site/static/usage/v7/alert/presenting/controller/index.md';
+import Controller from '@site/static/usage/v8/alert/presenting/controller/index.md';
 
 <Controller />
 
@@ -54,7 +54,7 @@ import Controller from '@site/static/usage/v7/alert/presenting/controller/index.
 
 オプションで、`cancel`のような `role` プロパティをボタンに追加することができます。もし `cancel` ロールがボタンのいずれかに設定されている場合、バックドロップをタップしてアラートが解除されると、キャンセルロールを持つボタンから handler が起動されます。
 
-import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v8/alert/buttons/index.md';
 
 <Buttons />
 
@@ -65,13 +65,13 @@ Alertには、複数の異なるInputを含めることもでき、そのデー�
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/v7/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v8/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/v7/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v8/alert/inputs/radios/index.md';
 
 <Radios />
 
@@ -101,7 +101,7 @@ Alertはscopedによるカプセル化を使用しており、実行時に各ス
 }
 ```
 
-import Customization from '@site/static/usage/v7/alert/customization/index.md';
+import Customization from '@site/static/usage/v8/alert/customization/index.md';
 
 <Customization />
 

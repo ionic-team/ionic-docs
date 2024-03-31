@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@ionic/angular": "next",
+    "@ionic/core": "next",
+    "@angular/platform-browser-dynamic": "17.2.2"
+  }
+}

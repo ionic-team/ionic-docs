@@ -16,7 +16,7 @@ Iconは、<a href="https://ionic.io/ionicons">Ionicons</a>ライブラリを通�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/icon/basic/index.md';
+import Basic from '@site/static/usage/v8/icon/basic/index.md';
 
 <Basic />
 
