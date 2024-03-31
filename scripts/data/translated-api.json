@@ -1129,6 +1129,11 @@
           "docs": "アクションシートボタンが押されたときの色"
         },
         {
+          "name": "--button-color-disabled",
+          "annotation": "prop",
+          "docs": "Color of the selected action sheet button when disabled"
+        },
+        {
           "name": "--button-color-focused",
           "annotation": "prop",
           "docs": "にタブで移動したときのアクションシートのボタンの色。"
@@ -2576,7 +2581,7 @@
         "ion-loading",
         "ion-menu",
         "ion-modal",
-        "ion-picker",
+        "ion-picker-legacy",
         "ion-popover"
       ],
       "dependencies": [],
@@ -2596,7 +2601,7 @@
         "ion-modal": [
           "ion-backdrop"
         ],
-        "ion-picker": [
+        "ion-picker-legacy": [
           "ion-backdrop"
         ],
         "ion-popover": [
@@ -4089,7 +4094,8 @@
         }
       ],
       "dependents": [
-        "ion-datetime"
+        "ion-datetime",
+        "ion-input-password-toggle"
       ],
       "dependencies": [
         "ion-ripple-effect"
@@ -4099,6 +4105,9 @@
           "ion-ripple-effect"
         ],
         "ion-datetime": [
+          "ion-button"
+        ],
+        "ion-input-password-toggle": [
           "ion-button"
         ]
       }
@@ -5188,30 +5197,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、強制的にレガシーフォームコントロールのマークアップを使用することができます。Ionicは、チェックボックスが`aria-label`属性を使用しているか、デフォルトスロットにテキストがある場合にのみ、モダンなフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントは最新のフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -7288,7 +7273,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "Formatting options for dates and times.\nShould include a 'date' and/or 'time' object, each of which is of type [Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).",
+          "docs": "日付と時刻のフォーマットオプション。それぞれ[Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options)型です。",
           "docsTags": [],
           "values": [
             {
@@ -8137,6 +8122,11 @@
           "name": "--wheel-highlight-background",
           "annotation": "prop",
           "docs": "ホイールスタイルレイアウトの場合は選択された項目の下、グリッドスタイルレイアウトの場合は月/年ピッカーのハイライトの背景。"
+        },
+        {
+          "name": "--wheel-highlight-border-radius",
+          "annotation": "prop",
+          "docs": "The border radius of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
         }
       ],
       "slots": [
@@ -8195,31 +8185,26 @@
       "dependencies": [
         "ion-buttons",
         "ion-button",
-        "ion-picker-internal",
-        "ion-picker-column-internal",
-        "ion-item",
-        "ion-label",
+        "ion-picker",
+        "ion-picker-column",
+        "ion-picker-column-option",
         "ion-icon",
+        "ion-ripple-effect",
         "ion-popover"
       ],
       "dependencyGraph": {
         "ion-datetime": [
           "ion-buttons",
           "ion-button",
-          "ion-picker-internal",
-          "ion-picker-column-internal",
-          "ion-item",
-          "ion-label",
+          "ion-picker",
+          "ion-picker-column",
+          "ion-picker-column-option",
           "ion-icon",
+          "ion-ripple-effect",
           "ion-popover"
         ],
         "ion-button": [
           "ion-ripple-effect"
-        ],
-        "ion-item": [
-          "ion-icon",
-          "ion-ripple-effect",
-          "ion-note"
         ],
         "ion-popover": [
           "ion-backdrop"
@@ -9726,6 +9711,176 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/input-password-toggle/input-password-toggle.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-input-password-toggle",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "complexType": {
+            "original": "Color",
+            "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+            "references": {
+              "Color": {
+                "location": "import",
+                "path": "../../interface",
+                "id": "src/interface.d.ts::Color"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hideIcon",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "string",
+            "resolved": "string | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "hide-icon",
+          "reflectToAttr": false,
+          "docs": "The icon that can be used to represent hiding a password. If not set, the \"eyeOff\" Ionicon will be used.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showIcon",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "string",
+            "resolved": "string | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-icon",
+          "reflectToAttr": false,
+          "docs": "The icon that can be used to represent showing a password. If not set, the \"eye\" Ionicon will be used.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "ion-input-password-toggle": [
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/input/input.tsx",
       "encapsulation": "scoped",
       "tag": "ion-input",
@@ -9750,35 +9905,6 @@
       ],
       "usage": {},
       "props": [
-        {
-          "name": "accept",
-          "type": "string | undefined",
-          "complexType": {
-            "original": "string",
-            "resolved": "string | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "accept",
-          "reflectToAttr": false,
-          "docs": "この属性は無視されます。",
-          "docsTags": [
-            {
-              "name": "deprecated"
-            }
-          ],
-          "deprecation": "",
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
         {
           "name": "autocapitalize",
           "type": "string",
@@ -10282,7 +10408,7 @@
           },
           "mutable": false,
           "attr": "disabled",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "`true`の場合、ユーザはInputと対話することができません。",
           "docsTags": [],
           "default": "false",
@@ -10537,30 +10663,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "max",
           "type": "number | string | undefined",
           "complexType": {
@@ -10787,7 +10889,7 @@
           },
           "mutable": false,
           "attr": "readonly",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "`true`の場合、ユーザーは値を変更することができません。",
           "docsTags": [],
           "default": "false",
@@ -10838,30 +10940,6 @@
             {
               "value": "round",
               "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "size",
-          "type": "number | undefined",
-          "complexType": {
-            "original": "number",
-            "resolved": "number | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "size",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
             },
             {
               "type": "undefined"
@@ -11197,6 +11275,11 @@
           "name": "--highlight-color-valid",
           "annotation": "prop",
           "docs": "有効時の入力のハイライトの色"
+        },
+        {
+          "name": "--highlight-height",
+          "annotation": "prop",
+          "docs": "The height of the highlight on the input. Only applies to md mode."
         },
         {
           "name": "--padding-bottom",
@@ -12127,14 +12210,6 @@
           "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL."
         },
         {
-          "name": "slot",
-          "text": "helper - Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
-        },
-        {
-          "name": "slot",
-          "text": "error - Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
-        },
-        {
           "name": "part",
           "text": "native - The native HTML button, anchor or div element that wraps all child elements."
         },
@@ -12234,69 +12309,6 @@
           "required": false
         },
         {
-          "name": "counter",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "counter",
-          "reflectToAttr": false,
-          "docs": "`true`の場合、文字カウンタが使用された文字の比率と総文字数制限を表示します。内側の `ion-input` または `ion-textarea` に `maxlength` プロパティが設定されている場合にのみ適用されます。",
-          "docsTags": [
-            {
-              "name": "deprecated",
-              "text": "Use the `counter` property on `ion-input` or `ion-textarea` instead."
-            }
-          ],
-          "default": "false",
-          "deprecation": "Use the `counter` property on `ion-input` or `ion-textarea` instead.",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "counterFormatter",
-          "type": "((inputLength: number, maxLength: number) => string) | undefined",
-          "complexType": {
-            "original": "CounterFormatter",
-            "resolved": "((inputLength: number, maxLength: number) => string) | undefined",
-            "references": {
-              "CounterFormatter": {
-                "location": "import",
-                "path": "./item-interface",
-                "id": "src/components/item/item-interface.ts::CounterFormatter"
-              }
-            }
-          },
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "カウンターのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、カウンターのテキストは\"itemLength / maxLength\"に設定されています。",
-          "docsTags": [
-            {
-              "name": "deprecated",
-              "text": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead."
-            }
-          ],
-          "deprecation": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.",
-          "values": [
-            {
-              "type": "((inputLength: number, maxLength: number) => string)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "detail",
           "type": "boolean | undefined",
           "complexType": {
@@ -12386,41 +12398,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "fill",
-          "type": "\"outline\" | \"solid\" | undefined",
-          "complexType": {
-            "original": "'outline' | 'solid'",
-            "resolved": "\"outline\" | \"solid\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "fill",
-          "reflectToAttr": false,
-          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
-          "docsTags": [
-            {
-              "name": "deprecated",
-              "text": "Use the `fill` property on `ion-input` or `ion-textarea` instead."
-            }
-          ],
-          "deprecation": "Use the `fill` property on `ion-input` or `ion-textarea` instead.",
-          "values": [
-            {
-              "value": "outline",
-              "type": "string"
-            },
-            {
-              "value": "solid",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -12592,31 +12569,6 @@
           "required": false
         },
         {
-          "name": "shape",
-          "type": "\"round\" | undefined",
-          "complexType": {
-            "original": "'round'",
-            "resolved": "\"round\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "shape",
-          "reflectToAttr": false,
-          "docs": "アイテムの形状を指定します。円形」の場合、境界線の半径が大きくなります。",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "round",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "target",
           "type": "string | undefined",
           "complexType": {
@@ -12675,11 +12627,6 @@
       "methods": [],
       "events": [],
       "listeners": [
-        {
-          "event": "ionInput",
-          "capture": false,
-          "passive": false
-        },
         {
           "event": "ionColor",
           "capture": false,
@@ -12783,26 +12730,6 @@
           "docs": "アイテム詳細アイコンの不透明度"
         },
         {
-          "name": "--highlight-color-focused",
-          "annotation": "prop",
-          "docs": "フォーカスされたときのアイテムのハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
-        },
-        {
-          "name": "--highlight-color-invalid",
-          "annotation": "prop",
-          "docs": "無効な場合の項目のハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
-        },
-        {
-          "name": "--highlight-color-valid",
-          "annotation": "prop",
-          "docs": "有効な場合の項目のハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` でスタイリングできる。"
-        },
-        {
-          "name": "--highlight-height",
-          "annotation": "prop",
-          "docs": "アイテムのハイライトの高さ。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
-        },
-        {
           "name": "--inner-border-width",
           "annotation": "prop",
           "docs": "アイテム内枠の幅"
@@ -12878,14 +12805,6 @@
           "docs": "コンテンツは、LTRではアイテムテキストの右側に、RTLでは左側に配置されます。"
         },
         {
-          "name": "error",
-          "docs": "コンテンツはアイテムの下に配置され、エラーが検出されたときに表示されます。**DEPRECATED** 代わりに ion-input または ion-textarea の \"errorText\" プロパティを使用してください。"
-        },
-        {
-          "name": "helper",
-          "docs": "コンテンツはアイテムの下に配置され、エラーが検出されない場合に表示されます。**DEPRECATED** 代わりに ion-input または ion-textarea の \"helperText\" プロパティを使用してください。"
-        },
-        {
           "name": "start",
           "docs": "コンテンツは、LTRではアイテムテキストの左側に、RTLでは右側に配置されます。"
         }
@@ -12901,22 +12820,16 @@
         }
       ],
       "dependents": [
-        "ion-datetime",
         "ion-select-popover"
       ],
       "dependencies": [
         "ion-icon",
-        "ion-ripple-effect",
-        "ion-note"
+        "ion-ripple-effect"
       ],
       "dependencyGraph": {
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect",
-          "ion-note"
-        ],
-        "ion-datetime": [
-          "ion-item"
+          "ion-ripple-effect"
         ],
         "ion-select-popover": [
           "ion-item"
@@ -13070,14 +12983,10 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "ion-datetime",
         "ion-select-popover"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "ion-datetime": [
-          "ion-label"
-        ],
         "ion-select-popover": [
           "ion-label"
         ]
@@ -14720,11 +14629,17 @@
         },
         {
           "name": "type",
-          "type": "string | undefined",
+          "type": "\"overlay\" | \"push\" | \"reveal\" | undefined",
           "complexType": {
-            "original": "string",
-            "resolved": "string | undefined",
-            "references": {}
+            "original": "MenuType",
+            "resolved": "\"overlay\" | \"push\" | \"reveal\" | undefined",
+            "references": {
+              "MenuType": {
+                "location": "import",
+                "path": "./menu-interface",
+                "id": "src/components/menu/menu-interface.ts::MenuType"
+              }
+            }
           },
           "mutable": true,
           "attr": "type",
@@ -14733,6 +14648,15 @@
           "docsTags": [],
           "values": [
             {
+              "value": "overlay",
+              "type": "string"
+            },
+            {
+              "value": "push",
+              "type": "string"
+            },
+            {
+              "value": "reveal",
               "type": "string"
             },
             {
@@ -16424,6 +16348,28 @@
           ]
         },
         {
+          "name": "getLength",
+          "returns": {
+            "type": "Promise<number>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<number>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<number>"
+          },
+          "signature": "getLength() => Promise<number>",
+          "parameters": [],
+          "docs": "Returns the number of views in the stack.",
+          "docsTags": []
+        },
+        {
           "name": "getPrevious",
           "returns": {
             "type": "Promise<ViewController | undefined>",
@@ -17440,20 +17386,377 @@
       ],
       "slots": [],
       "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/picker-column-option/picker-column-option.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-picker-column-option",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "complexType": {
+            "original": "Color",
+            "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+            "references": {
+              "Color": {
+                "location": "import",
+                "path": "../../interface",
+                "id": "src/interface.d.ts::Color"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user cannot interact with the picker column option.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "complexType": {
+            "original": "any | null",
+            "resolved": "any",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "オプションのテキスト値です。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
       "dependents": [
-        "ion-item"
+        "ion-datetime"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "ion-item": [
-          "ion-note"
+        "ion-datetime": [
+          "ion-picker-column-option"
         ]
       }
     },
     {
-      "filePath": "src/components/picker/picker.tsx",
+      "filePath": "src/components/picker-column/picker-column.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-picker-column",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        },
+        {
+          "name": "slot",
+          "text": "prefix - Content to show on the left side of the picker options."
+        },
+        {
+          "name": "slot",
+          "text": "suffix - Content to show on the right side of the picker options."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "complexType": {
+            "original": "Color",
+            "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+            "references": {
+              "Color": {
+                "location": "import",
+                "path": "../../interface",
+                "id": "src/interface.d.ts::Color"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user cannot interact with the picker.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string | undefined",
+          "complexType": {
+            "original": "string | number",
+            "resolved": "number | string | undefined",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The selected option in the picker.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "Sets focus on the scrollable container within the picker column.\nUse this method instead of the global `pickerColumn.focus()`.",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "ionChange",
+          "detail": "PickerColumnChangeEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "PickerColumnChangeEventDetail",
+            "resolved": "PickerColumnChangeEventDetail",
+            "references": {
+              "PickerColumnChangeEventDetail": {
+                "location": "import",
+                "path": "./picker-column-interfaces",
+                "id": "src/components/picker-column/picker-column-interfaces.ts::PickerColumnChangeEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "値が変更されたときに発行されます。",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "prefix",
+          "docs": "Content to show on the left side of the picker options."
+        },
+        {
+          "name": "suffix",
+          "docs": "Content to show on the right side of the picker options."
+        }
+      ],
+      "parts": [],
+      "dependents": [
+        "ion-datetime"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ion-datetime": [
+          "ion-picker-column"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/picker-legacy/picker.tsx",
       "encapsulation": "scoped",
-      "tag": "ion-picker",
+      "tag": "ion-picker-legacy",
       "docs": "",
       "docsTags": [
         {
@@ -17517,7 +17820,7 @@
               "PickerButton": {
                 "location": "import",
                 "path": "./picker-interface",
-                "id": "src/components/picker/picker-interface.ts::PickerButton"
+                "id": "src/components/picker-legacy/picker-interface.ts::PickerButton"
               }
             }
           },
@@ -17544,7 +17847,7 @@
               "PickerColumn": {
                 "location": "import",
                 "path": "./picker-interface",
-                "id": "src/components/picker/picker-interface.ts::PickerColumn"
+                "id": "src/components/picker-legacy/picker-interface.ts::PickerColumn"
               }
             }
           },
@@ -17821,7 +18124,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -17842,7 +18145,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
             }
           ],
           "docs": "ピッカー・オーバーレイが表示された後、それを解除します。",
@@ -17853,7 +18156,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -17880,7 +18183,7 @@
               "PickerColumn": {
                 "location": "import",
                 "path": "./picker-interface",
-                "id": "src/components/picker/picker-interface.ts::PickerColumn"
+                "id": "src/components/picker-legacy/picker-interface.ts::PickerColumn"
               }
             },
             "return": "Promise<PickerColumn | undefined>"
@@ -18197,12 +18500,85 @@
       "dependents": [],
       "dependencies": [
         "ion-backdrop",
-        "ion-picker-column"
+        "ion-picker-legacy-column"
       ],
       "dependencyGraph": {
-        "ion-picker": [
+        "ion-picker-legacy": [
           "ion-backdrop",
-          "ion-picker-column"
+          "ion-picker-legacy-column"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/picker/picker.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-picker",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "touchstart",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [
+        {
+          "name": "--fade-background-rgb",
+          "annotation": "prop",
+          "docs": "Background of the gradient covering non-selected items in rgb format"
+        },
+        {
+          "name": "--highlight-background",
+          "annotation": "prop",
+          "docs": "Background of the picker highlight for the selected item"
+        },
+        {
+          "name": "--highlight-border-radius",
+          "annotation": "prop",
+          "docs": "Border radius of the picker highlight for the selected item"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ion-datetime"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ion-datetime": [
+          "ion-picker"
         ]
       }
     },
@@ -19480,11 +19856,6 @@
           "docs": "プログレストラックの背景、または `buffer` が設定されている場合はバッファバー。"
         },
         {
-          "name": "--buffer-background",
-          "annotation": "prop",
-          "docs": "DEPRECATED、代わりに `--background` を使用します。"
-        },
-        {
           "name": "--progress-background",
           "annotation": "prop",
           "docs": "現在値を表すプログレスバーの背景"
@@ -19871,30 +20242,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -20314,30 +20661,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -21524,6 +21847,7 @@
         "ion-button",
         "ion-card",
         "ion-chip",
+        "ion-datetime",
         "ion-datetime-button",
         "ion-fab-button",
         "ion-item",
@@ -21551,6 +21875,9 @@
           "ion-ripple-effect"
         ],
         "ion-chip": [
+          "ion-ripple-effect"
+        ],
+        "ion-datetime": [
           "ion-ripple-effect"
         ],
         "ion-datetime-button": [
@@ -22440,7 +22767,7 @@
           "reflectToAttr": false,
           "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
           "docsTags": [],
-          "default": "'default'",
+          "default": "'off'",
           "values": [
             {
               "type": "string"
@@ -24595,30 +24922,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -24997,6 +25300,11 @@
           "docs": "有効時のセレクトのハイライトの色"
         },
         {
+          "name": "--highlight-height",
+          "annotation": "prop",
+          "docs": "The height of the highlight on the select. Only applies to md mode."
+        },
+        {
           "name": "--padding-bottom",
           "annotation": "prop",
           "docs": "セレクトのBottom Padding"
@@ -25095,8 +25403,7 @@
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect",
-          "ion-note"
+          "ion-ripple-effect"
         ],
         "ion-popover": [
           "ion-backdrop"
@@ -27470,30 +27777,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "maxlength",
           "type": "number | undefined",
           "complexType": {
@@ -27961,6 +28244,11 @@
           "name": "--highlight-color-valid",
           "annotation": "prop",
           "docs": "有効時のテキストエリアのハイライトの色"
+        },
+        {
+          "name": "--highlight-height",
+          "annotation": "prop",
+          "docs": "The height of the highlight on the textarea. Only applies to md mode."
         },
         {
           "name": "--padding-bottom",
@@ -29238,7 +29526,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "How to control the alignment of the toggle and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docs": "十字軸上のトグルとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは十字軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも十字軸の中央に表示されます。",
           "docsTags": [],
           "default": "'center'",
           "values": [
@@ -29453,30 +29741,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {

@@ -698,6 +698,11 @@
       "docs": "Color of the action sheet button when pressed"
     },
     {
+      "name": "--button-color-disabled",
+      "annotation": "prop",
+      "docs": "Color of the selected action sheet button when disabled"
+    },
+    {
       "name": "--button-color-focused",
       "annotation": "prop",
       "docs": "Color of the action sheet button when tabbed to"

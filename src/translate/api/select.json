@@ -399,30 +399,6 @@
       "required": false
     },
     {
-      "name": "legacy",
-      "type": "boolean | undefined",
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "legacy",
-      "reflectToAttr": false,
-      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
-      "docsTags": [],
-      "values": [
-        {
-          "type": "boolean"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
-      "required": false
-    },
-    {
       "name": "mode",
       "type": "\"ios\" | \"md\"",
       "mutable": false,
@@ -801,6 +777,11 @@
       "docs": "The color of the highlight on the select when valid"
     },
     {
+      "name": "--highlight-height",
+      "annotation": "prop",
+      "docs": "The height of the highlight on the select. Only applies to md mode."
+    },
+    {
       "name": "--padding-bottom",
       "annotation": "prop",
       "docs": "Bottom padding of the select"
@@ -899,8 +880,7 @@
     ],
     "ion-item": [
       "ion-icon",
-      "ion-ripple-effect",
-      "ion-note"
+      "ion-ripple-effect"
     ],
     "ion-popover": [
       "ion-backdrop"

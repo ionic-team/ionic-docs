@@ -270,6 +270,28 @@
       ]
     },
     {
+      "name": "getLength",
+      "returns": {
+        "type": "Promise<number>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<number>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<number>"
+      },
+      "signature": "getLength() => Promise<number>",
+      "parameters": [],
+      "docs": "Returns the number of views in the stack.",
+      "docsTags": []
+    },
+    {
       "name": "getPrevious",
       "returns": {
         "type": "Promise<ViewController | undefined>",

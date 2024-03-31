@@ -24,35 +24,6 @@
   "usage": {},
   "props": [
     {
-      "name": "accept",
-      "type": "string | undefined",
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "accept",
-      "reflectToAttr": false,
-      "docs": "This attribute is ignored.",
-      "docsTags": [
-        {
-          "name": "deprecated"
-        }
-      ],
-      "deprecation": "",
-      "values": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
-      "required": false
-    },
-    {
       "name": "autocapitalize",
       "type": "string",
       "complexType": {
@@ -555,7 +526,7 @@
       },
       "mutable": false,
       "attr": "disabled",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "If `true`, the user cannot interact with the input.",
       "docsTags": [],
       "default": "false",
@@ -810,30 +781,6 @@
       "required": false
     },
     {
-      "name": "legacy",
-      "type": "boolean | undefined",
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "legacy",
-      "reflectToAttr": false,
-      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
-      "docsTags": [],
-      "values": [
-        {
-          "type": "boolean"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
-      "required": false
-    },
-    {
       "name": "max",
       "type": "number | string | undefined",
       "complexType": {
@@ -1060,7 +1007,7 @@
       },
       "mutable": false,
       "attr": "readonly",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "If `true`, the user cannot modify the value.",
       "docsTags": [],
       "default": "false",
@@ -1111,30 +1058,6 @@
         {
           "value": "round",
           "type": "string"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
-      "required": false
-    },
-    {
-      "name": "size",
-      "type": "number | undefined",
-      "complexType": {
-        "original": "number",
-        "resolved": "number | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "size",
-      "reflectToAttr": false,
-      "docs": "",
-      "docsTags": [],
-      "values": [
-        {
-          "type": "number"
         },
         {
           "type": "undefined"
@@ -1470,6 +1393,11 @@
       "name": "--highlight-color-valid",
       "annotation": "prop",
       "docs": "The color of the highlight on the input when valid"
+    },
+    {
+      "name": "--highlight-height",
+      "annotation": "prop",
+      "docs": "The height of the highlight on the input. Only applies to md mode."
     },
     {
       "name": "--padding-bottom",

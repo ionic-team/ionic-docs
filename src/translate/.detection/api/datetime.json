@@ -1131,6 +1131,11 @@
       "name": "--wheel-highlight-background",
       "annotation": "prop",
       "docs": "The background of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
+    },
+    {
+      "name": "--wheel-highlight-border-radius",
+      "annotation": "prop",
+      "docs": "The border radius of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
     }
   ],
   "slots": [
@@ -1189,31 +1194,26 @@
   "dependencies": [
     "ion-buttons",
     "ion-button",
-    "ion-picker-internal",
-    "ion-picker-column-internal",
-    "ion-item",
-    "ion-label",
+    "ion-picker",
+    "ion-picker-column",
+    "ion-picker-column-option",
     "ion-icon",
+    "ion-ripple-effect",
     "ion-popover"
   ],
   "dependencyGraph": {
     "ion-datetime": [
       "ion-buttons",
       "ion-button",
-      "ion-picker-internal",
-      "ion-picker-column-internal",
-      "ion-item",
-      "ion-label",
+      "ion-picker",
+      "ion-picker-column",
+      "ion-picker-column-option",
       "ion-icon",
+      "ion-ripple-effect",
       "ion-popover"
     ],
     "ion-button": [
       "ion-ripple-effect"
-    ],
-    "ion-item": [
-      "ion-icon",
-      "ion-ripple-effect",
-      "ion-note"
     ],
     "ion-popover": [
       "ion-backdrop"

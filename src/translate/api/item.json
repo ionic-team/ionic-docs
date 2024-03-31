@@ -21,14 +21,6 @@
       "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL."
     },
     {
-      "name": "slot",
-      "text": "helper - Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
-    },
-    {
-      "name": "slot",
-      "text": "error - Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
-    },
-    {
       "name": "part",
       "text": "native - The native HTML button, anchor or div element that wraps all child elements."
     },
@@ -128,69 +120,6 @@
       "required": false
     },
     {
-      "name": "counter",
-      "type": "boolean",
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "counter",
-      "reflectToAttr": false,
-      "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit. Only applies when the `maxlength` property is set on the inner `ion-input` or `ion-textarea`.",
-      "docsTags": [
-        {
-          "name": "deprecated",
-          "text": "Use the `counter` property on `ion-input` or `ion-textarea` instead."
-        }
-      ],
-      "default": "false",
-      "deprecation": "Use the `counter` property on `ion-input` or `ion-textarea` instead.",
-      "values": [
-        {
-          "type": "boolean"
-        }
-      ],
-      "optional": false,
-      "required": false
-    },
-    {
-      "name": "counterFormatter",
-      "type": "((inputLength: number, maxLength: number) => string) | undefined",
-      "complexType": {
-        "original": "CounterFormatter",
-        "resolved": "((inputLength: number, maxLength: number) => string) | undefined",
-        "references": {
-          "CounterFormatter": {
-            "location": "import",
-            "path": "./item-interface",
-            "id": "src/components/item/item-interface.ts::CounterFormatter"
-          }
-        }
-      },
-      "mutable": false,
-      "reflectToAttr": false,
-      "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
-      "docsTags": [
-        {
-          "name": "deprecated",
-          "text": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead."
-        }
-      ],
-      "deprecation": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.",
-      "values": [
-        {
-          "type": "((inputLength: number, maxLength: number) => string)"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
-      "required": false
-    },
-    {
       "name": "detail",
       "type": "boolean | undefined",
       "complexType": {
@@ -280,41 +209,6 @@
         }
       ],
       "optional": false,
-      "required": false
-    },
-    {
-      "name": "fill",
-      "type": "\"outline\" | \"solid\" | undefined",
-      "complexType": {
-        "original": "'outline' | 'solid'",
-        "resolved": "\"outline\" | \"solid\" | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "fill",
-      "reflectToAttr": false,
-      "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
-      "docsTags": [
-        {
-          "name": "deprecated",
-          "text": "Use the `fill` property on `ion-input` or `ion-textarea` instead."
-        }
-      ],
-      "deprecation": "Use the `fill` property on `ion-input` or `ion-textarea` instead.",
-      "values": [
-        {
-          "value": "outline",
-          "type": "string"
-        },
-        {
-          "value": "solid",
-          "type": "string"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
       "required": false
     },
     {
@@ -486,31 +380,6 @@
       "required": false
     },
     {
-      "name": "shape",
-      "type": "\"round\" | undefined",
-      "complexType": {
-        "original": "'round'",
-        "resolved": "\"round\" | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "shape",
-      "reflectToAttr": false,
-      "docs": "The shape of the item. If \"round\" it will have increased\nborder radius.",
-      "docsTags": [],
-      "values": [
-        {
-          "value": "round",
-          "type": "string"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
-      "required": false
-    },
-    {
       "name": "target",
       "type": "string | undefined",
       "complexType": {
@@ -569,11 +438,6 @@
   "methods": [],
   "events": [],
   "listeners": [
-    {
-      "event": "ionInput",
-      "capture": false,
-      "passive": false
-    },
     {
       "event": "ionColor",
       "capture": false,
@@ -677,26 +541,6 @@
       "docs": "Opacity of the item detail icon"
     },
     {
-      "name": "--highlight-color-focused",
-      "annotation": "prop",
-      "docs": "The color of the highlight on the item when focused. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
-    },
-    {
-      "name": "--highlight-color-invalid",
-      "annotation": "prop",
-      "docs": "The color of the highlight on the item when invalid. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
-    },
-    {
-      "name": "--highlight-color-valid",
-      "annotation": "prop",
-      "docs": "The color of the highlight on the item when valid. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
-    },
-    {
-      "name": "--highlight-height",
-      "annotation": "prop",
-      "docs": "The height of the highlight on the item. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
-    },
-    {
       "name": "--inner-border-width",
       "annotation": "prop",
       "docs": "Width of the item inner border"
@@ -772,14 +616,6 @@
       "docs": "Content is placed to the right of the item text in LTR, and to the left in RTL."
     },
     {
-      "name": "error",
-      "docs": "Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
-    },
-    {
-      "name": "helper",
-      "docs": "Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
-    },
-    {
       "name": "start",
       "docs": "Content is placed to the left of the item text in LTR, and to the right in RTL."
     }
@@ -795,22 +631,16 @@
     }
   ],
   "dependents": [
-    "ion-datetime",
     "ion-select-popover"
   ],
   "dependencies": [
     "ion-icon",
-    "ion-ripple-effect",
-    "ion-note"
+    "ion-ripple-effect"
   ],
   "dependencyGraph": {
     "ion-item": [
       "ion-icon",
-      "ion-ripple-effect",
-      "ion-note"
-    ],
-    "ion-datetime": [
-      "ion-item"
+      "ion-ripple-effect"
     ],
     "ion-select-popover": [
       "ion-item"

@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 import { commands } from '../data/cli.json';
 
 export const getTranslateType = async () => {
-  const response = await fetch('https://unpkg.com/@ionic/docs/core.json');
+  const response = await fetch('https://unpkg.com/@ionic/docs@next/core.json');
   const { components } = await response.json();
 
   return [

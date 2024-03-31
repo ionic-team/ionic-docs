@@ -145,14 +145,10 @@
   "slots": [],
   "parts": [],
   "dependents": [
-    "ion-datetime",
     "ion-select-popover"
   ],
   "dependencies": [],
   "dependencyGraph": {
-    "ion-datetime": [
-      "ion-label"
-    ],
     "ion-select-popover": [
       "ion-label"
     ]

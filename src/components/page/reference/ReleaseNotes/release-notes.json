@@ -1,51 +1,114 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>searchbar:</strong> autocapitalize is initialized correctly (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29197\">#29197</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/8ad66c03d777edcab19c97cba696b171acc2d2e8\">8ad66c0</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29193\">#29193</a></li>\n</ul>\n",
+    "name": "v7.8.2",
+    "published_at": "March 27 2024",
+    "tag_name": "v7.8.2",
+    "type": "patch",
+    "version": "7.8.2"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> wheel picker shows consistently in overlays (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29147\">#29147</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/19c1bc16cbc6725463890382365203824b7fd353\">19c1bc1</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26234\">#26234</a></li>\n<li><strong>header:</strong> iOS headers in MD app are not hidden (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29164\">#29164</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/fdfecd32c33c41cf202d3b30c073bfb1b077e2d6\">fdfecd3</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28867\">#28867</a></li>\n<li><strong>react:</strong> avoid definitely typed errors with @types/react@18 (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29182\">#29182</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/58d217d0cf6b716da855c71c169fb1870d4067d3\">58d217d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29178\">#29178</a></li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>datetime:</strong> calendar body shows immediately in modal on ios (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29163\">#29163</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/f75977699dae5aeea3d97d4318377633e935afb9\">f759776</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24542\">#24542</a></li>\n</ul>\n",
+    "name": "v7.8.1",
+    "published_at": "March 20 2024",
+    "tag_name": "v7.8.1",
+    "type": "patch",
+    "version": "7.8.1"
+  },
+  {
+    "body": "<h3>Features</h3>\n<ul>\n<li><strong>datetime:</strong> formatOptions property for Datetime (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29065\">#29065</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/7cdbc1b5ad004e17a7c51363653e0e67f50e6860\">7cdbc1b</a>)</li>\n<li><strong>searchbar:</strong> autocapitalize, dir, lang, maxlength, and minlength are inherited to native input (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29098\">#29098</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a0a77f799df0732d9f7182f15866035a3ce5a1eb\">a0a77f7</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/27606\">#27606</a></li>\n</ul>\n",
+    "name": "v7.8.0",
+    "published_at": "March 13 2024",
+    "tag_name": "v7.8.0",
+    "type": "minor",
+    "version": "7.8.0"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> add ionNavWillChange and ionNavDidChange types for nav (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29122\">#29122</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/85b9d5c35f626ffc273d220549b0126ddc1f7e4b\">85b9d5c</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29114\">#29114</a></li>\n<li><strong>checkbox:</strong> set aria-checked of indeterminate checkbox to 'mixed' (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29115\">#29115</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/b2d636f14dcd33313f6604cfd4a64b542c831b34\">b2d636f</a>)</li>\n<li><strong>overlay:</strong> do not hide overlay if toast is presented (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29140\">#29140</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/c0f5e5ebc0c9d45d71e10e09903b00b3ba8e6bba\">c0f5e5e</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29139\">#29139</a></li>\n</ul>\n",
+    "name": "v7.7.5",
+    "published_at": "March 13 2024",
+    "tag_name": "v7.7.5",
+    "type": "patch",
+    "version": "7.7.5"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>modal:</strong> ariaLabel and role are inherited when set via htmlAttributes (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29099\">#29099</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/de13633a182d963876434db773aa346833f956fd\">de13633</a>)</li>\n</ul>\n",
+    "name": "v7.7.4",
+    "published_at": "March 7 2024",
+    "tag_name": "v7.7.4",
+    "type": "patch",
+    "version": "7.7.4"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>label:</strong> do not grow when in end slot (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29036\">#29036</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/1fc4b76f5940b38fd89e19561d6b4738dfb8ae5d\">1fc4b76</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29033\">#29033</a></li>\n<li><strong>overlays:</strong> focus is returned to last focus element when focusing toast (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28950\">#28950</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2ed0ada9237b3f4dbf5959746ce2d1744936eebe\">2ed0ada</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28261\">#28261</a></li>\n</ul>\n",
+    "name": "v7.7.3",
+    "published_at": "February 22 2024",
+    "tag_name": "v7.7.3",
+    "type": "patch",
+    "version": "7.7.3"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>overlays:</strong> do not return focus if application has already moved focus manually (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28850\">#28850</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a016670a8a46e101d23235b17bc8a2081fb992eb\">a016670</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28849\">#28849</a></li>\n<li><strong>overlays:</strong> ensure that only topmost overlay is announced by screen readers (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28997\">#28997</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/ba4ba6161c1a6c67f7804b07f49c64ac9ad2b14c\">ba4ba61</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/23472\">#23472</a></li>\n<li><strong>popover:</strong> render arrow above backdrop (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28986\">#28986</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/0a8964d30c76218fe62f7f4aed4f81df7bb80cd0\">0a8964d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28985\">#28985</a></li>\n</ul>\n",
+    "name": "v7.7.2",
+    "published_at": "February 14 2024",
+    "tag_name": "v7.7.2",
+    "type": "patch",
+    "version": "7.7.2"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>action-sheet:</strong> iOS dismiss animation respects safe area (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28915\">#28915</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/7449fb4fed4048f5d01ba068dc6f8e2d7727e95d\">7449fb4</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28541\">#28541</a></li>\n<li><strong>overlays:</strong> tear down animations after dismiss (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28907\">#28907</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/950fa40c5597c81d5cbaeb9276b09adfea5e79fb\">950fa40</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28352\">#28352</a></li>\n<li><strong>react:</strong> route with redirect will mount page (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28961\">#28961</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/5777ce258119d2715b1326cdc103bd4ad7612bd1\">5777ce2</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28838\">#28838</a></li>\n<li><strong>select:</strong> popover can be scrolled (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28965\">#28965</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/35ab6b4816bd627239de8d8b25ce0c86db8c74b4\">35ab6b4</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28963\">#28963</a></li>\n</ul>\n",
+    "name": "v7.7.1",
+    "published_at": "February 7 2024",
+    "tag_name": "v7.7.1",
+    "type": "patch",
+    "version": "7.7.1"
+  },
+  {
+    "body": "<h3>Features</h3>\n<ul>\n<li>add experimental hardware back button support in browsers (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28705\">#28705</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/658d1caccd530350843b85c0e24544ec27dd9eb4\">658d1ca</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28703\">#28703</a></li>\n</ul>\n",
+    "name": "v7.7.0",
+    "published_at": "February 1 2024",
+    "tag_name": "v7.7.0",
+    "type": "minor",
+    "version": "7.7.0"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>accordion:</strong> prevent opening of readonly accordion using keyboard (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28865\">#28865</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/e10f49c43daa11fe7deb5a9b9bfd34897542b6b1\">e10f49c</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28344\">#28344</a></li>\n<li><strong>action-sheet, alert, toast:</strong> button roles autocomplete with available options (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27940\">#27940</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/f6fc22bba60388701b80a9421510e3d843d39e9e\">f6fc22b</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/27965\">#27965</a></li>\n<li><strong>item:</strong> ensure button focus state on property change (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28892\">#28892</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/bf7922c8b37b32dbf90650cb74a2e77bedf0c118\">bf7922c</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28525\">#28525</a></li>\n<li><strong>item:</strong> only default slot content wraps (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28773\">#28773</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/9448783bb19b187f867054c86d215e3dc97952c1\">9448783</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28769\">#28769</a></li>\n</ul>\n",
+    "name": "v7.6.7",
+    "published_at": "January 31 2024",
+    "tag_name": "v7.6.7",
+    "type": "patch",
+    "version": "7.6.7"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>alert:</strong> remove border-right on ios stacked buttons (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28821\">#28821</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/ad65824722da0eed90ef9e595b743754bfd360b8\">ad65824</a>)</li>\n<li><strong>datetime:</strong> do not animate to new value when multiple values in different months are set (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28847\">#28847</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/9262f7da15969706039e9d5f11ef5c7bd73ced0d\">9262f7d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28602\">#28602</a></li>\n<li><strong>datetime:</strong> enter closes keyboard when typing time (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28848\">#28848</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/c47a16d6c3c57f56b053727dd10ead0bfe547e50\">c47a16d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28325\">#28325</a></li>\n<li><strong>menu:</strong> improve reliability of main content not being scrollable when menu opens (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28829\">#28829</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/9603a4de363d2b42622ff3585cd6e4787d9581d1\">9603a4d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28399\">#28399</a></li>\n<li><strong>popover:</strong> content inside of popover scrolls correctly (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28861\">#28861</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/10c38d0354e61e20bec9a313de84b22c3b85c323\">10c38d0</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28455\">#28455</a></li>\n<li><strong>segment:</strong> setting value via binding updates button state (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28837\">#28837</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/0847c2ac2c52b5fa6d30e381685d6cbf7a41231a\">0847c2a</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28816\">#28816</a></li>\n<li><strong>select:</strong> click handlers on slotted content fire (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28839\">#28839</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/aed7a03532b88628a4358c8cbae1a1cbb861462b\">aed7a03</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28818\">#28818</a></li>\n<li><strong>vue:</strong> tabs and parameterized routes work with latest vue (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28846\">#28846</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/5bc439961fda2c595666e67688fdd1b8ff4dd0bf\">5bc4399</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28774\">#28774</a></li>\n</ul>\n",
+    "name": "v7.6.6",
+    "published_at": "January 24 2024",
+    "tag_name": "v7.6.6",
+    "type": "patch",
+    "version": "7.6.6"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> add old IonBackButtonDelegate import (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28831\">#28831</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/fb7735397ed53323dd93a172407117228610b929\">fb77353</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28827\">#28827</a></li>\n<li><strong>list:</strong> remove uneeded border radius from items in inset list (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28830\">#28830</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/dbaaa5bd9f43b8ba589b3f9c4b4204d2f203ef18\">dbaaa5b</a>)</li>\n</ul>\n",
+    "name": "v7.6.5",
+    "published_at": "January 17 2024",
+    "tag_name": "v7.6.5",
+    "type": "patch",
+    "version": "7.6.5"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>input:</strong> slotted buttons are clickable (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28772\">#28772</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/4ccc150edff4e3f33f453343aedb081d920b2f90\">4ccc150</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28762\">#28762</a></li>\n</ul>\n",
     "name": "v7.6.4",
-    "published_at": "January 10 2024",
+    "published_at": "January 17 2024",
     "tag_name": "v7.6.4",
     "type": "patch",
     "version": "7.6.4"
   },
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> selected today button renders correctly on ios (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28740\">#28740</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2f99aeae6f71d5ffd1880f2c549227ecf71becf3\">2f99aea</a>)</li>\n<li><strong>nav, router-outlet:</strong> ios page transition does not cover menu on larger screens (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28745\">#28745</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/878eec6ea21d76586466d01e13e5e842e69eaceb\">878eec6</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28737\">#28737</a></li>\n<li><strong>radio-group:</strong> radio disabled prop can be undefined (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28712\">#28712</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/75ffeee933ae353d2601670178896116c81923e0\">75ffeee</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28677\">#28677</a></li>\n<li><strong>refresher:</strong> native ios refresher works on iPadOS (<a href=\"https://github.com/ionic-team/ionic-framework/issues/28620\">#28620</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/e5226016a0f0b066a7bd7fc9997f905d3b87fbc4\">e522601</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/28617\">#28617</a></li>\n</ul>\n",
     "name": "v7.6.3",
     "published_at": "January 3 2024",
     "tag_name": "v7.6.3",
     "type": "patch",
     "version": "7.6.3"
-  },
-  {
-    "name": "v7.6.2",
-    "published_at": "December 19 2023",
-    "tag_name": "v7.6.2",
-    "type": "patch",
-    "version": "7.6.2"
-  },
-  {
-    "name": "v7.6.1",
-    "published_at": "December 13 2023",
-    "tag_name": "v7.6.1",
-    "type": "patch",
-    "version": "7.6.1"
-  },
-  {
-    "name": "v7.6.0",
-    "published_at": "December 6 2023",
-    "tag_name": "v7.6.0",
-    "type": "minor",
-    "version": "7.6.0"
-  },
-  {
-    "name": "v7.5.8",
-    "published_at": "December 6 2023",
-    "tag_name": "v7.5.8",
-    "type": "patch",
-    "version": "7.5.8"
-  },
-  {
-    "name": "v7.5.7",
-    "published_at": "November 29 2023",
-    "tag_name": "v7.5.7",
-    "type": "patch",
-    "version": "7.5.7"
   }
 ]
