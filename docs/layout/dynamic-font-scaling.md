@@ -16,6 +16,34 @@ import DynamicFontScaling from '@site/static/usage/v8/layout/dynamic-font-scalin
 
 <DynamicFontScaling />
 
+## Enabling Dynamic Font Scaling in Ionic
+
+:::info
+This feature is currently opt-in on iOS. However, it will be enabled by default starting in Ionic 8 at which point the following CSS will no longer be necessary.
+:::
+
+Dynamic Font Scaling is already enabled by default on Android. Developers can enable it on iOS using the following steps:
+
+1. Ensure that the [typography.css](/docs/layout/global-stylesheets#typographycss) file is imported.
+2. Add the following CSS to a global stylesheet:
+
+```css
+html {
+  --ion-dynamic-font: var(--ion-default-dynamic-font);
+}
+```
+
+:::note
+Under the hood, Ionic sets the following CSS on iOS devices to enable Dynamic Font Scaling:
+
+```css
+html {
+  font: var(--ion-dynamic-font);
+}
+```
+
+:::
+
 ## Using Dynamic Font Scaling
 
 ### Enabling in an Application

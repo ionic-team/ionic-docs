@@ -1131,7 +1131,7 @@
         {
           "name": "--button-color-disabled",
           "annotation": "prop",
-          "docs": "Color of the selected action sheet button when disabled"
+          "docs": "無効時の選択されたアクション・シート・ボタンの色"
         },
         {
           "name": "--button-color-focused",
@@ -8126,7 +8126,7 @@
         {
           "name": "--wheel-highlight-border-radius",
           "annotation": "prop",
-          "docs": "The border radius of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
+          "docs": "ホイールスタイルレイアウトの場合は選択された項目の下、グリッドスタイルレイアウトの場合は月/年ピッカーのハイライトの境界半径。"
         }
       ],
       "slots": [
@@ -9800,7 +9800,7 @@
           "mutable": false,
           "attr": "hide-icon",
           "reflectToAttr": false,
-          "docs": "The icon that can be used to represent hiding a password. If not set, the \"eyeOff\" Ionicon will be used.",
+          "docs": "パスワードの非表示を表すアイコン。設定されていない場合、\"eyeOff \"アイコンが使用される。",
           "docsTags": [],
           "values": [
             {
@@ -9845,7 +9845,7 @@
           "mutable": false,
           "attr": "show-icon",
           "reflectToAttr": false,
-          "docs": "The icon that can be used to represent showing a password. If not set, the \"eye\" Ionicon will be used.",
+          "docs": "パスワードを示すアイコン。設定されていない場合は、\"eye\"のアイコンが使用されます。",
           "docsTags": [],
           "values": [
             {
@@ -11279,7 +11279,7 @@
         {
           "name": "--highlight-height",
           "annotation": "prop",
-          "docs": "The height of the highlight on the input. Only applies to md mode."
+          "docs": "入力のハイライトの高さ。mdモードにのみ適用される。"
         },
         {
           "name": "--padding-bottom",
@@ -16366,7 +16366,7 @@
           },
           "signature": "getLength() => Promise<number>",
           "parameters": [],
-          "docs": "Returns the number of views in the stack.",
+          "docs": "スタック内のビューの数を返します。",
           "docsTags": []
         },
         {
@@ -17476,7 +17476,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "If `true`, the user cannot interact with the picker column option.",
+          "docs": "true`の場合、ユーザーはピッカー列オプションを操作できない。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -17624,7 +17624,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "If `true`, the user cannot interact with the picker.",
+          "docs": "true`の場合、ユーザーはピッカーと対話することができない。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -17667,7 +17667,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The selected option in the picker.",
+          "docs": "ピッカーで選択されているオプション。",
           "docsTags": [],
           "values": [
             {
@@ -17704,7 +17704,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the scrollable container within the picker column.\nUse this method instead of the global `pickerColumn.focus()`.",
+          "docs": "ピッカーカラム内のスクロール可能なコンテナにフォーカスを設定します。グローバルメソッド `pickerColumn.focus()` の代わりにこのメソッドを使用します。",
           "docsTags": []
         }
       ],
@@ -17735,11 +17735,11 @@
       "slots": [
         {
           "name": "prefix",
-          "docs": "Content to show on the left side of the picker options."
+          "docs": "ピッカー・オプションの左側に表示するコンテンツ。"
         },
         {
           "name": "suffix",
-          "docs": "Content to show on the right side of the picker options."
+          "docs": "ピッカー・オプションの右側に表示するコンテンツ。"
         }
       ],
       "parts": [],
@@ -18557,17 +18557,17 @@
         {
           "name": "--fade-background-rgb",
           "annotation": "prop",
-          "docs": "Background of the gradient covering non-selected items in rgb format"
+          "docs": "非選択項目をカバーするグラデーションの背景（rgb形式"
         },
         {
           "name": "--highlight-background",
           "annotation": "prop",
-          "docs": "Background of the picker highlight for the selected item"
+          "docs": "選択されたアイテムのピッカー・ハイライトの背景"
         },
         {
           "name": "--highlight-border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the picker highlight for the selected item"
+          "docs": "選択されたアイテムのピッカーハイライトの境界半径"
         }
       ],
       "slots": [],
@@ -25302,7 +25302,7 @@
         {
           "name": "--highlight-height",
           "annotation": "prop",
-          "docs": "The height of the highlight on the select. Only applies to md mode."
+          "docs": "セレクトのハイライトの高さ。mdモードにのみ適用される。"
         },
         {
           "name": "--padding-bottom",
@@ -28248,7 +28248,7 @@
         {
           "name": "--highlight-height",
           "annotation": "prop",
-          "docs": "The height of the highlight on the textarea. Only applies to md mode."
+          "docs": "テキストエリアのハイライトの高さ。mdモードにのみ適用される。"
         },
         {
           "name": "--padding-bottom",
