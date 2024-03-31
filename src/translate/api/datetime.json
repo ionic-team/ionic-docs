@@ -267,6 +267,44 @@
       "required": false
     },
     {
+      "name": "formatOptions",
+      "type": "undefined | { date: DateTimeFormatOptions; time?: DateTimeFormatOptions | undefined; } | { date?: DateTimeFormatOptions | undefined; time: DateTimeFormatOptions; }",
+      "complexType": {
+        "original": "FormatOptions",
+        "resolved": "undefined | { date: DateTimeFormatOptions; time?: DateTimeFormatOptions | undefined; } | { date?: DateTimeFormatOptions | undefined; time: DateTimeFormatOptions; }",
+        "references": {
+          "FormatOptions": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::FormatOptions"
+          }
+        }
+      },
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Formatting options for dates and times.\nShould include a 'date' and/or 'time' object, each of which is of type [Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "undefined"
+        },
+        {
+          "type": "{ date: DateTimeFormatOptions; time?: DateTimeFormatOptions"
+        },
+        {
+          "type": "undefined; }"
+        },
+        {
+          "type": "{ date?: DateTimeFormatOptions"
+        },
+        {
+          "type": "undefined; time: DateTimeFormatOptions; }"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "highlightedDates",
       "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
       "complexType": {

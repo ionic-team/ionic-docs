@@ -802,7 +802,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -823,7 +823,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "アクションシートのオーバーレイが提示された後、それを解除します。",
@@ -834,7 +834,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -1633,7 +1633,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -1654,7 +1654,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "アラートオーバーレイが表示された後、解除します。",
@@ -1665,7 +1665,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -5402,7 +5402,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the checkbox."
+          "docs": "チェックボックスを表すラベルテキスト。"
         },
         {
           "name": "mark",
@@ -7273,6 +7273,44 @@
           "required": false
         },
         {
+          "name": "formatOptions",
+          "type": "undefined | { date: DateTimeFormatOptions; time?: DateTimeFormatOptions | undefined; } | { date?: DateTimeFormatOptions | undefined; time: DateTimeFormatOptions; }",
+          "complexType": {
+            "original": "FormatOptions",
+            "resolved": "undefined | { date: DateTimeFormatOptions; time?: DateTimeFormatOptions | undefined; } | { date?: DateTimeFormatOptions | undefined; time: DateTimeFormatOptions; }",
+            "references": {
+              "FormatOptions": {
+                "location": "import",
+                "path": "./datetime-interface",
+                "id": "src/components/datetime/datetime-interface.ts::FormatOptions"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Formatting options for dates and times.\nShould include a 'date' and/or 'time' object, each of which is of type [Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "undefined"
+            },
+            {
+              "type": "{ date: DateTimeFormatOptions; time?: DateTimeFormatOptions"
+            },
+            {
+              "type": "undefined; }"
+            },
+            {
+              "type": "{ date?: DateTimeFormatOptions"
+            },
+            {
+              "type": "undefined; time: DateTimeFormatOptions; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "highlightedDates",
           "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
           "complexType": {
@@ -7831,7 +7869,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "選択されている日付の数を示すヘッダーテキストをフォーマットするために使用されるコールバック。選択されている日付が 0 あるいは 1 以上の場合にのみ使用されます (つまり、1 の場合は未使用です)。デフォルトでは、ヘッダテキストは \"numberOfDates days \"に設定されます。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照。",
           "docsTags": [],
           "values": [
             {
@@ -9765,10 +9803,10 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+          "type": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
           "complexType": {
             "original": "AutocompleteTypes",
-            "resolved": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+            "resolved": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
             "references": {
               "AutocompleteTypes": {
                 "location": "import",
@@ -9786,18 +9824,6 @@
           "values": [
             {
               "value": "name",
-              "type": "string"
-            },
-            {
-              "value": "email",
-              "type": "string"
-            },
-            {
-              "value": "tel",
-              "type": "string"
-            },
-            {
-              "value": "url",
               "type": "string"
             },
             {
@@ -9830,6 +9856,10 @@
             },
             {
               "value": "nickname",
+              "type": "string"
+            },
+            {
+              "value": "email",
               "type": "string"
             },
             {
@@ -9973,6 +10003,10 @@
               "type": "string"
             },
             {
+              "value": "tel",
+              "type": "string"
+            },
+            {
               "value": "tel-country-code",
               "type": "string"
             },
@@ -9994,6 +10028,10 @@
             },
             {
               "value": "impp",
+              "type": "string"
+            },
+            {
+              "value": "url",
               "type": "string"
             },
             {
@@ -10042,7 +10080,7 @@
           "mutable": false,
           "attr": "autofocus",
           "reflectToAttr": false,
-          "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ネイティブの入力要素に [`autofocus` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) を設定します。  ページロード時に要素がフォーカスされるには、これだけでは不十分かもしれません。詳しくは[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -10197,7 +10235,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "カウンターのテキストをフォーマットするためのコールバック。デフォルトでは、カウンタのテキストは \"itemLength / maxLength\" に設定される。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照。",
           "docsTags": [],
           "values": [
             {
@@ -11029,7 +11067,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ion-input` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい場合は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": []
         }
       ],
@@ -11204,7 +11242,7 @@
       "slots": [
         {
           "name": "end",
-          "docs": "Content to display at the trailing edge of the input. (EXPERIMENTAL)"
+          "docs": "入力の後端に表示する内容。(実験的)"
         },
         {
           "name": "label",
@@ -11212,7 +11250,7 @@
         },
         {
           "name": "start",
-          "docs": "Content to display at the leading edge of the input. (EXPERIMENTAL)"
+          "docs": "入力の最先端に表示するコンテンツ。(実験的)"
         }
       ],
       "parts": [],
@@ -13793,7 +13831,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -13814,7 +13852,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "ローディングオーバーレイが提示された後、それを解除します。",
@@ -13825,7 +13863,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -15160,7 +15198,7 @@
           "mutable": false,
           "attr": "can-dismiss",
           "reflectToAttr": false,
-          "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "dismiss` メソッドを呼び出したときに、モーダルが終了できるかどうかを決定します。  値が `true` または値の関数が `true` を返す場合、モーダルは終了しようとすると閉じます。値が `false` の場合、または値の関数が `false` を返す場合、モーダルは閉じません。  コールバック内から `this` にアクセスする必要がある場合は、 https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照してください。",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -15522,7 +15560,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -15547,7 +15585,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "モーダルオーバーレイが表示された後、それを解除します。",
@@ -15558,7 +15596,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -17783,7 +17821,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -17804,7 +17842,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "ピッカー・オーバーレイが表示された後、それを解除します。",
@@ -17815,7 +17853,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -18825,7 +18863,7 @@
               {
                 "name": "dismissParentPopover",
                 "type": "boolean",
-                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -18855,7 +18893,7 @@
             {
               "name": "dismissParentPopover",
               "type": "boolean",
-              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "ポップオーバーオーバーレイが提示された後、それを解除します。",
@@ -18870,7 +18908,7 @@
             },
             {
               "name": "param",
-              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -19518,7 +19556,7 @@
           "mutable": false,
           "attr": "compare-with",
           "reflectToAttr": false,
-          "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-radio-group. When not specified, the default behavior will use strict\nequality (===) for comparison.",
+          "docs": "このプロパティを使用すると、開発者は、ion-radio-group で選択されたオプションを決定するときにオブジェクトを比較するためのカスタム関数またはプロパティ名を指定できます。指定しない場合、デフォルトの動作では、比較に厳密な等式 (===) が使用されます。",
           "docsTags": [],
           "values": [
             {
@@ -19991,7 +20029,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the radio."
+          "docs": "ラジオを説明するラベルテキスト。"
         },
         {
           "name": "mark",
@@ -20427,7 +20465,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "ピンのテキストをフォーマットするためのコールバック。デフォルトでは、ピンのテキストは `Math.round(value)` に設定されます。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照してください。",
           "docsTags": [],
           "default": "(value: number): number => Math.round(value)",
           "values": [
@@ -20737,7 +20775,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the range."
+          "docs": "範囲を表すラベルテキスト。"
         },
         {
           "name": "pin",
@@ -22390,11 +22428,33 @@
           "required": false
         },
         {
+          "name": "autocapitalize",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "autocapitalize",
+          "reflectToAttr": false,
+          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+          "docsTags": [],
+          "default": "'default'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "autocomplete",
-          "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+          "type": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
           "complexType": {
             "original": "AutocompleteTypes",
-            "resolved": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+            "resolved": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
             "references": {
               "AutocompleteTypes": {
                 "location": "import",
@@ -22412,18 +22472,6 @@
           "values": [
             {
               "value": "name",
-              "type": "string"
-            },
-            {
-              "value": "email",
-              "type": "string"
-            },
-            {
-              "value": "tel",
-              "type": "string"
-            },
-            {
-              "value": "url",
               "type": "string"
             },
             {
@@ -22456,6 +22504,10 @@
             },
             {
               "value": "nickname",
+              "type": "string"
+            },
+            {
+              "value": "email",
               "type": "string"
             },
             {
@@ -22599,6 +22651,10 @@
               "type": "string"
             },
             {
+              "value": "tel",
+              "type": "string"
+            },
+            {
               "value": "tel-country-code",
               "type": "string"
             },
@@ -22620,6 +22676,10 @@
             },
             {
               "value": "impp",
+              "type": "string"
+            },
+            {
+              "value": "url",
               "type": "string"
             },
             {
@@ -22940,6 +23000,54 @@
           "required": false
         },
         {
+          "name": "maxlength",
+          "type": "number | undefined",
+          "complexType": {
+            "original": "number",
+            "resolved": "number | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "この属性は、ユーザが入力できる最大文字数を指定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "minlength",
+          "type": "number | undefined",
+          "complexType": {
+            "original": "number",
+            "resolved": "number | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "minlength",
+          "reflectToAttr": false,
+          "docs": "この属性は、ユーザーが入力できる最小の文字数を指定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -23234,7 +23342,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ion-searchbar` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい開発者は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": []
         }
       ],
@@ -24236,7 +24344,7 @@
           "mutable": false,
           "attr": "compare-with",
           "reflectToAttr": false,
-          "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-select. When not specified, the default behavior will use strict\nequality (===) for comparison.",
+          "docs": "このプロパティを使用すると、開発者は、ion-select で選択されたオプションを決定するときにオブジェクトを比較するためのカスタム関数またはプロパティ名を指定できます。指定しない場合、デフォルトの動作では比較に厳密な等式 (===) が使用されます。",
           "docsTags": [],
           "values": [
             {
@@ -24927,7 +25035,7 @@
       "slots": [
         {
           "name": "end",
-          "docs": "Content to display at the trailing edge of the select."
+          "docs": "セレクトの最後尾に表示するコンテンツ。"
         },
         {
           "name": "label",
@@ -24935,7 +25043,7 @@
         },
         {
           "name": "start",
-          "docs": "Content to display at the leading edge of the select."
+          "docs": "セレクトの最先端に表示するコンテンツ。"
         }
       ],
       "parts": [
@@ -26905,7 +27013,7 @@
           "mutable": false,
           "attr": "autofocus",
           "reflectToAttr": false,
-          "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ネイティブの入力要素に [`autofocus` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) を設定します。  ページロード時に要素がフォーカスされるには、これだけでは不十分かもしれません。詳しくは[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -27060,7 +27168,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "カウンターのテキストをフォーマットするためのコールバック。デフォルトでは、カウンタのテキストは \"itemLength / maxLength\" に設定される。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照。",
           "docsTags": [],
           "values": [
             {
@@ -27723,7 +27831,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ion-textarea`のネイティブ `textarea` にフォーカスを設定する。グローバルメソッド `textarea.focus()` の代わりにこのメソッドを使用する。  詳細は [managing focus](/docs/developing/managing-focus) を参照してください。",
           "docsTags": []
         }
       ],
@@ -27898,7 +28006,7 @@
       "slots": [
         {
           "name": "end",
-          "docs": "Content to display at the trailing edge of the textarea. (EXPERIMENTAL)"
+          "docs": "textarea の末尾に表示する内容。(実験的)"
         },
         {
           "name": "label",
@@ -27906,7 +28014,7 @@
         },
         {
           "name": "start",
-          "docs": "Content to display at the leading edge of the textarea. (EXPERIMENTAL)"
+          "docs": "textarea の前端に表示する内容。(実験的)"
         }
       ],
       "parts": [],
@@ -28615,7 +28723,7 @@
           "mutable": false,
           "attr": "swipe-gesture",
           "reflectToAttr": false,
-          "docs": "If set to 'vertical', the Toast can be dismissed with\na swipe gesture. The swipe direction is determined by\nthe value of the `position` property:\n`top`: The Toast can be swiped up to dismiss.\n`bottom`: The Toast can be swiped down to dismiss.\n`middle`: The Toast can be swiped up or down to dismiss.",
+          "docs": "vertical'に設定すると、スワイプジェスチャーでToastを消すことができます。スワイプの方向は `position` プロパティの値によって決まります：top`：top`: 上方向にスワイプすることでトーストを消すことができます。top`: トーストを上方向にスワイプして消すことができます：top`: 上方向にスワイプするとToastが表示され、下方向にスワイプするとToastが表示されます。middle`：トーストは上下にスワイプして消すことができます。",
           "docsTags": [],
           "values": [
             {
@@ -28694,7 +28802,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -28720,7 +28828,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "トーストのオーバーレイが提示された後、それを解除します。",
@@ -28731,7 +28839,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -29130,7 +29238,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "十字軸上のトグルとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは十字軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも十字軸の中央に表示されます。",
+          "docs": "How to control the alignment of the toggle and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
           "docsTags": [],
           "default": "'center'",
           "values": [
@@ -29570,7 +29678,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the toggle."
+          "docs": "トグルを説明するラベルテキスト。"
         },
         {
           "name": "track",
