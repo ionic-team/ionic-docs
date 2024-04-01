@@ -39,7 +39,7 @@
       el.appendChild(avatar);
 
       const text = document.createElement('ion-label');
-      text.textContent = `Item ${i}`;
+      text.innerText = `Item ${i}`;
 
       el.appendChild(text);
 

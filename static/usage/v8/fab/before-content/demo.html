@@ -40,7 +40,7 @@
         const total = count + 50;
         for (let i = count; i < total; i++) {
           const el = document.createElement('ion-item');
-          el.setAttribute('button', '');
+          el.button = true;
 
           const avatar = document.createElement('ion-avatar');
           avatar.slot = 'start';
@@ -52,9 +52,11 @@
           el.appendChild(avatar);
 
           const text = document.createElement('ion-label');
-          text.textContent = `Item ${i}`;
+          text.innerText = `Item ${i}`;
 
           el.appendChild(text);
+
+
 
           list.appendChild(el);
         }
