@@ -71,7 +71,7 @@ import SafeArea from '@site/static/usage/v8/fab/safe-area/index.md';
 
 In scenarios where a view contains many interactive elements, such as an infinitely-scrolling list, it may be challenging for users to navigate to the Floating Action Button (FAB) if it is placed below all the items in the DOM.
 
-By setting the `fixedSlotPlacement` prop on the `ion-content` component to `beforeContent`, the FAB will be placed before the main content in the DOM. This ensures that when users navigate using the keyboard, they will reach the FAB before navigating to the other interactive elements, making it easier for them to access the FAB.
+By setting the `fixedSlotPlacement` property on [Content](./content) to `beforeContent`, the FAB will be placed before the main content in the DOM. This ensures that the FAB receives keyboard focus before other interactive elements receive focus, making it easier for users to access the FAB.
 
 import BeforeContent from '@site/static/usage/v8/fab/before-content/index.md';
 
