@@ -1,5 +1,5 @@
 ```html
-<ion-content fixed-slot-placement="beforeContent">
+<ion-content fixed-slot-placement="before">
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>

@@ -30,7 +30,7 @@ function Example() {
   }, []);
 
   return (
-    <IonContent fixedSlotPlacement="beforeContent">
+    <IonContent fixedSlotPlacement="before">
       <IonFab horizontal="end" vertical="bottom" slot="fixed">
         <IonFabButton>
           <IonIcon name="add"></IonIcon>
