@@ -54,6 +54,8 @@ import Fullscreen from '@site/static/usage/v8/content/fullscreen/index.md';
 
 To place elements outside of the scrollable area, assign them to the `fixed` slot. Doing so will [absolutely position](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning) the element to the top left of the content. In order to change the position of the element, it can be styled using the [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) CSS properties.
 
+The `fixedSlotPlacement` property is used to determine if content in the `fixed` slot is placed before or after the main content in the DOM. When set to `before`, fixed slot content will be placed before the main content and will therefore receive keyboard focus before the main content receives keyboard focus. This can be useful when the main content contains an infinitely-scrolling list, preventing a [FAB](./fab) or other fixed content from being reachable by pressing the tab key.
+
 import Fixed from '@site/static/usage/v8/content/fixed/index.md';
 
 <Fixed />
