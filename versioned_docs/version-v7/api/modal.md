@@ -123,6 +123,10 @@ import CardExample from '@site/static/usage/v7/modal/card/basic/index.md';
 
 ### Sheet Modal
 
+:::info
+[Content](./content) must be used inside of the sheet modal otherwise your modal content will not be scrollable.
+:::
+
 Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
 
 The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed. Note that the modal cannot be dismissed on swipe if no `0` breakpoint is included, but it can still be dismissed by pressing `Esc` or the hardware back button.
