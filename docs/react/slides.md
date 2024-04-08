@@ -393,27 +393,27 @@ const MyComponent: React.FC = () => {
 
 Below is a full list of event name changes when going from `IonSlides` to Swiper React:
 
-| IonSlides Event             | Swiper Event                         |
-| --------------------------- | ------------------------------------ |
-| `onIonSlideWillChange`      | `swiperonSlideChangeTransitionStart` |
-| `onIonSlideDidChange`       | `swiperonSlideChangeTransitionEnd`   |
-| `onIonSlideDoubleTap`       | `swiperonDoubleTap`                  |
-| `onIonSlideDrag`            | `swiperonSliderMove`                 |
-| `onIonSlideNextStart`       | `swiperonSlideNextTransitionStart`   |
-| `onIonSlideNextEnd`         | `swiperonSlideNextTransitionEnd`     |
-| `onIonSlidePrevStart`       | `swiperonSlidePrevTransitionStart`   |
-| `onIonSlidePrevEnd`         | `swiperonSlidePrevTransitionEnd`     |
-| `onIonSlideReachStart`      | `swiperonReachBeginning`             |
-| `onIonSlideReachEnd`        | `swiperonReachEnd`                   |
-| `onIonSlideTap`             | `swiperonTap`                        |
-| `onIonSlideTouchStart`      | `swiperonTouchStart`                 |
-| `onIonSlideTouchEnd`        | `swiperonTouchEnd`                   |
-| `onIonSlideTransitionStart` | `swiperonTransitionStart`            |
-| `onIonSlideTransitionEnd`   | `swiperonTransitionEnd`              |
-| `onIonSlidesDidLoad`        | `swiperonInit`                       |
+| IonSlides Event             | Swiper Event                   |
+| --------------------------- | ------------------------------ |
+| `onIonSlideWillChange`      | `onSlideChangeTransitionStart` |
+| `onIonSlideDidChange`       | `onSlideChangeTransitionEnd`   |
+| `onIonSlideDoubleTap`       | `onDoubleTap`                  |
+| `onIonSlideDrag`            | `onSliderMove`                 |
+| `onIonSlideNextStart`       | `onSlideNextTransitionStart`   |
+| `onIonSlideNextEnd`         | `onSlideNextTransitionEnd`     |
+| `onIonSlidePrevStart`       | `onSlidePrevTransitionStart`   |
+| `onIonSlidePrevEnd`         | `onSlidePrevTransitionEnd`     |
+| `onIonSlideReachStart`      | `onReachBeginning`             |
+| `onIonSlideReachEnd`        | `onReachEnd`                   |
+| `onIonSlideTap`             | `onTap`                        |
+| `onIonSlideTouchStart`      | `onTouchStart`                 |
+| `onIonSlideTouchEnd`        | `onTouchEnd`                   |
+| `onIonSlideTransitionStart` | `onTransitionStart`            |
+| `onIonSlideTransitionEnd`   | `onTransitionEnd`              |
+| `onIonSlidesDidLoad`        | `onInit`                       |
 
 :::note
-All events available in Swiper can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a> and should be lowercased and prefixed with the word `swiper`.
+All events available in Swiper can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
 :::
 
 ## Methods
