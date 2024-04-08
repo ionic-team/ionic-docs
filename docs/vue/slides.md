@@ -372,27 +372,27 @@ To migrate, we would change the name of the event to `slideChange`:
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Vue:
 
-| ion-slides Event          | Swiper Event                       |
-| ------------------------- | ---------------------------------- |
-| `ionSlideWillChange`      | `swiperslideChangeTransitionStart` |
-| `ionSlideDidChange`       | `swiperslideChangeTransitionEnd`   |
-| `ionSlideDoubleTap`       | `swiperdoubleTap`                  |
-| `ionSlideDrag`            | `swipersliderMove`                 |
-| `ionSlideNextStart`       | `swiperslideNextTransitionStart`   |
-| `ionSlideNextEnd`         | `swiperslideNextTransitionEnd`     |
-| `ionSlidePrevStart`       | `swiperslidePrevTransitionStart`   |
-| `ionSlidePrevEnd`         | `swiperslidePrevTransitionEnd`     |
-| `ionSlideReachStart`      | `swiperreachBeginning`             |
-| `ionSlideReachEnd`        | `swiperreachEnd`                   |
-| `ionSlideTap`             | `swipertap`                        |
-| `ionSlideTouchStart`      | `swipertouchStart`                 |
-| `ionSlideTouchEnd`        | `swipertouchEnd`                   |
-| `ionSlideTransitionStart` | `swipertransitionStart`            |
-| `ionSlideTransitionEnd`   | `swipertransitionEnd`              |
-| `ionSlidesDidLoad`        | `swiperinit`                       |
+| ion-slides Event          | Swiper Event                 |
+| ------------------------- | ---------------------------- |
+| `ionSlideWillChange`      | `slideChangeTransitionStart` |
+| `ionSlideDidChange`       | `slideChangeTransitionEnd`   |
+| `ionSlideDoubleTap`       | `doubleTap`                  |
+| `ionSlideDrag`            | `sliderMove`                 |
+| `ionSlideNextStart`       | `slideNextTransitionStart`   |
+| `ionSlideNextEnd`         | `slideNextTransitionEnd`     |
+| `ionSlidePrevStart`       | `slidePrevTransitionStart`   |
+| `ionSlidePrevEnd`         | `slidePrevTransitionEnd`     |
+| `ionSlideReachStart`      | `reachBeginning`             |
+| `ionSlideReachEnd`        | `reachEnd`                   |
+| `ionSlideTap`             | `tap`                        |
+| `ionSlideTouchStart`      | `touchStart`                 |
+| `ionSlideTouchEnd`        | `touchEnd`                   |
+| `ionSlideTransitionStart` | `transitionStart`            |
+| `ionSlideTransitionEnd`   | `transitionEnd`              |
+| `ionSlidesDidLoad`        | `init`                       |
 
 :::note
-All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a> and should be lowercased and prefixed with the word `swiper`.
+All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
 :::
 
 ## Methods
