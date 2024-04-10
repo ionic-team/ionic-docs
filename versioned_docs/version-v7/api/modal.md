@@ -103,9 +103,7 @@ import CanDismissChildStateExample from '@site/static/usage/v7/modal/can-dismiss
 
 <CanDismissChildStateExample />
 
-## Types of modals
-
-### Card Modal
+## Card Modal
 
 Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
 
@@ -121,7 +119,7 @@ import CardExample from '@site/static/usage/v7/modal/card/basic/index.md';
 
 <CardExample />
 
-### Sheet Modal
+## Sheet Modal
 
 :::info
 [Content](./content) must be used inside of the sheet modal otherwise your modal content will not be scrollable.
@@ -139,19 +137,23 @@ import SheetExample from '@site/static/usage/v7/modal/sheet/basic/index.md';
 
 <SheetExample />
 
-#### Interacting with background content
+### Interacting with background content
 
 import SheetBackgroundContentExample from '@site/static/usage/v7/modal/sheet/background-content/index.md';
 
 <SheetBackgroundContentExample />
 
-#### Auto Height Sheet
+### Custom Sheet Height
+
+Developers should use the `--height` CSS Variable to change the height of the sheet modal instead of changing the last breakpoint in the `breakpoints` array. The reason for this is changing the last breakpoint in the `breakpoints` array to a value less than `1` will cause some of the modal to be inaccessible outside of the viewport.
+
+The following example shows how to get a sheet modal that is automatically sized based on its content. Note that by keeping the maximum breakpoint at `1` we ensure that the entire modal is accessible in the viewport.
 
 import SheetAutoHeightExample from '@site/static/usage/v7/modal/sheet/auto-height/index.md';
 
 <SheetAutoHeightExample />
 
-#### Handle Behavior
+### Handle Behavior
 
 Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is activated by the user.
 
