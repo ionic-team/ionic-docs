@@ -244,10 +244,10 @@ Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
 </ion-slides>
 ```
 
-To migrate, we would change the name of the event to `slidechange`:
+To migrate, we would change the name of the event to `swiperslidechange`:
 
 ```html
-<swiper-container (slidechange)="onSlideChange()">
+<swiper-container (swiperslidechange)="onSlideChange()">
   <swiper-slide>Slide 1</swiper-slide>
   <swiper-slide>Slide 2</swiper-slide>
   <swiper-slide>Slide 3</swiper-slide>
