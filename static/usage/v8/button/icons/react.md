@@ -3,7 +3,6 @@ import React from 'react';
 import { IonButton, IonIcon } from '@ionic/react';
 import { heart, logoApple, settingsSharp, star } from 'ionicons/icons';
 
-
 function Example() {
   return (
     <>
