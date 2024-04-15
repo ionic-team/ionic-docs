@@ -39,10 +39,13 @@
       async function initPhoneMask() {
         const ionInput = document.querySelector('#phone');
         const nativeEl = await ionInput.getInputElement();
-
-        new window.Maskito(nativeEl, {
+        const phoneMaskOptions = {
           mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-        });
+        };
+        new window.Maskito(nativeEl, phoneMaskOptions);
+
+        //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+        ionInput.value = window.maskitoTransform('5555551212', phoneMaskOptions);
       }
 
       async function initCardMask() {
