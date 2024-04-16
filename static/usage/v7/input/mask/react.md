@@ -4,7 +4,6 @@ import { IonInput, IonItem, IonList } from '@ionic/react';
 import { useMaskito } from '@maskito/react';
 import { MaskitoOptions, maskitoTransform } from '@maskito/core';
 
-
 function Example() {
   const cardMask = useMaskito({
     options: {
@@ -25,10 +24,10 @@ function Example() {
   const phoneMaskOptions: MaskitoOptions = {
     mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
   };
-  const phoneMask = useMaskito({ options: phoneMaskOptions});
-  
-   //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
-   const [myPhoneNumber, setMyPhoneNumber] = useState(maskitoTransform('5555551212', phoneMaskOptions));
+  const phoneMask = useMaskito({ options: phoneMaskOptions });
+
+  //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+  const [myPhoneNumber, setMyPhoneNumber] = useState(maskitoTransform('5555551212', phoneMaskOptions));
 
   return (
     <IonList>
@@ -53,7 +52,7 @@ function Example() {
             }
           }}
           value={myPhoneNumber}
-          onIonInput={e => setMyPhoneNumber(e.detail.value || '')}
+          onIonInput={(e) => setMyPhoneNumber(e.detail.value || '')}
           label="US phone number"
           placeholder="+1 (xxx) xxx-xxxx"
         ></IonInput>

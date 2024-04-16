@@ -5,7 +5,12 @@
       <ion-input label="Card number" placeholder="0000 0000 0000 0000" v-maskito="cardOptions"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="US phone number" placeholder="+1 (xxx) xxx-xxxx" v-model="myPhoneNumber" v-maskito="phoneOptions"></ion-input>
+      <ion-input
+        label="US phone number"
+        placeholder="+1 (xxx) xxx-xxxx"
+        v-model="myPhoneNumber"
+        v-maskito="phoneOptions"
+      ></ion-input>
     </ion-item>
   </ion-list>
 </template>
