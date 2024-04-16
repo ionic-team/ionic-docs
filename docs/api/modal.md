@@ -100,10 +100,8 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v8/modal/ca
 import CanDismissChildStateExample from '@site/static/usage/v8/modal/can-dismiss/child-state/index.md';
 
 <CanDismissChildStateExample />
-
-## モーダルの種類
  
-### Card Modal
+## Card Modal
 
 開発者は、アプリのメインコンテンツの上にカードが積み重なったようにモーダルが表示されるカードモーダルエフェクトを作成できます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティを設定する必要があります。
 
@@ -119,10 +117,10 @@ import CardExample from '@site/static/usage/v8/modal/card/basic/index.md';
 
 <CardExample />
 
-### シートモーダル
+## Sheet Modal
 
 :::info
-[コンテンツ](./content) は、シート モーダル内で使用する必要があります。
+[Content](./content) should be used inside of the sheet modal if you want your modal content to be scrollable.
 :::
 
 開発者は、マップアプリケーションで利用可能なドロワーコンポーネントに似たシートモーダルエフェクトを作成することができます。シートモーダルを作成するには、`ion-modal` の `breakpoints` プロパティと `initialBreakpoint` プロパティを設定する必要があります。
@@ -137,19 +135,23 @@ import SheetExample from '@site/static/usage/v8/modal/sheet/basic/index.md';
 
 <SheetExample />
 
-#### 背景コンテンツとのインタラクション
+### 背景コンテンツとのインタラクション
 
 import SheetBackgroundContentExample from '@site/static/usage/v8/modal/sheet/background-content/index.md';
 
 <SheetBackgroundContentExample />
 
-#### 自動の高さのシート
+### 任意の高さのシート
+
+Developers should use the `--height` CSS Variable to change the height of the sheet modal instead of changing the last breakpoint in the `breakpoints` array. The reason for this is changing the last breakpoint in the `breakpoints` array to a value less than `1` will cause some of the modal to be inaccessible outside of the viewport.
+
+The following example shows how to get a sheet modal that is automatically sized based on its content. Note that by keeping the maximum breakpoint at `1` we ensure that the entire modal is accessible in the viewport.
 
 import SheetAutoHeightExample from '@site/static/usage/v8/modal/sheet/auto-height/index.md';
 
 <SheetAutoHeightExample />
 
-#### ハンドルの動作
+### ハンドルの動作
 
 シートモーダルでは、ブレークポイント間でシートをドラッグするために使用されるハンドルインジケータをオプションでレンダリングすることができます。 `handleBehavior` プロパティは、ハンドルがユーザーによってアクティブにされたときの振る舞いを設定するために使用されます。
 
