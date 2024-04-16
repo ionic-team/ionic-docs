@@ -142,9 +142,14 @@ import Masking from '@site/static/usage/v8/input/mask/index.md';
 
 <Masking />
 
+Other input masking library are supported, such as:
+* [imask.js](https://imask.js.org/)
+* [Inputmask](https://robinherbots.github.io/Inputmask/)
+* [maska](https://beholdr.github.io/maska/#/)
+
 :::note
 
-Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/taiga-family/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
+Please submit bug reports with input masking libraries to their respective repositories. For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
 
 :::
 
