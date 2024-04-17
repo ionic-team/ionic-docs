@@ -15,15 +15,15 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-Ionicでは、ダークな配色をサポートするなど、アプリのパレットを簡単に変更できます。ダークモードは、アプリのすべてのビューをダークパレットに変更する表示設定です。iOSとAndroidでシステム全体でサポートされているため、開発者にとってアプリに追加することが非常に望ましいです。
+Ionic では、ダークな配色をサポートするなど、アプリのパレットを簡単に変更できます。ダークモードは、アプリのすべてのビューをダークパレットに変更する表示設定です。iOS と Android でシステム全体でサポートされているため、開発者にとってアプリに追加することが非常に望ましいです。
 
 ## Enabling Dark Palette
 
-アプリでダークパレットを有効にする方法は3つあります: **always** ダークパレットを有効にする方法、**system** OSの設定に基づく方法、**class** CSSのクラスを使用する方法です。
+アプリでダークパレットを有効にする方法は 3 つあります: **always** ダークパレットを有効にする方法、**system** OS の設定に基づく方法、**class** CSS のクラスを使用する方法です。
 
 ### Always
 
-Ionic Frameworkで提供されるデフォルトのパレットは、明るい背景と暗いテキストで構成されるライトパレットです。しかし、以下のスタイルシートを適切なファイルにインポートすることで、デフォルトのパレットをダークパレットに変更できます：
+Ionic Framework で提供されるデフォルトのパレットは、明るい背景と暗いテキストで構成されるライトパレットです。しかし、以下のスタイルシートを適切なファイルにインポートすることで、デフォルトのパレットをダークパレットに変更できます：
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -72,7 +72,7 @@ Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette
 
 ### System
 
-ダークモードを有効にするシステムアプローチでは、ユーザーの好みの配色をシステム設定で確認します。これは、新しいIonic Frameworkアプリを起動するときのデフォルトです。適切なファイルに以下のスタイルシートをインポートすると、システム設定からユーザーの好みを自動的に取得し、ダークモードが優先される場合にダークパレットを適用します：
+ダークモードを有効にするシステムアプローチでは、ユーザーの好みの配色をシステム設定で確認します。これは、新しい Ionic Framework アプリを起動するときのデフォルトです。適切なファイルに以下のスタイルシートをインポートすると、システム設定からユーザーの好みを自動的に取得し、ダークモードが優先される場合にダークパレットを適用します：
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -178,7 +178,7 @@ The `.ion-palette-dark` class **must** be added to the `html` element in order t
 
 ## システム UI コンポーネントを調整する
 
-ダークパレットを開発する際、特定のシステムUIコンポーネントがダークモードに正しく調整されないことに気づくかもしれません。これを修正するには `color-scheme` を指定する必要があります。クロスブラウザ対応の詳細については、<a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a>を参照してください。
+ダークパレットを開発する際、特定のシステム UI コンポーネントがダークモードに正しく調整されないことに気づくかもしれません。これを修正するには `color-scheme` を指定する必要があります。クロスブラウザ対応の詳細については、<a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a>を参照してください。
 
 ネイティブコンポーネントだけではなく、主に Ionic コンポーネントを使用している場合に、 `color-scheme` はスクロールバーなどのアプリケーションの側面にも影響します。 `color-scheme` を使用するには、次の HTML をアプリケーションの`head`に追加する必要があります:
 
@@ -208,7 +208,7 @@ For developers looking to customize the theme color under the status bar in Safa
 
 ## Ionic Dark Palette
 
-Ionicには推奨のダークパレットがあり、3種類の方法で有効にできます： [always](#always)、[system](#system)の設定に基づく方法、[CSS class](#css-class)を使用する方法です。それぞれの方法には、対応する名前のダークパレットファイルをインポートすることが含まれます。
+Ionic には推奨のダークパレットがあり、3 種類の方法で有効にできます： [always](#always)、[system](#system)の設定に基づく方法、[CSS class](#css-class)を使用する方法です。それぞれの方法には、対応する名前のダークパレットファイルをインポートすることが含まれます。
 
 各ファイルの内容は、参考のために以下に含まれています。これらの変数は、該当するダークパレットファイルをインポートすることで設定されるため、アプリにコピーする必要はありません。さらなるカスタマイズのための追加変数を含む、変更される変数の詳細については、[Themes](themes.md)セクションを参照してください。
 
