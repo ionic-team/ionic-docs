@@ -177,8 +177,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'updating/7-0',
-          label: 'Ionic v7.0.0 Upgrade Guide',
+          docId: 'updating/8-0',
+          label: 'Ionic v8.0.0 Upgrade Guide',
           position: 'left',
           className: 'cta',
         },
