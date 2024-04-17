@@ -1,44 +1,46 @@
 ---
 title: "ion-datetime"
 ---
-import Props from '@ionic-internal/component-api/v7/datetime/props.md';
-import Events from '@ionic-internal/component-api/v7/datetime/events.md';
-import Methods from '@ionic-internal/component-api/v7/datetime/methods.md';
-import Parts from '@ionic-internal/component-api/v7/datetime/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/datetime/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/datetime/slots.md';
+import Props from '@ionic-internal/component-api/v8/datetime/props.md';
+import Events from '@ionic-internal/component-api/v8/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v8/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v8/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/datetime/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/datetime/slots.md';
 
-import Basic from '@site/static/usage/v7/datetime/basic/index.md';
+import Basic from '@site/static/usage/v8/datetime/basic/index.md';
 
-import MaxMin from '@site/static/usage/v7/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/v7/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/v7/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v8/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v8/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v8/datetime/date-constraints/advanced/index.md';
 
-import CustomLocale from '@site/static/usage/v7/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/v7/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/v7/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/v7/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/v7/datetime/localization/time-label/index.md';
+import FormatOptions from '@site/static/usage/v8/datetime/format-options/index.md';
 
-import MonthAndYear from '@site/static/usage/v7/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/v7/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/v7/datetime/presentation/date/index.md';
+import CustomLocale from '@site/static/usage/v8/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v8/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v8/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v8/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v8/datetime/localization/time-label/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/v7/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/v7/datetime/title/customizing-title/index.md';
+import MonthAndYear from '@site/static/usage/v8/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v8/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v8/datetime/presentation/date/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v8/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v8/datetime/title/customizing-title/index.md';
 
-import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
-import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v8/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v8/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v8/datetime/buttons/customizing-button-texts/index.md';
 
-import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
+import HighlightedDatesArray from '@site/static/usage/v8/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v8/datetime/highlightedDates/callback/index.md';
 
-import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
-import CalendarDaysStyling from '@site/static/usage/v7/datetime/styling/calendar-days/index.md';
-import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
+import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
+
+import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
+import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
+import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -242,7 +244,7 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 以下の例では、ホイールピッカーに `presentation="date-time"` を指定しています。
 
-import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v8/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
@@ -267,6 +269,16 @@ This property is only supported when using `presentation="date"` and `preferWhee
 ### タイトルをカスタマイズ
 
 <CustomizingTitle />
+
+## フォーマットオプション
+
+`formatOptions`を指定することで、Datetimeコンポーネントのヘッダーテキスト内の日付と時刻ボタン内の時刻の書式をカスタマイズすることができます。`formatOptions`プロパティ内の `date` と `time` はそれぞれ [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) オブジェクトでなければなりません。もし `formatOptions` が指定されなかった場合、日付と時刻にはデフォルトのフォーマットが使用されます。
+
+Datetime はタイムゾーンを [操作したり設定したりしません](#time-zones)。もし `timeZone` や `timeZoneName` が指定された場合、それらは無視され、タイムゾーンは UTC に設定される。これにより、表示される値がユーザーの現在のタイムゾーンに変換されるのではなく、選択された値と一致するようになります。
+
+選択された表示と一致しない可能性があるので、指定するオプションには注意してください。例えば、`month`の表示に対して`minute: 'numeric'` を指定すると、予期しない動作になり、時間だけが表示されるはずのところに月が表示されるかもしれません。
+
+<FormatOptions />
 
 ## ボタン
 

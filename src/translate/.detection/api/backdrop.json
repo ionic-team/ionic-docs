@@ -106,7 +106,7 @@
     "ion-loading",
     "ion-menu",
     "ion-modal",
-    "ion-picker",
+    "ion-picker-legacy",
     "ion-popover"
   ],
   "dependencies": [],
@@ -126,7 +126,7 @@
     "ion-modal": [
       "ion-backdrop"
     ],
-    "ion-picker": [
+    "ion-picker-legacy": [
       "ion-backdrop"
     ],
     "ion-popover": [

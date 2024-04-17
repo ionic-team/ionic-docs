@@ -102,7 +102,7 @@ The `ion-slides` component had additional styling that helped create a native lo
 ```css
 swiper-container {
   --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
-  --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+  --swiper-pagination-color: var(--ion-color-primary, #0054e9);
   --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
   --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
   --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
@@ -244,10 +244,10 @@ Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
 </ion-slides>
 ```
 
-To migrate, we would change the name of the event to `slidechange`:
+To migrate, we would change the name of the event to `swiperslidechange`:
 
 ```html
-<swiper-container (slidechange)="onSlideChange()">
+<swiper-container (swiperslidechange)="onSlideChange()">
   <swiper-slide>Slide 1</swiper-slide>
   <swiper-slide>Slide 2</swiper-slide>
   <swiper-slide>Slide 3</swiper-slide>
@@ -256,27 +256,27 @@ To migrate, we would change the name of the event to `slidechange`:
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Angular:
 
-| ion-slides Event          | Swiper Event                 |
-| ------------------------- | ---------------------------- |
-| `ionSlideWillChange`      | `slidechangetransitionstart` |
-| `ionSlideDidChange`       | `slidechangetransitionend`   |
-| `ionSlideDoubleTap`       | `doubletap`                  |
-| `ionSlideDrag`            | `slidermove`                 |
-| `ionSlideNextStart`       | `slidenexttransitionstart`   |
-| `ionSlideNextEnd`         | `slidenexttransitionend`     |
-| `ionSlidePrevStart`       | `slideprevtransitionstart`   |
-| `ionSlidePrevEnd`         | `slideprevtransitionend`     |
-| `ionSlideReachStart`      | `reachbeginning`             |
-| `ionSlideReachEnd`        | `reachend`                   |
-| `ionSlideTap`             | `tap`                        |
-| `ionSlideTouchStart`      | `touchstart`                 |
-| `ionSlideTouchEnd`        | `touchend`                   |
-| `ionSlideTransitionStart` | `transitionstart`            |
-| `ionSlideTransitionEnd`   | `transitionend`              |
-| `ionSlidesDidLoad`        | `init`                       |
+| ion-slides Event          | Swiper Event                       |
+| ------------------------- | ---------------------------------- |
+| `ionSlideWillChange`      | `swiperslidechangetransitionstart` |
+| `ionSlideDidChange`       | `swiperslidechange`                |
+| `ionSlideDoubleTap`       | `swiperdoubletap`                  |
+| `ionSlideDrag`            | `swiperslidermove`                 |
+| `ionSlideNextStart`       | `swiperslidenexttransitionstart`   |
+| `ionSlideNextEnd`         | `swiperslidenexttransitionend`     |
+| `ionSlidePrevStart`       | `swiperslideprevtransitionstart`   |
+| `ionSlidePrevEnd`         | `swiperslideprevtransitionend`     |
+| `ionSlideReachStart`      | `swiperreachbeginning`             |
+| `ionSlideReachEnd`        | `swiperreachend`                   |
+| `ionSlideTap`             | `swipertap`                        |
+| `ionSlideTouchStart`      | `swipertouchstart`                 |
+| `ionSlideTouchEnd`        | `swipertouchend`                   |
+| `ionSlideTransitionStart` | `swipertransitionstart`            |
+| `ionSlideTransitionEnd`   | `swipertransitionend`              |
+| `ionSlidesDidLoad`        | `swiperinit`                       |
 
 :::note
-All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
+All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a> and should be lowercased and prefixed with the word `swiper`.
 :::
 
 ## Methods

@@ -18,7 +18,7 @@ Ionic のコンポーネントは、アプリケーションを簡単にカス�
 
 CSS 変数は、アプリケーションの `:root` セレクタでグローバルに設定できます。They can also be applied only for a specific mode. Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
 
-Ionic CLI を使用して Angular プロジェクトを開始すると Ionic のデフォルト変数を上書きすることができる `src/theme/variables.scss` が作成されます。
+Ionic CLI を使用して Angular、React、または Vue プロジェクトを開始すると Ionic のデフォルト変数を上書きすることができる `src/theme/variables.scss` が作成されます。
 
 ```css
 /* Set variables for all modes */
@@ -31,12 +31,12 @@ Ionic CLI を使用して Angular プロジェクトを開始すると Ionic の
 }
 
 /* Set text color of the entire app for iOS only */
-.ios {
+:root.ios {
   --ion-text-color: #000;
 }
 
 /* Set text color of the entire app for Material Design only */
-.md {
+:root.md {
   --ion-text-color: #222;
 }
 ```

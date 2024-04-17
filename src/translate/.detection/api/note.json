@@ -111,13 +111,7 @@
   ],
   "slots": [],
   "parts": [],
-  "dependents": [
-    "ion-item"
-  ],
+  "dependents": [],
   "dependencies": [],
-  "dependencyGraph": {
-    "ion-item": [
-      "ion-note"
-    ]
-  }
+  "dependencyGraph": {}
 }

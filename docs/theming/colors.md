@@ -1,7 +1,5 @@
 ---
 title: 配色
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';

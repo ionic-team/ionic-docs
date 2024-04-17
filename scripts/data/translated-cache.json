@@ -1340,6 +1340,25 @@
     "Content to display at the trailing edge of the textarea. (EXPERIMENTAL)": "textarea の末尾に表示する内容。(実験的)",
     "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.  See [managing focus](/docs/developing/managing-focus) for more information.": "ion-textarea`のネイティブ `textarea` にフォーカスを設定する。グローバルメソッド `textarea.focus()` の代わりにこのメソッドを使用する。  詳細は [managing focus](/docs/developing/managing-focus) を参照してください。",
     "If set to 'vertical', the Toast can be dismissed with a swipe gesture. The swipe direction is determined by the value of the `position` property: `top`: The Toast can be swiped up to dismiss. `bottom`: The Toast can be swiped down to dismiss. `middle`: The Toast can be swiped up or down to dismiss.": "vertical'に設定すると、スワイプジェスチャーでToastを消すことができます。スワイプの方向は `position` プロパティの値によって決まります：top`：top`: 上方向にスワイプすることでトーストを消すことができます。top`: トーストを上方向にスワイプして消すことができます：top`: 上方向にスワイプするとToastが表示され、下方向にスワイプするとToastが表示されます。middle`：トーストは上下にスワイプして消すことができます。",
-    "The label text describing the toggle.": "トグルを説明するラベルテキスト。"
+    "The label text describing the toggle.": "トグルを説明するラベルテキスト。",
+    "Formatting options for dates and times. Should include a 'date' and/or 'time' object, each of which is of type [Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).": "日付と時刻のフォーマットオプション。それぞれ[Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options)型です。",
+    "How to control the alignment of the toggle and label on the cross axis. `\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.": "十字軸上のトグルとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは十字軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも十字軸の中央に表示されます。",
+    "Color of the selected action sheet button when disabled": "無効時の選択されたアクション・シート・ボタンの色",
+    "The border radius of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts.": "ホイールスタイルレイアウトの場合は選択された項目の下、グリッドスタイルレイアウトの場合は月/年ピッカーのハイライトの境界半径。",
+    "The icon that can be used to represent hiding a password. If not set, the \"eyeOff\" Ionicon will be used.": "パスワードの非表示を表すアイコン。設定されていない場合、\"eyeOff \"アイコンが使用される。",
+    "The icon that can be used to represent showing a password. If not set, the \"eye\" Ionicon will be used.": "パスワードを示すアイコン。設定されていない場合は、\"eye\"のアイコンが使用されます。",
+    "The height of the highlight on the input. Only applies to md mode.": "入力のハイライトの高さ。mdモードにのみ適用される。",
+    "Returns the number of views in the stack.": "スタック内のビューの数を返します。",
+    "If `true`, the user cannot interact with the picker column option.": "true`の場合、ユーザーはピッカー列オプションを操作できない。",
+    "The selected option in the picker.": "ピッカーで選択されているオプション。",
+    "If `true`, the user cannot interact with the picker.": "true`の場合、ユーザーはピッカーと対話することができない。",
+    "Content to show on the left side of the picker options.": "ピッカー・オプションの左側に表示するコンテンツ。",
+    "Content to show on the right side of the picker options.": "ピッカー・オプションの右側に表示するコンテンツ。",
+    "Sets focus on the scrollable container within the picker column. Use this method instead of the global `pickerColumn.focus()`.": "ピッカーカラム内のスクロール可能なコンテナにフォーカスを設定します。グローバルメソッド `pickerColumn.focus()` の代わりにこのメソッドを使用します。",
+    "Background of the gradient covering non-selected items in rgb format": "非選択項目をカバーするグラデーションの背景（rgb形式",
+    "Background of the picker highlight for the selected item": "選択されたアイテムのピッカー・ハイライトの背景",
+    "Border radius of the picker highlight for the selected item": "選択されたアイテムのピッカーハイライトの境界半径",
+    "The height of the highlight on the select. Only applies to md mode.": "セレクトのハイライトの高さ。mdモードにのみ適用される。",
+    "The height of the highlight on the textarea. Only applies to md mode.": "テキストエリアのハイライトの高さ。mdモードにのみ適用される。"
   }
 }

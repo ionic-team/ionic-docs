@@ -708,7 +708,8 @@
     }
   ],
   "dependents": [
-    "ion-datetime"
+    "ion-datetime",
+    "ion-input-password-toggle"
   ],
   "dependencies": [
     "ion-ripple-effect"
@@ -718,6 +719,9 @@
       "ion-ripple-effect"
     ],
     "ion-datetime": [
+      "ion-button"
+    ],
+    "ion-input-password-toggle": [
       "ion-button"
     ]
   }

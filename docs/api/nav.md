@@ -1,12 +1,12 @@
 ---
 title: "ion-nav"
 ---
-import Props from '@ionic-internal/component-api/v7/nav/props.md';
-import Events from '@ionic-internal/component-api/v7/nav/events.md';
-import Methods from '@ionic-internal/component-api/v7/nav/methods.md';
-import Parts from '@ionic-internal/component-api/v7/nav/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/nav/slots.md';
+import Props from '@ionic-internal/component-api/v8/nav/props.md';
+import Events from '@ionic-internal/component-api/v8/nav/events.md';
+import Methods from '@ionic-internal/component-api/v8/nav/methods.md';
+import Parts from '@ionic-internal/component-api/v8/nav/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/nav/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/nav/slots.md';
 
 <head>
   <title>ion-nav: Nav View Component for Ionic Framework Apps</title>
@@ -29,7 +29,7 @@ Router Outletとは異なり、Navは特定のルーターに縛られること�
 
 NavLinkは、Navと対話する際の簡略化されたAPIです。開発者は、コンポーネントをカスタマイズしたり、コンポーネントのプロパティを渡したり、ルートアニメーションの方向を変更したり、ナビゲート時のカスタムアニメーションを定義したりすることができます。
 
-import NavLinkExample from '@site/static/usage/v7/nav/nav-link/index.md';
+import NavLinkExample from '@site/static/usage/v8/nav/nav-link/index.md';
 
 <NavLinkExample />
 

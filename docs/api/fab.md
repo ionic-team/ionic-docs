@@ -1,12 +1,12 @@
 ---
 title: "ion-fab"
 ---
-import Props from '@ionic-internal/component-api/v7/fab/props.md';
-import Events from '@ionic-internal/component-api/v7/fab/events.md';
-import Methods from '@ionic-internal/component-api/v7/fab/methods.md';
-import Parts from '@ionic-internal/component-api/v7/fab/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/fab/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/fab/slots.md';
+import Props from '@ionic-internal/component-api/v8/fab/props.md';
+import Events from '@ionic-internal/component-api/v8/fab/events.md';
+import Methods from '@ionic-internal/component-api/v8/fab/methods.md';
+import Parts from '@ionic-internal/component-api/v8/fab/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/fab/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/fab/slots.md';
 
 <head>
   <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>
@@ -21,7 +21,7 @@ Fabは、1つ以上の[fabボタン](./fab-button)を含むコンテナ要素で
 
 ## 基本的な使い方
 
-import BasicUsage from '@site/static/usage/v7/fab/basic/index.md';
+import BasicUsage from '@site/static/usage/v8/fab/basic/index.md';
 
 <BasicUsage />
 
@@ -29,7 +29,7 @@ import BasicUsage from '@site/static/usage/v7/fab/basic/index.md';
 
 [fabリスト](./fab-list)コンポーネントの`side`プロパティは、メインfabボタンと相対的に表示される場所を制御します。一つのfabは、`side`の値が全て異なる限り、複数のfabリストを持つことができます。
 
-import ListSide from '@site/static/usage/v7/fab/list-side/index.md';
+import ListSide from '@site/static/usage/v8/fab/list-side/index.md';
 
 <ListSide />
 
@@ -37,7 +37,7 @@ import ListSide from '@site/static/usage/v7/fab/list-side/index.md';
 
 fabを固定位置に配置するためには、外側の [content](./content) コンポーネントの `fixed` スロットに割り当てる必要があります。vertical`とhorizontal`のプロップを使用して、ビューポートでのfabの配置を制御します。edge`プロップは、アプリのヘッダーやフッターにfabボタンが重なるようにします。
 
-import Positioning from '@site/static/usage/v7/fab/positioning/index.md';
+import Positioning from '@site/static/usage/v8/fab/positioning/index.md';
 
 <Positioning />
 
@@ -63,7 +63,7 @@ ion-fab {
 
 `ion-header` (`vertical` が `"top"` に設定されたファブの場合) または `ion-footer` (`vertical` が `"bottom"` に設定されたファブの場合) がある場合、ファブはヘッダまたはフッタからの相対位置に配置されるため、CSS の調整は必要ありません。
 
-import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
+import SafeArea from '@site/static/usage/v8/fab/safe-area/index.md';
 
 <SafeArea />
 
@@ -71,7 +71,7 @@ import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
 
 メインファブボタンの `size` プロパティを `"small"` に設定すると、ミニサイズで描画されます。なお、このプロパティは内側のファブボタンで使用した場合は効果がありません。
 
-import ButtonSizing from '@site/static/usage/v7/fab/button-sizing/index.md';
+import ButtonSizing from '@site/static/usage/v8/fab/button-sizing/index.md';
 
 <ButtonSizing />
 
@@ -79,19 +79,19 @@ import ButtonSizing from '@site/static/usage/v7/fab/button-sizing/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/fab/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/fab/theming/colors/index.md';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSCustomProperties from '@site/static/usage/v7/fab/theming/css-custom-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v8/fab/theming/css-custom-properties/index.md';
 
 <CSSCustomProperties />
 
 ### CSS Shadow Parts
 
-import CSSShadowParts from '@site/static/usage/v7/fab/theming/css-shadow-parts/index.md';
+import CSSShadowParts from '@site/static/usage/v8/fab/theming/css-shadow-parts/index.md';
 
 <CSSShadowParts />
 

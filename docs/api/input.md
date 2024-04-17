@@ -1,12 +1,12 @@
 ---
 title: "ion-input"
 ---
-import Props from '@ionic-internal/component-api/v7/input/props.md';
-import Events from '@ionic-internal/component-api/v7/input/events.md';
-import Methods from '@ionic-internal/component-api/v7/input/methods.md';
-import Parts from '@ionic-internal/component-api/v7/input/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/input/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/input/slots.md';
+import Props from '@ionic-internal/component-api/v8/input/props.md';
+import Events from '@ionic-internal/component-api/v8/input/events.md';
+import Methods from '@ionic-internal/component-api/v8/input/methods.md';
+import Parts from '@ionic-internal/component-api/v8/input/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/input/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
@@ -23,7 +23,7 @@ input コンポーネントは、HTML input 要素のラッパーで、カスタ
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/input/basic/index.md';
+import Basic from '@site/static/usage/v8/input/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、`keyup`、`keydown`、`keypress`などの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
 
-import Types from '@site/static/usage/v7/input/types/index.md';
+import Types from '@site/static/usage/v8/input/types/index.md';
 
 <Types />
 
@@ -48,7 +48,7 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 
 ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
-import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/input/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -58,7 +58,7 @@ import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md
 
 この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
-import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v8/input/label-slot/index.md';
 
 <LabelSlot />
 
@@ -66,7 +66,7 @@ import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
 
 表示するラベルが必要ない場合でも、開発者は `aria-label` を指定する必要があります。
 
-import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v8/input/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
@@ -74,7 +74,7 @@ import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.m
 
 Inputsには、入力の操作方法に応じて、Inputをクリアするための2つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、Inputに `value` があるときにクリアボタンを表示します。2つ目の方法は `clearOnEdit` プロパティで、入力が編集削除された後、再度入力されるとクリアされます。 `type` が `"password"` に設定されているInputは、デフォルトで `clearOnEdit` が有効になっています。
 
-import Clear from '@site/static/usage/v7/input/clear/index.md';
+import Clear from '@site/static/usage/v8/input/clear/index.md';
 
 <Clear />
 
@@ -87,7 +87,7 @@ Material Design では、Inputに塗りつぶしのスタイルが用意され�
 
 Filled inputs can be used on iOS by setting Input's `mode` to `md`.
 
-import Fill from '@site/static/usage/v7/input/fill/index.md';
+import Fill from '@site/static/usage/v8/input/fill/index.md';
 
 <Fill />
 
@@ -98,7 +98,7 @@ import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
-import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
+import HelperError from '@site/static/usage/v8/input/helper-error/index.md';
 
 <HelperError />
 
@@ -108,13 +108,13 @@ Input Counterは、Inputの下に表示されるテキストで、入力可能�
 
 The `counter` and `counterFormatter` properties on `ion-item` were [deprecated in Ionic 7](/docs/api/input#using-the-modern-syntax) and should be used directly on `ion-input` instead.
 
-import Counter from '@site/static/usage/v7/input/counter/index.md';
+import Counter from '@site/static/usage/v8/input/counter/index.md';
 
 <Counter />
 
 Inputs with a counter add a border between the input and the counter, therefore they should not be placed inside of an `ion-item` which adds an additional border under the item. The `ion-padding-start` class can be added to align the counter inputs with inputs inside of items.
 
-import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/index.md';
+import CounterAlignment from '@site/static/usage/v8/input/counter-alignment/index.md';
 
 <CounterAlignment />
 
@@ -124,7 +124,7 @@ import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/inde
 
 ステート変数に値を格納する場合、ステート変数と `ion-input` コンポーネントの値の両方を更新することを推奨します。これにより、状態変数と `ion-input` コンポーネントの値が確実に同期されます。
 
-import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
+import FilteringData from '@site/static/usage/v8/input/filtering/index.md';
 
 <FilteringData />
 
@@ -138,7 +138,7 @@ Maskitoを使い始めるには、ライブラリをインストールしてく�
 npm install @maskito/core @maskito/{angular,react,vue}
 ```
 
-import Masking from '@site/static/usage/v7/input/mask/index.md';
+import Masking from '@site/static/usage/v8/input/mask/index.md';
 
 <Masking />
 
@@ -170,7 +170,11 @@ import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md'
 
 `color`プロパティを設定すると、各Inputのカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
 
-import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
+:::note
+The `color` property does *not* change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
+:::
+
+import Colors from '@site/static/usage/v8/input/theming/colors/index.md';
 
 <Colors />
 
@@ -178,7 +182,7 @@ import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
 Inputはscoped encapsulationを採用しており、実行時に各スタイルに追加のクラスを付加することで、CSSを自動的にスコープ化します。CSSでscopedセレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
 
-import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -196,7 +200,7 @@ Ionic 7.0では、よりシンプルなInput構文が導入されました。こ
 2. Input固有のプロパティを `ion-item` から `ion-input` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれる。
 3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-input` の `helperText` と `errorText` プロパティを使用します。
 
-import Migration from '@site/static/usage/v7/input/migration/index.md';
+import Migration from '@site/static/usage/v8/input/migration/index.md';
 
 <Migration />
 

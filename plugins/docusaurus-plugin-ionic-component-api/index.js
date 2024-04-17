@@ -48,6 +48,7 @@ module.exports = function (context, options) {
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
+
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
@@ -169,11 +170,9 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description |
-| --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
-
-`;
+| Name | Description | Bubbles |
+| --- | --- | --- |
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
 function renderMethods({ methods }) {

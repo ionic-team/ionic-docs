@@ -1,12 +1,12 @@
 ---
 title: "ion-textarea"
 ---
-import Props from '@ionic-internal/component-api/v7/textarea/props.md';
-import Events from '@ionic-internal/component-api/v7/textarea/events.md';
-import Methods from '@ionic-internal/component-api/v7/textarea/methods.md';
-import Parts from '@ionic-internal/component-api/v7/textarea/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/textarea/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/textarea/slots.md';
+import Props from '@ionic-internal/component-api/v8/textarea/props.md';
+import Events from '@ionic-internal/component-api/v8/textarea/events.md';
+import Methods from '@ionic-internal/component-api/v8/textarea/methods.md';
+import Parts from '@ionic-internal/component-api/v8/textarea/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/textarea/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
@@ -25,7 +25,7 @@ textareaコンポーネントはIonicのプロパティに加えて [ネイテ�
 
 ## 基本的な使い方
 
-import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
+import BasicPlayground from '@site/static/usage/v8/textarea/basic/index.md';
 
 <BasicPlayground />
 
@@ -41,7 +41,7 @@ Labels should be used to describe the textarea. They can be used visually, and t
 
 ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
-import LabelPlacement from '@site/static/usage/v7/textarea/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/textarea/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -51,7 +51,7 @@ import LabelPlacement from '@site/static/usage/v7/textarea/label-placement/index
 
 この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
-import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v8/textarea/label-slot/index.md';
 
 <LabelSlot />
 
@@ -59,7 +59,7 @@ import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
 
 ラベルの表示が必要ない場合でも、開発者は`aria-label`を指定して、textareaがスクリーンリーダーにアクセスできるようにすべきです。
 
-import NoVisibleLabel from '@site/static/usage/v7/textarea/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v8/textarea/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
@@ -71,7 +71,7 @@ Material Designでは、テキストエリアの塗りつぶしスタイルが�
 
 Filled textareas can be used on iOS by setting Textarea's `mode` to `md`.
 
-import Fill from '@site/static/usage/v7/textarea/fill/index.md';
+import Fill from '@site/static/usage/v8/textarea/fill/index.md';
 
 <Fill />
 
@@ -81,7 +81,7 @@ import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
-import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
+import HelperError from '@site/static/usage/v8/textarea/helper-error/index.md';
 
 <HelperError />
 
@@ -89,7 +89,7 @@ import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
 textareaカウンターは、textareaの下に表示されるテキストで、textareaが受け付ける合計文字数のうち、何文字が入力されたかをユーザーに通知します。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
-import Counter from '@site/static/usage/v7/textarea/counter/index.md';
+import Counter from '@site/static/usage/v8/textarea/counter/index.md';
 
 <Counter />
 
@@ -97,7 +97,7 @@ import Counter from '@site/static/usage/v7/textarea/counter/index.md';
 
 `autoGrow`プロパティが`true`に設定されている場合、テキストエリアはその内容に基づいて拡大・縮小します。
 
-import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md';
+import AutogrowPlayground from '@site/static/usage/v8/textarea/autogrow/index.md';
 
 <AutogrowPlayground />
 
@@ -105,7 +105,7 @@ import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md
 
 `clearOnEdit`プロパティを`true`に設定すると、テキストエリアが編集削除された後、再度入力されるとクリアされます。
 
-import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/index.md';
+import ClearOnEditPlayground from '@site/static/usage/v8/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
@@ -140,7 +140,7 @@ Ionic 7.0では、よりシンプルなtextareaの構文が導入されました
 2. テキストエリア固有のプロパティを `ion-item` から `ion-textarea` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれます。
 3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-textarea` の `helperText` と `errorText` プロパティを使用します。
 
-import Migration from '@site/static/usage/v7/textarea/migration/index.md';
+import Migration from '@site/static/usage/v8/textarea/migration/index.md';
 
 <Migration />
 
@@ -150,7 +150,7 @@ Ionicは、アプリが最新のtextarea構文を使用しているかどうか�
 
 ## テーマ
 
-import ThemingPlayground from '@site/static/usage/v7/textarea/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v8/textarea/theming/index.md';
 
 <ThemingPlayground />
 

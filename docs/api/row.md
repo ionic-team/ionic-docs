@@ -1,12 +1,12 @@
 ---
 title: "ion-row"
 ---
-import Props from '@ionic-internal/component-api/v7/row/props.md';
-import Events from '@ionic-internal/component-api/v7/row/events.md';
-import Methods from '@ionic-internal/component-api/v7/row/methods.md';
-import Parts from '@ionic-internal/component-api/v7/row/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/row/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/row/slots.md';
+import Props from '@ionic-internal/component-api/v8/row/props.md';
+import Events from '@ionic-internal/component-api/v8/row/events.md';
+import Methods from '@ionic-internal/component-api/v8/row/methods.md';
+import Parts from '@ionic-internal/component-api/v8/row/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/row/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components of the Grid System</title>

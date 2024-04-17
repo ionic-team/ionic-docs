@@ -214,11 +214,6 @@
       "docs": "Background of the progress track, or the buffer bar if `buffer` is set"
     },
     {
-      "name": "--buffer-background",
-      "annotation": "prop",
-      "docs": "DEPRECATED, use `--background` instead"
-    },
-    {
       "name": "--progress-background",
       "annotation": "prop",
       "docs": "Background of the progress bar representing the current value"

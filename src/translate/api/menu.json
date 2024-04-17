@@ -164,11 +164,17 @@
     },
     {
       "name": "type",
-      "type": "string | undefined",
+      "type": "\"overlay\" | \"push\" | \"reveal\" | undefined",
       "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+        "original": "MenuType",
+        "resolved": "\"overlay\" | \"push\" | \"reveal\" | undefined",
+        "references": {
+          "MenuType": {
+            "location": "import",
+            "path": "./menu-interface",
+            "id": "src/components/menu/menu-interface.ts::MenuType"
+          }
+        }
       },
       "mutable": true,
       "attr": "type",
@@ -177,6 +183,15 @@
       "docsTags": [],
       "values": [
         {
+          "value": "overlay",
+          "type": "string"
+        },
+        {
+          "value": "push",
+          "type": "string"
+        },
+        {
+          "value": "reveal",
           "type": "string"
         },
         {

@@ -38,7 +38,7 @@
       "mutable": false,
       "attr": "alignment",
       "reflectToAttr": false,
-      "docs": "How to control the alignment of the toggle and label on the cross axis.\n``\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+      "docs": "How to control the alignment of the toggle and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
       "docsTags": [],
       "default": "'center'",
       "values": [
@@ -253,30 +253,6 @@
         }
       ],
       "optional": false,
-      "required": false
-    },
-    {
-      "name": "legacy",
-      "type": "boolean | undefined",
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean | undefined",
-        "references": {}
-      },
-      "mutable": false,
-      "attr": "legacy",
-      "reflectToAttr": false,
-      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
-      "docsTags": [],
-      "values": [
-        {
-          "type": "boolean"
-        },
-        {
-          "type": "undefined"
-        }
-      ],
-      "optional": true,
       "required": false
     },
     {

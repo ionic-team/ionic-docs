@@ -1,12 +1,12 @@
 ---
 title: "ion-menu"
 ---
-import Props from '@ionic-internal/component-api/v7/menu/props.md';
-import Events from '@ionic-internal/component-api/v7/menu/events.md';
-import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
-import Parts from '@ionic-internal/component-api/v7/menu/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/menu/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
+import Props from '@ionic-internal/component-api/v8/menu/props.md';
+import Events from '@ionic-internal/component-api/v8/menu/events.md';
+import Methods from '@ionic-internal/component-api/v8/menu/methods.md';
+import Parts from '@ionic-internal/component-api/v8/menu/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/menu/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
@@ -24,7 +24,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/menu/basic/index.md';
+import Basic from '@site/static/usage/v8/menu/basic/index.md';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v7/menu/basic/index.md';
 
 [menu toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
 
-import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v8/menu/toggle/index.md';
 
 <MenuToggle />
 
@@ -42,7 +42,7 @@ import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 `type`プロパティは、アプリケーションでのメニューの表示方法をカスタマイズするために使用することができます。
 
-import MenuType from '@site/static/usage/v7/menu/type/index.md';
+import MenuType from '@site/static/usage/v8/menu/type/index.md';
 
 <MenuType />
 
@@ -53,7 +53,7 @@ import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 アプリ内で両サイドのメニューが必要な場合、 `MenuController` の `open` メソッドに `side` の値を渡すことでメニューを開くことができます。sideが指定されない場合は、`"start"`側のメニューが開かれる。MenuController` を使用した例については、下記の [複数メニュー](#multiple-menus) セクションを参照ください。
 
-import Sides from '@site/static/usage/v7/menu/sides/index.md';
+import Sides from '@site/static/usage/v8/menu/sides/index.md';
 
 <Sides />
 
@@ -62,7 +62,7 @@ import Sides from '@site/static/usage/v7/menu/sides/index.md';
 
 同じサイドに複数のメニューが存在する場合、サイドではなくIDで参照する必要があります。そうしないと、間違ったメニューがアクティブになる可能性がある。
 
-import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
+import Multiple from '@site/static/usage/v8/menu/multiple/index.md';
 
 <Multiple />
 
@@ -71,7 +71,7 @@ import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/v7/menu/theming/index.md';
+import Theming from '@site/static/usage/v8/menu/theming/index.md';
 
 <Theming />
 

@@ -1,12 +1,12 @@
 ---
 title: "ion-toggle"
 ---
-import Props from '@ionic-internal/component-api/v7/toggle/props.md';
-import Events from '@ionic-internal/component-api/v7/toggle/events.md';
-import Methods from '@ionic-internal/component-api/v7/toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v7/toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/toggle/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/toggle/slots.md';
+import Props from '@ionic-internal/component-api/v8/toggle/props.md';
+import Events from '@ionic-internal/component-api/v8/toggle/events.md';
+import Methods from '@ionic-internal/component-api/v8/toggle/methods.md';
+import Parts from '@ionic-internal/component-api/v8/toggle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/toggle/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/toggle/slots.md';
 
 <head>
   <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>
@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/toggle/basic/index.md';
+import Basic from '@site/static/usage/v8/toggle/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/toggle/basic/index.md';
 
 トグルは、`enableOnOffLabels`プロパティを設定することで、オン/オフラベルを有効にすることができます。これはアクセシビリティ上重要なことで、チェックされたトグルとチェックされていないトグルの区別がつきやすくなります。
 
-import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
+import OnOff from '@site/static/usage/v8/toggle/on-off/index.md';
 
 <OnOff />
 
@@ -40,7 +40,7 @@ import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 
 [アイテム](./item)と[リスト](./list)コンポーネントを使用すると、リストビューでトグルを使用することも可能です。
 
-import List from '@site/static/usage/v7/toggle/list/index.md';
+import List from '@site/static/usage/v8/toggle/list/index.md';
 
 <List />
 
@@ -49,7 +49,7 @@ import List from '@site/static/usage/v7/toggle/list/index.md';
 
 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
-import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/toggle/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -61,7 +61,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked toggles can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Alignment from '@site/static/usage/v7/toggle/alignment/index.md';
+import Alignment from '@site/static/usage/v8/toggle/alignment/index.md';
 
 <Alignment />
 
@@ -69,7 +69,7 @@ import Alignment from '@site/static/usage/v7/toggle/alignment/index.md';
 
 開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
-import Justify from '@site/static/usage/v7/toggle/justify/index.md';
+import Justify from '@site/static/usage/v8/toggle/justify/index.md';
 
 <Justify />
 
@@ -77,7 +77,7 @@ import Justify from '@site/static/usage/v7/toggle/justify/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/toggle/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/toggle/theming/colors/index.md';
 
 <Colors />
 
@@ -85,7 +85,7 @@ import Colors from '@site/static/usage/v7/toggle/theming/colors/index.md';
 
 CSSカスタムプロパティは、標準CSSと組み合わせてトグルの異なる部分をターゲットにすることができます。トグルの `width` と `height` を直接変更してトラックのサイズを変更し、`--handle-width` と `--handle-height` カスタムプロパティを使用して、ハンドルサイズをカスタマイズすることができます。
 
-import CSSProps from '@site/static/usage/v7/toggle/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/toggle/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -93,7 +93,7 @@ import CSSProps from '@site/static/usage/v7/toggle/theming/css-properties/index.
 
 トグルをさらにカスタマイズするには、公開されている特定のシャドウ部分をターゲットにすることができます。これらの部分には、どのようなCSSプロパティでもスタイルを設定でき、CSSカスタムプロパティと組み合わせることも可能です。
 
-import CSSParts from '@site/static/usage/v7/toggle/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v8/toggle/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
@@ -107,7 +107,7 @@ Ionic 7.0では、よりシンプルなトグル構文が導入されました�
 
 最新の構文を使用するには、`ion-label`を削除して、`ion-toggle`の内部にラベルを直接渡します。ラベルの配置は `ion-toggle` の `labelPlacement` プロパティを使用して設定することができる。ラベルとコントロールの行の詰め方は、`ion-toggle` の `justify` プロパティを使用して制御することができます。
 
-import Migration from '@site/static/usage/v7/toggle/migration/index.md';
+import Migration from '@site/static/usage/v8/toggle/migration/index.md';
 
 <Migration />
   

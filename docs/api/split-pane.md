@@ -2,12 +2,12 @@
 title: "ion-split-pane"
 ---
 
-import Props from '@ionic-internal/component-api/v7/split-pane/props.md';
-import Events from '@ionic-internal/component-api/v7/split-pane/events.md';
-import Methods from '@ionic-internal/component-api/v7/split-pane/methods.md';
-import Parts from '@ionic-internal/component-api/v7/split-pane/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/split-pane/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/split-pane/slots.md';
+import Props from '@ionic-internal/component-api/v8/split-pane/props.md';
+import Events from '@ionic-internal/component-api/v8/split-pane/events.md';
+import Methods from '@ionic-internal/component-api/v8/split-pane/methods.md';
+import Parts from '@ionic-internal/component-api/v8/split-pane/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/split-pane/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/split-pane/slots.md';
 
 <head>
   <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 このデモでは `when` プロパティを `'xs'` に設定し、分割ペインが常に表示されるようにしています。小さなビューポートで分割ペインを折りたたみたい場合は、Ionicアプリケーションにこの設定は必要ありません。詳しくは、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
 :::
 
-import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
+import Basic from '@site/static/usage/v8/split-pane/basic/index.md';
 
 <Basic />
 
@@ -58,7 +58,7 @@ import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
 
 ## CSSカスタムプロパティ
 
-import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properties/index.md';
+import CSSProperties from '@site/static/usage/v8/split-pane/theming/css-properties/index.md';
 
 <CSSProperties />
 

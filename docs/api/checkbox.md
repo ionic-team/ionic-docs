@@ -2,12 +2,12 @@
 title: "ion-checkbox"
 ---
 
-import Props from '@ionic-internal/component-api/v7/checkbox/props.md';
-import Events from '@ionic-internal/component-api/v7/checkbox/events.md';
-import Methods from '@ionic-internal/component-api/v7/checkbox/methods.md';
-import Parts from '@ionic-internal/component-api/v7/checkbox/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/checkbox/slots.md';
+import Props from '@ionic-internal/component-api/v8/checkbox/props.md';
+import Events from '@ionic-internal/component-api/v8/checkbox/events.md';
+import Methods from '@ionic-internal/component-api/v8/checkbox/methods.md';
+import Parts from '@ionic-internal/component-api/v8/checkbox/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/checkbox/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/checkbox/slots.md';
 
 <head>
   <title>ion-checkbox: Ionic App Checkbox to Select Multiple Options</title>
@@ -23,7 +23,7 @@ Checkboxを使用すると、一連のオプションから複数のオプショ
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
+import Basic from '@site/static/usage/v8/checkbox/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 開発者は `labelPlacement` プロパティを使用して、ラベルをコントロールに対してどのように配置するかを制御できます。このプロパティはフレックスボックスの `flex-direction` プロパティを反映しています。
 
-import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/checkbox/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -43,7 +43,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
+import Alignment from '@site/static/usage/v8/checkbox/alignment/index.md';
 
 <Alignment />
 
@@ -51,7 +51,7 @@ import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
 
 開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。このプロパティはフレックスボックスの `justify-content` プロパティを反映しています。
 
-import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
+import Justify from '@site/static/usage/v8/checkbox/justify/index.md';
 
 <Justify />
 
@@ -62,15 +62,23 @@ import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 
 ## Indeterminate Checkboxes
 
-import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
+import Indeterminate from '@site/static/usage/v8/checkbox/indeterminate/index.md';
 
 <Indeterminate />
+  
+## Links inside of Labels
+
+Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
+
+import LabelLink from '@site/static/usage/v8/checkbox/label-link/index.md';
+
+<LabelLink />
 
 ## テーマ
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/checkbox/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -106,7 +114,7 @@ Ionic 7.0では、よりシンプルなチェックボックス構文が導入�
 
 最新の構文を使用するには、`ion-label` を削除して、 `ion-checkbox` の中に直接ラベルを渡す必要があります。ラベルの配置は `ion-checkbox` の `labelPlacement` プロパティを使用して設定することができる。ラベルとコントロールの行の詰め方は、`ion-checkbox` の `justify` プロパティを使用して制御することができます。
 
-import Migration from '@site/static/usage/v7/checkbox/migration/index.md';
+import Migration from '@site/static/usage/v8/checkbox/migration/index.md';
 
 <Migration />
   

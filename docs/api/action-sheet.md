@@ -4,12 +4,12 @@ title: "ion-action-sheet"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v7/action-sheet/props.md';
-import Events from '@ionic-internal/component-api/v7/action-sheet/events.md';
-import Methods from '@ionic-internal/component-api/v7/action-sheet/methods.md';
-import Parts from '@ionic-internal/component-api/v7/action-sheet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/action-sheet/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
+import Props from '@ionic-internal/component-api/v8/action-sheet/props.md';
+import Events from '@ionic-internal/component-api/v8/action-sheet/events.md';
+import Methods from '@ionic-internal/component-api/v8/action-sheet/methods.md';
+import Parts from '@ionic-internal/component-api/v8/action-sheet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/action-sheet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
@@ -27,7 +27,7 @@ Action Sheetは複数の選択肢を表示するダイアログです。アプ�
 
 `ion-action-sheet` は、テンプレートに直接コンポーネントを記述することで使用することができます。これにより、アクションシートを表示するために配線する必要があるハンドラの数を減らすことができます。
 
-import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md';
+import Trigger from '@site/static/usage/v8/action-sheet/inline/trigger/index.md';
 
 <Trigger />
 
@@ -37,7 +37,7 @@ import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md'
 
 `isOpen` は一方通行のデータバインディングを使用しているため、アクションシートが終了したときに自動的に `false` に設定されることはありません。開発者は `ionActionSheetDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` に設定する必要があります。この理由は、`ion-action-sheet` の内部がアプリケーションの状態と密接に結合するのを防ぐためです。一方通行のデータバインディングでは、アクションシートはリアクティブ変数が提供するブーリアン値だけを気にすればよい。一方通行のデータバインディングでは、アクションシートは、ブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
 
-import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
+import IsOpen from '@site/static/usage/v8/action-sheet/inline/isOpen/index.md';
 
 <IsOpen />
 
@@ -45,7 +45,7 @@ import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
 
 アクションシートの表示・非表示をより細かく制御したい場合は、`actionSheetController`を使用することができます。
 
-import Controller from '@site/static/usage/v7/action-sheet/controller/index.md';
+import Controller from '@site/static/usage/v8/action-sheet/controller/index.md';
 
 <Controller />
 
@@ -59,7 +59,7 @@ Buttonは `ActionSheetButton` の `data` プロパティを介してデータを
 
 `didDismiss` イベントが発生すると、イベント詳細の `data` と `role` フィールドを使用して、アクションシートがどのように却下されたかについての情報を収集することができます。
 
-import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/index.md';
+import RoleInfo from '@site/static/usage/v8/action-sheet/role-info-on-dismiss/index.md';
 
 <RoleInfo />
 
@@ -83,7 +83,7 @@ import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/in
 }
 ```
 
-import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md';
+import Styling from '@site/static/usage/v8/action-sheet/theming/styling/index.md';
 
 <Styling />
 
@@ -91,7 +91,7 @@ import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md
 
 [CSSカスタムプロパティ](#css-custom-properties-1) は、個々の要素を対象とすることなく、アクションシートのスタイルに使用することができます。
 
-import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-properties/index.md';
+import CssCustomProperties from '@site/static/usage/v8/action-sheet/theming/css-properties/index.md';
 
 <CssCustomProperties />
 

@@ -802,7 +802,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -823,7 +823,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "アクションシートのオーバーレイが提示された後、それを解除します。",
@@ -834,7 +834,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -1127,6 +1127,11 @@
           "name": "--button-color-activated",
           "annotation": "prop",
           "docs": "アクションシートボタンが押されたときの色"
+        },
+        {
+          "name": "--button-color-disabled",
+          "annotation": "prop",
+          "docs": "無効時の選択されたアクション・シート・ボタンの色"
         },
         {
           "name": "--button-color-focused",
@@ -1633,7 +1638,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -1654,7 +1659,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "アラートオーバーレイが表示された後、解除します。",
@@ -1665,7 +1670,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -2576,7 +2581,7 @@
         "ion-loading",
         "ion-menu",
         "ion-modal",
-        "ion-picker",
+        "ion-picker-legacy",
         "ion-popover"
       ],
       "dependencies": [],
@@ -2596,7 +2601,7 @@
         "ion-modal": [
           "ion-backdrop"
         ],
-        "ion-picker": [
+        "ion-picker-legacy": [
           "ion-backdrop"
         ],
         "ion-popover": [
@@ -4089,7 +4094,8 @@
         }
       ],
       "dependents": [
-        "ion-datetime"
+        "ion-datetime",
+        "ion-input-password-toggle"
       ],
       "dependencies": [
         "ion-ripple-effect"
@@ -4099,6 +4105,9 @@
           "ion-ripple-effect"
         ],
         "ion-datetime": [
+          "ion-button"
+        ],
+        "ion-input-password-toggle": [
           "ion-button"
         ]
       }
@@ -5191,30 +5200,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、強制的にレガシーフォームコントロールのマークアップを使用することができます。Ionicは、チェックボックスが`aria-label`属性を使用しているか、デフォルトスロットにテキストがある場合にのみ、モダンなフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントは最新のフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -5402,7 +5387,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the checkbox."
+          "docs": "チェックボックスを表すラベルテキスト。"
         },
         {
           "name": "mark",
@@ -7273,6 +7258,44 @@
           "required": false
         },
         {
+          "name": "formatOptions",
+          "type": "undefined | { date: DateTimeFormatOptions; time?: DateTimeFormatOptions | undefined; } | { date?: DateTimeFormatOptions | undefined; time: DateTimeFormatOptions; }",
+          "complexType": {
+            "original": "FormatOptions",
+            "resolved": "undefined | { date: DateTimeFormatOptions; time?: DateTimeFormatOptions | undefined; } | { date?: DateTimeFormatOptions | undefined; time: DateTimeFormatOptions; }",
+            "references": {
+              "FormatOptions": {
+                "location": "import",
+                "path": "./datetime-interface",
+                "id": "src/components/datetime/datetime-interface.ts::FormatOptions"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "日付と時刻のフォーマットオプション。それぞれ[Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options)型です。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "undefined"
+            },
+            {
+              "type": "{ date: DateTimeFormatOptions; time?: DateTimeFormatOptions"
+            },
+            {
+              "type": "undefined; }"
+            },
+            {
+              "type": "{ date?: DateTimeFormatOptions"
+            },
+            {
+              "type": "undefined; time: DateTimeFormatOptions; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "highlightedDates",
           "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
           "complexType": {
@@ -7831,7 +7854,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "選択されている日付の数を示すヘッダーテキストをフォーマットするために使用されるコールバック。選択されている日付が 0 あるいは 1 以上の場合にのみ使用されます (つまり、1 の場合は未使用です)。デフォルトでは、ヘッダテキストは \"numberOfDates days \"に設定されます。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照。",
           "docsTags": [],
           "values": [
             {
@@ -8099,6 +8122,11 @@
           "name": "--wheel-highlight-background",
           "annotation": "prop",
           "docs": "ホイールスタイルレイアウトの場合は選択された項目の下、グリッドスタイルレイアウトの場合は月/年ピッカーのハイライトの背景。"
+        },
+        {
+          "name": "--wheel-highlight-border-radius",
+          "annotation": "prop",
+          "docs": "ホイールスタイルレイアウトの場合は選択された項目の下、グリッドスタイルレイアウトの場合は月/年ピッカーのハイライトの境界半径。"
         }
       ],
       "slots": [
@@ -8157,31 +8185,26 @@
       "dependencies": [
         "ion-buttons",
         "ion-button",
-        "ion-picker-internal",
-        "ion-picker-column-internal",
-        "ion-item",
-        "ion-label",
+        "ion-picker",
+        "ion-picker-column",
+        "ion-picker-column-option",
         "ion-icon",
+        "ion-ripple-effect",
         "ion-popover"
       ],
       "dependencyGraph": {
         "ion-datetime": [
           "ion-buttons",
           "ion-button",
-          "ion-picker-internal",
-          "ion-picker-column-internal",
-          "ion-item",
-          "ion-label",
+          "ion-picker",
+          "ion-picker-column",
+          "ion-picker-column-option",
           "ion-icon",
+          "ion-ripple-effect",
           "ion-popover"
         ],
         "ion-button": [
           "ion-ripple-effect"
-        ],
-        "ion-item": [
-          "ion-icon",
-          "ion-ripple-effect",
-          "ion-note"
         ],
         "ion-popover": [
           "ion-backdrop"
@@ -9688,6 +9711,176 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/input-password-toggle/input-password-toggle.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-input-password-toggle",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "complexType": {
+            "original": "Color",
+            "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+            "references": {
+              "Color": {
+                "location": "import",
+                "path": "../../interface",
+                "id": "src/interface.d.ts::Color"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hideIcon",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "string",
+            "resolved": "string | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "hide-icon",
+          "reflectToAttr": false,
+          "docs": "パスワードの非表示を表すアイコン。設定されていない場合、\"eyeOff \"アイコンが使用される。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showIcon",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "string",
+            "resolved": "string | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-icon",
+          "reflectToAttr": false,
+          "docs": "パスワードを示すアイコン。設定されていない場合は、\"eye\"のアイコンが使用されます。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "ion-input-password-toggle": [
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/input/input.tsx",
       "encapsulation": "scoped",
       "tag": "ion-input",
@@ -9712,35 +9905,6 @@
       ],
       "usage": {},
       "props": [
-        {
-          "name": "accept",
-          "type": "string | undefined",
-          "complexType": {
-            "original": "string",
-            "resolved": "string | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "accept",
-          "reflectToAttr": false,
-          "docs": "この属性は無視されます。",
-          "docsTags": [
-            {
-              "name": "deprecated"
-            }
-          ],
-          "deprecation": "",
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
         {
           "name": "autocapitalize",
           "type": "string",
@@ -10042,7 +10206,7 @@
           "mutable": false,
           "attr": "autofocus",
           "reflectToAttr": false,
-          "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ネイティブの入力要素に [`autofocus` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) を設定します。  ページロード時に要素がフォーカスされるには、これだけでは不十分かもしれません。詳しくは[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -10197,7 +10361,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "カウンターのテキストをフォーマットするためのコールバック。デフォルトでは、カウンタのテキストは \"itemLength / maxLength\" に設定される。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照。",
           "docsTags": [],
           "values": [
             {
@@ -10244,7 +10408,7 @@
           },
           "mutable": false,
           "attr": "disabled",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "`true`の場合、ユーザはInputと対話することができません。",
           "docsTags": [],
           "default": "false",
@@ -10499,30 +10663,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "max",
           "type": "number | string | undefined",
           "complexType": {
@@ -10749,7 +10889,7 @@
           },
           "mutable": false,
           "attr": "readonly",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "`true`の場合、ユーザーは値を変更することができません。",
           "docsTags": [],
           "default": "false",
@@ -10800,30 +10940,6 @@
             {
               "value": "round",
               "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "size",
-          "type": "number | undefined",
-          "complexType": {
-            "original": "number",
-            "resolved": "number | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "size",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
             },
             {
               "type": "undefined"
@@ -11029,7 +11145,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ion-input` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい場合は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": []
         }
       ],
@@ -11161,6 +11277,11 @@
           "docs": "有効時の入力のハイライトの色"
         },
         {
+          "name": "--highlight-height",
+          "annotation": "prop",
+          "docs": "入力のハイライトの高さ。mdモードにのみ適用される。"
+        },
+        {
           "name": "--padding-bottom",
           "annotation": "prop",
           "docs": "InputのBottom Padding"
@@ -11204,7 +11325,7 @@
       "slots": [
         {
           "name": "end",
-          "docs": "Content to display at the trailing edge of the input. (EXPERIMENTAL)"
+          "docs": "入力の後端に表示する内容。(実験的)"
         },
         {
           "name": "label",
@@ -11212,7 +11333,7 @@
         },
         {
           "name": "start",
-          "docs": "Content to display at the leading edge of the input. (EXPERIMENTAL)"
+          "docs": "入力の最先端に表示するコンテンツ。(実験的)"
         }
       ],
       "parts": [],
@@ -12089,14 +12210,6 @@
           "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL."
         },
         {
-          "name": "slot",
-          "text": "helper - Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
-        },
-        {
-          "name": "slot",
-          "text": "error - Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
-        },
-        {
           "name": "part",
           "text": "native - The native HTML button, anchor or div element that wraps all child elements."
         },
@@ -12196,69 +12309,6 @@
           "required": false
         },
         {
-          "name": "counter",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "counter",
-          "reflectToAttr": false,
-          "docs": "`true`の場合、文字カウンタが使用された文字の比率と総文字数制限を表示します。内側の `ion-input` または `ion-textarea` に `maxlength` プロパティが設定されている場合にのみ適用されます。",
-          "docsTags": [
-            {
-              "name": "deprecated",
-              "text": "Use the `counter` property on `ion-input` or `ion-textarea` instead."
-            }
-          ],
-          "default": "false",
-          "deprecation": "Use the `counter` property on `ion-input` or `ion-textarea` instead.",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "counterFormatter",
-          "type": "((inputLength: number, maxLength: number) => string) | undefined",
-          "complexType": {
-            "original": "CounterFormatter",
-            "resolved": "((inputLength: number, maxLength: number) => string) | undefined",
-            "references": {
-              "CounterFormatter": {
-                "location": "import",
-                "path": "./item-interface",
-                "id": "src/components/item/item-interface.ts::CounterFormatter"
-              }
-            }
-          },
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "カウンターのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、カウンターのテキストは\"itemLength / maxLength\"に設定されています。",
-          "docsTags": [
-            {
-              "name": "deprecated",
-              "text": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead."
-            }
-          ],
-          "deprecation": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.",
-          "values": [
-            {
-              "type": "((inputLength: number, maxLength: number) => string)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "detail",
           "type": "boolean | undefined",
           "complexType": {
@@ -12348,41 +12398,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "fill",
-          "type": "\"outline\" | \"solid\" | undefined",
-          "complexType": {
-            "original": "'outline' | 'solid'",
-            "resolved": "\"outline\" | \"solid\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "fill",
-          "reflectToAttr": false,
-          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
-          "docsTags": [
-            {
-              "name": "deprecated",
-              "text": "Use the `fill` property on `ion-input` or `ion-textarea` instead."
-            }
-          ],
-          "deprecation": "Use the `fill` property on `ion-input` or `ion-textarea` instead.",
-          "values": [
-            {
-              "value": "outline",
-              "type": "string"
-            },
-            {
-              "value": "solid",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -12554,31 +12569,6 @@
           "required": false
         },
         {
-          "name": "shape",
-          "type": "\"round\" | undefined",
-          "complexType": {
-            "original": "'round'",
-            "resolved": "\"round\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "shape",
-          "reflectToAttr": false,
-          "docs": "アイテムの形状を指定します。円形」の場合、境界線の半径が大きくなります。",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "round",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "target",
           "type": "string | undefined",
           "complexType": {
@@ -12637,11 +12627,6 @@
       "methods": [],
       "events": [],
       "listeners": [
-        {
-          "event": "ionInput",
-          "capture": false,
-          "passive": false
-        },
         {
           "event": "ionColor",
           "capture": false,
@@ -12745,26 +12730,6 @@
           "docs": "アイテム詳細アイコンの不透明度"
         },
         {
-          "name": "--highlight-color-focused",
-          "annotation": "prop",
-          "docs": "フォーカスされたときのアイテムのハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
-        },
-        {
-          "name": "--highlight-color-invalid",
-          "annotation": "prop",
-          "docs": "無効な場合の項目のハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
-        },
-        {
-          "name": "--highlight-color-valid",
-          "annotation": "prop",
-          "docs": "有効な場合の項目のハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` でスタイリングできる。"
-        },
-        {
-          "name": "--highlight-height",
-          "annotation": "prop",
-          "docs": "アイテムのハイライトの高さ。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
-        },
-        {
           "name": "--inner-border-width",
           "annotation": "prop",
           "docs": "アイテム内枠の幅"
@@ -12840,14 +12805,6 @@
           "docs": "コンテンツは、LTRではアイテムテキストの右側に、RTLでは左側に配置されます。"
         },
         {
-          "name": "error",
-          "docs": "コンテンツはアイテムの下に配置され、エラーが検出されたときに表示されます。**DEPRECATED** 代わりに ion-input または ion-textarea の \"errorText\" プロパティを使用してください。"
-        },
-        {
-          "name": "helper",
-          "docs": "コンテンツはアイテムの下に配置され、エラーが検出されない場合に表示されます。**DEPRECATED** 代わりに ion-input または ion-textarea の \"helperText\" プロパティを使用してください。"
-        },
-        {
           "name": "start",
           "docs": "コンテンツは、LTRではアイテムテキストの左側に、RTLでは右側に配置されます。"
         }
@@ -12863,22 +12820,16 @@
         }
       ],
       "dependents": [
-        "ion-datetime",
         "ion-select-popover"
       ],
       "dependencies": [
         "ion-icon",
-        "ion-ripple-effect",
-        "ion-note"
+        "ion-ripple-effect"
       ],
       "dependencyGraph": {
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect",
-          "ion-note"
-        ],
-        "ion-datetime": [
-          "ion-item"
+          "ion-ripple-effect"
         ],
         "ion-select-popover": [
           "ion-item"
@@ -13032,14 +12983,10 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "ion-datetime",
         "ion-select-popover"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "ion-datetime": [
-          "ion-label"
-        ],
         "ion-select-popover": [
           "ion-label"
         ]
@@ -13793,7 +13740,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -13814,7 +13761,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "ローディングオーバーレイが提示された後、それを解除します。",
@@ -13825,7 +13772,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -14682,11 +14629,17 @@
         },
         {
           "name": "type",
-          "type": "string | undefined",
+          "type": "\"overlay\" | \"push\" | \"reveal\" | undefined",
           "complexType": {
-            "original": "string",
-            "resolved": "string | undefined",
-            "references": {}
+            "original": "MenuType",
+            "resolved": "\"overlay\" | \"push\" | \"reveal\" | undefined",
+            "references": {
+              "MenuType": {
+                "location": "import",
+                "path": "./menu-interface",
+                "id": "src/components/menu/menu-interface.ts::MenuType"
+              }
+            }
           },
           "mutable": true,
           "attr": "type",
@@ -14695,6 +14648,15 @@
           "docsTags": [],
           "values": [
             {
+              "value": "overlay",
+              "type": "string"
+            },
+            {
+              "value": "push",
+              "type": "string"
+            },
+            {
+              "value": "reveal",
               "type": "string"
             },
             {
@@ -15160,7 +15122,7 @@
           "mutable": false,
           "attr": "can-dismiss",
           "reflectToAttr": false,
-          "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "dismiss` メソッドを呼び出したときに、モーダルが終了できるかどうかを決定します。  値が `true` または値の関数が `true` を返す場合、モーダルは終了しようとすると閉じます。値が `false` の場合、または値の関数が `false` を返す場合、モーダルは閉じません。  コールバック内から `this` にアクセスする必要がある場合は、 https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照してください。",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -15522,7 +15484,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -15547,7 +15509,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "モーダルオーバーレイが表示された後、それを解除します。",
@@ -15558,7 +15520,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -16384,6 +16346,28 @@
               "text": "index The index of the view."
             }
           ]
+        },
+        {
+          "name": "getLength",
+          "returns": {
+            "type": "Promise<number>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<number>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<number>"
+          },
+          "signature": "getLength() => Promise<number>",
+          "parameters": [],
+          "docs": "スタック内のビューの数を返します。",
+          "docsTags": []
         },
         {
           "name": "getPrevious",
@@ -17402,20 +17386,377 @@
       ],
       "slots": [],
       "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/picker-column-option/picker-column-option.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-picker-column-option",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "complexType": {
+            "original": "Color",
+            "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+            "references": {
+              "Color": {
+                "location": "import",
+                "path": "../../interface",
+                "id": "src/interface.d.ts::Color"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "true`の場合、ユーザーはピッカー列オプションを操作できない。",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "complexType": {
+            "original": "any | null",
+            "resolved": "any",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "オプションのテキスト値です。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
       "dependents": [
-        "ion-item"
+        "ion-datetime"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "ion-item": [
-          "ion-note"
+        "ion-datetime": [
+          "ion-picker-column-option"
         ]
       }
     },
     {
-      "filePath": "src/components/picker/picker.tsx",
+      "filePath": "src/components/picker-column/picker-column.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-picker-column",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        },
+        {
+          "name": "slot",
+          "text": "prefix - Content to show on the left side of the picker options."
+        },
+        {
+          "name": "slot",
+          "text": "suffix - Content to show on the right side of the picker options."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "complexType": {
+            "original": "Color",
+            "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+            "references": {
+              "Color": {
+                "location": "import",
+                "path": "../../interface",
+                "id": "src/interface.d.ts::Color"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "true`の場合、ユーザーはピッカーと対話することができない。",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string | undefined",
+          "complexType": {
+            "original": "string | number",
+            "resolved": "number | string | undefined",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "ピッカーで選択されているオプション。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "ピッカーカラム内のスクロール可能なコンテナにフォーカスを設定します。グローバルメソッド `pickerColumn.focus()` の代わりにこのメソッドを使用します。",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "ionChange",
+          "detail": "PickerColumnChangeEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "PickerColumnChangeEventDetail",
+            "resolved": "PickerColumnChangeEventDetail",
+            "references": {
+              "PickerColumnChangeEventDetail": {
+                "location": "import",
+                "path": "./picker-column-interfaces",
+                "id": "src/components/picker-column/picker-column-interfaces.ts::PickerColumnChangeEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "値が変更されたときに発行されます。",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "prefix",
+          "docs": "ピッカー・オプションの左側に表示するコンテンツ。"
+        },
+        {
+          "name": "suffix",
+          "docs": "ピッカー・オプションの右側に表示するコンテンツ。"
+        }
+      ],
+      "parts": [],
+      "dependents": [
+        "ion-datetime"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ion-datetime": [
+          "ion-picker-column"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/picker-legacy/picker.tsx",
       "encapsulation": "scoped",
-      "tag": "ion-picker",
+      "tag": "ion-picker-legacy",
       "docs": "",
       "docsTags": [
         {
@@ -17479,7 +17820,7 @@
               "PickerButton": {
                 "location": "import",
                 "path": "./picker-interface",
-                "id": "src/components/picker/picker-interface.ts::PickerButton"
+                "id": "src/components/picker-legacy/picker-interface.ts::PickerButton"
               }
             }
           },
@@ -17506,7 +17847,7 @@
               "PickerColumn": {
                 "location": "import",
                 "path": "./picker-interface",
-                "id": "src/components/picker/picker-interface.ts::PickerColumn"
+                "id": "src/components/picker-legacy/picker-interface.ts::PickerColumn"
               }
             }
           },
@@ -17842,7 +18183,7 @@
               "PickerColumn": {
                 "location": "import",
                 "path": "./picker-interface",
-                "id": "src/components/picker/picker-interface.ts::PickerColumn"
+                "id": "src/components/picker-legacy/picker-interface.ts::PickerColumn"
               }
             },
             "return": "Promise<PickerColumn | undefined>"
@@ -18159,12 +18500,85 @@
       "dependents": [],
       "dependencies": [
         "ion-backdrop",
-        "ion-picker-column"
+        "ion-picker-legacy-column"
       ],
       "dependencyGraph": {
-        "ion-picker": [
+        "ion-picker-legacy": [
           "ion-backdrop",
-          "ion-picker-column"
+          "ion-picker-legacy-column"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/picker/picker.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-picker",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "touchstart",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [
+        {
+          "name": "--fade-background-rgb",
+          "annotation": "prop",
+          "docs": "非選択項目をカバーするグラデーションの背景（rgb形式"
+        },
+        {
+          "name": "--highlight-background",
+          "annotation": "prop",
+          "docs": "選択されたアイテムのピッカー・ハイライトの背景"
+        },
+        {
+          "name": "--highlight-border-radius",
+          "annotation": "prop",
+          "docs": "選択されたアイテムのピッカーハイライトの境界半径"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ion-datetime"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ion-datetime": [
+          "ion-picker"
         ]
       }
     },
@@ -18825,7 +19239,7 @@
               {
                 "name": "dismissParentPopover",
                 "type": "boolean",
-                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -18855,7 +19269,7 @@
             {
               "name": "dismissParentPopover",
               "type": "boolean",
-              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "ポップオーバーオーバーレイが提示された後、それを解除します。",
@@ -18870,7 +19284,7 @@
             },
             {
               "name": "param",
-              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -19442,11 +19856,6 @@
           "docs": "プログレストラックの背景、または `buffer` が設定されている場合はバッファバー。"
         },
         {
-          "name": "--buffer-background",
-          "annotation": "prop",
-          "docs": "DEPRECATED、代わりに `--background` を使用します。"
-        },
-        {
           "name": "--progress-background",
           "annotation": "prop",
           "docs": "現在値を表すプログレスバーの背景"
@@ -19518,7 +19927,7 @@
           "mutable": false,
           "attr": "compare-with",
           "reflectToAttr": false,
-          "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-radio-group. When not specified, the default behavior will use strict\nequality (===) for comparison.",
+          "docs": "このプロパティを使用すると、開発者は、ion-radio-group で選択されたオプションを決定するときにオブジェクトを比較するためのカスタム関数またはプロパティ名を指定できます。指定しない場合、デフォルトの動作では、比較に厳密な等式 (===) が使用されます。",
           "docsTags": [],
           "values": [
             {
@@ -19836,30 +20245,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -19991,7 +20376,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the radio."
+          "docs": "ラジオを説明するラベルテキスト。"
         },
         {
           "name": "mark",
@@ -20279,30 +20664,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "max",
           "type": "number",
           "complexType": {
@@ -20427,7 +20788,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "ピンのテキストをフォーマットするためのコールバック。デフォルトでは、ピンのテキストは `Math.round(value)` に設定されます。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照してください。",
           "docsTags": [],
           "default": "(value: number): number => Math.round(value)",
           "values": [
@@ -20737,7 +21098,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the range."
+          "docs": "範囲を表すラベルテキスト。"
         },
         {
           "name": "pin",
@@ -21486,6 +21847,7 @@
         "ion-button",
         "ion-card",
         "ion-chip",
+        "ion-datetime",
         "ion-datetime-button",
         "ion-fab-button",
         "ion-item",
@@ -21513,6 +21875,9 @@
           "ion-ripple-effect"
         ],
         "ion-chip": [
+          "ion-ripple-effect"
+        ],
+        "ion-datetime": [
           "ion-ripple-effect"
         ],
         "ion-datetime-button": [
@@ -22390,6 +22755,28 @@
           "required": false
         },
         {
+          "name": "autocapitalize",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "autocapitalize",
+          "reflectToAttr": false,
+          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+          "docsTags": [],
+          "default": "'off'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "autocomplete",
           "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
           "complexType": {
@@ -22940,6 +23327,54 @@
           "required": false
         },
         {
+          "name": "maxlength",
+          "type": "number | undefined",
+          "complexType": {
+            "original": "number",
+            "resolved": "number | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "この属性は、ユーザが入力できる最大文字数を指定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "minlength",
+          "type": "number | undefined",
+          "complexType": {
+            "original": "number",
+            "resolved": "number | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "minlength",
+          "reflectToAttr": false,
+          "docs": "この属性は、ユーザーが入力できる最小の文字数を指定します。",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -23234,7 +23669,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ion-searchbar` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい開発者は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": []
         }
       ],
@@ -24236,7 +24671,7 @@
           "mutable": false,
           "attr": "compare-with",
           "reflectToAttr": false,
-          "docs": "This property allows developers to specify a custom function or property\nname for comparing objects when determining the selected option in the\nion-select. When not specified, the default behavior will use strict\nequality (===) for comparison.",
+          "docs": "このプロパティを使用すると、開発者は、ion-select で選択されたオプションを決定するときにオブジェクトを比較するためのカスタム関数またはプロパティ名を指定できます。指定しない場合、デフォルトの動作では比較に厳密な等式 (===) が使用されます。",
           "docsTags": [],
           "values": [
             {
@@ -24478,30 +24913,6 @@
             {
               "value": "start",
               "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
             },
             {
               "type": "undefined"
@@ -24889,6 +25300,11 @@
           "docs": "有効時のセレクトのハイライトの色"
         },
         {
+          "name": "--highlight-height",
+          "annotation": "prop",
+          "docs": "セレクトのハイライトの高さ。mdモードにのみ適用される。"
+        },
+        {
           "name": "--padding-bottom",
           "annotation": "prop",
           "docs": "セレクトのBottom Padding"
@@ -24927,7 +25343,7 @@
       "slots": [
         {
           "name": "end",
-          "docs": "Content to display at the trailing edge of the select."
+          "docs": "セレクトの最後尾に表示するコンテンツ。"
         },
         {
           "name": "label",
@@ -24935,7 +25351,7 @@
         },
         {
           "name": "start",
-          "docs": "Content to display at the leading edge of the select."
+          "docs": "セレクトの最先端に表示するコンテンツ。"
         }
       ],
       "parts": [
@@ -24987,8 +25403,7 @@
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect",
-          "ion-note"
+          "ion-ripple-effect"
         ],
         "ion-popover": [
           "ion-backdrop"
@@ -26905,7 +27320,7 @@
           "mutable": false,
           "attr": "autofocus",
           "reflectToAttr": false,
-          "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ネイティブの入力要素に [`autofocus` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) を設定します。  ページロード時に要素がフォーカスされるには、これだけでは不十分かもしれません。詳しくは[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -27060,7 +27475,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
+          "docs": "カウンターのテキストをフォーマットするためのコールバック。デフォルトでは、カウンタのテキストは \"itemLength / maxLength\" に設定される。  コールバック内から `this` にアクセスする必要がある場合は https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照。",
           "docsTags": [],
           "values": [
             {
@@ -27359,30 +27774,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -27723,7 +28114,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+          "docs": "ion-textarea`のネイティブ `textarea` にフォーカスを設定する。グローバルメソッド `textarea.focus()` の代わりにこのメソッドを使用する。  詳細は [managing focus](/docs/developing/managing-focus) を参照してください。",
           "docsTags": []
         }
       ],
@@ -27855,6 +28246,11 @@
           "docs": "有効時のテキストエリアのハイライトの色"
         },
         {
+          "name": "--highlight-height",
+          "annotation": "prop",
+          "docs": "テキストエリアのハイライトの高さ。mdモードにのみ適用される。"
+        },
+        {
           "name": "--padding-bottom",
           "annotation": "prop",
           "docs": "テキストエリアのBottom Padding"
@@ -27898,7 +28294,7 @@
       "slots": [
         {
           "name": "end",
-          "docs": "Content to display at the trailing edge of the textarea. (EXPERIMENTAL)"
+          "docs": "textarea の末尾に表示する内容。(実験的)"
         },
         {
           "name": "label",
@@ -27906,7 +28302,7 @@
         },
         {
           "name": "start",
-          "docs": "Content to display at the leading edge of the textarea. (EXPERIMENTAL)"
+          "docs": "textarea の前端に表示する内容。(実験的)"
         }
       ],
       "parts": [],
@@ -28615,7 +29011,7 @@
           "mutable": false,
           "attr": "swipe-gesture",
           "reflectToAttr": false,
-          "docs": "If set to 'vertical', the Toast can be dismissed with\na swipe gesture. The swipe direction is determined by\nthe value of the `position` property:\n`top`: The Toast can be swiped up to dismiss.\n`bottom`: The Toast can be swiped down to dismiss.\n`middle`: The Toast can be swiped up or down to dismiss.",
+          "docs": "vertical'に設定すると、スワイプジェスチャーでToastを消すことができます。スワイプの方向は `position` プロパティの値によって決まります：top`：top`: 上方向にスワイプすることでトーストを消すことができます。top`: トーストを上方向にスワイプして消すことができます：top`: 上方向にスワイプするとToastが表示され、下方向にスワイプするとToastが表示されます。middle`：トーストは上下にスワイプして消すことができます。",
           "docsTags": [],
           "values": [
             {
@@ -28694,7 +29090,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
               }
             ],
             "references": {
@@ -28720,7 +29116,7 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ],
           "docs": "トーストのオーバーレイが提示された後、それを解除します。",
@@ -28731,7 +29127,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
             }
           ]
         },
@@ -29348,30 +29744,6 @@
           "required": false
         },
         {
-          "name": "legacy",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "legacy",
-          "reflectToAttr": false,
-          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -29570,7 +29942,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the toggle."
+          "docs": "トグルを説明するラベルテキスト。"
         },
         {
           "name": "track",

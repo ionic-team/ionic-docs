@@ -1,0 +1,228 @@
+{
+  "filePath": "src/components/picker-column/picker-column.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-picker-column",
+  "docs": "",
+  "docsTags": [
+    {
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    },
+    {
+      "name": "slot",
+      "text": "prefix - Content to show on the left side of the picker options."
+    },
+    {
+      "name": "slot",
+      "text": "suffix - Content to show on the right side of the picker options."
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "color",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": true,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "default": "'primary'",
+      "values": [
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the picker.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "number | string | undefined",
+      "complexType": {
+        "original": "string | number",
+        "resolved": "number | string | undefined",
+        "references": {}
+      },
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The selected option in the picker.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "setFocus() => Promise<void>",
+      "parameters": [],
+      "docs": "Sets focus on the scrollable container within the picker column.\nUse this method instead of the global `pickerColumn.focus()`.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionChange",
+      "detail": "PickerColumnChangeEventDetail",
+      "bubbles": true,
+      "complexType": {
+        "original": "PickerColumnChangeEventDetail",
+        "resolved": "PickerColumnChangeEventDetail",
+        "references": {
+          "PickerColumnChangeEventDetail": {
+            "location": "import",
+            "path": "./picker-column-interfaces",
+            "id": "src/components/picker-column/picker-column-interfaces.ts::PickerColumnChangeEventDetail"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value has changed.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [],
+  "slots": [
+    {
+      "name": "prefix",
+      "docs": "Content to show on the left side of the picker options."
+    },
+    {
+      "name": "suffix",
+      "docs": "Content to show on the right side of the picker options."
+    }
+  ],
+  "parts": [],
+  "dependents": [
+    "ion-datetime"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "ion-datetime": [
+      "ion-picker-column"
+    ]
+  }
+}

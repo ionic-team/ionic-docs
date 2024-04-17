@@ -2,12 +2,12 @@
 title: "ion-route-redirect"
 ---
 
-import Props from '@ionic-internal/component-api/v7/route-redirect/props.md';
-import Events from '@ionic-internal/component-api/v7/route-redirect/events.md';
-import Methods from '@ionic-internal/component-api/v7/route-redirect/methods.md';
-import Parts from '@ionic-internal/component-api/v7/route-redirect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/route-redirect/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/route-redirect/slots.md';
+import Props from '@ionic-internal/component-api/v8/route-redirect/props.md';
+import Events from '@ionic-internal/component-api/v8/route-redirect/events.md';
+import Methods from '@ionic-internal/component-api/v8/route-redirect/methods.md';
+import Parts from '@ionic-internal/component-api/v8/route-redirect/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/route-redirect/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/route-redirect/slots.md';
 
 <head>
   <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>

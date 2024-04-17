@@ -12,6 +12,7 @@ Swiper
 Udemy
 Vetur
 Wistia
+WCAG
 
 actionsheet
 fabs
