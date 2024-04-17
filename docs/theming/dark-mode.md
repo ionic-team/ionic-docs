@@ -227,7 +227,7 @@ It is important to pay attention to the specificity if you want to override any 
 :::
 
 :::info
-The contents of Ionic's dark palette can be [viewed on GitHub](https://github.com/ionic-team/ionic-framework/blob/feature-8.0/core/src/css/palettes/dark.scss). The CSS used to apply the **always** dark palette can be found [here](https://github.com/ionic-team/ionic-framework/blob/feature-8.0/core/src/css/palettes/dark.always.scss).
+The contents of Ionic's dark palette can be [viewed on GitHub](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss). The CSS used to apply the **always** dark palette can be found [here](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.always.scss).
 :::
 
 </TabItem>
@@ -246,7 +246,7 @@ It is important to pay attention to the specificity if you want to override any 
 :::
 
 :::info
-The contents of Ionic's dark palette can be [viewed on GitHub](https://github.com/ionic-team/ionic-framework/blob/feature-8.0/core/src/css/palettes/dark.scss). The CSS used to apply the **system** dark palette can be found [here](https://github.com/ionic-team/ionic-framework/blob/feature-8.0/core/src/css/palettes/dark.system.scss).
+The contents of Ionic's dark palette can be [viewed on GitHub](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss). The CSS used to apply the **system** dark palette can be found [here](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.system.scss).
 :::
 
 </TabItem>
@@ -264,7 +264,7 @@ It is important to pay attention to the specificity if you want to override any 
 :::
 
 :::info
-The contents of Ionic's dark palette can be [viewed on GitHub](https://github.com/ionic-team/ionic-framework/blob/feature-8.0/core/src/css/palettes/dark.scss). The CSS used to apply the **class** dark palette can be found [here](https://github.com/ionic-team/ionic-framework/blob/feature-8.0/core/src/css/palettes/dark.class.scss).
+The contents of Ionic's dark palette can be [viewed on GitHub](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss). The CSS used to apply the **class** dark palette can be found [here](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.class.scss).
 :::
 
 </TabItem>
