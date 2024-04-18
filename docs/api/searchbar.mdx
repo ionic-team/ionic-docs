@@ -58,7 +58,7 @@ import CancelButton from '@site/static/usage/v8/searchbar/cancel-button/index.md
 
 Searchbars are styled to look native when placed inside of a toolbar. In iOS, searchbars should be placed in their own toolbar, under a toolbar that contains the page title. In Material Design, searchbars are either persistently displayed in their own toolbar, or expand over a toolbar containing the page title.
 
-<!-- Reuse the playground from the Toolbar directory -->
+{/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v8/toolbar/searchbars/index.md';
 
 <Toolbar />

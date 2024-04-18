@@ -43,7 +43,7 @@ import Scrollable from '@site/static/usage/v8/segment/scrollable/index.md';
 
 ## Segments in Toolbars
 
-<!-- Reuse the playground from the Toolbar directory -->
+{/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 
 <Toolbar />
