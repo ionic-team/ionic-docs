@@ -39,6 +39,18 @@
     {
       "matchPackagePatterns": ["@ionic/"],
       "minimumReleaseAge": "0 days",
+      "allowedVersions": "^7.0.0",
+      "groupName": "ionic",
+      "matchFileNames": [
+        "static/code/stackblitz/v7/angular/package.json",
+        "static/code/stackblitz/v7/html/package.json",
+        "static/code/stackblitz/v7/react/package.json",
+        "static/code/stackblitz/v7/vue/package.json"
+      ]
+    },
+    {
+      "matchPackagePatterns": ["@ionic/"],
+      "minimumReleaseAge": "0 days",
       "allowedVersions": "^6.0.0",
       "groupName": "ionic",
       "matchFileNames": [
