@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-An individual column option in a picker. Visit the [`ion-picker`](./picker.md) documentation for more details.
+An individual column option in a picker. Visit the [`ion-picker`](./picker.mdx) documentation for more details.
 
 ## Properties
 <Props />
