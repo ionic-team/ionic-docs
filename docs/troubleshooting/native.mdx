@@ -13,37 +13,44 @@ title: Native Errors
 ## Code Signing errors
 
 ```shell
-Code Signing Error: Failed to create provisioning profile. The app ID "com.csform.ionic.yellow" cannot be registered to your development team. Change your bundle identifier to a unique string to try again. Code Signing Error: No profiles for 'com.csform.ionic.yellow' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.csform.ionic.yellow'. Code Signing Error: Code signing is required for product type 'Application' in SDK 'iOS 11.1'
+Code Signing Error: Failed to create provisioning profile. The app ID "com.csform.ionic.yellow" cannot be registered to your development team. Change your bundle identifier to a unique string to try again. Code Signing Error: No profiles for 'com.csform.ionic.yellow' were found: Xcode could not find any iOS App Development provisioning profiles matching 'com.csform.ionic.yellow'. Code Signing Error: Code signing is required for product type 'Application' in SDK 'iOS 11.1'
 ```
 
 Running an app on an iOS device requires a provisioning profile. If a provisioning profile has not been created yet follow these directions:
 
-1. <strong>Set the [Package ID](../reference/glossary.mdx#package-id).</strong>
+1.  <strong>Set the [Package ID](../reference/glossary.mdx#package-id).</strong>
 
-   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+    {/* prettier-ignore */}
+    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
-   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
-
-{/* prettier-ignore */}
-2. <strong>Open the project in <b>Xcode</b>.</strong>
-
-   For Capacitor, run the following to open the app in Xcode:
-
-   ```shell
-   $ ionic capacitor open ios
-   ```
-
-   For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
+    {/* prettier-ignore */}
+    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
 {/* prettier-ignore */}
-3. <strong>In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.</strong>
+2.  <strong>Open the project in <b>Xcode</b>.</strong>
 
-   ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+    {/* prettier-ignore */}
+    For Capacitor, run the following to open the app in Xcode:
+
+    {/* prettier-ignore */}
+    ```shell
+    $ ionic capacitor open ios
+    ```
+
+    {/* prettier-ignore */}
+    For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
 
 {/* prettier-ignore */}
-4. <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.</strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+3.  <strong>In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.</strong>
 
-   ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
+    {/* prettier-ignore */}
+    ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+
+{/* prettier-ignore */}
+4.  <strong>In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.</strong> Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+
+    {/* prettier-ignore */}
+    ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
 
 ## Xcode build error 65
 
