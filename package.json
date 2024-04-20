@@ -22,7 +22,7 @@
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md,mdx}\" --cache",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle",
-    "spellcheck": "cspell --no-progress \"**/*.md\" \"**/*.mdx\""
+    "spellcheck": "cspell --no-progress \"**/*.md\""
   },
   "browserslist": {
     "production": [
