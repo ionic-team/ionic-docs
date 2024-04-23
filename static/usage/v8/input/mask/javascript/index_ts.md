@@ -1,7 +1,7 @@
 ```ts
 import { defineCustomElements } from '@ionic/core/loader';
 
-import { Maskito } from '@maskito/core';
+import { Maskito, maskitoTransform } from '@maskito/core';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
@@ -25,4 +25,5 @@ import './theme/variables.css';
 defineCustomElements();
 
 (window as any).Maskito = Maskito;
+(window as any).maskitoTransform = maskitoTransform;
 ```
