@@ -74,7 +74,7 @@ Follow the same process to add the other two Keys required of the Camera plugin:
 
 Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
 
-![The Xcode interface displaying the Signing & Capabilities tab for an iOS app project.](/img/guides/first-app-cap-ng/xcode-signing.png 'Xcode Signing & Capabilities')
+![The Xcode interface displaying the Signing and Capabilities tab for an iOS app project.](/img/guides/first-app-cap-ng/xcode-signing.png 'Xcode Signing & Capabilities')
 
 With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
 
