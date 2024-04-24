@@ -75,7 +75,7 @@ ionic serve
 
 Tap on the Gallery tab, then the camera button. A runtime error should occur. In a browser, head over to the [Appflow dashboard](https://dashboard.ionicframework.com), then Monitor -> Monitoring. After a few minutes, the error should appear:
 
-![Screenshot of an event showing error 'takePhoto is not a function' with status 'New'.](/img/guides/first-app-v3/monitoring-event.png 'Ionic Monitoring Event Overview')
+![An event showing error 'takePhoto is not a function' with status 'New'.](/img/guides/first-app-v3/monitoring-event.png 'Ionic Monitoring Event Overview')
 
 Clicking on the event gives us lots of details surrounding what happened, such as a full stack trace. In this instance, we see that the error occurred three times on Mac OS X in the Chrome web browser.
 

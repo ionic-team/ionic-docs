@@ -49,7 +49,7 @@ imports: [
 
 Now, the iOS version of our app has a Material Design skin!
 
-![Screenshot showing an Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png 'Ionic Material Design Styling on iOS')
+![An Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png 'Ionic Material Design Styling on iOS')
 
 Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
 

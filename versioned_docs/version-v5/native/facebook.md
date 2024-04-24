@@ -20,7 +20,7 @@ Requires Cordova plugin: `cordova-plugin-facebook-connect`. For more info, pleas
 
 To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).
 
-[![Screenshot of the Facebook Developer Portal with a highlighted 'Add a New App' button.](/img/docs/native/Facebook/1.png "Facebook Developer Portal - Add a New App Button")](https://developers.facebook.com/apps/)
+[![The Facebook Developer Portal with a highlighted 'Add a New App' button.](/img/docs/native/Facebook/1.png "Facebook Developer Portal - Add a New App Button")](https://developers.facebook.com/apps/)
 
 Retrieve the `App ID` and `App Name`.
 

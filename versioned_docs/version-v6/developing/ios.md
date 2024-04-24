@@ -37,7 +37,7 @@ All iOS apps must be code signed, even for development. Luckily, Xcode makes thi
 
 Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
 
-![Screenshot of the Accounts section in Xcode Preferences showing an Apple ID and Personal Team.](/img/installation/ios-xcode-accounts.png 'Xcode Preferences Accounts Section')
+![The Accounts section in Xcode Preferences showing an Apple ID and Personal Team.](/img/installation/ios-xcode-accounts.png 'Xcode Preferences Accounts Section')
 
 ### Creating an iOS Simulator
 
@@ -96,11 +96,11 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
 1. **In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.**
 
-   ![Screenshot of Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
+   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
 
 1. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
-   ![Screenshot of Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
+   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
 
 ## Running with Xcode
 
