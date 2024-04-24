@@ -19,7 +19,7 @@
     "serve": "docusaurus serve",
     "playground:new": "hygen playground new",
     "prestart": "npm run generate-markdown",
-    "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md}\" --cache",
+    "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md,mdx}\" --cache",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle",
     "spellcheck": "cspell --no-progress \"**/*.md\""

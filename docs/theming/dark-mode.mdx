@@ -197,7 +197,7 @@ color-scheme: light dark;
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 
 :::note
-`color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).
+`color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.mdx#dark-mode).
 :::
 
 :::note
@@ -208,7 +208,7 @@ For developers looking to customize the theme color under the status bar in Safa
 
 Ionic has a recommended dark palette that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the dark palette file with the corresponding name.
 
-The contents of each file are included below for reference. These variables are set by importing the relevant dark palette file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
+The contents of each file are included below for reference. These variables are set by importing the relevant dark palette file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.mdx) section.
 
 <Tabs groupId="darkFiles" defaultValue="always" values={[{ value: 'always', label: 'Always (dark.always.css)' }, { value: 'system', label: 'System (dark.system.css)' }, { value: 'class', label: 'Class (dark.class.css)' }]}>
 
@@ -216,7 +216,7 @@ The contents of each file are included below for reference. These variables are 
 
 The **always** dark palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+1. Sets the [Ionic colors](colors.mdx) for all [modes](platform-styles.mdx#ionic-modes) to complement a dark palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
 2. Setting variables for the dark palette on `ios` devices using the `:root.ios` selector.
 3. Setting variables for the dark palette on `md` devices using the `:root.md` selector.
 
@@ -234,7 +234,7 @@ The contents of Ionic's dark palette can be [viewed on GitHub](https://github.co
 
 The **system** dark palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+1. Sets the [Ionic colors](colors.mdx) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
 2. Setting variables for the dark palette on `ios` devices using the `:root.ios` selector.
 3. Setting variables for the dark palette on `md` devices using the `:root.md` selector.
 4. Only applies these variables when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`.
@@ -253,7 +253,7 @@ The contents of Ionic's dark palette can be [viewed on GitHub](https://github.co
 
 The **class** dark palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a dark palette in the `.ion-palette-dark` selector. The `.ion-palette-dark` class must be added to the `html` element in an app.
+1. Sets the [Ionic colors](colors.mdx) for all [modes](platform-styles.mdx#ionic-modes) to complement a dark palette in the `.ion-palette-dark` selector. The `.ion-palette-dark` class must be added to the `html` element in an app.
 2. Setting variables for the dark palette on `ios` devices using the `.ion-palette-dark.ios` selector.
 3. Setting variables for the dark palette on `md` devices using the `.ion-palette-dark.md` selector.
 

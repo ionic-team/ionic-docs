@@ -118,10 +118,10 @@ Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The c
 The content of the Ionic docs is written as [Markdown](https://commonmark.org/) in `docs/`. Each Markdown file corresponds to a route unless explicitly changed in the frontmatter.
 
 ```
-/docs/                  =>  src/pages/index.md
-/docs/intro/cli         =>  src/pages/intro/cli.md
-/docs/theming/advanced  =>  src/pages/theming/advanced.md
-/docs/theming           =>  src/pages/theming.md
+/docs/                  =>  src/pages/index.mdx
+/docs/intro/cli         =>  src/pages/intro/cli.mdx
+/docs/theming/advanced  =>  src/pages/theming/advanced.mdx
+/docs/theming           =>  src/pages/theming.mdx
 ```
 
 You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.

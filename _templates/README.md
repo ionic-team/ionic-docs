@@ -21,12 +21,12 @@ If you need a component for multiple versions of Ionic Framework, you (currently
 
 ## Usage
 
-Once you've generated your playground, you need to add it to the main markdown file in the docs (e.g. [docs/api/button.md](../docs/api/button.mdx)) by doing something similar to the following example:
+Once you've generated your playground, you need to add it to the main markdown file in the docs (e.g. [docs/api/button.mdx](../docs/api/button.mdx)) by doing something similar to the following example:
 
 ```
 ## Feature
 
-import Feature from '@site/static/usage/v8/button/feature/index.md';
+import Feature from '@site/static/usage/v8/button/feature/index.mdx';
 
 <Feature />
 ```

@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 :::warning Deprecation Notice
 
-`ion-picker-legacy` is deprecated and will be removed in the next major release. Migrate to [`ion-picker`](./picker.md) as soon as possible.
+`ion-picker-legacy` is deprecated and will be removed in the next major release. Migrate to [`ion-picker`](./picker.mdx) as soon as possible.
 
 :::
 
