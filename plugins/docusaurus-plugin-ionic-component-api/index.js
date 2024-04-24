@@ -52,9 +52,7 @@ module.exports = function (context, options) {
 
       let npmTag = 'latest';
       if (currentVersion.banner === 'unreleased') {
-        // TODO create a ticket to re-enable this once v8 is released.
-        // npmTag = 'next';
-        npmTag = '7.5.8-dev.11702398696.1ab62ea9';
+        npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
         npmTag = currentVersion.path.slice(1);
       }
@@ -170,11 +168,9 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description |
-| --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
-
-`;
+| Name | Description | Bubbles |
+| --- | --- | --- |
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
 function renderMethods({ methods }) {

@@ -6,12 +6,13 @@
     <title>Input</title>
     <link rel="stylesheet" href="../../common.css" />
     <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
     <script type="module">
-      import { Maskito } from 'https://cdn.jsdelivr.net/npm/@maskito/core/index.esm.js';
+      import { Maskito, maskitoTransform } from 'https://cdn.jsdelivr.net/npm/@maskito/core/index.esm.js';
       window.Maskito = Maskito;
+      window.maskitoTransform = maskitoTransform;
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
 
     <style>
       ion-list {
@@ -39,10 +40,13 @@
       async function initPhoneMask() {
         const ionInput = document.querySelector('#phone');
         const nativeEl = await ionInput.getInputElement();
-
-        new window.Maskito(nativeEl, {
+        const phoneMaskOptions = {
           mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-        });
+        };
+        new window.Maskito(nativeEl, phoneMaskOptions);
+
+        //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+        ionInput.value = window.maskitoTransform('5555551212', phoneMaskOptions);
       }
 
       async function initCardMask() {

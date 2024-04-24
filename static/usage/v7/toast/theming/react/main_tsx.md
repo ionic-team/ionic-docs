@@ -12,7 +12,7 @@ function Example() {
         trigger="open-toast"
         duration={3000}
         message="Hello Styled World!"
-        class="custom-toast"
+        className="custom-toast"
         buttons={[
           {
             text: 'Dismiss',

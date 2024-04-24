@@ -6,34 +6,34 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent implements OnInit {
-  themeToggle = false;
+  paletteToggle = false;
 
   ngOnInit() {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Initialize the dark theme based on the initial
+    // Initialize the dark palette based on the initial
     // value of the prefers-color-scheme media query
-    this.initializeDarkTheme(prefersDark.matches);
+    this.initializeDarkPalette(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkTheme(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkPalette(mediaQuery.matches));
   }
 
-  // Check/uncheck the toggle and update the theme based on isDark
-  initializeDarkTheme(isDark) {
-    this.themeToggle = isDark;
-    this.toggleDarkTheme(isDark);
+  // Check/uncheck the toggle and update the palette based on isDark
+  initializeDarkPalette(isDark) {
+    this.paletteToggle = isDark;
+    this.toggleDarkPalette(isDark);
   }
 
-  // Listen for the toggle check/uncheck to toggle the dark theme
+  // Listen for the toggle check/uncheck to toggle the dark palette
   toggleChange(ev) {
-    this.toggleDarkTheme(ev.detail.checked);
+    this.toggleDarkPalette(ev.detail.checked);
   }
 
-  // Add or remove the "ion-theme-dark" class on the html element
-  toggleDarkTheme(shouldAdd) {
-    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
+  // Add or remove the "ion-palette-dark" class on the html element
+  toggleDarkPalette(shouldAdd) {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
 }
 ```

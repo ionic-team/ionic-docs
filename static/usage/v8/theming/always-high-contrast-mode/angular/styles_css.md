@@ -27,11 +27,11 @@
 @import '@ionic/angular/css/display.css';
 
 /**
- * Ionic High Contrast Theme
+ * Ionic High Contrast Palette
  * -----------------------------------------------------
  * For more information, please see:
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
 
-@import '@ionic/angular/css/themes/high-contrast.always.css';
+@import '@ionic/angular/css/palettes/high-contrast.always.css';
 ```

@@ -18,16 +18,16 @@ import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
 /**
- * Ionic Dark and High Contrast Themes
+ * Ionic Dark and High Contrast Palettes
  * -----------------------------------------------------
  * For more information, please see:
  * https://ionicframework.com/docs/theming/dark-mode
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
 
-import '@ionic/core/css/themes/dark.system.css';
-import '@ionic/core/css/themes/high-contrast.system.css';
-import '@ionic/core/css/themes/high-contrast-dark.system.css';
+import '@ionic/core/css/palettes/dark.system.css';
+import '@ionic/core/css/palettes/high-contrast.system.css';
+import '@ionic/core/css/palettes/high-contrast-dark.system.css';
 
 defineCustomElements();
 ```

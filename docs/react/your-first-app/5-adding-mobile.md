@@ -14,7 +14,7 @@ First, we’ll update the photo saving functionality to support mobile. In the `
 
 ```tsx
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-  let base64Data: string;
+  let base64Data: string | Blob;
   // "hybrid" will detect Cordova or Capacitor;
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
