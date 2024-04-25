@@ -31,9 +31,9 @@ The high contrast palette can be enabled by importing the following stylesheet i
 
 <TabItem value="angular">
 
-```css
+```scss
 @import '@ionic/angular/css/palettes/high-contrast.always.css'; // Light palette
-// @import '@ionic/angular/css/palettes/high-contrast.always.css'; // Dark palette
+// @import '@ionic/angular/css/palettes/high-contrast-dark.always.css'; // Dark palette
 ```
 
 </TabItem>
