@@ -105,7 +105,7 @@ color-scheme: light dark;
 | ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
 | ![Application without color-scheme](/img/theming/color-scheme-light.png) | ![Application with color-scheme](/img/theming/color-scheme-dark.png) |
 
-For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
+For more information regarding `color-scheme`, please see the [Web.dev guide on color schemes](https://web.dev/color-scheme/).
 
 :::note
 `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).

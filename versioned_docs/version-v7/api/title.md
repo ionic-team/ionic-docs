@@ -51,6 +51,18 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsibl
 
 <CollapsibleLargeTitleButtons />
 
+## Accessibility
+
+### Headings
+
+When creating headings, we typically recommend using [semantic heading elements (h1-h6)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements). However, there may be instances where you need to update Title to be treated as a particular heading by assistive technologies. For example, if you have a Title at the top of a view, you may want this to be considered a level 1 heading.
+
+To achieve this, developers should use the [`heading` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) on Title. This will indicate to assistive technologies that Title is a type of heading. From there, developers should use the [`aria-level` attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) to set the heading level.
+
+For example, if we wanted to make a Title behave like an `h1` element, we would set `role="heading"` and `aria-level="1"` on the Title.
+
+Since multiple Title elements can be used on a view in conjunction with semantic heading elements, Ionic does not automatically set the Title's `role` or `aria-level`. It is the responsibility of the developer to handle this.
+
 ## Theming
 
 The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the toolbar containing the collapsible large title should always match the background color of the content.

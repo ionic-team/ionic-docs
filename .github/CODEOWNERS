@@ -12,5 +12,3 @@
 # This should make it easy to add new rules without breaking existing ones.
 
 * @ionic-team/framework
-
-/_templates/ @mapsandapps
