@@ -67,9 +67,9 @@ title: Glossary
   </p>
 </section>
 
-<section id="event-bubbling">
-  <a href="#event-bubbling">
-    <h3>Event Bubbling</h3>
+<section id="bubbling">
+  <a href="#bubbling">
+    <h3>Bubbling</h3>
   </a>
   <p>
     Bubbling is a way of propagating events in the DOM. With bubbling, the event is first captured by the innermost

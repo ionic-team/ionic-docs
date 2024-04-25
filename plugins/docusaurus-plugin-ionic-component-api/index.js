@@ -168,7 +168,7 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description | [Bubbles](../reference/glossary#event-bubbling) |
+| Name | Description | [Bubbles](../reference/glossary#bubbling) |
 | --- | --- | --- |
 ${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
