@@ -1,19 +1,77 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^@ionic/"],
-      "groupName": "ionic"
+      "matchPackagePatterns": ["@ionic/"],
+      "minimumReleaseAge": "0 days",
+      "groupName": "ionic",
+      "schedule": ["every weekday before 11am"]
     },
     {
-      "matchPackagePatterns": ["^@angular/"],
-      "groupName": "angular"
+      "matchPackagePatterns": ["@angular/"],
+      "groupName": "angular",
+      "schedule": ["on the first day of the month"]
     },
     {
-      "matchPackagePatterns": ["^@ionic/"],
+      "matchPackageNames": ["react-router", "react-router-dom"],
+      "groupName": "react-router",
+      "allowedVersions": "^5.0.0"
+    },
+    {
+      "matchPackageNames": ["react", "react-dom"],
+      "groupName": "react"
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/plugin-react"],
+      "groupName": "vite-react",
+      "matchFileNames": [
+        "static/code/stackblitz/**/react/package.json"
+      ]
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/plugin-vue"],
+      "groupName": "vite-vue",
+      "matchFileNames": [
+        "static/code/stackblitz/**/vue/package.json"
+      ]
+    },
+    {
+      "matchPackagePatterns": ["@ionic/"],
+      "minimumReleaseAge": "0 days",
+      "allowedVersions": "^8.0.0",
+      "groupName": "ionic",
+      "matchFileNames": [
+        "static/code/stackblitz/v8/angular/package.json",
+        "static/code/stackblitz/v8/html/package.json",
+        "static/code/stackblitz/v8/react/package.json",
+        "static/code/stackblitz/v8/vue/package.json"
+      ]
+    },
+    {
+      "matchPackagePatterns": ["@ionic/"],
+      "minimumReleaseAge": "0 days",
+      "allowedVersions": "^7.0.0",
+      "groupName": "ionic",
+      "matchFileNames": [
+        "static/code/stackblitz/v7/angular/package.json",
+        "static/code/stackblitz/v7/html/package.json",
+        "static/code/stackblitz/v7/react/package.json",
+        "static/code/stackblitz/v7/vue/package.json"
+      ]
+    },
+    {
+      "matchPackagePatterns": ["@ionic/"],
+      "enabled": false,
+      "minimumReleaseAge": "0 days",
       "allowedVersions": "^6.0.0",
-      "matchFileNames": ["static/code/stackblitz/v6/**/package.json"]
+      "groupName": "ionic",
+      "matchFileNames": [
+        "static/code/stackblitz/v6/angular/package.json",
+        "static/code/stackblitz/v6/html/package.json",
+        "static/code/stackblitz/v6/react/package.json",
+        "static/code/stackblitz/v6/vue/package.json"
+      ]
     }
   ],
   "dependencyDashboard": true,
@@ -21,5 +79,7 @@
   "rebaseWhen": "never",
   "schedule": ["every weekday before 11am"],
   "semanticCommits": "enabled",
-  "includePaths": ["static/code/stackblitz"]
+  "includePaths": [
+    "static/code/stackblitz/**/*/package.json"
+  ]
 }

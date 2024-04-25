@@ -3,6 +3,9 @@ title: iOS App Store Deployment
 sidebar_label: iOS App Store
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <title>Publish to iOS App Store: Apple App Store Deployment for Ionic</title>
   <meta
@@ -24,6 +27,46 @@ To enroll in the Apple Developer Program, follow the instructions [listed here](
 
 ## Generating a release build
 
+<Tabs groupId="runtime">
+<TabItem value="capacitor" label="Capacitor" default>
+
+If the iOS platform is not already added, be sure to add it:
+
+```shell
+ionic cap add ios
+```
+
+With the platform added, run the build command with the `--prod` flag:
+
+```shell
+ionic build --prod
+```
+
+This will generate the minified code for the web portion of an app.
+
+For this first build, and after you make any binary changes like adding a plugin, use the sync command:
+
+```shell
+npx cap sync ios
+```
+
+This will also copy the minified web code over. However, if your build is only source change then you can just copy the minified web files using:
+
+```shell
+npx cap copy ios
+```
+
+From here, the project is now managed as if it was a native Xcode app (because it is).
+
+Open the project in `./ios/` to start Xcode:
+
+```shell
+npx cap open ios
+```
+
+</TabItem>
+<TabItem value="cordova" label="Cordova">
+
 If the iOS platform is not already added, be sure to add it:
 
 ```shell
@@ -43,6 +86,9 @@ From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 :::tip
 You can also have a release build generated automatically by using the `--release` flag.
 :::
+
+</TabItem>
+</Tabs>
 
 ## Generating Signing Certs
 

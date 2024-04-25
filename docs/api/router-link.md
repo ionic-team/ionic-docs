@@ -2,15 +2,15 @@
 title: "ion-router-link"
 ---
 
-import Props from '@ionic-internal/component-api/v7/router-link/props.md';
-import Events from '@ionic-internal/component-api/v7/router-link/events.md';
-import Methods from '@ionic-internal/component-api/v7/router-link/methods.md';
-import Parts from '@ionic-internal/component-api/v7/router-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/router-link/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/router-link/slots.md';
+import Props from '@ionic-internal/component-api/v8/router-link/props.md';
+import Events from '@ionic-internal/component-api/v8/router-link/events.md';
+import Methods from '@ionic-internal/component-api/v8/router-link/methods.md';
+import Parts from '@ionic-internal/component-api/v8/router-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/router-link/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/router-link/slots.md';
 
 <head>
-  <title>Router Link | Navigating The ion-router-link Component</title>
+  <title>ion-router-link: Navigate To a Specified Link</title>
   <meta name="description" content="Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation." />
 </head>
 

@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Select - Using compareWith</title>
-    <link rel="stylesheet" href="../../../../common.css" />
-    <script src="../../../../common.js"></script>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
-
-    <style>
-      .container > ion-list {
-        width: 70%;
-      }
-    </style>
   </head>
 
   <body>
@@ -23,12 +17,6 @@
           <ion-list>
             <ion-item>
               <ion-select aria-label="Food" placeholder="Select food"></ion-select>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-label>
-                Current value:
-                <ion-text></ion-text>
-              </ion-label>
             </ion-item>
           </ion-list>
         </div>
@@ -68,9 +56,8 @@
         selectEl.appendChild(selectOption);
       });
 
-      const valueLabel = document.querySelector('ion-text');
       selectEl.addEventListener('ionChange', () => {
-        valueLabel.innerHTML = JSON.stringify(selectEl.value);
+        console.log('Current value:', JSON.stringify(selectEl.value));
       });
     </script>
   </body>

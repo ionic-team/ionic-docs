@@ -1,15 +1,15 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Props from '@ionic-internal/component-api/v7/skeleton-text/props.md';
-import Events from '@ionic-internal/component-api/v7/skeleton-text/events.md';
-import Methods from '@ionic-internal/component-api/v7/skeleton-text/methods.md';
-import Parts from '@ionic-internal/component-api/v7/skeleton-text/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/skeleton-text/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/skeleton-text/slots.md';
+import Props from '@ionic-internal/component-api/v8/skeleton-text/props.md';
+import Events from '@ionic-internal/component-api/v8/skeleton-text/events.md';
+import Methods from '@ionic-internal/component-api/v8/skeleton-text/methods.md';
+import Parts from '@ionic-internal/component-api/v8/skeleton-text/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/skeleton-text/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/skeleton-text/slots.md';
 
 <head>
-  <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>
+  <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>
   <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
 </head>
 
@@ -23,7 +23,7 @@ Skeleton Text is a component for rendering placeholder content. The element will
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
+import Basic from '@site/static/usage/v8/skeleton-text/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v7/skeleton-text/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/skeleton-text/theming/css-properties/index.md';
 
 <CSSProps />
 

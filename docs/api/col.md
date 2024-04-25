@@ -1,15 +1,15 @@
 ---
 title: "ion-col"
 ---
-import Props from '@ionic-internal/component-api/v7/col/props.md';
-import Events from '@ionic-internal/component-api/v7/col/events.md';
-import Methods from '@ionic-internal/component-api/v7/col/methods.md';
-import Parts from '@ionic-internal/component-api/v7/col/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/col/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/col/slots.md';
+import Props from '@ionic-internal/component-api/v8/col/props.md';
+import Events from '@ionic-internal/component-api/v8/col/events.md';
+import Methods from '@ionic-internal/component-api/v8/col/methods.md';
+import Parts from '@ionic-internal/component-api/v8/col/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/col/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/col/slots.md';
 
 <head>
-  <title>ion-col: Column Component Padding, Size and Other Properties</title>
+  <title>ion-col: Column Component Padding and Other Properties</title>
   <meta name="description" content="ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties." />
 </head>
 

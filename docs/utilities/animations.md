@@ -32,6 +32,7 @@ Ionic Animations, on the other hand, uses the [Web Animations API](https://devel
     { value: 'javascript', label: 'JavaScript' },
     { value: 'typescript', label: 'TypeScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -76,6 +77,25 @@ Developers using Angular should install the latest version of `@ionic/angular`. 
 ```tsx
 
 import { Animation, AnimationController } from '@ionic/angular';
+
+...
+
+constructor(private animationCtrl: AnimationController) {
+  const animation: Animation = this.animationCtrl.create()
+    .addElement(myElementRef)
+    .duration(1000)
+    .fromTo('opacity', '1', '0.5');
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+
+```tsx
+
+import { Animation, AnimationController } from '@ionic/angular/standalone';
 
 ...
 
@@ -142,7 +162,7 @@ In the example below, an animation that changes the opacity on the `ion-card` el
 
 By default, all Ionic Animations are paused until the `play` method is called.
 
-import Basic from '@site/static/usage/v7/animations/basic/index.md';
+import Basic from '@site/static/usage/v8/animations/basic/index.md';
 
 <Basic />
 
@@ -152,7 +172,7 @@ Ionic Animations allows you to control the intermediate steps in an animation us
 
 Hyphenated CSS properties should be written using camel case when writing keyframes. For example, `border-radius` should be written as `borderRadius`. This also applies to the `fromTo()`, `from(),` and `to()` methods.
 
-import Keyframes from '@site/static/usage/v7/animations/keyframes/index.md';
+import Keyframes from '@site/static/usage/v8/animations/keyframes/index.md';
 
 <Keyframes />
 
@@ -166,7 +186,7 @@ Multiple elements can be animated at the same time and controlled via a single p
 
 This example shows 3 child animations controlled by a single parent animation. Animations `cardA` and `cardB` inherit the parent animation's duration of 2000ms, but animation `cardC` has a duration of 5000ms since it was explicitly set.
 
-import Group from '@site/static/usage/v7/animations/group/index.md';
+import Group from '@site/static/usage/v8/animations/group/index.md';
 
 <Group />
 
@@ -178,7 +198,7 @@ This example sets an inline filter which inverts the background color of the car
 
 See [Methods](#methods) for a complete list of hooks.
 
-import BeforeAndAfterHooks from '@site/static/usage/v7/animations/before-and-after-hooks/index.md';
+import BeforeAndAfterHooks from '@site/static/usage/v8/animations/before-and-after-hooks/index.md';
 
 <BeforeAndAfterHooks />
 
@@ -186,7 +206,7 @@ import BeforeAndAfterHooks from '@site/static/usage/v7/animations/before-and-aft
 
 Animations can be chained to run one after the other. The `play` method returns a Promise that resolves when the animation has completed.
 
-import Chain from '@site/static/usage/v7/animations/chain/index.md';
+import Chain from '@site/static/usage/v8/animations/chain/index.md';
 
 <Chain />
 
@@ -196,7 +216,7 @@ Ionic Animations gives developers the ability to create powerful gesture-based a
 
 In the following example we are creating a track along which we can drag the card element. Our `animation` object will take care of moving the card element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
-import Gesture from '@site/static/usage/v7/animations/gesture/index.md';
+import Gesture from '@site/static/usage/v8/animations/gesture/index.md';
 
 <Gesture />
 
@@ -208,7 +228,7 @@ This method works in all supported browsers when creating animations for the fir
 
 Safari does not currently support dynamically updating keyframe animations. For developers who need this kind of support in Safari, they can use [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener).
 
-import PreferenceBased from '@site/static/usage/v7/animations/preference-based/index.md';
+import PreferenceBased from '@site/static/usage/v8/animations/preference-based/index.md';
 
 <PreferenceBased />
 
@@ -218,7 +238,7 @@ Certain Ionic components allow developers to provide custom animations. All anim
 
 ### Modals
 
-import ModalOverride from '@site/static/usage/v7/animations/modal-override/index.md';
+import ModalOverride from '@site/static/usage/v8/animations/modal-override/index.md';
 
 <ModalOverride />
 

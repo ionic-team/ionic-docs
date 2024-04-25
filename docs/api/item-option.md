@@ -1,15 +1,15 @@
 ---
 title: "ion-item-option"
 ---
-import Props from '@ionic-internal/component-api/v7/item-option/props.md';
-import Events from '@ionic-internal/component-api/v7/item-option/events.md';
-import Methods from '@ionic-internal/component-api/v7/item-option/methods.md';
-import Parts from '@ionic-internal/component-api/v7/item-option/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/item-option/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/item-option/slots.md';
+import Props from '@ionic-internal/component-api/v8/item-option/props.md';
+import Events from '@ionic-internal/component-api/v8/item-option/events.md';
+import Methods from '@ionic-internal/component-api/v8/item-option/methods.md';
+import Parts from '@ionic-internal/component-api/v8/item-option/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/item-option/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/item-option/slots.md';
 
 <head>
-  <title>ion-item-options: Option Button Components for Ionic Apps</title>
+  <title>ion-item-option: Option Button for Sliding Item in Ionic</title>
   <meta name="description" content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties." />
 </head>
 

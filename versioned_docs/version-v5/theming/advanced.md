@@ -1,7 +1,6 @@
 ---
+title: Advanced Theming
 sidebar_label: Advanced
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
@@ -47,7 +46,7 @@ While the application and stepped variables in the themes section are useful for
 
 ### The Alpha Problem
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
 
 ```css
 /* These examples use the same color: blueviolet. */

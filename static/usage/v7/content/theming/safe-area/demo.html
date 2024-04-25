@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+
+    <style>
+      ion-content {
+        --ion-safe-area-top: 40px;
+        --ion-safe-area-bottom: 40px;
+        --ion-safe-area-left: 20px;
+        --ion-safe-area-right: 20px;
+      }
+
+      ion-content::part(scroll) {
+        padding-top: var(--ion-safe-area-top, 0);
+        padding-bottom: var(--ion-safe-area-bottom, 0);
+        padding-left: var(--ion-safe-area-left, 0);
+        padding-right: var(--ion-safe-area-right, 0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <span>Here's a small text description for the content. Nothing more, nothing less.</span>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

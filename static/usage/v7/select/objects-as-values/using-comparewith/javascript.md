@@ -3,12 +3,6 @@
   <ion-item>
     <ion-select aria-label="Food" placeholder="Select food"></ion-select>
   </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      Current value:
-      <ion-text></ion-text>
-    </ion-label>
-  </ion-item>
 </ion-list>
 
 <script>
@@ -44,9 +38,8 @@
     selectEl.appendChild(selectOption);
   });
 
-  const valueLabel = document.querySelector('ion-text');
   selectEl.addEventListener('ionChange', () => {
-    valueLabel.innerHTML = JSON.stringify(selectEl.value);
+    console.log('Current value:', JSON.stringify(selectEl.value));
   });
 </script>
 ```

@@ -1,7 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 
-import { MaskitoOptions, MaskitoElementPredicateAsync } from '@maskito/core';
+import { MaskitoOptions, MaskitoElementPredicate, maskitoTransform } from '@maskito/core';
 
 @Component({
   selector: 'app-example',
@@ -11,6 +11,9 @@ export class ExampleComponent {
   readonly phoneMask: MaskitoOptions = {
     mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
   };
+
+  //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+  myPhoneNumber = maskitoTransform('5555551212', this.phoneMask);
 
   readonly cardMask: MaskitoOptions = {
     mask: [
@@ -26,6 +29,6 @@ export class ExampleComponent {
     ],
   };
 
-  readonly maskPredicate: MaskitoElementPredicateAsync = async (el) => (el as HTMLIonInputElement).getInputElement();
+  readonly maskPredicate: MaskitoElementPredicate = async (el) => (el as HTMLIonInputElement).getInputElement();
 }
 ```

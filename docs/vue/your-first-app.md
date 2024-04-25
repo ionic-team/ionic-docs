@@ -19,9 +19,9 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 ## What We'll Build
@@ -104,8 +104,6 @@ Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 ```tsx
 // Above the createApp() line
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-
-// Call the element loader after the platform has been bootstrapped
 defineCustomElements(window);
 ```
 

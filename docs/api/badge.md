@@ -1,15 +1,15 @@
 ---
 title: "ion-badge"
 ---
-import Props from '@ionic-internal/component-api/v7/badge/props.md';
-import Events from '@ionic-internal/component-api/v7/badge/events.md';
-import Methods from '@ionic-internal/component-api/v7/badge/methods.md';
-import Parts from '@ionic-internal/component-api/v7/badge/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/badge/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/badge/slots.md';
+import Props from '@ionic-internal/component-api/v8/badge/props.md';
+import Events from '@ionic-internal/component-api/v8/badge/events.md';
+import Methods from '@ionic-internal/component-api/v8/badge/methods.md';
+import Parts from '@ionic-internal/component-api/v8/badge/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/badge/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/badge/slots.md';
 
 <head>
-  <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
+  <title>ion-badge: iOS & Android App Notification Badge Icons</title>
   <meta name="description" content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are." />
 </head>
 
@@ -21,7 +21,7 @@ Badges are inline block elements that usually appear near another element. Typic
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/badge/basic/index.md';
+import Basic from '@site/static/usage/v8/badge/basic/index.md';
 
 <Basic />
 
@@ -29,13 +29,13 @@ import Basic from '@site/static/usage/v7/badge/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/badge/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/badge/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Properties
 
-import CSSProps from '@site/static/usage/v7/badge/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/badge/theming/css-properties/index.md';
 
 <CSSProps />
 

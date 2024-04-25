@@ -2,12 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import InputWrapper from '../InputWrapper';
 
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 
 import styles from './index.module.scss';
 
 export default function ColorInput({ color, setColor, ...props }) {
-  const { isDarkTheme } = useThemeContext();
+  const { colorMode } = useColorMode();
 
   return (
     <div
@@ -16,7 +16,7 @@ export default function ColorInput({ color, setColor, ...props }) {
         'color-input',
         styles.colorInput,
         props.className,
-        styles[`colorInput${isDarkTheme ? 'Dark' : 'Light'}`]
+        styles[`colorInput${colorMode === 'dark' ? 'Dark' : 'Light'}`]
       )}
     >
       <div className={styles.colorPickerWrapper} style={{ '--background-c': color } as any}>

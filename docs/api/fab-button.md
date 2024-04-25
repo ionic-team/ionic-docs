@@ -1,15 +1,15 @@
 ---
 title: "ion-fab-button"
 ---
-import Props from '@ionic-internal/component-api/v7/fab-button/props.md';
-import Events from '@ionic-internal/component-api/v7/fab-button/events.md';
-import Methods from '@ionic-internal/component-api/v7/fab-button/methods.md';
-import Parts from '@ionic-internal/component-api/v7/fab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/fab-button/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/fab-button/slots.md';
+import Props from '@ionic-internal/component-api/v8/fab-button/props.md';
+import Events from '@ionic-internal/component-api/v8/fab-button/events.md';
+import Methods from '@ionic-internal/component-api/v8/fab-button/methods.md';
+import Parts from '@ionic-internal/component-api/v8/fab-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/fab-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/fab-button/slots.md';
 
 <head>
-  <title>Floating Action Button | Ionic FAB Button Icon for Primary Action</title>
+  <title>ion-fab-button: Ionic FAB Button Icon for Primary Action</title>
   <meta name="description" content="Floating Action Buttons (FABs) represent the primary action in an app. The icons are circular and, when pressed, the button may open more related actions." />
 </head>
 

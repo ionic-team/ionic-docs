@@ -19,9 +19,9 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 :::note
@@ -77,6 +77,12 @@ Next, create an Ionic Angular app that uses the “Tabs” starter template and 
 ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
+:::note
+
+When prompted to choose between `NgModules` and `Standalone`, opt for `NgModules` as this tutorial follows the `NgModules` approach.
+
+:::
+
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
 
 Next, change into the app folder:
@@ -106,7 +112,7 @@ Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 ```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader after the platform has been bootstrapped
+// Call the element loader before the bootstrapModule/bootstrapApplication call
 defineCustomElements(window);
 ```
 

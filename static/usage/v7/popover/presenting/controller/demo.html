@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Popover</title>
-    <link rel="stylesheet" href="../../../../common.css" />
-    <script src="../../../../common.js"></script>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
-
-    <style>
-      .container {
-        flex-direction: column;
-      }
-    </style>
   </head>
 
   <body>
@@ -21,14 +15,11 @@
       <ion-content>
         <div class="container">
           <ion-button>Click Me</ion-button>
-          <p></p>
         </div>
       </ion-content>
     </ion-app>
 
     <script>
-      const output = document.querySelector('p');
-
       class PopoverPage extends HTMLElement {
         constructor() {
           super();
@@ -51,7 +42,7 @@
         await popover.present();
 
         const { role } = await popover.onDidDismiss();
-        output.innerText = `Popover dismissed with role: ${role}`;
+        console.log(`Popover dismissed with role: ${role}`);
       }
 
       const button = document.querySelector('ion-button');

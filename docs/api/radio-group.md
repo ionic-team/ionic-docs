@@ -1,15 +1,15 @@
 ---
 title: "ion-radio-group"
 ---
-import Props from '@ionic-internal/component-api/v7/radio-group/props.md';
-import Events from '@ionic-internal/component-api/v7/radio-group/events.md';
-import Methods from '@ionic-internal/component-api/v7/radio-group/methods.md';
-import Parts from '@ionic-internal/component-api/v7/radio-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/radio-group/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/radio-group/slots.md';
+import Props from '@ionic-internal/component-api/v8/radio-group/props.md';
+import Events from '@ionic-internal/component-api/v8/radio-group/events.md';
+import Methods from '@ionic-internal/component-api/v8/radio-group/methods.md';
+import Parts from '@ionic-internal/component-api/v8/radio-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/radio-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>
+  <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
   <meta name="description" content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage." />
 </head>
 

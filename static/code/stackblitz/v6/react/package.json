@@ -1,11 +1,11 @@
 {
-  "name": "create-react-app-typescript",
+  "name": "vite-react-typescript",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",
-    "@types/node": "^16.11.35",
+    "@types/node": "^20.0.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "@types/react-router": "^5.1.11",
@@ -14,29 +14,13 @@
     "react-dom": "^18.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.6.4",
-    "web-vitals": "^2.1.4"
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.1.1",
+    "web-vitals": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "vite",
+    "build": "vite build"
   }
 }

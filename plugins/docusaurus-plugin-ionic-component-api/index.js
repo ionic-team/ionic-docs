@@ -4,10 +4,9 @@ module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
     async loadContent() {
+      const classicPreset = context.siteConfig.presets.find((preset) => preset[0] === '@docusaurus/preset-classic');
       // Finds the plugin options for @docusaurus/plugin-content-docs
-      const docsPluginOptions = context.siteConfig.plugins.find(
-        (plugin) => Array.isArray(plugin) && plugin[0] === '@docusaurus/plugin-content-docs'
-      )[1];
+      const docsPluginOptions = classicPreset[1].docs;
 
       const data = [];
       const currentVersion = docsPluginOptions.versions.current;
@@ -19,6 +18,7 @@ module.exports = function (context, options) {
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
+        let COMPONENT_LINK_REGEXP;
         const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
@@ -46,6 +46,7 @@ module.exports = function (context, options) {
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
+
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
@@ -121,6 +122,18 @@ function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
 }
 
+function formatType(attr, type) {
+  if (attr === 'color') {
+    /**
+     * The `color` attribute has an additional type that we don't want to display.
+     * The union type is used to allow intellisense to recommend the color names,
+     * while still accepting any string value.
+     */
+    type = type.replace('string & Record<never, never>', 'string');
+  }
+  return type.replace(/\|/g, '\uff5c');
+}
+
 function renderProperties({ props: properties }) {
   if (properties.length === 0) {
     return 'No properties available for this component.';
@@ -141,7 +154,7 @@ ${properties
 | --- | --- |
 | **Description** | ${formatMultiline(docs)} |
 | **Attribute** | \`${prop.attr}\` |
-| **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
+| **Type** | \`${formatType(prop.attr, prop.type)}\` |
 | **Default** | \`${prop.default}\` |
 
 `;
@@ -156,12 +169,8 @@ function renderEvents({ events }) {
 
   return `
 | Name | Description | [Bubbles](../reference/glossary#event-bubbling) |
-| --- | --- | -- |
-${events
-  .map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | ${event.bubbles ? 'Yes' : 'No'} |`)
-  .join('\n')}
-
-`;
+| --- | --- | --- |
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
 function renderMethods({ methods }) {

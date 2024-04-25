@@ -1,17 +1,17 @@
 import sdk from '@stackblitz/sdk';
 
-// The default title to use for Stackblitz examples (when not overwritten)
+// The default title to use for StackBlitz examples (when not overwritten)
 const DEFAULT_EDITOR_TITLE = 'Ionic Docs Example';
-// The default description to use for Stackblitz examples (when not overwritten)
+// The default description to use for StackBlitz examples (when not overwritten)
 const DEFAULT_EDITOR_DESCRIPTION = '';
 
 export interface EditorOptions {
   /**
-   * The title of the Stackblitz example.
+   * The title of the StackBlitz example.
    */
   title?: string;
   /**
-   * The description of the Stackblitz example.
+   * The description of the StackBlitz example.
    */
   description?: string;
 
@@ -20,7 +20,7 @@ export interface EditorOptions {
   };
 
   /**
-   * List of dependencies to add to the Stackblitz example.
+   * List of dependencies to add to the StackBlitz example.
    * The key is the name of the dependency and the value is the version.
    */
   dependencies?: {
@@ -29,12 +29,12 @@ export interface EditorOptions {
 
   /**
    * `true` if `ion-app` and `ion-content` should automatically be injected into the
-   * Stackblitz example.
+   * StackBlitz example.
    */
   includeIonContent: boolean;
 
   /**
-   * The mode of the Stackblitz example.
+   * The mode of the StackBlitz example.
    */
   mode?: string;
 
@@ -68,7 +68,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 
   const package_json = defaultFiles[3];
 
-  files[indexHtml] = files[indexHtml].replace(/{{ TEMPLATE }}/g, code).replace(
+  files[indexHtml] = defaultFiles[1].replace(/{{ TEMPLATE }}/g, code).replace(
     '</head>',
     `
   <script>
@@ -124,7 +124,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
   const appModule = 'src/app/app.module.ts';
   const files = {
     'src/main.ts': defaultFiles[0],
-    'src/polyfills.ts': `import 'zone.js/dist/zone';`,
+    'src/polyfills.ts': `import 'zone.js';`,
     [appModule]: defaultFiles[1],
     'src/app/app.component.ts': defaultFiles[2],
     'src/app/app.component.css': defaultFiles[3],
@@ -179,6 +179,9 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/package.json',
       'react/package-lock.json',
       'react/index.html',
+      'react/vite.config.js',
+      'react/browserslistrc',
+      'react/eslintrc.js',
     ],
     options.version
   );
@@ -194,7 +197,10 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 
   const appTsx = 'src/App.tsx';
   const files = {
-    'public/index.html': defaultFiles[6],
+    '.eslintrc.js': defaultFiles[9],
+    '.browserslistrc': defaultFiles[8],
+    'vite.config.js': defaultFiles[7],
+    'index.html': defaultFiles[6],
     'src/index.tsx': defaultFiles[0],
     [appTsx]: defaultFiles[1],
     'src/main.tsx': code,
@@ -272,7 +278,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
   );
 
   /**
-   * We have to use Stackblitz web containers here (node template), due
+   * We have to use StackBlitz web containers here (node template), due
    * to multiple issues with Vite, Vue/Vue Router and Vue 3's script setup.
    *
    * https://github.com/stackblitz/core/issues/1308

@@ -63,7 +63,8 @@
       "source": "/docs/vue/your-first-app/6-deploying-mobile",
       "destination": "/docs/vue/your-first-app/deploying-mobile"
     },
-    { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" }
+    { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" },
+    { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },

@@ -12,12 +12,13 @@ title: Browser Support
 
 Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, PWAs, and more.
 
-## Mobile Browsers
+## Mobile Platforms
 
 In pursuit of [adaptive styling](../core-concepts/fundamentals.md#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
 
 | Framework |        Android         |  iOS  |
 | :-------: | :--------------------: | :---: |
+| Ionic v8  | 5.1+ with Chromium 89+ | 15.0+ |
 | Ionic v7  | 5.1+ with Chromium 79+ | 14.0+ |
 | Ionic v6  | 5.0+ with Chromium 60+ | 13.0+ |
 | Ionic v5  |          5.0+          | 11.0+ |
@@ -33,14 +34,14 @@ Starting with Android 5.0, the webview was moved to a separate application that 
 
 To figure out what version of the webview a device is running, log `window.navigator.userAgent` to the console when inspecting the application using Chrome Dev Tools.
 
-## Desktop Browsers
+## Browsers
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
+Ionic supports the following browsers:
 
-|   Browser   | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
-| :---------: | :------: | :------: | :------: | :------: |
-| **Chrome**  |   79+    |   60+    |    ✔     |    ✔     |
-| **Safari**  |   14+    |   13+    |    ✔     |    ✔     |
-|  **Edge**   |   79+    |   79+    |   79+    |    ✔     |
-| **Firefox** |   70+    |   63+    |    ✔     |    ✔     |
-|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |
+|   Browser   | Ionic v8 | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
+| :---------: | :------: | :------: | :------: | :------: | :------: |
+| **Chrome**  |   89+    |   79+    |   60+    |    ✔     |    ✔     |
+| **Safari**  |   15+    |   14+    |   13+    |    ✔     |    ✔     |
+|  **Edge**   |   89+    |   79+    |   79+    |   79+    |    ✔     |
+| **Firefox** |   75+    |   70+    |   63+    |    ✔     |    ✔     |
+|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |  **X**   |

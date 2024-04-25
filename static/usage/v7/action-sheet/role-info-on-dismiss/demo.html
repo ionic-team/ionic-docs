@@ -4,18 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Action Sheet</title>
-    <link rel="stylesheet" href="../../../common.css" />
-    <script src="../../../common.js"></script>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
 
     <style>
       .container {
         flex-direction: column;
-      }
-
-      code {
-        white-space: pre-wrap;
       }
     </style>
   </head>
@@ -30,14 +26,11 @@
             header="Example header"
             sub-header="Example subheader"
           ></ion-action-sheet>
-
-          <code id="action"></code>
         </div>
       </ion-content>
     </ion-app>
     <script>
       const actionSheet = document.querySelector('ion-action-sheet');
-      const action = document.getElementById('action');
 
       actionSheet.buttons = [
         {
@@ -63,7 +56,7 @@
       ];
 
       actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {
-        action.innerText = JSON.stringify(ev.detail, null, 2);
+        console.log(JSON.stringify(ev.detail, null, 2));
       });
     </script>
   </body>

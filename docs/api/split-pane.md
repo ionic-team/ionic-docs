@@ -2,15 +2,15 @@
 title: "ion-split-pane"
 ---
 
-import Props from '@ionic-internal/component-api/v7/split-pane/props.md';
-import Events from '@ionic-internal/component-api/v7/split-pane/events.md';
-import Methods from '@ionic-internal/component-api/v7/split-pane/methods.md';
-import Parts from '@ionic-internal/component-api/v7/split-pane/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/split-pane/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/split-pane/slots.md';
+import Props from '@ionic-internal/component-api/v8/split-pane/props.md';
+import Events from '@ionic-internal/component-api/v8/split-pane/events.md';
+import Methods from '@ionic-internal/component-api/v8/split-pane/methods.md';
+import Parts from '@ionic-internal/component-api/v8/split-pane/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/split-pane/custom-props.md';
+import Slots from '@ionic-internal/component-api/v8/split-pane/slots.md';
 
 <head>
-  <title>ion-split-pane: Split Plane View for Menus and Multi-View Layouts</title>
+  <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
   <meta name="description" content="ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases." />
 </head>
 
@@ -29,7 +29,7 @@ If the device's screen width is below a certain size, the split pane will collap
 This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. See [Setting Breakpoints](#setting-breakpoints) for more information. 
 :::
 
-import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
+import Basic from '@site/static/usage/v8/split-pane/basic/index.md';
 
 <Basic />
 
@@ -58,7 +58,7 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 
 ### CSS Custom Properties
 
-import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properties/index.md';
+import CSSProperties from '@site/static/usage/v8/split-pane/theming/css-properties/index.md';
 
 <CSSProperties />
 

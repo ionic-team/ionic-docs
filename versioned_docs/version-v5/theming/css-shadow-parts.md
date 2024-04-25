@@ -79,7 +79,7 @@ ion-select::part(placeholder)::first-letter {
 }
 ```
 
-Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">psuedo-classes</a>, as well:
+Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">pseudo-classes</a>, as well:
 
 ```css
 ion-item::part(native):hover {
@@ -113,9 +113,8 @@ CSS Shadow Parts are supported in the recent versions of all of the major browse
 
 ### Vendor Prefixed Pseudo-Elements
 
-<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
-  Vendor prefixed
-</a> pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
+<!-- prettier-ignore -->
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">Vendor prefixed</a> pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
 
 ```css
 /* Does NOT work */

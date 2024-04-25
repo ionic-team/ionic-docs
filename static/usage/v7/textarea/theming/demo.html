@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Textarea - Theming</title>
-    <link rel="stylesheet" href="../../../common.css" />
-    <script src="../../../common.js"></script>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
     <style>
@@ -22,9 +22,11 @@
         --placeholder-opacity: 0.8;
       }
 
-      ion-textarea.custom .helper-text,
-      ion-textarea.custom .counter {
-        color: #373737;
+      ion-textarea.custom.ios .textarea-bottom .helper-text,
+      ion-textarea.custom.ios .textarea-bottom .counter,
+      ion-textarea.custom.md .textarea-bottom .helper-text,
+      ion-textarea.custom.md .textarea-bottom .counter {
+        color: var(--ion-color-primary);
       }
     </style>
   </head>

@@ -29,6 +29,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -92,6 +93,30 @@ constructor(private gestureCtrl: GestureController) {
 
 ```
 </TabItem>
+<TabItem value="angular-standalone">
+
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+
+By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
+or they can wrap their callbacks in an `NgZone.run()` call.
+
+```tsx
+import { Gesture, GestureController } from '@ionic/angular/standalone';
+
+...
+
+constructor(private gestureCtrl: GestureController) {
+  const gesture: Gesture = this.gestureCtrl.create({
+    el: this.element.nativeElement,
+    threshold: 15,
+    gestureName: 'my-gesture',
+    onMove: ev => this.onMoveHandler(ev)
+  }, true);
+  // The `true` above ensures that callbacks run inside NgZone.
+}
+
+```
+</TabItem>
 <TabItem value="react">
 
 Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
@@ -137,7 +162,7 @@ const gesture = createGesture({
 
 ## Basic Gestures
 
-import Basic from '@site/static/usage/v7/gestures/basic/index.md';
+import Basic from '@site/static/usage/v8/gestures/basic/index.md';
 
 In this example, our app listens for gestures on the `ion-content` element. When a gesture movement has started, the `onStart` function is called and a class is added to our `ion-card` to add a colored box shadow. When a gesture movement was detected, the `onMove` function is called and our app prints the current gesture information within the `ion-card`. Finally, when a gesture movement has ended, the `onEnd` function is called and the custom class is removed from our `ion-card`.
 
@@ -145,7 +170,7 @@ In this example, our app listens for gestures on the `ion-content` element. When
 
 ## Double Click Gesture
 
-import DoubleClick from '@site/static/usage/v7/gestures/double-click/index.md';
+import DoubleClick from '@site/static/usage/v8/gestures/double-click/index.md';
 
 In the example below, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 

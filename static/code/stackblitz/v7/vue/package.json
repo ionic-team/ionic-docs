@@ -8,15 +8,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ionic/vue": "^7.0.10",
-    "@ionic/vue-router": "^7.0.10",
+    "@ionic/vue": "^7.4.0",
+    "@ionic/vue-router": "^7.4.0",
     "vue": "^3.2.25",
-    "vue-router": "4.0.13"
+    "vue-router": "4.3.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^5.0.0",
     "typescript": "^4.5.4",
-    "vite": "^2.9.9",
-    "vue-tsc": "^0.34.7"
+    "vite": "^5.0.0",
+    "vue-tsc": "^2.0.0"
   }
 }

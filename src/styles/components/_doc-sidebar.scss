@@ -24,11 +24,14 @@ html[data-theme='dark'] {
   --ifm-menu-color-active: var(--ifm-link-color);
 
   --sidebar-spacing-horizontal: 1.5rem;
+
+  // The variable aims to style the collapsible menu items on the sidebar.
+  --ifm-menu-color-background-hover: transparent;
 }
 
 //overrides
 #__docusaurus {
-  [class^='docSidebarContainer'] {
+  .theme-doc-sidebar-container {
     background: var(--token-primary-bg-c);
 
     position: sticky;
@@ -40,13 +43,16 @@ html[data-theme='dark'] {
 
     border-inline-end: 1px solid var(--sidebar-border-c);
 
-    > a {
-      display: flex;
-      align-items: center;
-      height: var(--ifm-navbar-height);
-
-      padding-inline-start: var(--sidebar-spacing-horizontal);
-      padding-inline-end: var(--sidebar-spacing-horizontal);
+    [class^='sidebarViewport'] {
+      // Targets the logo
+      > a {
+        display: flex;
+        align-items: center;
+        height: var(--ifm-navbar-height);
+  
+        padding-inline-start: var(--sidebar-spacing-horizontal);
+        padding-inline-end: var(--sidebar-spacing-horizontal);
+      }
     }
   }
 
@@ -73,7 +79,7 @@ html[data-theme='dark'] {
 
   .theme-doc-sidebar-item-category-level-1 > .menu__list {
     /* removes indentation from first level categories */
-    margin: 0;
+    padding: 0;
   }
 
   .menu__list {
@@ -81,11 +87,14 @@ html[data-theme='dark'] {
     transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
     will-change: initial !important;
 
+    margin-top: 0;
+
     .menu__list {
       .menu__link--sublist {
         margin-inline-start: calc(-1 * (var(--dropdown-icon-width) + var(--dropdown-icon-gap)));
 
         &::after {
+          // The chevron icon will have less opacity when it's not on the first level.
           opacity: 0.6;
         }
       }
@@ -99,6 +108,10 @@ html[data-theme='dark'] {
         .menu__link {
           padding-inline-start: calc(var(--dropdown-icon-width) + var(--dropdown-icon-gap));
         }
+      }
+      &-collapsible {
+        // This allows the item to be clickable across the entire width of the sidebar.
+        display: block;
       }
     }
   }
@@ -146,7 +159,7 @@ html[data-theme='dark'] {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
-
+  
     &::after {
       background: var(--ifm-menu-link-sublist-icon) center / var(--dropdown-icon-width) var(--dropdown-icon-height);
       background-repeat: no-repeat;
@@ -158,16 +171,20 @@ html[data-theme='dark'] {
 
       margin-inline-end: var(--dropdown-icon-gap);
       margin-block-end: 0;
+
+      margin-inline-start: unset;
     }
   }
 
   .theme-doc-sidebar-item-category-level-1 {
-    > .menu__link {
-      color: var(--sidebar-category-c);
-
-      font-weight: 600;
-      font-size: 0.938rem;
-      line-height: 100%;
+    & > .menu__list-item-collapsible {
+      .menu__link {
+        color: var(--sidebar-category-c);
+  
+        font-weight: 600;
+        font-size: 0.938rem;
+        line-height: 100%;
+      }
     }
   }
 }
