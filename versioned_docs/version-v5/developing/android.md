@@ -153,7 +153,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
-![Screenshot highlighting the run button area in Android Studio to build and run an Android app.](/img/running/android-studio-run-button-area.png 'Android Studio Run Button Area')
+![The run button area in Android Studio to build and run an Android app.](/img/running/android-studio-run-button-area.png 'Android Studio Run Button Area')
 
 ### Live reload
 

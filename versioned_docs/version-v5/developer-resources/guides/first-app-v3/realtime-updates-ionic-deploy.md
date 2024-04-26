@@ -17,7 +17,7 @@ $ ionic cordova plugin add cordova-plugin-ionic@latest --save
 
 There are two unique values to provide: your app id and channel name. Sign into Appflow, then find the App Id on your app’s dashboard:
 
-![Screenshot highlighting the location of the App ID in the Appflow dashboard.](/img/guides/first-app-v3/app-id-location.png 'Appflow App ID Location')
+![The location of the App ID in the Appflow dashboard.](/img/guides/first-app-v3/app-id-location.png 'Appflow App ID Location')
 
 And we’ll just use “Master” as the channel name. Putting this together looks like:
 
