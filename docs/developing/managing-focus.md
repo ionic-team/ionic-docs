@@ -262,12 +262,12 @@ The following table explains what each content type represents:
 | `banner` | The header of the view. | [Header](../api/header) | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)|
 
 :::important
-TODO
+Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title) on each view. Since multiple [Title](../api/title) components can be used in a single view, Ionic does not automatically assign these attributes.
 :::
 
 ### Specifying Priority
 
-The config should be specified in order is decreasing priority. In the following example, the focus manager will always focus headings. Ionic only proceeds to the next focus priority if a view does not have a previous focus priority. In the following example, Ionic will only focus the banner if a view does not have a heading:
+The config should be specified in order of decreasing priority. In the following example, Ionic will always focus headings to start. Ionic only proceeds to the next focus priority, banner, if a view does not have a heading:
 
 ```js
 focusManagerPriority: ['heading', 'banner']
@@ -276,6 +276,6 @@ focusManagerPriority: ['heading', 'banner']
 ### Implementation Notes
 
 - When specifying a focus priority, browsers may still move focus within that focus priority. For example, when specifying a `'content'` focus priority, Ionic will move focus to the content. However, the browser may then move focus within that content to the first focusable element such as a button.
-- If the focus priority does not match any elements in a view, Ionic will instead focus the view itself to ensure focus generally moves to the correct place. Browsers may then adjust focus within the view.
+- If none of the focus priorities are found in a view, Ionic will instead focus the view itself to ensure focus generally moves to the correct place. Browsers may then adjust focus within the view.
 - When navigating from the current view to the previous view, Ionic will move focus back to the element that presented the current view.
 - The focus manager can be overridden on a per-view basis as shown in [Manual Focus Management with Routing](#routing).
