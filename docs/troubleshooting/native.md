@@ -38,12 +38,12 @@ iOS デバイスでアプリケーションを実行するには、プロビジ�
 <!-- prettier-ignore -->
 3. <strong><b>プロジェクト ナビゲーター</b>で、プロジェクトのルートを選択しエディタでプロジェクトを開きます。 **Identity** セクションで、設定された Package ID がバンドル識別子と一致することを確認します。</strong>
 
-   ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png "Xcode Identity Section")
 
 <!-- prettier-ignore -->
 4. <strong>同じプロジェクトエディタの <b>署名</b> セクションで、<b>Automatically manage signing</b> が 有効になっていることを確認します。</strong> 次に、Team から開発チームを選択します。開発チームがあれば、Xcode は プロビジョニングと署名を自動的に準備しようとします。
 
-   ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
+   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png "Xcode Signing Section")
 
 ## Xcode のビルドエラー 65
 

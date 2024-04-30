@@ -122,7 +122,7 @@ function myBrokenFunction() {
 しかし、どのプラットフォームが現在使用されているかをブラウザがどのように認識するか、ということは変わらないでしょう。プラットフォームはデバイスの検出とユーザーエージェントの検査によって決定されます。そのため、プラットフォームを変更するには、ユーザーエージェントを変更する必要があります。これを行うには、Chrome DevTools を開き、<kbd>Ctrl+Shift+i</kbd>(Mac では <kbd>Cmd+Option+I</kbd>) でデバイスのモードをオンに切り替えでください。デバイスモードの切り替えは、<kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac)で行います。
 :::
 
-![別のモードのアプリケーション](/img/faq/tips/change-device-platform.png)
+![Chrome DevTools showing the device mode with iPhone X selected.](/img/faq/tips/change-device-platform.png 'Chrome DevTools Device Mode')
 
 デバイスのドロップダウンからデバイスを選択すると viewport の大きさと同様に、ユーザーエージェントも変更されます。
 

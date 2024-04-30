@@ -32,9 +32,9 @@ CSS ベースのテーマ設定では、CSS ファイルをロードするか、
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
-| Light Mode                                                                             | Dark Mode                                                                            |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| ![Application with theme-color meta in light mode](/img/theming/theme-color-light.png) | ![Application with theme-color meta in dark mode](/img/theming/theme-color-dark.png) |
+| Light Mode                                                                                                         | Dark Mode                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| ![The light mode theme color in a browser interface.](/img/theming/theme-color-light.png 'Light Mode Theme Color') | ![The dark mode theme color in a browser interface.](/img/theming/theme-color-dark.png 'Dark Mode Theme Color') |
 
 macOS Monterey 以降の Safari では、`theme-color`メタを使用してツールバーをカスタマイズすることもできます。
 

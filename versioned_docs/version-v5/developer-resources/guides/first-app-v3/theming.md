@@ -4,11 +4,11 @@ Previously, we converted our single use Camera app into an epic photo gallery. N
 
 Ionic has five default colors, defined as Sass variables, that can be used to change the color of its UI components:
 
-![v3-theming](/img/guides/first-app-v3/v3-theming.png)
+![Ionic's five default Sass color variables for theming: primary, secondary, danger, light, and dark.](/img/guides/first-app-v3/v3-theming.png 'Default Ionic Sass Variables')
 
 You can customize each color further by supplying a base and contract property. Base acts as the background color and contrast acts as the text color for most components. This provides much more flexible control over your styles:
 
-![v3-theming-colors](/img/guides/first-app-v3/v3-themeColors.png)
+![Code snippet showing customized Sass variables with base and contrast properties.](/img/guides/first-app-v3/v3-themeColors.png 'Customized Ionic Sass Variables')
 
 You can find these colors defined in `src/theme/variables.scss`.
 
@@ -22,7 +22,7 @@ $colors: (
 
 But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
 
-![ios and android comparison](/img/guides/first-app-v3/ion-lab-comparison.png)
+![Comparing the native look of an Ionic app on iOS and Android platforms.](/img/guides/first-app-v3/ion-lab-comparison.png 'Ionic Platform Specific Styles Comparison')
 
 In our app, this is clearly visible in how the header and the icons are styled.
 
@@ -40,7 +40,7 @@ imports: [
 
 Now, the iOS version of our app has a Material Design skin!
 
-![ios and android comparison](/img/guides/first-app-v3/ion-lab-md-styling.png)
+![An Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png 'Ionic Material Design Styling on iOS')
 
 Creating gorgeous-looking Ionic apps is easy with Sass variables and platform-specific styling. You now have everything you need to get started with Ionic. Go forth and build great apps!
 

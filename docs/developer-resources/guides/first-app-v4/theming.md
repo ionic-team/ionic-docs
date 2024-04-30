@@ -4,11 +4,11 @@
 
 Ionic には CSS 変数として定義された 9 つのデフォルトカラーがあり、UI コンポーネントのカラーを変更するために使用できます:
 
-![v4-theming-defaults](/img/guides/first-app-v4/theming-defaults.png)
+![A chart showing Ionic's nine default colors with their hex codes.](/img/guides/first-app-v4/theming-defaults.png 'Ionic Default Color Palette')
 
 base、contrast、shade、tint プロパティを指定することによって、各カラーをさらにカスタマイズできます。これらにより、スタイルを柔軟にコントロールできます:
 
-![v4-theming-properties](/img/guides/first-app-v4/theming-properties.png)
+![Table detailing the properties for customizing the primary color in Ionic, including base, contrast, shade, and tint.](/img/guides/first-app-v4/theming-properties.png 'Ionic Color Customization Properties')
 
 これらのカラーは `src/theme/variables.scss` 内に定義されていることがわかります。
 
@@ -31,7 +31,7 @@ base、contrast、shade、tint プロパティを指定することによって�
 
 しかし待ってください、まだあります！Ionic は、アプリケーションが実行されているデバイスに基づいて、プラットフォーム固有のスタイルを自動的に提供し、ユーザーが慣れているネイティブなルック・アンド・フィールを与えます:
 
-![ios and android comparison](/img/guides/first-app-v3/ion-lab-comparison.png)
+![Comparing the native look of an Ionic app on iOS and Android platforms.](/img/guides/first-app-v3/ion-lab-comparison.png 'Ionic Platform Specific Styles Comparison')
 
 私たちのアプリでは、これはヘッダーとアイコンがどのようにスタイルされているかで、はっきりと見えます。
 
@@ -49,7 +49,7 @@ imports: [
 
 これで、iOS 版のアプリにマテリアルデザインのスキンが追加されました！
 
-![ios and android comparison](/img/guides/first-app-v3/ion-lab-md-styling.png)
+![An Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png 'Ionic Material Design Styling on iOS')
 
 CSS 変数とプラットフォーム固有のスタイルを使用すれば、とても魅力的な Ionic アプリケーションを簡単に作成できます。これで、Ionic を使い始めるために必要なものがすべて揃いました。
 

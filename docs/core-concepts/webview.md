@@ -22,7 +22,7 @@ Ionic アプリは[Web 技術](../reference/glossary.md#web-standards)をつか�
 
 最近の Web View は、カメラ、センサー、GPS、スピーカー、Bluetooth などのハードウェア機能のための組み込み<a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a>を多数提供していますが、プラットフォーム固有のハードウェア API にアクセスする必要がある場合もあります。Ionic アプリでは、通常は JavaScript API を利用してネイティブプラグインにアクセスしてブリッジする形でハードウェア API を利用することができます。
 
-![webview architecture](/img/building/webview-architecture.png)
+![Diagram illustrating the architecture of a Web View in Ionic apps, showing the bridge between native app components and web components.](/img/building/webview-architecture.png 'Web View Architecture Diagram')
 
 Ionic Web View プラグインは、最新の JavaScript アプリケーションに特化しています。iOS と Android の両方で、アプリファイルは常に `http://` プロトコルを使ってデバイス上で動作する最適化された HTTP サーバーにホストされます。
 
@@ -47,4 +47,4 @@ Cordova アプリでは、[Ionic Web View plugin](https://github.com/ionic-team/
 ### 実装
 
 - **iOS**: <a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank">WKWebView</a>
-- **Android**: <a href="https://developer.chrome.com/multidevice/webview/overview" target="_blank">Web View for Android</a>
+- **Android**: <a href="https://developer.android.com/reference/android/webkit/WebView" target="_blank">WebView for Android</a>
