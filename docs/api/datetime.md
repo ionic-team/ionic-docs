@@ -443,14 +443,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels
 
-When using the time wheel picker, you can use the number keys to select hour and minute values when the columns are focused.
-
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+The wheel picker in Datetime uses [Picker](./picker) internally. See [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces
 
