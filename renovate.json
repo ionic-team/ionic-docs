@@ -39,13 +39,25 @@
     {
       "matchPackagePatterns": ["@ionic/"],
       "minimumReleaseAge": "0 days",
-      "allowedVersions": "^6.0.0",
+      "allowedVersions": "^8.0.0",
       "groupName": "ionic",
       "matchFileNames": [
-        "static/code/stackblitz/v6/angular/package.json",
-        "static/code/stackblitz/v6/html/package.json",
-        "static/code/stackblitz/v6/react/package.json",
-        "static/code/stackblitz/v6/vue/package.json"
+        "static/code/stackblitz/v8/angular/package.json",
+        "static/code/stackblitz/v8/html/package.json",
+        "static/code/stackblitz/v8/react/package.json",
+        "static/code/stackblitz/v8/vue/package.json"
+      ]
+    },
+    {
+      "matchPackagePatterns": ["@ionic/"],
+      "minimumReleaseAge": "0 days",
+      "allowedVersions": "^7.0.0",
+      "groupName": "ionic",
+      "matchFileNames": [
+        "static/code/stackblitz/v7/angular/package.json",
+        "static/code/stackblitz/v7/html/package.json",
+        "static/code/stackblitz/v7/react/package.json",
+        "static/code/stackblitz/v7/vue/package.json"
       ]
     }
   ],
@@ -56,5 +68,8 @@
   "semanticCommits": "enabled",
   "includePaths": [
     "static/code/stackblitz/**/*/package.json"
+  ],
+  "ignorePaths": [
+    "static/code/stackblitz/v6/**"
   ]
 }

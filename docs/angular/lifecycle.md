@@ -13,7 +13,7 @@ sidebar_label: ライフサイクル
 
 このガイドでは、Ionic と Angular を使用して構築されたアプリでの Page Life Cycle のしくみについて説明します。（追記：Life Cycle とは、表示をはじめてから破棄するまでを指します。この間の特定のタイミングに設定されているイベントを Life Cycle Events といいます）
 
-![Ionic life cycle events demo](/img/guides/lifecycle/ioniclifecycle.png)
+![Flowchart illustrating the Ionic page life cycle events and their sequence.](/img/guides/lifecycle/ioniclifecycle.png 'Ionic Lifecycle Diagram')
 
 ## Angular の Life Cycle Events
 
@@ -47,7 +47,7 @@ Angular の Life Cycle Events に加えて、Ionic Angular には、使用可能
 
 `ionViewWillLeave` と `ionViewDidLeave` についてですが、 `ionViewWillLeave` は現在のページから離脱する処理がはじまる前に呼び出されますが、 `ionViewDidLeave` は新しいページに遷移する処理が成功してから呼び出されます (新しいページの `ionViewDidEnter` が発火した後になります)。
 
-![Ionic life cycle events demo](/img/guides/lifecycle/ioniclifecycle.gif)
+![Animated GIF showing Ionic page life cycle events in a console log as a page transition occurs.](/img/guides/lifecycle/ioniclifecycle.gif 'Ionic Lifecycle Animation')
 
 ## Ionic が Page の Life をどのように処理するか
 

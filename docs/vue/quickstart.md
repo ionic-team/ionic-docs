@@ -191,7 +191,7 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 
 現在、 `Home` コンポーネントはこうなっています:
 
-![Vue home component](/img/guides/vue/first-app/home-route.png)
+![A web browser displaying the Ionic Vue home route with a header titled 'Blank' and a message 'Ready to create an app? Start with Ionic UI Components'.](/img/guides/vue/first-app/home-route.png 'Ionic Vue Home Route Interface')
 
 ```html
 <template>

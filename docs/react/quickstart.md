@@ -127,7 +127,7 @@ const App: React.FC = () => (
 
 現在、 `Home` コンポーネントはこうなっています:
 
-![React home component](/img/guides/react/first-app/home-route.png)
+![The Home component displayed in a web browser with the text 'The world is your oyster'.](/img/guides/react/first-app/home-route.png 'Ionic React Home Component')
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';

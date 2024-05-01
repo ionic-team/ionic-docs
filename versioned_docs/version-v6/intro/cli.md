@@ -48,7 +48,7 @@ Create an Ionic app using one of the pre-made app templates, or a blank one to s
 ionic start
 ```
 
-![start app thumbnails](/img/installation/start-app-thumbnails.png)
+![Three thumbnail previews of Ionic app templates: blank, tabs, and side menu.](/img/installation/start-app-thumbnails.png 'Ionic App Starter Templates')
 
 To learn more about starting Ionic apps, see the [Starting Guide](../developing/starting.md).
 

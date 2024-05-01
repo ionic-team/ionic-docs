@@ -48,7 +48,7 @@ Ionic アプリを作成するには、スターターテンプレートを利�
 ionic start
 ```
 
-![start app thumbnails](/img/installation/start-app-thumbnails.png)
+![Three thumbnail previews of Ionic app templates: blank, tabs, and side menu.](/img/installation/start-app-thumbnails.png 'Ionic App Starter Templates')
 
 Ionic アプリのはじめ方をもっと知りたい方は、[スタートガイド](../developing/starting.md)を参照してください。
 

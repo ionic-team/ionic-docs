@@ -25,13 +25,13 @@ Download Android Studio from the <a href="https://developer.android.com/studio/"
 
 Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
 
-![Android Studio SDK Setup](/img/installation/android-studio-sdk-setup.png)
+![Android Studio SDK Components Setup screen showing the Android SDK and API 28: Android 9.0 (Pie) selected for installation.](/img/installation/android-studio-sdk-setup.png 'Android Studio SDK Components Setup')
 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
 
-![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
+![The Android Studio SDK Manager showing installed and available SDK packages.](/img/installation/android-studio-sdk.png 'Android Studio SDK Manager')
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -71,7 +71,7 @@ Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to 
 
 AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
 
-![AVD Setup](/img/installation/android-studio-avd-setup.png)
+![The Android Studio AVD Manager with the option to create a new Android Virtual Device.](/img/installation/android-studio-avd-setup.png 'Android Studio AVD Manager')
 
 Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
 
@@ -153,7 +153,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
-![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
+![The run button area in Android Studio to build and run an Android app.](/img/running/android-studio-run-button-area.png 'Android Studio Run Button Area')
 
 ### Live reload
 
@@ -189,7 +189,7 @@ Chrome has web developer tool support for Android simulators and devices. Go to 
 Make sure your application is running on the device or simulator, or it will not show up in the list.
 :::
 
-![Android Chrome DevTools](/img/running/android-chrome-devtools.png)
+![Chrome DevTools showing a list of devices available for inspection.](/img/running/android-chrome-devtools.png 'Chrome DevTools for Android')
 
 ### Viewing Native Logs
 
@@ -199,7 +199,7 @@ If running with Android Studio, native logs can be found in **Logcat**.
 If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
 :::
 
-![Android Studio Logcat](/img/running/android-studio-logcat.png)
+![The Logcat window in Android Studio displaying logs from an Android device.](/img/running/android-studio-logcat.png 'Android Studio Logcat')
 
 You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
 
