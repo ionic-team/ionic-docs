@@ -86,7 +86,7 @@ Open the photo-gallery app folder in your favorite code editor of choice, then n
 ```
 
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and the icon name to “images”:
-
+--Schluss--
 ```html
 <ion-tab-button tab="tab2">
   <ion-icon name="images"></ion-icon>
