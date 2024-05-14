@@ -443,14 +443,7 @@ JavaScriptで日付を扱うために [date-fns](https://date-fns.org) を使う
 
 #### 時刻、月、年のホイール
 
-タイムホイールピッカーを使用する場合、列がフォーカスされているときに、数字キーで時、分の値を選択することができます。
-
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+Datetimeのホイールピッカーは、内部的に [Picker](./picker) を使用しています。ホイールピッカーのアクセシビリティ機能の詳細については、 [ピッカー アクセシビリティ](./picker#accessibility) を参照してください。
 
 ## Interfaces
 

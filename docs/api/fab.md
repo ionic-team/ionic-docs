@@ -67,6 +67,16 @@ import SafeArea from '@site/static/usage/v8/fab/safe-area/index.md';
 
 <SafeArea />
 
+### 無限リストとの相対関係
+
+無限にスクロールするリストなど、ビューに多くのインタラクティブ要素が含まれるシナリオでは、フローティングアクションボタン(FAB)がDOM内のすべてのアイテムの下に配置されていると、ユーザーがフローティングアクションボタンに移動するのが難しい場合があります。
+
+[Content](./content)の `fixedSlotPlacement` プロパティを `before` に設定することで、FABはDOM内のメインコンテンツの前に配置されます。これにより、他のインタラクティブ要素がフォーカスを受ける前にFABがキーボードフォーカスを受けるようになり、ユーザがFABにアクセスしやすくなります。
+
+import BeforeContent from '@site/static/usage/v8/fab/before-content/index.md';
+
+<BeforeContent />
+
 ## ボタンサイズ
 
 メインファブボタンの `size` プロパティを `"small"` に設定すると、ミニサイズで描画されます。なお、このプロパティは内側のファブボタンで使用した場合は効果がありません。

@@ -54,6 +54,8 @@ import Fullscreen from '@site/static/usage/v8/content/fullscreen/index.md';
 
 スクロール可能な領域の外側に要素を配置するには、`fixed`スロットに割り当てます。そうすることで、その要素はコンテンツの左上に[絶対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning)されます。要素の位置を変えるには、CSSの[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position)プロパティを使ってスタイルを設定することができます。
 
+The `fixedSlotPlacement` property is used to determine if content in the `fixed` slot is placed before or after the main content in the DOM. When set to `before`, fixed slot content will be placed before the main content and will therefore receive keyboard focus before the main content receives keyboard focus. This can be useful when the main content contains an infinitely-scrolling list, preventing a [FAB](./fab) or other fixed content from being reachable by pressing the tab key.
+
 import Fixed from '@site/static/usage/v8/content/fixed/index.md';
 
 <Fixed />
