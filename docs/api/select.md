@@ -134,7 +134,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v8/selec
 <ObjectValuesAndMultipleSelectionExample />
 
 ## Justification
-  
+
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
 import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
@@ -145,7 +145,11 @@ import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
 Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
 
-Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
+Filled selects can be used on iOS by setting the select's `mode` to `md`.
+
+:::warning
+Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+:::
 
 import FillExample from '@site/static/usage/v8/select/fill/index.md';
 

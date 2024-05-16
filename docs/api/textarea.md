@@ -67,9 +67,11 @@ import NoVisibleLabel from '@site/static/usage/v8/textarea/no-visible-label/inde
 
 Material Design offers filled styles for a textarea. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
 
-Since the `fill` styles visually defines the textarea container, textareas that use `fill` should not be used in `ion-item`.
+Filled textareas can be used on iOS by setting the textarea's `mode` to `md`.
 
-Filled textareas can be used on iOS by setting Textarea's `mode` to `md`.
+:::warning
+Textareas that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+:::
 
 import Fill from '@site/static/usage/v8/textarea/fill/index.md';
 
