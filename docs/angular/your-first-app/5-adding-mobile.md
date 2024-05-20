@@ -14,6 +14,7 @@ Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform
 
 ```tsx
 import { Platform } from '@ionic/angular';
+import { Capacitor } from '@capacitor/core';
 
 export class PhotoService {
   public photos: UserPhoto[] = [];
