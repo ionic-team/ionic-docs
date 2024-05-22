@@ -29,6 +29,7 @@
       "source": "/docs/ja/",
       "destination": "/docs/ja"
     },
+    { "source": "/docs/ja/v8/:match*", "destination": "/docs/ja/:match*" },
     {
       "source": "/docs/(v5|next)?/developer-resources/:path*",
       "destination": "https://ionic.io/resources"
