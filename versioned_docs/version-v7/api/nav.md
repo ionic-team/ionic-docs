@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/nav/props.md';
 import Events from '@ionic-internal/component-api/v7/nav/events.md';
 import Methods from '@ionic-internal/component-api/v7/nav/methods.md';
 import Parts from '@ionic-internal/component-api/v7/nav/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/nav/slots.md';
 
 <head>

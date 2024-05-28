@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/list-header/props.md';
 import Events from '@ionic-internal/component-api/v5/list-header/events.md';
 import Methods from '@ionic-internal/component-api/v5/list-header/methods.md';
 import Parts from '@ionic-internal/component-api/v5/list-header/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/list-header/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/list-header/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/list-header/slots.md';
 
 # ion-list-header

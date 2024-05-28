@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v6/card-title/props.md';
 import Events from '@ionic-internal/component-api/v6/card-title/events.md';
 import Methods from '@ionic-internal/component-api/v6/card-title/methods.md';
 import Parts from '@ionic-internal/component-api/v6/card-title/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/card-title/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v6/card-title/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/card-title/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

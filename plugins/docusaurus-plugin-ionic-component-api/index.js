@@ -76,7 +76,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/events.md`, data.events),
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/custom-props.md`, data.customProps),
+          createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.md`, data.slots)
         );
       }
@@ -214,11 +214,51 @@ function renderCustomProps({ styles: customProps }) {
     return 'No CSS custom properties available for this component.';
   }
 
-  return `
+  const iosProps = customProps.filter((prop) => prop.mode === 'ios');
+  const mdProps = customProps.filter((prop) => prop.mode === 'md');
+
+  if (iosProps.length > 0 || mdProps.length > 0) {
+    // If the component has mode-specific custom props, render them in tabs for iOS and MD
+    return `
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+\`\`\`\`mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
 | Name | Description |
 | --- | --- |
-${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+${iosProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
 
+</TabItem>
+
+<TabItem value="md">
+
+| Name | Description |
+| --- | --- |
+${mdProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+
+</TabItem>
+</Tabs>
+
+\`\`\`\`
+
+`;
+  }
+  // Otherwise render the custom props without the tabs for iOS and MD
+  return `
+  | Name | Description |
+| --- | --- |
+${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
 `;
 }
 

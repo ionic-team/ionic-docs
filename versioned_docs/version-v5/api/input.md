@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/input/props.md';
 import Events from '@ionic-internal/component-api/v5/input/events.md';
 import Methods from '@ionic-internal/component-api/v5/input/methods.md';
 import Parts from '@ionic-internal/component-api/v5/input/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/input/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/input/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/input/slots.md';
 
 # ion-input

@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/route-redirect/props.md';
 import Events from '@ionic-internal/component-api/v5/route-redirect/events.md';
 import Methods from '@ionic-internal/component-api/v5/route-redirect/methods.md';
 import Parts from '@ionic-internal/component-api/v5/route-redirect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/route-redirect/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/route-redirect/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/route-redirect/slots.md';
 
 # ion-route-redirect

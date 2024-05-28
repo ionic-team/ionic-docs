@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/nav-link/props.md';
 import Events from '@ionic-internal/component-api/v5/nav-link/events.md';
 import Methods from '@ionic-internal/component-api/v5/nav-link/methods.md';
 import Parts from '@ionic-internal/component-api/v5/nav-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/nav-link/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/nav-link/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/nav-link/slots.md';
 
 # ion-nav-link
