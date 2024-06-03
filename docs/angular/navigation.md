@@ -175,33 +175,7 @@ import { LoginComponent } from './login.component';
 
 ## Standalone Components
 
-:::warning Experimental API
-
-Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later. This feature may change before it is stable.
-
-:::
-
 Standalone components allow developers to lazy load a component on a route without having to declare the component to an Angular module.
-
-To use standalone components with routing and Ionic Framework, you must first be on Ionic ^6.3.0. The experimental API requires developers to assign the `EnvironmentInjector` instance for each router outlet (`ion-router-outlet` and `ion-tabs`) that uses standalone component routing.
-
-```ts title="app.component.ts"
-import { Component, EnvironmentInjector } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: 'app.component.html',
-})
-export class AppComponent {
-  constructor(public environmentInjector: EnvironmentInjector) {}
-}
-```
-
-```html title="app.component.html"
-<ion-router-outlet [environmentInjector]="environmentInjector"></ion-router-outlet>
-<!-- or if you are using ion-tabs -->
-<ion-tabs [environmentInjector]="environmentInjector"> ... </ion-tabs>
-```
 
 Developers can use the existing syntax for standalone component routing from Angular:
 

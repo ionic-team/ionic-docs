@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v6/datetime-button/props.md';
 import Events from '@ionic-internal/component-api/v6/datetime-button/events.md';
 import Methods from '@ionic-internal/component-api/v6/datetime-button/methods.md';
 import Parts from '@ionic-internal/component-api/v6/datetime-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/datetime-button/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v6/datetime-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/datetime-button/slots.md';
 
 <head>

@@ -66,9 +66,22 @@ function Example() {
     initializeDarkPalette(prefersDark.matches);
     initializeHighContrastPalette(prefersHighContrast.matches);
 
+    const setDarkPaletteFromMediaQuery = (mediaQuery: MediaQueryListEvent) => {
+      initializeDarkPalette(mediaQuery.matches);
+    };
+
+    const setHighContrastPaletteFromMediaQuery = (mediaQuery: MediaQueryListEvent) => {
+      initializeHighContrastPalette(mediaQuery.matches);
+    };
+
     // Listen for changes to the media queries
-    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
-    prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
+    prefersDark.addEventListener('change', setDarkPaletteFromMediaQuery);
+    prefersHighContrast.addEventListener('change', setHighContrastPaletteFromMediaQuery);
+
+    return () => {
+      prefersDark.removeEventListener('change', setDarkPaletteFromMediaQuery);
+      prefersHighContrast.removeEventListener('change', setHighContrastPaletteFromMediaQuery);
+    };
   }, []);
 
   return (

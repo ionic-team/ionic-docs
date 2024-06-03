@@ -48,6 +48,10 @@ src/
 This command is only supported in Ionic Angular.
 :::
 
+:::note
+This command is only supported in Ionic Angular.
+:::
+
 The Ionic CLI can generate new app features with the [`ionic generate`](../cli/commands/generate.md) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
 ```shell-session

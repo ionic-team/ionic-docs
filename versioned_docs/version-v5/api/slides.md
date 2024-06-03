@@ -13,7 +13,7 @@ import Props from '@ionic-internal/component-api/v5/slides/props.md';
 import Events from '@ionic-internal/component-api/v5/slides/events.md';
 import Methods from '@ionic-internal/component-api/v5/slides/methods.md';
 import Parts from '@ionic-internal/component-api/v5/slides/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/slides/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/slides/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/slides/slots.md';
 
 # ion-slides
