@@ -84,7 +84,7 @@ The value of a CSS variable can be read in JavaScript using [getPropertyValue()]
 
 ```js
 const el = document.querySelector('.fancy-button');
-const color = el.style.getPropertyValue('--charcoal');
+const color = el.style.getPropertyValue('--background');
 ```
 
 ## Ionic Variables
