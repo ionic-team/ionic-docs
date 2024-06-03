@@ -58,7 +58,7 @@ function Example() {
 
     return () => {
       prefersDark.removeEventListener('change', setDarkPaletteFromMediaQuery);
-    }
+    };
   }, []);
 
   return (

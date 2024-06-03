@@ -42,7 +42,7 @@ function Example() {
 
     return () => {
       prefersDark.removeEventListener('change', setDarkThemeFromMediaQuery);
-    }
+    };
   }, []);
 
   return (

@@ -81,7 +81,7 @@ function Example() {
     return () => {
       prefersDark.removeEventListener('change', setDarkPaletteFromMediaQuery);
       prefersHighContrast.removeEventListener('change', setHighContrastPaletteFromMediaQuery);
-    }
+    };
   }, []);
 
   return (
