@@ -13,7 +13,7 @@ import Props from '@ionic-internal/component-api/v5/avatar/props.md';
 import Events from '@ionic-internal/component-api/v5/avatar/events.md';
 import Methods from '@ionic-internal/component-api/v5/avatar/methods.md';
 import Parts from '@ionic-internal/component-api/v5/avatar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/avatar/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/avatar/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/avatar/slots.md';
 
 # ion-avatar

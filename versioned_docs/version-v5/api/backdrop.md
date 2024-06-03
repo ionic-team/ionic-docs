@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/backdrop/props.md';
 import Events from '@ionic-internal/component-api/v5/backdrop/events.md';
 import Methods from '@ionic-internal/component-api/v5/backdrop/methods.md';
 import Parts from '@ionic-internal/component-api/v5/backdrop/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/backdrop/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/backdrop/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/backdrop/slots.md';
 
 # ion-backdrop

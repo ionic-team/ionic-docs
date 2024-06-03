@@ -8,11 +8,11 @@ import Props from '@ionic-internal/component-api/v8/tab-button/props.md';
 import Events from '@ionic-internal/component-api/v8/tab-button/events.md';
 import Methods from '@ionic-internal/component-api/v8/tab-button/methods.md';
 import Parts from '@ionic-internal/component-api/v8/tab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tab-button/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/tab-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/tab-button/slots.md';
 
 
-
+ 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />

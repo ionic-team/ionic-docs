@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/input-password-toggle/props.
 import Events from '@ionic-internal/component-api/v8/input-password-toggle/events.md';
 import Methods from '@ionic-internal/component-api/v8/input-password-toggle/methods.md';
 import Parts from '@ionic-internal/component-api/v8/input-password-toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input-password-toggle/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/input-password-toggle/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/input-password-toggle/slots.md';
 
 <head>

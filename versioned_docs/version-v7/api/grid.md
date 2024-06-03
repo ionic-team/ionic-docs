@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/grid/props.md';
 import Events from '@ionic-internal/component-api/v7/grid/events.md';
 import Methods from '@ionic-internal/component-api/v7/grid/methods.md';
 import Parts from '@ionic-internal/component-api/v7/grid/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/grid/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/grid/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/grid/slots.md';
 
 <head>

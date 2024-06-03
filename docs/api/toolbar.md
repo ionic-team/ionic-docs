@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/toolbar/props.md';
 import Events from '@ionic-internal/component-api/v8/toolbar/events.md';
 import Methods from '@ionic-internal/component-api/v8/toolbar/methods.md';
 import Parts from '@ionic-internal/component-api/v8/toolbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toolbar/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/toolbar/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/toolbar/slots.md';
 
 <head>

@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/textarea/props.md';
 import Events from '@ionic-internal/component-api/v5/textarea/events.md';
 import Methods from '@ionic-internal/component-api/v5/textarea/methods.md';
 import Parts from '@ionic-internal/component-api/v5/textarea/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/textarea/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/textarea/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/textarea/slots.md';
 
 # ion-textarea

@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/ripple-effect/props.md';
 import Events from '@ionic-internal/component-api/v5/ripple-effect/events.md';
 import Methods from '@ionic-internal/component-api/v5/ripple-effect/methods.md';
 import Parts from '@ionic-internal/component-api/v5/ripple-effect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/ripple-effect/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/ripple-effect/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/ripple-effect/slots.md';
 
 # ion-ripple-effect
