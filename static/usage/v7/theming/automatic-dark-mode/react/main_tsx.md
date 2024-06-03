@@ -33,8 +33,16 @@ function Example() {
 
     toggleDarkTheme(prefersDark.matches);
 
+    const setDarkThemeFromMediaQuery = (mediaQuery: MediaQueryListEvent) => {
+      toggleDarkTheme(mediaQuery.matches);
+    };
+
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
+    prefersDark.addEventListener('change', setDarkThemeFromMediaQuery);
+
+    return () => {
+      prefersDark.removeEventListener('change', setDarkThemeFromMediaQuery);
+    }
   }, []);
 
   return (
