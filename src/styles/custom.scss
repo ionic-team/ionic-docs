@@ -169,7 +169,6 @@ iframe {
   }
 }
 
-
 .cordova-ee-card {
   max-width: 100%;
 }
@@ -187,4 +186,46 @@ iframe {
 
 .cordova-ee-card p {
   margin: 1rem 0 0;
+}
+
+// OS Announcement Bar
+[class*='announcementBar_'] {
+  --docusaurus-announcement-bar-height: 3.5rem;
+
+  background: linear-gradient(90deg, #440f14, #5e1219 15%, #03060b 35%, #03060b 45%, #5e1219 85%, #440f14);
+
+  &:hover,
+  &:focus,
+  &:active {
+    strong {
+      color: var(--c-red-50);
+    }
+  }
+}
+
+[class*='announcementBarContent_'] {
+  padding: 0;
+
+  > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--docusaurus-announcement-bar-height);
+
+    letter-spacing: 0.01em !important;
+    text-decoration: none !important;
+
+    color: #fff !important;
+
+    font-size: 1.04rem;
+    font-weight: 500;
+
+    strong {
+      font-weight: 500;
+
+      color: var(--c-red-70);
+
+      transition: color 0.2s ease-out;
+    }
+  }
 }
