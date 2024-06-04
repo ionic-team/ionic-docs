@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/router/props.md';
 import Events from '@ionic-internal/component-api/v5/router/events.md';
 import Methods from '@ionic-internal/component-api/v5/router/methods.md';
 import Parts from '@ionic-internal/component-api/v5/router/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/router/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/router/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/router/slots.md';
 
 # ion-router

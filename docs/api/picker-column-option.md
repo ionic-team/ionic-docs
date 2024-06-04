@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/picker-column-option/props.m
 import Events from '@ionic-internal/component-api/v8/picker-column-option/events.md';
 import Methods from '@ionic-internal/component-api/v8/picker-column-option/methods.md';
 import Parts from '@ionic-internal/component-api/v8/picker-column-option/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/picker-column-option/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/picker-column-option/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/picker-column-option/slots.md';
 
 <head>

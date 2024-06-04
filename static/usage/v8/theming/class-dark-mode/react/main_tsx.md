@@ -49,8 +49,16 @@ function Example() {
     // value of the prefers-color-scheme media query
     initializeDarkPalette(prefersDark.matches);
 
+    const setDarkPaletteFromMediaQuery = (mediaQuery: MediaQueryListEvent) => {
+      initializeDarkPalette(mediaQuery.matches);
+    };
+
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
+    prefersDark.addEventListener('change', setDarkPaletteFromMediaQuery);
+
+    return () => {
+      prefersDark.removeEventListener('change', setDarkPaletteFromMediaQuery);
+    };
   }, []);
 
   return (

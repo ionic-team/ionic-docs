@@ -6,6 +6,12 @@
 
 :::
 
+:::warning Looking for `ion-virtual-scroll`?
+
+`ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Virtuoso package detailed below.
+
+:::
+
 One virtual scrolling solution to consider for your Ionic React app is [Virtuoso](https://virtuoso.dev/). This guide will go over how to install `Virtuoso` into your Ionic React application and use it with other Ionic components.
 
 ## Installation

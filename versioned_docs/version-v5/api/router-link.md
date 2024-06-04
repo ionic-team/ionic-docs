@@ -13,7 +13,7 @@ import Props from '@ionic-internal/component-api/v5/router-link/props.md';
 import Events from '@ionic-internal/component-api/v5/router-link/events.md';
 import Methods from '@ionic-internal/component-api/v5/router-link/methods.md';
 import Parts from '@ionic-internal/component-api/v5/router-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/router-link/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/router-link/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/router-link/slots.md';
 
 # ion-router-link

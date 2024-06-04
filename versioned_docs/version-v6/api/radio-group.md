@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v6/radio-group/props.md';
 import Events from '@ionic-internal/component-api/v6/radio-group/events.md';
 import Methods from '@ionic-internal/component-api/v6/radio-group/methods.md';
 import Parts from '@ionic-internal/component-api/v6/radio-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/radio-group/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v6/radio-group/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/radio-group/slots.md';
 
 <head>

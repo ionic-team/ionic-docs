@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/accordion/props.md';
 import Events from '@ionic-internal/component-api/v8/accordion/events.md';
 import Methods from '@ionic-internal/component-api/v8/accordion/methods.md';
 import Parts from '@ionic-internal/component-api/v8/accordion/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
 
 <head>

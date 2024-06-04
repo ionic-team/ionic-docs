@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/content/props.md';
 import Events from '@ionic-internal/component-api/v8/content/events.md';
 import Methods from '@ionic-internal/component-api/v8/content/methods.md';
 import Parts from '@ionic-internal/component-api/v8/content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/content/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/content/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/content/slots.md';
 
 <head>
@@ -76,6 +76,7 @@ import ScrollEvents from '@site/static/usage/v8/content/scroll-events/index.md';
 
 <ScrollEvents />
 
+Scroll events are disabled by default for content due to performance. However, they can be enabled by setting `scrollEvents` to `true`. This is necessary before listening to any of the scroll [events](#events).
 
 ## テーマ
 
@@ -161,6 +162,7 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
+### ScrollCustomEvent
 
 ## プロパティ
 <Props />
