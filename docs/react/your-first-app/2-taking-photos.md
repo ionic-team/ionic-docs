@@ -16,7 +16,7 @@ Now for the fun part - adding the ability to take photos with the device’s cam
 To do so, we will create our own custom React hook that will manage the photos for the gallery.
 
 :::note
-If you are not familiar with React Hooks, [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) from the official React docs is a good resource to start with.
+If you are not familiar with React Hooks, [Introducing React Hooks](https://react.dev/reference/react/hooks) from the official React docs is a good resource to start with.
 :::
 
 Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
