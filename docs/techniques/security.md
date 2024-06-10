@@ -53,8 +53,6 @@ const element = <a href={userInput}>Click Me!</a>;
 
 If the developer needs to achieve more comprehensive sanitization, they can use the [sanitize-html](https://www.npmjs.com/package/sanitize-html) package.
 
-To learn more about the built-in protections that React and JSX provide, see the [React JSX Documentation](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks).
-
 ### Vue
 
 Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](https://www.npmjs.com/package/sanitize-html).
