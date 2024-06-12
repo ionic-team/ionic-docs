@@ -19,7 +19,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'index.ts': javascript_index_ts,
       },
       dependencies: {
-        'ionicons': '7.4.0',
+        ionicons: '7.4.0',
       },
     },
     react,
@@ -30,9 +30,9 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/app/example.component.ts': angular_example_component_ts,
       },
       dependencies: {
-        'ionicons': '7.4.0',
+        ionicons: '7.4.0',
       },
-    }
+    },
   }}
   src="usage/v7/icon/basic/demo.html"
 />
