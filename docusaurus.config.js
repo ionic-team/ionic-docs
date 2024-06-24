@@ -368,30 +368,6 @@ module.exports = {
         versions: VERSIONS_JSON,
       },
     ],
-    function (context, options) {
-      return {
-        name: 'beamer',
-        injectHtmlTags({ content }) {
-          // Only inject Beamer when deployed to production, so we don't use up Beamer "users"
-          if (process.env.NODE_ENV === 'production') {
-            return {
-              // For performance, Beamer recommends injecting these scripts at the very bottom of the <body>
-              // Thus, custom plugin is required here to use postBodyTags
-              postBodyTags: [
-                `<script>var beamer_config = { product_id : 'mUvQtqly31065' };</script>`,
-                {
-                  tagName: 'script',
-                  attributes: {
-                    src: 'https://app.getbeamer.com/js/beamer-embed.js',
-                    defer: 'defer',
-                  },
-                },
-              ],
-            };
-          }
-        },
-      };
-    },
   ],
   customFields: {},
   themes: [],
