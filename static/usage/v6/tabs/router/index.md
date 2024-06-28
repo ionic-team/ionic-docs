@@ -42,7 +42,7 @@ import react_library_page_tsx from './react/library_page_tsx.md';
 import react_search_page_tsx from './react/search_page_tsx.md';
 
 <Playground
-  version={6}
+  version="6"
   code={{
     javascript,
     angular: {
