@@ -56,7 +56,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
 
-6. Delete the `src/shims-vue.d.ts` file if it exists. This is only needed when using the Vue CLI.
+6. Delete the `src/vite-env.d.ts` file if it exists. This is only needed when using the Vue CLI.
 
 7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
