@@ -15,12 +15,7 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonList, IonRadio, IonRadioGroup },
-  });
 </script>
 ```

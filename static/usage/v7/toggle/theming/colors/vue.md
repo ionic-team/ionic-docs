@@ -11,12 +11,7 @@
   <ion-toggle aria-label="Dark toggle" color="dark" :checked="true"></ion-toggle>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonToggle } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonToggle },
-  });
 </script>
 ```

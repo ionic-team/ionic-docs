@@ -18,16 +18,8 @@
   </ion-fab>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
   import { add, colorPalette, document, globe } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonFab, IonFabButton, IonFabList, IonIcon },
-    setup() {
-      return { add, colorPalette, document, globe };
-    },
-  });
 </script>
 ```

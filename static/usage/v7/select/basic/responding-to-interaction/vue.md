@@ -17,23 +17,17 @@
   </ion-list>
 </template>
 
-<script>
+<script lang="ts" setup>
   import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonItem, IonList, IonSelect, IonSelectOption },
-    methods: {
-      handleChange(ev) {
-        console.log('ionChange fired with value: ' + ev.detail.value);
-      },
-      handleCancel() {
-        console.log('ionCancel fired');
-      },
-      handleDismiss() {
-        console.log('ionDismiss fired');
-      },
-    },
-  });
+  function handleChange(ev) {
+    console.log('ionChange fired with value: ' + ev.detail.value);
+  }
+  function handleCancel() {
+    console.log('ionCancel fired');
+  }
+  function handleDismiss() {
+    console.log('ionDismiss fired');
+  }
 </script>
 ```

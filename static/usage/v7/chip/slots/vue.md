@@ -15,20 +15,8 @@
   </ion-chip>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonChip, IonAvatar, IonLabel, IonIcon } from '@ionic/vue';
   import { close, closeCircle, pin } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonChip, IonAvatar, IonLabel, IonIcon },
-    setup() {
-      return {
-        close,
-        closeCircle,
-        pin,
-      };
-    },
-  });
 </script>
 ```

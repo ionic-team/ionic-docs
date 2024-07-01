@@ -10,41 +10,32 @@
   ></ion-toast>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonToast } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonToast },
-    setup() {
-      const handlerMessage = ref('');
-      const roleMessage = ref('');
-      const toastButtons = [
-        {
-          text: 'More Info',
-          role: 'info',
-          handler: () => {
-            console.log('More Info clicked');
-          },
-        },
-        {
-          text: 'Dismiss',
-          role: 'cancel',
-          handler: () => {
-            console.log('Dismiss clicked');
-          },
-        },
-      ];
-      const handleDismiss = (ev: CustomEvent) => {
-        const { role } = ev.detail;
-        console.log(`Dismissed with role: ${role}`);
-      };
-
-      return {
-        toastButtons,
-        handleDismiss,
-      };
+  const handlerMessage = ref('');
+  const roleMessage = ref('');
+  const toastButtons = [
+    {
+      text: 'More Info',
+      role: 'info',
+      handler: () => {
+        console.log('More Info clicked');
+      },
     },
-  });
+    {
+      text: 'Dismiss',
+      role: 'cancel',
+      handler: () => {
+        console.log('Dismiss clicked');
+      },
+    },
+  ];
+
+  const handleDismiss = (ev: CustomEvent) => {
+    const { role } = ev.detail;
+    console.log(`Dismissed with role: ${role}`);
+  };
 </script>
 ```

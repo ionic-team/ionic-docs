@@ -28,21 +28,9 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonPage, IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonLabel, IonIcon } from '@ionic/vue';
 
   import { playCircle, radio, library, search } from 'ionicons/icons';
-
-  export default {
-    components: { IonPage, IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonLabel, IonIcon },
-    data() {
-      return {
-        playCircle,
-        radio,
-        library,
-        search,
-      };
-    },
-  };
 </script>
 ```
