@@ -192,8 +192,7 @@ Developers can use the existing syntax for standalone component routing from Ang
 })
 export class AppRoutingModule {}
 ```
-
-To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).
+If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to also import the `IonRouterLink` directive for Ionic components or the `IonRouterLinkWithHref` directive for <a> elements. To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).
 
 ## Live Example
 
