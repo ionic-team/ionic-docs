@@ -34,4 +34,3 @@ addIcons({ add, chevronBack, chevronDown, chevronForward, chevronUp });
 
 defineCustomElements();
 ```
-

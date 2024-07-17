@@ -44,4 +44,3 @@ import angular_example_component_ts from './angular/example_component_ts.md';
   }}
   src="usage/v8/fab/theming/css-shadow-parts/demo.html"
 />
-

@@ -44,4 +44,3 @@ addIcons({ add, colorPalette, document, globe });
 
 defineCustomElements();
 ```
-

@@ -2,7 +2,14 @@
 import { Component } from '@angular/core';
 
 import { addIcons } from 'ionicons';
-import { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe } from 'ionicons/icons';
+import {
+  chevronDownCircle,
+  chevronForwardCircle,
+  chevronUpCircle,
+  colorPalette,
+  document,
+  globe,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-example',

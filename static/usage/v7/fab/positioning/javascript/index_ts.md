@@ -2,7 +2,14 @@
 import { defineCustomElements } from '@ionic/core/loader';
 
 import { addIcons } from 'ionicons';
-import { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe } from 'ionicons/icons';
+import {
+  chevronDownCircle,
+  chevronForwardCircle,
+  chevronUpCircle,
+  colorPalette,
+  document,
+  globe,
+} from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
@@ -34,4 +41,3 @@ addIcons({ chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalett
 
 defineCustomElements();
 ```
-
