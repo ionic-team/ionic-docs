@@ -25,7 +25,7 @@ import './theme/variables.css';
 
 /**
  * On Ionicons 7.2+ these icons
- * gets mapped to a kebab-case key.
+ * get mapped to a kebab-case key.
  * Alternatively, developers can do:
  * addIcons({ 'camera': camera, 'film': film, 'flash': flash, 'home': home });
  */
