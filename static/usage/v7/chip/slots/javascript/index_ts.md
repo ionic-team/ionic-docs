@@ -33,4 +33,3 @@ addIcons({ close, closeCircle, pin });
 
 defineCustomElements();
 ```
-
