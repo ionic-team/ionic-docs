@@ -10,7 +10,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
+  version="8"
   code={{
     javascript: {
       files: {
@@ -34,5 +34,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="300px"
-  src="usage/v7/select/start-end-slots/demo.html"
+  src="usage/v8/select/start-end-slots/demo.html"
 />
