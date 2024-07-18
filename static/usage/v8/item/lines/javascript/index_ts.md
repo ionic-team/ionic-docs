@@ -38,7 +38,7 @@ import './theme/variables.css';
  * On Ionicons 7.2+ these icons
  * get mapped to a kebab-case key.
  * Alternatively, developers can do:
- * addIcons({ 'information-circle': informationCircle, 'star': star});
+ * addIcons({ 'information-circle': informationCircle, 'star': star });
  */
 addIcons({ informationCircle, star });
 
