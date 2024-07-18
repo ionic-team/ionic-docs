@@ -162,7 +162,7 @@ In most cases, [Icon](./icon.md) components placed in these slots should have `a
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.md';
 
 <StartEndSlots />
 
