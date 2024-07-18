@@ -33,6 +33,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/skeleton-text/basic/demo.html"
   size="250px"
+  src="usage/v8/skeleton-text/basic/demo.html"
 />
