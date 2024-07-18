@@ -11,7 +11,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="7"
-  size="xsmall"
   code={{
     javascript: {
       files: {
@@ -34,5 +33,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
+  size="xsmall"
   src="usage/v7/icon/basic/demo.html"
 />
