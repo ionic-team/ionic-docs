@@ -7,6 +7,7 @@ import react_app_tsx from './react/app_tsx.md';
 import react_main_tsx from './react/main_tsx.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_styles_css from './angular/styles_css.md';
 
 import vue_example from './vue/example_vue.md';
@@ -22,6 +23,9 @@ import variables_css from './theme/variables_css.md';
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
         'theme/variables.css': variables_css,
+      },
+      dependencies: {
+        ionicons: '7.4.0',
       },
     },
     react: {
@@ -41,8 +45,12 @@ import variables_css from './theme/variables_css.md';
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
         'src/styles.css': angular_styles_css,
         'src/theme/variables.css': variables_css,
+      },
+      dependencies: {
+        ionicons: '7.4.0',
       },
     },
   }}
