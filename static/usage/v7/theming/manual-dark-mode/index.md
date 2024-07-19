@@ -1,6 +1,7 @@
 import Playground from '@site/src/components/global/Playground';
 
-import javascript_index_html from './javascript.md';
+import javascript_index_html from './javascript/index_html.md';
+import javascript_index_ts from './javascript/index_ts.md';
 
 import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
@@ -19,7 +20,11 @@ import variables_css from './theme/variables_css.md';
     javascript: {
       files: {
         'index.html': javascript_index_html,
+        'index.ts': javascript_index_ts,
         'theme/variables.css': variables_css,
+      },
+      dependencies: {
+        ionicons: '7.4.0',
       },
     },
     react: {
@@ -41,6 +46,9 @@ import variables_css from './theme/variables_css.md';
         'src/app/example.component.ts': angular_example_component_ts,
         'src/global.css': angular_global_css,
         'src/theme/variables.css': variables_css,
+      },
+      dependencies: {
+        ionicons: '7.4.0',
       },
     },
   }}

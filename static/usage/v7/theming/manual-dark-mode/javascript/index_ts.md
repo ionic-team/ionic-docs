@@ -20,17 +20,6 @@ import '@ionic/core/css/text-transformation.css';
 import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
-/**
- * Ionic Dark Palette
- * -----------------------------------------------------
- * For more information, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-import '@ionic/core/css/palettes/dark.always.css';
-// import '@ionic/core/css/palettes/dark.class.css';
-// import '@ionic/core/css/palettes/dark.system.css';
-
 /* Theme variables */
 import './theme/variables.css';
 
