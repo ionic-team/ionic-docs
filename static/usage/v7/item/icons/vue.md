@@ -21,16 +21,8 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonIcon, IonItem, IonLabel } from '@ionic/vue';
   import { informationCircle, star } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonIcon, IonItem, IonLabel },
-    setup() {
-      return { informationCircle, star };
-    },
-  });
 </script>
 ```

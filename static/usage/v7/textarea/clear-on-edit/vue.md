@@ -6,12 +6,7 @@
   ></ion-textarea>
 </template>
 
-<script>
+<script lang="ts" setup>
   import { IonTextarea } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonTextarea },
-  });
 </script>
 ```

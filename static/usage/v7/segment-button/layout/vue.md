@@ -73,16 +73,8 @@
   </ion-segment>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonIcon, IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
   import { call, heart, pin } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon, IonLabel, IonSegment, IonSegmentButton },
-    setup() {
-      return { call, heart, pin };
-    },
-  });
 </script>
 ```

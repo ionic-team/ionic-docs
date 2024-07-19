@@ -12,12 +12,7 @@
   <ion-chip color="dark">Dark</ion-chip>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonChip } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonChip },
-  });
 </script>
 ```

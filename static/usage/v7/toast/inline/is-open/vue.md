@@ -16,20 +16,13 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonHeader, IonToolbar, IonContent, IonTitle, IonToast } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonHeader, IonToolbar, IonContent, IonTitle, IonToast },
-    setup() {
-      const isOpen = ref(false);
-      const setOpen = (state: boolean) => {
-        isOpen.value = state;
-      };
-
-      return { isOpen, setOpen };
-    },
-  });
+  const isOpen = ref(false);
+  const setOpen = (state: boolean) => {
+    isOpen.value = state;
+  };
 </script>
 ```

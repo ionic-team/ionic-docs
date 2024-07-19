@@ -45,7 +45,7 @@
   </ion-footer>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonBackButton,
     IonButton,
@@ -64,30 +64,6 @@
     IonToolbar,
   } from '@ionic/vue';
   import { create } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonBackButton,
-      IonButton,
-      IonButtons,
-      IonCheckbox,
-      IonContent,
-      IonFooter,
-      IonHeader,
-      IonIcon,
-      IonInput,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonTitle,
-      IonToggle,
-      IonToolbar,
-    },
-    setup() {
-      return { create };
-    },
-  });
 </script>
 
 <style>

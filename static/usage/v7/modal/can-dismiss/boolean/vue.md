@@ -9,7 +9,7 @@
     <ion-content class="ion-padding">
       <ion-button id="open-modal" expand="block">Open</ion-button>
 
-      <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="presentingElement">
+      <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="page?.$el">
         <ion-header>
           <ion-toolbar>
             <ion-title>Modal</ion-title>
@@ -31,7 +31,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     CheckboxCustomEvent,
     IonButtons,
@@ -45,38 +45,18 @@
     IonCheckbox,
     IonPage,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonCheckbox,
-      IonPage,
-    },
-    data() {
-      return {
-        canDismiss: false,
-        presentingElement: undefined,
-      };
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-      onTermsChanged(ev: CheckboxCustomEvent) {
-        this.canDismiss = ev.detail.checked;
-      },
-    },
-    mounted() {
-      this.presentingElement = this.$refs.page.$el;
-    },
-  });
+  const modal = ref();
+  const page = ref();
+  const canDismiss = ref(false);
+
+  function dismiss() {
+    modal.value.$el.dismiss();
+  }
+
+  function onTermsChanged(ev: CheckboxCustomEvent) {
+    canDismiss.value = ev.detail.checked;
+  }
 </script>
 ```

@@ -7,12 +7,7 @@
   </ion-modal>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonDatetime, IonDatetimeButton, IonModal },
-  });
 </script>
 ```
