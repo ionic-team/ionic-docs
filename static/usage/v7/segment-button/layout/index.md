@@ -17,9 +17,6 @@ import angular_example_component_html from './angular/example_component_html.md'
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
       },
-      dependencies: {
-        ionicons: '7.4.0',
-      },
     },
     react,
     vue,
@@ -27,9 +24,6 @@ import angular_example_component_html from './angular/example_component_html.md'
       files: {
         'src/app/example.component.ts': angular_example_component_ts,
         'src/app/example.component.html': angular_example_component_html,
-      },
-      dependencies: {
-        ionicons: '7.4.0',
       },
     },
   }}

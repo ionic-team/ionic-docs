@@ -21,9 +21,6 @@ import angular_global_css from './angular/global_css.md';
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
       },
-      dependencies: {
-        ionicons: '7.4.0',
-      },
     },
     react: {
       files: {
@@ -38,9 +35,6 @@ import angular_global_css from './angular/global_css.md';
         'src/app/example.component.css': angular_example_component_css,
         'src/app/example.component.ts': angular_example_component_ts,
         'src/global.css': angular_global_css,
-      },
-      dependencies: {
-        ionicons: '7.4.0',
       },
     },
   }}

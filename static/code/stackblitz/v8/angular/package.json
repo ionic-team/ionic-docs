@@ -2,6 +2,7 @@
   "dependencies": {
     "@ionic/angular": "8.2.5",
     "@ionic/core": "8.2.5",
-    "@angular/platform-browser-dynamic": "18.0.5"
+    "@angular/platform-browser-dynamic": "18.0.5",
+    "ionicons": "7.4.0"
   }
 }

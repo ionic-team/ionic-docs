@@ -24,9 +24,6 @@ import variables_css from './theme/variables_css.md';
         'index.ts': javascript_index_ts,
         'theme/variables.css': variables_css,
       },
-      dependencies: {
-        ionicons: '7.4.0',
-      },
     },
     react: {
       files: {
@@ -48,9 +45,6 @@ import variables_css from './theme/variables_css.md';
         'src/app/example.component.ts': angular_example_component_ts,
         'src/styles.css': angular_styles_css,
         'src/theme/variables.css': variables_css,
-      },
-      dependencies: {
-        ionicons: '7.4.0',
       },
     },
   }}
