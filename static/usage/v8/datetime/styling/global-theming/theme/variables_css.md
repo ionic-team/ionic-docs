@@ -1,29 +1,26 @@
 ```css
-/* Core CSS required for Ionic components to work properly */
-@import '~@ionic/angular/css/core.css';
+/* Ionic Variables and Theming
+ * ---------------------------------------------------------------
+ * Any overrides to theme variables should be placed in this file.
+ * For more information, please see:
+ * http://ionicframework.com/docs/theming/
+ */
 
-/* Basic CSS for apps built with Ionic */
-@import '~@ionic/angular/css/normalize.css';
-@import '~@ionic/angular/css/structure.css';
-@import '~@ionic/angular/css/typography.css';
-@import '~@ionic/angular/css/display.css';
-
-/* Optional CSS utils that can be commented out */
-@import '~@ionic/angular/css/padding.css';
-@import '~@ionic/angular/css/float-elements.css';
-@import '~@ionic/angular/css/text-alignment.css';
-@import '~@ionic/angular/css/text-transformation.css';
-@import '~@ionic/angular/css/flex-utils.css';
-
-:root,
-:root.ios,
-:root.md {
+/* This sets the CSS variables for the rose color */
+:root {
   --ion-color-rose: #831843;
   --ion-color-rose-rgb: 131, 24, 67;
   --ion-color-rose-contrast: #ffffff;
   --ion-color-rose-contrast-rgb: 255, 255, 255;
   --ion-color-rose-shade: #73153b;
   --ion-color-rose-tint: #8f2f56;
+}
+
+/* This overrides the global CSS variables for both modes */
+:root.ios,
+:root.md {
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
 
   --ion-text-color: #881337;
   --ion-text-color-rgb: 136, 19, 55;
@@ -69,6 +66,7 @@
   --ion-background-color-step-950: #8e1e40;
 }
 
+/* This adds the rose color */
 .ion-color-rose {
   --ion-color-base: var(--ion-color-rose);
   --ion-color-base-rgb: var(--ion-color-rose-rgb);
@@ -76,13 +74,5 @@
   --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
   --ion-color-shade: var(--ion-color-rose-shade);
   --ion-color-tint: var(--ion-color-rose-tint);
-}
-
-ion-datetime {
-  --background: #fff1f2;
-  --background-rgb: 255, 241, 242;
-
-  border-radius: 16px;
-  box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
 }
 ```
