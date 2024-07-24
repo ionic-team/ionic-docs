@@ -86,7 +86,6 @@ export class CameraComponent{
     const imageUrl = image.webPath;
     this.imageSrc = imageUrl;
   };
-
 }
 ```
 
@@ -102,7 +101,7 @@ export class CameraComponent{
 <script setup lang="typescript">
 import { ref } from 'vue';
 import { Camera, CameraResultType } from '@capacitor/camera';
-const imageSrc = ref('');
+const imageSrc = ref<string | undefined>('');
 
 const takePicture = async () => {
   const image = await Camera.getPhoto({
@@ -126,7 +125,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import { useState } from 'react';
 
 export function CameraComponent() {
-  const [imageSrc, setImageSrc] = useState('');
+  const [imageSrc, setImageSrc] = useState<string | undefined>('');
 
   const takePicture = async () => {
     const image = await Camera.getPhoto({
