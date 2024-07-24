@@ -37,7 +37,7 @@ All iOS apps must be code signed, even for development. Luckily, Xcode makes thi
 
 Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
 
-![Xcode Accounts](/img/installation/ios-xcode-accounts.png)
+![The Accounts section in Xcode Preferences showing an Apple ID and Personal Team.](/img/installation/ios-xcode-accounts.png 'Xcode Preferences Accounts Section')
 
 ### Creating an iOS Simulator
 
@@ -45,7 +45,7 @@ The iOS simulator emulates iOS devices on Macs. The following documentation is a
 
 Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
 
-![iOS Simulators](/img/installation/ios-xcode-simulators-setup.png)
+![Xcode window displaying the Devices and Simulators section with an iPhone X simulator selected.](/img/installation/ios-xcode-simulators-setup.png 'Xcode Devices and Simulators Window')
 
 ## Cordova Setup
 
@@ -96,11 +96,11 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
 1. **In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.**
 
-   ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
 
 1. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
-   ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
+   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
 
 ## Running with Xcode
 
@@ -125,7 +125,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 1. **In Xcode, select a target simulator or device and click the play button.**
 
-   ![Xcode Play Button Area](/img/running/ios-xcode-play-button-area.png)
+   ![Xcode toolbar with the play button and the active scheme for an iPhone simulator.](/img/running/ios-xcode-play-button-area.png 'Xcode Play Button and Active Scheme')
 
 ## Running with the Ionic CLI
 
@@ -133,7 +133,7 @@ The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devic
 
 With live-reload, changes made to the app's source files trigger a rebuild of web assets and the changes are reflected on the simulator or device without having to deploy again.
 
-:::caution
+:::warning
 For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--external` (or `--host=0.0.0.0`) to bind to external addresses.
 :::
 
@@ -171,7 +171,7 @@ If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences
 If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
 :::
 
-![Safari Web Inspector](/img/running/ios-safari-web-inspector-timelines.png)
+![Safari Web Inspector window showing the Timelines tab for performance profiling of an iOS app.](/img/running/ios-safari-web-inspector-timelines.png 'Safari Web Inspector Timelines')
 
 ### Viewing Native Logs
 
@@ -181,4 +181,4 @@ If running with Xcode, native logs can be found in the Xcode **Console**.
 If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 :::
 
-![Xcode Console](/img/running/ios-xcode-console.png)
+![Xcode Console output displaying logs from an iOS app running on a simulator.](/img/running/ios-xcode-console.png 'Xcode Console Logs')

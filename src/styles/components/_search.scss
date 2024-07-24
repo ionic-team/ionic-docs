@@ -33,13 +33,13 @@ html[data-theme='dark'] {
 
 //overrides
 #__docusaurus {
-  [class^='searchBox_'] {
+  [class^='navbarSearchContainer_'] {
     flex-grow: 1;
     max-width: 14rem;
   }
 
   @media (max-width: 996px) {
-    [class^='searchBox_'] {
+    [class^='navbarSearchContainer_'] {
       position: static;
       right: initial;
     }
@@ -66,10 +66,17 @@ html[data-theme='dark'] {
         padding-block-end: 0;
 
         width: auto;
-        height: auto;
 
         color: var(--c-indigo-50);
         border-radius: 0;
+
+        font-weight: 400;
+
+        // Targets the `CMD/CTRL` symbol
+        &:first-child {
+          font-size: 1.4em;
+          margin-inline-end: 0.0625rem;
+        }
       }
     }
 

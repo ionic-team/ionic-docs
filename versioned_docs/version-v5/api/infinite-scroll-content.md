@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/infinite-scroll-content/prop
 import Events from '@ionic-internal/component-api/v5/infinite-scroll-content/events.md';
 import Methods from '@ionic-internal/component-api/v5/infinite-scroll-content/methods.md';
 import Parts from '@ionic-internal/component-api/v5/infinite-scroll-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/infinite-scroll-content/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/infinite-scroll-content/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/infinite-scroll-content/slots.md';
 
 # ion-infinite-scroll-content

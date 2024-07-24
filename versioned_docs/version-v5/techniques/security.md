@@ -1,5 +1,5 @@
 ---
-disableHtmlPreviews: true
+title: Security
 ---
 
 import Tabs from '@theme/Tabs';

@@ -19,9 +19,9 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 :::note
@@ -77,6 +77,12 @@ Next, create an Ionic Angular app that uses the “Tabs” starter template and 
 ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
+:::note
+
+When prompted to choose between `NgModules` and `Standalone`, opt for `NgModules` as this tutorial follows the `NgModules` approach.
+
+:::
+
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
 
 Next, change into the app folder:
@@ -106,7 +112,7 @@ Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 ```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader after the platform has been bootstrapped
+// Call the element loader before the bootstrapModule/bootstrapApplication call
 defineCustomElements(window);
 ```
 
@@ -126,7 +132,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/img/guides/first-app-cap-ng/email-photogallery.gif)
+![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif 'Live Reload Feature in Ionic App')
 
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 

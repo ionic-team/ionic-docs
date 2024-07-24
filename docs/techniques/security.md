@@ -1,6 +1,5 @@
 ---
 title: Security
-disableHtmlPreviews: true
 ---
 
 <head>
@@ -54,8 +53,6 @@ const element = <a href={userInput}>Click Me!</a>;
 
 If the developer needs to achieve more comprehensive sanitization, they can use the [sanitize-html](https://www.npmjs.com/package/sanitize-html) package.
 
-To learn more about the built-in protections that React and JSX provide, see the [React JSX Documentation](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks).
-
 ### Vue
 
 Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](https://www.npmjs.com/package/sanitize-html).
@@ -83,7 +80,11 @@ Ionic Framework provides an application config option called `sanitizerEnabled` 
 Developers can also choose to eject from the sanitizer in certain scenarios. Ionic Framework provides the `IonicSafeString` class that allows developers to do just that.
 
 :::note
-In order to bypass the sanitizer and use unsanitized custom HTML in the relevant Ionic components, `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config. See [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) for more information.
+In order to bypass the sanitizer and use unsanitized custom HTML in the relevant Ionic components, `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config.
+
+`IonicSafeString` should not be used if `innerHTMLTemplatesEnabled` is set to `false`.
+
+See [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) for more information.
 :::
 
 #### Usage
@@ -94,6 +95,7 @@ In order to bypass the sanitizer and use unsanitized custom HTML in the relevant
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'javascript', label: 'JavaScript' },
     { value: 'react', label: 'React' },
   ]
@@ -102,6 +104,25 @@ In order to bypass the sanitizer and use unsanitized custom HTML in the relevant
 
 ```tsx
 import { IonicSafeString, ToastController } from '@ionic/angular';
+
+...
+
+constructor(private toastController: ToastController) {}
+
+async presentToast() {
+  const toast = await this.toastController.create({
+      message: new IonicSafeString('<ion-button>Hello!</ion-button>'),
+      duration: 2000
+  });
+  toast.present();
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { IonicSafeString, ToastController } from '@ionic/angular/standalone';
 
 ...
 

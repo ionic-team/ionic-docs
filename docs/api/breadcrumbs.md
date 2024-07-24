@@ -1,12 +1,12 @@
 ---
 title: "ion-breadcrumbs"
 ---
-import Props from '@ionic-internal/component-api/v7/breadcrumbs/props.md';
-import Events from '@ionic-internal/component-api/v7/breadcrumbs/events.md';
-import Methods from '@ionic-internal/component-api/v7/breadcrumbs/methods.md';
-import Parts from '@ionic-internal/component-api/v7/breadcrumbs/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/breadcrumbs/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/breadcrumbs/slots.md';
+import Props from '@ionic-internal/component-api/v8/breadcrumbs/props.md';
+import Events from '@ionic-internal/component-api/v8/breadcrumbs/events.md';
+import Methods from '@ionic-internal/component-api/v8/breadcrumbs/methods.md';
+import Parts from '@ionic-internal/component-api/v8/breadcrumbs/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/breadcrumbs/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/breadcrumbs/slots.md';
 
 
 
@@ -18,7 +18,7 @@ Breadcrumbs are navigation items that are used to indicate where a user is on an
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/breadcrumbs/basic/index.md';
+import Basic from '@site/static/usage/v8/breadcrumbs/basic/index.md';
 
 <Basic />
 
@@ -26,13 +26,13 @@ import Basic from '@site/static/usage/v7/breadcrumbs/basic/index.md';
 
 ### Icons on Items
 
-import IconsOnItems from '@site/static/usage/v7/breadcrumbs/icons/icons-on-items/index.md';
+import IconsOnItems from '@site/static/usage/v8/breadcrumbs/icons/icons-on-items/index.md';
 
 <IconsOnItems />
 
 ### Custom Separators
 
-import CustomSeparators from '@site/static/usage/v7/breadcrumbs/icons/custom-separators/index.md';
+import CustomSeparators from '@site/static/usage/v8/breadcrumbs/icons/custom-separators/index.md';
 
 <CustomSeparators />
 
@@ -42,7 +42,7 @@ import CustomSeparators from '@site/static/usage/v7/breadcrumbs/icons/custom-sep
 
 If there are more items than the value of `maxItems`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
 
-import MaxItems from '@site/static/usage/v7/breadcrumbs/collapsing-items/max-items/index.md';
+import MaxItems from '@site/static/usage/v8/breadcrumbs/collapsing-items/max-items/index.md';
 
 <MaxItems />
 
@@ -50,7 +50,7 @@ import MaxItems from '@site/static/usage/v7/breadcrumbs/collapsing-items/max-ite
 
 Once the items are collapsed, the number of items to show can be controlled by the `itemsBeforeCollapse` and `itemsAfterCollapse` properties.
 
-import ItemsBeforeAfter from '@site/static/usage/v7/breadcrumbs/collapsing-items/items-before-after/index.md';
+import ItemsBeforeAfter from '@site/static/usage/v8/breadcrumbs/collapsing-items/items-before-after/index.md';
 
 <ItemsBeforeAfter />
 
@@ -58,7 +58,7 @@ import ItemsBeforeAfter from '@site/static/usage/v7/breadcrumbs/collapsing-items
 
 Clicking the collapsed indicator will fire the `ionCollapsedClick` event. This can be used to, for example, expand the breadcrumbs.
 
-import ExpandOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/expand-on-click/index.md';
+import ExpandOnClick from '@site/static/usage/v8/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
 <ExpandOnClick />
 
@@ -66,7 +66,7 @@ import ExpandOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/ex
 
 The `ionCollapsedClick` event can also be used to present an overlay (in this case, an `ion-popover`) showing the hidden breadcrumbs.
 
-import PopoverOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/popover-on-click/index.md';
+import PopoverOnClick from '@site/static/usage/v8/breadcrumbs/collapsing-items/popover-on-click/index.md';
 
 <PopoverOnClick />
 
@@ -74,13 +74,13 @@ import PopoverOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/p
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/breadcrumbs/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/breadcrumbs/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Label</title>
-    <link rel="stylesheet" href="../../../common.css" />
-    <script src="../../../common.js"></script>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
 
@@ -26,14 +26,14 @@
 
           <ion-item>
             <ion-label>
-              Multi-line text that should ellipsis when it is too long to fit on one line. Lorem ipsum dolor sit amet,
+              Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit.
             </ion-label>
           </ion-item>
 
           <ion-item>
-            <ion-label class="ion-text-wrap">
-              Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet,
+            <ion-label class="ion-text-nowrap">
+              Multi-line text that should ellipsis when it is too long to fit on one line. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit.
             </ion-label>
           </ion-item>

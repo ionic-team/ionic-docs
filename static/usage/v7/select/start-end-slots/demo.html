@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+
+    <style>
+      ion-list {
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-list>
+            <ion-item>
+              <ion-select label-placement="stacked" label="Favorite fruit" value="apple">
+                <ion-icon slot="start" name="leaf" aria-hidden="true"></ion-icon>
+                <ion-select-option value="apple">Apple</ion-select-option>
+                <ion-select-option value="banana">Banana</ion-select-option>
+                <ion-select-option value="orange">Orange</ion-select-option>
+                <ion-button fill="clear" slot="end" aria-label="Show/hide password">
+                  <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+                </ion-button>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

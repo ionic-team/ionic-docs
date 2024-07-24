@@ -12,6 +12,7 @@ Swiper
 Udemy
 Vetur
 Wistia
+WCAG
 
 actionsheet
 fabs
@@ -30,6 +31,7 @@ authed
 autogrow
 automations
 autoplay
+Callout
 comparewith
 composables
 engageable

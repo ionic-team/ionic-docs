@@ -1,44 +1,46 @@
 ---
 title: "ion-datetime"
 ---
-import Props from '@ionic-internal/component-api/v7/datetime/props.md';
-import Events from '@ionic-internal/component-api/v7/datetime/events.md';
-import Methods from '@ionic-internal/component-api/v7/datetime/methods.md';
-import Parts from '@ionic-internal/component-api/v7/datetime/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/datetime/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/datetime/slots.md';
+import Props from '@ionic-internal/component-api/v8/datetime/props.md';
+import Events from '@ionic-internal/component-api/v8/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v8/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v8/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/datetime/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/datetime/slots.md';
 
-import Basic from '@site/static/usage/v7/datetime/basic/index.md';
+import Basic from '@site/static/usage/v8/datetime/basic/index.md';
 
-import MaxMin from '@site/static/usage/v7/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/v7/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/v7/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v8/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v8/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v8/datetime/date-constraints/advanced/index.md';
 
-import CustomLocale from '@site/static/usage/v7/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/v7/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/v7/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/v7/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/v7/datetime/localization/time-label/index.md';
+import FormatOptions from '@site/static/usage/v8/datetime/format-options/index.md';
 
-import MonthAndYear from '@site/static/usage/v7/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/v7/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/v7/datetime/presentation/date/index.md';
+import CustomLocale from '@site/static/usage/v8/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v8/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v8/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v8/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v8/datetime/localization/time-label/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/v7/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/v7/datetime/title/customizing-title/index.md';
+import MonthAndYear from '@site/static/usage/v8/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v8/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v8/datetime/presentation/date/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v8/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v8/datetime/title/customizing-title/index.md';
 
-import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
-import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v8/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v8/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v8/datetime/buttons/customizing-button-texts/index.md';
 
-import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
+import HighlightedDatesArray from '@site/static/usage/v8/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v8/datetime/highlightedDates/callback/index.md';
 
-import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
-import CalendarDaysStyling from '@site/static/usage/v7/datetime/styling/calendar-days/index.md';
-import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
+import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
+
+import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
+import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
+import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -242,7 +244,7 @@ Certain `presentation` options have both grid and wheel styles that developers c
 
 The example below shows the wheel picker with `presentation="date-time"`.
 
-import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v8/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
@@ -267,6 +269,16 @@ By default, `ion-datetime` does not show any header or title associated with the
 ### Customizing the Title
 
 <CustomizingTitle />
+
+## Format Options
+
+You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatOptions` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatOptions` is not provided, default formats will be used for dates and times.
+
+Datetime [does not manipulate or set](#time-zones) the time zone. If `timeZone` or `timeZoneName` are provided, they will be ignored, and the time zone will be set to UTC. This ensures that the displayed value matches the selected value, rather than being converted to the user's current time zone.
+
+Be careful with the options you provide, as they may not match the selected presentation. For example, providing `minute: 'numeric'` for a presentation of `month` may lead to unexpected behavior, displaying a month where only a time might be expected.
+
+<FormatOptions />
 
 ## Buttons
 
@@ -431,14 +443,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels
 
-When using the time wheel picker, you can use the number keys to select hour and minute values when the columns are focused.
-
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+The wheel picker in Datetime uses [Picker](./picker) internally. See [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces
 

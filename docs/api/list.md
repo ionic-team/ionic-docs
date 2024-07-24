@@ -1,12 +1,12 @@
 ---
 title: "ion-list"
 ---
-import Props from '@ionic-internal/component-api/v7/list/props.md';
-import Events from '@ionic-internal/component-api/v7/list/events.md';
-import Methods from '@ionic-internal/component-api/v7/list/methods.md';
-import Parts from '@ionic-internal/component-api/v7/list/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/list/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/list/slots.md';
+import Props from '@ionic-internal/component-api/v8/list/props.md';
+import Events from '@ionic-internal/component-api/v8/list/events.md';
+import Methods from '@ionic-internal/component-api/v8/list/methods.md';
+import Parts from '@ionic-internal/component-api/v8/list/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/list/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/list/slots.md';
 
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>
@@ -23,7 +23,7 @@ Lists support several interactions including swiping items to reveal options, dr
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/list/basic/index.md';
+import Basic from '@site/static/usage/v8/list/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v7/list/basic/index.md';
 
 Adding the `inset` property to a list will apply margin around the list. In `ios` mode it will also add rounded corners to the list.
 
-import Inset from '@site/static/usage/v7/list/inset/index.md';
+import Inset from '@site/static/usage/v8/list/inset/index.md';
 
 <Inset />
 
@@ -41,7 +41,7 @@ import Inset from '@site/static/usage/v7/list/inset/index.md';
 
 Adding the `lines` property to a list will adjust the bottom borders of all of the items in the list. Setting it to `"full"` will display full width borders, `"inset"` will display borders adjusted with left padding, and `"none"` will show no borders. If the `lines` property is set on an item in a list, that will take priority over the property on the list.
 
-import Lines from '@site/static/usage/v7/list/lines/index.md';
+import Lines from '@site/static/usage/v8/list/lines/index.md';
 
 <Lines />
 

@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/picker/props.md';
 import Events from '@ionic-internal/component-api/v5/picker/events.md';
 import Methods from '@ionic-internal/component-api/v5/picker/methods.md';
 import Parts from '@ionic-internal/component-api/v5/picker/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/picker/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/picker/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/picker/slots.md';
 
 # ion-picker
