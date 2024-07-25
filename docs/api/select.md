@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/select/props.md';
 import Events from '@ionic-internal/component-api/v8/select/events.md';
 import Methods from '@ionic-internal/component-api/v8/select/methods.md';
 import Parts from '@ionic-internal/component-api/v8/select/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/select/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/select/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/select/slots.md';
 
 <head>
@@ -134,7 +134,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v8/selec
 <ObjectValuesAndMultipleSelectionExample />
 
 ## Justification
-  
+
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
 import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
@@ -145,7 +145,11 @@ import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
 Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
 
-Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
+Filled selects can be used on iOS by setting the select's `mode` to `md`.
+
+:::warning
+Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+:::
 
 import FillExample from '@site/static/usage/v8/select/fill/index.md';
 
@@ -183,7 +187,7 @@ In most cases, [Icon](./icon.md) components placed in these slots should have `a
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v7/select/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v8/select/start-end-slots/index.md';
 
 <StartEndSlots />
 

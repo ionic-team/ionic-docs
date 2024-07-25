@@ -24,9 +24,9 @@ import '@ionic/react/css/display.css';
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-// import '@ionic/react/css/themes/dark.always.css';
-// import '@ionic/react/css/themes/dark.class.css';
-import '@ionic/react/css/themes/dark.system.css';
+// import '@ionic/react/css/palettes/dark.always.css';
+// import '@ionic/react/css/palettes/dark.class.css';
+import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';

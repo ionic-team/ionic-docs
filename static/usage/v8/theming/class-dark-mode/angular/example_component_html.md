@@ -17,7 +17,7 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list [inset]="true">
     <ion-item>
-      <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"
+      <ion-toggle [(ngModel)]="paletteToggle" (ionChange)="toggleChange($event)" justify="space-between"
         >Dark Mode</ion-toggle
       >
     </ion-item>

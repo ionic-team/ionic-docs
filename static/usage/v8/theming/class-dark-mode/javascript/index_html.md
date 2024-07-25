@@ -17,7 +17,7 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list inset="true">
     <ion-item>
-      <ion-toggle justify="space-between" id="themeToggle">Dark Mode</ion-toggle>
+      <ion-toggle justify="space-between" id="paletteToggle">Dark Mode</ion-toggle>
     </ion-item>
   </ion-list>
 
@@ -50,28 +50,28 @@
 </ion-content>
 
 <script>
-  // Query for the toggle that is used to change between themes
-  const toggle = document.querySelector('#themeToggle');
+  // Query for the toggle that is used to change between palettes
+  const toggle = document.querySelector('#paletteToggle');
 
-  // Listen for the toggle check/uncheck to toggle the dark theme
+  // Listen for the toggle check/uncheck to toggle the dark palette
   toggle.addEventListener('ionChange', (ev) => {
-    toggleDarkTheme(ev.detail.checked);
+    toggleDarkPalette(ev.detail.checked);
   });
 
   // Use matchMedia to check the user preference
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  // Initialize the dark theme based on the initial
+  // Initialize the dark palette based on the initial
   // value of the prefers-color-scheme media query
-  initializeDarkTheme(prefersDark.matches);
+  initializeDarkPalette(prefersDark.matches);
 
   // Listen for changes to the prefers-color-scheme media query
-  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
+  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
 
-  // Check/uncheck the toggle and update the theme based on isDark
-  function initializeDarkTheme(isDark) {
+  // Check/uncheck the toggle and update the palette based on isDark
+  function initializeDarkPalette(isDark) {
     toggle.checked = isDark;
-    toggleDarkTheme(isDark);
+    toggleDarkPalette(isDark);
   }
 
   // Called by the media query to check/uncheck the toggle
@@ -79,14 +79,14 @@
     toggle.checked = shouldCheck;
   }
 
-  // Add or remove the "ion-theme-dark" class on the html element
-  function toggleDarkTheme(shouldAdd) {
-    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
+  // Add or remove the "ion-palette-dark" class on the html element
+  function toggleDarkPalette(shouldAdd) {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between themes */
+  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
   ion-item {
     --transition: none;
   }

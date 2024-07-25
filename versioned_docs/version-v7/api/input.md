@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/input/props.md';
 import Events from '@ionic-internal/component-api/v7/input/events.md';
 import Methods from '@ionic-internal/component-api/v7/input/methods.md';
 import Parts from '@ionic-internal/component-api/v7/input/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/input/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/input/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
@@ -146,6 +146,22 @@ import Masking from '@site/static/usage/v7/input/mask/index.md';
 Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/taiga-family/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
 
 :::
+
+## Start and End Slots (experimental)
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the input.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md';
+
+<StartEndSlots />
 
 ## Theming
 

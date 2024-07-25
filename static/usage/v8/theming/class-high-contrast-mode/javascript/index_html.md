@@ -1,5 +1,5 @@
 ```html
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
@@ -17,10 +17,10 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list inset="true">
     <ion-item>
-      <ion-toggle justify="space-between" id="darkThemeToggle">Dark Mode</ion-toggle>
+      <ion-toggle justify="space-between" id="darkPaletteToggle">Dark Mode</ion-toggle>
     </ion-item>
     <ion-item>
-      <ion-toggle justify="space-between" id="highContrastThemeToggle">High Contrast Mode</ion-toggle>
+      <ion-toggle justify="space-between" id="highContrastPaletteToggle">High Contrast Mode</ion-toggle>
     </ion-item>
   </ion-list>
 
@@ -53,57 +53,57 @@
 </ion-content>
 
 <script>
-  // Query for the toggle that is used to change between themes
-  const darkThemeToggle = document.querySelector('#darkThemeToggle');
-  const highContrastThemeToggle = document.querySelector('#highContrastThemeToggle');
+  // Query for the toggle that is used to change between palettes
+  const darkPaletteToggle = document.querySelector('#darkPaletteToggle');
+  const highContrastPaletteToggle = document.querySelector('#highContrastPaletteToggle');
 
-  // Listen for the toggle check/uncheck to toggle the theme
-  darkThemeToggle.addEventListener('ionChange', (ev) => {
-    toggleDarkTheme(ev.detail.checked);
+  // Listen for the toggle check/uncheck to toggle the palette
+  darkPaletteToggle.addEventListener('ionChange', (ev) => {
+    toggleDarkPalette(ev.detail.checked);
   });
 
-  highContrastThemeToggle.addEventListener('ionChange', (ev) => {
-    toggleHighContrastTheme(ev.detail.checked);
+  highContrastPaletteToggle.addEventListener('ionChange', (ev) => {
+    toggleHighContrastPalette(ev.detail.checked);
   });
 
   // Use matchMedia to check the user preference
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
 
-  // Initialize the dark theme based on the initial
+  // Initialize the dark palette based on the initial
   // value of the media queries
-  initializeDarkTheme(prefersDark.matches);
-  initializeHighContrastTheme(prefersHighContrast.matches);
+  initializeDarkPalette(prefersDark.matches);
+  initializeHighContrastPalette(prefersHighContrast.matches);
 
   // Listen for changes to the media queries
-  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
-  prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastTheme(mediaQuery.matches));
+  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
+  prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
 
-  // Check/uncheck the toggle and update the dark theme
-  function initializeDarkTheme(isDark) {
-    darkThemeToggle.checked = isDark;
-    toggleDarkTheme(isDark);
+  // Check/uncheck the toggle and update the dark palette
+  function initializeDarkPalette(isDark) {
+    darkPaletteToggle.checked = isDark;
+    toggleDarkPalette(isDark);
   }
 
-  // Check/uncheck the toggle and update the high contrast theme
-  function initializeHighContrastTheme(isHighContrast) {
-    highContrastThemeToggle.checked = isHighContrast;
-    toggleHighContrastTheme(isHighContrast);
+  // Check/uncheck the toggle and update the high contrast palette
+  function initializeHighContrastPalette(isHighContrast) {
+    highContrastPaletteToggle.checked = isHighContrast;
+    toggleHighContrastPalette(isHighContrast);
   }
 
-  // Add or remove the "ion-theme-dark" class on the html element
-  function toggleDarkTheme(shouldAdd) {
-    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
+  // Add or remove the "ion-palette-dark" class on the html element
+  function toggleDarkPalette(shouldAdd) {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
 
-  // Add or remove the "ion-theme-high-contrast" class on the html element
-  function toggleHighContrastTheme(shouldAdd) {
-    document.documentElement.classList.toggle('ion-theme-high-contrast', shouldAdd);
+  // Add or remove the "ion-palette-high-contrast" class on the html element
+  function toggleHighContrastPalette(shouldAdd) {
+    document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
   }
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between themes */
+  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
   ion-item {
     --transition: none;
   }

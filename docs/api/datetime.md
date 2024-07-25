@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/datetime/props.md';
 import Events from '@ionic-internal/component-api/v8/datetime/events.md';
 import Methods from '@ionic-internal/component-api/v8/datetime/methods.md';
 import Parts from '@ionic-internal/component-api/v8/datetime/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/datetime/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/datetime/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/datetime/slots.md';
 
 import Basic from '@site/static/usage/v8/datetime/basic/index.md';
@@ -13,6 +13,8 @@ import Basic from '@site/static/usage/v8/datetime/basic/index.md';
 import MaxMin from '@site/static/usage/v8/datetime/date-constraints/max-min/index.md';
 import Values from '@site/static/usage/v8/datetime/date-constraints/values/index.md';
 import Advanced from '@site/static/usage/v8/datetime/date-constraints/advanced/index.md';
+
+import FormatOptions from '@site/static/usage/v8/datetime/format-options/index.md';
 
 import CustomLocale from '@site/static/usage/v8/datetime/localization/custom-locale/index.md';
 import HourCycle from '@site/static/usage/v8/datetime/localization/hour-cycle/index.md';
@@ -268,6 +270,16 @@ By default, `ion-datetime` does not show any header or title associated with the
 
 <CustomizingTitle />
 
+## Format Options
+
+You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatOptions` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatOptions` is not provided, default formats will be used for dates and times.
+
+Datetime [does not manipulate or set](#time-zones) the time zone. If `timeZone` or `timeZoneName` are provided, they will be ignored, and the time zone will be set to UTC. This ensures that the displayed value matches the selected value, rather than being converted to the user's current time zone.
+
+Be careful with the options you provide, as they may not match the selected presentation. For example, providing `minute: 'numeric'` for a presentation of `month` may lead to unexpected behavior, displaying a month where only a time might be expected.
+
+<FormatOptions />
+
 ## Buttons
 
 By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
@@ -431,14 +443,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels
 
-When using the time wheel picker, you can use the number keys to select hour and minute values when the columns are focused.
-
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+The wheel picker in Datetime uses [Picker](./picker) internally. See [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces
 

@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/radio/props.md';
 import Events from '@ionic-internal/component-api/v5/radio/events.md';
 import Methods from '@ionic-internal/component-api/v5/radio/methods.md';
 import Parts from '@ionic-internal/component-api/v5/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/radio/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/radio/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/radio/slots.md';
 
 # ion-radio

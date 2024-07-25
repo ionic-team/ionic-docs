@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/refresher/props.md';
 import Events from '@ionic-internal/component-api/v5/refresher/events.md';
 import Methods from '@ionic-internal/component-api/v5/refresher/methods.md';
 import Parts from '@ionic-internal/component-api/v5/refresher/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/refresher/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/refresher/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/refresher/slots.md';
 
 # ion-refresher

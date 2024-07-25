@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/fab-button/props.md';
 import Events from '@ionic-internal/component-api/v8/fab-button/events.md';
 import Methods from '@ionic-internal/component-api/v8/fab-button/methods.md';
 import Parts from '@ionic-internal/component-api/v8/fab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/fab-button/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/fab-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/fab-button/slots.md';
 
 <head>

@@ -8,7 +8,7 @@ import Props from '@ionic-internal/component-api/v8/toast/props.md';
 import Events from '@ionic-internal/component-api/v8/toast/events.md';
 import Methods from '@ionic-internal/component-api/v8/toast/methods.md';
 import Parts from '@ionic-internal/component-api/v8/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/toast/slots.md';
 
 <head>
@@ -76,10 +76,10 @@ import PositionAnchor from '@site/static/usage/v8/toast/position-anchor/index.md
 
 Toasts can be swiped to dismiss by using the `swipeGesture` property. This feature is position-aware, meaning the direction that users need to swipe will change based on the value of the `position` property. Additionally, the distance users need to swipe may be impacted by the `positionAnchor` property.
 
-import SwipeGesture from '@site/static/usage/v7/toast/swipe-gesture/index.md';
+import SwipeGesture from '@site/static/usage/v8/toast/swipe-gesture/index.md';
 
 <SwipeGesture />
-  
+
 ## Layout
 
 Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.

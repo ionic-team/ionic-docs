@@ -16,7 +16,7 @@ Now for the fun part - adding the ability to take photos with the device’s cam
 To do so, we will create our own custom React hook that will manage the photos for the gallery.
 
 :::note
-If you are not familiar with React Hooks, [Introducing React Hooks](https://reactjs.org/docs/hooks-intro.html) from the official React docs is a good resource to start with.
+If you are not familiar with React Hooks, [Introducing React Hooks](https://react.dev/reference/react/hooks) from the official React docs is a good resource to start with.
 :::
 
 Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
@@ -72,7 +72,7 @@ const Tab2: React.FC = () => {
 
 Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
-![Camera API on the web](/img/guides/first-app-cap-ng/camera-web.png)
+![A photo gallery app displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png 'Webcam Selfie in Photo Gallery')
 
 _(Your selfie is probably much better than mine)_
 

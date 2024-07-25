@@ -52,9 +52,7 @@ module.exports = function (context, options) {
 
       let npmTag = 'latest';
       if (currentVersion.banner === 'unreleased') {
-        // TODO create a ticket to re-enable this once v8 is released.
-        // npmTag = 'next';
-        npmTag = '7.5.8-dev.11702398696.1ab62ea9';
+        npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
         npmTag = currentVersion.path.slice(1);
       }
@@ -78,7 +76,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/events.md`, data.events),
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/custom-props.md`, data.customProps),
+          createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.md`, data.slots)
         );
       }
@@ -170,11 +168,9 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description |
-| --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
-
-`;
+| Name | Description | Bubbles |
+| --- | --- | --- |
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
 function renderMethods({ methods }) {
@@ -214,16 +210,56 @@ ${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).jo
 }
 
 function renderCustomProps({ styles: customProps }) {
-  if (customProps.length === 0) {
-    return 'No CSS custom properties available for this component.';
-  }
+  const iosProps = customProps.filter((prop) => prop.mode === 'ios');
+  const mdProps = customProps.filter((prop) => prop.mode === 'md');
 
-  return `
-| Name | Description |
-| --- | --- |
-${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+  const renderTable = (props) => {
+    if (props.length === 0) {
+      return 'No CSS custom properties available for this component.';
+    }
+
+    return `
+    | Name | Description |
+  | --- | --- |
+  ${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+  `;
+  };
+
+  if (iosProps.length > 0 || mdProps.length > 0) {
+    // If the component has mode-specific custom props, render them in tabs for iOS and MD
+    return `
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+\`\`\`\`mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+${renderTable(iosProps)}
+
+</TabItem>
+
+<TabItem value="md">
+
+${renderTable(mdProps)}
+
+</TabItem>
+</Tabs>
+
+\`\`\`\`
 
 `;
+  }
+  // Otherwise render the custom props without the tabs for iOS and MD
+  return renderTable(customProps);
 }
 
 function renderSlots({ slots }) {

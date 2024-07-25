@@ -12,6 +12,7 @@
     <ion-input
       label="US phone number"
       placeholder="+1 (xxx) xxx-xxxx"
+      [(ngModel)]="myPhoneNumber"
       [maskito]="phoneMask"
       [maskitoElement]="maskPredicate"
     ></ion-input>

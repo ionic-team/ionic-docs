@@ -80,15 +80,10 @@ module.exports = {
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
           exclude: ['README.md'],
-          lastVersion: 'v7',
+          lastVersion: 'current',
           versions: {
             current: {
-              label: 'v8 (beta)',
-              banner: 'unreleased',
-              path: 'v8',
-            },
-            v7: {
-              label: 'v7',
+              label: 'v8',
             },
           },
         },
@@ -109,6 +104,12 @@ module.exports = {
   ],
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
+      isCloseable: false,
+    },
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
@@ -182,8 +183,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'updating/7-0',
-          label: 'Ionic v7.0.0 Upgrade Guide',
+          docId: 'updating/8-0',
+          label: 'Ionic v8.0.0 Upgrade Guide',
           position: 'left',
           className: 'cta',
         },
@@ -367,30 +368,6 @@ module.exports = {
         versions: VERSIONS_JSON,
       },
     ],
-    function (context, options) {
-      return {
-        name: 'beamer',
-        injectHtmlTags({ content }) {
-          // Only inject Beamer when deployed to production, so we don't use up Beamer "users"
-          if (process.env.NODE_ENV === 'production') {
-            return {
-              // For performance, Beamer recommends injecting these scripts at the very bottom of the <body>
-              // Thus, custom plugin is required here to use postBodyTags
-              postBodyTags: [
-                `<script>var beamer_config = { product_id : 'mUvQtqly31065' };</script>`,
-                {
-                  tagName: 'script',
-                  attributes: {
-                    src: 'https://app.getbeamer.com/js/beamer-embed.js',
-                    defer: 'defer',
-                  },
-                },
-              ],
-            };
-          }
-        },
-      };
-    },
   ],
   customFields: {},
   themes: [],

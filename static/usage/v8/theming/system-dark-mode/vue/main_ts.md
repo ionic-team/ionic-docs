@@ -21,15 +21,15 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
 /**
- * Ionic Dark Theme
+ * Ionic Dark Palette
  * -----------------------------------------------------
  * For more information, please see:
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-// import '@ionic/vue/css/themes/dark.always.css';
-// import '@ionic/vue/css/themes/dark.class.css';
-import '@ionic/vue/css/themes/dark.system.css';
+// import '@ionic/vue/css/palettes/dark.always.css';
+// import '@ionic/vue/css/palettes/dark.class.css';
+import '@ionic/vue/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';

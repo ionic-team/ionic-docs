@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/card/props.md';
 import Events from '@ionic-internal/component-api/v5/card/events.md';
 import Methods from '@ionic-internal/component-api/v5/card/methods.md';
 import Parts from '@ionic-internal/component-api/v5/card/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/card/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/card/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/card/slots.md';
 
 # ion-card

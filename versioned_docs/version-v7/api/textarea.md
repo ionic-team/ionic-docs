@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/textarea/props.md';
 import Events from '@ionic-internal/component-api/v7/textarea/events.md';
 import Methods from '@ionic-internal/component-api/v7/textarea/methods.md';
 import Parts from '@ionic-internal/component-api/v7/textarea/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/textarea/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/textarea/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/textarea/slots.md';
 
 <head>
@@ -112,6 +112,22 @@ Setting the `clearOnEdit` property to `true` will clear the textarea after it ha
 import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
+
+## Start and End Slots (experimental)
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the textarea.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/textarea/start-end-slots/index.md';
+
+<StartEndSlots />
 
 ## Migrating from Legacy Textarea Syntax
 

@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v8/infinite-scroll/props.md';
 import Events from '@ionic-internal/component-api/v8/infinite-scroll/events.md';
 import Methods from '@ionic-internal/component-api/v8/infinite-scroll/methods.md';
 import Parts from '@ionic-internal/component-api/v8/infinite-scroll/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/infinite-scroll/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/infinite-scroll/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/infinite-scroll/slots.md';
 
 <head>

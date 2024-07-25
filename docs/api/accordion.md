@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/accordion/props.md';
 import Events from '@ionic-internal/component-api/v8/accordion/events.md';
 import Methods from '@ionic-internal/component-api/v8/accordion/methods.md';
 import Parts from '@ionic-internal/component-api/v8/accordion/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
 
 <head>
@@ -35,6 +35,12 @@ import Toggle from '@site/static/usage/v8/accordion/toggle/index.md';
 <Toggle />
 
 ## Listen for Accordion State Changes
+
+:::caution
+Most `ionChange` events emitted by other components such as [Input](./input) and [Textarea](./textarea) bubble. As a result, these events will bubble up and cause your `ionChange` listener on the Accordion Group to fire if the associated components are used inside of an Accordion.
+
+When using other components that emit `ionChange` inside of Accordion it is recommended to have the `ionChange` callback on Accordion Group check the `target` key on the event passed to the callback to verify that `ionChange` is coming from the Accordion Group and not any descendants.
+:::
 
 Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
 

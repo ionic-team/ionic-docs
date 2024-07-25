@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/radio/props.md';
 import Events from '@ionic-internal/component-api/v8/radio/events.md';
 import Methods from '@ionic-internal/component-api/v8/radio/methods.md';
 import Parts from '@ionic-internal/component-api/v8/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
 
 <head>
@@ -40,7 +40,7 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
-import UsingComparewith from '@site/static/usage/v7/radio/using-comparewith/index.md';
+import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/index.md';
 
 <UsingComparewith />
 
@@ -110,7 +110,7 @@ Using the modern syntax involves removing the `ion-label` and passing the label 
 import Migration from '@site/static/usage/v8/radio/migration/index.md';
 
 <Migration />
-  
+
 
 :::note
 In past versions of Ionic, `ion-item` was required for `ion-radio` to function properly. Starting in Ionic 7.0, `ion-radio` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-radio` to function properly.

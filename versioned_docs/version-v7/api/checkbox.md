@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/checkbox/props.md';
 import Events from '@ionic-internal/component-api/v7/checkbox/events.md';
 import Methods from '@ionic-internal/component-api/v7/checkbox/methods.md';
 import Parts from '@ionic-internal/component-api/v7/checkbox/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/checkbox/slots.md';
 
 <head>
@@ -66,6 +66,14 @@ import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
 
 <Indeterminate />
+
+## Links inside of Labels
+
+Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
+
+import LabelLink from '@site/static/usage/v7/checkbox/label-link/index.md';
+
+<LabelLink />
 
 ## Theming
 

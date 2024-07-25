@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/buttons/props.md';
 import Events from '@ionic-internal/component-api/v5/buttons/events.md';
 import Methods from '@ionic-internal/component-api/v5/buttons/methods.md';
 import Parts from '@ionic-internal/component-api/v5/buttons/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/buttons/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/buttons/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/buttons/slots.md';
 
 # ion-buttons
