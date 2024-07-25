@@ -51,9 +51,6 @@ import react_search_page_tsx from './react/search_page_tsx.md';
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
       },
-      dependencies: {
-        ionicons: '7.4.0',
-      },
     },
     angular: {
       files: {
@@ -75,9 +72,6 @@ import react_search_page_tsx from './react/search_page_tsx.md';
         'src/app/app.module.ts': angular_app_module_ts,
         'src/app/app.component.html': angular_app_component_html,
         'src/app/app-routing.module.ts': angular_app_routing_module_ts,
-      },
-      dependencies: {
-        ionicons: '7.4.0',
       },
     },
     vue: {

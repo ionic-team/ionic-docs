@@ -20,9 +20,6 @@ import angular_example_component_css from './angular/example_component_css.md';
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
       },
-      dependencies: {
-        ionicons: '7.4.0',
-      },
     },
     react: {
       files: {
@@ -36,9 +33,6 @@ import angular_example_component_css from './angular/example_component_css.md';
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
         'src/app/example.component.css': angular_example_component_css,
-      },
-      dependencies: {
-        ionicons: '7.4.0',
       },
     },
   }}

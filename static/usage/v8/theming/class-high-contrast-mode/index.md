@@ -23,9 +23,6 @@ import vue_main_ts from './vue/main_ts.md';
         'index.html': javascript_index_html,
         'index.ts': javascript_index_ts,
       },
-      dependencies: {
-        ionicons: '7.4.0',
-      },
     },
     react: {
       files: {
@@ -46,9 +43,6 @@ import vue_main_ts from './vue/main_ts.md';
         'src/app/example.component.ts': angular_example_component_ts,
         'src/global.css': angular_global_css,
         'src/styles.css': angular_styles_css,
-      },
-      dependencies: {
-        ionicons: '7.4.0',
       },
     },
   }}
