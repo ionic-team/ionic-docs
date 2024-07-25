@@ -21,7 +21,7 @@ import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
 /**
- * Ionic Dark Theme
+ * Ionic Dark Palette
  * -----------------------------------------------------
  * For more information, please see:
  * https://ionicframework.com/docs/theming/dark-mode
