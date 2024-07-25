@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picker | Basic</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-picker>
+            <ion-picker-column value="javascript">
+              <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
+              <ion-picker-column-option value="javascript">Javascript</ion-picker-column-option>
+              <ion-picker-column-option value="typescript">Typescript</ion-picker-column-option>
+              <ion-picker-column-option value="rust">Rust</ion-picker-column-option>
+              <ion-picker-column-option value="c#">C#</ion-picker-column-option>
+            </ion-picker-column>
+          </ion-picker>
+        </div>
+      </ion-content>
+    </ion-app>
+    <script></script>
+  </body>
+</html>

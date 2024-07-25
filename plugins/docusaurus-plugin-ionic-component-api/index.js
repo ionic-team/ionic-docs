@@ -4,10 +4,9 @@ module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
     async loadContent() {
+      const classicPreset = context.siteConfig.presets.find((preset) => preset[0] === '@docusaurus/preset-classic');
       // Finds the plugin options for @docusaurus/plugin-content-docs
-      const docsPluginOptions = context.siteConfig.plugins.find(
-        (plugin) => Array.isArray(plugin) && plugin[0] === '@docusaurus/plugin-content-docs'
-      )[1];
+      const docsPluginOptions = classicPreset[1].docs;
 
       const data = [];
       const currentVersion = docsPluginOptions.versions.current;
@@ -19,6 +18,7 @@ module.exports = function (context, options) {
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
+        let COMPONENT_LINK_REGEXP;
         const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
@@ -46,6 +46,7 @@ module.exports = function (context, options) {
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
+
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
@@ -75,7 +76,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/events.md`, data.events),
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/custom-props.md`, data.customProps),
+          createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.md`, data.slots)
         );
       }
@@ -167,11 +168,9 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description |
-| --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
-
-`;
+| Name | Description | Bubbles |
+| --- | --- | --- |
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
 function renderMethods({ methods }) {
@@ -211,16 +210,56 @@ ${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).jo
 }
 
 function renderCustomProps({ styles: customProps }) {
-  if (customProps.length === 0) {
-    return 'No CSS custom properties available for this component.';
-  }
+  const iosProps = customProps.filter((prop) => prop.mode === 'ios');
+  const mdProps = customProps.filter((prop) => prop.mode === 'md');
 
-  return `
-| Name | Description |
-| --- | --- |
-${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+  const renderTable = (props) => {
+    if (props.length === 0) {
+      return 'No CSS custom properties available for this component.';
+    }
+
+    return `
+    | Name | Description |
+  | --- | --- |
+  ${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+  `;
+  };
+
+  if (iosProps.length > 0 || mdProps.length > 0) {
+    // If the component has mode-specific custom props, render them in tabs for iOS and MD
+    return `
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+\`\`\`\`mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+${renderTable(iosProps)}
+
+</TabItem>
+
+<TabItem value="md">
+
+${renderTable(mdProps)}
+
+</TabItem>
+</Tabs>
+
+\`\`\`\`
 
 `;
+  }
+  // Otherwise render the custom props without the tabs for iOS and MD
+  return renderTable(customProps);
 }
 
 function renderSlots({ slots }) {

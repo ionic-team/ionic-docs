@@ -10,7 +10,7 @@ module.exports = {
       type: 'category',
       label: 'Upgrade Guides',
       collapsed: false,
-      items: ['updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
+      items: ['updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
     },
     {
       type: 'category',
@@ -26,6 +26,7 @@ module.exports = {
         'developing/hardware-back-button',
         'developing/keyboard',
         'developing/config',
+        'developing/managing-focus',
       ],
     },
     {
@@ -56,6 +57,7 @@ module.exports = {
         'theming/colors',
         'theming/themes',
         'theming/dark-mode',
+        'theming/high-contrast-mode',
         'theming/advanced',
         'theming/color-generator',
       ],
@@ -122,7 +124,23 @@ module.exports = {
         'react/pwa',
         'react/overlays',
         'react/storage',
-        'react/testing',
+        {
+          type: 'category',
+          label: 'Testing',
+          items: [
+            'react/testing/introduction',
+            {
+              type: 'category',
+              label: 'Unit Testing',
+              collapsed: false,
+              items: [
+                'react/testing/unit-testing/setup',
+                'react/testing/unit-testing/examples',
+                'react/testing/unit-testing/best-practices',
+              ],
+            },
+          ],
+        },
         'react/performance',
       ],
     },
@@ -155,7 +173,6 @@ module.exports = {
         'vue/platform',
         'vue/pwa',
         'vue/storage',
-        'vue/testing',
         'vue/troubleshooting',
         'vue/performance',
       ],
@@ -170,12 +187,7 @@ module.exports = {
       type: 'category',
       label: 'Deployment',
       collapsed: false,
-      items: [
-        'deployment/app-store',
-        'deployment/play-store',
-        'deployment/progressive-web-app',
-        'deployment/desktop-app',
-      ],
+      items: ['deployment/app-store', 'deployment/play-store', 'deployment/progressive-web-app'],
     },
     {
       type: 'category',
@@ -302,7 +314,14 @@ module.exports = {
       type: 'category',
       label: 'Date & Time Pickers',
       collapsed: false,
-      items: ['api/datetime', 'api/datetime-button', 'api/picker'],
+      items: [
+        'api/datetime',
+        'api/datetime-button',
+        'api/picker',
+        'api/picker-column',
+        'api/picker-column-option',
+        'api/picker-legacy',
+      ],
     },
     {
       type: 'category',
@@ -332,7 +351,7 @@ module.exports = {
       type: 'category',
       label: 'Input',
       collapsed: false,
-      items: ['api/input', 'api/textarea'],
+      items: ['api/input', 'api/input-password-toggle', 'api/textarea'],
     },
     {
       type: 'category',

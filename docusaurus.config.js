@@ -4,12 +4,38 @@ const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
 
+/**
+ * Old versions of the Ionic Docs are archived so
+ * that we do not need to re-build it every time we deploy.
+ * Building a large number of docs sites at once can cause
+ * out of memory issues, so archiving old docs sites
+ * allow us to keep memory usage and build times low.
+ *
+ * Note that this file is only for versions of the Ionic Docs
+ * that are built with Docusaurus. The
+ * Ionic v3 and v4 docs are built with other tools, so those
+ * versions are not included here.
+ *
+ * Note that the urls specified in this file should
+ * NOT have a trailing slash otherwise users will
+ * briefly get a 404 Page Not Found error before
+ * the docuementation website loads.
+ */
+const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
+
+/**
+ * This returns an array where each entry is an array
+ * containing the version name at index 0 and
+ * the archive url at index 1.
+ */
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
+
 const BASE_URL = '/docs';
 
 module.exports = {
   title: 'Ionic Documentation',
   tagline:
-    'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
+    'Ionic is the app platform for web developers. Build amazing mobile and web apps with one shared code base and open web standards',
   url: 'https://ionicframework.com',
   baseUrl: `${BASE_URL}/`,
   i18n: {
@@ -25,7 +51,65 @@ module.exports = {
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      {
+        // Will be passed to @docusaurus/plugin-content-docs (false to disable).
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+            if (locale != 'en') {
+              return 'https://crowdin.com/project/ionic-docs';
+            }
+            let match;
+            if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
+            }
+            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+                '-',
+                '/'
+              )}.ts`;
+            }
+            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
+            }
+            return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          },
+          exclude: ['README.md'],
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'v8',
+            },
+          },
+        },
+        // Will be passed to @docusaurus/plugin-google-tag-manager.
+        googleTagManager: {
+          containerId: 'GTM-TKMGCBC',
+        },
+        // Will be passed to @docusaurus/theme-classic.
+        theme: {
+          customCss: [
+            require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
+            require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
+            require.resolve('./src/styles/custom.scss'),
+          ],
+        },
+      },
+    ],
+  ],
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
+      isCloseable: false,
+    },
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
@@ -98,15 +182,30 @@ module.exports = {
           position: 'left',
         },
         {
-          type: 'cta',
+          type: 'doc',
+          docId: 'updating/8-0',
+          label: 'Ionic v8.0.0 Upgrade Guide',
           position: 'left',
-          text: 'Ionic v7.0.0 Upgrade Guide',
-          href: `/updating/7-0`,
+          className: 'cta',
         },
         {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              /**
+               * Use "to" instead of "href" so the
+               * external URL icon does not show up.
+               */
+              to: versionUrl,
+              /**
+               * Just like the version docs in this project,
+               * we want to archived versions to open in the
+               * same tab.
+               */
+              target: '_self',
+            })),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
@@ -180,8 +279,9 @@ module.exports = {
           className: 'navbar__link--support',
         },
         {
-          type: 'separator',
+          type: 'html',
           position: 'right',
+          value: '<div class="separator" aria-hidden></div>',
         },
         {
           type: 'localeDropdown',
@@ -198,43 +298,31 @@ module.exports = {
           className: 'icon-link language navbar__item',
         },
         {
-          type: 'iconLink',
+          href: 'https://twitter.com/Ionicframework',
           position: 'right',
-          icon: {
-            alt: 'twitter logo',
-            src: `/logos/twitter.svg`,
-            href: 'https://twitter.com/Ionicframework',
-            target: '_blank',
-          },
+          className: 'icon-link icon-link-mask icon-link-twitter',
+          'aria-label': 'Twitter',
+          target: '_blank',
         },
         {
-          type: 'iconLink',
+          href: 'https://ionic.link/discord',
           position: 'right',
-          icon: {
-            alt: 'github logo',
-            src: `/logos/github.svg`,
-            href: 'https://github.com/ionic-team/ionic-framework',
-            target: '_blank',
-          },
+          className: 'icon-link icon-link-mask icon-link-discord',
+          'aria-label': 'Discord',
+          target: '_blank',
         },
         {
-          type: 'iconLink',
+          href: 'https://github.com/ionic-team/ionic-framework',
           position: 'right',
-          icon: {
-            alt: 'discord logo',
-            src: `/logos/discord.svg`,
-            href: 'https://ionic.link/discord',
-            target: '_blank',
-          },
+          className: 'icon-link icon-link-mask icon-link-github',
+          'aria-label': 'GitHub repository',
+          target: '_blank',
         },
       ],
     },
-    tagManager: {
-      trackingID: 'GTM-TKMGCBC',
-    },
     prism: {
       theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+      // https://github.com/FormidableLabs/prism-react-renderer/blob/e6d323332b0363a633407fabab47b608088e3a4d/packages/generate-prism-languages/index.ts#L9-L25
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
@@ -257,42 +345,6 @@ module.exports = {
         },
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        routeBasePath: '/',
-        sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return 'https://crowdin.com/project/ionic-docs';
-          }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
-          }
-          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
-              '-',
-              '/'
-            )}.ts`;
-          }
-          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
-          }
-          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-        },
-        exclude: ['README.md'],
-        lastVersion: 'current',
-        versions: {
-          current: {
-            label: 'v7',
-          },
-        },
-      },
-    ],
-    '@docusaurus/plugin-content-pages',
-    '@docusaurus/plugin-debug',
-    '@docusaurus/plugin-sitemap',
-    '@ionic-internal/docusaurus-plugin-tag-manager',
     function (context, options) {
       return {
         name: 'ionic-docs-ads',
@@ -317,19 +369,6 @@ module.exports = {
       },
     ],
   ],
-  themes: [
-    [
-      //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, 'docusaurus-theme-classic'),
-      {
-        customCss: [
-          require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
-          require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
-          require.resolve('./src/styles/custom.scss'),
-        ],
-      },
-    ],
-    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
-  ],
   customFields: {},
+  themes: [],
 };

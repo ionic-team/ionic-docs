@@ -18,7 +18,7 @@ Ionic components are built with <a href="https://developer.mozilla.org/en-US/doc
 
 CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. See [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
 
-When using the Ionic CLI to start an Angular project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
+When using the Ionic CLI to start an Angular, React or Vue project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
 
 ```css
 /* Set variables for all modes */
@@ -31,12 +31,12 @@ When using the Ionic CLI to start an Angular project, the `src/theme/variables.s
 }
 
 /* Set text color of the entire app for iOS only */
-.ios {
+:root.ios {
   --ion-text-color: #000;
 }
 
 /* Set text color of the entire app for Material Design only */
-.md {
+:root.md {
   --ion-text-color: #222;
 }
 ```
@@ -84,7 +84,7 @@ The value of a CSS variable can be read in JavaScript using [getPropertyValue()]
 
 ```js
 const el = document.querySelector('.fancy-button');
-const color = el.style.getPropertyValue('--charcoal');
+const color = el.style.getPropertyValue('--background');
 ```
 
 ## Ionic Variables

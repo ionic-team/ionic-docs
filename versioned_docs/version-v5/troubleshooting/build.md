@@ -1,5 +1,5 @@
 ---
-disableHtmlPreviews: true
+title: Build Errors
 ---
 
 # Build Errors

@@ -11,16 +11,8 @@
   ></ion-searchbar>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonSearchbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { trash } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: { IonSearchbar },
-    setup() {
-      return { trash };
-    },
-  });
 </script>
 ```

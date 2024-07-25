@@ -20,11 +20,11 @@ Requires Cordova plugin: `cordova-plugin-facebook-connect`. For more info, pleas
 
 To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).
 
-[![fb-getstarted-1](/img/docs/native/Facebook/1.png)](https://developers.facebook.com/apps/)
+[![The Facebook Developer Portal with a highlighted 'Add a New App' button.](/img/docs/native/Facebook/1.png "Facebook Developer Portal - Add a New App Button")](https://developers.facebook.com/apps/)
 
 Retrieve the `App ID` and `App Name`.
 
-[![fb-getstarted-2](/img/docs/native/Facebook/2.png)](https://developers.facebook.com/apps/)
+[![Dashboard view of a Facebook app showing the App ID and API Version details.](/img/docs/native/Facebook/2.png "Facebook App Dashboard with App ID and API Version")](https://developers.facebook.com/apps/)
 
 Then type in the following command in your Terminal, where APP_ID and APP_NAME are the values from the Facebook Developer portal.
 
@@ -34,11 +34,11 @@ Then type in the following command in your Terminal, where APP_ID and APP_NAME a
 
 After, you'll need to add the native platforms you'll be using to your app in the Facebook Developer portal under your app's Settings:
 
-[![fb-getstarted-3](/img/docs/native/Facebook/3.png)](https://developers.facebook.com/apps/)
+[![Dropdown menu in the Facebook App Settings showing options including 'Dashboard' and 'Settings'.](/img/docs/native/Facebook/3.png "Facebook App Settings Menu")](https://developers.facebook.com/apps/)
 
 Click `'Add Platform'`.
 
-[![fb-getstarted-4](/img/docs/native/Facebook/4.png)](https://developers.facebook.com/apps/)
+[![Facebook App Basic Settings screen with an 'Add Platform' option visible.](/img/docs/native/Facebook/4.png "Facebook App Basic Settings with Add Platform Option")](https://developers.facebook.com/apps/)
 
 At this point you'll need to open your project's [`config.xml`](https://cordova.apache.org/docs/en/latest/config_ref/index.html) file, found in the root directory of your project.
 
@@ -54,13 +54,13 @@ You can also edit the `id` to whatever you'd like it to be.
 
 Under 'Bundle ID', add the `id` from your `config.xml` file:
 
-[![fb-getstarted-5](/img/docs/native/Facebook/5.png)](https://developers.facebook.com/apps/)
+[![Field to enter the iOS Bundle ID in the Facebook App Settings for iOS installation.](/img/docs/native/Facebook/5.png "iOS Bundle ID Configuration in Facebook App Settings")](https://developers.facebook.com/apps/)
 
 #### Android Install
 
 Under 'Google Play Package Name', add the `id` from your `config.xml` file:
 
-[![fb-getstarted-6](/img/docs/native/Facebook/6.png)](https://developers.facebook.com/apps/)
+[![Field to enter the Google Play Package Name in the Facebook App Settings for Android installation.](/img/docs/native/Facebook/6.png "Android Package Name Configuration in Facebook App Settings")](https://developers.facebook.com/apps/)
 
 And that's it! You can now make calls to Facebook using the plugin.
 
@@ -79,17 +79,7 @@ Events are listed on the [insights page](https://www.facebook.com/insights/).
 For tracking events, see `logEvent` and `logPurchase`.
 
 <p>
-  <a
-    href="https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect"
-    target="_blank"
-    rel="noopener"
-    className="git-link"
-  >
-    <svg viewBox="0 0 512 512">
-      <path d="M416 160c0-35.3-28.7-64-64-64s-64 28.7-64 64c0 23.7 12.9 44.3 32 55.4v8.6c0 19.9-7.8 33.7-25.3 44.9-15.4 9.8-38.1 17.1-67.5 21.5-14 2.1-25.7 6-35.2 10.7V151.4c19.1-11.1 32-31.7 32-55.4 0-35.3-28.7-64-64-64S96 60.7 96 96c0 23.7 12.9 44.3 32 55.4v209.2c-19.1 11.1-32 31.7-32 55.4 0 35.3 28.7 64 64 64s64-28.7 64-64c0-16.6-6.3-31.7-16.7-43.1 1.9-4.9 9.7-16.3 29.4-19.3 38.8-5.8 68.9-15.9 92.3-30.8 36-22.8 55-57 55-98.8v-8.6c19.1-11.1 32-31.7 32-55.4zM160 56c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm0 400c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm192-256c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"></path>
-    </svg>{' '}
-    https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect
-  </a>
+  <a href="https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect" target="_blank" rel="noopener" className="git-link">github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect</a>
 </p>
 
 <h2>Stuck on a Cordova issue?</h2>
@@ -99,11 +89,8 @@ For tracking events, see `logEvent` and `logPurchase`.
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
-    <p>
-      If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer
-      premium advisory services for both community plugins and premier plugins.
-    </p>
+    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
@@ -135,14 +122,7 @@ For tracking events, see `logEvent` and `logPurchase`.
   <TabItem value="Enterprise">
     <blockquote>
       Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a class="btn" href="https://ionic.io/docs/premier-plugins">
-        Learn More
-      </a> or if you're interested in an enterprise version of this plugin <a
-        class="btn"
-        href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine"
-      >
-        Contact Us
-      </a>
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>

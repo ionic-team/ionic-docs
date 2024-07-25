@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/checkbox/props.md';
 import Events from '@ionic-internal/component-api/v5/checkbox/events.md';
 import Methods from '@ionic-internal/component-api/v5/checkbox/methods.md';
 import Parts from '@ionic-internal/component-api/v5/checkbox/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/checkbox/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/checkbox/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/checkbox/slots.md';
 
 # ion-checkbox

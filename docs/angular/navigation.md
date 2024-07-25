@@ -175,33 +175,7 @@ Here, we have a typical Angular Module setup, along with a RouterModule import, 
 
 ## Standalone Components
 
-:::caution Experimental API
-
-Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later. This feature may change before it is stable.
-
-:::
-
 Standalone components allow developers to lazy load a component on a route without having to declare the component to an Angular module.
-
-To use standalone components with routing and Ionic Framework, you must first be on Ionic ^6.3.0. The experimental API requires developers to assign the `EnvironmentInjector` instance for each router outlet (`ion-router-outlet` and `ion-tabs`) that uses standalone component routing.
-
-```ts title="app.component.ts"
-import { Component, EnvironmentInjector } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: 'app.component.html',
-})
-export class AppComponent {
-  constructor(public environmentInjector: EnvironmentInjector) {}
-}
-```
-
-```html title="app.component.html"
-<ion-router-outlet [environmentInjector]="environmentInjector"></ion-router-outlet>
-<!-- or if you are using ion-tabs -->
-<ion-tabs [environmentInjector]="environmentInjector"> ... </ion-tabs>
-```
 
 Developers can use the existing syntax for standalone component routing from Angular:
 
@@ -218,6 +192,10 @@ Developers can use the existing syntax for standalone component routing from Ang
 })
 export class AppRoutingModule {}
 ```
+
+:::tip
+If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to also import the `IonRouterLink` directive for Ionic components or the `IonRouterLinkWithHref` directive for `<a>` elements. An example of this is available in the [Ionic Angular Build Options docs](./build-options.md#migrating-from-modules-to-standalone).
+:::
 
 To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).
 

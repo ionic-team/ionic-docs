@@ -1,7 +1,5 @@
 ---
 title: Global Stylesheets
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 <head>

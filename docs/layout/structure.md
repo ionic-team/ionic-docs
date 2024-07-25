@@ -1,6 +1,5 @@
 ---
 title: Structure
-initialTab: 'preview'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -22,7 +21,7 @@ Ionic Framework provides several different layouts that can be used to structure
 
 The most simple layout available consists of a [header](../api/header.md) and [content](../api/content.md). Most pages in an app generally have both of these, but a header is not required in order to use content.
 
-import Header from '@site/static/usage/v7/header/basic/index.md';
+import Header from '@site/static/usage/v8/header/basic/index.md';
 
 <Header />
 
@@ -30,7 +29,7 @@ import Header from '@site/static/usage/v7/header/basic/index.md';
 
 While a toolbar in a header appears above the content, a footer appears below the content. A header and a footer can also be used together on the same page.
 
-import Footer from '@site/static/usage/v7/footer/basic/index.md';
+import Footer from '@site/static/usage/v8/footer/basic/index.md';
 
 <Footer />
 
@@ -38,7 +37,7 @@ import Footer from '@site/static/usage/v7/footer/basic/index.md';
 
 A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the user quickly change between content views. Each tab can contain static content or a navigation stack by using a [router outlet](../api/router-outlet.md) or [nav](../api/nav.md).
 
-import Tabs from '@site/static/usage/v7/tabs/router/index.md';
+import Tabs from '@site/static/usage/v8/tabs/router/index.md';
 
 <Tabs />
 
@@ -46,7 +45,7 @@ import Tabs from '@site/static/usage/v7/tabs/router/index.md';
 
 A standard layout among mobile apps includes the ability to toggle a side [menu](../api/menu.md) by clicking a button or swiping it open from the side. Side menus are generally used for navigation, but they can contain any content.
 
-import Menu from '@site/static/usage/v7/menu/basic/index.md';
+import Menu from '@site/static/usage/v8/menu/basic/index.md';
 
 <Menu />
 
@@ -58,6 +57,6 @@ By default, the split pane view will show when the screen is larger than `768px`
 
 It's important to note that the element with the `id` matching the `contentId` specified by the split pane will be the main content that is always visible. This can be any element, including a [nav](../api/nav.md), [router outlet](../api/router-outlet.md), or [tabs](../api/tabs.md).
 
-import SplitPane from '@site/static/usage/v7/split-pane/basic/index.md';
+import SplitPane from '@site/static/usage/v8/split-pane/basic/index.md';
 
 <SplitPane />

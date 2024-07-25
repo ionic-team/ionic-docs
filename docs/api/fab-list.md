@@ -1,12 +1,12 @@
 ---
 title: "ion-fab-list"
 ---
-import Props from '@ionic-internal/component-api/v7/fab-list/props.md';
-import Events from '@ionic-internal/component-api/v7/fab-list/events.md';
-import Methods from '@ionic-internal/component-api/v7/fab-list/methods.md';
-import Parts from '@ionic-internal/component-api/v7/fab-list/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/fab-list/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/fab-list/slots.md';
+import Props from '@ionic-internal/component-api/v8/fab-list/props.md';
+import Events from '@ionic-internal/component-api/v8/fab-list/events.md';
+import Methods from '@ionic-internal/component-api/v8/fab-list/methods.md';
+import Parts from '@ionic-internal/component-api/v8/fab-list/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/fab-list/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/fab-list/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

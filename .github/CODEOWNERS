@@ -11,7 +11,4 @@
 # In each subsection folders are ordered first by depth, then alphabetically.
 # This should make it easy to add new rules without breaking existing ones.
 
-/_templates/ @mapsandapps
-
-/static/code/stackblitz/**/*/package.json @ionic-team/framework
-/static/code/stackblitz/**/*/package-lock.json @ionic-team/framework
+* @ionic-team/framework

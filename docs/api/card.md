@@ -1,12 +1,12 @@
 ---
 title: "ion-card"
 ---
-import Props from '@ionic-internal/component-api/v7/card/props.md';
-import Events from '@ionic-internal/component-api/v7/card/events.md';
-import Methods from '@ionic-internal/component-api/v7/card/methods.md';
-import Parts from '@ionic-internal/component-api/v7/card/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/card/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/card/slots.md';
+import Props from '@ionic-internal/component-api/v8/card/props.md';
+import Events from '@ionic-internal/component-api/v8/card/events.md';
+import Methods from '@ionic-internal/component-api/v8/card/methods.md';
+import Parts from '@ionic-internal/component-api/v8/card/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/card/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/card/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -27,28 +27,28 @@ and [card content](./card-content).
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v7/card/basic/index.md';
+import Basic from '@site/static/usage/v8/card/basic/index.md';
 
 <Basic />
 
 
 ## Media Cards
 
-import Media from '@site/static/usage/v7/card/media/index.md';
+import Media from '@site/static/usage/v8/card/media/index.md';
 
 <Media />
 
 
 ## Card Buttons
 
-import Buttons from '@site/static/usage/v7/card/buttons/index.md';
+import Buttons from '@site/static/usage/v8/card/buttons/index.md';
 
 <Buttons />
 
 
 ## List Card
 
-import List from '@site/static/usage/v7/card/list/index.md';
+import List from '@site/static/usage/v8/card/list/index.md';
 
 <List />
 
@@ -57,13 +57,13 @@ import List from '@site/static/usage/v7/card/list/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v7/card/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/card/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/card/theming/css-properties/index.md';
 
 <CSSProps />
 

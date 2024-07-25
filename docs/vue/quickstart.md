@@ -56,7 +56,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
 
-6. Delete the `src/shims-vue.d.ts` file if it exists. This is only needed when using the Vue CLI.
+6. Delete the `src/vite-env.d.ts` file if it exists.
 
 7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
@@ -189,7 +189,7 @@ Now the `App` component does not really have a lot to modify here. It is a basic
 
 Currently, the `Home` component looks like so:
 
-![Vue home component](/img/guides/vue/first-app/home-route.png)
+![A web browser displaying the Ionic Vue home route with a header titled 'Blank' and a message 'Ready to create an app? Start with Ionic UI Components'.](/img/guides/vue/first-app/home-route.png 'Ionic Vue Home Route Interface')
 
 ```html
 <template>
@@ -282,12 +282,11 @@ For brevity, we are excluding repeating parts of our component, like the functio
     <ion-content>
       <ion-list>
         <ion-item>
-          <ion-checkbox slot="start"></ion-checkbox>
-          <ion-label>
+          <ion-checkbox label-placement="end" justify="start">
             <h1>Create Idea</h1>
             <ion-note>Run Idea By Brandy</ion-note>
-          </ion-label>
-          <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+          </ion-checkbox>
+          <ion-badge color="success" slot="end">5 Days</ion-badge>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -301,7 +300,6 @@ For brevity, we are excluding repeating parts of our component, like the functio
     IonContent,
     IonHeader,
     IonItem,
-    IonLabel,
     IonList,
     IonNote,
     IonPage,
@@ -315,16 +313,15 @@ Here in our `IonContent`, we are adding an `IonList` and a much more involved `I
 
 ```html
 <ion-item>
-  <ion-checkbox slot="start"></ion-checkbox>
-  <ion-label>
+  <ion-checkbox label-placement="end" justify="start">
     <h1>Create Idea</h1>
     <ion-note>Run Idea By Brandy</ion-note>
-  </ion-label>
-  <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+  </ion-checkbox>
+  <ion-badge color="success" slot="end">5 Days</ion-badge>
 </ion-item>
 ```
 
-Looking at our code, we have a special attribute called slot. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
+Looking at our code, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonBadge` when it renders. This is not a Vue API, but a web standards API, and it is used across many Ionic Framework components. Additionally, this is different from the slots API you may recall from Vue 2. (For more information on slots, [see the MDN docs here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).)
 
 Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
 
@@ -353,7 +350,6 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
     IonHeader,
     IonIcon,
     IonItem,
-    IonLabel,
     IonList,
     IonNote,
     IonPage,
@@ -670,7 +666,7 @@ The configuration above will prevent all files from being prefetched and, instea
 
 ## Build a Native App
 
-We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
 
 Adding native functionality is easy. First, add Capacitor to your project:
 

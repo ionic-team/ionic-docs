@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/tab/props.md';
 import Events from '@ionic-internal/component-api/v5/tab/events.md';
 import Methods from '@ionic-internal/component-api/v5/tab/methods.md';
 import Parts from '@ionic-internal/component-api/v5/tab/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/tab/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/tab/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/tab/slots.md';
 
 # ion-tab

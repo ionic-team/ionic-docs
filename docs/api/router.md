@@ -2,12 +2,12 @@
 title: "ion-router"
 ---
 
-import Props from '@ionic-internal/component-api/v7/router/props.md';
-import Events from '@ionic-internal/component-api/v7/router/events.md';
-import Methods from '@ionic-internal/component-api/v7/router/methods.md';
-import Parts from '@ionic-internal/component-api/v7/router/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/router/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/router/slots.md';
+import Props from '@ionic-internal/component-api/v8/router/props.md';
+import Events from '@ionic-internal/component-api/v8/router/events.md';
+import Methods from '@ionic-internal/component-api/v8/router/methods.md';
+import Parts from '@ionic-internal/component-api/v8/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/router/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
@@ -36,7 +36,7 @@ In order to configure this relationship between components (to load/select) and 
 
 ## Basic Usage
 
-import BasicExample from '@site/static/usage/v7/router/basic/index.md';
+import BasicExample from '@site/static/usage/v8/router/basic/index.md';
 
 <BasicExample />
 

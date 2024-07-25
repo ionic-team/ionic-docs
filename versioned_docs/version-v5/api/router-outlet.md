@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/router-outlet/props.md';
 import Events from '@ionic-internal/component-api/v5/router-outlet/events.md';
 import Methods from '@ionic-internal/component-api/v5/router-outlet/methods.md';
 import Parts from '@ionic-internal/component-api/v5/router-outlet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/router-outlet/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/router-outlet/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/router-outlet/slots.md';
 
 # ion-router-outlet
