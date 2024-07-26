@@ -4,8 +4,8 @@ slug: /
 title: Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps
 description: Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks.
 hide_table_of_contents: true
-demoUrl: https://ionic-docs-demo.herokuapp.com/
-demoSourceUrl: https://github.com/ionic-team/docs-demo
+demoUrl: https://ionic-docs-demo-v5.vercel.app/
+demoSourceUrl: https://github.com/ionic-team/docs-demo/tree/5.x
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -49,7 +49,7 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
 
 ## Overview
 
-Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic Framework focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic Framework before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
@@ -128,20 +128,13 @@ Ionic Framework is actively developed and maintained full-time by a core team, a
 
 ### Join the Community
 
-There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
+There are millions of Ionic developers in o ver 200 countries worldwide. Here are some ways to join:
 
-- <a href="https://forum.ionicframework.com/" target="_blank">
-    Forum:
-  </a> A great place for asking questions and sharing ideas.
-- <a href="https://twitter.com/ionicframework" target="_blank">
-    Twitter:
-  </a> Where we post updates and share content from the Ionic community.
-- <a href="https://github.com/ionic-team/ionic" target="_blank">
-    GitHub:
-  </a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-- <a href="https://ionicframework.com/contributors" target="_blank">
-    Content authoring:
-  </a> Write a technical blog or share your story with the Ionic community.
+<!-- prettier-ignore -->
+- <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
+- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
+- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
+- <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
 
 ## License
 

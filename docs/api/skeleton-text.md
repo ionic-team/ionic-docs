@@ -1,23 +1,19 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@site/static/auto-generated/skeleton-text/props.md';
-import Events from '@site/static/auto-generated/skeleton-text/events.md';
-import Methods from '@site/static/auto-generated/skeleton-text/methods.md';
-import Parts from '@site/static/auto-generated/skeleton-text/parts.md';
-import CustomProps from '@site/static/auto-generated/skeleton-text/custom-props.md';
-import Slots from '@site/static/auto-generated/skeleton-text/slots.md';
+import Props from '@ionic-internal/component-api/v8/skeleton-text/props.md';
+import Events from '@ionic-internal/component-api/v8/skeleton-text/events.md';
+import Methods from '@ionic-internal/component-api/v8/skeleton-text/methods.md';
+import Parts from '@ionic-internal/component-api/v8/skeleton-text/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/skeleton-text/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/skeleton-text/slots.md';
 
 <head>
-  <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>
+  <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>
   <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -27,17 +23,17 @@ Skeleton Text is a component for rendering placeholder content. The element will
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/skeleton-text/basic/index.md';
+import Basic from '@site/static/usage/v8/skeleton-text/basic/index.md';
 
 <Basic />
 
-## Customization
+## Theming
 
-### Theming
+### CSS Custom Properties
 
-import Theming from '@site/static/usage/skeleton-text/theming/index.md';
+import CSSProps from '@site/static/usage/v8/skeleton-text/theming/css-properties/index.md';
 
-<Theming />
+<CSSProps />
 
 ## Properties
 <Props />

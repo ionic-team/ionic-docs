@@ -5,6 +5,13 @@ sidebar_label: 'ion-item-group'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/item-group/props.md';
+import Events from '@ionic-internal/component-api/v5/item-group/events.md';
+import Methods from '@ionic-internal/component-api/v5/item-group/methods.md';
+import Parts from '@ionic-internal/component-api/v5/item-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/item-group/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/item-group/slots.md';
+
 # ion-item-group
 
 Item groups are containers that organize similar items together. They can contain item dividers to divide the items into multiple sections. They can also be used to group sliding items.
@@ -558,3 +565,27 @@ export class ItemGroupExample {
 </TabItem>
 
 </Tabs>
+
+## Properties
+
+<Props />
+
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

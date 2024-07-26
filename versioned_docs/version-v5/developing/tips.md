@@ -59,6 +59,7 @@ Change the owner of npm's directories to the current user:
 
 ```shell
 $ sudo chown -R $(whoami) /usr/local/{lib/node_modules,bin,share}
+$ sudo chown -R $(whoami) /usr/lib/node_modules
 $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 
@@ -111,7 +112,7 @@ By default, when an app is viewed in the browser, Ionic will apply the `md` mode
 This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
 :::
 
-![app with a different mode](/img/faq/tips/change-device-platform.png)
+![Chrome DevTools showing the device mode with iPhone X selected.](/img/faq/tips/change-device-platform.png 'Chrome DevTools Device Mode')
 
 Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
 

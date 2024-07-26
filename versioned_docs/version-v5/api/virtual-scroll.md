@@ -7,6 +7,13 @@ sidebar_label: 'ion-virtual-scroll'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/virtual-scroll/props.md';
+import Events from '@ionic-internal/component-api/v5/virtual-scroll/events.md';
+import Methods from '@ionic-internal/component-api/v5/virtual-scroll/methods.md';
+import Parts from '@ionic-internal/component-api/v5/virtual-scroll/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/virtual-scroll/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/virtual-scroll/slots.md';
+
 # ion-virtual-scroll
 
 Virtual Scroll displays a virtual, "infinite" list. An array of records
@@ -243,142 +250,24 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 
 ## Properties
 
-### approxFooterHeight
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | The approximate width of each footer template's cell.<br />This dimension is used to help determine how many cells should<br />be created when initialized, and to help calculate the height of<br />the scrollable area. This height value can only use `px` units.<br />Note that the actual rendered size of each cell comes from the<br />app's CSS, whereas this approximation is used to help calculate<br />initial dimensions before the item has been rendered. |
-| **Attribute**   | `approx-footer-height`                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Type**        | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Default**     | `30`                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+## Events
 
-### approxHeaderHeight
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The approximate height of each header template's cell.<br />This dimension is used to help determine how many cells should<br />be created when initialized, and to help calculate the height of<br />the scrollable area. This height value can only use `px` units.<br />Note that the actual rendered size of each cell comes from the<br />app's CSS, whereas this approximation is used to help calculate<br />initial dimensions before the item has been rendered. |
-| **Attribute**   | `approx-header-height`                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **Type**        | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Default**     | `30`                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-
-### approxItemHeight
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | It is important to provide this<br />if virtual item height will be significantly larger than the default<br />The approximate height of each virtual item template's cell.<br />This dimension is used to help determine how many cells should<br />be created when initialized, and to help calculate the height of<br />the scrollable area. This height value can only use `px` units.<br />Note that the actual rendered size of each cell comes from the<br />app's CSS, whereas this approximation is used to help calculate<br />initial dimensions before the item has been rendered. |
-| **Attribute**   | `approx-item-height`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Type**        | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Default**     | `45`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-
-### footerFn
-
-|                 |                                                                                                                                                                                                                                                                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Section footers and the data used within its given<br />template can be dynamically created by passing a function to `footerFn`.<br />The logic within the footer function can decide if the footer template<br />should be used, and what data to give to the footer template. The function<br />must return `null` if a footer cell shouldn't be created. |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                                                                                                                                 |
-| **Type**        | `((item: any, index: number, items: any[]) => string \| null \| undefined) \| undefined`                                                                                                                                                                                                                                                                    |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                 |
-
-### footerHeight
-
-|                 |                                                                      |
-| --------------- | -------------------------------------------------------------------- |
-| **Description** | An optional function that maps each item footer within their height. |
-| **Attribute**   | `undefined`                                                          |
-| **Type**        | `((item: any, index: number) => number) \| undefined`                |
-| **Default**     | `undefined`                                                          |
-
-### headerFn
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Section headers and the data used within its given<br />template can be dynamically created by passing a function to `headerFn`.<br />For example, a large list of contacts usually has dividers between each<br />letter in the alphabet. App's can provide their own custom `headerFn`<br />which is called with each record within the dataset. The logic within<br />the header function can decide if the header template should be used,<br />and what data to give to the header template. The function must return<br />`null` if a header cell shouldn't be created. |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Type**        | `((item: any, index: number, items: any[]) => string \| null \| undefined) \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-
-### headerHeight
-
-|                 |                                                                      |
-| --------------- | -------------------------------------------------------------------- |
-| **Description** | An optional function that maps each item header within their height. |
-| **Attribute**   | `undefined`                                                          |
-| **Type**        | `((item: any, index: number) => number) \| undefined`                |
-| **Default**     | `undefined`                                                          |
-
-### itemHeight
-
-|                 |                                                                                                                                                                                                                                                                                                                                            |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | An optional function that maps each item within their height.<br />When this function is provides, heavy optimizations and fast path can be taked by<br />`ion-virtual-scroll` leading to massive performance improvements.<br /><br />This function allows to skip all DOM reads, which can be Doing so leads<br />to massive performance |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                                                                                                                |
-| **Type**        | `((item: any, index: number) => number) \| undefined`                                                                                                                                                                                                                                                                                      |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                |
-
-### items
-
-|                 |                                                                                                                                                                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | The data that builds the templates within the virtual scroll.<br />It's important to note that when this data has changed, then the<br />entire virtual scroll is reset, which is an expensive operation and<br />should be avoided if possible. |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                      |
-| **Type**        | `any[] \| undefined`                                                                                                                                                                                                                             |
-| **Default**     | `undefined`                                                                                                                                                                                                                                      |
-
-### nodeRender
-
-|                 |                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------- |
-| **Description** | NOTE: only Vanilla JS API.                                                              |
-| **Attribute**   | `undefined`                                                                             |
-| **Type**        | `((el: HTMLElement \| null, cell: Cell, domIndex: number) => HTMLElement) \| undefined` |
-| **Default**     | `undefined`                                                                             |
-
-### renderFooter
-
-|                 |                                                                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | NOTE: only JSX API for stencil.<br /><br />Provide a render function for the footer to be rendered. Returns a JSX virtual-dom. |
-| **Attribute**   | `undefined`                                                                                                                    |
-| **Type**        | `((item: any, index: number) => any) \| undefined`                                                                             |
-| **Default**     | `undefined`                                                                                                                    |
-
-### renderHeader
-
-|                 |                                                                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | NOTE: only JSX API for stencil.<br /><br />Provide a render function for the header to be rendered. Returns a JSX virtual-dom. |
-| **Attribute**   | `undefined`                                                                                                                    |
-| **Type**        | `((item: any, index: number) => any) \| undefined`                                                                             |
-| **Default**     | `undefined`                                                                                                                    |
-
-### renderItem
-
-|                 |                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | NOTE: only JSX API for stencil.<br /><br />Provide a render function for the items to be rendered. Returns a JSX virtual-dom. |
-| **Attribute**   | `undefined`                                                                                                                   |
-| **Type**        | `((item: any, index: number) => any) \| undefined`                                                                            |
-| **Default**     | `undefined`                                                                                                                   |
+<Events />
 
 ## Methods
 
-### checkEnd
+<Methods />
 
-|                 |                                                                                                                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | This method marks the tail the items array as dirty, so they can be re-rendered.<br /><br />It's equivalent to calling:<br /><br />`js<br />virtualScroll.checkRange(lastItemLen);<br />` |
-| **Signature**   | `checkEnd() => Promise<void>`                                                                                                                                                             |
+## CSS Shadow Parts
 
-### checkRange
+<Parts />
 
-|                 |                                                                                                                                                                                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as<br />dirty any time the content or their style changes.<br /><br />The subset of items to be updated can are specifing by an offset and a length. |
-| **Signature**   | `checkRange(offset: number, len?: number) => Promise<void>`                                                                                                                                                                                           |
+## CSS Custom Properties
 
-### positionForItem
+<CustomProps />
 
-|                 |                                                              |
-| --------------- | ------------------------------------------------------------ |
-| **Description** | Returns the position of the virtual item at the given index. |
-| **Signature**   | `positionForItem(index: number) => Promise<number>`          |
+## Slots
+
+<Slots />

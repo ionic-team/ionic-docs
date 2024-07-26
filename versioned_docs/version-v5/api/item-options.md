@@ -5,6 +5,13 @@ sidebar_label: 'ion-item-options'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/item-options/props.md';
+import Events from '@ionic-internal/component-api/v5/item-options/events.md';
+import Methods from '@ionic-internal/component-api/v5/item-options/methods.md';
+import Parts from '@ionic-internal/component-api/v5/item-options/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/item-options/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/item-options/slots.md';
+
 # ion-item-options
 
 The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).
@@ -19,17 +26,24 @@ You can combine the `ionSwipe` event plus the `expandable` directive to create a
 
 ## Properties
 
-### side
-
-|                 |                                                                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each. |
-| **Attribute**   | `side`                                                                                                                                                      |
-| **Type**        | `"end" \| "start"`                                                                                                                                          |
-| **Default**     | `'end'`                                                                                                                                                     |
+<Props />
 
 ## Events
 
-| Name       | Description                                  |
-| ---------- | -------------------------------------------- |
-| `ionSwipe` | Emitted when the item has been fully swiped. |
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

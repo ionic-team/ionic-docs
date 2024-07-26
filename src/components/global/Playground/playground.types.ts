@@ -9,3 +9,8 @@ export enum Mode {
   iOS = 'ios',
   MD = 'md',
 }
+
+export interface ConsoleItem {
+  type: 'log' | 'warning' | 'error';
+  message: string;
+}

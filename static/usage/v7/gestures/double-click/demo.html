@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double-Click Gestures</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+
+    <script type="module">
+      import { createGesture } from 'https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/index.esm.js';
+      window.createGesture = createGesture;
+
+      const DOUBLE_CLICK_THRESHOLD = 500;
+      const card = document.querySelector('ion-card');
+      const gesture = createGesture({
+        el: card,
+        threshold: 0,
+        onStart: () => onStart(),
+        gestureName: 'double-click',
+      });
+
+      gesture.enable();
+
+      let lastOnStart = 0;
+      let currentOffset = 0;
+
+      const onStart = () => {
+        const now = Date.now();
+
+        if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
+          card.style.setProperty('transform', getNewTransform());
+          lastOnStart = 0;
+        } else {
+          lastOnStart = now;
+        }
+      };
+
+      const getNewTransform = () => {
+        if (currentOffset >= 100) {
+          currentOffset = 0;
+        } else {
+          currentOffset += 20;
+        }
+
+        return `translateX(${currentOffset}px)`;
+      };
+    </script>
+
+    <style>
+      ion-card {
+        transform: translateX(0);
+        user-select: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-content>
+      <ion-card>
+        <ion-card-content>Double click me to move the card.</ion-card-content>
+      </ion-card>
+    </ion-content>
+  </body>
+</html>

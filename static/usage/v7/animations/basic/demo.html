@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+    <script type="module">
+      import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/index.esm.js';
+      window.createAnimation = createAnimation;
+
+      const animation = createAnimation()
+        .addElement(document.querySelector('#card'))
+        .duration(1500)
+        .iterations(Infinity)
+        .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+        .fromTo('opacity', '1', '0.2');
+
+      document.querySelector('#play').addEventListener('click', () => {
+        animation.play();
+      });
+
+      document.querySelector('#pause').addEventListener('click', () => {
+        animation.pause();
+      });
+
+      document.querySelector('#stop').addEventListener('click', () => {
+        animation.stop();
+      });
+    </script>
+
+    <style>
+      .container {
+        flex-direction: column;
+      }
+
+      ion-card {
+        width: 70%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <ion-card id="card">
+        <ion-card-content>Card</ion-card-content>
+      </ion-card>
+
+      <div>
+        <ion-button id="play">Play</ion-button>
+        <ion-button id="pause">Pause</ion-button>
+        <ion-button id="stop">Stop</ion-button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,42 +1,46 @@
 ---
 title: "ion-datetime"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Props from '@ionic-internal/component-api/v8/datetime/props.md';
+import Events from '@ionic-internal/component-api/v8/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v8/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v8/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/datetime/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/datetime/slots.md';
 
-import Props from '@site/static/auto-generated/datetime/props.md';
-import Events from '@site/static/auto-generated/datetime/events.md';
-import Methods from '@site/static/auto-generated/datetime/methods.md';
-import Parts from '@site/static/auto-generated/datetime/parts.md';
-import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
-import Slots from '@site/static/auto-generated/datetime/slots.md';
+import Basic from '@site/static/usage/v8/datetime/basic/index.md';
 
-import Basic from '@site/static/usage/datetime/basic/index.md';
+import MaxMin from '@site/static/usage/v8/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v8/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v8/datetime/date-constraints/advanced/index.md';
 
-import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
+import FormatOptions from '@site/static/usage/v8/datetime/format-options/index.md';
 
-import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
+import CustomLocale from '@site/static/usage/v8/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v8/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v8/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v8/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v8/datetime/localization/time-label/index.md';
 
-import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/datetime/presentation/date/index.md';
+import MonthAndYear from '@site/static/usage/v8/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v8/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v8/datetime/presentation/date/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v8/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v8/datetime/title/customizing-title/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v8/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v8/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v8/datetime/buttons/customizing-button-texts/index.md';
 
-import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+import HighlightedDatesArray from '@site/static/usage/v8/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v8/datetime/highlightedDates/callback/index.md';
 
-import Theming from '@site/static/usage/datetime/theming/index.md';
+import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
+
+import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
+import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
+import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -44,13 +48,12 @@ import Theming from '@site/static/usage/datetime/theming/index.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
 Datetimes present a calendar interface and time wheel, making it easy for users to select dates and times. Datetimes are similar to the native `input` elements of `datetime-local`, however, Ionic Framework's Datetime component makes it easy to display the date and time in the preferred format, and manage the datetime values.
 
-## Overview 
+## Overview
 
 Historically, handling datetime values within JavaScript, or even within HTML
 inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
@@ -61,7 +64,7 @@ parse various datetime strings differently, especially per locale.
 Fortunately, Ionic Framework's datetime input has been designed so developers can avoid
 the common pitfalls, allowing developers to easily manipulate datetime values and give the user a simple datetime picker for a great user experience.
 
-### ISO 8601 Datetime Format: YYYY-MM-DDTHH:mmZ
+### ISO 8601 Datetime Format: `YYYY-MM-DDTHH:mmZ`
 
 Ionic Framework uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)
 for its value. The value is simply a string, rather than using JavaScript's
@@ -70,15 +73,15 @@ and parse within JSON objects and databases.
 
 Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
-| Description          | Format                 | Datetime Value Example        |
-| -------------------- | ---------------------- | ----------------------------  |
-| Year                 | YYYY                   | 1994                          |
-| Year and Month       | YYYY-MM                | 1994-12                       |
-| Complete Date        | YYYY-MM-DD             | 1994-12-15                    |
-| Date and Time        | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47              |
-| UTC Timezone         | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z          |
-| Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00     |
-| Hour and Minute      | HH:mm                  | 13:47                         |
+| Description          | Format                   | Datetime Value Example          |
+| -------------------- | ------------------------ | ------------------------------  |
+| Year                 | `YYYY`                   | `1994`                          |
+| Year and Month       | `YYYY-MM`                | `1994-12`                       |
+| Complete Date        | `YYYY-MM-DD`             | `1994-12-15`                    |
+| Date and Time        | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`              |
+| UTC Timezone         | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`          |
+| Timezone Offset      | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00`     |
+| Hour and Minute      | `HH:mm`                  | `13:47`                         |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing
@@ -87,7 +90,7 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
 :::note
-While seconds and milliseconds can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second and millisecond selection. Any second or millisecond values provided will be ignored.
+While seconds, milliseconds, and time zone can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second, millisecond, and time zone selection. Any second, millisecond, or time zone values provided will be ignored.
 :::
 
 ## Basic Usage
@@ -98,13 +101,17 @@ While seconds and milliseconds can be specified using the ISO 8601 datetime form
 
 If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
+## Setting Values Asynchronously
+
+If its `value` is updated programmatically after a datetime has already been created, the datetime will automatically jump to the new date. However, it is recommended to avoid updating the `value` in this way when users are able to interact with the datetime, as this could be disorienting for those currently trying to select a date. For example, if a datetime's `value` is loaded by an asynchronous process, it is recommended to hide the datetime with CSS until the value has finished updating.
+
 ## Date Constraints
 
 ### Max and Min Dates
 
 To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user.
 
-The following example restricts date selection to March 2022 through May 2022 only. 
+The following example restricts date selection to March 2022 through May 2022 only.
 
 <MaxMin />
 
@@ -118,7 +125,7 @@ The following example allows minutes to be selected in increments of 15. It also
 
 ### Advanced Date Constraints
 
-With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
+With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string.
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
 The following example shows how to disable all weekend dates. For more advanced date manipulation, we recommend using a date utility such as `date-fns`.
@@ -237,7 +244,7 @@ Certain `presentation` options have both grid and wheel styles that developers c
 
 The example below shows the wheel picker with `presentation="date-time"`.
 
-import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v8/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
@@ -263,13 +270,23 @@ By default, `ion-datetime` does not show any header or title associated with the
 
 <CustomizingTitle />
 
+## Format Options
+
+You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatOptions` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatOptions` is not provided, default formats will be used for dates and times.
+
+Datetime [does not manipulate or set](#time-zones) the time zone. If `timeZone` or `timeZoneName` are provided, they will be ignored, and the time zone will be set to UTC. This ensures that the displayed value matches the selected value, rather than being converted to the user's current time zone.
+
+Be careful with the options you provide, as they may not match the selected presentation. For example, providing `minute: 'numeric'` for a presentation of `month` may lead to unexpected behavior, displaying a month where only a time might be expected.
+
+<FormatOptions />
+
 ## Buttons
 
 By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
 
 ### Showing Confirmation Buttons
 
-The default Done and Cancel buttons are already preconfigured to call the `done` and `cancel` methods, respectively.
+The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#confirm) and [`cancel`](#cancel) methods, respectively.
 
 <ShowingConfirmationButtons />
 
@@ -287,13 +304,55 @@ Developers can provide their own buttons for advanced custom behavior.
 
 <CustomizingButtons />
 
-## Theming
+## Highlighting Specific Dates
+
+Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+
+When specifying colors, any valid CSS color format can be used. This includes hex codes, `rgba`, [color variables](../theming/colors), etc.
+
+To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+
+:::note
+This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+:::
+
+### Using Array
+
+An array is better when the highlights apply to fixed dates, such as due dates.
+
+<HighlightedDatesArray />
+
+### Using Callback
+
+A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
+
+<HighlightedDatesCallback />
+
+## Styling
+
+### Global Theming
 
 Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
-<Theming />
+<GlobalTheming />
+
+### Calendar Days
+
+The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
+
+:::note
+The example below selects the day 2 days ago, unless that day is in the previous month, then it selects a day 2 days in the future. This is done for demo purposes in order to show how to apply custom styling to all days, the current day, and the selected day.
+:::
+
+<CalendarDaysStyling />
+
+### Wheel Pickers
+
+The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
+
+<WheelStyling />
 
 ## Time Zones
 
@@ -313,7 +372,7 @@ const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const date = new Date('2014-10-25T10:46:20Z');
 
 // Use date-fns-tz to convert from UTC to a zoned time
-const zonedTime = dateFnsTz.utcToZonedTime(date, userTimeZone);
+const zonedTime = utcToZonedTime(date, userTimeZone);
 
 // Create a formatted string from the zoned time
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
@@ -331,7 +390,7 @@ import { format, parseISO } from 'date-fns';
 /**
  * This is provided in the event
  * payload from the `ionChange` event.
- * 
+ *
  * The value is an ISO-8601 date string.
  */
 const dateFromIonDatetime = '2021-06-04T14:23:00-04:00';
@@ -384,14 +443,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels
 
-When using the time wheel picker, you can use the number keys to select hour and minute values when the columns are focused.
-
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+The wheel picker in Datetime uses [Picker](./picker) internally. See [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces
 

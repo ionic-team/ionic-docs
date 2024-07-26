@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+
+    <style>
+      ion-toggle {
+        padding: 12px;
+
+        --handle-width: 25px;
+        --handle-height: 27px;
+        --handle-max-height: auto;
+        --handle-spacing: 6px;
+
+        contain: none;
+      }
+
+      ion-toggle::part(track),
+      ion-toggle.toggle-checked::part(track) {
+        height: 10px;
+        width: 65px;
+
+        background: #ddd;
+
+        /* Required for iOS handle to overflow the height of the track */
+        overflow: visible;
+      }
+
+      ion-toggle::part(handle) {
+        background: #eb7769;
+
+        border-radius: 4px;
+        box-shadow: none;
+      }
+
+      ion-toggle.toggle-checked::part(handle) {
+        background: #95c34e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-toggle aria-label="Enable Notifications"></ion-toggle>
+          <ion-toggle checked="true" aria-label="Enable Notifications"></ion-toggle>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

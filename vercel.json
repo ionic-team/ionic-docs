@@ -29,11 +29,13 @@
       "source": "/docs/ja/",
       "destination": "/docs/ja"
     },
+    { "source": "/docs/ja/v8/:match*", "destination": "/docs/ja/:match*" },
     {
       "source": "/docs/(v5|next)?/developer-resources/:path*",
       "destination": "https://ionic.io/resources"
     },
     { "source": "/docs/next/:match*", "destination": "/docs/:match*" },
+    { "source": "/docs/v8/:match*", "destination": "/docs/:match*" },
     {
       "source": "/docs/react/your-first-app/2-taking-photos",
       "destination": "/docs/react/your-first-app/taking-photos"
@@ -63,7 +65,8 @@
       "source": "/docs/vue/your-first-app/6-deploying-mobile",
       "destination": "/docs/vue/your-first-app/deploying-mobile"
     },
-    { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" }
+    { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" },
+    { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },

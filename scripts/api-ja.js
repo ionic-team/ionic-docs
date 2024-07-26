@@ -8,7 +8,9 @@ const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
-  const response = await fetch('https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json');
+  const response = await fetch(
+    'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json'
+  );
   const { components } = await response.json();
 
   const names = components.map((component) => component.tag.slice(4));
@@ -41,7 +43,6 @@ function writePage(page) {
 function renderFrontmatter({ tag }) {
   const frontmatter = {
     title: tag,
-    hide_table_of_contents: true,
   };
 
   const demoPath = `api/${tag.slice(4)}/index.html`;
@@ -73,16 +74,9 @@ function renderReadme({ readme, encapsulation }) {
 
   return `
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 ${encapsulation !== 'none' ? `<EncapsulationPill type="${encapsulation}" />` : ''}
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
 
 ${addAdmonitions(rest)}
   `;

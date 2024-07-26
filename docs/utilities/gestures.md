@@ -29,6 +29,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -92,6 +93,30 @@ constructor(private gestureCtrl: GestureController) {
 
 ```
 </TabItem>
+<TabItem value="angular-standalone">
+
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+
+By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
+or they can wrap their callbacks in an `NgZone.run()` call.
+
+```tsx
+import { Gesture, GestureController } from '@ionic/angular/standalone';
+
+...
+
+constructor(private gestureCtrl: GestureController) {
+  const gesture: Gesture = this.gestureCtrl.create({
+    el: this.element.nativeElement,
+    threshold: 15,
+    gestureName: 'my-gesture',
+    onMove: ev => this.onMoveHandler(ev)
+  }, true);
+  // The `true` above ensures that callbacks run inside NgZone.
+}
+
+```
+</TabItem>
 <TabItem value="react">
 
 Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
@@ -137,328 +162,23 @@ const gesture = createGesture({
 
 ## Basic Gestures
 
-### Usage
+import Basic from '@site/static/usage/v8/gestures/basic/index.md';
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+In this example, our app listens for gestures on the `ion-content` element. When a gesture movement has started, the `onStart` function is called and a class is added to our `ion-card` to add a colored box shadow. When a gesture movement was detected, the `onMove` function is called and our app prints the current gesture information within the `ion-card`. Finally, when a gesture movement has ended, the `onEnd` function is called and the custom class is removed from our `ion-card`.
 
-```javascript
-let p = document.querySelector('p');
-const gesture = createGesture({
-  el: document.querySelector('.rectangle'),
-  onMove: (detail) => { onMove(detail); }
-})
-
-gesture.enable();
-
-const onMove = (detail) => {
-  const type = detail.type;
-  const currentX = detail.currentX;
-  const deltaX = detail.deltaX;
-  const velocityX = detail.velocityX;
-
-  p.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
-  `
-}
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-@ViewChild('paragraph') p: ElementRef;
-
-ngOnInit() {
-  const gesture = this.gestureCtrl.create({
-    el: this.rectangle.nativeElement,
-    onMove: (detail) => { this.onMove(detail); }
-  })
-
-  gesture.enable();
-}
-
-private onMove(detail) {
-  const type = detail.type;
-  const currentX = detail.currentX;
-  const deltaX = detail.deltaX;
-  const velocityX = detail.velocityX;
-
-  this.p.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
-  `
-}
-```
-</TabItem>
-<TabItem value="react">
-
-```javascript
-let p = document.querySelector('p');
-const gesture = createGesture({
-  el: document.querySelector('.rectangle'),
-  onMove: (detail) => { onMove(detail); }
-})
-
-gesture.enable();
-
-const onMove = (detail) => {
-  const type = detail.type;
-  const currentX = detail.currentX;
-  const deltaX = detail.deltaX;
-  const velocityX = detail.velocityX;
-
-  p.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
-  `
-}
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createGesture } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-let pRef = ref();
-const rectangleRef = ref();
-const gesture = createGesture({
-  el: rectangleRef.value,
-  onMove: (detail) => { onMove(detail); }
-})
-
-gesture.enable();
-
-const onMove = (detail) => {
-  const type = detail.type;
-  const currentX = detail.currentX;
-  const deltaX = detail.deltaX;
-  const velocityX = detail.velocityX;
-
-  pRef.value.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
-  `
-}
-```
-</TabItem>
-</Tabs>
-````
-
-In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
-
-<Codepen user="ionic" slug="xxKBYdL" />
+<Basic />
 
 ## Double Click Gesture
 
-### Usage
+import DoubleClick from '@site/static/usage/v8/gestures/double-click/index.md';
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+In the example below, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 
-```javascript
-const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
-const DOUBLE_CLICK_THRESHOLD = 500;
-const rectangle = document.querySelector('.rectangle');
-const gesture = createGesture({
-  el: rectangle,
-  threshold: 0,
-  onStart: () => { onStart(); }
-});
-
-gesture.enable();
-
-let lastOnStart = 0;
-let currentColor = 'rgba(0, 0, 255, 0.5)';
-
-const onStart = () => {
-  const now = Date.now();
-
-  if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
-    rectangle.style.setProperty('background', getRandomBackground());
-    lastOnStart = 0;
-  } else {
-    lastOnStart = now;
-  }
-}
-
-const getRandomBackground = () => {
-  const options = backgrounds.filter(bg => bg !== currentColor);
-  currentColor = options[Math.floor(Math.random() * options.length)];
-
-  return currentColor;
-}
-```
-</TabItem>
-<TabItem value="angular">
-
-```tsx
-@ViewChild('rectangle') rectangle: ElementRef;
-
-private backgrounds: string[] = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
-private currentColor: string = 'rgba(0, 0, 255, 0.5)';
-private lastOnStart: number = 0;
-private DOUBLE_CLICK_THRESHOLD: number = 500;
-
-ngOnInit() {
-  const gesture = this.gestureCtrl.create({
-    el: this.rectangle.nativeElement,
-    threshold: 0,
-    onStart: () => { this.onStart(); }
-  });
-
-  gesture.enable();
-}
-
-private onStart() {
-  const now = Date.now();
-
-  if (Math.abs(now - this.lastOnStart) <= this.DOUBLE_CLICK_THRESHOLD) {
-    this.rectangle.nativeElement.style.setProperty('background', this.getRandomBackground());
-    this.lastOnStart = 0;
-  } else {
-    this.lastOnStart = now;
-  }
-}
-
-private getRandomBackground() {
-  const options = this.backgrounds.filter(bg => bg !== this.currentColor);
-  this.currentColor = options[Math.floor(Math.random() * options.length)];
-
-  return this.currentColor;
-}
-```
-</TabItem>
-<TabItem value="react">
-
-```javascript
-const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
-const DOUBLE_CLICK_THRESHOLD = 500;
-const rectangle = document.querySelector('.rectangle');
-const gesture = createGesture({
-  el: rectangle,
-  threshold: 0,
-  onStart: () => { onStart(); }
-});
-
-gesture.enable();
-
-let lastOnStart = 0;
-let currentColor = 'rgba(0, 0, 255, 0.5)';
-
-const onStart = () => {
-  const now = Date.now();
-
-  if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
-    rectangle.style.setProperty('background', getRandomBackground());
-    lastOnStart = 0;
-  } else {
-    lastOnStart = now;
-  }
-}
-
-const getRandomBackground = () => {
-  const options = backgrounds.filter(bg => bg !== currentColor);
-  currentColor = options[Math.floor(Math.random() * options.length)];
-
-  return currentColor;
-}
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createGesture } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const backgrounds = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
-const DOUBLE_CLICK_THRESHOLD = 500;
-const rectangleRef = ref();
-const gesture = createGesture({
-  el: rectangleRef.value,
-  threshold: 0,
-  onStart: () => { onStart(); }
-});
-
-gesture.enable();
-
-let lastOnStart = 0;
-let currentColor = 'rgba(0, 0, 255, 0.5)';
-
-const onStart = () => {
-  const now = Date.now();
-
-  if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
-    rectangleRef.value.style.setProperty('background', getRandomBackground());
-    lastOnStart = 0;
-  } else {
-    lastOnStart = now;
-  }
-}
-
-const getRandomBackground = () => {
-  const options = backgrounds.filter(bg => bg !== currentColor);
-  currentColor = options[Math.floor(Math.random() * options.length)];
-
-  return currentColor;
-}
-```
-</TabItem>
-</Tabs>
-````
-
-In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
-
-<Codepen user="ionic" slug="oNvVEwE" />
+<DoubleClick />
 
 ## Gesture Animations
 
 See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
-
-## Browser Support
-
-| Browser/Platform | Supported Versions |
-| ---------------- | ------------------ |
-| **Chrome**       | 22+                |
-| **Safari**       | 9+                 |
-| **Firefox**      | 32+                |
-| **IE/Edge**      | 11+                |
-| **Opera**        | 30+                |
-| **iOS**          | 9+                 |
-| **Android**      | 5+                 |
 
 ## Types
 

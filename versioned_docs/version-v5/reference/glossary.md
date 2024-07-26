@@ -58,7 +58,7 @@
     <h3>Capacitor</h3>
   </a>
   <p>
-    <a href="https://capacitor.ionicframework.com/" target="_blank">
+    <a href="https://capacitorjs.com/" target="_blank">
       Capacitor
     </a>{' '}
     is an open source cross-platform app runtime that allows web-based apps to run natively on iOS, Android, Electron,
@@ -68,6 +68,8 @@
   </p>
 </section>
 
+<!-- cspell:disable -->
+
 <section id="cli">
   <a href="#cli">
     <h3>CLI</h3>
@@ -76,14 +78,16 @@
     A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for
     interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often
     use Command Prompt. The Ionic community often uses this term to refer to{' '}
-    <a href="https://ionicframework.com/docs/v1/cli/">Ionic's CLI</a>. Ionic's CLI can be used for a number of things,
-    such as creating production builds of an app, running the development server, and accessing{' '}
+    <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such
+    as creating production builds of an app, running the development server, and accessing{' '}
     <a href="https://ionic.io/appflow" target="_blank">
       Ionic commercial services
     </a>
     .
   </p>
 </section>
+
+<!-- cspell:enable -->
 
 <section id="commonjs">
   <a href="#commonjs">
@@ -396,15 +400,11 @@
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">
       variables
     </a>
-    ,{' '}
-    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
+    , <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
       mixins
-    </a>
-    , and{' '}
-    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
+    </a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
       loops
-    </a>
-    .
+    </a>.
   </p>
 </section>
 

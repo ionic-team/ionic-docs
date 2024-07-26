@@ -59,7 +59,7 @@ The base64FromPath method is a helper util that downloads a file from the suppli
 
 We pass in the `photo` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
 
-Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
+Next we use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
 
 Last, call `savePicture` and pass in the photo object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
 

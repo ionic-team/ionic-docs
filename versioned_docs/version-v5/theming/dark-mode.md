@@ -1,6 +1,5 @@
 ---
-initialTab: 'preview'
-inlineHtmlPreviews: true
+title: Dark Mode
 ---
 
 import Codepen from '@components/global/Codepen';
@@ -67,7 +66,7 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 toggleDarkTheme(prefersDark.matches);
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
+prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 
 // Add or remove the "dark" class based on if the media query matches
 function toggleDarkTheme(shouldAdd) {
@@ -99,7 +98,7 @@ toggle.addEventListener('ionChange', (ev) => {
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener((e) => checkToggle(e.matches));
+prefersDark.addEventListener('change', (e) => checkToggle(e.matches));
 
 // Called when the app loads
 function loadApp() {
@@ -132,9 +131,9 @@ This allows the page to indicate which color scheme it is comfortable being rend
 color-scheme: light dark;
 ```
 
-| Default scrollbar                                                        | Scrollbar with `color-scheme`                                        |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| ![Application without color-scheme](/img/theming/color-scheme-light.png) | ![Application with color-scheme](/img/theming/color-scheme-dark.png) |
+| Default scrollbar                                                                                                                                      | Scrollbar with `color-scheme`                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![A default light-themed scrollbar in an application interface.](/img/theming/color-scheme-light.png 'Default scrollbar appearance without dark mode') | ![A dark-themed scrollbar in an application interface, demonstrating the effect of the 'color-scheme' property.](/img/theming/color-scheme-dark.png "Scrollbar appearance with dark mode 'color-scheme' applied") |
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 

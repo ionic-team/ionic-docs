@@ -1,5 +1,5 @@
 ---
-disableHtmlPreviews: true
+title: Cross Platform
 ---
 
 # Cross Platform
@@ -35,9 +35,9 @@ This bit of code can be incredibly helpful when targeting environments where acc
 
 Many native APIs that people use (for example, the File API), are not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform the app is running on.
 
-## Desktop
+## Responsive UI
 
-When planning to deploy an app to desktop, either using <a href="https://electronjs.org" target="_blank">Electron</a> or as a <strong>Progressive Web App</strong>, it is important to ensure the app works smoothly on larger devices.
+When planning to deploy an app that may be used across a variety of devices, it is important to ensure the app works smoothly on larger screen sizes.
 
 ### Layout
 
@@ -63,11 +63,11 @@ Many people rarely notice the layout of an app, but it can have a massive impact
 </ion-content>
 ```
 
-This will render 5 items with a width of 100% each. This may look great on a mobile device, as seen below, but viewing this on a desktop browser is a different story. The items become stretched to fill the entire screen because of the wide screen width, leaving screen space unused.
+This will render 5 items with a width of 100% each. This may look great on a phone, but viewing this on a larger screen is a different story. The items become stretched to fill the entire screen because of the wide screen width, leaving screen space unused.
 
 <img src={require('@site/static/img/building/cross-platform-items.png').default} />
 
-To improve this experience, we can wrap the items in a [Grid](../layout/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
+To improve this experience, we can wrap the items in a [Grid](../api/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
 
 ```html
 <ion-grid>
@@ -149,7 +149,7 @@ There’s a lot going on in the example above. These are the key points:
 
 - The `size` attribute can have a breakpoint added to it, `size-{breakpoint}`. This value sets the size for the specified breakpoint and above.
 
-For more information on customizing with grid, see the [Grid](../layout/grid.md) documentation.
+For more information on customizing with grid, see the [Grid](../api/grid.md) documentation.
 
 ## Storage
 

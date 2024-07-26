@@ -98,7 +98,7 @@
     },
     "ion-input": {
       "title": "ion-input: Custom Input Value Type Styling and CSS Properties",
-      "description": "ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards."
+      "description": "ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It integrates with the keyboard on mobile devices."
     },
     "ion-item": {
       "title": "ion-item: Input, Edit, or Delete iOS and Android Item Elements",

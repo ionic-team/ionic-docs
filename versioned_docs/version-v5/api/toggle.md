@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/toggle/props.md';
+import Events from '@ionic-internal/component-api/v5/toggle/events.md';
+import Methods from '@ionic-internal/component-api/v5/toggle/methods.md';
+import Parts from '@ionic-internal/component-api/v5/toggle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/toggle/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/toggle/slots.md';
+
 # ion-toggle
 
 Toggles change the state of a single option. Toggles can be switched on or off by pressing or swiping them. They can also be checked programmatically by setting the `checked` property.
@@ -483,88 +490,24 @@ export class ToggleExample {
 
 ## Properties
 
-### checked
-
-|                 |                                    |
-| --------------- | ---------------------------------- |
-| **Description** | If `true`, the toggle is selected. |
-| **Attribute**   | `checked`                          |
-| **Type**        | `boolean`                          |
-| **Default**     | `false`                            |
-
-### color
-
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
-
-### disabled
-
-|                 |                                                      |
-| --------------- | ---------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the toggle. |
-| **Attribute**   | `disabled`                                           |
-| **Type**        | `boolean`                                            |
-| **Default**     | `false`                                              |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### name
-
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute**   | `name`                                                          |
-| **Type**        | `string`                                                        |
-| **Default**     | `this.inputId`                                                  |
-
-### value
-
-|                 |                                                                                                                                                                                                                                                                           |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The value of the toggle does not mean if it's checked or not, use the `checked`<br />property for that.<br /><br />The value of a toggle is analogous to the value of a `<input type="checkbox">`,<br />it's only used when the toggle participates in a native `<form>`. |
-| **Attribute**   | `value`                                                                                                                                                                                                                                                                   |
-| **Type**        | `null \| string \| undefined`                                                                                                                                                                                                                                             |
-| **Default**     | `'on'`                                                                                                                                                                                                                                                                    |
+<Props />
 
 ## Events
 
-| Name        | Description                                  |
-| ----------- | -------------------------------------------- |
-| `ionBlur`   | Emitted when the toggle loses focus.         |
-| `ionChange` | Emitted when the value property has changed. |
-| `ionFocus`  | Emitted when the toggle has focus.           |
+<Events />
+
+## Methods
+
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name     | Description                                                   |
-| -------- | ------------------------------------------------------------- |
-| `handle` | The toggle handle, or knob, used to change the checked state. |
-| `track`  | The background track of the toggle.                           |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                          | Description                                  |
-| ----------------------------- | -------------------------------------------- |
-| `--background`                | Background of the toggle                     |
-| `--background-checked`        | Background of the toggle when checked        |
-| `--border-radius`             | Border radius of the toggle track            |
-| `--handle-background`         | Background of the toggle handle              |
-| `--handle-background-checked` | Background of the toggle handle when checked |
-| `--handle-border-radius`      | Border radius of the toggle handle           |
-| `--handle-box-shadow`         | Box shadow of the toggle handle              |
-| `--handle-height`             | Height of the toggle handle                  |
-| `--handle-max-height`         | Maximum height of the toggle handle          |
-| `--handle-spacing`            | Horizontal spacing around the toggle handle  |
-| `--handle-transition`         | Transition of the toggle handle              |
-| `--handle-width`              | Width of the toggle handle                   |
+<CustomProps />
+
+## Slots
+
+<Slots />

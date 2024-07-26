@@ -6,11 +6,11 @@ import ColorDot from '../ColorDot';
 
 import InputWrapper from '../InputWrapper';
 
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 
 export default function LayeredColorsSelect({ ...props }) {
-  const { isDarkTheme } = useThemeContext();
+  const { colorMode } = useColorMode();
 
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
@@ -64,7 +64,10 @@ export default function LayeredColorsSelect({ ...props }) {
     <div
       {...props}
       ref={el}
-      className={clsx(styles.layeredColorsSelect, styles[`layeredColorsSelect${isDarkTheme ? 'Dark' : 'Light'}`])}
+      className={clsx(
+        styles.layeredColorsSelect,
+        styles[`layeredColorsSelect${colorMode === 'dark' ? 'Dark' : 'Light'}`]
+      )}
     >
       <div className={styles.selectRow}>
         <ColorDot color={`var(--ion-color-${color})`} />
@@ -83,28 +86,32 @@ export default function LayeredColorsSelect({ ...props }) {
         </InputWrapper>
       </div>
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Property</th>
-          <th>Default Value</th>
-          <th>Description</th>
-        </tr>
-        {variations.map((variation) => {
-          const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Property</th>
+            <th>Default Value</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {variations.map((variation) => {
+            const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
 
-          return (
-            <tr>
-              <td className={styles.colorName}>{variation.name}</td>
-              <td className={styles.colorProperty}>
-                <code>{variation.property}</code>
-              </td>
-              <td className={styles.colorValue}>
-                <CodeColor color={codeColor}>{variation.value}</CodeColor>
-              </td>
-              <td className={styles.colorDescription}>{variation.description}</td>
-            </tr>
-          );
-        })}
+            return (
+              <tr key={variation.name}>
+                <td className={styles.colorName}>{variation.name}</td>
+                <td className={styles.colorProperty}>
+                  <code>{variation.property}</code>
+                </td>
+                <td className={styles.colorValue}>
+                  <CodeColor color={codeColor}>{variation.value}</CodeColor>
+                </td>
+                <td className={styles.colorDescription}>{variation.description}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );

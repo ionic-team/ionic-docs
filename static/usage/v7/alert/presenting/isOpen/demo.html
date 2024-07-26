@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-button onclick="alert.isOpen = true">Click Me</ion-button>
+          <ion-alert
+            header="A Short Title Is Best"
+            sub-header="A Sub Header Is Optional"
+            message="A message should be a short, complete sentence."
+          ></ion-alert>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const alert = document.querySelector('ion-alert');
+
+      alert.buttons = ['Action'];
+      alert.addEventListener('ionAlertDidDismiss', () => {
+        alert.isOpen = false;
+      });
+    </script>
+  </body>
+</html>

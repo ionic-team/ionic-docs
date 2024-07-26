@@ -1,0 +1,34 @@
+# GitHub Actions docs
+# https://help.github.com/en/articles/about-github-actions
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+
+name: Install Dependencies, Lint
+
+on: [pull_request]
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [20]
+        os: [windows-latest, macOS-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node_version }}
+    - name: Install Dependencies
+      run: npm ci --legacy-peer-deps
+    - name: Lint
+      run: npm run lint
+    - name: Spell Check
+      run: npm run spellcheck
+    # Lint and spell check changes should be pushed
+    # to the branch before the branch is merge eligible.
+    - name: Check Diff
+      run: git diff --exit-code
+      shell: bash

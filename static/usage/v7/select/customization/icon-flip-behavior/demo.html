@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select - Icon Flip Behavior</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+
+    <style>
+      ion-select.always-flip::part(icon) {
+        transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      ion-select.always-flip.select-expanded::part(icon) {
+        transform: rotate(180deg);
+      }
+
+      ion-select.never-flip::part(icon) {
+        transform: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-list>
+            <ion-item>
+              <ion-select
+                class="always-flip"
+                toggle-icon="caret-down-sharp"
+                interface="popover"
+                label="Icon flips on both modes"
+                placeholder="Select fruit"
+              >
+                <ion-select-option value="apples">Apples</ion-select-option>
+                <ion-select-option value="oranges">Oranges</ion-select-option>
+                <ion-select-option value="bananas">Bananas</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-select
+                class="never-flip"
+                toggle-icon="caret-down-sharp"
+                interface="popover"
+                label="Icon never flips"
+                placeholder="Select fruit"
+              >
+                <ion-select-option value="apples">Apples</ion-select-option>
+                <ion-select-option value="oranges">Oranges</ion-select-option>
+                <ion-select-option value="bananas">Bananas</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

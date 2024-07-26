@@ -1,17 +1,20 @@
-import React from 'react';
+/**
+ * This file wraps the original MDXComponents so we don't need to modify the original code.
+ *
+ * Reason for modifying:
+ * - Add a custom table component
+ */
+
 import MDXComponentsOriginal from '@theme-original/MDXComponents';
+// CUSTOM CODE
+import MDXTable from './Table';
+// CUSTOM CODE END
+import type { MDXComponentsObject } from '@theme/MDXComponents';
 
-export default {
+const MDXComponents: MDXComponentsObject = {
   ...MDXComponentsOriginal,
-  table: ({ children, ...props }) => {
-    const tableHeadings = children[0].props.children.props.children;
-
-    const hasTheadValue = !Array.isArray(tableHeadings) || tableHeadings.every(({ props }) => props.children);
-
-    return (
-      <div className="table-wrapper">
-        <table {...props} children={hasTheadValue ? children : children.slice(1)} />
-      </div>
-    );
-  },
+  // CUSTOM CODE
+  table: MDXTable,
+  // CUSTOM CODE END
 };
+export default MDXComponents;

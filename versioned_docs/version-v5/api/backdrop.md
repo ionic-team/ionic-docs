@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/backdrop/props.md';
+import Events from '@ionic-internal/component-api/v5/backdrop/events.md';
+import Methods from '@ionic-internal/component-api/v5/backdrop/methods.md';
+import Parts from '@ionic-internal/component-api/v5/backdrop/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/backdrop/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/backdrop/slots.md';
+
 # ion-backdrop
 
 Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
@@ -192,35 +199,24 @@ export class BackdropExample {
 
 ## Properties
 
-### stopPropagation
-
-|                 |                                                       |
-| --------------- | ----------------------------------------------------- |
-| **Description** | If `true`, the backdrop will stop propagation on tap. |
-| **Attribute**   | `stop-propagation`                                    |
-| **Type**        | `boolean`                                             |
-| **Default**     | `true`                                                |
-
-### tappable
-
-|                 |                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------- |
-| **Description** | If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event. |
-| **Attribute**   | `tappable`                                                                            |
-| **Type**        | `boolean`                                                                             |
-| **Default**     | `true`                                                                                |
-
-### visible
-
-|                 |                                          |
-| --------------- | ---------------------------------------- |
-| **Description** | If `true`, the backdrop will be visible. |
-| **Attribute**   | `visible`                                |
-| **Type**        | `boolean`                                |
-| **Default**     | `true`                                   |
+<Props />
 
 ## Events
 
-| Name             | Description                          |
-| ---------------- | ------------------------------------ |
-| `ionBackdropTap` | Emitted when the backdrop is tapped. |
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

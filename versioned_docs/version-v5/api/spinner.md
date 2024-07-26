@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/spinner/props.md';
+import Events from '@ionic-internal/component-api/v5/spinner/events.md';
+import Methods from '@ionic-internal/component-api/v5/spinner/methods.md';
+import Parts from '@ionic-internal/component-api/v5/spinner/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/spinner/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/spinner/slots.md';
+
 # ion-spinner
 
 The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.
@@ -203,44 +210,24 @@ export class SpinnerExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### duration
+<Events />
 
-|                 |                                                                                             |
-| --------------- | ------------------------------------------------------------------------------------------- |
-| **Description** | Duration of the spinner animation in milliseconds. The default varies based on the spinner. |
-| **Attribute**   | `duration`                                                                                  |
-| **Type**        | `number \| undefined`                                                                       |
-| **Default**     | `undefined`                                                                                 |
+## Methods
 
-### name
+<Methods />
 
-|                 |                                                                                                                  |
-| --------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Description** | The name of the SVG spinner to use. If a name is not provided, the platform's default<br />spinner will be used. |
-| **Attribute**   | `name`                                                                                                           |
-| **Type**        | `"bubbles" \| "circles" \| "circular" \| "crescent" \| "dots" \| "lines" \| "lines-small" \| undefined`          |
-| **Default**     | `undefined`                                                                                                      |
+## CSS Shadow Parts
 
-### paused
-
-|                 |                                                    |
-| --------------- | -------------------------------------------------- |
-| **Description** | If `true`, the spinner's animation will be paused. |
-| **Attribute**   | `paused`                                           |
-| **Type**        | `boolean`                                          |
-| **Default**     | `false`                                            |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name      | Description          |
-| --------- | -------------------- |
-| `--color` | Color of the spinner |
+<CustomProps />
+
+## Slots
+
+<Slots />

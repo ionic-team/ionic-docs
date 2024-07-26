@@ -41,9 +41,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>
-    Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
-  </p>
+  <!-- prettier-ignore -->
+  <p>Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</p>
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -66,8 +65,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
 </DocsCard>
 
-<DocsCard header="Icons" href="https://ionic.io/ionicons" img="/icons/feature-component-icons-icon.png">
-  <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
+<DocsCard header="Icons" href="api/icon" img="/icons/feature-component-icons-icon.png">
+  <p>Beautifully designed icons for use in web, iOS, and Android apps.</p>
 </DocsCard>
 
 <DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
@@ -138,16 +137,12 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Select is similar to the native HTML select, with a few improvements to sorting and selecting.</p>
 </DocsCard>
 
-<DocsCard header="Slides" href="api/slides" icon="/icons/component-slides-icon.png">
-  <p>Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.</p>
-</DocsCard>
-
 <DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
   <p>Tabs enable tabbed navigation, a standard navigation pattern in modern apps.</p>
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissable.</p>
+  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissible.</p>
 </DocsCard>
 
 <DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">

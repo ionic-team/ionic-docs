@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/slides/props.md';
+import Events from '@ionic-internal/component-api/v5/slides/events.md';
+import Methods from '@ionic-internal/component-api/v5/slides/methods.md';
+import Parts from '@ionic-internal/component-api/v5/slides/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/slides/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/slides/slots.md';
+
 # ion-slides
 
 The Slides component is a multi-section container. Each section can be swiped
@@ -689,184 +696,24 @@ ion-slides {
 
 ## Properties
 
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### options
-
-|                 |                                                                                                   |
-| --------------- | ------------------------------------------------------------------------------------------------- |
-| **Description** | Options to pass to the swiper instance.<br />See http://idangero.us/swiper/api/ for valid options |
-| **Attribute**   | `options`                                                                                         |
-| **Type**        | `any`                                                                                             |
-| **Default**     | `{}`                                                                                              |
-
-### pager
-
-|                 |                                 |
-| --------------- | ------------------------------- |
-| **Description** | If `true`, show the pagination. |
-| **Attribute**   | `pager`                         |
-| **Type**        | `boolean`                       |
-| **Default**     | `false`                         |
-
-### scrollbar
-
-|                 |                                |
-| --------------- | ------------------------------ |
-| **Description** | If `true`, show the scrollbar. |
-| **Attribute**   | `scrollbar`                    |
-| **Type**        | `boolean`                      |
-| **Default**     | `false`                        |
+<Props />
 
 ## Events
 
-| Name                      | Description                                                 |
-| ------------------------- | ----------------------------------------------------------- |
-| `ionSlideDidChange`       | Emitted after the active slide has changed.                 |
-| `ionSlideDoubleTap`       | Emitted when the user double taps on the slide's container. |
-| `ionSlideDrag`            | Emitted when the slider is actively being moved.            |
-| `ionSlideNextEnd`         | Emitted when the next slide has ended.                      |
-| `ionSlideNextStart`       | Emitted when the next slide has started.                    |
-| `ionSlidePrevEnd`         | Emitted when the previous slide has ended.                  |
-| `ionSlidePrevStart`       | Emitted when the previous slide has started.                |
-| `ionSlideReachEnd`        | Emitted when the slider is at the last slide.               |
-| `ionSlideReachStart`      | Emitted when the slider is at its initial position.         |
-| `ionSlidesDidLoad`        | Emitted after Swiper initialization                         |
-| `ionSlideTap`             | Emitted when the user taps/clicks on the slide's container. |
-| `ionSlideTouchEnd`        | Emitted when the user releases the touch.                   |
-| `ionSlideTouchStart`      | Emitted when the user first touches the slider.             |
-| `ionSlideTransitionEnd`   | Emitted when the slide transition has ended.                |
-| `ionSlideTransitionStart` | Emitted when the slide transition has started.              |
-| `ionSlideWillChange`      | Emitted before the active slide has changed.                |
+<Events />
 
 ## Methods
 
-### getActiveIndex
+<Methods />
 
-|                 |                                       |
-| --------------- | ------------------------------------- |
-| **Description** | Get the index of the active slide.    |
-| **Signature**   | `getActiveIndex() => Promise<number>` |
+## CSS Shadow Parts
 
-### getPreviousIndex
-
-|                 |                                         |
-| --------------- | --------------------------------------- |
-| **Description** | Get the index of the previous slide.    |
-| **Signature**   | `getPreviousIndex() => Promise<number>` |
-
-### getSwiper
-
-|                 |                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Get the Swiper instance.<br />Use this to access the full Swiper API.<br />See https://idangero.us/swiper/api/ for all API options. |
-| **Signature**   | `getSwiper() => Promise<any>`                                                                                                       |
-
-### isBeginning
-
-|                 |                                                          |
-| --------------- | -------------------------------------------------------- |
-| **Description** | Get whether or not the current slide is the first slide. |
-| **Signature**   | `isBeginning() => Promise<boolean>`                      |
-
-### isEnd
-
-|                 |                                                         |
-| --------------- | ------------------------------------------------------- |
-| **Description** | Get whether or not the current slide is the last slide. |
-| **Signature**   | `isEnd() => Promise<boolean>`                           |
-
-### length
-
-|                 |                                 |
-| --------------- | ------------------------------- |
-| **Description** | Get the total number of slides. |
-| **Signature**   | `length() => Promise<number>`   |
-
-### lockSwipeToNext
-
-|                 |                                                        |
-| --------------- | ------------------------------------------------------ |
-| **Description** | Lock or unlock the ability to slide to the next slide. |
-| **Signature**   | `lockSwipeToNext(lock: boolean) => Promise<void>`      |
-
-### lockSwipeToPrev
-
-|                 |                                                            |
-| --------------- | ---------------------------------------------------------- |
-| **Description** | Lock or unlock the ability to slide to the previous slide. |
-| **Signature**   | `lockSwipeToPrev(lock: boolean) => Promise<void>`          |
-
-### lockSwipes
-
-|                 |                                                                    |
-| --------------- | ------------------------------------------------------------------ |
-| **Description** | Lock or unlock the ability to slide to the next or previous slide. |
-| **Signature**   | `lockSwipes(lock: boolean) => Promise<void>`                       |
-
-### slideNext
-
-|                 |                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------- |
-| **Description** | Transition to the next slide.                                                                  |
-| **Signature**   | `slideNext(speed?: number \| undefined, runCallbacks?: boolean \| undefined) => Promise<void>` |
-
-### slidePrev
-
-|                 |                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------- |
-| **Description** | Transition to the previous slide.                                                              |
-| **Signature**   | `slidePrev(speed?: number \| undefined, runCallbacks?: boolean \| undefined) => Promise<void>` |
-
-### slideTo
-
-|                 |                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Description** | Transition to the specified slide.                                                                          |
-| **Signature**   | `slideTo(index: number, speed?: number \| undefined, runCallbacks?: boolean \| undefined) => Promise<void>` |
-
-### startAutoplay
-
-|                 |                                    |
-| --------------- | ---------------------------------- |
-| **Description** | Start auto play.                   |
-| **Signature**   | `startAutoplay() => Promise<void>` |
-
-### stopAutoplay
-
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Description** | Stop auto play.                   |
-| **Signature**   | `stopAutoplay() => Promise<void>` |
-
-### update
-
-|                 |                                                                                                      |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| **Description** | Update the underlying slider implementation. Call this if you've added or removed<br />child slides. |
-| **Signature**   | `update() => Promise<void>`                                                                          |
-
-### updateAutoHeight
-
-|                 |                                                                                                                  |
-| --------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Description** | Force swiper to update its height (when autoHeight is enabled) for the duration<br />equal to 'speed' parameter. |
-| **Signature**   | `updateAutoHeight(speed?: number \| undefined) => Promise<void>`                                                 |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                               | Description                                      |
-| ---------------------------------- | ------------------------------------------------ |
-| `--bullet-background`              | Background of the pagination bullets             |
-| `--bullet-background-active`       | Background of the active pagination bullet       |
-| `--progress-bar-background`        | Background of the pagination progress-bar        |
-| `--progress-bar-background-active` | Background of the active pagination progress-bar |
-| `--scroll-bar-background`          | Background of the pagination scroll-bar          |
-| `--scroll-bar-background-active`   | Background of the active pagination scroll-bar   |
+<CustomProps />
+
+## Slots
+
+<Slots />

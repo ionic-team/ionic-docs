@@ -5,6 +5,13 @@ sidebar_label: 'ion-fab-list'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/fab-list/props.md';
+import Events from '@ionic-internal/component-api/v5/fab-list/events.md';
+import Methods from '@ionic-internal/component-api/v5/fab-list/methods.md';
+import Parts from '@ionic-internal/component-api/v5/fab-list/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/fab-list/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/fab-list/slots.md';
+
 # ion-fab-list
 
 The `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'
@@ -309,20 +316,24 @@ export class FabListExample {
 
 ## Properties
 
-### activated
+<Props />
 
-|                 |                                                                |
-| --------------- | -------------------------------------------------------------- |
-| **Description** | If `true`, the fab list will show all fab buttons in the list. |
-| **Attribute**   | `activated`                                                    |
-| **Type**        | `boolean`                                                      |
-| **Default**     | `false`                                                        |
+## Events
 
-### side
+<Events />
 
-|                 |                                                                     |
-| --------------- | ------------------------------------------------------------------- |
-| **Description** | The side the fab list will show on relative to the main fab button. |
-| **Attribute**   | `side`                                                              |
-| **Type**        | `"bottom" \| "end" \| "start" \| "top"`                             |
-| **Default**     | `'bottom'`                                                          |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

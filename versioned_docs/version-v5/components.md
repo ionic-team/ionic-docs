@@ -42,9 +42,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>
-    Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
-  </p>
+  <!-- prettier-ignore -->
+  <p>Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</p>
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -148,7 +147,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissable.</p>
+  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissible.</p>
 </DocsCard>
 
 <DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">

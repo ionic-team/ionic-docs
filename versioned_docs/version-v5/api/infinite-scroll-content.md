@@ -5,6 +5,13 @@ sidebar_label: 'ion-infinite-scroll-content'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/infinite-scroll-content/props.md';
+import Events from '@ionic-internal/component-api/v5/infinite-scroll-content/events.md';
+import Methods from '@ionic-internal/component-api/v5/infinite-scroll-content/methods.md';
+import Parts from '@ionic-internal/component-api/v5/infinite-scroll-content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/infinite-scroll-content/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/infinite-scroll-content/slots.md';
+
 # ion-infinite-scroll-content
 
 The `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.
@@ -111,20 +118,24 @@ export default defineComponent({
 
 ## Properties
 
-### loadingSpinner
+<Props />
 
-|                 |                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Description** | An animated SVG spinner that shows while loading.                                                               |
-| **Attribute**   | `loading-spinner`                                                                                               |
-| **Type**        | `"bubbles" \| "circles" \| "circular" \| "crescent" \| "dots" \| "lines" \| "lines-small" \| null \| undefined` |
-| **Default**     | `undefined`                                                                                                     |
+## Events
 
-### loadingText
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Optional text to display while loading.<br />`loadingText` can accept either plaintext or HTML as a string.<br />To display characters normally reserved for HTML, they<br />must be escaped. For example `<Ionic>` would become<br />`&lt;Ionic&gt;`<br /><br />For more information: [Security Documentation](https://ionicframework.com/docs/faq/security) |
-| **Attribute**   | `loading-text`                                                                                                                                                                                                                                                                                                                                                |
-| **Type**        | `IonicSafeString \| string \| undefined`                                                                                                                                                                                                                                                                                                                      |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                   |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

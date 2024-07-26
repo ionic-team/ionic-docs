@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datetime</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+    <style>
+      ion-datetime {
+        width: 350px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-datetime presentation="date" value="2023-01-01"></ion-datetime>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const datetime = document.querySelector('ion-datetime');
+      datetime.highlightedDates = [
+        {
+          date: '2023-01-05',
+          textColor: '#800080',
+          backgroundColor: '#ffc0cb',
+        },
+        {
+          date: '2023-01-10',
+          textColor: '#09721b',
+          backgroundColor: '#c8e5d0',
+        },
+        {
+          date: '2023-01-20',
+          textColor: 'var(--ion-color-secondary-contrast)',
+          backgroundColor: 'var(--ion-color-secondary)',
+        },
+        {
+          date: '2023-01-23',
+          textColor: 'rgb(68, 10, 184)',
+          backgroundColor: 'rgb(211, 200, 229)',
+        },
+      ];
+    </script>
+  </body>
+</html>

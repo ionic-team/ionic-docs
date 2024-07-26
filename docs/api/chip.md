@@ -1,49 +1,49 @@
 ---
 title: "ion-chip"
 ---
-import Props from '@site/static/auto-generated/chip/props.md';
-import Events from '@site/static/auto-generated/chip/events.md';
-import Methods from '@site/static/auto-generated/chip/methods.md';
-import Parts from '@site/static/auto-generated/chip/parts.md';
-import CustomProps from '@site/static/auto-generated/chip/custom-props.md';
-import Slots from '@site/static/auto-generated/chip/slots.md';
+import Props from '@ionic-internal/component-api/v8/chip/props.md';
+import Events from '@ionic-internal/component-api/v8/chip/events.md';
+import Methods from '@ionic-internal/component-api/v8/chip/methods.md';
+import Parts from '@ionic-internal/component-api/v8/chip/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/chip/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/chip/slots.md';
 
 <head>
-  <title>ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps</title>
+  <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>
   <meta name="description" content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
 Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.
 
-## Basic
+## Basic Usage
 
-import BasicExample from '@site/static/usage/chip/basic/index.md';
+import Basic from '@site/static/usage/v8/chip/basic/index.md';
 
-<BasicExample />
-
-## Colors
-
-import ColorExample from '@site/static/usage/chip/color/index.md';
-
-<ColorExample />
-
+<Basic />
 
 ## Slotting Components and Icons
 
-import SlotExample from '@site/static/usage/chip/slots/index.md';
+import SlotExample from '@site/static/usage/v8/chip/slots/index.md';
 
 <SlotExample />
 
-## Styling
+## Theming
 
-import StylingExample from '@site/static/usage/chip/styling/index.md';
+### Colors
 
-<StylingExample />
+import Colors from '@site/static/usage/v8/chip/theming/colors/index.md';
+
+<Colors />
+
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/v8/chip/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Properties
 <Props />

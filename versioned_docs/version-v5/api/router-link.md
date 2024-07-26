@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/router-link/props.md';
+import Events from '@ionic-internal/component-api/v5/router-link/events.md';
+import Methods from '@ionic-internal/component-api/v5/router-link/methods.md';
+import Parts from '@ionic-internal/component-api/v5/router-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/router-link/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/router-link/slots.md';
+
 # ion-router-link
 
 The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
@@ -17,63 +24,24 @@ The router link component is used for navigating to a specified link. Similar to
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### href
+<Events />
 
-|                 |                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Contains a URL or a URL fragment that the hyperlink points to.<br />If this property is set, an anchor tag will be rendered. |
-| **Attribute**   | `href`                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                        |
-| **Default**     | `undefined`                                                                                                                  |
+## Methods
 
-### rel
+<Methods />
 
-|                 |                                                                                                                                                                                             |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies the relationship of the target object to the link object.<br />The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
-| **Attribute**   | `rel`                                                                                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                                                                                       |
-| **Default**     | `undefined`                                                                                                                                                                                 |
+## CSS Shadow Parts
 
-### routerAnimation
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition animation when navigating to<br />another page using `href`. |
-| **Attribute**   | `undefined`                                                                                                   |
-| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                       |
-| **Default**     | `undefined`                                                                                                   |
-
-### routerDirection
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition direction when navigating to<br />another page using `href`. |
-| **Attribute**   | `router-direction`                                                                                            |
-| **Type**        | `"back" \| "forward" \| "root"`                                                                               |
-| **Default**     | `'forward'`                                                                                                   |
-
-### target
-
-|                 |                                                                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies where to display the linked URL.<br />Only applies when an `href` is provided.<br />Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
-| **Attribute**   | `target`                                                                                                                                                      |
-| **Type**        | `string \| undefined`                                                                                                                                         |
-| **Default**     | `undefined`                                                                                                                                                   |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name           | Description                   |
-| -------------- | ----------------------------- |
-| `--background` | Background of the router link |
-| `--color`      | Text color of the router link |
+<CustomProps />
+
+## Slots
+
+<Slots />

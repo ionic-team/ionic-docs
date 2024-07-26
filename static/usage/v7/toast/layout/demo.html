@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Toast</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button id="open-inline-toast">Open Baseline Layout Toast</ion-button>
+        <ion-button id="open-stacked-toast">Open Stacked Layout Toast</ion-button>
+        <ion-toast
+          trigger="open-stacked-toast"
+          duration="3000"
+          message="This is a toast with a long message and a button that appears on the next line."
+          layout="stacked"
+        ></ion-toast>
+        <ion-toast
+          trigger="open-inline-toast"
+          duration="3000"
+          message="This is a toast with a long message and a button that appears on the same line."
+        ></ion-toast>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const toasts = document.querySelectorAll('ion-toast');
+
+      toasts.forEach((toast) => {
+        toast.buttons = [
+          {
+            text: 'Action With Long Text',
+          },
+        ];
+      });
+    </script>
+  </body>
+</html>

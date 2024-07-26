@@ -1,8 +1,6 @@
 ---
 title: Advanced Theming
 sidebar_label: Advanced
-initialTab: 'preview'
-inlineHtmlPreviews: true
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
@@ -30,13 +28,13 @@ The `theme-color` meta controls the interface theme when running in a web browse
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
 
 ```html
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#0054e9" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
-| Light Mode                                                                             | Dark Mode                                                                            |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| ![Application with theme-color meta in light mode](/img/theming/theme-color-light.png) | ![Application with theme-color meta in dark mode](/img/theming/theme-color-dark.png) |
+| Light Mode                                                                                                         | Dark Mode                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| ![The light mode theme color in a browser interface.](/img/theming/theme-color-light.png 'Light Mode Theme Color') | ![The dark mode theme color in a browser interface.](/img/theming/theme-color-dark.png 'Dark Mode Theme Color') |
 
 The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
 
@@ -56,16 +54,17 @@ While the application and stepped variables in the themes section are useful for
 
 ### Application Variables
 
-| Name                      | Description                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| `--ion-font-family`       | Font family of the app                                                                     |
-| `--ion-statusbar-padding` | Statusbar padding top of the app                                                           |
-| `--ion-safe-area-top`     | Adjust the safe area inset top of the app                                                  |
-| `--ion-safe-area-right`   | Adjust the safe area inset right of the app                                                |
-| `--ion-safe-area-bottom`  | Adjust the safe area inset bottom of the app                                               |
-| `--ion-safe-area-left`    | Adjust the safe area inset left of the app                                                 |
-| `--ion-margin`            | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)    |
-| `--ion-padding`           | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding) |
+| Name                        | Description                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `--ion-font-family`         | Font family of the app                                                                               |
+| `--ion-statusbar-padding`   | Statusbar padding top of the app                                                                     |
+| `--ion-safe-area-top`       | Adjust the safe area inset top of the app                                                            |
+| `--ion-safe-area-right`     | Adjust the safe area inset right of the app                                                          |
+| `--ion-safe-area-bottom`    | Adjust the safe area inset bottom of the app                                                         |
+| `--ion-safe-area-left`      | Adjust the safe area inset left of the app                                                           |
+| `--ion-margin`              | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)              |
+| `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)           |
+| `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
 
 ### Grid Variables
 
@@ -87,7 +86,7 @@ While the application and stepped variables in the themes section are useful for
 
 ### The Alpha Problem
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
 
 ```css
 /* These examples use the same color: blueviolet. */
@@ -154,7 +153,7 @@ What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, 
 
 ```scss
 // Background color, shade, and tint
-$background: #3880ff;
+$background: #0054e9;
 $background-shade: mix(#000, $background, 12%);
 $background-tint: mix(#fff, $background, 10%);
 
@@ -168,9 +167,9 @@ After running through the Sass compiler, the colors will have the following valu
 
 | Variable            | Value                                          |
 | ------------------- | ---------------------------------------------- |
-| `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
-| `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
-| `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |
+| `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
+| `$background-shade` | <CodeColor color="#004acd">#004acd</CodeColor> |
+| `$background-tint`  | <CodeColor color="#1a65eb">#1a65eb</CodeColor> |
 | `$text`             | <CodeColor color="#444444">#444444</CodeColor> |
 | `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
 | `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |
@@ -180,3 +179,29 @@ However, because CSS variables can be set at runtime and are more dynamic, it is
 This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](colors.md#layered-colors), and it is also why [stepped colors](themes.md#stepped-colors) are necessary for theming.
 
 There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
+
+## Safe Area Padding
+
+The safe area of a display is the section that is not covered by the device's notch, status bar, or other elements that are part of the device's UI and not the app's. The dimensions of the safe area are different across devices and orientations (portrait or landscape).
+
+For example, below are screenshots of an iPhone 14 Pro Max. The red section is the safe area, and the white sections are places where the app's content would be covered up.
+
+| Portrait                                                                       | Landscape                                                                        |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
+
+To accommodate this, Ionic automatically adds padding to certain components. For example, the first `ion-toolbar` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
+
+<img src={require('@site/static/img/theming/modal-header-padding.png').default} />
+
+This padding can be manually adjusted through CSS using the `--ion-safe-area-(dir)` variables described in [Application Variables](#application-variables). Values can be set for the whole application, or on a per component basis. For example:
+
+```css
+html {
+  --ion-safe-area-left: 25px;
+}
+
+ion-modal {
+  --ion-safe-area-top: 0;
+}
+```

@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/avatar/props.md';
+import Events from '@ionic-internal/component-api/v5/avatar/events.md';
+import Methods from '@ionic-internal/component-api/v5/avatar/methods.md';
+import Parts from '@ionic-internal/component-api/v5/avatar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/avatar/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/avatar/slots.md';
+
 # ion-avatar
 
 Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.
@@ -171,8 +178,26 @@ export class AvatarExample {
 
 </Tabs>
 
+## Properties
+
+<Props />
+
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
 ## CSS Custom Properties
 
-| Name              | Description                                 |
-| ----------------- | ------------------------------------------- |
-| `--border-radius` | Border radius of the avatar and inner image |
+<CustomProps />
+
+## Slots
+
+<Slots />

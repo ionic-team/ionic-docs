@@ -1,5 +1,5 @@
 ---
-title: Slides
+title: Migrating From ion-slides to Swiper.js
 ---
 
 <head>
@@ -10,9 +10,17 @@ title: Slides
   />
 </head>
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Vue directly.
+:::warning Looking for `ion-slides`?
+`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+:::
 
-This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+
+:::note
+Swiper's Vue component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the Vue component because it provides the most stable experience at the time of writing.
+
+Using Swiper's Vue component is **not** required to use Swiper.js with Ionic Framework.
+:::
 
 ## Getting Started
 
@@ -31,7 +39,7 @@ vue upgrade --next
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@latest
 ```
 
 ## Swiping with Style
@@ -52,6 +60,10 @@ We recommend importing the styles in the component in which Swiper is being used
   });
 </script>
 ```
+
+:::note
+Importing `@ionic/vue/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+:::
 
 ### Updating Selectors
 
@@ -242,7 +254,9 @@ See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noref
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
+
+It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
 
 We can install the `IonicSlides` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
 
@@ -295,7 +309,7 @@ Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` opti
 
 ```html
 <template>
-  <ion-slides :options="{ slidesPerView: true, loop: true }">
+  <ion-slides :options="{ slidesPerView: 3, loop: true }">
     <ion-slide>Slide 1</ion-slide>
     <ion-slide>Slide 2</ion-slide>
     <ion-slide>Slide 3</ion-slide>
@@ -358,24 +372,24 @@ To migrate, we would change the name of the event to `slideChange`:
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Vue:
 
-| ion-slides Event        | Swiper Event               |
-| ----------------------- | -------------------------- |
-| ionSlideWillChange      | slideChangeTransitionStart |
-| ionSlideDidChange       | slideChangeTransitionEnd   |
-| ionSlideDoubleTap       | doubleTap                  |
-| ionSlideDrag            | sliderMove                 |
-| ionSlideNextStart       | slideNextTransitionStart   |
-| ionSlideNextEnd         | slideNextTransitionEnd     |
-| ionSlidePrevStart       | slidePrevTransitionStart   |
-| ionSlidePrevEnd         | slidePrevTransitionEnd     |
-| ionSlideReachStart      | reachBeginning             |
-| ionSlideReachEnd        | reachEnd                   |
-| ionSlideTap             | tap                        |
-| ionSlideTouchStart      | touchStart                 |
-| ionSlideTouchEnd        | touchEnd                   |
-| ionSlideTransitionStart | transitionStart            |
-| ionSlideTransitionEnd   | transitionEnd              |
-| ionSlidesDidLoad        | init                       |
+| ion-slides Event          | Swiper Event                 |
+| ------------------------- | ---------------------------- |
+| `ionSlideWillChange`      | `slideChangeTransitionStart` |
+| `ionSlideDidChange`       | `slideChangeTransitionEnd`   |
+| `ionSlideDoubleTap`       | `doubleTap`                  |
+| `ionSlideDrag`            | `sliderMove`                 |
+| `ionSlideNextStart`       | `slideNextTransitionStart`   |
+| `ionSlideNextEnd`         | `slideNextTransitionEnd`     |
+| `ionSlidePrevStart`       | `slidePrevTransitionStart`   |
+| `ionSlidePrevEnd`         | `slidePrevTransitionEnd`     |
+| `ionSlideReachStart`      | `reachBeginning`             |
+| `ionSlideReachEnd`        | `reachEnd`                   |
+| `ionSlideTap`             | `tap`                        |
+| `ionSlideTouchStart`      | `touchStart`                 |
+| `ionSlideTouchEnd`        | `touchEnd`                   |
+| `ionSlideTransitionStart` | `transitionStart`            |
+| `ionSlideTransitionEnd`   | `transitionEnd`              |
+| `ionSlidesDidLoad`        | `init`                       |
 
 :::note
 All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
@@ -411,19 +425,19 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `ion-slides` to Swiper Vue:
 
-| ion-slides Method  | Notes                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| getActiveIndex()   | Use the `activeIndex` property instead.                                              |
-| getPreviousIndex() | Use the `previousIndex` property instead.                                            |
-| getSwiper()        | Get a reference to the Swiper instance using `@swiper`. See example above.           |
-| isBeginning()      | Use the `isBeginning` property instead.                                              |
-| isEnd()            | Use the `isEnd` property instead.                                                    |
-| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
-| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
-| lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| startAutoplay()    | Use the `autoplay` property instead.                                                 |
-| stopAutoplay()     | Use the `autoplay` property instead.                                                 |
+| ion-slides Method    | Notes                                                                                |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| `getActiveIndex()`   | Use the `activeIndex` property instead.                                              |
+| `getPreviousIndex()` | Use the `previousIndex` property instead.                                            |
+| `getSwiper()`        | Get a reference to the Swiper instance using `@swiper`. See example above.           |
+| `isBeginning()`      | Use the `isBeginning` property instead.                                              |
+| `isEnd()`            | Use the `isEnd` property instead.                                                    |
+| `length()`           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
+| `lockSwipeToNext()`  | Use the `allowSlideNext` property instead.                                           |
+| `lockSwipeToPrev()`  | Use the `allowSlidePrev` property instead.                                           |
+| `lockSwipes()`       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
+| `startAutoplay()`    | Use the `autoplay` property instead.                                                 |
+| `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 ## Effects
 

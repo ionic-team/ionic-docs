@@ -7,6 +7,13 @@ sidebar_label: 'ion-footer'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/footer/props.md';
+import Events from '@ionic-internal/component-api/v5/footer/events.md';
+import Methods from '@ionic-internal/component-api/v5/footer/methods.md';
+import Parts from '@ionic-internal/component-api/v5/footer/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/footer/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/footer/slots.md';
+
 # ion-footer
 
 Footer is a root component of a page that sits at the bottom of the page.
@@ -155,20 +162,24 @@ export class FooterExample {
 
 ## Properties
 
-### mode
+<Props />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## Events
 
-### translucent
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If `true`, the footer will be translucent.<br />Only applies when the mode is `"ios"` and the device supports<br />[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).<br /><br />Note: In order to scroll content behind the footer, the `fullscreen`<br />attribute needs to be set on the content. |
-| **Attribute**   | `translucent`                                                                                                                                                                                                                                                                                                                                                  |
-| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                      |
-| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                        |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

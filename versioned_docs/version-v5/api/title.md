@@ -7,6 +7,13 @@ sidebar_label: 'ion-title'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/title/props.md';
+import Events from '@ionic-internal/component-api/v5/title/events.md';
+import Methods from '@ionic-internal/component-api/v5/title/methods.md';
+import Parts from '@ionic-internal/component-api/v5/title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/title/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/title/slots.md';
+
 # ion-title
 
 `ion-title` is a component that sets the title of the `Toolbar`.
@@ -627,26 +634,24 @@ ion-title.large-title {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### size
+<Events />
 
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Description** | The size of the toolbar title.    |
-| **Attribute**   | `size`                            |
-| **Type**        | `"large" \| "small" \| undefined` |
-| **Default**     | `undefined`                       |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name      | Description             |
-| --------- | ----------------------- |
-| `--color` | Text color of the title |
+<CustomProps />
+
+## Slots
+
+<Slots />

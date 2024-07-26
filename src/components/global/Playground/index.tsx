@@ -1,10 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { RefObject, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, UsageTarget } from './playground.types';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
+import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -13,30 +13,64 @@ import TabItem from '@theme/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
-const ControlButton = ({ isSelected, handleClick, title, label }) => {
-  return (
-    <button
-      type="button"
-      title={title}
-      className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
-      onClick={handleClick}
-      data-text={label}
-    >
-      {label}
-    </button>
-  );
-};
+import { useScrollPositionBlocker } from '@docusaurus/theme-common/internal';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+const ControlButton = forwardRef(
+  (
+    {
+      isSelected,
+      handleClick,
+      title,
+      label,
+      disabled,
+    }: {
+      isSelected: boolean;
+      handleClick: () => void;
+      title: string;
+      label: string;
+      disabled?: boolean;
+    },
+    ref: RefObject<HTMLButtonElement>
+  ) => {
+    const controlButton = (
+      <button
+        title={disabled ? undefined : title}
+        disabled={disabled}
+        className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
+        onClick={handleClick}
+        data-text={label}
+        ref={ref}
+      >
+        {label}
+      </button>
+    );
+    if (disabled) {
+      return (
+        <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
+          {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
+          <div>{controlButton}</div>
+        </Tippy>
+      );
+    }
+    return controlButton;
+  }
+);
+
+const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const langValue = UsageTarget[language];
+
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setUsageTarget(langValue);
+        setAndSaveUsageTarget(langValue, buttonRef.current);
       }}
       title={`Show ${language} code`}
       label={language}
+      disabled={disabled}
+      ref={buttonRef}
     />
   );
 };
@@ -46,11 +80,11 @@ type MdxContent = () => {};
 /**
  * The advanced configuration of options when creating a
  * playground example with multiple files for a single usage target
- * or if needing to modify the generated Stackblitz example code.
+ * or if needing to modify the generated StackBlitz example code.
  */
 interface UsageTargetOptions {
   /**
-   * The list of the file names to use in the Stackblitz example
+   * The list of the file names to use in the StackBlitz example
    * and their associated MDX content.
    *
    * ```ts
@@ -63,26 +97,31 @@ interface UsageTargetOptions {
   files: {
     [key: string]: MdxContent;
   };
-  angularModuleOptions?: {
-    /**
-     * The list of import declarations to add to the `AppModule`.
-     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
-     */
-    imports: string[];
-    /**
-     * The list of class name declarations to add to the `AppModule`.
-     */
-    declarations?: string[];
+  /**
+   * The list of dependencies to use in the StackBlitz example.
+   * The key is the package name and the value is the version.
+   * The version must be a valid semver range.
+   *
+   * For example:
+   * ```ts
+   * dependencies: {
+   *  '@maskito/core': '^0.11.0',
+   * }
+   * ```
+   */
+  dependencies?: {
+    [key: string]: string;
   };
 }
 
 /**
  * @param code The code snippets for each supported framework target.
- * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
- * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ * @param title Optional title of the generated playground example. Specify to customize the StackBlitz title.
+ * @param description Optional description of the generated playground example. Specify to customize the StackBlitz description.
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
+ * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
  */
 export default function Playground({
   code,
@@ -90,38 +129,182 @@ export default function Playground({
   description,
   src,
   size = 'small',
+  mode,
   devicePreview,
+  showConsole,
   includeIonContent = true,
+  version,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
   src: string;
   size: string;
+  /**
+   * Restricts the playground to a single specified mode.
+   * If not specified, the user can toggle between modes.
+   * Acceptable values are: `ios` or `md`.
+   */
+  mode?: 'ios' | 'md';
   description?: string;
   devicePreview?: boolean;
+  showConsole?: boolean;
   includeIonContent: boolean;
+  /**
+   * The major version of Ionic to use in the generated StackBlitz examples.
+   * This will also load assets for StackBlitz from the specified version directory.
+   */
+  version: number;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
     return;
   }
-  const { isDarkTheme } = useThemeContext();
+  if (typeof mode !== 'undefined' && mode !== 'ios' && mode !== 'md') {
+    console.warn(`Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`);
+    return;
+  }
+  if (typeof version === 'undefined') {
+    console.warn('You must specify a `version` for the Playground example. For example: <Playground version="7" />');
+    return;
+  }
+
+  const { colorMode } = useColorMode();
+
+  /**
+   * When deploying, Docusaurus builds the app in an SSR environment.
+   * We need to check whether we're in a browser so we know if we can
+   * use the window or localStorage objects.
+   */
+  const isBrowser = useIsBrowser();
 
   const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
+  const consoleBodyRef = useRef<HTMLDivElement | null>(null);
+
+  const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
+
+  const getDefaultMode = () => {
+    /**
+     * If a custom mode was specified, use that.
+     */
+    if (mode) return mode;
+
+    /**
+     * Otherwise, if there is a saved mode from previously clicking
+     * the mode button, use that.
+     */
+    if (isBrowser) {
+      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+      if (storedMode) return storedMode;
+    }
+
+    /**
+     * Default to iOS mode as a fallback.
+     */
+    return Mode.iOS;
+  };
+
+  const getDefaultUsageTarget = () => {
+    /**
+     * If there is a saved target from previously clicking the
+     * framework buttons, and there is code for it, use that.
+     */
+    if (isBrowser) {
+      const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+      if (storedTarget && code[storedTarget] !== undefined) {
+        return storedTarget;
+      }
+    }
+
+    /**
+     * If there is no saved target, and Angular code is available,
+     * default to that.
+     */
+    if (code[UsageTarget.Angular] !== undefined) {
+      return UsageTarget.Angular;
+    }
+
+    /**
+     * If there is no Angular code available, fall back to the
+     * first available framework.
+     */
+    return Object.keys(code)[0];
+  };
 
   /**
    * Developers can set a predefined size
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
-  const [mode, setMode] = useState(Mode.iOS);
+  const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
+  const [ionicMode, setIonicMode] = useState(getDefaultMode());
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(colorMode === 'dark');
+  const [mdConsoleItems, setMDConsoleItems] = useState<ConsoleItem[]>([]);
+  const [iosConsoleItems, setiOSConsoleItems] = useState<ConsoleItem[]>([]);
+
+  /**
+   * We don't actually care about the count, but this lets us
+   * re-trigger useEffect hooks when the demo is reset and the
+   * iframes are refreshed.
+   */
+  const [resetCount, setResetCount] = useState(0);
+
+  /**
+   * Keeps track of whether any amount of this playground is
+   * currently on the screen.
+   */
+  const [isInView, setIsInView] = useState(false);
+
+  const setAndSaveMode = (mode: Mode) => {
+    setIonicMode(mode);
+
+    if (isBrowser) {
+      localStorage.setItem(MODE_STORAGE_KEY, mode);
+
+      /**
+       * Tell other playgrounds on the page that the mode has
+       * updated, so they can sync up if they're in view.
+       */
+      window.dispatchEvent(
+        new CustomEvent(MODE_UPDATED_EVENT, {
+          detail: mode,
+        })
+      );
+    }
+  };
+
+  const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
+    setUsageTarget(target);
+
+    if (isBrowser) {
+      localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
+
+      /**
+       * This prevents the scroll position from jumping around if
+       * there is a playground above this one with code that changes
+       * in length between frameworks.
+       *
+       * Note that we don't need this when changing the mode because
+       * the two mode iframes are always the same height.
+       */
+      blockElementScrollPositionUntilNextRender(tab);
+
+      /**
+       * Tell other playgrounds on the page that the framework
+       * has updated, so they can sync up if they're in view.
+       */
+      window.dispatchEvent(
+        new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+          detail: target,
+        })
+      );
+    }
+  };
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -133,8 +316,24 @@ export default function Playground({
       await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
 
       const message = { darkMode: isDarkTheme };
-      frameiOS.current.contentWindow.postMessage(message);
-      frameMD.current.contentWindow.postMessage(message);
+      /**
+       * When changing the versioned docs, the frame reference can be undefined
+       * after the waitForFrame promise resolves.
+       *
+       * We need to check for the iOS frame reference before posting the message.
+       */
+      if (frameiOS.current) {
+        frameiOS.current.contentWindow.postMessage(message);
+      }
+      /**
+       * When changing the versioned docs, the frame reference can be undefined
+       * after the waitForFrame promise resolves.
+       *
+       * We need to check for the MD frame reference before posting the message.
+       */
+      if (frameMD.current) {
+        frameMD.current.contentWindow.postMessage(message);
+      }
     }
   };
 
@@ -156,6 +355,10 @@ export default function Playground({
   };
 
   useEffect(() => {
+    setIsDarkTheme(colorMode === 'dark');
+  }, [colorMode]);
+
+  useEffect(() => {
     /**
      * Note that we can't just do useEffect(postDarkThemeMessage)
      * because useEffect callbacks cannot return a Promise, as
@@ -169,7 +372,7 @@ export default function Playground({
    * load, so a loading screen is shown by default.
    * Once the source of the iframe loads we can
    * hide the loading screen and show the inner content.
-   * 
+   *
    * We call this as a local function because useEffect
    * callbacks cannot return a Promise, as async functions do.
    */
@@ -183,6 +386,24 @@ export default function Playground({
   }, [renderIframes]);
 
   useEffect(() => {
+    if (showConsole) {
+      if (frameiOS.current) {
+        frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+          setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
+        });
+      }
+
+      if (frameMD.current) {
+        frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+          setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
+        });
+      }
+    }
+  }, [iframesLoaded, resetCount]); // including resetCount re-runs this when iframes are reloaded
+
+  useEffect(() => {
     /**
      * Using a dynamic import here to avoid SSR errors when trying to extend `HTMLElement`
      * to create the custom element.
@@ -191,25 +412,36 @@ export default function Playground({
   });
 
   /**
-   * By default, we do not render the iframe content
-   * as it could cause delays on page load. Instead
-   * we wait for even 1 pixel of the playground to
-   * scroll into view (intersect with the viewport)
-   * before loading the iframes.
+   * By default, we do not render the iframe content as it could
+   * cause delays on page load. We also do not immediately switch
+   * the framework/mode when it gets changed through another
+   * playground on the page, as switching them for every playground
+   * at once can cause memory-related crashes on some devices.
+   *
+   * Instead, we wait for even 1 pixel of the playground to scroll
+   * into view (intersect with the viewport) before loading the
+   * iframes or auto-switching the framework/mode.
    */
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         const ev = entries[0];
-        if (!ev.isIntersecting || renderIframes) return;
-
-        setRenderIframes(true);
+        setIsInView(ev.isIntersecting);
+        if (!ev.isIntersecting) return;
 
         /**
-         * Once the playground is loaded, it is never "unloaded"
-         * so we can safely disconnect the observer.
+         * Load the stored mode and/or usage target, if present
+         * from previously being toggled.
          */
-        io.disconnect();
+        setIonicMode(getDefaultMode());
+        setUsageTarget(getDefaultUsageTarget());
+
+        /**
+         * If the iframes weren't already loaded, load them now.
+         */
+        if (!renderIframes) {
+          setRenderIframes(true);
+        }
       },
       { threshold: 0 }
     );
@@ -217,8 +449,54 @@ export default function Playground({
     io.observe(hostRef.current!);
   });
 
-  const isIOS = mode === Mode.iOS;
-  const isMD = mode === Mode.MD;
+  const handleModeUpdated = (e: CustomEvent) => {
+    const mode = e.detail;
+    if (Object.values(Mode).includes(mode)) {
+      setIonicMode(mode); // don't use setAndSave to avoid infinite loop
+    }
+  };
+
+  const handleUsageTargetUpdated = (e: CustomEvent) => {
+    const usageTarget = e.detail;
+    if (Object.values(UsageTarget).includes(usageTarget)) {
+      setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
+    }
+  };
+
+  /**
+   * When this playground is in view, listen for any other playgrounds
+   * on the page to switch their framework or mode, so this one can
+   * sync up to the same setting. This is needed because if the
+   * playground is already in view, the IntersectionObserver doesn't
+   * fire until the playground is scrolled off and back on the screen.
+   *
+   * Sometimes, the app isn't fully hydrated on the first render,
+   * causing isBrowser to be set to false even if running the app
+   * in a browser (vs. SSR). isBrowser is then updated on the next
+   * render cycle. This means we need to re-run this hook when
+   * isBrowser changes to handle playgrounds that were in view
+   * from the start of the page load.
+   *
+   * We also re-run when isInView changes because otherwise, a stale
+   * state value would be captured. Since we need to listen for these
+   * events only when the playground is in view, we check the state
+   * before adding the listeners at all, rather than within the
+   * callbacks.
+   */
+  useEffect(() => {
+    if (isBrowser && isInView) {
+      window.addEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
+      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
+    }
+
+    return () => {
+      window.removeEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
+      window.removeEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
+    };
+  }, [isBrowser, isInView]);
+
+  const isIOS = ionicMode === Mode.iOS;
+  const isMD = ionicMode === Mode.MD;
 
   const sourceiOS = useBaseUrl(`${src}?ionic:mode=${Mode.iOS}`);
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
@@ -235,13 +513,19 @@ export default function Playground({
   /**
    * Reloads the iOS and MD iframe sources back to their original state.
    */
-  function resetDemo() {
+  async function resetDemo() {
     if (frameiOS.current) {
       frameiOS.current.contentWindow.location.reload();
     }
     if (frameMD.current) {
       frameMD.current.contentWindow.location.reload();
     }
+
+    setiOSConsoleItems([]);
+    setMDConsoleItems([]);
+
+    await Promise.all([waitForNextFrameLoadEvent(frameiOS.current), waitForNextFrameLoadEvent(frameMD.current)]);
+    setResetCount((oldCount) => oldCount + 1);
   }
 
   function openEditor(event) {
@@ -249,23 +533,41 @@ export default function Playground({
       title,
       description,
       includeIonContent,
+      mode: isIOS ? 'ios' : 'md',
+      version,
     };
 
-    let codeBlock;
-    if (!hasUsageTargetOptions) {
-      // codeSnippets are React components, so we need to get their rendered text
-      // using outerText will preserve line breaks for formatting in Stackblitz editor
-      codeBlock = codeRef.current.querySelector('code').outerText;
-    } else {
-      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
-      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
+    // using outerText will preserve line breaks for formatting in StackBlitz editor
+    const codeBlock = codeRef.current.querySelector('code').outerText;
 
+    if (hasUsageTargetOptions) {
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
-        .map((fileName) => ({
-          [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
-            .outerText,
-        }))
+        .map((fileName) => {
+          const codeBlock = hostRef.current!.querySelector<HTMLElement>(
+            `#${getCodeSnippetId(usageTarget, fileName)} code`
+          );
+          let code = codeBlock.outerText;
+
+          if (code.trim().length === 0) {
+            /**
+             * Safari has an issue where accessing the `outerText` on a non-visible
+             * DOM element results in a string with only whitespace. To work around this,
+             * we create a clone of the element, not attached to the DOM, and parse
+             * the outerText from that.
+             *
+             * Only in Safari does this persist whitespace & line breaks, so we
+             * explicitly check for when the code is empty to use this workaround.
+             */
+            const el = document.createElement('div');
+            el.innerHTML = codeBlock.innerHTML;
+            code = el.outerText;
+          }
+          return {
+            [fileName]: code,
+          };
+        })
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+      editorOptions.dependencies = (code[usageTarget] as UsageTargetOptions).dependencies;
     }
 
     switch (usageTarget) {
@@ -285,14 +587,15 @@ export default function Playground({
   }
 
   useEffect(() => {
-    const codeSnippets = {};
+    const codeSnips = {};
     Object.keys(code).forEach((key) => {
       if (typeof code[key] === 'function') {
         /**
          * Instantiates the React component from the MDX content for
          * single-file playground examples.
          */
-        codeSnippets[key] = code[key]({});
+        const DynamicComponent = code[key];
+        codeSnips[key] = <DynamicComponent />;
       } else if (typeof code[key] === 'object') {
         /**
          * Instantiates the list of React components from the MDX content for
@@ -300,12 +603,13 @@ export default function Playground({
          */
         const fileSnippets = {};
         for (const fileName of Object.keys(code[key].files)) {
-          fileSnippets[`${fileName}`] = code[key].files[fileName]({});
+          const DynamicFileComponent = code[key].files[fileName];
+          fileSnippets[`${fileName}`] = <DynamicFileComponent />;
         }
-        codeSnippets[key] = fileSnippets;
+        codeSnips[key] = fileSnippets;
       }
     });
-    setCodeSnippets(codeSnippets);
+    setCodeSnippets(codeSnips);
   }, []);
 
   function getCodeSnippetId(usageTarget: string, fileName: string) {
@@ -341,7 +645,7 @@ export default function Playground({
         return null;
       }
       return (
-        <PlaygroundTabs className="playground__tabs">
+        <PlaygroundTabs groupId={usageTarget} className="playground__tabs">
           {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
             <TabItem
               className="playground__tab-item"
@@ -368,25 +672,74 @@ export default function Playground({
     );
   }
 
+  function renderConsole() {
+    const consoleItems = ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems;
+
+    return (
+      <div className="playground__console">
+        <div className="playground__console-header">
+          <code>Console</code>
+        </div>
+        <div className="playground__console-body" ref={consoleBodyRef}>
+          {consoleItems.length === 0 ? (
+            <div className="playground__console-item playground__console-item--placeholder">
+              <code>Console messages will appear here when logged from the example above.</code>
+            </div>
+          ) : (
+            consoleItems.map((consoleItem, i) => (
+              <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
+                {consoleItem.type !== 'log' && (
+                  <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
+                )}
+                <code>{consoleItem.message}</code>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    );
+  }
+
   const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
 
   return (
     <div className="playground" ref={hostRef}>
-      <div className="playground__container">
+      <div className={`playground__container ${showConsole ? 'playground__container--has-console' : ''}`}>
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {sortedUsageTargets.map((lang) => (
-              <CodeBlockButton
-                key={`code-block-${lang}`}
-                language={lang}
-                usageTarget={usageTarget}
-                setUsageTarget={setUsageTarget}
-              />
-            ))}
+            {sortedUsageTargets.map((lang) => {
+              /**
+               * If code was not passed for this target
+               * then we should disable the button.
+               */
+              const langValue = UsageTarget[lang];
+              const hasCode = code[langValue] !== undefined;
+              return (
+                <CodeBlockButton
+                  key={`code-block-${lang}`}
+                  language={lang}
+                  usageTarget={usageTarget}
+                  setAndSaveUsageTarget={setAndSaveUsageTarget}
+                  disabled={!hasCode}
+                />
+              );
+            })}
           </div>
           <div className="playground__control-group">
-            <ControlButton isSelected={isIOS} handleClick={() => setMode(Mode.iOS)} title="iOS mode" label="iOS" />
-            <ControlButton isSelected={isMD} handleClick={() => setMode(Mode.MD)} title="MD mode" label="MD" />
+            <ControlButton
+              disabled={mode && mode === 'md'}
+              isSelected={isIOS}
+              handleClick={() => setAndSaveMode(Mode.iOS)}
+              title="iOS mode"
+              label="iOS"
+            />
+            <ControlButton
+              disabled={mode && mode === 'ios'}
+              isSelected={isMD}
+              handleClick={() => setAndSaveMode(Mode.MD)}
+              title="MD mode"
+              label="MD"
+            />
           </div>
           <div className="playground__control-group playground__control-group--end">
             <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
@@ -485,45 +838,58 @@ export default function Playground({
         </div>
         {renderIframes
           ? [
-              <div className="playground__preview">
+              <div className="playground__preview" key="preview">
                 {!iframesLoaded && renderLoadingScreen()}
                 {/*
-              We render two iframes, one for each mode.
-              When the set mode changes, we hide one frame and
-              show the other. This is done to avoid flickering
-              and doing unnecessary reloads when switching modes.
-            */}
+                  We render two iframes, one for each mode.
+                  When the set mode changes, we hide one frame and
+                  show the other. This is done to avoid flickering
+                  and doing unnecessary reloads when switching modes.
+                */}
                 {devicePreview
                   ? [
-                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                      <div
+                        key="ios-iframe"
+                        className={!isIOS ? 'frame-hidden' : 'frame-visible'}
+                        aria-hidden={!isIOS ? 'true' : null}
+                      >
                         <device-preview mode="ios">
-                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
+                          <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                      <div
+                        key="md-iframe"
+                        className={!isMD ? 'frame-hidden' : 'frame-visible'}
+                        aria-hidden={!isMD ? 'true' : null}
+                      >
                         <device-preview mode="md">
-                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
+                          <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
                       </div>,
                     ]
                   : [
                       <iframe
+                        key="ios-iframe"
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
-                        ref={ref => handleFrameRef(ref, 'ios')}
+                        ref={(ref) => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
+                        aria-hidden={!isIOS ? 'true' : null}
                       ></iframe>,
                       <iframe
+                        key="md-iframe"
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
-                        ref={ref => handleFrameRef(ref, 'md')}
+                        ref={(ref) => handleFrameRef(ref, 'md')}
                         src={sourceMD}
+                        aria-hidden={!isMD ? 'true' : null}
                       ></iframe>,
                     ]}
               </div>,
             ]
           : []}
       </div>
+      {showConsole && renderConsole()}
       <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
@@ -551,9 +917,34 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
   });
 };
 
+/**
+ * Returns a promise that resolves on the *next* load event of the
+ * given iframe. We intentionally don't check if it's already loaded
+ * because this is used when the demo is reset and the iframe is
+ * refreshed, so we don't want to return too early and catch the
+ * pre-reset version of the window.
+ */
+const waitForNextFrameLoadEvent = (frame: HTMLIFrameElement) => {
+  return new Promise<void>((resolve) => {
+    const handleLoad = () => {
+      frame.removeEventListener('load', handleLoad);
+      resolve();
+    };
+
+    if (frame) {
+      frame.addEventListener('load', handleLoad);
+    }
+  });
+};
+
 const isFrameReady = (frame: HTMLIFrameElement) => {
   if (!frame) {
     return false;
   }
   return (frame.contentWindow as any).demoReady === true;
 };
+
+const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
+const MODE_STORAGE_KEY = 'playground_mode';
+const USAGE_TARGET_UPDATED_EVENT = 'playground-usage-target-updated';
+const MODE_UPDATED_EVENT = 'playground-event-updated';

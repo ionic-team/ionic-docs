@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Range</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+    <style>
+      .wrapper {
+        width: calc(100% - 100px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <div class="wrapper">
+            <ion-range label-placement="start" label="Label at the Start"></ion-range>
+
+            <br />
+
+            <ion-range label-placement="end" label="Label at the End"></ion-range>
+
+            <br />
+
+            <ion-range label-placement="fixed" label="Fixed Width Label"></ion-range>
+
+            <br />
+
+            <ion-range label-placement="stacked" label="Stacked Label"></ion-range>
+          </div>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

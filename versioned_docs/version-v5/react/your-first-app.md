@@ -14,9 +14,9 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 ## What We'll Build
@@ -26,8 +26,8 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 Highlights include:
 
 - One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
 
@@ -79,7 +79,7 @@ cd photo-gallery
 Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
-npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
 ### PWA Elements
@@ -119,7 +119,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/img/guides/react/first-app/live-reload.gif)
+![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/react/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
 
 Open `/src/pages/Tab2.tsx`. We see:
 

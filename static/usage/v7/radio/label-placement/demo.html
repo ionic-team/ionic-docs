@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <div>
+            <ion-radio-group value="start">
+              <ion-radio value="start" label-placement="start">Label at the Start</ion-radio>
+            </ion-radio-group>
+
+            <br />
+
+            <ion-radio-group value="end">
+              <ion-radio value="end" label-placement="end">Label at the End</ion-radio>
+            </ion-radio-group>
+
+            <br />
+
+            <ion-radio-group value="fixed">
+              <ion-radio value="fixed" label-placement="fixed">Fixed Width Label</ion-radio>
+            </ion-radio-group>
+
+            <br />
+
+            <ion-radio-group value="stacked">
+              <ion-radio value="stacked" label-placement="stacked">Stacked Label</ion-radio>
+            </ion-radio-group>
+          </div>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

@@ -1,312 +1,84 @@
 ---
 title: "ion-picker"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@site/static/auto-generated/picker/props.md';
-import Events from '@site/static/auto-generated/picker/events.md';
-import Methods from '@site/static/auto-generated/picker/methods.md';
-import Parts from '@site/static/auto-generated/picker/parts.md';
-import CustomProps from '@site/static/auto-generated/picker/custom-props.md';
-import Slots from '@site/static/auto-generated/picker/slots.md';
+import Props from '@ionic-internal/component-api/v8/picker/props.md';
+import Events from '@ionic-internal/component-api/v8/picker/events.md';
+import Methods from '@ionic-internal/component-api/v8/picker/methods.md';
+import Parts from '@ionic-internal/component-api/v8/picker/parts.md';
+import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
 
 <head>
-  <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
-  <meta name="description" content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport." />
+  <title>ion-picker: Display a list of options in columns</title>
+  <meta name="description" content="A Picker displays one or more columns with options for users to choose from." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
-<EncapsulationPill type="scoped" />
+<EncapsulationPill type="shadow" />
 
-A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+A Picker displays one or more columns with options for users to choose from.
 
-## Single Column
+import Basic from '@site/static/usage/v8/picker/basic/index.md';
 
-Display a list of options in a single, scrollable column.
+<Basic />
 
-import SingleColumn from '@site/static/usage/picker/single-column/index.md';
+## Prefix & Suffix Content
 
-<SingleColumn />
+Use the `prefix` and `suffix` slots to add additional content to the picker.
 
+import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
 
-## Multiple Columns
+<PrefixSuffix />
 
-Display multiple columns of different options.
+## Theming
 
-import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
+### CSS Variables
 
-<MultipleColumn />
+The picker highlight and fade can be customized using CSS variables on `ion-picker`. Developers can customize the individual appearance of `ion-picker-column-options` by targeting them directly and using host level styling.
 
-## Interfaces
+import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.md';
 
-### PickerButton
+<CSSProps />
 
-```typescript
-interface PickerButton {
-  text?: string;
-  role?: string;
-  cssClass?: string | string[];
-  handler?: (value: any) => boolean | void;
-}
-```
+## Picker in Modal
 
-### PickerColumn
+Pickers can be displayed inside of overlays, such as `ion-modal` to create a picker experience with confirmation or cancellation buttons.
 
-```typescript
-interface PickerColumn {
-  name: string;
-  align?: string;
-  selectedIndex?: number;
-  prevSelected?: number;
-  prefix?: string;
-  suffix?: string;
-  options: PickerColumnOption[];
-  cssClass?: string | string[];
-  columnWidth?: string;
-  prefixWidth?: string;
-  suffixWidth?: string;
-  optionsWidth?: string;
-}
-```
+import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
-### PickerColumnOption
-
-```typescript
-interface PickerColumnOption {
-  text?: string;
-  value?: any;
-  disabled?: boolean;
-  duration?: number;
-  transform?: string;
-  selected?: boolean;
-}
-```
-
-### PickerOptions
-
-```typescript
-interface PickerOptions {
-  columns: PickerColumn[];
-  buttons?: PickerButton[];
-  cssClass?: string | string[];
-  showBackdrop?: boolean;
-  backdropDismiss?: boolean;
-  animated?: boolean;
-
-  mode?: Mode;
-  keyboardClose?: boolean;
-  id?: string;
-  htmlAttributes?: { [key: string]: any };
-
-  enterAnimation?: AnimationBuilder;
-  leaveAnimation?: AnimationBuilder;
-}
-```
-
-
-
-
-## Usage
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-
-
-<TabItem value="angular">
-
-```html
-<ion-button expand="block" (click)="presentPicker()">Show Picker</ion-button>
-```
-
-```ts
-import { Component } from '@angular/core';
-import { PickerController } from '@ionic/angular';
-@Component({
-  selector: 'app-picker-example',
-  template: 'picker-example.component.html'
-})
-export class PickerExample {
-  private selectedAnimal: string;
-  constructor(private pickerController: PickerController) { }
+<ModalExample />
   
-  async presentPicker() {
-    const picker = await this.pickerController.create({
-      buttons: [
-        {
-          text: 'Confirm',
-          handler: (selected) => {
-            this.selectedAnimal = selected.animal.value;
-          },
-        }
-      ],
-      columns: [
-        {
-          name: 'animal',
-          options: [
-            { text: 'Dog', value: 'dog' },
-            { text: 'Cat', value: 'cat' },
-            { text: 'Bird', value: 'bird' },
-          ]
-        }
-      ]
-    });
-    await picker.present();
-  }
-}
-```
+## Accessibility
 
-</TabItem>
+### Screen Readers
 
-<TabItem value="react">
+Picker supports navigation using a screen reader by implementing the [`slider` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role) on each [Picker Column](./picker-column). The following gestures can be used to navigate the Picker.
 
-```tsx
-/* Using with useIonPicker Hook */
+| Gesture | Function |
+| - | - |
+| Swipe Left | Move focus to the previous Picker Column. |
+| Swipe Right | Move focus to the next Picker Column. |
+| Swipe Up | Select the next option in the Picker Column. |
+| Swipe Down | Select the previous option in the Picker Column. |
+| Double Tap and Slide Up/Down | Adjust the selected option in the Picker Column. Can be used as an alternative to swiping up and down. |
 
-import React, { useState } from 'react';
-import { IonButton, IonContent, IonPage, useIonPicker } from '@ionic/react';
+:::caution
+The Swipe Up and Swipe Down gestures rely on the correct key events being synthesized as noted on the [`slider` documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role). [Chromium-based browsers do not synthesize keyboard events correctly](https://issues.chromium.org/issues/40816094), but the "Double Tap and Slide Up/Down" gesture can be used as an alternative until this has been implemented in Chromium-based browsers.
+:::
 
-const PickerExample: React.FC = () => {
-  const [present] = useIonPicker();
-  const [value, setValue] = useState('');
-  return (
-    <IonPage>
-      <IonContent>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present({
-              buttons: [
-                {
-                  text: 'Confirm',
-                  handler: (selected) => {
-                    setValue(selected.animal.value)
-                  },
-                },
-              ],
-              columns: [
-                {
-                  name: 'animal',
-                  options: [
-                    { text: 'Dog', value: 'dog' },
-                    { text: 'Cat', value: 'cat' },
-                    { text: 'Bird', value: 'bird' },
-                  ],
-                },
-              ],
-            })
-          }
-        >
-          Show Picker
-        </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present(
-              [
-                {
-                  name: 'animal',
-                  options: [
-                    { text: 'Dog', value: 'dog' },
-                    { text: 'Cat', value: 'cat' },
-                    { text: 'Bird', value: 'bird' },
-                  ],
-                },
-                {
-                  name: 'vehicle',
-                  options: [
-                    { text: 'Car', value: 'car' },
-                    { text: 'Truck', value: 'truck' },
-                    { text: 'Bike', value: 'bike' },
-                  ],
-                },
-              ],
-              [
-                {
-                  text: 'Confirm',
-                  handler: (selected) => {
-                    setValue(`${selected.animal.value}, ${selected.vehicle.value}`)
-                  },
-                },
-              ]
-            )
-          }
-        >
-          Show Picker using params
-        </IonButton>
-        {value && (
-          <div>Selected Value: {value}</div>
-        )}
-      </IonContent>
-    </IonPage>
-  );
-};
-```
+### Keyboard Navigation
 
-</TabItem>
+Each [Picker Column](./picker-column) can be navigated using the keyboard when focused.
 
-
-<TabItem value="vue">
-
-```vue
-<template>
-  <div>
-    <ion-button @click="openPicker">SHOW PICKER</ion-button>
-    <p v-if="picked.animal">picked: {{ picked.animal.text }}</p>
-  </div>
-</template>
-
-<script>
-import { IonButton, pickerController } from "@ionic/vue";
-export default {
-  components: {
-    IonButton,
-  },
-  data() {
-    return {
-      pickingOptions: {
-        name: "animal",
-        options: [
-          { text: "Dog", value: "dog" },
-          { text: "Cat", value: "cat" },
-          { text: "Bird", value: "bird" },
-        ],
-      },
-      picked: {
-        animal: "",
-      },
-    };
-  },
-  methods: {
-    async openPicker() {
-      const picker = await pickerController.create({
-        columns: [this.pickingOptions],
-        buttons: [
-          {
-            text: "Cancel",
-            role: "cancel",
-          },
-          {
-            text: "Confirm",
-            handler: (value) => {
-              this.picked = value;
-              console.log(`Got Value ${value}`);
-            },
-          },
-        ],
-      });
-      await picker.present();
-    },
-  },
-};
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
+| Key                | Function                                                     |
+| ------------------ | ------------------------------------------------------------ |
+| `ArrowUp` | Scroll to the previous option. |
+| `ArrowDown` | Scroll to the next option. |
+| `PageUp` | Scroll up by more than one option. |
+| `PageDown` | Scroll down by more than one option. | 
+| `Home` | Scroll to the first option. |
+| `End` | Scroll to the last option. |
 
 ## Properties
 <Props />

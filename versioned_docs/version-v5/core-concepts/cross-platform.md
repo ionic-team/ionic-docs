@@ -1,5 +1,5 @@
 ---
-disableHtmlPreviews: true
+title: Cross Platform
 ---
 
 # Cross Platform

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+    <style>
+      ion-note {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Example</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content color="light">
+        <ion-list inset="true">
+          <ion-item>
+            <ion-input label="First Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Last Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-toggle>
+              <ion-label>Allow Notifications</ion-label>
+              <ion-note color="medium">Unsubscribe at any time</ion-note>
+            </ion-toggle>
+          </ion-item>
+        </ion-list>
+
+        <ion-list inset="true">
+          <ion-item>
+            <ion-textarea label="Comments" label-placement="floating" rows="5"></ion-textarea>
+          </ion-item>
+        </ion-list>
+
+        <ion-note color="medium" class="ion-margin-horizontal">
+          Your comments will be kept anonymous and will only be used to improve the reliability of our products.
+        </ion-note>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

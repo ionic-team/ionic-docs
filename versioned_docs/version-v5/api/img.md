@@ -7,6 +7,13 @@ sidebar_label: 'ion-img'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/img/props.md';
+import Events from '@ionic-internal/component-api/v5/img/events.md';
+import Methods from '@ionic-internal/component-api/v5/img/methods.md';
+import Parts from '@ionic-internal/component-api/v5/img/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/img/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v5/img/slots.md';
+
 # ion-img
 
 Img is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.
@@ -151,34 +158,24 @@ export class ImgExample {
 
 ## Properties
 
-### alt
-
-|                 |                                                                                                                                                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | This attribute defines the alternative text describing the image.<br />Users will see this text displayed if the image URL is wrong,<br />the image is not in one of the supported formats, or if the image is not yet downloaded. |
-| **Attribute**   | `alt`                                                                                                                                                                                                                              |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                              |
-| **Default**     | `undefined`                                                                                                                                                                                                                        |
-
-### src
-
-|                 |                                                                     |
-| --------------- | ------------------------------------------------------------------- |
-| **Description** | The image URL. This attribute is mandatory for the `<img>` element. |
-| **Attribute**   | `src`                                                               |
-| **Type**        | `string \| undefined`                                               |
-| **Default**     | `undefined`                                                         |
+<Props />
 
 ## Events
 
-| Name             | Description                                 |
-| ---------------- | ------------------------------------------- |
-| `ionError`       | Emitted when the img fails to load          |
-| `ionImgDidLoad`  | Emitted when the image has finished loading |
-| `ionImgWillLoad` | Emitted when the img src has been set       |
+<Events />
+
+## Methods
+
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name    | Description              |
-| ------- | ------------------------ |
-| `image` | The inner `img` element. |
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

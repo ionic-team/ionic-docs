@@ -1,6 +1,6 @@
-# Stackblitz
+# StackBlitz
 
-This directory contains the source files for generating the individual framework targets for a playground examples. The contents of the files will be loaded and injected into the Stackblitz example that is opened from the Playground.
+This directory contains the source files for generating the individual framework targets for a playground examples. The contents of the files will be loaded and injected into the StackBlitz example that is opened from the Playground.
 
 ## Angular
 
@@ -35,3 +35,10 @@ This directory contains the source files for generating the individual framework
 | `main.js`        | Initializes Ionic Vue and imports global styles.              |
 | `package.json`   | Project specific dependencies to create an example with Vite. |
 | `vite.config.js` | Vite configuration file.                                      |
+
+
+## Dotfiles
+
+Dotfiles must be saved without the dot otherwise they will not be fetched correctly. However, when creating the StackBlitz project the dot can be used.
+
+For example, if you had an `.eslintrc.js` file you would save it as `eslintrc.js` in this repo. When creating the StackBlitz project the contents of that file can then be saved as `.eslintrc.js`

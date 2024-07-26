@@ -10,13 +10,13 @@ Given the reality of time and resource restraints as well as the desire to keep 
 
 The current status of each Ionic Framework version is:
 
-| Version |        Status         |   Released   | Maintenance Ends | Ext. Support Ends |
-| :-----: | :-------------------: | :----------: | :--------------: | :---------------: |
-|   V5    |      **Active**       | Feb 11, 2020 |       TBD        |        TBD        |
-|   V4    |      Maintenance      | Jan 23, 2019 |   Aug 11, 2020   |        TBD        |
-|   V3    | Extended Support Only | Apr 5, 2017  |   Oct 30, 2019   |   Aug 11, 2020    |
-|   V2    |    End of Support     | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
-|   V1    |    End of Support     | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
+| Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
+| :-----: | :------------: | :----------: | :--------------: | :---------------: |
+|   V5    | End of Support | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
+|   V4    | End of Support | Jan 23, 2019 |   Aug 11, 2020   |   Sept 30, 2022   |
+|   V3    | End of Support | Apr 5, 2017  |   Oct 30, 2019   |   Aug 11, 2020    |
+|   V2    | End of Support | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
+|   V1    | End of Support | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
 
 - **Maintenance**: Only critical bug and security fixes. No major feature improvements.
 - **Extended Support**: For teams and organizations that require additional long term support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
@@ -62,18 +62,18 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 |      V3      | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
 
 - Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](https://ionic.io/docs/premier-plugins/setup#install-tooling)
-- For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins)
+- For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
 - If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
 
 ### Ionic Platform & Products (Cont.)
 
 |  Framework   |      Ionic Studio       | Ionic Native Community Plugins\* |
 | :----------: | :---------------------: | :------------------------------: |
-| V5 - Angular |  `@ionic/angular` 5.X   |        @awesome-cordova-plugins 5.X         |
-|  V5 - React  | Not currently supported |       @awesome-cordova-plugins 5.X\*        |
-| V4 - Angular |  `@ionic/angular` 5.X   |        @awesome-cordova-plugins 5.X         |
-|  V4 - React  | Not currently supported |       @awesome-cordova-plugins 5.X\*        |
-|      V3      | Not currently supported |        @awesome-cordova-plugins 4.X         |
+| V5 - Angular |  `@ionic/angular` 5.X   |   @awesome-cordova-plugins 5.X   |
+|  V5 - React  | Not currently supported |  @awesome-cordova-plugins 5.X\*  |
+| V4 - Angular |  `@ionic/angular` 5.X   |   @awesome-cordova-plugins 5.X   |
+|  V4 - React  | Not currently supported |  @awesome-cordova-plugins 5.X\*  |
+|      V3      | Not currently supported |   @awesome-cordova-plugins 4.X   |
 
 - Wrappers (and their associated plugins) are community maintained.
 - \*Cordova plugin support with Ionic Native and `@ionic/react` can be achieved using the [vanilla JavaScript implementation](../native.md#vanilla-javascript)

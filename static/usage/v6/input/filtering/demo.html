@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-list>
+            <ion-item>
+              <ion-label>Alphanumeric Characters</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const input = document.querySelector('ion-input');
+      input.addEventListener('ionInput', (ev) => {
+        const value = ev.target.value;
+
+        // Removes non alphanumeric characters
+        input.value = value.replace(/[^a-zA-Z0-9]+/g, '');
+      });
+    </script>
+  </body>
+</html>

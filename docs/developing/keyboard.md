@@ -2,7 +2,6 @@
 title: Keyboard
 ---
 
-import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -28,77 +27,9 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 ### Usage
 
-````mdx-code-block
-<Tabs
-  defaultValue="javascript"
-  groupId="framework"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.md';
 
-```html
-<ion-item>
-  <ion-label>Username or Email</ion-label>
-  <ion-input inputmode="email"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Enter a number</ion-label>
-  <ion-textarea inputmode="numeric"></ion-textarea>
-</ion-item>
-```
-</TabItem>
-<TabItem value="angular">
-
-```html
-<ion-item>
-  <ion-label>Username or Email</ion-label>
-  <ion-input inputmode="email"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Enter a number</ion-label>
-  <ion-textarea inputmode="numeric"></ion-textarea>
-</ion-item>
-```
-</TabItem>
-<TabItem value="react">
-
-```html
-<IonItem>
-  <IonLabel>Username or Email</IonLabel>
-  <IonInput inputmode="email"></IonInput>
-</IonItem>
-
-<IonItem>
-  <IonLabel>Enter a number</IonLabel>
-  <IonTextarea inputmode="numeric"></IonTextarea>
-</IonItem>
-```
-</TabItem>
-<TabItem value="vue">
-
-```html
-<ion-item>
-  <ion-label>Username or Email</ion-label>
-  <ion-input inputmode="email"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Enter a number</ion-label>
-  <ion-textarea inputmode="numeric"></ion-textarea>
-</ion-item>
-```
-</TabItem>
-</Tabs>
-````
-
-<Codepen user="ionic" slug="abvJVVv" height="400" />
+<Inputmode />
 
 :::note
 The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
@@ -114,57 +45,9 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ### Usage
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
 
-```html
-<ion-item>
-  <ion-label>Enter search query</ion-label>
-  <ion-input enterkeyhint="search" type="search"></ion-input>
-</ion-item>
-```
-</TabItem>
-<TabItem value="angular">
-
-```html
-<ion-item>
-  <ion-label>Enter search query</ion-label>
-  <ion-input enterkeyhint="search" type="search"></ion-input>
-</ion-item>
-```
-</TabItem>
-<TabItem value="react">
-
-```html
-<IonItem>
-  <IonLabel>Enter search query</IonLabel>
-  <IonInput enterkeyhint="search" type="search"></IonInput>
-</IonItem>
-```
-</TabItem>
-<TabItem value="vue">
-
-```html
-<ion-item>
-  <ion-label>Enter search query</ion-label>
-  <ion-input enterkeyhint="search" type="search"></ion-input>
-</ion-item>
-```
-</TabItem>
-</Tabs>
-````
-
-<Codepen user="ionic" slug="GRpWyRB" height="350" />
+<Enterkeyhint />
 
 :::note
 The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
@@ -176,7 +59,7 @@ By default the keyboard theme is determined by the OS. For example, if dark mode
 
 When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## Hiding the Accessory Bar
 
@@ -184,7 +67,7 @@ When running any kind of web based application, iOS will show an accessory bar a
 
 When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
 
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## Keyboard Lifecycle Events
 
@@ -199,6 +82,7 @@ Detecting the presence of an on-screen keyboard is useful for adjusting the posi
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -220,6 +104,25 @@ window.addEventListener('ionKeyboardDidHide', () => {
 
 ```tsx
 import { Platform } from '@ionic/angular';
+
+...
+
+constructor(private platform: Platform) {
+  this.platform.keyboardDidShow.subscribe(ev => {
+    const { keyboardHeight } = ev;
+    // Do something with the keyboard height such as translating an input above the keyboard.
+  });
+
+  this.platform.keyboardDidHide.subscribe(() => {
+    // Move input back to original location
+  });
+}
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Platform } from '@ionic/angular/standalone';
 
 ...
 
