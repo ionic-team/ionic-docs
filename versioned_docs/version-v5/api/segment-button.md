@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/segment-button/props.md';
 import Events from '@ionic-internal/component-api/v5/segment-button/events.md';
 import Methods from '@ionic-internal/component-api/v5/segment-button/methods.md';
 import Parts from '@ionic-internal/component-api/v5/segment-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/segment-button/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/segment-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/segment-button/slots.md';
 
 # ion-segment-button

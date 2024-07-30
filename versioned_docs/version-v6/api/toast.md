@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v6/toast/props.md';
 import Events from '@ionic-internal/component-api/v6/toast/events.md';
 import Methods from '@ionic-internal/component-api/v6/toast/methods.md';
 import Parts from '@ionic-internal/component-api/v6/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/toast/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v6/toast/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/toast/slots.md';
 
 <head>

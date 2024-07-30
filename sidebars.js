@@ -173,7 +173,6 @@ module.exports = {
         'vue/platform',
         'vue/pwa',
         'vue/storage',
-        'vue/testing',
         'vue/troubleshooting',
         'vue/performance',
       ],

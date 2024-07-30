@@ -84,7 +84,7 @@ CSS 変数の値は、[getPropertyValue()](https://developer.mozilla.org/en-US/d
 
 ```js
 const el = document.querySelector('.fancy-button');
-const color = el.style.getPropertyValue('--charcoal');
+const color = el.style.getPropertyValue('--background');
 ```
 
 ## Ionic 変数

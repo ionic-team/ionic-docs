@@ -8,7 +8,7 @@ import Props from '@ionic-internal/component-api/v8/toast/props.md';
 import Events from '@ionic-internal/component-api/v8/toast/events.md';
 import Methods from '@ionic-internal/component-api/v8/toast/methods.md';
 import Parts from '@ionic-internal/component-api/v8/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/toast/slots.md';
 
 <head>
@@ -76,10 +76,10 @@ import PositionAnchor from '@site/static/usage/v8/toast/position-anchor/index.md
 
 `swipeGesture`プロパティを使用することで、トーストをスワイプして消すことができます。この機能は位置を認識します。つまり、ユーザがスワイプする方向は `position` プロパティの値に基づいて変化します。さらに、ユーザーがスワイプする距離は `positionAnchor` プロパティによって影響を受ける可能性があります。
 
-import SwipeGesture from '@site/static/usage/v7/toast/swipe-gesture/index.md';
+import SwipeGesture from '@site/static/usage/v8/toast/swipe-gesture/index.md';
 
 <SwipeGesture />
-  
+
 ## レイアウト
 
 トースト内のボタンコンテナは、`layout`プロパティを使用して、メッセージと同じ行に表示するか、別々の行に積み重ねて表示することができます。スタックレイアウトは、長いテキスト値を持つボタンで使用する必要があります。さらに、スタックトーストレイアウトのボタンは `side` の値として `start` または `end` のどちらかを使用できますが、両方を使用することはできません。

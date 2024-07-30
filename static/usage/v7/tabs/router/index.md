@@ -1,12 +1,14 @@
 import Playground from '@site/src/components/global/Playground';
 
-import javascript from './javascript.md';
+import javascript_index_html from './javascript/index_html.md';
+import javascript_index_ts from './javascript/index_ts.md';
 
 import angular_app_component_html from './angular/app_component_html.md';
 import angular_app_module_ts from './angular/app_module_ts.md';
 import angular_app_routing_module_ts from './angular/app_routing_module_ts.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 import angular_home_page_module_ts from './angular/home_page_module_ts.md';
 import angular_home_page_component_ts from './angular/home_page_component_ts.md';
@@ -42,12 +44,18 @@ import react_library_page_tsx from './react/library_page_tsx.md';
 import react_search_page_tsx from './react/search_page_tsx.md';
 
 <Playground
-  version={7}
+  version="7"
   code={{
-    javascript,
+    javascript: {
+      files: {
+        'index.html': javascript_index_html,
+        'index.ts': javascript_index_ts,
+      },
+    },
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
         'src/app/home/home-page.component.ts': angular_home_page_component_ts,
         'src/app/home/home-page.component.html': angular_home_page_component_html,
         'src/global.css': angular_global_css,

@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/radio/props.md';
 import Events from '@ionic-internal/component-api/v8/radio/events.md';
 import Methods from '@ionic-internal/component-api/v8/radio/methods.md';
 import Parts from '@ionic-internal/component-api/v8/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
 
 <head>
@@ -40,7 +40,7 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
-import UsingComparewith from '@site/static/usage/v7/radio/using-comparewith/index.md';
+import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/index.md';
 
 <UsingComparewith />
 
@@ -110,7 +110,7 @@ Ionic 7.0では、よりシンプルなラジオ構文が導入されました�
 import Migration from '@site/static/usage/v8/radio/migration/index.md';
 
 <Migration />
-  
+
 
 :::note
 Ionic の過去のバージョンでは、`ion-radio` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-radio` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-radio`が正しく機能するためには、`ion-item`はもはや必須ではありません。

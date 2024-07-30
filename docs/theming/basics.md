@@ -31,9 +31,7 @@ Ionic は、2 つの **modes** をもっており、これらはプラットフ�
 
 ## CSS Variables
 
-Ionic コンポーネントは、 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSS properties (variables)</a>を使ってテーマ化されています。CSS 変数は、動的な値を静的な CSS で利用することができます。これは今までは Sass のような CSS プリプロセッサを必要としていたものです。アプリケーションの外観は、[Ionic Variables](/docs/theming/css-variables#ionic-variables)のいずれかの値を変更することで簡単に変更できます。
-
-Ionic Framework のコンポーネントは、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSS プロパティ（変数）</a>を使ってテーマ化されています。CSS 変数は、静的な言語に対して動的な値を追加するものです。これは、従来は Sass のような CSS プリプロセッサが必要だったものです。Ionic Framework が提供する[CSS Variables](css-variables.md)のいずれかの値を変更することで、アプリケーションの外観を簡単に変更することができます。
+Ionic Frameworkのコンポーネントは、 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSS custom properties (variables)</a> を使ってテーマ化されています。CSS変数は、静的な言語に動的な値を追加します。これは従来、SassのようなCSSプリプロセッサを必要とするものでした。Ionic Frameworkが提供する [CSS変数](css-variables.md) の値を変更することで、アプリケーションの外観を簡単に変更できます。
 
 ## CSS Shadow Parts
 

@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/refresher-content/props.md';
 import Events from '@ionic-internal/component-api/v5/refresher-content/events.md';
 import Methods from '@ionic-internal/component-api/v5/refresher-content/methods.md';
 import Parts from '@ionic-internal/component-api/v5/refresher-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/refresher-content/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/refresher-content/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/refresher-content/slots.md';
 
 # ion-refresher-content

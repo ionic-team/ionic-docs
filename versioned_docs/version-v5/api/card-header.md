@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v5/card-header/props.md';
 import Events from '@ionic-internal/component-api/v5/card-header/events.md';
 import Methods from '@ionic-internal/component-api/v5/card-header/methods.md';
 import Parts from '@ionic-internal/component-api/v5/card-header/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/card-header/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/card-header/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/card-header/slots.md';
 
 # ion-card-header

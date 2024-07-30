@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/textarea/props.md';
 import Events from '@ionic-internal/component-api/v8/textarea/events.md';
 import Methods from '@ionic-internal/component-api/v8/textarea/methods.md';
 import Parts from '@ionic-internal/component-api/v8/textarea/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/textarea/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/textarea/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/textarea/slots.md';
 
 <head>
@@ -67,9 +67,11 @@ import NoVisibleLabel from '@site/static/usage/v8/textarea/no-visible-label/inde
 
 Material Designでは、テキストエリアの塗りつぶしスタイルが用意されています。アイテムの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
-`fill` スタイルはテキストエリアのコンテナを視覚的に定義するため、`fill` を使用するテキストエリアは `ion-item` で使用すべきではありません。
+iOSでは、Textareasの`mode`を`md`に設定することで、Filled Textareasを使うことができます。
 
-Filled textareas can be used on iOS by setting Textarea's `mode` to `md`.
+:::warning
+Textareas that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+:::
 
 import Fill from '@site/static/usage/v8/textarea/fill/index.md';
 
@@ -121,7 +123,7 @@ In most cases, [Icon](./icon.md) components placed in these slots should have `a
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v7/textarea/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v8/textarea/start-end-slots/index.md';
 
 <StartEndSlots />
 

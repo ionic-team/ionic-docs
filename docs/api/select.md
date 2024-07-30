@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/select/props.md';
 import Events from '@ionic-internal/component-api/v8/select/events.md';
 import Methods from '@ionic-internal/component-api/v8/select/methods.md';
 import Parts from '@ionic-internal/component-api/v8/select/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/select/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/select/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/select/slots.md';
 
 <head>
@@ -135,7 +135,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v8/selec
 
 ## Justification
   
-開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
+開発者は `justify` プロパティを使って、ラベルとコントロールの行の詰め方をコントロールすることができる。
 
 import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
@@ -145,7 +145,11 @@ import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
 Material DesignはセレクトにFilledスタイルを提供します。select の `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定できます。
 
-`fill` スタイルはセレクトコンテナを視覚的に定義するので、`fill` を使用するセレクトは `ion-item` では使用しないでください。
+iOSでは、Selectの `mode` を `md` に設定することで、Filled Selectsを使うことができます。
+
+:::warning
+Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+:::
 
 import FillExample from '@site/static/usage/v8/select/fill/index.md';
 
@@ -183,7 +187,7 @@ In most cases, [Icon](./icon.md) components placed in these slots should have `a
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v7/select/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v8/select/start-end-slots/index.md';
 
 <StartEndSlots />
 

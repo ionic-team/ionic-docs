@@ -44,4 +44,4 @@ export const MyComponent: React.FC = () => {
 
 In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using the `key` attribute, we pass the `item.id` for each object. This `id` is used to provide a stable identity for each loop element.
 
-For more information on how React renders lists using `key` see: https://reactjs.org/docs/lists-and-keys.html
+For more information on how React renders lists using `key` see: https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
