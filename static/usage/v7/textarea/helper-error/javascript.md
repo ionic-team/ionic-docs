@@ -27,7 +27,7 @@
 
     if (value === '') return;
 
-    validateEmail(value) ? textarea.classList.add('ion-valid') : input.classList.add('ion-invalid');
+    validateEmail(value) ? textarea.classList.add('ion-valid') : textarea.classList.add('ion-invalid');
   };
 
   const markTouched = () => {
