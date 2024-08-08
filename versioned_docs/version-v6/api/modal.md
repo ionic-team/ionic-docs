@@ -225,11 +225,11 @@ interface ModalCustomEvent extends CustomEvent {
 
 ## Accessibility
 
-### Keyboard Navigation
+### Keyboard Interactions
 
-| Key   | Function            |
-| ----- | ------------------- |
-| `Esc` | Dismisses the modal |
+| Key             | Description         |
+| --------------- | ------------------- |
+| <kbd>Esc</kbd>  | Dismisses the modal |
 
 ### Labels
 

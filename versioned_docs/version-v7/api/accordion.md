@@ -173,19 +173,19 @@ import AccessibilityAnimations from '@site/static/usage/v7/accordion/accessibili
 
 <AccessibilityAnimations />
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
 
-| Key                | Function                                                                                                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `Space` or `Enter` | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component.                                                                |
-| `Tab`              | Moves focus to the next focusable element.                                                                                                                                           |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.                                                                                                                                       |
-| `Down Arrow`       | - When focus is on an accordion header, moves focus to the next accordion header. <br />- When focus is on the last accordion header, moves focus to the first accordion header.     |
-| `Up Arrow`         | - When focus is on an accordion header, moves focus to the previous accordion header. <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
-| `Home`             | When focus is on an accordion header, moves focus to the first accordion header.                                                                                                     |
-| `End`              | When focus is on an accordion header, moves focus to the last accordion header.                                                                                                      |
+| Key                                  | Description                                                  |
+| ------------------------------------ | ------------------------------------------------------------ |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component. |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.                   |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element.               |
+| <kbd>Down Arrow</kbd>                | - When focus is on an accordion header, moves focus to the next accordion header.  <br />- When focus is on the last accordion header, moves focus to the first accordion header. |
+| <kbd>Up Arrow</kbd>                  | - When focus is on an accordion header, moves focus to the previous accordion header.  <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
+| <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header. |
+| <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header. |
 
 ## Performance
 
