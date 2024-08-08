@@ -295,8 +295,8 @@ These keyboard interactions apply to all `ion-select` elements when the followin
 - The select is focused.
 - The select is not disabled.
 
-| Key                   | Description                                                  |
-| --------------------- | ------------------------------------------------------------ |
+| Key                | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
 | <kbd>Enter</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
 | <kbd>Space</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
 
