@@ -227,9 +227,9 @@ interface ModalCustomEvent extends CustomEvent {
 
 ### Keyboard Interactions
 
-| Key             | Description         |
-| --------------- | ------------------- |
-| <kbd>Esc</kbd>  | Dismisses the modal |
+| Key            | Description         |
+| -------------- | ------------------- |
+| <kbd>Esc</kbd> | Dismisses the modal |
 
 ### Labels
 
