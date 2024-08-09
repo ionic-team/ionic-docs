@@ -265,8 +265,8 @@ When an `<ion-item>` renders a native `<button>` element, the keyboard interacti
 
 | Key              | Description                                                                 |
 | ---------------- | --------------------------------------------------------------------------- |
-| <kbd>Enter</kbd> | Activates the item, triggering its `click` event. If the item is of type `submit` within a form, it submits the form.    |
-| <kbd>Space</kbd> | Activates the item, triggering its `click` event. Does not submit the form, even if the item has `type` set to `submit`. |
+| <kbd>Enter</kbd> | Activates the item, triggering its `click` event. If the item is within a form and has `type` set to `"submit"`, it submits the form. |
+| <kbd>Space</kbd> | Activates the item, triggering its `click` event. Does not submit the form, even if the item `type` is `"submit"`.                    |
 
 #### Anchor
 
