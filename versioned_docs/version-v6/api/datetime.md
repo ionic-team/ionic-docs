@@ -382,41 +382,41 @@ dates in JavaScript.
 
 ## Accessibility
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 `ion-datetime` has full keyboard support for navigating between focusable elements inside of the component. The following table details what each key does:
 
-| Key                | Function                                       |
-| ------------------ | ---------------------------------------------- |
-| `Tab`              | Moves focus to the next focusable element.     |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element. |
-| `Space` or `Enter` | Clicks the focusable element.                  |
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.     |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element. |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Clicks the focusable element.                  |
 
 #### Date Grid
 
-| Key                  | Function                                          |
-| -------------------- | ------------------------------------------------- |
-| `ArrowUp`            | Moves focus to the same day of the previous week. |
-| `ArrowDown`          | Moves focus to the same day of the next week.     |
-| `ArrowRight`         | Moves focus to the next day.                      |
-| `ArrowLeft`          | Moves focus to the previous day.                  |
-| `Home`               | Moves focus to the first day of the current week. |
-| `End`                | Moves focus to the last day of the current week.  |
-| `PageUp`             | Changes the grid of dates to the previous month.  |
-| `PageDown`           | Changes the grid of dates to the next month.      |
-| `Shift` + `PageUp`   | Changes the grid of dates to the previous year.   |
-| `Shift` + `PageDown` | Changes the grid of dates to the next year.       |
+| Key                                    | Description                                       |
+| -------------------------------------- | ------------------------------------------------- |
+| <kbd>ArrowUp</kbd>                     | Moves focus to the same day of the previous week. |
+| <kbd>ArrowDown</kbd>                   | Moves focus to the same day of the next week.     |
+| <kbd>ArrowRight</kbd>                  | Moves focus to the next day.                      |
+| <kbd>ArrowLeft</kbd>                   | Moves focus to the previous day.                  |
+| <kbd>Home</kbd>                        | Moves focus to the first day of the current week. |
+| <kbd>End</kbd>                         | Moves focus to the last day of the current week.  |
+| <kbd>PageUp</kbd>                      | Changes the grid of dates to the previous month.  |
+| <kbd>PageDown</kbd>                    | Changes the grid of dates to the next month.      |
+| <kbd>Shift</kbd> + <kbd>PageUp</kbd>   | Changes the grid of dates to the previous year.   |
+| <kbd>Shift</kbd> + <kbd>PageDown</kbd> | Changes the grid of dates to the next year.       |
 
 #### Time, Month, and Year Wheels
 
 When using the time wheel picker, you can use the number keys to select hour and minute values when the columns are focused.
 
-| Key         | Function                     |
-| ----------- | ---------------------------- |
-| `ArrowUp`   | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item.     |
-| `Home`      | Scroll to the first item.    |
-| `End`       | Scroll to the last item.     |
+| Key                  | Function                     |
+| -------------------- | ---------------------------- |
+| <kbd>ArrowUp</kbd>   | Scroll to the previous item. |
+| <kbd>ArrowDown</kbd> | Scroll to the next item.     |
+| <kbd>Home</kbd>      | Scroll to the first item.    |
+| <kbd>End</kbd>       | Scroll to the last item.     |
 
 ## Interfaces
 
