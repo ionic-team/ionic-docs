@@ -27,17 +27,9 @@ Unlike Router Outlet, Nav is not tied to a particular router. This means that if
 
 ## Using NavLink
 
-NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating.
-
-import NavLinkExample from '@site/static/usage/v8/nav/nav-link/index.md';
-
-<NavLinkExample />
-
-## Using NavLink
-
 NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating. 
 
-import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
+import NavLinkExample from '@site/static/usage/v8/nav/nav-link/index.md'; 
 
 <NavLinkExample />
 
@@ -51,7 +43,7 @@ The example below uses a reference to Nav and the public method APIs to push and
 
 :::
 
-import ModalNavigationExample from '@site/static/usage/nav/modal-navigation/index.md';
+import ModalNavigationExample from '@site/static/usage/v8/nav/modal-navigation/index.md';
 
 <ModalNavigationExample />
 
