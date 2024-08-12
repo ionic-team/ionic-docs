@@ -65,17 +65,17 @@ import CSSProps from '@site/static/usage/v7/segment/theming/css-properties/index
 
 ## Accessibility
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 The component has full keyboard support for navigating between and selecting `ion-segment-button` elements. By default, keyboard navigation will only focus `ion-segment-button` elements, but you can use the `selectOnFocus` property to ensure that they get selected on focus as well. The following table details what each key does:
 
-| Key                | Function                                       |
-| ------------------ | ---------------------------------------------- |
-| `ArrowRight`       | Focuses the next focusable element.            |
-| `ArrowLeft`        | Focuses the previous focusable element.        |
-| `Home`             | Focuses the first focusable element.           |
-| `End`              | Focuses the last focusable element.            |
-| `Space` or `Enter` | Selects the element that is currently focused. |
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>ArrowRight</kbd>                | Focuses the next focusable element.            |
+| <kbd>ArrowLeft</kbd>                 | Focuses the previous focusable element.        |
+| <kbd>Home</kbd>                      | Focuses the first focusable element.           |
+| <kbd>End</kbd>                       | Focuses the last focusable element.            |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Selects the element that is currently focused. |
 
 ## Interfaces
 

@@ -98,7 +98,7 @@ Here's a simplified example illustrating how a child component can interact with
 import CanDismissChildStateExample from '@site/static/usage/v8/modal/can-dismiss/child-state/index.md';
 
 <CanDismissChildStateExample />
- 
+
 ## Card Modal
 
 Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
@@ -170,7 +170,7 @@ Modals are presented at the root of your application so they overlay your entire
  `ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
 :::
 
-``` 
+```
 ion-modal.stack-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
@@ -245,11 +245,11 @@ interface ModalCustomEvent extends CustomEvent {
 
 ## Accessibility
 
-### Keyboard Navigation
+### Keyboard Interactions
 
-| Key   | Function            |
-| ----- | ------------------- |
-| `Esc` | Dismisses the modal |
+| Key             | Description         |
+| --------------- | ------------------- |
+| <kbd>Esc</kbd>  | Dismisses the modal |
 
 
 ### Labels
