@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav | NavLink</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nav | NavLink</title>
-  <link rel="stylesheet" href="../../common.css" />
-  <script src="../../common.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
-</head>
+  <body>
+    <ion-app>
+      <ion-nav root="page-one"></ion-nav>
+    </ion-app>
 
-<body>
-  <ion-app>
-    <ion-nav root="page-one"></ion-nav>
-  </ion-app>
-
-  <script>
-    class PageOne extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
+    <script>
+      class PageOne extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = `
         <ion-header>
           <ion-toolbar>
             <ion-title>Page One</ion-title>
@@ -33,11 +32,11 @@
           </ion-nav-link>
         </ion-content>
       `;
+        }
       }
-    }
-    class PageTwo extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
+      class PageTwo extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = `
         <ion-header>
           <ion-toolbar>
             <ion-buttons slot="start">
@@ -55,11 +54,11 @@
           </div>
         </ion-content>
       `;
+        }
       }
-    }
-    class PageThree extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
+      class PageThree extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = `
         <ion-header>
           <ion-toolbar>
             <ion-buttons slot="start">
@@ -72,13 +71,11 @@
           <h1>Page Three</h1>
         </ion-content>
       `;
+        }
       }
-    }
-    customElements.define('page-one', PageOne);
-    customElements.define('page-two', PageTwo);
-    customElements.define('page-three', PageThree);
-  </script>
-
-</body>
-
+      customElements.define('page-one', PageOne);
+      customElements.define('page-two', PageTwo);
+      customElements.define('page-three', PageThree);
+    </script>
+  </body>
 </html>
