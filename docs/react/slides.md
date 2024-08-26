@@ -159,7 +159,7 @@ To begin, we need to import the modules and their corresponding CSS files from t
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -191,7 +191,7 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -223,7 +223,7 @@ Finally, we can turn these features on by using the appropriate properties:
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -272,7 +272,7 @@ We can install the `IonicSlides` module by importing it from `@ionic/react` and 
 import React from 'react';
 import { IonContent, IonPage, IonicSlides } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
