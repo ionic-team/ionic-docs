@@ -24,6 +24,10 @@ The `ion-tabs` component does not have any styling and works as a router outlet 
 
 Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.
 
+:::warning
+Using `IonTabs` within React requires the `IonTabBar` component as a direct child of `IonTabs`.
+:::
+
 The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
 
 ## Basic Usage
