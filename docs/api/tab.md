@@ -22,7 +22,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
 
 :::note
-This component can only be used when the `ion-tabs` component is set for [basic usage](./tabs.md#basic-usage). When setting up tabs with routing, the `ion-tab` component cannot be used.
+Angular, React, and Vue can only use this component when the `ion-tabs` component is set for [basic usage](./tabs.md#basic-usage). When setting up tabs with routing, the `ion-tab` component cannot be used.
+
+Javascript can use this component when the `ion-tabs` component is set for [basic usage](./tabs.md#basic-usage) or [usage with router](./tabs.md#usage-with-router).
 :::
 
 
