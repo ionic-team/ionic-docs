@@ -26,15 +26,17 @@ Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They donâ€
 
 The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
 
-:::note Framework Support
+## Basic Usage
 
-Using `ion-tabs` within Angular, React or Vue requires the use of the `ion-router-outlet` or `ion-nav` components.
+Tabs can be used to display different content without the need to change the URL. This is useful when the tabs are not used for navigation, but rather to display different content.
 
-:::
+import Basic from '@site/static/usage/v8/tabs/basic/index.md';
+
+<Basic />
 
 ## Usage with Router
 
-Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the url. This is the most common pattern for tabs navigation.
+Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the URL. This is the most common pattern for tabs navigation.
 
 import Router from '@site/static/usage/v8/tabs/router/index.md';
 
