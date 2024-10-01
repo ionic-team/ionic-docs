@@ -28,7 +28,7 @@ Using `ion-app` enables the following behaviors:
 
 ## Programmatic Focus
 
-As mentioned earlier, the `ion-app` component provides focus utilities for Ionic components with the `ion-focusable` class. The `setFocus` method allows you to programmatically focus an element in response to user actions. However, it should not be used when the element is focused due to a keyboard event, as the focus utility will handle that automatically.
+Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
 
 import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
 
