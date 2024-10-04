@@ -466,7 +466,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 ```tsx
 import React from 'react';
 import { IonContent, IonPage, IonicSlides } from '@ionic/react';
-import { EffectFade } from 'swiper';
+import { EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -493,7 +493,7 @@ Next, we need to import the stylesheet associated with the effect:
 ```tsx
 import React from 'react';
 import { IonContent, IonPage, IonicSlides } from '@ionic/react';
-import { EffectFade } from 'swiper';
+import { EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -521,7 +521,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 ```tsx
 import React from 'react';
 import { IonContent, IonPage, IonicSlides } from '@ionic/react';
-import { EffectFade } from 'swiper';
+import { EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
