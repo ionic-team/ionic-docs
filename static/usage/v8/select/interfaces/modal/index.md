@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="8"
   size="400px"
   code={{ javascript, react, vue, angular }}
-  src="usage/v8/select/interfaces/popover/demo.html"
+  src="usage/v8/select/interfaces/modal/demo.html"
 />
