@@ -2,8 +2,8 @@
 title: "ion-segment-view"
 ---
 
-import Props from '@ionic-internal/component-api/v8.3.4-dev.11730395663.1a0f4848/segment-view/props.md';
-import Events from '@ionic-internal/component-api/v8.3.4-dev.11730395663.1a0f4848/segment-view/events.md';
+import Props from '@ionic-internal/component-api/v8/segment-view/props.md';
+import Events from '@ionic-internal/component-api/v8/segment-view/events.md';
 
 <head>
   <title>ion-segment-view: Controller element for swipeable segments</title>
