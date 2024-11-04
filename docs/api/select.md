@@ -70,7 +70,7 @@ import SingleSelectionExample from '@site/static/usage/v8/select/basic/single-se
 
 ## Multiple Selection
 
-By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert or popover overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
+By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert, popover, or modal overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
 
 :::note
 
@@ -86,7 +86,7 @@ import MultipleSelectionExample from '@site/static/usage/v8/select/basic/multipl
 
 ## Interfaces
 
-By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md), [ion-popover](popover.md), or [ion-modal](modal.md) by passing `action-sheet`, `popover`, or `modal`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
 
 ### Alert
 
@@ -106,6 +106,12 @@ import ActionSheetExample from '@site/static/usage/v8/select/interfaces/action-s
 import PopoverExample from '@site/static/usage/v8/select/interfaces/popover/index.md';
 
 <PopoverExample />
+
+### Modal
+
+import ModalExample from '@site/static/usage/v8/select/interfaces/modal/index.md';
+
+<ModalExample />
 
 ## Responding to Interaction
 
@@ -161,15 +167,19 @@ The alert supports two buttons: `Cancel` and `OK`. Each button's text can be cus
 
 The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
 
+The `modal` interface has a single `Close` button in the header. This button is only responsible for dismissing the modal. Any selections made will persist
+after clicking this button or if the modal is dismissed using an alternative method.
+
 import ButtonTextExample from '@site/static/usage/v8/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
 ## Interface Options
 
-Since select uses the alert, action sheet and popover interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
+Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), and [ion-popover docs](popover.md) for the properties that each interface accepts.
+See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
+for the properties that each interface accepts.
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
@@ -207,11 +217,13 @@ import StylingSelectExample from '@site/static/usage/v8/select/customization/sty
 
 ### Styling Select Interface
 
-Customizing the interface dialog should be done by following the Customization section in that interface's documentation:
+Customizing the interface dialog should be done by following the styling sections (CSS shadow parts, CSS custom properties, and slots) in
+that interface's documentation:
 
-- [Alert Customization](alert.md#customization)
-- [Action Sheet Customization](action-sheet.md#customization)
-- [Popover Customization](popover.md#customization)
+- [Alert](alert.md#css-shadow-parts)
+- [Action Sheet](action-sheet.md#css-shadow-parts)
+- [Popover](popover.md#css-shadow-parts)
+- [Modal](modal.md#css-shadow-parts)
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
 
@@ -304,7 +316,7 @@ These keyboard interactions apply to all `ion-select` elements when the followin
 
 Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
 
-These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-popover` elements when the overlay is presented and focused.
+These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and focused.
 
 | Key                   | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
@@ -321,7 +333,7 @@ These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-p
 
 Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
 
-These keyboard interactions apply to `ion-alert` and `ion-popover` elements when the overlay is presented and multiple selection is enabled.
+These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and multiple selection is enabled.
 
 | Key                | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
