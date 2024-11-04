@@ -49,6 +49,22 @@ import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 <Toolbar />
 
 
+## Swipeable Segments
+
+Each [segment button](./segment-button.md) can be associated with a [segment content](./segment-content.md) element that will be displayed
+when the segment is active. With this approach, each segment's content can be swiped or scrolled between and the segment will be updated
+to reflect the currently visible content.
+
+:::warning
+If no initial `value` is assigned to the `ion-segment` when using swipeable segments, the segment will default to the value of the first segment button.
+
+Segment buttons cannot be disabled when used with swipeable segments.
+:::
+
+import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
+
+<Swipeable />
+
 ## Theming
 
 ### Colors
