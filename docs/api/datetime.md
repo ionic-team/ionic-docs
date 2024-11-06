@@ -204,7 +204,7 @@ Some use cases may call for only date selection or only time selection. The `pre
 
 ### Month and Year Selection
 
-Month and year selection is available by passing `month-year`, `year-month`, `month`, or `year` to the `presentation` property.
+Month and year selection is available by passing `month-year`, `month`, or `year` to the `presentation` property.
 
 This example shows a datetime with the `month-year` configuration.
 
