@@ -29,18 +29,17 @@
   "props": [
     {
       "name": "alignment",
-      "type": "\"center\" | \"start\"",
+      "type": "\"center\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'center'",
-        "resolved": "\"center\" | \"start\"",
+        "resolved": "\"center\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
       "attr": "alignment",
       "reflectToAttr": false,
-      "docs": "How to control the alignment of the toggle and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+      "docs": "How to control the alignment of the toggle and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.\nSetting this property will change the toggle `display` to `block`.",
       "docsTags": [],
-      "default": "'center'",
       "values": [
         {
           "value": "center",
@@ -49,9 +48,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -191,18 +193,17 @@
     },
     {
       "name": "justify",
-      "type": "\"end\" | \"space-between\" | \"start\"",
+      "type": "\"end\" | \"space-between\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'end' | 'space-between'",
-        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "resolved": "\"end\" | \"space-between\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
-      "docs": "How to pack the label and toggle within a line.\n`\"start\"`: The label and toggle will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and toggle will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and toggle will appear on opposite\nends of the line with space between the two elements.",
+      "docs": "How to pack the label and toggle within a line.\n`\"start\"`: The label and toggle will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and toggle will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and toggle will appear on opposite\nends of the line with space between the two elements.\nSetting this property will change the toggle `display` to `block`.",
       "docsTags": [],
-      "default": "'space-between'",
       "values": [
         {
           "value": "end",
@@ -215,9 +216,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -360,7 +364,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the user switches the toggle on or off. Does not emit\nwhen programmatically changing the value of the `checked` property.",
+      "docs": "Emitted when the user switches the toggle on or off.\n\nThis event will not emit when programmatically setting the `checked` property.",
       "docsTags": []
     },
     {
@@ -383,62 +387,146 @@
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the toggle track"
+      "docs": "Border radius of the toggle track",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the toggle track",
+      "mode": "md"
     },
     {
       "name": "--handle-background",
       "annotation": "prop",
-      "docs": "Background of the toggle handle"
+      "docs": "Background of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-background",
+      "annotation": "prop",
+      "docs": "Background of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-background-checked",
       "annotation": "prop",
-      "docs": "Background of the toggle handle when checked"
+      "docs": "Background of the toggle handle when checked",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-background-checked",
+      "annotation": "prop",
+      "docs": "Background of the toggle handle when checked",
+      "mode": "md"
     },
     {
       "name": "--handle-border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the toggle handle"
+      "docs": "Border radius of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the toggle handle"
+      "docs": "Box shadow of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-height",
       "annotation": "prop",
-      "docs": "Height of the toggle handle"
+      "docs": "Height of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-height",
+      "annotation": "prop",
+      "docs": "Height of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the toggle handle"
+      "docs": "Maximum height of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-spacing",
       "annotation": "prop",
-      "docs": "Horizontal spacing around the toggle handle"
+      "docs": "Horizontal spacing around the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-spacing",
+      "annotation": "prop",
+      "docs": "Horizontal spacing around the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-transition",
       "annotation": "prop",
-      "docs": "Transition of the toggle handle"
+      "docs": "Transition of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-transition",
+      "annotation": "prop",
+      "docs": "Transition of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--handle-width",
       "annotation": "prop",
-      "docs": "Width of the toggle handle"
+      "docs": "Width of the toggle handle",
+      "mode": "ios"
+    },
+    {
+      "name": "--handle-width",
+      "annotation": "prop",
+      "docs": "Width of the toggle handle",
+      "mode": "md"
     },
     {
       "name": "--track-background",
       "annotation": "prop",
-      "docs": "Background of the toggle track"
+      "docs": "Background of the toggle track",
+      "mode": "ios"
+    },
+    {
+      "name": "--track-background",
+      "annotation": "prop",
+      "docs": "Background of the toggle track",
+      "mode": "md"
     },
     {
       "name": "--track-background-checked",
       "annotation": "prop",
-      "docs": "Background of the toggle track when checked"
+      "docs": "Background of the toggle track when checked",
+      "mode": "ios"
+    },
+    {
+      "name": "--track-background-checked",
+      "annotation": "prop",
+      "docs": "Background of the toggle track when checked",
+      "mode": "md"
     }
   ],
   "slots": [

@@ -278,162 +278,386 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the button"
+      "docs": "Background of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the button",
+      "mode": "md"
     },
     {
       "name": "--background-focused",
       "annotation": "prop",
-      "docs": "Background of the button when focused with the tab key"
+      "docs": "Background of the button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-focused-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the button background when focused with the tab key"
+      "docs": "Opacity of the button background when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-hover",
       "annotation": "prop",
-      "docs": "Background of the button on hover"
+      "docs": "Background of the button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the button on hover",
+      "mode": "md"
     },
     {
       "name": "--background-hover-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the background on hover"
+      "docs": "Opacity of the background on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the background on hover",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the button"
+      "docs": "Border radius of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the button",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Text color of the button"
+      "docs": "Text color of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the button",
+      "mode": "md"
     },
     {
       "name": "--color-focused",
       "annotation": "prop",
-      "docs": "Text color of the button when focused with the tab key"
+      "docs": "Text color of the button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--color-hover",
       "annotation": "prop",
-      "docs": "Text color of the button on hover"
+      "docs": "Text color of the button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Text color of the button on hover",
+      "mode": "md"
     },
     {
       "name": "--icon-font-size",
       "annotation": "prop",
-      "docs": "Font size of the button icon"
+      "docs": "Font size of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-font-size",
+      "annotation": "prop",
+      "docs": "Font size of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-font-weight",
       "annotation": "prop",
-      "docs": "Font weight of the button icon"
+      "docs": "Font weight of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-font-weight",
+      "annotation": "prop",
+      "docs": "Font weight of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-margin-bottom",
       "annotation": "prop",
-      "docs": "Bottom margin of the button icon"
+      "docs": "Bottom margin of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-margin-bottom",
+      "annotation": "prop",
+      "docs": "Bottom margin of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-margin-end",
       "annotation": "prop",
-      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon"
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-margin-end",
+      "annotation": "prop",
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-margin-start",
       "annotation": "prop",
-      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon"
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-margin-start",
+      "annotation": "prop",
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-margin-top",
       "annotation": "prop",
-      "docs": "Top margin of the button icon"
+      "docs": "Top margin of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-margin-top",
+      "annotation": "prop",
+      "docs": "Top margin of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the button icon"
+      "docs": "Bottom padding of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon",
+      "mode": "md"
     },
     {
       "name": "--icon-padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the button icon"
+      "docs": "Top padding of the button icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the button icon",
+      "mode": "md"
     },
     {
       "name": "--margin-bottom",
       "annotation": "prop",
-      "docs": "Bottom margin of the button"
+      "docs": "Bottom margin of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-bottom",
+      "annotation": "prop",
+      "docs": "Bottom margin of the button",
+      "mode": "md"
     },
     {
       "name": "--margin-end",
       "annotation": "prop",
-      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button"
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-end",
+      "annotation": "prop",
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button",
+      "mode": "md"
     },
     {
       "name": "--margin-start",
       "annotation": "prop",
-      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button"
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-start",
+      "annotation": "prop",
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button",
+      "mode": "md"
     },
     {
       "name": "--margin-top",
       "annotation": "prop",
-      "docs": "Top margin of the button"
+      "docs": "Top margin of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-top",
+      "annotation": "prop",
+      "docs": "Top margin of the button",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the button"
+      "docs": "Minimum height of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the button",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the button"
+      "docs": "Minimum width of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the button",
+      "mode": "md"
     },
     {
       "name": "--opacity",
       "annotation": "prop",
-      "docs": "Opacity of the button"
+      "docs": "Opacity of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the button"
+      "docs": "Bottom padding of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the button"
+      "docs": "Top padding of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the button",
+      "mode": "md"
     },
     {
       "name": "--ripple-color",
       "annotation": "prop",
-      "docs": "Color of the button ripple effect"
+      "docs": "Color of the button ripple effect",
+      "mode": "ios"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect",
+      "mode": "md"
     },
     {
       "name": "--transition",
       "annotation": "prop",
-      "docs": "Transition of the button"
+      "docs": "Transition of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the button",
+      "mode": "md"
     }
   ],
   "slots": [],

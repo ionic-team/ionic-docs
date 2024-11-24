@@ -140,52 +140,122 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the item divider"
+      "docs": "Background of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the item divider",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the item divider"
+      "docs": "Color of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the item divider",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom inner padding of the item divider"
+      "docs": "Bottom inner padding of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom inner padding of the item divider",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-end",
       "annotation": "prop",
-      "docs": "End inner padding of the item divider"
+      "docs": "End inner padding of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-end",
+      "annotation": "prop",
+      "docs": "End inner padding of the item divider",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-start",
       "annotation": "prop",
-      "docs": "Start inner padding of the item divider"
+      "docs": "Start inner padding of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-start",
+      "annotation": "prop",
+      "docs": "Start inner padding of the item divider",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-top",
       "annotation": "prop",
-      "docs": "Top inner padding of the item divider"
+      "docs": "Top inner padding of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-top",
+      "annotation": "prop",
+      "docs": "Top inner padding of the item divider",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the item divider"
+      "docs": "Bottom padding of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the item divider",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item divider"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item divider",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item divider"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item divider",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the item divider"
+      "docs": "Top padding of the item divider",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the item divider",
+      "mode": "md"
     }
   ],
   "slots": [

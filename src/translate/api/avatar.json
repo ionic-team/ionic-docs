@@ -13,7 +13,14 @@
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the avatar and inner image"
+      "docs": "Border radius of the avatar and inner image",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the avatar and inner image",
+      "mode": "md"
     }
   ],
   "slots": [],

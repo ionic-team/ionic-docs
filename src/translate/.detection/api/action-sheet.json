@@ -635,122 +635,290 @@
     {
       "name": "--backdrop-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the backdrop"
+      "docs": "Opacity of the backdrop",
+      "mode": "ios"
+    },
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop",
+      "mode": "md"
     },
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the action sheet group"
+      "docs": "Background of the action sheet group",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the action sheet group",
+      "mode": "md"
     },
     {
       "name": "--button-background",
       "annotation": "prop",
-      "docs": "Background of the action sheet button"
+      "docs": "Background of the action sheet button",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button",
+      "mode": "md"
     },
     {
       "name": "--button-background-activated",
       "annotation": "prop",
-      "docs": "Background of the action sheet button when pressed. Note: setting this will interfere with the Material Design ripple."
+      "docs": "Background of the action sheet button when pressed. Note: setting this will interfere with the Material Design ripple.",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-activated",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button when pressed. Note: setting this will interfere with the Material Design ripple.",
+      "mode": "md"
     },
     {
       "name": "--button-background-activated-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the action sheet button background when pressed"
+      "docs": "Opacity of the action sheet button background when pressed",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-activated-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the action sheet button background when pressed",
+      "mode": "md"
     },
     {
       "name": "--button-background-focused",
       "annotation": "prop",
-      "docs": "Background of the action sheet button when tabbed to"
+      "docs": "Background of the action sheet button when tabbed to",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-focused",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button when tabbed to",
+      "mode": "md"
     },
     {
       "name": "--button-background-focused-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the action sheet button background when tabbed to"
+      "docs": "Opacity of the action sheet button background when tabbed to",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the action sheet button background when tabbed to",
+      "mode": "md"
     },
     {
       "name": "--button-background-hover",
       "annotation": "prop",
-      "docs": "Background of the action sheet button on hover"
+      "docs": "Background of the action sheet button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-hover",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button on hover",
+      "mode": "md"
     },
     {
       "name": "--button-background-hover-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the action sheet button background on hover"
+      "docs": "Opacity of the action sheet button background on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the action sheet button background on hover",
+      "mode": "md"
     },
     {
       "name": "--button-background-selected",
       "annotation": "prop",
-      "docs": "Background of the selected action sheet button"
+      "docs": "Background of the selected action sheet button",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-selected",
+      "annotation": "prop",
+      "docs": "Background of the selected action sheet button",
+      "mode": "md"
     },
     {
       "name": "--button-background-selected-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the selected action sheet button background"
+      "docs": "Opacity of the selected action sheet button background",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-background-selected-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the selected action sheet button background",
+      "mode": "md"
     },
     {
       "name": "--button-color",
       "annotation": "prop",
-      "docs": "Color of the action sheet button"
+      "docs": "Color of the action sheet button",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button",
+      "mode": "md"
     },
     {
       "name": "--button-color-activated",
       "annotation": "prop",
-      "docs": "Color of the action sheet button when pressed"
+      "docs": "Color of the action sheet button when pressed",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color-activated",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button when pressed",
+      "mode": "md"
     },
     {
       "name": "--button-color-disabled",
       "annotation": "prop",
-      "docs": "Color of the selected action sheet button when disabled"
+      "docs": "Color of the selected action sheet button when disabled",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color-disabled",
+      "annotation": "prop",
+      "docs": "Color of the selected action sheet button when disabled",
+      "mode": "md"
     },
     {
       "name": "--button-color-focused",
       "annotation": "prop",
-      "docs": "Color of the action sheet button when tabbed to"
+      "docs": "Color of the action sheet button when tabbed to",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color-focused",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button when tabbed to",
+      "mode": "md"
     },
     {
       "name": "--button-color-hover",
       "annotation": "prop",
-      "docs": "Color of the action sheet button on hover"
+      "docs": "Color of the action sheet button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color-hover",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button on hover",
+      "mode": "md"
     },
     {
       "name": "--button-color-selected",
       "annotation": "prop",
-      "docs": "Color of the selected action sheet button"
+      "docs": "Color of the selected action sheet button",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color-selected",
+      "annotation": "prop",
+      "docs": "Color of the selected action sheet button",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the action sheet text"
+      "docs": "Color of the action sheet text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the action sheet text",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "height of the action sheet"
+      "docs": "height of the action sheet",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "height of the action sheet",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the action sheet"
+      "docs": "Maximum height of the action sheet",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the action sheet",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the action sheet"
+      "docs": "Maximum width of the action sheet",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the action sheet",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the action sheet"
+      "docs": "Minimum height of the action sheet",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the action sheet",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the action sheet"
+      "docs": "Minimum width of the action sheet",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the action sheet",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the action sheet"
+      "docs": "Width of the action sheet",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the action sheet",
+      "mode": "md"
     }
   ],
   "slots": [],

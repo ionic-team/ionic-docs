@@ -175,7 +175,7 @@
       },
       "mutable": false,
       "attr": "disabled",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "If `true`, the user cannot interact with the item.",
       "docsTags": [],
       "default": "false",
@@ -453,157 +453,374 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the item"
+      "docs": "Background of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the item",
+      "mode": "md"
     },
     {
       "name": "--background-activated",
       "annotation": "prop",
-      "docs": "Background of the item when pressed. Note: setting this will interfere with the Material Design ripple."
+      "docs": "Background of the item when pressed. Note: setting this will interfere with the Material Design ripple.",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the item when pressed. Note: setting this will interfere with the Material Design ripple.",
+      "mode": "md"
     },
     {
       "name": "--background-activated-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the item background when pressed"
+      "docs": "Opacity of the item background when pressed",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-activated-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the item background when pressed",
+      "mode": "md"
     },
     {
       "name": "--background-focused",
       "annotation": "prop",
-      "docs": "Background of the item when focused with the tab key"
+      "docs": "Background of the item when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the item when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-focused-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the item background when focused with the tab key"
+      "docs": "Opacity of the item background when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the item background when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-hover",
       "annotation": "prop",
-      "docs": "Background of the item on hover"
+      "docs": "Background of the item on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the item on hover",
+      "mode": "md"
     },
     {
       "name": "--background-hover-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the background of the item on hover"
+      "docs": "Opacity of the background of the item on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the background of the item on hover",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the item border"
+      "docs": "Color of the item border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the item border",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Radius of the item border"
+      "docs": "Radius of the item border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the item border",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the item border"
+      "docs": "Style of the item border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the item border",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the item border"
+      "docs": "Width of the item border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the item border",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the item"
+      "docs": "Color of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the item",
+      "mode": "md"
     },
     {
       "name": "--color-activated",
       "annotation": "prop",
-      "docs": "Color of the item when pressed"
+      "docs": "Color of the item when pressed",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-activated",
+      "annotation": "prop",
+      "docs": "Color of the item when pressed",
+      "mode": "md"
     },
     {
       "name": "--color-focused",
       "annotation": "prop",
-      "docs": "Color of the item when focused with the tab key"
+      "docs": "Color of the item when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Color of the item when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--color-hover",
       "annotation": "prop",
-      "docs": "Color of the item on hover"
+      "docs": "Color of the item on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Color of the item on hover",
+      "mode": "md"
     },
     {
       "name": "--detail-icon-color",
       "annotation": "prop",
-      "docs": "Color of the item detail icon"
+      "docs": "Color of the item detail icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--detail-icon-color",
+      "annotation": "prop",
+      "docs": "Color of the item detail icon",
+      "mode": "md"
     },
     {
       "name": "--detail-icon-font-size",
       "annotation": "prop",
-      "docs": "Font size of the item detail icon"
+      "docs": "Font size of the item detail icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--detail-icon-font-size",
+      "annotation": "prop",
+      "docs": "Font size of the item detail icon",
+      "mode": "md"
     },
     {
       "name": "--detail-icon-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the item detail icon"
+      "docs": "Opacity of the item detail icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--detail-icon-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the item detail icon",
+      "mode": "md"
     },
     {
       "name": "--inner-border-width",
       "annotation": "prop",
-      "docs": "Width of the item inner border"
+      "docs": "Width of the item inner border",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-border-width",
+      "annotation": "prop",
+      "docs": "Width of the item inner border",
+      "mode": "md"
     },
     {
       "name": "--inner-box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the item inner"
+      "docs": "Box shadow of the item inner",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the item inner",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the item inner"
+      "docs": "Bottom padding of the item inner",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the item inner",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner",
+      "mode": "md"
     },
     {
       "name": "--inner-padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the item inner"
+      "docs": "Top padding of the item inner",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the item inner",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the item"
+      "docs": "Minimum height of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the item",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the item"
+      "docs": "Bottom padding of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the item",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the item"
+      "docs": "Top padding of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the item",
+      "mode": "md"
     },
     {
       "name": "--ripple-color",
       "annotation": "prop",
-      "docs": "Color of the item ripple effect"
+      "docs": "Color of the item ripple effect",
+      "mode": "ios"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the item ripple effect",
+      "mode": "md"
     },
     {
       "name": "--transition",
       "annotation": "prop",
-      "docs": "Transition of the item"
+      "docs": "Transition of the item",
+      "mode": "ios"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the item",
+      "mode": "md"
     }
   ],
   "slots": [
@@ -631,6 +848,7 @@
     }
   ],
   "dependents": [
+    "ion-select-modal",
     "ion-select-popover"
   ],
   "dependencies": [
@@ -641,6 +859,9 @@
     "ion-item": [
       "ion-icon",
       "ion-ripple-effect"
+    ],
+    "ion-select-modal": [
+      "ion-item"
     ],
     "ion-select-popover": [
       "ion-item"

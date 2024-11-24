@@ -471,117 +471,278 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the button"
+      "docs": "Background of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the button",
+      "mode": "md"
     },
     {
       "name": "--background-activated",
       "annotation": "prop",
-      "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple."
+      "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple.",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple.",
+      "mode": "md"
     },
     {
       "name": "--background-activated-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the button background when pressed"
+      "docs": "Opacity of the button background when pressed",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-activated-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background when pressed",
+      "mode": "md"
     },
     {
       "name": "--background-focused",
       "annotation": "prop",
-      "docs": "Background of the button when focused with the tab key"
+      "docs": "Background of the button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-focused-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the button background when focused with the tab key"
+      "docs": "Opacity of the button background when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-hover",
       "annotation": "prop",
-      "docs": "Background of the button on hover"
+      "docs": "Background of the button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the button on hover",
+      "mode": "md"
     },
     {
       "name": "--background-hover-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the button background on hover"
+      "docs": "Opacity of the button background on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background on hover",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Border color of the button"
+      "docs": "Border color of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the button",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the button"
+      "docs": "Border radius of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the button",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Border style of the button"
+      "docs": "Border style of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the button",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Border width of the button"
+      "docs": "Border width of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the button",
+      "mode": "md"
     },
     {
       "name": "--box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the button"
+      "docs": "Box shadow of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the button",
+      "mode": "md"
     },
     {
       "name": "--close-icon-font-size",
       "annotation": "prop",
-      "docs": "Font size of the close icon"
+      "docs": "Font size of the close icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--close-icon-font-size",
+      "annotation": "prop",
+      "docs": "Font size of the close icon",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Text color of the button"
+      "docs": "Text color of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the button",
+      "mode": "md"
     },
     {
       "name": "--color-activated",
       "annotation": "prop",
-      "docs": "Text color of the button when pressed"
+      "docs": "Text color of the button when pressed",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-activated",
+      "annotation": "prop",
+      "docs": "Text color of the button when pressed",
+      "mode": "md"
     },
     {
       "name": "--color-focused",
       "annotation": "prop",
-      "docs": "Text color of the button when focused with the tab key"
+      "docs": "Text color of the button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--color-hover",
       "annotation": "prop",
-      "docs": "Text color of the button on hover"
+      "docs": "Text color of the button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Text color of the button on hover",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the button"
+      "docs": "Bottom padding of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the button"
+      "docs": "Top padding of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the button",
+      "mode": "md"
     },
     {
       "name": "--ripple-color",
       "annotation": "prop",
-      "docs": "Color of the button ripple effect"
+      "docs": "Color of the button ripple effect",
+      "mode": "ios"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect",
+      "mode": "md"
     },
     {
       "name": "--transition",
       "annotation": "prop",
-      "docs": "Transition of the button"
+      "docs": "Transition of the button",
+      "mode": "ios"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the button",
+      "mode": "md"
     }
   ],
   "slots": [],

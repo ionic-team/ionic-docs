@@ -1,0 +1,132 @@
+{
+  "filePath": "src/components/select-modal/select-modal.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-select-modal",
+  "docs": "",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "header",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "header",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "multiple",
+      "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "multiple",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "options",
+      "type": "SelectModalOption[]",
+      "complexType": {
+        "original": "SelectModalOption[]",
+        "resolved": "SelectModalOption[]",
+        "references": {
+          "SelectModalOption": {
+            "location": "import",
+            "path": "./select-modal-interface",
+            "id": "src/components/select-modal/select-modal-interface.ts::SelectModalOption"
+          }
+        }
+      },
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "[]",
+      "values": [
+        {
+          "type": "SelectModalOption[]"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [
+    "ion-select"
+  ],
+  "dependencies": [
+    "ion-radio-group",
+    "ion-item",
+    "ion-radio",
+    "ion-checkbox",
+    "ion-header",
+    "ion-toolbar",
+    "ion-title",
+    "ion-buttons",
+    "ion-button",
+    "ion-content",
+    "ion-list"
+  ],
+  "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-radio-group",
+      "ion-item",
+      "ion-radio",
+      "ion-checkbox",
+      "ion-header",
+      "ion-toolbar",
+      "ion-title",
+      "ion-buttons",
+      "ion-button",
+      "ion-content",
+      "ion-list"
+    ],
+    "ion-item": [
+      "ion-icon",
+      "ion-ripple-effect"
+    ],
+    "ion-button": [
+      "ion-ripple-effect"
+    ],
+    "ion-select": [
+      "ion-select-modal"
+    ]
+  }
+}

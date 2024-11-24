@@ -273,6 +273,28 @@
       "required": false
     },
     {
+      "name": "focusTrap",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "focus-trap",
+      "reflectToAttr": false,
+      "docs": "If `true`, focus will not be allowed to move outside of this overlay.\nIf `false`, focus will be allowed to move outside of the overlay.\n\nIn most scenarios this property should remain set to `true`. Setting\nthis property to `false` can cause severe accessibility issues as users\nrelying on assistive technologies may be able to move focus into\na confusing state. We recommend only setting this to `false` when\nabsolutely necessary.\n\nDevelopers may want to consider disabling focus trapping if this\noverlay presents a non-Ionic overlay from a 3rd party library.\nDevelopers would disable focus trapping on the Ionic overlay\nwhen presenting the 3rd party overlay and then re-enable\nfocus trapping when dismissing the 3rd party overlay and moving\nfocus back to the Ionic overlay.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "htmlAttributes",
       "type": "undefined | { [key: string]: any; }",
       "complexType": {
@@ -964,57 +986,134 @@
     {
       "name": "--backdrop-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the backdrop"
+      "docs": "Opacity of the backdrop",
+      "mode": "ios"
+    },
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop",
+      "mode": "md"
     },
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the popover"
+      "docs": "Background of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the popover",
+      "mode": "md"
     },
     {
       "name": "--box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the popover"
+      "docs": "Box shadow of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the popover",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the popover"
+      "docs": "Height of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the popover",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the popover"
+      "docs": "Maximum height of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the popover",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the popover"
+      "docs": "Maximum width of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the popover",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the popover"
+      "docs": "Minimum height of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the popover",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the popover"
+      "docs": "Minimum width of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the popover",
+      "mode": "md"
     },
     {
       "name": "--offset-x",
       "annotation": "prop",
-      "docs": "The amount to move the popover by on the x-axis"
+      "docs": "The amount to move the popover by on the x-axis",
+      "mode": "ios"
+    },
+    {
+      "name": "--offset-x",
+      "annotation": "prop",
+      "docs": "The amount to move the popover by on the x-axis",
+      "mode": "md"
     },
     {
       "name": "--offset-y",
       "annotation": "prop",
-      "docs": "The amount to move the popover by on the y-axis"
+      "docs": "The amount to move the popover by on the y-axis",
+      "mode": "ios"
+    },
+    {
+      "name": "--offset-y",
+      "annotation": "prop",
+      "docs": "The amount to move the popover by on the y-axis",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the popover"
+      "docs": "Width of the popover",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the popover",
+      "mode": "md"
     }
   ],
   "slots": [

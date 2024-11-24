@@ -913,7 +913,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionChange` event is fired when the user modifies the textarea's value.\nUnlike the `ionInput` event, the `ionChange` event is fired when\nthe element loses focus after its value has been modified.",
+      "docs": "The `ionChange` event is fired when the user modifies the textarea's value.\nUnlike the `ionInput` event, the `ionChange` event is fired when\nthe element loses focus after its value has been modified.\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     },
     {
@@ -961,92 +961,218 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the textarea"
+      "docs": "Background of the textarea",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the textarea",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the border below the textarea when using helper text, error text, or counter"
+      "docs": "Color of the border below the textarea when using helper text, error text, or counter",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the border below the textarea when using helper text, error text, or counter",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the textarea"
+      "docs": "Border radius of the textarea",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the textarea",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the border below the textarea when using helper text, error text, or counter"
+      "docs": "Style of the border below the textarea when using helper text, error text, or counter",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the border below the textarea when using helper text, error text, or counter",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the border below the textarea when using helper text, error text, or counter"
+      "docs": "Width of the border below the textarea when using helper text, error text, or counter",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the border below the textarea when using helper text, error text, or counter",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the text"
+      "docs": "Color of the text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the text",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-focused",
       "annotation": "prop",
-      "docs": "The color of the highlight on the textarea when focused"
+      "docs": "The color of the highlight on the textarea when focused",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the textarea when focused",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-invalid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the textarea when invalid"
+      "docs": "The color of the highlight on the textarea when invalid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the textarea when invalid",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-valid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the textarea when valid"
+      "docs": "The color of the highlight on the textarea when valid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the textarea when valid",
+      "mode": "md"
     },
     {
       "name": "--highlight-height",
       "annotation": "prop",
-      "docs": "The height of the highlight on the textarea. Only applies to md mode."
+      "docs": "The height of the highlight on the textarea. Only applies to md mode.",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-height",
+      "annotation": "prop",
+      "docs": "The height of the highlight on the textarea. Only applies to md mode.",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the textarea"
+      "docs": "Bottom padding of the textarea",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the textarea",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the textarea"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the textarea",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the textarea",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the textarea"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the textarea",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the textarea",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the textarea"
+      "docs": "Top padding of the textarea",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the textarea",
+      "mode": "md"
     },
     {
       "name": "--placeholder-color",
       "annotation": "prop",
-      "docs": "Color of the placeholder text"
+      "docs": "Color of the placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-font-style",
       "annotation": "prop",
-      "docs": "Style of the placeholder text"
+      "docs": "Style of the placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-font-style",
+      "annotation": "prop",
+      "docs": "Style of the placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-font-weight",
       "annotation": "prop",
-      "docs": "Weight of the placeholder text"
+      "docs": "Weight of the placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-font-weight",
+      "annotation": "prop",
+      "docs": "Weight of the placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the placeholder text"
+      "docs": "Opacity of the placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the placeholder text",
+      "mode": "md"
     }
   ],
   "slots": [

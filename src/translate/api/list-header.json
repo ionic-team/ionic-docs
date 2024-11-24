@@ -139,32 +139,74 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the list header"
+      "docs": "Background of the list header",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the list header",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the list header border"
+      "docs": "Color of the list header border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the list header border",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the list header border"
+      "docs": "Style of the list header border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the list header border",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the list header border"
+      "docs": "Width of the list header border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the list header border",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the list header text"
+      "docs": "Color of the list header text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the list header text",
+      "mode": "md"
     },
     {
       "name": "--inner-border-width",
       "annotation": "prop",
-      "docs": "Width of the inner list header border"
+      "docs": "Width of the inner list header border",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-border-width",
+      "annotation": "prop",
+      "docs": "Width of the inner list header border",
+      "mode": "md"
     }
   ],
   "slots": [],

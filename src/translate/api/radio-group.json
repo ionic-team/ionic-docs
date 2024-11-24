@@ -127,7 +127,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value has changed.",
+      "docs": "Emitted when the value has changed.\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     }
   ],
@@ -143,10 +143,14 @@
   "slots": [],
   "parts": [],
   "dependents": [
+    "ion-select-modal",
     "ion-select-popover"
   ],
   "dependencies": [],
   "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-radio-group"
+    ],
     "ion-select-popover": [
       "ion-radio-group"
     ]
