@@ -347,12 +347,26 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the card"
+      "docs": "Background of the card",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the card",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the card"
+      "docs": "Color of the card",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the card",
+      "mode": "md"
     }
   ],
   "slots": [],

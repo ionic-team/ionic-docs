@@ -118,10 +118,14 @@
   "slots": [],
   "parts": [],
   "dependents": [
+    "ion-select-modal",
     "ion-select-popover"
   ],
   "dependencies": [],
   "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-list"
+    ],
     "ion-select-popover": [
       "ion-list"
     ]

@@ -211,12 +211,26 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the progress track, or the buffer bar if `buffer` is set"
+      "docs": "Background of the progress track, or the buffer bar if `buffer` is set",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the progress track, or the buffer bar if `buffer` is set",
+      "mode": "md"
     },
     {
       "name": "--progress-background",
       "annotation": "prop",
-      "docs": "Background of the progress bar representing the current value"
+      "docs": "Background of the progress bar representing the current value",
+      "mode": "ios"
+    },
+    {
+      "name": "--progress-background",
+      "annotation": "prop",
+      "docs": "Background of the progress bar representing the current value",
+      "mode": "md"
     }
   ],
   "slots": [],

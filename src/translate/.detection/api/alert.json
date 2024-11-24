@@ -702,42 +702,98 @@
     {
       "name": "--backdrop-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the backdrop"
+      "docs": "Opacity of the backdrop",
+      "mode": "ios"
+    },
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop",
+      "mode": "md"
     },
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the alert"
+      "docs": "Background of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the alert",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the alert"
+      "docs": "Height of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the alert",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the alert"
+      "docs": "Maximum height of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the alert",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the alert"
+      "docs": "Maximum width of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the alert",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the alert"
+      "docs": "Minimum height of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the alert",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the alert"
+      "docs": "Minimum width of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the alert",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the alert"
+      "docs": "Width of the alert",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the alert",
+      "mode": "md"
     }
   ],
   "slots": [],

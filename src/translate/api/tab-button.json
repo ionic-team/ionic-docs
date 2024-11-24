@@ -266,57 +266,134 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the tab button"
+      "docs": "Background of the tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the tab button",
+      "mode": "md"
     },
     {
       "name": "--background-focused",
       "annotation": "prop",
-      "docs": "Background of the tab button when focused with the tab key"
+      "docs": "Background of the tab button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the tab button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-focused-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the tab button background when focused with the tab key"
+      "docs": "Opacity of the tab button background when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the tab button background when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the tab button"
+      "docs": "Color of the tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the tab button",
+      "mode": "md"
     },
     {
       "name": "--color-focused",
       "annotation": "prop",
-      "docs": "Color of the tab button when focused with the tab key"
+      "docs": "Color of the tab button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Color of the tab button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--color-selected",
       "annotation": "prop",
-      "docs": "Color of the selected tab button"
+      "docs": "Color of the selected tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-selected",
+      "annotation": "prop",
+      "docs": "Color of the selected tab button",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the tab button"
+      "docs": "Bottom padding of the tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the tab button",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the tab button"
+      "docs": "Top padding of the tab button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the tab button",
+      "mode": "md"
     },
     {
       "name": "--ripple-color",
       "annotation": "prop",
-      "docs": "Color of the button ripple effect"
+      "docs": "Color of the button ripple effect",
+      "mode": "ios"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect",
+      "mode": "md"
     }
   ],
   "slots": [],

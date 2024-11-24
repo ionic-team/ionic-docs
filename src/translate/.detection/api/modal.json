@@ -179,6 +179,28 @@
       "required": false
     },
     {
+      "name": "focusTrap",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "focus-trap",
+      "reflectToAttr": false,
+      "docs": "If `true`, focus will not be allowed to move outside of this overlay.\nIf `false`, focus will be allowed to move outside of the overlay.\n\nIn most scenarios this property should remain set to `true`. Setting\nthis property to `false` can cause severe accessibility issues as users\nrelying on assistive technologies may be able to move focus into\na confusing state. We recommend only setting this to `false` when\nabsolutely necessary.\n\nDevelopers may want to consider disabling focus trapping if this\noverlay presents a non-Ionic overlay from a 3rd party library.\nDevelopers would disable focus trapping on the Ionic overlay\nwhen presenting the 3rd party overlay and then re-enable\nfocus trapping when dismissing the 3rd party overlay and moving\nfocus back to the Ionic overlay.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "handle",
       "type": "boolean | undefined",
       "complexType": {
@@ -842,62 +864,146 @@
     {
       "name": "--backdrop-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the backdrop"
+      "docs": "Opacity of the backdrop",
+      "mode": "ios"
+    },
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop",
+      "mode": "md"
     },
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the modal content"
+      "docs": "Background of the modal content",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the modal content",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Border color of the modal content"
+      "docs": "Border color of the modal content",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the modal content",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the modal content"
+      "docs": "Border radius of the modal content",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the modal content",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Border style of the modal content"
+      "docs": "Border style of the modal content",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the modal content",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Border width of the modal content"
+      "docs": "Border width of the modal content",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the modal content",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the modal"
+      "docs": "Height of the modal",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the modal",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the modal"
+      "docs": "Maximum height of the modal",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the modal",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the modal"
+      "docs": "Maximum width of the modal",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the modal",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the modal"
+      "docs": "Minimum height of the modal",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the modal",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the modal"
+      "docs": "Minimum width of the modal",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the modal",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the modal"
+      "docs": "Width of the modal",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the modal",
+      "mode": "md"
     }
   ],
   "slots": [
@@ -920,13 +1026,18 @@
       "docs": "The handle that is displayed at the top of the sheet modal when `handle=\"true\"`."
     }
   ],
-  "dependents": [],
+  "dependents": [
+    "ion-select"
+  ],
   "dependencies": [
     "ion-backdrop"
   ],
   "dependencyGraph": {
     "ion-modal": [
       "ion-backdrop"
+    ],
+    "ion-select": [
+      "ion-modal"
     ]
   }
 }

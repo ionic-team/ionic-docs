@@ -210,11 +210,16 @@
         "docs": ""
       },
       "complexType": {
-        "signature": "(animated?: boolean) => Promise<boolean>",
+        "signature": "(animated?: boolean, role?: string) => Promise<boolean>",
         "parameters": [
           {
             "name": "animated",
             "type": "boolean",
+            "docs": ""
+          },
+          {
+            "name": "role",
+            "type": "string | undefined",
             "docs": ""
           }
         ],
@@ -226,11 +231,16 @@
         },
         "return": "Promise<boolean>"
       },
-      "signature": "close(animated?: boolean) => Promise<boolean>",
+      "signature": "close(animated?: boolean, role?: string) => Promise<boolean>",
       "parameters": [
         {
           "name": "animated",
           "type": "boolean",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
           "docs": ""
         }
       ],
@@ -322,7 +332,7 @@
         "docs": ""
       },
       "complexType": {
-        "signature": "(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
+        "signature": "(shouldOpen: boolean, animated?: boolean, role?: string) => Promise<boolean>",
         "parameters": [
           {
             "name": "shouldOpen",
@@ -332,6 +342,11 @@
           {
             "name": "animated",
             "type": "boolean",
+            "docs": ""
+          },
+          {
+            "name": "role",
+            "type": "string | undefined",
             "docs": ""
           }
         ],
@@ -343,7 +358,7 @@
         },
         "return": "Promise<boolean>"
       },
-      "signature": "setOpen(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
+      "signature": "setOpen(shouldOpen: boolean, animated?: boolean, role?: string) => Promise<boolean>",
       "parameters": [
         {
           "name": "shouldOpen",
@@ -353,6 +368,11 @@
         {
           "name": "animated",
           "type": "boolean",
+          "docs": ""
+        },
+        {
+          "name": "role",
+          "type": "string | undefined",
           "docs": ""
         }
       ],
@@ -397,12 +417,18 @@
   "events": [
     {
       "event": "ionDidClose",
-      "detail": "void",
+      "detail": "MenuCloseEventDetail",
       "bubbles": true,
       "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
+        "original": "MenuCloseEventDetail",
+        "resolved": "MenuCloseEventDetail",
+        "references": {
+          "MenuCloseEventDetail": {
+            "location": "import",
+            "path": "./menu-interface",
+            "id": "src/components/menu/menu-interface.ts::MenuCloseEventDetail"
+          }
+        }
       },
       "cancelable": true,
       "composed": true,
@@ -425,12 +451,18 @@
     },
     {
       "event": "ionWillClose",
-      "detail": "void",
+      "detail": "MenuCloseEventDetail",
       "bubbles": true,
       "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
+        "original": "MenuCloseEventDetail",
+        "resolved": "MenuCloseEventDetail",
+        "references": {
+          "MenuCloseEventDetail": {
+            "location": "import",
+            "path": "./menu-interface",
+            "id": "src/components/menu/menu-interface.ts::MenuCloseEventDetail"
+          }
+        }
       },
       "cancelable": true,
       "composed": true,
@@ -469,37 +501,86 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the menu"
+      "docs": "Background of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the menu",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the menu"
+      "docs": "Height of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the menu",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the menu"
+      "docs": "Maximum height of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the menu",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the menu"
+      "docs": "Maximum width of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the menu",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the menu"
+      "docs": "Minimum height of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the menu",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the menu"
+      "docs": "Minimum width of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the menu",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the menu"
+      "docs": "Width of the menu",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the menu",
+      "mode": "md"
     }
   ],
   "slots": [],
