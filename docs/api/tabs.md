@@ -26,15 +26,17 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 `ion-tab-bar` は、`ion-tabs` コンポーネントの適切な場所に投影するために、スロットを定義する必要があります。
 
-:::note Framework Support
+## Basic Usage
 
-Angular、React、Vueで `ion-tabs` を使用するには、 `ion-router-outlet` または `ion-nav` コンポーネントを使用する必要があります。
+タブは、URLを変更することなく、異なるコンテンツを表示するために使用することができます。これは、タブをナビゲーションのために使用するのではなく、異なるコンテンツを表示するために使用する場合に便利です。
 
-:::
+import Basic from '@site/static/usage/v8/tabs/basic/index.md';
+
+<Basic />
 
 ## ルーターとの併用
 
-タブはIonicルーターと一緒に使うことで、タブベースのナビゲーションを実装することができます。タブバーとアクティブなタブは、urlに基づいて自動的に解決されます。これはタブナビゲーションで最も一般的なパターンです。
+タブをIonicルーターで使用すると、タブベースのナビゲーションを実装できます。タブバーとアクティブタブはURLに基づいて自動的に解決されます。これはタブナビゲーションの最も一般的なパターンです。
 
 import Router from '@site/static/usage/v8/tabs/router/index.md';
 

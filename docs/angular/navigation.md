@@ -193,6 +193,10 @@ Developers can use the existing syntax for standalone component routing from Ang
 export class AppRoutingModule {}
 ```
 
+:::tip
+If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to also import the `IonRouterLink` directive for Ionic components or the `IonRouterLinkWithHref` directive for `<a>` elements. An example of this is available in the [Ionic Angular Build Options docs](./build-options.md#migrating-from-modules-to-standalone).
+:::
+
 To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).
 
 ## Live Example

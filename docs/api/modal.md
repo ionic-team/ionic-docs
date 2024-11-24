@@ -100,7 +100,7 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v8/modal/ca
 import CanDismissChildStateExample from '@site/static/usage/v8/modal/can-dismiss/child-state/index.md';
 
 <CanDismissChildStateExample />
- 
+
 ## Card Modal
 
 開発者は、アプリのメインコンテンツの上にカードが積み重なったようにモーダルが表示されるカードモーダルエフェクトを作成できます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティを設定する必要があります。
@@ -172,7 +172,7 @@ IonicのAngularアプリを構築する場合、スタイルはグローバル�
 `ion-modal` は、積み重ねられたモーダルは同じサイズであるという前提で動作します。その結果、後続の各モーダルはボックスシャドウを持たず、背景の不透明度は `0` になります。これは、モーダルが追加されるたびに影や背景が濃くなるのを避けるためです。これは、CSS 変数 `--box-shadow` と `--backdrop-opacity` を設定することで変更することができます。
 :::
 
-``` 
+```
 ion-modal.stack-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
@@ -247,11 +247,11 @@ interface ModalCustomEvent extends CustomEvent {
 
 ## アクセシビリティ
 
-### Keyboard Navigation
+### Keyboard Interactions
 
-| Key   | Function            |
-| ----- | ------------------- |
-| `Esc` | Dismisses the modal |
+| Key             | Description         |
+| --------------- | ------------------- |
+| <kbd>Esc</kbd>  | Dismisses the modal |
 
 
 ### ラベル

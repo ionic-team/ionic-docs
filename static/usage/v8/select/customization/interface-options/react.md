@@ -20,6 +20,12 @@ function Example() {
     subHeader: 'Select your favorite color',
   };
 
+  const customModalOptions = {
+    header: 'Favorite Candy',
+    breakpoints: [0, 0.5],
+    initialBreakpoint: 0.5,
+  };
+
   return (
     <IonList>
       <IonItem>
@@ -48,6 +54,14 @@ function Example() {
           <IonSelectOption value="red">Red</IonSelectOption>
           <IonSelectOption value="green">Green</IonSelectOption>
           <IonSelectOption value="blue">Blue</IonSelectOption>
+        </IonSelect>
+      </IonItem>
+
+      <IonItem>
+        <IonSelect label="Modal" interfaceOptions={customModalOptions} interface="modal" placeholder="Select One">
+          <IonSelectOption value="reese's">Reese's</IonSelectOption>
+          <IonSelectOption value="snickers">Snickers</IonSelectOption>
+          <IonSelectOption value="twix">Twix</IonSelectOption>
         </IonSelect>
       </IonItem>
     </IonList>

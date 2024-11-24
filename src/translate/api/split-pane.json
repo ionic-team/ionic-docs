@@ -100,22 +100,50 @@
     {
       "name": "--border",
       "annotation": "prop",
-      "docs": "Border between panes"
+      "docs": "Border between panes",
+      "mode": "ios"
+    },
+    {
+      "name": "--border",
+      "annotation": "prop",
+      "docs": "Border between panes",
+      "mode": "md"
     },
     {
       "name": "--side-max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the side pane. Does not apply when split pane is collapsed."
+      "docs": "Maximum width of the side pane. Does not apply when split pane is collapsed.",
+      "mode": "ios"
+    },
+    {
+      "name": "--side-max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the side pane. Does not apply when split pane is collapsed.",
+      "mode": "md"
     },
     {
       "name": "--side-min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the side pane. Does not apply when split pane is collapsed."
+      "docs": "Minimum width of the side pane. Does not apply when split pane is collapsed.",
+      "mode": "ios"
+    },
+    {
+      "name": "--side-min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the side pane. Does not apply when split pane is collapsed.",
+      "mode": "md"
     },
     {
       "name": "--side-width",
       "annotation": "prop",
-      "docs": "Width of the side pane. Does not apply when split pane is collapsed."
+      "docs": "Width of the side pane. Does not apply when split pane is collapsed.",
+      "mode": "ios"
+    },
+    {
+      "name": "--side-width",
+      "annotation": "prop",
+      "docs": "Width of the side pane. Does not apply when split pane is collapsed.",
+      "mode": "md"
     }
   ],
   "slots": [],

@@ -1,6 +1,9 @@
 ```ts
 import { Component } from '@angular/core';
 
+import { addIcons } from 'ionicons';
+import { ellipse } from 'ionicons/icons';
+
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -23,6 +26,15 @@ export class ExampleComponent {
     'Ted Turtle',
   ];
   public items = [];
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ ellipse });
+  }
 
   ngOnInit() {
     this.addItems(5);

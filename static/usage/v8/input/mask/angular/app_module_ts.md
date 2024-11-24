@@ -8,10 +8,10 @@ import { IonicModule } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './example.component';
 
-import { MaskitoModule } from '@maskito/angular';
+import { MaskitoDirective } from '@maskito/angular';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MaskitoModule, IonicModule.forRoot({})],
+  imports: [BrowserModule, FormsModule, MaskitoDirective, IonicModule.forRoot({})],
   declarations: [AppComponent, ExampleComponent],
   bootstrap: [AppComponent],
 })

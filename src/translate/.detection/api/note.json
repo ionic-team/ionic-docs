@@ -106,7 +106,14 @@
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the note"
+      "docs": "Color of the note",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the note",
+      "mode": "md"
     }
   ],
   "slots": [],

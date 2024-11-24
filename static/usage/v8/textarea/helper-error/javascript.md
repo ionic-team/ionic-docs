@@ -8,7 +8,7 @@
 ></ion-textarea>
 
 <script>
-  const textarea = textarea.querySelector('ion-textarea');
+  const textarea = document.querySelector('ion-textarea');
 
   textarea.addEventListener('ionInput', (ev) => validate(ev));
   textarea.addEventListener('ionBlur', () => markTouched());
@@ -27,7 +27,7 @@
 
     if (value === '') return;
 
-    validateEmail(value) ? textarea.classList.add('ion-valid') : input.classList.add('ion-invalid');
+    validateEmail(value) ? textarea.classList.add('ion-valid') : textarea.classList.add('ion-invalid');
   };
 
   const markTouched = () => {

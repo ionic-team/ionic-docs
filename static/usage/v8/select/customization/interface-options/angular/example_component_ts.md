@@ -23,5 +23,11 @@ export class ExampleComponent {
     header: 'Colors',
     subHeader: 'Select your favorite color',
   };
+
+  customModalOptions = {
+    header: 'Favorite Candy',
+    breakpoints: [0, 0.5],
+    initialBreakpoint: 0.5,
+  };
 }
 ```

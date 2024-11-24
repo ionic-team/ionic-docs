@@ -34,7 +34,7 @@ Angular、React、Vue で `ion-popover` を使用する場合、渡されたコ�
 
 もし、ポップオーバーの表示と非表示を細かく制御したい場合は、 `popoverController` を使用することをお勧めします。
 
-### Angular 
+### Angular
 
 渡されたコンポーネントは、ポップオーバーが表示されたときに作成され、ポップオーバーが解除されたときに破棄される必要があるため、内部で `<ng-content>` を使用してコンテンツを投影することはできません。代わりに、`<ng-container>` を使用します。これは、`<ng-template>` が渡されることを想定しています。そのため、コンポーネントを渡す際には、`<ng-template>`でラップする必要があります。
 
@@ -113,7 +113,7 @@ import Styling from '@site/static/usage/v8/popover/customization/styling/index.m
 
 ### Alignment
 
-`alignment` プロパティは、ポップオーバーのエッジをトリガーエレメントの対応するエッジに揃えることができます。使用される正確なエッジは `side` プロパティの値に依存します。
+`alignment` プロパティを使用すると、ポップオーバーのエッジをトリガー要素の対応するエッジに揃えることができます。使用される正確な辺は `side` プロパティの値に依存します。
 
 ### Side and Alignment Demo
 
@@ -172,7 +172,7 @@ interface PopoverOptions {
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
-  
+
   size?: PopoverSize;
   dismissOnSelect?: boolean;
   reference?: PositionReference;
@@ -197,28 +197,27 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 ## アクセシビリティ
 
-### キーボードナビゲーション
+### キーボードインタラクション
 
 `ion-popover` は、ポップオーバー内のフォーカス可能な要素間を移動するための基本的なキーボードをサポートしています。次の表は、それぞれのキーが何をするのかの詳細です:
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Esc`              | Closes the popover. |
-| `Space` or `Enter` | Clicks the focusable element. |
-
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.     |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element. |
+| <kbd>Esc</kbd>                       | Closes the popover.                            |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Clicks the focusable element.                  |
 
 `ion-popover` は、 `button` プロパティを持つ `ion-item` 要素間を移動するための矢印キーを完全にサポートしています。最も一般的な使用例としては、デスクトップにフォーカスしたアプリケーションにおけるドロップダウンメニューとして使用することができます。基本的なキーボードのサポートに加え、次の表ではドロップダウンメニューの矢印キーのサポートについて詳しく説明します。
 
-| Key                | Function                                                       |
-| ------------------ | -------------------------------------------------------------- |
-| `ArrowUp`          | Moves focus to the previous focusable element.                 |
-| `ArrowDown`        | Moves focus to the next focusable element.                     |
-| `Home`             | Moves focus to the first focusable element.                    |
-| `End`              | Moves focus to the last focusable element.                     |
-| `ArrowLeft`        | When used in a child popover, closes the popover and returns focus to the parent popover. |
-| `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
+| Key                                                           | Description                                                                               |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <kbd>ArrowUp</kbd>                                            | Moves focus to the previous focusable element.                                            |
+| <kbd>ArrowDown</kbd>                                          | Moves focus to the next focusable element.                                                |
+| <kbd>Home</kbd>                                               | Moves focus to the first focusable element.                                               |
+| <kbd>End</kbd>                                                | Moves focus to the last focusable element.                                                |
+| <kbd>ArrowLeft</kbd>                                          | When used in a child popover, closes the popover and returns focus to the parent popover. |
+| <kbd>Space</kbd>, <kbd>Enter</kbd>, and <kbd>ArrowRight</kbd> | When focusing a trigger element, opens the associated popover.                            |
 
 ## Performance
 

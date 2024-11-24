@@ -1,0 +1,78 @@
+{
+  "filePath": "src/components/segment-view/segment-view.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-segment-view",
+  "docs": "",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the segment view cannot be interacted with.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionSegmentViewScroll",
+      "detail": "SegmentViewScrollEvent",
+      "bubbles": true,
+      "complexType": {
+        "original": "SegmentViewScrollEvent",
+        "resolved": "SegmentViewScrollEvent",
+        "references": {
+          "SegmentViewScrollEvent": {
+            "location": "import",
+            "path": "./segment-view-interface",
+            "id": "src/components/segment-view/segment-view-interface.ts::SegmentViewScrollEvent"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the segment view is scrolled.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "scroll",
+      "capture": false,
+      "passive": true
+    },
+    {
+      "event": "touchstart",
+      "capture": false,
+      "passive": true
+    },
+    {
+      "event": "touchend",
+      "capture": false,
+      "passive": true
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

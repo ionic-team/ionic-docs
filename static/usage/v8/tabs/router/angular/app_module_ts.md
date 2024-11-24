@@ -11,7 +11,7 @@ import { ExampleComponent } from './example.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, IonicModule.forRoot()],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, IonicModule.forRoot({})],
   declarations: [AppComponent, ExampleComponent],
   bootstrap: [AppComponent],
 })

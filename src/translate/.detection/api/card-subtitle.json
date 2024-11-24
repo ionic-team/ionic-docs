@@ -106,7 +106,14 @@
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the card subtitle"
+      "docs": "Color of the card subtitle",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the card subtitle",
+      "mode": "md"
     }
   ],
   "slots": [],

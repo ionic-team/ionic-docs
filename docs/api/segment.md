@@ -49,7 +49,22 @@ import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 <Toolbar />
 
 
-## テーマ
+## スワイプ可能なセグメント
+
+それぞれの [セグメントボタン](./segment-button.md) は、セグメントがアクティブになったときに表示される [セグメントコンテンツ](./segment-content.md) 要素と関連付けることができます。
+要素に関連付けることができます。この方法では、各セグメントをスワイプまたはスクロールすることで、セグメントの内容が更新されます。
+
+:::warning
+スワイプ可能なセグメントを使用しているときに `ion-segment` に初期値 `value` が割り当てられていない場合、セグメントのデフォルトは最初のセグメントボタンの値になります。
+
+スワイプ可能なセグメントを使用する場合、セグメントボタンを無効にすることはできません。
+:::
+
+import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
+
+<Swipeable />
+
+## Theming
 
 ### Colors
 
@@ -66,17 +81,17 @@ import CSSProps from '@site/static/usage/v8/segment/theming/css-properties/index
 
 ## アクセシビリティ
 
-### キーボードナビゲーション
+### キーボードインタラクション
 
 このコンポーネントは、`ion-segment-button`要素間のナビゲーションと選択について、フルキーボードサポートを備えています。デフォルトでは、キーボードナビゲーションは `ion-segment-button` 要素にのみフォーカスしますが、`selectOnFocus` プロパティを使用すると、フォーカスされた要素も確実に選択されるようになります。次の表は、それぞれのキーが何をするのかの詳細です。
 
-| Key                | Function                                                       |
-| ------------------ | -------------------------------------------------------------- |
-| `ArrowRight`       | Focuses the next focusable element.                            |
-| `ArrowLeft`        | Focuses the previous focusable element.                        |
-| `Home`             | Focuses the first focusable element.                           |
-| `End`              | Focuses the last focusable element.                            |
-| `Space` or `Enter` | Selects the element that is currently focused.                 |
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>ArrowRight</kbd>                | Focuses the next focusable element.            |
+| <kbd>ArrowLeft</kbd>                 | Focuses the previous focusable element.        |
+| <kbd>Home</kbd>                      | Focuses the first focusable element.           |
+| <kbd>End</kbd>                       | Focuses the last focusable element.            |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Selects the element that is currently focused. |
 
 ## Interfaces
 

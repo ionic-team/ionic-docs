@@ -132,57 +132,134 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the toolbar"
+      "docs": "Background of the toolbar",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the toolbar",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the toolbar border"
+      "docs": "Color of the toolbar border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the toolbar border",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the toolbar border"
+      "docs": "Style of the toolbar border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the toolbar border",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the toolbar border"
+      "docs": "Width of the toolbar border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the toolbar border",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the toolbar text"
+      "docs": "Color of the toolbar text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the toolbar text",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the toolbar"
+      "docs": "Minimum height of the toolbar",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the toolbar",
+      "mode": "md"
     },
     {
       "name": "--opacity",
       "annotation": "prop",
-      "docs": "Opacity of the toolbar background"
+      "docs": "Opacity of the toolbar background",
+      "mode": "ios"
+    },
+    {
+      "name": "--opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the toolbar background",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the toolbar"
+      "docs": "Bottom padding of the toolbar",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the toolbar",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the toolbar"
+      "docs": "Top padding of the toolbar",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the toolbar",
+      "mode": "md"
     }
   ],
   "slots": [
@@ -208,7 +285,13 @@
     }
   ],
   "parts": [],
-  "dependents": [],
+  "dependents": [
+    "ion-select-modal"
+  ],
   "dependencies": [],
-  "dependencyGraph": {}
+  "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-toolbar"
+    ]
+  }
 }

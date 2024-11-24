@@ -36,11 +36,15 @@
   "slots": [],
   "parts": [],
   "dependents": [
-    "ion-datetime"
+    "ion-datetime",
+    "ion-select-modal"
   ],
   "dependencies": [],
   "dependencyGraph": {
     "ion-datetime": [
+      "ion-buttons"
+    ],
+    "ion-select-modal": [
       "ion-buttons"
     ]
   }

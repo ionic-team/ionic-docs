@@ -244,10 +244,10 @@
     },
     {
       "name": "interface",
-      "type": "\"action-sheet\" | \"alert\" | \"popover\"",
+      "type": "\"action-sheet\" | \"alert\" | \"modal\" | \"popover\"",
       "complexType": {
         "original": "SelectInterface",
-        "resolved": "\"action-sheet\" | \"alert\" | \"popover\"",
+        "resolved": "\"action-sheet\" | \"alert\" | \"modal\" | \"popover\"",
         "references": {
           "SelectInterface": {
             "location": "import",
@@ -259,7 +259,7 @@
       "mutable": false,
       "attr": "interface",
       "reflectToAttr": false,
-      "docs": "The interface the select should use: `action-sheet`, `popover` or `alert`.",
+      "docs": "The interface the select should use: `action-sheet`, `popover`, `alert`, or `modal`.",
       "docsTags": [],
       "default": "'alert'",
       "values": [
@@ -269,6 +269,10 @@
         },
         {
           "value": "alert",
+          "type": "string"
+        },
+        {
+          "value": "modal",
           "type": "string"
         },
         {
@@ -290,7 +294,7 @@
       "mutable": false,
       "attr": "interface-options",
       "reflectToAttr": false,
-      "docs": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](./alert), the\n[ion-action-sheet docs](./action-sheet) and the\n[ion-popover docs](./popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.",
+      "docs": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](./alert), the\n[ion-action-sheet docs](./action-sheet), the\n[ion-popover docs](./popover), and the [ion-modal docs](./modal) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.",
       "docsTags": [],
       "default": "{}",
       "values": [
@@ -303,10 +307,10 @@
     },
     {
       "name": "justify",
-      "type": "\"end\" | \"space-between\" | \"start\"",
+      "type": "\"end\" | \"space-between\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'end' | 'space-between'",
-        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "resolved": "\"end\" | \"space-between\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
@@ -314,7 +318,6 @@
       "reflectToAttr": false,
       "docs": "How to pack the label and select within a line.\n`justify` does not apply when the label and select\nare on different lines when `labelPlacement` is set to\n`\"floating\"` or `\"stacked\"`.\n`\"start\"`: The label and select will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and select will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and select will appear on opposite\nends of the line with space between the two elements.",
       "docsTags": [],
-      "default": "'space-between'",
       "values": [
         {
           "value": "end",
@@ -327,9 +330,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -635,6 +641,14 @@
           "HTMLElement": {
             "location": "global",
             "id": "global::HTMLElement"
+          },
+          "HTMLIonRadioElement": {
+            "location": "global",
+            "id": "global::HTMLIonRadioElement"
+          },
+          "HTMLIonCheckboxElement": {
+            "location": "global",
+            "id": "global::HTMLIonCheckboxElement"
           }
         },
         "return": "Promise<any>"
@@ -702,7 +716,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value has changed.",
+      "docs": "Emitted when the value has changed.\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     },
     {
@@ -739,82 +753,194 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the select"
+      "docs": "Background of the select",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the select",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the select border"
+      "docs": "Color of the select border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the select border",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
+      "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start.",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start.",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the select border"
+      "docs": "Style of the select border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the select border",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the select border"
+      "docs": "Width of the select border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the select border",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-focused",
       "annotation": "prop",
-      "docs": "The color of the highlight on the select when focused"
+      "docs": "The color of the highlight on the select when focused",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the select when focused",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-invalid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the select when invalid"
+      "docs": "The color of the highlight on the select when invalid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the select when invalid",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-valid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the select when valid"
+      "docs": "The color of the highlight on the select when valid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the select when valid",
+      "mode": "md"
     },
     {
       "name": "--highlight-height",
       "annotation": "prop",
-      "docs": "The height of the highlight on the select. Only applies to md mode."
+      "docs": "The height of the highlight on the select. Only applies to md mode.",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-height",
+      "annotation": "prop",
+      "docs": "The height of the highlight on the select. Only applies to md mode.",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the select"
+      "docs": "Bottom padding of the select",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the select",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the select"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the select",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the select",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the select"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the select",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the select",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the select"
+      "docs": "Top padding of the select",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the select",
+      "mode": "md"
     },
     {
       "name": "--placeholder-color",
       "annotation": "prop",
-      "docs": "Color of the select placeholder text"
+      "docs": "Color of the select placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the select placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the select placeholder text"
+      "docs": "Opacity of the select placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the select placeholder text",
+      "mode": "md"
     },
     {
       "name": "--ripple-color",
       "annotation": "prop",
-      "docs": "The color of the ripple effect on MD mode."
+      "docs": "The color of the ripple effect on MD mode.",
+      "mode": "ios"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "The color of the ripple effect on MD mode.",
+      "mode": "md"
     }
   ],
   "slots": [
@@ -859,6 +985,8 @@
     "ion-popover",
     "ion-action-sheet",
     "ion-alert",
+    "ion-select-modal",
+    "ion-modal",
     "ion-icon"
   ],
   "dependencyGraph": {
@@ -867,6 +995,8 @@
       "ion-popover",
       "ion-action-sheet",
       "ion-alert",
+      "ion-select-modal",
+      "ion-modal",
       "ion-icon"
     ],
     "ion-select-popover": [
@@ -892,6 +1022,25 @@
     ],
     "ion-alert": [
       "ion-ripple-effect",
+      "ion-backdrop"
+    ],
+    "ion-select-modal": [
+      "ion-radio-group",
+      "ion-item",
+      "ion-radio",
+      "ion-checkbox",
+      "ion-header",
+      "ion-toolbar",
+      "ion-title",
+      "ion-buttons",
+      "ion-button",
+      "ion-content",
+      "ion-list"
+    ],
+    "ion-button": [
+      "ion-ripple-effect"
+    ],
+    "ion-modal": [
       "ion-backdrop"
     ]
   }

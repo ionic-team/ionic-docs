@@ -34,6 +34,14 @@
         <ion-select-option value="blue">Blue</ion-select-option>
       </ion-select>
     </ion-item>
+
+    <ion-item>
+      <ion-select label="Modal" :interface-options="customModalOptions" interface="modal" placeholder="Select One">
+        <ion-select-option value="reese's">Reese's</ion-select-option>
+        <ion-select-option value="snickers">Snickers</ion-select-option>
+        <ion-select-option value="twix">Twix</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-list>
 </template>
 
@@ -62,10 +70,17 @@
         subHeader: 'Select your favorite color',
       };
 
+      const customModalOptions = {
+        header: 'Favorite Candy',
+        breakpoints: [0, 0.5],
+        initialBreakpoint: 0.5,
+      };
+
       return {
         customAlertOptions,
         customPopoverOptions,
         customActionSheetOptions,
+        customModalOptions,
       };
     },
   });
