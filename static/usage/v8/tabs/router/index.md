@@ -98,4 +98,5 @@ import react_search_page_tsx from './react/search_page_tsx.md';
   }}
   src="usage/v8/tabs/router/demo.html"
   devicePreview
+  includeIonContent={false}
 />

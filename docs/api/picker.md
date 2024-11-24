@@ -48,7 +48,7 @@ import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.
 import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
 <ModalExample />
-  
+
 ## Accessibility
 
 ### Screen Readers
@@ -67,18 +67,18 @@ Picker supports navigation using a screen reader by implementing the [`slider` r
 The Swipe Up and Swipe Down gestures rely on the correct key events being synthesized as noted on the [`slider` documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role). [Chromium-based browsers do not synthesize keyboard events correctly](https://issues.chromium.org/issues/40816094), but the "Double Tap and Slide Up/Down" gesture can be used as an alternative until this has been implemented in Chromium-based browsers.
 :::
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 Each [Picker Column](./picker-column) can be navigated using the keyboard when focused.
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous option. |
-| `ArrowDown` | Scroll to the next option. |
-| `PageUp` | Scroll up by more than one option. |
-| `PageDown` | Scroll down by more than one option. | 
-| `Home` | Scroll to the first option. |
-| `End` | Scroll to the last option. |
+| Key                  | Description                          |
+| -------------------- | ------------------------------------ |
+| <kbd>ArrowUp</kbd>   | Scroll to the previous option.       |
+| <kbd>ArrowDown</kbd> | Scroll to the next option.           |
+| <kbd>PageUp</kbd>    | Scroll up by more than one option.   |
+| <kbd>PageDown</kbd>  | Scroll down by more than one option. |
+| <kbd>Home</kbd>      | Scroll to the first option.          |
+| <kbd>End</kbd>       | Scroll to the last option.           |
 
 ## プロパティ
 <Props />

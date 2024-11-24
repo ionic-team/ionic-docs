@@ -178,4 +178,4 @@ The Ionic documentation's `main` branch is deployed automatically and separately
 
 This repo is licensed and managed separately from Ionic itself.
 
-By contributing to this repo, you agree to have your contributions licensed under the Apache 2.0 license. See [LICENSE](../LICENSE) for the full license text.
+By contributing to this repo, you agree to have your contributions licensed under the Apache 2.0 license. See [LICENSE](LICENSE) for the full license text.
