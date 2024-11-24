@@ -8,10 +8,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@ionic/vue": "8.2.0",
     "@ionic/vue-router": "8.2.0",
+=======
+    "@ionic/vue": "8.4.0",
+    "@ionic/vue-router": "8.4.0",
+>>>>>>> main
     "vue": "^3.2.25",
-    "vue-router": "4.3.2"
+    "vue-router": "4.4.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

@@ -1,6 +1,9 @@
 ```ts
 import { Component, OnInit } from '@angular/core';
 
+import { addIcons } from 'ionicons';
+import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
+
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -8,6 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class ExampleComponent implements OnInit {
   darkPaletteToggle = false;
   highContrastPaletteToggle = false;
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
+  }
 
   ngOnInit() {
     // Use matchMedia to check the user preference

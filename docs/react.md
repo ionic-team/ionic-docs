@@ -67,8 +67,8 @@ React を使用して、あらゆるプラットフォーム向けに受賞歴�
 
 ## 使い慣れたツール
 
-Ionic の React プロジェクトは React プロジェクトと同じように、[react-dom](https://reactjs.org/docs/react-dom.html) を活用し、[Create React App (CRA)](https://github.com/facebook/create-react-app) アプリで見られるようなセットアップが可能です。ルーティングとナビゲーション](/docs/react/navigation)では、React Router が使用されています。
-React バージョン 16.8 以降に対応しています。
+Ionic ReactプロジェクトはReactプロジェクトと同じように、[react-dom](https://react.dev/reference/react-dom)を活用し、[Create React App (CRA)](https://github.com/facebook/create-react-app) アプリで通常見られるセットアップを行います。 [ルーティングとナビゲーション](/docs/react/navigation) では、React Routerが使用されます。
+Reactバージョン16.8以上と互換性があります。
 
 </div>
 

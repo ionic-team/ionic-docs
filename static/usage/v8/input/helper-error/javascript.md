@@ -9,7 +9,7 @@
 ></ion-input>
 
 <script>
-  const input = input.querySelector('ion-input');
+  const input = document.querySelector('ion-input');
 
   input.addEventListener('ionInput', (ev) => validate(ev));
   input.addEventListener('ionBlur', () => markTouched());
