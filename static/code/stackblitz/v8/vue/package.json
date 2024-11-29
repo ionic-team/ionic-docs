@@ -11,7 +11,7 @@
     "@ionic/vue": "8.4.0",
     "@ionic/vue-router": "8.4.0",
     "vue": "^3.2.25",
-    "vue-router": "4.4.5"
+    "vue-router": "4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
