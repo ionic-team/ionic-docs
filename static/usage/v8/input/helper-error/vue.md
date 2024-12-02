@@ -13,36 +13,41 @@
   ></ion-input>
 </template>
 
-<script lang="ts">
-  import { IonInput } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
+import { IonInput } from '@ionic/vue';
 
-  export default defineComponent({
-    components: { IonInput },
-    methods: {
-      validateEmail(email) {
-        return email.match(
-          /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-        );
-      },
+const intput = ref<HTMLElement | null>(null);
 
-      validate(ev) {
-        const value = ev.target.value;
+function validateEmail(email: string) {
+  return email.match(
+    /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+  ) !== null;
+}
 
-        this.$refs.input.$el.classList.remove('ion-valid');
-        this.$refs.input.$el.classList.remove('ion-invalid');
+function validate(ev: Event) {
+  const target = ev.target as HTMLInputElement;
+  const value = target.value;
 
-        if (value === '') return;
+  if (!intput.value) return;
 
-        this.validateEmail(value)
-          ? this.$refs.input.$el.classList.add('ion-valid')
-          : this.$refs.input.$el.classList.add('ion-invalid');
-      },
+  const inputElement = intput.value;
 
-      markTouched() {
-        this.$refs.input.$el.classList.add('ion-touched');
-      },
-    },
-  });
+  inputElement.classList.remove('ion-valid');
+  inputElement.classList.remove('ion-invalid');
+
+  if (value === '') return;
+
+  if (validateEmail(value)) {
+    inputElement.classList.add('ion-valid');
+  } else {
+    inputElement.classList.add('ion-invalid');
+  }
+}
+
+function markTouched() {
+  if (!intput.value) return;
+  intput.value.classList.add('ion-touched');
+}
 </script>
 ```
