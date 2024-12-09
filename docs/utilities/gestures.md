@@ -71,7 +71,7 @@ const gesture: Gesture = createGesture({
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `GestureController` dependency injection.
 
 By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
 or they can wrap their callbacks in an `NgZone.run()` call.
