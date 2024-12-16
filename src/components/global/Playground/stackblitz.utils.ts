@@ -105,8 +105,13 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
+      'angular/package.json',
+      'angular/angular.json',
+      'angular/tsconfig.json',
+      'angular/tsconfig.app.json',
       'angular/main.ts',
-      'angular/app.module.ts',
+      'angular/index.html',
+      'angular/app.routes.ts',
       'angular/app.component.ts',
       'angular/app.component.css',
       options?.includeIonContent ? 'angular/app.component.withContent.html' : 'angular/app.component.html',
@@ -114,58 +119,50 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'angular/styles.css',
       'angular/global.css',
       'angular/variables.css',
-      'angular/angular.json',
-      'angular/tsconfig.json',
-      'angular/package.json',
     ],
     options.version
   );
 
-  const appModule = 'src/app/app.module.ts';
+  const package_json = JSON.parse(defaultFiles[0]);
+
+  if (options?.dependencies) {
+    package_json.dependencies = {
+      ...package_json.dependencies,
+      ...options.dependencies,
+    };
+  }
+
+  const main = 'src/main.ts';
+
   const files = {
-    'src/main.ts': defaultFiles[0],
+    'package.json': JSON.stringify(package_json, null, 2),
+    'angular.json': defaultFiles[1],
+    'tsconfig.json': defaultFiles[2],
+    'tsconfig.app.json': defaultFiles[3],
+    [main]: defaultFiles[4],
+    'src/index.html': defaultFiles[5],
     'src/polyfills.ts': `import 'zone.js';`,
-    [appModule]: defaultFiles[1],
-    'src/app/app.component.ts': defaultFiles[2],
-    'src/app/app.component.css': defaultFiles[3],
-    'src/app/app.component.html': defaultFiles[4],
-    'src/app/example.component.ts': defaultFiles[5],
+    'src/app/app.routes.ts': defaultFiles[6],
+    'src/app/app.component.ts': defaultFiles[7],
+    'src/app/app.component.css': defaultFiles[8],
+    'src/app/app.component.html': defaultFiles[9],
+    'src/app/example.component.ts': defaultFiles[10],
     'src/app/example.component.html': code,
     'src/app/example.component.css': '',
-    'src/index.html': '<app-root></app-root>',
-    'src/styles.css': defaultFiles[6],
-    'src/global.css': defaultFiles[7],
-    'src/theme/variables.css': defaultFiles[8],
-    'angular.json': defaultFiles[9],
-    'tsconfig.json': defaultFiles[10],
+    'src/styles.css': defaultFiles[11],
+    'src/global.css': defaultFiles[12],
+    'src/theme/variables.css': defaultFiles[13],
     ...options?.files,
     ...options?.dependencies,
   };
 
-  const package_json = defaultFiles[11];
-
-  files[appModule] = files[appModule].replace(
-    'IonicModule.forRoot({})',
-    `IonicModule.forRoot({ mode: '${options?.mode}' })`
-  );
-
-  let dependencies = {};
-  try {
-    dependencies = {
-      ...dependencies,
-      ...JSON.parse(package_json).dependencies,
-      ...options?.dependencies,
-    };
-  } catch (e) {
-    console.error('Failed to parse package.json contents', e);
-  }
+  files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
 
   sdk.openProject({
-    template: 'angular-cli',
+    template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files,
-    dependencies,
   });
 };
 
