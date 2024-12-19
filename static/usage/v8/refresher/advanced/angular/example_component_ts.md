@@ -1,5 +1,17 @@
 ```ts
 import { Component } from '@angular/core';
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { ellipse } from 'ionicons/icons';
@@ -8,6 +20,18 @@ import { ellipse } from 'ionicons/icons';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
+  imports: [
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonRefresher,
+    IonRefresherContent,
+    IonTitle,
+    IonToolbar,
+  ],
 })
 export class ExampleComponent {
   public names = [
