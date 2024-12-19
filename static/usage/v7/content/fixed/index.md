@@ -14,17 +14,12 @@ import angular_example_component_css from './angular/example_component_css.md';
   version="7"
   code={{
     javascript,
-    react: {
-      files: {
-        'src/main.tsx': react_main_tsx,
-        'src/main.css': react_main_css,
-      },
-    },
+    react,
     vue,
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
-        'src/app/example.component.css': angular_example_component_css,
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
   }}
