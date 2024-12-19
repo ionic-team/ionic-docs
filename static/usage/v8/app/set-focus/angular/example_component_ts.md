@@ -6,7 +6,7 @@ import { IonButton, IonRadio, IonRadioGroup } from '@ionic/angular/standalone';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
-  imports: [IonButton, IonRadio, IonRadioGroup]
+  imports: [IonButton, IonRadio, IonRadioGroup],
 })
 export class ExampleComponent {
   focusElement(id: string) {
