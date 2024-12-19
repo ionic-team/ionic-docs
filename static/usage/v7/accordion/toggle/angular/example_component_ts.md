@@ -1,13 +1,14 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { IonAccordionGroup } from '@ionic/angular';
+import { IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel],
 })
 export class ExampleComponent {
-  @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
+  @ViewChild('accordionGroup', { static: true }) accordionGroup!: IonAccordionGroup;
 
   toggleAccordion = () => {
     const nativeEl = this.accordionGroup;
