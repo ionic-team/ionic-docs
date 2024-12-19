@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 import { ModalController } from '@ionic/angular';
 import { ModalExampleComponent } from './modal-example.component';
@@ -7,6 +8,7 @@ import { ModalExampleComponent } from './modal-example.component';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
   message = 'This modal example uses the modalController to present and dismiss modals.';

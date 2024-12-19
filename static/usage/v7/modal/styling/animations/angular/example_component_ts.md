@@ -1,10 +1,38 @@
 ```ts
 import { Component } from '@angular/core';
+import {
+  IonAvatar,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonImg,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonModal,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [
+    IonAvatar,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonImg,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonModal,
+    IonTitle,
+    IonToolbar,
+  ],
 })
 export class ExampleComponent {
   constructor(private animationCtrl: AnimationController) {}
