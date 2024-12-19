@@ -7,14 +7,5 @@ import { IonButton, IonToast } from '@ionic/angular/standalone';
   templateUrl: 'example.component.html',
   imports: [IonButton, IonToast],
 })
-export class ExampleComponent {
-  public toastButtons = [
-    {
-      text: 'Dismiss',
-      role: 'cancel',
-    },
-  ];
-
-  constructor() {}
-}
+export class ExampleComponent {}
 ```
