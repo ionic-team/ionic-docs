@@ -1,11 +1,13 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonRange } from '@ionic/angular/standalone';
 
 import { RangeCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonRange],
 })
 export class ExampleComponent {
   onIonKnobMoveStart(ev: Event) {
