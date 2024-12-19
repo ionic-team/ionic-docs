@@ -18,7 +18,6 @@ import {
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  styleUrls: ['example.component.css'],
   imports: [
     IonAvatar,
     IonButton,
@@ -34,15 +33,5 @@ import {
     IonToolbar,
   ],
 })
-export class ExampleComponent {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
-
-  decrement() {
-    this.count--;
-  }
-}
+export class ExampleComponent {}
 ```

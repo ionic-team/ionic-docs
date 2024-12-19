@@ -1,10 +1,22 @@
 ```ts
 import { Component } from '@angular/core';
+import {
+  IonButton,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonModal,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import { CheckboxCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
   canDismiss = false;
