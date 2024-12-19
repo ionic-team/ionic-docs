@@ -1,5 +1,17 @@
 ```tsx
 import { Component, OnInit } from '@angular/core';
+import {
+  IonAvatar,
+  IonContent,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonItem,
+  IonLabel,
+  IonList,
+} from '@ionic/angular/standalone';
 
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
@@ -9,6 +21,18 @@ import { add } from 'ionicons/icons';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [
+    IonAvatar,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonInfiniteScroll,
+    IonInfiniteScrollContent,
+    IonItem,
+    IonLabel,
+    IonList,
+  ],
 })
 export class ExampleComponent implements OnInit {
   items = [];
