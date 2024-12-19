@@ -1,9 +1,11 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonItem, IonLabel, IonList, IonSearchbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonItem, IonLabel, IonList, IonSearchbar],
 })
 export class ExampleComponent {
   public data = [
