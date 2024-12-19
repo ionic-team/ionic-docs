@@ -7,9 +7,5 @@ import { IonTextarea } from '@ionic/angular/standalone';
   templateUrl: 'example.component.html',
   imports: [IonTextarea],
 })
-export class ExampleComponent {
-  customCounterFormatter(inputLength: number, maxLength: number) {
-    return `${maxLength - inputLength} characters remaining`;
-  }
-}
+export class ExampleComponent {}
 ```
