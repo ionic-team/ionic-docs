@@ -1,5 +1,22 @@
 ```ts
 import { Component, OnInit } from '@angular/core';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonTitle,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
@@ -7,6 +24,23 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonRange,
+    IonText,
+    IonTitle,
+    IonToggle,
+    IonToolbar,
+  ],
 })
 export class ExampleComponent implements OnInit {
   paletteToggle = false;
