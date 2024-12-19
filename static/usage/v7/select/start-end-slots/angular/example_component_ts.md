@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonButton, IonIcon, IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { eye, leaf } from 'ionicons/icons';
@@ -8,6 +9,7 @@ import { eye, leaf } from 'ionicons/icons';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
+  imports: [IonButton, IonIcon, IonItem, IonList, IonSelect, IonSelectOption],
 })
 export class ExampleComponent {
   constructor() {
