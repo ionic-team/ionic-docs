@@ -1,10 +1,12 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
+import { IonButton, IonContent } from '@ionic/angular/standalone';
 import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonButton, IonContent],
 })
 export class ExampleComponent {
   @ViewChild(IonContent) content: IonContent;
