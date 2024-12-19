@@ -1,11 +1,21 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
+import {
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonModal,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import type { IonModal } from '@ionic/angular';
 import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal: IonModal;

@@ -1,5 +1,6 @@
 ```ts
 import { Component, ElementRef, ViewChildren, ViewChild } from '@angular/core';
+import { IonButton, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { AnimationController, IonCard } from '@ionic/angular';
@@ -8,6 +9,7 @@ import { AnimationController, IonCard } from '@ionic/angular';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
+  imports: [IonButton, IonCard, IonCardContent],
 })
 export class ExampleComponent {
   @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;

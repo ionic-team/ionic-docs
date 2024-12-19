@@ -1,11 +1,13 @@
 ```ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { IonButton, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import type { Animation } from '@ionic/angular';
 import { AnimationController, IonCard, IonCardContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonButton, IonCard, IonCardContent],
 })
 export class ExampleComponent {
   @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;
