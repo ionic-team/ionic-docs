@@ -5,6 +5,7 @@ import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/angular/standal
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonDatetime, IonDatetimeButton, IonModal],
 })
 export class ExampleComponent {}
