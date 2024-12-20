@@ -5,6 +5,7 @@ import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/angular/standa
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonItem, IonLabel, IonList, IonListHeader],
 })
 export class ExampleComponent {}
