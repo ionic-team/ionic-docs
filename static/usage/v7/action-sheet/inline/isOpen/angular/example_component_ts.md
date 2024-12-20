@@ -1,9 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonActionSheet, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonActionSheet, IonButton],
 })
 export class ExampleComponent {
   isActionSheetOpen = false;
