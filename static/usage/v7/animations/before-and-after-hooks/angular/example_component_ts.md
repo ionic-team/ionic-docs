@@ -8,6 +8,7 @@ import { AnimationController } from '@ionic/angular';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton, IonCard, IonCardContent],
 })
 export class ExampleComponent {
