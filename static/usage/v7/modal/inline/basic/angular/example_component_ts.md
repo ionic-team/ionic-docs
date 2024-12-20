@@ -17,6 +17,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
