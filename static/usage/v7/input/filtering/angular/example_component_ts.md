@@ -1,10 +1,13 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
+import { IonInput, IonItem, IonList } from '@ionic/angular/standalone';
 import type { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonInput, IonItem, IonList],
 })
 export class ExampleComponent {
   inputModel = '';
