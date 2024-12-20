@@ -5,6 +5,7 @@ import { IonButton, IonPickerLegacy } from '@ionic/angular/standalone';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton, IonPickerLegacy],
 })
 export class ExampleComponent {
