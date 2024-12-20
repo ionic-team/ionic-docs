@@ -3,7 +3,7 @@ import { Component, ElementRef, ViewChildren } from '@angular/core';
 import { IonButton, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
-import { AnimationController, IonCard } from '@ionic/angular';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -11,25 +11,25 @@ import { AnimationController, IonCard } from '@ionic/angular';
   imports: [IonButton, IonCard, IonCardContent],
 })
 export class ExampleComponent {
-  @ViewChildren(IonCard, { read: ElementRef }) cardElements: QueryList<ElementRef<HTMLIonCardElement>>;
+  @ViewChildren(IonCard, { read: ElementRef }) cardElements!: QueryList<ElementRef<HTMLIonCardElement>>;
 
-  private animation: Animation;
+  private animation!: Animation;
 
   constructor(private animationCtrl: AnimationController) {}
 
   ngAfterViewInit() {
     const cardA = this.animationCtrl
       .create()
-      .addElement(this.cardElements.get(0).nativeElement)
+      .addElement(this.cardElements.get(0)!.nativeElement)
       .keyframes([
         { offset: 0, transform: 'scale(1) rotate(0)' },
         { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
-        { offset: 1, transform: 'scale(1) rotate(0) ' },
+        { offset: 1, transform: 'scale(1) rotate(0)' },
       ]);
 
     const cardB = this.animationCtrl
       .create()
-      .addElement(this.cardElements.get(1).nativeElement)
+      .addElement(this.cardElements.get(1)!.nativeElement)
       .keyframes([
         { offset: 0, transform: 'scale(1)', opacity: '1' },
         { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
@@ -38,7 +38,7 @@ export class ExampleComponent {
 
     const cardC = this.animationCtrl
       .create()
-      .addElement(this.cardElements.get(2).nativeElement)
+      .addElement(this.cardElements.get(2)!.nativeElement)
       .duration(5000)
       .keyframes([
         { offset: 0, transform: 'scale(1)', opacity: '0.5' },
@@ -50,7 +50,7 @@ export class ExampleComponent {
       .create()
       .duration(2000)
       .iterations(Infinity)
-      .addAnimation([cardA, cardB, cardC]);
+      .addAnimation([cardA, cardB, cardC].filter(Boolean) as Animation[]);
   }
 
   play() {

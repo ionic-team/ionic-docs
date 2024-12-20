@@ -9,7 +9,6 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import type { IonModal } from '@ionic/angular';
 import { AnimationController } from '@ionic/angular';
 
 @Component({
@@ -18,7 +17,7 @@ import { AnimationController } from '@ionic/angular';
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  @ViewChild('modal', { static: true }) modal: IonModal;
+  @ViewChild('modal', { static: true }) modal!: IonModal;
 
   constructor(private animationCtrl: AnimationController) {}
 
@@ -26,18 +25,22 @@ export class ExampleComponent {
     const enterAnimation = (baseEl: HTMLElement) => {
       const root = baseEl.shadowRoot;
 
+      const backdropElement = root?.querySelector('ion-backdrop');
+      const wrapperElement = root?.querySelector('.modal-wrapper');
+
       const backdropAnimation = this.animationCtrl
         .create()
-        .addElement(root.querySelector('ion-backdrop'))
+        .addElement(backdropElement || baseEl)
         .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
-      const wrapperAnimation = this.animationCtrl
-        .create()
-        .addElement(root.querySelector('.modal-wrapper'))
-        .keyframes([
+      const wrapperAnimation = this.animationCtrl.create();
+
+      if (wrapperElement) {
+        wrapperAnimation.addElement(wrapperElement).keyframes([
           { offset: 0, opacity: '0', transform: 'scale(0)' },
           { offset: 1, opacity: '0.99', transform: 'scale(1)' },
         ]);
+      }
 
       return this.animationCtrl
         .create()

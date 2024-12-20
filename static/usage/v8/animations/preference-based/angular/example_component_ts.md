@@ -1,9 +1,8 @@
 ```ts
-import { Component, ElementRef, ViewChildren, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonButton, IonCard, IonCardContent } from '@ionic/angular/standalone';
-import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
-import { AnimationController, IonCard } from '@ionic/angular';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -12,9 +11,9 @@ import { AnimationController, IonCard } from '@ionic/angular';
   imports: [IonButton, IonCard, IonCardContent],
 })
 export class ExampleComponent {
-  @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;
+  @ViewChild(IonCard, { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;
 
-  private animation: Animation;
+  private animation!: Animation;
 
   constructor(private animationCtrl: AnimationController) {}
 

@@ -1,7 +1,7 @@
 ```ts
-import { Component, ElementRef, ViewChildren, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonCard, IonCardContent } from '@ionic/angular/standalone';
-import { AnimationController, GestureController, IonCard } from '@ionic/angular';
+import { AnimationController, GestureController } from '@ionic/angular';
 import type { Animation, Gesture, GestureDetail } from '@ionic/angular';
 
 @Component({
@@ -11,10 +11,10 @@ import type { Animation, Gesture, GestureDetail } from '@ionic/angular';
   imports: [IonCard, IonCardContent],
 })
 export class ExampleComponent {
-  @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;
+  @ViewChild(IonCard, { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;
 
-  private animation: Animation;
-  private gesture: Gesture;
+  private animation!: Animation;
+  private gesture!: Gesture;
   private started = false;
   private initialStep = 0;
 
