@@ -1,5 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
+import { IonButton } from '@ionic/angular/standalone';
 
 import { PopoverController } from '@ionic/angular';
 
@@ -8,6 +9,8 @@ import { PopoverComponent } from './popover.component';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonButton],
 })
 export class ExampleComponent {
   constructor(public popoverController: PopoverController) {}
