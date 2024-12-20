@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonBreadcrumb, IonBreadcrumbs, IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { arrowForwardCircle } from 'ionicons/icons';
@@ -8,6 +9,7 @@ import { arrowForwardCircle } from 'ionicons/icons';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
+  imports: [IonBreadcrumb, IonBreadcrumbs, IonIcon],
 })
 export class ExampleComponent {
   constructor() {

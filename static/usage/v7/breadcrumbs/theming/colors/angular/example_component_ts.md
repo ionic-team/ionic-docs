@@ -8,11 +8,5 @@ import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
   styleUrls: ['example.component.css'],
   imports: [IonBreadcrumb, IonBreadcrumbs],
 })
-export class ExampleComponent {
-  maxBreadcrumbs? = 4;
-
-  expandBreadcrumbs() {
-    this.maxBreadcrumbs = undefined;
-  }
-}
+export class ExampleComponent {}
 ```
