@@ -6,6 +6,7 @@ import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton, IonContent, IonHeader, IonMenu, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
