@@ -5,6 +5,7 @@ import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/angular/stan
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonContent, IonFooter, IonTitle, IonToolbar],
 })
 export class ExampleComponent {}
