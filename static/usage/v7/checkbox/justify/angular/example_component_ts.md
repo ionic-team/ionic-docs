@@ -5,6 +5,7 @@ import { IonCheckbox, IonItem, IonList } from '@ionic/angular/standalone';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonCheckbox, IonItem, IonList],
 })
 export class ExampleComponent {}
