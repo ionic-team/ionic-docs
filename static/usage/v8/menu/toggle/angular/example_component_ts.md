@@ -4,11 +4,8 @@ import {
   IonButton,
   IonContent,
   IonHeader,
-  IonItem,
   IonMenu,
   IonMenuToggle,
-  IonRadio,
-  IonRadioGroup,
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
@@ -17,20 +14,7 @@ import {
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
-  imports: [
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonMenu,
-    IonMenuToggle,
-    IonRadio,
-    IonRadioGroup,
-    IonTitle,
-    IonToolbar,
-  ],
+  imports: [IonButton, IonContent, IonHeader, IonMenu, IonMenuToggle, IonTitle, IonToolbar],
 })
-export class ExampleComponent {
-  menuType: string = 'overlay';
-}
+export class ExampleComponent {}
 ```
