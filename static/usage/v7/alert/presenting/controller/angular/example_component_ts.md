@@ -6,6 +6,7 @@ import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton],
 })
 export class ExampleComponent {

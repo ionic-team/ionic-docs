@@ -6,6 +6,7 @@ import type { OverlayEventDetail } from '@ionic/core';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonAlert, IonButton],
 })
 export class ExampleComponent {
