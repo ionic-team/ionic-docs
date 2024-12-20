@@ -5,6 +5,7 @@ import { IonHeader, IonSearchbar, IonTitle, IonToolbar } from '@ionic/angular/st
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonHeader, IonSearchbar, IonTitle, IonToolbar],
 })
 export class ExampleComponent {}
