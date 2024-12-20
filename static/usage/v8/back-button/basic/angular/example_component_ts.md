@@ -7,6 +7,7 @@ import { PageOneComponent } from './page-one.component';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonNav],
 })
 export class ExampleComponent {
