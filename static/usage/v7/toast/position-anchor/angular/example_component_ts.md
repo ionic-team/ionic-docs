@@ -5,6 +5,7 @@ import { IonButton, IonContent, IonFooter, IonHeader, IonTitle, IonToast, IonToo
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton, IonContent, IonFooter, IonHeader, IonTitle, IonToast, IonToolbar],
 })
 export class ExampleComponent {}
