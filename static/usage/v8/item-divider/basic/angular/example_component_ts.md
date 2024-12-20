@@ -5,6 +5,7 @@ import { IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList } from '@ionic
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList],
 })
 export class ExampleComponent {}
