@@ -1,7 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
 import { IonButton, IonContent } from '@ionic/angular/standalone';
-import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -10,7 +9,7 @@ import { IonContent } from '@ionic/angular';
   imports: [IonButton, IonContent],
 })
 export class ExampleComponent {
-  @ViewChild(IonContent) content: IonContent;
+  @ViewChild(IonContent) content!: IonContent;
 
   scrollToBottom() {
     // Passing a duration to the method makes it so the scroll slowly
