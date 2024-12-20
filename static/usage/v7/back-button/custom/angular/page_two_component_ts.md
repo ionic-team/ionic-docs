@@ -24,7 +24,7 @@ import { caretBack } from 'ionicons/icons';
   imports: [IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class PageTwoComponent {
-    constructor() {
+  constructor() {
     /**
      * Any icons you want to use in your application
      * can be registered in app.component.ts and then
