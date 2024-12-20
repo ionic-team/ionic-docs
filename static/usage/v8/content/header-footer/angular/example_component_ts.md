@@ -5,6 +5,7 @@ import { IonContent, IonFooter, IonHeader, IonTitle, IonToolbar } from '@ionic/a
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonContent, IonFooter, IonHeader, IonTitle, IonToolbar],
 })
 export class ExampleComponent {}
