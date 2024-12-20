@@ -5,6 +5,7 @@ import { IonAvatar, IonItem, IonLabel, IonThumbnail } from '@ionic/angular/stand
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonAvatar, IonItem, IonLabel, IonThumbnail],
 })
 export class ExampleComponent {}
