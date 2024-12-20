@@ -5,6 +5,7 @@ import { IonItem, IonLabel, IonList, IonSearchbar } from '@ionic/angular/standal
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonItem, IonLabel, IonList, IonSearchbar],
 })
 export class ExampleComponent {
