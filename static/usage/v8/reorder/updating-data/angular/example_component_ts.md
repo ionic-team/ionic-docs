@@ -1,11 +1,14 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/angular/standalone';
 
 import { ItemReorderEventDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonItem, IonLabel, IonList, IonReorder, IonReorderGroup],
 })
 export class ExampleComponent {
   items = [1, 2, 3, 4, 5];
