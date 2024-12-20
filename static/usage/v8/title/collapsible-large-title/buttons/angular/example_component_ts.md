@@ -14,6 +14,7 @@ import {
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonItem, IonList, IonTitle, IonToolbar],
 })
 export class ExampleComponent {}
