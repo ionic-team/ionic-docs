@@ -7,6 +7,7 @@ import { Item } from './types';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonContent, IonItem, IonLabel, IonList, IonModal],
 })
 export class ExampleComponent {

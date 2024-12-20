@@ -5,6 +5,7 @@ import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/sta
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonItem, IonList, IonSelect, IonSelectOption],
 })
 export class ExampleComponent {}
