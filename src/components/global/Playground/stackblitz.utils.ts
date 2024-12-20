@@ -112,7 +112,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'angular/main.ts',
       'angular/index.html',
       'angular/app.routes.ts',
-      'angular/app.component.ts',
+      options?.includeIonContent ? 'angular/app.component.withContent.ts' : 'angular/app.component.ts',
       'angular/app.component.css',
       options?.includeIonContent ? 'angular/app.component.withContent.html' : 'angular/app.component.html',
       'angular/example.component.ts',
