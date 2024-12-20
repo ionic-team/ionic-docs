@@ -21,6 +21,7 @@ import { add } from 'ionicons/icons';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [
     IonAvatar,
     IonContent,
