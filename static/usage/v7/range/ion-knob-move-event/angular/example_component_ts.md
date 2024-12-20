@@ -7,6 +7,7 @@ import { RangeCustomEvent } from '@ionic/angular';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [IonRange],
 })
 export class ExampleComponent {
