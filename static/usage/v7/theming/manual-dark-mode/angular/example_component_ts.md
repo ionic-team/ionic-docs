@@ -24,6 +24,7 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
   imports: [
     IonBackButton,
     IonButton,
