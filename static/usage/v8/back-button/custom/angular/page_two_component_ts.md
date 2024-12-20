@@ -1,5 +1,9 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { caretBack } from 'ionicons/icons';
 
 @Component({
   selector: 'app-page-two',
@@ -17,6 +21,16 @@ import { Component } from '@angular/core';
       <p>Use the back button to navigate to the previous page.</p>
     </ion-content>
   `,
+  imports: [IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar],
 })
-export class PageTwoComponent {}
+export class PageTwoComponent {
+    constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ caretBack });
+  }
+}
 ```
