@@ -16,7 +16,7 @@ import {
   imports: [IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover],
 })
 export class ExampleComponent {
-  @ViewChild('popover') popover;
+  @ViewChild('popover') popover!: HTMLIonPopoverElement;
 
   isOpen = false;
   collapsedBreadcrumbs: HTMLIonBreadcrumbElement[] = [];

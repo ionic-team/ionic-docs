@@ -1,5 +1,5 @@
 ```ts
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,7 +8,7 @@ import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
   imports: [IonBreadcrumb, IonBreadcrumbs],
 })
 export class ExampleComponent {
-  maxBreadcrumbs = 4;
+  maxBreadcrumbs? = 4;
 
   expandBreadcrumbs() {
     this.maxBreadcrumbs = undefined;
