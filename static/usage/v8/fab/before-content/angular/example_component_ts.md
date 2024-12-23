@@ -36,7 +36,7 @@ import { add } from 'ionicons/icons';
   ],
 })
 export class ExampleComponent implements OnInit {
-  items = [];
+  items: string[] = [];
 
   constructor() {
     /**
@@ -58,10 +58,10 @@ export class ExampleComponent implements OnInit {
     }
   }
 
-  onIonInfinite(ev) {
+  onIonInfinite(ev: InfiniteScrollCustomEvent) {
     this.generateItems();
     setTimeout(() => {
-      (ev as InfiniteScrollCustomEvent).target.complete();
+      ev.target.complete();
     }, 500);
   }
 }
