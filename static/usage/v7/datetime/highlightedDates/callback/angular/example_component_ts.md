@@ -9,7 +9,7 @@ import { IonDatetime } from '@ionic/angular/standalone';
   imports: [IonDatetime],
 })
 export class ExampleComponent {
-  highlightedDates = (isoString) => {
+  highlightedDates = (isoString: string) => {
     const date = new Date(isoString);
     const utcDay = date.getUTCDate();
 
