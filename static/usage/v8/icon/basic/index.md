@@ -12,7 +12,12 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 <Playground
   version="8"
   code={{
-    javascript,
+    javascript: {
+      files: {
+        'index.html': javascript_index_html,
+        'index.ts': javascript_index_ts,
+      },
+    },
     react,
     vue,
     angular: {
