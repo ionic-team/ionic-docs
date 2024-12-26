@@ -2,6 +2,21 @@
 import { Component } from '@angular/core';
 import { IonButton, IonPickerLegacy } from '@ionic/angular/standalone';
 
+interface PickerValue {
+  meat: {
+    text: string;
+    value: string;
+  };
+  veggies: {
+    text: string;
+    value: string;
+  };
+  crust: {
+    text: string;
+    value: string;
+  };
+}
+
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -70,7 +85,7 @@ export class ExampleComponent {
     },
     {
       text: 'Confirm',
-      handler: (value: any) => {
+      handler: (value: PickerValue) => {
         console.log(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
       },
     },
