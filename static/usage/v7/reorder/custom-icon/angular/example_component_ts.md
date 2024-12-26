@@ -1,8 +1,14 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonIcon, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/angular/standalone';
-
-import { ItemReorderEventDetail } from '@ionic/angular';
+import {
+  ItemReorderEventDetail,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonReorder,
+  IonReorderGroup,
+} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { pizza } from 'ionicons/icons';

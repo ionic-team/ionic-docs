@@ -1,8 +1,13 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/angular/standalone';
-
-import { ItemReorderEventDetail } from '@ionic/angular';
+import {
+  ItemReorderEventDetail,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonReorder,
+  IonReorderGroup,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
