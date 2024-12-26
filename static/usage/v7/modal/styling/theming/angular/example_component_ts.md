@@ -6,8 +6,8 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonImg,
   IonItem,
+  IonImg,
   IonLabel,
   IonList,
   IonModal,
@@ -25,8 +25,8 @@ import {
     IonButtons,
     IonContent,
     IonHeader,
-    IonImg,
     IonItem,
+    IonImg,
     IonLabel,
     IonList,
     IonModal,
@@ -34,12 +34,5 @@ import {
     IonToolbar,
   ],
 })
-export class ExampleComponent {
-  // Typically referenced to your ion-router-outlet
-  presentingElement!: HTMLElement | null;
-
-  ngOnInit() {
-    this.presentingElement = document.querySelector('.ion-page');
-  }
-}
+export class ExampleComponent {}
 ```

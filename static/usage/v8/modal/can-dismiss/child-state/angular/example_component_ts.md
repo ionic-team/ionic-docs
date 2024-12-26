@@ -1,17 +1,26 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonButton, IonContent, IonHeader, IonModal, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { FormsModule } from '@angular/forms';
+import {
+  ActionSheetController,
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonModal,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
-import { ActionSheetController } from '@ionic/angular';
+import { ChildComponent } from './child.component';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
-  imports: [IonButton, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
+  imports: [ChildComponent, FormsModule, IonButton, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  presentingElement = undefined;
+  presentingElement!: HTMLElement | null;
 
   private canDismissOverride = false;
 
@@ -21,7 +30,8 @@ export class ExampleComponent {
     this.presentingElement = document.querySelector('.ion-page');
   }
 
-  onDismissChange(canDismiss: boolean) {
+  onDismissChange(canDismiss: any) {
+    console.log('canDismiss', canDismiss);
     // Allows the modal to be dismissed based on the state of the checkbox
     this.canDismissOverride = canDismiss;
   }

@@ -1,6 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 import {
+  CheckboxCustomEvent,
   IonButton,
   IonButtons,
   IonCheckbox,
@@ -11,7 +12,6 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import { CheckboxCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -22,7 +22,7 @@ import { CheckboxCustomEvent } from '@ionic/angular';
 export class ExampleComponent {
   canDismiss = false;
 
-  presentingElement = null;
+  presentingElement!: HTMLElement | null;
 
   ngOnInit() {
     this.presentingElement = document.querySelector('.ion-page');

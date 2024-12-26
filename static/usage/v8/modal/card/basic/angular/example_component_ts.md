@@ -36,7 +36,7 @@ import {
 })
 export class ExampleComponent {
   // Typically referenced to your ion-router-outlet
-  presentingElement = null;
+  presentingElement!: HTMLElement | null;
 
   ngOnInit() {
     this.presentingElement = document.querySelector('.ion-page');

@@ -1,6 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 import {
+  ActionSheetController,
   IonButton,
   IonButtons,
   IonContent,
@@ -10,8 +11,6 @@ import {
   IonToolbar,
 } from '@ionic/angular/standalone';
 
-import { ActionSheetController } from '@ionic/angular';
-
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -19,7 +18,7 @@ import { ActionSheetController } from '@ionic/angular';
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  presentingElement = undefined;
+  presentingElement!: HTMLElement | null;
 
   constructor(private actionSheetCtrl: ActionSheetController) {}
 
