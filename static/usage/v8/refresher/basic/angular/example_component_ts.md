@@ -16,10 +16,10 @@ import {
   imports: [IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  handleRefresh(event) {
+  handleRefresh(event: CustomEvent) {
     setTimeout(() => {
       // Any calls to load data go here
-      event.target.complete();
+      (event.target as HTMLIonRefresherElement).complete();
     }, 2000);
   }
 }

@@ -16,6 +16,11 @@ import {
 import { addIcons } from 'ionicons';
 import { ellipse } from 'ionicons/icons';
 
+interface Item {
+  name: string;
+  unread: boolean;
+}
+
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -49,7 +54,7 @@ export class ExampleComponent {
     'Rachel Rabbit',
     'Ted Turtle',
   ];
-  public items = [];
+  public items: Item[] = [];
 
   constructor() {
     /**
@@ -68,7 +73,7 @@ export class ExampleComponent {
     return this.names[Math.floor(Math.random() * this.names.length)];
   }
 
-  addItems(count, unread = false) {
+  addItems(count: number, unread = false) {
     for (let i = 0; i < count; i++) {
       this.items.unshift({
         name: this.chooseRandomName(),
@@ -77,10 +82,10 @@ export class ExampleComponent {
     }
   }
 
-  handleRefresh(event) {
+  handleRefresh(event: CustomEvent) {
     setTimeout(() => {
       this.addItems(3, true);
-      event.target.complete();
+      (event.target as HTMLIonRefresherElement).complete();
     }, 2000);
   }
 }
