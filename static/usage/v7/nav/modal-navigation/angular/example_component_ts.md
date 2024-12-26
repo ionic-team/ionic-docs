@@ -10,7 +10,6 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import { IonNav } from '@ionic/angular';
 
 import { PageOneComponent } from './page-one.component';
 
@@ -21,7 +20,7 @@ import { PageOneComponent } from './page-one.component';
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonNav, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  @ViewChild('nav') private nav: IonNav;
+  @ViewChild('nav') private nav!: IonNav;
 
   onWillPresent() {
     this.nav.setRoot(PageOneComponent);
