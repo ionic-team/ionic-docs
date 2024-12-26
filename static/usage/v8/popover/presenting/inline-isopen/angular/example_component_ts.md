@@ -9,7 +9,7 @@ import { IonButton, IonContent, IonPopover } from '@ionic/angular/standalone';
   imports: [IonButton, IonContent, IonPopover],
 })
 export class ExampleComponent {
-  @ViewChild('popover') popover;
+  @ViewChild('popover') popover!: HTMLIonPopoverElement;
 
   isOpen = false;
 

@@ -1,5 +1,5 @@
 ```ts
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonButton, IonContent, IonPopover } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,14 +8,5 @@ import { IonButton, IonContent, IonPopover } from '@ionic/angular/standalone';
   styleUrls: ['example.component.css'],
   imports: [IonButton, IonContent, IonPopover],
 })
-export class ExampleComponent {
-  @ViewChild('popover') popover!: HTMLIonPopoverElement;
-
-  isOpen = false;
-
-  presentPopover(e: Event) {
-    this.popover.event = e;
-    this.isOpen = true;
-  }
-}
+export class ExampleComponent {}
 ```
