@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   IonButton,
   IonContent,
@@ -18,6 +19,7 @@ import {
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [
+    FormsModule,
     IonButton,
     IonContent,
     IonHeader,
