@@ -2,8 +2,8 @@
 import { Component, ElementRef, ViewChildren } from '@angular/core';
 import { IonButton, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import type { QueryList } from '@angular/core';
-import type { Animation } from '@ionic/angular';
-import { AnimationController } from '@ionic/angular';
+import type { Animation } from '@ionic/angular/standalone';
+import { AnimationController } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',

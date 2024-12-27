@@ -1,6 +1,7 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
 import {
+  AnimationController,
   IonButton,
   IonButtons,
   IonContent,
@@ -9,7 +10,6 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

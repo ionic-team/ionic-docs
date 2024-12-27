@@ -1,8 +1,7 @@
 ```ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IonCard, IonCardContent } from '@ionic/angular/standalone';
-import { AnimationController, GestureController } from '@ionic/angular';
-import type { Animation, Gesture, GestureDetail } from '@ionic/angular';
+import { AnimationController, GestureController, IonCard, IonCardContent } from '@ionic/angular/standalone';
+import type { Animation, Gesture, GestureDetail } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',

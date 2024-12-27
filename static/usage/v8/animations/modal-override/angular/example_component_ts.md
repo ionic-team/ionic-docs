@@ -9,7 +9,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import { AnimationController } from '@ionic/angular';
+import { AnimationController } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',

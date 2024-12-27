@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { AnimationController } from '@ionic/angular';
+import { AnimationController } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
