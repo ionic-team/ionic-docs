@@ -1,5 +1,6 @@
 ```ts
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   IonBackButton,
   IonButton,
@@ -26,6 +27,7 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [
+    FormsModule,
     IonBackButton,
     IonButton,
     IonButtons,
@@ -68,18 +70,18 @@ export class ExampleComponent implements OnInit {
   }
 
   // Check/uncheck the toggle and update the theme based on isDark
-  initializeDarkTheme(isDark) {
+  initializeDarkTheme(isDark: boolean) {
     this.themeToggle = isDark;
     this.toggleDarkTheme(isDark);
   }
 
   // Listen for the toggle check/uncheck to toggle the dark theme
-  toggleChange(ev) {
-    this.toggleDarkTheme(ev.detail.checked);
+  toggleChange(event: CustomEvent) {
+    this.toggleDarkTheme(event.detail.checked);
   }
 
   // Add or remove the "dark" class on the document body
-  toggleDarkTheme(shouldAdd) {
+  toggleDarkTheme(shouldAdd: boolean) {
     document.body.classList.toggle('dark', shouldAdd);
   }
 }
