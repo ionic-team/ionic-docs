@@ -23,9 +23,10 @@ export class ExampleComponent {
   ];
   public results = [...this.data];
 
-  handleInput(event) {
-    const query = event.target.value.toLowerCase();
-    this.results = this.data.filter((d) => d.toLowerCase().indexOf(query) > -1);
+  handleInput(event: Event) {
+    const target = event.target as HTMLIonSearchbarElement;
+    const query = target.value?.toLowerCase() || '';
+    this.results = this.data.filter((d) => d.toLowerCase().includes(query));
   }
 }
 ```
