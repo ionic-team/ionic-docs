@@ -153,7 +153,6 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     'src/global.css': defaultFiles[12],
     'src/theme/variables.css': defaultFiles[13],
     ...options?.files,
-    ...options?.dependencies,
   };
 
   files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
