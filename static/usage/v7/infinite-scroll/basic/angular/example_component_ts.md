@@ -1,6 +1,7 @@
 ```tsx
 import { Component, OnInit } from '@angular/core';
 import {
+  InfiniteScrollCustomEvent,
   IonAvatar,
   IonContent,
   IonInfiniteScroll,
@@ -9,8 +10,6 @@ import {
   IonLabel,
   IonList,
 } from '@ionic/angular/standalone';
-
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
