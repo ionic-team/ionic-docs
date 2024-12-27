@@ -26,8 +26,8 @@ export class ExampleComponent {
     },
   ];
 
-  setRoleMessage(ev) {
-    const { role } = ev.detail;
+  setRoleMessage(event: CustomEvent) {
+    const { role } = event.detail;
     console.log(`Dismissed with role: ${role}`);
   }
 }
