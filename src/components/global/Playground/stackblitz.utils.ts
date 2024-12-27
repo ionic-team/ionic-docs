@@ -112,7 +112,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'angular/main.ts',
       'angular/index.html',
       'angular/app.routes.ts',
-      'angular/app.component.ts',
+      options?.includeIonContent ? 'angular/app.component.withContent.ts' : 'angular/app.component.ts',
       'angular/app.component.css',
       options?.includeIonContent ? 'angular/app.component.withContent.html' : 'angular/app.component.html',
       'angular/example.component.ts',
@@ -153,7 +153,6 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     'src/global.css': defaultFiles[12],
     'src/theme/variables.css': defaultFiles[13],
     ...options?.files,
-    ...options?.dependencies,
   };
 
   files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
