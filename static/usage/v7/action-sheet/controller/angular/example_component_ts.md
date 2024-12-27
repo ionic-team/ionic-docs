@@ -1,8 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonButton } from '@ionic/angular/standalone';
-
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
