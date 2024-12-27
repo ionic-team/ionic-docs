@@ -2,6 +2,12 @@
 import { Component } from '@angular/core';
 import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
 
+interface Food {
+  id: number;
+  name: string;
+  type: string;
+}
+
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -9,7 +15,7 @@ import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/sta
   imports: [IonItem, IonList, IonSelect, IonSelectOption],
 })
 export class ExampleComponent {
-  foods = [
+  foods: Food[] = [
     {
       id: 1,
       name: 'Apples',
@@ -27,7 +33,7 @@ export class ExampleComponent {
     },
   ];
 
-  compareWith(o1, o2) {
+  compareWith(o1: Food | null, o2: Food | Food[] | null): boolean {
     if (!o1 || !o2) {
       return o1 === o2;
     }
@@ -39,8 +45,9 @@ export class ExampleComponent {
     return o1.id === o2.id;
   }
 
-  handleChange(ev) {
-    console.log('Current value:', JSON.stringify(ev.target.value));
+  handleChange(ev: Event) {
+    const target = ev.target as HTMLIonSelectElement;
+    console.log('Current value:', JSON.stringify(target.value));
   }
 }
 ```

@@ -9,8 +9,8 @@ import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/sta
   imports: [IonItem, IonList, IonSelect, IonSelectOption],
 })
 export class ExampleComponent {
-  handleChange(e) {
-    console.log('ionChange fired with value: ' + e.detail.value);
+  handleChange(event: CustomEvent) {
+    console.log('ionChange fired with value: ' + event.detail.value);
   }
 
   handleCancel() {

@@ -1,14 +1,15 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
 import { IonContent, IonItem, IonLabel, IonList, IonModal } from '@ionic/angular/standalone';
-import { IonModal } from '@ionic/angular';
 import { Item } from './types';
+
+import { TypeaheadComponent } from './typeahead.component';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
-  imports: [IonContent, IonItem, IonLabel, IonList, IonModal],
+  imports: [IonContent, IonItem, IonLabel, IonList, IonModal, TypeaheadComponent],
 })
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
@@ -44,15 +45,23 @@ export class ExampleComponent {
     { text: 'Strawberry', value: 'strawberry' },
   ];
 
-  private formatData(data: string[]) {
+  /**
+   * Formats the display text based on the selected fruits.
+   * @param data - Array of selected fruit values
+   * @returns A formatted string for display
+   */
+  private formatData(data: string[]): string {
     if (data.length === 1) {
       const fruit = this.fruits.find((fruit) => fruit.value === data[0]);
-      return fruit.text;
+      return fruit ? fruit.text : '';
     }
-
     return `${data.length} items`;
   }
 
+  /**
+   * Handles fruit selection changes and updates the selected fruits and text.
+   * @param fruits - Array of selected fruit values
+   */
   fruitSelectionChanged(fruits: string[]) {
     this.selectedFruits = fruits;
     this.selectedFruitsText = this.formatData(this.selectedFruits);

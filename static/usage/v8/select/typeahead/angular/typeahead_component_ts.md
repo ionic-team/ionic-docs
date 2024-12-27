@@ -1,11 +1,37 @@
 ```ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import type { OnInit } from '@angular/core';
+
+import {
+  IonButton,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonList,
+  IonSearchbar,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+
 import { Item } from './types';
 
 @Component({
   selector: 'app-typeahead',
   templateUrl: 'typeahead.component.html',
+  imports: [
+    IonButton,
+    IonButtons,
+    IonCheckbox,
+    IonContent,
+    IonHeader,
+    IonItem,
+    IonList,
+    IonSearchbar,
+    IonTitle,
+    IonToolbar,
+  ],
 })
 export class TypeaheadComponent implements OnInit {
   @Input() items: Item[] = [];
@@ -23,10 +49,6 @@ export class TypeaheadComponent implements OnInit {
     this.workingSelectedValues = [...this.selectedItems];
   }
 
-  trackItems(index: number, item: Item) {
-    return item.value;
-  }
-
   cancelChanges() {
     this.selectionCancel.emit();
   }
@@ -35,8 +57,9 @@ export class TypeaheadComponent implements OnInit {
     this.selectionChange.emit(this.workingSelectedValues);
   }
 
-  searchbarInput(ev) {
-    this.filterList(ev.target.value);
+  searchbarInput(ev: Event) {
+    const inputElement = ev.target as HTMLInputElement;
+    this.filterList(inputElement.value);
   }
 
   /**
@@ -50,7 +73,7 @@ export class TypeaheadComponent implements OnInit {
      * If no search query is defined,
      * return all options.
      */
-    if (searchQuery === undefined) {
+    if (searchQuery === undefined || searchQuery.trim() === '') {
       this.filteredItems = [...this.items];
     } else {
       /**
@@ -59,17 +82,15 @@ export class TypeaheadComponent implements OnInit {
        * contain the search query as a substring.
        */
       const normalizedQuery = searchQuery.toLowerCase();
-      this.filteredItems = this.items.filter((item) => {
-        return item.text.toLowerCase().includes(normalizedQuery);
-      });
+      this.filteredItems = this.items.filter((item) => item.text.toLowerCase().includes(normalizedQuery));
     }
   }
 
-  isChecked(value: string) {
-    return this.workingSelectedValues.find((item) => item === value);
+  isChecked(value: string): boolean {
+    return this.workingSelectedValues.includes(value);
   }
 
-  checkboxChange(ev) {
+  checkboxChange(ev: CustomEvent<{ checked: boolean; value: string }>) {
     const { checked, value } = ev.detail;
 
     if (checked) {
