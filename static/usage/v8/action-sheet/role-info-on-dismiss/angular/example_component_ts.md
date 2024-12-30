@@ -35,9 +35,8 @@ export class ExampleComponent {
 
   constructor() {}
 
-  logResult(event: Event) {
-    const ev = event as CustomEvent<OverlayEventDetail<string>>;
-    console.log(JSON.stringify(ev.detail, null, 2));
+  logResult(event: CustomEvent<OverlayEventDetail<string>>) {
+    console.log(JSON.stringify(event.detail, null, 2));
   }
 }
 ```
