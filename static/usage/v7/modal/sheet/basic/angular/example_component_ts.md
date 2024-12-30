@@ -34,15 +34,5 @@ import {
     IonToolbar,
   ],
 })
-export class ExampleComponent {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
-
-  decrement() {
-    this.count--;
-  }
-}
+export class ExampleComponent {}
 ```

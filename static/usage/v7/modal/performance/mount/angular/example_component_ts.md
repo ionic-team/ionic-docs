@@ -16,11 +16,5 @@ import {
   styleUrls: ['example.component.css'],
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
-export class ExampleComponent {
-  isModalOpen = false;
-
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen;
-  }
-}
+export class ExampleComponent {}
 ```

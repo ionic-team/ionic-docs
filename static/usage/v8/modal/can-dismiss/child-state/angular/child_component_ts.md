@@ -1,11 +1,25 @@
 ```ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { CheckboxCustomEvent, IonModal } from '@ionic/angular';
+import {
+  CheckboxCustomEvent,
+  IonButton,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonList,
+  IonModal,
+  IonNote,
+  IonToolbar,
+  IonTitle,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-child',
   templateUrl: 'child.component.html',
+  imports: [IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonList, IonNote, IonToolbar, IonTitle],
 })
 export class ChildComponent {
   @Input() modal!: IonModal;

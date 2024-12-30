@@ -3,14 +3,14 @@ import { Component } from '@angular/core';
 import {
   IonAvatar,
   IonButton,
+  IonButtons,
   IonContent,
   IonHeader,
-  IonImg,
   IonItem,
+  IonImg,
   IonLabel,
   IonList,
   IonModal,
-  IonSearchbar,
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
@@ -22,27 +22,17 @@ import {
   imports: [
     IonAvatar,
     IonButton,
+    IonButtons,
     IonContent,
     IonHeader,
-    IonImg,
     IonItem,
+    IonImg,
     IonLabel,
     IonList,
     IonModal,
-    IonSearchbar,
     IonTitle,
     IonToolbar,
   ],
 })
-export class ExampleComponent {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
-
-  decrement() {
-    this.count--;
-  }
-}
+export class ExampleComponent {}
 ```
