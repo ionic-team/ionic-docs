@@ -10,7 +10,11 @@ import { <%= pascalComponent %> } from '@ionic/react';<% if (css){ %>
 import './main.css';<% } %>
 
 function Example() {
-  return <<%= pascalComponent %>></<%= pascalComponent %>>;
+  return (
+    <>
+      <<%= pascalComponent %>></<%= pascalComponent %>>
+    </>
+  );
 }
 export default Example;
 ```
