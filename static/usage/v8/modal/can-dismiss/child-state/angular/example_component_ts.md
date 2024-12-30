@@ -30,8 +30,7 @@ export class ExampleComponent {
     this.presentingElement = document.querySelector('.ion-page');
   }
 
-  onDismissChange(canDismiss: any) {
-    console.log('canDismiss', canDismiss);
+  onDismissChange(canDismiss: boolean) {
     // Allows the modal to be dismissed based on the state of the checkbox
     this.canDismissOverride = canDismiss;
   }
