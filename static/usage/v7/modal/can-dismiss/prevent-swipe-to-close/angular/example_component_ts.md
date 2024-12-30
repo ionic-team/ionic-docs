@@ -17,7 +17,7 @@ import {
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  async canDismiss(data?: any, role?: string) {
+  async canDismiss(data?: undefined, role?: string) {
     return role !== 'gesture';
   }
 }

@@ -11,7 +11,7 @@ import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/angul
 export class ExampleComponent {
   private values: string[] = ['first', 'second', 'third'];
 
-  accordionGroupChange = (ev: any) => {
+  accordionGroupChange = (ev: CustomEvent) => {
     const collapsedItems = this.values.filter((value) => value !== ev.detail.value);
     const selectedValue = ev.detail.value;
 

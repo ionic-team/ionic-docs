@@ -26,9 +26,8 @@ export class ChildComponent {
 
   @Output() dismissChange = new EventEmitter<boolean>();
 
-  checkboxChanged(event: any) {
-    const ev = event as CheckboxCustomEvent;
-    const checked = ev.detail.checked;
+  checkboxChanged(event: CheckboxCustomEvent) {
+    const checked = event.detail.checked;
 
     this.dismissChange.emit(checked);
   }
