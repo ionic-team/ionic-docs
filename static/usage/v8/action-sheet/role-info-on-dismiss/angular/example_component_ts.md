@@ -32,8 +32,8 @@ export class ExampleComponent {
 
   constructor() {}
 
-  logResult(ev) {
-    console.log(JSON.stringify(ev.detail, null, 2));
+  logResult(event) {
+    console.log(JSON.stringify(event.detail, null, 2));
   }
 }
 ```

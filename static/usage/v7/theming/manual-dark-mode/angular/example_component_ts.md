@@ -39,8 +39,8 @@ export class ExampleComponent implements OnInit {
   }
 
   // Listen for the toggle check/uncheck to toggle the dark theme
-  toggleChange(ev) {
-    this.toggleDarkTheme(ev.detail.checked);
+  toggleChange(event) {
+    this.toggleDarkTheme(event.detail.checked);
   }
 
   // Add or remove the "dark" class on the document body

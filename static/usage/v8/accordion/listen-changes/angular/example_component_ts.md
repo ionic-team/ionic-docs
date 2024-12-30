@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class ExampleComponent {
   private values: string[] = ['first', 'second', 'third'];
 
-  accordionGroupChange = (ev: any) => {
-    const collapsedItems = this.values.filter((value) => value !== ev.detail.value);
-    const selectedValue = ev.detail.value;
+  accordionGroupChange = (event: any) => {
+    const collapsedItems = this.values.filter((value) => value !== event.detail.value);
+    const selectedValue = event.detail.value;
 
     console.log(
-      `Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
+      `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
     );
   };
 }

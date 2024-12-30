@@ -8,8 +8,8 @@ import { RangeCustomEvent } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  onIonChange(ev: Event) {
-    console.log('ionChange emitted value:', (ev as RangeCustomEvent).detail.value);
+  onIonChange(event: Event) {
+    console.log('ionChange emitted value:', (event as RangeCustomEvent).detail.value);
   }
 }
 ```

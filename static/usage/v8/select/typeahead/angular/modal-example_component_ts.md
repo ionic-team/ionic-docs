@@ -35,8 +35,8 @@ export class TypeaheadComponent implements OnInit {
     this.selectionChange.emit(this.workingSelectedValues);
   }
 
-  searchbarInput(ev) {
-    this.filterList(ev.target.value);
+  searchbarInput(event) {
+    this.filterList(event.target.value);
   }
 
   /**
@@ -69,8 +69,8 @@ export class TypeaheadComponent implements OnInit {
     return this.workingSelectedValues.find((item) => item === value);
   }
 
-  checkboxChange(ev) {
-    const { checked, value } = ev.detail;
+  checkboxChange(event) {
+    const { checked, value } = event.detail;
 
     if (checked) {
       this.workingSelectedValues = [...this.workingSelectedValues, value];

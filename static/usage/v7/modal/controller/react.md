@@ -54,9 +54,9 @@ function Example() {
 
   function openModal() {
     present({
-      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
-        if (ev.detail.role === 'confirm') {
-          setMessage(`Hello, ${ev.detail.data}!`);
+      onWillDismiss: (event: CustomEvent<OverlayEventDetail>) => {
+        if (event.detail.role === 'confirm') {
+          setMessage(`Hello, ${event.detail.data}!`);
         }
       },
     });

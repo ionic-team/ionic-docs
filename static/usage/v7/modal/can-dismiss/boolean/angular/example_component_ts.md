@@ -16,8 +16,8 @@ export class ExampleComponent {
   }
 
   onTermsChanged(event: Event) {
-    const ev = event as CheckboxCustomEvent;
-    this.canDismiss = ev.detail.checked;
+    const event = event as CheckboxCustomEvent;
+    this.canDismiss = event.detail.checked;
   }
 }
 ```

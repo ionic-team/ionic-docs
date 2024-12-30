@@ -24,8 +24,8 @@
   export default defineComponent({
     components: { IonItem, IonList, IonSelect, IonSelectOption },
     methods: {
-      handleChange(ev) {
-        console.log('ionChange fired with value: ' + ev.detail.value);
+      handleChange(event) {
+        console.log('ionChange fired with value: ' + event.detail.value);
       },
       handleCancel() {
         console.log('ionCancel fired');

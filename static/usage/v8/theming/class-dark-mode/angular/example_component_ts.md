@@ -39,8 +39,8 @@ export class ExampleComponent implements OnInit {
   }
 
   // Listen for the toggle check/uncheck to toggle the dark palette
-  toggleChange(ev) {
-    this.toggleDarkPalette(ev.detail.checked);
+  toggleChange(event) {
+    this.toggleDarkPalette(event.detail.checked);
   }
 
   // Add or remove the "ion-palette-dark" class on the html element

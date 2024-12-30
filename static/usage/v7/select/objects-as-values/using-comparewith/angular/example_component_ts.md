@@ -28,8 +28,8 @@ export class ExampleComponent {
     return o1 && o2 ? o1.id === o2.id : o1 === o2;
   }
 
-  handleChange(ev) {
-    console.log('Current value:', JSON.stringify(ev.target.value));
+  handleChange(event) {
+    console.log('Current value:', JSON.stringify(event.target.value));
   }
 }
 ```

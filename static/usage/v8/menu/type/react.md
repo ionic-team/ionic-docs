@@ -42,8 +42,8 @@ function Example() {
           <h2>Select an overlay type:</h2>
           <IonRadioGroup
             value={menuType}
-            onIonChange={(ev: RadioGroupCustomEvent) => {
-              setMenuType(ev.detail.value);
+            onIonChange={(event: RadioGroupCustomEvent) => {
+              setMenuType(event.detail.value);
             }}
           >
             <IonItem>

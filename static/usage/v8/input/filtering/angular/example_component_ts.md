@@ -11,8 +11,8 @@ export class ExampleComponent {
 
   @ViewChild('ionInputEl', { static: true }) ionInputEl!: IonInput;
 
-  onInput(ev) {
-    const value = ev.target!.value;
+  onInput(event) {
+    const value = event.target!.value;
 
     // Removes non alphanumeric characters
     const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');

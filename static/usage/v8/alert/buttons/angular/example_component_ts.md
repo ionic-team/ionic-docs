@@ -23,8 +23,8 @@ export class ExampleComponent {
     },
   ];
 
-  setResult(ev) {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+  setResult(event) {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   }
 }
 ```

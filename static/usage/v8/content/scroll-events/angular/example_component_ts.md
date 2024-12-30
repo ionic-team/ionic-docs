@@ -11,8 +11,8 @@ export class ExampleComponent {
     console.log('scroll start');
   }
 
-  handleScroll(ev: CustomEvent<ScrollDetail>) {
-    console.log('scroll', JSON.stringify(ev.detail));
+  handleScroll(event: CustomEvent<ScrollDetail>) {
+    console.log('scroll', JSON.stringify(event.detail));
   }
 
   handleScrollEnd() {

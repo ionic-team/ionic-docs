@@ -135,13 +135,13 @@
       prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
 
       // Listen for the toggle check/uncheck to toggle the dark palette
-      const darkChange = (ev: ToggleCustomEvent) => {
-        toggleDarkPalette(ev.detail.checked);
+      const darkChange = (event: ToggleCustomEvent) => {
+        toggleDarkPalette(event.detail.checked);
       };
 
       // Listen for the toggle check/uncheck to toggle the high contrast palette
-      const highContrastChange = (ev: ToggleCustomEvent) => {
-        toggleHighContrastPalette(ev.detail.checked);
+      const highContrastChange = (event: ToggleCustomEvent) => {
+        toggleHighContrastPalette(event.detail.checked);
       };
 
       return {
