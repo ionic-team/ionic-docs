@@ -8,9 +8,5 @@ import { IonRange } from '@ionic/angular/standalone';
   styleUrls: ['example.component.css'],
   imports: [IonRange],
 })
-export class ExampleComponent {
-  pinFormatter(value: number) {
-    return `${value}%`;
-  }
-}
+export class ExampleComponent {}
 ```
