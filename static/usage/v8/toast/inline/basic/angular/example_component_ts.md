@@ -8,11 +8,5 @@ import { IonButton, IonContent, IonHeader, IonTitle, IonToast, IonToolbar } from
   styleUrls: ['example.component.css'],
   imports: [IonButton, IonContent, IonHeader, IonTitle, IonToast, IonToolbar],
 })
-export class ExampleComponent {
-  isToastOpen = false;
-
-  setOpen(isOpen: boolean) {
-    this.isToastOpen = isOpen;
-  }
-}
+export class ExampleComponent {}
 ```
