@@ -1,10 +1,20 @@
 ```ts
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonMenu,
+  IonTitle,
+  IonToolbar,
+  MenuController,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonButton, IonContent, IonHeader, IonMenu, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
   constructor(private menuCtrl: MenuController) {}
