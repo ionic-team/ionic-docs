@@ -1,9 +1,10 @@
 ---
-# this file only gets generated if `angular_ts` (from the command line prompt) is true
-to: "<%= angular_ts ? `static/usage/v${version}/${name}/${path}/angular/example_component_ts.md` : null %>"
+arbitrary: <% pascalComponent = h.changeCase.pascal(component) %>
+to: "<%= `static/usage/v${version}/${name}/${path}/angular/example_component_ts.md` %>"
 ---
 ```ts
 import { Component } from '@angular/core';
+import { <%= pascalComponent %> } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
@@ -11,7 +12,7 @@ import { Component } from '@angular/core';
 <% if (css){ -%>
   styleUrls: ['./example.component.css'],
 <% } -%>
+  imports: [<%= pascalComponent %>],
 })
-export class ExampleComponent {
-}
+export class ExampleComponent {}
 ```
