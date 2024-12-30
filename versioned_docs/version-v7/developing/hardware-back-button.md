@@ -67,8 +67,8 @@ The `ionBackButton` event will not be emitted when running an app in a browser o
 <TabItem value="javascript">
 
 ```javascript
-document.addEventListener('ionBackButton', (ev) => {
-  ev.detail.register(10, () => {
+document.addEventListener('ionBackButton', (event) => {
+  event.detail.register(10, () => {
     console.log('Handler was called!');
   });
 });
@@ -108,8 +108,8 @@ constructor(private platform: Platform) {
 <TabItem value="react">
 
 ```tsx
-document.addEventListener('ionBackButton', (ev) => {
-  ev.detail.register(10, () => {
+document.addEventListener('ionBackButton', (event) => {
+  event.detail.register(10, () => {
     console.log('Handler was called!');
   });
 });
@@ -157,12 +157,12 @@ Each hardware back button callback has a `processNextHandler` parameter. Calling
 <TabItem value="javascript">
 
 ```javascript
-document.addEventListener('ionBackButton', (ev) => {
-  ev.detail.register(5, () => {
+document.addEventListener('ionBackButton', (event) => {
+  event.detail.register(5, () => {
     console.log('Another handler was called!');
   });
 
-  ev.detail.register(10, (processNextHandler) => {
+  event.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
 
     processNextHandler();
@@ -216,12 +216,12 @@ constructor(private platform: Platform) {
 <TabItem value="react">
 
 ```tsx
-document.addEventListener('ionBackButton', (ev) => {
-  ev.detail.register(5, () => {
+document.addEventListener('ionBackButton', (event) => {
+  event.detail.register(5, () => {
     console.log('Another handler was called!');
   });
 
-  ev.detail.register(10, (processNextHandler) => {
+  event.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
 
     processNextHandler();
@@ -261,16 +261,16 @@ This example shows how to indicate to Ionic Framework that you want the next han
 Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
 
 ```javascript
-document.addEventListener('ionBackButton', (ev) => {
+document.addEventListener('ionBackButton', (event) => {
   // Handler A
-  ev.detail.register(10, (processNextHandler) => {
+  event.detail.register(10, (processNextHandler) => {
     console.log('Handler A was called!');
 
     processNextHandler();
   });
 
   // Handler B
-  ev.detail.register(10, (processNextHandler) => {
+  event.detail.register(10, (processNextHandler) => {
     console.log('Handler B was called!');
 
     processNextHandler();
@@ -305,8 +305,8 @@ import { App } from '@capacitor/app';
 ...
 
 const routerEl = document.querySelector('ion-router');
-document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
-  ev.detail.register(-1, () => {
+document.addEventListener('ionBackButton', (event: BackButtonEvent) => {
+  event.detail.register(-1, () => {
     const path = window.location.pathname;
     if (path === routerEl.root) {
       App.exitApp();
@@ -368,8 +368,8 @@ import { App } from '@capacitor/app';
 ...
 
 const ionRouter = useIonRouter();
-document.addEventListener('ionBackButton', (ev) => {
-  ev.detail.register(-1, () => {
+document.addEventListener('ionBackButton', (event) => {
+  event.detail.register(-1, () => {
     if (!ionRouter.canGoBack()) {
       App.exitApp();
     }
