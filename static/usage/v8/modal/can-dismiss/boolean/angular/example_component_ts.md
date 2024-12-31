@@ -28,8 +28,7 @@ export class ExampleComponent {
     this.presentingElement = document.querySelector('.ion-page');
   }
 
-  onTermsChanged(event: Event) {
-    const event = event as CheckboxCustomEvent;
+  onTermsChanged(event: CheckboxCustomEvent) {
     this.canDismiss = event.detail.checked;
   }
 }
