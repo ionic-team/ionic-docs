@@ -1,9 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonButton, IonToast } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonButton, IonToast],
 })
 export class ExampleComponent {
   public toastButtons = [
@@ -23,7 +26,7 @@ export class ExampleComponent {
     },
   ];
 
-  setRoleMessage(event) {
+  setRoleMessage(event: CustomEvent) {
     const { role } = event.detail;
     console.log(`Dismissed with role: ${role}`);
   }

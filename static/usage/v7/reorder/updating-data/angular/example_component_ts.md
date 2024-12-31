@@ -1,11 +1,19 @@
 ```ts
 import { Component } from '@angular/core';
-
-import { ItemReorderEventDetail } from '@ionic/angular';
+import {
+  ItemReorderEventDetail,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonReorder,
+  IonReorderGroup,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonItem, IonLabel, IonList, IonReorder, IonReorderGroup],
 })
 export class ExampleComponent {
   items = [1, 2, 3, 4, 5];
@@ -22,10 +30,6 @@ export class ExampleComponent {
 
     // After complete is called the items will be in the new order
     console.log('After complete', this.items);
-  }
-
-  trackItems(index: number, itemNumber: number) {
-    return itemNumber;
   }
 }
 ```

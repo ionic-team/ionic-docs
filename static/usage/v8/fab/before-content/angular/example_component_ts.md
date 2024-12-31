@@ -1,7 +1,18 @@
 ```tsx
 import { Component, OnInit } from '@angular/core';
-
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import {
+  InfiniteScrollCustomEvent,
+  IonAvatar,
+  IonContent,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonItem,
+  IonLabel,
+  IonList,
+} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { add } from 'ionicons/icons';
@@ -9,9 +20,22 @@ import { add } from 'ionicons/icons';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [
+    IonAvatar,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonInfiniteScroll,
+    IonInfiniteScrollContent,
+    IonItem,
+    IonLabel,
+    IonList,
+  ],
 })
 export class ExampleComponent implements OnInit {
-  items = [];
+  items: string[] = [];
 
   constructor() {
     /**
@@ -33,10 +57,10 @@ export class ExampleComponent implements OnInit {
     }
   }
 
-  onIonInfinite(event) {
+  onIonInfinite(event: InfiniteScrollCustomEvent) {
     this.generateItems();
     setTimeout(() => {
-      (event as InfiniteScrollCustomEvent).target.complete();
+      event.target.complete();
     }, 500);
   }
 }

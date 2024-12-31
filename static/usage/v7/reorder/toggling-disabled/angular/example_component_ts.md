@@ -1,11 +1,20 @@
 ```ts
 import { Component } from '@angular/core';
-
-import { ItemReorderEventDetail } from '@ionic/angular';
+import {
+  ItemReorderEventDetail,
+  IonButton,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonReorder,
+  IonReorderGroup,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonButton, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup],
 })
 export class ExampleComponent {
   public isDisabled = true;

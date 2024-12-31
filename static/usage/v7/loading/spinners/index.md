@@ -1,7 +1,9 @@
 import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
-import angular from './angular.md';
+
+import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 import react from './react.md';
 import vue from './vue.md';
 
@@ -11,7 +13,12 @@ import vue from './vue.md';
     javascript,
     react,
     vue,
-    angular,
+    angular: {
+      files: {
+        'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
+      },
+    },
   }}
   src="usage/v7/loading/spinners/demo.html"
 />
