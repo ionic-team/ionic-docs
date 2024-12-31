@@ -9,9 +9,7 @@ import { <%= pascalComponent %> } from '@ionic/angular/standalone';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-<% if (css){ -%>
   styleUrls: ['./example.component.css'],
-<% } -%>
   imports: [<%= pascalComponent %>],
 })
 export class ExampleComponent {}
