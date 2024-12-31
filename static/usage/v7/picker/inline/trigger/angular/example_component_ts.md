@@ -1,9 +1,19 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonButton, IonPicker } from '@ionic/angular/standalone';
+
+interface PickerValue {
+  languages: {
+    text: string;
+    value: string;
+  };
+}
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonButton, IonPicker],
 })
 export class ExampleComponent {
   public pickerColumns = [
@@ -37,7 +47,7 @@ export class ExampleComponent {
     },
     {
       text: 'Confirm',
-      handler: (value) => {
+      handler: (value: PickerValue) => {
         console.log(`You selected: ${value.languages.value}`);
       },
     },

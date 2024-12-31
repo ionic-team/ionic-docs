@@ -1,16 +1,17 @@
 ```ts
 import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
-import type { GestureDetail } from '@ionic/angular';
-import { GestureController, IonCard } from '@ionic/angular';
+import { GestureController, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle } from '@ionic/angular/standalone';
+import type { GestureDetail } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
+  imports: [IonCard, IonCardContent, IonCardHeader, IonCardSubtitle],
 })
 export class ExampleComponent {
-  @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;
-  @ViewChild('debug', { read: ElementRef }) debug: ElementRef<HTMLParagraphElement>;
+  @ViewChild(IonCard, { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;
+  @ViewChild('debug', { read: ElementRef }) debug!: ElementRef<HTMLParagraphElement>;
 
   isCardActive = false;
 
