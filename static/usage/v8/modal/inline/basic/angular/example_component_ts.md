@@ -45,7 +45,7 @@ export class ExampleComponent {
     this.modal.dismiss(this.name, 'confirm');
   }
 
-  onWillDismiss(event: CustomEvent<OverlayEventDetail<string>>) {
+  onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
     if (event.detail.role === 'confirm') {
       this.message = `Hello, ${event.detail.data}!`;
     }
