@@ -9,12 +9,12 @@ import { IonRange, RangeCustomEvent } from '@ionic/angular/standalone';
   imports: [IonRange],
 })
 export class ExampleComponent {
-  onIonKnobMoveStart(ev: Event) {
-    console.log('ionKnobMoveStart:', (ev as RangeCustomEvent).detail.value);
+  onIonKnobMoveStart(event: RangeCustomEvent) {
+    console.log('ionKnobMoveStart:', event.detail.value);
   }
 
-  onIonKnobMoveEnd(ev: Event) {
-    console.log('ionKnobMoveEnd:', (ev as RangeCustomEvent).detail.value);
+  onIonKnobMoveEnd(event: RangeCustomEvent) {
+    console.log('ionKnobMoveEnd:', event.detail.value);
   }
 }
 ```

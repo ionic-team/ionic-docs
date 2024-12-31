@@ -30,29 +30,29 @@ function Example() {
         el: cardEl.current!,
         threshold: 0,
         gestureName: 'card-drag',
-        onMove: (ev) => onMove(ev),
-        onEnd: (ev) => onEnd(ev),
+        onMove: (event) => onMove(event),
+        onEnd: (event) => onEnd(event),
       });
 
       gesture.current.enable(true);
 
-      const onMove = (ev: GestureDetail) => {
+      const onMove = (event: GestureDetail) => {
         if (!started.current) {
           animation.current!.progressStart();
           started.current = true;
         }
 
-        animation.current!.progressStep(getStep(ev));
+        animation.current!.progressStep(getStep(event));
       };
 
-      const onEnd = (ev: GestureDetail) => {
+      const onEnd = (event: GestureDetail) => {
         if (!started.current) {
           return;
         }
 
         gesture.current!.enable(false);
 
-        const step = getStep(ev);
+        const step = getStep(event);
         const shouldComplete = step > 0.5;
 
         animation.current!.progressEnd(shouldComplete ? 1 : 0, step).onFinish(() => {
@@ -67,8 +67,8 @@ function Example() {
         return Math.max(min, Math.min(n, max));
       };
 
-      const getStep = (ev: GestureDetail) => {
-        const delta = initialStep.current + ev.deltaX;
+      const getStep = (event: GestureDetail) => {
+        const delta = initialStep.current + event.deltaX;
         return clamp(0, delta / MAX_TRANSLATE, 1);
       };
     }

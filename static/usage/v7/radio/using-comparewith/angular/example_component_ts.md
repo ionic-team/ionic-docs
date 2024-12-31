@@ -37,8 +37,8 @@ export class ExampleComponent {
     return o1.id === o2.id;
   }
 
-  handleChange(ev: Event): void {
-    const target = ev.target as HTMLInputElement;
+  handleChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
     console.log('Current value:', JSON.stringify(target.value));
   }
 }

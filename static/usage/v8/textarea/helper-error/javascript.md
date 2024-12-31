@@ -10,7 +10,7 @@
 <script>
   const textarea = document.querySelector('ion-textarea');
 
-  textarea.addEventListener('ionInput', (ev) => validate(ev));
+  textarea.addEventListener('ionInput', (event) => validate(event));
   textarea.addEventListener('ionBlur', () => markTouched());
 
   const validateEmail = (email) => {
@@ -19,8 +19,8 @@
     );
   };
 
-  const validate = (ev) => {
-    const value = ev.target.value;
+  const validate = (event) => {
+    const value = event.target.value;
 
     textarea.classList.remove('ion-valid');
     textarea.classList.remove('ion-invalid');

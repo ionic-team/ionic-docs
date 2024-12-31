@@ -21,8 +21,8 @@
     setup() {
       const ionInputEl = ref();
       const inputModel = ref('');
-      const onInput = (ev) => {
-        const value = ev.target!.value;
+      const onInput = (event) => {
+        const value = event.target!.value;
 
         // Removes non alphanumeric characters
         const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');

@@ -27,9 +27,8 @@ export class ExampleComponent {
     },
   ];
 
-  setResult(event: Event) {
-    const ev = event as CustomEvent<OverlayEventDetail<string>>;
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+  setResult(event: CustomEvent<OverlayEventDetail>) {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   }
 }
 ```

@@ -45,8 +45,8 @@ export class ExampleComponent {
     return o1.id === o2.id;
   }
 
-  handleChange(ev: Event) {
-    const target = ev.target as HTMLIonSelectElement;
+  handleChange(event: Event) {
+    const target = event.target as HTMLIonSelectElement;
     console.log('Current value:', JSON.stringify(target.value));
   }
 }
