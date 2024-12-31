@@ -1,14 +1,26 @@
 ```ts
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  ActionSheetController,
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonModal,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
-import { ActionSheetController } from '@ionic/angular';
+import { ChildComponent } from './child.component';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [ChildComponent, FormsModule, IonButton, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  presentingElement = undefined;
+  presentingElement!: HTMLElement | null;
 
   private canDismissOverride = false;
 

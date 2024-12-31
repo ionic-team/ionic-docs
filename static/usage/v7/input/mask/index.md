@@ -7,7 +7,6 @@ import react_main_tsx from './react.md';
 
 import vue_example_vue from './vue.md';
 
-import angular_app_module_ts from './angular/app_module_ts.md';
 import angular_example_component_html from './angular/example_component_html.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
@@ -43,7 +42,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
     angular: {
       files: {
-        'src/app/app.module.ts': angular_app_module_ts,
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
       },
