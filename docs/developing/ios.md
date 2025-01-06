@@ -14,10 +14,12 @@ skipIntros: true
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link';
 
 :::info Looking for the legacy iOS guide?
 
-The Developing for iOS guide has officially migrated to the [Capacitor documentation for iOS](https://capacitorjs.com/docs/ios). If you need to access the legacy documentation, you can find it under the [legacy developing for iOS guide](/docs/v6/developing/ios).
+The Developing for iOS guide has officially migrated to the [Capacitor documentation for iOS](https://capacitorjs.com/docs/ios). If you need to access the legacy documentation, you can find it under the [legacy developing for iOS guide](https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/v6/developing/ios).
 
 :::
 
@@ -31,7 +33,7 @@ The Developing for iOS guide has officially migrated to the [Capacitor documenta
   </DocsCard>
   <DocsCard
     header="Developing for iOS with Cordova (Legacy)"
-    href="/docs/v6/developing/ios"
+    href="https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/v6/developing/ios"
     icon="/icons/native-cordova-bot.png"
   >
     <p>Learn the fundamentals you need to know to start building iOS apps with Ionic Framework and Cordova.</p>
