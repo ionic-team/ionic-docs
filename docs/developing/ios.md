@@ -14,8 +14,6 @@ skipIntros: true
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Link from '@docusaurus/Link';
 
 :::info Looking for the legacy iOS guide?
 
