@@ -10,10 +10,10 @@
   export default {
     components: { IonButton },
     methods: {
-      async openPopover(ev: Event) {
+      async openPopover(event: Event) {
         const popover = await popoverController.create({
           component: Popover,
-          event: ev,
+          event: event,
         });
         await popover.present();
 

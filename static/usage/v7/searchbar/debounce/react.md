@@ -17,9 +17,9 @@ function Example() {
   ];
   let [results, setResults] = useState([...data]);
 
-  const handleInput = (ev: Event) => {
+  const handleInput = (event: Event) => {
     let query = '';
-    const target = ev.target as HTMLIonSearchbarElement;
+    const target = event.target as HTMLIonSearchbarElement;
     if (target) query = target.value!.toLowerCase();
 
     setResults(data.filter((d) => d.toLowerCase().indexOf(query) > -1));
@@ -27,7 +27,7 @@ function Example() {
 
   return (
     <>
-      <IonSearchbar debounce={1000} onIonInput={(ev) => handleInput(ev)}></IonSearchbar>
+      <IonSearchbar debounce={1000} onIonInput={(event) => handleInput(event)}></IonSearchbar>
 
       <IonList>
         {results.map((result) => (

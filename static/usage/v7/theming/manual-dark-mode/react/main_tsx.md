@@ -26,8 +26,8 @@ function Example() {
   const [themeToggle, setThemeToggle] = useState(false);
 
   // Listen for the toggle check/uncheck to toggle the dark theme
-  const toggleChange = (ev: ToggleCustomEvent) => {
-    toggleDarkTheme(ev.detail.checked);
+  const toggleChange = (event: ToggleCustomEvent) => {
+    toggleDarkTheme(event.detail.checked);
   };
 
   // Add or remove the "dark" class on the document body

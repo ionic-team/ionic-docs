@@ -45,8 +45,8 @@
       compareWith(o1, o2) {
         return o1.id === o2.id;
       },
-      handleChange(ev) {
-        console.log('Current value:', JSON.stringify(ev.detail.value));
+      handleChange(event) {
+        console.log('Current value:', JSON.stringify(event.detail.value));
       },
     },
   });

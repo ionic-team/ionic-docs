@@ -80,8 +80,8 @@
         emit('selection-change', workingSelectedValues.value);
       };
 
-      const searchbarInput = (ev: SearchbarCustomEvent) => {
-        filterList(ev.target.value);
+      const searchbarInput = (event: SearchbarCustomEvent) => {
+        filterList(event.target.value);
       };
 
       /**
@@ -110,8 +110,8 @@
         }
       };
 
-      const checkboxChange = (ev: CheckboxCustomEvent) => {
-        const { checked, value } = ev.detail;
+      const checkboxChange = (event: CheckboxCustomEvent) => {
+        const { checked, value } = event.detail;
 
         if (checked) {
           workingSelectedValues.value = [...workingSelectedValues.value, value];

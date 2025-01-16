@@ -1,9 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonItem, IonLabel, IonList, IonSearchbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonItem, IonLabel, IonList, IonSearchbar],
 })
 export class ExampleComponent {
   public data = [
@@ -20,9 +23,10 @@ export class ExampleComponent {
   ];
   public results = [...this.data];
 
-  handleInput(event) {
-    const query = event.target.value.toLowerCase();
-    this.results = this.data.filter((d) => d.toLowerCase().indexOf(query) > -1);
+  handleInput(event: Event) {
+    const target = event.target as HTMLIonSearchbarElement;
+    const query = target.value?.toLowerCase() || '';
+    this.results = this.data.filter((d) => d.toLowerCase().includes(query));
   }
 }
 ```
