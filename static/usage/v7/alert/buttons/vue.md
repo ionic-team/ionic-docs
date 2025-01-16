@@ -29,8 +29,8 @@
     },
   ];
 
-  const logResult = (ev: CustomEvent) => {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+  const logResult = (event: CustomEvent) => {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   };
 </script>
 ```

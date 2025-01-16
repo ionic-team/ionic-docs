@@ -45,10 +45,10 @@
         buttons[i].addEventListener('click', handleButtonClick);
       }
 
-      async function handleButtonClick(ev) {
+      async function handleButtonClick(event) {
         popover = await popoverController.create({
           component: 'popover-example-page',
-          event: ev,
+          event: event,
           translucent: true,
         });
         currentPopover = popover;

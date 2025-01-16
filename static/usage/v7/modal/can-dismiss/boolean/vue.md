@@ -70,8 +70,8 @@
       dismiss() {
         this.$refs.modal.$el.dismiss();
       },
-      onTermsChanged(ev: CheckboxCustomEvent) {
-        this.canDismiss = ev.detail.checked;
+      onTermsChanged(event: CheckboxCustomEvent) {
+        this.canDismiss = event.detail.checked;
       },
     },
     mounted() {

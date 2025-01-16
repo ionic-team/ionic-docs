@@ -45,8 +45,8 @@ function AppTypeahead(props: TypeaheadProps) {
     }
   };
 
-  const searchbarInput = (ev: any) => {
-    filterList(ev.target.value);
+  const searchbarInput = (event: any) => {
+    filterList(event.target.value);
   };
 
   /**
@@ -77,8 +77,8 @@ function AppTypeahead(props: TypeaheadProps) {
     }
   };
 
-  const checkboxChange = (ev: CheckboxCustomEvent) => {
-    const { checked, value } = ev.detail;
+  const checkboxChange = (event: CheckboxCustomEvent) => {
+    const { checked, value } = event.detail;
 
     if (checked) {
       setWorkingSelectedValues([...workingSelectedValues, value]);

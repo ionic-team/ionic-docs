@@ -23,6 +23,8 @@ The Infinite Scroll component calls an action to be performed when the user scro
 
 The expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.
 
+## Basic Usage
+
 import Basic from '@site/static/usage/v7/infinite-scroll/basic/index.md';
 
 <Basic />

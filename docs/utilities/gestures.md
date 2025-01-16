@@ -47,7 +47,7 @@ const gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 
 ```
@@ -65,7 +65,7 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 ```
 </TabItem>
@@ -86,7 +86,7 @@ constructor(private gestureCtrl: GestureController) {
     el: this.element.nativeElement,
     threshold: 15,
     gestureName: 'my-gesture',
-    onMove: ev => this.onMoveHandler(ev)
+    onMove: event => this.onMoveHandler(event)
   }, true);
   // The `true` above ensures that callbacks run inside NgZone.
 }
@@ -110,7 +110,7 @@ constructor(private gestureCtrl: GestureController) {
     el: this.element.nativeElement,
     threshold: 15,
     gestureName: 'my-gesture',
-    onMove: ev => this.onMoveHandler(ev)
+    onMove: event => this.onMoveHandler(event)
   }, true);
   // The `true` above ensures that callbacks run inside NgZone.
 }
@@ -130,7 +130,7 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 ```
 </TabItem>
@@ -152,7 +152,7 @@ const gesture = createGesture({
   el: elementRef.value,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 
 ```

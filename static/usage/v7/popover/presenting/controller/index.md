@@ -10,7 +10,6 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_popover_component_html from './angular/popover_component_html.md';
 import angular_popover_component_ts from './angular/popover_component_ts.md';
-import angular_app_module from './angular/app_module_ts.md';
 
 <Playground
   version="7"
@@ -30,7 +29,6 @@ import angular_app_module from './angular/app_module_ts.md';
         'src/app/example.component.ts': angular_example_component_ts,
         'src/app/popover.component.html': angular_popover_component_html,
         'src/app/popover.component.ts': angular_popover_component_ts,
-        'src/app/app.module.ts': angular_app_module,
       },
     },
   }}

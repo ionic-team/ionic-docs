@@ -44,29 +44,29 @@
           el: card,
           threshold: 0,
           gestureName: 'card-drag',
-          onMove: (ev) => onMove(ev),
-          onEnd: (ev) => onEnd(ev),
+          onMove: (event) => onMove(event),
+          onEnd: (event) => onEnd(event),
         });
 
         gesture.enable(true);
 
-        const onMove = (ev: GestureDetail) => {
+        const onMove = (event: GestureDetail) => {
           if (!started) {
             animation.progressStart();
             started = true;
           }
 
-          animation.progressStep(getStep(ev));
+          animation.progressStep(getStep(event));
         };
 
-        const onEnd = (ev: GestureDetail) => {
+        const onEnd = (event: GestureDetail) => {
           if (!started) {
             return;
           }
 
           gesture.enable(false);
 
-          const step = getStep(ev);
+          const step = getStep(event);
           const shouldComplete = step > 0.5;
 
           animation.progressEnd(shouldComplete ? 1 : 0, step).onFinish(() => {
@@ -81,8 +81,8 @@
           return Math.max(min, Math.min(n, max));
         };
 
-        const getStep = (ev: GestureDetail) => {
-          const delta = initialStep + ev.deltaX;
+        const getStep = (event: GestureDetail) => {
+          const delta = initialStep + event.deltaX;
           return clamp(0, delta / MAX_TRANSLATE, 1);
         };
       });

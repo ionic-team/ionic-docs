@@ -1,10 +1,6 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-    "@ionic/core": "8.2.0"
-=======
-    "@ionic/core": "8.4.0",
+    "@ionic/core": "8.4.1",
     "ionicons": "7.4.0"
->>>>>>> main
   }
 }

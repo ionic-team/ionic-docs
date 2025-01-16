@@ -1,5 +1,5 @@
 ---
-title: "ion-password-toggle"
+title: "ion-input-password-toggle"
 ---
 import Props from '@ionic-internal/component-api/v8/input-password-toggle/props.md';
 import Events from '@ionic-internal/component-api/v8/input-password-toggle/events.md';

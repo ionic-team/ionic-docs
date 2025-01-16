@@ -3,15 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@ionic/react": "8.2.0",
-    "@ionic/react-router": "8.2.0",
-    "@types/node": "^20.0.0",
-=======
-    "@ionic/react": "8.4.0",
-    "@ionic/react-router": "8.4.0",
+    "@ionic/react": "8.4.1",
+    "@ionic/react-router": "8.4.1",
     "@types/node": "^22.0.0",
->>>>>>> main
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "@types/react-router": "^5.1.11",

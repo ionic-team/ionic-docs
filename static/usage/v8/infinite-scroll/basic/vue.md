@@ -51,9 +51,9 @@
         }
       };
 
-      const ionInfinite = (ev: InfiniteScrollCustomEvent) => {
+      const ionInfinite = (event: InfiniteScrollCustomEvent) => {
         generateItems();
-        setTimeout(() => ev.target.complete(), 500);
+        setTimeout(() => event.target.complete(), 500);
       };
 
       generateItems();

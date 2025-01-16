@@ -1,5 +1,15 @@
 ```ts
 import { Component } from '@angular/core';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonNavLink,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { PageThreeComponent } from './page-three.component';
 
@@ -23,6 +33,7 @@ import { PageThreeComponent } from './page-three.component';
       </div>
     </ion-content>
   `,
+  imports: [IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonNavLink, IonTitle, IonToolbar],
 })
 export class PageTwoComponent {
   component = PageThreeComponent;

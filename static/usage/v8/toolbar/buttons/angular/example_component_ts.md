@@ -1,5 +1,14 @@
 ```ts
 import { Component } from '@angular/core';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonIcon,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';
@@ -8,6 +17,7 @@ import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle,
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
+  imports: [IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
   constructor() {

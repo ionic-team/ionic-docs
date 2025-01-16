@@ -54,8 +54,8 @@
   const toggle = document.querySelector('#themeToggle');
 
   // Listen for the toggle check/uncheck to toggle the dark theme
-  toggle.addEventListener('ionChange', (ev) => {
-    toggleDarkTheme(ev.detail.checked);
+  toggle.addEventListener('ionChange', (event) => {
+    toggleDarkTheme(event.detail.checked);
   });
 
   // Use matchMedia to check the user preference

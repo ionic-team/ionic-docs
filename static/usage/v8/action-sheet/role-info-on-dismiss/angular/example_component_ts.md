@@ -1,10 +1,13 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonActionSheet, IonButton } from '@ionic/angular/standalone';
+import type { OverlayEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
+  imports: [IonActionSheet, IonButton],
 })
 export class ExampleComponent {
   public actionSheetButtons = [
@@ -32,8 +35,8 @@ export class ExampleComponent {
 
   constructor() {}
 
-  logResult(ev) {
-    console.log(JSON.stringify(ev.detail, null, 2));
+  logResult(event: CustomEvent<OverlayEventDetail>) {
+    console.log(JSON.stringify(event.detail, null, 2));
   }
 }
 ```
