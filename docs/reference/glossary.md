@@ -121,8 +121,8 @@ title: 用語集
   </a>
   <p>
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a>
-    (Cross-Origin Resource Sharing) は、サーバがクライアントから Web 資産へのアクセスを制御するメカニズムです。 See the{' '}
-    <a href="../troubleshooting/cors">CORS FAQs</a> for more information.
+    (Cross-Origin Resource Sharing) は、サーバがクライアントから Web 資産へのアクセスを制御するメカニズムです。 詳しくは
+    <a href="../troubleshooting/cors">CORS FAQs</a> をご覧ください。
   </p>
 </section>
 
@@ -222,7 +222,7 @@ title: 用語集
     <h3>Gulp</h3>
   </a>
   <p>
-    <a href="http://gulpjs.com/" target="_blank">Gulp</a>は、アプリケーションをビルドするためのタスクを実行するために使用されるツールです。一般的なビルドタスクには、{' '}
+    <a href="http://gulpjs.com/" target="_blank">Gulp</a>は、アプリケーションをビルドするためのタスクを実行するために使用されるツールです。一般的なビルドタスクには、
     <a href="#es2015-es6">ES6</a> から <a href="#es5">ES5</a>, <a href="#sass">Sass</a> から CSSへの変換、
     コードの縮小、ファイルの連結などがあります。
   </p>
