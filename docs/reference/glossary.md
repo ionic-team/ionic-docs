@@ -288,7 +288,7 @@ title: 用語集
   </a>
   <p>
     <strong>Live Reload</strong> (or <strong>live-reload</strong>) は、アプリケーションの変更を検出すると、
-    自動的にブラウザまたは <a href="../core-concepts/webview">Web View</a>{をリロードするツールです。場合によっては、ウィンドウ全体をリロードしなくても、
+    自動的にブラウザまたは <a href="../core-concepts/webview">Web View</a>をリロードするツールです。場合によっては、ウィンドウ全体をリロードしなくても、
     アプリケーションの一部を置き換えることができます。ライブリロード には実行中の開発サーバーが必要なので、Web View
     にはデプロイされたファイルを単に読むのではなく、URLをロードする必要があるため、別のデバイスでライブリロードを使用するのは難しいかもしれません。詳しくは<a href="../cli/livereload">Live Reload docs</a> を御覧ください。
   </p>
