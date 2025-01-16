@@ -1,14 +1,15 @@
 ```ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { GestureController, IonCard } from '@ionic/angular';
+import { GestureController, IonCard, IonCardContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
+  imports: [IonCard, IonCardContent],
 })
 export class ExampleComponent {
-  @ViewChild('card', { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;
+  @ViewChild('card', { read: ElementRef }) card!: ElementRef<HTMLIonCardElement>;
 
   private currentOffset: number = 0;
   private lastOnStart: number = 0;

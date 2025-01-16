@@ -450,7 +450,7 @@ module.exports = {
       type: 'category',
       label: 'セグメント',
       collapsed: false,
-      items: ['api/segment', 'api/segment-button'],
+      items: ['api/segment', 'api/segment-button', 'api/segment-content', 'api/segment-view'],
     },
     {
       type: 'category',

@@ -7,7 +7,9 @@
       placeholder="Select food"
       (ionChange)="handleChange($event)"
     >
-      <ion-select-option *ngFor="let food of foods" [value]="food">{{ food.name }}</ion-select-option>
+      @for (food of foods; track food) {
+      <ion-select-option [value]="food">{{ food.name }}</ion-select-option>
+      }
     </ion-select>
   </ion-item>
 </ion-list>

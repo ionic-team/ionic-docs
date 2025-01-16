@@ -6,7 +6,46 @@
   "docsTags": [],
   "usage": {},
   "props": [],
-  "methods": [],
+  "methods": [
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "(elements: HTMLElement[]) => Promise<void>",
+        "parameters": [
+          {
+            "name": "elements",
+            "type": "HTMLElement[]",
+            "docs": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "HTMLElement": {
+            "location": "global",
+            "id": "global::HTMLElement"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "setFocus(elements: HTMLElement[]) => Promise<void>",
+      "parameters": [
+        {
+          "name": "elements",
+          "type": "HTMLElement[]",
+          "docs": ""
+        }
+      ],
+      "docs": "Used to set focus on an element that uses `ion-focusable`.\nDo not use this if focusing the element as a result of a keyboard\nevent as the focus utility should handle this for us. This method\nshould be used when we want to programmatically focus an element as\na result of another user action. (Ex: We focus the first element\ninside of a popover when the user presents it, but the popover is not always\npresented as a result of keyboard action.)",
+      "docsTags": []
+    }
+  ],
   "events": [],
   "listeners": [],
   "styles": [],

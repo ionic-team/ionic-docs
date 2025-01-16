@@ -4,6 +4,7 @@
 # Production
 /build
 /www
+/i18n
 
 # Generated files
 .docusaurus

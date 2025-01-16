@@ -116,8 +116,8 @@
       prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
 
       // Listen for the toggle check/uncheck to toggle the dark palette
-      const toggleChange = (ev: ToggleCustomEvent) => {
-        toggleDarkPalette(ev.detail.checked);
+      const toggleChange = (event: ToggleCustomEvent) => {
+        toggleDarkPalette(event.detail.checked);
       };
 
       return {

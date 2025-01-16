@@ -377,27 +377,62 @@
     {
       "name": "--background-focused",
       "annotation": "prop",
-      "docs": "Background color of the breadcrumb when focused"
+      "docs": "Background color of the breadcrumb when focused",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background color of the breadcrumb when focused",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Text color of the breadcrumb"
+      "docs": "Text color of the breadcrumb",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the breadcrumb",
+      "mode": "md"
     },
     {
       "name": "--color-active",
       "annotation": "prop",
-      "docs": "Text color of the active breadcrumb"
+      "docs": "Text color of the active breadcrumb",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-active",
+      "annotation": "prop",
+      "docs": "Text color of the active breadcrumb",
+      "mode": "md"
     },
     {
       "name": "--color-focused",
       "annotation": "prop",
-      "docs": "Text color of the breadcrumb when focused"
+      "docs": "Text color of the breadcrumb when focused",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the breadcrumb when focused",
+      "mode": "md"
     },
     {
       "name": "--color-hover",
       "annotation": "prop",
-      "docs": "Text color of the breadcrumb on hover"
+      "docs": "Text color of the breadcrumb on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Text color of the breadcrumb on hover",
+      "mode": "md"
     }
   ],
   "slots": [],

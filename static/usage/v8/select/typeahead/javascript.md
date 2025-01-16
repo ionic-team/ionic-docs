@@ -153,12 +153,12 @@
   }
 
   // Listen for all ionChange events from the checkbox
-  modal.addEventListener('ionChange', (ev) => {
-    if (ev.target.tagName !== 'ION-CHECKBOX') {
+  modal.addEventListener('ionChange', (event) => {
+    if (event.target.tagName !== 'ION-CHECKBOX') {
       return;
     }
 
-    const { checked, value } = ev.detail;
+    const { checked, value } = event.detail;
 
     if (checked) {
       workingSelectedFruits = [...workingSelectedFruits, value];
@@ -172,8 +172,8 @@
    * we need to update the view with
    * the filtered list.
    */
-  searchbar.addEventListener('ionInput', (ev) => {
-    renderList(ev.target.value);
+  searchbar.addEventListener('ionInput', (event) => {
+    renderList(event.target.value);
   });
 
   /**
@@ -181,8 +181,8 @@
    * update the parent page with the
    * selected fruits.
    */
-  modal.addEventListener('ionModalWillDismiss', (ev) => {
-    const { data } = ev.detail;
+  modal.addEventListener('ionModalWillDismiss', (event) => {
+    const { data } = event.detail;
 
     if (data === undefined) return;
 
@@ -195,7 +195,7 @@
    * When the modal has completed we need to
    * reset the filtered state of the list.
    */
-  modal.addEventListener('ionModalDidDismiss', (ev) => {
+  modal.addEventListener('ionModalDidDismiss', (event) => {
     searchbar.value = undefined;
     renderList();
   });

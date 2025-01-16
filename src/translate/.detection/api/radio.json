@@ -29,18 +29,17 @@
   "props": [
     {
       "name": "alignment",
-      "type": "\"center\" | \"start\"",
+      "type": "\"center\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'center'",
-        "resolved": "\"center\" | \"start\"",
+        "resolved": "\"center\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
       "attr": "alignment",
       "reflectToAttr": false,
-      "docs": "How to control the alignment of the radio and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+      "docs": "How to control the alignment of the radio and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.\nSetting this property will change the radio `display` to `block`.",
       "docsTags": [],
-      "default": "'center'",
       "values": [
         {
           "value": "center",
@@ -49,9 +48,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -144,18 +146,17 @@
     },
     {
       "name": "justify",
-      "type": "\"end\" | \"space-between\" | \"start\"",
+      "type": "\"end\" | \"space-between\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'end' | 'space-between'",
-        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "resolved": "\"end\" | \"space-between\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
-      "docs": "How to pack the label and radio within a line.\n`\"start\"`: The label and radio will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and radio will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and radio will appear on opposite\nends of the line with space between the two elements.",
+      "docs": "How to pack the label and radio within a line.\n`\"start\"`: The label and radio will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and radio will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and radio will appear on opposite\nends of the line with space between the two elements.\nSetting this property will change the radio `display` to `block`.",
       "docsTags": [],
-      "default": "'space-between'",
       "values": [
         {
           "value": "end",
@@ -168,9 +169,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -309,22 +313,50 @@
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the radio"
+      "docs": "Border radius of the radio",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the radio",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the radio"
+      "docs": "Color of the radio",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the radio",
+      "mode": "md"
     },
     {
       "name": "--color-checked",
       "annotation": "prop",
-      "docs": "Color of the checked radio"
+      "docs": "Color of the checked radio",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-checked",
+      "annotation": "prop",
+      "docs": "Color of the checked radio",
+      "mode": "md"
     },
     {
       "name": "--inner-border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the inner checked radio"
+      "docs": "Border radius of the inner checked radio",
+      "mode": "ios"
+    },
+    {
+      "name": "--inner-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the inner checked radio",
+      "mode": "md"
     }
   ],
   "slots": [
@@ -348,10 +380,14 @@
     }
   ],
   "dependents": [
+    "ion-select-modal",
     "ion-select-popover"
   ],
   "dependencies": [],
   "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-radio"
+    ],
     "ion-select-popover": [
       "ion-radio"
     ]

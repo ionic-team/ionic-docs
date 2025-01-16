@@ -21,6 +21,8 @@ Infinite Scrollコンポーネントは、ユーザーがページの下部ま�
 
 ユーザが定義された距離に達したときに、`ionInfinite` イベントに割り当てられた関数が呼び出されます。この関数がすべてのタスクを完了したら、無限スクロールインスタンスに対して `complete()` メソッドを呼び出す必要があります。
 
+## Basic Usage
+
 import Basic from '@site/static/usage/v8/infinite-scroll/basic/index.md';
 
 <Basic />

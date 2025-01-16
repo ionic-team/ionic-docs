@@ -1,6 +1,8 @@
 ```tsx
-import React from 'react';
+import { useState } from 'react';
 import { IonInput, IonItem, IonList } from '@ionic/react';
+
+import { MaskitoOptions, maskitoTransform } from '@maskito/core';
 import { useMaskito } from '@maskito/react';
 
 function Example() {

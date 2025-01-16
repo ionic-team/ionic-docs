@@ -43,8 +43,8 @@
     props.modal.$el.dismiss();
   };
 
-  const checkboxChanged = (ev) => {
-    const checked = ev.detail.checked;
+  const checkboxChanged = (event) => {
+    const checked = event.detail.checked;
     emit('dismissChange', checked);
   };
 </script>

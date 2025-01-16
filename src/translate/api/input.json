@@ -358,6 +358,30 @@
       "required": false
     },
     {
+      "name": "clearInputIcon",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "clear-input-icon",
+      "reflectToAttr": false,
+      "docs": "The icon to use for the clear button. Only applies when `clearInput` is set to `true`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "clearOnEdit",
       "type": "boolean | undefined",
       "complexType": {
@@ -1304,7 +1328,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
+      "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     },
     {
@@ -1352,92 +1376,218 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the input"
+      "docs": "Background of the input",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the input",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the border below the input when using helper text, error text, or counter"
+      "docs": "Color of the border below the input when using helper text, error text, or counter",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the border below the input when using helper text, error text, or counter",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Radius of the input. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
+      "docs": "Radius of the input. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start.",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the input. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start.",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the border below the input when using helper text, error text, or counter"
+      "docs": "Style of the border below the input when using helper text, error text, or counter",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the border below the input when using helper text, error text, or counter",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the border below the input when using helper text, error text, or counter"
+      "docs": "Width of the border below the input when using helper text, error text, or counter",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the border below the input when using helper text, error text, or counter",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the input text"
+      "docs": "Color of the input text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the input text",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-focused",
       "annotation": "prop",
-      "docs": "The color of the highlight on the input when focused"
+      "docs": "The color of the highlight on the input when focused",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when focused",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-invalid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the input when invalid"
+      "docs": "The color of the highlight on the input when invalid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when invalid",
+      "mode": "md"
     },
     {
       "name": "--highlight-color-valid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the input when valid"
+      "docs": "The color of the highlight on the input when valid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when valid",
+      "mode": "md"
     },
     {
       "name": "--highlight-height",
       "annotation": "prop",
-      "docs": "The height of the highlight on the input. Only applies to md mode."
+      "docs": "The height of the highlight on the input. Only applies to md mode.",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-height",
+      "annotation": "prop",
+      "docs": "The height of the highlight on the input. Only applies to md mode.",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the input"
+      "docs": "Bottom padding of the input",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the input",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the input"
+      "docs": "Top padding of the input",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the input",
+      "mode": "md"
     },
     {
       "name": "--placeholder-color",
       "annotation": "prop",
-      "docs": "Color of the input placeholder text"
+      "docs": "Color of the input placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the input placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-font-style",
       "annotation": "prop",
-      "docs": "Font style of the input placeholder text"
+      "docs": "Font style of the input placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-font-style",
+      "annotation": "prop",
+      "docs": "Font style of the input placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-font-weight",
       "annotation": "prop",
-      "docs": "Font weight of the input placeholder text"
+      "docs": "Font weight of the input placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-font-weight",
+      "annotation": "prop",
+      "docs": "Font weight of the input placeholder text",
+      "mode": "md"
     },
     {
       "name": "--placeholder-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the input placeholder text"
+      "docs": "Opacity of the input placeholder text",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the input placeholder text",
+      "mode": "md"
     }
   ],
   "slots": [

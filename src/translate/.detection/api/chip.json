@@ -150,12 +150,26 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the chip"
+      "docs": "Background of the chip",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the chip",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the chip"
+      "docs": "Color of the chip",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the chip",
+      "mode": "md"
     }
   ],
   "slots": [],

@@ -538,7 +538,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionChange` event is fired for `<ion-range>` elements when the user\nmodifies the element's value:\n- When the user releases the knob after dragging;\n- When the user moves the knob with keyboard arrows\n\n`ionChange` is not fired when the value is changed programmatically.",
+      "docs": "The `ionChange` event is fired for `<ion-range>` elements when the user\nmodifies the element's value:\n- When the user releases the knob after dragging;\n- When the user moves the knob with keyboard arrows\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     },
     {
@@ -621,57 +621,134 @@
     {
       "name": "--bar-background",
       "annotation": "prop",
-      "docs": "Background of the range bar"
+      "docs": "Background of the range bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--bar-background",
+      "annotation": "prop",
+      "docs": "Background of the range bar",
+      "mode": "md"
     },
     {
       "name": "--bar-background-active",
       "annotation": "prop",
-      "docs": "Background of the active range bar"
+      "docs": "Background of the active range bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--bar-background-active",
+      "annotation": "prop",
+      "docs": "Background of the active range bar",
+      "mode": "md"
     },
     {
       "name": "--bar-border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the range bar"
+      "docs": "Border radius of the range bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--bar-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the range bar",
+      "mode": "md"
     },
     {
       "name": "--bar-height",
       "annotation": "prop",
-      "docs": "Height of the range bar"
+      "docs": "Height of the range bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--bar-height",
+      "annotation": "prop",
+      "docs": "Height of the range bar",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the range"
+      "docs": "Height of the range",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the range",
+      "mode": "md"
     },
     {
       "name": "--knob-background",
       "annotation": "prop",
-      "docs": "Background of the range knob"
+      "docs": "Background of the range knob",
+      "mode": "ios"
+    },
+    {
+      "name": "--knob-background",
+      "annotation": "prop",
+      "docs": "Background of the range knob",
+      "mode": "md"
     },
     {
       "name": "--knob-border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the range knob"
+      "docs": "Border radius of the range knob",
+      "mode": "ios"
+    },
+    {
+      "name": "--knob-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the range knob",
+      "mode": "md"
     },
     {
       "name": "--knob-box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the range knob"
+      "docs": "Box shadow of the range knob",
+      "mode": "ios"
+    },
+    {
+      "name": "--knob-box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the range knob",
+      "mode": "md"
     },
     {
       "name": "--knob-size",
       "annotation": "prop",
-      "docs": "Size of the range knob"
+      "docs": "Size of the range knob",
+      "mode": "ios"
+    },
+    {
+      "name": "--knob-size",
+      "annotation": "prop",
+      "docs": "Size of the range knob",
+      "mode": "md"
     },
     {
       "name": "--pin-background",
       "annotation": "prop",
-      "docs": "Background of the range pin (only available in MD mode)"
+      "docs": "Background of the range pin (only available in MD mode)",
+      "mode": "ios"
+    },
+    {
+      "name": "--pin-background",
+      "annotation": "prop",
+      "docs": "Background of the range pin (only available in MD mode)",
+      "mode": "md"
     },
     {
       "name": "--pin-color",
       "annotation": "prop",
-      "docs": "Color of the range pin (only available in MD mode)"
+      "docs": "Color of the range pin (only available in MD mode)",
+      "mode": "ios"
+    },
+    {
+      "name": "--pin-color",
+      "annotation": "prop",
+      "docs": "Color of the range pin (only available in MD mode)",
+      "mode": "md"
     }
   ],
   "slots": [

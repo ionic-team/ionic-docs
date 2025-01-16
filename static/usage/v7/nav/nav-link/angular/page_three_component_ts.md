@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-page-one',
@@ -16,6 +17,7 @@ import { Component } from '@angular/core';
       <h1>Page Three</h1>
     </ion-content>
   `,
+  imports: [IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class PageThreeComponent {}
 ```

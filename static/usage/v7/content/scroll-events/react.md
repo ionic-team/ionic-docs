@@ -7,8 +7,8 @@ function Example() {
     console.log('scroll start');
   }
 
-  function handleScroll(ev: CustomEvent<ScrollDetail>) {
-    console.log('scroll', JSON.stringify(ev.detail));
+  function handleScroll(event: CustomEvent<ScrollDetail>) {
+    console.log('scroll', JSON.stringify(event.detail));
   }
 
   function handleScrollEnd() {

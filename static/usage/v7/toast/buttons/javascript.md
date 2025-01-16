@@ -22,8 +22,8 @@
     },
   ];
 
-  toast.addEventListener('ionToastDidDismiss', (ev) => {
-    const { role } = ev.detail;
+  toast.addEventListener('ionToastDidDismiss', (event) => {
+    const { role } = event.detail;
     console.log(`Dismissed with role: ${role}`);
   });
 </script>

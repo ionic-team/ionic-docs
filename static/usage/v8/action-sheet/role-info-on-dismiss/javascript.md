@@ -44,8 +44,8 @@
     },
   ];
 
-  actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {
-    console.log(JSON.stringify(ev.detail, null, 2));
+  actionSheet.addEventListener('ionActionSheetDidDismiss', (event) => {
+    console.log(JSON.stringify(event.detail, null, 2));
   });
 </script>
 ```

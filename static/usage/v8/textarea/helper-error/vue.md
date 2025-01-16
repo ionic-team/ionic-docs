@@ -25,8 +25,8 @@
         );
       },
 
-      validate(ev) {
-        const value = ev.target.value;
+      validate(event) {
+        const value = event.target.value;
 
         this.$refs.input.$el.classList.remove('ion-valid');
         this.$refs.input.$el.classList.remove('ion-invalid');

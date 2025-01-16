@@ -27,12 +27,12 @@ function Example() {
   const [highContrastPaletteToggle, setHighContrastPaletteToggle] = useState(false);
 
   // Listen for the toggle check/uncheck to toggle the palettes
-  const darkPaletteToggleChange = (ev: ToggleCustomEvent) => {
-    toggleDarkPalette(ev.detail.checked);
+  const darkPaletteToggleChange = (event: ToggleCustomEvent) => {
+    toggleDarkPalette(event.detail.checked);
   };
 
-  const highContrastPaletteToggleChange = (ev: ToggleCustomEvent) => {
-    toggleHighContrastPalette(ev.detail.checked);
+  const highContrastPaletteToggleChange = (event: ToggleCustomEvent) => {
+    toggleHighContrastPalette(event.detail.checked);
   };
 
   // Add or remove the "ion-palette-dark" class on the html element

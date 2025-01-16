@@ -1,5 +1,7 @@
 ```ts
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { IonDatetime } from '@ionic/angular/standalone';
+import { FormsModule } from '@angular/forms';
 
 // ViewEncapsulation is turned off for this demo due to
 // a lack of support for styling multiple css shadow parts
@@ -9,9 +11,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   encapsulation: ViewEncapsulation.None,
+  imports: [IonDatetime, FormsModule],
 })
 export class ExampleComponent implements OnInit {
-  public datetime;
+  public datetime!: string;
 
   ngOnInit() {
     const date = new Date();

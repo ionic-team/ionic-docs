@@ -26,8 +26,8 @@ function Example() {
   const [paletteToggle, setPaletteToggle] = useState(false);
 
   // Listen for the toggle check/uncheck to toggle the dark palette
-  const toggleChange = (ev: ToggleCustomEvent) => {
-    toggleDarkPalette(ev.detail.checked);
+  const toggleChange = (event: ToggleCustomEvent) => {
+    toggleDarkPalette(event.detail.checked);
   };
 
   // Add or remove the "ion-palette-dark" class on the html element

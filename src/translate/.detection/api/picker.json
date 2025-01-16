@@ -46,17 +46,38 @@
     {
       "name": "--fade-background-rgb",
       "annotation": "prop",
-      "docs": "Background of the gradient covering non-selected items in rgb format"
+      "docs": "Background of the gradient covering non-selected items in rgb format",
+      "mode": "ios"
+    },
+    {
+      "name": "--fade-background-rgb",
+      "annotation": "prop",
+      "docs": "Background of the gradient covering non-selected items in rgb format",
+      "mode": "md"
     },
     {
       "name": "--highlight-background",
       "annotation": "prop",
-      "docs": "Background of the picker highlight for the selected item"
+      "docs": "Background of the picker highlight for the selected item",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-background",
+      "annotation": "prop",
+      "docs": "Background of the picker highlight for the selected item",
+      "mode": "md"
     },
     {
       "name": "--highlight-border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the picker highlight for the selected item"
+      "docs": "Border radius of the picker highlight for the selected item",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the picker highlight for the selected item",
+      "mode": "md"
     }
   ],
   "slots": [],

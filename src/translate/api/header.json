@@ -90,7 +90,13 @@
   "styles": [],
   "slots": [],
   "parts": [],
-  "dependents": [],
+  "dependents": [
+    "ion-select-modal"
+  ],
   "dependencies": [],
-  "dependencyGraph": {}
+  "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-header"
+    ]
+  }
 }

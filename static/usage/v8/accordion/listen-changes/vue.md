@@ -35,12 +35,12 @@
     },
     setup() {
       const values = ['first', 'second', 'third'];
-      const accordionGroupChange = (ev: AccordionGroupCustomEvent) => {
-        const collapsedItems = values.filter((value) => value !== ev.detail.value);
-        const selectedValue = ev.detail.value;
+      const accordionGroupChange = (event: AccordionGroupCustomEvent) => {
+        const collapsedItems = values.filter((value) => value !== event.detail.value);
+        const selectedValue = event.detail.value;
 
         console.log(
-          `Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(
+          `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(
             ', '
           )}`
         );

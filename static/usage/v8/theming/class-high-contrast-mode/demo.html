@@ -78,12 +78,12 @@
       const highContrastModeToggle = document.querySelector('#highContrastModeToggle');
 
       // Listen for the toggle check/uncheck to toggle the dark palette
-      darkModeToggle.addEventListener('ionChange', (ev) => {
-        toggleDarkPalette(ev.detail.checked);
+      darkModeToggle.addEventListener('ionChange', (event) => {
+        toggleDarkPalette(event.detail.checked);
       });
 
-      highContrastModeToggle.addEventListener('ionChange', (ev) => {
-        toggleHighContrastPalette(ev.detail.checked);
+      highContrastModeToggle.addEventListener('ionChange', (event) => {
+        toggleHighContrastPalette(event.detail.checked);
       });
 
       // Use matchMedia to check the user preference
@@ -121,8 +121,8 @@
 
       // Demo only code below
       // ----------------------------------------------------
-      window.addEventListener('demoReady', (ev) => {
-        const palette = ev.target.localStorage.getItem('palette');
+      window.addEventListener('demoReady', (event) => {
+        const palette = event.target.localStorage.getItem('palette');
         const isDark = palette === 'dark' ? true : false;
 
         // Initialize the dark palette based on the initial
@@ -130,8 +130,8 @@
         initializeDarkPalette(isDark);
       });
 
-      window.addEventListener('message', (ev) => {
-        darkModeToggle.checked = ev.data.darkMode;
+      window.addEventListener('message', (event) => {
+        darkModeToggle.checked = event.data.darkMode;
       });
     </script>
 

@@ -35,8 +35,8 @@
           },
         },
       ];
-      const handleDismiss = (ev: CustomEvent) => {
-        const { role } = ev.detail;
+      const handleDismiss = (event: CustomEvent) => {
+        const { role } = event.detail;
         console.log(`Dismissed with role: ${role}`);
       };
 

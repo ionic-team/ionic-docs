@@ -11,13 +11,15 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-item [button]="true" *ngFor="let item of items">
+    @for (item of items; track item) {
+    <ion-item [button]="true">
       <ion-icon slot="start" color="primary" [name]="item.unread ? 'ellipse' : ''"></ion-icon>
       <ion-label>
         <h2>{{ item.name }}</h2>
         <p>New message from {{ item.name }}</p>
       </ion-label>
     </ion-item>
+    }
   </ion-list>
 </ion-content>
 ```

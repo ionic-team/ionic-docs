@@ -152,7 +152,7 @@ To begin, we need to import the modules and their corresponding CSS files from t
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
@@ -186,7 +186,7 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
@@ -225,7 +225,7 @@ Finally, we can turn these features on by using the appropriate properties:
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
@@ -274,7 +274,7 @@ We can install the `IonicSlides` module by importing it from `@ionic/vue` and pa
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
@@ -457,7 +457,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { EffectFade } from 'swiper';
+  import { EffectFade } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
@@ -491,7 +491,7 @@ Next, we need to import the stylesheet associated with the effect:
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { EffectFade } from 'swiper';
+  import { EffectFade } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
@@ -526,7 +526,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 </template>
 <script>
   import { defineComponent } from 'vue';
-  import { EffectFade } from 'swiper';
+  import { EffectFade } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 

@@ -58,12 +58,12 @@
   const highContrastPaletteToggle = document.querySelector('#highContrastPaletteToggle');
 
   // Listen for the toggle check/uncheck to toggle the palette
-  darkPaletteToggle.addEventListener('ionChange', (ev) => {
-    toggleDarkPalette(ev.detail.checked);
+  darkPaletteToggle.addEventListener('ionChange', (event) => {
+    toggleDarkPalette(event.detail.checked);
   });
 
-  highContrastPaletteToggle.addEventListener('ionChange', (ev) => {
-    toggleHighContrastPalette(ev.detail.checked);
+  highContrastPaletteToggle.addEventListener('ionChange', (event) => {
+    toggleHighContrastPalette(event.detail.checked);
   });
 
   // Use matchMedia to check the user preference

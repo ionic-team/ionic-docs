@@ -29,18 +29,17 @@
   "props": [
     {
       "name": "alignment",
-      "type": "\"center\" | \"start\"",
+      "type": "\"center\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'center'",
-        "resolved": "\"center\" | \"start\"",
+        "resolved": "\"center\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
       "attr": "alignment",
       "reflectToAttr": false,
-      "docs": "How to control the alignment of the checkbox and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+      "docs": "How to control the alignment of the checkbox and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.\nSetting this property will change the checkbox `display` to `block`.",
       "docsTags": [],
-      "default": "'center'",
       "values": [
         {
           "value": "center",
@@ -49,9 +48,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -188,18 +190,17 @@
     },
     {
       "name": "justify",
-      "type": "\"end\" | \"space-between\" | \"start\"",
+      "type": "\"end\" | \"space-between\" | \"start\" | undefined",
       "complexType": {
         "original": "'start' | 'end' | 'space-between'",
-        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "resolved": "\"end\" | \"space-between\" | \"start\" | undefined",
         "references": {}
       },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
-      "docs": "How to pack the label and checkbox within a line.\n`\"start\"`: The label and checkbox will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and checkbox will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and checkbox will appear on opposite\nends of the line with space between the two elements.",
+      "docs": "How to pack the label and checkbox within a line.\n`\"start\"`: The label and checkbox will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and checkbox will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and checkbox will appear on opposite\nends of the line with space between the two elements.\nSetting this property will change the checkbox `display` to `block`.",
       "docsTags": [],
-      "default": "'space-between'",
       "values": [
         {
           "value": "end",
@@ -212,9 +213,12 @@
         {
           "value": "start",
           "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -351,7 +355,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the checked property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically\nsetting the checked property.",
+      "docs": "Emitted when the checked property has changed as a result of a user action such as a click.\n\nThis event will not emit when programmatically setting the `checked` property.",
       "docsTags": []
     },
     {
@@ -374,57 +378,134 @@
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Border color of the checkbox icon"
+      "docs": "Border color of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the checkbox icon",
+      "mode": "md"
     },
     {
       "name": "--border-color-checked",
       "annotation": "prop",
-      "docs": "Border color of the checkbox icon when checked"
+      "docs": "Border color of the checkbox icon when checked",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color-checked",
+      "annotation": "prop",
+      "docs": "Border color of the checkbox icon when checked",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the checkbox icon"
+      "docs": "Border radius of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the checkbox icon",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Border style of the checkbox icon"
+      "docs": "Border style of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the checkbox icon",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Border width of the checkbox icon"
+      "docs": "Border width of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the checkbox icon",
+      "mode": "md"
     },
     {
       "name": "--checkbox-background",
       "annotation": "prop",
-      "docs": "Background of the checkbox icon"
+      "docs": "Background of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--checkbox-background",
+      "annotation": "prop",
+      "docs": "Background of the checkbox icon",
+      "mode": "md"
     },
     {
       "name": "--checkbox-background-checked",
       "annotation": "prop",
-      "docs": "Background of the checkbox icon when checked"
+      "docs": "Background of the checkbox icon when checked",
+      "mode": "ios"
+    },
+    {
+      "name": "--checkbox-background-checked",
+      "annotation": "prop",
+      "docs": "Background of the checkbox icon when checked",
+      "mode": "md"
     },
     {
       "name": "--checkmark-color",
       "annotation": "prop",
-      "docs": "Color of the checkbox checkmark when checked"
+      "docs": "Color of the checkbox checkmark when checked",
+      "mode": "ios"
+    },
+    {
+      "name": "--checkmark-color",
+      "annotation": "prop",
+      "docs": "Color of the checkbox checkmark when checked",
+      "mode": "md"
     },
     {
       "name": "--checkmark-width",
       "annotation": "prop",
-      "docs": "Stroke width of the checkbox checkmark"
+      "docs": "Stroke width of the checkbox checkmark",
+      "mode": "ios"
+    },
+    {
+      "name": "--checkmark-width",
+      "annotation": "prop",
+      "docs": "Stroke width of the checkbox checkmark",
+      "mode": "md"
     },
     {
       "name": "--size",
       "annotation": "prop",
-      "docs": "Size of the checkbox icon"
+      "docs": "Size of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--size",
+      "annotation": "prop",
+      "docs": "Size of the checkbox icon",
+      "mode": "md"
     },
     {
       "name": "--transition",
       "annotation": "prop",
-      "docs": "Transition of the checkbox icon"
+      "docs": "Transition of the checkbox icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the checkbox icon",
+      "mode": "md"
     }
   ],
   "slots": [
@@ -448,10 +529,14 @@
     }
   ],
   "dependents": [
+    "ion-select-modal",
     "ion-select-popover"
   ],
   "dependencies": [],
   "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-checkbox"
+    ],
     "ion-select-popover": [
       "ion-checkbox"
     ]

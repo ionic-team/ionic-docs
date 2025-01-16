@@ -152,17 +152,38 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the tab bar"
+      "docs": "Background of the tab bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the tab bar",
+      "mode": "md"
     },
     {
       "name": "--border",
       "annotation": "prop",
-      "docs": "Border of the tab bar"
+      "docs": "Border of the tab bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--border",
+      "annotation": "prop",
+      "docs": "Border of the tab bar",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the tab bar"
+      "docs": "Color of the tab bar",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the tab bar",
+      "mode": "md"
     }
   ],
   "slots": [],

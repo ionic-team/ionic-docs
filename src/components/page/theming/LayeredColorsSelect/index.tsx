@@ -72,7 +72,7 @@ export default function LayeredColorsSelect({ ...props }) {
       <div className={styles.selectRow}>
         <ColorDot color={`var(--ion-color-${color})`} />
         <InputWrapper>
-          <select value={color} onChange={(ev) => setColor((ev.target as HTMLSelectElement).value)}>
+          <select value={color} onChange={(event) => setColor((event.target as HTMLSelectElement).value)}>
             <option value="primary">Primary</option>
             <option value="secondary">Secondary</option>
             <option value="tertiary">Tertiary</option>

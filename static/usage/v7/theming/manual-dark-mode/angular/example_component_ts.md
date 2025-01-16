@@ -1,12 +1,61 @@
 ```ts
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonTitle,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [
+    FormsModule,
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonRange,
+    IonText,
+    IonTitle,
+    IonToggle,
+    IonToolbar,
+  ],
 })
 export class ExampleComponent implements OnInit {
   themeToggle = false;
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
+  }
 
   ngOnInit() {
     // Use matchMedia to check the user preference
@@ -21,18 +70,18 @@ export class ExampleComponent implements OnInit {
   }
 
   // Check/uncheck the toggle and update the theme based on isDark
-  initializeDarkTheme(isDark) {
+  initializeDarkTheme(isDark: boolean) {
     this.themeToggle = isDark;
     this.toggleDarkTheme(isDark);
   }
 
   // Listen for the toggle check/uncheck to toggle the dark theme
-  toggleChange(ev) {
-    this.toggleDarkTheme(ev.detail.checked);
+  toggleChange(event: CustomEvent) {
+    this.toggleDarkTheme(event.detail.checked);
   }
 
   // Add or remove the "dark" class on the document body
-  toggleDarkTheme(shouldAdd) {
+  toggleDarkTheme(shouldAdd: boolean) {
     document.body.classList.toggle('dark', shouldAdd);
   }
 }

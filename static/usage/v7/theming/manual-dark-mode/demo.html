@@ -68,7 +68,7 @@
       const toggle = document.querySelector('#themeToggle');
 
       // Listen for the toggle check/uncheck to toggle the dark theme
-      toggle.addEventListener('ionChange', (ev) => toggleDarkTheme(ev.detail.checked));
+      toggle.addEventListener('ionChange', (event) => toggleDarkTheme(event.detail.checked));
 
       // Called by the media query to check/uncheck the toggle
       function checkToggle(shouldCheck) {
@@ -88,8 +88,8 @@
 
       // Demo only code below
       // ----------------------------------------------------
-      window.addEventListener('demoReady', (ev) => {
-        const theme = ev.target.localStorage.getItem('theme');
+      window.addEventListener('demoReady', (event) => {
+        const theme = event.target.localStorage.getItem('theme');
         const isDark = theme === 'dark' ? true : false;
 
         // Initialize the dark theme based on the initial
@@ -97,8 +97,8 @@
         initializeDarkTheme(isDark);
       });
 
-      window.addEventListener('message', (ev) => {
-        toggle.checked = ev.data.darkMode;
+      window.addEventListener('message', (event) => {
+        toggle.checked = event.data.darkMode;
       });
     </script>
 

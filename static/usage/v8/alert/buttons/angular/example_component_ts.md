@@ -1,9 +1,13 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonAlert, IonButton } from '@ionic/angular/standalone';
+import type { OverlayEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonAlert, IonButton],
 })
 export class ExampleComponent {
   public alertButtons = [
@@ -23,8 +27,8 @@ export class ExampleComponent {
     },
   ];
 
-  setResult(ev) {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+  setResult(event: CustomEvent<OverlayEventDetail>) {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   }
 }
 ```

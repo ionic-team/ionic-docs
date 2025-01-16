@@ -91,8 +91,8 @@ When running an app in Capacitor or Cordova, it is possible to hide the accessor
 <TabItem value="javascript">
 
 ```javascript
-window.addEventListener('ionKeyboardDidShow', ev => {
-  const { keyboardHeight } = ev;
+window.addEventListener('ionKeyboardDidShow', event => {
+  const { keyboardHeight } = event;
   // Do something with the keyboard height such as translating an input above the keyboard.
 });
 
@@ -109,8 +109,8 @@ import { Platform } from '@ionic/angular';
 ...
 
 constructor(private platform: Platform) {
-  this.platform.keyboardDidShow.subscribe(ev => {
-    const { keyboardHeight } = ev;
+  this.platform.keyboardDidShow.subscribe(event => {
+    const { keyboardHeight } = event;
     // Do something with the keyboard height such as translating an input above the keyboard.
   });
 
@@ -128,8 +128,8 @@ import { Platform } from '@ionic/angular/standalone';
 ...
 
 constructor(private platform: Platform) {
-  this.platform.keyboardDidShow.subscribe(ev => {
-    const { keyboardHeight } = ev;
+  this.platform.keyboardDidShow.subscribe(event => {
+    const { keyboardHeight } = event;
     // Do something with the keyboard height such as translating an input above the keyboard.
   });
 

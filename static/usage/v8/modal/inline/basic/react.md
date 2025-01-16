@@ -26,9 +26,9 @@ function Example() {
     modal.current?.dismiss(input.current?.value, 'confirm');
   }
 
-  function onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
-    if (ev.detail.role === 'confirm') {
-      setMessage(`Hello, ${ev.detail.data}!`);
+  function onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
+    if (event.detail.role === 'confirm') {
+      setMessage(`Hello, ${event.detail.data}!`);
     }
   }
 
@@ -44,7 +44,7 @@ function Example() {
           Open
         </IonButton>
         <p>{message}</p>
-        <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
+        <IonModal ref={modal} trigger="open-modal" onWillDismiss={(event) => onWillDismiss(event)}>
           <IonHeader>
             <IonToolbar>
               <IonButtons slot="start">

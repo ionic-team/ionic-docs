@@ -20,8 +20,8 @@ interface ChildProps {
 }
 
 function Child({ dismissChange, dismiss }: ChildProps) {
-  const checkboxChanged = (ev: CheckboxCustomEvent) => {
-    const checked = ev.detail.checked;
+  const checkboxChanged = (event: CheckboxCustomEvent) => {
+    const checked = event.detail.checked;
     dismissChange(checked);
   };
 

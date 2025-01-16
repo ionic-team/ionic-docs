@@ -96,7 +96,6 @@ npm は最初に `package.lock.json` からパッケージのバージョンを�
 選択できるコードエディターはたくさんあります。ここに私たちのお気に入りのいくつかがあります：
 
 - [Visual Studio Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
-- [Atom](https://atom.io): a hackable text editor made by GitHub
 - [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
 
 ## デバッガの利用

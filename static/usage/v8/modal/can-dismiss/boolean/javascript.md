@@ -41,8 +41,8 @@
 
   modal.addEventListener('didPresent', () => {
     var terms = document.getElementById('terms');
-    terms.addEventListener('ionChange', (ev) => {
-      modal.canDismiss = ev.detail.checked;
+    terms.addEventListener('ionChange', (event) => {
+      modal.canDismiss = event.detail.checked;
     });
   });
 </script>

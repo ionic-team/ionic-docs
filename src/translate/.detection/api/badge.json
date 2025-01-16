@@ -106,32 +106,74 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the badge"
+      "docs": "Background of the badge",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the badge",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Text color of the badge"
+      "docs": "Text color of the badge",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the badge",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the badge"
+      "docs": "Bottom padding of the badge",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the badge",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the badge"
+      "docs": "Top padding of the badge",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the badge",
+      "mode": "md"
     }
   ],
   "slots": [],

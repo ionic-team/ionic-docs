@@ -54,8 +54,8 @@
   const toggle = document.querySelector('#paletteToggle');
 
   // Listen for the toggle check/uncheck to toggle the dark palette
-  toggle.addEventListener('ionChange', (ev) => {
-    toggleDarkPalette(ev.detail.checked);
+  toggle.addEventListener('ionChange', (event) => {
+    toggleDarkPalette(event.detail.checked);
   });
 
   // Use matchMedia to check the user preference

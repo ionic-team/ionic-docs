@@ -54,8 +54,8 @@ function Example() {
               <IonCheckbox
                 id="terms"
                 checked={canDismiss}
-                onIonChange={(ev) => {
-                  setCanDismiss(ev.detail.checked);
+                onIonChange={(event) => {
+                  setCanDismiss(event.detail.checked);
                 }}
               >
                 <div className="ion-text-wrap">Do you accept the terms and conditions?</div>

@@ -1,6 +1,9 @@
 ```ts
 import { defineCustomElements } from '@ionic/core/loader';
 
+import { addIcons } from 'ionicons';
+import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
 
@@ -25,6 +28,18 @@ import '@ionic/core/css/display.css';
  */
 
 import '@ionic/core/css/palettes/high-contrast.always.css';
+
+/* Theme variables */
+import './theme/variables.css';
+
+/**
+ * On Ionicons 7.2+ these icons
+ * get mapped to a kebab-case key.
+ * Alternatively, developers can do:
+ * addIcons({ 'person-circle': personCircle, 'person-circle-outline': personCircleOutline,
+ * 'sunny': sunny, 'sunny-outline': sunnyOutline });
+ */
+addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
 
 defineCustomElements();
 ```

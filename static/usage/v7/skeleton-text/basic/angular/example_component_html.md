@@ -1,5 +1,6 @@
 ```html
-<ion-list *ngIf="loaded">
+@if (loaded) {
+<ion-list>
   <ion-list-header>Albums</ion-list-header>
   <ion-item>
     <ion-thumbnail slot="start">
@@ -12,8 +13,8 @@
     </ion-label>
   </ion-item>
 </ion-list>
-
-<ion-list *ngIf="!loaded">
+} @else {
+<ion-list>
   <ion-list-header>
     <ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
   </ion-list-header>
@@ -34,6 +35,7 @@
     </ion-label>
   </ion-item>
 </ion-list>
+}
 
 <ion-button (click)="loaded = !loaded">Toggle</ion-button>
 ```

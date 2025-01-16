@@ -9,9 +9,9 @@
 ></ion-input>
 
 <script>
-  const input = input.querySelector('ion-input');
+  const input = document.querySelector('ion-input');
 
-  input.addEventListener('ionInput', (ev) => validate(ev));
+  input.addEventListener('ionInput', (event) => validate(event));
   input.addEventListener('ionBlur', () => markTouched());
 
   const validateEmail = (email) => {
@@ -20,8 +20,8 @@
     );
   };
 
-  const validate = (ev) => {
-    const value = ev.target.value;
+  const validate = (event) => {
+    const value = event.target.value;
 
     input.classList.remove('ion-valid');
     input.classList.remove('ion-invalid');

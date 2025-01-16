@@ -998,7 +998,7 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionChange` event is fired for `<ion-searchbar>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the value has been committed\nby the user. This can happen when the element loses focus or\nwhen the \"Enter\" key is pressed. `ionChange` can also fire\nwhen clicking the clear or cancel buttons.",
+      "docs": "The `ionChange` event is fired for `<ion-searchbar>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the value has been committed\nby the user. This can happen when the element loses focus or\nwhen the \"Enter\" key is pressed. `ionChange` can also fire\nwhen clicking the clear or cancel buttons.\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     },
     {
@@ -1055,57 +1055,134 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the searchbar input"
+      "docs": "Background of the searchbar input",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the searchbar input",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the searchbar input"
+      "docs": "Border radius of the searchbar input",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the searchbar input",
+      "mode": "md"
     },
     {
       "name": "--box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the searchbar input"
+      "docs": "Box shadow of the searchbar input",
+      "mode": "ios"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the searchbar input",
+      "mode": "md"
     },
     {
       "name": "--cancel-button-color",
       "annotation": "prop",
-      "docs": "Color of the searchbar cancel button"
+      "docs": "Color of the searchbar cancel button",
+      "mode": "ios"
+    },
+    {
+      "name": "--cancel-button-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar cancel button",
+      "mode": "md"
     },
     {
       "name": "--clear-button-color",
       "annotation": "prop",
-      "docs": "Color of the searchbar clear button"
+      "docs": "Color of the searchbar clear button",
+      "mode": "ios"
+    },
+    {
+      "name": "--clear-button-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar clear button",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the searchbar text"
+      "docs": "Color of the searchbar text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar text",
+      "mode": "md"
     },
     {
       "name": "--icon-color",
       "annotation": "prop",
-      "docs": "Color of the searchbar icon"
+      "docs": "Color of the searchbar icon",
+      "mode": "ios"
+    },
+    {
+      "name": "--icon-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar icon",
+      "mode": "md"
     },
     {
       "name": "--placeholder-color",
       "annotation": "prop",
-      "docs": "Color of the searchbar placeholder"
+      "docs": "Color of the searchbar placeholder",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the searchbar placeholder",
+      "mode": "md"
     },
     {
       "name": "--placeholder-font-style",
       "annotation": "prop",
-      "docs": "Font style of the searchbar placeholder"
+      "docs": "Font style of the searchbar placeholder",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-font-style",
+      "annotation": "prop",
+      "docs": "Font style of the searchbar placeholder",
+      "mode": "md"
     },
     {
       "name": "--placeholder-font-weight",
       "annotation": "prop",
-      "docs": "Font weight of the searchbar placeholder"
+      "docs": "Font weight of the searchbar placeholder",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-font-weight",
+      "annotation": "prop",
+      "docs": "Font weight of the searchbar placeholder",
+      "mode": "md"
     },
     {
       "name": "--placeholder-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the searchbar placeholder"
+      "docs": "Opacity of the searchbar placeholder",
+      "mode": "ios"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the searchbar placeholder",
+      "mode": "md"
     }
   ],
   "slots": [],

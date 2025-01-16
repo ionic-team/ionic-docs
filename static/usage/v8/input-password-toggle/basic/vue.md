@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput, InputPasswordToggle } from '@ionic/vue';
+  import { IonInput, IonInputPasswordToggle } from '@ionic/vue';
 </script>
 ```

@@ -22,8 +22,8 @@
     },
   ];
 
-  alert.addEventListener('ionAlertDidDismiss', (ev) => {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+  alert.addEventListener('ionAlertDidDismiss', (event) => {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   });
 </script>
 ```

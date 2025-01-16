@@ -60,7 +60,7 @@ const ColorGenerator = (props) => {
                 </div>
                 <div className={styles.titleRowEnd}>
                   <ColorInput
-                    onClick={(ev) => ev.stopPropagation()}
+                    onClick={(event) => event.stopPropagation()}
                     color={formattedValue}
                     setColor={(color) =>
                       setColors((colors) => {

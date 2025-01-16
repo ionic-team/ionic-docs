@@ -204,7 +204,7 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 ### 月と年の選択
 
-月と年の選択は、  `presentation` プロパティに `month-year` , `year-month` , `month` , または `year` を渡すことで行うことができます。
+月と年の選択は、  `presentation` プロパティに `month-year` , `month` , または `year` を渡すことで行うことができます。
 
 この例では、 `month-year` を設定した datetime を示しています。
 
@@ -416,30 +416,30 @@ JavaScriptで日付を扱うために [date-fns](https://date-fns.org) を使う
 
 ## アクセシビリティ
 
-### キーボードナビゲーション
+### キーボードインタラクション
 
 `ion-datetime` は、コンポーネント内のフォーカス可能な要素間を移動するためのフルキーボードサポートを備えています。次の表は、それぞれのキーが何をするのかの詳細です。
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Space` or `Enter` | Clicks the focusable element.                                |
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.     |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element. |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Clicks the focusable element.                  |
 
 #### 日付の表示
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Moves focus to the same day of the previous week. |
-| `ArrowDown` | Moves focus to the same day of the next week. |
-| `ArrowRight` | Moves focus to the next day. |
-| `ArrowLeft` | Moves focus to the previous day. |
-| `Home` | Moves focus to the first day of the current week. |
-| `End` | Moves focus to the last day of the current week. |
-| `PageUp` | Changes the grid of dates to the previous month. |
-| `PageDown` | Changes the grid of dates to the next month. |
-| `Shift` + `PageUp` | Changes the grid of dates to the previous year. |
-| `Shift` + `PageDown` | Changes the grid of dates to the next year. |
+| Key                                    | Description                                       |
+| -------------------------------------- | ------------------------------------------------- |
+| <kbd>ArrowUp</kbd>                     | Moves focus to the same day of the previous week. |
+| <kbd>ArrowDown</kbd>                   | Moves focus to the same day of the next week.     |
+| <kbd>ArrowRight</kbd>                  | Moves focus to the next day.                      |
+| <kbd>ArrowLeft</kbd>                   | Moves focus to the previous day.                  |
+| <kbd>Home</kbd>                        | Moves focus to the first day of the current week. |
+| <kbd>End</kbd>                         | Moves focus to the last day of the current week.  |
+| <kbd>PageUp</kbd>                      | Changes the grid of dates to the previous month.  |
+| <kbd>PageDown</kbd>                    | Changes the grid of dates to the next month.      |
+| <kbd>Shift</kbd> + <kbd>PageUp</kbd>   | Changes the grid of dates to the previous year.   |
+| <kbd>Shift</kbd> + <kbd>PageDown</kbd> | Changes the grid of dates to the next year.       |
 
 #### 時刻、月、年のホイール
 

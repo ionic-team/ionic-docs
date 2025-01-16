@@ -15,8 +15,7 @@ import Slots from '@ionic-internal/component-api/v8/app/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-AppはIonicアプリケーションのコンテナ要素です。プロジェクトごとに `<ion-app>` 要素は1つだけにしてください。アプリケーションには、menus, headers, content, footersなど、多くのIonicコンポーネントを含めることができます。オーバーレイコンポーネントは、表示されるときに `<ion-app>` に追加されます。
+AppはIonicアプリケーションのコンテナ要素です。1つのプロジェクトにつき`<ion-app>`要素は1つだけです。アプリはメニュー、ヘッダー、コンテンツ、フッターなど多くのIonicコンポーネントを持つことができます。オーバーレイコンポーネントは表示時に `<ion-app>` に追加されます。
 
 `ion-app`を使用すると、以下の動作が可能になります。
 
@@ -27,6 +26,13 @@ AppはIonicアプリケーションのコンテナ要素です。プロジェク
 * Material Design モードでのボタン操作時の[Ripple effect](./リップルエフェクト) が使えます。
 * Ionicアプリの使用感をよりネイティブなものにする、その他のタップやフォーカスのユーティリティが使えます。
 
+## Programmatic Focus
+
+Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
+
+import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
+
+<SetFocus />
 
 ## プロパティ
 <Props />

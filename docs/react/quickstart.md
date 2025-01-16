@@ -445,6 +445,6 @@ export default Home;
 
 このガイドでは、Ionic React アプリの作成の基本、基本的なナビゲーションの追加、ネイティブアプリを構築する方法としての Capacitor の紹介について説明した。React と Capacitor で完全な Ionic アプリを作るには、[First App guide](your-first-app.md)を参照してください。
 
-Ionic のコンポーネントの詳細は [component API pages](https://ionicframework.com/docs/components) をチェックしてほしい。React の詳細については、 [React Docs](https://reactjs.org/) を参照ください。ネイティブ機能の構築を続けるには、 [Capacitor docs](https://capacitorjs.com/docs/) を参照してください。
+Ionic のコンポーネントの詳細は [component API pages](https://ionicframework.com/docs/components) をチェックしてほしい。React の詳細については、 [React Docs](https://react.dev/) を参照ください。ネイティブ機能の構築を続けるには、 [Capacitor docs](https://capacitorjs.com/docs/) を参照してください。
 
 アプリ構築をお楽しみください! 🎉

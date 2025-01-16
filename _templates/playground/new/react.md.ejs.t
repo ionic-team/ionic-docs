@@ -11,9 +11,10 @@ import './main.css';<% } %>
 
 function Example() {
   return (
-    <<%= pascalComponent %>></<%= pascalComponent %>>
+    <>
+      <<%= pascalComponent %>></<%= pascalComponent %>>
+    </>
   );
 }
 export default Example;
 ```
-

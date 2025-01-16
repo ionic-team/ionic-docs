@@ -12,8 +12,8 @@ function Example() {
     );
   };
 
-  const validate = (ev: Event) => {
-    const value = (ev.target as HTMLInputElement).value;
+  const validate = (event: Event) => {
+    const value = (event.target as HTMLInputElement).value;
 
     setIsValid(undefined);
 

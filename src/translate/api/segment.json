@@ -239,11 +239,17 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value property has changed and any\ndragging pointer has been released from `ion-segment`.",
+      "docs": "Emitted when the value property has changed and any dragging pointer has been released from `ion-segment`.\n\nThis event will not emit when programmatically setting the `value` property.",
       "docsTags": []
     }
   ],
   "listeners": [
+    {
+      "event": "ionSegmentViewScroll",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    },
     {
       "event": "keydown",
       "capture": false,
@@ -254,7 +260,14 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the segment button"
+      "docs": "Background of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the segment button",
+      "mode": "md"
     }
   ],
   "slots": [],

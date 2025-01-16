@@ -6,8 +6,8 @@ function Example() {
   const [inputModel, setInputModel] = useState('');
   const ionInputEl = useRef<HTMLIonInputElement>(null);
 
-  const onInput = (ev: Event) => {
-    const value = (ev.target as HTMLIonInputElement).value as string;
+  const onInput = (event: Event) => {
+    const value = (event.target as HTMLIonInputElement).value as string;
 
     // Removes non alphanumeric characters
     const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');

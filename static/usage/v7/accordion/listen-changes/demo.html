@@ -42,12 +42,12 @@
       const accordionGroup = document.querySelector('ion-accordion-group');
       const values = ['first', 'second', 'third'];
 
-      accordionGroup.addEventListener('ionChange', (ev) => {
-        const collapsedItems = values.filter((value) => value !== ev.detail.value);
-        const selectedValue = ev.detail.value;
+      accordionGroup.addEventListener('ionChange', (event) => {
+        const collapsedItems = values.filter((value) => value !== event.detail.value);
+        const selectedValue = event.detail.value;
 
         console.log(
-          `Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(
+          `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(
             ', '
           )}`
         );

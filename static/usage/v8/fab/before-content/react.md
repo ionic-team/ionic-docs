@@ -47,9 +47,9 @@ function Example() {
         ))}
       </IonList>
       <IonInfiniteScroll
-        onIonInfinite={(ev) => {
+        onIonInfinite={(event) => {
           generateItems();
-          setTimeout(() => ev.target.complete(), 500);
+          setTimeout(() => event.target.complete(), 500);
         }}
       >
         <IonInfiniteScrollContent></IonInfiniteScrollContent>

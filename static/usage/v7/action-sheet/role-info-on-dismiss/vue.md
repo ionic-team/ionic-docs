@@ -51,8 +51,8 @@
         },
       ];
 
-      const logResult = (ev: CustomEvent) => {
-        console.log(JSON.stringify(ev.detail, null, 2));
+      const logResult = (event: CustomEvent) => {
+        console.log(JSON.stringify(event.detail, null, 2));
       };
 
       return {

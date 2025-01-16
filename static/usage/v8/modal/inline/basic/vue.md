@@ -62,9 +62,9 @@
     modal.value.$el.dismiss(name, 'confirm');
   };
 
-  const onWillDismiss = (ev: CustomEvent<OverlayEventDetail>) => {
-    if (ev.detail.role === 'confirm') {
-      message.value = `Hello, ${ev.detail.data}!`;
+  const onWillDismiss = (event: CustomEvent<OverlayEventDetail>) => {
+    if (event.detail.role === 'confirm') {
+      message.value = `Hello, ${event.detail.data}!`;
     }
   };
 </script>

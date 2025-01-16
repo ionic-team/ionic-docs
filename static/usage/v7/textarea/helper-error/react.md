@@ -14,8 +14,8 @@ function Example() {
     );
   };
 
-  const validate = (ev: Event) => {
-    const value = (ev.target as HTMLTextAreaElement).value;
+  const validate = (event: Event) => {
+    const value = (event.target as HTMLTextAreaElement).value;
 
     setIsValid(undefined);
 
