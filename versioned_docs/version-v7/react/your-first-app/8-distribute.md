@@ -55,7 +55,7 @@ To receive this live update, you will need to run the app on a device or an emul
 ionic cordova run [ios | android] [options]
 ```
 
-Assuming the app is configured correctly to listen to the channel you deployed too, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
+Assuming the app is configured correctly to listen to the channel you deployed to, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
 
 To dive into more details on the steps to deploy a live update, as well as additional information such as disabling deploy for development, check out the [Deploy a Live Update](https://ionic.io/docs/appflow/quickstart/deploy) section inside the Appflow docs.
 
@@ -95,6 +95,6 @@ For access to the ability to create a Native Configuration, you will need to be 
 
 Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to your users devices!
 
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature run the the build and deploy process again through Appflow to get it out to your users.
+There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature run the build and deploy process again through Appflow to get it out to your users.
 
 Happy app building! 💙
