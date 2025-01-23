@@ -47,7 +47,6 @@ import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalo
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
-import { environment } from './environments/environment';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -140,7 +139,7 @@ export class AppComponent {
 Icons registered in an application entry point can then be referenced by name anywhere in the application.
 
 ```html title="home.page.html"
-<!-- 
+<!--
   logoIonic was registered in app.component.ts instead of home.page.ts,
   but it can still be used in home.page.html.
 -->
@@ -302,7 +301,7 @@ export class AppComponent {
 Icons registered in an application entry point can then be referenced by name anywhere in the application.
 
 ```html title="home.page.html"
-<!-- 
+<!--
   logoIonic was registered in app.component.ts instead of home.page.ts,
   but it can still be used in home.page.html.
 -->
@@ -428,11 +427,6 @@ import { RouteReuseStrategy, provideRouter } from '@angular/router';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -556,11 +550,6 @@ import { RouteReuseStrategy, provideRouter } from '@angular/router';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
 
 @NgModule({
   declarations: [AppComponent],
@@ -601,11 +590,6 @@ import { RouteReuseStrategy, provideRouter } from '@angular/router';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
 
 @NgModule({
   declarations: [AppComponent],
