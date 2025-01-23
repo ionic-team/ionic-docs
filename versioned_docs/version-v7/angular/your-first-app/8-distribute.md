@@ -55,7 +55,7 @@ To receive this live update, you will need to run the app on a device or an emul
 ionic [cordova | cap] run [ios | android] [options]
 ```
 
-Assuming the app is configured correctly to listen to the channel you deployed too, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
+Assuming the app is configured correctly to listen to the channel you deployed to, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
 
 To dive into more details on the steps to deploy a live update, as well as additional information such as disabling deploy for development, check out the [Deploy a Live Update](https://ionic.io/docs/appflow/quickstart/deploy) section inside the Appflow docs.
 
