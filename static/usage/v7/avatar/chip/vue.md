@@ -8,12 +8,7 @@
   </ion-chip>
 </template>
 
-<script lang="ts">
-  import { IonAvatar, IonChip, IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonAvatar, IonChip, IonLabel },
-  });
+<script lang="ts" setup>
+import { IonAvatar, IonChip, IonLabel } from '@ionic/vue';
 </script>
 ```
