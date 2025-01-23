@@ -222,7 +222,6 @@ interface ToastButton {
   icon?: string;
   side?: 'start' | 'end';
   role?: 'cancel' | string;
-  cssClass?: string | string[];
   htmlAttributes?: { [key: string]: any };
   handler?: () => boolean | void | Promise<boolean | void>;
 }
