@@ -107,7 +107,7 @@ module.exports = {
     announcementBar: {
       id: 'announcement-bar',
       content:
-        '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
+        '<a href="https://ionic.io/blog/important-announcement-the-future-of-ionics-commercial-products" target="_blank" rel="noopener"><span><strong>Important Announcement:</strong> The Future of Ionic’s Commercial Products →</span></a>',
       isCloseable: false,
     },
     metadata: [
