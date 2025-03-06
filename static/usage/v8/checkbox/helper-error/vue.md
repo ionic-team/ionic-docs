@@ -1,6 +1,6 @@
 ```html
 <template>
-  <form id="my-form" @submit.prevent="submit">
+  <form @submit.prevent="submit">
     <ion-checkbox
       v-model="agree"
       helper-text="This needs to be checked"
