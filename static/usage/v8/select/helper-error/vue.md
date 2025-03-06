@@ -3,7 +3,9 @@
   <form @submit.prevent="submit">
     <ion-select
       v-model="favFruit"
-      helper-text="Select your favorite frui"
+      label="Default label"
+      placeholder="Favorite Fruit"
+      helper-text="Select your favorite fruit"
       error-text="This field is required"
       @ionChange="validateSelect"
       :class="{ 'ion-valid': isValid, 'ion-invalid': isValid === false, 'ion-touched': isTouched }"

@@ -1,12 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { IonSelect, IonButton } from '@ionic/angular/standalone';
+import { IonSelect, IonSelectOption, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   standalone: true,
-  imports: [IonSelect, IonButton, ReactiveFormsModule],
+  imports: [IonSelect, IonSelectOption, IonButton, ReactiveFormsModule],
   templateUrl: './example.component.html',
   styleUrl: './example.component.css',
 })

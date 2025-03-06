@@ -28,6 +28,8 @@ function Example() {
       <form onSubmit={submit}>
         <IonSelect
           ref={favFruitRef}
+          label="Default label"
+          placeholder="Favorite Fruit"
           className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
             isTouched ? 'ion-touched' : ''
           }`}
