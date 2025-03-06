@@ -2,7 +2,7 @@
 <template>
   <form id="my-form" @submit.prevent="submit">
     <ion-checkbox
-      v-model="isChecked"
+      v-model="agree"
       helper-text="This needs to be checked"
       error-text="This field is required"
       @ionChange="validateCheckbox"
@@ -27,7 +27,7 @@
       IonButton,
     },
     setup() {
-      const isChecked = ref(false);
+      const agree = ref(false);
       const isTouched = ref(false);
       const isValid = ref<boolean | undefined>();
 
@@ -37,12 +37,11 @@
       };
 
       const submit = () => {
-        isTouched.value = true;
-        isValid.value = isChecked.value;
+        validateCheckbox({ detail: { checked: agree.value } } as CheckboxCustomEvent<{ checked: boolean }>);
       };
 
       return {
-        isChecked,
+        agree,
         isTouched,
         isValid,
         validateCheckbox,

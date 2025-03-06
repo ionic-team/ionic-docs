@@ -6,7 +6,7 @@ function Example() {
   const [isTouched, setIsTouched] = useState<boolean>(false);
   const [isValid, setIsValid] = useState<boolean | undefined>();
 
-  const checkboxRef = useRef<HTMLIonCheckboxElement>(null);
+  const agreeRef = useRef<HTMLIonCheckboxElement>(null);
 
   const validateCheckbox = (event: CheckboxCustomEvent<{ checked: boolean }>) => {
     setIsTouched(true);
@@ -16,8 +16,8 @@ function Example() {
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (checkboxRef.current) {
-      validateCheckbox({ detail: { checked: checkboxRef.current.checked } } as CheckboxCustomEvent<{
+    if (agreeRef.current) {
+      validateCheckbox({ detail: { checked: agreeRef.current.checked } } as CheckboxCustomEvent<{
         checked: boolean;
       }>);
     }
@@ -27,7 +27,7 @@ function Example() {
     <>
       <form onSubmit={submit}>
         <IonCheckbox
-          ref={checkboxRef}
+          ref={agreeRef}
           className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
             isTouched ? 'ion-touched' : ''
           }`}

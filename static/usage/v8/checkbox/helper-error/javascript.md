@@ -11,27 +11,27 @@
 
 <script>
   const form = document.getElementById('my-form');
-  const checkbox = form.querySelector('ion-checkbox');
+  const agree = form.querySelector('ion-checkbox');
 
   form.addEventListener('submit', (event) => submit(event));
-  checkbox.addEventListener('ionChange', (event) => validateCheckbox(event));
+  agree.addEventListener('ionChange', (event) => validateCheckbox(event));
 
   const validateCheckbox = (event) => {
-    checkbox.classList.add('ion-touched');
+    agree.classList.add('ion-touched');
 
     if (!event.detail.checked) {
-      checkbox.classList.add('ion-invalid');
-      checkbox.classList.remove('ion-valid');
+      agree.classList.add('ion-invalid');
+      agree.classList.remove('ion-valid');
     } else {
-      checkbox.classList.remove('ion-invalid');
-      checkbox.classList.add('ion-valid');
+      agree.classList.remove('ion-invalid');
+      agree.classList.add('ion-valid');
     }
   };
 
   const submit = (event) => {
     event.preventDefault();
 
-    validateCheckbox({ detail: { checked: checkbox.checked } });
+    validateCheckbox({ detail: { checked: agree.checked } });
   };
 </script>
 ```
