@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="my-form">
+        <ion-checkbox helper-text="This needs to be checked" error-text="This field is required">
+          I agree to the terms and conditions
+        </ion-checkbox>
+
+        <br />
+
+        <ion-button type="submit" size="small">Submit</ion-button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById('my-form');
+      const checkbox = form.querySelector('ion-checkbox');
+
+      form.addEventListener('submit', (event) => submit(event));
+      checkbox.addEventListener('ionChange', (event) => validateCheckbox(event));
+
+      const validateCheckbox = (event) => {
+        checkbox.classList.add('ion-touched');
+
+        if (!event.detail.checked) {
+          checkbox.classList.add('ion-invalid');
+          checkbox.classList.remove('ion-valid');
+        } else {
+          checkbox.classList.remove('ion-invalid');
+          checkbox.classList.add('ion-valid');
+        }
+      };
+
+      const submit = (event) => {
+        event.preventDefault();
+
+        validateCheckbox({ detail: { checked: checkbox.checked } });
+      };
+    </script>
+  </body>
+</html>
