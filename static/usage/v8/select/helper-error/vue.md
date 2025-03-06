@@ -8,6 +8,7 @@
       helper-text="Select your favorite fruit"
       error-text="This field is required"
       @ionChange="validateSelect"
+      @ionBlur="onIonBlur"
       :class="{ 'ion-valid': isValid, 'ion-invalid': isValid === false, 'ion-touched': isTouched }"
     >
       <ion-select-option value="apple">Apple</ion-select-option>
@@ -37,11 +38,20 @@
       const isValid = ref<boolean | undefined>();
 
       const validateSelect = (event: SelectCustomEvent<{ value: string }>) => {
+        isValid.value = event.detail.value ? true : false;
+      };
+
+      const markTouched = () => {
         isTouched.value = true;
-        isValid.value = event.detail.value;
+      };
+
+      const onIonBlur = () => {
+        markTouched();
+        validateSelect({ detail: { value: favFruit.value } } as SelectCustomEvent<{ value: string }>);
       };
 
       const submit = () => {
+        markTouched();
         validateSelect({ detail: { value: favFruit.value } } as SelectCustomEvent<{ value: string }>);
       };
 

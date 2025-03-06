@@ -42,10 +42,9 @@
 
       form.addEventListener('submit', (event) => submit(event));
       favFruit.addEventListener('ionChange', (event) => validateSelect(event));
+      favFruit.addEventListener('ionBlur', () => onIonBlur({ detail: { value: favFruit.value } }));
 
       const validateSelect = (event) => {
-        favFruit.classList.add('ion-touched');
-
         if (!event.detail.value) {
           favFruit.classList.add('ion-invalid');
           favFruit.classList.remove('ion-valid');
@@ -55,9 +54,19 @@
         }
       };
 
+      const markTouched = () => {
+        favFruit.classList.add('ion-touched');
+      };
+
+      const onIonBlur = (event) => {
+        markTouched();
+        validateSelect(event);
+      };
+
       const submit = (event) => {
         event.preventDefault();
 
+        markTouched();
         validateSelect({ detail: { value: favFruit.value } });
       };
     </script>

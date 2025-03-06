@@ -9,12 +9,27 @@ function Example() {
   const favFruitRef = useRef<HTMLIonSelectElement>(null);
 
   const validateSelect = (event: SelectCustomEvent<{ value: string }>) => {
+    setIsValid(event.detail.value ? true : false);
+  };
+
+  const markTouched = () => {
     setIsTouched(true);
-    setIsValid(event.detail.value);
+  };
+
+  const onIonBlur = () => {
+    markTouched();
+
+    if (favFruitRef.current) {
+      validateSelect({ detail: { value: favFruitRef.current.value } } as SelectCustomEvent<{
+        value: string;
+      }>);
+    }
   };
 
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    markTouched();
 
     if (favFruitRef.current) {
       validateSelect({ detail: { value: favFruitRef.current.value } } as SelectCustomEvent<{
@@ -36,6 +51,7 @@ function Example() {
           helperText="Select your favorite fruit"
           errorText="This field is required"
           onIonChange={(event) => validateSelect(event)}
+          onIonBlur={onIonBlur}
         >
           <IonSelectOption value="apple">Apple</IonSelectOption>
           <IonSelectOption value="banana">Banana</IonSelectOption>

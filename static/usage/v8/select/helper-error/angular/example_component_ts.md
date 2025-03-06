@@ -15,14 +15,14 @@ export class ExampleComponent {
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      favFruit: [false, Validators.required],
+      favFruit: ['', Validators.required],
     });
   }
 
   onSubmit() {
     // Mark the control as touched to trigger the error message.
     // This is needed if the user submits the form without interacting
-    // with the checkbox.
+    // with the select.
     this.myForm.get('favFruit')!.markAsTouched();
   }
 }
