@@ -1,8 +1,6 @@
 ```html
 <form id="my-form">
-  <ion-toggle helper-text="This needs to be enabled" error-text="This field is required">
-    Wi-Fi
-  </ion-toggle>
+  <ion-toggle helper-text="This needs to be enabled" error-text="This field is required"> Wi-Fi </ion-toggle>
 
   <br />
 
