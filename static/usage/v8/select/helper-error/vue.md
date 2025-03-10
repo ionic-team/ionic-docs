@@ -33,7 +33,7 @@
       IonButton,
     },
     setup() {
-      const favFruit = ref(false);
+      const favFruit = ref('');
       const isTouched = ref(false);
       const isValid = ref<boolean | undefined>();
 
