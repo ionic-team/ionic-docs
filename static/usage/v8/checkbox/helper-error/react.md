@@ -31,8 +31,8 @@ function Example() {
           className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
             isTouched ? 'ion-touched' : ''
           }`}
-          helperText="This needs to be checked"
-          errorText="This field is required"
+          helperText="Agree to the terms before continuing"
+          errorText="You must agree to the terms to continue"
           onIonChange={(event) => validateCheckbox(event)}
         >
           I agree to the terms and conditions
