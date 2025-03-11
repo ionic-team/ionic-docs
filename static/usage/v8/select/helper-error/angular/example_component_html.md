@@ -2,8 +2,8 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <ion-select
     formControlName="favFruit"
-    label="Default label"
-    placeholder="Favorite Fruit"
+    label="Favorite fruit"
+    placeholder="Select fruit"
     helperText="Select your favorite fruit"
     errorText="This field is required"
   >
