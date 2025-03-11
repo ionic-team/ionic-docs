@@ -28,7 +28,7 @@ function Example() {
         checked={isChecked}
         onIonChange={(event) => validateToggle(event)}
       >
-        I agree to the terms and conditions
+        Wi-Fi
       </IonToggle>
     </>
   );
