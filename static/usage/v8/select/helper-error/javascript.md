@@ -1,8 +1,8 @@
 ```html
 <form id="my-form">
   <ion-select
-    label="Default label"
-    placeholder="Favorite Fruit"
+    label="Favorite fruit"
+    placeholder="Select fruit"    
     helper-text="Select your favorite fruit"
     error-text="This field is required"
   >
