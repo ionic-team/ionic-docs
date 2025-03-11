@@ -19,9 +19,9 @@ function Example() {
     <>
       <IonToggle
         ref={wifiRef}
-        className={`${isValid ? 'ion-valid' : ''} ${
-          isValid === false ? 'ion-invalid' : ''
-        } ${isTouched ? 'ion-touched' : ''}`}
+        className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
+          isTouched ? 'ion-touched' : ''
+        }`}
         helperText="Enable to connect to available networks"
         errorText="Must be enabled to access the internet"
         justify="space-between"

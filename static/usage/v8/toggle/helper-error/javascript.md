@@ -1,5 +1,12 @@
 ```html
-<ion-toggle helper-text="Enable to connect to available networks" error-text="Must be enabled to access the internet" justify="space-between" checked> Wi-Fi </ion-toggle>
+<ion-toggle
+  helper-text="Enable to connect to available networks"
+  error-text="Must be enabled to access the internet"
+  justify="space-between"
+  checked
+>
+  Wi-Fi
+</ion-toggle>
 
 <script>
   const wifi = document.querySelector('ion-toggle');

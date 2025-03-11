@@ -17,31 +17,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { IonToggle, IonButton, ToggleCustomEvent } from '@ionic/vue';
+  import { defineComponent, ref } from 'vue';
+  import { IonToggle, IonButton, ToggleCustomEvent } from '@ionic/vue';
 
-export default defineComponent({
-  components: {
-    IonToggle,
-    IonButton,
-  },
-  setup() {
-    const wifi = ref(true);
-    const isTouched = ref(false);
-    const isValid = ref<boolean | undefined>();
+  export default defineComponent({
+    components: {
+      IonToggle,
+      IonButton,
+    },
+    setup() {
+      const wifi = ref(true);
+      const isTouched = ref(false);
+      const isValid = ref<boolean | undefined>();
 
-    const validateToggle = (event: ToggleCustomEvent<{ checked: boolean }>) => {
-      isTouched.value = true;
-      isValid.value = event.detail.checked;
-    };
+      const validateToggle = (event: ToggleCustomEvent<{ checked: boolean }>) => {
+        isTouched.value = true;
+        isValid.value = event.detail.checked;
+      };
 
-    return {
-      wifi,
-      isTouched,
-      isValid,
-      validateToggle,
-    };
-  },
-});
+      return {
+        wifi,
+        isTouched,
+        isValid,
+        validateToggle,
+      };
+    },
+  });
 </script>
 ```
