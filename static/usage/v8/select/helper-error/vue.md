@@ -3,8 +3,8 @@
   <form @submit.prevent="submit">
     <ion-select
       v-model="favFruit"
-      label="Default label"
-      placeholder="Favorite Fruit"
+      label="Favorite fruit"
+      placeholder="Select fruit"
       helper-text="Select your favorite fruit"
       error-text="This field is required"
       @ionChange="validateSelect"
