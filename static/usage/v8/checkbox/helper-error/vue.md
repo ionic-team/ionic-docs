@@ -3,8 +3,8 @@
   <form @submit.prevent="submit">
     <ion-checkbox
       v-model="agree"
-      helper-text="This needs to be checked"
-      error-text="This field is required"
+      helper-text="Agree to the terms before continuing" 
+      error-text="You must agree to the terms to continue"
       @ionChange="validateCheckbox"
       :class="{ 'ion-valid': isValid, 'ion-invalid': isValid === false, 'ion-touched': isTouched }"
     >
