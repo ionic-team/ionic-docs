@@ -1,12 +1,17 @@
 ```ts
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { IonToggle, IonButton } from '@ionic/angular/standalone';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { IonToggle } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   standalone: true,
-  imports: [IonToggle, IonButton, ReactiveFormsModule],
+  imports: [IonToggle, ReactiveFormsModule],
   templateUrl: './example.component.html',
   styleUrl: './example.component.css',
 })
@@ -15,14 +20,13 @@ export class ExampleComponent {
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      wifi: [false, Validators.requiredTrue],
+      wifi: [true, Validators.requiredTrue],
     });
   }
 
-  onSubmit() {
-    // Mark the control as touched to trigger the error message.
-    // This is needed if the user submits the form without interacting
-    // with the toggle.
+  onChange() {
+    // Mark the control as touched to trigger the error message
+    // without requiring the toggle to be blurred first
     this.myForm.get('wifi')!.markAsTouched();
   }
 }
