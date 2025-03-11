@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@ionic/core": "8.4.4-dev.11741632207.1cb10db6",
+    "@ionic/core": "8.4.1",
     "ionicons": "7.4.0"
   }
 }
