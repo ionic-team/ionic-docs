@@ -1,17 +1,9 @@
 ```html
-<form id="my-form">
-  <ion-toggle helper-text="This needs to be enabled" error-text="This field is required"> Wi-Fi </ion-toggle>
-
-  <br />
-
-  <ion-button type="submit" size="small">Submit</ion-button>
-</form>
+<ion-toggle helper-text="Enable to connect to available networks" error-text="Must be enabled to access the internet" justify="space-between" checked> Wi-Fi </ion-toggle>
 
 <script>
-  const form = document.getElementById('my-form');
-  const wifi = form.querySelector('ion-toggle');
+  const wifi = document.querySelector('ion-toggle');
 
-  form.addEventListener('submit', (event) => submit(event));
   wifi.addEventListener('ionChange', (event) => validateToggle(event));
 
   const validateToggle = (event) => {
@@ -24,12 +16,6 @@
       wifi.classList.remove('ion-invalid');
       wifi.classList.add('ion-valid');
     }
-  };
-
-  const submit = (event) => {
-    event.preventDefault();
-
-    validateToggle({ detail: { checked: wifi.checked } });
   };
 </script>
 ```
