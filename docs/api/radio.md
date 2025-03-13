@@ -76,6 +76,16 @@ import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md
 
 <EmptySelection />
 
+## Helper & Error Text
+
+Helper and error text can be used inside of a radio group with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-radio-group`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
+
+<HelperError />
+
 
 ## Theming
 
