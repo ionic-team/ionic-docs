@@ -159,7 +159,15 @@ import SheetHandleBehaviorExample from '@site/static/usage/v8/modal/sheet/handle
 
 <SheetHandleBehaviorExample />
 
-## スタイリング
+### Scrolling content at all breakpoints
+
+Sheet modals can be configured to allow scrolling content at all breakpoints, making them ideal for displaying content larger than the viewport. By setting the `expandToScroll` property to `false`, the content remains scrollable at every breakpoint. Otherwise, by default, scrolling is only enabled when the sheet modal is fully expanded.
+
+import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expand-to-scroll/index.md';
+
+<SheetScrollingContentExample />
+
+## Styling
 
 モーダルはアプリケーションのルートで表示されるので、アプリ全体を覆うように表示されます。この動作は、インライン モーダルおよびコントローラから表示されるモーダルの両方に適用されます。その結果、カスタムのモーダルスタイルを特定のコンポーネントにスコープすることはできず、モーダルには適用されません。代わりに、スタイルはグローバルに適用する必要があります。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
