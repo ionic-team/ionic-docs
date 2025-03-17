@@ -305,12 +305,26 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the item option"
+      "docs": "Background of the item option",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the item option",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the item option"
+      "docs": "Color of the item option",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the item option",
+      "mode": "md"
     }
   ],
   "slots": [

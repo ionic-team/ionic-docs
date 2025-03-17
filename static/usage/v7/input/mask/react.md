@@ -1,8 +1,9 @@
 ```tsx
 import { useState } from 'react';
 import { IonInput, IonItem, IonList } from '@ionic/react';
-import { useMaskito } from '@maskito/react';
+
 import { MaskitoOptions, maskitoTransform } from '@maskito/core';
+import { useMaskito } from '@maskito/react';
 
 function Example() {
   const cardMask = useMaskito({

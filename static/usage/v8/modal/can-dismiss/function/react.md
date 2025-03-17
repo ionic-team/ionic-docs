@@ -41,8 +41,8 @@ function Example() {
             role: 'cancel',
           },
         ],
-        onWillDismiss: (ev) => {
-          if (ev.detail.role === 'confirm') {
+        onWillDismiss: (event) => {
+          if (event.detail.role === 'confirm') {
             resolve(true);
           } else {
             reject();

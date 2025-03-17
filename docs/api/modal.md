@@ -100,7 +100,7 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v8/modal/ca
 import CanDismissChildStateExample from '@site/static/usage/v8/modal/can-dismiss/child-state/index.md';
 
 <CanDismissChildStateExample />
- 
+
 ## Card Modal
 
 開発者は、アプリのメインコンテンツの上にカードが積み重なったようにモーダルが表示されるカードモーダルエフェクトを作成できます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティを設定する必要があります。
@@ -159,7 +159,15 @@ import SheetHandleBehaviorExample from '@site/static/usage/v8/modal/sheet/handle
 
 <SheetHandleBehaviorExample />
 
-## スタイリング
+### Scrolling content at all breakpoints
+
+Sheet modals can be configured to allow scrolling content at all breakpoints, making them ideal for displaying content larger than the viewport. By setting the `expandToScroll` property to `false`, the content remains scrollable at every breakpoint. Otherwise, by default, scrolling is only enabled when the sheet modal is fully expanded.
+
+import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expand-to-scroll/index.md';
+
+<SheetScrollingContentExample />
+
+## Styling
 
 モーダルはアプリケーションのルートで表示されるので、アプリ全体を覆うように表示されます。この動作は、インライン モーダルおよびコントローラから表示されるモーダルの両方に適用されます。その結果、カスタムのモーダルスタイルを特定のコンポーネントにスコープすることはできず、モーダルには適用されません。代わりに、スタイルはグローバルに適用する必要があります。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
@@ -172,7 +180,7 @@ IonicのAngularアプリを構築する場合、スタイルはグローバル�
 `ion-modal` は、積み重ねられたモーダルは同じサイズであるという前提で動作します。その結果、後続の各モーダルはボックスシャドウを持たず、背景の不透明度は `0` になります。これは、モーダルが追加されるたびに影や背景が濃くなるのを避けるためです。これは、CSS 変数 `--box-shadow` と `--backdrop-opacity` を設定することで変更することができます。
 :::
 
-``` 
+```
 ion-modal.stack-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
@@ -247,11 +255,11 @@ interface ModalCustomEvent extends CustomEvent {
 
 ## アクセシビリティ
 
-### Keyboard Navigation
+### Keyboard Interactions
 
-| Key   | Function            |
-| ----- | ------------------- |
-| `Esc` | Dismisses the modal |
+| Key             | Description         |
+| --------------- | ------------------- |
+| <kbd>Esc</kbd>  | Dismisses the modal |
 
 
 ### ラベル

@@ -1,14 +1,50 @@
 ```tsx
 import { Component, OnInit } from '@angular/core';
+import {
+  InfiniteScrollCustomEvent,
+  IonAvatar,
+  IonContent,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonItem,
+  IonLabel,
+  IonList,
+} from '@ionic/angular/standalone';
 
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { add } from 'ionicons/icons';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [
+    IonAvatar,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonInfiniteScroll,
+    IonInfiniteScrollContent,
+    IonItem,
+    IonLabel,
+    IonList,
+  ],
 })
 export class ExampleComponent implements OnInit {
-  items = [];
+  items: string[] = [];
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ add });
+  }
 
   ngOnInit() {
     this.generateItems();
@@ -21,10 +57,10 @@ export class ExampleComponent implements OnInit {
     }
   }
 
-  onIonInfinite(ev) {
+  onIonInfinite(event: InfiniteScrollCustomEvent) {
     this.generateItems();
     setTimeout(() => {
-      (ev as InfiniteScrollCustomEvent).target.complete();
+      event.target.complete();
     }, 500);
   }
 }

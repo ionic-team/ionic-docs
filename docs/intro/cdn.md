@@ -15,7 +15,7 @@ Ionic は、テスト環境、Angular、その他のフレームワーク、ま�
 
 ## Ionic Framework CDN
 
-Ionic フレームワークは、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタですばやくテストするために、CDN から組み込むことができます。。
+Ionic フレームワークは、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタですばやくテストするために、CDN から組み込むことができます。
 
 CDN からフレームワークにアクセスするには、 [jsdelivr](https://www.jsdelivr.com/) を使用することをお勧めします。最新バージョンを入手するためには HTML ファイルの `<head>` 要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
 

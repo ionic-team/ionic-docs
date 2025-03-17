@@ -90,6 +90,33 @@
       "required": false
     },
     {
+      "name": "fixedSlotPlacement",
+      "type": "\"after\" | \"before\"",
+      "complexType": {
+        "original": "'after' | 'before'",
+        "resolved": "\"after\" | \"before\"",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "fixed-slot-placement",
+      "reflectToAttr": false,
+      "docs": "Controls where the fixed content is placed relative to the main content\nin the DOM. This can be used to control the order in which fixed elements\nreceive keyboard focus.\nFor example, if a FAB in the fixed slot should receive keyboard focus before\nthe main page content, set this property to `'before'`.",
+      "docsTags": [],
+      "default": "'after'",
+      "values": [
+        {
+          "value": "after",
+          "type": "string"
+        },
+        {
+          "value": "before",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "forceOverscroll",
       "type": "boolean | undefined",
       "complexType": {
@@ -579,7 +606,13 @@
       "docs": "The scrollable container of the content."
     }
   ],
-  "dependents": [],
+  "dependents": [
+    "ion-select-modal"
+  ],
   "dependencies": [],
-  "dependencyGraph": {}
+  "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-content"
+    ]
+  }
 }

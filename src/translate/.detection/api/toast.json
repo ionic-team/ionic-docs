@@ -903,87 +903,206 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the toast"
+      "docs": "Background of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the toast",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Border color of the toast"
+      "docs": "Border color of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the toast",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the toast"
+      "docs": "Border radius of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the toast",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Border style of the toast"
+      "docs": "Border style of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the toast",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Border width of the toast"
+      "docs": "Border width of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the toast",
+      "mode": "md"
     },
     {
       "name": "--box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow of the toast"
+      "docs": "Box shadow of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the toast",
+      "mode": "md"
     },
     {
       "name": "--button-color",
       "annotation": "prop",
-      "docs": "Color of the button text"
+      "docs": "Color of the button text",
+      "mode": "ios"
+    },
+    {
+      "name": "--button-color",
+      "annotation": "prop",
+      "docs": "Color of the button text",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the toast text"
+      "docs": "Color of the toast text",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the toast text",
+      "mode": "md"
     },
     {
       "name": "--end",
       "annotation": "prop",
-      "docs": "Position from the right if direction is left-to-right, and from the left if direction is right-to-left"
+      "docs": "Position from the right if direction is left-to-right, and from the left if direction is right-to-left",
+      "mode": "ios"
+    },
+    {
+      "name": "--end",
+      "annotation": "prop",
+      "docs": "Position from the right if direction is left-to-right, and from the left if direction is right-to-left",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the toast"
+      "docs": "Height of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the toast",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the toast"
+      "docs": "Maximum height of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the toast",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the toast"
+      "docs": "Maximum width of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the toast",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the toast"
+      "docs": "Minimum height of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the toast",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the toast"
+      "docs": "Minimum width of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the toast",
+      "mode": "md"
     },
     {
       "name": "--start",
       "annotation": "prop",
-      "docs": "Position from the left if direction is left-to-right, and from the right if direction is right-to-left"
+      "docs": "Position from the left if direction is left-to-right, and from the right if direction is right-to-left",
+      "mode": "ios"
+    },
+    {
+      "name": "--start",
+      "annotation": "prop",
+      "docs": "Position from the left if direction is left-to-right, and from the right if direction is right-to-left",
+      "mode": "md"
     },
     {
       "name": "--white-space",
       "annotation": "prop",
-      "docs": "White space of the toast message"
+      "docs": "White space of the toast message",
+      "mode": "ios"
+    },
+    {
+      "name": "--white-space",
+      "annotation": "prop",
+      "docs": "White space of the toast message",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the toast"
+      "docs": "Width of the toast",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the toast",
+      "mode": "md"
     }
   ],
   "slots": [],

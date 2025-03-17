@@ -62,8 +62,8 @@
       const menu = document.querySelector('ion-menu');
       const radioGroup = document.querySelector('ion-radio-group');
 
-      radioGroup.addEventListener('ionChange', (ev) => {
-        menu.type = ev.detail.value;
+      radioGroup.addEventListener('ionChange', (event) => {
+        menu.type = event.detail.value;
       });
     </script>
   </body>

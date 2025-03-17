@@ -677,67 +677,158 @@
     {
       "name": "--backdrop-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the backdrop"
+      "docs": "Opacity of the backdrop",
+      "mode": "ios"
+    },
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop",
+      "mode": "md"
     },
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the picker"
+      "docs": "Background of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the picker",
+      "mode": "md"
     },
     {
       "name": "--background-rgb",
       "annotation": "prop",
-      "docs": "Background of the picker in rgb format"
+      "docs": "Background of the picker in rgb format",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-rgb",
+      "annotation": "prop",
+      "docs": "Background of the picker in rgb format",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Border color of the picker"
+      "docs": "Border color of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the picker",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Border radius of the picker"
+      "docs": "Border radius of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the picker",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Border style of the picker"
+      "docs": "Border style of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the picker",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Border width of the picker"
+      "docs": "Border width of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the picker",
+      "mode": "md"
     },
     {
       "name": "--height",
       "annotation": "prop",
-      "docs": "Height of the picker"
+      "docs": "Height of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the picker",
+      "mode": "md"
     },
     {
       "name": "--max-height",
       "annotation": "prop",
-      "docs": "Maximum height of the picker"
+      "docs": "Maximum height of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the picker",
+      "mode": "md"
     },
     {
       "name": "--max-width",
       "annotation": "prop",
-      "docs": "Maximum width of the picker"
+      "docs": "Maximum width of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the picker",
+      "mode": "md"
     },
     {
       "name": "--min-height",
       "annotation": "prop",
-      "docs": "Minimum height of the picker"
+      "docs": "Minimum height of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the picker",
+      "mode": "md"
     },
     {
       "name": "--min-width",
       "annotation": "prop",
-      "docs": "Minimum width of the picker"
+      "docs": "Minimum width of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the picker",
+      "mode": "md"
     },
     {
       "name": "--width",
       "annotation": "prop",
-      "docs": "Width of the picker"
+      "docs": "Width of the picker",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the picker",
+      "mode": "md"
     }
   ],
   "slots": [],

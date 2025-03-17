@@ -109,12 +109,25 @@
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Text color of the title"
+      "docs": "Text color of the title",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the title",
+      "mode": "md"
     }
   ],
   "slots": [],
   "parts": [],
-  "dependents": [],
+  "dependents": [
+    "ion-select-modal"
+  ],
   "dependencies": [],
-  "dependencyGraph": {}
+  "dependencyGraph": {
+    "ion-select-modal": [
+      "ion-title"
+    ]
+  }
 }

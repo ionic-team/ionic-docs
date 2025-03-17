@@ -28,7 +28,7 @@
     },
   ];
 
-  actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {
+  actionSheet.addEventListener('ionActionSheetDidDismiss', (event) => {
     actionSheet.isOpen = false;
   });
 </script>

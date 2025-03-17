@@ -24,6 +24,30 @@
   "usage": {},
   "props": [
     {
+      "name": "contentId",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "content-id",
+      "reflectToAttr": true,
+      "docs": "The `id` of the segment content.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "disabled",
       "type": "boolean",
       "complexType": {
@@ -188,142 +212,338 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Background of the segment button"
+      "docs": "Background of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the segment button",
+      "mode": "md"
     },
     {
       "name": "--background-checked",
       "annotation": "prop",
-      "docs": "Background of the checked segment button"
+      "docs": "Background of the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-checked",
+      "annotation": "prop",
+      "docs": "Background of the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--background-focused",
       "annotation": "prop",
-      "docs": "Background of the segment button when focused with the tab key"
+      "docs": "Background of the segment button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the segment button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-focused-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the segment button background when focused with the tab key"
+      "docs": "Opacity of the segment button background when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the segment button background when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--background-hover",
       "annotation": "prop",
-      "docs": "Background of the segment button on hover"
+      "docs": "Background of the segment button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the segment button on hover",
+      "mode": "md"
     },
     {
       "name": "--background-hover-opacity",
       "annotation": "prop",
-      "docs": "Opacity of the segment button background on hover"
+      "docs": "Opacity of the segment button background on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the segment button background on hover",
+      "mode": "md"
     },
     {
       "name": "--border-color",
       "annotation": "prop",
-      "docs": "Color of the segment button border"
+      "docs": "Color of the segment button border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the segment button border",
+      "mode": "md"
     },
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Radius of the segment button border"
+      "docs": "Radius of the segment button border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the segment button border",
+      "mode": "md"
     },
     {
       "name": "--border-style",
       "annotation": "prop",
-      "docs": "Style of the segment button border"
+      "docs": "Style of the segment button border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the segment button border",
+      "mode": "md"
     },
     {
       "name": "--border-width",
       "annotation": "prop",
-      "docs": "Width of the segment button border"
+      "docs": "Width of the segment button border",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the segment button border",
+      "mode": "md"
     },
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the segment button"
+      "docs": "Color of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the segment button",
+      "mode": "md"
     },
     {
       "name": "--color-checked",
       "annotation": "prop",
-      "docs": "Color of the checked segment button"
+      "docs": "Color of the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-checked",
+      "annotation": "prop",
+      "docs": "Color of the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--color-focused",
       "annotation": "prop",
-      "docs": "Color of the segment button when focused with the tab key"
+      "docs": "Color of the segment button when focused with the tab key",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Color of the segment button when focused with the tab key",
+      "mode": "md"
     },
     {
       "name": "--color-hover",
       "annotation": "prop",
-      "docs": "Color of the segment button on hover"
+      "docs": "Color of the segment button on hover",
+      "mode": "ios"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Color of the segment button on hover",
+      "mode": "md"
     },
     {
       "name": "--indicator-box-shadow",
       "annotation": "prop",
-      "docs": "Box shadow on the indicator for the checked segment button"
+      "docs": "Box shadow on the indicator for the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--indicator-box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow on the indicator for the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--indicator-color",
       "annotation": "prop",
-      "docs": "Color of the indicator for the checked segment button"
+      "docs": "Color of the indicator for the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--indicator-color",
+      "annotation": "prop",
+      "docs": "Color of the indicator for the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--indicator-height",
       "annotation": "prop",
-      "docs": "Height of the indicator for the checked segment button"
+      "docs": "Height of the indicator for the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--indicator-height",
+      "annotation": "prop",
+      "docs": "Height of the indicator for the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--indicator-transform",
       "annotation": "prop",
-      "docs": "Transform of the indicator for the checked segment button"
+      "docs": "Transform of the indicator for the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--indicator-transform",
+      "annotation": "prop",
+      "docs": "Transform of the indicator for the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--indicator-transition",
       "annotation": "prop",
-      "docs": "Transition of the indicator for the checked segment button"
+      "docs": "Transition of the indicator for the checked segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--indicator-transition",
+      "annotation": "prop",
+      "docs": "Transition of the indicator for the checked segment button",
+      "mode": "md"
     },
     {
       "name": "--margin-bottom",
       "annotation": "prop",
-      "docs": "Bottom margin of the segment button"
+      "docs": "Bottom margin of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-bottom",
+      "annotation": "prop",
+      "docs": "Bottom margin of the segment button",
+      "mode": "md"
     },
     {
       "name": "--margin-end",
       "annotation": "prop",
-      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the segment button"
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-end",
+      "annotation": "prop",
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the segment button",
+      "mode": "md"
     },
     {
       "name": "--margin-start",
       "annotation": "prop",
-      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the segment button"
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-start",
+      "annotation": "prop",
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the segment button",
+      "mode": "md"
     },
     {
       "name": "--margin-top",
       "annotation": "prop",
-      "docs": "Top margin of the segment button"
+      "docs": "Top margin of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-top",
+      "annotation": "prop",
+      "docs": "Top margin of the segment button",
+      "mode": "md"
     },
     {
       "name": "--padding-bottom",
       "annotation": "prop",
-      "docs": "Bottom padding of the segment button"
+      "docs": "Bottom padding of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the segment button",
+      "mode": "md"
     },
     {
       "name": "--padding-end",
       "annotation": "prop",
-      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the segment button"
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the segment button",
+      "mode": "md"
     },
     {
       "name": "--padding-start",
       "annotation": "prop",
-      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the segment button"
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the segment button",
+      "mode": "md"
     },
     {
       "name": "--padding-top",
       "annotation": "prop",
-      "docs": "Top padding of the segment button"
+      "docs": "Top padding of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the segment button",
+      "mode": "md"
     },
     {
       "name": "--transition",
       "annotation": "prop",
-      "docs": "Transition of the segment button"
+      "docs": "Transition of the segment button",
+      "mode": "ios"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the segment button",
+      "mode": "md"
     }
   ],
   "slots": [],

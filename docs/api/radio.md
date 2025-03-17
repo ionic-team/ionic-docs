@@ -40,7 +40,7 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
-import UsingComparewith from '@site/static/usage/v7/radio/using-comparewith/index.md';
+import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/index.md';
 
 <UsingComparewith />
 
@@ -76,6 +76,16 @@ import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md
 
 <EmptySelection />
 
+## Helper & Error Text
+
+Helper and error text can be used inside of a radio group with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-radio-group`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
+
+<HelperError />
+
 
 ## テーマ
 
@@ -110,7 +120,7 @@ Ionic 7.0では、よりシンプルなラジオ構文が導入されました�
 import Migration from '@site/static/usage/v8/radio/migration/index.md';
 
 <Migration />
-  
+
 
 :::note
 Ionic の過去のバージョンでは、`ion-radio` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-radio` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-radio`が正しく機能するためには、`ion-item`はもはや必須ではありません。

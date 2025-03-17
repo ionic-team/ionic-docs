@@ -1,15 +1,23 @@
 ```tsx
 import { Component, OnInit } from '@angular/core';
-
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import {
+  IonAvatar,
+  IonContent,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonItem,
+  IonLabel,
+  IonList,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  styleUrls: ['example.component.scss'],
+  styleUrls: ['example.component.css'],
+  imports: [IonAvatar, IonContent, IonInfiniteScroll, IonInfiniteScrollContent, IonItem, IonLabel, IonList],
 })
 export class ExampleComponent implements OnInit {
-  items = [];
+  items: string[] = [];
 
   ngOnInit() {
     for (let i = 1; i < 51; i++) {

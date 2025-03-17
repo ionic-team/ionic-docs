@@ -62,11 +62,6 @@ module.exports = {
               name: 'css',
               message: 'Generate custom CSS files?',
             },
-            {
-              type: 'toggle',
-              name: 'angular_ts',
-              message: 'Generate an Angular TypeScript file?',
-            },
           ])
           .then((answers) => {
             answers.name = answers.name || answers.component.replace('ion-', '');

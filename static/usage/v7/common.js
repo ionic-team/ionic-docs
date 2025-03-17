@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
    * the demos loaded in iframes can match the
    * docs website theme.
    */
-  window.addEventListener('message', (ev) => {
-    const { data } = ev;
+  window.addEventListener('message', (event) => {
+    const { data } = event;
 
     if (data.darkMode) {
       document.body.classList.add('dark');
@@ -71,8 +71,8 @@ window.addEventListener('DOMContentLoaded', () => {
    * already created so that it does not wait on an event
    * that was already fired.
    */
-  const ev = new CustomEvent('demoReady');
-  window.dispatchEvent(ev);
+  const event = new CustomEvent('demoReady');
+  window.dispatchEvent(event);
 
   window.demoReady = true;
 });
