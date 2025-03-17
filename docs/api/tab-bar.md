@@ -148,6 +148,18 @@ export default defineComponent({
 
 </Tabs>
 
+## With Badges
+
+Badges can be added to a tab button, commonly used to indicate notifications or additional items linked to the element.
+
+:::info
+Empty badges are only available for `md` mode.
+:::
+
+import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
+
+<InsideTabBar />
+
 ## Properties
 <Props />
 
