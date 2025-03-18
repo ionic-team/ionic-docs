@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { IonBadge, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { heart, calendar } from 'ionicons/icons';
+import { heart, calendar, musicalNote } from 'ionicons/icons';
 
 @Component({
   selector: 'app-example',
@@ -17,7 +17,7 @@ export class ExampleComponent {
      * can be registered in app.component.ts and then
      * referenced by name anywhere in your application.
      */
-    addIcons({ heart, calendar });
+    addIcons({ heart, calendar, musicalNote });
   }
 }
 ```

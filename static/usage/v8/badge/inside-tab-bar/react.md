@@ -1,7 +1,7 @@
 ```tsx
 import React from 'react';
 import { IonBadge, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { heart, calendar } from 'ionicons/icons';
+import { heart, calendar, musicalNote } from 'ionicons/icons';
 
 function Example() {
   return (
@@ -13,6 +13,9 @@ function Example() {
           <IonBadge color="danger"></IonBadge>
         </IonTabButton>
         <IonTabButton tab="tab2">
+          <IonIcon icon={musicalNote} />
+        </IonTabButton>
+        <IonTabButton tab="tab3">
           <IonIcon icon={calendar} />
           <IonBadge color="danger">47</IonBadge>
         </IonTabButton>
