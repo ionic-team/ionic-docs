@@ -148,7 +148,7 @@ export default defineComponent({
 
 </Tabs>
 
-## With Badges
+## Badges in Tab Buttons
 
 Badges can be added to a tab button, commonly used to indicate notifications or additional items linked to the element.
 
