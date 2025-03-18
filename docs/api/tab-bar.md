@@ -150,7 +150,7 @@ export default defineComponent({
 
 ## Badges in Tab Buttons
 
-Badges can be added to a tab button, commonly used to indicate notifications or additional items linked to the element.
+Badges can be added inside a tab button, often used to indicate notifications or highlight additional items associated with the element.
 
 :::info
 Empty badges are only available for `md` mode.
