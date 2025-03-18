@@ -9,10 +9,12 @@
 
     <ion-tab-button tab="2">
       <ion-icon :icon="musicalNote" />
+      <ion-label>Music</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="3">
       <ion-icon :icon="calendar" />
+      <ion-label>Calendar</ion-label>
       <ion-badge color="danger">47</ion-badge>
     </ion-tab-button>
   </ion-tab-bar>

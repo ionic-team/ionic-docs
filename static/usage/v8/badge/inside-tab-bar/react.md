@@ -14,9 +14,11 @@ function Example() {
         </IonTabButton>
         <IonTabButton tab="tab2">
           <IonIcon icon={musicalNote} />
+          <IonLabel>Music</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab3">
           <IonIcon icon={calendar} />
+          <IonLabel>Calendar</IonLabel>
           <IonBadge color="danger">47</IonBadge>
         </IonTabButton>
       </IonTabBar>
