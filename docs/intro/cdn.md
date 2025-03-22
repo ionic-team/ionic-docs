@@ -63,6 +63,9 @@ $ npm install @ionic/react-router
 To include the necessary CSS in a React project, add the following to the root App component.
 
 ```javascript
+/* Import setup Ionic react and IonApp for vite to recognize Ionic */
+import { IonApp, setupIonicReact } from "@ionic/react";
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -78,6 +81,20 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+
+/* Set up function */
+setupIonicReact();
+
+/* React App component */
+export default const App = () = {
+
+  return(
+    <IonApp>
+    /* Components or routes go in here */
+    </IonApp>
+  )
+
+}
 ```
 
 ## Ionic + Vue
