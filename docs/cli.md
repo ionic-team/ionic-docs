@@ -15,7 +15,7 @@ The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go
 
 ## Installation
 
-The Ionic CLI can be installed globally with npm:
+The Ionic CLI 7 can be installed globally with npm:
 
 ```shell
 npm install -g @ionic/cli
