@@ -15,7 +15,7 @@ The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go
 
 ## Installation
 
-The Ionic CLI 7 can be installed globally with npm:
+The Ionic CLI can be installed globally with npm:
 
 ```shell
 npm install -g @ionic/cli
@@ -47,7 +47,7 @@ The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) an
 
 To troubleshoot issues with the Ionic CLI, the following may be useful:
 
-- Make sure the latest version of the Ionic CLI is installed. Get the installed version by running `ionic --version`.
+- Make sure the latest version of the Ionic CLI is installed. Get the installed Ionic CLI version by running `ionic --version`. Ionic CLI version is not related with Ionic version.
 - Make sure the latest Node LTS is installed. See [Node & npm](/docs/intro/environment#node-npm) environment setup.
 - The `--verbose` flag prints debugging messages, which may narrow down the issue.
 - Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
