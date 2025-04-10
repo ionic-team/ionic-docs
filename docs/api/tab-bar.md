@@ -148,7 +148,19 @@ export default defineComponent({
 
 </Tabs>
 
-## プロパティ
+## Tabボタン内のバッジ
+
+バッジはTabボタン内に追加することができ、多くの場合、通知を示したり、要素に関連する追加項目を強調するために使用されます。
+
+:::info
+Empty badges are only available for `md` mode.
+:::
+
+import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
+
+<InsideTabBar />
+
+## Properties
 <Props />
 
 ## イベント
