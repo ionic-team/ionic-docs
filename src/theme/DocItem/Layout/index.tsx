@@ -1,4 +1,7 @@
 /**
+ * DocItemLayout is a component that renders the layout of a page like
+ * the individual component pages, guide pages, etc.
+ * 
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/DocItem/Layout/index.tsx
  * 
@@ -17,6 +20,7 @@ import DocItemFooter from '@theme/DocItem/Footer';
 import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
+import ContentVisibility from '@theme/ContentVisibility';
 import type {Props} from '@theme/DocItem/Layout';
 import styles from '@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.module.css';
 
@@ -64,34 +68,42 @@ function useDocDemo() {
 
 export default function DocItemLayout({children, ...props}: Props): JSX.Element {
   const docTOC = useDocTOC();
+  const {metadata} = useDoc();
   // CUSTOM CODE
   const {demoUrl, demoSourceUrl} = useDocDemo();
   // CUSTOM CODE END
   return (
-    <div className="row">
-      <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
-        <DocVersionBanner />
-        <div className={styles.docItemContainer}>
-          <article>
-            <DocVersionBadge />
-            {docTOC.mobile}
-            <DocItemContent>{children}</DocItemContent>
-            <DocItemFooter />
-          </article>
-          <DocItemPaginator />
-        </div>
-      </div>
+    <>
       {/* ------- CUSTOM CODE -------- */}
-      {/* Ideally this would only render if there is a demoUrl and the it's a mobile device. However,the `windowSize` does not provide a tablet so we have to hide it through CSS. */}
-      {demoUrl && (
-        <div className='col col--4'>
-          <div className='doc-demo-wrapper'>
-            <DocDemo url={demoUrl} source={demoSourceUrl} />
+      {/* Moved to be on top of the inner content. */}
+      {/* The banner is rendered per version based on the versions config on docusaurus.config.js */}
+      <DocVersionBanner />
+      {/* ------- CUSTOM CODE END -------- */}
+      <div className="row">
+        <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
+          <ContentVisibility metadata={metadata} />
+          <div className={styles.docItemContainer}>
+            <article>
+              <DocVersionBadge />
+              {docTOC.mobile}
+              <DocItemContent>{children}</DocItemContent>
+              <DocItemFooter />
+            </article>
+            <DocItemPaginator />
           </div>
         </div>
-      )}
-      {/* ------- CUSTOM CODE END -------- */}
-      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
-    </div>
+        {/* ------- CUSTOM CODE -------- */}
+        {/* Ideally this would only render if there is a demoUrl and the it's a mobile device. However,the `windowSize` does not provide a tablet so we have to hide it through CSS. */}
+        {demoUrl && (
+          <div className='col col--4'>
+            <div className='doc-demo-wrapper'>
+              <DocDemo url={demoUrl} source={demoSourceUrl} />
+            </div>
+          </div>
+        )}
+        {/* ------- CUSTOM CODE END -------- */}
+        {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+      </div>
+    </>
   );
 }

@@ -81,6 +81,7 @@ module.exports = {
           },
           exclude: ['README.md'],
           lastVersion: 'current',
+          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
               label: 'v8',
@@ -333,6 +334,7 @@ module.exports = {
     },
   },
   plugins: [
+    // Allows usage of Sass/SCSS in the CSS preprocessor.
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',
