@@ -51,7 +51,7 @@
     "concurrently": "^6.2.0",
     "crowdin": "^3.5.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
-    "docusaurus-plugin-sass": "^0.2.1",
+    "docusaurus-plugin-sass": "^0.2.6",
     "fs-extra": "^9.1.0",
     "modern-normalize": "^1.1.0",
     "prism-react-renderer": "^2.1.0",
