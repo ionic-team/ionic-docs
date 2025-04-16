@@ -6,8 +6,10 @@
  * - Changed the language icon in the navbar to use the Ionicons language icon. This provides a bolded version of the language icon.
  */
 
-import React from 'react';
-export default function IconLanguage({ width = 22, height = 22, ...props }) {
+import React, { type ReactNode } from 'react';
+import type { Props } from '@theme/Icon/Language';
+
+export default function IconLanguage({ width = 22, height = 22, ...props }: Props): ReactNode {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width={width} height={height} aria-hidden {...props}>
       <path
