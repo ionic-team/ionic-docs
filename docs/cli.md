@@ -47,7 +47,7 @@ The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) an
 
 To troubleshoot issues with the Ionic CLI, the following may be useful:
 
-- Make sure the latest version of the Ionic CLI is installed. Get the installed Ionic CLI version by running `ionic --version`. Ionic CLI version is not related with Ionic version.
+- Make sure the latest version of the Ionic CLI is installed. Get the installed Ionic CLI version by running `ionic --version`. The Ionic CLI version is not related to the Ionic Framework version.
 - Make sure the latest Node LTS is installed. See [Node & npm](/docs/intro/environment#node-npm) environment setup.
 - The `--verbose` flag prints debugging messages, which may narrow down the issue.
 - Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
