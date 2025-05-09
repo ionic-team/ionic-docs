@@ -15,7 +15,7 @@ import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
-import { useDoc } from '@docusaurus/theme-common/internal';
+import { useDoc } from '@docusaurus/plugin-content-docs/client';
 
 interface TOCProps extends Props {
   editUrl: string;
