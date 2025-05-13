@@ -50,12 +50,8 @@ module.exports = function (context, options) {
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
-      let npmTag = 'latest';
-      if (currentVersion.banner === 'unreleased') {
-        npmTag = 'next';
-      } else if (currentVersion.path !== undefined) {
-        npmTag = currentVersion.path.slice(1);
-      }
+      // TODO: remove this when 8.6 is released
+      let npmTag = '8.5.7-dev.11747094257.1dd7476b';
       // Latest version
       await generateMarkdownForVersion(currentVersion.path || currentVersion.label, npmTag, true);
 
