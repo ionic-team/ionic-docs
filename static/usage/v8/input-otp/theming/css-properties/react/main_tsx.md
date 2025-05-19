@@ -7,8 +7,12 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonInputOtp class="custom" separators="all"> Didn't get a code? <a href="#">Resend the code</a> </IonInputOtp>
-      <IonInputOtp fill="solid" class="custom" separators="all"> Didn't get a code? <a href="#">Resend the code</a> </IonInputOtp>
+      <IonInputOtp class="custom" separators="all">
+        Didn't get a code? <a href="#">Resend the code</a>
+      </IonInputOtp>
+      <IonInputOtp fill="solid" class="custom" separators="all">
+        Didn't get a code? <a href="#">Resend the code</a>
+      </IonInputOtp>
     </>
   );
 }
