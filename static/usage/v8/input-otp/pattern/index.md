@@ -20,6 +20,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  size="300px"
+  size="large"
   src="usage/v8/input-otp/pattern/demo.html"
 />
