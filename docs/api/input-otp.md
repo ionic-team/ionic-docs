@@ -47,7 +47,7 @@ import Type from '@site/static/usage/v8/input-otp/type/index.md';
 
 ## Shape
 
-The `shape` property controls the visual appearance of input boxes with three options: `soft`, `round`, and `rectangular`. It uses `shape="round"` by default, displaying input boxes with fully rounded corners. The `soft` shape provides slightly rounded corners, while `rectangular` has sharp corners.
+The `shape` property controls the border radius of the input boxes, creating rounded or sharp corners.
 
 import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
 
@@ -55,7 +55,7 @@ import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
 
 ## Fill
 
-The `fill` property offers two visual styles: `outline` and `solid`. It uses `fill="outline"` by default, displaying input boxes with a border. When `fill="solid"` is specified, input boxes have a filled background.
+The `fill` property controls the background style of the input boxes, offering bordered or filled backgrounds.
 
 import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
 
@@ -63,7 +63,7 @@ import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
 
 ## Size
 
-The `size` property provides three size options: `small`, `medium`, and `large`. It uses `size="medium"` by default for a balanced input box size. The `small` size creates compact input boxes, while `large` creates spacious ones.
+The `size` property provides different size options for the input boxes.
 
 import Size from '@site/static/usage/v8/input-otp/size/index.md';
 
@@ -76,7 +76,7 @@ The `separators` property adds visual dividers between one or more of the input 
 - Array of numbers (e.g., `[1, 3]`)
 - String `"all"` to show separators between every input box
 
-The numbers represent the index after which a separator should appear. For example, `"1"` displays a separator after the first input box. This can be used to create visually distinct groupings of input boxes, but it will still have one value.
+The numbers represent the index after which a separator should appear. For example, `"1,3"` displays a separator after the first and third input box. This can be used to create visually distinct groupings of input boxes, but it will still have one value.
 
 import Separators from '@site/static/usage/v8/input-otp/separators/index.md';
 
