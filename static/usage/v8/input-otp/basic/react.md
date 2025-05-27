@@ -6,12 +6,10 @@ function Example() {
   return (
     <>
       <IonInputOtp>
-        {' '}
-        Didn't get a code? <a href="#">Resend the code</a>{' '}
+        Didn't get a code? <a href="#">Resend the code</a>
       </IonInputOtp>
       <IonInputOtp length="6">
-        {' '}
-        Didn't get a code? <a href="#">Resend the code</a>{' '}
+        Didn't get a code? <a href="#">Resend the code</a>
       </IonInputOtp>
     </>
   );
