@@ -22,7 +22,6 @@
 
   function validateOtp(input) {
     const value = input.value;
-    console.log(value);
 
     // Remove existing validation classes
     input.classList.remove('ion-valid');
@@ -32,11 +31,9 @@
     if (value && value.toString().length === 4) {
       input.classList.add('ion-valid');
       input.textContent = 'Valid';
-    } else if (value) {
+    } else {
       input.classList.add('ion-invalid');
       input.textContent = 'Invalid';
-    } else {
-      input.textContent = '';
     }
   }
 </script>
