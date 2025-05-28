@@ -51,7 +51,7 @@ module.exports = function (context, options) {
       }
 
       // TODO: revert this before merging
-      let npmTag = '8.5.7-dev.11748379940.12698faf';
+      let npmTag = '8.5.7-dev.11748466845.12de1519';
       // Latest version
       await generateMarkdownForVersion(currentVersion.path || currentVersion.label, npmTag, true);
 
