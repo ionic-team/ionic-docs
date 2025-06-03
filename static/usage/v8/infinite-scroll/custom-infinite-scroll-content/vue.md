@@ -98,7 +98,6 @@
   export default defineComponent({
     components: {
       IonContent,
-      IonContent,
       IonInfiniteScroll,
       IonInfiniteScrollContent,
       IonList,
