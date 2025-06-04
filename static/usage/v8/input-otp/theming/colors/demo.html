@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badge</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-input-otp length="2" color="primary"> Primary </ion-input-otp>
+          <ion-input-otp length="2" color="secondary"> Secondary </ion-input-otp>
+          <ion-input-otp length="2" color="tertiary"> Tertiary </ion-input-otp>
+          <ion-input-otp length="2" color="success"> Success </ion-input-otp>
+          <ion-input-otp length="2" color="warning"> Warning </ion-input-otp>
+          <ion-input-otp length="2" color="danger"> Danger </ion-input-otp>
+          <ion-input-otp length="2" color="light"> Light </ion-input-otp>
+          <ion-input-otp length="2" color="medium"> Medium </ion-input-otp>
+          <ion-input-otp length="2" color="dark"> Dark </ion-input-otp>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>
