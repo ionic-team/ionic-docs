@@ -54,19 +54,24 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
       options?.includeIonContent ? 'html/index.withContent.html' : 'html/index.html',
       'html/variables.css',
       'html/package.json',
+      'html/tsconfig.json',
+      'html/vite.config.ts',
     ],
     options.version
   );
 
+  const package_json = JSON.parse(defaultFiles[3]);
+
   const indexHtml = 'index.html';
   const files = {
-    'index.ts': defaultFiles[0],
+    'package.json': JSON.stringify(package_json, null, 2),
+    'src/index.ts': defaultFiles[0],
     [indexHtml]: defaultFiles[1],
-    'theme/variables.css': defaultFiles[2],
+    'src/theme/variables.css': defaultFiles[2],
+    'tsconfig.json': defaultFiles[4],
+    'vite.config.ts': defaultFiles[5],
     ...options?.files,
   };
-
-  const package_json = defaultFiles[3];
 
   files[indexHtml] = defaultFiles[1].replace(/{{ TEMPLATE }}/g, code).replace(
     '</head>',
@@ -82,23 +87,18 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 `
   );
 
-  let dependencies = {};
-  try {
-    dependencies = {
-      ...dependencies,
-      ...JSON.parse(package_json).dependencies,
-      ...options?.dependencies,
+  if (options?.dependencies) {
+    package_json.dependencies = {
+      ...package_json.dependencies,
+      ...options.dependencies,
     };
-  } catch (e) {
-    console.error('Failed to parse package.json contents', e);
   }
 
   sdk.openProject({
-    template: 'typescript',
+    template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files,
-    dependencies,
   });
 };
 
