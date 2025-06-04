@@ -36,6 +36,8 @@ import CustomizingButtonTexts from '@site/static/usage/v8/datetime/buttons/custo
 import HighlightedDatesArray from '@site/static/usage/v8/datetime/highlightedDates/array/index.md';
 import HighlightedDatesCallback from '@site/static/usage/v8/datetime/highlightedDates/callback/index.md';
 
+import ShowAdjacentDays from '@site/static/usage/v8/datetime/show-adjacent-days/index.md';
+
 import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
@@ -247,6 +249,18 @@ The example below shows the wheel picker with `presentation="date-time"`.
 import Wheel from '@site/static/usage/v8/datetime/presentation/wheel/index.md';
 
 <Wheel />
+
+## Show Adjacent Days
+
+If the `showAdjacentDays` property is set to `true`, days from the previous and next month will be displayed in the calendar view to fill any empty spaces at the beginning or end of the month. When a user clicks on an enabled adjacent day, the calendar will smoothly animate to show that month's view.
+
+The calendar view always displays 6 rows when `showAdjacentDays` is enabled, so days from the previous or next month will be shown as needed to fill the grid. For example, even if a month starts on the first day of the week and ends within the fifth row, days from the next month will appear at the end to complete the sixth row.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<ShowAdjacentDays />
 
 ## Multiple Date Selection
 
