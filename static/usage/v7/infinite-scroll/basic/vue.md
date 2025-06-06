@@ -23,7 +23,6 @@
     IonList,
     IonItem,
     IonAvatar,
-    IonImg,
     IonLabel,
     InfiniteScrollCustomEvent,
   } from '@ionic/vue';
@@ -37,7 +36,6 @@
       IonList,
       IonItem,
       IonAvatar,
-      IonImg,
       IonLabel,
     },
     setup() {
