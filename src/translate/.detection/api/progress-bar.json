@@ -35,7 +35,12 @@
       "attr": "buffer",
       "reflectToAttr": false,
       "docs": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1].",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "1"
+        }
+      ],
       "default": "1",
       "values": [
         {
@@ -43,7 +48,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -109,7 +116,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -144,7 +153,12 @@
       "attr": "reversed",
       "reflectToAttr": false,
       "docs": "If true, reverse the progress bar direction.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -152,7 +166,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -166,7 +182,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'determinate'"
+        }
+      ],
       "default": "'determinate'",
       "values": [
         {
@@ -179,7 +200,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -193,7 +216,12 @@
       "attr": "value",
       "reflectToAttr": false,
       "docs": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1].",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
       "default": "0",
       "values": [
         {
@@ -201,7 +229,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

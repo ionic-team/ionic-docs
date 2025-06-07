@@ -18,7 +18,12 @@
       "attr": "fixed",
       "reflectToAttr": false,
       "docs": "If `true`, the grid will have a fixed width based on the screen size.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

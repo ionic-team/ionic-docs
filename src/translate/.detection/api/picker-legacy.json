@@ -23,7 +23,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the picker will animate.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -31,7 +36,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "backdropDismiss",
@@ -45,7 +52,12 @@
       "attr": "backdrop-dismiss",
       "reflectToAttr": false,
       "docs": "If `true`, the picker will be dismissed when the backdrop is clicked.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -53,7 +65,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "buttons",
@@ -70,9 +84,15 @@
         }
       },
       "mutable": false,
+      "attr": "buttons",
       "reflectToAttr": false,
       "docs": "Array of buttons to be displayed at the top of the picker.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "[]"
+        }
+      ],
       "default": "[]",
       "values": [
         {
@@ -80,7 +100,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "columns",
@@ -97,9 +119,15 @@
         }
       },
       "mutable": false,
+      "attr": "columns",
       "reflectToAttr": false,
       "docs": "Array of columns to be displayed in the picker.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "[]"
+        }
+      ],
       "default": "[]",
       "values": [
         {
@@ -107,7 +135,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "cssClass",
@@ -134,7 +164,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "duration",
@@ -148,7 +180,12 @@
       "attr": "duration",
       "reflectToAttr": false,
       "docs": "Number of milliseconds to wait before dismissing the picker.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
       "default": "0",
       "values": [
         {
@@ -156,7 +193,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterAnimation",
@@ -173,6 +212,7 @@
         }
       },
       "mutable": false,
+      "attr": "enter-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the picker is presented.",
       "docsTags": [],
@@ -185,7 +225,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "htmlAttributes",
@@ -196,6 +238,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "html-attributes",
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the picker.",
       "docsTags": [],
@@ -208,7 +251,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "isOpen",
@@ -222,7 +267,12 @@
       "attr": "is-open",
       "reflectToAttr": false,
       "docs": "If `true`, the picker will open. If `false`, the picker will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the pickerController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe picker dismisses. You will need to do that in your code.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -230,7 +280,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keyboardClose",
@@ -244,7 +296,12 @@
       "attr": "keyboard-close",
       "reflectToAttr": false,
       "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -252,7 +309,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "leaveAnimation",
@@ -269,6 +328,7 @@
         }
       },
       "mutable": false,
+      "attr": "leave-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the picker is dismissed.",
       "docsTags": [],
@@ -281,7 +341,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -316,7 +378,12 @@
       "attr": "show-backdrop",
       "reflectToAttr": false,
       "docs": "If `true`, a backdrop will be displayed behind the picker.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -324,7 +391,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "trigger",
@@ -348,7 +417,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

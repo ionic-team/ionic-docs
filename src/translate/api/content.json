@@ -87,7 +87,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "fixedSlotPlacement",
@@ -101,7 +103,12 @@
       "attr": "fixed-slot-placement",
       "reflectToAttr": false,
       "docs": "Controls where the fixed content is placed relative to the main content\nin the DOM. This can be used to control the order in which fixed elements\nreceive keyboard focus.\nFor example, if a FAB in the fixed slot should receive keyboard focus before\nthe main page content, set this property to `'before'`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'after'"
+        }
+      ],
       "default": "'after'",
       "values": [
         {
@@ -114,7 +121,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "forceOverscroll",
@@ -138,7 +147,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "fullscreen",
@@ -152,7 +163,12 @@
       "attr": "fullscreen",
       "reflectToAttr": false,
       "docs": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -160,7 +176,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "scrollEvents",
@@ -174,7 +192,12 @@
       "attr": "scroll-events",
       "reflectToAttr": false,
       "docs": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -182,7 +205,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "scrollX",
@@ -196,7 +221,12 @@
       "attr": "scroll-x",
       "reflectToAttr": false,
       "docs": "If you want to enable the content scrolling in the X axis, set this property to `true`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -204,7 +234,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "scrollY",
@@ -218,7 +250,12 @@
       "attr": "scroll-y",
       "reflectToAttr": false,
       "docs": "If you want to disable the content scrolling in the Y axis, set this property to `false`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -226,7 +263,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

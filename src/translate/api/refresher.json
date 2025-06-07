@@ -23,7 +23,12 @@
       "attr": "close-duration",
       "reflectToAttr": false,
       "docs": "Time it takes to close the refresher.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'280ms'"
+        }
+      ],
       "default": "'280ms'",
       "values": [
         {
@@ -31,7 +36,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -45,7 +52,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the refresher will be hidden.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -53,7 +65,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -88,7 +102,12 @@
       "attr": "pull-factor",
       "reflectToAttr": false,
       "docs": "How much to multiply the pull speed by. To slow the pull animation down,\npass a number less than `1`. To speed up the pull, pass a number greater\nthan `1`. The default value is `1` which is equal to the speed of the cursor.\nIf a negative value is passed in, the factor will be `1` instead.\n\nFor example: If the value passed is `1.2` and the content is dragged by\n`10` pixels, instead of `10` pixels the content will be pulled by `12` pixels\n(an increase of 20 percent). If the value passed is `0.8`, the dragged amount\nwill be `8` pixels, less than the amount the cursor has moved.\n\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "1"
+        }
+      ],
       "default": "1",
       "values": [
         {
@@ -96,7 +115,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullMax",
@@ -110,7 +131,12 @@
       "attr": "pull-max",
       "reflectToAttr": false,
       "docs": "The maximum distance of the pull until the refresher\nwill automatically go into the `refreshing` state.\nDefaults to the result of `pullMin + 60`.\nDoes not apply when  the refresher content uses a spinner,\nenabling the native refresher.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.pullMin + 60"
+        }
+      ],
       "default": "this.pullMin + 60",
       "values": [
         {
@@ -118,7 +144,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullMin",
@@ -132,7 +160,12 @@
       "attr": "pull-min",
       "reflectToAttr": false,
       "docs": "The minimum distance the user must pull down until the\nrefresher will go into the `refreshing` state.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "60"
+        }
+      ],
       "default": "60",
       "values": [
         {
@@ -140,7 +173,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "snapbackDuration",
@@ -154,7 +189,12 @@
       "attr": "snapback-duration",
       "reflectToAttr": false,
       "docs": "Time it takes the refresher to snap back to the `refreshing` state.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'280ms'"
+        }
+      ],
       "default": "'280ms'",
       "values": [
         {
@@ -162,7 +202,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

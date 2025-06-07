@@ -75,7 +75,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "itemsAfterCollapse",
@@ -89,7 +91,12 @@
       "attr": "items-after-collapse",
       "reflectToAttr": false,
       "docs": "The number of breadcrumbs to show after the collapsed indicator.\nIf `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`,\nthe breadcrumbs will not be collapsed.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "1"
+        }
+      ],
       "default": "1",
       "values": [
         {
@@ -97,7 +104,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "itemsBeforeCollapse",
@@ -111,7 +120,12 @@
       "attr": "items-before-collapse",
       "reflectToAttr": false,
       "docs": "The number of breadcrumbs to show before the collapsed indicator.\nIf `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`,\nthe breadcrumbs will not be collapsed.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "1"
+        }
+      ],
       "default": "1",
       "values": [
         {
@@ -119,7 +133,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "maxItems",
@@ -143,7 +159,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
