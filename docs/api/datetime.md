@@ -36,6 +36,8 @@ import CustomizingButtonTexts from '@site/static/usage/v8/datetime/buttons/custo
 import HighlightedDatesArray from '@site/static/usage/v8/datetime/highlightedDates/array/index.md';
 import HighlightedDatesCallback from '@site/static/usage/v8/datetime/highlightedDates/callback/index.md';
 
+import ShowAdjacentDays from '@site/static/usage/v8/datetime/show-adjacent-days/index.md';
+
 import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
@@ -247,6 +249,18 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 import Wheel from '@site/static/usage/v8/datetime/presentation/wheel/index.md';
 
 <Wheel />
+
+## 隣接する日を表示する
+
+`showAdjacentDays` プロパティが `true` に設定されている場合、カレンダービューに前月と翌月の日が表示され、月の初めや終わりの空白を埋めることができます。ユーザーが有効な隣接日をクリックすると、カレンダーはその月のビューを表示するようにスムーズにアニメーションします。
+
+`showAdjacentDays`が有効な場合、カレンダービューは常に6行表示されるため、グリッドを埋めるために必要に応じて前月または翌月の日が表示されます。例えば、ある月が週の初日に始まり、5行目で終わるとしても、6行目を完成させるために翌月の日が最後に表示されます。
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<ShowAdjacentDays />
 
 ## 複数の日付の選択
 
