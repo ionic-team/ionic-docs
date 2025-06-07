@@ -20,7 +20,7 @@ module.exports = function (context, options) {
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
         const response = isCurrentVersion
-          ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+          ? await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`)
           : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
