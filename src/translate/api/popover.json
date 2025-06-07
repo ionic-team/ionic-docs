@@ -64,7 +64,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "animated",
@@ -78,7 +80,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the popover will animate.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -86,7 +93,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "arrow",
@@ -100,7 +109,12 @@
       "attr": "arrow",
       "reflectToAttr": false,
       "docs": "If `true`, the popover will display an arrow that points at the\n`reference` when running in `ios` mode. Does not apply in `md` mode.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -108,7 +122,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "backdropDismiss",
@@ -122,7 +138,12 @@
       "attr": "backdrop-dismiss",
       "reflectToAttr": false,
       "docs": "If `true`, the popover will be dismissed when the backdrop is clicked.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -130,7 +151,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "component",
@@ -169,7 +192,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "componentProps",
@@ -186,6 +211,7 @@
         }
       },
       "mutable": false,
+      "attr": "component-props",
       "reflectToAttr": false,
       "docs": "The data to pass to the popover component.\nYou only need to use this if you are not using\na JavaScript framework. Otherwise, you can just\nset the props directly on your component.",
       "docsTags": [],
@@ -198,7 +224,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "dismissOnSelect",
@@ -212,7 +240,12 @@
       "attr": "dismiss-on-select",
       "reflectToAttr": false,
       "docs": "If `true`, the popover will be automatically\ndismissed when the content has been clicked.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -220,7 +253,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterAnimation",
@@ -237,6 +272,7 @@
         }
       },
       "mutable": false,
+      "attr": "enter-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the popover is presented.",
       "docsTags": [],
@@ -249,7 +285,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "event",
@@ -270,7 +308,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "focusTrap",
@@ -284,7 +324,12 @@
       "attr": "focus-trap",
       "reflectToAttr": false,
       "docs": "If `true`, focus will not be allowed to move outside of this overlay.\nIf `false`, focus will be allowed to move outside of the overlay.\n\nIn most scenarios this property should remain set to `true`. Setting\nthis property to `false` can cause severe accessibility issues as users\nrelying on assistive technologies may be able to move focus into\na confusing state. We recommend only setting this to `false` when\nabsolutely necessary.\n\nDevelopers may want to consider disabling focus trapping if this\noverlay presents a non-Ionic overlay from a 3rd party library.\nDevelopers would disable focus trapping on the Ionic overlay\nwhen presenting the 3rd party overlay and then re-enable\nfocus trapping when dismissing the 3rd party overlay and moving\nfocus back to the Ionic overlay.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -292,7 +337,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "htmlAttributes",
@@ -303,6 +350,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "html-attributes",
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the popover.",
       "docsTags": [],
@@ -315,7 +363,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "isOpen",
@@ -329,7 +379,12 @@
       "attr": "is-open",
       "reflectToAttr": false,
       "docs": "If `true`, the popover will open. If `false`, the popover will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the popoverController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe popover dismisses. You will need to do that in your code.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -337,7 +392,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keepContentsMounted",
@@ -351,7 +408,12 @@
       "attr": "keep-contents-mounted",
       "reflectToAttr": false,
       "docs": "If `true`, the component passed into `ion-popover` will\nautomatically be mounted when the popover is created. The\ncomponent will remain mounted even when the popover is dismissed.\nHowever, the component will be destroyed when the popover is\ndestroyed. This property is not reactive and should only be\nused when initially creating a popover.\n\nNote: This feature only applies to inline popovers in JavaScript\nframeworks such as Angular, React, and Vue.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -359,7 +421,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keyboardClose",
@@ -373,7 +437,12 @@
       "attr": "keyboard-close",
       "reflectToAttr": false,
       "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -381,7 +450,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "leaveAnimation",
@@ -398,6 +469,7 @@
         }
       },
       "mutable": false,
+      "attr": "leave-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the popover is dismissed.",
       "docsTags": [],
@@ -410,7 +482,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -451,7 +525,12 @@
       "attr": "reference",
       "reflectToAttr": false,
       "docs": "Describes what to position the popover relative to.\nIf `\"trigger\"`, the popover will be positioned relative\nto the trigger button. If passing in an event, this is\ndetermined via event.target.\nIf `\"event\"`, the popover will be positioned relative\nto the x/y coordinates of the trigger action. If passing\nin an event, this is determined via event.clientX and event.clientY.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'trigger'"
+        }
+      ],
       "default": "'trigger'",
       "values": [
         {
@@ -464,7 +543,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showBackdrop",
@@ -478,7 +559,12 @@
       "attr": "show-backdrop",
       "reflectToAttr": false,
       "docs": "If `true`, a backdrop will be displayed behind the popover.\nThis property controls whether or not the backdrop\ndarkens the screen when the popover is presented.\nIt does not control whether or not the backdrop\nis active or present in the DOM.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -486,7 +572,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "side",
@@ -506,7 +594,12 @@
       "attr": "side",
       "reflectToAttr": false,
       "docs": "Describes which side of the `reference` point to position\nthe popover on. The `\"start\"` and `\"end\"` values are RTL-aware,\nand the `\"left\"` and `\"right\"` values are not.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'bottom'"
+        }
+      ],
       "default": "'bottom'",
       "values": [
         {
@@ -535,7 +628,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "size",
@@ -555,7 +650,12 @@
       "attr": "size",
       "reflectToAttr": false,
       "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be set to a static default value.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'auto'"
+        }
+      ],
       "default": "'auto'",
       "values": [
         {
@@ -568,7 +668,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "translucent",
@@ -582,7 +684,12 @@
       "attr": "translucent",
       "reflectToAttr": false,
       "docs": "If `true`, the popover will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -590,7 +697,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "trigger",
@@ -614,7 +723,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "triggerAction",
@@ -634,7 +745,12 @@
       "attr": "trigger-action",
       "reflectToAttr": false,
       "docs": "Describes what kind of interaction with the trigger that\nshould cause the popover to open. Does not apply when the `trigger`\nproperty is `undefined`.\nIf `\"click\"`, the popover will be presented when the trigger is left clicked.\nIf `\"hover\"`, the popover will be presented when a pointer hovers over the trigger.\nIf `\"context-menu\"`, the popover will be presented when the trigger is right\nclicked on desktop and long pressed on mobile. This will also prevent your\ndevice's normal context menu from appearing.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'click'"
+        }
+      ],
       "default": "'click'",
       "values": [
         {
@@ -651,7 +767,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [
@@ -799,7 +917,7 @@
         "parameters": [
           {
             "name": "event",
-            "type": "MouseEvent | TouchEvent | PointerEvent | CustomEvent<any> | undefined",
+            "type": "MouseEvent | PointerEvent | TouchEvent | CustomEvent<any> | undefined",
             "docs": ""
           }
         ],
@@ -835,7 +953,7 @@
       "parameters": [
         {
           "name": "event",
-          "type": "MouseEvent | TouchEvent | PointerEvent | CustomEvent<any> | undefined",
+          "type": "MouseEvent | PointerEvent | TouchEvent | CustomEvent<any> | undefined",
           "docs": ""
         }
       ],

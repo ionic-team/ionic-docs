@@ -71,7 +71,12 @@
       "attr": "cancel-text",
       "reflectToAttr": false,
       "docs": "The text to display on the picker's cancel button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'Cancel'"
+        }
+      ],
       "default": "'Cancel'",
       "values": [
         {
@@ -79,7 +84,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "clearText",
@@ -93,7 +100,12 @@
       "attr": "clear-text",
       "reflectToAttr": false,
       "docs": "The text to display on the picker's \"Clear\" button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'Clear'"
+        }
+      ],
       "default": "'Clear'",
       "values": [
         {
@@ -101,7 +113,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -121,7 +135,12 @@
       "attr": "color",
       "reflectToAttr": false,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'primary'"
+        }
+      ],
       "default": "'primary'",
       "values": [
         {
@@ -168,7 +187,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "dayValues",
@@ -198,7 +219,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -212,7 +235,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the datetime.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -220,7 +248,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "doneText",
@@ -234,7 +264,12 @@
       "attr": "done-text",
       "reflectToAttr": false,
       "docs": "The text to display on the picker's \"Done\" button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'Done'"
+        }
+      ],
       "default": "'Done'",
       "values": [
         {
@@ -242,7 +277,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "firstDayOfWeek",
@@ -256,7 +293,12 @@
       "attr": "first-day-of-week",
       "reflectToAttr": false,
       "docs": "The first day of the week to use for `ion-datetime`. The\ndefault value is `0` and represents Sunday.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
       "default": "0",
       "values": [
         {
@@ -264,7 +306,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "formatOptions",
@@ -281,6 +325,7 @@
         }
       },
       "mutable": false,
+      "attr": "format-options",
       "reflectToAttr": false,
       "docs": "Formatting options for dates and times.\nShould include a 'date' and/or 'time' object, each of which is of type [Intl.DateTimeFormatOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options).",
       "docsTags": [],
@@ -302,7 +347,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "highlightedDates",
@@ -324,6 +371,7 @@
         }
       },
       "mutable": false,
+      "attr": "highlighted-dates",
       "reflectToAttr": false,
       "docs": "Used to apply custom text and background colors to specific dates.\n\nCan be either an array of objects containing ISO strings and colors,\nor a callback that receives an ISO string and returns the colors.\n\nOnly applies to the `date`, `date-time`, and `time-date` presentations,\nwith `preferWheel=\"false\"`.",
       "docsTags": [],
@@ -342,7 +390,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "hourCycle",
@@ -385,7 +435,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "hourValues",
@@ -415,7 +467,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "isDateEnabled",
@@ -426,6 +480,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "is-date-enabled",
       "reflectToAttr": false,
       "docs": "Returns if an individual date (calendar day) is enabled or disabled.\n\nIf `true`, the day will be enabled/interactive.\nIf `false`, the day will be disabled/non-interactive.\n\nThe function accepts an ISO 8601 date string of a given day.\nBy default, all days are enabled. Developers can use this function\nto write custom logic to disable certain days.\n\nThe function is called for each rendered calendar day, for the previous, current and next month.\nCustom implementations should be optimized for performance to avoid jank.",
       "docsTags": [],
@@ -438,7 +493,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "locale",
@@ -452,7 +509,12 @@
       "attr": "locale",
       "reflectToAttr": false,
       "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `\"default\"` value refers to the default\nlocale set by your device.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'default'"
+        }
+      ],
       "default": "'default'",
       "values": [
         {
@@ -460,7 +522,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "max",
@@ -484,7 +548,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "min",
@@ -508,7 +574,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "minuteValues",
@@ -538,7 +606,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -589,7 +659,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "multiple",
@@ -603,7 +675,12 @@
       "attr": "multiple",
       "reflectToAttr": false,
       "docs": "If `true`, multiple dates can be selected at once. Only\napplies to `presentation=\"date\"` and `preferWheel=\"false\"`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -611,7 +688,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "name",
@@ -625,7 +704,12 @@
       "attr": "name",
       "reflectToAttr": false,
       "docs": "The name of the control, which is submitted with the form data.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.inputId"
+        }
+      ],
       "default": "this.inputId",
       "values": [
         {
@@ -633,7 +717,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "preferWheel",
@@ -647,7 +733,12 @@
       "attr": "prefer-wheel",
       "reflectToAttr": false,
       "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `\"date\"`, `\"date-time\"`, or `\"time-date\"`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`\"time\"`, `\"month\"`, `\"month-year\"`, or `\"year\"`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -655,7 +746,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "presentation",
@@ -675,7 +768,12 @@
       "attr": "presentation",
       "reflectToAttr": false,
       "docs": "Which values you want to select. `\"date\"` will show\na calendar picker to select the month, day, and year. `\"time\"`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `\"date-time\"` will show the date picker first and time picker second.\n`\"time-date\"` will show the time picker first and date picker second.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'date-time'"
+        }
+      ],
       "default": "'date-time'",
       "values": [
         {
@@ -708,7 +806,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "readonly",
@@ -722,7 +822,12 @@
       "attr": "readonly",
       "reflectToAttr": false,
       "docs": "If `true`, the datetime appears normal but the selected date cannot be changed.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -730,7 +835,38 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "showAdjacentDays",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "show-adjacent-days",
+      "reflectToAttr": false,
+      "docs": "If `true`, the datetime calendar displays a six-week (42-day) layout,\nincluding days from the previous and next months to fill the grid.\nThese adjacent days are selectable unless disabled.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showClearButton",
@@ -744,7 +880,12 @@
       "attr": "show-clear-button",
       "reflectToAttr": false,
       "docs": "If `true`, a \"Clear\" button will be rendered alongside\nthe default \"Cancel\" and \"OK\" buttons at the bottom of the `ion-datetime`\ncomponent. Developers can also use the `button` slot\nif they want to customize these buttons. If custom\nbuttons are set in the `button` slot then the\ndefault buttons will not be rendered.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -752,7 +893,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showDefaultButtons",
@@ -766,7 +909,12 @@
       "attr": "show-default-buttons",
       "reflectToAttr": false,
       "docs": "If `true`, the default \"Cancel\" and \"OK\" buttons\nwill be rendered at the bottom of the `ion-datetime`\ncomponent. Developers can also use the `button` slot\nif they want to customize these buttons. If custom\nbuttons are set in the `button` slot then the\ndefault buttons will not be rendered.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -774,7 +922,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showDefaultTimeLabel",
@@ -788,7 +938,12 @@
       "attr": "show-default-time-label",
       "reflectToAttr": false,
       "docs": "If `true`, the default \"Time\" label will be rendered\nfor the time selector of the `ion-datetime` component.\nDevelopers can also use the `time-label` slot\nif they want to customize this label. If a custom\nlabel is set in the `time-label` slot then the\ndefault label will not be rendered.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -796,7 +951,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showDefaultTitle",
@@ -810,7 +967,12 @@
       "attr": "show-default-title",
       "reflectToAttr": false,
       "docs": "If `true`, a header will be shown above the calendar\npicker. This will include both the slotted title, and\nthe selected date.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -818,7 +980,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "size",
@@ -832,7 +996,12 @@
       "attr": "size",
       "reflectToAttr": false,
       "docs": "If `cover`, the `ion-datetime` will expand to cover the full width of its container.\nIf `fixed`, the `ion-datetime` will have a fixed width.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'fixed'"
+        }
+      ],
       "default": "'fixed'",
       "values": [
         {
@@ -845,7 +1014,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "titleSelectedDatesFormatter",
@@ -862,6 +1033,7 @@
         }
       },
       "mutable": false,
+      "attr": "title-selected-dates-formatter",
       "reflectToAttr": false,
       "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
       "docsTags": [],
@@ -874,7 +1046,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -904,7 +1078,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "yearValues",
@@ -934,7 +1110,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

@@ -18,7 +18,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the router-outlet should animate the transition of components.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "animation",
@@ -43,6 +50,7 @@
         }
       },
       "mutable": false,
+      "attr": "animation",
       "reflectToAttr": false,
       "docs": "This property allows to create custom transition using AnimationBuilder functions.",
       "docsTags": [],
@@ -55,7 +63,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -74,7 +84,12 @@
       "attr": "mode",
       "reflectToAttr": false,
       "docs": "The mode determines which platform styles to use.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "getIonMode(this)"
+        }
+      ],
       "default": "getIonMode(this)",
       "values": [
         {
@@ -87,7 +102,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

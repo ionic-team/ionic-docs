@@ -27,6 +27,18 @@
     {
       "name": "slot",
       "text": "end - Content is placed to the right of the toolbar text in LTR, and to the left in RTL."
+    },
+    {
+      "name": "part",
+      "text": "background - The background of the toolbar, covering the entire area behind the toolbar content."
+    },
+    {
+      "name": "part",
+      "text": "container - The container that wraps all toolbar content, including the default slot and named slot content."
+    },
+    {
+      "name": "part",
+      "text": "content - The container for the default slot, wrapping content provided without a named slot."
     }
   ],
   "usage": {},
@@ -95,7 +107,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -284,7 +298,20 @@
       "docs": "Content is placed to the left of the toolbar text in LTR, and to the right in RTL."
     }
   ],
-  "parts": [],
+  "parts": [
+    {
+      "name": "background",
+      "docs": "The background of the toolbar, covering the entire area behind the toolbar content."
+    },
+    {
+      "name": "container",
+      "docs": "The container that wraps all toolbar content, including the default slot and named slot content."
+    },
+    {
+      "name": "content",
+      "docs": "The container for the default slot, wrapping content provided without a named slot."
+    }
+  ],
   "dependents": [
     "ion-select-modal"
   ],

@@ -28,7 +28,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "multiple",
@@ -52,7 +54,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "options",
@@ -69,9 +73,15 @@
         }
       },
       "mutable": false,
+      "attr": "options",
       "reflectToAttr": false,
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "[]"
+        }
+      ],
       "default": "[]",
       "values": [
         {
@@ -79,7 +89,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],
