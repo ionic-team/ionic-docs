@@ -47,8 +47,8 @@ Ionic CLI は、[TypeScript](/docs/reference/glossary#typescript)と [Node.js](/
 
 Ionic CLI の問題をトラブルシューティングするには、以下の方法が役立ちます:
 
-- 最新バージョンの Ionic CLI がインストールされていることを確認します。インストールされているバージョンは、`ionic --version`を実行することで取得できます。
-- 最新の Node LTS がインストールされていることを確認します。[Node & npm](/docs/intro/environment#node-npm) environment setup を参照してください。
-- `verbose` フラグは、デバッグメッセージを表示し、問題を絞り込むことができます。
-- 接続の問題は、プロキシの設定が適切でないことが原因である可能性があります。リクエストプロキシの設定については、[Using a Proxy](/docs/cli/using-a-proxy) を参照してください。
-- Ionic CLI のグローバルな設定ディレクトリは、すべてのプラットフォームで `~/.ionic` です。このディレクトリは安全に削除でき、Ionic CLI が再投入しますが、すべての設定（ユーザーセッションを含む）は失われます。このディレクトリは[CLI 環境変数](/docs/cli/configuration#environment-variables)で設定します。
+- Ionic CLI の最新バージョンがインストールされていることを確認します。 `ionic --version` を実行して、インストールされている Ionic CLI のバージョンを取得します。Ionic CLI のバージョンは Ionic Framework のバージョンとは関係ありません。
+- 最新の Node LTS がインストールされていることを確認する。 [Node & npm](/docs/intro/environment#node-npm) 環境設定を参照してください。
+- `verbose` フラグはデバッグメッセージを表示し、問題を絞り込むことができます。
+- 接続の問題は、プロキシの設定が適切でないことが原因かもしれません。リクエストのプロキシ設定については、[プロキシを使う](/docs/cli/using-a-proxy)を参照してください。
+- グローバル Ionic CLI 設定ディレクトリは、すべてのプラットフォームで `~/.ionic` です。このディレクトリは安全に削除でき、Ionic CLI が再作成しますが、すべての設定（ユーザーセッションを含む）は失われます。このディレクトリを[CLI 環境変数](/docs/cli/configuration#environment-variables)で設定します。

@@ -351,7 +351,7 @@ module.exports = {
       type: 'category',
       label: 'インプット',
       collapsed: false,
-      items: ['api/input', 'api/input-password-toggle', 'api/textarea'],
+      items: ['api/input', 'api/input-password-toggle', 'api/input-otp', 'api/textarea'],
     },
     {
       type: 'category',

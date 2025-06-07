@@ -37,7 +37,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullingText",
@@ -70,7 +72,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "refreshingSpinner",
@@ -136,7 +140,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "refreshingText",
@@ -169,7 +175,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

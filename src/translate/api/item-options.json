@@ -24,7 +24,12 @@
       "attr": "side",
       "reflectToAttr": false,
       "docs": "The side the option button should be on. Possible values: `\"start\"` and `\"end\"`. If you have multiple `ion-item-options`, a side must be provided for each.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'end'"
+        }
+      ],
       "default": "'end'",
       "values": [
         {
@@ -37,7 +42,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

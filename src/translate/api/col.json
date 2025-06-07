@@ -28,7 +28,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "offsetLg",
@@ -52,7 +54,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "offsetMd",
@@ -76,7 +80,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "offsetSm",
@@ -100,7 +106,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "offsetXl",
@@ -124,7 +132,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "offsetXs",
@@ -148,7 +158,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pull",
@@ -172,7 +184,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullLg",
@@ -196,7 +210,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullMd",
@@ -220,7 +236,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullSm",
@@ -244,7 +262,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullXl",
@@ -268,7 +288,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pullXs",
@@ -292,7 +314,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "push",
@@ -316,7 +340,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pushLg",
@@ -340,7 +366,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pushMd",
@@ -364,7 +392,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pushSm",
@@ -388,7 +418,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pushXl",
@@ -412,7 +444,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pushXs",
@@ -436,7 +470,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "size",
@@ -460,7 +496,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "sizeLg",
@@ -484,7 +522,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "sizeMd",
@@ -508,7 +548,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "sizeSm",
@@ -532,7 +574,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "sizeXl",
@@ -556,7 +600,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "sizeXs",
@@ -580,7 +626,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

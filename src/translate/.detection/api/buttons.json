@@ -18,7 +18,12 @@
       "attr": "collapse",
       "reflectToAttr": false,
       "docs": "If true, buttons will disappear when its\nparent toolbar has fully collapsed if the toolbar\nis not the first toolbar. If the toolbar is the\nfirst toolbar, the buttons will be hidden and will\nonly be shown once all toolbars have fully collapsed.\n\nOnly applies in `ios` mode with `collapse` set to\n`true` on `ion-header`.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

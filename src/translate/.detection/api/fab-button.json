@@ -31,7 +31,12 @@
       "attr": "activated",
       "reflectToAttr": false,
       "docs": "If `true`, the fab button will be show a close icon.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -39,7 +44,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "closeIcon",
@@ -53,7 +60,12 @@
       "attr": "close-icon",
       "reflectToAttr": false,
       "docs": "The icon name to use for the close icon. This will appear when the fab button\nis pressed. Only applies if it is the main button inside of a fab containing a\nfab list.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "close"
+        }
+      ],
       "default": "close",
       "values": [
         {
@@ -61,7 +73,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -127,7 +141,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -141,7 +157,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the fab button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -149,7 +170,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "download",
@@ -173,7 +196,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "href",
@@ -197,7 +222,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -242,7 +269,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "routerAnimation",
@@ -259,6 +288,7 @@
         }
       },
       "mutable": false,
+      "attr": "router-animation",
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
       "docsTags": [],
@@ -271,7 +301,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "routerDirection",
@@ -291,7 +323,12 @@
       "attr": "router-direction",
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'forward'"
+        }
+      ],
       "default": "'forward'",
       "values": [
         {
@@ -308,7 +345,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "show",
@@ -322,7 +361,12 @@
       "attr": "show",
       "reflectToAttr": false,
       "docs": "If `true`, the fab button will show when in a fab-list.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -330,7 +374,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "size",
@@ -355,7 +401,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "target",
@@ -379,7 +427,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "translucent",
@@ -393,7 +443,12 @@
       "attr": "translucent",
       "reflectToAttr": false,
       "docs": "If `true`, the fab button will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -401,7 +456,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -415,7 +472,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The type of the button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'button'"
+        }
+      ],
       "default": "'button'",
       "values": [
         {
@@ -432,7 +494,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

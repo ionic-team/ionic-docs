@@ -23,6 +23,18 @@
     {
       "name": "part",
       "text": "mark - The checkmark used to indicate the checked state."
+    },
+    {
+      "name": "part",
+      "text": "supporting-text - Supporting text displayed beneath the checkbox label."
+    },
+    {
+      "name": "part",
+      "text": "helper-text - Supporting text displayed beneath the checkbox label when the checkbox is valid."
+    },
+    {
+      "name": "part",
+      "text": "error-text - Supporting text displayed beneath the checkbox label when the checkbox is invalid and touched."
     }
   ],
   "usage": {},
@@ -54,7 +66,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "checked",
@@ -68,7 +82,12 @@
       "attr": "checked",
       "reflectToAttr": false,
       "docs": "If `true`, the checkbox is selected.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -76,7 +95,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -142,7 +163,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -156,7 +179,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the checkbox.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -164,7 +192,61 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "errorText",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "error-text",
+      "reflectToAttr": false,
+      "docs": "Text that is placed under the checkbox label and displayed when an error is detected.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "helperText",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "helper-text",
+      "reflectToAttr": false,
+      "docs": "Text that is placed under the checkbox label and displayed when no error is detected.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "indeterminate",
@@ -178,7 +260,12 @@
       "attr": "indeterminate",
       "reflectToAttr": false,
       "docs": "If `true`, the checkbox will visually appear as indeterminate.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -186,7 +273,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "justify",
@@ -219,7 +308,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "labelPlacement",
@@ -233,7 +324,12 @@
       "attr": "label-placement",
       "reflectToAttr": false,
       "docs": "Where to place the label relative to the checkbox.\n`\"start\"`: The label will appear to the left of the checkbox in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the checkbox in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the checkbox regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'start'"
+        }
+      ],
       "default": "'start'",
       "values": [
         {
@@ -254,7 +350,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -289,7 +387,12 @@
       "attr": "name",
       "reflectToAttr": false,
       "docs": "The name of the control, which is submitted with the form data.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.inputId"
+        }
+      ],
       "default": "this.inputId",
       "values": [
         {
@@ -297,7 +400,38 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "required",
+      "reflectToAttr": false,
+      "docs": "If true, screen readers will announce it as a required field. This property\nworks only for accessibility purposes, it will not prevent the form from\nsubmitting if the value is invalid.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -311,7 +445,12 @@
       "attr": "value",
       "reflectToAttr": false,
       "docs": "The value of the checkbox does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\nit's only used when the checkbox participates in a native `<form>`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'on'"
+        }
+      ],
       "default": "'on'",
       "values": [
         {
@@ -319,7 +458,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],
@@ -520,12 +661,24 @@
       "docs": "The container for the checkbox mark."
     },
     {
+      "name": "error-text",
+      "docs": "Supporting text displayed beneath the checkbox label when the checkbox is invalid and touched."
+    },
+    {
+      "name": "helper-text",
+      "docs": "Supporting text displayed beneath the checkbox label when the checkbox is valid."
+    },
+    {
       "name": "label",
       "docs": "The label text describing the checkbox."
     },
     {
       "name": "mark",
       "docs": "The checkmark used to indicate the checked state."
+    },
+    {
+      "name": "supporting-text",
+      "docs": "Supporting text displayed beneath the checkbox label."
     }
   ],
   "dependents": [

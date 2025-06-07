@@ -18,7 +18,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "Sets the type of ripple-effect:\n\n- `bounded`: the ripple effect expands from the user's click position\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\n\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\nwhile surfaces for unbounded ripples should have it set to visible.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'bounded'"
+        }
+      ],
       "default": "'bounded'",
       "values": [
         {
@@ -31,7 +36,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

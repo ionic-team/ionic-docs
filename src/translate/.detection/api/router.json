@@ -18,7 +18,12 @@
       "attr": "root",
       "reflectToAttr": false,
       "docs": "The root path to use when matching URLs. By default, this is set to \"/\", but you can specify\nan alternate prefix for all URL paths.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'/'"
+        }
+      ],
       "default": "'/'",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "useHash",
@@ -40,7 +47,12 @@
       "attr": "use-hash",
       "reflectToAttr": false,
       "docs": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the other side hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -48,7 +60,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

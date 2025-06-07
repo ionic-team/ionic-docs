@@ -73,7 +73,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -139,7 +141,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "debounce",
@@ -163,7 +167,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -177,7 +183,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the range.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -185,7 +196,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "dualKnobs",
@@ -199,7 +212,12 @@
       "attr": "dual-knobs",
       "reflectToAttr": false,
       "docs": "Show two knobs.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -207,7 +225,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "label",
@@ -231,7 +251,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "labelPlacement",
@@ -245,7 +267,12 @@
       "attr": "label-placement",
       "reflectToAttr": false,
       "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the range regardless of the direction.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'start'"
+        }
+      ],
       "default": "'start'",
       "values": [
         {
@@ -266,7 +293,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "max",
@@ -280,7 +309,12 @@
       "attr": "max",
       "reflectToAttr": false,
       "docs": "Maximum integer value of the range.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "100"
+        }
+      ],
       "default": "100",
       "values": [
         {
@@ -288,7 +322,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "min",
@@ -302,7 +338,12 @@
       "attr": "min",
       "reflectToAttr": false,
       "docs": "Minimum integer value of the range.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
       "default": "0",
       "values": [
         {
@@ -310,7 +351,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -345,7 +388,12 @@
       "attr": "name",
       "reflectToAttr": false,
       "docs": "The name of the control, which is submitted with the form data.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.rangeId"
+        }
+      ],
       "default": "this.rangeId",
       "values": [
         {
@@ -353,7 +401,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pin",
@@ -367,7 +417,12 @@
       "attr": "pin",
       "reflectToAttr": false,
       "docs": "If `true`, a pin with integer value is shown when the knob\nis pressed.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -375,7 +430,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pinFormatter",
@@ -392,9 +449,15 @@
         }
       },
       "mutable": false,
+      "attr": "pin-formatter",
       "reflectToAttr": false,
       "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "(value: number): number => Math.round(value)"
+        }
+      ],
       "default": "(value: number): number => Math.round(value)",
       "values": [
         {
@@ -405,7 +468,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "snaps",
@@ -419,7 +484,12 @@
       "attr": "snaps",
       "reflectToAttr": false,
       "docs": "If `true`, the knob snaps to tick marks evenly spaced based\non the step property value.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -427,7 +497,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "step",
@@ -441,7 +513,12 @@
       "attr": "step",
       "reflectToAttr": false,
       "docs": "Specifies the value granularity.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "1"
+        }
+      ],
       "default": "1",
       "values": [
         {
@@ -449,7 +526,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "ticks",
@@ -463,7 +542,12 @@
       "attr": "ticks",
       "reflectToAttr": false,
       "docs": "If `true`, tick marks are displayed based on the step value.\nOnly applies when `snaps` is `true`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -471,7 +555,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -491,7 +577,12 @@
       "attr": "value",
       "reflectToAttr": false,
       "docs": "the value of the range.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
       "default": "0",
       "values": [
         {
@@ -502,7 +593,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

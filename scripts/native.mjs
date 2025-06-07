@@ -50,16 +50,27 @@ function createApiPage(pluginId, readme, pkgJson) {
   const sidebarLabel = toTitleCase(pluginId);
 
   /**
-   * - removes JSDoc HTML comments as they break docusauurs
-   * - The { character is used for opening JavaScript expressions.
-   * MDX will now fail if what you put inside {expression} that is
-   * not a valid expression: replace it by escaping it with a backslash.
-   * Only do this for { characters that are inside <code> blocks.
+   * Cleanup and transform JSDoc content for compatibility with MDX/Docusaurus:
+   * 
+   * - Remove HTML comments (`<!-- ... -->`) which are not valid in MDX and will cause parsing errors.
+   * - Escape `{` characters inside <code> blocks because MDX treats `{}` as JavaScript expressions. Unescaped `{` inside code blocks can cause parsing errors.
+   * - Convert JSDoc-style {@link URL|Text} and {@link URL} to proper Markdown links:
+   *   - {@link URL|Text} → [Text](URL)
+   *   - {@link URL} → [URL](URL)
+   *   This is necessary because MDX does not understand the JSDoc `@link` syntax, and leaving it unconverted will cause parsing errors.
    */
-  readme = readme.replaceAll(/<!--.*-->/g, '').replace(/<code>(.*?)<\/code>/g, (_match, p1) => {
-    // Replace { with \{ inside the matched <code> content
-    return `<code>${p1.replace(/{/g, '\\{')}</code>`;
-  });
+  readme = readme
+    // Remove HTML comments
+    .replaceAll(/<!--.*-->/g, '')
+    // Escape `{` characters inside <code> blocks to avoid Markdown parsing issues
+    .replace(/<code>(.*?)<\/code>/g, (_match, p1) => {
+      // Replace { with \{
+      return `<code>${p1.replace(/{/g, '\\{')}</code>`;
+    })
+    // Convert {@link URL|Text} to [Text](URL)
+    .replace(/\{@link\s+([^\s|}]+)\|([^}]+)\}/g, '[$2]($1)')
+    // Convert {@link URL} to [URL](URL)
+    .replace(/\{@link\s+([^}]+)\}/g, '[$1]($1)');
 
   return `
 ---

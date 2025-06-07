@@ -1,3 +1,7 @@
+/**
+ * This file is not part of Docusaurus, it is a custom component.
+ */
+
 import React from 'react';
 
 export default function MDXTable({ children, ...props }) {

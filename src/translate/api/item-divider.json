@@ -87,7 +87,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -122,7 +124,12 @@
       "attr": "sticky",
       "reflectToAttr": false,
       "docs": "When it's set to `true`, the item-divider will stay visible when it reaches the top\nof the viewport until the next `ion-item-divider` replaces it.\n\nThis feature relies in `position:sticky`:\nhttps://caniuse.com/#feat=css-sticky",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -130,7 +137,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

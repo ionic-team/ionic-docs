@@ -18,7 +18,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the select option. This property does not apply when `interface=\"action-sheet\"` as `ion-action-sheet` does not allow for disabled buttons.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -47,7 +54,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

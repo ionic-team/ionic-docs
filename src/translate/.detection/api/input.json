@@ -35,7 +35,12 @@
       "attr": "autocapitalize",
       "reflectToAttr": false,
       "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
       "default": "'off'",
       "values": [
         {
@@ -43,7 +48,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "autocomplete",
@@ -63,7 +70,12 @@
       "attr": "autocomplete",
       "reflectToAttr": false,
       "docs": "Indicates whether the value of the control can be automatically completed by the browser.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
       "default": "'off'",
       "values": [
         {
@@ -284,7 +296,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "autocorrect",
@@ -298,7 +312,12 @@
       "attr": "autocorrect",
       "reflectToAttr": false,
       "docs": "Whether auto correction should be enabled when the user is entering/editing the text value.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
       "default": "'off'",
       "values": [
         {
@@ -311,7 +330,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "autofocus",
@@ -325,7 +346,12 @@
       "attr": "autofocus",
       "reflectToAttr": false,
       "docs": "Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.\n\nThis may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -333,7 +359,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "clearInput",
@@ -347,7 +375,12 @@
       "attr": "clear-input",
       "reflectToAttr": false,
       "docs": "If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -355,7 +388,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "clearInputIcon",
@@ -379,7 +414,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "clearOnEdit",
@@ -403,7 +440,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -469,7 +508,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "counter",
@@ -483,7 +524,12 @@
       "attr": "counter",
       "reflectToAttr": false,
       "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -491,7 +537,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "counterFormatter",
@@ -502,6 +550,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "counter-formatter",
       "reflectToAttr": false,
       "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
       "docsTags": [],
@@ -514,7 +563,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "debounce",
@@ -538,7 +589,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -552,7 +605,12 @@
       "attr": "disabled",
       "reflectToAttr": true,
       "docs": "If `true`, the user cannot interact with the input.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -560,7 +618,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterkeyhint",
@@ -609,7 +669,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "errorText",
@@ -633,7 +695,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "fill",
@@ -662,7 +726,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "helperText",
@@ -686,7 +752,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "inputmode",
@@ -739,7 +807,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "label",
@@ -763,7 +833,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "labelPlacement",
@@ -777,7 +849,12 @@
       "attr": "label-placement",
       "reflectToAttr": false,
       "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the input in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the input in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the input when the input is focused or it has a value. Otherwise it will appear on top of the input.\n`\"stacked\"`: The label will appear smaller and above the input regardless even when the input is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'start'"
+        }
+      ],
       "default": "'start'",
       "values": [
         {
@@ -802,7 +879,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "max",
@@ -829,7 +908,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "maxlength",
@@ -853,7 +934,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "min",
@@ -880,7 +963,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "minlength",
@@ -904,7 +989,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -949,7 +1036,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "name",
@@ -963,7 +1052,12 @@
       "attr": "name",
       "reflectToAttr": false,
       "docs": "The name of the control, which is submitted with the form data.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.inputId"
+        }
+      ],
       "default": "this.inputId",
       "values": [
         {
@@ -971,7 +1065,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "pattern",
@@ -995,7 +1091,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "placeholder",
@@ -1019,7 +1117,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "readonly",
@@ -1033,7 +1133,12 @@
       "attr": "readonly",
       "reflectToAttr": true,
       "docs": "If `true`, the user cannot modify the value.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -1041,7 +1146,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "required",
@@ -1055,7 +1162,12 @@
       "attr": "required",
       "reflectToAttr": false,
       "docs": "If `true`, the user must fill in a value before submitting a form.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -1063,7 +1175,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "shape",
@@ -1088,7 +1202,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "spellcheck",
@@ -1102,7 +1218,12 @@
       "attr": "spellcheck",
       "reflectToAttr": false,
       "docs": "If `true`, the element will have its spelling and grammar checked.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -1110,7 +1231,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "step",
@@ -1134,7 +1257,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -1154,7 +1279,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The type of control to display. The default type is text.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'text'"
+        }
+      ],
       "default": "'text'",
       "values": [
         {
@@ -1207,7 +1337,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -1221,7 +1353,12 @@
       "attr": "value",
       "reflectToAttr": false,
       "docs": "The value of the input.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "''"
+        }
+      ],
       "default": "''",
       "values": [
         {
@@ -1238,7 +1375,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [
@@ -1371,7 +1510,13 @@
       "docsTags": []
     }
   ],
-  "listeners": [],
+  "listeners": [
+    {
+      "event": "click",
+      "capture": true,
+      "passive": false
+    }
+  ],
   "styles": [
     {
       "name": "--background",

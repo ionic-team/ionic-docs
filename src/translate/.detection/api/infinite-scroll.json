@@ -18,7 +18,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the infinite scroll will be hidden and scroll event listeners\nwill be removed.\n\nSet this to true to disable the infinite scroll from actively\ntrying to receive new data while scrolling. This is useful\nwhen it is known that there is no more data that can be added, and\nthe infinite scroll is no longer needed.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "position",
@@ -40,7 +47,12 @@
       "attr": "position",
       "reflectToAttr": false,
       "docs": "The position of the infinite scroll element.\nThe value can be either `top` or `bottom`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'bottom'"
+        }
+      ],
       "default": "'bottom'",
       "values": [
         {
@@ -53,7 +65,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "threshold",
@@ -67,7 +81,12 @@
       "attr": "threshold",
       "reflectToAttr": false,
       "docs": "The threshold distance from the bottom\nof the content to call the `infinite` output event when scrolled.\nThe threshold value can be either a percent, or\nin pixels. For example, use the value of `10%` for the `infinite`\noutput event to get called when the user has scrolled 10%\nfrom the bottom of the page. Use the value `100px` when the\nscroll is within 100 pixels from the bottom of the page.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'15%'"
+        }
+      ],
       "default": "'15%'",
       "values": [
         {
@@ -75,7 +94,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

@@ -25,7 +25,9 @@
         }
       ],
       "optional": false,
-      "required": true
+      "required": true,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "to",
@@ -52,7 +54,9 @@
         }
       ],
       "optional": false,
-      "required": true
+      "required": true,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

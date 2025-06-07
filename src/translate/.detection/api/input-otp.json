@@ -1,0 +1,914 @@
+{
+  "filePath": "src/components/input-otp/input-otp.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-input-otp",
+  "docs": "",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "autocapitalize",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "autocapitalize",
+      "reflectToAttr": false,
+      "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
+      "default": "'off'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "color",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": true,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": true,
+      "docs": "If `true`, the user cannot interact with the input.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "fill",
+      "type": "\"outline\" | \"solid\" | undefined",
+      "complexType": {
+        "original": "'outline' | 'solid'",
+        "resolved": "\"outline\" | \"solid\" | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "fill",
+      "reflectToAttr": false,
+      "docs": "The fill for the input boxes. If `\"solid\"` the input boxes will have a background. If\n`\"outline\"` the input boxes will be transparent with a border.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'outline'"
+        }
+      ],
+      "default": "'outline'",
+      "values": [
+        {
+          "value": "outline",
+          "type": "string"
+        },
+        {
+          "value": "solid",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "inputmode",
+      "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+      "complexType": {
+        "original": "'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'",
+        "resolved": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "inputmode",
+      "reflectToAttr": false,
+      "docs": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.\n\nFor numbers (type=\"number\"): \"numeric\"\nFor text (type=\"text\"): \"text\"",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "decimal",
+          "type": "string"
+        },
+        {
+          "value": "email",
+          "type": "string"
+        },
+        {
+          "value": "none",
+          "type": "string"
+        },
+        {
+          "value": "numeric",
+          "type": "string"
+        },
+        {
+          "value": "search",
+          "type": "string"
+        },
+        {
+          "value": "tel",
+          "type": "string"
+        },
+        {
+          "value": "text",
+          "type": "string"
+        },
+        {
+          "value": "url",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "length",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "length",
+      "reflectToAttr": false,
+      "docs": "The number of input boxes to display.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "4"
+        }
+      ],
+      "default": "4",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "pattern",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "pattern",
+      "reflectToAttr": false,
+      "docs": "A regex pattern string for allowed characters. Defaults based on type.\n\nFor numbers (`type=\"number\"`): `\"[\\p{N}]\"`\nFor text (`type=\"text\"`): `\"[\\p{L}\\p{N}]\"`",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "readonly",
+      "reflectToAttr": true,
+      "docs": "If `true`, the user cannot modify the value.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "separators",
+      "type": "number[] | string | undefined",
+      "complexType": {
+        "original": "'all' | string | number[]",
+        "resolved": "number[] | string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "separators",
+      "reflectToAttr": false,
+      "docs": "Where separators should be shown between input boxes.\nCan be a comma-separated string or an array of numbers.\n\nFor example:\n`\"3\"` will show a separator after the 3rd input box.\n`[1,4]` will show a separator after the 1st and 4th input boxes.\n`\"all\"` will show a separator between every input box.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number[]"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "shape",
+      "type": "\"rectangular\" | \"round\" | \"soft\"",
+      "complexType": {
+        "original": "'round' | 'rectangular' | 'soft'",
+        "resolved": "\"rectangular\" | \"round\" | \"soft\"",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "shape",
+      "reflectToAttr": false,
+      "docs": "The shape of the input boxes.\nIf \"round\" they will have an increased border radius.\nIf \"rectangular\" they will have no border radius.\nIf \"soft\" they will have a soft border radius.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'round'"
+        }
+      ],
+      "default": "'round'",
+      "values": [
+        {
+          "value": "rectangular",
+          "type": "string"
+        },
+        {
+          "value": "round",
+          "type": "string"
+        },
+        {
+          "value": "soft",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "size",
+      "type": "\"large\" | \"medium\" | \"small\"",
+      "complexType": {
+        "original": "'small' | 'medium' | 'large'",
+        "resolved": "\"large\" | \"medium\" | \"small\"",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "size",
+      "reflectToAttr": false,
+      "docs": "The size of the input boxes.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'medium'"
+        }
+      ],
+      "default": "'medium'",
+      "values": [
+        {
+          "value": "large",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "small",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "type",
+      "type": "\"number\" | \"text\"",
+      "complexType": {
+        "original": "'text' | 'number'",
+        "resolved": "\"number\" | \"text\"",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of input allowed in the input boxes.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'number'"
+        }
+      ],
+      "default": "'number'",
+      "values": [
+        {
+          "value": "number",
+          "type": "string"
+        },
+        {
+          "value": "text",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "value",
+      "type": "null | number | string | undefined",
+      "complexType": {
+        "original": "string | number | null",
+        "resolved": "null | number | string | undefined",
+        "references": {}
+      },
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value of the input group.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "''"
+        }
+      ],
+      "default": "''",
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "(index?: number) => Promise<void>",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "number | undefined",
+            "docs": "- The index of the input box to focus (0-based).\nIf provided and the input box has a value, the input box at that index will be focused.\nOtherwise, the first empty input box or the last input if all are filled will be focused."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "setFocus(index?: number) => Promise<void>",
+      "parameters": [
+        {
+          "name": "index",
+          "type": "number | undefined",
+          "docs": "- The index of the input box to focus (0-based).\nIf provided and the input box has a value, the input box at that index will be focused.\nOtherwise, the first empty input box or the last input if all are filled will be focused."
+        }
+      ],
+      "docs": "Sets focus to an input box.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "index - The index of the input box to focus (0-based).\nIf provided and the input box has a value, the input box at that index will be focused.\nOtherwise, the first empty input box or the last input if all are filled will be focused."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "FocusEvent",
+      "bubbles": true,
+      "complexType": {
+        "original": "FocusEvent",
+        "resolved": "FocusEvent",
+        "references": {
+          "FocusEvent": {
+            "location": "global",
+            "id": "global::FocusEvent"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input group loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "InputOtpChangeEventDetail",
+      "bubbles": true,
+      "complexType": {
+        "original": "InputOtpChangeEventDetail",
+        "resolved": "InputOtpChangeEventDetail",
+        "references": {
+          "InputOtpChangeEventDetail": {
+            "location": "import",
+            "path": "./input-otp-interface",
+            "id": "src/components/input-otp/input-otp-interface.ts::InputOtpChangeEventDetail"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nThe `ionChange` event fires when the `<ion-input-otp>` component loses\nfocus after its value has changed.\n\nThis event will not emit when programmatically setting the `value` property.",
+      "docsTags": []
+    },
+    {
+      "event": "ionComplete",
+      "detail": "InputOtpCompleteEventDetail",
+      "bubbles": true,
+      "complexType": {
+        "original": "InputOtpCompleteEventDetail",
+        "resolved": "InputOtpCompleteEventDetail",
+        "references": {
+          "InputOtpCompleteEventDetail": {
+            "location": "import",
+            "path": "./input-otp-interface",
+            "id": "src/components/input-otp/input-otp-interface.ts::InputOtpCompleteEventDetail"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when all input boxes have been filled with valid values.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "FocusEvent",
+      "bubbles": true,
+      "complexType": {
+        "original": "FocusEvent",
+        "resolved": "FocusEvent",
+        "references": {
+          "FocusEvent": {
+            "location": "global",
+            "id": "global::FocusEvent"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input group has focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionInput",
+      "detail": "InputOtpInputEventDetail",
+      "bubbles": true,
+      "complexType": {
+        "original": "InputOtpInputEventDetail",
+        "resolved": "InputOtpInputEventDetail",
+        "references": {
+          "InputOtpInputEventDetail": {
+            "location": "import",
+            "path": "./input-otp-interface",
+            "id": "src/components/input-otp/input-otp-interface.ts::InputOtpInputEventDetail"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "The `ionInput` event is fired each time the user modifies the input's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the input's value. This typically happens for each keystroke as the user types.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background color of the input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background color of the input boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the input boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the input boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the input boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the input",
+      "mode": "ios"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the input",
+      "mode": "md"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of input boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when focused",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when focused",
+      "mode": "md"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when invalid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when invalid",
+      "mode": "md"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when valid",
+      "mode": "ios"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the input when valid",
+      "mode": "md"
+    },
+    {
+      "name": "--margin-bottom",
+      "annotation": "prop",
+      "docs": "Bottom margin of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-bottom",
+      "annotation": "prop",
+      "docs": "Bottom margin of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--margin-end",
+      "annotation": "prop",
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-end",
+      "annotation": "prop",
+      "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--margin-start",
+      "annotation": "prop",
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-start",
+      "annotation": "prop",
+      "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--margin-top",
+      "annotation": "prop",
+      "docs": "Top margin of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--margin-top",
+      "annotation": "prop",
+      "docs": "Top margin of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of input boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the input group",
+      "mode": "ios"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the input group",
+      "mode": "md"
+    },
+    {
+      "name": "--separator-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the separator between boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--separator-border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the separator between boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--separator-color",
+      "annotation": "prop",
+      "docs": "Color of the separator between boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--separator-color",
+      "annotation": "prop",
+      "docs": "Color of the separator between boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--separator-height",
+      "annotation": "prop",
+      "docs": "Height of the separator between boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--separator-height",
+      "annotation": "prop",
+      "docs": "Height of the separator between boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--separator-width",
+      "annotation": "prop",
+      "docs": "Width of the separator between boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--separator-width",
+      "annotation": "prop",
+      "docs": "Width of the separator between boxes",
+      "mode": "md"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of input boxes",
+      "mode": "ios"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of input boxes",
+      "mode": "md"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

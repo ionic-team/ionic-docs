@@ -23,7 +23,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -31,7 +36,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -45,7 +52,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the accordion group cannot be interacted with.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -53,7 +65,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "expand",
@@ -67,7 +81,12 @@
       "attr": "expand",
       "reflectToAttr": false,
       "docs": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'compact'"
+        }
+      ],
       "default": "'compact'",
       "values": [
         {
@@ -80,7 +99,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -125,7 +146,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "readonly",
@@ -139,7 +162,12 @@
       "attr": "readonly",
       "reflectToAttr": false,
       "docs": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -147,7 +175,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -177,7 +207,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

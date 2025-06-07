@@ -72,7 +72,7 @@ interface UseIonRouterResult {
   forward: (routerAnimation?: AnimationBuilder) => void;
   navigate: (
     location: string | Location,
-    routerDirection?: 'forward' | 'back' | 'root' | 'none',
+    routerDirection?: 'forward' | 'back' | 'root',
     routerAction?: 'push' | 'pop' | 'replace',
     routerAnimation?: AnimationBuilder
   ) => void;

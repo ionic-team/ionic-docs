@@ -18,7 +18,12 @@
       "attr": "activated",
       "reflectToAttr": false,
       "docs": "If `true`, the fab list will show all fab buttons in the list.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "side",
@@ -40,7 +47,12 @@
       "attr": "side",
       "reflectToAttr": false,
       "docs": "The side the fab list will show on relative to the main fab button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'bottom'"
+        }
+      ],
       "default": "'bottom'",
       "values": [
         {
@@ -61,7 +73,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

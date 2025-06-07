@@ -23,7 +23,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the alert will animate.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -31,7 +36,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "backdropDismiss",
@@ -45,7 +52,12 @@
       "attr": "backdrop-dismiss",
       "reflectToAttr": false,
       "docs": "If `true`, the alert will be dismissed when the backdrop is clicked.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -53,7 +65,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "buttons",
@@ -70,9 +84,15 @@
         }
       },
       "mutable": false,
+      "attr": "buttons",
       "reflectToAttr": false,
       "docs": "Array of buttons to be added to the alert.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "[]"
+        }
+      ],
       "default": "[]",
       "values": [
         {
@@ -83,7 +103,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "cssClass",
@@ -110,7 +132,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterAnimation",
@@ -127,6 +151,7 @@
         }
       },
       "mutable": false,
+      "attr": "enter-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the alert is presented.",
       "docsTags": [],
@@ -139,7 +164,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "header",
@@ -163,7 +190,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "htmlAttributes",
@@ -174,6 +203,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "html-attributes",
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the alert.",
       "docsTags": [],
@@ -186,7 +216,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "inputs",
@@ -203,9 +235,15 @@
         }
       },
       "mutable": true,
+      "attr": "inputs",
       "reflectToAttr": false,
       "docs": "Array of input to show in the alert.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "[]"
+        }
+      ],
       "default": "[]",
       "values": [
         {
@@ -213,7 +251,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "isOpen",
@@ -227,7 +267,12 @@
       "attr": "is-open",
       "reflectToAttr": false,
       "docs": "If `true`, the alert will open. If `false`, the alert will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the alertController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe alert dismisses. You will need to do that in your code.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -235,7 +280,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keyboardClose",
@@ -249,7 +296,12 @@
       "attr": "keyboard-close",
       "reflectToAttr": false,
       "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -257,7 +309,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "leaveAnimation",
@@ -274,6 +328,7 @@
         }
       },
       "mutable": false,
+      "attr": "leave-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the alert is dismissed.",
       "docsTags": [],
@@ -286,7 +341,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "message",
@@ -319,7 +376,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -364,7 +423,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "translucent",
@@ -378,7 +439,12 @@
       "attr": "translucent",
       "reflectToAttr": false,
       "docs": "If `true`, the alert will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -386,7 +452,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "trigger",
@@ -410,7 +478,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [
@@ -542,6 +612,10 @@
           "Promise": {
             "location": "global",
             "id": "global::Promise"
+          },
+          "HTMLButtonElement": {
+            "location": "global",
+            "id": "global::HTMLButtonElement"
           }
         },
         "return": "Promise<void>"

@@ -46,7 +46,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "componentProps",
@@ -63,6 +65,7 @@
         }
       },
       "mutable": false,
+      "attr": "component-props",
       "reflectToAttr": false,
       "docs": "Data you want to pass to the component as props. Only used if the `\"routerDirection\"` is `\"forward\"` or `\"root\"`.",
       "docsTags": [],
@@ -75,7 +78,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "routerAnimation",
@@ -92,6 +97,7 @@
         }
       },
       "mutable": false,
+      "attr": "router-animation",
       "reflectToAttr": false,
       "docs": "The transition animation when navigating to another page.",
       "docsTags": [],
@@ -104,7 +110,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "routerDirection",
@@ -124,7 +132,12 @@
       "attr": "router-direction",
       "reflectToAttr": false,
       "docs": "The transition direction when navigating to another page.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'forward'"
+        }
+      ],
       "default": "'forward'",
       "values": [
         {
@@ -141,7 +154,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

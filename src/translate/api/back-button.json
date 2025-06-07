@@ -87,7 +87,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "defaultHref",
@@ -111,7 +113,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -125,7 +129,12 @@
       "attr": "disabled",
       "reflectToAttr": true,
       "docs": "If `true`, the user cannot interact with the button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -133,7 +142,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "icon",
@@ -160,7 +171,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -198,6 +211,7 @@
         }
       },
       "mutable": false,
+      "attr": "router-animation",
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page.",
       "docsTags": [],
@@ -210,7 +224,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "text",
@@ -237,7 +253,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -251,7 +269,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The type of the button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'button'"
+        }
+      ],
       "default": "'button'",
       "values": [
         {
@@ -268,7 +291,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

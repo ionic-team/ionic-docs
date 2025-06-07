@@ -7,30 +7,42 @@
  * - Removed the original styles that were applied to the language icon. We want to use our own styles.
  */
 
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import { useLocation } from '@docusaurus/router';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import IconLanguage from '@theme/Icon/Language';
-import styles from './styles.module.css';
-export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, dropdownItemsAfter, ...props }) {
+import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
+import type { Props } from '@theme/NavbarItem/LocaleDropdownNavbarItem';
+
+import styles from '@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/styles.module.css';
+import customStyles from './styles.module.css';
+
+export default function LocaleDropdownNavbarItem({
+  mobile,
+  dropdownItemsBefore,
+  dropdownItemsAfter,
+  queryString = '',
+  ...props
+}: Props): ReactNode {
   const {
     i18n: { currentLocale, locales, localeConfigs },
   } = useDocusaurusContext();
   const alternatePageUtils = useAlternatePageUtils();
   const { search, hash } = useLocation();
-  const localeItems = locales.map((locale) => {
+
+  const localeItems = locales.map((locale): LinkLikeNavbarItemProps => {
     const baseTo = `pathname://${alternatePageUtils.createUrl({
       locale,
       fullyQualified: false,
     })}`;
     // preserve ?search#hash suffix on locale switches
-    const to = `${baseTo}${search}${hash}`;
+    const to = `${baseTo}${search}${hash}${queryString}`;
     return {
-      label: localeConfigs[locale].label,
-      lang: localeConfigs[locale].htmlLang,
+      label: localeConfigs[locale]!.label,
+      lang: localeConfigs[locale]!.htmlLang,
       to,
       target: '_self',
       autoAddBaseUrl: false,
@@ -46,7 +58,9 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
           : '',
     };
   });
+
   const items = [...dropdownItemsBefore, ...localeItems, ...dropdownItemsAfter];
+
   // Mobile is handled a bit differently
   const dropdownLabel = mobile
     ? translate({
@@ -54,7 +68,7 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
         id: 'theme.navbar.mobileLanguageDropdown.label',
         description: 'The label for the mobile language switcher dropdown',
       })
-    : localeConfigs[currentLocale].label;
+    : localeConfigs[currentLocale]!.label;
 
   return (
     <DropdownNavbarItem
@@ -62,9 +76,9 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
       mobile={mobile}
       label={
         <>
-          <IconLanguage />
+          <IconLanguage className={styles.iconLanguage} />
           {/* CUSTOM CODE - added span in order to hide the text */}
-          <span className={styles.localeVisuallyHidden}>{dropdownLabel}</span>
+          <span className={customStyles.localeVisuallyHidden}>{dropdownLabel}</span>
         </>
       }
       items={items}

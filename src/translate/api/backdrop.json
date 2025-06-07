@@ -18,7 +18,12 @@
       "attr": "stop-propagation",
       "reflectToAttr": false,
       "docs": "If `true`, the backdrop will stop propagation on tap.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "tappable",
@@ -40,7 +47,12 @@
       "attr": "tappable",
       "reflectToAttr": false,
       "docs": "If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -48,7 +60,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "visible",
@@ -62,7 +76,12 @@
       "attr": "visible",
       "reflectToAttr": false,
       "docs": "If `true`, the backdrop will be visible.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -70,7 +89,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

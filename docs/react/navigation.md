@@ -197,7 +197,7 @@ const UsersListPage: React.FC = () => {
 
 Other components that have the `routerLink` prop are `IonButton`, `IonCard`, `IonRouterLink`, `IonFabButton`, and `IonItemOption`.
 
-Each of these components also have a `routerDirection` prop to explicitly set the type of page transition to use ("back", "forward", or "none").
+Each of these components also have a `routerDirection` prop to explicitly set the type of page transition to use (`"forward"`, `"back"`, or `"root"`).
 
 Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://v5.reactrouter.com/web/api/Link) component to navigate between views:
 

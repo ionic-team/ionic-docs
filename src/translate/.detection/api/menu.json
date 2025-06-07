@@ -37,7 +37,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -51,7 +53,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the menu is disabled.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -59,7 +66,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "maxEdgeStart",
@@ -73,7 +82,12 @@
       "attr": "max-edge-start",
       "reflectToAttr": false,
       "docs": "The edge threshold for dragging the menu open.\nIf a drag/swipe happens over this value, the menu is not triggered.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "50"
+        }
+      ],
       "default": "50",
       "values": [
         {
@@ -81,7 +95,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "menuId",
@@ -105,7 +121,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "side",
@@ -125,7 +143,12 @@
       "attr": "side",
       "reflectToAttr": true,
       "docs": "Which side of the view the menu should be placed.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'start'"
+        }
+      ],
       "default": "'start'",
       "values": [
         {
@@ -138,7 +161,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "swipeGesture",
@@ -152,7 +177,12 @@
       "attr": "swipe-gesture",
       "reflectToAttr": false,
       "docs": "If `true`, swiping the menu is enabled.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -160,7 +190,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -199,7 +231,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

@@ -21,6 +21,7 @@
         }
       },
       "mutable": false,
+      "attr": "before-enter",
       "reflectToAttr": false,
       "docs": "A navigation hook that is fired when the route tries to enter.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
       "docsTags": [],
@@ -36,7 +37,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "beforeLeave",
@@ -53,6 +56,7 @@
         }
       },
       "mutable": false,
+      "attr": "before-leave",
       "reflectToAttr": false,
       "docs": "A navigation hook that is fired when the route tries to leave.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
       "docsTags": [],
@@ -68,7 +72,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "component",
@@ -89,7 +95,9 @@
         }
       ],
       "optional": false,
-      "required": true
+      "required": true,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "componentProps",
@@ -100,6 +108,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "component-props",
       "reflectToAttr": false,
       "docs": "A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed\nto the defined component when rendered.",
       "docsTags": [],
@@ -112,7 +121,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "url",
@@ -126,7 +137,12 @@
       "attr": "url",
       "reflectToAttr": false,
       "docs": "Relative path that needs to match in order for this route to apply.\n\nAccepts paths similar to expressjs so that you can define parameters\nin the url /foo/:bar where bar would be available in incoming props.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "''"
+        }
+      ],
       "default": "''",
       "values": [
         {
@@ -134,7 +150,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

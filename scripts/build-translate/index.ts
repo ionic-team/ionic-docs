@@ -51,15 +51,19 @@ const apply = async () => {
                   //   return;
                   // }
 
-                  const response = await translate({
-                    free_api: true,
-                    text: translateText,
-                    source_lang: DeeplConfig.fromLanguage,
-                    target_lang: DeeplConfig.toLanguage,
-                    auth_key: process.env.DEEPLAUTHKEY,
-                  });
-                  const translated = response.data.translations[0].text;
-                  translatedNow[translateText] = translated;
+                  try {
+                    const response = await translate({
+                      free_api: true,
+                      text: translateText,
+                      source_lang: DeeplConfig.fromLanguage,
+                      target_lang: DeeplConfig.toLanguage,
+                      auth_key: process.env.DEEPLAUTHKEY,
+                    });
+                    const translated = response.data.translations[0].text;
+                    translatedNow[translateText] = translated;
+                  } catch (e) {
+                    translatedNow[translateText] = translateText;
+                  }
 
                   // ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
                 }

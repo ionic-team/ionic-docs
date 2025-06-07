@@ -31,7 +31,12 @@
       "attr": "auto-hide",
       "reflectToAttr": false,
       "docs": "Automatically hides the menu button when the corresponding menu is not active",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -39,7 +44,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -105,7 +112,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -119,7 +128,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the menu button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -127,7 +141,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "menu",
@@ -151,7 +167,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -186,7 +204,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The type of the button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'button'"
+        }
+      ],
       "default": "'button'",
       "values": [
         {
@@ -203,7 +226,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],
