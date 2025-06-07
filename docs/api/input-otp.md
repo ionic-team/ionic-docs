@@ -9,19 +9,19 @@ import CustomProps from '@ionic-internal/component-api/v8/input-otp/custom-props
 import Slots from '@ionic-internal/component-api/v8/input-otp/slots.md';
 
 <head>
-  <title>ion-input-otp: One-Time Password Input Component</title>
-  <meta name="description" content="ion-input-otp is a component for entering one-time passwords (OTP) with support for multiple input boxes and automatic focus management." />
+  <title>ion-input-otp: ワンタイムパスワード入力コンポーネント</title>
+  <meta name="description" content="ion-input-otp は、ワンタイムパスワード (OTP) を入力するためのコンポーネントで、複数の入力ボックスと自動フォーカス管理をサポートしています。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The Input OTP component is a specialized input component designed for entering one-time passwords (OTP). It provides a user-friendly interface for entering verification codes with support for multiple input boxes and automatic focus management.
+Input OTP コンポーネントは、ワンタイムパスワード（OTP）入力用に設計された入力コンポーネントです。複数の入力ボックスと自動フォーカス管理をサポートし、 検証コードを入力するためのユーザーフレンドリーなインターフェイスを提供します。
 
-## Basic Usage
+## 基本的な使用法
 
-The component provides 4 input boxes by default, which is a common length for many verification codes. The number of input boxes can be customized using the `length` property.
+このコンポーネントはデフォルトで4つの入力ボックスを提供します。入力ボックスの数は `length` プロパティを使用してカスタマイズすることができます。
 
 import Basic from '@site/static/usage/v8/input-otp/basic/index.md';
 
@@ -29,17 +29,17 @@ import Basic from '@site/static/usage/v8/input-otp/basic/index.md';
 
 ## Type
 
-The `type` property determines the input format, supporting either numeric or alphanumeric verification codes. It accepts two values: `number` and `text`. It uses `type="number"` by default for entering numeric verification codes. When `type="text"` is specified, it accepts alphanumeric input. This flexibility allows handling different OTP formats, whether numeric-only codes (like SMS verification codes) or alphanumeric codes (like backup codes or recovery keys).
+`type` プロパティは入力形式を決定し、数字または英数字の検証コードをサポートします。プロパティには2つの値を指定できる： `number`と `text` です。デフォルトでは `type="number"` を使用し、数字認証コードを入力を受け付けます。 `type="text"` を指定すると、英数字の入力を受け付ける。この柔軟性により、数字のみのコード（SMS 認証コードのような）や英数字のコード（バックアップコードやリカバリキーのような）など、さまざまな OTP フォーマットを扱うことができます
 
-The `type` property automatically sets both the `inputmode` and `pattern` attributes:
-- When `type="number"`:
-  - Sets `inputmode="numeric"` to show a numeric keyboard on mobile devices
-  - Sets `pattern="[\p{N}]"` to allow only numeric input
-- When `type="text"`:
-  - Sets `inputmode="text"` to show a standard keyboard
-  - Sets `pattern="[\p{L}\p{N}]"` to allow alphanumeric input
+`type` プロパティは `inputmode` 属性と `pattern` 属性の両方を自動的に設定します：
+- `type="number"` の場合：
+  - `inputmode="numeric"`を設定し、モバイルデバイスに数字キーボードを表示します。
+  - `pattern="[\p{N}]"`を設定し、数字入力のみを許可します。
+- `type="text"`の場合
+  - 標準のキーボードを表示するには `inputmode="text"` を設定します。
+  - `pattern="[\p{L}\p{N}]"` を設定し、英数字の入力を許可する。
 
-See the [Pattern](#pattern) section for more details on pattern validation and customization.
+パターンの検証やカスタマイズの詳細については、[パターン](#pattern)のセクションを参照してください。
 
 import Type from '@site/static/usage/v8/input-otp/type/index.md';
 
@@ -47,7 +47,7 @@ import Type from '@site/static/usage/v8/input-otp/type/index.md';
 
 ## Shape
 
-The `shape` property controls the border radius of the input boxes, creating rounded or sharp corners.
+`shape` プロパティは、入力ボックスのボーダー半径をコントロールし、丸みを帯びたコーナーやシャープなコーナーを作成します。
 
 import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
 
@@ -55,7 +55,7 @@ import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
 
 ## Fill
 
-The `fill` property controls the background style of the input boxes, offering bordered or filled backgrounds.
+`fill` プロパティは入力ボックスの背景のスタイルをコントロールし、縁取りまたは塗りつぶしの背景を提供します。
 
 import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
 
@@ -63,7 +63,7 @@ import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
 
 ## Size
 
-The `size` property provides different size options for the input boxes.
+`size`プロパティは入力ボックスに異なるサイズのオプションを提供します。
 
 import Size from '@site/static/usage/v8/input-otp/size/index.md';
 
@@ -71,12 +71,12 @@ import Size from '@site/static/usage/v8/input-otp/size/index.md';
 
 ## Separators
 
-The `separators` property adds visual dividers between one or more of the input boxes. Separators can be defined in three ways:
-- Comma-separated string of numbers (e.g., `"1,3"`)
-- Array of numbers (e.g., `[1, 3]`)
-- String `"all"` to show separators between every input box
+`separators` プロパティは1つ以上の入力ボックスの間に視覚的な仕切りを追加します。セパレータは3つの方法で定義できます：
+- カンマで区切られた数値の文字列 (例: `"1,3"`)
+- 数字の配列 (例: `[1, 3]`)
+- 文字列 `"all"` (すべての入力ボックスの間にセパレータを表示する)
 
-The numbers represent the index after which a separator should appear. For example, `"1,3"` displays a separator after the first and third input box. This can be used to create visually distinct groupings of input boxes, but it will still have one value.
+数字はセパレータが表示されるべきインデックスを表します。例えば、`"1,3"` は1番目と3番目の入力ボックスの後にセパレータを表示します。これは、入力ボックスを視覚的に区別してグループ化するために使用できますが、それでも値は1つです。
 
 import Separators from '@site/static/usage/v8/input-otp/separators/index.md';
 
@@ -84,13 +84,13 @@ import Separators from '@site/static/usage/v8/input-otp/separators/index.md';
 
 ## States
 
-The component supports various states for automatic styling of input boxes:
-- `disabled` and `readonly` states via respective properties
-- Form validation states: `valid` and `invalid` visually indicated through CSS classes
-- In Angular: validation states are automatically managed through the framework's value accessors and form validation
-- For other frameworks: developers must manually add `ion-valid`, `ion-invalid`, and `ion-touched` classes
-- `ion-invalid` styles only display when touched (`ion-touched`)
-- `ion-valid` styles only display when focused (`has-focus`)
+このコンポーネントは、入力ボックスの自動スタイリングのためのさまざまな状態をサポートしています：
+- それぞれのプロパティによる `disabled` と `readonly` 状態
+- フォームバリデーション状態： CSSクラスによって視覚的に示される `valid` と `invalid` の状態
+- Angularの場合：バリデーション状態は、フレームワークの値アクセサとフォームバリデーションによって自動的に管理されます
+- 他のフレームワークの場合: 開発者は `ion-valid`、`ion-invalid`、`ion-touched` クラスを手動で追加する必要があります
+- `onvalid` スタイルはタッチされたときのみ表示されます (`ion-touched`)
+- `ion-valid` スタイルはフォーカスされたときのみ表示されます (`has-focus`)
 
 import States from '@site/static/usage/v8/input-otp/states/index.md';
 
@@ -98,16 +98,16 @@ import States from '@site/static/usage/v8/input-otp/states/index.md';
 
 ## Pattern
 
-The `pattern` property enables custom validation using regular expressions. It accepts a [string regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) or [unicode regular expression](https://www.regular-expressions.info/unicode.html) to validate allowed characters. The `pattern` must match the entire value, not just a subset. Default patterns:
-- `type="number"`: `"[\p{N}]"` for matching any kind of numeric character in any script.
-- `type="text"`: `"[\p{L}\p{N}]"` for any kind of numeric character in any script and any kind of letter from any language.
+`pattern` プロパティは正規表現を使ったカスタムバリデーションを可能にします。 [文字列の正規表現](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet)または[unicodeの正規表現](https://www.regular-expressions.info/unicode.html)を使用して、許可される文字を検証することができます。 `pattern`はサブセットだけでなく、値全体にマッチする必要があります。デフォルトのパターン
+- `type="number"`: `"[\p{N}]"`  スクリプト内のあらゆる種類の数値文字にマッチします。
+- `type="text"`: `"[\p{L}\p{N}]"` あらゆるスクリプトのあらゆる種類の数字と、あらゆる言語のあらゆる種類の文字にマッチします。
 
-The component will prevent users from entering any characters that don't match the specified pattern. Developers can override these defaults by providing their own pattern string to match specific input requirements.
+このコンポーネントは、指定されたパターンにマッチしない文字の入力を防ぎます。開発者は、特定の入力要件に一致する独自のパターン文字列を提供することで、これらのデフォルトをオーバーライドできます。
 
 :::tip
-When using a custom `pattern`, remember that the `type` property controls which keyboard appears on mobile devices:
-- Use `type="number"` for numeric-only patterns to show the numeric keyboard
-- Use `type="text"` for patterns that include letters to show the alphanumeric keyboard
+カスタム `pattern` を使用する場合、`type` プロパティがモバイルデバイスに表示されるキーボードを制御することを覚えておいてください：
+- 数字のみのパターンには `type="number"` を使い、数字キーボードを表示します。
+- 英数字キーボードを表示するには、文字を含むパターンには `type="text"` を使用します。
 :::
 
 import Pattern from '@site/static/usage/v8/input-otp/pattern/index.md';
@@ -118,7 +118,7 @@ import Pattern from '@site/static/usage/v8/input-otp/pattern/index.md';
 
 ### Colors
 
-The `color` property changes the color palette for input boxes. For `outline` fills, this property changes the caret color, highlight color and border color. For `solid` fills, this property changes the caret color and highlight color.
+`color`プロパティは入力ボックスのカラーパレットを変更します。アウトライン塗りつぶしの場合、このプロパティはキャレットカラー、ハイライトカラー、ボーダーカラーを変更します。 `solid` 塗りつぶしの場合、このプロパティはキャレットカラーとハイライトカラーを変更します。
 
 :::note
 The `color` property does *not* change the text color of the input OTP. For that, use the [`--color` CSS property](#css-custom-properties-1).
@@ -130,7 +130,7 @@ import Colors from '@site/static/usage/v8/input-otp/theming/colors/index.md';
 
 ### CSS Custom Properties
 
-Input OTP uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input-otp` for customization will not work; therefore we recommend adding a class and customizing it that way. Due to certain styles being applied based on the `fill`, you may need to override properties on the fills separately.
+Input OTPはスコープされたカプセル化を使用しています。これは、実行時に各スタイルに追加のクラスを追加することで、CSSを自動的にスコープすることを意味します。CSSでスコープされたセレクタをオーバーライドするには、[より高い特異性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。特定のスタイルが `fill` に基づいて適用されるため、`fill` のプロパティを個別にオーバーライドする必要があるかもしれません。
 
 import CSSProps from '@site/static/usage/v8/input-otp/theming/css-properties/index.md';
 
@@ -140,9 +140,9 @@ import CSSProps from '@site/static/usage/v8/input-otp/theming/css-properties/ind
 
 ### Keyboard Interactions
 
-The keyboard navigation for Input OTP follows the [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)'s recommendations for composite widgets. It is treated as a composite widget because it contains multiple focusable elements (input boxes) that function as a single control.
+Input OTPのキーボードナビゲーションは、[ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) の複合ウィジェットに関する推奨に従っています。これは、1つのコントロールとして機能する複数のフォーカス可能な要素（入力ボックス）を含むため、複合ウィジェットとして扱われます。
 
-These keyboard interactions apply to all `ion-input-otp` elements when the component is not disabled.
+コンポーネントが無効になっていない場合、これらのキーボード操作はすべての `ion-input-otp` 要素に適用されます。
 
 | Key | Description |
 | --- | --- |
