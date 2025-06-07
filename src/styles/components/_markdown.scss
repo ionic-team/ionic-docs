@@ -24,6 +24,8 @@ html[data-theme='dark'] {
   --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.875rem;
 
+  position: relative;
+
   strong,
   b {
     font-weight: 600;
@@ -40,7 +42,7 @@ html[data-theme='dark'] {
 
   .encapsulation-pill {
     position: absolute;
-    top: calc(var(--ifm-navbar-height) + 4rem);
+    top: 0;
   }
 
   > * {

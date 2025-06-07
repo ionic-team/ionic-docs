@@ -33,7 +33,7 @@ const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).spl
 const BASE_URL = '/docs';
 
 module.exports = {
-  title: 'Ionic日本語ドキュメンテーション',
+  title: 'Ionic Framework',
   tagline:
     'Ionicは、ウェブ開発者のためのアプリプラットフォームです。1つの共有コードベースとオープンなWeb標準を使用して、素晴らしいモバイル、Web、デスクトップアプリケーションのすべてを構築できます。',
   url: 'https://ionicframework.jp',
@@ -80,6 +80,7 @@ module.exports = {
           },
           exclude: ['README.md'],
           lastVersion: 'current',
+          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
               label: 'v8',
@@ -338,6 +339,7 @@ module.exports = {
     },
   },
   plugins: [
+    // Allows usage of Sass/SCSS in the CSS preprocessor.
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',
