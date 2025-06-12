@@ -166,7 +166,15 @@ function renderEvents({ events }) {
   return `
 | Name | Description | Bubbles |
 | --- | --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
+${events
+  .map((event) => {
+    const isDeprecated = event.deprecation !== undefined;
+    const docs = isDeprecated ? `${event.docs}\n_Deprecated_ ${event.deprecation}` : event.docs;
+    return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
+      event.bubbles
+    }\` |`;
+  })
+  .join('\n')}`;
 }
 
 /**
