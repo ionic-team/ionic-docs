@@ -141,7 +141,7 @@ ${properties
   .map((prop) => {
     const isDeprecated = prop.deprecation !== undefined;
 
-    const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    const docs = isDeprecated ? `${prop.docs}\n\n**_Deprecated_** — ${prop.deprecation}` : prop.docs;
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
@@ -169,7 +169,7 @@ function renderEvents({ events }) {
 ${events
   .map((event) => {
     const isDeprecated = event.deprecation !== undefined;
-    const docs = isDeprecated ? `${event.docs}\n_Deprecated_ ${event.deprecation}` : event.docs;
+    const docs = isDeprecated ? `${event.docs}\n\n**_Deprecated_** — ${event.deprecation}` : event.docs;
     return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
       event.bubbles
     }\` |`;
