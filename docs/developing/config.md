@@ -53,7 +53,8 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 ## Reading the Config
 
-### Acccessing the Current Mode Programmatically
+### Accessing the Current Mode Programmatically
+
 In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
 
 ### get
@@ -94,6 +95,7 @@ In some cases, you may need to access the current Ionic mode programmatically wi
       }
     }
     ```
+
   </TabItem>
 
   <TabItem value="angular-standalone">
@@ -107,8 +109,8 @@ In some cases, you may need to access the current Ionic mode programmatically wi
       }
     }
     ```
-  </TabItem>
 
+  </TabItem>
 
   <TabItem value="react">
     ```jsx
@@ -133,6 +135,7 @@ In some cases, you may need to access the current Ionic mode programmatically wi
 
     export default ModeDisplayExample;
     ```
+
   </TabItem>
 
   <TabItem value="vue">
@@ -155,6 +158,7 @@ In some cases, you may need to access the current Ionic mode programmatically wi
       const mode = getMode();
     </script>
     ```
+
   </TabItem>
 </Tabs>
 
@@ -181,13 +185,14 @@ In some cases, you may need to access the current Ionic mode programmatically wi
 
 <TabItem value="javascript">
 
-  ```js
-    import { config } from '@ionic/core';
+```js
+import { config } from '@ionic/core';
 
-    const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
 
-    console.log('Swipe back enabled:', swipeBackEnabled);
-  ```
+console.log('Swipe back enabled:', swipeBackEnabled);
+```
+
 </TabItem>
 <TabItem value="angular">
 
@@ -219,51 +224,51 @@ class AppComponent {
 </TabItem>
 <TabItem value="react">
 
-  ```jsx
-    import React from 'react';
-    import { IonButton, IonContent, IonPage } from '@ionic/react';
-    import { config } from '@ionic/core';
+```jsx
+import React from 'react';
+import { IonButton, IonContent, IonPage } from '@ionic/react';
+import { config } from '@ionic/core';
 
-    function SwipeBackExample() {
-      const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+function SwipeBackExample() {
+  const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
 
-      return (
-        <IonPage>
-          <IonContent className="ion-padding">
-            <p>Swipe back is <strong>{swipeBackEnabled ? 'enabled' : 'disabled'}</strong>.</p>
-            <IonButton disabled={!swipeBackEnabled}>
-              Try Swipe Back
-            </IonButton>
-          </IonContent>
-        </IonPage>
-      );
-    }
+  return (
+    <IonPage>
+      <IonContent className="ion-padding">
+        <p>
+          Swipe back is <strong>{swipeBackEnabled ? 'enabled' : 'disabled'}</strong>.
+        </p>
+        <IonButton disabled={!swipeBackEnabled}>Try Swipe Back</IonButton>
+      </IonContent>
+    </IonPage>
+  );
+}
 
-    export default SwipeBackExample;
-  ```
+export default SwipeBackExample;
+```
 
 </TabItem>
 <TabItem value="vue">
 
-  ```javascript
-  <template>
-    <ion-page>
-      <ion-content class="ion-padding">
-        <p>Swipe back is <strong>{{ swipeBackEnabled ? 'enabled' : 'disabled' }}</strong>.</p>
-        <ion-button :disabled="!swipeBackEnabled">
-          Try Swipe Back
-        </ion-button>
-      </ion-content>
-    </ion-page>
-  </template>
+```javascript
+<template>
+  <ion-page>
+    <ion-content class="ion-padding">
+      <p>Swipe back is <strong>{{ swipeBackEnabled ? 'enabled' : 'disabled' }}</strong>.</p>
+      <ion-button :disabled="!swipeBackEnabled">
+        Try Swipe Back
+      </ion-button>
+    </ion-content>
+  </ion-page>
+</template>
 
-  <script setup lang="ts">
-  import { IonButton, IonContent, IonPage } from '@ionic/vue';
-  import { config } from '@ionic/core';
+<script setup lang="ts">
+import { IonButton, IonContent, IonPage } from '@ionic/vue';
+import { config } from '@ionic/core';
 
-  const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
-  </script>
-  ```
+const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+</script>
+```
 
 </TabItem>
 </Tabs>
