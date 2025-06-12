@@ -50,12 +50,8 @@ module.exports = function (context, options) {
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
-      let npmTag = 'latest';
-      if (currentVersion.banner === 'unreleased') {
-        npmTag = 'next';
-      } else if (currentVersion.path !== undefined) {
-        npmTag = currentVersion.path.slice(1);
-      }
+      // TODO: remove this before merging
+      let npmTag = '8.6.2-dev.11749668763.17db572c';
       // Latest version
       await generateMarkdownForVersion(currentVersion.path || currentVersion.label, npmTag, true);
 
