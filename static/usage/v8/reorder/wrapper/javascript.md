@@ -37,7 +37,7 @@
 <script>
   const reorderGroup = document.querySelector('ion-reorder-group');
 
-  reorderGroup.addEventListener('ionItemReorder', ({ detail }) => {
+  reorderGroup.addEventListener('ionReorderEnd', ({ detail }) => {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', detail.from, 'to', detail.to);

@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-list>
-    <ion-reorder-group :disabled="isDisabled" @ionItemReorder="handleReorder($event)">
+    <ion-reorder-group :disabled="isDisabled" @ionReorderEnd="handleReorder($event)">
       <ion-item>
         <ion-label> Item 1 </ion-label>
         <ion-reorder slot="end"></ion-reorder>

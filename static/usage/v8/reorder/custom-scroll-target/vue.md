@@ -4,7 +4,7 @@
     <div class="ion-content-scroll-host">
       <ion-list>
         <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-        <ion-reorder-group :disabled="false" @ionItemReorder="handleReorder($event)">
+        <ion-reorder-group :disabled="false" @ionReorderEnd="handleReorder($event)">
           <ion-item>
             <ion-label> Item 1 </ion-label>
             <ion-reorder slot="end"></ion-reorder>
