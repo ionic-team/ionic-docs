@@ -31,7 +31,7 @@ function Example() {
   return (
     <>
       <IonList>
-        <IonReorderGroup disabled={isDisabled} onIonItemReorder={handleReorder}>
+        <IonReorderGroup disabled={isDisabled} onIonReorderEnd={handleReorder}>
           <IonItem>
             <IonLabel>Item 1</IonLabel>
             <IonReorder slot="end"></IonReorder>

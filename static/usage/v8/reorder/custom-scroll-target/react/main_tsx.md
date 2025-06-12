@@ -29,7 +29,7 @@ function Example() {
       <div className="ion-content-scroll-host">
         <IonList>
           {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
-          <IonReorderGroup disabled={false} onIonItemReorder={handleReorder}>
+          <IonReorderGroup disabled={false} onIonReorderEnd={handleReorder}>
             <IonItem>
               <IonLabel>Item 1</IonLabel>
               <IonReorder slot="end"></IonReorder>

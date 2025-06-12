@@ -16,9 +16,9 @@ import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
+The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it in a new position, the `ionReorderEnd` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
 
-The `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
+The `detail` property of the `ionReorderEnd` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
 
 
 ## Interfaces
