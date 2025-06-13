@@ -4,7 +4,7 @@ import { IonIcon, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, Reord
 import { pizza } from 'ionicons/icons';
 
 function Example() {
-  function handleReorder(event: ReorderEndCustomEvent) {
+  function handleReorderEnd(event: ReorderEndCustomEvent) {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
@@ -18,7 +18,7 @@ function Example() {
   return (
     <IonList>
       {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
-      <IonReorderGroup disabled={false} onIonReorderEnd={handleReorder}>
+      <IonReorderGroup disabled={false} onIonReorderEnd={handleReorderEnd}>
         <IonItem>
           <IonLabel>Item 1</IonLabel>
           <IonReorder slot="end">

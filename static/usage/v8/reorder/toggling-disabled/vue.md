@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-list>
-    <ion-reorder-group :disabled="isDisabled" @ionReorderEnd="handleReorder($event)">
+    <ion-reorder-group :disabled="isDisabled" @ionReorderEnd="handleReorderEnd($event)">
       <ion-item>
         <ion-label> Item 1 </ion-label>
         <ion-reorder slot="end"></ion-reorder>
@@ -50,7 +50,7 @@
     setup() {
       let isDisabled = ref(true);
 
-      const handleReorder = (event: ReorderEndCustomEvent) => {
+      const handleReorderEnd = (event: ReorderEndCustomEvent) => {
         // The `from` and `to` properties contain the index of the item
         // when the drag started and ended, respectively
         console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
@@ -65,7 +65,7 @@
         isDisabled.value = !isDisabled.value;
       };
 
-      return { isDisabled, handleReorder, toggleReorder };
+      return { isDisabled, handleReorderEnd, toggleReorder };
     },
   });
 </script>

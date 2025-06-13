@@ -29,7 +29,7 @@ export class ExampleComponent {
     addIcons({ pizza });
   }
 
-  handleReorder(event: ReorderEndCustomEvent) {
+  handleReorderEnd(event: ReorderEndCustomEvent) {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', event.detail.from, 'to', event.detail.to);

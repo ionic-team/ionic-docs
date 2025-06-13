@@ -2,7 +2,7 @@
 <template>
   <ion-list>
     <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-    <ion-reorder-group :disabled="false" @ionReorderEnd="handleReorder($event)">
+    <ion-reorder-group :disabled="false" @ionReorderEnd="handleReorderEnd($event)">
       <ion-item v-for="item in items" :key="item">
         <ion-label> Item {{ item }} </ion-label>
         <ion-reorder slot="end"></ion-reorder>
@@ -20,7 +20,7 @@
     setup() {
       const items = ref([1, 2, 3, 4, 5]);
 
-      const handleReorder = (event: ReorderEndCustomEvent) => {
+      const handleReorderEnd = (event: ReorderEndCustomEvent) => {
         // Before complete is called with the items they will remain in the
         // order before the drag
         console.log('Before complete', items.value);
@@ -33,7 +33,7 @@
         // After complete is called the items will be in the new order
         console.log('After complete', items.value);
       };
-      return { handleReorder, items };
+      return { handleReorderEnd, items };
     },
   });
 </script>

@@ -5,7 +5,7 @@ import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCust
 function Example() {
   const [items, setItems] = useState([1, 2, 3, 4, 5]);
 
-  function handleReorder(event: ReorderEndCustomEvent) {
+  function handleReorderEnd(event: ReorderEndCustomEvent) {
     // Before complete is called with the items they will remain in the
     // order before the drag
     console.log('Before complete', items);
@@ -22,7 +22,7 @@ function Example() {
   return (
     <IonList>
       {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
-      <IonReorderGroup disabled={false} onIonReorderEnd={handleReorder}>
+      <IonReorderGroup disabled={false} onIonReorderEnd={handleReorderEnd}>
         {items.map((item) => (
           <IonItem key={item}>
             <IonLabel>Item {item}</IonLabel>

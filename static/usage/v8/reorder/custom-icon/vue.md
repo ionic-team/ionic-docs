@@ -2,7 +2,7 @@
 <template>
   <ion-list>
     <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-    <ion-reorder-group :disabled="false" @ionReorderEnd="handleReorder($event)">
+    <ion-reorder-group :disabled="false" @ionReorderEnd="handleReorderEnd($event)">
       <ion-item>
         <ion-label> Item 1 </ion-label>
         <ion-reorder slot="end">
@@ -49,7 +49,7 @@
   export default defineComponent({
     components: { IonIcon, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup },
     setup() {
-      const handleReorder = (event: ReorderEndCustomEvent) => {
+      const handleReorderEnd = (event: ReorderEndCustomEvent) => {
         // The `from` and `to` properties contain the index of the item
         // when the drag started and ended, respectively
         console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
@@ -59,7 +59,7 @@
         // by the reorder group
         event.detail.complete();
       };
-      return { handleReorder, pizza };
+      return { handleReorderEnd, pizza };
     },
   });
 </script>

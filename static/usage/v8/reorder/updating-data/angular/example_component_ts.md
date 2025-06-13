@@ -18,7 +18,7 @@ import {
 export class ExampleComponent {
   items = [1, 2, 3, 4, 5];
 
-  handleReorder(event: ReorderEndCustomEvent) {
+  handleReorderEnd(event: ReorderEndCustomEvent) {
     // Before complete is called with the items they will remain in the
     // order before the drag
     console.log('Before complete', this.items);
