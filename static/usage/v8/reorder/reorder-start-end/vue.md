@@ -17,13 +17,13 @@
   import { IonIcon, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/vue';
   import { caretDown, ellipse, warning } from 'ionicons/icons';
 
-  const items = [
+  const items = ref([
     { label: 'Buy groceries', icon: warning, color: 'warning' },
     { label: 'Call the bank', icon: warning, color: 'warning' },
     { label: 'Finish project report', icon: ellipse, color: 'light' },
     { label: 'Book flight tickets', icon: ellipse, color: 'light' },
     { label: 'Read a book', icon: caretDown, color: 'secondary' },
-  ];
+  ]);
 
   const iconMap = ref(new Map<string, HTMLElement>());
 
@@ -48,10 +48,8 @@
       icon.$el.style.opacity = '1';
     });
 
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. This method can also be called directly
-    // by the reorder group.
-    event.detail.complete();
+    // Finish the reorder and update the items data
+    items.value = event.detail.complete(items.value);
   }
 </script>
 ```
