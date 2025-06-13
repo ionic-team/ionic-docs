@@ -1,11 +1,11 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ItemReorderEventDetail } from '@ionic/react';
+import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/react';
 
 function Example() {
   const [items, setItems] = useState([1, 2, 3, 4, 5]);
 
-  function handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
+  function handleReorder(event: ReorderEndCustomEvent) {
     // Before complete is called with the items they will remain in the
     // order before the drag
     console.log('Before complete', items);

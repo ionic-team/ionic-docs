@@ -1,12 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
 import {
-  ItemReorderEventDetail,
   IonItem,
   IonLabel,
   IonList,
   IonReorder,
   IonReorderGroup,
+  ReorderEndCustomEvent,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -18,7 +18,7 @@ import {
 export class ExampleComponent {
   items = [1, 2, 3, 4, 5];
 
-  handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
+  handleReorder(event: ReorderEndCustomEvent) {
     // Before complete is called with the items they will remain in the
     // order before the drag
     console.log('Before complete', this.items);

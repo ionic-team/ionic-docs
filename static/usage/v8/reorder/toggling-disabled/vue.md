@@ -34,7 +34,15 @@
 </template>
 
 <script lang="ts">
-  import { IonButton, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/vue';
+  import {
+    IonButton,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonReorder,
+    IonReorderGroup,
+    ReorderEndCustomEvent,
+  } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
@@ -42,7 +50,7 @@
     setup() {
       let isDisabled = ref(true);
 
-      const handleReorder = (event: CustomEvent) => {
+      const handleReorder = (event: ReorderEndCustomEvent) => {
         // The `from` and `to` properties contain the index of the item
         // when the drag started and ended, respectively
         console.log('Dragged from index', event.detail.from, 'to', event.detail.to);

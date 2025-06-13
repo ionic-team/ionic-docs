@@ -1,7 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 import {
-  ItemReorderEventDetail,
+  ReorderEndCustomEvent,
   IonContent,
   IonItem,
   IonLabel,
@@ -17,7 +17,7 @@ import {
   imports: [IonContent, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup],
 })
 export class ExampleComponent {
-  handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
+  handleReorder(event: ReorderEndCustomEvent) {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
