@@ -43,7 +43,12 @@
       "attr": "button",
       "reflectToAttr": false,
       "docs": "If `true`, a button tag will be rendered and the item will be tappable.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -51,7 +56,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -117,7 +124,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "detail",
@@ -141,7 +150,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "detailIcon",
@@ -155,7 +166,12 @@
       "attr": "detail-icon",
       "reflectToAttr": false,
       "docs": "The icon to use when `detail` is set to `true`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "chevronForward"
+        }
+      ],
       "default": "chevronForward",
       "values": [
         {
@@ -163,7 +179,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -177,7 +195,12 @@
       "attr": "disabled",
       "reflectToAttr": true,
       "docs": "If `true`, the user cannot interact with the item.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -185,7 +208,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "download",
@@ -209,7 +234,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "href",
@@ -233,7 +260,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "lines",
@@ -266,7 +295,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -311,7 +342,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "routerAnimation",
@@ -328,6 +361,7 @@
         }
       },
       "mutable": false,
+      "attr": "router-animation",
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
       "docsTags": [],
@@ -340,7 +374,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "routerDirection",
@@ -360,7 +396,12 @@
       "attr": "router-direction",
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'forward'"
+        }
+      ],
       "default": "'forward'",
       "values": [
         {
@@ -377,7 +418,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "target",
@@ -401,7 +444,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -415,7 +460,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The type of the button. Only used when an `onclick` or `button` property is present.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'button'"
+        }
+      ],
       "default": "'button'",
       "values": [
         {
@@ -432,7 +482,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

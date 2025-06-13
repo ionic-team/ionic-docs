@@ -39,6 +39,18 @@
     {
       "name": "part",
       "text": "label - The label text describing the select."
+    },
+    {
+      "name": "part",
+      "text": "supporting-text - Supporting text displayed beneath the select."
+    },
+    {
+      "name": "part",
+      "text": "helper-text - Supporting text displayed beneath the select when the select is valid."
+    },
+    {
+      "name": "part",
+      "text": "error-text - Supporting text displayed beneath the select when the select is invalid and touched."
     }
   ],
   "usage": {},
@@ -55,7 +67,12 @@
       "attr": "cancel-text",
       "reflectToAttr": false,
       "docs": "The text to display on the cancel button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'Cancel'"
+        }
+      ],
       "default": "'Cancel'",
       "values": [
         {
@@ -63,7 +80,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -129,7 +148,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "compareWith",
@@ -165,7 +186,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -179,7 +202,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the select.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -187,7 +215,35 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "errorText",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "error-text",
+      "reflectToAttr": false,
+      "docs": "Text that is placed under the select and displayed when an error is detected.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "expandedIcon",
@@ -211,7 +267,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "fill",
@@ -240,7 +298,35 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "helperText",
+      "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "helper-text",
+      "reflectToAttr": false,
+      "docs": "Text that is placed under the select and displayed when no error is detected.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "interface",
@@ -260,7 +346,12 @@
       "attr": "interface",
       "reflectToAttr": false,
       "docs": "The interface the select should use: `action-sheet`, `popover`, `alert`, or `modal`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'alert'"
+        }
+      ],
       "default": "'alert'",
       "values": [
         {
@@ -281,7 +372,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "interfaceOptions",
@@ -295,7 +388,12 @@
       "attr": "interface-options",
       "reflectToAttr": false,
       "docs": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](./alert), the\n[ion-action-sheet docs](./action-sheet), the\n[ion-popover docs](./popover), and the [ion-modal docs](./modal) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "{}"
+        }
+      ],
       "default": "{}",
       "values": [
         {
@@ -303,7 +401,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "justify",
@@ -336,7 +436,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "label",
@@ -360,7 +462,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "labelPlacement",
@@ -374,7 +478,12 @@
       "attr": "label-placement",
       "reflectToAttr": false,
       "docs": "Where to place the label relative to the select.\n`\"start\"`: The label will appear to the left of the select in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the select in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select.\n`\"stacked\"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\nWhen using `\"floating\"` or `\"stacked\"` we recommend initializing the select with either a `value` or a `placeholder`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'start'"
+        }
+      ],
       "default": "'start'",
       "values": [
         {
@@ -402,7 +511,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -437,7 +548,12 @@
       "attr": "multiple",
       "reflectToAttr": false,
       "docs": "If `true`, the select can accept multiple values.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -445,7 +561,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "name",
@@ -459,7 +577,12 @@
       "attr": "name",
       "reflectToAttr": false,
       "docs": "The name of the control, which is submitted with the form data.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.inputId"
+        }
+      ],
       "default": "this.inputId",
       "values": [
         {
@@ -467,7 +590,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "okText",
@@ -481,7 +606,12 @@
       "attr": "ok-text",
       "reflectToAttr": false,
       "docs": "The text to display on the ok button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'OK'"
+        }
+      ],
       "default": "'OK'",
       "values": [
         {
@@ -489,7 +619,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "placeholder",
@@ -513,7 +645,38 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "required",
+      "reflectToAttr": false,
+      "docs": "If true, screen readers will announce it as a required field. This property\nworks only for accessibility purposes, it will not prevent the form from\nsubmitting if the value is invalid.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "selectedText",
@@ -540,7 +703,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "shape",
@@ -565,7 +730,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "toggleIcon",
@@ -589,7 +756,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -610,7 +779,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [
@@ -963,6 +1134,14 @@
       "docs": "The container for the selected text or placeholder."
     },
     {
+      "name": "error-text",
+      "docs": "Supporting text displayed beneath the select when the select is invalid and touched."
+    },
+    {
+      "name": "helper-text",
+      "docs": "Supporting text displayed beneath the select when the select is valid."
+    },
+    {
       "name": "icon",
       "docs": "The select icon container."
     },
@@ -973,6 +1152,10 @@
     {
       "name": "placeholder",
       "docs": "The text displayed in the select when there is no value."
+    },
+    {
+      "name": "supporting-text",
+      "docs": "Supporting text displayed beneath the select."
     },
     {
       "name": "text",

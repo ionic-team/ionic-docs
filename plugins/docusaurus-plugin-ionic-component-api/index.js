@@ -20,7 +20,7 @@ module.exports = function (context, options) {
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
         const response = isCurrentVersion
-          ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+          ? await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`)
           : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
@@ -175,6 +175,25 @@ function renderEvents({ events }) {
 ${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
 }
 
+/**
+ * Formats method parameters for the optional Parameters row of each method table
+ * @param {*} paramsArr Array of method parameters
+ * @returns formatted parameters for methods table
+ */
+function renderParameters(paramsArr) {
+  if (!paramsArr.some((param) => param.docs)) {
+    return '';
+  }
+
+  const documentedParams = paramsArr.filter((param) => param.docs);
+  const formattedParams = documentedParams
+    .map((param) => {
+      return `**${param.name}**: ${formatMultiline(param.docs)}`;
+    })
+    .join('<br/>');
+  return `| **Parameters** | ${formattedParams} |`;
+}
+
 function renderMethods({ methods }) {
   if (methods.length === 0) {
     return 'No public methods available for this component.';
@@ -191,6 +210,7 @@ ${methods
 | --- | --- |
 | **Description** | ${formatMultiline(method.docs)} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
+${method.parameters.length !== 0 ? renderParameters(method.parameters) : ''}
 `
   )
   .join('\n')}

@@ -23,7 +23,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, enable searchbar animation.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -31,7 +36,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "autocapitalize",
@@ -45,7 +52,12 @@
       "attr": "autocapitalize",
       "reflectToAttr": false,
       "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
       "default": "'off'",
       "values": [
         {
@@ -53,7 +65,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "autocomplete",
@@ -73,7 +87,12 @@
       "attr": "autocomplete",
       "reflectToAttr": false,
       "docs": "Set the input's autocomplete property.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
       "default": "'off'",
       "values": [
         {
@@ -294,7 +313,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "autocorrect",
@@ -308,7 +329,12 @@
       "attr": "autocorrect",
       "reflectToAttr": false,
       "docs": "Set the input's autocorrect property.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'off'"
+        }
+      ],
       "default": "'off'",
       "values": [
         {
@@ -321,7 +347,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "cancelButtonIcon",
@@ -335,7 +363,12 @@
       "attr": "cancel-button-icon",
       "reflectToAttr": false,
       "docs": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `arrow-back-sharp`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "config.get('backButtonIcon', arrowBackSharp) as string"
+        }
+      ],
       "default": "config.get('backButtonIcon', arrowBackSharp) as string",
       "values": [
         {
@@ -343,7 +376,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "cancelButtonText",
@@ -356,8 +391,13 @@
       "mutable": false,
       "attr": "cancel-button-text",
       "reflectToAttr": false,
-      "docs": "Set the the cancel button text. Only applies to `ios` mode.",
-      "docsTags": [],
+      "docs": "Set the cancel button text. Only applies to `ios` mode.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'Cancel'"
+        }
+      ],
       "default": "'Cancel'",
       "values": [
         {
@@ -365,7 +405,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "clearIcon",
@@ -389,7 +431,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -455,7 +499,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "debounce",
@@ -479,7 +525,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -493,7 +541,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the input.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -501,7 +554,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterkeyhint",
@@ -550,7 +605,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "inputmode",
@@ -603,7 +660,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "maxlength",
@@ -627,7 +686,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "minlength",
@@ -651,7 +712,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -686,7 +749,12 @@
       "attr": "name",
       "reflectToAttr": false,
       "docs": "If used in a form, set the name of the control, which is submitted with the form data.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "this.inputId"
+        }
+      ],
       "default": "this.inputId",
       "values": [
         {
@@ -694,7 +762,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "placeholder",
@@ -708,7 +778,12 @@
       "attr": "placeholder",
       "reflectToAttr": false,
       "docs": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'Search'"
+        }
+      ],
       "default": "'Search'",
       "values": [
         {
@@ -716,7 +791,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "searchIcon",
@@ -740,7 +817,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showCancelButton",
@@ -754,7 +833,12 @@
       "attr": "show-cancel-button",
       "reflectToAttr": false,
       "docs": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'never'"
+        }
+      ],
       "default": "'never'",
       "values": [
         {
@@ -771,7 +855,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showClearButton",
@@ -785,7 +871,12 @@
       "attr": "show-clear-button",
       "reflectToAttr": false,
       "docs": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'always'"
+        }
+      ],
       "default": "'always'",
       "values": [
         {
@@ -802,7 +893,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "spellcheck",
@@ -816,7 +909,12 @@
       "attr": "spellcheck",
       "reflectToAttr": false,
       "docs": "If `true`, enable spellcheck on the input.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -824,7 +922,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "type",
@@ -838,7 +938,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "Set the type of the input.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'search'"
+        }
+      ],
       "default": "'search'",
       "values": [
         {
@@ -871,7 +976,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -885,7 +992,12 @@
       "attr": "value",
       "reflectToAttr": false,
       "docs": "the value of the searchbar.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "''"
+        }
+      ],
       "default": "''",
       "values": [
         {
@@ -899,7 +1011,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

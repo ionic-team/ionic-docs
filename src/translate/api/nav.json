@@ -18,7 +18,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the nav should animate the transition of components.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -26,7 +31,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "animation",
@@ -43,6 +50,7 @@
         }
       },
       "mutable": false,
+      "attr": "animation",
       "reflectToAttr": false,
       "docs": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\nHowever, this property allows to create custom transition using `AnimationBuilder` functions.",
       "docsTags": [],
@@ -55,7 +63,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "root",
@@ -97,7 +107,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "rootParams",
@@ -114,6 +126,7 @@
         }
       },
       "mutable": false,
+      "attr": "root-params",
       "reflectToAttr": false,
       "docs": "Any parameters for the root component",
       "docsTags": [],
@@ -126,7 +139,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "swipeGesture",
@@ -150,7 +165,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

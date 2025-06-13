@@ -47,7 +47,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the toast will animate.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -55,7 +60,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "buttons",
@@ -72,6 +79,7 @@
         }
       },
       "mutable": false,
+      "attr": "buttons",
       "reflectToAttr": false,
       "docs": "An array of buttons for the toast.",
       "docsTags": [],
@@ -87,7 +95,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "color",
@@ -153,7 +163,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "cssClass",
@@ -180,7 +192,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "duration",
@@ -194,7 +208,12 @@
       "attr": "duration",
       "reflectToAttr": false,
       "docs": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "config.getNumber('toastDuration', 0)"
+        }
+      ],
       "default": "config.getNumber('toastDuration', 0)",
       "values": [
         {
@@ -202,7 +221,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterAnimation",
@@ -219,6 +240,7 @@
         }
       },
       "mutable": false,
+      "attr": "enter-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the toast is presented.",
       "docsTags": [],
@@ -231,7 +253,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "header",
@@ -255,7 +279,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "htmlAttributes",
@@ -266,6 +292,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "html-attributes",
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the toast.",
       "docsTags": [],
@@ -278,7 +305,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "icon",
@@ -302,7 +331,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "isOpen",
@@ -316,7 +347,12 @@
       "attr": "is-open",
       "reflectToAttr": false,
       "docs": "If `true`, the toast will open. If `false`, the toast will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the toastController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe toast dismisses. You will need to do that in your code.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -324,7 +360,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keyboardClose",
@@ -338,7 +376,12 @@
       "attr": "keyboard-close",
       "reflectToAttr": false,
       "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -346,7 +389,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "layout",
@@ -366,7 +411,12 @@
       "attr": "layout",
       "reflectToAttr": false,
       "docs": "Defines how the message and buttons are laid out in the toast.\n'baseline': The message and the buttons will appear on the same line.\nMessage text may wrap within the message container.\n'stacked': The buttons containers and message will stack on top\nof each other. Use this if you have long text in your buttons.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'baseline'"
+        }
+      ],
       "default": "'baseline'",
       "values": [
         {
@@ -379,7 +429,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "leaveAnimation",
@@ -396,6 +448,7 @@
         }
       },
       "mutable": false,
+      "attr": "leave-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the toast is dismissed.",
       "docsTags": [],
@@ -408,7 +461,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "message",
@@ -441,7 +496,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -482,7 +539,12 @@
       "attr": "position",
       "reflectToAttr": false,
       "docs": "The starting position of the toast on the screen. Can be tweaked further\nusing the `positionAnchor` property.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'bottom'"
+        }
+      ],
       "default": "'bottom'",
       "values": [
         {
@@ -499,7 +561,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "positionAnchor",
@@ -531,7 +595,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "swipeGesture",
@@ -562,7 +628,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "translucent",
@@ -576,7 +644,12 @@
       "attr": "translucent",
       "reflectToAttr": false,
       "docs": "If `true`, the toast will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -584,7 +657,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "trigger",
@@ -608,7 +683,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

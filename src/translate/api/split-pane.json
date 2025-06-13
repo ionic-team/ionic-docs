@@ -28,7 +28,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -42,7 +44,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the split pane will be hidden.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -50,7 +57,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "when",
@@ -64,7 +73,12 @@
       "attr": "when",
       "reflectToAttr": false,
       "docs": "When the split-pane should be shown.\nCan be a CSS media query expression, or a shortcut expression.\nCan also be a boolean expression.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "QUERY['lg']"
+        }
+      ],
       "default": "QUERY['lg']",
       "values": [
         {
@@ -75,7 +89,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

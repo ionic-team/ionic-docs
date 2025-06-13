@@ -45,7 +45,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "disabled",
@@ -59,7 +61,12 @@
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the segment button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -67,7 +74,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "layout",
@@ -87,7 +96,12 @@
       "attr": "layout",
       "reflectToAttr": false,
       "docs": "Set the layout of the text and icon in the segment.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'icon-top'"
+        }
+      ],
       "default": "'icon-top'",
       "values": [
         {
@@ -119,7 +133,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -154,7 +170,12 @@
       "attr": "type",
       "reflectToAttr": false,
       "docs": "The type of the button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'button'"
+        }
+      ],
       "default": "'button'",
       "values": [
         {
@@ -171,7 +192,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "value",
@@ -191,7 +214,12 @@
       "attr": "value",
       "reflectToAttr": false,
       "docs": "The value of the segment button.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'ion-sb-' + ids++"
+        }
+      ],
       "default": "'ion-sb-' + ids++",
       "values": [
         {
@@ -202,7 +230,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [],

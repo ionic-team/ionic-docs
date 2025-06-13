@@ -39,7 +39,12 @@
       "attr": "animated",
       "reflectToAttr": false,
       "docs": "If `true`, the modal will animate.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -47,7 +52,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "backdropBreakpoint",
@@ -61,7 +68,12 @@
       "attr": "backdrop-breakpoint",
       "reflectToAttr": false,
       "docs": "A decimal value between 0 and 1 that indicates the\npoint after which the backdrop will begin to fade in\nwhen using a sheet modal. Prior to this point, the\nbackdrop will be hidden and the content underneath\nthe sheet can be interacted with. This value is exclusive\nmeaning the backdrop will become active after the value\nspecified.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
       "default": "0",
       "values": [
         {
@@ -69,7 +81,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "backdropDismiss",
@@ -83,7 +97,12 @@
       "attr": "backdrop-dismiss",
       "reflectToAttr": false,
       "docs": "If `true`, the modal will be dismissed when the backdrop is clicked.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -91,7 +110,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "breakpoints",
@@ -102,6 +123,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "breakpoints",
       "reflectToAttr": false,
       "docs": "The breakpoints to use when creating a sheet modal. Each value in the\narray must be a decimal between 0 and 1 where 0 indicates the modal is fully\nclosed and 1 indicates the modal is fully open. Values are relative\nto the height of the modal, not the height of the screen. One of the values in this\narray must be the value of the `initialBreakpoint` property.\nFor example: [0, .25, .5, 1]",
       "docsTags": [],
@@ -114,7 +136,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "canDismiss",
@@ -133,7 +157,12 @@
       "attr": "can-dismiss",
       "reflectToAttr": false,
       "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\nSee https://ionicframework.com/docs/troubleshooting/runtime#accessing-this\nif you need to access `this` from within the callback.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -147,7 +176,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "enterAnimation",
@@ -164,6 +195,7 @@
         }
       },
       "mutable": false,
+      "attr": "enter-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the modal is presented.",
       "docsTags": [],
@@ -176,7 +208,38 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
+    },
+    {
+      "name": "expandToScroll",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "expand-to-scroll",
+      "reflectToAttr": false,
+      "docs": "Controls whether scrolling or dragging within the sheet modal expands\nit to a larger breakpoint. This only takes effect when `breakpoints`\nand `initialBreakpoint` are set.\n\nIf `true`, scrolling or dragging anywhere in the modal will first expand\nit to the next breakpoint. Once fully expanded, scrolling will affect the\ncontent.\nIf `false`, scrolling will always affect the content. The modal will\nonly expand when dragging the header or handle. The modal will close when\ndragging the header or handle. It can also be closed when dragging the\ncontent, but only if the content is scrolled to the top.",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "focusTrap",
@@ -190,7 +253,12 @@
       "attr": "focus-trap",
       "reflectToAttr": false,
       "docs": "If `true`, focus will not be allowed to move outside of this overlay.\nIf `false`, focus will be allowed to move outside of the overlay.\n\nIn most scenarios this property should remain set to `true`. Setting\nthis property to `false` can cause severe accessibility issues as users\nrelying on assistive technologies may be able to move focus into\na confusing state. We recommend only setting this to `false` when\nabsolutely necessary.\n\nDevelopers may want to consider disabling focus trapping if this\noverlay presents a non-Ionic overlay from a 3rd party library.\nDevelopers would disable focus trapping on the Ionic overlay\nwhen presenting the 3rd party overlay and then re-enable\nfocus trapping when dismissing the 3rd party overlay and moving\nfocus back to the Ionic overlay.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -198,7 +266,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "handle",
@@ -222,7 +292,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "handleBehavior",
@@ -242,7 +314,12 @@
       "attr": "handle-behavior",
       "reflectToAttr": false,
       "docs": "The interaction behavior for the sheet modal when the handle is pressed.\n\nDefaults to `\"none\"`, which  means the modal will not change size or position when the handle is pressed.\nSet to `\"cycle\"` to let the modal cycle between available breakpoints when pressed.\n\nHandle behavior is unavailable when the `handle` property is set to `false` or\nwhen the `breakpoints` property is not set (using a fullscreen or card modal).",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "'none'"
+        }
+      ],
       "default": "'none'",
       "values": [
         {
@@ -258,7 +335,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "htmlAttributes",
@@ -269,6 +348,7 @@
         "references": {}
       },
       "mutable": false,
+      "attr": "html-attributes",
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the modal.",
       "docsTags": [],
@@ -281,7 +361,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "initialBreakpoint",
@@ -305,7 +387,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "isOpen",
@@ -319,7 +403,12 @@
       "attr": "is-open",
       "reflectToAttr": false,
       "docs": "If `true`, the modal will open. If `false`, the modal will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the modalController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe modal dismisses. You will need to do that in your code.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -327,7 +416,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keepContentsMounted",
@@ -341,7 +432,12 @@
       "attr": "keep-contents-mounted",
       "reflectToAttr": false,
       "docs": "If `true`, the component passed into `ion-modal` will\nautomatically be mounted when the modal is created. The\ncomponent will remain mounted even when the modal is dismissed.\nHowever, the component will be destroyed when the modal is\ndestroyed. This property is not reactive and should only be\nused when initially creating a modal.\n\nNote: This feature only applies to inline modals in JavaScript\nframeworks such as Angular, React, and Vue.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
       "default": "false",
       "values": [
         {
@@ -349,7 +445,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "keyboardClose",
@@ -363,7 +461,12 @@
       "attr": "keyboard-close",
       "reflectToAttr": false,
       "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -371,7 +474,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "leaveAnimation",
@@ -388,6 +493,7 @@
         }
       },
       "mutable": false,
+      "attr": "leave-animation",
       "reflectToAttr": false,
       "docs": "Animation to use when the modal is dismissed.",
       "docsTags": [],
@@ -400,7 +506,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "mode",
@@ -437,6 +545,7 @@
         }
       },
       "mutable": false,
+      "attr": "presenting-element",
       "reflectToAttr": false,
       "docs": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode.",
       "docsTags": [],
@@ -449,7 +558,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "showBackdrop",
@@ -463,7 +574,12 @@
       "attr": "show-backdrop",
       "reflectToAttr": false,
       "docs": "If `true`, a backdrop will be displayed behind the modal.\nThis property controls whether or not the backdrop\ndarkens the screen when the modal is presented.\nIt does not control whether or not the backdrop\nis active or present in the DOM.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "true"
+        }
+      ],
       "default": "true",
       "values": [
         {
@@ -471,7 +587,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "trigger",
@@ -495,7 +613,9 @@
         }
       ],
       "optional": false,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [

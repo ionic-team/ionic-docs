@@ -43,7 +43,9 @@
         }
       ],
       "optional": true,
-      "required": false
+      "required": false,
+      "getter": false,
+      "setter": false
     },
     {
       "name": "tab",
@@ -64,7 +66,9 @@
         }
       ],
       "optional": false,
-      "required": true
+      "required": true,
+      "getter": false,
+      "setter": false
     }
   ],
   "methods": [
