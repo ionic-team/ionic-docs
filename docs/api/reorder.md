@@ -81,9 +81,9 @@ The `ionReorderStart` event is emitted when the user begins a reorder gesture. T
 
 The `ionReorderEnd` event is emitted when the user completes the reorder gesture by removing their pointer from the screen. The event includes the `from` and `to` indices of the item, as well as the `complete` method that should be called to finalize the reorder operation. The `from` index will always be the position of the item when the gesture started, while the `to` index will be its final position. This event will fire even if no items have changed position, in which case the `from` and `to` indices will be the same.
 
-import ReorderStartEnd from '@site/static/usage/v8/reorder/reorder-start-end/index.md';
+import ReorderStartEndEvents from '@site/static/usage/v8/reorder/reorder-start-end-events/index.md';
 
-<ReorderStartEnd />
+<ReorderStartEndEvents />
 
 ### Using `ionReorderMove`
 
@@ -93,9 +93,9 @@ The `ionReorderMove` event is emitted continuously during the reorder gesture as
 Do not call the `complete` method during the `ionReorderMove` event as it can break the gesture.
 :::
 
-import ReorderMove from '@site/static/usage/v8/reorder/reorder-move/index.md';
+import ReorderMoveEvent from '@site/static/usage/v8/reorder/reorder-move-event/index.md';
 
-<ReorderMove />
+<ReorderMoveEvent />
 
 ## Usage with Virtual Scroll
 
