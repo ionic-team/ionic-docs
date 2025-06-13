@@ -40,7 +40,6 @@ export class ExampleComponent {
 
   handleReorderStart() {
     // Hide the icons when the reorder starts
-    console.log('handleReorderStart');
     this.icons.forEach((icon) => {
       icon.nativeElement.style.opacity = '0';
     });
@@ -54,7 +53,7 @@ export class ExampleComponent {
 
     // Finish the reorder and position the item in the DOM based on
     // where the gesture ended. This method can also be called directly
-    // by the reorder group
+    // by the reorder group.
     event.detail.complete();
   }
 }

@@ -26,7 +26,7 @@ export class ExampleComponent {
 
     // Finish the reorder and position the item in the DOM based on
     // where the gesture ended. This method can also be called directly
-    // by the reorder group
+    // by the reorder group.
     event.detail.complete();
   }
 
