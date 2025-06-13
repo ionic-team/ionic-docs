@@ -34,6 +34,8 @@
   const reorderGroup = document.querySelector('ion-reorder-group');
   const icons = document.querySelectorAll('ion-icon');
   reorderGroup.addEventListener('ionReorderStart', ({ detail }) => {
+    console.log('Reorder started');
+
     // Hide the icons when the reorder starts
     icons.forEach((icon) => {
       icon.style.opacity = 0;
@@ -41,6 +43,8 @@
   });
 
   reorderGroup.addEventListener('ionReorderEnd', ({ detail }) => {
+    console.log('Dragged from index', detail.from, 'to', detail.to);
+
     // Show the icons again
     icons.forEach((icon) => {
       icon.style.opacity = 1;

@@ -36,6 +36,8 @@
   }
 
   function handleReorderStart() {
+    console.log('Reorder started');
+
     // Hide the icons when the reorder starts
     iconMap.value.forEach((icon) => {
       icon.$el.style.opacity = '0';
@@ -43,6 +45,8 @@
   }
 
   function handleReorderEnd(event: ReorderEndCustomEvent) {
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+
     // Show the icons again
     iconMap.value.forEach((icon) => {
       icon.$el.style.opacity = '1';

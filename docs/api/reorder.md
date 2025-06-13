@@ -77,11 +77,21 @@ import UpdatingData from '@site/static/usage/v8/reorder/updating-data/index.md';
 
 ### Using `ionReorderStart` and `ionReorderEnd`
 
+The `ionReorderStart` event is emitted when the user begins a reorder gesture. This event fires when the user taps and holds an item, before any movement occurs. This is useful for preparing the UI for the reorder operation, such as hiding certain elements or updating the visual state of items. For example, icons in list items can be hidden while they are being dragged and shown again when the reorder is complete.
+
+The `ionReorderEnd` event is emitted when the user completes the reorder gesture by removing their pointer from the screen. The event includes the `from` and `to` indices of the item, as well as the `complete` method that should be called to finalize the reorder operation. The `from` index will always be the position of the item when the gesture started, while the `to` index will be its final position. This event will fire even if no items have changed position, in which case the `from` and `to` indices will be the same.
+
 import ReorderStartEnd from '@site/static/usage/v8/reorder/reorder-start-end/index.md';
 
 <ReorderStartEnd />
 
 ### Using `ionReorderMove`
+
+The `ionReorderMove` event is emitted continuously during the reorder gesture as the user drags an item. The event includes the `from` and `to` indices of the item. Unlike `ionReorderEnd`, the `from` index in this event represents the last known position of the item (which updates as the item moves), while the `to` index represents its current position. If the item has not changed position since the last event, the `from` and `to` indices will be the same. This event is useful for tracking position changes during the drag operation. For example, the ranking or numbering of items can be updated in real-time as they are being dragged to maintain a logical ascending order.
+
+:::warning
+Do not call the `complete` method during the `ionReorderMove` event as it can break the gesture.
+:::
 
 import ReorderMove from '@site/static/usage/v8/reorder/reorder-move/index.md';
 

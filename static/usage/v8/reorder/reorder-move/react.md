@@ -23,6 +23,10 @@ function Example() {
     const from = event.detail.from;
     const to = event.detail.to;
 
+    if (from !== to) {
+      console.log('Dragged from index', from, 'to', to);
+    }
+
     // Get all items and sort by their current id (item-1, item-2, ...)
     const itemElements = Array.from(document.querySelectorAll('ion-item')).sort((a, b) => {
       const aNum = parseInt(a.id.replace('item-', ''), 10);

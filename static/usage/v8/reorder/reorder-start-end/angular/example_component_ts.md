@@ -39,6 +39,8 @@ export class ExampleComponent {
   }
 
   handleReorderStart() {
+    console.log('Reorder started');
+
     // Hide the icons when the reorder starts
     this.icons.forEach((icon) => {
       icon.nativeElement.style.opacity = '0';
@@ -46,6 +48,8 @@ export class ExampleComponent {
   }
 
   handleReorderEnd(event: ReorderEndCustomEvent) {
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+
     // Show the icons again
     this.icons.forEach((icon) => {
       icon.nativeElement.style.opacity = '1';

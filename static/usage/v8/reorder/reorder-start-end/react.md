@@ -20,6 +20,8 @@ function Example() {
   const iconsRef = useRef<(HTMLIonIconElement | null)[]>([]);
 
   function handleReorderStart() {
+    console.log('Reorder started');
+
     // Hide the icons when the reorder starts
     iconsRef.current.forEach((icon) => {
       if (icon) icon.style.opacity = '0';
@@ -27,6 +29,8 @@ function Example() {
   }
 
   function handleReorderEnd(event: ReorderEndCustomEvent) {
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+
     // Show the icons again
     iconsRef.current.forEach((icon) => {
       if (icon) icon.style.opacity = '1';
