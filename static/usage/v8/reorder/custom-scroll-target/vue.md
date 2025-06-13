@@ -36,7 +36,15 @@
 </template>
 
 <script lang="ts">
-  import { IonContent, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/vue';
+  import {
+    IonContent,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonReorder,
+    IonReorderGroup,
+    ReorderEndCustomEvent,
+  } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
