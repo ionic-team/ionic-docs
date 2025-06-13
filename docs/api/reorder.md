@@ -73,6 +73,19 @@ import UpdatingData from '@site/static/usage/v8/reorder/updating-data/index.md';
 
 <UpdatingData />
 
+## Event Handling
+
+### Using `ionReorderStart` and `ionReorderEnd`
+
+import ReorderStartEnd from '@site/static/usage/v8/reorder/reorder-start-end/index.md';
+
+<ReorderStartEnd />
+
+### Using `ionReorderMove`
+
+import ReorderMove from '@site/static/usage/v8/reorder/reorder-move/index.md';
+
+<ReorderMove />
 
 ## Usage with Virtual Scroll
 
