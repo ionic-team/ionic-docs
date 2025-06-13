@@ -50,12 +50,8 @@ module.exports = function (context, options) {
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
-      let npmTag = 'latest';
-      if (currentVersion.banner === 'unreleased') {
-        npmTag = 'next';
-      } else if (currentVersion.path !== undefined) {
-        npmTag = currentVersion.path.slice(1);
-      }
+      // TODO: remove this before merging
+      let npmTag = '8.6.2-dev.11749759855.198287b7';
       // Latest version
       await generateMarkdownForVersion(currentVersion.path || currentVersion.label, npmTag, true);
 
@@ -145,7 +141,7 @@ ${properties
   .map((prop) => {
     const isDeprecated = prop.deprecation !== undefined;
 
-    const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    const docs = isDeprecated ? `${prop.docs}\n\n**_Deprecated_** — ${prop.deprecation}` : prop.docs;
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
@@ -170,7 +166,15 @@ function renderEvents({ events }) {
   return `
 | Name | Description | Bubbles |
 | --- | --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
+${events
+  .map((event) => {
+    const isDeprecated = event.deprecation !== undefined;
+    const docs = isDeprecated ? `${event.docs}\n\n**_Deprecated_** — ${event.deprecation}` : event.docs;
+    return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
+      event.bubbles
+    }\` |`;
+  })
+  .join('\n')}`;
 }
 
 /**

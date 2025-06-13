@@ -10,7 +10,7 @@
   let items = [1, 2, 3, 4, 5];
   reorderItems(items);
 
-  reorderGroup.addEventListener('ionItemReorder', ({ detail }) => {
+  reorderGroup.addEventListener('ionReorderEnd', ({ detail }) => {
     // Before complete is called with the items they will remain in the
     // order before the drag
     console.log('Before complete', items);
