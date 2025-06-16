@@ -324,7 +324,7 @@ module.exports = {
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/e6d323332b0363a633407fabab47b608088e3a4d/packages/generate-prism-languages/index.ts#L9-L25
-      additionalLanguages: ['shell-session', 'http'],
+      additionalLanguages: ['shell-session', 'http', 'diff'],
     },
     algolia: {
       appId: 'O9QSL985BS',
