@@ -53,18 +53,17 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
-
-  constructor() { }
+  constructor() {}
 
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 100,
     });
   }
 }
@@ -83,9 +82,8 @@ import { PhotoService } from '../services/photo.service';
   standalone: false,
 })
 export class Tab2Page {
-
   // update constructor to include photoService
-  constructor(public photoService: PhotoService) { }
+  constructor(public photoService: PhotoService) {}
 
   // add addNewToGallery method
   addPhotoToGallery() {
@@ -99,9 +97,7 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Tab 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -118,7 +114,6 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>
 ```
 
@@ -147,7 +142,7 @@ Back at the top of the `PhotoService` class definition, define an array of Photo
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  constructor() { }
+  constructor() {}
 
   // other code
 }
@@ -170,6 +165,7 @@ public async addNewToGallery() {
   });
 }
 ```
+
 `photo.service.ts` should now look like this:
 
 ```tsx
@@ -179,23 +175,23 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   public photos: UserPhoto[] = [];
-  constructor() { }
+  constructor() {}
 
   public async addNewToGallery() {
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 100,
     });
 
     // add new photo to photos array
     this.photos.unshift({
-      filepath: "soon...",
-      webviewPath: capturedPhoto.webPath!
+      filepath: 'soon...',
+      webviewPath: capturedPhoto.webPath!,
     });
   }
 }
@@ -205,14 +201,13 @@ export interface UserPhoto {
   webviewPath?: string;
 }
 ```
+
 Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Tab 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -238,9 +233,9 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>
 ```
+
 :::note
 Learn more about the [ngFor core directive](https://blog.angular-university.io/angular-2-ngfor/).
 :::

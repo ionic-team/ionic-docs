@@ -74,6 +74,7 @@ for (let photo of this.photos) {
   photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
+
 After these updates to the `PhotoService` class, your `photos.service.ts` file should look like this:
 
 ```tsx
@@ -83,9 +84,8 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class PhotoService {
   public photos: UserPhoto[] = [];
   private PHOTO_STORAGE = 'photos';
@@ -139,14 +139,14 @@ export class PhotoService {
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
-      directory: Directory.Data
+      directory: Directory.Data,
     });
 
     // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
-      webviewPath: photo.webPath
+      webviewPath: photo.webPath,
     };
   }
 
@@ -155,17 +155,18 @@ export class PhotoService {
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
 
-    return await this.convertBlobToBase64(blob) as string;
+    return (await this.convertBlobToBase64(blob)) as string;
   }
 
-  private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = reject;
-    reader.onload = () => {
+  private convertBlobToBase64 = (blob: Blob) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
         resolve(reader.result);
-    };
-    reader.readAsDataURL(blob);
-  });
+      };
+      reader.readAsDataURL(blob);
+    });
 }
 
 export interface UserPhoto {
@@ -187,7 +188,6 @@ import { PhotoService } from '../services/photo.service';
   standalone: false,
 })
 export class Tab2Page {
-
   constructor(public photoService: PhotoService) {}
 
   // add call to loadSaved on navigation to Photos tab
@@ -200,6 +200,7 @@ export class Tab2Page {
   }
 }
 ```
+
 :::note
 If you're seeing broken image links or missing photos after following these steps, you may need to open your browser's
 dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).

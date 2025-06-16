@@ -117,8 +117,9 @@ import { defineCustomElements } from '@ionic/pwa-elements/loader'; // Added impo
 // Call the element loader before the bootstrapModule/bootstrapApplication call
 defineCustomElements(window);
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.log(err));
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.
@@ -144,9 +145,7 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Tab 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -172,9 +171,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Tab 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -201,7 +198,6 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and t
 
 ```html
 <ion-tabs>
-
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1" href="/tabs/tab1">
       <ion-icon aria-hidden="true" name="triangle"></ion-icon>
@@ -220,7 +216,6 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and t
       <ion-label>Tab 3</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-
 </ion-tabs>
 ```
 

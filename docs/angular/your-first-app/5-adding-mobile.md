@@ -70,7 +70,9 @@ top of `photo.service.ts`.
 ```tsx
 import { Capacitor } from '@capacitor/core';
 ```
+
 Then update `savePicture()` to look like the following:
+
 ```tsx
 // Save picture to file on device
 private async savePicture(photo: Photo) {

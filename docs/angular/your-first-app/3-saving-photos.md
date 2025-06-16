@@ -86,17 +86,17 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   public photos: UserPhoto[] = [];
-  constructor() { }
+  constructor() {}
 
   public async addNewToGallery() {
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 100,
     });
 
     // Save the picture and add it to photo collection
@@ -114,14 +114,14 @@ export class PhotoService {
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
-      directory: Directory.Data
+      directory: Directory.Data,
     });
 
     // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
-      webviewPath: photo.webPath
+      webviewPath: photo.webPath,
     };
   }
 
@@ -130,17 +130,18 @@ export class PhotoService {
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
 
-    return await this.convertBlobToBase64(blob) as string;
+    return (await this.convertBlobToBase64(blob)) as string;
   }
 
-  private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = reject;
-    reader.onload = () => {
+  private convertBlobToBase64 = (blob: Blob) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
         resolve(reader.result);
-    };
-    reader.readAsDataURL(blob);
-  });
+      };
+      reader.readAsDataURL(blob);
+    });
 }
 
 export interface UserPhoto {
@@ -148,6 +149,7 @@ export interface UserPhoto {
   webviewPath?: string;
 }
 ```
+
 Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
 There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem. Next up, we'll load and display our saved images
