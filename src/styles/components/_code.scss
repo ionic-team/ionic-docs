@@ -175,6 +175,10 @@ pre[class*='language-'] {
   cursor: help;
 }
 
+.token.deleted {
+  color: red;
+}
+
 // diff code block highlighting
 .language-diff .token.deleted {
   color: rgb(50, 0, 0);
