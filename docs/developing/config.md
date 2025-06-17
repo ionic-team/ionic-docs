@@ -49,14 +49,21 @@ This final example allows you to accumulate a config object based upon different
 
 import PerPlatformOverridesExample from '@site/docs/developing/config/per-platform-fallback/index.md';
 
-
-
 <PerPlatformOverridesExample />
+
 ## Accessing the Current Mode Programmatically
 
 In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
 
+<<<<<<< HEAD
 ## Reading the Config
+=======
+import IonicMode from '@site/static/usage/v8/config/mode/index.md';
+
+<IonicMode />
+
+## Reading the Config (Angular)
+>>>>>>> 8a050f69 (docs(config): added dummy code for playground to work)
 
 ### Accessing the Current Mode Programmatically
 
