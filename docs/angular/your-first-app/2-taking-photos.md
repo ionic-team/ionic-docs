@@ -44,23 +44,72 @@ public async addNewToGallery() {
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
 
+Your updated `photo.service.ts` should now look like this:
+
+```tsx
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PhotoService {
+  constructor() {}
+
+  public async addNewToGallery() {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+  }
+}
+```
+
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported service:
 
 ```tsx
+import { Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
 
-constructor(public photoService: PhotoService) { }
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: false,
+})
+export class Tab2Page {
+  // update constructor to include photoService
+  constructor(public photoService: PhotoService) {}
 
-addPhotoToGallery() {
-  this.photoService.addNewToGallery();
+  // add addNewToGallery method
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
 }
 ```
 
 Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
 
 ```html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 2 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <!-- add click event listener to floating action button -->
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
@@ -78,7 +127,7 @@ After taking a photo, it disappears right away. We need to display it within our
 
 ## Displaying Photos
 
-Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
+Return to `photo.service.ts`. Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
 
 ```tsx
 export interface UserPhoto {
@@ -87,11 +136,13 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera.
+Back at the top of the `PhotoService` class definition, define an array of Photos, which will contain a reference to each photo captured with the Camera.
 
 ```tsx
 export class PhotoService {
   public photos: UserPhoto[] = [];
+
+  constructor() {}
 
   // other code
 }
@@ -100,12 +151,14 @@ export class PhotoService {
 Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
 
 ```tsx
+public async addNewToGallery() {
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
     quality: 100
   });
 
+  // add new photo to photos array
   this.photos.unshift({
     filepath: "soon...",
     webviewPath: capturedPhoto.webPath!
@@ -113,21 +166,79 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
 }
 ```
 
+`photo.service.ts` should now look like this:
+
+```tsx
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PhotoService {
+  public photos: UserPhoto[] = [];
+  constructor() {}
+
+  public async addNewToGallery() {
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    // add new photo to photos array
+    this.photos.unshift({
+      filepath: 'soon...',
+      webviewPath: capturedPhoto.webPath!,
+    });
+  }
+}
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
+```
+
 Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
 
 ```html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 2 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- add grid component to display array of photos -->
   <ion-grid>
     <ion-row>
+      <!-- create new column and image component for each photo -->
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
         <ion-img [src]="photo.webviewPath"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <!-- ion-fab markup  -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 ```
+
+:::note
+Learn more about the [ngFor core directive](https://blog.angular-university.io/angular-2-ngfor/).
+:::
 
 Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 

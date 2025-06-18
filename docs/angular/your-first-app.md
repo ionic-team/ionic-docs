@@ -110,10 +110,16 @@ npm install @ionic/pwa-elements
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```tsx
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+import { defineCustomElements } from '@ionic/pwa-elements/loader'; // Added import
 
 // Call the element loader before the bootstrapModule/bootstrapApplication call
 defineCustomElements(window);
+
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.log(err));
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.
@@ -137,18 +143,20 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Tab 2</ion-title>
+    <ion-title> Tab 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
 ```
 
@@ -161,22 +169,54 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 2 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- add floating action button -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <!-- remove app-explore-container -->
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>
 ```
 
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
 
 ```html
-<ion-tab-button tab="tab2">
-  <ion-icon name="images"></ion-icon>
-  <ion-label>Photos</ion-label>
-</ion-tab-button>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" href="/tabs/tab1">
+      <ion-icon aria-hidden="true" name="triangle"></ion-icon>
+      <ion-label>Tab 1</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" href="/tabs/tab2">
+      <!-- update icon-->
+      <ion-icon aria-hidden="true" name="images"></ion-icon>
+      <!-- update label -->
+      <ion-label>Photos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" href="/tabs/tab3">
+      <ion-icon aria-hidden="true" name="square"></ion-icon>
+      <ion-label>Tab 3</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 ```
 
 Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.

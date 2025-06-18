@@ -10,27 +10,38 @@ Our photo gallery app won’t be complete until it runs on iOS, Android, and the
 
 Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
 
-Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):
+Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile).
+
+Add `Platform` to the imports at the top of the file and a new property `platform` to the `PhotoService` class. We'll also need to update the constructor to set the user's platform:
 
 ```tsx
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+// add Platform import
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
   public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
+
+  // add property platform to store which platform app is running on
   private platform: Platform;
 
+  // update constructor to set platform property
   constructor(platform: Platform) {
     this.platform = platform;
   }
 
-  // other code
+  // other code...
 }
 ```
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web. Update `readAsBase64()` to look like the following:
 
 ```tsx
 private async readAsBase64(photo: Photo) {
@@ -53,7 +64,14 @@ private async readAsBase64(photo: Photo) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
+Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). To use this method, we'll need to import Capacitor at the
+top of `photo.service.ts`.
+
+```tsx
+import { Capacitor } from '@capacitor/core';
+```
+
+Then update `savePicture()` to look like the following:
 
 ```tsx
 // Save picture to file on device

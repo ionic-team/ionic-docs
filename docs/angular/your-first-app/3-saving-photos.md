@@ -27,6 +27,7 @@ public async addNewToGallery() {
 
   // Save the picture and add it to photo collection
   const savedImageFile = await this.savePicture(capturedPhoto);
+  // update argument to unshift array method
   this.photos.unshift(savedImageFile);
 }
 ```
@@ -55,7 +56,7 @@ private async savePicture(photo: Photo) {
 }
 ```
 
-`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) logic - more on that in a bit. For now, implement the logic for running on the web:
+`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) logic - more on that in a bit. For now, we'll create two new helper functions, `readAsBase64()` and `convertBlobToBase64()`, to implement the logic for running on the web:
 
 ```tsx
 private async readAsBase64(photo: Photo) {
@@ -76,6 +77,80 @@ private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
+`photo.service.ts` should now look like this:
+
+```tsx
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PhotoService {
+  public photos: UserPhoto[] = [];
+  constructor() {}
+
+  public async addNewToGallery() {
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    // Save the picture and add it to photo collection
+    const savedImageFile = await this.savePicture(capturedPhoto);
+    // update argument to unshift array method
+    this.photos.unshift(savedImageFile);
+  }
+
+  private async savePicture(photo: Photo) {
+    // Convert photo to base64 format, required by Filesystem API to save
+    const base64Data = await this.readAsBase64(photo);
+
+    // Write the file to the data directory
+    const fileName = Date.now() + '.jpeg';
+    const savedFile = await Filesystem.writeFile({
+      path: fileName,
+      data: base64Data,
+      directory: Directory.Data,
+    });
+
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
+    return {
+      filepath: fileName,
+      webviewPath: photo.webPath,
+    };
+  }
+
+  private async readAsBase64(photo: Photo) {
+    // Fetch the photo, read as a blob, then convert to base64 format
+    const response = await fetch(photo.webPath!);
+    const blob = await response.blob();
+
+    return (await this.convertBlobToBase64(blob)) as string;
+  }
+
+  private convertBlobToBase64 = (blob: Blob) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
+}
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
+```
+
 Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem. Next up, we'll load and display our saved images
+when the user navigates to the Photos tab.
