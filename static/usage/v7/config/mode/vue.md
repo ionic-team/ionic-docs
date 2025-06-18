@@ -5,13 +5,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { getMode } from '@ionic/core';
+  import { ref } from 'vue';
+  import { getMode } from '@ionic/core';
 
-const modeValue = ref('');
+  const modeValue = ref('');
 
-function showMode() {
-  modeValue.value = getMode();
-}
+  function showMode() {
+    modeValue.value = getMode();
+  }
 </script>
 ```

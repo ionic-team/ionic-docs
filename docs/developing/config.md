@@ -280,8 +280,8 @@ class AppComponent {
 
 |                 |                                                                                 |
 | --------------- | ------------------------------------------------------------------------------- |
-| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |    
-| **Signature**   | `getNumber(key: string, fallback?: number) => number`                           | 
+| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
+| **Signature**   | `getNumber(key: string, fallback?: number) => number`                           |
 
 ## Interfaces
 

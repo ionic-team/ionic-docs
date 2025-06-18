@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ionic Config Mode Example</title>
@@ -10,42 +9,41 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
     <style>
-        .container {
-            /* display: block; */
-            padding: 16px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .mode-value {
-            margin-top: 16px;
-            font-weight: bold;
-        }
+      .container {
+        /* display: block; */
+        padding: 16px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .mode-value {
+        margin-top: 16px;
+        font-weight: bold;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <ion-app>
-        <ion-content>
-            <div class="container">
-                <ion-button id="showModeBtn">Show Current Mode</ion-button>
-                <div class="mode-value" id="modeValue"></div>
-            </div>
-        </ion-content>
+      <ion-content>
+        <div class="container">
+          <ion-button id="showModeBtn">Show Current Mode</ion-button>
+          <div class="mode-value" id="modeValue"></div>
+        </div>
+      </ion-content>
     </ion-app>
     <script type="module">
-        document.getElementById('showModeBtn').addEventListener('click', () => {
-            let mode;
-            if (window.Ionic && window.Ionic.config && window.Ionic.config.get) {
-                mode = window.Ionic.config.get('mode');
-            } else {
-                mode = document.documentElement.getAttribute('mode') || 'md';
-            }
-            document.getElementById('modeValue').textContent = `Current mode: ${mode}`;
-        });
+      document.getElementById('showModeBtn').addEventListener('click', () => {
+        let mode;
+        if (window.Ionic && window.Ionic.config && window.Ionic.config.get) {
+          mode = window.Ionic.config.get('mode');
+        } else {
+          mode = document.documentElement.getAttribute('mode') || 'md';
+        }
+        document.getElementById('modeValue').textContent = `Current mode: ${mode}`;
+      });
     </script>
-</body>
-
+  </body>
 </html>
