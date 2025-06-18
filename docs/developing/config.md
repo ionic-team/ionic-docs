@@ -55,19 +55,13 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
 
-<<<<<<< HEAD
-## Reading the Config
-=======
 import IonicMode from '@site/static/usage/v8/config/mode/index.md';
 
 <IonicMode />
 
 ## Reading the Config (Angular)
->>>>>>> 8a050f69 (docs(config): added dummy code for playground to work)
 
-### Accessing the Current Mode Programmatically
-
-In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
+Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 
 ### get
 
@@ -82,96 +76,38 @@ In some cases, you may need to access the current Ionic mode programmatically wi
   groupId="framework"
   defaultValue="angular"
   values={[
-    { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
     { value: 'angular-standalone', label: 'Angular (Standalone)' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
   ]}
 >
-  <TabItem value="javascript">
-    ```javascript
-    const mode = Ionic.mode;
-    console.log('Current Ionic Mode: ', mode); // e.g., 'ios' or 'md'
-    ```
-  </TabItem>
+<TabItem value="angular">
 
-  <TabItem value="angular">
-    ```ts
-    import { Config } from '@ionic/angular';
+```ts
+import { Config } from '@ionic/angular';
 
-    @Component(...)
-    class AppComponent {
-      constructor(config: Config) {
-        const mode = config.get('mode');
-      }
-    }
-    ```
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
+  }
+}
+```
 
-  </TabItem>
+</TabItem>
+<TabItem value="angular-standalone">
 
-  <TabItem value="angular-standalone">
-    ```ts
-    import { Config } from '@ionic/angular/standalone';
+```ts
+import { Config } from '@ionic/angular/standalone';
 
-    @Component(...)
-    class AppComponent {
-      constructor(config: Config) {
-        const mode = config.get('mode');
-      }
-    }
-    ```
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
+  }
+}
+```
 
-  </TabItem>
-
-  <TabItem value="react">
-    ```jsx
-    import React from 'react';
-    import { IonButton, IonContent, IonPage } from '@ionic/react';
-    import { getMode } from '@ionic/core';
-
-    function ModeDisplayExample() {
-      const mode = getMode();
-
-      return (
-        <IonPage>
-          <IonContent className="ion-padding">
-            <p>The current Ionic mode is: <strong>{mode}</strong></p>
-            <IonButton color={mode === 'ios' ? 'secondary' : 'tertiary'}>
-              Mode-Dependent Button
-            </IonButton>
-          </IonContent>
-        </IonPage>
-      );
-    }
-
-    export default ModeDisplayExample;
-    ```
-
-  </TabItem>
-
-  <TabItem value="vue">
-    ```javascript
-    <template>
-      <ion-page>
-        <ion-content class="ion-padding">
-          <p>The current Ionic mode is: <strong>{{ mode }}</strong></p>
-          <ion-button :color="mode === 'ios' ? 'secondary' : 'tertiary'">
-            Mode-Dependent Button
-          </ion-button>
-        </ion-content>
-      </ion-page>
-    </template>
-
-    <script setup lang="ts">
-      import { IonButton, IonContent, IonPage } from '@ionic/vue';
-      import { getMode } from '@ionic/core';
-
-      const mode = getMode();
-    </script>
-    ```
-
-  </TabItem>
+</TabItem>
 </Tabs>
 
 ### getBoolean
@@ -187,25 +123,10 @@ In some cases, you may need to access the current Ionic mode programmatically wi
   groupId="framework"
   defaultValue="angular"
   values={[
-    { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
     { value: 'angular-standalone', label: 'Angular (Standalone)' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
   ]}
 >
-
-<TabItem value="javascript">
-
-```js
-import { config } from '@ionic/core';
-
-const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
-
-console.log('Swipe back enabled:', swipeBackEnabled);
-```
-
-</TabItem>
 <TabItem value="angular">
 
 ```ts
@@ -234,63 +155,14 @@ class AppComponent {
 ```
 
 </TabItem>
-<TabItem value="react">
-
-```jsx
-import React from 'react';
-import { IonButton, IonContent, IonPage } from '@ionic/react';
-import { config } from '@ionic/core';
-
-function SwipeBackExample() {
-  const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
-
-  return (
-    <IonPage>
-      <IonContent className="ion-padding">
-        <p>
-          Swipe back is <strong>{swipeBackEnabled ? 'enabled' : 'disabled'}</strong>.
-        </p>
-        <IonButton disabled={!swipeBackEnabled}>Try Swipe Back</IonButton>
-      </IonContent>
-    </IonPage>
-  );
-}
-
-export default SwipeBackExample;
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-<template>
-  <ion-page>
-    <ion-content class="ion-padding">
-      <p>Swipe back is <strong>{{ swipeBackEnabled ? 'enabled' : 'disabled' }}</strong>.</p>
-      <ion-button :disabled="!swipeBackEnabled">
-        Try Swipe Back
-      </ion-button>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup lang="ts">
-import { IonButton, IonContent, IonPage } from '@ionic/vue';
-import { config } from '@ionic/core';
-
-const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
-</script>
-```
-
-</TabItem>
 </Tabs>
 
 ### getNumber
 
 |                 |                                                                                 |
 | --------------- | ------------------------------------------------------------------------------- |
-| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
-| **Signature**   | `getNumber(key: string, fallback?: number) => number`                           |
+| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |    
+| **Signature**   | `getNumber(key: string, fallback?: number) => number`                           | 
 
 ## Interfaces
 

@@ -1,15 +1,19 @@
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { IonButton } from '@ionic/react';
-
 import { getMode } from '@ionic/core';
 
 function Example() {
-  const mode = getMode();
+  const [modeValue, setModeValue] = useState('');
+
+  const showMode = () => {
+    setModeValue(getMode());
+  };
 
   return (
     <>
-      <IonButton color={mode === 'ios' ? 'secondary' : 'tertiary'}>Default</IonButton>
+      <IonButton onClick={showMode}>Show Current Mode</IonButton>
+      <div className="mode-value">{modeValue && `Current mode: ${modeValue}`}</div>
     </>
   );
 }

@@ -1,17 +1,10 @@
 ```html
-<ion-item href="#">
-  <ion-label>Anchor Item</ion-label>
-</ion-item>
-
-<ion-item href="#" disabled="true">
-  <ion-label>Disabled Anchor Item</ion-label>
-</ion-item>
-
-<ion-item button>
-  <ion-label>Button Item</ion-label>
-</ion-item>
-
-<ion-item button disabled="true">
-  <ion-label>Disabled Button Item</ion-label>
-</ion-item>
+<ion-app>
+  <ion-content>
+    <div class="container">
+      <ion-button (click)="showMode()">Show Current Mode</ion-button>
+      <div class="mode-value">{{ modeValue }}</div>
+    </div>
+  </ion-content>
+</ion-app>
 ```

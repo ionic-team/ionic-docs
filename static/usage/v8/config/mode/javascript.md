@@ -1,17 +1,15 @@
 ```html
-<ion-item href="#">
-  <ion-label>Anchor Item</ion-label>
-</ion-item>
-
-<ion-item href="#" disabled="true">
-  <ion-label>Disabled Anchor Item</ion-label>
-</ion-item>
-
-<ion-item button>
-  <ion-label>Button Item</ion-label>
-</ion-item>
-
-<ion-item button disabled="true">
-  <ion-label>Disabled Button Item</ion-label>
-</ion-item>
+<button id="showModeBtn">Show Current Mode</button>
+<div id="modeValue"></div>
+<script>
+  document.getElementById('showModeBtn').addEventListener('click', () => {
+    let mode;
+    if (window.Ionic && window.Ionic.config && window.Ionic.config.get) {
+      mode = window.Ionic.config.get('mode');
+    } else {
+      mode = document.documentElement.getAttribute('mode') || 'md';
+    }
+    document.getElementById('modeValue').textContent = `Current mode: ${mode}`;
+  });
+</script>
 ```
