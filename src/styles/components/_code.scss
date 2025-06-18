@@ -137,8 +137,7 @@ pre[class*='language-'] {
 .token.selector,
 .token.char,
 .token.function,
-.token.builtin,
-.token.inserted {
+.token.builtin {
   color: #ff6810;
 }
 
@@ -149,7 +148,8 @@ pre[class*='language-'] {
 .token.attr-value,
 .language-css .token.string,
 .style .token.string,
-.token.variable {
+.token.variable,
+.token.inserted {
   color: #42b983;
 }
 
