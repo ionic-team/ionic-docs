@@ -79,7 +79,7 @@ import UpdatingData from '@site/static/usage/v8/reorder/updating-data/index.md';
 
 The `ionReorderStart` event is emitted when the user begins a reorder gesture. This event fires when the user taps and holds an item, before any movement occurs. This is useful for preparing the UI for the reorder operation, such as hiding certain elements or updating the visual state of items. For example, icons in list items can be hidden while they are being dragged and shown again when the reorder is complete.
 
-The `ionReorderEnd` event is emitted when the user completes the reorder gesture by removing their pointer from the screen. The event includes the `from` and `to` indices of the item, as well as the `complete` method that should be called to finalize the reorder operation. The `from` index will always be the position of the item when the gesture started, while the `to` index will be its final position. This event will fire even if no items have changed position, in which case the `from` and `to` indices will be the same.
+The `ionReorderEnd` event is emitted when the user completes the reorder gesture. This occurs when the user releases the item they are dragging, for example by lifting their finger on a touch screen or releasing the mouse button. The event includes the `from` and `to` indices of the item, as well as the `complete` method that should be called to finalize the reorder operation. The `from` index will always be the position of the item when the gesture started, while the `to` index will be its final position. This event will fire even if no items have changed position, in which case the `from` and `to` indices will be the same.
 
 import ReorderStartEndEvents from '@site/static/usage/v8/reorder/reorder-start-end-events/index.md';
 
