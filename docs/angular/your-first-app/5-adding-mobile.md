@@ -35,7 +35,7 @@ export class PhotoService {
     this.platform = platform;
   }
 
-  // other code...
+  // other code
 }
 ```
 
