@@ -82,7 +82,7 @@ import { PhotoService } from '../services/photo.service';
   standalone: false,
 })
 export class Tab2Page {
-  // update constructor to include photoService
+  // CHANGE: Update constructor to include `photoService`.
   constructor(public photoService: PhotoService) {}
 
   // add addNewToGallery method
