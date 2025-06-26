@@ -206,7 +206,7 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and t
     </ion-tab-button>
 
     <ion-tab-button tab="tab2" href="/tabs/tab2">
-      <!-- update icon-->
+      <!-- CHANGE: Update icon. -->
       <ion-icon aria-hidden="true" name="images"></ion-icon>
       <!-- update label -->
       <ion-label>Photos</ion-label>
