@@ -223,7 +223,7 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
   <!-- CHANGE: Add a grid component to display the photos. -->
   <ion-grid>
     <ion-row>
-      <!-- create new column and image component for each photo -->
+      <!-- CHANGE: Create a new column and image component for each photo. -->
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
         <ion-img [src]="photo.webviewPath"></ion-img>
       </ion-col>
