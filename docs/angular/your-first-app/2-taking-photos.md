@@ -24,21 +24,42 @@ ionic g service services/photo
 Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
 
 ```tsx
+import { Injectable } from '@angular/core';
+// CHANGE: Add the following imports.
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PhotoService {
+
+  constructor() { }
+}
 ```
 
 Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
 
 ```tsx
-public async addNewToGallery() {
-  // Take a photo
-  const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri,
-    source: CameraSource.Camera,
-    quality: 100
-  });
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+export class PhotoService {
+
+  constructor() { }
+
+  // CHANGE: Add the gallery function.
+  public async addNewToGallery() {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+  }
 }
 ```
 
