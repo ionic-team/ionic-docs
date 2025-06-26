@@ -39,7 +39,7 @@ public async addNewToGallery() {
 
   this.photos.unshift(savedImageFile);
 
-  // Add call to set() method to cache all photo data for future retrieval
+  // CHANGE: Add method to cache all photo data for future retrieval.
   Preferences.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos),
