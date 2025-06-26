@@ -50,6 +50,11 @@ public async addNewToGallery() {
 With the photo array data saved, create a new public method in the `PhotoService` class called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
 
 ```tsx
+public async addNewToGallery() {
+   // Same old code from before.
+}
+
+// CHANGE: Add the method to load the photo data.
 public async loadSaved() {
   // Retrieve cached photo array data
   const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
@@ -57,21 +62,31 @@ public async loadSaved() {
 
   // more to come...
 }
+
+private async savePicture(photo: Photo) {
+   // Same old code from before.
+}
 ```
 
 On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` function:
 
 ```tsx
-// Display the photo by reading into base64 format
-for (let photo of this.photos) {
-  // Read each saved photo's data from the Filesystem
-  const readFile = await Filesystem.readFile({
-    path: photo.filepath,
-    directory: Directory.Data,
-  });
+public async loadSaved() {
+  // Retrieve cached photo array data
+  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
+  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
 
-  // Web platform only: Load the photo as base64 data
-  photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+  // CHANGE: Display the photo by reading into base64 format.
+  for (let photo of this.photos) {
+    // Read each saved photo's data from the Filesystem
+    const readFile = await Filesystem.readFile({
+      path: photo.filepath,
+      directory: Directory.Data,
+    });
+
+    // Web platform only: Load the photo as base64 data
+    photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+  }
 }
 ```
 
