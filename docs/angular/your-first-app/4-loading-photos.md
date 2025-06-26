@@ -16,7 +16,7 @@ Open `photo.service.ts` and begin by defining a new property in the `PhotoServic
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  // add key for photo store
+  // CHANGE: Add a key for photo storage.
   private PHOTO_STORAGE: string = 'photos';
 
   constructor() {}
