@@ -189,7 +189,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
     </ion-fab-button>
   </ion-fab>
 
-  <!-- remove app-explore-container -->
+  <!-- CHANGE: Remove or comment out `app-explore-container`. -->
   <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>
 ```
