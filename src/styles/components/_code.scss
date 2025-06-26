@@ -149,7 +149,8 @@ pre[class*='language-'] {
 .token.attr-value,
 .language-css .token.string,
 .style .token.string,
-.token.variable {
+.token.variable,
+.language-diff .token.inserted {
   color: #42b983;
 }
 
@@ -159,7 +160,8 @@ pre[class*='language-'] {
 
 .token.regex,
 .token.keyword,
-.token.important {
+.token.important,
+.language-diff .token.deleted {
   color: #f55073;
 }
 

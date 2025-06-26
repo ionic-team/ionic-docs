@@ -51,6 +51,14 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 <PerPlatformOverridesExample />
 
+## Accessing the Current Mode Programmatically
+
+In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
+
+import IonicMode from '@site/static/usage/v8/config/mode/index.md';
+
+<IonicMode />
+
 ## Reading the Config (Angular)
 
 Ionic Angular provides a `Config` provider for accessing the Ionic Config.
