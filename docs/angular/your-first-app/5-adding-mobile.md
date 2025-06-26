@@ -30,7 +30,7 @@ export class PhotoService {
   // add property platform to store which platform app is running on
   private platform: Platform;
 
-  // update constructor to set platform property
+  // CHANGE: Update constructor to set `platform`.
   constructor(platform: Platform) {
     this.platform = platform;
   }
