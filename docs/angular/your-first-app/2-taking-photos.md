@@ -238,10 +238,6 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
 </ion-content>
 ```
 
-:::note
-Learn more about the [ngFor core directive](https://blog.angular-university.io/angular-2-ngfor/).
-:::
-
 Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
