@@ -220,7 +220,7 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
     </ion-toolbar>
   </ion-header>
 
-  <!-- add grid component to display array of photos -->
+  <!-- CHANGE: Add a grid component to display the photos. -->
   <ion-grid>
     <ion-row>
       <!-- create new column and image component for each photo -->
