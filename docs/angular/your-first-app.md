@@ -112,7 +112,8 @@ Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 ```tsx
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
-import { defineCustomElements } from '@ionic/pwa-elements/loader'; // Added import
+// CHANGE: Add the following import.
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 // Call the element loader before the bootstrapModule/bootstrapApplication call
 defineCustomElements(window);
