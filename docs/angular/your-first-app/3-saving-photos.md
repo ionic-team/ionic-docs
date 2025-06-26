@@ -90,6 +90,7 @@ import { Preferences } from '@capacitor/preferences';
 })
 export class PhotoService {
   public photos: UserPhoto[] = [];
+
   constructor() {}
 
   public async addNewToGallery() {
