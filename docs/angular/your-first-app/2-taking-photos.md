@@ -128,6 +128,11 @@ Return to `photo.service.ts`.
 Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
 
 ```tsx
+export class PhotoService {
+  // Same old code from before.
+}
+
+// CHANGE: Add the interface.
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
@@ -138,6 +143,7 @@ Above the constructor, define an array of `UserPhoto`, which will contain a refe
 
 ```tsx
 export class PhotoService {
+  // CHANGE: Add the photos array.
   public photos: UserPhoto[] = [];
 
   constructor() {}
