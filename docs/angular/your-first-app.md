@@ -183,7 +183,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
     </ion-toolbar>
   </ion-header>
 
-  <!-- add floating action button -->
+  <!-- CHANGE: Add the floating action button. -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
