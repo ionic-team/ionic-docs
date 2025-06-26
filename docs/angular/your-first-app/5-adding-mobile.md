@@ -19,8 +19,7 @@ import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-
-// add Platform import
+// CHANGE: Add import.
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
