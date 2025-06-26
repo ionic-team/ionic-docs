@@ -35,49 +35,133 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
-<ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
-</ion-col>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Photo Gallery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Photo Gallery</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+        <!-- CHANGE: Add a click event listener to each image -->
+        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
 ```
 
-Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
+Over in `tab2.page.ts`, import `ActionSheetController` and add it to the constructor:
 
 ```tsx
+import { Component } from '@angular/core';
+import { PhotoService } from '../services/photo.service';
+// CHANGE: Add import
 import { ActionSheetController } from '@ionic/angular';
 
-constructor(public photoService: PhotoService,
-            public actionSheetController: ActionSheetController) {}
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: false,
+})
+export class Tab2Page {
+
+  // CHANGE: Update constructor to include `actionSheetController`.
+  constructor(public photoService: PhotoService,
+              public actionSheetController: ActionSheetController) {}
+
+  // other code
+}
 ```
 
 Add `UserPhoto` to the import statement.
 
 ```tsx
+import { Component } from '@angular/core';
+// CHANGE: Update import
 import { PhotoService, UserPhoto } from '../services/photo.service';
+import { ActionSheetController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: false,
+})
+export class Tab2Page {
+
+  constructor(public photoService: PhotoService,
+              public actionSheetController: ActionSheetController) {}
+
+  // other code
+}
 ```
 
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```tsx
-public async showActionSheet(photo: UserPhoto, position: number) {
-  const actionSheet = await this.actionSheetController.create({
-    header: 'Photos',
-    buttons: [{
-      text: 'Delete',
-      role: 'destructive',
-      icon: 'trash',
-      handler: () => {
-        this.photoService.deletePicture(photo, position);
-      }
-    }, {
-      text: 'Cancel',
-      icon: 'close',
-      role: 'cancel',
-      handler: () => {
-        // Nothing to do, action sheet is automatically closed
+import { Component } from '@angular/core';
+import { PhotoService, UserPhoto } from '../services/photo.service';
+import { ActionSheetController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: false,
+})
+export class Tab2Page {
+
+  constructor(public photoService: PhotoService,
+              public actionSheetController: ActionSheetController) {}
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+  }
+  
+  // CHANGE: Add `showActionSheet` function.
+  public async showActionSheet(photo: UserPhoto, position: number) {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Photos',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          this.photoService.deletePicture(photo, position);
         }
-    }]
-  });
-  await actionSheet.present();
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          // Nothing to do, action sheet is automatically closed
+          }
+      }]
+    });
+    await actionSheet.present();
+  }
 }
 ```
 
@@ -86,24 +170,71 @@ Save both of the files we just edited. The Photo Gallery app will reload automat
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
 ```tsx
-public async deletePicture(photo: UserPhoto, position: number) {
-  // Remove this photo from the Photos reference data array
-  this.photos.splice(position, 1);
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+import { Platform } from '@ionic/angular';
+import { Capacitor } from '@capacitor/core';
 
-  // Update photos array cache by overwriting the existing photo array
-  Preferences.set({
-    key: this.PHOTO_STORAGE,
-    value: JSON.stringify(this.photos)
+@Injectable({
+  providedIn: 'root'
+})
+export class PhotoService {
+  public photos: UserPhoto[] = [];
+  private PHOTO_STORAGE: string = 'photos';
+  private platform: Platform;
+
+  constructor(platform: Platform) {
+    this.platform = platform;
+  }
+
+  public async addNewToGallery() {
+    // Same old code from before.
+  }
+
+  public async loadSaved() {
+    // Same old code from before.
+  }
+
+  // Save picture to file on device
+  private async savePicture(photo: Photo) {
+    // Same old code from before.
+  }
+
+  // CHANGE: Add the `deletePicture` function.
+  public async deletePicture(photo: UserPhoto, position: number) {
+    // Remove this photo from the Photos reference data array
+    this.photos.splice(position, 1);
+
+    // Update photos array cache by overwriting the existing photo array
+    Preferences.set({
+      key: this.PHOTO_STORAGE,
+      value: JSON.stringify(this.photos)
+    });
+
+    // Delete photo file from filesystem
+    const filename = photo.filepath
+                        .substr(photo.filepath.lastIndexOf('/') + 1);
+
+    await Filesystem.deleteFile({
+      path: filename,
+      directory: Directory.Data
+    });
+  }
+  
+  private async readAsBase64(photo: Photo) {
+    // Same old code from before.
+  }
+
+  private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
+    // Same old code from before.
   });
+}
 
-  // delete photo file from filesystem
-  const filename = photo.filepath
-                      .substr(photo.filepath.lastIndexOf('/') + 1);
-
-  await Filesystem.deleteFile({
-    path: filename,
-    directory: Directory.Data
-  });
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
 }
 ```
 
