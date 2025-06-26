@@ -85,7 +85,7 @@ export class Tab2Page {
   // CHANGE: Update constructor to include `photoService`.
   constructor(public photoService: PhotoService) {}
 
-  // add addNewToGallery method
+  // CHANGE: Add `addNewToGallery` method.
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
   }
