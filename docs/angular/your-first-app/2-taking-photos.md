@@ -160,7 +160,7 @@ public async addNewToGallery() {
     quality: 100
   });
 
-  // add new photo to photos array
+  // CHANGE: Add the new photo to the photos array.
   this.photos.unshift({
     filepath: "soon...",
     webviewPath: capturedPhoto.webPath!
