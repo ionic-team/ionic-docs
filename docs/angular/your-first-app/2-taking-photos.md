@@ -127,7 +127,9 @@ After taking a photo, it disappears right away. We need to display it within our
 
 ## Displaying Photos
 
-Return to `photo.service.ts`. Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
+Return to `photo.service.ts`.
+
+Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
 
 ```tsx
 export interface UserPhoto {
