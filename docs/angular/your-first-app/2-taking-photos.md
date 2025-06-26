@@ -109,7 +109,7 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
   </ion-header>
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <!-- add click event listener to floating action button -->
+    <!-- CHANGE: Add a click event listener to the floating action button. -->
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
