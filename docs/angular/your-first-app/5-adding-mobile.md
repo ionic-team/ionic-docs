@@ -26,7 +26,7 @@ export class PhotoService {
   public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
 
-  // add property platform to store which platform app is running on
+  // CHANGE: Add a property to track the app's running platform.
   private platform: Platform;
 
   // CHANGE: Update constructor to set `platform`.
@@ -40,7 +40,9 @@ export class PhotoService {
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web. Update `readAsBase64()` to look like the following:
+First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
+
+Update `readAsBase64()` to look like the following:
 
 ```tsx
 private async readAsBase64(photo: Photo) {
@@ -63,8 +65,7 @@ private async readAsBase64(photo: Photo) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). To use this method, we'll need to import Capacitor at the
-top of `photo.service.ts`.
+Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
 
 ```tsx
 import { Capacitor } from '@capacitor/core';

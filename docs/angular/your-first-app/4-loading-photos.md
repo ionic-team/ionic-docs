@@ -175,7 +175,9 @@ export interface UserPhoto {
 }
 ```
 
-Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen. Update `tab2.page.ts` to look like the following:
+Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+
+Update `tab2.page.ts` to look like the following:
 
 ```tsx
 import { Component } from '@angular/core';
@@ -190,7 +192,7 @@ import { PhotoService } from '../services/photo.service';
 export class Tab2Page {
   constructor(public photoService: PhotoService) {}
 
-  // add call to loadSaved on navigation to Photos tab
+  // CHANGE: Add call to `loadSaved` when navigating to the Photos tab.
   async ngOnInit() {
     await this.photoService.loadSaved();
   }
