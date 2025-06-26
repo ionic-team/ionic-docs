@@ -138,7 +138,7 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the `PhotoService` class definition, define an array of Photos, which will contain a reference to each photo captured with the Camera.
+Above the constructor, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera.
 
 ```tsx
 export class PhotoService {
