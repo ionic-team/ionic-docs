@@ -149,6 +149,7 @@ pre[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.variable,
+// Code additions (indicated by a leading '+') within a diff.
 .token.inserted {
   color: #42b983;
 }
