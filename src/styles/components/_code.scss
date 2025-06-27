@@ -175,6 +175,7 @@ pre[class*='language-'] {
   cursor: help;
 }
 
+// Code removals (indicated by a leading '-') within a diff.
 .token.deleted {
   color: red;
 }
