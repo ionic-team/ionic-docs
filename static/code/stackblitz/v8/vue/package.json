@@ -14,9 +14,9 @@
     "vue-router": "4.5.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
     "typescript": "^4.5.4",
-    "vite": "^6.0.0",
+    "vite": "^7.0.0",
     "vue-tsc": "^2.0.0"
   }
 }
