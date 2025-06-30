@@ -31,11 +31,10 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
-
-  constructor() { }
+  constructor() {}
 }
 ```
 
@@ -48,8 +47,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 export class PhotoService {
-
-  constructor() { }
+  constructor() {}
 
   // CHANGE: Add the gallery function.
   public async addNewToGallery() {

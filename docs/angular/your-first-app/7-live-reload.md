@@ -37,9 +37,7 @@ With Live Reload running and the app open on your device, let’s implement phot
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Photo Gallery
-    </ion-title>
+    <ion-title> Photo Gallery </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -58,7 +56,7 @@ With Live Reload running and the app open on your device, let’s implement phot
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
@@ -82,10 +80,8 @@ import { ActionSheetController } from '@ionic/angular';
   standalone: false,
 })
 export class Tab2Page {
-
   // CHANGE: Update constructor to include `actionSheetController`.
-  constructor(public photoService: PhotoService,
-              public actionSheetController: ActionSheetController) {}
+  constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
 
   // other code
 }
@@ -106,9 +102,7 @@ import { ActionSheetController } from '@ionic/angular';
   standalone: false,
 })
 export class Tab2Page {
-
-  constructor(public photoService: PhotoService,
-              public actionSheetController: ActionSheetController) {}
+  constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
 
   // other code
 }
@@ -129,26 +123,29 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class Tab2Page {
   // Same old code from before.
-  
+
   // CHANGE: Add `showActionSheet` function.
   public async showActionSheet(photo: UserPhoto, position: number) {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',
-      buttons: [{
-        text: 'Delete',
-        role: 'destructive',
-        icon: 'trash',
-        handler: () => {
-          this.photoService.deletePicture(photo, position);
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          // Nothing to do, action sheet is automatically closed
-          }
-      }]
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'destructive',
+          icon: 'trash',
+          handler: () => {
+            this.photoService.deletePicture(photo, position);
+          },
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          handler: () => {
+            // Nothing to do, action sheet is automatically closed
+          },
+        },
+      ],
     });
     await actionSheet.present();
   }
@@ -168,7 +165,7 @@ import { Platform } from '@ionic/angular';
 import { Capacitor } from '@capacitor/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   // Same old code from before.
@@ -186,19 +183,18 @@ export class PhotoService {
     // Update photos array cache by overwriting the existing photo array
     Preferences.set({
       key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos)
+      value: JSON.stringify(this.photos),
     });
 
     // Delete photo file from filesystem
-    const filename = photo.filepath
-                        .substr(photo.filepath.lastIndexOf('/') + 1);
+    const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
 
     await Filesystem.deleteFile({
       path: filename,
-      directory: Directory.Data
+      directory: Directory.Data,
     });
   }
-  
+
   private async readAsBase64(photo: Photo) {
     // Same old code from before.
   }

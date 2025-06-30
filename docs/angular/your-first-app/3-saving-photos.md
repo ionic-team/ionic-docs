@@ -11,20 +11,19 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `photo` object, which represents the newly captured device photo:
 
 ```tsx
-
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   // Same old code from before.
 
   // CHANGE: Add the `savePicture` method.
-  private async savePicture(photo: Photo) { }
+  private async savePicture(photo: Photo) {}
 }
 
 export interface UserPhoto {
@@ -42,12 +41,12 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   public photos: UserPhoto[] = [];
-  
-  constructor() { }
+
+  constructor() {}
 
   public async addNewToGallery() {
     // Take a photo
@@ -57,7 +56,7 @@ export class PhotoService {
       quality: 100,
     });
 
-    // CHANGE: Add `savedImageFile` 
+    // CHANGE: Add `savedImageFile`
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
@@ -65,7 +64,7 @@ export class PhotoService {
     this.photos.unshift(savedImageFile);
   }
 
-  private async savePicture(photo: Photo) { }
+  private async savePicture(photo: Photo) {}
 }
 
 export interface UserPhoto {
@@ -83,7 +82,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   // Same old code from before.
@@ -98,14 +97,14 @@ export class PhotoService {
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
-      directory: Directory.Data
+      directory: Directory.Data,
     });
 
     // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
     return {
       filepath: fileName,
-      webviewPath: photo.webPath
+      webviewPath: photo.webPath,
     };
   }
 }
@@ -125,7 +124,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotoService {
   // Same old code from before.
@@ -136,18 +135,19 @@ export class PhotoService {
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
 
-    return await this.convertBlobToBase64(blob) as string;
+    return (await this.convertBlobToBase64(blob)) as string;
   }
 
   // CHANGE: Add the `convertBlobToBase64` method.
-  private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = reject;
-    reader.onload = () => {
-      resolve(reader.result);
-    };
-    reader.readAsDataURL(blob);
-  });
+  private convertBlobToBase64 = (blob: Blob) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
 }
 
 export interface UserPhoto {
