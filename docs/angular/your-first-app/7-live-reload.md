@@ -53,7 +53,7 @@ With Live Reload running and the app open on your device, let’s implement phot
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <!-- CHANGE: Add a click event listener to each image -->
+        <!-- CHANGE: Add a click event listener to each image. -->
         <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
       </ion-col>
     </ion-row>
@@ -72,7 +72,7 @@ Over in `tab2.page.ts`, import `ActionSheetController` and add it to the constru
 ```tsx
 import { Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
-// CHANGE: Add import
+// CHANGE: Add import.
 import { ActionSheetController } from '@ionic/angular';
 
 @Component({
@@ -95,7 +95,7 @@ Add `UserPhoto` to the import statement.
 
 ```tsx
 import { Component } from '@angular/core';
-// CHANGE: Update import
+// CHANGE: Update import.
 import { PhotoService, UserPhoto } from '../services/photo.service';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -128,17 +128,7 @@ import { ActionSheetController } from '@ionic/angular';
   standalone: false,
 })
 export class Tab2Page {
-
-  constructor(public photoService: PhotoService,
-              public actionSheetController: ActionSheetController) {}
-
-  addPhotoToGallery() {
-    this.photoService.addNewToGallery();
-  }
-
-  async ngOnInit() {
-    await this.photoService.loadSaved();
-  }
+  // Same old code from before.
   
   // CHANGE: Add `showActionSheet` function.
   public async showActionSheet(photo: UserPhoto, position: number) {
@@ -181,21 +171,7 @@ import { Capacitor } from '@capacitor/core';
   providedIn: 'root'
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
-  private PHOTO_STORAGE: string = 'photos';
-  private platform: Platform;
-
-  constructor(platform: Platform) {
-    this.platform = platform;
-  }
-
-  public async addNewToGallery() {
-    // Same old code from before.
-  }
-
-  public async loadSaved() {
-    // Same old code from before.
-  }
+  // Same old code from before.
 
   // Save picture to file on device
   private async savePicture(photo: Photo) {
@@ -227,9 +203,7 @@ export class PhotoService {
     // Same old code from before.
   }
 
-  private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
-    // Same old code from before.
-  });
+  // Same old code from before.
 }
 
 export interface UserPhoto {

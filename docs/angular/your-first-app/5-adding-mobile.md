@@ -132,7 +132,9 @@ public async loadSaved() {
 }
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. `photos.service.ts` should now look like this:
+Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. 
+
+`photos.service.ts` should now look like this:
 
 ```tsx
 import { Injectable } from '@angular/core';

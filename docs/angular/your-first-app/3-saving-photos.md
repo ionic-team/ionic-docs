@@ -21,23 +21,7 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root'
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
-  
-  constructor() { }
-
-  public async addNewToGallery() {
-    // Take a photo
-    const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
-    });
-
-    this.photos.unshift({
-      filepath: "soon...",
-      webviewPath: capturedPhoto.webPath!
-    });
-  }
+  // Same old code from before.
 
   // CHANGE: Add the `savePicture` method.
   private async savePicture(photo: Photo) { }
@@ -102,23 +86,7 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root'
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
-
-  constructor() { }
-
-  public async addNewToGallery() {
-    // Take a photo
-    const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
-    });
-
-    // Save the picture and add it to photo collection
-    const savedImageFile = await this.savePicture(capturedPhoto);
-
-    this.photos.unshift(savedImageFile);
-  }
+  // Same old code from before.
 
   // CHANGE: Update the `savePicture` method.
   private async savePicture(photo: Photo) {
@@ -160,43 +128,7 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root'
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
-
-  constructor() { }
-
-  public async addNewToGallery() {
-    // Take a photo
-    const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
-    });
-
-    // Save the picture and add it to photo collection
-    const savedImageFile = await this.savePicture(capturedPhoto);
-
-    this.photos.unshift(savedImageFile);
-  }
-
-  private async savePicture(photo: Photo) {
-    // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(photo);
-
-    // Write the file to the data directory
-    const fileName = Date.now() + '.jpeg';
-    const savedFile = await Filesystem.writeFile({
-      path: fileName,
-      data: base64Data,
-      directory: Directory.Data
-    });
-
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
-    return {
-      filepath: fileName,
-      webviewPath: photo.webPath
-    };
-  }
+  // Same old code from before.
 
   // CHANGE: Add the `readAsBase64` method.
   private async readAsBase64(photo: Photo) {
@@ -303,4 +235,3 @@ Obtaining the camera photo as base64 format on the web appears to be a bit trick
 There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
 
 Next up, we'll load and display our saved images.
-when the user navigates to the Photos tab.
