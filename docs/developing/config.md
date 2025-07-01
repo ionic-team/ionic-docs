@@ -51,6 +51,8 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 <PerPlatformOverridesExample />
 
+
+
 ## Reading the Config (Angular)
 
 Ionic Angular provides a `Config` provider for accessing the Ionic Config.
