@@ -65,9 +65,9 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
   const indexHtml = 'index.html';
   const files = {
     'package.json': JSON.stringify(package_json, null, 2),
-    'src/index.ts': defaultFiles[0],
+    'index.ts': defaultFiles[0],
     [indexHtml]: defaultFiles[1],
-    'src/theme/variables.css': defaultFiles[2],
+    'theme/variables.css': defaultFiles[2],
     'tsconfig.json': defaultFiles[4],
     'vite.config.ts': defaultFiles[5],
     ...options?.files,
