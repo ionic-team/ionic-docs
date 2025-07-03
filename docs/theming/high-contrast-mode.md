@@ -120,7 +120,7 @@ This approach activates the high contrast palette when the [CSS media query for 
 The following example uses the system settings to decide when to show high contrast mode.
 
 :::info
-Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](hhttps://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
+Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
 :::
 
 import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
