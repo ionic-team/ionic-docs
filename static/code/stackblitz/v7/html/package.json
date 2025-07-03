@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ionic/core": "^7.0.0",
-    "ionicons": "8.0.8"
+    "ionicons": "8.0.9"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
