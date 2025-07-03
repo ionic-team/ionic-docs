@@ -62,6 +62,13 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 
   const package_json = JSON.parse(defaultFiles[3]);
 
+  if (options?.dependencies) {
+    package_json.dependencies = {
+      ...package_json.dependencies,
+      ...options.dependencies,
+    };
+  }
+
   const indexHtml = 'index.html';
   const files = {
     'package.json': JSON.stringify(package_json, null, 2),
@@ -86,13 +93,6 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 </head>
 `
   );
-
-  if (options?.dependencies) {
-    package_json.dependencies = {
-      ...package_json.dependencies,
-      ...options.dependencies,
-    };
-  }
 
   sdk.openProject({
     template: 'node',
