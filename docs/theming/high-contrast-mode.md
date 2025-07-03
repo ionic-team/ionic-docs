@@ -178,7 +178,7 @@ This approach activates the high contrast palette when the `.ion-palette-high-co
 The following example combines site settings, system settings, and the toggle to decide when to show high contrast mode. The site's palette takes precedence over system settings. If your system settings differ from the site's palette when the demo loads, it will use the site's palette.
 
 :::info
-Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](hhttps://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
+Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
 :::
 
 import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
