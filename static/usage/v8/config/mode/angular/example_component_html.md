@@ -9,9 +9,7 @@
       >
         {{ modeValue }}
       </ion-button>
-      <div class="mode-value" *ngIf="modeValue">
-        Current mode: {{ modeValue }}
-      </div>
+      <div class="mode-value" *ngIf="modeValue">Current mode: {{ modeValue }}</div>
     </div>
   </ion-content>
 </ion-app>
