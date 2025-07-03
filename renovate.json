@@ -23,6 +23,13 @@
       "groupName": "react"
     },
     {
+      "matchPackageNames": ["vite", "vite-plugin-static-copy"],
+      "groupName": "vite-html",
+      "matchFileNames": [
+        "static/code/stackblitz/**/html/package.json"
+      ]
+    },
+    {
       "matchPackageNames": ["vite", "@vitejs/plugin-react"],
       "groupName": "vite-react",
       "matchFileNames": [
