@@ -51,6 +51,7 @@
       IonRefresherContent,
       IonTitle,
       IonToolbar,
+      RefresherCustomEvent,
     },
     setup() {
       const names = [
@@ -82,7 +83,7 @@
 
       addItems(5);
 
-      const handleRefresh = (event: CustomEvent) => {
+      const handleRefresh = (event: RefresherCustomEvent) => {
         setTimeout(() => {
           addItems(3, true);
           event.target.complete();
