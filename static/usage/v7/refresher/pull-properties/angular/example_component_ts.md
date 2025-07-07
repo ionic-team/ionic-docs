@@ -7,6 +7,7 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
+  RefresherCustomEvent,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -16,10 +17,10 @@ import {
   imports: [IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  handleRefresh(event: CustomEvent) {
+  handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       // Any calls to load data go here
-      (event.target as HTMLIonRefresherElement).complete();
+      event.target.complete();
     }, 2000);
   }
 }
