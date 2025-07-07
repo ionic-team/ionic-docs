@@ -2,21 +2,21 @@
 
 Thanks for your interest in contributing to Ionic's documentation! :tada: Check the guidelines below for suggestions and requirements before submitting your contribution.
 
-- [Contributing Guide](#contributing-guide)
-  - [Development Workflow](#development-workflow)
-    - [Previewing Changes](#previewing-changes)
-    - [Linting Documentation](#linting-documentation)
-    - [Spell Check](#spell-check)
-  - [Using VS Code on Windows](#using-vs-code-on-windows)
-  - [Project Structure](#project-structure)
-    - [Directories](#directories)
-  - [Authoring Content](#authoring-content)
-    - [Authoring Locally](#authoring-locally)
-  - [Translation](#translation)
-  - [Reporting Issues](#reporting-issues)
-  - [Pull Request Guidelines](#pull-request-guidelines)
-  - [Deploying](#deploying)
-  - [License](#license)
+<SUB>TABLE OF CONTENTS</SUB>
+- [Development Workflow](#development-workflow)
+  * [Previewing Changes](#previewing-changes)
+  * [Linting Documentation](#linting-documentation)
+  * [Spell Check](#spell-check)
+- [Using VS Code on Windows](#using-vs-code-on-windows)
+- [Project Structure](#project-structure)
+  * [Directories](#directories)
+- [Authoring Content](#authoring-content)
+  * [Reference Content](#reference-content)
+- [Translation](#translation)
+- [Reporting Issues](#reporting-issues)
+- [Pull Request Guidelines](#pull-request-guidelines)
+- [Deploying](#deploying)
+- [License](#license)
 
 ---
 
