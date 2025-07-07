@@ -2,7 +2,7 @@
 
 Thanks for your interest in contributing to Ionic's documentation! :tada: Check the guidelines below for suggestions and requirements before submitting your contribution.
 
-<SUB>TABLE OF CONTENTS</SUB>
+<sub>TABLE OF CONTENTS</sub>
 - [Development Workflow](#development-workflow)
   * [Previewing Changes](#previewing-changes)
   * [Linting Documentation](#linting-documentation)
