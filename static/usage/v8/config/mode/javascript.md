@@ -6,7 +6,7 @@
   const mode = window.Ionic.config.get('mode') || document.documentElement.getAttribute('mode') || 'md';
 
   modeValue.textContent = mode;
-  
+
   modeButton.setAttribute('color', mode === 'ios' ? 'secondary' : 'tertiary');
   modeButton.setAttribute('fill', mode === 'ios' ? 'outline' : 'solid');
 </script>

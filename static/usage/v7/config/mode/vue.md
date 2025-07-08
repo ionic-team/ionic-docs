@@ -12,7 +12,7 @@
 
   const color = computed(() => (mode.value === 'ios' ? 'secondary' : 'tertiary'));
   const fill = computed(() => (mode.value === 'ios' ? 'outline' : 'solid'));
-  
+
   onMounted(() => {
     mode.value = getMode() || 'md';
   });

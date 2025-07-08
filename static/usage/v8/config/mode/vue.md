@@ -9,7 +9,7 @@
   import { getMode } from '@ionic/core';
 
   const mode = ref('');
-  
+
   const color = computed(() => (mode.value === 'ios' ? 'secondary' : 'tertiary'));
   const fill = computed(() => (mode.value === 'ios' ? 'outline' : 'solid'));
 

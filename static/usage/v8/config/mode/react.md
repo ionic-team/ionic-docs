@@ -10,7 +10,7 @@ function Example() {
     const mode = getMode() || 'md';
     setMode(mode);
   }, []);
-  
+
   const color = mode === 'ios' ? 'secondary' : 'tertiary';
   const fill = mode === 'ios' ? 'outline' : 'solid';
 

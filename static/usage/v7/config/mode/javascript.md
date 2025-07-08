@@ -5,7 +5,7 @@
   const modeButton = document.querySelector('#modeButton');
   const modeValue = document.querySelector('#modeValue');
   const mode = window.Ionic.config.get('mode') || document.documentElement.getAttribute('mode') || 'md';
-  
+
   modeValue.textContent = mode;
 
   modeButton.setAttribute('color', mode === 'ios' ? 'secondary' : 'tertiary');
