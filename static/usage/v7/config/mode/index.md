@@ -8,7 +8,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="8"
+  version="7"
   code={{
     javascript,
     react,
@@ -20,5 +20,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/config/mode/demo.html"
+  src="usage/v7/config/mode/demo.html"
 />

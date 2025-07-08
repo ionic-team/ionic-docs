@@ -1,22 +1,17 @@
 ```ts
 import { Component } from '@angular/core';
-import { Config, IonicModule } from '@ionic/angular';
-import { NgIf } from '@angular/common';
+import { Config, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: './example.component.html',
-  imports: [IonicModule, NgIf],
-  standalone: true,
+  imports: [IonButton]
 })
-export class ExampleComponent {
-  modeValue = '';
 
+export class ExampleComponent {
+  mode: string;
   constructor(public config: Config) {
-    this.modeValue = this.config.get('mode');
-  }
-  showMode() {
-    this.modeValue = this.config.get('mode');
+    this.mode = this.config.get('mode');
   }
 }
 ```
