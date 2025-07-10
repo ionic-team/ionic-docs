@@ -66,7 +66,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Date & Time Pickers" href="api/datetime" img="/icons/feature-component-datetime-icon.png">
-  <p>An interface which makes it easy for users to select dates and time.</p>
+  <p>Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</p>
 </DocsCard>
 
 <DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
@@ -78,7 +78,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Icon" href="api/icon" icon="/icons/component-icons-icon.png">
-  <p>Ionicons is Ionic's Icon library for use in web, iOS, Android, and desktop apps.</p>
+  <p>Beautifully designed icons for use in web, iOS, and Android apps.</p>
 </DocsCard>
 
 <DocsCard header="Infinite Scroll" href="api/infinite-scroll" icon="/icons/component-infinitescroll-icon.png">
@@ -90,7 +90,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
-  <p>A common UI paradigm that serves as an entry point to more detailed information.</p>
+  <p>Items are an all-purpose UI container that can be used as part of a list.</p>
 </DocsCard>
 
 <DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
@@ -133,7 +133,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Refresher" href="api/refresher" img="/icons/feature-component-refresher-icon.png">
-  <p>A floating action button (FAB) is a circular button that offers an action on a screen.</p>
+  <p>Refresher provides pull-to-refresh functionality on a content component.</p>
 </DocsCard>
 
 <DocsCard header="Reorder" href="api/reorder" icon="/icons/component-reorder-icon.png">
