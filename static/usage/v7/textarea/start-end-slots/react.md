@@ -10,7 +10,7 @@ function Example() {
         <IonTextarea labelPlacement="stacked" label="Comments" placeholder="Enter your comments">
           <IonIcon slot="start" icon={lockClosed} aria-hidden="true"></IonIcon>
           <IonButton fill="clear" slot="end" aria-label="Show/hide">
-            <IonIcon slot="icon-only" name={eye} aria-hidden="true"></IonIcon>
+            <IonIcon slot="icon-only" icon={eye} aria-hidden="true"></IonIcon>
           </IonButton>
         </IonTextarea>
       </IonItem>
