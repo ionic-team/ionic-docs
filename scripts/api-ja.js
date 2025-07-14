@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const { api: apiOverrides } = require('./data/meta-override.json');
-const utils = require('./utils');
+const utils = require('./utils.mjs');
 
 const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
