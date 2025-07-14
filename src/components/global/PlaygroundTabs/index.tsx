@@ -37,7 +37,7 @@ function TabsComponent(props: Props): JSX.Element {
       `Docusaurus error: Bad <Tabs> child <${
         // @ts-expect-error: guarding against unexpected cases
         typeof child.type === 'string' ? child.type : child.type.name
-      }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`
+      }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`,
     );
   });
   const values =
@@ -54,19 +54,19 @@ function TabsComponent(props: Props): JSX.Element {
     throw new Error(
       `Docusaurus error: Duplicate values "${dup
         .map((a) => a.value)
-        .join(', ')}" found in <Tabs>. Every value needs to be unique.`
+        .join(', ')}" found in <Tabs>. Every value needs to be unique.`,
     );
   }
   // When defaultValueProp is null, don't show a default tab
   const defaultValue =
     defaultValueProp === null
       ? defaultValueProp
-      : defaultValueProp ?? children.find((child) => child.props.default)?.props.value ?? children[0]?.props.value;
+      : (defaultValueProp ?? children.find((child) => child.props.default)?.props.value ?? children[0]?.props.value);
   if (defaultValue !== null && !values.some((a) => a.value === defaultValue)) {
     throw new Error(
       `Docusaurus error: The <Tabs> has a defaultValue "${defaultValue}" but none of its children has the corresponding value. Available values are: ${values
         .map((a) => a.value)
-        .join(', ')}. If you intend to show no default tab, use defaultValue={null} instead.`
+        .join(', ')}. If you intend to show no default tab, use defaultValue={null} instead.`,
     );
   }
 
@@ -134,7 +134,7 @@ function TabsComponent(props: Props): JSX.Element {
             {
               'tabs--block': block,
             },
-            className
+            className,
           )}
           onScroll={() => {
             setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
@@ -225,7 +225,7 @@ function TabsComponent(props: Props): JSX.Element {
             cloneElement(tabItem, {
               key: i,
               className: `${tabItem.props.className} ${!isTabSelected(tabItem.props.value) ? 'hidden' : ''}`,
-            })
+            }),
           )}
         </div>
       )}

@@ -41,7 +41,7 @@ test('example', async () => {
   render(
     <IonApp>
       <Example />
-    </IonApp>
+    </IonApp>,
   );
 
   await user.click(screen.getByRole('button', { name: /click me!/i }));

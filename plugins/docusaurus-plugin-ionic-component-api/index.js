@@ -77,7 +77,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
           createData(`${basePath}/custom-props.mdx`, data.customProps),
-          createData(`${basePath}/slots.md`, data.slots)
+          createData(`${basePath}/slots.md`, data.slots),
         );
       }
 
@@ -209,7 +209,7 @@ ${methods
 | **Description** | ${formatMultiline(method.docs)} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 ${method.parameters.length !== 0 ? renderParameters(method.parameters) : ''}
-`
+`,
   )
   .join('\n')}
 

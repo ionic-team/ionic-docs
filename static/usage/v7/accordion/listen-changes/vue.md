@@ -41,8 +41,8 @@
 
         console.log(
           `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(
-            ', '
-          )}`
+            ', ',
+          )}`,
         );
       };
 

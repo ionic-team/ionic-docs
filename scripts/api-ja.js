@@ -9,7 +9,7 @@ let COMPONENT_LINK_REGEXP;
 
 (async function () {
   const response = await fetch(
-    'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json'
+    'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json',
   );
   const { components } = await response.json();
 
@@ -116,7 +116,7 @@ ${Object.entries(usage)
 ${value}
 
 </TabItem>
-`
+`,
   )
   .join('\n')}
 </Tabs>
@@ -144,7 +144,7 @@ ${properties
 | **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
 | **Default** | \`${prop.default}\` |
 
-`
+`,
   )
   .join('\n')}
 `;
@@ -183,7 +183,7 @@ ${methods
 | --- | --- |
 | **Description** | ${method.docs.split('\n').join('<br />')} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
-`
+`,
   )
   .join('\n')}
 

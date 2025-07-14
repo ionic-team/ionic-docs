@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
           type,
           message: Object.values(arguments).join(' '),
         },
-      })
+      }),
     );
   };
 

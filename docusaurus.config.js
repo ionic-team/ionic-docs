@@ -71,7 +71,7 @@ module.exports = {
             if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
                 '-',
-                '/'
+                '/',
               )}.ts`;
             }
             if ((match = docPath.match(/native\/(.*)\.md/)) != null) {

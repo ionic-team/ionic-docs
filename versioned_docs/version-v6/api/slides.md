@@ -181,7 +181,7 @@ const slideOpts = {
       swiper.slides
         .transition(duration)
         .find(
-          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
+          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left',
         )
         .transition(duration);
     },
@@ -331,7 +331,7 @@ const slideOpts = {
           $cubeShadowEl.transform(
             `translate3d(0px, ${swiperWidth / 2 + params.shadowOffset}px, ${
               -swiperWidth / 2
-            }px) rotateX(90deg) rotateZ(0deg) scale(${params.shadowScale})`
+            }px) rotateX(90deg) rotateZ(0deg) scale(${params.shadowScale})`,
           );
         } else {
           const shadowAngle = Math.abs(wrapperRotate) - Math.floor(Math.abs(wrapperRotate) / 90) * 90;
@@ -343,7 +343,7 @@ const slideOpts = {
           $cubeShadowEl.transform(
             `scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${swiperHeight / 2 + offset$$1}px, ${
               -swiperHeight / 2 / scale2
-            }px) rotateX(-90deg)`
+            }px) rotateX(-90deg)`,
           );
         }
       }
@@ -352,7 +352,7 @@ const slideOpts = {
       $wrapperEl.transform(
         `translate3d(0px,0,${zFactor}px) rotateX(${swiper.isHorizontal() ? 0 : wrapperRotate}deg) rotateY(${
           swiper.isHorizontal() ? -wrapperRotate : 0
-        }deg)`
+        }deg)`,
       );
     },
     setTransition: function (duration) {
@@ -361,7 +361,7 @@ const slideOpts = {
       slides
         .transition(duration)
         .find(
-          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
+          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left',
         )
         .transition(duration);
       if (swiper.params.cubeEffect.shadow && !swiper.isHorizontal()) {
@@ -492,13 +492,13 @@ const slideOpts = {
             : $slideEl.find('.swiper-slide-shadow-bottom');
           if (shadowBefore.length === 0) {
             shadowBefore = swiper.$(
-              `<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'left' : 'top'}"></div>`
+              `<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'left' : 'top'}"></div>`,
             );
             $slideEl.append(shadowBefore);
           }
           if (shadowAfter.length === 0) {
             shadowAfter = swiper.$(
-              `<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'right' : 'bottom'}"></div>`
+              `<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'right' : 'bottom'}"></div>`,
             );
             $slideEl.append(shadowAfter);
           }
@@ -514,7 +514,7 @@ const slideOpts = {
       slides
         .transition(duration)
         .find(
-          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
+          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left',
         )
         .transition(duration);
       if (swiper.params.virtualTranslate && duration !== 0) {

@@ -15,7 +15,7 @@ export default function ColorDot({ color, ...props }) {
         props.className,
         'color-dot',
         styles.colorDot,
-        styles[`colorDot${colorMode === 'dark' ? 'Dark' : 'Light'}`]
+        styles[`colorDot${colorMode === 'dark' ? 'Dark' : 'Light'}`],
       )}
       {...props}
     />

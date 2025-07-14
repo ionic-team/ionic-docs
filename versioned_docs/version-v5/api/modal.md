@@ -249,7 +249,7 @@ customElements.define(
   Modal Content
 </ion-content>`;
     }
-  }
+  },
 );
 
 function presentModal() {

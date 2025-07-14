@@ -25,7 +25,9 @@
 
     min-width: 28px;
     height: 28px;
-    transition: transform 120ms ease, background 120ms ease;
+    transition:
+      transform 120ms ease,
+      background 120ms ease;
   }
 
   ion-range::part(pin)::before {

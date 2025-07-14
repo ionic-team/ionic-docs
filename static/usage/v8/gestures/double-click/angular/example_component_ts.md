@@ -15,7 +15,10 @@ export class ExampleComponent {
   private lastOnStart: number = 0;
   private DOUBLE_CLICK_THRESHOLD: number = 500;
 
-  constructor(private el: ElementRef, private gestureCtrl: GestureController) {}
+  constructor(
+    private el: ElementRef,
+    private gestureCtrl: GestureController,
+  ) {}
 
   ngAfterViewInit() {
     const gesture = this.gestureCtrl.create({

@@ -607,7 +607,7 @@ type UseIonRouterResult = {
     routerDirection?: RouterDirection,
     routeAction?: RouteAction,
     routerOptions?: RouterOptions,
-    animationBuilder?: AnimationBuilder
+    animationBuilder?: AnimationBuilder,
   ): void;
   /**
    * Navigates backwards in history, using the IonRouter to determine history

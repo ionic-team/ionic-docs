@@ -72,7 +72,7 @@ module.exports = {
 
             const playgroundName = changeCase.pascal(answers.path.split('/').pop());
             console.log(
-              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v${answers.version}/${answers.name}/${answers.path}/index.md';\n\n<${playgroundName} />\n`
+              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v${answers.version}/${answers.name}/${answers.path}/index.md';\n\n<${playgroundName} />\n`,
             );
 
             return answers;

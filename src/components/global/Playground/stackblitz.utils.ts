@@ -57,7 +57,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
       'html/tsconfig.json',
       'html/vite.config.ts',
     ],
-    options.version
+    options.version,
   );
 
   const package_json = JSON.parse(defaultFiles[3]);
@@ -91,7 +91,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     }
   </script>
 </head>
-`
+`,
   );
 
   sdk.openProject({
@@ -120,7 +120,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'angular/global.css',
       'angular/variables.css',
     ],
-    options.version
+    options.version,
   );
 
   const package_json = JSON.parse(defaultFiles[0]);
@@ -179,7 +179,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/browserslistrc',
       'react/eslintrc.js',
     ],
-    options.version
+    options.version,
   );
 
   const package_json = JSON.parse(defaultFiles[4]);
@@ -234,7 +234,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
       'vue/tsconfig.node.json',
       'vue/env.d.ts',
     ],
-    options.version
+    options.version,
   );
 
   const package_json = JSON.parse(defaultFiles[0]);
@@ -269,7 +269,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     '.use(IonicVue)',
     `.use(IonicVue, {
   mode: '${options?.mode}'
-})`
+})`,
   );
 
   /**

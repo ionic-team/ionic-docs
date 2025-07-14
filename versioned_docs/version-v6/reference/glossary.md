@@ -410,11 +410,15 @@ title: Glossary
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">
       variables
     </a>
-    , <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
+    ,{' '}
+    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
       mixins
-    </a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
+    </a>
+    , and{' '}
+    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
       loops
-    </a>.
+    </a>
+    .
   </p>
 </section>
 

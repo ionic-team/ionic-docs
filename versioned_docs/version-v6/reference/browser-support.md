@@ -44,8 +44,8 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 
 |   Browser   | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: |
-| **Chrome**  |   60+    |    ✔     |    ✔     |
-| **Safari**  |   13+    |    ✔     |    ✔     |
-|  **Edge**   |   79+    |   79+    |    ✔     |
-| **Firefox** |   63+    |    ✔     |    ✔     |
+| **Chrome**  |   60+    |    ✔    |    ✔    |
+| **Safari**  |   13+    |    ✔    |    ✔    |
+|  **Edge**   |   79+    |   79+    |    ✔    |
+| **Firefox** |   63+    |    ✔    |    ✔    |
 |  **IE 11**  |  **X**   |  **X**   |  **X**   |

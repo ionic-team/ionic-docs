@@ -131,7 +131,7 @@ export class PhotoService {
       (err) => {
         // Handle error
         console.log('Camera issue: ' + err);
-      }
+      },
     );
   }
 }
