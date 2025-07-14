@@ -102,9 +102,53 @@ After installation, open up the project in your code editor of choice.
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```tsx
-// Above the createApp() line
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router';
+
+import { IonicVue } from '@ionic/vue';
+// CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/vue/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+import '@ionic/vue/css/normalize.css';
+import '@ionic/vue/css/structure.css';
+import '@ionic/vue/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+import '@ionic/vue/css/padding.css';
+import '@ionic/vue/css/float-elements.css';
+import '@ionic/vue/css/text-alignment.css';
+import '@ionic/vue/css/text-transformation.css';
+import '@ionic/vue/css/flex-utils.css';
+import '@ionic/vue/css/display.css';
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import '@ionic/vue/css/palettes/dark.always.css'; */
+/* @import '@ionic/vue/css/palettes/dark.class.css'; */
+import '@ionic/vue/css/palettes/dark.system.css';
+
+/* Theme variables */
+import './theme/variables.css';
+
+// CHANGE: Call the element loader before the createApp() call
 defineCustomElements(window);
+const app = createApp(App)
+  .use(IonicVue)
+  .use(router);
+
+router.isReady().then(() => {
+  app.mount('#app');
+});
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.
@@ -146,29 +190,118 @@ Open `/src/views/Tab2.vue`. We see:
     </ion-content>
   </ion-page>
 </template>
+
+<script setup lang="ts">
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import ExploreContainer from '@/components/ExploreContainer.vue';
+</script>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. But first, remove the `ExploreContainer` component, beginning with the import statement:
-
-```tsx
-import ExploreContainer from '@/components/ExploreContainer.vue';
-```
-
-Next, remove the `ExploreContainer` node from the HTML markup in the `template`.
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. But first, remove both the `ExploreContainer` component and its import statement:
 
 ```html
-<ExploreContainer name="Tab 2 page" />
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <!-- CHANGE: Remove or comment out <ExploreContainer /> -->
+      <!-- <ExploreContainer name="Tab 2 page" /> -->
+    </ion-content>
+  </ion-page>
+</template>
+
+<script setup lang="ts">
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+// CHANGE: Remove or comment out ExploreContainer import.
+// import ExploreContainer from '@/components/ExploreContainer.vue';
+</script>
 ```
 
 We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script setup>` tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
-```tsx
+```html
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script setup lang="ts">
+// CHANGE: Add import from `ionicons/icons`
+import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Update import from `@ionic/vue` to include necessary Ionic components
+import {
+  IonPage,
+  IonHeader,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+} from '@ionic/vue';
+</script>
+```
+
+Since our pages are generated as [Vue Single File Components](https://vuejs.org/api/sfc-spec.html) using the [`<script setup>`](https://vuejs.org/api/sfc-script-setup.html#script-setup) syntax these items are now exposed for use in our template.
+
+Add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
+
+```html
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <!-- CHANGE: Add the floating action button. -->
+      <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button @click="takePhoto()">
+          <ion-icon :icon="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script setup lang="ts">
 import { camera, trash, close } from 'ionicons/icons';
 import {
   IonPage,
@@ -184,37 +317,45 @@ import {
   IonCol,
   IonImg,
 } from '@ionic/vue';
-```
-
-Since our pages are generated as [Vue Single File Components](https://vuejs.org/api/sfc-spec.html) using the [`<script setup>`](https://vuejs.org/api/sfc-script-setup.html#script-setup) syntax these items are now exposed for use in our template.
-
-Add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
-
-```html
-<ion-content :fullscreen="true">
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button @click="takePhoto()">
-      <ion-icon :icon="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</ion-content>
+</script>
 ```
 
 We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
 
-Next, open `src/views/TabsPage.vue`, remove the `ellipse` icon from the import and import the `images` icon instead:
-
-```tsx
-import { images, square, triangle } from 'ionicons/icons';
-```
-
-Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button:
+Next, open `src/views/TabsPage.vue`. Remove the `ellipse` icon from the import and import the `images` icon instead. Then, within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button:
 
 ```html
-<ion-tab-button tab="tab2" href="/tabs/tab2">
-  <ion-icon :icon="images" />
-  <ion-label>Photos</ion-label>
-</ion-tab-button>
+<template>
+  <ion-page>
+    <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="tab1" href="/tabs/tab1">
+          <ion-icon aria-hidden="true" :icon="triangle" />
+          <ion-label>Tab 1</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="tab2" href="/tabs/tab2">
+          <!-- CHANGE: Replace `ellipse` icon with `images` -->
+          <ion-icon aria-hidden="true" :icon="images" />
+          <!-- CHANGE: Update `tab2` label to `Photos` -->
+          <ion-label>Photos</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="tab3" href="/tabs/tab3">
+          <ion-icon aria-hidden="true" :icon="square" />
+          <ion-label>Tab 3</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-page>
+</template>
+
+<script setup lang="ts">
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+// CHANGE: Update import by removing `ellipse` and adding `images`.
+import { images, square, triangle } from 'ionicons/icons';
+</script>
 ```
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.
