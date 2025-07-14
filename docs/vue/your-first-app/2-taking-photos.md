@@ -17,15 +17,22 @@ Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 We will start by importing the various utilities we will use from Vue core and Capacitor:
 
 ```typescript
+// CHANGE: Add imports from `vue` and `capacitor`.
 import { ref, onMounted, watch } from 'vue';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 ```
 
-Next, create a function named usePhotoGallery:
+Next, create a function named `usePhotoGallery`:
 
 ```typescript
+import { ref, onMounted, watch } from 'vue';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+// CHANGE: Create `usePhotoGallery` function.
 export const usePhotoGallery = () => {
   const takePhoto = async () => {
     const photo = await Camera.getPhoto({
@@ -45,33 +52,53 @@ Our `usePhotoGallery` function exposes a method called takePhoto, which in turn 
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
-The last step we need to take is to use the new function from the Tab2 page. Go back to `Tab2Page.vue` and import it:
+The last step we need to take is to use the new function in the Tab2 page. Go back to `Tab2Page.vue`.
 
-```tsx
-import { usePhotoGallery } from '@/composables/usePhotoGallery';
-```
+Import `usePhotoGallery` and destructure the `takePhoto` function so we can use it in our `template`:
 
-Destructure the `takePhoto` function from `usePhotoGallery` so we can use it in our `template`:
+```html
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button @click="takePhoto()">
+          <ion-icon :icon="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  </ion-page>
+</template>
 
-```tsx
 <script setup lang="ts">
+import { camera, trash, close } from 'ionicons/icons';
 import {
-  IonContent,
-  IonCol,
-  IonFab,
-  IonFabButton,
-  IonGrid,
   IonPage,
   IonHeader,
+  IonFab,
+  IonFabButton,
   IonIcon,
-  IonImg,
-  IonRow,
-  IonTitle,
   IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
 } from '@ionic/vue';
-import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Add `usePhotoGallery` import.
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
+// CHANGE: Destructure `takePhoto` from `usePhotoGallery().
 const { takePhoto } = usePhotoGallery();
 </script>
 ```
@@ -86,68 +113,190 @@ After taking a photo, it disappears right away. We still need to display it with
 
 ## Displaying Photos
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following UserPhoto interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+First we will create a new type to define our Photo, which will hold specific metadata. Back in `usePhotoGallery.ts`, add the following `UserPhoto` interface below the main function:
 
-```tsx
+```typescript
+export const usePhotoGallery = () => {
+  // Same old code from before.
+};
+
+// CHANGE: Add the `UserPhoto` interface.
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
 ```
 
-At the top of the `usePhotoGallery` function, define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
+At the top of the `usePhotoGallery` function, define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://vuejs.org/api/reactivity-core.html#ref).
 
-```tsx
-const photos = ref<UserPhoto[]>([]);
-```
-
-When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` function, adding this code after the `Camera.getPhoto` line:
-
-```tsx
-const fileName = Date.now() + '.jpeg';
-const savedFileImage = {
-  filepath: fileName,
-  webviewPath: photo.webPath,
-};
-
-photos.value = [savedFileImage, ...photos.value];
-```
-
-Next, update the return statement to include the photos array:
-
-```tsx
-return {
-  photos,
-  takePhoto,
+```typescript
+export const usePhotoGallery = () => {
+  // CHANGE: Add the `photos` array.
+  const photos = ref<UserPhoto[]>([]);
+  
+  // other code
 };
 ```
 
-Back in the Tab2 component, update the import statement to include the `UserPhoto` interface:
+When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` function with the following:
 
-```tsx
+```typescript
+const takePhoto = async () => {
+  const photo = await Camera.getPhoto({
+    resultType: CameraResultType.Uri,
+    source: CameraSource.Camera,
+    quality: 100,
+  });
+  // CHANGE: Create the `fileName` with current timestamp.
+  const fileName = Date.now() + '.jpeg';
+  // CHANGE: Create `savedFileImage` matching `UserPhoto` interface.
+  const savedFileImage = {
+    filepath: fileName,
+    webviewPath: photo.webPath,
+  };
+
+  // CHANGE: Update the `photos` array with the new photo.
+  photos.value = [savedFileImage, ...photos.value];
+};
+```
+
+Next, update the `userPhotoGallery` return statement to include the `photos` array:
+
+```typescript
+export const usePhotoGallery = () => {
+  // other code
+
+  // CHANGE: Update return statement to include `photos` array.
+  return {
+    photos,
+    takePhoto
+  };
+};
+```
+
+`usePhotoGallery.ts` should now look like this:
+
+```typescript
+import { ref, onMounted, watch } from 'vue';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+export const usePhotoGallery = () => {
+  const photos = ref<UserPhoto[]>([]);
+
+  const takePhoto = async () => {
+    const photo = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+    const fileName = Date.now() + '.jpeg';
+    const savedFileImage = {
+      filepath: fileName,
+      webviewPath: photo.webPath,
+    };
+
+    photos.value = [savedFileImage, ...photos.value];
+  };
+
+  return {
+    photos,
+    takePhoto
+  };
+};
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
+```
+
+Back in `Tab2Page.vue`, update the import statement to include the `UserPhoto` interface and get access to the `photos` array:
+
+```html
+<template>
+  <!-- template code -->
+</template>
+
+<script setup lang="ts">
+import { camera, trash, close } from 'ionicons/icons';
+import {
+  IonPage,
+  IonHeader,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+} from '@ionic/vue';
+// CHANGE: Update import to include `UserPhoto` interface.
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
-```
 
-Then, get access to the photos array:
-
-```tsx
+// CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
 const { photos, takePhoto } = usePhotoGallery();
+</script>
 ```
 
 With the photo(s) stored into the main array we can now display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as they are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) to the photo's path:
 
-```tsx
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-        <ion-img :src="photo.webviewPath"></ion-img>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+```html
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <!-- CHANGE: Add a grid component to display the photos. -->
+      <ion-grid>
+        <ion-row>
+          <!-- CHANGE: Create a new column and image component for each photo. -->
+          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
+            <ion-img :src="photo.webviewPath"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button @click="takePhoto()">
+          <ion-icon :icon="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  </ion-page>
+</template>
 
-  <!-- <ion-fab> markup  -->
-</ion-content>
+<script setup lang="ts">
+import { camera, trash, close } from 'ionicons/icons';
+import {
+  IonPage,
+  IonHeader,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+} from '@ionic/vue';
+import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+
+const { photos, takePhoto } = usePhotoGallery();
+</script>
 ```
 
 Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
