@@ -77,7 +77,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>The grid is a powerful mobile-first system for building custom layouts.</p>
 </DocsCard>
 
-<DocsCard header="Icon" href="api/icon" icon="/icons/component-icons-icon.png">
+<DocsCard header="Icons" href="api/icon" icon="/icons/component-icons-icon.png">
   <p>Beautifully designed icons for use in web, iOS, and Android apps.</p>
 </DocsCard>
 
