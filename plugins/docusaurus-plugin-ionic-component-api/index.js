@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',

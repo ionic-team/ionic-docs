@@ -1,6 +1,5 @@
 const path = require('path');
 const prismic = require('@prismicio/client');
-const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
 
