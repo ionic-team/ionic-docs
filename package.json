@@ -54,7 +54,6 @@
     "docusaurus-plugin-sass": "^0.2.6",
     "fs-extra": "^11.3.0",
     "modern-normalize": "^3.0.1",
-    "node-fetch": "^3.3.2",
     "prism-react-renderer": "^2.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
