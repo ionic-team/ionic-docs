@@ -1,5 +1,4 @@
 const fetch = globalThis.fetch;
-
 const fs = require('fs');
 const path = require('path');
 const { api: apiOverrides } = require('./data/meta-override.json');
@@ -9,36 +8,66 @@ const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
-  const response = await fetch(
-    'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json',
-  );
-  const { components } = await response.json();
+  try {
+    const response = await fetch(
+      'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json',
+    );
+    
+    if (!response.ok) {
+      console.error(`Failed to fetch translated API data: ${response.status} ${response.statusText}`);
+      return;
+    }
+    
+    const data = await response.json();
+    
+    if (!data || !data.components) {
+      console.error('Invalid API data structure - missing components');
+      return;
+    }
+    
+    const { components } = data;
 
-  const names = components.map((component) => component.tag.slice(4));
-  // matches all relative markdown links to a component, e.g. (../button)
-  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+    const names = components.map((component) => component.tag.slice(4));
+    // matches all relative markdown links to a component, e.g. (../button)
+    COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
 
-  components.map(writePage);
+    components.map(writePage);
+  } catch (error) {
+    console.error('Error fetching or processing translated API data:', error);
+    // Don't fail the build, just skip Japanese API generation
+    console.log('Skipping Japanese API generation due to error');
+  }
 })();
 
 function writePage(page) {
-  let data = [
-    renderFrontmatter(page),
-    renderReadme(page),
-    renderUsage(page),
-    renderProperties(page),
-    renderEvents(page),
-    renderMethods(page),
-    renderParts(page),
-    renderCustomProps(page),
-    renderSlots(page),
-  ].join('');
+  try {
+    let data = [
+      renderFrontmatter(page),
+      renderReadme(page),
+      renderUsage(page),
+      renderProperties(page),
+      renderEvents(page),
+      renderMethods(page),
+      renderParts(page),
+      renderCustomProps(page),
+      renderSlots(page),
+    ].join('');
 
-  // fix relative links, e.g. (../button) -> (button.md)
-  data = data.replace(COMPONENT_LINK_REGEXP, '($1.md$2)');
+    // fix relative links, e.g. (../button) -> (button.md)
+    data = data.replace(COMPONENT_LINK_REGEXP, '($1.md$2)');
 
-  const path = `i18n/ja/docusaurus-plugin-content-docs/current/api/${page.tag.slice(4)}.md`;
-  fs.writeFileSync(path, data);
+    const filePath = `i18n/ja/docusaurus-plugin-content-docs/current/api/${page.tag.slice(4)}.md`;
+    
+    // Ensure directory exists
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    fs.writeFileSync(filePath, data);
+  } catch (error) {
+    console.error(`Error writing page for ${page.tag}:`, error);
+  }
 }
 
 function renderFrontmatter({ tag }) {
@@ -64,9 +93,21 @@ ${utils.getHeadTag(apiOverrides[tag])}
 `;
 }
 
-function renderReadme({ readme, encapsulation }) {
+function renderReadme(page) {
+  // Add null/undefined check
+  if (!page || !page.readme) {
+    console.warn(`Missing readme for component: ${page?.tag || 'unknown'}`);
+    return '';
+  }
+  
+  const readme = page.readme;
   const endIndex = readme.indexOf('\n');
-
+  
+  // Add additional safety check
+  if (endIndex === -1) {
+    return readme; // Return the whole readme if no newline found
+  }
+  
   const title = readme.substring(0, endIndex);
   const rest = readme.substring(endIndex);
 
@@ -76,7 +117,7 @@ function renderReadme({ readme, encapsulation }) {
   return `
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-${encapsulation !== 'none' ? `<EncapsulationPill type="${encapsulation}" />` : ''}
+${page.encapsulation !== 'none' ? `<EncapsulationPill type="${page.encapsulation}" />` : ''}
 
 
 ${addAdmonitions(rest)}
