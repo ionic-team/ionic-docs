@@ -1,5 +1,4 @@
 import { writeFileSync } from 'fs';
-import fetch from 'node-fetch';
 
 // replace with latest once it's relased
 const tag = 'latest';
