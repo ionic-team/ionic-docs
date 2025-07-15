@@ -90,7 +90,10 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
-  <p>Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items can be swiped, deleted, reordered, edited, and more.</p>
+  <p>
+    Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements.
+    Items can be swiped, deleted, reordered, edited, and more.
+  </p>
 </DocsCard>
 
 <DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
@@ -99,8 +102,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
   <p>
-    A collection of media components, including avatars, icons, images, and thumbnails, designed to 
-    enhance visual content.
+    A collection of media components, including avatars, icons, images, and thumbnails, designed to enhance visual
+    content.
   </p>
 </DocsCard>
 
