@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+const fetch = globalThis.fetch;
+
 const fs = require('fs');
 const path = require('path');
 const { api: apiOverrides } = require('./data/meta-override.json');

@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import { outputJson } from 'fs-extra';
-import fetch from 'node-fetch';
 import { resolve } from 'path';
 import url from 'url';
 
