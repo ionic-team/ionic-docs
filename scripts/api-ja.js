@@ -9,7 +9,7 @@ let COMPONENT_LINK_REGEXP;
   try {
     // Dynamic import for ES module utils
     const utils = await import('./utils.mjs');
-    
+
     const response = await fetch(
       'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json'
     );
