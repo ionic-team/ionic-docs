@@ -1,13 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 const { api: apiOverrides } = require('./data/meta-override.json');
-const utils = require('./utils');
 
 const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
   try {
+    // Dynamic import for ES module utils
+    const utils = await import('./utils.mjs');
+    
     const response = await fetch(
       'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json'
     );
@@ -23,15 +25,15 @@ let COMPONENT_LINK_REGEXP;
     // matches all relative markdown links to a component, e.g. (../button)
     COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
 
-    components.map(writePage);
+    components.map((page) => writePage(page, utils));
   } catch (error) {
     console.error('Error in api-ja script:', error.message);
   }
 })();
 
-function writePage(page) {
+function writePage(page, utils) {
   let data = [
-    renderFrontmatter(page),
+    renderFrontmatter(page, utils),
     renderReadme(page),
     renderUsage(page),
     renderProperties(page),
@@ -49,7 +51,7 @@ function writePage(page) {
   fs.writeFileSync(filePath, data);
 }
 
-function renderFrontmatter({ tag }) {
+function renderFrontmatter({ tag }, utils) {
   const frontmatter = {
     title: tag,
   };
