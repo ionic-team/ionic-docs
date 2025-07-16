@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
@@ -18,30 +16,40 @@ module.exports = function (context, options) {
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
-        let COMPONENT_LINK_REGEXP;
-        const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-        const { components } = await response.json();
+        try {
+          let COMPONENT_LINK_REGEXP;
+          const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+          
+          if (!response.ok) {
+            console.error(`Failed to fetch component data for ${npmTag}: ${response.status}`);
+            return;
+          }
+          
+          const { components } = await response.json();
 
-        const names = components.map((component) => component.tag.slice(4));
-        // matches all relative markdown links to a component, e.g. (../button)
-        COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+          const names = components.map((component) => component.tag.slice(4));
+          // matches all relative markdown links to a component, e.g. (../button)
+          COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
 
-        components.forEach((comp) => {
-          const compTag = comp.tag.slice(4);
-          const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
+          components.forEach((comp) => {
+            const compTag = comp.tag.slice(4);
+            const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
 
-          data.push({
-            outDir,
-            componentTag: compTag,
-            version,
-            props: renderProperties(comp),
-            events: renderEvents(comp),
-            methods: renderMethods(comp),
-            parts: renderParts(comp),
-            customProps: renderCustomProps(comp),
-            slots: renderSlots(comp),
+            data.push({
+              outDir,
+              componentTag: compTag,
+              version,
+              props: renderProperties(comp),
+              events: renderEvents(comp),
+              methods: renderMethods(comp),
+              parts: renderParts(comp),
+              customProps: renderCustomProps(comp),
+              slots: renderSlots(comp),
+            });
           });
-        });
+        } catch (error) {
+          console.error(`Error generating markdown for version ${version}:`, error.message);
+        }
       };
 
       for (const version of options.versions) {
@@ -234,63 +242,4 @@ function renderCustomProps({ styles: customProps }) {
   const mdProps = customProps.filter((prop) => prop.mode === 'md');
 
   const renderTable = (props) => {
-    if (props.length === 0) {
-      return 'No CSS custom properties available for this component.';
-    }
-
-    return `
-    | Name | Description |
-  | --- | --- |
-  ${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
-  `;
-  };
-
-  if (iosProps.length > 0 || mdProps.length > 0) {
-    // If the component has mode-specific custom props, render them in tabs for iOS and MD
-    return `
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
-\`\`\`\`mdx-code-block
-<Tabs
-  groupId="mode"
-  defaultValue="ios"
-  values={[
-    { value: 'ios', label: 'iOS' },
-    { value: 'md', label: 'MD' },
-  ]
-}>
-<TabItem value="ios">
-
-${renderTable(iosProps)}
-
-</TabItem>
-
-<TabItem value="md">
-
-${renderTable(mdProps)}
-
-</TabItem>
-</Tabs>
-
-\`\`\`\`
-
-`;
-  }
-  // Otherwise render the custom props without the tabs for iOS and MD
-  return renderTable(customProps);
-}
-
-function renderSlots({ slots }) {
-  if (slots.length === 0) {
-    return 'No slots available for this component.';
-  }
-
-  return `
-| Name | Description |
-| --- | --- |
-${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
-
-`;
-}
+    if

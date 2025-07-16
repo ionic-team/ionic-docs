@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const { api: apiOverrides } = require('./data/meta-override.json');
@@ -8,16 +7,26 @@ const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
-  const response = await fetch(
-    'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json'
-  );
-  const { components } = await response.json();
+  try {
+    const response = await fetch(
+      'https://raw.githubusercontent.com/ionic-team/ionic-docs/translation/jp/scripts/data/translated-api.json'
+    );
 
-  const names = components.map((component) => component.tag.slice(4));
-  // matches all relative markdown links to a component, e.g. (../button)
-  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+    if (!response.ok) {
+      console.error(`Failed to fetch translated API data: ${response.status}`);
+      return;
+    }
 
-  components.map(writePage);
+    const { components } = await response.json();
+
+    const names = components.map((component) => component.tag.slice(4));
+    // matches all relative markdown links to a component, e.g. (../button)
+    COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+
+    components.map(writePage);
+  } catch (error) {
+    console.error('Error in api-ja script:', error.message);
+  }
 })();
 
 function writePage(page) {
@@ -36,8 +45,8 @@ function writePage(page) {
   // fix relative links, e.g. (../button) -> (button.md)
   data = data.replace(COMPONENT_LINK_REGEXP, '($1.md$2)');
 
-  const path = `i18n/ja/docusaurus-plugin-content-docs/current/api/${page.tag.slice(4)}.md`;
-  fs.writeFileSync(path, data);
+  const filePath = `i18n/ja/docusaurus-plugin-content-docs/current/api/${page.tag.slice(4)}.md`;
+  fs.writeFileSync(filePath, data);
 }
 
 function renderFrontmatter({ tag }) {
@@ -65,7 +74,6 @@ ${utils.getHeadTag(apiOverrides[tag])}
 
 function renderReadme({ readme, encapsulation }) {
   const endIndex = readme.indexOf('\n');
-
   const title = readme.substring(0, endIndex);
   const rest = readme.substring(endIndex);
 
@@ -76,7 +84,6 @@ function renderReadme({ readme, encapsulation }) {
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ${encapsulation !== 'none' ? `<EncapsulationPill type="${encapsulation}" />` : ''}
-
 
 ${addAdmonitions(rest)}
   `;
@@ -128,7 +135,6 @@ function renderProperties({ props: properties }) {
     return '';
   }
 
-  // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ## Properties
 
@@ -141,7 +147,7 @@ ${properties
 | --- | --- |
 | **Description** | ${prop.docs.split('\n').join('<br />')} |
 | **Attribute** | \`${prop.attr}\` |
-| **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
+| **Type** | \`${prop.type.replace(/\|/g, '\\|')}\` |
 | **Default** | \`${prop.default}\` |
 
 `
@@ -170,7 +176,6 @@ function renderMethods({ methods }) {
     return '';
   }
 
-  // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ## Methods
 
@@ -182,7 +187,7 @@ ${methods
 | | |
 | --- | --- |
 | **Description** | ${method.docs.split('\n').join('<br />')} |
-| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
+| **Signature** | \`${method.signature.replace(/\|/g, '\\|')}\` |
 `
   )
   .join('\n')}
