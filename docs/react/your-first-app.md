@@ -102,10 +102,22 @@ After installation, open up the project in your code editor of choice.
 Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
 
 ```tsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+// CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 // Call the element loader before the render call
 defineCustomElements(window);
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.
@@ -147,10 +159,12 @@ Open `/src/pages/Tab2.tsx`. We see:
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as some of the Ionic components we'll use shortly:
+We put the visual aspects of our app into <ion-content>. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```tsx
+// CHANGE: Add the following import.
 import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Add the following import.
 import {
   IonContent,
   IonHeader,
@@ -166,21 +180,32 @@ import {
   IonImg,
   IonActionSheet,
 } from '@ionic/react';
+import ExploreContainer from '../components/ExploreContainer';
+import './Tab2.css';
+
+const Tab2: React.FC = () => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Tab 2</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <!-- CHANGE: Add the floating action button. -->
+      <IonContent>
+        <IonFab vertical="bottom" horizontal="center" slot="fixed">
+          <IonFabButton onClick={() => takePhoto()}>
+            <IonIcon icon={camera}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+      </IonContent>
+      <!-- END OF CODE BLOCK -->
+    </IonPage>
+  );
+};
+
+export default Tab2;
 ```
-
-Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
-
-```tsx
-<IonContent>
-  <IonFab vertical="bottom" horizontal="center" slot="fixed">
-    <IonFabButton onClick={() => takePhoto()}>
-      <IonIcon icon={camera}></IonIcon>
-    </IonFabButton>
-  </IonFab>
-</IonContent>
-```
-
-We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
 
 Next, open `src/App.tsx`, remove the `ellipse` icon from the import and import the `images` icon instead:
 
@@ -191,10 +216,47 @@ import { images, square, triangle } from 'ionicons/icons';
 Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button:
 
 ```tsx
-<IonTabButton tab="tab2" href="/tab2">
-  <IonIcon icon={images} />
-  <IonLabel>Photos</IonLabel>
-</IonTabButton>
+// Keep other imports 
+// CHANGE: Add the following import.
+import { images, square, triangle } from 'ionicons/icons';
+
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonTabs>
+            <IonRouterOutlet>
+            <Route exact path="/tab1">
+                <Tab1 />
+            </Route>
+            <Route exact path="/tab2">
+                <Tab2 />
+            </Route>
+            <Route path="/tab3">
+                <Tab3 />
+            </Route>
+            <Route exact path="/">
+                <Redirect to="/tab1" />
+            </Route>
+            </IonRouterOutlet>
+            <IonTabBar slot="bottom">
+            <IonTabButton tab="tab1" href="/tab1">
+                <IonIcon aria-hidden="true" icon={triangle} />
+                <IonLabel>Tab 1</IonLabel>
+            </IonTabButton>
+            <!-- CHANGE: The label to `Photos` and the `ellipse` icon to `images` -->
+            <IonTabButton tab="tab2" href="/tab2">
+            <IonIcon icon={images} />
+            <IonLabel>Photos</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="tab3" href="/tab3">
+                <IonIcon aria-hidden="true" icon={square} />
+                <IonLabel>Tab 3</IonLabel>
+            </IonTabButton>
+            </IonTabBar>
+      </IonTabs>
+    </IonReactRouter>
+  </IonApp>
+);
 ```
 
 :::note
