@@ -102,8 +102,8 @@ After installation, open up the project in your code editor of choice.
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```tsx
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
@@ -142,9 +142,7 @@ import './theme/variables.css';
 
 // CHANGE: Call the element loader before the createApp() call
 defineCustomElements(window);
-const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
+const app = createApp(App).use(IonicVue).use(router);
 
 router.isReady().then(() => {
   app.mount('#app');
@@ -192,8 +190,8 @@ Open `/src/views/Tab2.vue`. We see:
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+  import ExploreContainer from '@/components/ExploreContainer.vue';
 </script>
 ```
 
@@ -226,9 +224,9 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-// CHANGE: Remove or comment out ExploreContainer import.
-// import ExploreContainer from '@/components/ExploreContainer.vue';
+  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+  // CHANGE: Remove or comment out ExploreContainer import.
+  // import ExploreContainer from '@/components/ExploreContainer.vue';
 </script>
 ```
 
@@ -253,23 +251,23 @@ We'll replace it with a [floating action button](https://ionicframework.com/docs
 </template>
 
 <script setup lang="ts">
-// CHANGE: Add import from `ionicons/icons`
-import { camera, trash, close } from 'ionicons/icons';
-// CHANGE: Update import from `@ionic/vue` to include necessary Ionic components
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
+  // CHANGE: Add import from `ionicons/icons`
+  import { camera, trash, close } from 'ionicons/icons';
+  // CHANGE: Update import from `@ionic/vue` to include necessary Ionic components
+  import {
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
 </script>
 ```
 
@@ -302,21 +300,21 @@ Add the FAB to the bottom of the page. Use the camera image as the icon, and cal
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
 </script>
 ```
 
@@ -352,9 +350,9 @@ Next, open `src/views/TabsPage.vue`. Remove the `ellipse` icon from the import a
 </template>
 
 <script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-// CHANGE: Update import by removing `ellipse` and adding `images`.
-import { images, square, triangle } from 'ionicons/icons';
+  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+  // CHANGE: Update import by removing `ellipse` and adding `images`.
+  import { images, square, triangle } from 'ionicons/icons';
 </script>
 ```
 

@@ -25,36 +25,38 @@ $ ionic cap run android -l --external
 The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
 
 ## Deleting Photos
+
 With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo.
 
 Open `Tab2Page.vue` and add `actionSheetController` to the imports from `@ionic/vue`. We also need to add a reference to the `deletePhoto` method, which we'll create soon in `usePhotoGallery()`:
+
 ```html
 <template>
   <!-- template code -->
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  // CHANGE: Add the `actionSheetController` import.
-  actionSheetController,
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonImg,
-  IonGrid,
-  IonRow,
-  IonCol,
-} from '@ionic/vue';
-import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    // CHANGE: Add the `actionSheetController` import.
+    actionSheetController,
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonImg,
+    IonGrid,
+    IonRow,
+    IonCol,
+  } from '@ionic/vue';
+  import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-// CHANGE: Add reference to the `deletePhoto` method.
-const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+  // CHANGE: Add reference to the `deletePhoto` method.
+  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 </script>
 ```
 
@@ -104,51 +106,51 @@ Next, within `script setup`, create a new function called `showActionSheet`. `sh
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  actionSheetController,
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
-import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    actionSheetController,
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
+  import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 
-// CHANGE: Add the `showActionSheet` function.
-const showActionSheet = async (photo: UserPhoto) => {
-  const actionSheet = await actionSheetController.create({
-    header: 'Photos',
-    buttons: [
-      {
-        text: 'Delete',
-        role: 'destructive',
-        icon: trash,
-        handler: () => {
-          deletePhoto(photo);
+  // CHANGE: Add the `showActionSheet` function.
+  const showActionSheet = async (photo: UserPhoto) => {
+    const actionSheet = await actionSheetController.create({
+      header: 'Photos',
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'destructive',
+          icon: trash,
+          handler: () => {
+            deletePhoto(photo);
+          },
         },
-      },
-      {
-        text: 'Cancel',
-        icon: close,
-        role: 'cancel',
-        handler: () => {
-          // Nothing to do, action sheet is automatically closed
+        {
+          text: 'Cancel',
+          icon: close,
+          role: 'cancel',
+          handler: () => {
+            // Nothing to do, action sheet is automatically closed
+          },
         },
-      },
-    ],
-  });
-  await actionSheet.present();
-};
+      ],
+    });
+    await actionSheet.present();
+  };
 </script>
 ```
 
@@ -206,7 +208,7 @@ export const usePhotoGallery = () => {
   return {
     photos,
     takePhoto,
-    deletePhoto
+    deletePhoto,
   };
 };
 

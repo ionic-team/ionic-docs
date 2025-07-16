@@ -32,7 +32,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 ```
@@ -66,7 +66,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 ```
@@ -98,10 +98,10 @@ export const usePhotoGallery = () => {
 
   // CHANGE: Add call to `watch` with `photos` array and `cachePhotos` method.
   watch(photos, cachePhotos);
-  
+
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 ```
@@ -146,10 +146,10 @@ export const usePhotoGallery = () => {
   };
 
   watch(photos, cachePhotos);
-  
+
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 ```
@@ -186,10 +186,10 @@ export const usePhotoGallery = () => {
   // CHANGE: Add call to `onMounted` with the `loadSaved` method.
   onMounted(loadSaved);
   watch(photos, cachePhotos);
-  
+
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 ```
@@ -226,7 +226,7 @@ export const usePhotoGallery = () => {
         resolve(reader.result);
       };
       reader.readAsDataURL(blob);
-  });
+    });
 
   const cachePhotos = () => {
     Preferences.set({
@@ -275,7 +275,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 

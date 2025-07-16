@@ -34,11 +34,11 @@ export const usePhotoGallery = () => {
         resolve(reader.result);
       };
       reader.readAsDataURL(blob);
-  });
+    });
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 
@@ -92,7 +92,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 
@@ -137,7 +137,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 
@@ -180,7 +180,7 @@ export const usePhotoGallery = () => {
         resolve(reader.result);
       };
       reader.readAsDataURL(blob);
-  });
+    });
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     // Fetch the photo, read as a blob, then convert to base64 format
@@ -204,7 +204,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 

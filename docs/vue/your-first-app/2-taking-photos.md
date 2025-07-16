@@ -80,26 +80,26 @@ Import `usePhotoGallery` and destructure the `takePhoto` function so we can use 
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
-// CHANGE: Add `usePhotoGallery` import.
-import { usePhotoGallery } from '@/composables/usePhotoGallery';
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
+  // CHANGE: Add `usePhotoGallery` import.
+  import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-// CHANGE: Destructure `takePhoto` from `usePhotoGallery().
-const { takePhoto } = usePhotoGallery();
+  // CHANGE: Destructure `takePhoto` from `usePhotoGallery().
+  const { takePhoto } = usePhotoGallery();
 </script>
 ```
 
@@ -133,7 +133,7 @@ At the top of the `usePhotoGallery` function, define an array so we can store ea
 export const usePhotoGallery = () => {
   // CHANGE: Add the `photos` array.
   const photos = ref<UserPhoto[]>([]);
-  
+
   // other code
 };
 ```
@@ -169,7 +169,7 @@ export const usePhotoGallery = () => {
   // CHANGE: Update return statement to include `photos` array.
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 ```
@@ -202,7 +202,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 
@@ -220,26 +220,26 @@ Back in `Tab2Page.vue`, update the import statement to include the `UserPhoto` i
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
-// CHANGE: Update import to include `UserPhoto` interface.
-import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
+  // CHANGE: Update import to include `UserPhoto` interface.
+  import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-// CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
-const { photos, takePhoto } = usePhotoGallery();
+  // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
+  const { photos, takePhoto } = usePhotoGallery();
 </script>
 ```
 
@@ -278,24 +278,24 @@ With the photo(s) stored into the main array we can now display the images on th
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
-import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
+  import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-const { photos, takePhoto } = usePhotoGallery();
+  const { photos, takePhoto } = usePhotoGallery();
 </script>
 ```
 

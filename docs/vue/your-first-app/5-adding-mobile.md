@@ -123,7 +123,7 @@ export const usePhotoGallery = () => {
         resolve(reader.result);
       };
       reader.readAsDataURL(blob);
-  });
+    });
 
   const cachePhotos = () => {
     Preferences.set({
@@ -194,7 +194,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto
+    takePhoto,
   };
 };
 
