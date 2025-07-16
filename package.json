@@ -7,7 +7,7 @@
   },
   "scripts": {
     "prebuild": "npm run generate-markdown && npm run i18n:sync && npm run crowdin:conditional",
-    "build": "npm run build:${VERCEL_ENV:-preview}",
+    "build": "node scripts/build.mjs",
     "build:preview": "docusaurus build --locale en",
     "build:production": "docusaurus build",
     "clear": "docusaurus clear",
@@ -16,7 +16,7 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "generate-markdown": "node scripts/native.mjs && concurrently \"node scripts/cli.mjs\" \"node scripts/release-notes.mjs\"",
-    "i18n:sync": "node -e \"require('./scripts/utils.mjs').syncI18n()\"",
+    "i18n:sync": "node scripts/i18n.mjs",
     "lint": "npm run prettier -- --write",
     "serve": "docusaurus serve",
     "playground:new": "hygen playground new",
@@ -63,6 +63,7 @@
     "remark-parse": "^11.0.0",
     "sass": "^1.44.0",
     "semver": "^7.3.5",
+    "tar": "^6.1.11",
     "unified": "^11.0.0"
   },
   "devDependencies": {
