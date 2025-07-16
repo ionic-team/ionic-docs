@@ -1,0 +1,354 @@
+---
+title: "ion-modal"
+demoUrl: "/docs/demos/api/modal/index.html"
+demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/modal/index.html"
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<head>
+  <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
+  <meta name="description" content="ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components." />
+</head>
+
+import EncapsulationPill from '@components/page/api/EncapsulationPill';
+
+<EncapsulationPill type="shadow" />
+
+
+  
+## Properties
+
+
+### animated
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、モーダルはアニメーションを行います。 |
+| **Attribute** | `animated` |
+| **Type** | `boolean` |
+| **Default** | `true` |
+
+
+
+### backdropBreakpoint
+
+| | |
+| --- | --- |
+| **Description** | シートモーダル使用時に背景がフェードインし始めるポイントを示す0～1の10進数値です。それ以前は、背景は非表示で、シートの下のコンテンツは操作可能です。この値は排他的で、指定された値の後に背景がアクティブになることを意味します。 |
+| **Attribute** | `backdrop-breakpoint` |
+| **Type** | `number` |
+| **Default** | `0` |
+
+
+
+### backdropDismiss
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、バックドロップがクリックされるとモーダルは解除されます。 |
+| **Attribute** | `backdrop-dismiss` |
+| **Type** | `boolean` |
+| **Default** | `true` |
+
+
+
+### breakpoints
+
+| | |
+| --- | --- |
+| **Description** | シート モーダルを作成するときに使用するブレークポイントです。配列の各値は 0 から 1 の間の 10 進数でなければならず、0 はモーダルが完全に閉じていることを、1 はモーダルが完全に開いていることを示しています。値は、画面の高さではなく、モーダルの高さに対する相対値です。この配列の値の1つは、`initialBreakpoint` プロパティの値でなければなりません。例えば[0, .25, .5, 1] |
+| **Attribute** | `breakpoints` |
+| **Type** | `number[] \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### canDismiss
+
+| | |
+| --- | --- |
+| **Description** | dismiss` メソッドを呼び出したときに、モーダルが終了できるかどうかを決定します。  値が `true` または値の関数が `true` を返す場合、モーダルは終了しようとすると閉じます。値が `false` の場合、または値の関数が `false` を返す場合、モーダルは閉じません。  コールバック内から `this` にアクセスする必要がある場合は、 https://ionicframework.com/docs/troubleshooting/runtime#accessing-this を参照してください。 |
+| **Attribute** | `can-dismiss` |
+| **Type** | `((data?: any, role?: string \| undefined) => Promise<boolean>) \| boolean` |
+| **Default** | `true` |
+
+
+
+### enterAnimation
+
+| | |
+| --- | --- |
+| **Description** | モーダルが表示されたときに使用するアニメーション。 |
+| **Attribute** | `enter-animation` |
+| **Type** | `((baseEl: any, opts?: any) => Animation) \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### expandToScroll
+
+| | |
+| --- | --- |
+| **Description** | Controls whether scrolling or dragging within the sheet modal expands it to a larger breakpoint. This only takes effect when `breakpoints` and `initialBreakpoint` are set.  If `true`, scrolling or dragging anywhere in the modal will first expand it to the next breakpoint. Once fully expanded, scrolling will affect the content. If `false`, scrolling will always affect the content. The modal will only expand when dragging the header or handle. The modal will close when dragging the header or handle. It can also be closed when dragging the content, but only if the content is scrolled to the top. |
+| **Attribute** | `expand-to-scroll` |
+| **Type** | `boolean` |
+| **Default** | `true` |
+
+
+
+### focusTrap
+
+| | |
+| --- | --- |
+| **Description** | もし `true` なら、フォーカスはこのオーバーレイの外側には移動できない。false`の場合、フォーカスはオーバーレイの外側に移動することができる。  ほとんどの場合、このプロパティは `true` のままにしておくべきである。このプロパティを `false` に設定すると、支援技術に依存しているユーザーがフォーカスを混乱した状態に移動できる可能性があるため、深刻なアクセシビリティの問題を引き起こす可能性があります。絶対に必要な場合のみ、このプロパティを `false` に設定することをお勧めします。  開発者は、このオーバーレイがサードパーティライブラリからIonic以外のオーバーレイを表示している場合、フォーカストラッピングを無効にすることを検討するとよいでしょう。開発者は、サードパーティーのオーバーレイを表示するときにIonicオーバーレイのフォーカストラッピングを無効にし、サードパーティーのオーバーレイを解除してIonicオーバーレイにフォーカスを戻すときにフォーカストラッピングを再度有効にします。 |
+| **Attribute** | `focus-trap` |
+| **Type** | `boolean` |
+| **Default** | `true` |
+
+
+
+### handle
+
+| | |
+| --- | --- |
+| **Description** | シートモーダルの上部に表示される水平線です。 `breakpoints`と`initialBreakpoint`プロパティを設定すると、デフォルトで`true`になります。 |
+| **Attribute** | `handle` |
+| **Type** | `boolean \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### handleBehavior
+
+| | |
+| --- | --- |
+| **Description** | ハンドルが押されたときのシートモーダルのインタラクション動作です。  デフォルトは `"none"` で、ハンドルが押されてもモーダルはサイズも位置も変わりません。cycle"` に設定すると、押されたときにモーダルが利用可能なブレークポイント間を循環するようになります。  ハンドルの動作は、`handle` プロパティが `false` に設定されている場合、または `breakpoints` プロパティが設定されていない場合（フルスクリーンまたはカード モーダルを使用している場合）には、利用できません。 |
+| **Attribute** | `handle-behavior` |
+| **Type** | `"cycle" \| "none" \| undefined` |
+| **Default** | `'none'` |
+
+
+
+### htmlAttributes
+
+| | |
+| --- | --- |
+| **Description** | モーダルに渡す追加属性。 |
+| **Attribute** | `html-attributes` |
+| **Type** | `undefined \| { [key: string]: any; }` |
+| **Default** | `undefined` |
+
+
+
+### initialBreakpoint
+
+| | |
+| --- | --- |
+| **Description** | シートモーダル作成時にモーダルが開く初期点を示す 0 から 1 までの 10 進値。この値は `breakpoints` 配列にも記載されている必要があります。 |
+| **Attribute** | `initial-breakpoint` |
+| **Type** | `number \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### isOpen
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、モーダルは開かれます。 `false`の場合、モーダルは閉じます。それ以外の場合は、modalController または `trigger` プロパティを使用してください。注意: `isOpen` は、モーダルが終了しても自動的に `false` に戻されません。あなたのコードでそれを行う必要があります。 |
+| **Attribute** | `is-open` |
+| **Type** | `boolean` |
+| **Default** | `false` |
+
+
+
+### keepContentsMounted
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、モーダルの作成時に `ion-modal` に渡されたコンポーネントが自動的にマウントされます。このコンポーネントは、モーダルが終了してもマウントされたままです。しかし、モーダルが破棄されると、コンポーネントは破棄されます。このプロパティはリアクティブではないので、モーダルを最初に作成するときにのみ使用する必要があります。  注意：この機能は、Angular、React、Vue などの JavaScript フレームワークのインライン モーダルにのみ適用されます。 |
+| **Attribute** | `keep-contents-mounted` |
+| **Type** | `boolean` |
+| **Default** | `false` |
+
+
+
+### keyboardClose
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、オーバーレイが表示されたときにキーボードが自動的に解除されます。 |
+| **Attribute** | `keyboard-close` |
+| **Type** | `boolean` |
+| **Default** | `true` |
+
+
+
+### leaveAnimation
+
+| | |
+| --- | --- |
+| **Description** | モーダルが解除されたときに使用するアニメーションです。 |
+| **Attribute** | `leave-animation` |
+| **Type** | `((baseEl: any, opts?: any) => Animation) \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### mode
+
+| | |
+| --- | --- |
+| **Description** | modeは、どのプラットフォームのスタイルを使用するかを決定します。 |
+| **Attribute** | `mode` |
+| **Type** | `"ios" \| "md"` |
+| **Default** | `undefined` |
+
+
+
+### presentingElement
+
+| | |
+| --- | --- |
+| **Description** | モーダルを提示した要素です。カード提示効果や、複数のモーダルを重ねる場合に使用します。iOS modeでのみ適用されます。 |
+| **Attribute** | `presenting-element` |
+| **Type** | `HTMLElement \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### showBackdrop
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、モーダルの後ろに背景が表示されます。このプロパティは、モーダルが表示されたときに背景が画面を暗くするかどうかを制御します。このプロパティは、背景がアクティブであるかどうか、または DOM に存在するかどうかを制御するものではありません。 |
+| **Attribute** | `show-backdrop` |
+| **Type** | `boolean` |
+| **Default** | `true` |
+
+
+
+### trigger
+
+| | |
+| --- | --- |
+| **Description** | クリックされたときにモーダルを開かせるトリガー要素に対応するIDです。 |
+| **Attribute** | `trigger` |
+| **Type** | `string \| undefined` |
+| **Default** | `undefined` |
+
+
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `didDismiss` | モーダルが解散した後に発行されます。ionModalDidDismiss の略記です。 |
+| `didPresent` | モーダルが提示された後に発行されます。ionModalDidPresent の略記です。 |
+| `ionBreakpointDidChange` | モーダルブレークポイントが変更された後に発行されます。 |
+| `ionModalDidDismiss` | モーダルが終了した後に発行されます。 |
+| `ionModalDidPresent` | モーダルが提示された後に発行されます。 |
+| `ionModalWillDismiss` | モーダルが解散する前に発行されます。 |
+| `ionModalWillPresent` | モーダルが提示される前に発行されます。 |
+| `willDismiss` | モーダルが解散する前に発行されます。ionModalWillDismiss の略記です。 |
+| `willPresent` | モーダルが提示される前に発行されます。ionModalWillPresent の略記です。 |
+
+
+## Methods
+
+
+### dismiss
+
+| | |
+| --- | --- |
+| **Description** | モーダルオーバーレイが表示された後、それを解除します。 |
+| **Signature** | `dismiss(data?: any, role?: string) => Promise<boolean>` |
+
+
+### getCurrentBreakpoint
+
+| | |
+| --- | --- |
+| **Description** | シートスタイルモーダルの現在のブレークポイントを返します。 |
+| **Signature** | `getCurrentBreakpoint() => Promise<number \| undefined>` |
+
+
+### onDidDismiss
+
+| | |
+| --- | --- |
+| **Description** | モーダルが解除されたときに解決するPromiseを返します。 |
+| **Signature** | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+
+### onWillDismiss
+
+| | |
+| --- | --- |
+| **Description** | モーダルがいつ解散するかを解決するPromiseを返します。 |
+| **Signature** | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+
+### present
+
+| | |
+| --- | --- |
+| **Description** | モーダルオーバーレイを作成した後に提示します。 |
+| **Signature** | `present() => Promise<void>` |
+
+
+### setCurrentBreakpoint
+
+| | |
+| --- | --- |
+| **Description** | シートスタイルモーダルを特定のブレークポイントに移動します。ブレークポイントの値は、 `breakpoints` 配列で定義された値でなければなりません。 |
+| **Signature** | `setCurrentBreakpoint(breakpoint: number) => Promise<void>` |
+
+
+
+## CSS Shadow Parts
+
+| Name | Description |
+| --- | --- |
+| `backdrop` | ion-backdrop`要素です。 |
+| `content` | デフォルトslotのラッパー要素です。 |
+| `handle` | handle="true"`のときにシートモーダルの上部に表示されるハンドルです。 |
+
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| `--backdrop-opacity` | 背景の不透明度 |
+| `--backdrop-opacity` | 背景の不透明度 |
+| `--background` | モーダルコンテンツの背景 |
+| `--background` | モーダルコンテンツの背景 |
+| `--border-color` | モーダルコンテンツのボーダーカラー |
+| `--border-color` | モーダルコンテンツのボーダーカラー |
+| `--border-radius` | モーダルコンテンツのボーダー半径 |
+| `--border-radius` | モーダルコンテンツのボーダー半径 |
+| `--border-style` | モーダルコンテンツのボーダースタイル |
+| `--border-style` | モーダルコンテンツのボーダースタイル |
+| `--border-width` | モーダルコンテンツのボーダー幅 |
+| `--border-width` | モーダルコンテンツのボーダー幅 |
+| `--height` | モーダルの高さ |
+| `--height` | モーダルの高さ |
+| `--max-height` | モーダルの最大の高さ |
+| `--max-height` | モーダルの最大の高さ |
+| `--max-width` | モーダルの最大幅 |
+| `--max-width` | モーダルの最大幅 |
+| `--min-height` | モーダルの最小高さ |
+| `--min-height` | モーダルの最小高さ |
+| `--min-width` | モーダルの最小幅 |
+| `--min-width` | モーダルの最小幅 |
+| `--width` | モーダルの幅 |
+| `--width` | モーダルの幅 |
+
+
+## Slots
+
+| Name | Description |
+| --- | --- |
+| `` | コンテンツは `.modal-content` 要素の内側に配置されます。 |
+

@@ -1,0 +1,170 @@
+---
+title: "ion-breadcrumb"
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+
+import EncapsulationPill from '@components/page/api/EncapsulationPill';
+
+<EncapsulationPill type="shadow" />
+
+
+  
+## Properties
+
+
+### active
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、パンくずが現在アクティブなパンくずであることを示すために、パンくずの外観を変化させることができる。最後のパンくずが設定されていない場合、デフォルトは `true` です。 |
+| **Attribute** | `active` |
+| **Type** | `boolean` |
+| **Default** | `false` |
+
+
+
+### color
+
+| | |
+| --- | --- |
+| **Description** | アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです。 `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, と `"dark"` です．色に関する詳しい情報は [theming](/docs/theming/basics) を参照してください。 |
+| **Attribute** | `color` |
+| **Type** | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning" \| string & Record<never, never> \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### disabled
+
+| | |
+| --- | --- |
+| **Description** | `true`の場合、ユーザーはパンくずと対話することができません。 |
+| **Attribute** | `disabled` |
+| **Type** | `boolean` |
+| **Default** | `false` |
+
+
+
+### download
+
+| | |
+| --- | --- |
+| **Description** | この属性は、ブラウザが URL に移動する代わりに URL をダウンロードするように指示し、ユーザはローカルファイルとして保存するように促されます。この属性に値がある場合、保存のプロンプトであらかじめ入力されたファイル名として使用されます（ユーザーはファイル名を変更することができます）。 |
+| **Attribute** | `download` |
+| **Type** | `string \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### href
+
+| | |
+| --- | --- |
+| **Description** | ハイパーリンクが指し示す URL または URL フラグメントを格納します。このプロパティが設定されている場合、アンカータグがレンダリングされます。 |
+| **Attribute** | `href` |
+| **Type** | `string \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### mode
+
+| | |
+| --- | --- |
+| **Description** | modeは、どのプラットフォームのスタイルを使用するかを決定します。 |
+| **Attribute** | `mode` |
+| **Type** | `"ios" \| "md"` |
+| **Default** | `undefined` |
+
+
+
+### rel
+
+| | |
+| --- | --- |
+| **Description** | ターゲットオブジェクトとリンクオブジェクトの関係を指定します。値は、スペースで区切られた[リンクタイプ](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)のリストです。 |
+| **Attribute** | `rel` |
+| **Type** | `string \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### routerAnimation
+
+| | |
+| --- | --- |
+| **Description** | ルータを使用する場合、`href`を使用して別のページに移動する際の遷移アニメーションを指定します。 |
+| **Attribute** | `router-animation` |
+| **Type** | `((baseEl: any, opts?: any) => Animation) \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### routerDirection
+
+| | |
+| --- | --- |
+| **Description** | ルータを使用する場合、`href`を使用して他のページに移動する際の遷移方向を指定します。 |
+| **Attribute** | `router-direction` |
+| **Type** | `"back" \| "forward" \| "root"` |
+| **Default** | `'forward'` |
+
+
+
+### separator
+
+| | |
+| --- | --- |
+| **Description** | trueの場合、このパンくずと次のパンくずの間にセパレータを表示します。デフォルトは `true` で、最後のパンくずを除くすべてのパンくずが表示されます。 |
+| **Attribute** | `separator` |
+| **Type** | `boolean \| undefined` |
+| **Default** | `undefined` |
+
+
+
+### target
+
+| | |
+| --- | --- |
+| **Description** | リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
+| **Attribute** | `target` |
+| **Type** | `string \| undefined` |
+| **Default** | `undefined` |
+
+
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `ionBlur` | パンくずのフォーカスが外れたときに発行されます。 |
+| `ionFocus` | パンくずがフォーカスされたときに発行されます。 |
+
+
+## CSS Shadow Parts
+
+| Name | Description |
+| --- | --- |
+| `collapsed-indicator` | パンくずが折りたたまれていることを示すインジケーター要素です。 |
+| `native` | すべての子要素を包むネイティブHTMLのアンカーまたはdiv要素です。 |
+| `separator` | 各パンくずの間のセパレータ要素です。 |
+
+
+## CSS Custom Properties
+
+| Name | Description |
+| --- | --- |
+| `--background-focused` | フォーカス時のパンくずの背景色 |
+| `--background-focused` | フォーカス時のパンくずの背景色 |
+| `--color` | パンくずの文字色 |
+| `--color` | パンくずの文字色 |
+| `--color-active` | アクティブなパンくずのテキスト色 |
+| `--color-active` | アクティブなパンくずのテキスト色 |
+| `--color-focused` | フォーカスされたときのパンくずのテキスト色 |
+| `--color-focused` | フォーカスされたときのパンくずのテキスト色 |
+| `--color-hover` | ホバー時のパンくずのテキスト色 |
+| `--color-hover` | ホバー時のパンくずのテキスト色 |
+
