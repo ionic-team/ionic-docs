@@ -1,35 +1,10 @@
 const path = require('path');
 const prismic = require('@prismicio/client');
-const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
-
-/**
- * Old versions of the Ionic Docs are archived so
- * that we do not need to re-build it every time we deploy.
- * Building a large number of docs sites at once can cause
- * out of memory issues, so archiving old docs sites
- * allow us to keep memory usage and build times low.
- *
- * Note that this file is only for versions of the Ionic Docs
- * that are built with Docusaurus. The
- * Ionic v3 and v4 docs are built with other tools, so those
- * versions are not included here.
- *
- * Note that the urls specified in this file should
- * NOT have a trailing slash otherwise users will
- * briefly get a 404 Page Not Found error before
- * the docuementation website loads.
- */
 const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
 
-/**
- * This returns an array where each entry is an array
- * containing the version name at index 0 and
- * the archive url at index 1.
- */
 const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
-
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -51,12 +26,12 @@ module.exports = {
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
+
   presets: [
     [
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       {
-        // Will be passed to @docusaurus/plugin-content-docs (false to disable).
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
@@ -81,18 +56,15 @@ module.exports = {
           },
           exclude: ['README.md'],
           lastVersion: 'current',
-          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
               label: 'v8',
             },
           },
         },
-        // Will be passed to @docusaurus/plugin-google-tag-manager.
         googleTagManager: {
           containerId: 'GTM-TKMGCBC',
         },
-        // Will be passed to @docusaurus/theme-classic.
         theme: {
           customCss: [
             require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
@@ -103,6 +75,7 @@ module.exports = {
       },
     ],
   ],
+
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
     announcementBar: {
@@ -114,34 +87,13 @@ module.exports = {
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      {
-        name: 'twitter:domain',
-        content: 'ionicframework.com',
-      },
-      {
-        name: 'twitter:site',
-        content: '@ionicframework',
-      },
-      {
-        name: 'twitter:creator',
-        content: 'ionicframework',
-      },
-      {
-        name: 'fb:page_id',
-        content: '1321836767955949',
-      },
-      {
-        name: 'og:type',
-        content: 'website',
-      },
-      {
-        name: 'og:site_name',
-        content: 'Ionic Framework Docs',
-      },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:domain', content: 'ionicframework.com' },
+      { name: 'twitter:site', content: '@ionicframework' },
+      { name: 'twitter:creator', content: 'ionicframework' },
+      { name: 'fb:page_id', content: '1321836767955949' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:site_name', content: 'Ionic Framework Docs' },
     ],
     colorMode: {
       defaultMode: 'light',
@@ -195,22 +147,12 @@ module.exports = {
           dropdownItemsAfter: [
             ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
               label: versionName,
-              /**
-               * Use "to" instead of "href" so the
-               * external URL icon does not show up.
-               */
               to: versionUrl,
-              /**
-               * Just like the version docs in this project,
-               * we want to archived versions to open in the
-               * same tab.
-               */
               target: '_self',
             })),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
-          // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           dropdownActiveClassDisabled: true,
         },
         {
@@ -323,8 +265,6 @@ module.exports = {
     },
     prism: {
       theme: { plain: {}, styles: [] },
-      // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
-      // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
       additionalLanguages: ['shell-session', 'http', 'diff'],
     },
     algolia: {
@@ -335,7 +275,6 @@ module.exports = {
     },
   },
   plugins: [
-    // Allows usage of Sass/SCSS in the CSS preprocessor.
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',
@@ -354,10 +293,7 @@ module.exports = {
         async loadContent() {
           const repoName = 'ionicframeworkcom';
           const endpoint = prismic.getEndpoint(repoName);
-          const client = prismic.createClient(endpoint, {
-            fetch,
-          });
-
+          const client = prismic.createClient(endpoint);
           return await client.getByType('docs_ad');
         },
         async contentLoaded({ content, actions: { setGlobalData, addRoute } }) {

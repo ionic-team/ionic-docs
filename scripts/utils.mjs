@@ -1,6 +1,8 @@
 import {unified} from 'unified';
 import markdown from 'remark-parse';
 import html from 'remark-html';
+import { execSync } from 'child_process';
+import { platform } from 'os';
 
 function renderMarkdown(markdownString) {
   return unified().use(markdown).use(html).processSync(markdownString);
@@ -85,3 +87,14 @@ export {
   renderList,
   getHeadTag,
 };
+
+export function syncI18n() {
+  const isWindows = platform() === 'win32';
+  const scriptPath = isWindows ? 'scripts\\i18n.bat' : 'scripts/i18n.sh';
+  
+  try {
+    execSync(scriptPath, { stdio: 'inherit' });
+  } catch (error) {
+    console.warn('i18n sync failed, continuing...', error.message);
+  }
+}
