@@ -19,12 +19,12 @@ module.exports = function (context, options) {
         try {
           let COMPONENT_LINK_REGEXP;
           const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-          
+
           if (!response.ok) {
             console.error(`Failed to fetch component data for ${npmTag}: ${response.status}`);
             return;
           }
-          
+
           const { components } = await response.json();
 
           const names = components.map((component) => component.tag.slice(4));
@@ -54,7 +54,6 @@ module.exports = function (context, options) {
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
-
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
@@ -242,4 +241,61 @@ function renderCustomProps({ styles: customProps }) {
   const mdProps = customProps.filter((prop) => prop.mode === 'md');
 
   const renderTable = (props) => {
-    if
+    if (props.length === 0) {
+      return 'No CSS custom properties available for this component.';
+    }
+
+    return `
+| Name | Description |
+| --- | --- |
+${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+`;
+  };
+
+  if (iosProps.length > 0 || mdProps.length > 0) {
+    // If the component has mode-specific custom props, render them in tabs for iOS and MD
+    return `
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+\`\`\`\`mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+${renderTable(iosProps)}
+
+</TabItem>
+
+<TabItem value="md">
+
+${renderTable(mdProps)}
+
+</TabItem>
+</Tabs>
+\`\`\`\`
+
+`;
+  }
+  // Otherwise render the custom props without the tabs for iOS and MD
+  return renderTable(customProps);
+}
+
+function renderSlots({ slots }) {
+  if (slots.length === 0) {
+    return 'No slots available for this component.';
+  }
+
+  return `
+| Name | Description |
+| --- | --- |
+${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
+
+`;
+}
