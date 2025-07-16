@@ -74,7 +74,7 @@ ${utils.getHeadTag(apiOverrides[tag])}
 `;
 }
 
-function renderReadme({ readme, encapsulation }) {
+function renderReadme({ readme = '', encapsulation = 'none' }) {
   const endIndex = readme.indexOf('\n');
   const title = readme.substring(0, endIndex);
   const rest = readme.substring(endIndex);
@@ -91,7 +91,7 @@ ${addAdmonitions(rest)}
   `;
 }
 
-function renderUsage({ usage }) {
+function renderUsage({ usage = {} }) {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -132,7 +132,7 @@ ${value}
 `;
 }
 
-function renderProperties({ props: properties }) {
+function renderProperties({ props: properties = [] }) {
   if (properties.length === 0) {
     return '';
   }
