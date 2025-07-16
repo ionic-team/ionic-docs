@@ -19,7 +19,7 @@ import DocsCards from '@components/global/DocsCards';
   `}</style>
 </head>
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you’re familiar with the basics, refer to the [API Index](api.md) for a complete list of each component and sub-component.
+Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you're familiar with the basics, refer to the [API Index](api.md) for a complete list of each component and sub-component.
 
 <intro-end />
 
@@ -49,8 +49,9 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <!-- prettier-ignore -->
-  <p>Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</p>
+  <p>
+    Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
+  </p>
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -85,7 +86,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Infinite scroll allows you to load new data as the user scrolls through your app.</p>
 </DocsCard>
 
-<DocsCard header="Input" href="api/input" icon="/icons/component-input-icon.png">
+<DocsCard header="Inputs" href="api/input" icon="/icons/component-input-icon.png">
   <p>Inputs provides a way for users to enter data in your app.</p>
 </DocsCard>
 
@@ -119,10 +120,6 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Navigation is how users move between different pages in your app.</p>
 </DocsCard>
 
-<DocsCard header="OTP Input" href="api/input-otp" icon="/icons/component-input-otp-icon.png">
-  <p>OTP inputs offer a simple way to enter one-time passwords using multiple boxes with automatic focus.</p>
-</DocsCard>
-
 <DocsCard header="Popover" href="api/popover" icon="/icons/component-popover-icon.png">
   <p>Popover provides an easy way to present information or options without changing contexts.</p>
 </DocsCard>
@@ -133,6 +130,10 @@ Ionic apps are made of high-level building blocks called Components, which allow
 
 <DocsCard header="Radio" href="api/radio" icon="/icons/component-radio-icon.png">
   <p>Radio inputs allow you to present a set of exclusive options.</p>
+</DocsCard>
+
+<DocsCard header="Range" href="api/range" icon="/icons/component-range-icon.png">
+  <p>Range sliders let users select a value by dragging a knob along a track.</p>
 </DocsCard>
 
 <DocsCard header="Refresher" href="api/refresher" img="/icons/feature-component-refresher-icon.png">
@@ -164,7 +165,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissible.</p>
+  <p>Toasts are subtle notifications that appear over your app's content without interrupting user interaction.</p>
 </DocsCard>
 
 <DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">
