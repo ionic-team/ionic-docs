@@ -1,7 +1,6 @@
 import { writeFileSync } from 'fs';
-import fetch from 'node-fetch';
 
-// replace with latest once it's relased
+// replace with latest once it's released
 const tag = 'latest';
 
 const pluginApis = [
@@ -85,14 +84,24 @@ ${readme}`.trim();
 
 async function getReadme(pluginId) {
   const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/README.md`;
-  const rsp = await fetch(url);
-  return rsp.text();
+  const response = await fetch(url);
+  
+  if (!response.ok) {
+    throw new Error(`Failed to fetch README for ${pluginId}: ${response.status}`);
+  }
+  
+  return response.text();
 }
 
 async function getPkgJsonData(pluginId) {
   const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/package.json`;
-  const rsp = await fetch(url);
-  return rsp.json();
+  const response = await fetch(url);
+  
+  if (!response.ok) {
+    throw new Error(`Failed to fetch package.json for ${pluginId}: ${response.status}`);
+  }
+  
+  return response.json();
 }
 
 async function main() {

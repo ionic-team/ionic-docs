@@ -1,18 +1,14 @@
 import pkg from 'fs-extra';
-import fetch from 'node-fetch';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import { compare } from 'semver';
-import { URL } from 'url';
+import { URL, fileURLToPath } from 'url';
 
 import { renderMarkdown } from './utils.mjs';
 
-const __dirname = new URL('.', import.meta.url).pathname;
+// Fix for cross-platform __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/ReleaseNotes/release-notes.json');
-
-// export default {
-//   title: 'Build Release Notes data',
-//   task: async () => outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 })
-// };
 
 // Get the GitHub Releases from Ionic
 // -------------------------------------------------------------------------------
@@ -24,13 +20,19 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 // https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on
 const getReleases = async () => {
   try {
-    const request = await fetch(new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'), {
+    const response = await fetch('https://api.github.com/repos/ionic-team/ionic/releases', {
       headers: {
-        Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
+        'Authorization': process.env.GITHUB_TOKEN ? `token ${process.env.GITHUB_TOKEN}` : '',
+        'User-Agent': 'ionic-docs',
       },
     });
 
-    const releases = await request.json();
+    if (!response.ok) {
+      console.error(`GitHub API responded with status: ${response.status}`);
+      return [];
+    }
+
+    const releases = await response.json();
 
     // Check that the response is an array in case it was
     // successful but returned an object
@@ -66,6 +68,7 @@ const getReleases = async () => {
       return [];
     }
   } catch (error) {
+    console.error('Error fetching releases:', error.message);
     return [];
   }
 };
@@ -96,8 +99,15 @@ function getVersionType(version) {
 }
 
 async function run() {
-  const { outputJson } = pkg;
-  outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 });
+  try {
+    const { outputJson } = pkg;
+    const releases = await getReleases();
+    await outputJson(OUTPUT_PATH, releases, { spaces: 2 });
+    console.log('Release notes updated successfully!');
+  } catch (error) {
+    console.error('Error updating release notes:', error.message);
+    process.exit(1);
+  }
 }
 
 run();
