@@ -17,7 +17,12 @@ title: 用語集
     <h3>Accessibility</h3>
   </a>
   <p>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank">Accessibility</a> (a11y) is the practice of enabling as many people as possible to use the content, even if people have limited abilities. This include people with disabilities, those using mobile devices, and those with slow network connections. Content should be developed to be as accessible as technology allows.
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank">
+      Accessibility
+    </a>{' '}
+    (a11y) is the practice of enabling as many people as possible to use the content, even if people have limited
+    abilities. This include people with disabilities, those using mobile devices, and those with slow network
+    connections. Content should be developed to be as accessible as technology allows.
   </p>
 </section>
 
@@ -26,7 +31,12 @@ title: 用語集
     <h3>Android SDK</h3>
   </a>
   <p>
-    The <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a>は、Google の Android Platform の開発をする開発者向けに作られたソフトウェア開発キットです。 Androidアプリケーションのビルド、テスト、デバッグ用のツールが含まれています。
+    The{' '}
+    <a href="http://developer.android.com/sdk/index.html" target="_blank">
+      Android SDK
+    </a>
+    は、Google の Android Platform の開発をする開発者向けに作られたソフトウェア開発キットです。
+    Androidアプリケーションのビルド、テスト、デバッグ用のツールが含まれています。
   </p>
 </section>
 
@@ -35,7 +45,9 @@ title: 用語集
     <h3>Android Studio</h3>
   </a>
   <p>
-    <a href="https://developer.android.com/studio/" target="_blank">Android Studio</a>
+    <a href="https://developer.android.com/studio/" target="_blank">
+      Android Studio
+    </a>
     は、ネイティブ Android アプリ開発のための正式な統合開発環境（IDE）です。
   </p>
 </section>
@@ -45,8 +57,10 @@ title: 用語集
     <h3>Autoprefixer</h3>
   </a>
   <p>
-    <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a> は
-    は、ベンダー固有のプレフィックスを手書きの Sass/CSS コードに追加するツールです。 これにより、作成する標準化された
+    <a href="https://github.com/postcss/autoprefixer" target="_blank">
+      Autoprefixer
+    </a>{' '}
+    は は、ベンダー固有のプレフィックスを手書きの Sass/CSS コードに追加するツールです。 これにより、作成する標準化された
     CSS ルールが、サポートするすべてのブラウザに確実に適用されます。 たとえば、autoprefixer
     を使用すると、さまざまなブラウザで使用されるすべての flexbox 構文を知る必要がなく、
     <code>display: flex;</code> と記述するだけで済み、かつ自動的に正しくCSSに差し込まれます。
@@ -68,10 +82,14 @@ title: 用語集
     <h3>Capacitor</h3>
   </a>
   <p>
-    <a href="https://capacitorjs.com/" target="_blank">Capacitor</a>は、
-    web ベースのアプリケーションをネイティブの iOS、Android、Electron、web上で実行できるようにするオープンソースの
-    クロスプラットフォームアプリランタイムです。 「ネイティブのプログレッシブ Webアプリケーション」を示すこれらのアプリはとても参考になり、
-    それらは従来のハイブリッドアプリの考え方を超えた次の進化を表しています。Capacitor は Ionic社によって作られ、活発に開発/サポートされています。
+    <a href="https://capacitorjs.com/" target="_blank">
+      Capacitor
+    </a>
+    は、 web ベースのアプリケーションをネイティブの iOS、Android、Electron、web上で実行できるようにするオープンソースの
+    クロスプラットフォームアプリランタイムです。 「ネイティブのプログレッシブ
+    Webアプリケーション」を示すこれらのアプリはとても参考になり、
+    それらは従来のハイブリッドアプリの考え方を超えた次の進化を表しています。Capacitor は
+    Ionic社によって作られ、活発に開発/サポートされています。
   </p>
 </section>
 
@@ -82,12 +100,15 @@ title: 用語集
     <h3>CLI</h3>
   </a>
   <p>
-    CLI、または <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterfaceはプログラムと互いに作用し合う、 テキストベースのインターフェースです。Mac
+    CLI、または <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>
+    nterfaceはプログラムと互いに作用し合う、 テキストベースのインターフェースです。Mac
     ユーザの共通のコマンドラインアプリケーションは Terminal アプリケーションであり、Windows
     ユーザによく使われるものはコマンドプロンプトです。 Ionic コミュニティでよく使われるものは、次に示すこの
-    <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a> というターミナルです。Ionic's CLI は、
-    アプリケーションのプロダクションビルドの生成や、開発用のサーバーの起動、
-    <a href="https://ionic.io/appflow" target="_blank">Ionic の商用サービス</a>へのアクセス など、様々なことに使われています 。
+    <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a> というターミナルです。Ionic's CLI は、 アプリケーションのプロダクションビルドの生成や、開発用のサーバーの起動、
+    <a href="https://ionic.io/appflow" target="_blank">
+      Ionic の商用サービス
+    </a>
+    へのアクセス など、様々なことに使われています 。
   </p>
 </section>
 
@@ -98,8 +119,11 @@ title: 用語集
     <h3>CommonJS</h3>
   </a>
   <p>
-    <a href="https://webpack.github.io/docs/commonjs.html" target="_blank">CommonJS</a>は JavaScript の標準化団体が定義した API の集合です。
-    彼らは JavaScript のモジュールとパッケージの標準を定義しました。
+    <a href="https://webpack.github.io/docs/commonjs.html" target="_blank">
+      CommonJS
+    </a>
+    は JavaScript の標準化団体が定義した API の集合です。 彼らは JavaScript
+    のモジュールとパッケージの標準を定義しました。
   </p>
 </section>
 
@@ -108,7 +132,10 @@ title: 用語集
     <h3>Cordova</h3>
   </a>
   <p>
-    <a href="https://cordova.apache.org" target="_blank">Apache Cordova</a>は、標準の HTML/CSS/JS
+    <a href="https://cordova.apache.org" target="_blank">
+      Apache Cordova
+    </a>
+    は、標準の HTML/CSS/JS
     を本格的なネイティブアプリケーションに変換する、オープンソースのモバイルアプリケーション開発用フレームワークです。
     実機のカメラや加速度計などのネイティブの機能にアクセスする JavaScript API を提供します。 Cordova
     は、ウェブアプリケーションを iOS、Android、Windows Phone にパッケージングするために必要なビルドツールを含みます。
@@ -120,7 +147,9 @@ title: 用語集
     <h3>CORS</h3>
   </a>
   <p>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">
+      CORS
+    </a>
     (Cross-Origin Resource Sharing) は、サーバがクライアントから Web 資産へのアクセスを制御するメカニズムです。 詳しくは
     <a href="../troubleshooting/cors">CORS FAQs</a> をご覧ください。
   </p>
@@ -132,7 +161,9 @@ title: 用語集
   </a>
   <p>
     You may be familiar with variables from Sass.
-    <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">CSS Variables</a>
+    <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">
+      CSS Variables
+    </a>
     enable the same functionality but are built into the browser. CSS Variables are available in all evergreen browsers.
   </p>
 </section>
@@ -142,11 +173,9 @@ title: 用語集
     <h3>Decorators</h3>
   </a>
   <p>
-    デコレータは、関数を返す式です。既存の関数を使用して、その動作を拡張できます。
-    TypeScript では、<i>クラス</i> や
+    デコレータは、関数を返す式です。既存の関数を使用して、その動作を拡張できます。 TypeScript では、<i>クラス</i> や
     <i>パラメータ</i> を装飾することもできます。
-    <strong>クラス</strong> を装飾すると、そのコンストラクタの動作がラップおよび拡張されます。 
-    つまり、デコレータはコンストラクタが呼び出されるといくつかの機能を追加し、独自のコンストラクタを返します。
+    <strong>クラス</strong> を装飾すると、そのコンストラクタの動作がラップおよび拡張されます。 つまり、デコレータはコンストラクタが呼び出されるといくつかの機能を追加し、独自のコンストラクタを返します。
     <strong>パラメータ</strong> を修飾すると、そのパラメータに渡される引数がラップされます。
     デコレータは、引数がメソッドに渡されると機能を追加し、独自の引数を返します。
   </p>
@@ -212,7 +241,10 @@ title: 用語集
     <h3>Git</h3>
   </a>
   <p>
-    <a href="https://git-scm.com/" target="_blank">Git</a>は、コードを管理するための分散バージョン管理システムです。これにより、開発チームはコードの競合を引き起こすことなく、
+    <a href="https://git-scm.com/" target="_blank">
+      Git
+    </a>
+    は、コードを管理するための分散バージョン管理システムです。これにより、開発チームはコードの競合を引き起こすことなく、
     同じプロジェクトのコードに貢献できます。
   </p>
 </section>
@@ -222,9 +254,11 @@ title: 用語集
     <h3>Gulp</h3>
   </a>
   <p>
-    <a href="http://gulpjs.com/" target="_blank">Gulp</a>は、アプリケーションをビルドするためのタスクを実行するために使用されるツールです。一般的なビルドタスクには、
-    <a href="#es2015-es6">ES6</a> から <a href="#es5">ES5</a>, <a href="#sass">Sass</a> から CSSへの変換、
-    コードの縮小、ファイルの連結などがあります。
+    <a href="http://gulpjs.com/" target="_blank">
+      Gulp
+    </a>
+    は、アプリケーションをビルドするためのタスクを実行するために使用されるツールです。一般的なビルドタスクには、
+    <a href="#es2015-es6">ES6</a> から <a href="#es5">ES5</a>, <a href="#sass">Sass</a> から CSSへの変換、 コードの縮小、ファイルの連結などがあります。
   </p>
 </section>
 
@@ -233,8 +267,10 @@ title: 用語集
     <h3>ES Modules</h3>
   </a>
   <p>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">ES Modules</a>はモジュールの概念を 
-    JavaScript にそのまま持ち込んだものになります。
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">
+      ES Modules
+    </a>
+    はモジュールの概念を JavaScript にそのまま持ち込んだものになります。
     モジュールでは、クラスと変数はグローバルスコープ内にないため、使用するには明示的にプロジェクトにインポートする必要があります。
     これにより、コードがどこから来ているのかを理解しやすくなり、機能のモジュール化と区分化が進みます。
   </p>
@@ -245,8 +281,11 @@ title: 用語集
     <h3>Ionicons</h3>
   </a>
   <p>
-    <a href="https://ionic.io/ionicons/" target="_blank">Ionicons</a>は Ionic社によって作成・利用されているオープンソースのアイコンのセットです。
-    1:1 で iOSとマテリアルデザインのアイコンと、よく使われるソーシャル/アプリケーションのアイコンを含みます。 Ionicons
+    <a href="https://ionic.io/ionicons/" target="_blank">
+      Ionicons
+    </a>
+    は Ionic社によって作成・利用されているオープンソースのアイコンのセットです。 1:1 で
+    iOSとマテリアルデザインのアイコンと、よく使われるソーシャル/アプリケーションのアイコンを含みます。 Ionicons
     はデフォルトで Ionic ディストリビューションに含まれますが、任意のプロジェクトでも使うことが出来ます。
   </p>
 </section>
@@ -256,7 +295,10 @@ title: 用語集
     <h3>Karma</h3>
   </a>
   <p>
-    <a href="https://karma-runner.github.io/latest/index.html" target="_blank">Karma</a>は、
+    <a href="https://karma-runner.github.io/latest/index.html" target="_blank">
+      Karma
+    </a>
+    は、
     実際にブラウザ上でアプリケーションのテストを実行するテストランナーです。任意のテストフレームワークで書かれたテストケースを、
     実際にブラウザで実行します。Karma はもともと Angular 1 用に書かれたものです。
   </p>
@@ -288,9 +330,11 @@ title: 用語集
   </a>
   <p>
     <strong>Live Reload</strong> (or <strong>live-reload</strong>) は、アプリケーションの変更を検出すると、
-    自動的にブラウザまたは <a href="../core-concepts/webview">Web View</a>をリロードするツールです。場合によっては、ウィンドウ全体をリロードしなくても、
+    自動的にブラウザまたは <a href="../core-concepts/webview">Web View</a>
+    をリロードするツールです。場合によっては、ウィンドウ全体をリロードしなくても、
     アプリケーションの一部を置き換えることができます。ライブリロード には実行中の開発サーバーが必要なので、Web View
-    にはデプロイされたファイルを単に読むのではなく、URLをロードする必要があるため、別のデバイスでライブリロードを使用するのは難しいかもしれません。詳しくは<a href="../cli/livereload">Live Reload docs</a> を御覧ください。
+    にはデプロイされたファイルを単に読むのではなく、URLをロードする必要があるため、別のデバイスでライブリロードを使用するのは難しいかもしれません。詳しくは
+    <a href="../cli/livereload">Live Reload docs</a> を御覧ください。
   </p>
 </section>
 
@@ -299,8 +343,11 @@ title: 用語集
     <h3>Node</h3>
   </a>
   <p>
-    <a href="https://nodejs.org/" target="_blank">Node</a>は、サーバサイドで JavaScript を書くことができるランタイム環境です
-    加えて、Node は Webサービスに使用されるだけでなく、
+    <a href="https://nodejs.org/" target="_blank">
+      Node
+    </a>
+    は、サーバサイドで JavaScript を書くことができるランタイム環境です 加えて、Node は
+    Webサービスに使用されるだけでなく、
     <a href="#cli">Ionic CLI</a>などの開発者ツールの構築にもよく使用されます。
   </p>
 </section>
@@ -310,8 +357,10 @@ title: 用語集
     <h3>npm</h3>
   </a>
   <p>
-    <a href="https://www.npmjs.com/" target="_blank">npm</a>は <a href="#node">node</a> のパッケージマネージャです。
-    これにより、開発者はノードモジュールをインストール、
+    <a href="https://www.npmjs.com/" target="_blank">
+      npm
+    </a>
+    は <a href="#node">node</a> のパッケージマネージャです。 これにより、開発者はノードモジュールをインストール、
     共有、およびパッケージ化できます。Ionic は npm からいくつかの依存関係と一緒にインストールすることができます。
   </p>
 </section>
@@ -334,7 +383,10 @@ title: 用語集
   <p>
     Apple 社が <strong>Bundle ID</strong> と呼び、Android 社が <strong>Application ID</strong> と呼ぶ
     <strong>Package ID</strong> は、App Store/Play Store に公開されたアプリを識別するために使用されます。 これは
-    <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">逆 DNS 表記</a>でフォーマットされた文字列です。
+    <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">
+      逆 DNS 表記
+    </a>
+    でフォーマットされた文字列です。
   </p>
 </section>
 
@@ -343,9 +395,12 @@ title: 用語集
     <h3>Polyfill</h3>
   </a>
   <p>
-    <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">polyfill</a>は、ブラウザに機能を追加し、
-    ブラウザの違いを標準化する少しのコードです。これは <a href="#shim">shim</a>と似ていますが、 shim に独自の API がある場合には、
-    ブラウザに実装されていることを期待する API として polyfillを使用します。
+    <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">
+      polyfill
+    </a>
+    は、ブラウザに機能を追加し、 ブラウザの違いを標準化する少しのコードです。これは <a href="#shim">shim</a>
+    と似ていますが、 shim に独自の API がある場合には、 ブラウザに実装されていることを期待する API として
+    polyfillを使用します。
   </p>
 </section>
 
@@ -354,8 +409,10 @@ title: 用語集
     <h3>Protractor</h3>
   </a>
   <p>
-    <a href="https://angular.github.io/protractor/#/" target="_blank">Protractor</a>は、
-    Angular チームが開発したテストフレームワークです。Protractor は、エンドツーエンドのテストのために、 Karma
+    <a href="https://angular.github.io/protractor/#/" target="_blank">
+      Protractor
+    </a>
+    は、 Angular チームが開発したテストフレームワークです。Protractor は、エンドツーエンドのテストのために、 Karma
     のようなテストランナーと一緒に使うことができます。テストランナーを使用すると、コードの品質を高速かつプログラム的に検証できます。
   </p>
 </section>
@@ -365,10 +422,19 @@ title: 用語集
     <h3>Sass</h3>
   </a>
   <p>
-    Sass は CSS にコンパイルされるスタイルシート言語で、Ionicで使用されています。 Sass is like CSS, but with extra features
-    such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a>,
-    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and
-    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">loops</a>.
+    Sass は CSS にコンパイルされるスタイルシート言語で、Ionicで使用されています。 Sass is like CSS, but with extra
+    features such as{' '}
+    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">
+      variables
+    </a>
+    ,
+    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
+      mixins
+    </a>
+    , and
+    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
+      loops
+    </a>.
   </p>
 </section>
 
@@ -379,9 +445,14 @@ title: 用語集
   <p>
     A component that uses scoped encapsulation will automatically scope its CSS by appending each of the styles with a
     data attribute at run time. Overriding scoped selectors in CSS requires a
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">higher specificity</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">
+      higher specificity
+    </a>
     selector. Scoped components can also be styled using
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a>.
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">
+      CSS Custom Properties
+    </a>
+    .
   </p>
 </section>
 
@@ -390,11 +461,17 @@ title: 用語集
     <h3>Shadow DOM</h3>
   </a>
   <p>
-    <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">Shadow DOM</a>
-    is a native browser solution for DOM and style encapsulation of a component. It shields the component from its
-    surrounding environment. To externally style internal elements of a Shadow DOM component you must use
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a>
-    or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">CSS Shadow Parts</a>.
+    <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">
+      Shadow DOM
+    </a>
+    is a native browser solution for DOM and style encapsulation of a component. It shields the component from its surrounding
+    environment. To externally style internal elements of a Shadow DOM component you must use
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">
+      CSS Custom Properties
+    </a>
+    or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">
+      CSS Shadow Parts
+    </a>.
   </p>
 </section>
 
@@ -413,10 +490,10 @@ title: 用語集
     <h3>Transpiler</h3>
   </a>
   <p>
-    トランスパイルは、実行前にコードをある言語から別の言語に変換するプロセスです。一般的に、トランスパイルは高級言語を別の高級言語に変換します。 Typically,
-    a transpiler will convert a high-level language to another high-level language. The most common type of
-    <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a>
-    (<a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
+    トランスパイルは、実行前にコードをある言語から別の言語に変換するプロセスです。一般的に、トランスパイルは高級言語を別の高級言語に変換します。
+    Typically, a transpiler will convert a high-level language to another high-level language. The most common type of
+    <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a>(
+    <a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
   </p>
 </section>
 
@@ -425,11 +502,17 @@ title: 用語集
     <h3>TypeScript</h3>
   </a>
   <p>
-    <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a>は JavaScript のスーパーセットであり、
-    <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">型宣言</a>と
-    <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">インターフェース</a>
-    などの多くの機能を追加した JavaScript を提供することを意味します。Ionic は TypeScript で構築されていますが、Ionic アプリの構築において
-    TypeScript の使用は完全にオプショナルです。
+    <a href="http://www.typescriptlang.org" target="_blank">
+      TypeScript
+    </a>
+    は JavaScript のスーパーセットであり、
+    <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">
+      型宣言
+    </a>と<a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">
+      インターフェース
+    </a>
+    などの多くの機能を追加した JavaScript を提供することを意味します。Ionic は TypeScript で構築されていますが、Ionic
+    アプリの構築において TypeScript の使用は完全にオプショナルです。
   </p>
 </section>
 
@@ -448,7 +531,10 @@ title: 用語集
     <h3>Webpack</h3>
   </a>
   <p>
-    <a href="https://webpack.github.io/" target="_blank">Webpack</a>は、JavaScript モジュールとその他のアセットを一緒にバンドルします。
+    <a href="https://webpack.github.io/" target="_blank">
+      Webpack
+    </a>
+    は、JavaScript モジュールとその他のアセットを一緒にバンドルします。
     これを使用して、必要なときにのみ読み込まれる単一の、または複数の「チャンク」を作成できます。 Webpack
     を使うと、多くのファイルや依存関係を1つのファイルか、他のタイプにまとめることができます。
   </p>
@@ -459,10 +545,14 @@ title: 用語集
     <h3>Web Standards</h3>
   </a>
   <p>
-    The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization
-    for the Web. Together, industry leaders and the public work together to develop
-    <a href="https://www.w3.org/standards/" target="_blank">web standards</a>, which are a set of protocols, specifications,
-    and technologies that define the Web Platform.
+    The{' '}
+    <a href="https://www.w3.org/" target="_blank">
+      World Wide Web Consortium
+    </a>{' '}
+    (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop
+    <a href="https://www.w3.org/standards/" target="_blank">
+      web standards
+    </a>, which are a set of protocols, specifications, and technologies that define the Web Platform.
   </p>
 </section>
 
@@ -471,9 +561,11 @@ title: 用語集
     <h3>Xcode</h3>
   </a>
   <p>
-    <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a>は Apple 社のオペレーティングシステム(macOS、iOS、watchOS、tvOS) 上で
-    ソフトウェア開発を行うための AppleIDE(統合開発環境)であり、
-    他の言語やプラットフォーム用の拡張機能を備えています。
+    <a href="https://developer.apple.com/xcode/" target="_blank">
+      Xcode
+    </a>
+    は Apple 社のオペレーティングシステム(macOS、iOS、watchOS、tvOS) 上で ソフトウェア開発を行うための
+    AppleIDE(統合開発環境)であり、 他の言語やプラットフォーム用の拡張機能を備えています。
   </p>
 </section>
 
