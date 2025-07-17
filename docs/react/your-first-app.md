@@ -108,7 +108,7 @@ import App from './App';
 // CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader before the render call
+// CHANGE: Call the element loader before the render call
 defineCustomElements(window);
 
 const container = document.getElementById('root');
@@ -159,7 +159,7 @@ Open `/src/pages/Tab2.tsx`. We see:
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into <ion-content>. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```tsx
 // CHANGE: Add the following import.
@@ -216,7 +216,7 @@ import { images, square, triangle } from 'ionicons/icons';
 Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button:
 
 ```tsx
-// Keep other imports 
+// Keep other imports
 // CHANGE: Add the following import.
 import { images, square, triangle } from 'ionicons/icons';
 

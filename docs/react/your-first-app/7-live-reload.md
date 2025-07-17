@@ -31,12 +31,11 @@ With Live Reload running and the app is open on your device, let’s implement p
 ```tsx
 // Other Imports
 
-// CHANGE: Import UserPhoto, usePhotoGallery hook and useState from react. 
+// CHANGE: Import UserPhoto, usePhotoGallery hook and useState from react.
 import React, { useState } from 'react';
 import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 
-const Tab2: React.FC = () => {
-};
+const Tab2: React.FC = () => {};
 ```
 
 Next, reference the `deletePhoto` function, which we'll create soon:
@@ -45,36 +44,35 @@ Next, reference the `deletePhoto` function, which we'll create soon:
 // Same old code from before.
 
 const Tab2: React.FC = () => {
-  // CHANGE: Reference deletePhoto function 
+  // CHANGE: Reference deletePhoto function
   const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 
-  // Same old code from before. 
+  // Same old code from before.
 };
-
 ```
 
 Next, add a state value to store information about the photo to delete:
 
 ```tsx
-// Same old code from before. 
+// Same old code from before.
 
 const Tab2: React.FC = () => {
-    // Same old code from before. 
+  // Same old code from before.
 
-    // CHANGE: Add a state value for photo deletion. 
-    const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
+  // CHANGE: Add a state value for photo deletion.
+  const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 
-    // Same old code from before. 
+  // Same old code from before.
 };
 ```
 
 When a user clicks on an image, we will show the action sheet by changing the state value to the photo. Update the `<IonImg>` element to:
 
 ```tsx
-// Same old code from before. 
+// Same old code from before.
 
 const Tab2: React.FC = () => {
-    // Same old code from before. 
+    // Same old code from before.
 
     return (
         <IonPage>
@@ -113,7 +111,7 @@ In the JSX, put the following component before the closing `</IonContent>` tag.
 // Same old code from before.
 
 const Tab2: React.FC = () => {
-    // Same old code from before. 
+    // Same old code from before.
 
     return (
         <IonPage>
@@ -171,34 +169,34 @@ Above, we added two options: `Delete` that calls `deletePhoto` function (to be a
 Next, we need to implement the deletePhoto method that will come from the `usePhotoGallery` hook. Open the file and paste in the following function in the hook:
 
 ```tsx
-// Same old code from before. 
+// Same old code from before.
 
 export function usePhotoGallery() {
-    // Same old code from before. 
+  // Same old code from before.
 
-    // CHANGE: Implement deletePhoto method within usePhotoGallery hook.
-    const deletePhoto = async (photo: UserPhoto) => {
-        // Remove this photo from the Photos reference data array
-        const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
+  // CHANGE: Implement deletePhoto method within usePhotoGallery hook.
+  const deletePhoto = async (photo: UserPhoto) => {
+    // Remove this photo from the Photos reference data array
+    const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
 
-        // Update photos array cache by overwriting the existing photo array
-        Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+    // Update photos array cache by overwriting the existing photo array
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
-        // delete photo file from filesystem
-        const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
-        await Filesystem.deleteFile({
-            path: filename,
-            directory: Directory.Data,
-        });
-        setPhotos(newPhotos);
-    };
+    // delete photo file from filesystem
+    const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
+    await Filesystem.deleteFile({
+      path: filename,
+      directory: Directory.Data,
+    });
+    setPhotos(newPhotos);
+  };
 
-    // CHANGE: Update return and add deletePhoto function
-    return {
-        photos,
-        takePhoto,
-        deletePhoto,
-    };
+  // CHANGE: Update return and add deletePhoto function
+  return {
+    photos,
+    takePhoto,
+    deletePhoto,
+  };
 }
 
 // Same old code from before.
@@ -210,8 +208,7 @@ Save this file, then tap on a photo again and choose the “Delete” option. Th
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.
 
-
-`Tab2.tsx` should look like this: 
+`Tab2.tsx` should look like this:
 
 ```tsx
 import { camera, trash, close } from 'ionicons/icons';
@@ -237,7 +234,7 @@ import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 const Tab2: React.FC = () => {
   const { photos, takePhoto, deletePhoto } = usePhotoGallery();
   const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
-  
+
   return (
     <IonPage>
       <IonHeader>
@@ -290,135 +287,132 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-
 `usePhotoGallery.ts` should look like this:
 
 ```tsx
 import { useState, useEffect } from 'react';
 import { isPlatform } from '@ionic/react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera'; 
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Capacitor } from '@capacitor/core';
 
-
 const PHOTO_STORAGE = 'photos';
 
 export function usePhotoGallery() {
-    const [photos, setPhotos ] = useState<UserPhoto[]>([]);
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
-    const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-        let base64Data: string | Blob;
-        // "hybrid" will detect Cordova or Capacitor:
-        if (isPlatform('hybrid')) {
-            const file = await Filesystem.readFile({
-                path: photo.path!,
-            });
-            base64Data = file.data;
-        } else {
-            base64Data = await base64FromPath(photo.webPath!);
-        }
-        
-
-        const savedFile = await Filesystem.writeFile({
-            path: fileName,
-            data: base64Data,
-            directory: Directory.Data,
-        });
-
-        if (isPlatform('hybrid')) {
-            // Display the new image by rewriting the 'file://' path to HTTP
-            // Details: https://ionicframework.com/docs/building/webview#file-protocol
-            return {
-                filepath: savedFile.uri,
-                webviewPath: Capacitor.convertFileSrc(savedFile.uri),
-            };
-        } else {
-            // Use webPath to display the new image instead of base64 since it's
-            // already loaded into memory
-            return {
-                filepath: fileName,
-                webviewPath: photo.webPath,
-            };
-        }
+  const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
+    let base64Data: string | Blob;
+    // "hybrid" will detect Cordova or Capacitor:
+    if (isPlatform('hybrid')) {
+      const file = await Filesystem.readFile({
+        path: photo.path!,
+      });
+      base64Data = file.data;
+    } else {
+      base64Data = await base64FromPath(photo.webPath!);
     }
 
-    useEffect(() => {
-        const loadSaved = async() => {
-            const { value } = await Preferences.get({ key: PHOTO_STORAGE });
-            const photosInPreferences = (value? JSON.parse(value) : []) as UserPhoto[];
-            
-            if (!isPlatform('hybrid')) {
-                for (let photo of photosInPreferences) {
-                    const file = await Filesystem.readFile({
-                        path: photo.filepath,
-                        directory: Directory.Data,
-                    });
-                    // Web platform only: Load the photo as base64 data
-                    photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
-                }
-            }
-            setPhotos(photosInPreferences);
-        };
-        loadSaved();
-    }, []);
-    
-    const takePhoto = async () => {
-        const photo = await Camera.getPhoto({
-            resultType: CameraResultType.Uri,
-            source: CameraSource.Camera,
-            quality: 100,
-        });
-        
-        const fileName = Date.now() + '.jpeg';
-        const savedFileImage = await savePicture(photo, fileName);
-        const newPhotos = [savedFileImage, ...photos];
-        setPhotos(newPhotos);
-        Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
-    };
+    const savedFile = await Filesystem.writeFile({
+      path: fileName,
+      data: base64Data,
+      directory: Directory.Data,
+    });
 
-    const deletePhoto = async (photo: UserPhoto) => {
-        // Remove this photo from the Photos reference data array
-        const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
+    if (isPlatform('hybrid')) {
+      // Display the new image by rewriting the 'file://' path to HTTP
+      // Details: https://ionicframework.com/docs/building/webview#file-protocol
+      return {
+        filepath: savedFile.uri,
+        webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+      };
+    } else {
+      // Use webPath to display the new image instead of base64 since it's
+      // already loaded into memory
+      return {
+        filepath: fileName,
+        webviewPath: photo.webPath,
+      };
+    }
+  };
 
-        // Update photos array cache by overwriting the existing photo array
-        Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  useEffect(() => {
+    const loadSaved = async () => {
+      const { value } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
 
-        // delete photo file from filesystem
-        const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
-        await Filesystem.deleteFile({
-            path: filename,
+      if (!isPlatform('hybrid')) {
+        for (let photo of photosInPreferences) {
+          const file = await Filesystem.readFile({
+            path: photo.filepath,
             directory: Directory.Data,
-        });
-        setPhotos(newPhotos);
+          });
+          // Web platform only: Load the photo as base64 data
+          photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+        }
+      }
+      setPhotos(photosInPreferences);
     };
+    loadSaved();
+  }, []);
 
-    return {
-        photos,
-        takePhoto,
-        deletePhoto,
-    };
+  const takePhoto = async () => {
+    const photo = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    const fileName = Date.now() + '.jpeg';
+    const savedFileImage = await savePicture(photo, fileName);
+    const newPhotos = [savedFileImage, ...photos];
+    setPhotos(newPhotos);
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  };
+
+  const deletePhoto = async (photo: UserPhoto) => {
+    // Remove this photo from the Photos reference data array
+    const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
+
+    // Update photos array cache by overwriting the existing photo array
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+
+    // delete photo file from filesystem
+    const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
+    await Filesystem.deleteFile({
+      path: filename,
+      directory: Directory.Data,
+    });
+    setPhotos(newPhotos);
+  };
+
+  return {
+    photos,
+    takePhoto,
+    deletePhoto,
+  };
 }
 
 export async function base64FromPath(path: string): Promise<string> {
-    const response = await fetch(path);
-    const blob = await response.blob();
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onerror = reject;
-        reader.onload = () => {
-            if (typeof reader.result === 'string') {
-                resolve(reader.result);
-            } else {
-                reject('method did not return a string');
-            }
-        };
-        reader.readAsDataURL(blob);
-    });
+  const response = await fetch(path);
+  const blob = await response.blob();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      if (typeof reader.result === 'string') {
+        resolve(reader.result);
+      } else {
+        reject('method did not return a string');
+      }
+    };
+    reader.readAsDataURL(blob);
+  });
 }
 
 export interface UserPhoto {
-    filepath: string;
-    webviewPath?: string;
+  filepath: string;
+  webviewPath?: string;
 }
 ```
