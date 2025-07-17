@@ -9,7 +9,7 @@
     "start": "vite preview"
   },
   "dependencies": {
-    "@ionic/core": "8.6.4",
+    "@ionic/core": "8.6.5",
     "ionicons": "8.0.13"
   },
   "devDependencies": {
