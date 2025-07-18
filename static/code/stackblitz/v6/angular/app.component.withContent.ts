@@ -10,4 +10,6 @@ import { ExampleComponent } from './example.component';
   imports: [IonicModule, ExampleComponent, RouterOutlet],
   standalone: true
 })
-export class AppComponent { }
+export class AppComponent {
+  constructor() {}
+}
