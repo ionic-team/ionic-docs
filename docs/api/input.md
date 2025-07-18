@@ -192,7 +192,7 @@ import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.m
 
 A simpler input syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an input, resolves accessibility issues, and improves the developer experience.
 
-Developers can perform this migration one input at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+Developers can perform this migration one input at a time. The legacy syntax is no longer supported.
 
 ### Using the Modern Syntax
 
@@ -205,10 +205,6 @@ Using the modern syntax involves three steps:
 import Migration from '@site/static/usage/v8/input/migration/index.md';
 
 <Migration />
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern input syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-input` to `true` to force that instance of the input to use the legacy syntax.
 
 ## Interfaces
 
