@@ -1,10 +1,12 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { IonAccordionGroup } from '@ionic/angular';
+import { IonicModule, IonAccordionGroup } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true
 })
 export class ExampleComponent {
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
