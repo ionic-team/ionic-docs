@@ -1,10 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
-import { PickerController } from '@ionic/angular';
+import { IonicModule, PickerController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true
 })
 export class ExampleComponent {
   constructor(private pickerCtrl: PickerController) {}
