@@ -80,3 +80,4 @@ mozallowfullscreen
 msallowfullscreen
 oallowfullscreen
 webkitallowfullscreen
+webnative
