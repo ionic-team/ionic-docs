@@ -53,8 +53,9 @@ Requires the Cordova plugin: `cordova-plugin-ionic-webview` > 2.0. For more info
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ionic-webview {'\n'}$ npm install @awesome-cordova-plugins/ionic-webview{'https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview'}
+      $ ionic cordova plugin add cordova-plugin-ionic-webview {'\n'}$ npm install @awesome-cordova-plugins/ionic-webview
       {'\n'}
+      # For more information, visit: [Awesome Cordova Plugins - Ionic WebView](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview)
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
