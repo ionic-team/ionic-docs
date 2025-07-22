@@ -99,7 +99,7 @@ module.exports = {
       label: 'React',
       collapsed: false,
       items: [
-        'react',
+        'react/overview',
         'react/quickstart',
         {
           type: 'category',
