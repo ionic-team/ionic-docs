@@ -11,7 +11,7 @@ The [WebNative Visual Studio Code extension](https://marketplace.visualstudio.co
 
 If you have VS Code on this computer click Install below. You can also find the extension by searching for "WebNative".
 
-<a href="vscode:extension/webnative.webnative" target="_self">
+<a href="vscode:extension/WebNative.webnative" target="_self">
   <button
     style={{
       color: 'var(--ifm-color-content-inverse)',
