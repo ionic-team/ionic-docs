@@ -24,9 +24,7 @@ If you have VS Code on this computer click Install below. You can also find the 
       borderRadius: 100,
       backgroundColor: 'var(--ifm-font-color-base)',
     }}
-  >
-    Install
-  </button>
+  >Install</button>
 </a>
 <a href="https://webnative.dev/introduction/getting-started/" target="_self">
   <button
@@ -38,11 +36,9 @@ If you have VS Code on this computer click Install below. You can also find the 
       paddingLeft: 32,
       paddingRight: 32,
       borderRadius: 100,
-      backgroundColor: 'var(--c-admonition-info-bg)',
+      backgroundColor: 'var(--admonition-info-c-bg)',
     }}
-  >
-    Docs
-  </button>
+  >Docs</button>
 </a>
 
 ## Additional Documentation
