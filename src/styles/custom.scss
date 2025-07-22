@@ -35,7 +35,7 @@
     'Segoe UI emoji';
   --ifm-font-family-monospace: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik08Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');
 
   //#region ----------- Z Indices ------------
   --z-sidebar: 2000;
@@ -224,4 +224,27 @@ iframe {
       transition: color 0.2s ease-out;
     }
   }
+}
+
+.install-button {
+  color: var(--admonition-info-c-bg);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border: 0;  
+  border-radius: 100px;
+  background-color: var(--ifm-font-color-base);
+}
+
+.docs-button {
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 100px;
+  background-color: var(--admonition-info-c-bg);
 }
