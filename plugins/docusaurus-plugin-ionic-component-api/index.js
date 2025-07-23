@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
@@ -18,35 +16,44 @@ module.exports = function (context, options) {
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
-        let COMPONENT_LINK_REGEXP;
-        const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-        const { components } = await response.json();
+        try {
+          let COMPONENT_LINK_REGEXP;
+          const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
 
-        const names = components.map((component) => component.tag.slice(4));
-        // matches all relative markdown links to a component, e.g. (../button)
-        COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+          if (!response.ok) {
+            console.error(`Failed to fetch component data for ${npmTag}: ${response.status}`);
+            return;
+          }
 
-        components.forEach((comp) => {
-          const compTag = comp.tag.slice(4);
-          const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
+          const { components } = await response.json();
 
-          data.push({
-            outDir,
-            componentTag: compTag,
-            version,
-            props: renderProperties(comp),
-            events: renderEvents(comp),
-            methods: renderMethods(comp),
-            parts: renderParts(comp),
-            customProps: renderCustomProps(comp),
-            slots: renderSlots(comp),
+          const names = components.map((component) => component.tag.slice(4));
+          // matches all relative markdown links to a component, e.g. (../button)
+          COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+
+          components.forEach((comp) => {
+            const compTag = comp.tag.slice(4);
+            const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
+
+            data.push({
+              outDir,
+              componentTag: compTag,
+              version,
+              props: renderProperties(comp),
+              events: renderEvents(comp),
+              methods: renderMethods(comp),
+              parts: renderParts(comp),
+              customProps: renderCustomProps(comp),
+              slots: renderSlots(comp),
+            });
           });
-        });
+        } catch (error) {
+          console.error(`Error generating markdown for version ${version}:`, error.message);
+        }
       };
 
       for (const version of options.versions) {
         const npmTag = version.slice(1);
-
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
@@ -239,17 +246,16 @@ function renderCustomProps({ styles: customProps }) {
     }
 
     return `
-    | Name | Description |
-  | --- | --- |
-  ${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
-  `;
+| Name | Description |
+| --- | --- |
+${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+`;
   };
 
   if (iosProps.length > 0 || mdProps.length > 0) {
     // If the component has mode-specific custom props, render them in tabs for iOS and MD
     return `
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
 
 \`\`\`\`mdx-code-block
@@ -273,7 +279,6 @@ ${renderTable(mdProps)}
 
 </TabItem>
 </Tabs>
-
 \`\`\`\`
 
 `;
