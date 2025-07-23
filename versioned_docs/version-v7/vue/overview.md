@@ -14,30 +14,21 @@ sidebar_label: Overview
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-`@ionic/vue` combines the core Ionic Framework experience with the tooling and APIs that are tailored to Vue Developers.
+`@ionic/vue` brings the full power of the Ionic Framework to Vue developers. It offers seamless integration with the Vue ecosystem, so you can build high-quality cross-platform apps using familiar Vue tools, components, and best practices. You also get access to Ionic's extensive UI library and native capabilities.
 
 ## Vue Version Support
 
-Ionic Vue is built on top of Vue 3.0.0. If you've built an app with early versions of Ionic Vue, you'll want to upgrade to the latest release and upgrade your Vue dependencies.
+Ionic Vue v7 supports Vue 3.x. For detailed information on supported versions and our support policy, see the [Ionic Vue Support Policy](/docs/reference/support#ionic-vue).
 
 ## Vue Tooling
 
-Ionic Vue projects ship with the same tooling as regular Vue CLI projects. Meaning you'll be building with the Vue CLI and all of it's features. In addition, starter projects also ship with few features enabled by default, like Routing and TypeScript support.
+Ionic Vue projects use the same tooling as standard Vue CLI projects, so you can take advantage of the full Vue CLI feature set for building, testing, and deploying your apps. Starter projects come with useful features enabled by default, such as Vue Router for navigation and TypeScript support for type safety and improved developer experience.
 
 ## Native Tooling
 
-[Capacitor](https://capacitorjs.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, and the web.
+[Capacitor](https://capacitorjs.com) is the official cross-platform runtime for Ionic Vue, enabling your apps to run natively on iOS, Android, and the web with a single codebase.
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitorjs.com/docs/cordova).
-
-## From the Community
-
-<!-- cspell:disable -->
-
-- [Using Vue.js with Ionic & Capacitor](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
-- [Building Mobile Apps With Vue3 and Ionic](https://soshace.com/building-mobile-apps-with-vue3-and-ionic/) - Oluwaseun Raphael Afolayan
-
-<!-- cspell:enable -->
+While you can use many [Cordova](https://cordova.apache.org/) plugins with Ionic Vue, Capacitor is the recommended and fully supported solution. The [Ionic CLI](../cli.md) does not provide official Cordova integration for Ionic Vue projects. For more information on using Cordova plugins with Capacitor, see the [Capacitor documentation](https://capacitorjs.com/docs/cordova).
 
 ## Installation
 
@@ -51,16 +42,21 @@ $ ionic serve █
 ## Resources
 
 <DocsCards>
-  <DocsCard header="Getting Started" href="your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
-    <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
-  </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/feature-component-navigation-icon.png">
-  <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
+<DocsCard header="Getting Started" href="quickstart" icon="/icons/guide-quickstart-icon.png">
+  <p>Quickly set up your first Ionic Vue app and learn the basics of the framework and CLI.</p>
 </DocsCard>
 
-<DocsCard header="Lifecycle" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
-  <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/logo-vue-icon.png">
+  <p>Build a real Photo Gallery app with Ionic Vue and native device features.</p>
+</DocsCard>
+
+<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>Master navigation in Ionic Vue using Vue Router.</p>
+</DocsCard>
+
+<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>Explore Ionic’s rich library of UI components for building beautiful apps.</p>
 </DocsCard>
 
 </DocsCards>

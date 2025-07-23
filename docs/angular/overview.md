@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Angular Version Support
 
-Ionic Angular supports the latest versions of Angular. For detailed information on supported versions and our support policy, see the [Ionic Angular Support Policy](/docs/reference/support#ionic-angular).
+Ionic Angular v8 supports Angular versions 16 and above. For detailed information on supported versions and our support policy, see the [Ionic Angular Support Policy](/docs/reference/support#ionic-angular).
 
 ## Angular Tooling
 
@@ -54,7 +54,7 @@ $ ionic serve █
 </DocsCard>
 
 <DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>Explore Ionic’s rich library of UI components for building beautiful apps.</p>
+  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
 </DocsCard>
 
 </DocsCards>

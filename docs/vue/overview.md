@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Vue Version Support
 
-Ionic Vue supports the latest versions of Vue. For detailed information on supported versions and our support policy, see the [Ionic Vue Support Policy](/docs/reference/support#ionic-vue).
+Ionic Vue v8 supports Vue 3.x. For detailed information on supported versions and our support policy, see the [Ionic Vue Support Policy](/docs/reference/support#ionic-vue).
 
 ## Vue Tooling
 
