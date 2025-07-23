@@ -227,24 +227,25 @@ iframe {
 }
 
 .install-button {
+  background-color: var(--ifm-font-color-base);
+  border:2px solid var(--ifm-font-color-base);
+  border-radius: 100px;
   color: var(--admonition-info-c-bg);
   cursor: pointer;
   font-weight: bold;
   padding: 16px;
   padding-left: 32px;
   padding-right: 32px;
-  border: 0;
-  border-radius: 100px;
-  background-color: var(--ifm-font-color-base);
 }
 
 .docs-button {
+  background-color: transparent;
+  border: 2px solid var(--ifm-font-color-base);
+  border-radius: 100px;
   color: var(--ifm-font-color-base);
   cursor: pointer;
   font-weight: bold;
   padding: 16px;
   padding-left: 32px;
   padding-right: 32px;
-  border-radius: 100px;
-  background-color: var(--admonition-info-c-bg);
 }
