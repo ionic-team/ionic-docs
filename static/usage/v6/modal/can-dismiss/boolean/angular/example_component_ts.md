@@ -1,10 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
-import { CheckboxCustomEvent } from '@ionic/angular';
+import { IonicModule, CheckboxCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true
 })
 export class ExampleComponent {
   canDismiss = false;
