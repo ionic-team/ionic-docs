@@ -22,7 +22,7 @@ If you have VS Code on this computer click Install below. You can also find the 
 
 Full documentation of the WebNative extension can be found at [webnative.dev](https://webnative.dev/introduction/getting-started/) covering topics like:
 
-- Building, debugging and running your Capacitor application.
+- Building, debugging and running your Ionic Framework application.
 - Bundle analysis, dependency upgrades.
 - Migration from Cordova.
 - Changing native settings.
