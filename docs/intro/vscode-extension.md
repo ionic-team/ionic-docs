@@ -7,7 +7,7 @@ title: VS Code Extension
   <meta name="description" content="Using the Ionic/Ionic-Framework VS Code Extension" />
 </head>
 
-The [WebNative Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=webnative.webnative) is a community-maintained plugin that helps you perform common Ionic Framework development tasks without needing to remember CLI commands.
+The [WebNative Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=WebNative.webnative) is a community-maintained plugin that helps you perform common Ionic Framework development tasks without needing to remember CLI commands.
 
 If you have VS Code on this computer click Install below. You can also find the extension by searching for "WebNative".
 
