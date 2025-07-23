@@ -1,11 +1,11 @@
 import pkg from 'fs-extra';
+import fetch from 'node-fetch';
 import { resolve, dirname } from 'path';
 import { compare } from 'semver';
 import { URL, fileURLToPath } from 'url';
 
 import { renderMarkdown } from './utils.mjs';
 
-// Fix for cross-platform __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/ReleaseNotes/release-notes.json');
