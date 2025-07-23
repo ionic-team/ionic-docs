@@ -1,12 +1,14 @@
 ```ts
 import { Component } from '@angular/core';
 
-import { RangeCustomEvent } from '@ionic/angular';
+import { IonicModule, RangeCustomEvent } from '@ionic/angular';
 import { RangeValue } from '@ionic/core';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true
 })
 export class ExampleComponent {
   lastEmittedValue: RangeValue;
