@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-page-one',
@@ -16,6 +17,8 @@ import { Component } from '@angular/core';
       <h1>Page Three</h1>
     </ion-content>
   `,
+  imports: [IonicModule],
+  standalone: true
 })
 export class PageThreeComponent {}
 ```
