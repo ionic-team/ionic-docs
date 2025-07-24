@@ -1,11 +1,14 @@
 ```ts
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import type { OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 import { Item } from './types';
 
 @Component({
   selector: 'app-typeahead',
   templateUrl: 'typeahead.component.html',
+  imports: [CommonModule, IonicModule],
+  standalone: true
 })
 export class TypeaheadComponent implements OnInit {
   @Input() items: Item[] = [];
