@@ -1,10 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true
 })
 export class ExampleComponent {
   constructor(private toastController: ToastController) {}
