@@ -34,6 +34,7 @@ Ionic uses the official Angular stack for building apps and routing, so your app
 $ npm install -g @ionic/cli
 $ ionic start myApp tabs --type angular
 
+$ cd myApp
 $ ionic serve █
 ```
 

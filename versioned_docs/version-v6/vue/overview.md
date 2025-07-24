@@ -36,6 +36,7 @@ While you can use many [Cordova](https://cordova.apache.org/) plugins with Ionic
 $ npm install -g @ionic/cli
 $ ionic start myApp tabs --type vue
 
+$ cd myApp
 $ ionic serve █
 ```
 

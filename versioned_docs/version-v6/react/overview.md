@@ -34,6 +34,7 @@ Ionic React works seamlessly with the React CLI and popular React tooling. You c
 $ npm install -g @ionic/cli
 $ ionic start myApp tabs --type react
 
+$ cd myApp
 $ ionic serve █
 ```
 
