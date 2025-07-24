@@ -188,24 +188,6 @@ import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.m
 
 <CSSProps />
 
-## Migrating from Legacy Input Syntax
-
-A simpler input syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an input, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one input at a time. The legacy syntax is no longer supported.
-
-### Using the Modern Syntax
-
-Using the modern syntax involves three steps:
-
-1. Remove `ion-label` and use the `label` property on `ion-input` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-input`.
-2. Move input-specific properties from `ion-item` on to `ion-input`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
-3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-input` instead.
-
-import Migration from '@site/static/usage/v8/input/migration/index.md';
-
-<Migration />
-
 ## Interfaces
 
 ### InputChangeEventDetail
