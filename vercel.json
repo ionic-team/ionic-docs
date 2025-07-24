@@ -6,6 +6,10 @@
       "destination": "/docs/angular/overview"
     },
     {
+      "source": "/docs/:version(v6|v7)/angular",
+      "destination": "/docs/:version/angular/overview"
+    },
+    {
       "source": "/docs/angular/your-first-app/2-taking-photos",
       "destination": "/docs/angular/your-first-app/taking-photos"
     },
@@ -45,6 +49,10 @@
       "destination": "/docs/react/overview"
     },
     {
+      "source": "/docs/:version(v6|v7)/react",
+      "destination": "/docs/:version/react/overview"
+    },
+    {
       "source": "/docs/react/your-first-app/2-taking-photos",
       "destination": "/docs/react/your-first-app/taking-photos"
     },
@@ -68,6 +76,10 @@
     {
       "source": "/docs/vue",
       "destination": "/docs/vue/overview"
+    },
+    {
+      "source": "/docs/:version(v6|v7)/vue",
+      "destination": "/docs/:version/vue/overview"
     },
     { "source": "/docs/vue/your-first-app/2-taking-photos", "destination": "/docs/vue/your-first-app/taking-photos" },
     { "source": "/docs/vue/your-first-app/3-saving-photos", "destination": "/docs/vue/your-first-app/saving-photos" },
