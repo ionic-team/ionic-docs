@@ -1,19 +1,20 @@
 ```html
+<router-outlet ></router-outlet>
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
+    <ion-tab-button routerLink="home" routerLinkActive="tab-selected">
       <ion-icon name="play-circle"></ion-icon>
       Listen Now
     </ion-tab-button>
-    <ion-tab-button tab="radio">
+    <ion-tab-button routerLink="radio" routerLinkActive="tab-selected">
       <ion-icon name="radio"></ion-icon>
       Radio
     </ion-tab-button>
-    <ion-tab-button tab="library">
+    <ion-tab-button routerLink="library" routerLinkActive="tab-selected">
       <ion-icon name="library"></ion-icon>
       Library
     </ion-tab-button>
-    <ion-tab-button tab="search">
+    <ion-tab-button routerLink="search" routerLinkActive="tab-selected">
       <ion-icon name="search"></ion-icon>
       Search
     </ion-tab-button>
