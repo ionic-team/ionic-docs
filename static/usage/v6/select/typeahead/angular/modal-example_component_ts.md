@@ -8,7 +8,7 @@ import { Item } from './types';
   selector: 'app-typeahead',
   templateUrl: 'typeahead.component.html',
   imports: [CommonModule, IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class TypeaheadComponent implements OnInit {
   @Input() items: Item[] = [];

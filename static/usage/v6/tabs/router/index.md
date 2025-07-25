@@ -43,8 +43,7 @@ import react_search_page_tsx from './react/search_page_tsx.md';
       files: {
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
-        'src/app/app.routes.ts':
-        app_routes_ts,
+        'src/app/app.routes.ts': app_routes_ts,
         'src/app/home/home-page.component.ts': angular_home_page_component_ts,
         'src/app/home/home-page.component.html': angular_home_page_component_html,
         'src/global.css': angular_global_css,

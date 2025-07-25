@@ -8,7 +8,7 @@ import { Item } from './types';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule, TypeaheadComponent],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;

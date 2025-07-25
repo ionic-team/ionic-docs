@@ -6,7 +6,7 @@ import { IonicModule, IonContent } from '@ionic/angular';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   @ViewChild(IonContent) content: IonContent;

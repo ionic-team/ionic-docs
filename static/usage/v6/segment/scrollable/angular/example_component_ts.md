@@ -5,10 +5,10 @@ import { addIcons } from 'ionicons';
 import { home, heart, pin, star, call, globe, basket, barbell, trash, person } from 'ionicons/icons';
 
 @Component({
-    selector: 'app-example',
-    templateUrl: 'example.component.html',
-    imports: [IonicModule],
-    standalone: true
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true,
 })
 export class ExampleComponent {
   constructor() {

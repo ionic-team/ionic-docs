@@ -8,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [CommonModule, IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   public loaded = false;

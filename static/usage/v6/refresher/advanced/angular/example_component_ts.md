@@ -10,10 +10,10 @@ import { ellipse } from 'ionicons/icons';
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
   imports: [CommonModule, IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
-    constructor() {
+  constructor() {
     /**
      * Any icons you want to use in your application
      * can be registered in app.component.ts and then

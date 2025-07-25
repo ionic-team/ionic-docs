@@ -6,7 +6,7 @@ import { IonicModule, PopoverController } from '@ionic/angular';
   selector: 'app-popover',
   templateUrl: 'popover.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class PopoverComponent {}
 ```

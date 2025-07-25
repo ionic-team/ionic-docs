@@ -8,7 +8,7 @@ import { IonicModule, ItemReorderEventDetail } from '@ionic/angular';
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {

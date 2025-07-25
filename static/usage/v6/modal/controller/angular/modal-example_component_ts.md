@@ -7,7 +7,7 @@ import { IonicModule, ModalController } from '@ionic/angular';
   selector: 'app-modal-example',
   templateUrl: 'modal-example.component.html',
   imports: [FormsModule, IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ModalExampleComponent {
   name: string;

@@ -6,8 +6,7 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class HomePageComponent {}
-
 ```

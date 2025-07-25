@@ -8,7 +8,7 @@ import { ModalExampleComponent } from './modal-example.component';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   message = 'This modal example uses the modalController to present and dismiss modals.';

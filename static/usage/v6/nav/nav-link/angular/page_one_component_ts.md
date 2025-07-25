@@ -19,7 +19,7 @@ import { PageTwoComponent } from './page-two.component';
     </ion-content>
   `,
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class PageOneComponent {
   component = PageTwoComponent;

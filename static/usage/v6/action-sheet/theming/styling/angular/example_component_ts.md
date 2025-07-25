@@ -8,7 +8,7 @@ import { IonicModule, ActionSheetController } from '@ionic/angular';
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   constructor(private actionSheetCtrl: ActionSheetController) {}

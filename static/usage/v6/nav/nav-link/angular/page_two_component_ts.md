@@ -24,7 +24,7 @@ import { PageThreeComponent } from './page-three.component';
     </ion-content>
   `,
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class PageTwoComponent {
   component = PageThreeComponent;

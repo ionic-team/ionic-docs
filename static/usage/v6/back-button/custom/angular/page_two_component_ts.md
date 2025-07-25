@@ -21,7 +21,7 @@ import { caretBack } from 'ionicons/icons';
     </ion-content>
   `,
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class PageTwoComponent {
   constructor() {

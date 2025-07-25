@@ -6,8 +6,7 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-radio-page',
   templateUrl: './radio-page.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class RadioPageComponent {}
-
 ```

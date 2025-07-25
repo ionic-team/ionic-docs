@@ -8,9 +8,9 @@ import { personCircle, search, ellipsisHorizontal, ellipsisVertical, helpCircle,
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
-export class ExampleComponent{
+export class ExampleComponent {
   constructor() {
     /**
      * Any icons you want to use in your application

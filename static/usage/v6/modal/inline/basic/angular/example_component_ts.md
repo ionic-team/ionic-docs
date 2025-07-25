@@ -8,7 +8,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [FormsModule, IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   @ViewChild(IonModal) modal: IonModal;

@@ -6,8 +6,7 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-library-page',
   templateUrl: './library-page.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class LibraryPageComponent {}
-
 ```

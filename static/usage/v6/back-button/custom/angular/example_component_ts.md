@@ -8,7 +8,7 @@ import { PageOneComponent } from './page-one.component';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   component = PageOneComponent;

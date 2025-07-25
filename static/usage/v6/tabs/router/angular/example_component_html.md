@@ -1,5 +1,5 @@
 ```html
-<router-outlet ></router-outlet>
+<router-outlet></router-outlet>
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button routerLink="home" routerLinkActive="tab-selected">

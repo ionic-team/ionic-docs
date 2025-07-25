@@ -8,7 +8,7 @@ import { globe } from 'ionicons/icons';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   constructor(private toastController: ToastController) {

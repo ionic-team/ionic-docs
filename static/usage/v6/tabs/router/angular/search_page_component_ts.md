@@ -6,8 +6,7 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class SearchPageComponent {}
-
 ```

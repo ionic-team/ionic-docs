@@ -2,13 +2,13 @@
 import { Component } from '@angular/core';
 import { IonicModule, ItemReorderEventDetail } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { pizza } from 'ionicons/icons'
+import { pizza } from 'ionicons/icons';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   constructor() {

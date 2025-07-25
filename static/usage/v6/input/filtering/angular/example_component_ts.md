@@ -7,7 +7,7 @@ import type { IonInput } from '@ionic/angular';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   inputModel = '';

@@ -10,7 +10,7 @@ import { playCircle, library, radio, search } from 'ionicons/icons';
   selector: 'app-example',
   templateUrl: 'example.component.html',
   imports: [CommonModule, IonicModule, RouterModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent {
   constructor() {

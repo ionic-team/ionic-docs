@@ -8,7 +8,7 @@ import { IonicModule, InfiniteScrollCustomEvent } from '@ionic/angular';
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [CommonModule, IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class ExampleComponent implements OnInit {
   items = [];

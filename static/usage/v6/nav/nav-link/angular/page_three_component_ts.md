@@ -18,7 +18,7 @@ import { IonicModule } from '@ionic/angular';
     </ion-content>
   `,
   imports: [IonicModule],
-  standalone: true
+  standalone: true,
 })
 export class PageThreeComponent {}
 ```

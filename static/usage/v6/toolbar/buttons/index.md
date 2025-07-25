@@ -17,7 +17,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
       },
-    }
+    },
   }}
   src="usage/v6/toolbar/buttons/demo.html"
   size="500px"
