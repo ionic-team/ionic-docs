@@ -96,6 +96,15 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'JavaScript',
+      collapsed: false,
+      items: [
+        'javascript/overview',
+        'javascript/ionic-core',
+      ],
+    },
+    {
+      type: 'category',
       label: 'React',
       collapsed: false,
       items: [
