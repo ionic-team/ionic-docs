@@ -18,7 +18,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 
 ## Text Modification
 
-### Text Alignment
+### Text Align
 
 ```html
 <ion-grid>
@@ -76,7 +76,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 | `.ion-text-wrap`    | `white-space: normal` | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
 | `.ion-text-nowrap`  | `white-space: nowrap` | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
 
-### Text Transformation
+### Text Transform
 
 ```html
 <ion-grid>
@@ -125,7 +125,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ## Element Placement
 
-### Float Elements
+### Float
 
 The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
 
@@ -188,7 +188,11 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ## Element Display
 
+### Display
+
 The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex. It can also be used to completely hide an element from the layout.
+
+Ionic provides the following utility classes for `display`:
 
 | Class       | Style Rule      | Description                 |
 | ----------- | --------------- | --------------------------- |
@@ -236,7 +240,7 @@ The following classes are deprecated and will be removed in the next major relea
 
 ## Content Space
 
-### Element Padding
+### Padding
 
 The padding class sets the padding area of an element. The padding area is the space between the content of the element and its border.
 
@@ -286,7 +290,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 | `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
 | `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
 
-### Element Margin
+### Margin
 
 The margin area extends the border area with an empty area used to separate the element from its neighbors.
 
@@ -344,7 +348,11 @@ Flexbox properties are divided into two categories: **container properties** tha
 
 ### Align Items
 
+The [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) CSS property sets the [align-self](#align-self) value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
+
 <img src={require('@site/static/img/layout/align-items.png').default} />
+
+Ionic provides the following utility classes for `align-items`:
 
 | Class                          | Style Rule                       | Description                                                                 |
 | ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
@@ -356,7 +364,13 @@ Flexbox properties are divided into two categories: **container properties** tha
 
 ### Align Content
 
+The [align-content](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) CSS property sets the distribution of space between and around content items along a flexbox's cross axis, or a grid or block-level element's block axis.
+
+This property has no effect on single line flex containers (i.e., ones with `flex-wrap: nowrap`).
+
 <img src={require('@site/static/img/layout/align-content.png').default} />
+
+Ionic provides the following utility classes for `align-content`:
 
 | Class                          | Style Rule                       | Description                                                                 |
 | ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
@@ -369,7 +383,11 @@ Flexbox properties are divided into two categories: **container properties** tha
 
 ### Justify Content
 
+The [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) CSS property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multicol containers.
+
 <img src={require('@site/static/img/layout/justify-content.png').default} />
+
+Ionic provides the following utility classes for `justify-content`:
 
 | Class                          | Style Rule                       | Description                                                                 |
 | ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
@@ -382,7 +400,11 @@ Flexbox properties are divided into two categories: **container properties** tha
 
 ### Flex Direction
 
+The [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+
 <img src={require('@site/static/img/layout/flex-direction.png').default} />
+
+Ionic provides the following utility classes for `flex-direction`:
 
 | Class                          | Style Rule                       | Description                                                                 |
 | ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
@@ -393,7 +415,11 @@ Flexbox properties are divided into two categories: **container properties** tha
 
 ### Flex Wrap
 
+The [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap) CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
+
 <img src={require('@site/static/img/layout/flex-wrap.png').default} />
+
+Ionic provides the following utility classes for `flex-wrap`:
 
 | Class                          | Style Rule                       | Description                                                                 |
 | ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
@@ -435,7 +461,13 @@ Flex item properties control how individual flex items behave within their flex 
 
 ### Align Self
 
+The [align-self](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) CSS property overrides a grid or flex item's align-items value. In grid, it aligns the item inside the grid area. In flexbox, it aligns the item on the cross axis.
+
+The property doesn't apply to block-level boxes, or to table cells. If a flexbox item's cross-axis margin is `auto`, then `align-self` is ignored.
+
 <img src={require('@site/static/img/layout/align-self.png').default} />
+
+Ionic provides the following utility classes for `align-self`:
 
 | Class                      | Style Rule               | Description                                                            |
 | -------------------------- | ------------------------ | ---------------------------------------------------------------------- |
@@ -448,7 +480,7 @@ Flex item properties control how individual flex items behave within their flex 
 
 ### Flex
 
-The `flex` property is a shorthand for `flex-grow`, `flex-shrink` and `flex-basis`. It controls how flex items grow and shrink within their container.
+The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) CSS property is a shorthand property for `flex-grow`, `flex-shrink` and `flex-basis`. It sets how a flex item will grow or shrink to fit the space available in its flex container.
 
 ```html
 <ion-grid>
@@ -502,6 +534,8 @@ The `flex` property is a shorthand for `flex-grow`, `flex-shrink` and `flex-basi
 </ion-grid>
 ```
 
+Ionic provides the following utility classes for `flex`:
+
 | Class               | Style Rule            | Description                                                                 |
 | ------------------- | --------------------- | --------------------------------------------------------------------------- |
 | `.ion-flex-1`       | `flex: 1`             | Item grows and shrinks equally with other flex items.                      |
@@ -510,6 +544,8 @@ The `flex` property is a shorthand for `flex-grow`, `flex-shrink` and `flex-basi
 | `.ion-flex-none`    | `flex: none`          | Item does not grow or shrink.                                              |
 
 ### Flex Grow
+
+The [flex-grow](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow) CSS property sets the flex grow factor, which specifies how much of the flex container's positive free space, if any, should be assigned to the flex item's main size.
 
 ```html
 <ion-grid>
@@ -527,12 +563,16 @@ The `flex` property is a shorthand for `flex-grow`, `flex-shrink` and `flex-basi
 </ion-grid>
 ```
 
+Ionic provides the following utility classes for `flex-grow`:
+
 | Class                | Style Rule           | Description                                                                 |
 | -------------------- | -------------------- | --------------------------------------------------------------------------- |
 | `.ion-flex-grow-0`   | `flex-grow: 0`       | Item does not grow beyond its content size.                                |
 | `.ion-flex-grow-1`   | `flex-grow: 1`       | Item grows to fill available space proportionally.                         |
 
 ### Flex Shrink
+
+The [flex-shrink](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink) CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, the flex items can shrink to fit according to their `flex-shrink` value. Each flex line's negative free space is distributed between the line's flex items that have a `flex-shrink` value greater than `0`.
 
 ```html
 <ion-grid>
@@ -550,12 +590,16 @@ The `flex` property is a shorthand for `flex-grow`, `flex-shrink` and `flex-basi
 </ion-grid>
 ```
 
+Ionic provides the following utility classes for `flex-shrink`:
+
 | Class                  | Style Rule             | Description                                                                 |
 | ---------------------- | ---------------------- | --------------------------------------------------------------------------- |
 | `.ion-flex-shrink-0`   | `flex-shrink: 0`       | Item does not shrink below its content size.                               |
 | `.ion-flex-shrink-1`   | `flex-shrink: 1`       | Item shrinks proportionally when container is too small.                   |
 
 ### Order
+
+The [order](https://developer.mozilla.org/en-US/docs/Web/CSS/order) CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
 
 ```html
 <ion-grid>
@@ -575,6 +619,8 @@ The `flex` property is a shorthand for `flex-grow`, `flex-shrink` and `flex-basi
   </ion-row>
 </ion-grid>
 ```
+
+Ionic provides the following utility classes for `order`:
 
 | Class               | Style Rule    | Description                                                                 |
 | ------------------- | ------------- | --------------------------------------------------------------------------- |
@@ -610,7 +656,7 @@ The table below shows the default behavior, where `{property}` is one of the fol
 
 ## Border Display
 
-The border display CSS property determines if the border should be visible or not. The property can be applied to the ion-header and the ion-footer.
+The `.ion-no-border` utility class can be used to remove borders from Ionic components. This class can be applied to the `ion-header` and `ion-footer` components.
 
 ```html
 <ion-header class="ion-no-border">

@@ -12,7 +12,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 
 ## Text Modification
 
-### Text Alignment
+### Text Align
 
 ```html
 <ion-grid>
@@ -70,7 +70,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 | `.ion-text-wrap`    | `white-space: normal` | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
 | `.ion-text-nowrap`  | `white-space: nowrap` | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
 
-### Text Transformation
+### Text Transform
 
 ```html
 <ion-grid>
@@ -203,7 +203,7 @@ There are also additional classes to modify the visibility based on the screen s
 
 ## Content Space
 
-### Element Padding
+### Padding
 
 The padding class sets the padding area of an element. The padding area is the space between the content of the element and its border.
 
@@ -253,7 +253,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 | `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
 | `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
 
-### Element Margin
+### Margin
 
 The margin area extends the border area with an empty area used to separate the element from its neighbors.
 
@@ -493,7 +493,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 
 ## Border Display
 
-The border display CSS property determines if the border should be visible or not. The property can be applied to the ion-header and the ion-footer.
+The `.ion-no-border` utility class can be used to remove borders from Ionic components. This class can be applied to the `ion-header` and `ion-footer` components.
 
 ```html
 <ion-header class="ion-no-border">
