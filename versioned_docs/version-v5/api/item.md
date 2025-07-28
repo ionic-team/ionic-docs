@@ -52,7 +52,7 @@ The below chart details the item slots and where it will place the element insid
 | `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL. |
 | none    | Placed inside of the input wrapper.                                        |
 
-### Text Align
+### Text Alignment
 
 Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.md) for classes that can be added to `<ion-item>` to transform the text.
 
