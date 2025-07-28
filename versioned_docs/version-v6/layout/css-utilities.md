@@ -12,7 +12,7 @@ title: CSS Utilities
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
 
-:::note
+:::important
 If your app was not started using an available Ionic Framework starter, the stylesheets listed in the [optional section of the global stylesheets](global-stylesheets.md#optional) will need to be included in order for these styles to work.
 :::
 
@@ -127,7 +127,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ### Float Elements
 
-The float CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
+The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
 
 ```html
 <ion-grid>
@@ -171,7 +171,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ## Element Display
 
-The display CSS property determines if an element should be visible or not. The element will still be in the DOM, but not rendered, if it is hidden.
+The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex. It can also be used to completely hide an element from the layout.
 
 ```html
 <ion-grid>
@@ -196,7 +196,7 @@ The display CSS property determines if an element should be visible or not. The 
 | ----------- | --------------- | --------------------------- |
 | `.ion-hide` | `display: none` | The element will be hidden. |
 
-### Responsive Display Attributes
+### Responsive Display Classes
 
 There are also additional classes to modify the visibility based on the screen size. Instead of just `.ion-hide` for all screen sizes, use `.ion-hide-{breakpoint}-{dir}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints), and `{dir}` is whether the element should be hidden on all screen sizes above (`up`) or below (`down`) the specified breakpoint.
 
