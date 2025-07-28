@@ -383,7 +383,7 @@ Ionic provides the following utility classes for `align-content`:
 
 ### Justify Content
 
-The [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) CSS property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multicol containers.
+The [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) CSS property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multi-column containers.
 
 <img src={require('@site/static/img/layout/justify-content.png').default} />
 
