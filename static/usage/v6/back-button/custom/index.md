@@ -1,6 +1,7 @@
 import Playground from '@site/src/components/global/Playground';
 
-import javascript from './javascript.md';
+import javascript_index_html from './javascript/index_html.md';
+import javascript_index_ts from './javascript/index_ts.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
@@ -18,7 +19,12 @@ import vue_page_two from './vue/page_two_vue.md';
 <Playground
   version="6"
   code={{
-    javascript,
+    javascript: {
+      files: {
+        'index.html': javascript_index_html,
+        'index.ts': javascript_index_ts,
+      },
+    },
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
