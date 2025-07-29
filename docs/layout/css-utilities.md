@@ -482,57 +482,7 @@ Ionic provides the following utility classes for `align-self`:
 
 The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) CSS property is a shorthand property for `flex-grow`, `flex-shrink` and `flex-basis`. It sets how a flex item will grow or shrink to fit the space available in its flex container.
 
-```html
-<ion-grid>
-  <ion-row>
-    <ion-col class="ion-flex-1">
-      <div>Flex 1</div>
-    </ion-col>
-    <ion-col class="ion-flex-1">
-      <div>Flex 1</div>
-    </ion-col>
-    <ion-col class="ion-flex-1">
-      <div>Flex 1</div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col class="ion-flex-auto">
-      <div>Flex Auto</div>
-    </ion-col>
-    <ion-col class="ion-flex-auto">
-      <div>Flex Auto</div>
-    </ion-col>
-    <ion-col class="ion-flex-auto">
-      <div>Flex Auto</div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col class="ion-flex-initial">
-      <div>Flex Initial</div>
-    </ion-col>
-    <ion-col class="ion-flex-initial">
-      <div>Flex Initial</div>
-    </ion-col>
-    <ion-col class="ion-flex-initial">
-      <div>Flex Initial</div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col class="ion-flex-none">
-      <div>Flex None</div>
-    </ion-col>
-    <ion-col class="ion-flex-none">
-      <div>Flex None</div>
-    </ion-col>
-    <ion-col class="ion-flex-none">
-      <div>Flex None</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+<img src={require('@site/static/img/layout/flex.png').default} />
 
 Ionic provides the following utility classes for `flex`:
 
@@ -547,21 +497,7 @@ Ionic provides the following utility classes for `flex`:
 
 The [flex-grow](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow) CSS property sets the flex grow factor, which specifies how much of the flex container's positive free space, if any, should be assigned to the flex item's main size.
 
-```html
-<ion-grid>
-  <ion-row>
-    <ion-col class="ion-flex-grow-0">
-      <div>Grow 0</div>
-    </ion-col>
-    <ion-col class="ion-flex-grow-1">
-      <div>Grow 1</div>
-    </ion-col>
-    <ion-col class="ion-flex-grow-0">
-      <div>Grow 0</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+<img src={require('@site/static/img/layout/flex-grow.png').default} />
 
 Ionic provides the following utility classes for `flex-grow`:
 
@@ -574,21 +510,7 @@ Ionic provides the following utility classes for `flex-grow`:
 
 The [flex-shrink](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink) CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, the flex items can shrink to fit according to their `flex-shrink` value. Each flex line's negative free space is distributed between the line's flex items that have a `flex-shrink` value greater than `0`.
 
-```html
-<ion-grid>
-  <ion-row>
-    <ion-col class="ion-flex-shrink-0">
-      <div>Shrink 0</div>
-    </ion-col>
-    <ion-col class="ion-flex-shrink-1">
-      <div>Shrink 1</div>
-    </ion-col>
-    <ion-col class="ion-flex-shrink-0">
-      <div>Shrink 0</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+<img src={require('@site/static/img/layout/flex-shrink.png').default} />
 
 Ionic provides the following utility classes for `flex-shrink`:
 
@@ -601,24 +523,7 @@ Ionic provides the following utility classes for `flex-shrink`:
 
 The [order](https://developer.mozilla.org/en-US/docs/Web/CSS/order) CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
 
-```html
-<ion-grid>
-  <ion-row>
-    <ion-col class="ion-order-first">
-      <div>Order First</div>
-    </ion-col>
-    <ion-col class="ion-order-0">
-      <div>Order 0</div>
-    </ion-col>
-    <ion-col class="ion-order-1">
-      <div>Order 1</div>
-    </ion-col>
-    <ion-col class="ion-order-last">
-      <div>Order Last</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+<img src={require('@site/static/img/layout/order.png').default} />
 
 Ionic provides the following utility classes for `order`:
 
