@@ -85,6 +85,7 @@ module.exports = {
         },
         'angular/lifecycle',
         'angular/navigation',
+        'angular/injection-tokens',
         'angular/virtual-scroll',
         'angular/slides',
         'angular/platform',
