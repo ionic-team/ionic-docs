@@ -13,12 +13,6 @@ sidebar_label: Injection Tokens
 
 Ionic provides Angular injection tokens that allow you to access Ionic elements through Angular's dependency injection system. This provides a more Angular-idiomatic way to interact with Ionic components programmatically.
 
-## IonModalToken
-
-The `IonModalToken` injection token allows you to inject a reference to the current modal element directly into your Angular components. This is particularly useful when you need to programmatically control modal behavior, listen to modal events, or access modal properties.
-
-Starting in `@ionic/angular` v8.7.0, you can use this injection token to streamline modal interactions in your Angular applications.
-
 ## Benefits
 
 Using injection tokens provides several advantages:
@@ -27,6 +21,12 @@ Using injection tokens provides several advantages:
 - **Angular Integration**: Works seamlessly with Angular's dependency injection system
 - **Simplified Code**: Eliminates the need for `ViewChild` queries or manual element references
 - **Better Testing**: Easier to mock and test components that use injection tokens
+
+## IonModalToken
+
+The `IonModalToken` injection token allows you to inject a reference to the current modal element directly into your Angular components. This is particularly useful when you need to programmatically control modal behavior, listen to modal events, or access modal properties.
+
+Starting in `@ionic/angular` v8.7.0, you can use this injection token to streamline modal interactions in your Angular applications.
 
 ### Basic Usage
 
@@ -150,7 +150,7 @@ When opening a modal that uses the injection token, you can pass the component d
 ```tsx
 import { Component, inject } from '@angular/core';
 import { IonContent, IonButton, ModalController } from '@ionic/angular/standalone';
-import { ModalContentComponent } from './modal-content.component';
+import { ModalComponent } from './modal.component';
 
 @Component({
   selector: 'app-home',
@@ -164,14 +164,14 @@ export class HomePage {
   private modalController = inject(ModalController);
 
   async openModal() {
-    const modal = await this.modalController.create({
-      component: ModalContentComponent,
+    const myModal = await this.modalController.create({
+      component: ModalComponent,
       componentProps: {
         // Any props you want to pass to the modal content
       },
     });
 
-    await modal.present();
+    await myModal.present();
   }
 }
 ```
