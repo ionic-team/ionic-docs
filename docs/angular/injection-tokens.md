@@ -19,6 +19,15 @@ The `IonModalToken` injection token allows you to inject a reference to the curr
 
 Starting in `@ionic/angular` v8.7.0, you can use this injection token to streamline modal interactions in your Angular applications.
 
+## Benefits
+
+Using injection tokens provides several advantages:
+
+- **Type Safety**: Full TypeScript support with proper typing for the modal element
+- **Angular Integration**: Works seamlessly with Angular's dependency injection system
+- **Simplified Code**: Eliminates the need for `ViewChild` queries or manual element references
+- **Better Testing**: Easier to mock and test components that use injection tokens
+
 ### Basic Usage
 
 To use the `IonModalToken`, inject it into your component's constructor:
@@ -166,13 +175,3 @@ export class HomePage {
   }
 }
 ```
-
-## Benefits
-
-Using injection tokens provides several advantages:
-
-- **Type Safety**: Full TypeScript support with proper typing for the modal element
-- **Angular Integration**: Works seamlessly with Angular's dependency injection system
-- **Simplified Code**: Eliminates the need for `ViewChild` queries or manual element references
-- **Better Testing**: Easier to mock and test components that use injection tokens
-- **Standalone Components**: Full compatibility with Angular's standalone component architecture
