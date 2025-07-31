@@ -98,10 +98,7 @@ module.exports = {
       type: 'category',
       label: 'JavaScript',
       collapsed: false,
-      items: [
-        'javascript/overview',
-        'javascript/ionic-core',
-      ],
+      items: ['javascript/overview', 'javascript/ionic-core'],
     },
     {
       type: 'category',

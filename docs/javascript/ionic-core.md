@@ -8,7 +8,9 @@ sidebar_label: Ionic Core
 This guide walks you through integrating [Ionic Core](https://ionicframework.com/docs/components) with a plain JavaScript (Vanilla) project using Vite. You'll get tree-shaking support, efficient bundle sizes, and a solid development experience.
 
 # 1. Navigate to your desired directory and create a new Vite project
+
 Open your terminal and run:
+
 ```shell
 npm create vite@latest my-vanilla-ionic-app -- --template vanilla
 ```
@@ -20,7 +22,9 @@ cd my-vanilla-ionic-app
 ```
 
 # 3. Install project dependencies
+
 Install both Vite's dependencies and Ionic Core:
+
 ```shell
 npm install
 npm install @ionic/core
@@ -35,28 +39,25 @@ Add the following `<link>` inside the `<head>` tag in index.html:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<title>Ionic Core - Example</title>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
-		/>
-	</head>
-	<body>
-		<ion-app>
-			<ion-header>
-				<ion-toolbar>
-					<ion-title>My Ionic App</ion-title>
-				</ion-toolbar>
-			</ion-header>
-			<ion-content class="ion-padding">
-				<ion-button expand="block">Click Me</ion-button>
-			</ion-content>
-		</ion-app>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>Ionic Core - Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>My Ionic App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button expand="block">Click Me</ion-button>
+      </ion-content>
+    </ion-app>
+  </body>
 </html>
 ```
 
@@ -71,16 +72,8 @@ import { defineCustomElements } from '@ionic/core/loader';
 const resourcesUrl = '/';
 
 defineCustomElements(window, {
-	components: [
-		'ion-app',
-		'ion-button',
-		'ion-card',
-		'ion-header',
-		'ion-toolbar',
-		'ion-title',
-		'ion-content',
-	],
-	resourcesUrl: resourcesUrl,
+  components: ['ion-app', 'ion-button', 'ion-card', 'ion-header', 'ion-toolbar', 'ion-title', 'ion-content'],
+  resourcesUrl: resourcesUrl,
 });
 ```
 
