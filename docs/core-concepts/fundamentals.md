@@ -51,3 +51,19 @@ At the core, Ionic Framework is built using <a href="https://developer.mozilla.o
 Many Ionic components use [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) to inform developers of important state changes in the components. For example, an `ion-datetime` component will emit `ionChange` whenever the selected date has changed.
 
 Developers can use standard events such as `click` as they normally would. However, many events emitted within a component's [shadow root](../reference/glossary.md#shadow) will be [retargeted](https://dom.spec.whatwg.org/#retarget) to the host element. This may result in multiple `click` handlers executing even if the user only clicked once. As a result, developers should rely on Ionic's events to be properly informed of state changes on Ionic components. Ionic's events are prefixed with `ion` to avoid collisions with standard events. Each component's documentation page has a list of available events that developers can listen for in their applications.
+
+## Properties
+[Properties (`@Prop`)](https://stenciljs.com/docs/properties) are custom attributes exposed publically on an HTML element. They allow developers to pass data to a component to render or otherwise use. 
+
+### Virtual Properties
+In Ionic components, virutal properties are a special category of properties that are used to define inputs to a component without the reactivity that typically comes with `@Prop` decorated properties in Stencil.
+
+Unlike `@Prop` inputs:
+- Virtual properties do not trigger a re-render when updated.
+- They cannot be mutated to produce side effects in the component lifecycle.
+- They are not tracked for changes and do not participate in Stencil's reactive data flow.
+
+#### When to Use Virtual Properties
+Virtual properties are intended for use cases where you need to pass static or read-only data into a component, like configuration options or values that won't change during the component's lifecycle. They offer a lightweight alternative when you don't need Stencil's change detection or DOM updates.
+
+Because they are not reactive, updates to virtual properties after initial load will not affect the rendered output of the component.
