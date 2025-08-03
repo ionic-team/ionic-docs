@@ -284,28 +284,6 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## 従来のセレクト構文からの移行
-
-Ionic 7.0では、よりシンプルなセレクト構文が導入されました。この新しい構文は、セレクトのセットアップに必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
-
-開発者はこの移行をセレクトごとに行うことができます。開発者は従来の構文を使い続けることもできますが、できるだけ早く移行することをお勧めします。
-
-
-### 最新構文の使用
-
-最新の構文を使用するには、2つのステップがあります：
-
-1. 1. `ion-label` を削除し、代わりに `ion-select` の `label` プロパティを使用する。ラベルの配置は `ion-select` の `labelPlacement` プロパティで設定できる。
-2. fill` と `shape` を `ion-item` から `ion-select` に移動する。
-
-import Migration from '@site/static/usage/v8/select/migration/index.md';
-
-<Migration />
-
-### レガシー構文の使用
-
-Ionicは、アプリがモダンなセレクト構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けた方が望ましいこともあります。開発者は `ion-select` の `legacy` プロパティを `true` に設定することで、その入力インスタンスにレガシー構文を使用させることができます。
-
 ## Accessibility
 
 ### Keyboard Interactions

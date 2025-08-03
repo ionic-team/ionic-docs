@@ -65,7 +65,7 @@ import Justify from '@site/static/usage/v8/checkbox/justify/index.md';
 import Indeterminate from '@site/static/usage/v8/checkbox/indeterminate/index.md';
 
 <Indeterminate />
-  
+
 ## Links inside of Labels
 
 Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
@@ -114,31 +114,7 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## レガシーなチェックボックス構文からのマイグレーション
-
-Ionic 7.0では、よりシンプルなチェックボックス構文が導入されました。この新しい構文は、チェックボックスの設定に必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
-
-開発者は、この移行を一度に1つのチェックボックスずつ実行することができます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
-
-### 最新の構文の使い方
-
-最新の構文を使用するには、`ion-label` を削除して、 `ion-checkbox` の中に直接ラベルを渡す必要があります。ラベルの配置は `ion-checkbox` の `labelPlacement` プロパティを使用して設定することができる。ラベルとコントロールの行の詰め方は、`ion-checkbox` の `justify` プロパティを使用して制御することができます。
-
-import Migration from '@site/static/usage/v8/checkbox/migration/index.md';
-
-<Migration />
-  
-
-:::note
-Ionic の過去のバージョンでは、`ion-checkbox` が正しく機能するために `ion-item` が必要でした。Ionic 7.0 からは、`ion-checkbox` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-checkbox`が正しく機能するためには、`ion-item`はもはや必須ではありません。
-:::
-
-### レガシーな構文の使い方
-
-Ionicは、アプリが最新のチェックボックス構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましい場合もあります。開発者は `ion-checkbox` の `legacy` プロパティを `true` に設定することで、そのチェックボックスのインスタンスがレガシー構文を使用するように強制できます。
-
-
-## プロパティ
+## Properties
 <Props />
 
 ## イベント

@@ -23,7 +23,6 @@
     IonList,
     IonItem,
     IonAvatar,
-    IonImg,
     IonLabel,
     InfiniteScrollCustomEvent,
   } from '@ionic/vue';
@@ -32,13 +31,11 @@
   export default defineComponent({
     components: {
       IonContent,
-      IonContent,
       IonInfiniteScroll,
       IonInfiniteScrollContent,
       IonList,
       IonItem,
       IonAvatar,
-      IonImg,
       IonLabel,
     },
     setup() {

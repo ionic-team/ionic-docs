@@ -1,39 +1,30 @@
 ---
-title: Ionic VS Code Extension
+title: VS Code Extension
 ---
 
 <head>
-  <title>Ionic Visual Studio Codeエクステンションを使う</title>
-  <meta
-    name="description"
-    content="Ionic Visual Studio Code 拡張は、Ionicアプリの開発に共通するさまざまな機能の実行を支援します。"
-  />
+  <title>VS Code Extension</title>
+  <meta name="description" content="Using the Ionic/Ionic-Framework VS Code Extension" />
 </head>
 
-Ionic Visual Studio Code 拡張は、Ionic アプリの開発に共通するさまざまな機能を、VS Code のウィンドウを開いたまま実行できるようにします。 [Visual Studio Marketplace 上の拡張機能](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) をインストールすることができます。エクステンションをインストールすると、アクティビティバーに Ionic のロゴが表示されるようになります。
+The [WebNative Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=WebNative.webnative) is a community-maintained plugin that helps you perform common Ionic Framework development tasks without needing to remember CLI commands.
 
-## 新規プロジェクトの作成
+If you have VS Code on this computer click Install below. You can also find the extension by searching for "WebNative".
 
-空のディレクトリから、テンプレートオプションの 1 つをクリックし、アプリ名を指定することで、新しい Angular、React、または Vue プロジェクトを作成することができます。
+<a href="vscode:extension/webnative.webnative" target="_self">
+  <button className="install-button">Install</button>
+</a>
+<a href="https://webnative.dev/introduction/getting-started/" target="_self">
+  <button className="docs-button">Docs</button>
+</a>
 
-<img
-  src="https://user-images.githubusercontent.com/84595830/159510276-6766a5b8-132d-4284-a3fa-cd6374d64891.gif"
-  alt="Video of creating a project"
-/>
+## Additional Documentation
 
-新しいプロジェクトを作成すると、拡張機能は `package.json` にあるすべての共通タスクにアクセスできるようになります。
+Full documentation of the WebNative extension can be found at [webnative.dev](https://webnative.dev/introduction/getting-started/) covering topics like:
 
-## Capacitor の追加
-
-[Capacitor](https://capacitorjs.com/) をアプリケーションに追加するには、"Integrate Capacitor "を選択します。
-
-<img
-  src="https://user-images.githubusercontent.com/84595830/159510570-b5a151bb-2e17-42c8-8cab-bffbaa849576.gif"
-  alt="Capacitor追加のビデオ"
-/>
-
-Capacitor が統合され、"Run On Web", "Run On Android", "Run On iOS "のオプションで、Web, Android, iOS 上でアプリを実行することができるようになりました。
-
-## Doing More
-
-Ionic VS Code 拡張は、マイグレーション、デバッグ、モノレポのサポートなど、非常に多くのことを支援します。拡張機能の全リストは、[extension overview on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) をご確認ください。
+- Building, debugging and running your Ionic Framework application.
+- Bundle analysis, dependency upgrades.
+- Migration from Cordova.
+- Changing native settings.
+- Splash Screens & Icons.
+- Developing without a Mac using the WebNative app.

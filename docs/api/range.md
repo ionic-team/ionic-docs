@@ -128,32 +128,6 @@ import CSSParts from '@site/static/usage/v8/range/theming/css-shadow-parts/index
 
 <CSSParts />
 
-## レガシーな範囲構文からの移行
-
-Ionic 7.0では、よりシンプルな範囲構文が導入されました。この新しい構文は、範囲を設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
-
-開発者はこの移行を範囲ごとに実行できます。開発者は従来の構文を使い続けることもできますが、できるだけ早く移行することをお勧めします。
-
-### 最新の構文の使い方
-
-最新の構文を使用するには、`ion-label` を削除し、`label` プロパティを使用して `ion-range` にラベルを渡します。ラベルの配置は `labelPlacement` プロパティを使用して設定することができます。
-
-ラベルにカスタム HTML が必要な場合は、代わりに `label` スロットを使用して `ion-range` 内に直接渡すことができる。
-
-import Migration from '@site/static/usage/v8/range/migration/index.md';
-
-<Migration />
-
-
-:::note
-Ionic の過去のバージョンでは、`ion-range` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 以降では、`ion-range` は `ion-item` 内でアイテムを `ion-list` に配置する場合にのみ使用します。また、`ion-range` が正しく機能するためには、`ion-item` は不要になりました。
-:::
-
-### レガシー構文の使用
-
-Ionicは、アプリが最新の範囲構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けた方が望ましいこともあります。開発者は `ion-range` の `legacy` プロパティを `true` に設定することで、そのインスタンスにレガシー構文を使用させることができます。
-
-
 ## Interfaces
 
 ### RangeChangeEventDetail
