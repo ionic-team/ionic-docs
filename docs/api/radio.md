@@ -107,32 +107,7 @@ import CSSParts from '@site/static/usage/v8/radio/theming/css-shadow-parts/index
 
 <CSSParts />
 
-## Legacy Radio Syntaxからの移行
-
-Ionic 7.0では、よりシンプルなラジオ構文が導入されました。この新しい構文は、ラジオを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
-
-開発者は、この移行を一度に1つのラジオで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
-
-### 最新の構文の使い方
-
-最新の構文を使用するには、`ion-label`を削除して、`ion-radio`の内部にラベルを直接渡します。ラベルの配置は `ion-radio` の `labelPlacement` プロパティを使用して設定することができます。ラベルとコントロールの行の詰め方は、`ion-radio` の `justify` プロパティを使用して制御することができます。
-
-import Migration from '@site/static/usage/v8/radio/migration/index.md';
-
-<Migration />
-
-
-:::note
-Ionic の過去のバージョンでは、`ion-radio` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-radio` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-radio`が正しく機能するためには、`ion-item`はもはや必須ではありません。
-:::
-
-### レガシー構文の使用
-
-Ionicは、アプリが最新の無線構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-radio` の `legacy` プロパティを `true` に設定することで、その無線機のインスタンスがレガシー構文を使用するように強制できます。
-
-
-
-## プロパティ
+## Properties
 <Props />
 
 ## イベント

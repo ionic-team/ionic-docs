@@ -147,7 +147,7 @@ ${properties
   .map((prop) => {
     const isDeprecated = prop.deprecation !== undefined;
 
-    const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    const docs = isDeprecated ? `${prop.docs}\n\n**_Deprecated_** — ${prop.deprecation}` : prop.docs;
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
@@ -172,7 +172,34 @@ function renderEvents({ events }) {
   return `
 | Name | Description | Bubbles |
 | --- | --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
+${events
+  .map((event) => {
+    const isDeprecated = event.deprecation !== undefined;
+    const docs = isDeprecated ? `${event.docs}\n\n**_Deprecated_** — ${event.deprecation}` : event.docs;
+    return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
+      event.bubbles
+    }\` |`;
+  })
+  .join('\n')}`;
+}
+
+/**
+ * Formats method parameters for the optional Parameters row of each method table
+ * @param {*} paramsArr Array of method parameters
+ * @returns formatted parameters for methods table
+ */
+function renderParameters(paramsArr) {
+  if (!paramsArr.some((param) => param.docs)) {
+    return '';
+  }
+
+  const documentedParams = paramsArr.filter((param) => param.docs);
+  const formattedParams = documentedParams
+    .map((param) => {
+      return `**${param.name}**: ${formatMultiline(param.docs)}`;
+    })
+    .join('<br/>');
+  return `| **Parameters** | ${formattedParams} |`;
 }
 
 /**

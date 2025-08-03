@@ -27,9 +27,17 @@
   import { chevronDownCircleOutline } from 'ionicons/icons';
 
   export default defineComponent({
-    components: { IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar },
+    components: {
+      IonContent,
+      IonHeader,
+      IonRefresher,
+      IonRefresherContent,
+      IonTitle,
+      IonToolbar,
+      RefresherCustomEvent,
+    },
     setup() {
-      const handleRefresh = (event: CustomEvent) => {
+      const handleRefresh = (event: RefresherCustomEvent) => {
         setTimeout(() => {
           // Any calls to load data go here
           event.target.complete();

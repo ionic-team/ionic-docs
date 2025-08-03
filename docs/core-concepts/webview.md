@@ -42,7 +42,7 @@ import { Capacitor } from '@capacitor/core';
 Capacitor.convertFileSrc(filePath);
 ```
 
-Cordova アプリでは、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)　が File URI を変換するユーティリティ関数 `window.Ionic.WebView.convertFileSrc()` を提供しています。また、対応する Ionic Native プラグインもあります。また、対応する Ionic Native プラグインとして [`@awesome-cordova-plugins/ionic-webview`](../native/ionic-webview.md) があります。
+For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview).
 
 ### 実装
 

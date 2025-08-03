@@ -12,13 +12,13 @@ title: CSSユーティリティ
 
 Ionic Framework は、テキストの順番を入れ替えたり、要素の配置や padding や margin を修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
 
-:::note
-使用可能な Ionic Framework スターターを使用してアプリケーションを起動していない場合、これらのスタイルを機能させるには、 [グローバルスタイルシートのオプションセクション](global-stylesheets.md#optional) にリストされているスタイルシートを含める必要があります。
+:::important
+If your app was not started using an available Ionic Framework starter, the stylesheets listed in the [optional section of the global stylesheets](global-stylesheets.md#optional) will need to be included in order for these styles to work.
 :::
 
 ## テキストの修正
 
-### テキストの配置
+### Text Align
 
 ```html
 <ion-grid>
@@ -76,7 +76,7 @@ Ionic Framework は、テキストの順番を入れ替えたり、要素の配�
 | `.ion-text-wrap`    | `white-space: normal` | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
 | `.ion-text-nowrap`  | `white-space: nowrap` | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
 
-### テキストの変換
+### Text Transform
 
 ```html
 <ion-grid>
@@ -125,9 +125,9 @@ Ionic Framework は、テキストの順番を入れ替えたり、要素の配�
 
 ## 要素の配置
 
-### Float 要素
+### Float
 
-CSS プロパティの float は、テキストとインライン要素を囲んだ要素がそのコンテナの左側または右側に沿って配置することを指定します。 以下のように要素はウェブページのコードと異なった順に表示されます。
+The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
 
 ```html
 <ion-grid>
@@ -188,45 +188,59 @@ CSS プロパティの float は、テキストとインライン要素を囲ん
 
 ## 要素の表示
 
-display CSS プロパティは、要素を表示するかどうかを決定します。要素は DOM 内に残りますが、非表示の場合はレンダリングされません。
+### Display
 
-```html
-<ion-grid>
-  <ion-row>
-    <ion-col class="ion-hide">
-      <div>
-        <h3>hidden</h3>
-        You can't see me.
-      </div>
-    </ion-col>
-    <ion-col>
-      <div>
-        <h3>not-hidden</h3>
-        You can see me!
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex. It can also be used to completely hide an element from the layout.
 
-| Class       | Style Rule      | Description                 |
-| ----------- | --------------- | --------------------------- |
-| `.ion-hide` | `display: none` | The element will be hidden. |
+Ionic provides the following utility classes for `display`:
 
-### Responsive な Display 属性
+| Class                       | Style Rule              | Description                                                                                                                            |
+| --------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `.ion-display-none`         | `display: none`         | Turns off the display of an element so that it has no effect on layout (the document is rendered as though the element did not exist). |
+| `.ion-display-inline`       | `display: inline`       | The element behaves as an inline element that does not create line breaks before or after itself.                                      |
+| `.ion-display-inline-block` | `display: inline-block` | The element behaves as a block element that flows with surrounding content as if it were a single inline box.                          |
+| `.ion-display-block`        | `display: block`        | The element behaves as a block element, creating line breaks both before and after itself when in the normal flow.                     |
+| `.ion-display-flex`         | `display: flex`         | The element behaves like a block element and lays out its content according to the flexbox model.                                      |
+| `.ion-display-inline-flex`  | `display: inline-flex`  | The element behaves like an inline element and lays out its content according to the flexbox model.                                    |
+| `.ion-display-grid`         | `display: grid`         | The element behaves like a block element and lays out its content according to the grid model.                                         |
+| `.ion-display-inline-grid`  | `display: inline-grid`  | The element behaves like an inline element and lays out its content according to the grid model.                                       |
+| `.ion-display-table`        | `display: table`        | The element behaves like an HTML `<table>` element. It defines a block-level box.                                                      |
+| `.ion-display-table-cell`   | `display: table-cell`   | The element behaves like an HTML `<td>` element.                                                                                       |
+| `.ion-display-table-row`    | `display: table-row`    | The element behaves like an HTML `<tr>` element.                                                                                       |
 
-画面サイズに基づいて表示を変更するクラスもあります。ただ `.ion-hide` ではなく `.ion-hide-{breakpoint}-{dir}` という特定の画面サイズでのみクラスを使用します。\{breakpoint\}は、[Ionic Breakpoints](#ionic-breakpoints)にリストされているブレークポイント名の 1 つです。 `{dir}` は、指定されたブレークポイントの上 (`up`) または下 (`down`) のすべての画面サイズで要素を非表示にするかどうかです。
+### Responsive Display Classes
 
-| Class                | Description                                                                                          |
-| -------------------- | ---------------------------------------------------------------------------------------------------- |
-| `.ion-hide-sm-{dir}` | Applies the modifier to the element when `min-width: 576px` (`up`) or `max-width: 576px` (`down`).   |
-| `.ion-hide-md-{dir}` | Applies the modifier to the element when `min-width: 768px` (`up`) or `max-width: 768px` (`down`).   |
-| `.ion-hide-lg-{dir}` | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`).   |
-| `.ion-hide-xl-{dir}` | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`). |
+All of the display classes listed above have additional classes to modify the display based on the screen size. Instead of `display-` in each class, use `display-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
+
+The table below shows the default behavior, where `{modifier}` is any of the following: `none`, `inline`, `inline-block`, `block`, `flex`, `inline-flex`, `grid`, `inline-grid`, `table`, `table-cell`, `table-row`, as they are described above.
+
+| Class                        | Description                                                   |
+| ---------------------------- | ------------------------------------------------------------- |
+| `.ion-display-{modifier}`    | Applies the modifier to the element on all screen sizes.      |
+| `.ion-display-sm-{modifier}` | Applies the modifier to the element when `min-width: 576px`.  |
+| `.ion-display-md-{modifier}` | Applies the modifier to the element when `min-width: 768px`.  |
+| `.ion-display-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
+| `.ion-display-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
+
+### Deprecated Classes
+
+:::warning Deprecation Notice
+
+The following classes are deprecated and will be removed in the next major release. Use the recommended `.ion-display-*` classes instead.
+
+:::
+
+| Class                | Description                                                                                                                                                                      |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.ion-hide`          | Applies `display: none` to the element on all screen sizes. <br/> **Deprecated** — Use the `ion-display-none` class instead.                                                     |
+| `.ion-hide-sm-{dir}` | Applies the modifier to the element when `min-width: 576px` (`up`) or `max-width: 576px` (`down`). <br/> **Deprecated** — Use the `ion-display-sm-{modifier}` classes instead.   |
+| `.ion-hide-md-{dir}` | Applies the modifier to the element when `min-width: 768px` (`up`) or `max-width: 768px` (`down`). <br/> **Deprecated** — Use the `ion-display-md-{modifier}` classes instead.   |
+| `.ion-hide-lg-{dir}` | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`). <br/> **Deprecated** — Use the `ion-display-lg-{modifier}` classes instead.   |
+| `.ion-hide-xl-{dir}` | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`). <br/> **Deprecated** — Use the `ion-display-xl-{modifier}` classes instead. |
 
 ## コンテンツのスペース
 
-### 要素の Padding
+### Padding
 
 padding 属性は、要素の padding エリアを設定します。padding エリアは、要素のコンテンツとその境界線のスペースです。
 
@@ -276,7 +290,7 @@ padding 属性は、要素の padding エリアを設定します。padding エ�
 | `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
 | `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
 
-### 要素の Margin
+### Margin
 
 Margin エリアは、隣り合う要素とのスペースを広げるために境界線の外に空のエリアをつくるためのものです。
 
@@ -326,146 +340,54 @@ Margin エリアは、隣り合う要素とのスペースを広げるために�
 | `.ion-margin-horizontal` | `margin: 0 16px`      | Applies margin to the left and right. |
 | `.ion-no-margin`         | `margin: 0`           | Applies no margin to all sides.       |
 
-## Flex プロパティ
+## Flex Container Properties
+
+Flexbox properties are divided into two categories: **container properties** that control the layout of all flex items, and **item properties** that control individual flex items. See [Flex Item Properties](#flex-item-properties) for item-level alignment.
 
 <img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
 
-### Flex コンテナのプロパティ
+### Align Items
 
-```html
-<ion-grid>
-  <ion-row class="ion-justify-content-start">
-    <ion-col size="3">
-      <div>1 of 2</div>
-    </ion-col>
-    <ion-col size="3">
-      <div>2 of 2</div>
-    </ion-col>
-  </ion-row>
+The [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) CSS property sets the [align-self](#align-self) value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
 
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="3">
-      <div>1 of 2</div>
-    </ion-col>
-    <ion-col size="3">
-      <div>2 of 2</div>
-    </ion-col>
-  </ion-row>
+<img src={require('@site/static/img/layout/align-items.png').default} />
 
-  <ion-row class="ion-justify-content-end">
-    <ion-col size="3">
-      <div>1 of 2</div>
-    </ion-col>
-    <ion-col size="3">
-      <div>2 of 2</div>
-    </ion-col>
-  </ion-row>
+Ionic provides the following utility classes for `align-items`:
 
-  <ion-row class="ion-justify-content-around">
-    <ion-col size="3">
-      <div>1 of 2</div>
-    </ion-col>
-    <ion-col size="3">
-      <div>2 of 2</div>
-    </ion-col>
-  </ion-row>
+| Class                       | Style Rule                | Description                                          |
+| --------------------------- | ------------------------- | ---------------------------------------------------- |
+| `.ion-align-items-start`    | `align-items: flex-start` | Items are packed toward the start on the cross axis. |
+| `.ion-align-items-end`      | `align-items: flex-end`   | Items are packed toward the end on the cross axis.   |
+| `.ion-align-items-center`   | `align-items: center`     | Items are centered along the cross axis.             |
+| `.ion-align-items-baseline` | `align-items: baseline`   | Items are aligned so that their baselines align.     |
+| `.ion-align-items-stretch`  | `align-items: stretch`    | Items are stretched to fill the container.           |
 
-  <ion-row class="ion-justify-content-between">
-    <ion-col size="3">
-      <div>1 of 2</div>
-    </ion-col>
-    <ion-col size="3">
-      <div>2 of 2</div>
-    </ion-col>
-  </ion-row>
+### Align Content
 
-  <ion-row class="ion-justify-content-evenly">
-    <ion-col size="3">
-      <div>1 of 2</div>
-    </ion-col>
-    <ion-col size="3">
-      <div>2 of 2</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+The [align-content](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) CSS property sets the distribution of space between and around content items along a flexbox's cross axis, or a grid or block-level element's block axis.
 
-<ion-grid>
-  <ion-row class="ion-align-items-start">
-    <ion-col>
-      <div>1 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>2 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>3 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>4 of 4 # # #</div>
-    </ion-col>
-  </ion-row>
+This property has no effect on single line flex containers (i.e., ones with `flex-wrap: nowrap`).
 
-  <ion-row class="ion-align-items-end">
-    <ion-col>
-      <div>1 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>2 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>3 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>4 of 4 # # #</div>
-    </ion-col>
-  </ion-row>
+<img src={require('@site/static/img/layout/align-content.png').default} />
 
-  <ion-row class="ion-align-items-center">
-    <ion-col>
-      <div>1 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>2 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>3 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>4 of 4 # # #</div>
-    </ion-col>
-  </ion-row>
+Ionic provides the following utility classes for `align-content`:
 
-  <ion-row class="ion-align-items-baseline">
-    <ion-col>
-      <div>1 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>2 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>3 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>4 of 4 # # #</div>
-    </ion-col>
-  </ion-row>
+| Class                        | Style Rule                     | Description                                                |
+| ---------------------------- | ------------------------------ | ---------------------------------------------------------- |
+| `.ion-align-content-start`   | `align-content: flex-start`    | Lines are packed toward the start of the cross axis.       |
+| `.ion-align-content-end`     | `align-content: flex-end`      | Lines are packed toward the end of the cross axis.         |
+| `.ion-align-content-center`  | `align-content: center`        | Lines are centered along the cross axis.                   |
+| `.ion-align-content-stretch` | `align-content: stretch`       | Lines are stretched to fill the container.                 |
+| `.ion-align-content-between` | `align-content: space-between` | Lines are evenly distributed on the cross axis.            |
+| `.ion-align-content-around`  | `align-content: space-around`  | Lines are evenly distributed with equal space around them. |
 
-  <ion-row class="ion-align-items-stretch">
-    <ion-col>
-      <div>1 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>2 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>3 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>4 of 4 # # #</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+### Justify Content
+
+The [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) CSS property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multi-column containers.
+
+<img src={require('@site/static/img/layout/justify-content.png').default} />
+
+Ionic provides the following utility classes for `justify-content`:
 
 | Class                          | Style Rule                       | Description                                                                 |
 | ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
@@ -475,35 +397,77 @@ Margin エリアは、隣り合う要素とのスペースを広げるために�
 | `.ion-justify-content-around`  | `justify-content: space-around`  | Items are evenly distributed on the main axis with equal space around them. |
 | `.ion-justify-content-between` | `justify-content: space-between` | Items are evenly distributed on the main axis.                              |
 | `.ion-justify-content-evenly`  | `justify-content: space-evenly`  | Items are distributed so that the spacing between any two items is equal.   |
-| `.ion-align-items-start`       | `align-items: flex-start`        | Items are packed toward the start on the cross axis.                        |
-| `.ion-align-items-end`         | `align-items: flex-end`          | Items are packed toward the end on the cross axis.                          |
-| `.ion-align-items-center`      | `align-items: center`            | Items are centered along the cross axis.                                    |
-| `.ion-align-items-baseline`    | `align-items: baseline`          | Items are aligned so that their baselines align.                            |
-| `.ion-align-items-stretch`     | `align-items: stretch`           | Items are stretched to fill the container.                                  |
-| `.ion-nowrap`                  | `flex-wrap: nowrap`              | Items will all be on one line.                                              |
-| `.ion-wrap`                    | `flex-wrap: wrap`                | Items will wrap onto multiple lines, from top to bottom.                    |
-| `.ion-wrap-reverse`            | `flex-wrap: wrap-reverse`        | Items will wrap onto multiple lines, from bottom to top.                    |
 
-### Flex Item Properties
+### Flex Direction
 
-```html
-<ion-grid>
-  <ion-row>
-    <ion-col class="ion-align-self-start">
-      <div>1 of 4</div>
-    </ion-col>
-    <ion-col class="ion-align-self-center">
-      <div>2 of 4</div>
-    </ion-col>
-    <ion-col class="ion-align-self-end">
-      <div>3 of 4</div>
-    </ion-col>
-    <ion-col>
-      <div>4 of 4 # # #</div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-```
+The [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+
+<img src={require('@site/static/img/layout/flex-direction.png').default} />
+
+Ionic provides the following utility classes for `flex-direction`:
+
+| Class                      | Style Rule                       | Description                                                       |
+| -------------------------- | -------------------------------- | ----------------------------------------------------------------- |
+| `.ion-flex-row`            | `flex-direction: row`            | Items are placed in the same direction as the text direction.     |
+| `.ion-flex-row-reverse`    | `flex-direction: row-reverse`    | Items are placed in the opposite direction as the text direction. |
+| `.ion-flex-column`         | `flex-direction: column`         | Items are placed vertically.                                      |
+| `.ion-flex-column-reverse` | `flex-direction: column-reverse` | Items are placed vertically in reverse order.                     |
+
+### Flex Wrap
+
+The [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap) CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
+
+<img src={require('@site/static/img/layout/flex-wrap.png').default} />
+
+Ionic provides the following utility classes for `flex-wrap`:
+
+| Class                    | Style Rule                | Description                                              |
+| ------------------------ | ------------------------- | -------------------------------------------------------- |
+| `.ion-flex-nowrap`       | `flex-wrap: nowrap`       | Items will all be on one line.                           |
+| `.ion-flex-wrap`         | `flex-wrap: wrap`         | Items will wrap onto multiple lines, from top to bottom. |
+| `.ion-flex-wrap-reverse` | `flex-wrap: wrap-reverse` | Items will wrap onto multiple lines, from bottom to top. |
+
+### Responsive Flex Container Classes
+
+All of the flex container classes listed above have additional classes to modify the properties based on the screen size. Instead of the base class name, use `{property}-{breakpoint}-{modifier}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
+
+The table below shows the default behavior, where `{property}` is one of the following: `justify-content`, `align-content`, `align-items`, `flex`, or `flex-wrap`, and `{modifier}` is the corresponding value as described above.
+
+| Class                           | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| `.ion-{property}-{modifier}`    | Applies the modifier to the element on all screen sizes.      |
+| `.ion-{property}-sm-{modifier}` | Applies the modifier to the element when `min-width: 576px`.  |
+| `.ion-{property}-md-{modifier}` | Applies the modifier to the element when `min-width: 768px`.  |
+| `.ion-{property}-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
+| `.ion-{property}-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
+
+### Deprecated Classes
+
+:::warning Deprecation Notice
+
+The following classes are deprecated and will be removed in the next major release. Use the recommended `.ion-flex-*` classes instead.
+
+:::
+
+| Class               | Description                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `.ion-nowrap`       | Items will all be on one line.<br />**Deprecated** — Use `.ion-flex-nowrap` instead.                                 |
+| `.ion-wrap`         | Items will wrap onto multiple lines, from top to bottom.<br />**Deprecated** — Use `.ion-flex-wrap` instead.         |
+| `.ion-wrap-reverse` | Items will wrap onto multiple lines, from bottom to top.<br />**Deprecated** — Use `.ion-flex-wrap-reverse` instead. |
+
+## Flex Item Properties
+
+Flex item properties control how individual flex items behave within their flex container. See also: [Flex Container Properties](#flex-container-properties) for container-level alignment.
+
+### Align Self
+
+The [align-self](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) CSS property overrides a grid or flex item's align-items value. In grid, it aligns the item inside the grid area. In flexbox, it aligns the item on the cross axis.
+
+The property doesn't apply to block-level boxes, or to table cells. If a flexbox item's cross-axis margin is `auto`, then `align-self` is ignored.
+
+<img src={require('@site/static/img/layout/align-self.png').default} />
+
+Ionic provides the following utility classes for `align-self`:
 
 | Class                      | Style Rule               | Description                                                            |
 | -------------------------- | ------------------------ | ---------------------------------------------------------------------- |
@@ -514,9 +478,90 @@ Margin エリアは、隣り合う要素とのスペースを広げるために�
 | `.ion-align-self-stretch`  | `align-self: stretch`    | Item is stretched to fill the container.                               |
 | `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.      |
 
-## Border の表示
+### Flex
 
-border display CSS プロパティは、border を表示するかどうかを指定します。このプロパティは、 `ion-header` と` ion-footer` に適用できます。
+The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) CSS property is a shorthand property for `flex-grow`, `flex-shrink` and `flex-basis`. It sets how a flex item will grow or shrink to fit the space available in its flex container.
+
+<img src={require('@site/static/img/layout/flex.png').default} />
+
+Ionic provides the following utility classes for `flex`:
+
+| Class               | Style Rule      | Description                                                 |
+| ------------------- | --------------- | ----------------------------------------------------------- |
+| `.ion-flex-1`       | `flex: 1`       | Item grows and shrinks equally with other flex items.       |
+| `.ion-flex-auto`    | `flex: auto`    | Item grows and shrinks based on its content size.           |
+| `.ion-flex-initial` | `flex: initial` | Item shrinks to its minimum content size but does not grow. |
+| `.ion-flex-none`    | `flex: none`    | Item does not grow or shrink.                               |
+
+### Flex Grow
+
+The [flex-grow](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow) CSS property sets the flex grow factor, which specifies how much of the flex container's positive free space, if any, should be assigned to the flex item's main size.
+
+<img src={require('@site/static/img/layout/flex-grow.png').default} />
+
+Ionic provides the following utility classes for `flex-grow`:
+
+| Class              | Style Rule     | Description                                        |
+| ------------------ | -------------- | -------------------------------------------------- |
+| `.ion-flex-grow-0` | `flex-grow: 0` | Item does not grow beyond its content size.        |
+| `.ion-flex-grow-1` | `flex-grow: 1` | Item grows to fill available space proportionally. |
+
+### Flex Shrink
+
+The [flex-shrink](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink) CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, the flex items can shrink to fit according to their `flex-shrink` value. Each flex line's negative free space is distributed between the line's flex items that have a `flex-shrink` value greater than `0`.
+
+<img src={require('@site/static/img/layout/flex-shrink.png').default} />
+
+Ionic provides the following utility classes for `flex-shrink`:
+
+| Class                | Style Rule       | Description                                              |
+| -------------------- | ---------------- | -------------------------------------------------------- |
+| `.ion-flex-shrink-0` | `flex-shrink: 0` | Item does not shrink below its content size.             |
+| `.ion-flex-shrink-1` | `flex-shrink: 1` | Item shrinks proportionally when container is too small. |
+
+### Order
+
+The [order](https://developer.mozilla.org/en-US/docs/Web/CSS/order) CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
+
+<img src={require('@site/static/img/layout/order.png').default} />
+
+Ionic provides the following utility classes for `order`:
+
+| Class              | Style Rule  | Description                               |
+| ------------------ | ----------- | ----------------------------------------- |
+| `.ion-order-first` | `order: -1` | Item appears first in the flex container. |
+| `.ion-order-0`     | `order: 0`  | Item appears in its natural order.        |
+| `.ion-order-1`     | `order: 1`  | Item appears after items with order 0.    |
+| `.ion-order-2`     | `order: 2`  | Item appears after items with order 1.    |
+| `.ion-order-3`     | `order: 3`  | Item appears after items with order 2.    |
+| `.ion-order-4`     | `order: 4`  | Item appears after items with order 3.    |
+| `.ion-order-5`     | `order: 5`  | Item appears after items with order 4.    |
+| `.ion-order-6`     | `order: 6`  | Item appears after items with order 5.    |
+| `.ion-order-7`     | `order: 7`  | Item appears after items with order 6.    |
+| `.ion-order-8`     | `order: 8`  | Item appears after items with order 7.    |
+| `.ion-order-9`     | `order: 9`  | Item appears after items with order 8.    |
+| `.ion-order-10`    | `order: 10` | Item appears after items with order 9.    |
+| `.ion-order-11`    | `order: 11` | Item appears after items with order 10.   |
+| `.ion-order-12`    | `order: 12` | Item appears after items with order 11.   |
+| `.ion-order-last`  | `order: 13` | Item appears last in the flex container.  |
+
+### Responsive Flex Item Classes
+
+All of the flex item classes listed above have additional classes to modify the properties based on the screen size. Instead of the base class name, use `{property}-{breakpoint}-{modifier}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
+
+The table below shows the default behavior, where `{property}` is one of the following: `align-self`, `flex`, `flex-grow`, `flex-shrink`, or `order`, and `{modifier}` is the corresponding value as described above.
+
+| Class                           | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| `.ion-{property}-{modifier}`    | Applies the modifier to the element on all screen sizes.      |
+| `.ion-{property}-sm-{modifier}` | Applies the modifier to the element when `min-width: 576px`.  |
+| `.ion-{property}-md-{modifier}` | Applies the modifier to the element when `min-width: 768px`.  |
+| `.ion-{property}-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
+| `.ion-{property}-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
+
+## Border Display
+
+The `.ion-no-border` utility class can be used to remove borders from Ionic components. This class can be applied to the `ion-header` and `ion-footer` components.
 
 ```html
 <ion-header class="ion-no-border">
