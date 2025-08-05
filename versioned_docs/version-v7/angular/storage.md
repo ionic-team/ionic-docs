@@ -25,7 +25,7 @@ Many applications need to locally store settings as well as other lightweight ke
 
 ## Relational Data Storage (Mobile Only)
 
-Some applications, especially those following an offline-first methodology, may require locally storing high volumes of complex relational data. For such scenarios, a SQLite plugin may be used. The most common SQLite plugin offering are:
+Some applications, especially those following an offline-first methodology, may require locally storing high volumes of complex relational data. For such scenarios, a SQLite plugin may be used. The most common SQLite plugin offerings are:
 
 - [Cordova SQLite Storage](https://github.com/storesafe/cordova-sqlite-storage) (a [convenience wrapper](https://danielsogl.gitbook.io/awesome-cordova-plugins/sqlite) also exists for this plugin to aid in implementation)
 - [Capacitor Community SQLite Plugin](https://github.com/capacitor-community/sqlite)
