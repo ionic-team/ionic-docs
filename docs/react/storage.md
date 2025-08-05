@@ -11,9 +11,9 @@ sidebar_label: Storage
   />
 </head>
 
-There are variety of options available for storing data within an Ionic application. It is best to choose options that best fit the needs of your application. A single application may have requirements that span multiple options. 
+There are a variety of options available for storing data within an Ionic application. It is best to choose options that best fit the needs of your application. A single application may have requirements that span multiple options. 
 
-:::note
+:::info
 Some storage options involve third-party plugins or products. In such cases, we neither endorse nor support those plugins or products. We are mentioning them here for informational purposes only.
 :::
 
