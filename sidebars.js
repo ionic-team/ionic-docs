@@ -68,6 +68,7 @@ module.exports = {
       collapsed: false,
       items: [
         'angular/overview',
+        'angular/quickstart',
         'angular/build-options',
         {
           type: 'category',
