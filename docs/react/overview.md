@@ -46,16 +46,24 @@ $ ionic serve █
   <p>Quickly set up your first Ionic React app and learn the basics of the framework and CLI.</p>
 </DocsCard>
 
-<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/logo-react-icon.png">
-  <p>Build a real Photo Gallery app with Ionic React and native device features.</p>
+<DocsCard header="React Documentation" href="https://react.dev/learn" icon="/icons/logo-react-icon.png">
+  <p>Learn more about React's core concepts, tools, and best practices from the official React documentation.</p>
 </DocsCard>
 
 <DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Master navigation in Ionic React using React Router.</p>
+  <p>Discover how to handle routing and navigation in Ionic React apps using the React Router.</p>
 </DocsCard>
 
 <DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>Explore Ionic’s rich library of UI components for building beautiful apps.</p>
+  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+</DocsCard>
+
+<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+</DocsCard>
+
+<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
 </DocsCard>
 
 </DocsCards>
