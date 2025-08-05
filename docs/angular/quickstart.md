@@ -4,23 +4,23 @@ sidebar_label: Quickstart
 ---
 
 <head>
-  <title>Angular QuickStart Global Component for Generating Ionic Angular Apps</title>
+  <title>Ionic Angular Quickstart Using Ionic CLI: Angular Basics</title>
   <meta
     name="description"
-    content="Our QuickStart guide covers the basics of both Angular and Ionic Framework global components to get apps up and running. Read how to easily generate Ionic Angular apps."
+    content="Ionic Angular Quickstart covers the basics of Angular and Ionic, including any Ionic-specific features. Learn how to build Angular apps using the Ionic CLI."
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Welcome! This guide will walk you through creating your first Ionic Angular app, step by step. You'll learn how to set up your development environment, generate a new project, explore the project structure, and add your first UI components and navigation.
+Welcome! This guide will walk you through the basics of Ionic Angular development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Angular before building your first real app.
 
 If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, see the [Ionic Angular Overview](overview).
 
 ## Prerequisites
 
-Before you begin, make sure you have [Node.js](https://nodejs.org/) (which includes npm) installed on your machine.
+Before you begin, make sure you have Node.js and npm installed on your machine.
 You can check by running:
 
 ```shell
@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-If you don't have Node.js, [download it here](https://nodejs.org/en/download).
+If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
 
 ## Create a Project with the Ionic CLI
 
@@ -297,7 +297,7 @@ For more information, see the [Icon documentation](/docs/api/icon) and the [Ioni
 
 ## Run on a Device
 
-Ionic's components work everywhere: iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
+Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
 
 ```shell
 ionic build
