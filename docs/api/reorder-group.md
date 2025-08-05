@@ -16,14 +16,58 @@ import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-reorder groupは、[reorder](./reorder) コンポーネントを使用したアイテムのコンテナです。ユーザがアイテムをドラッグして新しい位置にドロップすると、 `ionItemReorder` イベントがディスパッチされる。このイベントのハンドラは `complete` メソッドを呼び出すように実装する必要があります。
+The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it, the `ionReorderEnd` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
 
-`ionItemReorder` イベントの `detail` プロパティには、`from` と `to` インデックスを含む、並べ替え操作に関するすべての関連情報が含まれます。並び替えのコンテキストでは、アイテムは `from` インデックスから `to` インデックスに移動します。reorder groupの使用例については、[reorder](./reorder) のドキュメントを参照してください。
+The `detail` property of the `ionReorderEnd` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` an index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
 
 
 ## Interfaces
 
-### ItemReorderEventDetail
+### ReorderMoveEventDetail
+
+```typescript
+interface ReorderMoveEventDetail {
+  from: number;
+  to: number;
+}
+```
+
+### ReorderEndEventDetail
+
+```typescript
+interface ReorderEndEventDetail {
+  from: number;
+  to: number;
+  complete: (data?: boolean | any[]) => any;
+}
+```
+
+### ReorderMoveCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface ReorderMoveCustomEvent extends CustomEvent {
+  detail: ReorderMoveEventDetail;
+  target: HTMLIonReorderGroupElement;
+}
+
+```
+
+### ReorderEndCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface ReorderEndCustomEvent extends CustomEvent {
+  detail: ReorderEndEventDetail;
+  target: HTMLIonReorderGroupElement;
+}
+```
+
+### ItemReorderEventDetail (deprecated)
+
+**_Deprecated_** — Use the `ionReorderEnd` event with `ReorderEndEventDetail` instead.
 
 ```typescript
 interface ItemReorderEventDetail {
@@ -33,9 +77,9 @@ interface ItemReorderEventDetail {
 }
 ```
 
-### ItemReorderCustomEvent
+### ItemReorderCustomEvent (deprecated)
 
-必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
+**_Deprecated_** — Use the `ionReorderEnd` event with `ReorderEndCustomEvent` instead.
 
 ```typescript
 interface ItemReorderCustomEvent extends CustomEvent {

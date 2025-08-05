@@ -85,6 +85,7 @@ module.exports = {
         },
         'angular/lifecycle',
         'angular/navigation',
+        'angular/injection-tokens',
         'angular/virtual-scroll',
         'angular/slides',
         'angular/platform',
@@ -349,7 +350,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'インプット',
+      label: 'Inputs',
       collapsed: false,
       items: ['api/input', 'api/input-password-toggle', 'api/input-otp', 'api/textarea'],
     },

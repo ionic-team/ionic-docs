@@ -188,28 +188,6 @@ import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.m
 
 <CSSProps />
 
-## レガシーな Input 構文からの移行
-
-Ionic 7.0では、よりシンプルなInput構文が導入されました。この新しい構文は、Inputのセットアップに必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
-
-開発者は、この移行を一度に1つのInputで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
-
-### 最新の構文の使い方
-
-最新の構文を使うには、3つのステップがあります。
-
-1. `ion-label` を削除して、代わりに `ion-input` の `label` プロパティを使用します。ラベルの配置は `ion-input` の `labelPlacement` プロパティで設定することができる。
-2. Input固有のプロパティを `ion-item` から `ion-input` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれる。
-3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-input` の `helperText` と `errorText` プロパティを使用します。
-
-import Migration from '@site/static/usage/v8/input/migration/index.md';
-
-<Migration />
-
-### レガシー構文の使用
-
-Ionicは、アプリが最新のInput構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-input`の`legacy`プロパティを`true`に設定することで、そのInputのインスタンスにレガシー構文を使用するように強制できます。
-
 ## Interfaces
 
 ### InputChangeEventDetail

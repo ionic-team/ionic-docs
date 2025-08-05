@@ -80,6 +80,7 @@ mozallowfullscreen
 msallowfullscreen
 oallowfullscreen
 webkitallowfullscreen
+webnative
 
-ionicframework
 browserslistrc
+ionicframework

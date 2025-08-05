@@ -9,7 +9,7 @@
       "schedule": ["every weekday before 11am"]
     },
     {
-      "matchPackagePatterns": ["@angular/"],
+      "matchPackagePatterns": ["@angular/",  "@angular-devkit/"],
       "groupName": "angular",
       "schedule": ["on the first day of the month"]
     },
@@ -21,6 +21,13 @@
     {
       "matchPackageNames": ["react", "react-dom"],
       "groupName": "react"
+    },
+    {
+      "matchPackageNames": ["vite", "vite-plugin-static-copy"],
+      "groupName": "vite-html",
+      "matchFileNames": [
+        "static/code/stackblitz/**/html/package.json"
+      ]
     },
     {
       "matchPackageNames": ["vite", "@vitejs/plugin-react"],
