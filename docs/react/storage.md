@@ -1,25 +1,50 @@
 ---
+title: Data Storage
 sidebar_label: Storage
 ---
 
-# Data Storage
+<head>
+  <title>React App Data Storage Options - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="A variety of options are available for storing data within Ionic apps made using Angular. Choose the options that best fit your storage needs."
+  />
+</head>
 
-There are variety of options available for storing data within an Ionic app.
+There are variety of options available for storing data within an Ionic application. It is best to choose options that best fit the needs of your application. A single application may have requirements that span multiple options. 
 
-Here are two official Ionic options:
+:::note
+Some storage options involve third-party plugins or products. In such cases, we neither endorse nor support those plugins or products. We are mentioning them here for informational purposes only.
+:::
 
-## Ionic Secure Storage
+Here are some common use cases and solutions:
 
-For teams building mission-critical apps or requiring encryption support, [Ionic Secure Storage](https://ionic.io/docs/secure-storage) is an official premium solution from the Ionic team that provides a cross-platform data storage system that works on iOS and Android.
+## Local Application Settings and Data
 
-It makes it easy to build high performance, offline-ready Ionic apps across iOS, Android, and the web.
+Many applications need to locally store settings as well as other lightweight key/value data. The [Capacitor Preferences](https://capacitorjs.com/docs/apis/preferences) plugin is specifically designed to handle these scenarios.
 
-[Learn more](https://ionic.io/products/secure-storage)
+## Relational Data Storage (Mobile Only)
 
-## @ionic/storage
+Some applications, especially those following an offline-first methodology, may require locally storing high volumes of complex relational data. For such scenarios, a SQLite plugin may be used. The most common SQLite plugin offering are:
 
-For developers not requiring encryption nor relational data support, [@ionic/storage](https://github.com/ionic-team/ionic-storage) is an open source key/value API for building apps that work across storage engines on multiple platforms.
+- [Cordova SQLite Storage](https://github.com/storesafe/cordova-sqlite-storage) (a [convenience wrapper](https://danielsogl.gitbook.io/awesome-cordova-plugins/sqlite) also exists for this plugin to aid in implementation)
+- [Capacitor Community SQLite Plugin](https://github.com/capacitor-community/sqlite)
 
-Additionally, Ionic Secure Storage has a driver that works with the key/value API in `@ionic/storage` while providing encryption and SQLite support.
+## Non-Relational High Volume Data Storage (Mobile and Web)
 
-Learn more about [@ionic/storage](https://github.com/ionic-team/ionic-storage)
+For applications that need to store a high volume of data as well as operate on both web and mobile, a potential solution is to create a key/value pair data storage service that uses [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) on the web and one of the previously mentioned SQLite plugins on mobile.
+
+Here a sample of how this can be accomplished:
+
+- [Full application](https://github.com/ionic-enterprise/tutorials-and-demos-react/tree/main/demos/sqlcipher-kv-pair)
+- [Mobile Service](https://github.com/ionic-enterprise/tutorials-and-demos-react/blob/main/demos/sqlcipher-kv-pair/src/utils/mobile-kv-store.ts)
+- [Web Service](https://github.com/ionic-enterprise/tutorials-and-demos-react/blob/main/demos/sqlcipher-kv-pair/src/utils/web-kv-store.ts)
+
+## Other Options
+
+Other storage options that provide local as well as cloud-based storage that work well within Capacitor applications also exist and may integrate well with your application.
+
+For example:
+
+- [PouchDB](https://pouchdb.com/)
+- [Firestore](https://firebase.google.com/docs/firestore)
