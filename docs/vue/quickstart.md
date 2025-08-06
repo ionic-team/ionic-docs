@@ -303,29 +303,27 @@ See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-sta
 
 ## Build with TypeScript or JavaScript
 
-We love TypeScript at Ionic, and have believed for quite some time now that it’s a great tool for building scalable apps. That said, we know how much the Vue community values simplicity – in their tooling, languages, and more. In fact, it’s likely what drew you to Vue in the first place. Start simple – then scale up as needed.
+Ionic Vue projects are created with TypeScript by default, but you can easily convert to JavaScript if you prefer. After generating a blank Ionic Vue app, follow these steps:
 
-So, if you’d prefer to use JavaScript instead of TypeScript, you can. After generating an Ionic Vue app, follow these steps:
-
-1. Remove TypeScript dependencies:
+1. Remove the TypeScript dependencies:
 
 ```shell
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
-2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, and all files in the `tests` directory.
+2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, and files in the `tests` directory.
 
 3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
-4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
+4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: 'off'` from `.eslintrc.js`.
 
 5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
 
 6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
-7. Delete `tsconfig.json` and `src/vite-env.d.ts`
+7. Delete `tsconfig.json` and `src/vite-env.d.ts`.
 
-8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`
+8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
 
 8. Install terser `npm i -D terser`.
 
