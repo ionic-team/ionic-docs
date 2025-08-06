@@ -12,8 +12,13 @@ function Example() {
           <IonRadio value="truncated">Truncated with ellipsis by default</IonRadio>
         </IonItem>
         <IonItem>
-          <IonRadio value="wrapped" className="wrapped">
-            `text-wrap` applied to `label` shadow part
+          <IonRadio value="wrapped-part" className="wrapped">
+            Wrapping with text-wrap applied to label shadow part
+          </IonRadio>
+        </IonItem>
+        <IonItem>
+          <IonRadio value="wrapped-div">
+            <div className="ion-text-wrap">Wrapping with ion-text-wrap class applied wrapper element</div>
           </IonRadio>
         </IonItem>
       </IonRadioGroup>
