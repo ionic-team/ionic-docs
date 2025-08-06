@@ -175,9 +175,10 @@ You can enhance your Home page with more Ionic UI components. For example, add a
 
 Then, import the `IonButton` component in the `<script>` tag:
 
-```ts
+```html
 <script setup lang="ts">
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';</script>
+  import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+</script>
 ```
 
 ## Add a New Page
@@ -325,7 +326,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
 
-8. Install terser `npm i -D terser`.
+9. Install terser `npm i -D terser`.
 
 ## Explore More
 
