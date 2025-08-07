@@ -69,7 +69,6 @@ module.exports = {
       items: [
         'angular/overview',
         'angular/quickstart',
-        'angular/build-options',
         {
           type: 'category',
           label: 'Build Your First App',
@@ -84,6 +83,7 @@ module.exports = {
             'angular/your-first-app/distribute',
           ],
         },
+        'angular/build-options',
         'angular/lifecycle',
         'angular/navigation',
         'angular/virtual-scroll',
@@ -166,6 +166,7 @@ module.exports = {
             'vue/your-first-app/distribute',
           ],
         },
+        'vue/build-options',
         'vue/lifecycle',
         'vue/navigation',
         'vue/virtual-scroll',

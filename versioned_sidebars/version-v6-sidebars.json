@@ -388,6 +388,10 @@
         },
         {
           "type": "doc",
+          "id": "vue/build-options"
+        },
+        {
+          "type": "doc",
           "id": "vue/lifecycle"
         },
         {
