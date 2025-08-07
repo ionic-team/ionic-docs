@@ -66,6 +66,10 @@ Your new app's `src` directory will look like this:
     └── Home.tsx
 ```
 
+:::info
+All file paths in the examples below are relative to the `src/` directory.
+:::
+
 Let's walk through these files to understand the app's structure.
 
 ## View the App Component
@@ -159,7 +163,7 @@ For detailed information about Ionic layout components, see the [Header](/docs/a
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent`:
+You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent` in `pages/Home.tsx`:
 
 ```tsx
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -187,7 +191,7 @@ export default Home;
 
 ## Add a New Page
 
-Create a new page at `src/pages/New.tsx`:
+Create a new page at `pages/New.tsx`:
 
 ```tsx
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -247,7 +251,7 @@ Then, add its route in `IonRouterOutlet`:
 </IonRouterOutlet>
 ```
 
-Once that is done, update the button in `Home.tsx`:
+Once that is done, update the button in `pages/Home.tsx`:
 
 ```tsx
 <IonButton routerLink="/new">Navigate</IonButton>
@@ -261,7 +265,7 @@ Navigating can also be performed programmatically using React Router's `history`
 
 Ionic React comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `IonIcon` component.
 
-Update the imports in `New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
+Update the imports in `pages/New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
 ```tsx
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -278,6 +282,59 @@ Then, include them inside of the `IonContent`:
 Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
 For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+
+## Call Component Methods
+
+Let's add a button that can scroll the content area to the bottom.
+
+Update `pages/New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
+
+```tsx
+<IonContent ref={content}>
+  <IonIcon icon={heart} />
+  <IonIcon icon={logoIonic} />
+
+  <IonButton onClick={scrollToBottom}>Scroll to Bottom</IonButton>
+
+  {/* Add lots of content to make scrolling possible */}
+  {Array.from({ length: 50 }, (_, i) => (
+    <IonItem key={i}>
+      <IonLabel>Item {i + 1}</IonLabel>
+    </IonItem>
+  ))}
+</IonContent>
+```
+
+Then, add the imports for the additional components and define the `scrollToBottom` function:
+
+```tsx
+import { useRef } from 'react';
+import { IonButton, IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { heart, logoIonic } from 'ionicons/icons';
+
+const New: React.FC = () => {
+  const content = useRef<HTMLIonContentElement>(null);
+
+  const scrollToBottom = () => {
+    content.current?.scrollToBottom(300);
+  };
+
+  return (
+    // ...existing template...
+  );
+};
+
+export default New;
+```
+
+To call methods on Ionic components:
+
+1. Create a `ref` for the component
+2. Call the method directly on `ref.current`
+
+This pattern is necessary because React refs store the component instance in the `.current` property.
+
+You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
 
 ## Run on a Device
 

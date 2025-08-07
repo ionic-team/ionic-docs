@@ -64,6 +64,10 @@ Your new app's `src` directory will look like this:
     └── HomePage.vue
 ```
 
+:::info
+All file paths in the examples below are relative to the `src/` directory.
+:::
+
 Let's walk through these files to understand the app's structure.
 
 ## View the App Component
@@ -117,7 +121,7 @@ When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `Views/HomePage.vue`, imports the Ionic components and defines the page template:
+The Home page component, defined in `views/HomePage.vue`, imports the Ionic components and defines the page template:
 
 ```html
 <template>
@@ -283,6 +287,61 @@ Note that we are passing the imported SVG reference, **not** the icon name as a 
 
 For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
+## Call Component Methods
+
+Let's add a button that can scroll the content area to the bottom.
+
+Update `views/NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
+
+```html
+<ion-content ref="content">
+  <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+
+  <!-- Add lots of content to make scrolling possible -->
+  <ion-item v-for="i in 50" :key="i">
+    <ion-label>Item {{ i }}</ion-label>
+  </ion-item>
+</ion-content>
+```
+
+In the script section, add the new component imports and define the `scrollToBottom` function:
+
+```html
+<script setup lang="ts">
+  import {
+    IonBackButton,
+    IonButtons,
+    IonButton,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
+  import { heart, logoIonic } from 'ionicons/icons';
+  import { ref } from 'vue';
+
+  const content = ref();
+
+  const scrollToBottom = () => {
+    content.value.$el.scrollToBottom(300);
+  };
+</script>
+```
+
+To call methods on Ionic components:
+
+1. Create a `ref` for the component
+2. Access the underlying Web Component via `$el`
+3. Call the method on the Web Component
+
+This pattern is necessary because Ionic components are built as Web Components. The `$el` property gives you access to the actual Web Component instance where the methods are defined.
+
+You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+
 ## Run on a Device
 
 Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
@@ -312,17 +371,17 @@ Ionic Vue projects are created with TypeScript by default, but you can easily co
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
-2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, and files in the `tests` directory.
+2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `router/index.ts`, `main.ts`, and files in the `tests` directory.
 
 3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
 4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: 'off'` from `.eslintrc.js`.
 
-5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
+5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `router/index.js`.
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
+6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/HomePage.vue`.
 
-7. Delete `tsconfig.json` and `src/vite-env.d.ts`.
+7. Delete `tsconfig.json` and `vite-env.d.ts`.
 
 8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
 

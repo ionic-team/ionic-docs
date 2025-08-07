@@ -69,6 +69,10 @@ Your new app's `src/app` directory will look like this:
     └── home.page.ts
 ```
 
+:::info
+All file paths in the examples below are relative to the `src/app/` directory.
+:::
+
 Let's walk through these files to understand the app's structure.
 
 ## View the App Component
@@ -123,7 +127,7 @@ When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `home.page.ts`, imports the Ionic components it uses:
+The Home page component, defined in `home/home.page.ts`, imports the Ionic components it uses:
 
 ```ts
 import { Component } from '@angular/core';
@@ -205,7 +209,7 @@ ionic generate page new
 
 A route will be automatically added to `app.routes.ts`.
 
-In your `new.page.html`, you can add a [Back Button](/docs/api/back-button) to the [Toolbar](/docs/api/toolbar):
+In your `new/new.page.html`, you can add a [Back Button](/docs/api/back-button) to the [Toolbar](/docs/api/toolbar):
 
 ```html
 <ion-header [translucent]="true">
@@ -218,7 +222,7 @@ In your `new.page.html`, you can add a [Back Button](/docs/api/back-button) to t
 </ion-header>
 ```
 
-And import `IonBackButton` and `IonButtons` in `new.page.ts`:
+And import `IonBackButton` and `IonButtons` in `new/new.page.ts`:
 
 ```ts
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
@@ -233,13 +237,13 @@ The `ion-back-button` will automatically handle navigation back to the previous 
 
 ## Navigate to the New Page
 
-To navigate to the new page, update the button in `home.page.html`:
+To navigate to the new page, update the button in `home/home.page.html`:
 
 ```html
 <ion-button [routerLink]="['/new']">Navigate</ion-button>
 ```
 
-Then, import `RouterLink` in `home.page.ts`:
+Then, import `RouterLink` in `home/home.page.ts`:
 
 ```ts
 import { RouterLink } from '@angular/router';
@@ -256,7 +260,7 @@ Navigating can also be performed using Angular's Router service. See the [Angula
 
 ## Add Icons to the New Page
 
-Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `new.page.html`:
+Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `new/new.page.html`:
 
 ```html
 <ion-content>
@@ -267,7 +271,7 @@ Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. Y
 </ion-content>
 ```
 
-You'll also need to import and register these icons in `new.page.ts`:
+You'll also need to import and register these icons in `new/new.page.ts`:
 
 ```ts
 // ...existing imports...
@@ -288,12 +292,100 @@ export class NewPage implements OnInit {
   constructor() {
     addIcons({ heart, logoIonic });
   }
+
+  ngOnInit() {}
 }
 ```
 
 Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
 
 For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+
+## Call Component Methods
+
+Let's add a button that can scroll the content area to the bottom.
+
+Update the `ion-content` in your `new/new.page.html` to include a button and some items after the existing icons:
+
+```html
+<ion-content [fullscreen]="true" #content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">new</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-icon name="heart"></ion-icon>
+  <ion-icon name="logo-ionic"></ion-icon>
+
+  <ion-button (click)="scrollToBottom()">Scroll to Bottom</ion-button>
+
+  <!-- Add lots of content to make scrolling possible -->
+  @for (item of items; track $index; let i = $index) {
+  <ion-item>
+    <ion-label>Item {{ i + 1 }}</ion-label>
+  </ion-item>
+  }
+</ion-content>
+```
+
+In the component, add the `ViewChild` import, the new component imports and define the `scrollToBottom` function:
+
+```ts
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { heart, logoIonic } from 'ionicons/icons';
+
+@Component({
+  // ...existing config...
+  imports: [
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonTitle,
+    IonToolbar,
+  ],
+})
+export class NewPage implements OnInit {
+  @ViewChild(IonContent) content!: IonContent;
+
+  items = Array.from({ length: 50 }, (_, i) => i);
+
+  constructor() {
+    addIcons({ heart, logoIonic });
+  }
+
+  ngOnInit() {}
+
+  scrollToBottom = () => {
+    this.content.scrollToBottom(300);
+  };
+}
+```
+
+To call methods on Ionic components:
+
+1. Create a `ViewChild` reference for the component
+2. Call the method directly on the component instance
+
+You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
 
 ## Run on a Device
 
