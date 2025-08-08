@@ -38,7 +38,7 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 ## Label Wrapping
 
-Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. The `label` shadow part can be styled with the `::part()` selector.
+Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. You can enable text wrapping by adding the `ion-text-wrap` class to a wrapper around the radio text or styling the `label` shadow part using the `::part()` selector.
 
 import LabelWrap from '@site/static/usage/v8/radio/label-wrap/index.md';
 

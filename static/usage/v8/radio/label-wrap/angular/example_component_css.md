@@ -4,6 +4,6 @@ ion-list {
 }
 
 ion-radio.wrapped::part(label) {
-  text-wrap: wrap;
+  white-space: normal;
 }
 ```
