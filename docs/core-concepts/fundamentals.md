@@ -54,20 +54,26 @@ Developers can use standard events such as `click` as they normally would. Howev
 
 ## Properties
 
-[Properties (`@Prop`)](https://stenciljs.com/docs/properties) are custom attributes exposed publically on an HTML element. They allow developers to pass data to a component to render or otherwise use.
+Properties are JavaScript properties that can be set on Ionic components to configure their behavior and appearance. Properties are defined in each component's [API documentation](/docs/api) page.
+
+### Reactive Properties
+
+Reactive properties automatically update the component when their values change. These are the most common type of property in Ionic components.
+
+```html
+<ion-button color="primary">Primary Button</ion-button>
+```
+
+The `color` property is a reactive property that configures how the button appears. If you change the `color` value after the initial render, the button will update to reflect the new value.
 
 ### Virtual Properties
 
-In Ionic components, virutal properties are a special category of properties that are used to define inputs to a component without the reactivity that typically comes with `@Prop` decorated properties in Stencil.
+Virtual properties are designed for one-time configuration during component initialization. They do not trigger re-renders when updated.
 
-Unlike `@Prop` inputs:
+```html
+<ion-button mode="ios">iOS Style Button</ion-button> <ion-button mode="md">Material Design Button</ion-button>
+```
 
-- Virtual properties do not trigger a re-render when updated.
-- They cannot be mutated to produce side effects in the component lifecycle.
-- They are not tracked for changes and do not participate in Stencil's reactive data flow.
+The `mode` property is a virtual property that determines which platform styles to use for a component. It can be set at the component level or globally through the app configuration. In both cases, it's set once during initialization and doesn't change during the component's lifecycle.
 
-#### When to Use Virtual Properties
-
-Virtual properties are intended for use cases where you need to pass static or read-only data into a component, like configuration options or values that won't change during the component's lifecycle. They offer a lightweight alternative when you don't need Stencil's change detection or DOM updates.
-
-Because they are not reactive, updates to virtual properties after initial load will not affect the rendered output of the component.
+For more information on Ionic modes, read the [Platform Styles documentation](/docs/theming/platform-styles).
