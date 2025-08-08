@@ -13,7 +13,7 @@ interface Food {
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [IonItem, IonList, IonRadio, IonRadioGroup],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ExampleComponent {
   foods: Food[] = [
