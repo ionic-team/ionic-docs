@@ -81,7 +81,7 @@
   </ion-tabs>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonTabs,
     IonTab,
@@ -93,19 +93,6 @@
     IonTitle,
     IonIcon,
   } from '@ionic/vue';
-
   import { playCircle, radio, library, search } from 'ionicons/icons';
-
-  export default {
-    components: { IonTabs, IonTab, IonToolbar, IonTabBar, IonTabButton, IonContent, IonHeader, IonTitle, IonIcon },
-    data() {
-      return {
-        playCircle,
-        radio,
-        library,
-        search,
-      };
-    },
-  };
 </script>
 ```

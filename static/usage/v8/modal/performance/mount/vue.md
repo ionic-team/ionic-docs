@@ -21,9 +21,9 @@
   </ion-content>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
   const modal = ref();
 
