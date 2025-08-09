@@ -4,52 +4,44 @@
   <ion-picker-legacy trigger="open-picker" :columns="pickerColumns" :buttons="pickerButtons"></ion-picker-legacy>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonButton, IonPickerLegacy } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonPickerLegacy },
-    setup() {
-      const pickerColumns = [
+  const pickerColumns = [
+    {
+      name: 'languages',
+      options: [
         {
-          name: 'languages',
-          options: [
-            {
-              text: 'JavaScript',
-              value: 'javascript',
-            },
-            {
-              text: 'TypeScript',
-              value: 'typescript',
-            },
-            {
-              text: 'Rust',
-              value: 'rust',
-            },
-            {
-              text: 'C#',
-              value: 'c#',
-            },
-          ],
-        },
-      ];
-
-      const pickerButtons = [
-        {
-          text: 'Cancel',
-          role: 'cancel',
+          text: 'JavaScript',
+          value: 'javascript',
         },
         {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`You selected: ${value.languages.value}`);
-          },
+          text: 'TypeScript',
+          value: 'typescript',
         },
-      ];
-
-      return { pickerColumns, pickerButtons };
+        {
+          text: 'Rust',
+          value: 'rust',
+        },
+        {
+          text: 'C#',
+          value: 'c#',
+        },
+      ],
     },
-  });
+  ];
+
+  const pickerButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+    },
+    {
+      text: 'Confirm',
+      handler: (value) => {
+        console.log(`You selected: ${value.languages.value}`);
+      },
+    },
+  ];
 </script>
 ```
