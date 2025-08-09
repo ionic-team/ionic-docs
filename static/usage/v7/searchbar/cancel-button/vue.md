@@ -11,7 +11,7 @@
   ></ion-searchbar>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonSearchbar } from '@ionic/vue';
   import { trash } from 'ionicons/icons';
 </script>

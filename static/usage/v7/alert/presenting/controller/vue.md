@@ -3,7 +3,7 @@
   <ion-button @click="presentAlert">Click Me</ion-button>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonButton, alertController } from '@ionic/vue';
 
   const presentAlert = async () => {

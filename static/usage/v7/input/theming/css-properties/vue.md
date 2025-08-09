@@ -10,13 +10,8 @@
   ></ion-input>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonInput } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonInput },
-  });
 </script>
 
 <style>

@@ -7,7 +7,7 @@
   <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonSearchbar } from '@ionic/vue';
 </script>
 ```
