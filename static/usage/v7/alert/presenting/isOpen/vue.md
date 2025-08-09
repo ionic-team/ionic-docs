@@ -11,7 +11,7 @@
   ></ion-alert>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { ref } from 'vue';
   import { IonAlert, IonButton } from '@ionic/vue';
 
