@@ -130,17 +130,9 @@ export const TabBarExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
 import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
 import { call, person, settings } from 'ionicons/icons';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonIcon, IonTabBar, IonTabButton, IonTabs },
-  setup() {
-    return { call, person, settings }
-  }
-});
 </script>
 ```
 

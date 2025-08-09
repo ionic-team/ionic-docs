@@ -112,23 +112,11 @@ We can also programmatically navigate in our app by using the router API:
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonContent, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { useRouter } from 'vue-router';
 
-  export default defineComponent({
-    name: 'HomePage',
-    components: {
-      IonButton,
-      IonContent,
-      IonPage,
-    },
-    setup() {
-      const router = useRouter();
-      return { router };
-    },
-  });
+  const router = useRouter();
 </script>
 ```
 
@@ -155,35 +143,21 @@ The `useIonRouter` utility is a function that provides methods for programmatic 
 This first example lets us push a new page onto the stack with a custom page transition:
 
 ```js
-import { defineComponent } from 'vue';
 import { useIonRouter } from '@ionic/vue';
 import { customAnimation } from '@/animations/customAnimation';
 
-export default defineComponent({
-  ...,
-  setup() {
-    const ionRouter = useIonRouter();
-
-    ionRouter.push('/page2', customAnimation);
-  }
-});
+const ionRouter = useIonRouter();
+ionRouter.push('/page2', customAnimation);
 ```
 
 `useIonRouter` provides convenience `push`, `replace`, `back`, and `forward` methods to make it easy to use common navigation actions. It also provides a `navigate` method which can be used in more complex navigation scenarios:
 
 ```js
-import { defineComponent } from 'vue';
 import { useIonRouter } from '@ionic/vue';
 import { customAnimation } from '@/animations/customAnimation';
 
-export default defineComponent({
-  ...,
-  setup() {
-    const ionRouter = useIonRouter();
-
-    ionRouter.navigate('/page2', 'forward', 'replace', customAnimation);
-  }
-});
+const ionRouter = useIonRouter();
+ionRouter.navigate('/page2', 'forward', 'replace', customAnimation);
 ```
 
 The example above has the app navigate to `/page2` with a custom animation that uses the forward direction. In addition, the `replace` value ensures that the app replaces the current history entry when navigating.
@@ -415,29 +389,9 @@ Let's start by taking a look at our `Tabs` component:
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
   import { ellipse, square, triangle } from 'ionicons/icons';
-
-  export default {
-    name: 'Tabs',
-    components: {
-      IonLabel,
-      IonTabs,
-      IonTabBar,
-      IonTabButton,
-      IonIcon,
-      IonPage,
-      IonRouterOutlet,
-    },
-    setup() {
-      return {
-        ellipse,
-        square,
-        triangle,
-      };
-    },
-  };
 </script>
 ```
 
@@ -552,19 +506,8 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  });
 </script>
 ```
 
@@ -620,26 +563,12 @@ Let's look at how to use it in our component:
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { useRoute } from 'vue-router';
 
-  export default defineComponent({
-    name: 'Detail',
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-    setup() {
-      const route = useRoute();
-      const { id } = route.params;
-      return { id };
-    },
-  });
+  const route = useRoute();
+  const { id } = route.params;
 </script>
 ```
 
