@@ -34,13 +34,8 @@
   </ion-grid>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonCol, IonGrid, IonInput, IonRow } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonCol, IonGrid, IonInput, IonRow },
-  });
 </script>
 
 <style scoped>

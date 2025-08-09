@@ -11,17 +11,11 @@
   ></ion-textarea>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonTextarea } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonTextarea },
-    methods: {
-      customFormatter(inputLength, maxLength) {
-        return `${maxLength - inputLength} characters remaining`;
-      },
-    },
-  });
+  const customFormatter = (inputLength, maxLength) => {
+    return `${maxLength - inputLength} characters remaining`;
+  };
 </script>
 ```

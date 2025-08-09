@@ -35,7 +35,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonContent,
     IonItem,
@@ -45,25 +45,17 @@
     IonReorderGroup,
     ReorderEndCustomEvent,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonContent, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup },
-    setup() {
-      const handleReorderEnd = (event: ReorderEndCustomEvent) => {
-        // The `from` and `to` properties contain the index of the item
-        // when the drag started and ended, respectively
-        console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+  const handleReorderEnd = (event: ReorderEndCustomEvent) => {
+    // The `from` and `to` properties contain the index of the item
+    // when the drag started and ended, respectively
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
-        // Finish the reorder and position the item in the DOM based on
-        // where the gesture ended. This method can also be called directly
-        // by the reorder group.
-        event.detail.complete();
-      };
-
-      return { handleReorderEnd };
-    },
-  });
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group.
+    event.detail.complete();
+  };
 </script>
 
 <style scoped>

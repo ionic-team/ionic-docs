@@ -3,7 +3,7 @@
   <ion-content fixed-slot-placement="before">
     <ion-fab horizontal="end" vertical="bottom" slot="fixed">
       <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
+        <ion-icon :icon="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
     <ion-list>
@@ -20,7 +20,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     InfiniteScrollCustomEvent,
     IonAvatar,
@@ -28,48 +28,29 @@
     IonFab,
     IonFabButton,
     IonIcon,
-    IonImg,
     IonInfiniteScroll,
     IonInfiniteScrollContent,
     IonItem,
     IonLabel,
     IonList,
   } from '@ionic/vue';
-  import { defineComponent, reactive } from 'vue';
+  import { add } from 'ionicons/icons';
+  import { reactive } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonAvatar,
-      IonContent,
-      IonFab,
-      IonFabButton,
-      IonIcon,
-      IonImg,
-      IonInfiniteScroll,
-      IonInfiniteScrollContent,
-      IonItem,
-      IonLabel,
-      IonList,
-    },
-    setup() {
-      const items = reactive([]);
+  const items = reactive([]);
 
-      const generateItems = () => {
-        const count = items.length + 1;
-        for (let i = 0; i < 50; i++) {
-          items.push(`Item ${count + i}`);
-        }
-      };
+  const generateItems = () => {
+    const count = items.length + 1;
+    for (let i = 0; i < 50; i++) {
+      items.push(`Item ${count + i}`);
+    }
+  };
 
-      const ionInfinite = (event: InfiniteScrollCustomEvent) => {
-        generateItems();
-        setTimeout(() => event.target.complete(), 500);
-      };
+  const ionInfinite = (event: InfiniteScrollCustomEvent) => {
+    generateItems();
+    setTimeout(() => event.target.complete(), 500);
+  };
 
-      generateItems();
-
-      return { ionInfinite, items };
-    },
-  });
+  generateItems();
 </script>
 ```

@@ -14,17 +14,10 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonHeader, IonTitle, IonToolbar, IonContent, IonNavLink, IonButton } from '@ionic/vue';
   import PageTwo from './PageTwo.vue';
 
-  export default {
-    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonNavLink, IonButton },
-    data() {
-      return {
-        component: PageTwo,
-      };
-    },
-  };
+  const component = PageTwo;
 </script>
 ```

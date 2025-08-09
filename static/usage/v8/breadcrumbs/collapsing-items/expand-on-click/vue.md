@@ -10,22 +10,14 @@
   </ion-breadcrumbs>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonBreadcrumb, IonBreadcrumbs },
-    data() {
-      return {
-        maxBreadcrumbs: 4,
-      };
-    },
-    methods: {
-      expandBreadcrumbs() {
-        this.maxBreadcrumbs = undefined;
-      },
-    },
-  });
+  const maxBreadcrumbs = ref(4);
+
+  const expandBreadcrumbs = () => {
+    maxBreadcrumbs.value = undefined;
+  };
 </script>
 ```

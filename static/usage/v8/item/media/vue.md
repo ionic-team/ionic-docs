@@ -15,12 +15,7 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonAvatar, IonItem, IonLabel, IonThumbnail } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonAvatar, IonItem, IonLabel, IonThumbnail },
-  });
 </script>
 ```

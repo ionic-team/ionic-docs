@@ -7,22 +7,23 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonContent, IonButton },
-    props: ['nav'],
-    methods: {
-      navigateBack() {
-        const { nav } = this;
-        nav.pop();
-      },
-      navigateToRoot() {
-        const { nav } = this;
-        nav.popToRoot();
-      },
-    },
+  interface Props {
+    nav: any;
+  }
+
+  const props = defineProps<Props>();
+
+  const navigateBack = () => {
+    const { nav } = props;
+    nav.pop();
+  };
+
+  const navigateToRoot = () => {
+    const { nav } = props;
+    nav.popToRoot();
   };
 </script>
 ```

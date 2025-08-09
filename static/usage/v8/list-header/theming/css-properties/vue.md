@@ -5,13 +5,8 @@
   </ion-list-header>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonLabel, IonListHeader } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonLabel, IonListHeader },
-  });
 </script>
 
 <style scoped>

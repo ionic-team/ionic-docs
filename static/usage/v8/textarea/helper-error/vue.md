@@ -12,36 +12,31 @@
   ></ion-textarea>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonTextarea } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonTextarea },
-    methods: {
-      validateEmail(email) {
-        return email.match(
-          /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-        );
-      },
+  const input = ref();
 
-      validate(event) {
-        const value = event.target.value;
+  const validateEmail = (email) => {
+    return email.match(
+      /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    );
+  };
 
-        this.$refs.input.$el.classList.remove('ion-valid');
-        this.$refs.input.$el.classList.remove('ion-invalid');
+  const validate = (event) => {
+    const value = event.target.value;
 
-        if (value === '') return;
+    input.value.$el.classList.remove('ion-valid');
+    input.value.$el.classList.remove('ion-invalid');
 
-        this.validateEmail(value)
-          ? this.$refs.input.$el.classList.add('ion-valid')
-          : this.$refs.input.$el.classList.add('ion-invalid');
-      },
+    if (value === '') return;
 
-      markTouched() {
-        this.$refs.input.$el.classList.add('ion-touched');
-      },
-    },
-  });
+    validateEmail(value) ? input.value.$el.classList.add('ion-valid') : input.value.$el.classList.add('ion-invalid');
+  };
+
+  const markTouched = () => {
+    input.value.$el.classList.add('ion-touched');
+  };
 </script>
 ```

@@ -55,24 +55,22 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonContent } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonContent },
-    methods: {
-      scrollToBottom() {
-        // Passing a duration to the method makes it so the scroll slowly
-        // goes to the bottom instead of instantly
-        this.$refs.content.$el.scrollToBottom(500);
-      },
-      scrollToTop() {
-        // Passing a duration to the method makes it so the scroll slowly
-        // goes to the top instead of instantly
-        this.$refs.content.$el.scrollToTop(500);
-      },
-    },
-  });
+  const content = ref();
+
+  const scrollToBottom = () => {
+    // Passing a duration to the method makes it so the scroll slowly
+    // goes to the bottom instead of instantly
+    content.value.$el.scrollToBottom(500);
+  };
+
+  const scrollToTop = () => {
+    // Passing a duration to the method makes it so the scroll slowly
+    // goes to the top instead of instantly
+    content.value.$el.scrollToTop(500);
+  };
 </script>
 ```
