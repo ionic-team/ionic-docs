@@ -18,12 +18,7 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList },
-  });
 </script>
 ```

@@ -12,12 +12,7 @@
   <ion-spinner color="dark"></ion-spinner>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonSpinner } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonSpinner },
-  });
 </script>
 ```

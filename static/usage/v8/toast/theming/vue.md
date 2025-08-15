@@ -10,22 +10,15 @@
   ></ion-toast>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonToast } from '@ionic/vue';
 
-  export default {
-    components: { IonButton, IonToast },
-    setup() {
-      const toastButtons = [
-        {
-          text: 'Dismiss',
-          role: 'cancel',
-        },
-      ];
-
-      return { toastButtons };
+  const toastButtons = [
+    {
+      text: 'Dismiss',
+      role: 'cancel',
     },
-  };
+  ];
 </script>
 
 <style>

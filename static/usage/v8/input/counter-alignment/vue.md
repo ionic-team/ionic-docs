@@ -11,7 +11,7 @@
   </ion-list>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonInput, IonItem, IonList } from '@ionic/vue';
 </script>
 ```

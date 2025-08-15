@@ -15,13 +15,8 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonRippleEffect } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRippleEffect },
-  });
 </script>
 
 <style scoped>

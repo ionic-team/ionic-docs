@@ -17,37 +17,21 @@
   </form>
 </template>
 
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
+  import { ref } from 'vue';
   import { IonCheckbox, IonButton, CheckboxCustomEvent } from '@ionic/vue';
 
-  export default defineComponent({
-    components: {
-      IonCheckbox,
-      IonButton,
-    },
-    setup() {
-      const agree = ref(false);
-      const isTouched = ref(false);
-      const isValid = ref<boolean | undefined>();
+  const agree = ref(false);
+  const isTouched = ref(false);
+  const isValid = ref<boolean | undefined>();
 
-      const validateCheckbox = (event: CheckboxCustomEvent<{ checked: boolean }>) => {
-        isTouched.value = true;
-        isValid.value = event.detail.checked;
-      };
+  const validateCheckbox = (event: CheckboxCustomEvent<{ checked: boolean }>) => {
+    isTouched.value = true;
+    isValid.value = event.detail.checked;
+  };
 
-      const submit = () => {
-        validateCheckbox({ detail: { checked: agree.value } } as CheckboxCustomEvent<{ checked: boolean }>);
-      };
-
-      return {
-        agree,
-        isTouched,
-        isValid,
-        validateCheckbox,
-        submit,
-      };
-    },
-  });
+  const submit = () => {
+    validateCheckbox({ detail: { checked: agree.value } } as CheckboxCustomEvent<{ checked: boolean }>);
+  };
 </script>
 ```

@@ -22,7 +22,7 @@
     </ion-content>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonBackdrop,
     IonHeader,
@@ -33,10 +33,5 @@
     IonCheckbox,
     IonButton,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonBackdrop, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonCheckbox, IonButton },
-  });
 </script>
 ```

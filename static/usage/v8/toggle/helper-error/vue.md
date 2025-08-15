@@ -16,32 +16,17 @@
   </ion-toggle>
 </template>
 
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
+  import { ref } from 'vue';
   import { IonToggle, IonButton, ToggleCustomEvent } from '@ionic/vue';
 
-  export default defineComponent({
-    components: {
-      IonToggle,
-      IonButton,
-    },
-    setup() {
-      const wifi = ref(true);
-      const isTouched = ref(false);
-      const isValid = ref<boolean | undefined>();
+  const wifi = ref(true);
+  const isTouched = ref(false);
+  const isValid = ref<boolean | undefined>();
 
-      const validateToggle = (event: ToggleCustomEvent<{ checked: boolean }>) => {
-        isTouched.value = true;
-        isValid.value = event.detail.checked;
-      };
-
-      return {
-        wifi,
-        isTouched,
-        isValid,
-        validateToggle,
-      };
-    },
-  });
+  const validateToggle = (event: ToggleCustomEvent<{ checked: boolean }>) => {
+    isTouched.value = true;
+    isValid.value = event.detail.checked;
+  };
 </script>
 ```

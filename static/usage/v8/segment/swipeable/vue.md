@@ -39,12 +39,7 @@
   }
 </style>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonLabel, IonSegment, IonSegmentButton, IonSegmentContent, IonSegmentView } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonLabel, IonSegment, IonSegmentButton, IonSegmentContent, IonSegmentView },
-  });
 </script>
 ```

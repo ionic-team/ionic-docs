@@ -5,22 +5,17 @@
   <ion-button expand="block" @click="presentToast('bottom')">Present Toast At the Bottom</ion-button>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, toastController } from '@ionic/vue';
 
-  export default {
-    components: { IonButton },
-    methods: {
-      async presentToast(position: 'top' | 'middle' | 'bottom') {
-        const toast = await toastController.create({
-          message: 'Hello World!',
-          duration: 1500,
-          position: position,
-        });
+  const presentToast = async (position: 'top' | 'middle' | 'bottom') => {
+    const toast = await toastController.create({
+      message: 'Hello World!',
+      duration: 1500,
+      position: position,
+    });
 
-        await toast.present();
-      },
-    },
+    await toast.present();
   };
 </script>
 ```
