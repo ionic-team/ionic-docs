@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>🛒 المتجر البسيط</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- إضافة منتج جديد -->
+  <ion-card>
+    <ion-item>
+      <ion-input placeholder="اسم المنتج" [(ngModel)]="newProduct.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="السعر" [(ngModel)]="newProduct.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="رابط الصورة" [(ngModel)]="newProduct.image"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="success" (click)="addProduct()">أضف المنتج</ion-button>
+  </ion-card>
+
+  <hr>
+
+  <!-- قائمة المنتجات -->
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.price }} د.ع</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
