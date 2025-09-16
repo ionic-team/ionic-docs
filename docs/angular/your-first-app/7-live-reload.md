@@ -32,7 +32,7 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+With Live Reload running and the app open on your device, let’s implement photo deletion functionality. In your IDE, NOT Android or IOS IDE, open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
 <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
@@ -98,7 +98,7 @@ public async deletePicture(photo: UserPhoto, position: number) {
 
   // delete photo file from filesystem
   const filename = photo.filepath
-                      .substr(photo.filepath.lastIndexOf('/') + 1);
+                      .substring(photo.filepath.lastIndexOf('/') + 1);
 
   await Filesystem.deleteFile({
     path: filename,
