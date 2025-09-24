@@ -173,7 +173,6 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/variables.css',
       'react/tsconfig.json',
       'react/package.json',
-      'react/package-lock.json',
       'react/index.html',
       'react/vite.config.js',
       'react/browserslistrc',
@@ -193,17 +192,16 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 
   const appTsx = 'src/App.tsx';
   const files = {
-    '.eslintrc.js': defaultFiles[9],
-    '.browserslistrc': defaultFiles[8],
-    'vite.config.js': defaultFiles[7],
-    'index.html': defaultFiles[6],
+    '.eslintrc.js': defaultFiles[8],
+    '.browserslistrc': defaultFiles[7],
+    'vite.config.js': defaultFiles[6],
+    'index.html': defaultFiles[5],
     'src/index.tsx': defaultFiles[0],
     [appTsx]: defaultFiles[1],
     'src/main.tsx': code,
     'src/theme/variables.css': defaultFiles[2],
     'tsconfig.json': defaultFiles[3],
     'package.json': JSON.stringify(package_json, null, 2),
-    'package-lock.json': defaultFiles[5],
     ...options?.files,
     '.stackblitzrc': `{
   "startCommand": "yarn run start"
@@ -224,7 +222,6 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'vue/package.json',
-      'vue/package-lock.json',
       'vue/index.html',
       'vue/variables.css',
       'vue/vite.config.ts',
@@ -247,16 +244,15 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
 
   const mainTs = 'src/main.ts';
   const files = {
-    'src/App.vue': defaultFiles[6],
+    'src/App.vue': defaultFiles[5],
     'src/components/Example.vue': code,
-    [mainTs]: defaultFiles[5],
-    'src/theme/variables.css': defaultFiles[3],
-    'index.html': defaultFiles[2],
-    'vite.config.ts': defaultFiles[4],
+    [mainTs]: defaultFiles[4],
+    'src/theme/variables.css': defaultFiles[2],
+    'index.html': defaultFiles[1],
+    'vite.config.ts': defaultFiles[3],
     'package.json': JSON.stringify(package_json, null, 2),
-    'package-lock.json': defaultFiles[1],
-    'tsconfig.json': defaultFiles[7],
-    'tsconfig.node.json': defaultFiles[8],
+    'tsconfig.json': defaultFiles[6],
+    'tsconfig.node.json': defaultFiles[7],
     ...options?.files,
     '.stackblitzrc': `{
   "startCommand": "yarn run dev"
