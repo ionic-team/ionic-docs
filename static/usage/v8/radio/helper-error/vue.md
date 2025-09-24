@@ -20,38 +20,21 @@
   </form>
 </template>
 
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
+  import { ref } from 'vue';
   import { IonRadioGroup, IonRadio, IonButton, RadioGroupCustomEvent } from '@ionic/vue';
 
-  export default defineComponent({
-    components: {
-      IonRadioGroup,
-      IonRadio,
-      IonButton,
-    },
-    setup() {
-      const favFruit = ref('');
-      const isTouched = ref(false);
-      const isValid = ref<boolean | undefined>();
+  const favFruit = ref('');
+  const isTouched = ref(false);
+  const isValid = ref<boolean | undefined>();
 
-      const validateRadioGroup = (event: RadioGroupCustomEvent<{ value: string }>) => {
-        isTouched.value = true;
-        isValid.value = event.detail.value ? true : false;
-      };
+  const validateRadioGroup = (event: RadioGroupCustomEvent<{ value: string }>) => {
+    isTouched.value = true;
+    isValid.value = event.detail.value ? true : false;
+  };
 
-      const submit = () => {
-        validateRadioGroup({ detail: { value: favFruit.value } } as RadioGroupCustomEvent<{ value: string }>);
-      };
-
-      return {
-        favFruit,
-        isTouched,
-        isValid,
-        validateRadioGroup,
-        submit,
-      };
-    },
-  });
+  const submit = () => {
+    validateRadioGroup({ detail: { value: favFruit.value } } as RadioGroupCustomEvent<{ value: string }>);
+  };
 </script>
 ```

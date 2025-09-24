@@ -229,7 +229,6 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
       options?.includeIonContent ? 'vue/App.withContent.vue' : 'vue/App.vue',
       'vue/tsconfig.json',
       'vue/tsconfig.node.json',
-      'vue/env.d.ts',
     ],
     options.version
   );
@@ -248,7 +247,6 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     'src/App.vue': defaultFiles[5],
     'src/components/Example.vue': code,
     [mainTs]: defaultFiles[4],
-    'src/env.d.ts': defaultFiles[8],
     'src/theme/variables.css': defaultFiles[2],
     'index.html': defaultFiles[1],
     'vite.config.ts': defaultFiles[3],
