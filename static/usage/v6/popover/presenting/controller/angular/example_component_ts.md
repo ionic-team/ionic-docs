@@ -1,13 +1,15 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
 
-import { PopoverController } from '@ionic/angular';
+import { IonicModule, PopoverController } from '@ionic/angular';
 
 import { PopoverComponent } from './popover.component';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true,
 })
 export class ExampleComponent {
   roleMsg = '';
