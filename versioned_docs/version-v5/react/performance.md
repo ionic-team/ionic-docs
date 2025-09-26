@@ -1,4 +1,5 @@
 ---
+title: React Performance
 sidebar_label: Performance
 ---
 

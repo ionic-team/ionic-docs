@@ -1,5 +1,6 @@
 ---
-sidebar_label: パフォーマンス
+title: Vue Performance
+sidebar_label: Performance
 ---
 
 # Vue Performance
