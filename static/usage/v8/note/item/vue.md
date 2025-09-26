@@ -11,12 +11,7 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonItem, IonLabel, IonNote } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonLabel, IonNote },
-  });
 </script>
 ```

@@ -22,7 +22,7 @@ import DocsCards from '@components/global/DocsCards';
   <meta property="og:url" content="https://ionicframework.com/docs" />
 </head>
 
-Ionic Framework はオープンソースの UI ツールキットで、HTML、CSS、JavaScript などのウェブ技術を使って、 [Angular](angular/overview.md), [React](react.md), and [Vue](vue/overview.md) といった人気フレームワークと併用することで高性能で高品質なモバイルアプリやデスクトップアプリを作ることができます。
+Ionic is an open source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react/overview.md), and [Vue](vue/overview.md).
 
 [Ionic のインストール](intro/cli.md) や [First App Tutorial](intro/next.md#build-your-first-app) を参考に、主な概念を学ぶことができます。
 
@@ -58,7 +58,7 @@ Ionic Framework はオープンソースの UI ツールキットで、HTML、CS
 
 ## 概要
 
-Ionic は、アプリのフロントエンドの UX と UI インタラクション（UI コントロール、インタラクション、ジェスチャー、アニメーション）に重点を置いています。学習が容易で、 [Angular](angular/overview.md) 、 [React](react.md) 、 [Vue](vue/overview.md) などのライブラリやフレームワークに統合することが可能です。また、シンプルな [script include](intro/cdn.md) を使って、フロントエンドフレームワークなしでスタンドアロンで使用することも可能です。Ionic についてもっと知りたい方向けに、<a href="https://youtu.be/p3AN3igqiRc" target="_blank">私たちはビデオを作成しました</a>。ここから、基本的な使い方を学ぶことができます。
+Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### どこでもひとつのコードで
 

@@ -25,12 +25,7 @@
   </ion-segment>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonLabel, IonSegment, IonSegmentButton },
-  });
 </script>
 ```

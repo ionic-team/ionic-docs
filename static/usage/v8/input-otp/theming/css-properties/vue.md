@@ -8,7 +8,6 @@
 
 <script setup lang="ts">
   import { IonInputOtp } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 </script>
 
 <style>

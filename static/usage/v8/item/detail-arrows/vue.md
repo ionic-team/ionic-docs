@@ -37,18 +37,8 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonItem, IonLabel } from '@ionic/vue';
   import { caretForwardOutline } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonLabel },
-    setup() {
-      return {
-        caretForwardOutline,
-      };
-    },
-  });
 </script>
 ```

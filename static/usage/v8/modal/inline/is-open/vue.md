@@ -28,7 +28,7 @@
   </ion-content>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonButtons, IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
   import { ref } from 'vue';
 

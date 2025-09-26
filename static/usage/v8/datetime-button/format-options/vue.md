@@ -12,9 +12,8 @@
   </ion-modal>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
   const formatOptions = {
     date: {

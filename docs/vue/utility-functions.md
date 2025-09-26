@@ -16,23 +16,15 @@ Returns the Ionic router instance, containing API methods for navigating, custom
 
 ```js
 import { IonPage, useIonRouter } from '@ionic/vue';
-import { defineComponent } from 'vue';
 import { customAnimation } from '@/animations/customAnimation';
 
-export default defineComponent({
-  components: { IonPage },
-  setup() {
-    const router = useIonRouter();
-    const push = () => {
-      router.push('/page2', customAnimation);
-    };
-    const back = () => {
-      router.back(customAnimation);
-    };
-
-    return { push, back };
-  },
-});
+const router = useIonRouter();
+const push = () => {
+  router.push('/page2', customAnimation);
+};
+const back = () => {
+  router.back(customAnimation);
+};
 ```
 
 **Hardware back button on Android**
@@ -42,15 +34,9 @@ You may want to know if you are at the root page of the application when a user 
 ```tsx
 import { useIonRouter } from '@ionic/vue';
 
-...
-
-export default {
-  setup() {
-    const ionRouter = useIonRouter();
-    if (ionRouter.canGoBack()) {
-      // Perform some action here
-    }
-  }
+const ionRouter = useIonRouter();
+if (ionRouter.canGoBack()) {
+  // Perform some action here
 }
 ```
 
@@ -152,29 +138,25 @@ See the [Keyboard Documentation](../developing/keyboard) for more information an
 Ionic Vue provides several lifecycle hooks for the `setup()` function to tap into the Ionic Framework page lifecycle.
 
 ```js
+<script setup lang="ts">
 import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonPage },
-  setup() {
-    onIonViewDidEnter(() => {
-      console.log('Page did enter');
-    });
-
-    onIonViewDidLeave(() => {
-      console.log('Page did leave');
-    });
-
-    onIonViewWillEnter(() => {
-      console.log('Page will enter');
-    });
-
-    onIonViewWillLeave(() => {
-      console.log('Page will leave');
-    });
-  },
+onIonViewDidEnter(() => {
+  console.log('Page did enter');
 });
+
+onIonViewDidLeave(() => {
+  console.log('Page did leave');
+});
+
+onIonViewWillEnter(() => {
+  console.log('Page will enter');
+});
+
+onIonViewWillLeave(() => {
+  console.log('Page will leave');
+});
+</script>
 ```
 
 :::note

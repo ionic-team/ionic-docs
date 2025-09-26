@@ -31,13 +31,8 @@ To resolve this issue, you need to import the component from `@ionic/vue` and pr
   <ion-button>Hello World</ion-button>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton },
-  });
 </script>
 ```
 
@@ -97,19 +92,8 @@ In order for page transitions to work correctly, each page must have an `ion-pag
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  });
 </script>
 ```
 

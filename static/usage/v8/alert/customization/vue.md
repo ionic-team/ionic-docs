@@ -4,7 +4,7 @@
   <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" :buttons="alertButtons"></ion-alert>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonAlert, IonButton } from '@ionic/vue';
 
   const alertButtons = [

@@ -34,27 +34,8 @@
   </ion-segment>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonIcon, IonSegment, IonSegmentButton } from '@ionic/vue';
   import { home, heart, pin, star, call, globe, basket, barbell, trash, person } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon, IonSegment, IonSegmentButton },
-    setup() {
-      return {
-        home,
-        heart,
-        pin,
-        star,
-        call,
-        globe,
-        basket,
-        barbell,
-        trash,
-        person,
-      };
-    },
-  });
 </script>
 ```

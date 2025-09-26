@@ -172,23 +172,9 @@ export const TabButtonExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
   import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonIcon,
-      IonLabel,
-      IonTabBar,
-      IonTabButton,
-      IonTabs,
-    },
-    setup() {
-      return { calendar, informationCircle, map, personCircle };
-    },
-  });
 </script>
 ```
 

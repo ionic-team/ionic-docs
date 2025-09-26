@@ -6,12 +6,7 @@
   <ion-button fill="solid">Solid</ion-button>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton },
-  });
 </script>
 ```

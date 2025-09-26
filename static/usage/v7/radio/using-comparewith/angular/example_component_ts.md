@@ -1,5 +1,5 @@
 ```ts
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/angular/standalone';
 
 interface Food {
@@ -13,6 +13,7 @@ interface Food {
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [IonItem, IonList, IonRadio, IonRadioGroup],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ExampleComponent {
   foods: Food[] = [

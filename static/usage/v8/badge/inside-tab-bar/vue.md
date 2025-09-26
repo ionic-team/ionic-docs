@@ -20,22 +20,8 @@
   </ion-tab-bar>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonBadge, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/vue';
   import { heart, calendar, musicalNote } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonBadge,
-      IonTabBar,
-      IonTabButton,
-      IonIcon,
-      IonLabel,
-    },
-    setup() {
-      return { heart, calendar, musicalNote };
-    },
-  });
 </script>
 ```

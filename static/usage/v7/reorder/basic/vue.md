@@ -31,26 +31,18 @@
   </ion-list>
 </template>
 
-<script lang="ts">
-  import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+<script setup lang="ts">
+  import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ItemReorderCustomEvent } from '@ionic/vue';
 
-  export default defineComponent({
-    components: { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup },
-    setup() {
-      const handleReorder = (event: CustomEvent) => {
-        // The `from` and `to` properties contain the index of the item
-        // when the drag started and ended, respectively
-        console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+  const handleReorder = (event: ItemReorderCustomEvent) => {
+    // The `from` and `to` properties contain the index of the item
+    // when the drag started and ended, respectively
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
-        // Finish the reorder and position the item in the DOM based on
-        // where the gesture ended. This method can also be called directly
-        // by the reorder group
-        event.detail.complete();
-      };
-
-      return { handleReorder };
-    },
-  });
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group.
+    event.detail.complete();
+  };
 </script>
 ```

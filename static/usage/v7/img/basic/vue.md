@@ -6,12 +6,7 @@
   ></ion-img>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonImg } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonImg },
-  });
 </script>
 ```

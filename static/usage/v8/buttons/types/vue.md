@@ -74,16 +74,8 @@
   </ion-toolbar>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar },
-    setup() {
-      return { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star };
-    },
-  });
 </script>
 ```
