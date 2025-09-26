@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v8/tab-button/custom-prop
 import Slots from '@ionic-internal/component-api/v8/tab-button/slots.md';
 
 
- 
+
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
@@ -166,7 +166,7 @@ export const TabButtonExample: React.FC = () => (
       </ion-tab-button>
 
       <ion-tab-button tab="speakers" href="/tabs/speakers">
-        <ion-icon :icon="person-circle" aria-hidden="true"></ion-icon>
+        <ion-icon :icon="personCircle" aria-hidden="true"></ion-icon>
         <ion-label>Speakers</ion-label>
       </ion-tab-button>
 
@@ -183,29 +183,15 @@ export const TabButtonExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
-import { 
-  IonIcon, 
-  IonLabel, 
-  IonTabBar, 
-  IonTabButton, 
+<script setup lang="ts">
+import {
+  IonIcon,
+  IonLabel,
+  IonTabBar,
+  IonTabButton,
   IonTabs
 } from '@ionic/vue';
 import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: {
-    IonIcon, 
-    IonLabel, 
-    IonTabBar, 
-    IonTabButton, 
-    IonTabs
-  },
-  setup() {
-    return { calendar, informationCircle, map, personCircle }
-  }
-});
 </script>
 ```
 

@@ -5,13 +5,8 @@
   </ion-item-divider>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonItemDivider } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItemDivider },
-  });
 </script>
 
 <style scoped>

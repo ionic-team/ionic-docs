@@ -63,7 +63,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonButtons,
     IonButton,
@@ -79,37 +79,18 @@
     IonLabel,
     IonPage,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref, onMounted } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonList,
-      IonAvatar,
-      IonImg,
-      IonLabel,
-      IonPage,
-    },
-    data() {
-      return {
-        presentingElement: null,
-      };
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-    },
-    mounted() {
-      this.presentingElement = this.$refs.page.$el;
-    },
+  const presentingElement = ref(null);
+  const page = ref();
+  const modal = ref();
+
+  const dismiss = () => {
+    modal.value.$el.dismiss();
+  };
+
+  onMounted(() => {
+    presentingElement.value = page.value.$el;
   });
 </script>
 ```
