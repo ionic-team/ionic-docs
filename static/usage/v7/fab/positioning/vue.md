@@ -59,7 +59,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/vue';
   import {
     chevronDownCircle,
@@ -69,13 +69,5 @@
     document,
     globe,
   } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar },
-    setup() {
-      return { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe };
-    },
-  });
 </script>
 ```

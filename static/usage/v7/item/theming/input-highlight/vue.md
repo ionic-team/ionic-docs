@@ -16,12 +16,8 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonInput, IonItem, IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-  export default defineComponent({
-    components: { IonInput, IonItem, IonLabel },
-  });
 </script>
 
 <style>

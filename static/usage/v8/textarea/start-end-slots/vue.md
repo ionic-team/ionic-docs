@@ -12,22 +12,8 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonIcon, IonItem, IonList, IonTextarea } from '@ionic/vue';
   import { eye, lockClosed } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonIcon,
-      IonItem,
-      IonList,
-      IonTextarea,
-    },
-    setup() {
-      return { eye, lockClosed };
-    },
-  });
 </script>
 ```
