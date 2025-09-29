@@ -1,7 +1,7 @@
 import { resolve, join } from 'node:path';
 import fetch from 'node-fetch';
 import { existsSync, writeFileSync } from 'fs';
-import overrides from './data/meta-override.json' assert { type: 'json' };
+import overrides from './data/meta-override.json' with { type: 'json' };
 import * as utils from './utils.mjs';
 
 const apiOverrides = overrides.api;
@@ -74,8 +74,8 @@ ${encapsulation !== 'none' ? `<EncapsulationPill type="${encapsulation}" />` : '
 
 
 `;
-  } else {
   }
+
   const endIndex = readme.indexOf('\n');
 
   const title = readme.substring(0, endIndex);
