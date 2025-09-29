@@ -1,3 +1,8 @@
+---
+title: Vue Platform
+sidebar_label: Platform
+---
+
 # Platform
 
 ## isPlatform
@@ -80,8 +85,4 @@ type PlatformConfig = {
   pwa?: ((win: Window) => boolean) | undefined;
   tablet?: ((win: Window) => boolean) | undefined;
 };
-```
-
-```
-
 ```

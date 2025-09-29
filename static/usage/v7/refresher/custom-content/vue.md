@@ -21,31 +21,23 @@
   </ion-content>
 </template>
 
-<script lang="ts">
-  import { IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+<script setup lang="ts">
+  import {
+    IonContent,
+    IonHeader,
+    IonRefresher,
+    IonRefresherContent,
+    IonTitle,
+    IonToolbar,
+    RefresherCustomEvent,
+  } from '@ionic/vue';
   import { chevronDownCircleOutline } from 'ionicons/icons';
 
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonRefresher,
-      IonRefresherContent,
-      IonTitle,
-      IonToolbar,
-      RefresherCustomEvent,
-    },
-    setup() {
-      const handleRefresh = (event: RefresherCustomEvent) => {
-        setTimeout(() => {
-          // Any calls to load data go here
-          event.target.complete();
-        }, 2000);
-      };
-
-      return { chevronDownCircleOutline, handleRefresh };
-    },
-  });
+  const handleRefresh = (event: RefresherCustomEvent) => {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
+  };
 </script>
 ```

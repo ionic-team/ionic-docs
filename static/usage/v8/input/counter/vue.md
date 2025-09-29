@@ -12,7 +12,7 @@
   ></ion-input>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonInput } from '@ionic/vue';
 
   const customFormatter = (inputLength, maxLength) => {

@@ -4,140 +4,98 @@ sidebar_label: クイックスタート
 ---
 
 <head>
-  <title>Vue QuickStart Global Component for Generating Ionic Vue Apps</title>
+  <title>Ionic Vue Quickstart Using Ionic CLI: Vue Basics</title>
   <meta
     name="description"
-    content="Our QuickStart guide covers the basics of both Vue and Ionic Framework global components to get apps up and running. Read how to easily generate Ionic Vue apps."
+    content="Ionic Vue Quickstart covers the basics of Vue and Ionic, including any Ionic-specific features. Learn how to build Vue apps using the Ionic CLI."
   />
 </head>
 
-## Ionic Framework とは
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
-まず、ここに来たばかりの人を歓迎します！Ionic Framework は、 iOS, Android, Electron, Web 上で動作するアプリを構築するための、無償でオープンソースのコンポーネントライブラリです。使い慣れたテクノロジ(HTML、CSS、JavaScript)を使用してアプリケーションを一度作成したら、任意のプラットフォームに展開することができます。
+Welcome! This guide will walk you through the basics of Ionic Vue development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Vue before building your first real app.
 
-UI コンポーネントに加えて、Ionic Framework は新しいアプリを作るためのコマンドラインツールを提供し、サポートしている様々なプラットフォームにデプロイすることができます。
+If you're looking for a high-level overview of what Ionic Vue is and how it fits into the Vue ecosystem, see the [Ionic Vue Overview](overview).
 
-このガイドでは、Ionic Framework 特有の機能を含め、Vue と Ionic Framework の基本について説明します。Vue に精通している方は、ガイドを楽しみ、Ionic Framework について新しいことを学んでください。どちらにも詳しくない方はご安心ください!このガイドでは、基本的なことを説明し、アプリケーションを起動して実行するのに十分な情報を提供します。
+## Prerequisites
 
-## Ionic CLI を使ったプロジェクト新規作成
-
-はじめに、Ionic CLI の最新版をインストールしましょう。
+Before you begin, make sure you have Node.js and npm installed on your machine.
+You can check by running:
 
 ```shell
-npm install -g @ionic/cli@latest
+node -v
+npm -v
 ```
 
-これによって使えるようになった、グローバルコマンド `ionic` によって、Ionic Framework と他の依存関係を持つ Vue プロジェクトを作成することができます。新しいプロジェクトを作成するには、次のコマンドを実行します。
+If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+
+## Create a Project with the Ionic CLI
+
+First, install the latest [Ionic CLI](../cli):
+
+```shell
+npm install -g @ionic/cli
+```
+
+Then, run the following commands to create and run a new project:
 
 ```shell
 ionic start myApp blank --type vue
+
 cd myApp
+ionic serve
 ```
 
-これで、 `ionic serve` を実行することによって、プロジェクトをブラウザで実行することができます。
+After running `ionic serve`, your project will open in the browser.
 
-## TypeScript と JavaScript のどちらで構築するかを選べます
+![Screenshot of the Ionic Vue Home page](/img/guides/quickstart/home-page.png 'Ionic Vue Home Component')
 
-私たちは TypeScript が大好きで、スケールさせるアプリを構築するための素晴らしいツールだと確信しています。とはいえ、Vue コミュニティがいかにシンプルさを重視しているかは、ツールや言語などでわかっています。実際、そもそも Vue に興味を持ったのはそのおかげかもしれません。シンプルに開始し、必要に応じてスケールアップします。
+## Explore the Project Structure
 
-したがって、TypeScript の代わりに JavaScript を使うことができます。Ionic Vue アプリケーションを生成したら、次の手順を実行してください。
-
-1. TypeScript の依存を削除:
+Your new app's `src` directory will look like this:
 
 ```shell
-npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
+├── App.vue
+├── main.ts
+├── router
+│   └── index.ts
+└── views
+    └── HomePage.vue
 ```
 
-2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `src/router/index.ts` and `src/main.ts`. If you're using tests, also change the extension of files in the `tests` directory.
+:::info
+All file paths in the examples below are relative to the `src/` directory.
+:::
 
-3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
+Let's walk through these files to understand the app's structure.
 
-4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
+## View the App Component
 
-5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
-
-6. Delete the `src/vite-env.d.ts` file if it exists.
-
-7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
-
-8. Delete the `tsconfig.json` file.
-
-9. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`
-
-10. Install terser `npm i -D terser`.
-
-## Vue コンポーネントの確認
-
-アプリケーションのベースは `src` ディレクトリにあり、メインのエントリポイントは `main.ts` になります。エディタでプロジェクトを開き、`main.ts` を確認すると、次のように表示されます:
-
-```ts
-import { createApp } from 'vue';
-import { IonicVue } from '@ionic/vue';
-
-import App from './App.vue';
-import router from './router';
-
-const app = createApp(App).use(IonicVue).use(router);
-
-router.isReady().then(() => {
-  app.mount('#app');
-});
-```
-
-So what is going on here? The first four lines are pulling in some dependencies. The `createApp` function lets us initialize our Vue application, while `IonicVue` is a plugin that allows us to use Ionic Framework in a Vue environment.
-
-The third import is the root component for our app, simply named `App`. This is our first Vue component and will be used in the bootstrapping process for our Vue app.
-
-The fourth import gets our routing configuration. We will look at this more in depth later.
-
-`App.vue` を開くと、次のように表示されます:
-
-```html
-<template>
-  <ion-app>
-    <ion-router-outlet />
-  </ion-app>
-</template>
-
-<script setup lang="ts">
-  import { IonApp, IonRouterOutlet } from '@ionic/vue';
-</script>
-```
-
-script に書かれている import のグループを分解してみていきましょう。
-
-```html
-<script setup lang="ts">
-  import { IonApp, IonRouterOutlet } from '@ionic/vue';
-</script>
-```
-
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. Vue's [`script setup` syntax](https://vuejs.org/api/sfc-script-setup.html) gives the template access to those components as `<ion-app>` and `<ion-router-outlet>`.
-
-You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
-
-次に、テンプレートを見てみましょう。
-
-```html
-<template>
-  <ion-app>
-    <ion-router-outlet />
-  </ion-app>
-</template>
-```
-
-すべての Vue コンポーネントには `<template>` が必要です。その中に `IonApp` と `IonRouterOutlet` のコンポーネントを配置します。
-
-## Initializing the router
-
-## ルーターのインストール
-
-Ionic Vue は内部的に [vue-router](https://router.vuejs.org/) を使用しているため、Vue Router にすでに慣れている場合は、これまでの知識を Ionic Vue のナビゲーションに適用できます。先ほど述べたルータの設定を見てみましょう。`router/index.ts` で次のように表示されます。
+The root of your app is defined in `App.vue`:
 
 ```tsx
+<template>
+  <ion-app>
+    <ion-router-outlet />
+  </ion-app>
+</template>
+
+<script setup lang="ts">
+import { IonApp, IonRouterOutlet } from '@ionic/vue';
+</script>
+```
+
+This sets up the root of your application, using Ionic's `ion-app` and `ion-router-outlet` components. The router outlet is where your pages will be displayed.
+
+## View Routes
+
+Routes are defined in `router/index.ts`:
+
+```ts
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '@/views/HomePage.vue';
+import HomePage from '../views/HomePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -152,46 +110,18 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
 export default router;
 ```
 
-:::note
-この例では、Ionic Vue の Blank starter を使っているので、実際にみる route は少し違うかもしれません
-:::
+When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
-ここでの設定は `vue-router` を直接使用する場合と同じですが、代わりに `@ionic/vue-router` パッケージから `createRouter` や `createWebHistory` などの依存関係をインポートする必要があります。
+## View the Home Page
 
-依存関係をインポートした後、 `routes` 配列に route を宣言できます。そこから、 router インスタンスを作成し、route と使用する history のタイプを提供できます。
-
-Ionic Vue では、遅延ローディングはすぐに使うことができます。 `Home` コンポーネントをインポートする代わりに、次の操作を実行することもできます:
-
-```tsx
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    redirect: '/home',
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: () => import('@/views/HomePage.vue'),
-  },
-];
-```
-
-Now, you might be wondering: Why do we use `@` when describing the path to our components? The `@` symbol is a shortcut we can use to describe paths relative to the `src` directory. This is useful if we are trying to reference a component while in a file several folders deep. Instead of doing `'../../../views/HomePage.vue'`, we could simply do `'@/views/HomePage.vue'`.
-
-## コンポーネントのスタイル
-
-ここでは、 `App` コンポーネントを変更する必要はあまりありません。コンテナコンポーネントの基本的な例です。ルータロジックを設定すると、指定された URL ルートに一致するコンポーネントをレンダリングするだけで済みます。すでに 1 つのコンポーネント/ルータが設定されているので、 `Home` コンポーネントを変更しましょう。
-
-現在、 `Home` コンポーネントはこうなっています:
-
-![A web browser displaying the Ionic Vue home route with a header titled 'Blank' and a message 'Ready to create an app? Start with Ionic UI Components'.](/img/guides/vue/first-app/home-route.png 'Ionic Vue Home Route Interface')
+The Home page component, defined in `views/HomePage.vue`, imports the Ionic components and defines the page template:
 
 ```html
 <template>
@@ -226,184 +156,85 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
   import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
-<style scoped>
-  #container {
-    text-align: center;
-
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-
-    color: #8c8c8c;
-
-    margin: 0;
-  }
-
-  #container a {
-    text-decoration: none;
-  }
-</style>
+<!-- ...styles... -->
 ```
 
-最初に確認した `App` コンポーネントと同様に、特定の Ionic Framework コンポーネントのインポート、Vue からのインポート、Vue コンポーネント、そして私たちのコンポーネントに合わせたスタイルがあります。
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
-スタイルに `scoped` を指定していることに注目してください。つまり、ここで記述するスタイルは、このコンポーネントにのみ適用されます。これは、スタイルがコンポーネントから漏れてアプリケーションの他の部分に影響するのを防ぐのに役立ちます。Ionic Vue アプリケーションでは、 `scoped` のついたスタイルを使用することを強くお勧めします。
-
-`IonPage` はすべてのページ(route/URL を持つコンポーネント)の基本コンポーネントであり、header, title, content コンポーネントなど、フルスクリーンコンポーネントの一般的な構成要素がいくつか含まれています。
-
-:::note
-独自のページを作成する場合は、 `IonPage` をそのルート・コンポーネントにすることを忘れないでください。 `IonPage` をルートコンポーネントにすることは、Ionic Framework コンポーネントが依存するベース CSS を提供するだけでなく、トランジションが適切に動作することを保証するために重要です。
+:::tip Learn More
+For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
 :::
 
-`IonHeader` は、ページの先頭に配置されるコンポーネントです。これは、フレックスボックスベースのレイアウトを処理する以外には、単独ではあまり機能しません。これは、`IonToolbar` や `IonSearchbar`などのコンポーネントを保持するためのものです。
+## Add an Ionic Component
 
-`IonContent` は、その名前が示すように、ページのメインコンテンツ領域です。ユーザーが操作するスクロール可能なコンテンツと、アプリで使用できるスクロールイベントを提供する役割を担っています。
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) at the end of the `ion-content`:
 
-現在のコンテンツは比較的シンプルで実際のアプリで使えるものは何も入っていないので、それを変えましょう。
+```html
+<ion-content>
+  <!-- existing content -->
 
-:::note
-簡潔に表記するために、関数宣言や他のコンポーネントからのインポート文など、コンポーネントの繰り返し部分を除外します。
-:::
+  <ion-button>Navigate</ion-button>
+</ion-content>
+```
+
+Then, import the `IonButton` component in the `<script>` tag:
+
+```html
+<script setup lang="ts">
+  import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+</script>
+```
+
+## Add a New Page
+
+Create a new page at `views/NewPage.vue`:
 
 ```html
 <template>
   <ion-page>
-    ...
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-checkbox label-placement="end" justify="start">
-            <h1>Create Idea</h1>
-            <ion-note>Run Idea By Brandy</ion-note>
-          </ion-checkbox>
-          <ion-badge color="success" slot="end">5 Days</ion-badge>
-        </ion-item>
-      </ion-list>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>New</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">New</ion-title>
+        </ion-toolbar>
+      </ion-header>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-  import {
-    IonBadge,
-    IonCheckbox,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonList,
-    IonNote,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
-ここでは、 `IonContent` に `IonList` と `IonItem` コンポーネントを追加します。ここでは `IonItem` を中心に説明します。
+This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
-```html
-<ion-item>
-  <ion-checkbox label-placement="end" justify="start">
-    <h1>Create Idea</h1>
-    <ion-note>Run Idea By Brandy</ion-note>
-  </ion-checkbox>
-  <ion-badge color="success" slot="end">5 Days</ion-badge>
-</ion-item>
-```
+:::warning Important
+When creating your own pages, always use `ion-page` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
+:::
 
-コードを見ると、`slot`という特別な属性がある。これは `IonItem` がレンダリングする際に、`IonBadge` をどこに配置すればよいかを知るための鍵です。これは Vue の API ではなく、Web 標準の API で、多くの Ionic Framework コンポーネントで使われています。また、これは Vue 2 で使用された slots API とは異なります（slots の詳細については、[MDN のドキュメントを参照してください](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)）。
+## Navigate to the New Page
 
-Ionic Framework の別のコンポーネントである FAB（フローティング・アクション・ボタン）を見てみましょう。FAB は、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。この FAB には、FAB、FAB ボタンおよびアイコンの 3 つのコンポーネントが必要です。
+To navigate to the new page, create a route for it by first importing it at the top of `router/index.ts` after the `HomePage` import:
 
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <ion-list> ... </ion-list>
-
-      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button>
-          <ion-icon :icon="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup>
-  import {
-    IonBadge,
-    IonCheckbox,
-    IonContent,
-    IonFab,
-    IonFabButton,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonList,
-    IonNote,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { add } from 'ionicons/icons';
-</script>
-```
-
-メインの `IonFab` では、縦方向と横方向の属性（vertical/horizontal）で表示位置を設定しています。また、slot 属性を使用して、レンダー位置を"fixed"に設定します。これにより、 `IonContent` 内のスクロール可能なコンテンツの外側でレンダリングするよう `IonFab` に指示します。
-
-次に、これにクリックハンドラを設定します。FAB ボタンをクリックすると、新しいページ(この後、すぐに作成します)に移動します。これを行うには、Vue Router のナビゲーション API にアクセスする必要があります。これは `useRouter` パッケージから `vue-router` をインポートすることで実現できます。
-
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <ion-list> ... </ion-list>
-
-      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button @click="() => router.push('/new')">
-          <ion-icon :icon="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup>
-  import { add } from 'ionicons/icons';
-  import { useRouter } from 'vue-router';
-  const router = useRouter();
-</script>
-```
-
-このコンポーネントファイルでは、 `useRouter` 関数をインポートしています。この関数を呼び出すと、コンポーネントからルーティングを操作することができます。つまり、Vue Router から履歴 API にアクセスし、新しい route をナビゲーションスタックにプッシュすることができます。利用方法は `IonFabButton` にクリックイベントを追加し、`router.push` を呼び出すだけです。この場合、私たちは `/new` という route にナビゲーションします。
-
-```html
-<ion-fab-button @click="() => router.push('/new')"> ... </ion-fab-button>
-```
-
-## 新しい route を作成する
-
-これで、アプリケーション内をナビゲートするための環境が整ったので、新しいコンポーネントを作成し、新しい route をルーターの宣言に追加する必要があります。 `router/index.ts` を開いて、 `new` の route を追加します。
+To navigate to a new page, add the route to `router/index.ts`
 
 ```tsx
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import HomePage from '@/views/HomePage.vue';
-import NewItem from '@/views/NewItem.vue';
+import NewPage from '../views/NewPage.vue';
+```
 
+Then, add its route in the `routes` array:
+
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -416,267 +247,104 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/new',
-    name: 'NewItem',
-    component: NewItem,
+    name: 'New',
+    component: NewPage,
   },
 ];
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
-});
-
-export default router;
 ```
 
-route に `/new` を追加したので、該当するコンポーネントとなる `NewItem` を作成します。これは `views/NewItem.vue` に作成します。
+Once that is done, update the button in `views/HomePage.vue`:
 
-新しく `NewItem.vue` ファイルを作成します。
+```tsx
+<ion-button router-link="/new">Navigate</ion-button>
+```
+
+:::info
+Navigating can also be performed programmatically using Vue Router, and routes can be lazy loaded for better performance. See the [Vue Navigation documentation](/docs/vue/navigation) for more information.
+:::
+
+## Add Icons to the New Page
+
+Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `ion-icon` component.
+
+Update the imports in `views/NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
 ```html
-<template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title>New Item</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content></ion-content>
-  </ion-page>
-</template>
-
 <script setup lang="ts">
-  import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { heart, logoIonic } from 'ionicons/icons';
 </script>
 ```
 
-:::note
-Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
-:::
+Then, include them inside of the `ion-content`:
 
-ここでの内容は、 `Home` コンポーネントに似ています。異なるのは、 `IonBackButton` コンポーネントです。これは、前の route に戻るために使用されます。簡単でしょ?わかりました、でもページをリロードしたらどうなりますか?
-
-この場合、インメモリ内から履歴は失われるため、 戻るボタンは表示されません。この問題を解決するには、 `default-href` 属性値を、履歴がない場合にナビゲートする URL に設定します。
-
-```html
-<ion-back-button default-href="/home"></ion-back-button>
+```tsx
+<ion-icon :icon="heart"></ion-icon>
+<ion-icon :icon="logoIonic"></ion-icon>
 ```
 
-これで、アプリの履歴がない場合も、home route に戻るための戻るボタンを表示することができます。
+Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
-## Calling Methods on Components
+For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
-In order to call a method on any of the Ionic Vue components, you will first need to get a reference to the component instance. Next, you will need to access the underlying Web Component using `$el` and call the method.
+## Call Component Methods
 
-In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+Let's add a button that can scroll the content area to the bottom.
+
+Update `views/NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
 
 ```html
-<template>
-  <ion-content ref="content">
-    <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+<ion-content ref="content">
+  <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
 
-    ...
-  </ion-content>
-</template>
+  <!-- Add lots of content to make scrolling possible -->
+  <ion-item v-for="i in 50" :key="i">
+    <ion-label>Item {{ i }}</ion-label>
+  </ion-item>
+</ion-content>
+```
 
+In the script section, add the new component imports and define the `scrollToBottom` function:
+
+```html
 <script setup lang="ts">
-  import { IonButton, IonContent } from '@ionic/vue';
+  import {
+    IonBackButton,
+    IonButtons,
+    IonButton,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
+  import { heart, logoIonic } from 'ionicons/icons';
   import { ref } from 'vue';
 
   const content = ref();
+
   const scrollToBottom = () => {
     content.value.$el.scrollToBottom(300);
   };
 </script>
 ```
 
-## Adding Icons
+To call methods on Ionic components:
 
-Ionic Vue には [Ionicons](https://ionic.io/ionicons/) がプリインストールされています。開発者がアプリケーションで使用できるオプションはいくつかあります。
+1. Create a `ref` for the component
+2. Access the underlying Web Component via `$el`
+3. Call the method on the Web Component
 
-### Per-Component Imports
+This pattern is necessary because Ionic components are built as Web Components. The `$el` property gives you access to the actual Web Component instance where the methods are defined.
 
-Per-Component Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
+You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
 
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <ion-icon :icon="heart"></ion-icon>
-    </ion-content>
-  </ion-page>
-</template>
+## Run on a Device
 
-<script setup>
-  import { heart } from 'ionicons/icons';
-  import { IonContent, IonIcon, IonPage } from '@ionic/vue';
-</script>
-```
-
-ここでやっていることを詳しく説明しましょう。まず、 `heart` のアイコンを `ionicons/icons` からインポートします。これにより、アイコンの適切な SVG データがロードされます。
-
-Then we pass the icon data into the `ion-icon` component via the `icon` property.
-
-開発者は、モードに応じて異なるアイコンを設定することもできます:
-
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <ion-icon :ios="logoApple" :md="logoAndroid"></ion-icon>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup>
-  import { logoAndroid, logoApple } from 'ionicons/icons';
-  import { IonContent, IonIcon, IonPage } from '@ionic/vue';
-</script>
-```
-
-> Note: これらのアイコン名は、読み込み時にはキャメルケースで読み込む必要があります。
-
-### グローバルインポート
-
-もう 1 つのオプションは、特定のアイコンをグローバルにインポートすることです。アプリケーションを起動するたびにアイコンが強制的にロードされ、アプリケーションの初期チャンク・サイズが大きくなる可能性があるため、通常は推奨しません。
-
-とはいえ、特定のアイコンをグローバルにロードすることに意味があるユースケースがあるかもしれません:
-
-**main.ts**
-
-```tsx
-import { addIcons } from 'ionicons';
-import { heart } from 'ionicons/icons';
-
-addIcons({
-  heart: heart,
-});
-```
-
-**HomePage.vue**
-
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <ion-icon icon="heart"></ion-icon>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup>
-  import { IonContent, IonIcon, IonPage } from '@ionic/vue';
-</script>
-```
-
-`main.ts` で `addIcons` 関数を利用すると、アイコンをグローバルに登録し、キーとして文字列で指定することができます。この場合、 `Home` コンポーネントでキーでアイコンを参照します。
-
-## ビルドの最適化
-
-Vue には、アプリケーションを調整するためのツールがいくつか用意されています。このセクションでは、Ionic Framework に最も関連するオプションについて説明します。
-
-### ローカルコンポーネント登録 (推奨)
-
-デフォルトでは、Ionic Framework コンポーネントはローカルに登録されます。ローカルでの登録では、これらのコンポーネントはそれぞれの Vue コンポーネントにインポートされ、提供されます。これは、遅延読み込みとツリーの共有が Ionic Framework コンポーネントで正しく動作するため、推奨される方法です。
-
-この方法の 1 つの欠点は、Ionic Framework コンポーネントを何度もインポートし直すのが面倒なことです。しかし、その見返りとして得られるパフォーマンス上のメリットには価値があると考えています。
-
-また、ローカルに登録されたコンポーネントはサブコンポーネントでは使用できません。サブコンポーネントで使用するためには、Ionic Framework コンポーネントを再インポートする必要があります。
-
-ローカルコンポーネント登録の仕組みを見てみましょう:
-
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <SubComponent></SubComponent>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup lang="ts">
-  import { IonContent, IonPage } from '@ionic/vue';
-  import SubComponent from '@/components/SubComponent.vue';
-</script>
-```
-
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we import them from `@ionic/vue`. From there, we can use the components in our template.
-
-Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `SubComponent` unless we register them there as well.
-
-詳細については、<a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Local Registration Vue Documentation</a> のマニュアルを参照してください。
-
-### グローバルコンポーネント登録
-
-コンポーネントを登録するためのもう 1 つのオプションは、グローバル登録を使用することです。グローバル登録には、 `main.ts` で使用するコンポーネントをインポートし、Vue アプリインスタンスで`component` メソッドを呼び出すことが含まれます。
-
-これにより、Vue アプリに Ionic Framework コンポーネントを追加するのは簡単になりますが、グローバル登録は理想的ではありません。Vue のドキュメントを引用すると、「Webpack などのビルドシステムを使用している場合、すべてのコンポーネントをグローバルに登録すると、コンポーネントの使用を停止しても、最終ビルドに含めることができます。これにより、ユーザーがダウンロードしなければならない JavaScript の量が不必要に増加します」とあります。
-
-グローバルコンポーネント登録の仕組みを見てみましょう:
-
-**main.ts**
-
-```tsx
-import { IonContent, IonicVue, IonPage } from '@ionic/vue';
-
-const app = createApp(App).use(IonicVue).use(router);
-
-app.component('ion-content', IonContent);
-app.component('ion-page', IonPage);
-```
-
-**MyComponent.vue**
-
-```html
-<template>
-  <ion-page>
-    <ion-content>
-      <SubComponent></SubComponent>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script setup lang="ts">
-  import SubComponent from '@/components/SubComponent.vue';
-</script>
-```
-
-上の例では、 `IonPage` コンポーネントと `IonPage` コンポーネントを使用しています。これらを使用するには、まず `main.ts` の `@ionic/vue` からインポートします。次に、app インスタンスで `component` メソッドを呼び出し、タグ名とコンポーネント定義を渡します。これを行うと、各 Vue コンポーネントにコンポーネントをインポートしなくても、アプリケーションの残りの部分でコンポーネントを使用できます。
-
-詳細については、<a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Global Registration Vue Documentation</a> のドキュメントを参照してください。
-
-### JavaScript のプリフェッチ
-
-デフォルトでは、Vue CLI はアプリケーション内の JavaScript のプリフェッチ・ヒントを自動的に生成します。プリフェッチでは、ブラウザのアイドル時間を利用して、ユーザーが近い将来にアクセスする可能性のある文書をダウンロードします。ユーザーがプリフェッチされたドキュメントを必要とするページにアクセスすると、ブラウザのキャッシュからすぐに提供できます。
-
-プリフェッチは帯域幅を消費するため、大規模なアプリケーションを使用している場合は無効にすることをお勧めします。これを行うには、`vue.config.js`ファイルを変更または作成します:
-
-**vue.config.js**
-
-```js
-module.exports = {
-  chainWebpack: (config) => {
-    config.plugins.delete('prefetch');
-  },
-};
-```
-
-The configuration above will prevent all files from being prefetched and, instead, will be loaded when they are needed. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples.
-
-## Build a Native App
-
-We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
-
-Adding native functionality is easy. First, add Capacitor to your project:
-
-```shell
-ionic integrations enable capacitor
-```
-
-次に、プロジェクトをビルドしてから利用するプラットフォームを選択します:
+Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
 
 ```shell
 ionic build
@@ -684,54 +352,69 @@ ionic cap add ios
 ionic cap add android
 ```
 
-iOS と Android のプロジェクトを開いたり、ビルド、実行するのに、ネイティブの IDE(Xcode と Android Studio)を使います:
+Open the native projects in their IDEs:
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-詳細は [こちら](https://capacitorjs.com/docs/getting-started/with-ionic) をご覧ください。
+See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
 
-次に、 [すべての利用可能な APIs](https://capacitorjs.com/docs/apis) を確認します。[Camera API](https://capacitorjs.com/docs/apis/camera) を含むすばらしい機能があります。以下の数行のコードでカメラ機能を実装することができます￥:
+## Build with TypeScript or JavaScript
 
-```html
-<template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Ionic Blank</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <img :src="imageSrc" />
-      <ion-button @click="takePhoto()">Take Photo</ion-button>
-    </ion-content>
-  </ion-page>
-</template>
+Ionic Vue projects are created with TypeScript by default, but you can easily convert to JavaScript if you prefer. After generating a blank Ionic Vue app, follow these steps:
 
-<script setup lang="ts">
-  import { IonButton, IonContent, IonHeader, IonPage, IonTitle } from '@ionic/vue';
-  import { ref } from 'vue';
-  import { Camera, CameraResultType } from '@capacitor/camera';
+1. Remove the TypeScript dependencies:
 
-  const imageSrc = ref('');
-  const takePhoto = async () => {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri,
-    });
-
-    imageSrc.value = image.webPath;
-  };
-</script>
+```shell
+npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
-## 次にすること
+2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `router/index.ts`, `main.ts`, and files in the `tests` directory.
 
-このガイドでは、Ionic Vue アプリの作成の基本、基本的なナビゲーションの追加、ネイティブアプリを構築する方法としての Capacitor の紹介について説明した。Vue と Capacitor を使って完全な Ionic Framework アプリを構築するには、我々の [First App guide](your-first-app.md) をご覧ください。
+3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
-Ionic Frameworks のコンポーネントの詳細については、 [component API pages](https://ionicframework.com/docs/components) を参照してください。Vue の詳細については、 [Vue Docs](https://v3.vuejs.org/) を参照のこと。ネイティブ機能の構築を続けるには、[Capacitor docs](https://capacitorjs.com/docs/) を参照してください。
+4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: 'off'` from `.eslintrc.js`.
 
-アプリ構築をお楽しみください! 🎉
+5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `router/index.js`.
+
+6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/HomePage.vue`.
+
+7. Delete `tsconfig.json` and `vite-env.d.ts`.
+
+8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
+
+9. Install terser `npm i -D terser`.
+
+## Explore More
+
+This guide covered the basics of creating an Ionic Vue app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
+
+<DocsCards>
+
+<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
+  <p>Build a real Photo Gallery app with Ionic Vue and native device features.</p>
+</DocsCard>
+
+<DocsCard header="Vue Documentation" href="https://vuejs.org/guide/introduction.html" icon="/icons/logo-vue-icon.png">
+  <p>Learn more about Vue's core concepts, tools, and best practices from the official Vue documentation.</p>
+</DocsCard>
+
+<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>Discover how to handle routing and navigation in Ionic Vue apps using the Vue Router.</p>
+</DocsCard>
+
+<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+</DocsCard>
+
+<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+</DocsCard>
+
+<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
+</DocsCard>
+
+</DocsCards>

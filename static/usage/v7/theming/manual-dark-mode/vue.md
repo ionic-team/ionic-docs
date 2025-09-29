@@ -53,7 +53,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonBackButton,
     IonButton,
@@ -72,66 +72,35 @@
   } from '@ionic/vue';
   import type { ToggleCustomEvent } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonBackButton,
-      IonButton,
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonListHeader,
-      IonRange,
-      IonText,
-      IonToggle,
-      IonToolbar,
-    },
-    setup() {
-      const themeToggle = ref(false);
+  const themeToggle = ref(false);
 
-      // Use matchMedia to check the user preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  // Use matchMedia to check the user preference
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-      // Add or remove the "dark" class on the document body
-      const toggleDarkTheme = (shouldAdd) => {
-        document.body.classList.toggle('dark', shouldAdd);
-      };
+  // Add or remove the "dark" class on the document body
+  const toggleDarkTheme = (shouldAdd) => {
+    document.body.classList.toggle('dark', shouldAdd);
+  };
 
-      // Check/uncheck the toggle and update the theme based on isDark
-      const initializeDarkTheme = (isDark) => {
-        themeToggle.value = isDark;
-        toggleDarkTheme(isDark);
-      };
+  // Check/uncheck the toggle and update the theme based on isDark
+  const initializeDarkTheme = (isDark) => {
+    themeToggle.value = isDark;
+    toggleDarkTheme(isDark);
+  };
 
-      // Initialize the dark theme based on the initial
-      // value of the prefers-color-scheme media query
-      initializeDarkTheme(prefersDark.matches);
+  // Initialize the dark theme based on the initial
+  // value of the prefers-color-scheme media query
+  initializeDarkTheme(prefersDark.matches);
 
-      // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
+  // Listen for changes to the prefers-color-scheme media query
+  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
 
-      // Listen for the toggle check/uncheck to toggle the dark theme
-      const toggleChange = (event: ToggleCustomEvent) => {
-        toggleDarkTheme(event.detail.checked);
-      };
-
-      return {
-        personCircle,
-        personCircleOutline,
-        sunnyOutline,
-        sunny,
-        initializeDarkTheme,
-        toggleChange,
-        toggleDarkTheme,
-        themeToggle,
-      };
-    },
-  });
+  // Listen for the toggle check/uncheck to toggle the dark theme
+  const toggleChange = (event: ToggleCustomEvent) => {
+    toggleDarkTheme(event.detail.checked);
+  };
 </script>
 
 <style>

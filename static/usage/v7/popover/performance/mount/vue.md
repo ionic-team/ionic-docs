@@ -8,12 +8,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonContent, IonPopover } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonContent, IonPopover },
-  });
 </script>
 ```
