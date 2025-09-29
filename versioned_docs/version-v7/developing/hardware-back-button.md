@@ -122,13 +122,9 @@ import { useBackButton } from '@ionic/vue';
 
 ...
 
-export default {
-  setup() {
-    useBackButton(10, () => {
-      console.log('Handler was called!');
-    });
-  }
-}
+useBackButton(10, () => {
+  console.log('Handler was called!');
+});
 ```
 </TabItem>
 </Tabs>
@@ -236,19 +232,15 @@ import { useBackButton } from '@ionic/vue';
 
 ...
 
-export default {
-  setup() {
-    useBackButton(5, () => {
-      console.log('Another handler was called!');
-    });
+useBackButton(5, () => {
+  console.log('Another handler was called!');
+});
 
-    useBackButton(10, (processNextHandler) => {
-      console.log('Handler was called!');
+useBackButton(10, (processNextHandler) => {
+  console.log('Handler was called!');
 
-      processNextHandler();
-    });
-  }
-}
+  processNextHandler();
+});
 ```
 </TabItem>
 </Tabs>
@@ -385,16 +377,12 @@ import { App } from '@capacitor/app';
 
 ...
 
-export default {
-  setup() {
-    const ionRouter = useIonRouter();
-    useBackButton(-1, () => {
-      if (!ionRouter.canGoBack()) {
-        App.exitApp();
-      }
-    });
+const ionRouter = useIonRouter();
+useBackButton(-1, () => {
+  if (!ionRouter.canGoBack()) {
+    App.exitApp();
   }
-}
+});
 ```
 </TabItem>
 </Tabs>

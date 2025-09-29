@@ -39,11 +39,19 @@ import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md
 
 <LabelPlacement />
 
+## Label Wrapping
+
+Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. You can enable text wrapping by adding the `ion-text-wrap` class to a wrapper around the radio text or styling the `label` shadow part using the `::part()` selector.
+
+import LabelWrap from '@site/static/usage/v7/radio/label-wrap/index.md';
+
+<LabelWrap />
+
 ## Object Value References
 
 By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
-import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/index.md';
+import UsingComparewith from '@site/static/usage/v7/radio/using-comparewith/index.md';
 
 <UsingComparewith />
 

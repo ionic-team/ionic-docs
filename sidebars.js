@@ -68,7 +68,7 @@ module.exports = {
       collapsed: false,
       items: [
         'angular/overview',
-        'angular/build-options',
+        'angular/quickstart',
         {
           type: 'category',
           label: 'Build Your First App',
@@ -83,8 +83,10 @@ module.exports = {
             'angular/your-first-app/distribute',
           ],
         },
+        'angular/build-options',
         'angular/lifecycle',
         'angular/navigation',
+        'angular/injection-tokens',
         'angular/virtual-scroll',
         'angular/slides',
         'angular/platform',
@@ -105,7 +107,7 @@ module.exports = {
       label: 'React',
       collapsed: false,
       items: [
-        'react',
+        'react/overview',
         'react/quickstart',
         {
           type: 'category',
@@ -171,6 +173,7 @@ module.exports = {
             'vue/your-first-app/distribute',
           ],
         },
+        'vue/build-options',
         'vue/lifecycle',
         'vue/navigation',
         'vue/virtual-scroll',

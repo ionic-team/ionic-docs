@@ -16,7 +16,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { markRaw } from 'vue';
   import {
     IonHeader,
@@ -30,22 +30,6 @@
   } from '@ionic/vue';
   import PageThree from './PageThree.vue';
 
-  export default {
-    components: {
-      IonHeader,
-      IonTitle,
-      IonToolbar,
-      IonContent,
-      IonNavLink,
-      IonButton,
-      IonButtons,
-      IonBackButton,
-    },
-    data() {
-      return {
-        component: markRaw(PageThree),
-      };
-    },
-  };
+  const component = markRaw(PageThree);
 </script>
 ```

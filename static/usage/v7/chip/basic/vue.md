@@ -5,12 +5,7 @@
   <ion-chip :outline="true">Outline</ion-chip>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonChip } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonChip },
-  });
 </script>
 ```

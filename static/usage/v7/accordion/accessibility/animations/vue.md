@@ -22,16 +22,7 @@
   </ion-accordion-group>
 </template>
 
-<script lang="ts">
-  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel, AccordionGroupCustomEvent } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
-  export default defineComponent({
-    components: {
-      IonAccordion,
-      IonAccordionGroup,
-      IonItem,
-      IonLabel,
-    },
-  });
+<script setup lang="ts">
+  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
 </script>
 ```
