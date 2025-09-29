@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/select/props.md';
 import Events from '@ionic-internal/component-api/v7/select/events.md';
 import Methods from '@ionic-internal/component-api/v7/select/methods.md';
 import Parts from '@ionic-internal/component-api/v7/select/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/select/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/select/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/select/slots.md';
 
 <head>
@@ -174,6 +174,20 @@ Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert
 import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
+
+## Start and End Slots
+
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
+
+:::note
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+:::
+
+import StartEndSlots from '@site/static/usage/v7/select/start-end-slots/index.md';
+
+<StartEndSlots />
 
 ## Customization
 

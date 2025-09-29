@@ -4,10 +4,36 @@ const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
 
+/**
+ * Old versions of the Ionic Docs are archived so
+ * that we do not need to re-build it every time we deploy.
+ * Building a large number of docs sites at once can cause
+ * out of memory issues, so archiving old docs sites
+ * allow us to keep memory usage and build times low.
+ *
+ * Note that this file is only for versions of the Ionic Docs
+ * that are built with Docusaurus. The
+ * Ionic v3 and v4 docs are built with other tools, so those
+ * versions are not included here.
+ *
+ * Note that the urls specified in this file should
+ * NOT have a trailing slash otherwise users will
+ * briefly get a 404 Page Not Found error before
+ * the docuementation website loads.
+ */
+const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
+
+/**
+ * This returns an array where each entry is an array
+ * containing the version name at index 0 and
+ * the archive url at index 1.
+ */
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
+
 const BASE_URL = '/docs';
 
 module.exports = {
-  title: 'Ionic Documentation',
+  title: 'Ionic Framework',
   tagline:
     'Ionic is the app platform for web developers. Build amazing mobile and web apps with one shared code base and open web standards',
   url: 'https://ionicframework.com',
@@ -54,15 +80,11 @@ module.exports = {
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
           exclude: ['README.md'],
-          lastVersion: 'v7',
+          lastVersion: 'current',
+          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
-              label: 'v8 (beta)',
-              banner: 'unreleased',
-              path: 'v8',
-            },
-            v7: {
-              label: 'v7',
+              label: 'v8',
             },
           },
         },
@@ -83,6 +105,12 @@ module.exports = {
   ],
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
+      isCloseable: false,
+    },
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
@@ -156,8 +184,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'updating/7-0',
-          label: 'Ionic v7.0.0 Upgrade Guide',
+          docId: 'updating/8-0',
+          label: 'Ionic v8.0.0 Upgrade Guide',
           position: 'left',
           className: 'cta',
         },
@@ -165,6 +193,20 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              /**
+               * Use "to" instead of "href" so the
+               * external URL icon does not show up.
+               */
+              to: versionUrl,
+              /**
+               * Just like the version docs in this project,
+               * we want to archived versions to open in the
+               * same tab.
+               */
+              target: '_self',
+            })),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
@@ -281,8 +323,9 @@ module.exports = {
     },
     prism: {
       theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/e6d323332b0363a633407fabab47b608088e3a4d/packages/generate-prism-languages/index.ts#L9-L25
-      additionalLanguages: ['shell-session', 'http'],
+      // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
+      // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
+      additionalLanguages: ['shell-session', 'http', 'diff'],
     },
     algolia: {
       appId: 'O9QSL985BS',
@@ -292,6 +335,7 @@ module.exports = {
     },
   },
   plugins: [
+    // Allows usage of Sass/SCSS in the CSS preprocessor.
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',

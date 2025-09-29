@@ -52,9 +52,7 @@ module.exports = function (context, options) {
 
       let npmTag = 'latest';
       if (currentVersion.banner === 'unreleased') {
-        // TODO create a ticket to re-enable this once v8 is released.
-        // npmTag = 'next';
-        npmTag = '7.5.8-dev.11702398696.1ab62ea9';
+        npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
         npmTag = currentVersion.path.slice(1);
       }
@@ -78,7 +76,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/events.md`, data.events),
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/custom-props.md`, data.customProps),
+          createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.md`, data.slots)
         );
       }
@@ -136,9 +134,25 @@ function formatType(attr, type) {
   return type.replace(/\|/g, '\uff5c');
 }
 
-function renderProperties({ props: properties }) {
+function renderProperties({ props: properties, docsTags }) {
   if (properties.length === 0) {
     return 'No properties available for this component.';
+  }
+
+  // Extract virtual property names from component-level docsTags
+  const virtualPropNames = [];
+  if (docsTags) {
+    docsTags.forEach((tag) => {
+      if (tag.name === 'virtualProp') {
+        // Check if any property name exists in the virtualProp tag text
+        // and add it to the virtualPropNames array
+        properties.forEach((prop) => {
+          if (tag.text.includes(prop.name)) {
+            virtualPropNames.push(prop.name);
+          }
+        });
+      }
+    });
   }
 
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
@@ -146,8 +160,15 @@ function renderProperties({ props: properties }) {
 ${properties
   .map((prop) => {
     const isDeprecated = prop.deprecation !== undefined;
+    const isVirtual = virtualPropNames.includes(prop.name);
 
-    const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    let docs = prop.docs;
+    if (isVirtual) {
+      docs = `${docs}\n\nThis is a [virtual property](/docs/core-concepts/fundamentals#virtual-properties) that is set once during initialization and will not update if you change its value after the initial render.`;
+    }
+    if (isDeprecated) {
+      docs = `${docs}\n\n**_Deprecated_** — ${prop.deprecation}`;
+    }
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
@@ -170,11 +191,36 @@ function renderEvents({ events }) {
   }
 
   return `
-| Name | Description |
-| --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
+| Name | Description | Bubbles |
+| --- | --- | --- |
+${events
+  .map((event) => {
+    const isDeprecated = event.deprecation !== undefined;
+    const docs = isDeprecated ? `${event.docs}\n\n**_Deprecated_** — ${event.deprecation}` : event.docs;
+    return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
+      event.bubbles
+    }\` |`;
+  })
+  .join('\n')}`;
+}
 
-`;
+/**
+ * Formats method parameters for the optional Parameters row of each method table
+ * @param {*} paramsArr Array of method parameters
+ * @returns formatted parameters for methods table
+ */
+function renderParameters(paramsArr) {
+  if (!paramsArr.some((param) => param.docs)) {
+    return '';
+  }
+
+  const documentedParams = paramsArr.filter((param) => param.docs);
+  const formattedParams = documentedParams
+    .map((param) => {
+      return `**${param.name}**: ${formatMultiline(param.docs)}`;
+    })
+    .join('<br/>');
+  return `| **Parameters** | ${formattedParams} |`;
 }
 
 function renderMethods({ methods }) {
@@ -193,6 +239,7 @@ ${methods
 | --- | --- |
 | **Description** | ${formatMultiline(method.docs)} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
+${method.parameters.length !== 0 ? renderParameters(method.parameters) : ''}
 `
   )
   .join('\n')}
@@ -214,16 +261,56 @@ ${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).jo
 }
 
 function renderCustomProps({ styles: customProps }) {
-  if (customProps.length === 0) {
-    return 'No CSS custom properties available for this component.';
-  }
+  const iosProps = customProps.filter((prop) => prop.mode === 'ios');
+  const mdProps = customProps.filter((prop) => prop.mode === 'md');
 
-  return `
-| Name | Description |
-| --- | --- |
-${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+  const renderTable = (props) => {
+    if (props.length === 0) {
+      return 'No CSS custom properties available for this component.';
+    }
+
+    return `
+    | Name | Description |
+  | --- | --- |
+  ${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+  `;
+  };
+
+  if (iosProps.length > 0 || mdProps.length > 0) {
+    // If the component has mode-specific custom props, render them in tabs for iOS and MD
+    return `
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+\`\`\`\`mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+${renderTable(iosProps)}
+
+</TabItem>
+
+<TabItem value="md">
+
+${renderTable(mdProps)}
+
+</TabItem>
+</Tabs>
+
+\`\`\`\`
 
 `;
+  }
+  // Otherwise render the custom props without the tabs for iOS and MD
+  return renderTable(customProps);
 }
 
 function renderSlots({ slots }) {

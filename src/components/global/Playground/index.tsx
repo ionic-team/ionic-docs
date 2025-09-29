@@ -388,15 +388,15 @@ export default function Playground({
   useEffect(() => {
     if (showConsole) {
       if (frameiOS.current) {
-        frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
-          setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+        frameiOS.current.contentWindow.addEventListener('console', (event: CustomEvent) => {
+          setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, event.detail]);
           consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
         });
       }
 
       if (frameMD.current) {
-        frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
-          setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+        frameMD.current.contentWindow.addEventListener('console', (event: CustomEvent) => {
+          setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, event.detail]);
           consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
         });
       }
@@ -425,9 +425,9 @@ export default function Playground({
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
-        const ev = entries[0];
-        setIsInView(ev.isIntersecting);
-        if (!ev.isIntersecting) return;
+        const event = entries[0];
+        setIsInView(event.isIntersecting);
+        if (!event.isIntersecting) return;
 
         /**
          * Load the stored mode and/or usage target, if present

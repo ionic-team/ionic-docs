@@ -1,10 +1,43 @@
 ```ts
 import { Component } from '@angular/core';
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherCustomEvent,
+} from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { ellipse } from 'ionicons/icons';
+
+interface Item {
+  name: string;
+  unread: boolean;
+}
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['./example.component.css'],
+  imports: [
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonRefresher,
+    IonRefresherContent,
+    IonTitle,
+    IonToolbar,
+  ],
 })
 export class ExampleComponent {
   public names = [
@@ -22,7 +55,16 @@ export class ExampleComponent {
     'Rachel Rabbit',
     'Ted Turtle',
   ];
-  public items = [];
+  public items: Item[] = [];
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ ellipse });
+  }
 
   ngOnInit() {
     this.addItems(5);
@@ -32,7 +74,7 @@ export class ExampleComponent {
     return this.names[Math.floor(Math.random() * this.names.length)];
   }
 
-  addItems(count, unread = false) {
+  addItems(count: number, unread = false) {
     for (let i = 0; i < count; i++) {
       this.items.unshift({
         name: this.chooseRandomName(),
@@ -41,7 +83,7 @@ export class ExampleComponent {
     }
   }
 
-  handleRefresh(event) {
+  handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       this.addItems(3, true);
       event.target.complete();

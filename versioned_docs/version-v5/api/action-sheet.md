@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/action-sheet/props.md';
 import Events from '@ionic-internal/component-api/v5/action-sheet/events.md';
 import Methods from '@ionic-internal/component-api/v5/action-sheet/methods.md';
 import Parts from '@ionic-internal/component-api/v5/action-sheet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/action-sheet/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/action-sheet/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/action-sheet/slots.md';
 
 # ion-action-sheet

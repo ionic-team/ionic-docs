@@ -6,8 +6,14 @@
     <title>Accordion</title>
     <link rel="stylesheet" href="../../common.css" />
     <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+
+    <style>
+      ion-accordion-group {
+        width: 300px;
+      }
+    </style>
   </head>
 
   <body>
@@ -42,12 +48,12 @@
       const accordionGroup = document.querySelector('ion-accordion-group');
       const values = ['first', 'second', 'third'];
 
-      accordionGroup.addEventListener('ionChange', (ev) => {
-        const collapsedItems = values.filter((value) => value !== ev.detail.value);
-        const selectedValue = ev.detail.value;
+      accordionGroup.addEventListener('ionChange', (event) => {
+        const collapsedItems = values.filter((value) => value !== event.detail.value);
+        const selectedValue = event.detail.value;
 
         console.log(
-          `Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(
+          `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(
             ', '
           )}`
         );

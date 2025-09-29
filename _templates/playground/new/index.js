@@ -54,18 +54,13 @@ module.exports = {
               type: 'select',
               name: 'version',
               message: 'Select the Ionic Framework version for the playground',
-              initial: '7',
-              choices: ['6', '7'],
+              initial: '8',
+              choices: ['6', '7', '8'],
             },
             {
               type: 'toggle',
               name: 'css',
               message: 'Generate custom CSS files?',
-            },
-            {
-              type: 'toggle',
-              name: 'angular_ts',
-              message: 'Generate an Angular TypeScript file?',
             },
           ])
           .then((answers) => {
@@ -77,7 +72,7 @@ module.exports = {
 
             const playgroundName = changeCase.pascal(answers.path.split('/').pop());
             console.log(
-              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v7/${answers.name}/${answers.path}/index.md';\n\n<${playgroundName} />\n`
+              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v${answers.version}/${answers.name}/${answers.path}/index.md';\n\n<${playgroundName} />\n`
             );
 
             return answers;

@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/nav/props.md';
 import Events from '@ionic-internal/component-api/v7/nav/events.md';
 import Methods from '@ionic-internal/component-api/v7/nav/methods.md';
 import Parts from '@ionic-internal/component-api/v7/nav/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/nav/slots.md';
 
 <head>
@@ -36,6 +36,20 @@ NavLink is a simplified API when interacting with Nav. Developers can customize 
 import NavLinkExample from '@site/static/usage/v7/nav/nav-link/index.md';
 
 <NavLinkExample />
+
+## Navigation within a Modal
+
+Modal can use Nav to offer a linear navigation that is independent of the URL.
+
+:::note
+
+The example below uses a reference to Nav and the public method APIs to push and pop views. It is recommended to use NavLink in implementations that do not require this level of granular access and control.
+
+:::
+
+import ModalNavigationExample from '@site/static/usage/v7/nav/modal-navigation/index.md';
+
+<ModalNavigationExample />
 
 ## Interfaces
 

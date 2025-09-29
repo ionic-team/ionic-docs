@@ -202,7 +202,7 @@ Now the `App` component does not really have a lot to modify here. It is a basic
 
 Currently, the `Home` component looks like so:
 
-![Vue home component](/img/guides/vue/first-app/home-route.png)
+![Screenshot of the Ionic Vue Home page showing the message "Ready to create an app? Start with Ionic UI Components"](/img/guides/quickstart/home-page.png 'Ionic Vue Home Component')
 
 ```html
 <template>

@@ -12,17 +12,12 @@ import react_main_css from './react/main_css.md';
 import react from './react.md';
 <% } -%>
 import vue from './vue.md';
-<% if (css || angular_ts){ %>
+
 import angular_example_component_html from './angular/example_component_html.md';
-<% } else { -%>
-import angular from './angular.md';
-<% } -%>
-<% if (angular_ts){ -%>
-import angular_example_component_ts from './angular/example_component_ts.md';
-<% } -%>
 <% if (css){ -%>
 import angular_example_component_css from './angular/example_component_css.md';
 <% } -%>
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="<%= version %>"
@@ -39,21 +34,15 @@ import angular_example_component_css from './angular/example_component_css.md';
     react,
 <% } -%>
     vue,
-<% if (angular_ts || css){ -%>
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
-<% if (angular_ts){ -%>
-        'src/app/example.component.ts': angular_example_component_ts,
-<% } -%>
 <% if (css){ -%>
         'src/app/example.component.css': angular_example_component_css,
 <% } -%>
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
-<% } else { -%>
-    angular,
-<% } -%>
   }}
   src="usage/v<%= version %>/<%= name %>/<%= path %>/demo.html"
 />

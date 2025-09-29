@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/range/props.md';
 import Events from '@ionic-internal/component-api/v8/range/events.md';
 import Methods from '@ionic-internal/component-api/v8/range/methods.md';
 import Parts from '@ionic-internal/component-api/v8/range/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/range/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/range/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/range/slots.md';
 
 <head>
@@ -127,32 +127,6 @@ Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customiza
 import CSSParts from '@site/static/usage/v8/range/theming/css-shadow-parts/index.md';
 
 <CSSParts />
-
-## Migrating from Legacy Range Syntax
-
-A simpler range syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an range, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one range at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-### Using the Modern Syntax
-
-Using the modern syntax involves removing the `ion-label` and passing the label to `ion-range` using the `label` property. The placement of the label can be configured using the `labelPlacement` property.
-
-If custom HTML is needed for the label, it can be passed directly inside the `ion-range` using the `label` slot instead.
-
-import Migration from '@site/static/usage/v8/range/migration/index.md';
-
-<Migration />
-
-
-:::note
-In past versions of Ionic, `ion-item` was required for `ion-range` to function properly. Starting in Ionic 7.0, `ion-range` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-range` to function properly.
-:::
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern range syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-range` to `true` to force that instance of the range to use the legacy syntax.
-
 
 ## Interfaces
 

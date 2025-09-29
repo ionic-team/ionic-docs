@@ -68,7 +68,7 @@ module.exports = {
       collapsed: false,
       items: [
         'angular/overview',
-        'angular/build-options',
+        'angular/quickstart',
         {
           type: 'category',
           label: 'Build Your First App',
@@ -83,8 +83,10 @@ module.exports = {
             'angular/your-first-app/distribute',
           ],
         },
+        'angular/build-options',
         'angular/lifecycle',
         'angular/navigation',
+        'angular/injection-tokens',
         'angular/virtual-scroll',
         'angular/slides',
         'angular/platform',
@@ -99,7 +101,7 @@ module.exports = {
       label: 'React',
       collapsed: false,
       items: [
-        'react',
+        'react/overview',
         'react/quickstart',
         {
           type: 'category',
@@ -165,6 +167,7 @@ module.exports = {
             'vue/your-first-app/distribute',
           ],
         },
+        'vue/build-options',
         'vue/lifecycle',
         'vue/navigation',
         'vue/virtual-scroll',
@@ -173,7 +176,6 @@ module.exports = {
         'vue/platform',
         'vue/pwa',
         'vue/storage',
-        'vue/testing',
         'vue/troubleshooting',
         'vue/performance',
       ],
@@ -253,15 +255,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Action Sheet',
-      collapsed: false,
-      items: ['api/action-sheet'],
-    },
-    {
-      type: 'category',
       label: 'Accordion',
       collapsed: false,
       items: ['api/accordion', 'api/accordion-group'],
+    },
+    {
+      type: 'category',
+      label: 'Action Sheet',
+      collapsed: false,
+      items: ['api/action-sheet'],
     },
     {
       type: 'category',
@@ -277,7 +279,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Breadcrumb',
+      label: 'Breadcrumbs',
       collapsed: false,
       items: ['api/breadcrumb', 'api/breadcrumbs'],
     },
@@ -338,21 +340,21 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Infinite Scroll',
-      collapsed: false,
-      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
-    },
-    {
-      type: 'category',
       label: 'Icons',
       collapsed: false,
       items: ['api/icon'],
     },
     {
       type: 'category',
-      label: 'Input',
+      label: 'Infinite Scroll',
       collapsed: false,
-      items: ['api/input', 'api/textarea'],
+      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
+    },
+    {
+      type: 'category',
+      label: 'Inputs',
+      collapsed: false,
+      items: ['api/input', 'api/input-password-toggle', 'api/input-otp', 'api/textarea'],
     },
     {
       type: 'category',
@@ -451,7 +453,7 @@ module.exports = {
       type: 'category',
       label: 'Segment',
       collapsed: false,
-      items: ['api/segment', 'api/segment-button'],
+      items: ['api/segment', 'api/segment-button', 'api/segment-content', 'api/segment-view'],
     },
     {
       type: 'category',

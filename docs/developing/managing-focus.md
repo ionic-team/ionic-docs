@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
+## Manual Focus Management
+
 Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
 
 - The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
@@ -20,18 +22,18 @@ Ionic provides a `setFocus` API on components such as [Input](../api/input), [Se
 - The `appload` event for vanilla JavaScript applications when the application loads.
 - The result of a user gesture or interaction.
 
-## Why not autofocus?
+### Why not autofocus?
 
 The `autofocus` attribute is a standard HTML attribute that allows developers to set focus to an element when a page loads. This attribute is commonly used to set focus to the first input element on a page. However, the `autofocus` attribute can cause issues in routing applications when navigating between pages. This is because the `autofocus` attribute will set focus to the element when the page loads, but will not set focus to the element when the page is revisited. Learn more about the `autofocus` attribute in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus).
 
-## Platform Restrictions
+### Platform Restrictions
 
 There are platform restrictions you should be aware of when using the `setFocus` API, including:
 
 1. Android requires user interaction before setting focus to an element. This can be as simple as a user tapping on the screen.
 2. Interactive elements can only focused a result of a user gesture on Mobile Safari (iOS), such as calling `setFocus` as the result of a button click.
 
-## Basic Usage
+### Basic Usage
 
 The example below demonstrates how to use the `setFocus` API to request focus on an input when the user clicks a button.
 
@@ -39,7 +41,7 @@ import Basic from '@site/static/usage/v8/input/set-focus/index.md';
 
 <Basic />
 
-## Routing
+### Routing
 
 Developers can use the `ionViewDidEnter` lifecycle event to set focus to an element when a page is entered.
 
@@ -126,7 +128,7 @@ export default Home;
 </Tabs>
 ````
 
-## Overlays
+### Overlays
 
 Developers can use the `didPresent` lifecycle event to set focus to an element when an overlay is presented.
 
@@ -236,3 +238,44 @@ export default Home;
 </TabItem>
 </Tabs>
 ````
+
+## Assistive Technology Focus Management
+
+By default, Single Page Applications have no built-in way of informing screen readers that the active view has changed in a browser or webview. This means that users who rely on assistive technology do not always know if a navigation event occurred.
+
+Developers who enable the [focusManagerPriority config](./config#ionicconfig) can delegate focus management to Ionic during page transitions. When enabled, Ionic will move focus to the correct element as specified in the config option. This will inform screen readers that a navigation event occurred.
+
+### Types
+
+```typescript
+type FocusManagerPriority = 'content' | 'heading' | 'banner';
+```
+
+### Content Types
+
+The following table explains what each content type represents:
+
+| Type      | Description                   | Ionic Component           | Semantic HTML Equivalent                                                     | Landmark Equivalent                                                                                                                                                                                                   |
+| --------- | ----------------------------- | ------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content` | The main portion of the view. | [Content](../api/content) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)     | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)                                                                                                                      |
+| `heading` | The title of the view.        | [Title](../api/title)     | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)         | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) with [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
+| `banner`  | The header of the view.       | [Header](../api/header)   | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
+
+:::important
+Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title) on each view. Since multiple [Title](../api/title) components can be used in a single view, Ionic does not automatically assign these attributes.
+:::
+
+### Specifying Priority
+
+The config should be specified in order of decreasing priority. In the following example, Ionic will always focus headings to start. Ionic only proceeds to the next focus priority, banner, if a view does not have a heading:
+
+```js
+focusManagerPriority: ['heading', 'banner'];
+```
+
+### Implementation Notes
+
+- When specifying a focus priority, browsers may still move focus within that focus priority. For example, when specifying a `'content'` focus priority, Ionic will move focus to the content. However, the browser may then move focus within that content to the first focusable element such as a button.
+- If none of the focus priorities are found in a view, Ionic will instead focus the view itself to ensure focus generally moves to the correct place. Browsers may then adjust focus within the view.
+- When navigating from the current view to the previous view, Ionic will move focus back to the element that presented the current view.
+- The focus manager can be overridden on a per-view basis as shown in [Manual Focus Management with Routing](#routing).

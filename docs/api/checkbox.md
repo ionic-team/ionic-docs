@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v8/checkbox/props.md';
 import Events from '@ionic-internal/component-api/v8/checkbox/events.md';
 import Methods from '@ionic-internal/component-api/v8/checkbox/methods.md';
 import Parts from '@ionic-internal/component-api/v8/checkbox/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/checkbox/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/checkbox/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/checkbox/slots.md';
 
 <head>
@@ -66,6 +66,24 @@ import Indeterminate from '@site/static/usage/v8/checkbox/indeterminate/index.md
 
 <Indeterminate />
 
+## Links inside of Labels
+
+Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
+
+import LabelLink from '@site/static/usage/v8/checkbox/label-link/index.md';
+
+<LabelLink />
+
+## Helper & Error Text
+
+Helper and error text can be used inside of a checkbox with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-checkbox`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/v8/checkbox/helper-error/index.md';
+
+<HelperError />
+
 ## Theming
 
 ### CSS Custom Properties
@@ -95,30 +113,6 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonCheckboxElement;
 }
 ```
-
-## Migrating from Legacy Checkbox Syntax
-
-A simpler checkbox syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup a checkbox, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one checkbox at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-### Using the Modern Syntax
-
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-checkbox`. The placement of the label can be configured using the `labelPlacement` property on `ion-checkbox`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-checkbox`.
-
-import Migration from '@site/static/usage/v8/checkbox/migration/index.md';
-
-<Migration />
-  
-
-:::note
-In past versions of Ionic, `ion-item` was required for `ion-checkbox` to function properly. Starting in Ionic 7.0, `ion-checkbox` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-checkbox` to function properly.
-:::
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern checkbox syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-checkbox` to `true` to force that instance of the checkbox to use the legacy syntax.
-
 
 ## Properties
 <Props />

@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/ripple-effect/props.md';
 import Events from '@ionic-internal/component-api/v7/ripple-effect/events.md';
 import Methods from '@ionic-internal/component-api/v7/ripple-effect/methods.md';
 import Parts from '@ionic-internal/component-api/v7/ripple-effect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/ripple-effect/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/ripple-effect/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/ripple-effect/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

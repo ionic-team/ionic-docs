@@ -31,7 +31,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     CheckboxCustomEvent,
     IonButtons,
@@ -45,38 +45,23 @@
     IonCheckbox,
     IonPage,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref, onMounted } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonCheckbox,
-      IonPage,
-    },
-    data() {
-      return {
-        canDismiss: false,
-        presentingElement: undefined,
-      };
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-      onTermsChanged(ev: CheckboxCustomEvent) {
-        this.canDismiss = ev.detail.checked;
-      },
-    },
-    mounted() {
-      this.presentingElement = this.$refs.page.$el;
-    },
+  const canDismiss = ref(false);
+  const presentingElement = ref();
+  const page = ref();
+  const modal = ref();
+
+  const dismiss = () => {
+    modal.value.$el.dismiss();
+  };
+
+  const onTermsChanged = (event: CheckboxCustomEvent) => {
+    canDismiss.value = event.detail.checked;
+  };
+
+  onMounted(() => {
+    presentingElement.value = page.value.$el;
   });
 </script>
 ```

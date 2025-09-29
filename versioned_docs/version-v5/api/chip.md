@@ -13,7 +13,7 @@ import Props from '@ionic-internal/component-api/v5/chip/props.md';
 import Events from '@ionic-internal/component-api/v5/chip/events.md';
 import Methods from '@ionic-internal/component-api/v5/chip/methods.md';
 import Parts from '@ionic-internal/component-api/v5/chip/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/chip/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/chip/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/chip/slots.md';
 
 # ion-chip

@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their application in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app! As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Animations.
+Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their application in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app! As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Gestures.
 
 Building complex gestures can be time consuming. Other libraries that provide custom gestures are often times too heavy handed and end up capturing mouse or touch events and not letting them propagate. This can result in other elements no longer being scrollable or clickable.
 
@@ -47,7 +47,7 @@ const gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 
 ```
@@ -65,13 +65,13 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 ```
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+Developers using Angular should install the latest version of `@ionic/angular`. Gestures can be created via the `GestureController` dependency injection.
 
 By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
 or they can wrap their callbacks in an `NgZone.run()` call.
@@ -86,7 +86,7 @@ constructor(private gestureCtrl: GestureController) {
     el: this.element.nativeElement,
     threshold: 15,
     gestureName: 'my-gesture',
-    onMove: ev => this.onMoveHandler(ev)
+    onMove: event => this.onMoveHandler(event)
   }, true);
   // The `true` above ensures that callbacks run inside NgZone.
 }
@@ -95,7 +95,7 @@ constructor(private gestureCtrl: GestureController) {
 </TabItem>
 <TabItem value="angular-standalone">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+Developers using Angular should install the latest version of `@ionic/angular`. Gestures can be created via the `GestureController` dependency injection.
 
 By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
 or they can wrap their callbacks in an `NgZone.run()` call.
@@ -110,7 +110,7 @@ constructor(private gestureCtrl: GestureController) {
     el: this.element.nativeElement,
     threshold: 15,
     gestureName: 'my-gesture',
-    onMove: ev => this.onMoveHandler(ev)
+    onMove: event => this.onMoveHandler(event)
   }, true);
   // The `true` above ensures that callbacks run inside NgZone.
 }
@@ -130,7 +130,7 @@ const gesture: Gesture = createGesture({
   el: elementRef,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 ```
 </TabItem>
@@ -152,7 +152,7 @@ const gesture = createGesture({
   el: elementRef.value,
   threshold: 15,
   gestureName: 'my-gesture',
-  onMove: ev => onMoveHandler(ev)
+  onMove: event => onMoveHandler(event)
 });
 
 ```

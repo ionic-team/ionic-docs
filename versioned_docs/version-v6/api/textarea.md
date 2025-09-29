@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v6/textarea/props.md';
 import Events from '@ionic-internal/component-api/v6/textarea/events.md';
 import Methods from '@ionic-internal/component-api/v6/textarea/methods.md';
 import Parts from '@ionic-internal/component-api/v6/textarea/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/textarea/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v6/textarea/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/textarea/slots.md';
 
 <head>

@@ -21,13 +21,13 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
 /**
- * Ionic High Contrast Theme
+ * Ionic High Contrast Palette
  * -----------------------------------------------------
  * For more information, please see:
  * https://ionicframework.com/docs/theming/high-contrast-mode
  */
 
-import '@ionic/vue/css/themes/high-contrast.always.css';
+import '@ionic/vue/css/palettes/high-contrast.always.css';
 
 createApp(App).use(IonicVue).mount('#app');
 ```

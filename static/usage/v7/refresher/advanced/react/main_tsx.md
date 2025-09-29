@@ -11,7 +11,7 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  RefresherEventDetail,
+  RefresherCustomEvent,
 } from '@ionic/react';
 import { ellipse } from 'ionicons/icons';
 
@@ -44,7 +44,7 @@ function Example() {
     }
   }, []);
 
-  function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+  function handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       addItems(3, true);
       event.detail.complete();

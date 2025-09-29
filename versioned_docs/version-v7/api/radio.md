@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/radio/props.md';
 import Events from '@ionic-internal/component-api/v7/radio/events.md';
 import Methods from '@ionic-internal/component-api/v7/radio/methods.md';
 import Parts from '@ionic-internal/component-api/v7/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
@@ -38,6 +38,22 @@ Developers can use the `labelPlacement` property to control how the label is pla
 import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
 
 <LabelPlacement />
+
+## Label Wrapping
+
+Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. You can enable text wrapping by adding the `ion-text-wrap` class to a wrapper around the radio text or styling the `label` shadow part using the `::part()` selector.
+
+import LabelWrap from '@site/static/usage/v7/radio/label-wrap/index.md';
+
+<LabelWrap />
+
+## Object Value References
+
+By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+
+import UsingComparewith from '@site/static/usage/v7/radio/using-comparewith/index.md';
+
+<UsingComparewith />
 
 ## Alignment
 

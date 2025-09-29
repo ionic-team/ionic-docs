@@ -58,23 +58,19 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonContent },
-    methods: {
-      handleScrollStart() {
-        console.log('scroll start');
-      },
-      handleScroll(ev: CustomEvent) {
-        console.log('scroll', JSON.stringify(ev.detail));
-      },
-      handleScrollEnd() {
-        console.log('scroll end');
-      },
-    },
-  });
+  const handleScrollStart = () => {
+    console.log('scroll start');
+  };
+
+  const handleScroll = (event: CustomEvent) => {
+    console.log('scroll', JSON.stringify(event.detail));
+  };
+
+  const handleScrollEnd = () => {
+    console.log('scroll end');
+  };
 </script>
 ```

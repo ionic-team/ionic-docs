@@ -2,7 +2,7 @@
 
 The great thing about Ionic is that with one codebase, you can build for any platform using familiar web tools and languages. Follow along as we create a working Photo Gallery. Here’s the before and after:
 
-![Before and after going through this tutorial](/img/guides/first-app-v3/gallery-combined.png)
+![An Ionic app's transformation from a blank 'Tab Two' to a 'Photo Gallery' with images.](/img/guides/first-app-v3/gallery-combined.png 'Ionic App Before and After Photo Gallery')
 
 It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
@@ -11,7 +11,7 @@ It’s easy to get started. Note that all code referenced in this guide can be [
 Download/install these right away to ensure an optimal Ionic development experience:
 
 - [Git](https://git-scm.com/downloads) for version control.
-- <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Appflow.
+- <strong>SSH client</strong>, such as [PuTTy](https://putty.software/), for secure login to Appflow.
 - <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 - <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we
@@ -65,7 +65,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
-![Before and after going through this tutorial](/img/guides/first-app-v3/email-photogallery.gif)
+![Animated GIF demonstrating the LiveReload feature in Ionic, showing real-time updates in the app after code changes.](/img/guides/first-app-v3/email-photogallery.gif 'Ionic LiveReload Feature Demonstration')
 
 Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
 

@@ -6,8 +6,8 @@
     <title>Menu - Type</title>
     <link rel="stylesheet" href="../../common.css" />
     <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
   </head>
 
   <body>
@@ -62,8 +62,8 @@
       const menu = document.querySelector('ion-menu');
       const radioGroup = document.querySelector('ion-radio-group');
 
-      radioGroup.addEventListener('ionChange', (ev) => {
-        menu.type = ev.detail.value;
+      radioGroup.addEventListener('ionChange', (event) => {
+        menu.type = event.detail.value;
       });
     </script>
   </body>

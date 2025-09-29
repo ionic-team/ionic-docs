@@ -42,7 +42,7 @@
     },
   ];
 
-  picker.addEventListener('ionPickerDidDismiss', (ev) => {
+  picker.addEventListener('ionPickerDidDismiss', (event) => {
     picker.isOpen = false;
   });
 </script>

@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/input/props.md';
 import Events from '@ionic-internal/component-api/v8/input/events.md';
 import Methods from '@ionic-internal/component-api/v8/input/methods.md';
 import Parts from '@ionic-internal/component-api/v8/input/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/input/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/input/slots.md';
 
 <head>
@@ -83,9 +83,11 @@ import Clear from '@site/static/usage/v8/input/clear/index.md';
 
 Material Design offers filled styles for an input. The `fill` property on the input can be set to either `"solid"` or `"outline"`.
 
-Since the `fill` styles visually defines the input container, inputs that use `fill` should not be used in `ion-item`.
+Filled inputs can be used on iOS by setting the input's `mode` to `md`.
 
-Filled inputs can be used on iOS by setting Input's `mode` to `md`.
+:::warning
+Inputs that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+:::
 
 import Fill from '@site/static/usage/v8/input/fill/index.md';
 
@@ -160,7 +162,7 @@ In most cases, [Icon](./icon.md) components placed in these slots should have `a
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v7/input/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.md';
 
 <StartEndSlots />
 
@@ -185,28 +187,6 @@ Input uses scoped encapsulation, which means it will automatically scope its CSS
 import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.md';
 
 <CSSProps />
-
-## Migrating from Legacy Input Syntax
-
-A simpler input syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an input, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one input at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-### Using the Modern Syntax
-
-Using the modern syntax involves three steps:
-
-1. Remove `ion-label` and use the `label` property on `ion-input` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-input`.
-2. Move input-specific properties from `ion-item` on to `ion-input`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
-3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-input` instead.
-
-import Migration from '@site/static/usage/v8/input/migration/index.md';
-
-<Migration />
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern input syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-input` to `true` to force that instance of the input to use the legacy syntax.
 
 ## Interfaces
 

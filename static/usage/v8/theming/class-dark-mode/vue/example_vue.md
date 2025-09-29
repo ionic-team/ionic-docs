@@ -18,7 +18,7 @@
     <ion-list-header>Appearance</ion-list-header>
     <ion-list :inset="true">
       <ion-item>
-        <ion-toggle :checked="themeToggle" @ionChange="toggleChange($event)" justify="space-between"
+        <ion-toggle :checked="paletteToggle" @ionChange="toggleChange($event)" justify="space-between"
           >Dark Mode</ion-toggle
         >
       </ion-item>
@@ -53,7 +53,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonBackButton,
     IonButton,
@@ -72,70 +72,39 @@
   } from '@ionic/vue';
   import type { ToggleCustomEvent } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonBackButton,
-      IonButton,
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonListHeader,
-      IonRange,
-      IonText,
-      IonToggle,
-      IonToolbar,
-    },
-    setup() {
-      const themeToggle = ref(false);
+  const paletteToggle = ref(false);
 
-      // Use matchMedia to check the user preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  // Use matchMedia to check the user preference
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-      // Add or remove the "ion-theme-dark" class on the html element
-      const toggleDarkTheme = (shouldAdd) => {
-        document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
-      };
+  // Add or remove the "ion-palette-dark" class on the html element
+  const toggleDarkPalette = (shouldAdd) => {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
+  };
 
-      // Check/uncheck the toggle and update the theme based on isDark
-      const initializeDarkTheme = (isDark) => {
-        themeToggle.value = isDark;
-        toggleDarkTheme(isDark);
-      };
+  // Check/uncheck the toggle and update the palette based on isDark
+  const initializeDarkPalette = (isDark) => {
+    paletteToggle.value = isDark;
+    toggleDarkPalette(isDark);
+  };
 
-      // Initialize the dark theme based on the initial
-      // value of the prefers-color-scheme media query
-      initializeDarkTheme(prefersDark.matches);
+  // Initialize the dark palette based on the initial
+  // value of the prefers-color-scheme media query
+  initializeDarkPalette(prefersDark.matches);
 
-      // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
+  // Listen for changes to the prefers-color-scheme media query
+  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
 
-      // Listen for the toggle check/uncheck to toggle the dark theme
-      const toggleChange = (ev: ToggleCustomEvent) => {
-        toggleDarkTheme(ev.detail.checked);
-      };
-
-      return {
-        personCircle,
-        personCircleOutline,
-        sunnyOutline,
-        sunny,
-        initializeDarkTheme,
-        toggleChange,
-        toggleDarkTheme,
-        themeToggle,
-      };
-    },
-  });
+  // Listen for the toggle check/uncheck to toggle the dark palette
+  const toggleChange = (event: ToggleCustomEvent) => {
+    toggleDarkPalette(event.detail.checked);
+  };
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between themes */
+  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
   ion-item {
     --transition: none;
   }

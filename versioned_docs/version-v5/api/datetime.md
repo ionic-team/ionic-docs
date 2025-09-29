@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/datetime/props.md';
 import Events from '@ionic-internal/component-api/v5/datetime/events.md';
 import Methods from '@ionic-internal/component-api/v5/datetime/methods.md';
 import Parts from '@ionic-internal/component-api/v5/datetime/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/datetime/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/datetime/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/datetime/slots.md';
 
 # ion-datetime

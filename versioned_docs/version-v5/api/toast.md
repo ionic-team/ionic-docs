@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/toast/props.md';
 import Events from '@ionic-internal/component-api/v5/toast/events.md';
 import Methods from '@ionic-internal/component-api/v5/toast/methods.md';
 import Parts from '@ionic-internal/component-api/v5/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/toast/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/toast/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/toast/slots.md';
 
 # ion-toast

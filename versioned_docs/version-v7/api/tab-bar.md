@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v7/tab-bar/props.md';
 import Events from '@ionic-internal/component-api/v7/tab-bar/events.md';
 import Methods from '@ionic-internal/component-api/v7/tab-bar/methods.md';
 import Parts from '@ionic-internal/component-api/v7/tab-bar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/tab-bar/slots.md';
 
 <head>
@@ -126,17 +126,9 @@ export const TabBarExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
   import { call, person, settings } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon, IonTabBar, IonTabButton, IonTabs },
-    setup() {
-      return { call, person, settings };
-    },
-  });
 </script>
 ```
 

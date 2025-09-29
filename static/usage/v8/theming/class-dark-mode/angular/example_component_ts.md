@@ -1,39 +1,88 @@
 ```ts
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonTitle,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [
+    FormsModule,
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonRange,
+    IonText,
+    IonTitle,
+    IonToggle,
+    IonToolbar,
+  ],
 })
 export class ExampleComponent implements OnInit {
-  themeToggle = false;
+  paletteToggle = false;
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
+  }
 
   ngOnInit() {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Initialize the dark theme based on the initial
+    // Initialize the dark palette based on the initial
     // value of the prefers-color-scheme media query
-    this.initializeDarkTheme(prefersDark.matches);
+    this.initializeDarkPalette(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkTheme(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkPalette(mediaQuery.matches));
   }
 
-  // Check/uncheck the toggle and update the theme based on isDark
-  initializeDarkTheme(isDark) {
-    this.themeToggle = isDark;
-    this.toggleDarkTheme(isDark);
+  // Check/uncheck the toggle and update the palette based on isDark
+  initializeDarkPalette(isDark: boolean) {
+    this.paletteToggle = isDark;
+    this.toggleDarkPalette(isDark);
   }
 
-  // Listen for the toggle check/uncheck to toggle the dark theme
-  toggleChange(ev) {
-    this.toggleDarkTheme(ev.detail.checked);
+  // Listen for the toggle check/uncheck to toggle the dark palette
+  toggleChange(event: CustomEvent) {
+    this.toggleDarkPalette(event.detail.checked);
   }
 
-  // Add or remove the "ion-theme-dark" class on the html element
-  toggleDarkTheme(shouldAdd) {
-    document.documentElement.classList.toggle('ion-theme-dark', shouldAdd);
+  // Add or remove the "ion-palette-dark" class on the html element
+  toggleDarkPalette(shouldAdd: boolean) {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
 }
 ```

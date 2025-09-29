@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/toggle/props.md';
 import Events from '@ionic-internal/component-api/v8/toggle/events.md';
 import Methods from '@ionic-internal/component-api/v8/toggle/methods.md';
 import Parts from '@ionic-internal/component-api/v8/toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toggle/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/toggle/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/toggle/slots.md';
 
 <head>
@@ -73,6 +73,16 @@ import Justify from '@site/static/usage/v8/toggle/justify/index.md';
 
 <Justify />
 
+## Helper & Error Text
+
+Helper and error text can be used inside of a toggle with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-toggle`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/v8/toggle/helper-error/index.md';
+
+<HelperError />
+
 ## Theming
 
 ### Colors
@@ -96,29 +106,6 @@ We can further customize toggle by targeting specific shadow parts that are expo
 import CSSParts from '@site/static/usage/v8/toggle/theming/css-shadow-parts/index.md';
 
 <CSSParts />
-
-## Migrating from Legacy Toggle Syntax
-
-A simpler toggle syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an toggle, resolves accessibility issues, and improves the developer experience.
-
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-### Using the Modern Syntax
-
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-toggle`. The placement of the label can be configured using the `labelPlacement` property on `ion-toggle`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-toggle`.
-
-import Migration from '@site/static/usage/v8/toggle/migration/index.md';
-
-<Migration />
-  
-
-:::note
-In past versions of Ionic, `ion-item` was required for `ion-toggle` to function properly. Starting in Ionic 7.0, `ion-toggle` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-toggle` to function properly.
-:::
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern toggle syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-toggle` to `true` to force that instance of the toggle to use the legacy syntax.
 
 ## Interfaces
 

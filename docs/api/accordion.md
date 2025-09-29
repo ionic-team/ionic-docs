@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/accordion/props.md';
 import Events from '@ionic-internal/component-api/v8/accordion/events.md';
 import Methods from '@ionic-internal/component-api/v8/accordion/methods.md';
 import Parts from '@ionic-internal/component-api/v8/accordion/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
 
 <head>
@@ -35,6 +35,12 @@ import Toggle from '@site/static/usage/v8/accordion/toggle/index.md';
 <Toggle />
 
 ## Listen for Accordion State Changes
+
+:::caution
+Most `ionChange` events emitted by other components such as [Input](./input) and [Textarea](./textarea) bubble. As a result, these events will bubble up and cause your `ionChange` listener on the Accordion Group to fire if the associated components are used inside of an Accordion.
+
+When using other components that emit `ionChange` inside of Accordion it is recommended to have the `ionChange` callback on Accordion Group check the `target` key on the event passed to the callback to verify that `ionChange` is coming from the Accordion Group and not any descendants.
+:::
 
 Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
 
@@ -164,19 +170,19 @@ import AccessibilityAnimations from '@site/static/usage/v8/accordion/accessibili
 
 <AccessibilityAnimations />
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Space` or `Enter` | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component. |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Down Arrow`       | - When focus is on an accordion header, moves focus to the next accordion header.  <br />- When focus is on the last accordion header, moves focus to the first accordion header. |
-| `Up Arrow`         | - When focus is on an accordion header, moves focus to the previous accordion header.  <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
-| `Home`             | When focus is on an accordion header, moves focus to the first accordion header. |
-| `End`              | When focus is on an accordion header, moves focus to the last accordion header. |
+| Key                                  | Description                                                  |
+| ------------------------------------ | ------------------------------------------------------------ |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component. |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.                   |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element.               |
+| <kbd>Down Arrow</kbd>                | - When focus is on an accordion header, moves focus to the next accordion header.  <br />- When focus is on the last accordion header, moves focus to the first accordion header. |
+| <kbd>Up Arrow</kbd>                  | - When focus is on an accordion header, moves focus to the previous accordion header.  <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
+| <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header. |
+| <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header. |
 
 ## Performance
 

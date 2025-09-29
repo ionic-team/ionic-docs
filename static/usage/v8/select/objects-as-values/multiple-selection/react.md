@@ -46,7 +46,7 @@ function Example() {
           aria-label="Food"
           placeholder="Select food"
           compareWith={compareWith}
-          onIonChange={(ev) => console.log('Current value:', JSON.stringify(ev.detail.value))}
+          onIonChange={(event) => console.log('Current value:', JSON.stringify(event.detail.value))}
           multiple={true}
         >
           {foods.map((food) => (

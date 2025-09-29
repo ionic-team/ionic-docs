@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/popover/props.md';
 import Events from '@ionic-internal/component-api/v8/popover/events.md';
 import Methods from '@ionic-internal/component-api/v8/popover/methods.md';
 import Parts from '@ionic-internal/component-api/v8/popover/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/popover/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/popover/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/popover/slots.md';
 
 <head>
@@ -34,7 +34,7 @@ Using a popover inline is useful when you do not want to explicitly wire up clic
 
 If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
 
-### Angular 
+### Angular
 
 Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
 
@@ -113,7 +113,7 @@ Regardless of what you choose for your reference point, you can position a popov
 
 ### Alignment
 
-The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property. 
+The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property.
 
 ### Side and Alignment Demo
 
@@ -172,7 +172,7 @@ interface PopoverOptions {
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
-  
+
   size?: PopoverSize;
   dismissOnSelect?: boolean;
   reference?: PositionReference;
@@ -197,28 +197,27 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 ## Accessibility
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 `ion-popover` has basic keyboard support for navigating between focusable elements inside of the popover. The following table details what each key does:
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Esc`              | Closes the popover. |
-| `Space` or `Enter` | Clicks the focusable element. |
-
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.     |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element. |
+| <kbd>Esc</kbd>                       | Closes the popover.                            |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Clicks the focusable element.                  |
 
 `ion-popover` has full arrow key support for navigating between `ion-item` elements with the `button` property. The most common use case for this is as a dropdown menu in a desktop-focused application. In addition to the basic keyboard support, the following table details arrow key support for dropdown menus:
 
-| Key                | Function                                                       |
-| ------------------ | -------------------------------------------------------------- |
-| `ArrowUp`          | Moves focus to the previous focusable element.                 |
-| `ArrowDown`        | Moves focus to the next focusable element.                     |
-| `Home`             | Moves focus to the first focusable element.                    |
-| `End`              | Moves focus to the last focusable element.                     |
-| `ArrowLeft`        | When used in a child popover, closes the popover and returns focus to the parent popover. |
-| `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
+| Key                                                           | Description                                                                               |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <kbd>ArrowUp</kbd>                                            | Moves focus to the previous focusable element.                                            |
+| <kbd>ArrowDown</kbd>                                          | Moves focus to the next focusable element.                                                |
+| <kbd>Home</kbd>                                               | Moves focus to the first focusable element.                                               |
+| <kbd>End</kbd>                                                | Moves focus to the last focusable element.                                                |
+| <kbd>ArrowLeft</kbd>                                          | When used in a child popover, closes the popover and returns focus to the parent popover. |
+| <kbd>Space</kbd>, <kbd>Enter</kbd>, and <kbd>ArrowRight</kbd> | When focusing a trigger element, opens the associated popover.                            |
 
 ## Performance
 

@@ -45,7 +45,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonBackButton,
     IonButton,
@@ -63,33 +63,10 @@
     IonToolbar,
   } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
-  import { defineComponent, ref } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonBackButton,
-      IonButton,
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonListHeader,
-      IonRange,
-      IonText,
-      IonToggle,
-      IonToolbar,
-    },
-    setup() {
-      return { personCircle, personCircleOutline, sunnyOutline, sunny };
-    },
-  });
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between themes */
+  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
   ion-item {
     --transition: none;
   }

@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/infinite-scroll/props.md';
 import Events from '@ionic-internal/component-api/v7/infinite-scroll/events.md';
 import Methods from '@ionic-internal/component-api/v7/infinite-scroll/methods.md';
 import Parts from '@ionic-internal/component-api/v7/infinite-scroll/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/infinite-scroll/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/infinite-scroll/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/infinite-scroll/slots.md';
 
 <head>
@@ -22,6 +22,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.
 
 The expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.
+
+## Basic Usage
 
 import Basic from '@site/static/usage/v7/infinite-scroll/basic/index.md';
 

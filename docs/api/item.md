@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/item/props.md';
 import Events from '@ionic-internal/component-api/v8/item/events.md';
 import Methods from '@ionic-internal/component-api/v8/item/methods.md';
 import Parts from '@ionic-internal/component-api/v8/item/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/item/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/item/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/item/slots.md';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -42,7 +42,7 @@ Supporting visuals are decorative icons or other adornments for an item. Common 
 
 If a visual is required to interact with the item, such as an icon button, then the visual is an [action](#actions) not a supporting visual.
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text="Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse."
   doText="Align visuals on the same side in a list"
   doNotText="Don't render visuals with different alignments in the same list"
@@ -60,7 +60,7 @@ import SupportingVisuals from '@site/static/usage/v8/item/content-types/supporti
 
 The text content type includes form control labels or other visible text. This text serves to indicate the intent of the item. Try to keep the text short and to the point.
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text={<>If you find that you need a few more sentences to clarify the item's purpose, consider moving the additional sentences to a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list. Adding the item to its own list makes it clear which item the text is associated with.</>}
   doText="Move long text outside of the list"
   doNotText="Don't try to fit long text in an item"
@@ -82,7 +82,7 @@ import Text from '@site/static/usage/v8/item/content-types/text/index.md';
 
 Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text="Limit the amount of metadata you include to only the most relevant information."
   doText="Add only the most important metadata"
   doNotText="Don't add too much metadata as it can overwhelm or confuse the user."
@@ -90,7 +90,7 @@ Metadata provides additional context for an item such as status text or counts. 
   doNotImage={<img alt="A list that contains several items, each representing a different to-do list. Two counts are placed at the end of each item: One count that states the total number of tasks, and another count that states the total number of tasks that are due today." src={useBaseUrl('img/item/metadata-relevant-do-not.jpg')} />}
 />
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text="Developers should also consider how important the metadata is. Drawing attention to the metadata may be helpful for the user or it may distract them from the more important information depending on the use case."
   doText="Prioritize the most important content."
   cautionText="Prioritized metadata may distract from other important content."
@@ -112,7 +112,7 @@ Actions are interactive elements that do something when you activate them. An it
 
 Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text={<>Actions can be added by using the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component. Actions can also be placed directly inside of the Item without the use of Item Sliding, but this should be limited to no more than 2 actions.</>}
   doText={<>Use an <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> to reveal multiple actions by swiping on the Item.</>}
   doNotText="Don't put more than 2 actions within an Item."
@@ -130,7 +130,7 @@ import Actions from '@site/static/usage/v8/item/content-types/actions/index.md';
 
 Controls are form components such as checkboxes, inputs, radios, and more. Each item in a list should have at most two controls due to screen space constraints.
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text={<>Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. <a href={useBaseUrl('api/input#filled-inputs')}>Filled Inputs</a> are a great way of visually defining the input container outside of a list.</>}
   doText="Place inputs with metadata outside of the list."
   doNotText="Don't put metadata for inputs in the list."
@@ -138,7 +138,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   doNotImage={<img alt="There is a list containing an email input and a password input. Both have helper texts associated with them. However, the divider between each item and between the helper text makes it hard to tell which input each helper text is associated with." src={useBaseUrl('img/item/controls-metadata-list-do-not.jpg')} />}
 />
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text={<>Alternatively, the metadata can be placed in a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list.</>}
   doText="Place metadata for inputs at the end of a list."
   doNotText="Don't put metadata for inputs in the list."
@@ -146,7 +146,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   doNotImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-do-not.jpg')} />}
 />
 
-<BestPracticeFigure 
+<BestPracticeFigure
   text={<>Items should typically have no more than two controls. If you need more controls, consider adding the additional controls in a <a href="useBaseUrl('api/modal')">Modal</a> that is accessible from the item.</>}
   doText="Move additional controls to a submenu accessible from the item."
   doNotText="Don't use more than two controls within an item."
@@ -244,6 +244,37 @@ The following guidelines will help ensure your list items are easy to understand
 2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
 3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
 4. Use [content types](#content-types) correctly. The Item component is designed to be a row in a [List](./list) and should not be used as a general purpose container.
+
+## Accessibility
+
+### Keyboard Interactions
+
+An `<ion-item>` has the following keyboard interactions when any of these conditions are met:
+- The `button` property is set to `"true"`, rendering a native `<button>` element.
+- The `href` property is set, rendering a native `<a>` element.
+- The `routerLink` property is set, rendering a native `<a>` element.
+
+| Key                               | Description                                    |
+| --------------------------------- | ---------------------------------------------- |
+| <kbd>Tab</kbd>                    | Moves focus to the next focusable element.     |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd> | Moves focus to the previous focusable element. |
+
+#### Button
+
+When an `<ion-item>` renders a native `<button>` element, the keyboard interactions follow the same pattern as the [button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role#keyboard_interactions):
+
+| Key              | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| <kbd>Enter</kbd> | Activates the item, triggering its `click` event. If the item is within a form and has `type` set to `"submit"`, it submits the form. |
+| <kbd>Space</kbd> | Activates the item, triggering its `click` event. Does not submit the form, even if the item `type` is `"submit"`.                    |
+
+#### Anchor
+
+When an `<ion-item>` renders a native `<a>` element, the keyboard interactions follow the same pattern as the [link role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/link_role):
+
+| Key              | Description                                                                              |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| <kbd>Enter</kbd> | Activates the item, navigating to the linked page or moving focus to the in-page target. |
 
 ## Properties
 <Props />

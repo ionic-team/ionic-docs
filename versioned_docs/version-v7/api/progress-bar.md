@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/progress-bar/props.md';
 import Events from '@ionic-internal/component-api/v7/progress-bar/events.md';
 import Methods from '@ionic-internal/component-api/v7/progress-bar/methods.md';
 import Parts from '@ionic-internal/component-api/v7/progress-bar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/progress-bar/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/progress-bar/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/progress-bar/slots.md';
 
 <head>

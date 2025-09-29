@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/buttons/props.md';
 import Events from '@ionic-internal/component-api/v7/buttons/events.md';
 import Methods from '@ionic-internal/component-api/v7/buttons/methods.md';
 import Parts from '@ionic-internal/component-api/v7/buttons/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/buttons/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/buttons/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/buttons/slots.md';
 
 <head>

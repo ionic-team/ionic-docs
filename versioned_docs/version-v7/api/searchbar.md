@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/searchbar/props.md';
 import Events from '@ionic-internal/component-api/v7/searchbar/events.md';
 import Methods from '@ionic-internal/component-api/v7/searchbar/methods.md';
 import Parts from '@ionic-internal/component-api/v7/searchbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/searchbar/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/searchbar/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/searchbar/slots.md';
 
 <head>

@@ -8,6 +8,7 @@ import react_main_css from './react/main_css.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
 import angular_example_component_css from './angular/example_component_css.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="7"
@@ -25,6 +26,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       files: {
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.css': angular_example_component_css,
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
   }}

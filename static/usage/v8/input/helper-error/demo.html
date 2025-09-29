@@ -6,8 +6,8 @@
     <title>Input</title>
     <link rel="stylesheet" href="../../common.css" />
     <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
     <style>
       .container ion-input {
         width: 300px;
@@ -34,7 +34,7 @@
     <script>
       const input = document.querySelector('ion-input');
 
-      input.addEventListener('ionInput', (ev) => validate(ev));
+      input.addEventListener('ionInput', (event) => validate(event));
       input.addEventListener('ionBlur', () => markTouched());
 
       const validateEmail = (email) => {
@@ -43,8 +43,8 @@
         );
       };
 
-      const validate = (ev) => {
-        const value = ev.target.value;
+      const validate = (event) => {
+        const value = event.target.value;
 
         input.classList.remove('ion-valid');
         input.classList.remove('ion-invalid');

@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/app/props.md';
 import Events from '@ionic-internal/component-api/v8/app/events.md';
 import Methods from '@ionic-internal/component-api/v8/app/methods.md';
 import Parts from '@ionic-internal/component-api/v8/app/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/app/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/app/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/app/slots.md';
 
 <head>
@@ -14,7 +14,6 @@ import Slots from '@ionic-internal/component-api/v8/app/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
 
 App is a container element for an Ionic application. There should only be one `<ion-app>` element per project. An app can have many Ionic components including menus, headers, content, and footers. The overlay components get appended to the `<ion-app>` when they are presented.
 
@@ -27,6 +26,13 @@ Using `ion-app` enables the following behaviors:
 * [Ripple effect](./ripple-effect) when activating buttons on Material Design mode
 * Other tap and focus utilities which make the experience of using an Ionic app feel more native
 
+## Programmatic Focus
+
+Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
+
+import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
+
+<SetFocus />
 
 ## Properties
 <Props />

@@ -7,20 +7,20 @@ import {
   IonList,
   IonReorder,
   IonReorderGroup,
-  ItemReorderEventDetail,
+  ReorderEndCustomEvent,
 } from '@ionic/react';
 
 function Example() {
   const [isDisabled, setIsDisabled] = useState(true);
 
-  function handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
+  function handleReorderEnd(event: ReorderEndCustomEvent) {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
     // Finish the reorder and position the item in the DOM based on
     // where the gesture ended. This method can also be called directly
-    // by the reorder group
+    // by the reorder group.
     event.detail.complete();
   }
 
@@ -31,7 +31,7 @@ function Example() {
   return (
     <>
       <IonList>
-        <IonReorderGroup disabled={isDisabled} onIonItemReorder={handleReorder}>
+        <IonReorderGroup disabled={isDisabled} onIonReorderEnd={handleReorderEnd}>
           <IonItem>
             <IonLabel>Item 1</IonLabel>
             <IonReorder slot="end"></IonReorder>

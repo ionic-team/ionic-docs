@@ -1,4 +1,5 @@
 ---
+title: Angular Performance
 sidebar_label: Performance
 ---
 

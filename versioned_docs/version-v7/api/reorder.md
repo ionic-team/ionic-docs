@@ -6,7 +6,7 @@ import Props from '@ionic-internal/component-api/v7/reorder/props.md';
 import Events from '@ionic-internal/component-api/v7/reorder/events.md';
 import Methods from '@ionic-internal/component-api/v7/reorder/methods.md';
 import Parts from '@ionic-internal/component-api/v7/reorder/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/reorder/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/reorder/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/reorder/slots.md';
 
 <head>
@@ -65,7 +65,7 @@ In order to sort the array upon completion of the reorder, the array should be p
 
 In some cases, it may be necessary for an app to reorder both the array and the DOM nodes on its own. If this is required, `false` should be passed as a parameter to the `complete` method. This will prevent Ionic from reordering any DOM nodes inside of the reorder group.
 
-Regardless of the approach taken, a stable identity should be provided to reorder items if provided in a loop. This means using `trackBy` for Angular, and `key` for React and Vue.
+Regardless of the approach taken, a stable identity should be provided to reorder items if provided in a loop. This means using `track` for Angular, and `key` for React and Vue.
 
 import UpdatingData from '@site/static/usage/v7/reorder/updating-data/index.md';
 

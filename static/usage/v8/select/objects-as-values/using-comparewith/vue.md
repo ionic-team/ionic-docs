@@ -14,41 +14,33 @@
   </ion-list>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonSelect, IonSelectOption } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonSelect, IonSelectOption },
-    data() {
-      return {
-        foods: [
-          {
-            id: 1,
-            name: 'Apples',
-            type: 'fruit',
-          },
-          {
-            id: 2,
-            name: 'Carrots',
-            type: 'vegetable',
-          },
-          {
-            id: 3,
-            name: 'Cupcakes',
-            type: 'dessert',
-          },
-        ],
-      };
+  const foods = [
+    {
+      id: 1,
+      name: 'Apples',
+      type: 'fruit',
     },
-    methods: {
-      compareWith(o1, o2) {
-        return o1 && o2 ? o1.id === o2.id : o1 === o2;
-      },
-      handleChange(ev) {
-        console.log('Current value:', JSON.stringify(ev.detail.value));
-      },
+    {
+      id: 2,
+      name: 'Carrots',
+      type: 'vegetable',
     },
-  });
+    {
+      id: 3,
+      name: 'Cupcakes',
+      type: 'dessert',
+    },
+  ];
+
+  const compareWith = (o1, o2) => {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  };
+
+  const handleChange = (event) => {
+    console.log('Current value:', JSON.stringify(event.detail.value));
+  };
 </script>
 ```

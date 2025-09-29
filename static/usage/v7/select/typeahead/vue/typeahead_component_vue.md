@@ -26,7 +26,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonButton,
     IonButtons,
@@ -40,96 +40,76 @@
     IonToolbar,
   } from '@ionic/vue';
   import type { CheckboxCustomEvent, SearchbarCustomEvent } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    props: {
-      items: Array,
-      selectedItems: Array,
-      title: {
-        type: String,
-        default: 'Select Items',
-      },
-    },
-    emits: ['selection-cancel', 'selection-change'],
-    components: {
-      IonButton,
-      IonButtons,
-      IonCheckbox,
-      IonContent,
-      IonHeader,
-      IonItem,
-      IonList,
-      IonTitle,
-      IonSearchbar,
-      IonToolbar,
-    },
-    setup(props, { emit }) {
-      const filteredItems = ref([...props.items]);
-      const workingSelectedValues = ref([...props.selectedItems]);
+  interface Props {
+    items: Array<any>;
+    selectedItems: Array<any>;
+    title?: string;
+  }
 
-      const isChecked = (value: string) => {
-        return workingSelectedValues.value.find((item) => item === value) !== undefined;
-      };
-
-      const cancelChanges = () => {
-        emit('selection-cancel');
-      };
-
-      const confirmChanges = () => {
-        emit('selection-change', workingSelectedValues.value);
-      };
-
-      const searchbarInput = (ev: SearchbarCustomEvent) => {
-        filterList(ev.target.value);
-      };
-
-      /**
-       * Update the rendered view with
-       * the provided search query. If no
-       * query is provided, all data
-       * will be rendered.
-       */
-      const filterList = (searchQuery: string | undefined) => {
-        /**
-         * If no search query is defined,
-         * return all options.
-         */
-        if (searchQuery === undefined) {
-          filteredItems.value = [...props.items];
-        } else {
-          /**
-           * Otherwise, normalize the search
-           * query and check to see which items
-           * contain the search query as a substring.
-           */
-          const normalizedQuery = searchQuery.toLowerCase();
-          filteredItems.value = props.items.filter((item) => {
-            return item.text.toLowerCase().includes(normalizedQuery);
-          });
-        }
-      };
-
-      const checkboxChange = (ev: CheckboxCustomEvent) => {
-        const { checked, value } = ev.detail;
-
-        if (checked) {
-          workingSelectedValues.value = [...workingSelectedValues.value, value];
-        } else {
-          workingSelectedValues.value = workingSelectedValues.value.filter((item) => item !== value);
-        }
-      };
-
-      return {
-        filteredItems,
-        workingSelectedValues,
-        isChecked,
-        cancelChanges,
-        confirmChanges,
-        searchbarInput,
-        checkboxChange,
-      };
-    },
+  const props = withDefaults(defineProps<Props>(), {
+    title: 'Select Items',
   });
+
+  const emit = defineEmits<{
+    'selection-cancel': [];
+    'selection-change': [value: any[]];
+  }>();
+
+  const filteredItems = ref([...props.items]);
+  const workingSelectedValues = ref([...props.selectedItems]);
+
+  const isChecked = (value: string) => {
+    return workingSelectedValues.value.find((item) => item === value) !== undefined;
+  };
+
+  const cancelChanges = () => {
+    emit('selection-cancel');
+  };
+
+  const confirmChanges = () => {
+    emit('selection-change', workingSelectedValues.value);
+  };
+
+  const searchbarInput = (event: SearchbarCustomEvent) => {
+    filterList(event.target.value);
+  };
+
+  /**
+   * Update the rendered view with
+   * the provided search query. If no
+   * query is provided, all data
+   * will be rendered.
+   */
+  const filterList = (searchQuery: string | undefined) => {
+    /**
+     * If no search query is defined,
+     * return all options.
+     */
+    if (searchQuery === undefined) {
+      filteredItems.value = [...props.items];
+    } else {
+      /**
+       * Otherwise, normalize the search
+       * query and check to see which items
+       * contain the search query as a substring.
+       */
+      const normalizedQuery = searchQuery.toLowerCase();
+      filteredItems.value = props.items.filter((item) => {
+        return item.text.toLowerCase().includes(normalizedQuery);
+      });
+    }
+  };
+
+  const checkboxChange = (event: CheckboxCustomEvent) => {
+    const { checked, value } = event.detail;
+
+    if (checked) {
+      workingSelectedValues.value = [...workingSelectedValues.value, value];
+    } else {
+      workingSelectedValues.value = workingSelectedValues.value.filter((item) => item !== value);
+    }
+  };
 </script>
 ```

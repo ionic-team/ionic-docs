@@ -9,7 +9,7 @@
   ></ion-alert>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonAlert, IonButton } from '@ionic/vue';
 
   const alertButtons = [
@@ -29,8 +29,8 @@
     },
   ];
 
-  const logResult = (ev: CustomEvent) => {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+  const logResult = (event: CustomEvent) => {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   };
 </script>
 ```

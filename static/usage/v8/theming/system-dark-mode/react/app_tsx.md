@@ -19,15 +19,15 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /**
- * Ionic Dark Theme
+ * Ionic Dark Palette
  * -----------------------------------------------------
  * For more information, please see:
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-// import '@ionic/react/css/themes/dark.always.css';
-// import '@ionic/react/css/themes/dark.class.css';
-import '@ionic/react/css/themes/dark.system.css';
+// import '@ionic/react/css/palettes/dark.always.css';
+// import '@ionic/react/css/palettes/dark.class.css';
+import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';

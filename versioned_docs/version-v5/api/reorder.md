@@ -11,7 +11,7 @@ import Props from '@ionic-internal/component-api/v5/reorder/props.md';
 import Events from '@ionic-internal/component-api/v5/reorder/events.md';
 import Methods from '@ionic-internal/component-api/v5/reorder/methods.md';
 import Parts from '@ionic-internal/component-api/v5/reorder/parts.md';
-import CustomProps from '@ionic-internal/component-api/v5/reorder/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v5/reorder/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/reorder/slots.md';
 
 # ion-reorder

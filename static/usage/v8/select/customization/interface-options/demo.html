@@ -6,8 +6,8 @@
     <title>Select - Interface Options</title>
     <link rel="stylesheet" href="../../../common.css" />
     <script src="../../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
 
     <style>
       .container > ion-list {
@@ -49,6 +49,14 @@
                 <ion-select-option value="blue">Blue</ion-select-option>
               </ion-select>
             </ion-item>
+
+            <ion-item>
+              <ion-select label="Modal" id="customModalSelect" interface="modal" placeholder="Select One">
+                <ion-select-option value="reese's">Reese's</ion-select-option>
+                <ion-select-option value="snickers">Snickers</ion-select-option>
+                <ion-select-option value="twix">Twix</ion-select-option>
+              </ion-select>
+            </ion-item>
           </ion-list>
         </div>
       </ion-content>
@@ -78,6 +86,14 @@
         subHeader: 'Select your favorite color',
       };
       customActionSheetSelect.interfaceOptions = customActionSheetOptions;
+
+      const customModalSelect = document.getElementById('customModalSelect');
+      const customModalOptions = {
+        header: 'Favorite Candy',
+        breakpoints: [0, 0.5],
+        initialBreakpoint: 0.5,
+      };
+      customModalSelect.interfaceOptions = customModalOptions;
     </script>
   </body>
 </html>

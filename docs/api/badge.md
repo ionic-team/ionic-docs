@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/badge/props.md';
 import Events from '@ionic-internal/component-api/v8/badge/events.md';
 import Methods from '@ionic-internal/component-api/v8/badge/methods.md';
 import Parts from '@ionic-internal/component-api/v8/badge/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/badge/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/badge/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/badge/slots.md';
 
 <head>
@@ -24,6 +24,18 @@ Badges are inline block elements that usually appear near another element. Typic
 import Basic from '@site/static/usage/v8/badge/basic/index.md';
 
 <Basic />
+
+## Badges in Tab Buttons
+
+Badges can be added inside a tab button, often used to indicate notifications or highlight additional items associated with the element.
+
+:::info
+Empty badges are only available for `md` mode.
+:::
+
+import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
+
+<InsideTabBar />
 
 ## Theming
 

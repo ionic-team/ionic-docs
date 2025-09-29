@@ -9,7 +9,7 @@ import Props from '@ionic-internal/component-api/v7/tab-button/props.md';
 import Events from '@ionic-internal/component-api/v7/tab-button/events.md';
 import Methods from '@ionic-internal/component-api/v7/tab-button/methods.md';
 import Parts from '@ionic-internal/component-api/v7/tab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/tab-button/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/tab-button/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -172,23 +172,9 @@ export const TabButtonExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
   import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonIcon,
-      IonLabel,
-      IonTabBar,
-      IonTabButton,
-      IonTabs,
-    },
-    setup() {
-      return { calendar, informationCircle, map, personCircle };
-    },
-  });
 </script>
 ```
 

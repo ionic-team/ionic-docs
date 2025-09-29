@@ -2,21 +2,24 @@
 
 Thanks for your interest in contributing to Ionic's documentation! :tada: Check the guidelines below for suggestions and requirements before submitting your contribution.
 
-- [Contributing Guide](#contributing-guide)
-  - [Development Workflow](#development-workflow)
-    - [Previewing Changes](#previewing-changes)
-    - [Linting Documentation](#linting-documentation)
-    - [Spell Check](#spell-check)
-  - [Using VS Code on Windows](#using-vs-code-on-windows)
-  - [Project Structure](#project-structure)
-    - [Directories](#directories)
-  - [Authoring Content](#authoring-content)
-    - [Authoring Locally](#authoring-locally)
-  - [Translation](#translation)
-  - [Reporting Issues](#reporting-issues)
-  - [Pull Request Guidelines](#pull-request-guidelines)
-  - [Deploying](#deploying)
-  - [License](#license)
+<sub>
+  <b>TABLE OF CONTENTS</b>
+</sub>
+
+- [Development Workflow](#development-workflow)
+  - [Previewing Changes](#previewing-changes)
+  - [Linting Documentation](#linting-documentation)
+  - [Spell Check](#spell-check)
+- [Using VS Code on Windows](#using-vs-code-on-windows)
+- [Project Structure](#project-structure)
+  - [Directories](#directories)
+- [Authoring Content](#authoring-content)
+  - [Reference Content](#reference-content)
+- [Translation](#translation)
+- [Reporting Issues](#reporting-issues)
+- [Pull Request Guidelines](#pull-request-guidelines)
+- [Deploying](#deploying)
+- [License](#license)
 
 ---
 
@@ -178,4 +181,4 @@ The Ionic documentation's `main` branch is deployed automatically and separately
 
 This repo is licensed and managed separately from Ionic itself.
 
-By contributing to this repo, you agree to have your contributions licensed under the Apache 2.0 license. See [LICENSE](../LICENSE) for the full license text.
+By contributing to this repo, you agree to have your contributions licensed under the Apache 2.0 license. See [LICENSE](LICENSE) for the full license text.

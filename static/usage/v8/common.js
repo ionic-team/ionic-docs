@@ -1,7 +1,7 @@
 const linkElement = document.createElement('link');
 
 linkElement.rel = 'stylesheet';
-linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@next/css/themes/dark.class.css';
+linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@8/css/palettes/dark.class.css';
 
 document.head.appendChild(linkElement);
 
@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
    * the demos loaded in iframes can match the
    * docs website theme.
    */
-  window.addEventListener('message', (ev) => {
-    const { data } = ev;
+  window.addEventListener('message', (event) => {
+    const { data } = event;
 
     if (data.darkMode) {
       document.documentElement.classList.add('ion-theme-dark');
@@ -78,8 +78,8 @@ window.addEventListener('DOMContentLoaded', () => {
    * already created so that it does not wait on an event
    * that was already fired.
    */
-  const ev = new CustomEvent('demoReady');
-  window.dispatchEvent(ev);
+  const event = new CustomEvent('demoReady');
+  window.dispatchEvent(event);
 
   window.demoReady = true;
 });

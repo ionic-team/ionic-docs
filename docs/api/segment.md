@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/segment/props.md';
 import Events from '@ionic-internal/component-api/v8/segment/events.md';
 import Methods from '@ionic-internal/component-api/v8/segment/methods.md';
 import Parts from '@ionic-internal/component-api/v8/segment/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/segment/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/segment/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/segment/slots.md';
 
 <head>
@@ -49,6 +49,22 @@ import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 <Toolbar />
 
 
+## Swipeable Segments
+
+Each [segment button](./segment-button.md) can be associated with a [segment content](./segment-content.md) element that will be displayed
+when the segment is active. With this approach, each segment's content can be swiped or scrolled between and the segment will be updated
+to reflect the currently visible content.
+
+:::warning
+If no initial `value` is assigned to the `ion-segment` when using swipeable segments, the segment will default to the value of the first segment button.
+
+Segment buttons cannot be disabled when used with swipeable segments.
+:::
+
+import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
+
+<Swipeable />
+
 ## Theming
 
 ### Colors
@@ -66,17 +82,17 @@ import CSSProps from '@site/static/usage/v8/segment/theming/css-properties/index
 
 ## Accessibility
 
-### Keyboard Navigation
+### Keyboard Interactions
 
 The component has full keyboard support for navigating between and selecting `ion-segment-button` elements. By default, keyboard navigation will only focus `ion-segment-button` elements, but you can use the `selectOnFocus` property to ensure that they get selected on focus as well. The following table details what each key does:
 
-| Key                | Function                                                       |
-| ------------------ | -------------------------------------------------------------- |
-| `ArrowRight`       | Focuses the next focusable element.                            |
-| `ArrowLeft`        | Focuses the previous focusable element.                        |
-| `Home`             | Focuses the first focusable element.                           |
-| `End`              | Focuses the last focusable element.                            |
-| `Space` or `Enter` | Selects the element that is currently focused.                 |
+| Key                                  | Description                                    |
+| ------------------------------------ | ---------------------------------------------- |
+| <kbd>ArrowRight</kbd>                | Focuses the next focusable element.            |
+| <kbd>ArrowLeft</kbd>                 | Focuses the previous focusable element.        |
+| <kbd>Home</kbd>                      | Focuses the first focusable element.           |
+| <kbd>End</kbd>                       | Focuses the last focusable element.            |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Selects the element that is currently focused. |
 
 ## Interfaces
 

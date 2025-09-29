@@ -5,7 +5,7 @@ import Props from '@ionic-internal/component-api/v8/title/props.md';
 import Events from '@ionic-internal/component-api/v8/title/events.md';
 import Methods from '@ionic-internal/component-api/v8/title/methods.md';
 import Parts from '@ionic-internal/component-api/v8/title/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/title/custom-props.md';
+import CustomProps from '@ionic-internal/component-api/v8/title/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/title/slots.md';
 
 <head>
@@ -48,6 +48,18 @@ The [buttons](./buttons.md) component can be used with the [`collapse`](./button
 import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
+
+## Accessibility
+
+### Headings
+
+When creating headings, we typically recommend using [semantic heading elements (h1-h6)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements). However, there may be instances where you need to update Title to be treated as a particular heading by assistive technologies. For example, if you have a Title at the top of a view, you may want this to be considered a level 1 heading.
+
+To achieve this, developers should use the [`heading` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) on Title. This will indicate to assistive technologies that Title is a type of heading. From there, developers should use the [`aria-level` attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) to set the heading level.
+
+For example, if we wanted to make a Title behave like an `h1` element, we would set `role="heading"` and `aria-level="1"` on the Title. This is necessary when using the [Focus Manager](../developing/managing-focus#assistive-technology-focus-management).
+
+Since multiple Title elements can be used on a view in conjunction with semantic heading elements, Ionic does not automatically set the Title's `role` or `aria-level`. It is the responsibility of the developer to handle this.
 
 ## Theming
 
