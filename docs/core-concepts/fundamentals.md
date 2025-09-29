@@ -51,7 +51,7 @@ Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" ta
 
 多くの Ionic コンポーネントは [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) を使用して、コンポーネントの重要な状態変化を開発者に通知します。例えば、 `ion-datetime` コンポーネントは、選択された日付が変更されると `ionChange` を発行します。
 
-開発者は通常通り click などの標準的なイベントを使用することができる。しかし、コンポーネントの [shadow root](../reference/glossary.md#shadow) 内で発生した多くのイベントは、ホスト要素に [retargeted](https://dom.spec.whatwg.org/#retarget) されます。この結果、ユーザーが 1 回しかクリックしなくても、複数の click ハンドラが実行される可能性があります。そのため、開発者は Ionic コンポーネントの状態変化を適切に通知するために、Ionic のイベントに頼る必要があります。Ionic のイベントには、標準的なイベントとの衝突を避けるためにionというプレフィックスが付けられています。各コンポーネントのドキュメントページには、開発者がアプリケーションでリッスンできる利用可能なイベントのリストがあります。
+開発者は通常通り click などの標準的なイベントを使用することができる。しかし、コンポーネントの [shadow root](../reference/glossary.md#shadow) 内で発生した多くのイベントは、ホスト要素に [retargeted](https://dom.spec.whatwg.org/#retarget) されます。この結果、ユーザーが 1 回しかクリックしなくても、複数の click ハンドラが実行される可能性があります。そのため、開発者は Ionic コンポーネントの状態変化を適切に通知するために、Ionic のイベントに頼る必要があります。Ionic のイベントには、標準的なイベントとの衝突を避けるために ion というプレフィックスが付けられています。各コンポーネントのドキュメントページには、開発者がアプリケーションでリッスンできる利用可能なイベントのリストがあります。
 
 ## Properties
 
