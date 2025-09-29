@@ -1,7 +1,15 @@
 ---
-title: 'Ionic Core Custom Components'
-sidebar_label: Ionic Core
+title: Ionic JavaScript Quickstart
+sidebar_label: Quickstart
 ---
+
+<head>
+  <title>Ionic JavaScript Quickstart: JavaScript Basics</title>
+  <meta
+    name="description"
+    content="Ionic JavaScript Quickstart covers the basics of JavaScript and Ionic, including any Ionic-specific features. Learn how to build JavaScript apps."
+  />
+</head>
 
 # Setting Up an Ionic Core Project with Vite (Vanilla JS)
 

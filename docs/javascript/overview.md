@@ -44,7 +44,7 @@ $ npm run dev █
 
 <DocsCards>
 
-<DocsCard header="Getting Started" href="ionic-core" icon="/icons/guide-quickstart-icon.png">
+<DocsCard header="Getting Started" href="quickstart" icon="/icons/guide-quickstart-icon.png">
   <p>Quickly set up your first Ionic JavaScript app and learn the basics of the framework and CLI.</p>
 </DocsCard>
 
