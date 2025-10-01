@@ -652,10 +652,8 @@ This guide covered the basics of creating an Ionic JavaScript app with Vite, add
 
 <DocsCards>
 
-<DocsCard class="disabled" header="Build Your First App" href="" icon="/icons/component-content-icon.png">
-  <p>
-    <i>Coming soon!</i>
-  </p>
+<DocsCard header="Vite Documentation" href="https://vite.dev/guide/" icon="/icons/logo-vite-icon.png">
+  <p>Learn advanced Vite configuration and optimization techniques for Ionic JavaScript apps.</p>
 </DocsCard>
 
 <DocsCard
