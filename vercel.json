@@ -34,6 +34,10 @@
       "destination": "/docs/angular/your-first-app/live-reload"
     },
     {
+      "source": "/docs/javascript",
+      "destination": "/docs/javascript/overview"
+    },
+    {
       "source": "/docs/ja/",
       "destination": "/docs/ja"
     },
