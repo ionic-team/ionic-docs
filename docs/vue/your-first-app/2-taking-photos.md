@@ -34,7 +34,7 @@ import { Preferences } from '@capacitor/preferences';
 
 // CHANGE: Create `usePhotoGallery` function.
 export const usePhotoGallery = () => {
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -43,18 +43,18 @@ export const usePhotoGallery = () => {
   };
 
   return {
-    takePhoto,
+    addNewToGallery,
   };
 };
 ```
 
-Our `usePhotoGallery` function exposes a method called takePhoto, which in turn calls the Capacitor Camera API's `getPhoto` method.
+Our `usePhotoGallery` function exposes a method called `addNewToGallery`, which in turn calls the Capacitor Camera API's `getPhoto` method.
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
 The last step we need to take is to use the new function in the Tab2 page. Go back to `Tab2Page.vue`.
 
-Import `usePhotoGallery` and destructure the `takePhoto` function so we can use it in our `template`:
+Import `usePhotoGallery` and destructure the `addNewToGallery` function so we can use it in our `template`:
 
 ```html
 <template>
@@ -71,7 +71,7 @@ Import `usePhotoGallery` and destructure the `takePhoto` function so we can use 
         </ion-toolbar>
       </ion-header>
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <ion-fab-button @click="takePhoto()">
+        <ion-fab-button @click="addNewToGallery()">
           <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
       </ion-fab>
@@ -98,8 +98,8 @@ Import `usePhotoGallery` and destructure the `takePhoto` function so we can use 
   // CHANGE: Add `usePhotoGallery` import.
   import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-  // CHANGE: Destructure `takePhoto` from `usePhotoGallery().
-  const { takePhoto } = usePhotoGallery();
+  // CHANGE: Destructure `addNewToGallery` from `usePhotoGallery().
+  const { addNewToGallery } = usePhotoGallery();
 </script>
 ```
 
@@ -138,10 +138,10 @@ export const usePhotoGallery = () => {
 };
 ```
 
-When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` function with the following:
+When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `addNewToGallery` function with the following:
 
 ```typescript
-const takePhoto = async () => {
+const addNewToGallery = async () => {
   const photo = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
@@ -169,7 +169,7 @@ export const usePhotoGallery = () => {
   // CHANGE: Update return statement to include `photos` array.
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 ```
@@ -185,7 +185,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -202,7 +202,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 
@@ -239,7 +239,7 @@ Back in `Tab2Page.vue`, update the import statement to include the `UserPhoto` i
   import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
   // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
-  const { photos, takePhoto } = usePhotoGallery();
+  const { photos, addNewToGallery } = usePhotoGallery();
 </script>
 ```
 
@@ -269,7 +269,7 @@ With the photo(s) stored into the main array we can now display the images on th
         </ion-row>
       </ion-grid>
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <ion-fab-button @click="takePhoto()">
+        <ion-fab-button @click="addNewToGallery()">
           <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
       </ion-fab>
@@ -295,7 +295,7 @@ With the photo(s) stored into the main array we can now display the images on th
   } from '@ionic/vue';
   import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-  const { photos, takePhoto } = usePhotoGallery();
+  const { photos, addNewToGallery } = usePhotoGallery();
 </script>
 ```
 

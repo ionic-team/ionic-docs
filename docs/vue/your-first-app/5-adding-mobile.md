@@ -103,7 +103,7 @@ export const usePhotoGallery = () => {
   const PHOTO_STORAGE = 'photos';
   const photos = ref<UserPhoto[]>([]);
 
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -194,7 +194,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 

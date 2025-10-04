@@ -21,7 +21,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     // Same old code from before.
   };
 
@@ -38,7 +38,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 
@@ -61,7 +61,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     // Same old code from before.
   };
 
@@ -92,7 +92,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 
@@ -102,7 +102,7 @@ export interface UserPhoto {
 }
 ```
 
-Last, update the `takePhoto` function to call `savePicture`:
+Last, update the `addNewToGallery` function to call `savePicture`:
 
 ```typescript
 import { ref, onMounted, watch } from 'vue';
@@ -113,8 +113,8 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
-  // CHANGE: Update the `takePhoto` method.
-  const takePhoto = async () => {
+  // CHANGE: Update the `addNewToGallery` method.
+  const addNewToGallery = async () => {
     const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -137,7 +137,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 
@@ -160,7 +160,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -204,7 +204,7 @@ export const usePhotoGallery = () => {
 
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
   };
 };
 

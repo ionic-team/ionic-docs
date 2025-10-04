@@ -56,7 +56,7 @@ Open `Tab2Page.vue` and add `actionSheetController` to the imports from `@ionic/
   import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
   // CHANGE: Add reference to the `deletePhoto` method.
-  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+  const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
 </script>
 ```
 
@@ -85,7 +85,7 @@ When a user clicks/taps on an image, we will show the action sheet. Add a click 
         </ion-row>
       </ion-grid>
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <ion-fab-button @click="takePhoto()">
+        <ion-fab-button @click="addNewToGallery()">
           <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
       </ion-fab>
@@ -124,7 +124,7 @@ Next, within `script setup`, create a new function called `showActionSheet`. `sh
   } from '@ionic/vue';
   import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+  const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
 
   // CHANGE: Add the `showActionSheet` function.
   const showActionSheet = async (photo: UserPhoto) => {
@@ -168,7 +168,7 @@ export const usePhotoGallery = () => {
   const PHOTO_STORAGE = 'photos';
   const photos = ref<UserPhoto[]>([]);
 
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     // Same old code from before.
   };
 
@@ -207,7 +207,7 @@ export const usePhotoGallery = () => {
   // CHANGE: Add `deletePhoto` to the return statement.
   return {
     photos,
-    takePhoto,
+    addNewToGallery,
     deletePhoto,
   };
 };
