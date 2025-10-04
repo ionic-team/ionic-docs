@@ -4,7 +4,7 @@ sidebar_label: Build Your First App
 ---
 
 <head>
-  <title>Vue Step-by-Step Tutorial: Run Your First Ionic App with Vue</title>
+  <title>Build Your First Ionic Mobile App: Vue Development Tutorial</title>
   <meta
     name="description"
     content="This Vue tutorial, teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with Vue."
