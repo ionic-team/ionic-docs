@@ -48,7 +48,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, we'll add a function to save the photo to the filesystem. We pass in the `photo` object, which represents the newly captured device photo, as well as the fileName, the path where the file will be stored.
+Next, we'll add a function to save the photo to the filesystem. We pass in the `photo` object, which represents the newly captured device photo, as well as the `fileName`, the path where the file will be stored.
 
 We use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) to save the photo to the filesystem. Create a new method inside `usePhotoGallery` called `savePicture`. This method will first convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function:
 
