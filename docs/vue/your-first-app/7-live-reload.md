@@ -1,6 +1,14 @@
 ---
+title: Rapid App Development with Live Reload
 sidebar_label: Live Reload
 ---
+
+<head>
+  <meta
+    name="description"
+    content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
+  />
+</head>
 
 # Rapid App Development with Live Reload
 
@@ -26,82 +34,196 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2Page.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
+With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo.
 
-```tsx
-import {
-  actionSheetController,
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonImg,
-  IonGrid,
-  IonRow,
-  IonCol,
-} from '@ionic/vue';
-// other imports
-```
+Open `Tab2Page.vue` and add `actionSheetController` to the imports from `@ionic/vue`. We also need to add a reference to the `deletePhoto` method, which we'll create soon in `usePhotoGallery()`:
 
-Next, reference the `deletePhoto` function, which we'll create soon:
+```html
+<template>
+  <!-- template code -->
+</template>
 
-```tsx
-const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+<script setup lang="ts">
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    // CHANGE: Add the `actionSheetController` import.
+    actionSheetController,
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonImg,
+    IonGrid,
+    IonRow,
+    IonCol,
+  } from '@ionic/vue';
+  import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+
+  // CHANGE: Add reference to the `deletePhoto` method.
+  const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
+</script>
 ```
 
 When a user clicks/taps on an image, we will show the action sheet. Add a click handler to the `<ion-img>` element:
 
 ```html
-<ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
+            <!-- CHANGE: Add a click event listener to each image. -->
+            <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button @click="addNewToGallery()">
+          <ion-icon :icon="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script setup lang="ts">
+  // script setup code
+</script>
 ```
 
-Next, within `script setup`, call the `create` function to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
+Next, within `script setup`, create a new function called `showActionSheet`. `showActionSheet` will call the `create` method on the `actionSheetController` to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
 
-```tsx
-const showActionSheet = async (photo: UserPhoto) => {
-  const actionSheet = await actionSheetController.create({
-    header: 'Photos',
-    buttons: [
-      {
-        text: 'Delete',
-        role: 'destructive',
-        icon: trash,
-        handler: () => {
-          deletePhoto(photo);
+```html
+<template>
+  <!-- template code -->
+</template>
+
+<script setup lang="ts">
+  import { camera, trash, close } from 'ionicons/icons';
+  import {
+    actionSheetController,
+    IonPage,
+    IonHeader,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+  } from '@ionic/vue';
+  import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+
+  const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
+
+  // CHANGE: Add the `showActionSheet` function.
+  const showActionSheet = async (photo: UserPhoto) => {
+    const actionSheet = await actionSheetController.create({
+      header: 'Photos',
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'destructive',
+          icon: trash,
+          handler: () => {
+            deletePhoto(photo);
+          },
         },
-      },
-      {
-        text: 'Cancel',
-        icon: close,
-        role: 'cancel',
-        handler: () => {
-          // Nothing to do, action sheet is automatically closed
+        {
+          text: 'Cancel',
+          icon: close,
+          role: 'cancel',
+          handler: () => {
+            // Nothing to do, action sheet is automatically closed
+          },
         },
-      },
-    ],
-  });
-  await actionSheet.present();
-};
+      ],
+    });
+    await actionSheet.present();
+  };
+</script>
 ```
 
-Next, we need to implement the `deletePhoto` method in the `usePhotoGallery` function. Open the file then add:
+Next, open `usePhotoGallery.ts`. We need to implement the `deletePhoto` method in the `usePhotoGallery` function. We also need to update the return statement to include `deletePhoto`:
 
 ```tsx
-const deletePhoto = async (photo: UserPhoto) => {
-  // Remove this photo from the Photos reference data array
-  photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
+import { ref, onMounted, watch } from 'vue';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+import { isPlatform } from '@ionic/vue';
+import { Capacitor } from '@capacitor/core';
 
-  // delete photo file from filesystem
-  const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
-  await Filesystem.deleteFile({
-    path: filename,
-    directory: Directory.Data,
-  });
+export const usePhotoGallery = () => {
+  const PHOTO_STORAGE = 'photos';
+  const photos = ref<UserPhoto[]>([]);
+
+  const addNewToGallery = async () => {
+    // Same old code from before.
+  };
+
+  const convertBlobToBase64 = (blob: Blob) => {
+    // Same old code from before.
+  };
+
+  const cachePhotos = () => {
+    // Same old code from before.
+  };
+
+  const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
+    // Same old code from before.
+  };
+
+  const loadSaved = async () => {
+    // Same old code from before.
+  };
+
+  // CHANGE: Add the `deletePhoto` method.
+  const deletePhoto = async (photo: UserPhoto) => {
+    // Remove this photo from the Photos reference data array
+    photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
+
+    // delete photo file from filesystem
+    const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
+    await Filesystem.deleteFile({
+      path: filename,
+      directory: Directory.Data,
+    });
+  };
+
+  onMounted(loadSaved);
+  watch(photos, cachePhotos);
+
+  // CHANGE: Add `deletePhoto` to the return statement.
+  return {
+    photos,
+    addNewToGallery,
+    deletePhoto,
+  };
 };
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
 ```
 
 The selected photo is removed from the `photos` array first, then we delete the photo file using the Filesystem API.
@@ -117,16 +239,6 @@ const cachePhotos = () => {
 };
 
 watch(photos, cachePhotos);
-```
-
-Finally, return the `deletePhoto` function:
-
-```tsx
-return {
-  photos,
-  takePhoto,
-  deletePhoto,
-};
 ```
 
 Save this file, then tap on a photo again and choose the "Delete" option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪

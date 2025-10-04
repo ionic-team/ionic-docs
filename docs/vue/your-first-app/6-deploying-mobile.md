@@ -4,10 +4,10 @@ sidebar_label: Deploying Mobile
 ---
 
 <head>
-  <title>Build and Deploy Vue Apps for iOS and Android with Capacitor</title>
+  <title>Deploying to iOS and Android Apps - Capacitor Setup on Ionic</title>
   <meta
     name="description"
-    content="Capacitor is Ionic’s official app runtime to deploy web apps to native platforms like iOS, Android, and more. Read for how to build and deploy Ionic Vue apps."
+    content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
   />
 </head>
 
