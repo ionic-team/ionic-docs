@@ -1,4 +1,5 @@
 ---
+title: Rapid App Development with Live Reload
 sidebar_label: Live Reload
 ---
 
