@@ -25,7 +25,9 @@ module.exports = function (context, options) {
             return components;
           } else {
             const response = isCurrentVersion
-              ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+              ? await fetch(
+                  `https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`
+                )
               : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
             const { components } = await response.json();
             return components;
