@@ -1062,7 +1062,7 @@
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
-      "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
+      "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
       "docsTags": []
     }
   ],

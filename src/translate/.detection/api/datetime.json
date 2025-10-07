@@ -1128,7 +1128,7 @@
           {
             "name": "closeOverlay",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, closes the parent overlay. Defaults to `false`."
           }
         ],
         "references": {
@@ -1144,11 +1144,16 @@
         {
           "name": "closeOverlay",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, closes the parent overlay. Defaults to `false`."
         }
       ],
       "docs": "Emits the ionCancel event and\noptionally closes the popover\nor modal that the datetime was\npresented in.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "closeOverlay If `true`, closes the parent overlay. Defaults to `false`."
+        }
+      ]
     },
     {
       "name": "confirm",
@@ -1162,7 +1167,7 @@
           {
             "name": "closeOverlay",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, closes the parent overlay. Defaults to `false`."
           }
         ],
         "references": {
@@ -1178,11 +1183,16 @@
         {
           "name": "closeOverlay",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, closes the parent overlay. Defaults to `false`."
         }
       ],
       "docs": "Confirms the selected datetime value, updates the\n`value` property, and optionally closes the popover\nor modal that the datetime was presented in.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "closeOverlay If `true`, closes the parent overlay. Defaults to `false`."
+        }
+      ]
     },
     {
       "name": "reset",
@@ -1196,7 +1206,7 @@
           {
             "name": "startDate",
             "type": "string | undefined",
-            "docs": ""
+            "docs": "A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
           }
         ],
         "references": {
@@ -1212,11 +1222,16 @@
         {
           "name": "startDate",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
         }
       ],
       "docs": "Resets the internal state of the datetime but does not update the value.\nPassing a valid ISO-8601 string will reset the state of the component to the provided date.\nIf no value is provided, the internal state will be reset to the clamped value of the min, max and today.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "startDate A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
+        }
+      ]
     }
   ],
   "events": [

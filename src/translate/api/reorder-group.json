@@ -68,7 +68,7 @@
           "docs": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
         }
       ],
-      "docs": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
+      "docs": "Completes the reorder operation. Must be called by the `ionReorderEnd` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
       "docsTags": [
         {
           "name": "param",
@@ -95,7 +95,67 @@
       },
       "cancelable": true,
       "composed": true,
-      "docs": "Event that needs to be listened to in order to complete the reorder action.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action.",
+      "docs": "Event that needs to be listened to in order to complete the reorder action.",
+      "docsTags": [
+        {
+          "name": "deprecated",
+          "text": "Use `ionReorderEnd` instead. If you are accessing\n`event.detail.from` or `event.detail.to` and relying on them\nbeing different you should now add checks as they are always emitted\nin `ionReorderEnd`, even when they are the same."
+        }
+      ],
+      "deprecation": "Use `ionReorderEnd` instead. If you are accessing\n`event.detail.from` or `event.detail.to` and relying on them\nbeing different you should now add checks as they are always emitted\nin `ionReorderEnd`, even when they are the same."
+    },
+    {
+      "event": "ionReorderEnd",
+      "detail": "ReorderEndEventDetail",
+      "bubbles": true,
+      "complexType": {
+        "original": "ReorderEndEventDetail",
+        "resolved": "ReorderEndEventDetail",
+        "references": {
+          "ReorderEndEventDetail": {
+            "location": "import",
+            "path": "./reorder-group-interface",
+            "id": "src/components/reorder-group/reorder-group-interface.ts::ReorderEndEventDetail"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Event that is emitted when the reorder gesture ends.\nThe from and to properties are always available, regardless of\nif the reorder gesture moved the item. If the item did not change\nfrom its start position, the from and to properties will be the same.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action.",
+      "docsTags": []
+    },
+    {
+      "event": "ionReorderMove",
+      "detail": "ReorderMoveEventDetail",
+      "bubbles": true,
+      "complexType": {
+        "original": "ReorderMoveEventDetail",
+        "resolved": "ReorderMoveEventDetail",
+        "references": {
+          "ReorderMoveEventDetail": {
+            "location": "import",
+            "path": "./reorder-group-interface",
+            "id": "src/components/reorder-group/reorder-group-interface.ts::ReorderMoveEventDetail"
+          }
+        }
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Event that is emitted as the reorder gesture moves.",
+      "docsTags": []
+    },
+    {
+      "event": "ionReorderStart",
+      "detail": "void",
+      "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "cancelable": true,
+      "composed": true,
+      "docs": "Event that is emitted when the reorder gesture starts.",
       "docsTags": []
     }
   ],

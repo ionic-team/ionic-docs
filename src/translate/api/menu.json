@@ -249,12 +249,12 @@
           {
             "name": "animated",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
           },
           {
             "name": "role",
             "type": "string | undefined",
-            "docs": ""
+            "docs": "The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
           }
         ],
         "references": {
@@ -270,16 +270,25 @@
         {
           "name": "animated",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
         }
       ],
       "docs": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "animated If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
+        }
+      ]
     },
     {
       "name": "isActive",
@@ -300,7 +309,7 @@
       },
       "signature": "isActive() => Promise<boolean>",
       "parameters": [],
-      "docs": "Returns `true` is the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
+      "docs": "Returns `true` if the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
       "docsTags": []
     },
     {
@@ -337,7 +346,7 @@
           {
             "name": "animated",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
           }
         ],
         "references": {
@@ -353,11 +362,16 @@
         {
           "name": "animated",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
         }
       ],
       "docs": "Opens the menu. If the menu is already open or it can't be opened,\nit returns `false`.",
-      "docsTags": []
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "animated If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
+        }
+      ]
     },
     {
       "name": "setOpen",
@@ -371,23 +385,27 @@
           {
             "name": "shouldOpen",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, the menu will open. If `false`, the menu\nwill close."
           },
           {
             "name": "animated",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
           },
           {
             "name": "role",
             "type": "string | undefined",
-            "docs": ""
+            "docs": "The role of the element that is closing the menu."
           }
         ],
         "references": {
           "Promise": {
             "location": "global",
             "id": "global::Promise"
+          },
+          "HTMLElement": {
+            "location": "global",
+            "id": "global::HTMLElement"
           }
         },
         "return": "Promise<boolean>"
@@ -397,21 +415,34 @@
         {
           "name": "shouldOpen",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, the menu will open. If `false`, the menu\nwill close."
         },
         {
           "name": "animated",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
         },
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": ""
+          "docs": "The role of the element that is closing the menu."
         }
       ],
-      "docs": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
-      "docsTags": []
+      "docs": "Opens or closes the menu.\nIf the operation can't be completed successfully, it returns `false`.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "shouldOpen If `true`, the menu will open. If `false`, the menu\nwill close."
+        },
+        {
+          "name": "param",
+          "text": "animated If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is closing the menu."
+        }
+      ]
     },
     {
       "name": "toggle",
@@ -425,7 +456,7 @@
           {
             "name": "animated",
             "type": "boolean",
-            "docs": ""
+            "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
           }
         ],
         "references": {
@@ -441,11 +472,16 @@
         {
           "name": "animated",
           "type": "boolean",
-          "docs": ""
+          "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
         }
       ],
-      "docs": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
-      "docsTags": []
+      "docs": "Toggles the menu. If the menu is already open, it will try to close,\notherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "animated If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
+        }
+      ]
     }
   ],
   "events": [
