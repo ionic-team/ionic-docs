@@ -110,7 +110,7 @@
           {
             "name": "animation",
             "type": "AnimationBuilder | undefined",
-            "docs": ""
+            "docs": "A custom animation to use for the transition."
           }
         ],
         "references": {
@@ -146,7 +146,7 @@
         {
           "name": "animation",
           "type": "AnimationBuilder | undefined",
-          "docs": ""
+          "docs": "A custom animation to use for the transition."
         }
       ],
       "docs": "Navigate to the specified path.",
@@ -158,6 +158,10 @@
         {
           "name": "param",
           "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+        },
+        {
+          "name": "param",
+          "text": "animation A custom animation to use for the transition."
         }
       ]
     }

@@ -929,7 +929,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -950,10 +950,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "アクションシートのオーバーレイが提示された後、それを解除します。",
+          "docs": "アクションシートのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -961,7 +961,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -1253,25 +1253,25 @@
         {
           "name": "--button-background-focused",
           "annotation": "prop",
-          "docs": "にタブしたときのアクションシートボタンの背景。",
+          "docs": "タブで移動したときのアクションシートボタンの背景。",
           "mode": "ios"
         },
         {
           "name": "--button-background-focused",
           "annotation": "prop",
-          "docs": "にタブしたときのアクションシートボタンの背景。",
+          "docs": "タブで移動したときのアクションシートボタンの背景。",
           "mode": "md"
         },
         {
           "name": "--button-background-focused-opacity",
           "annotation": "prop",
-          "docs": "にタブしたときのアクションシートボタンの背景の不透明度。",
+          "docs": "タブで移動したときのアクションシートボタンの背景の不透明度。",
           "mode": "ios"
         },
         {
           "name": "--button-background-focused-opacity",
           "annotation": "prop",
-          "docs": "にタブしたときのアクションシートボタンの背景の不透明度。",
+          "docs": "タブで移動したときのアクションシートボタンの背景の不透明度。",
           "mode": "md"
         },
         {
@@ -1361,13 +1361,13 @@
         {
           "name": "--button-color-focused",
           "annotation": "prop",
-          "docs": "にタブで移動したときのアクションシートのボタンの色。",
+          "docs": "タブで移動したときのアクションシートのボタンの色。",
           "mode": "ios"
         },
         {
           "name": "--button-color-focused",
           "annotation": "prop",
-          "docs": "にタブで移動したときのアクションシートのボタンの色。",
+          "docs": "タブで移動したときのアクションシートのボタンの色。",
           "mode": "md"
         },
         {
@@ -2003,7 +2003,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -2024,10 +2024,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "アラートオーバーレイが表示された後、解除します。",
+          "docs": "アラートのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -2035,7 +2035,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -2412,7 +2412,7 @@
               {
                 "name": "elements",
                 "type": "HTMLElement[]",
-                "docs": ""
+                "docs": "An array of HTML elements to set focus on."
               }
             ],
             "references": {
@@ -2432,11 +2432,16 @@
             {
               "name": "elements",
               "type": "HTMLElement[]",
-              "docs": ""
+              "docs": "An array of HTML elements to set focus on."
             }
           ],
-          "docs": "ion-focusable`を使用している要素にフォーカスを設定するために使用する。キーボードイベントの結果として要素にフォーカスを当てる場合は、このメソッドを使用しないでください。このメソッドは、他のユーザアクションの結果としてプログラム的に要素にフォーカスを当てたい場合に使用します。(例: ユーザーがポップオーバーを提示したときに、ポップオーバー内の最初の要素にフォーカスを当てますが、ポップオーバーは常にキーボード操作の結果として提示されるわけではありません)。",
-          "docsTags": []
+          "docs": "`ion-focusable`を使用している要素にフォーカスを設定するために使用する。キーボードイベントの結果として要素にフォーカスを当てる場合は、このメソッドを使用しないでください。このメソッドは、他のユーザアクションの結果としてプログラム的に要素にフォーカスを当てたい場合に使用します。(例: ユーザーがポップオーバーを提示したときに、ポップオーバー内の最初の要素にフォーカスを当てますが、ポップオーバーは常にキーボード操作の結果として提示されるわけではありません)。",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "elements An array of HTML elements to set focus on."
+            }
+          ]
         }
       ],
       "events": [],
@@ -3899,7 +3904,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -4126,7 +4131,7 @@
           "mutable": false,
           "attr": "items-after-collapse",
           "reflectToAttr": false,
-          "docs": "折りたたまれたインジケータの後に表示するパンくずの数。itemsBeforeCollapse` + `itemsAfterCollapse` が `maxItems` よりも大きい場合、パンくずは折りたたまれない。",
+          "docs": "折りたたまれたインジケータの後に表示するパンくずの数。`itemsBeforeCollapse` + `itemsAfterCollapse` が `maxItems` よりも大きい場合、パンくずは折りたたまれない。",
           "docsTags": [
             {
               "name": "default",
@@ -4155,7 +4160,7 @@
           "mutable": false,
           "attr": "items-before-collapse",
           "reflectToAttr": false,
-          "docs": "折りたたんだインジケータの前に表示するパンくずの数を指定します。itemsBeforeCollapse` + `itemsAfterCollapse` が `maxItems` よりも大きい場合、パンくずは折りたたまれない。",
+          "docs": "折りたたんだインジケータの前に表示するパンくずの数を指定します。`itemsBeforeCollapse` + `itemsAfterCollapse` が `maxItems` よりも大きい場合、パンくずは折りたたまれない。",
           "docsTags": [
             {
               "name": "default",
@@ -4707,7 +4712,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": true,
-          "docs": "round\"` に設定すると、より角が丸いボタンになります。",
+          "docs": "`\"round\"` に設定すると、より角が丸いボタンになります。",
           "docsTags": [],
           "values": [
             {
@@ -4798,7 +4803,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -6035,7 +6040,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -6187,7 +6192,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "十字軸上のチェックボックスとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、チェックボックス `display` が `block` に変更されます。",
+          "docs": "十字軸上のチェックボックスとラベルの配置を制御する方法。`\"start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。`\"center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、チェックボックス `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -6344,7 +6349,7 @@
           "mutable": false,
           "attr": "error-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the checkbox label and displayed when an error is detected.",
+          "docs": "チェックボックスのラベルの下に配置され、エラーが検出されたときに表示されるテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -6370,7 +6375,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the checkbox label and displayed when no error is detected.",
+          "docs": "チェックボックスのラベルの下に配置され、エラーが検出されなかった場合に表示されるテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -6425,7 +6430,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "ラベルとチェックボックスを1行にまとめる方法。start\"`：ラベルとチェックボックスはLTRでは左に、RTLでは右に表示されます。end\"`：ラベルとチェックボックスはLTRでは右に、RTLでは左に表示されます。space-between\"`：ラベルとチェックボックスは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、チェックボックスの `display` が `block` に変更されます。",
+          "docs": "ラベルとチェックボックスを1行にまとめる方法。`\"start\"`：ラベルとチェックボックスはLTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとチェックボックスはLTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとチェックボックスは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、チェックボックスの `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -6460,7 +6465,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "チェックボックスに対するラベルの位置。start\"`：ラベルはLTRではチェックボックスの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではチェックボックスの右、RTLでは左に表示されます。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。積み重ね\"`：ラベルは向きに関係なくチェックボックスの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
+          "docs": "チェックボックスに対するラベルの位置。`\"start\"`：ラベルはLTRではチェックボックスの左に、RTLでは右に表示されます。`\"end\"`：ラベルはLTRではチェックボックスの右、RTLでは左に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。`\"stacked\"`：ラベルは向きに関係なくチェックボックスの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [
             {
               "name": "default",
@@ -6552,7 +6557,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "If true, screen readers will announce it as a required field. This property works only for accessibility purposes, it will not prevent the form from submitting if the value is invalid.",
+          "docs": "true の場合、スクリーンリーダーは必須項目として読み上げます。このプロパティはアクセシビリティ目的でのみ機能し、値が無効でもフォーム送信は妨げません。",
           "docsTags": [
             {
               "name": "default",
@@ -6799,11 +6804,11 @@
         },
         {
           "name": "error-text",
-          "docs": "Supporting text displayed beneath the checkbox label when the checkbox is invalid and touched."
+          "docs": "チェックボックスが無効かつ操作されたときに、ラベルの下に表示される補助テキスト。"
         },
         {
           "name": "helper-text",
-          "docs": "Supporting text displayed beneath the checkbox label when the checkbox is valid."
+          "docs": "チェックボックスが有効なときに、ラベルの下に表示される補助テキスト。"
         },
         {
           "name": "label",
@@ -6815,7 +6820,7 @@
         },
         {
           "name": "supporting-text",
-          "docs": "Supporting text displayed beneath the checkbox label."
+          "docs": "チェックボックスのラベルの下に表示される補助テキスト。"
         }
       ],
       "dependents": [
@@ -7079,7 +7084,7 @@
           "mutable": false,
           "attr": "offset-lg",
           "reflectToAttr": false,
-          "docs": "Lgスクリーン用のカラムをオフセットする量を、使用可能な合計の末尾に何カラム分シフトさせるかで指定します。",
+          "docs": "lgスクリーン用のカラムをオフセットする量を、使用可能な合計の末尾に何カラム分シフトさせるかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7183,7 +7188,7 @@
           "mutable": false,
           "attr": "offset-xs",
           "reflectToAttr": false,
-          "docs": "xs画面のカラムをオフセットする量を、利用可能な合計の末尾に何カラム分ずらすかで指定します。",
+          "docs": "xsスクリーンのカラムをオフセットする量を、利用可能な合計の末尾に何カラム分ずらすかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7235,7 +7240,7 @@
           "mutable": false,
           "attr": "pull-lg",
           "reflectToAttr": false,
-          "docs": "LGスクリーン用のカラムを引く量を、使用可能な合計の開始位置に何カラム分シフトさせるかで指定します。",
+          "docs": "lgスクリーン用のカラムを引く量を、使用可能な合計の開始位置に何カラム分シフトさせるかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7391,7 +7396,7 @@
           "mutable": false,
           "attr": "push-lg",
           "reflectToAttr": false,
-          "docs": "LGスクリーン用のカラムをプッシュする量を、使用可能な総カラムのうち何カラム分までシフトさせるかで指定します。",
+          "docs": "lgスクリーン用のカラムをプッシュする量を、使用可能な総カラムのうち何カラム分までシフトさせるかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7495,7 +7500,7 @@
           "mutable": false,
           "attr": "push-xs",
           "reflectToAttr": false,
-          "docs": "xs画面分の列を、利用可能な合計の末尾に何列分シフトさせるかを指定します。",
+          "docs": "xsスクリーン分の列を、利用可能な合計の末尾に何列分シフトさせるかを指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7686,7 +7691,7 @@
         {
           "name": "--ion-grid-column-padding-lg",
           "annotation": "prop",
-          "docs": "LG以上の画面でのコラムのPadding"
+          "docs": "lg以上の画面でのコラムのPadding"
         },
         {
           "name": "--ion-grid-column-padding-md",
@@ -7701,7 +7706,7 @@
         {
           "name": "--ion-grid-column-padding-xl",
           "annotation": "prop",
-          "docs": "XL以上の画面でのカラムのPadding"
+          "docs": "xl以上の画面でのカラムのPadding"
         },
         {
           "name": "--ion-grid-column-padding-xs",
@@ -8877,7 +8882,7 @@
           "mutable": false,
           "attr": "first-day-of-week",
           "reflectToAttr": false,
-          "docs": "ion-datetime`に使用する週の最初の曜日を指定します。デフォルト値は `0` で、日曜日を表す。",
+          "docs": "`ion-datetime`に使用する週の最初の曜日を指定します。デフォルト値は `0` で、日曜日を表す。",
           "docsTags": [
             {
               "name": "default",
@@ -8958,7 +8963,7 @@
           "mutable": false,
           "attr": "highlighted-dates",
           "reflectToAttr": false,
-          "docs": "特定の日付にカスタムテキストと背景色を適用するために使用します。  ISO 文字列と色を含むオブジェクトの配列、または ISO 文字列を受け取って色を返すコールバックのいずれかを指定します。  preferWheel=\"false\"`を持つ `date`、`date-time`、`time-date` のプレゼンテーションにのみ適用されます。",
+          "docs": "特定の日付にカスタムテキストと背景色を適用するために使用します。  ISO 文字列と色を含むオブジェクトの配列、または ISO 文字列を受け取って色を返すコールバックのいずれかを指定します。  `preferWheel=\"false\"`を持つ `date`、`date-time`、`time-date` のプレゼンテーションにのみ適用されます。",
           "docsTags": [],
           "values": [
             {
@@ -8996,7 +9001,7 @@
           "mutable": false,
           "attr": "hour-cycle",
           "reflectToAttr": false,
-          "docs": "ion-datetime`の時間周期を指定します。値が設定されていない場合、現在のロケールによって指定される。",
+          "docs": "`ion-datetime`の時間周期を指定します。値が設定されていない場合、現在のロケールによって指定される。",
           "docsTags": [],
           "values": [
             {
@@ -9093,7 +9098,7 @@
           "mutable": false,
           "attr": "locale",
           "reflectToAttr": false,
-          "docs": "ion-datetime`に使用するロケールを指定します。これは月と日の名前のフォーマットに影響します。`\"default\"`の値は、あなたのデバイスが設定するデフォルトのロケールを指します。",
+          "docs": "`ion-datetime`に使用するロケールを指定します。これは月と日の名前のフォーマットに影響します。`\"default\"`の値は、あなたのデバイスが設定するデフォルトのロケールを指します。",
           "docsTags": [
             {
               "name": "default",
@@ -9259,7 +9264,7 @@
           "mutable": false,
           "attr": "multiple",
           "reflectToAttr": false,
-          "docs": "`true`の場合、複数の日付を一度に選択することができる。presentation=\"date\"`と `preferWheel=\"false\"` にのみ適用される。",
+          "docs": "`true`の場合、複数の日付を一度に選択することができる。`presentation=\"date\"`と `preferWheel=\"false\"` にのみ適用される。",
           "docsTags": [
             {
               "name": "default",
@@ -9406,7 +9411,7 @@
           "mutable": false,
           "attr": "readonly",
           "reflectToAttr": false,
-          "docs": "true`の場合、日付は正常に表示されるが、選択された日付は変更できない。",
+          "docs": "`true`の場合、日付は正常に表示されるが、選択された日付は変更できない。",
           "docsTags": [
             {
               "name": "default",
@@ -9435,7 +9440,7 @@
           "mutable": false,
           "attr": "show-adjacent-days",
           "reflectToAttr": false,
-          "docs": "If `true`, the datetime calendar displays a six-week (42-day) layout, including days from the previous and next months to fill the grid. These adjacent days are selectable unless disabled.",
+          "docs": "`true` の場合、グリッドを埋めるために前月・翌月の日も含めた6週間（42 日）のレイアウトでカレンダーを表示します。これらの隣接する日は無効化されていない限り選択できます。",
           "docsTags": [
             {
               "name": "default",
@@ -9713,7 +9718,7 @@
               {
                 "name": "closeOverlay",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, closes the parent overlay. Defaults to `false`."
               }
             ],
             "references": {
@@ -9729,11 +9734,16 @@
             {
               "name": "closeOverlay",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, closes the parent overlay. Defaults to `false`."
             }
           ],
           "docs": "ionCancel イベントを発行し、オプションで datetime が表示されたポップオーバーまたはモーダルを閉じます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "closeOverlay If `true`, closes the parent overlay. Defaults to `false`."
+            }
+          ]
         },
         {
           "name": "confirm",
@@ -9747,7 +9757,7 @@
               {
                 "name": "closeOverlay",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, closes the parent overlay. Defaults to `false`."
               }
             ],
             "references": {
@@ -9763,11 +9773,16 @@
             {
               "name": "closeOverlay",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, closes the parent overlay. Defaults to `false`."
             }
           ],
           "docs": "選択されたdatetimeの値を確認し、`value`プロパティを更新し、オプションでdatetimeが表示されていたポップオーバーまたはモーダルを閉じます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "closeOverlay If `true`, closes the parent overlay. Defaults to `false`."
+            }
+          ]
         },
         {
           "name": "reset",
@@ -9781,7 +9796,7 @@
               {
                 "name": "startDate",
                 "type": "string | undefined",
-                "docs": ""
+                "docs": "A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
               }
             ],
             "references": {
@@ -9797,11 +9812,16 @@
             {
               "name": "startDate",
               "type": "string | undefined",
-              "docs": ""
+              "docs": "A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
             }
           ],
           "docs": "datetimeの内部状態をリセットするが、値は更新しません。有効なISO-8601文字列を渡すと、コンポーネントの状態は指定した日付にリセットされます。値が提供されない場合、内部状態はmin、max、todayのクランプされた値にリセットされます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "startDate A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
+            }
+          ]
         }
       ],
       "events": [
@@ -10443,7 +10463,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -11270,12 +11290,12 @@
         {
           "name": "--ion-grid-padding-lg",
           "annotation": "prop",
-          "docs": "LG画面でのグリッドのPadding"
+          "docs": "lgスクリーンでのグリッドのPadding"
         },
         {
           "name": "--ion-grid-padding-md",
           "annotation": "prop",
-          "docs": "md画面におけるグリッドのPadding"
+          "docs": "mdスクリーンにおけるグリッドのPadding"
         },
         {
           "name": "--ion-grid-padding-sm",
@@ -11285,12 +11305,12 @@
         {
           "name": "--ion-grid-padding-xl",
           "annotation": "prop",
-          "docs": "XL画面でのグリッドのPadding"
+          "docs": "xlスクリーンでのグリッドのPadding"
         },
         {
           "name": "--ion-grid-padding-xs",
           "annotation": "prop",
-          "docs": "xs画面でのGridのPadding"
+          "docs": "xsスクリーンでのGridのPadding"
         },
         {
           "name": "--ion-grid-width",
@@ -11300,22 +11320,22 @@
         {
           "name": "--ion-grid-width-lg",
           "annotation": "prop",
-          "docs": "LGスクリーンで固定されたGridの幅"
+          "docs": "lgスクリーンで固定されたGridの幅"
         },
         {
           "name": "--ion-grid-width-md",
           "annotation": "prop",
-          "docs": "md画面での固定Gridの幅"
+          "docs": "mdスクリーンでの固定Gridの幅"
         },
         {
           "name": "--ion-grid-width-sm",
           "annotation": "prop",
-          "docs": "sm画面での固定Gridの幅"
+          "docs": "smスクリーンでの固定Gridの幅"
         },
         {
           "name": "--ion-grid-width-xl",
           "annotation": "prop",
-          "docs": "xl画面での固定Gridの幅"
+          "docs": "xlスクリーンでの固定Gridの幅"
         },
         {
           "name": "--ion-grid-width-xs",
@@ -11860,7 +11880,7 @@
           "mutable": false,
           "attr": "autocapitalize",
           "reflectToAttr": false,
-          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプション: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
           "docsTags": [
             {
               "name": "default",
@@ -11986,7 +12006,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "The fill for the input boxes. If `\"solid\"` the input boxes will have a background. If `\"outline\"` the input boxes will be transparent with a border.",
+          "docs": "入力ボックスの塗りつぶし。`\"solid\"` の場合は背景色が付き、`\"outline\"` の場合は枠線付きで透過表示になります。",
           "docsTags": [
             {
               "name": "default",
@@ -12023,7 +12043,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "A hint to the browser for which keyboard to display. Possible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.  For numbers (type=\"number\"): \"numeric\" For text (type=\"text\"): \"text\"",
+          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値は `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, `\"search\"`。数値入力（type=\"number\"）には \"numeric\"、テキスト（type=\"text\"）には \"text\" を使用します。",
           "docsTags": [],
           "values": [
             {
@@ -12078,7 +12098,7 @@
           "mutable": false,
           "attr": "length",
           "reflectToAttr": false,
-          "docs": "The number of input boxes to display.",
+          "docs": "表示する入力ボックスの数。",
           "docsTags": [
             {
               "name": "default",
@@ -12107,7 +12127,7 @@
           "mutable": false,
           "attr": "pattern",
           "reflectToAttr": false,
-          "docs": "A regex pattern string for allowed characters. Defaults based on type.  For numbers (`type=\"number\"`): `\"[\\p{N}]\"` For text (`type=\"text\"`): `\"[\\p{L}\\p{N}]\"`",
+          "docs": "許可される文字の正規表現パターン文字列。型に応じたデフォルトがあります。数値（type=\"number\"）は `\"[\\p{N}]\"`、テキスト（type=\"text\"）は `\"[\\p{L}\\p{N}]\"`。",
           "docsTags": [],
           "values": [
             {
@@ -12162,7 +12182,7 @@
           "mutable": false,
           "attr": "separators",
           "reflectToAttr": false,
-          "docs": "Where separators should be shown between input boxes. Can be a comma-separated string or an array of numbers.  For example: `\"3\"` will show a separator after the 3rd input box. `[1,4]` will show a separator after the 1st and 4th input boxes. `\"all\"` will show a separator between every input box.",
+          "docs": "入力ボックス間に区切り線を表示する場所。カンマ区切り文字列または数値配列で指定できます。例: `\"3\"` は 3 番目の入力ボックスの後に区切りを表示、`[1,4]` は 1 番目と 4 番目の後に表示、`\"all\"` はすべての入力ボックス間に表示します。",
           "docsTags": [],
           "values": [
             {
@@ -12191,7 +12211,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": false,
-          "docs": "The shape of the input boxes. If \"round\" they will have an increased border radius. If \"rectangular\" they will have no border radius. If \"soft\" they will have a soft border radius.",
+          "docs": "入力ボックスの形状。\"round\" は角の丸みを大きくし、\"rectangular\" は角丸なし、\"soft\" はやわらかい角丸になります。",
           "docsTags": [
             {
               "name": "default",
@@ -12229,7 +12249,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "The size of the input boxes.",
+          "docs": "入力ボックスのサイズ。",
           "docsTags": [
             {
               "name": "default",
@@ -12267,7 +12287,7 @@
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
-          "docs": "The type of input allowed in the input boxes.",
+          "docs": "入力ボックスに許可される入力種別。",
           "docsTags": [
             {
               "name": "default",
@@ -12301,7 +12321,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The value of the input group.",
+          "docs": "入力グループの値。",
           "docsTags": [
             {
               "name": "default",
@@ -12361,7 +12381,7 @@
               "docs": "- The index of the input box to focus (0-based).\nIf provided and the input box has a value, the input box at that index will be focused.\nOtherwise, the first empty input box or the last input if all are filled will be focused."
             }
           ],
-          "docs": "Sets focus to an input box.",
+          "docs": "任意の入力ボックスにフォーカスを設定します。",
           "docsTags": [
             {
               "name": "param",
@@ -12387,7 +12407,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the input group loses focus.",
+          "docs": "入力グループのフォーカスが外れたときに発行されます。",
           "docsTags": []
         },
         {
@@ -12407,7 +12427,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired when the user modifies the input's value. Unlike the `ionInput` event, the `ionChange` event is only fired when changes are committed, not as the user types.  The `ionChange` event fires when the `<ion-input-otp>` component loses focus after its value has changed.  This event will not emit when programmatically setting the `value` property.",
+          "docs": "ユーザーが入力値を変更したときに `ionChange` イベントが発生します。`ionInput` と異なり、`ionChange` は入力途中ではなく変更が確定したときにのみ発生します。`<ion-input-otp>` の値が変更された後にフォーカスを失ったときにも発生します。プログラムで `value` を設定した場合には発生しません。",
           "docsTags": []
         },
         {
@@ -12427,7 +12447,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when all input boxes have been filled with valid values.",
+          "docs": "すべての入力ボックスが有効な値で埋められたときに発行されます。",
           "docsTags": []
         },
         {
@@ -12446,7 +12466,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the input group has focus.",
+          "docs": "入力グループにフォーカスが当たったときに発行されます。",
           "docsTags": []
         },
         {
@@ -12466,7 +12486,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ionInput` イベントは、ユーザが入力値を変更するたびに発生する。ionChange` イベントとは異なり、 `ionInput` イベントは入力値が変更されるたびに発生する。これは通常、ユーザが入力を行うたびに発生します。  テキスト入力を受け付ける要素(`type=text`, `type=tel`など)の場合、インターフェイスは[`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent)となります。その他の要素の場合、インターフェイスは[`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)となります。編集時に入力がクリアされる場合、型は `null` となる。",
+          "docs": "`ionInput` イベントは、ユーザが入力値を変更するたびに発生する。`ionChange` イベントとは異なり、 `ionInput` イベントは入力値が変更されるたびに発生する。これは通常、ユーザが入力を行うたびに発生します。  テキスト入力を受け付ける要素(`type=text`, `type=tel`など)の場合、インターフェイスは[`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent)となります。その他の要素の場合、インターフェイスは[`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)となります。編集時に入力がクリアされる場合、型は `null` となる。",
           "docsTags": []
         }
       ],
@@ -12475,73 +12495,73 @@
         {
           "name": "--background",
           "annotation": "prop",
-          "docs": "Background color of the input boxes",
+          "docs": "入力ボックスの背景色",
           "mode": "ios"
         },
         {
           "name": "--background",
           "annotation": "prop",
-          "docs": "Background color of the input boxes",
+          "docs": "入力ボックスの背景色",
           "mode": "md"
         },
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Border color of the input boxes",
+          "docs": "入力ボックスのボーダーカラー",
           "mode": "ios"
         },
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Border color of the input boxes",
+          "docs": "入力ボックスのボーダーカラー",
           "mode": "md"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the input boxes",
+          "docs": "入力ボックスのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the input boxes",
+          "docs": "入力ボックスのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Border width of the input boxes",
+          "docs": "入力ボックスのボーダー幅",
           "mode": "ios"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Border width of the input boxes",
+          "docs": "入力ボックスのボーダー幅",
           "mode": "md"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "Text color of the input",
+          "docs": "入力テキストの色",
           "mode": "ios"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "Text color of the input",
+          "docs": "入力テキストの色",
           "mode": "md"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "Height of input boxes",
+          "docs": "入力ボックスの高さ",
           "mode": "ios"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "Height of input boxes",
+          "docs": "入力ボックスの高さ",
           "mode": "md"
         },
         {
@@ -12583,169 +12603,169 @@
         {
           "name": "--margin-bottom",
           "annotation": "prop",
-          "docs": "Bottom margin of the input group",
+          "docs": "入力グループの下マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-bottom",
           "annotation": "prop",
-          "docs": "Bottom margin of the input group",
+          "docs": "入力グループの下マージン",
           "mode": "md"
         },
         {
           "name": "--margin-end",
           "annotation": "prop",
-          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-end",
           "annotation": "prop",
-          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左マージン",
           "mode": "md"
         },
         {
           "name": "--margin-start",
           "annotation": "prop",
-          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-start",
           "annotation": "prop",
-          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右マージン",
           "mode": "md"
         },
         {
           "name": "--margin-top",
           "annotation": "prop",
-          "docs": "Top margin of the input group",
+          "docs": "入力グループの上マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-top",
           "annotation": "prop",
-          "docs": "Top margin of the input group",
+          "docs": "入力グループの上マージン",
           "mode": "md"
         },
         {
           "name": "--min-width",
           "annotation": "prop",
-          "docs": "Minimum width of input boxes",
+          "docs": "入力ボックスの最小幅",
           "mode": "ios"
         },
         {
           "name": "--min-width",
           "annotation": "prop",
-          "docs": "Minimum width of input boxes",
+          "docs": "入力ボックスの最小幅",
           "mode": "md"
         },
         {
           "name": "--padding-bottom",
           "annotation": "prop",
-          "docs": "Bottom padding of the input group",
+          "docs": "入力グループの下パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-bottom",
           "annotation": "prop",
-          "docs": "Bottom padding of the input group",
+          "docs": "入力グループの下パディング",
           "mode": "md"
         },
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左パディング",
           "mode": "md"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右パディング",
           "mode": "md"
         },
         {
           "name": "--padding-top",
           "annotation": "prop",
-          "docs": "Top padding of the input group",
+          "docs": "入力グループの上パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-top",
           "annotation": "prop",
-          "docs": "Top padding of the input group",
+          "docs": "入力グループの上パディング",
           "mode": "md"
         },
         {
           "name": "--separator-border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the separator between boxes",
+          "docs": "ボックス間セパレーターのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--separator-border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the separator between boxes",
+          "docs": "ボックス間セパレーターのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--separator-color",
           "annotation": "prop",
-          "docs": "Color of the separator between boxes",
+          "docs": "ボックス間セパレーターの色",
           "mode": "ios"
         },
         {
           "name": "--separator-color",
           "annotation": "prop",
-          "docs": "Color of the separator between boxes",
+          "docs": "ボックス間セパレーターの色",
           "mode": "md"
         },
         {
           "name": "--separator-height",
           "annotation": "prop",
-          "docs": "Height of the separator between boxes",
+          "docs": "ボックス間セパレーターの高さ",
           "mode": "ios"
         },
         {
           "name": "--separator-height",
           "annotation": "prop",
-          "docs": "Height of the separator between boxes",
+          "docs": "ボックス間セパレーターの高さ",
           "mode": "md"
         },
         {
           "name": "--separator-width",
           "annotation": "prop",
-          "docs": "Width of the separator between boxes",
+          "docs": "ボックス間セパレーターの幅",
           "mode": "ios"
         },
         {
           "name": "--separator-width",
           "annotation": "prop",
-          "docs": "Width of the separator between boxes",
+          "docs": "ボックス間セパレーターの幅",
           "mode": "md"
         },
         {
           "name": "--width",
           "annotation": "prop",
-          "docs": "Width of input boxes",
+          "docs": "入力ボックスの幅",
           "mode": "ios"
         },
         {
           "name": "--width",
           "annotation": "prop",
-          "docs": "Width of input boxes",
+          "docs": "入力ボックスの幅",
           "mode": "md"
         }
       ],
@@ -12967,7 +12987,7 @@
           "mutable": false,
           "attr": "autocapitalize",
           "reflectToAttr": false,
-          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプション: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
           "docsTags": [
             {
               "name": "default",
@@ -13566,7 +13586,7 @@
           "mutable": false,
           "attr": "enterkeyhint",
           "reflectToAttr": false,
-          "docs": "どのエンターキーを表示するかのブラウザへのヒント。指定可能な値。enter\"`, `\"done\"`, `\"go\"`, `\"next\"`, `\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "docs": "どのエンターキーを表示するかのブラウザへのヒント。指定可能な値。`\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`, `\"previous\"`, `\"search\"`, and `\"send\"`.",
           "docsTags": [],
           "values": [
             {
@@ -13643,7 +13663,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。`md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -13700,7 +13720,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値。none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値。`\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "docsTags": [],
           "values": [
             {
@@ -14179,7 +14199,7 @@
           "mutable": false,
           "attr": "step",
           "reflectToAttr": false,
-          "docs": "min属性、max属性と連携して、値を設定する際の増分を制限することができます。設定可能な値は以下の通りです。any\"`または正の浮動小数点数。",
+          "docs": "min属性、max属性と連携して、値を設定する際の増分を制限することができます。設定可能な値は以下の通りです。`\"any\"`または正の浮動小数点数。",
           "docsTags": [],
           "values": [
             {
@@ -14359,7 +14379,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-input` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい場合は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
+          "docs": "`ion-input` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい場合は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
           "docsTags": []
         }
       ],
@@ -14400,7 +14420,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ionChange` イベントは、ユーザが入力値を変更したときに発生する。ionInput` イベントとは異なり、`ionChange` イベントは変更がコミットされたときにのみ発生する。  ユーザが明示的に変更をコミットしたとき (例えば、`<ion-input type=\"date\">` の日付ピッカーから日付を選択したり、\"Enter\" キーを押したりしたときなど)。- 値が変更された後、要素がフォーカスを失ったとき。  このイベントは、プログラムで `value` プロパティを設定する場合には発生しません。",
+          "docs": "`ionChange` イベントは、ユーザが入力値を変更したときに発生する。`ionInput` イベントとは異なり、`ionChange` イベントは変更がコミットされたときにのみ発生する。  ユーザが明示的に変更をコミットしたとき (例えば、`<ion-input type=\"date\">` の日付ピッカーから日付を選択したり、\"Enter\" キーを押したりしたときなど)。- 値が変更された後、要素がフォーカスを失ったとき。  このイベントは、プログラムで `value` プロパティを設定する場合には発生しません。",
           "docsTags": []
         },
         {
@@ -14439,7 +14459,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ionInput` イベントは、ユーザが入力値を変更するたびに発生する。ionChange` イベントとは異なり、 `ionInput` イベントは入力値が変更されるたびに発生する。これは通常、ユーザが入力を行うたびに発生します。  テキスト入力を受け付ける要素(`type=text`, `type=tel`など)の場合、インターフェイスは[`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent)となります。その他の要素の場合、インターフェイスは[`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)となります。編集時に入力がクリアされる場合、型は `null` となる。",
+          "docs": "`ionInput` イベントは、ユーザが入力値を変更するたびに発生する。`ionChange` イベントとは異なり、 `ionInput` イベントは入力値が変更されるたびに発生する。これは通常、ユーザが入力を行うたびに発生します。  テキスト入力を受け付ける要素(`type=text`, `type=tel`など)の場合、インターフェイスは[`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent)となります。その他の要素の場合、インターフェイスは[`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)となります。編集時に入力がクリアされる場合、型は `null` となる。",
           "docsTags": []
         }
       ],
@@ -15276,7 +15296,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -16106,7 +16126,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -17633,7 +17653,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -17654,10 +17674,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "ローディングオーバーレイが提示された後、それを解除します。",
+          "docs": "ローディングのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -17665,7 +17685,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -18795,12 +18815,12 @@
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
               },
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": ""
+                "docs": "The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -18816,16 +18836,25 @@
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
             },
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": ""
+              "docs": "The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
           "docs": "メニューを閉じる。メニューが既に閉じられていたり、閉じることができない場合は、`false`を返します。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
+            },
+            {
+              "name": "param",
+              "text": "role The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
+            }
+          ]
         },
         {
           "name": "isActive",
@@ -18846,7 +18875,7 @@
           },
           "signature": "isActive() => Promise<boolean>",
           "parameters": [],
-          "docs": "メニューがアクティブであれば `true` を返します。  メニューがアクティブな状態とは、メニューを開いたり閉じたりできる状態、つまり有効な状態であり、`ion-split-pane`の一部でない状態であることを意味します。",
+          "docs": "メニューがアクティブな場合は `true` を返します。メニューが開閉可能で有効化されており、`ion-split-pane` の一部でないときにアクティブとみなされます。",
           "docsTags": []
         },
         {
@@ -18883,7 +18912,7 @@
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
               }
             ],
             "references": {
@@ -18899,11 +18928,16 @@
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
             }
           ],
           "docs": "メニューを開く。メニューが既に開いているか、開くことができない場合は、`false`を返します。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
+            }
+          ]
         },
         {
           "name": "setOpen",
@@ -18917,23 +18951,27 @@
               {
                 "name": "shouldOpen",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will open. If `false`, the menu\nwill close."
               },
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
               },
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": ""
+                "docs": "The role of the element that is closing the menu."
               }
             ],
             "references": {
               "Promise": {
                 "location": "global",
                 "id": "global::Promise"
+              },
+              "HTMLElement": {
+                "location": "global",
+                "id": "global::HTMLElement"
               }
             },
             "return": "Promise<boolean>"
@@ -18943,21 +18981,34 @@
             {
               "name": "shouldOpen",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will open. If `false`, the menu\nwill close."
             },
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
             },
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": ""
+              "docs": "The role of the element that is closing the menu."
             }
           ],
-          "docs": "ボタンを開いたり閉じたりします。操作が正常に完了しない場合は `false` を返します。",
-          "docsTags": []
+          "docs": "メニューを開くか閉じます。操作が正常に完了できない場合は `false` を返します。",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "shouldOpen If `true`, the menu will open. If `false`, the menu\nwill close."
+            },
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
+            },
+            {
+              "name": "param",
+              "text": "role The role of the element that is closing the menu."
+            }
+          ]
         },
         {
           "name": "toggle",
@@ -18971,7 +19022,7 @@
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
               }
             ],
             "references": {
@@ -18987,11 +19038,16 @@
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
             }
           ],
           "docs": "メニューを切り替えます。メニューが既に開かれている場合は閉じようとし、そうでない場合は開こうとします。操作が正常に完了しない場合は、`false`を返します。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
+            }
+          ]
         }
       ],
       "events": [
@@ -19409,7 +19465,7 @@
           "mutable": false,
           "attr": "expand-to-scroll",
           "reflectToAttr": false,
-          "docs": "Controls whether scrolling or dragging within the sheet modal expands it to a larger breakpoint. This only takes effect when `breakpoints` and `initialBreakpoint` are set.  If `true`, scrolling or dragging anywhere in the modal will first expand it to the next breakpoint. Once fully expanded, scrolling will affect the content. If `false`, scrolling will always affect the content. The modal will only expand when dragging the header or handle. The modal will close when dragging the header or handle. It can also be closed when dragging the content, but only if the content is scrolled to the top.",
+          "docs": "シートモーダル内でのスクロールやドラッグで、より大きいブレークポイントへ拡張するかを制御します。これは `breakpoints` と `initialBreakpoint` が設定されている場合にのみ有効です。`true` のとき、モーダル内のどこでスクロール/ドラッグしても、まず次のブレークポイントへ拡張します。最大まで拡張されると、スクロールはコンテンツに作用します。`false` のとき、スクロールは常にコンテンツに作用します。モーダルが拡張するのはヘッダーまたはハンドルをドラッグした場合のみです。ヘッダーやハンドルをドラッグするとモーダルは閉じます。コンテンツのドラッグでも閉じることがありますが、コンテンツが最上部までスクロールされている場合に限ります。",
           "docsTags": [
             {
               "name": "default",
@@ -19822,7 +19878,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
               }
             ],
             "references": {
@@ -19847,10 +19903,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
             }
           ],
-          "docs": "モーダルオーバーレイが表示された後、それを解除します。",
+          "docs": "モーダルのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -19858,7 +19914,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
             }
           ]
         },
@@ -19984,7 +20040,7 @@
               {
                 "name": "breakpoint",
                 "type": "number",
-                "docs": ""
+                "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
               }
             ],
             "references": {
@@ -20000,11 +20056,16 @@
             {
               "name": "breakpoint",
               "type": "number",
-              "docs": ""
+              "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
             }
           ],
-          "docs": "シートスタイルモーダルを特定のブレークポイントに移動します。ブレークポイントの値は、 `breakpoints` 配列で定義された値でなければなりません。",
-          "docsTags": []
+          "docs": "シートスタイルのモーダルを指定したブレークポイントに移動します。",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "breakpoint The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
+            }
+          ]
         }
       ],
       "events": [
@@ -20165,7 +20226,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
       "styles": [
         {
           "name": "--backdrop-opacity",
@@ -20321,7 +20389,7 @@
       "parts": [
         {
           "name": "backdrop",
-          "docs": "ion-backdrop`要素です。"
+          "docs": "`ion-backdrop`要素です。"
         },
         {
           "name": "content",
@@ -21951,7 +22019,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "true`の場合、ユーザーはピッカー列オプションを操作できない。",
+          "docs": "`true`の場合、ユーザーはピッカー列オプションを操作できない。",
           "docsTags": [
             {
               "name": "default",
@@ -22115,7 +22183,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "true`の場合、ユーザーはピッカーと対話することができない。",
+          "docs": "`true`の場合、ユーザーはピッカーと対話することができない。",
           "docsTags": [
             {
               "name": "default",
@@ -24057,12 +24125,12 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+                "docs": "The role of the element that is dismissing the popover. For example, `cancel` or `backdrop`."
               },
               {
                 "name": "dismissParentPopover",
                 "type": "boolean",
-                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
               }
             ],
             "references": {
@@ -24087,15 +24155,15 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+              "docs": "The role of the element that is dismissing the popover. For example, `cancel` or `backdrop`."
             },
             {
               "name": "dismissParentPopover",
               "type": "boolean",
-              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
             }
           ],
-          "docs": "ポップオーバーオーバーレイが提示された後、それを解除します。",
+          "docs": "ポップオーバーのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -24103,11 +24171,11 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+              "text": "role The role of the element that is dismissing the popover. For example, `cancel` or `backdrop`."
             },
             {
               "name": "param",
-              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
             }
           ]
         },
@@ -24185,7 +24253,7 @@
               {
                 "name": "event",
                 "type": "MouseEvent | PointerEvent | TouchEvent | CustomEvent<any> | undefined",
-                "docs": ""
+                "docs": "The event to position the popover relative to."
               }
             ],
             "references": {
@@ -24221,11 +24289,16 @@
             {
               "name": "event",
               "type": "MouseEvent | PointerEvent | TouchEvent | CustomEvent<any> | undefined",
-              "docs": ""
+              "docs": "The event to position the popover relative to."
             }
           ],
           "docs": "ポップオーバーが作成された後に、ポップオーバーを表示します。開発者は、マウス、タッチ、またはポインタイベントを渡すことで、そのイベントがディスパッチされた場所と相対的にポップオーバーを配置することができます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "event The event to position the popover relative to."
+            }
+          ]
         }
       ],
       "events": [
@@ -24514,7 +24587,7 @@
         },
         {
           "name": "backdrop",
-          "docs": "ion-backdrop`要素です。"
+          "docs": "`ion-backdrop`要素です。"
         },
         {
           "name": "content",
@@ -24843,7 +24916,7 @@
           "mutable": false,
           "attr": "allow-empty-selection",
           "reflectToAttr": false,
-          "docs": "`true`の場合、ラジオを非選択にすることができる。",
+          "docs": "`true`の場合、Radioを非選択にすることができる。",
           "docsTags": [
             {
               "name": "default",
@@ -24910,7 +24983,7 @@
           "mutable": false,
           "attr": "error-text",
           "reflectToAttr": false,
-          "docs": "The error text to display at the top of the radio group.",
+          "docs": "ラジオグループ上部に表示するエラーテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -24936,7 +25009,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": false,
-          "docs": "The helper text to display at the top of the radio group.",
+          "docs": "ラジオグループ上部に表示するヘルパーテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -25092,7 +25165,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "ラジオとラベルの十字軸上の配置を制御する方法。start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、ラジオの `display` が `block` に変更されます。",
+          "docs": "Radioとラベルの十字軸上の配置を制御する方法。`\"start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。`\"center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、Radioの `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -25191,7 +25264,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "`true`の場合、ユーザはラジオと対話することができません。",
+          "docs": "`true`の場合、ユーザはRadioと対話することができません。",
           "docsTags": [
             {
               "name": "default",
@@ -25220,7 +25293,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "ラベルとラジオを1行にまとめる方法。start\"`：ラベルとラジオはLTRでは左に、RTLでは右に表示されます。end\"`：ラベルとラジオはLTRでは右に、RTLでは左に表示されます。space-between\"`：ラベルとラジオは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、ラジオの `display` が `block` に変更されます。",
+          "docs": "ラベルとRadioを1行にまとめる方法。`\"start\"`：ラベルとRadioはLTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとRadioはLTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとRadioは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、Radioの `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -25255,7 +25328,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "ラジオに対してラベルを配置する位置。start\"`：ラベルはLTRではラジオの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではラジオの右、RTLでは左に表示される。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。stacked\"`：ラベルは向きに関係なくラジオの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
+          "docs": "Radioに対してラベルを配置する位置。start\"`：ラベルはLTRではRadioの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではRadioの右、RTLでは左に表示される。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。stacked\"`：ラベルは向きに関係なくRadioの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [
             {
               "name": "default",
@@ -25347,7 +25420,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "ラジオの値です。",
+          "docs": "Radioの値です。",
           "docsTags": [],
           "values": [
             {
@@ -25373,7 +25446,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ラジオボタンのフォーカスが外れたときに発行されます。",
+          "docs": "Radioボタンのフォーカスが外れたときに発行されます。",
           "docsTags": []
         },
         {
@@ -25387,7 +25460,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ラジオボタンにフォーカスが当たったときに発行されます。",
+          "docs": "Radioボタンにフォーカスが当たったときに発行されます。",
           "docsTags": []
         }
       ],
@@ -25396,66 +25469,66 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "ラジオのボーダー半径",
+          "docs": "Radioのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "ラジオのボーダー半径",
+          "docs": "Radioのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "ラジオのカラー",
+          "docs": "Radioのカラー",
           "mode": "ios"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "ラジオのカラー",
+          "docs": "Radioのカラー",
           "mode": "md"
         },
         {
           "name": "--color-checked",
           "annotation": "prop",
-          "docs": "チェックしたラジオの色",
+          "docs": "チェックしたRadioの色",
           "mode": "ios"
         },
         {
           "name": "--color-checked",
           "annotation": "prop",
-          "docs": "チェックしたラジオの色",
+          "docs": "チェックしたRadioの色",
           "mode": "md"
         },
         {
           "name": "--inner-border-radius",
           "annotation": "prop",
-          "docs": "内側のチェック付きラジオのボーダー半径",
+          "docs": "内側のチェック付きRadioのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--inner-border-radius",
           "annotation": "prop",
-          "docs": "内側のチェック付きラジオのボーダー半径",
+          "docs": "内側のチェック付きRadioのボーダー半径",
           "mode": "md"
         }
       ],
       "slots": [
         {
           "name": "",
-          "docs": "ラジオに関連付けるラベルテキストです。\"labelPlacement\"プロパティを使用して、ラジオに対するラベルの相対的な配置を制御します。"
+          "docs": "Radioに関連付けるラベルテキストです。\"labelPlacement\"プロパティを使用して、Radioに対するラベルの相対的な配置を制御します。"
         }
       ],
       "parts": [
         {
           "name": "container",
-          "docs": "ラジオマークの入れ物です。"
+          "docs": "Radioマークの入れ物です。"
         },
         {
           "name": "label",
-          "docs": "ラジオを説明するラベルテキスト。"
+          "docs": "Radioを説明するラベルテキスト。"
         },
         {
           "name": "mark",
@@ -25540,7 +25613,7 @@
           "mutable": true,
           "attr": "active-bar-start",
           "reflectToAttr": false,
-          "docs": "レンジアクティブバーの開始位置です。この機能は、ノブが1つの場合のみ有効です（dualKnobs=\"false\"）。有効な値は、min値以上、max値以下です。",
+          "docs": "Rangeアクティブバーの開始位置です。この機能は、ノブが1つの場合のみ有効です（dualKnobs=\"false\"）。有効な値は、min値以上、max値以下です。",
           "docsTags": [],
           "values": [
             {
@@ -25634,7 +25707,7 @@
           "mutable": false,
           "attr": "debounce",
           "reflectToAttr": false,
-          "docs": "レンジの値が変化するたびに `ionInput` イベントをトリガーするまでの待ち時間（ミリ秒単位）。",
+          "docs": "Rangeの値が変化するたびに `ionInput` イベントをトリガーするまでの待ち時間（ミリ秒単位）。",
           "docsTags": [],
           "values": [
             {
@@ -26019,7 +26092,7 @@
           "mutable": false,
           "attr": "ticks",
           "reflectToAttr": false,
-          "docs": "`true`の場合、ステップの値に基づいてティックマークを表示します。snaps`が `true` の場合のみ適用される。",
+          "docs": "`true`の場合、ステップの値に基づいてティックマークを表示します。`snaps` が `true` の場合のみ適用される。",
           "docsTags": [
             {
               "name": "default",
@@ -26089,7 +26162,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "レンジの焦点が合わなくなったときに発行されます。",
+          "docs": "Rangeの焦点が合わなくなったときに発行されます。",
           "docsTags": []
         },
         {
@@ -26109,7 +26182,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ionChange`イベントは`<ion-range>`要素に対して、ユーザがその要素の値を変更したときに発生します。 ・ユーザがドラッグした後にノブを離したとき ・ユーザがキーボードの矢印でノブを移動したとき このイベントはプログラムで`value`プロパティを設定したときには発生しません。",
+          "docs": "`ionChange` イベントは `<ion-range>` 要素に対して、ユーザがその要素の値を変更したときに発生します。 ・ユーザがドラッグした後にノブを離したとき ・ユーザがキーボードの矢印でノブを移動したとき このイベントはプログラムで`value`プロパティを設定したときには発生しません。",
           "docsTags": []
         },
         {
@@ -26123,7 +26196,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "レンジのフォーカスが合ったときに発行されます。",
+          "docs": "Rangeのフォーカスが合ったときに発行されます。",
           "docsTags": []
         },
         {
@@ -26183,7 +26256,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "マウスドラッグ、タッチジェスチャー、キーボード操作など、ユーザーがレンジノブの移動を開始したときに発行されます。",
+          "docs": "マウスドラッグ、タッチジェスチャー、キーボード操作など、ユーザーがRangeノブの移動を開始したときに発行されます。",
           "docsTags": []
         }
       ],
@@ -26192,133 +26265,133 @@
         {
           "name": "--bar-background",
           "annotation": "prop",
-          "docs": "レンジバーの背景",
+          "docs": "Rangeバーの背景",
           "mode": "ios"
         },
         {
           "name": "--bar-background",
           "annotation": "prop",
-          "docs": "レンジバーの背景",
+          "docs": "Rangeバーの背景",
           "mode": "md"
         },
         {
           "name": "--bar-background-active",
           "annotation": "prop",
-          "docs": "アクティブレンジバーの背景",
+          "docs": "アクティブRangeバーの背景",
           "mode": "ios"
         },
         {
           "name": "--bar-background-active",
           "annotation": "prop",
-          "docs": "アクティブレンジバーの背景",
+          "docs": "アクティブRangeバーの背景",
           "mode": "md"
         },
         {
           "name": "--bar-border-radius",
           "annotation": "prop",
-          "docs": "レンジバーのボーダー半径",
+          "docs": "Rangeバーのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--bar-border-radius",
           "annotation": "prop",
-          "docs": "レンジバーのボーダー半径",
+          "docs": "Rangeバーのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--bar-height",
           "annotation": "prop",
-          "docs": "レンジバーの高さ",
+          "docs": "Rangeバーの高さ",
           "mode": "ios"
         },
         {
           "name": "--bar-height",
           "annotation": "prop",
-          "docs": "レンジバーの高さ",
+          "docs": "Rangeバーの高さ",
           "mode": "md"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "レンジの高さ",
+          "docs": "Rangeの高さ",
           "mode": "ios"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "レンジの高さ",
+          "docs": "Rangeの高さ",
           "mode": "md"
         },
         {
           "name": "--knob-background",
           "annotation": "prop",
-          "docs": "レンジノブの背景",
+          "docs": "Rangeノブの背景",
           "mode": "ios"
         },
         {
           "name": "--knob-background",
           "annotation": "prop",
-          "docs": "レンジノブの背景",
+          "docs": "Rangeノブの背景",
           "mode": "md"
         },
         {
           "name": "--knob-border-radius",
           "annotation": "prop",
-          "docs": "レンジツマミのボーダー半径",
+          "docs": "Rangeツマミのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--knob-border-radius",
           "annotation": "prop",
-          "docs": "レンジツマミのボーダー半径",
+          "docs": "Rangeツマミのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--knob-box-shadow",
           "annotation": "prop",
-          "docs": "レンジノブのボックスシャドウ",
+          "docs": "Rangeノブのボックスシャドウ",
           "mode": "ios"
         },
         {
           "name": "--knob-box-shadow",
           "annotation": "prop",
-          "docs": "レンジノブのボックスシャドウ",
+          "docs": "Rangeノブのボックスシャドウ",
           "mode": "md"
         },
         {
           "name": "--knob-size",
           "annotation": "prop",
-          "docs": "レンジツマミの大きさ",
+          "docs": "Rangeツマミの大きさ",
           "mode": "ios"
         },
         {
           "name": "--knob-size",
           "annotation": "prop",
-          "docs": "レンジツマミの大きさ",
+          "docs": "Rangeツマミの大きさ",
           "mode": "md"
         },
         {
           "name": "--pin-background",
           "annotation": "prop",
-          "docs": "レンジピンの背景（MD mode時のみ有効）",
+          "docs": "Rangeピンの背景（MD mode時のみ有効）",
           "mode": "ios"
         },
         {
           "name": "--pin-background",
           "annotation": "prop",
-          "docs": "レンジピンの背景（MD mode時のみ有効）",
+          "docs": "Rangeピンの背景（MD mode時のみ有効）",
           "mode": "md"
         },
         {
           "name": "--pin-color",
           "annotation": "prop",
-          "docs": "レンジピンの色（MD mode時のみ有効）",
+          "docs": "Rangeピンの色（MD mode時のみ有効）",
           "mode": "ios"
         },
         {
           "name": "--pin-color",
           "annotation": "prop",
-          "docs": "レンジピンの色（MD mode時のみ有効）",
+          "docs": "Rangeピンの色（MD mode時のみ有効）",
           "mode": "md"
         }
       ],
@@ -26975,7 +27048,7 @@
               "docs": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
             }
           ],
-          "docs": "再注文操作を完了します。ionItemReorder` イベントで呼び出す必要がある。  アイテムのリストが渡された場合、リストは適切な順序に並び替えられ、返される。  パラメータが渡されない場合、または `true` が渡された場合、並べ替えは完了し、アイテムはドラッグされた位置に留まります。 `false`が渡された場合、並び替えは完了し、アイテムは元の位置に跳ね返されます。",
+          "docs": "並べ替え操作を完了します。`ionReorderEnd` イベントで呼び出す必要があります。アイテムの配列が渡された場合は並べ替えられ、正しい順序で返されます。引数がない、または `true` が渡された場合は並べ替えを確定し、アイテムはドラッグ先の位置に留まります。`false` の場合は並べ替えが完了し、アイテムは元の位置に戻ります。",
           "docsTags": [
             {
               "name": "param",
@@ -27002,7 +27075,67 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "再注文アクションを完了させるためにリッスンする必要があるイベント。イベントが発生したら、再注文のアクションを確定するために `complete()` メソッドを呼び出す必要があります。",
+          "docs": "並べ替えアクションを完了するためにリッスンが必要なイベント。",
+          "docsTags": [
+            {
+              "name": "deprecated",
+              "text": "Use `ionReorderEnd` instead. If you are accessing\n`event.detail.from` or `event.detail.to` and relying on them\nbeing different you should now add checks as they are always emitted\nin `ionReorderEnd`, even when they are the same."
+            }
+          ],
+          "deprecation": "Use `ionReorderEnd` instead. If you are accessing\n`event.detail.from` or `event.detail.to` and relying on them\nbeing different you should now add checks as they are always emitted\nin `ionReorderEnd`, even when they are the same."
+        },
+        {
+          "event": "ionReorderEnd",
+          "detail": "ReorderEndEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "ReorderEndEventDetail",
+            "resolved": "ReorderEndEventDetail",
+            "references": {
+              "ReorderEndEventDetail": {
+                "location": "import",
+                "path": "./reorder-group-interface",
+                "id": "src/components/reorder-group/reorder-group-interface.ts::ReorderEndEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event that is emitted when the reorder gesture ends. The from and to properties are always available, regardless of if the reorder gesture moved the item. If the item did not change from its start position, the from and to properties will be the same. Once the event has been emitted, the `complete()` method then needs to be called in order to finalize the reorder action.",
+          "docsTags": []
+        },
+        {
+          "event": "ionReorderMove",
+          "detail": "ReorderMoveEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "ReorderMoveEventDetail",
+            "resolved": "ReorderMoveEventDetail",
+            "references": {
+              "ReorderMoveEventDetail": {
+                "location": "import",
+                "path": "./reorder-group-interface",
+                "id": "src/components/reorder-group/reorder-group-interface.ts::ReorderMoveEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event that is emitted as the reorder gesture moves.",
+          "docsTags": []
+        },
+        {
+          "event": "ionReorderStart",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event that is emitted when the reorder gesture starts.",
           "docsTags": []
         }
       ],
@@ -27297,7 +27430,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "このルールの値がDOMから追加/削除されたり、パブリックプロパティが変更されたりしたときに発生する内部イベントです。  ion-router`は、ルータルールの内部レジストリを更新するために、このイベントを捕捉します。",
+          "docs": "このルールの値がDOMから追加/削除されたり、パブリックプロパティが変更されたりしたときに発生する内部イベントです。  `ion-router`は、ルータルールの内部レジストリを更新するために、このイベントを捕捉します。",
           "docsTags": []
         }
       ],
@@ -27706,7 +27839,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -27974,7 +28107,7 @@
               {
                 "name": "animation",
                 "type": "AnimationBuilder | undefined",
-                "docs": ""
+                "docs": "A custom animation to use for the transition."
               }
             ],
             "references": {
@@ -28010,7 +28143,7 @@
             {
               "name": "animation",
               "type": "AnimationBuilder | undefined",
-              "docs": ""
+              "docs": "A custom animation to use for the transition."
             }
           ],
           "docs": "指定されたパスに移動します。",
@@ -28022,6 +28155,10 @@
             {
               "name": "param",
               "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+            },
+            {
+              "name": "param",
+              "text": "animation A custom animation to use for the transition."
             }
           ]
         }
@@ -28160,7 +28297,7 @@
           "mutable": false,
           "attr": "autocapitalize",
           "reflectToAttr": false,
-          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプション: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
           "docsTags": [
             {
               "name": "default",
@@ -28678,7 +28815,7 @@
           "mutable": false,
           "attr": "enterkeyhint",
           "reflectToAttr": false,
-          "docs": "どのエンターキーを表示するかのブラウザへのヒント。指定可能な値。enter\"`, `\"done\"`, `\"go\"`, `\"next\"`, `\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "docs": "どのエンターキーを表示するかのブラウザへのヒント。指定可能な値。`\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`, `\"previous\"`, `\"search\"`, and `\"send\"`.",
           "docsTags": [],
           "values": [
             {
@@ -28729,7 +28866,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値。none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値。`\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "docsTags": [],
           "values": [
             {
@@ -29171,7 +29308,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-searchbar` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい開発者は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
+          "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global `input.focus()`. Developers who wish to focus an input when a page enters should call `setFocus()` in the `ionViewDidEnter()` lifecycle method. Developers who wish to focus an input when an overlay is presented should call `setFocus` after `didPresent` has resolved.  See [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": []
         }
       ],
@@ -29221,7 +29358,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "onChange` イベントは、ユーザが要素の値を変更したときに `<ion-searchbar>` 要素に対して発生する。ionInput` イベントとは異なり、要素の値が変更されるたびに `ionChange` イベントが発生するわけではない。  ionChange` イベントは、ユーザによって値が変更されたときに発生する。これは、要素のフォーカスが外れたときや、\"Enter\" キーが押されたときに発生する。また、クリアボタンやキャンセルボタンをクリックしたときにも `ionChange` イベントが発生することがある。  プログラムで `value` プロパティを設定した場合には、このイベントは発生しない。",
+          "docs": "`onChange` イベントは、ユーザが要素の値を変更したときに `<ion-searchbar>` 要素に対して発生する。`ionInput` イベントとは異なり、要素の値が変更されるたびに `ionChange` イベントが発生するわけではない。  `ionChange` イベントは、ユーザによって値が変更されたときに発生する。これは、要素のフォーカスが外れたときや、\"Enter\" キーが押されたときに発生する。また、クリアボタンやキャンセルボタンをクリックしたときにも `ionChange` イベントが発生することがある。  プログラムで `value` プロパティを設定した場合には、このイベントは発生しない。",
           "docsTags": []
         },
         {
@@ -29269,7 +29406,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ion-searchbar`要素の `value` が変更されたときに発行されます。",
+          "docs": "`ion-searchbar`要素の `value` が変更されたときに発行されます。",
           "docsTags": []
         }
       ],
@@ -30060,7 +30197,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "true`の場合、セグメントビューは操作できない。",
+          "docs": "`true`の場合、セグメントビューは操作できない。",
           "docsTags": [
             {
               "name": "default",
@@ -30935,7 +31072,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。`md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -31104,7 +31241,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "セレクトに関連付けられた可視ラベル。  プレーンテキストのラベルをレンダリングする必要がある場合に使用する。  label`プロパティは `label` スロットよりも優先される。",
+          "docs": "セレクトに関連付けられた可視ラベル。  プレーンテキストのラベルをレンダリングする必要がある場合に使用する。  `label`プロパティは `label` スロットよりも優先される。",
           "docsTags": [],
           "values": [
             {
@@ -31313,7 +31450,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "If true, screen readers will announce it as a required field. This property works only for accessibility purposes, it will not prevent the form from submitting if the value is invalid.",
+          "docs": "true の場合、スクリーンリーダーは必須項目として読み上げます。このプロパティはアクセシビリティ目的でのみ機能し、値が無効でもフォーム送信は妨げません。",
           "docsTags": [
             {
               "name": "default",
@@ -31601,13 +31738,13 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不 均一になることがあります。",
+          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不均一になることがあります。",
           "mode": "ios"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不 均一になることがあります。",
+          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不均一になることがあります。",
           "mode": "md"
         },
         {
@@ -31745,13 +31882,13 @@
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "選択Placeholderテキストの不透明度",
+          "docs": "セレクトPlaceholderテキストの不透明度",
           "mode": "ios"
         },
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "選択Placeholderテキストの不透明度",
+          "docs": "セレクトPlaceholderテキストの不透明度",
           "mode": "md"
         },
         {
@@ -31774,7 +31911,7 @@
         },
         {
           "name": "label",
-          "docs": "セレクトに関連付けるラベルテキスト。labelPlacement`プロパティを使用して、selectに対するラベルの位置を制御します。ラベルをカスタムHTMLでレンダリングする必要がある場合に使用します。"
+          "docs": "セレクトに関連付けるラベルテキスト。`labelPlacement`プロパティを使用して、selectに対するラベルの位置を制御します。ラベルをカスタムHTMLでレンダリングする必要がある場合に使用します。"
         },
         {
           "name": "start",
@@ -31784,7 +31921,7 @@
       "parts": [
         {
           "name": "container",
-          "docs": "選択テキストまたはプレースホルダーのコンテナ。"
+          "docs": "セレクトテキストまたはプレースホルダーのコンテナ。"
         },
         {
           "name": "error-text",
@@ -31937,524 +32074,6 @@
           "name": "--border-radius",
           "annotation": "prop",
           "docs": "スケルトンテキストのボーダー半径"
-        }
-      ],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/slide/slide.tsx",
-      "encapsulation": "none",
-      "tag": "ion-slide",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/slides/slides.tsx",
-      "encapsulation": "none",
-      "tag": "ion-slides",
-      "docs": "",
-      "docsTags": [
-        {
-          "name": "virtualProp",
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "mode",
-          "type": "\"ios\" | \"md\"",
-          "mutable": false,
-          "attr": "mode",
-          "reflectToAttr": false,
-          "docs": "modeは、どのプラットフォームのスタイルを使用するかを決定します。",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "ios",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "options",
-          "type": "any",
-          "mutable": false,
-          "attr": "options",
-          "reflectToAttr": false,
-          "docs": "swiperインスタンスに渡すオプションです。有効なオプションについては、https://swiperjs.com/swiper-api を参照してください。",
-          "docsTags": [],
-          "default": "{}",
-          "values": [
-            {
-              "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "pager",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "pager",
-          "reflectToAttr": false,
-          "docs": "もし `true` ならば、ページネーションを表示します。",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "scrollbar",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "scrollbar",
-          "reflectToAttr": false,
-          "docs": "`true`の場合、スクロールバーを表示します。",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "getActiveIndex",
-          "returns": {
-            "type": "Promise<number>",
-            "docs": ""
-          },
-          "signature": "getActiveIndex() => Promise<number>",
-          "parameters": [],
-          "docs": "アクティブなスライドのインデックスを取得します。",
-          "docsTags": []
-        },
-        {
-          "name": "getPreviousIndex",
-          "returns": {
-            "type": "Promise<number>",
-            "docs": ""
-          },
-          "signature": "getPreviousIndex() => Promise<number>",
-          "parameters": [],
-          "docs": "前のスライドのインデックスを取得します。",
-          "docsTags": []
-        },
-        {
-          "name": "getSwiper",
-          "returns": {
-            "type": "Promise<any>",
-            "docs": ""
-          },
-          "signature": "getSwiper() => Promise<any>",
-          "parameters": [],
-          "docs": "Swiperのインスタンスを取得します。これを使用して、SwiperのフルAPIにアクセスします。すべてのAPIオプションについては、https://swiperjs.com/swiper-api を参照してください。",
-          "docsTags": []
-        },
-        {
-          "name": "isBeginning",
-          "returns": {
-            "type": "Promise<boolean>",
-            "docs": ""
-          },
-          "signature": "isBeginning() => Promise<boolean>",
-          "parameters": [],
-          "docs": "現在のスライドが最初のスライドであるか否かを取得します。",
-          "docsTags": []
-        },
-        {
-          "name": "isEnd",
-          "returns": {
-            "type": "Promise<boolean>",
-            "docs": ""
-          },
-          "signature": "isEnd() => Promise<boolean>",
-          "parameters": [],
-          "docs": "現在のスライドが最後のスライドであるか否かを取得します。",
-          "docsTags": []
-        },
-        {
-          "name": "length",
-          "returns": {
-            "type": "Promise<number>",
-            "docs": ""
-          },
-          "signature": "length() => Promise<number>",
-          "parameters": [],
-          "docs": "スライドの総枚数を取得します。",
-          "docsTags": []
-        },
-        {
-          "name": "lockSwipeToNext",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "lockSwipeToNext(lock: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "次のスライドにスライドする機能をロックまたはアンロックします。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "lock If `true`, disable swiping to the next slide."
-            }
-          ]
-        },
-        {
-          "name": "lockSwipeToPrev",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "lockSwipeToPrev(lock: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "前のスライドにスライドする機能をロックまたはアンロックします。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "lock If `true`, disable swiping to the previous slide."
-            }
-          ]
-        },
-        {
-          "name": "lockSwipes",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "lockSwipes(lock: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "次のスライドや前のスライドにスライドする機能をロックまたはアンロックします。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "lock If `true`, disable swiping to the next and previous slide."
-            }
-          ]
-        },
-        {
-          "name": "slideNext",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "slideNext(speed?: number, runCallbacks?: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "次のスライドに遷移します。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "speed The transition duration (in ms)."
-            },
-            {
-              "name": "param",
-              "text": "runCallbacks If true, the transition will produce [Transition/SlideChange][Start/End] transition events."
-            }
-          ]
-        },
-        {
-          "name": "slidePrev",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "slidePrev(speed?: number, runCallbacks?: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "前のスライドに遷移します。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "speed The transition duration (in ms)."
-            },
-            {
-              "name": "param",
-              "text": "runCallbacks If true, the transition will produce the [Transition/SlideChange][Start/End] transition events."
-            }
-          ]
-        },
-        {
-          "name": "slideTo",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "slideTo(index: number, speed?: number, runCallbacks?: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "指定されたスライドに遷移します。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "index The index of the slide to transition to."
-            },
-            {
-              "name": "param",
-              "text": "speed The transition duration (in ms)."
-            },
-            {
-              "name": "param",
-              "text": "runCallbacks If true, the transition will produce [Transition/SlideChange][Start/End] transition events."
-            }
-          ]
-        },
-        {
-          "name": "startAutoplay",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "startAutoplay() => Promise<void>",
-          "parameters": [],
-          "docs": "オートプレイを開始します。",
-          "docsTags": []
-        },
-        {
-          "name": "stopAutoplay",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "stopAutoplay() => Promise<void>",
-          "parameters": [],
-          "docs": "自動再生を停止します。",
-          "docsTags": []
-        },
-        {
-          "name": "update",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "update() => Promise<void>",
-          "parameters": [],
-          "docs": "基礎となるスライダーの実装を更新します。子スライダーを追加または削除した場合に呼び出します。",
-          "docsTags": []
-        },
-        {
-          "name": "updateAutoHeight",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "updateAutoHeight(speed?: number) => Promise<void>",
-          "parameters": [],
-          "docs": "speed」パラメータに等しい時間、スイーパーの高さを強制的に更新する（autoHeightが有効な場合）。",
-          "docsTags": [
-            {
-              "name": "param",
-              "text": "speed The transition duration (in ms)."
-            }
-          ]
-        }
-      ],
-      "events": [
-        {
-          "event": "ionSlideDidChange",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "アクティブスライドが変更された後に発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideDoubleTap",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "ユーザがスライドのコンテナをダブルタップしたときに発生します。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideDrag",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "スライダーがアクティブに移動しているときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideNextEnd",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "次のスライドが終了したときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideNextStart",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "次のスライドが開始されたときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlidePrevEnd",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "前のスライドが終了したときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlidePrevStart",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "前のスライドが開始されたときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideReachEnd",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "スライダーが最後のスライドになったときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideReachStart",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "スライダーが初期位置にあるときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlidesDidLoad",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Swiperの初期化後に発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideTap",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "ユーザがスライドのコンテナをタップ/クリックしたときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideTouchEnd",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "ユーザーがタッチを離したときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideTouchStart",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "ユーザーがスライダーに初めて触れたときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideTransitionEnd",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "スライド遷移が終了したときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideTransitionStart",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "スライド遷移が開始されたときに発行されます。",
-          "docsTags": []
-        },
-        {
-          "event": "ionSlideWillChange",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "アクティブスライドが変更される前に発行されます。",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [
-        {
-          "name": "--bullet-background",
-          "annotation": "prop",
-          "docs": "ページネーションの箇条書きの背景"
-        },
-        {
-          "name": "--bullet-background-active",
-          "annotation": "prop",
-          "docs": "アクティブなページネーションバレットの背景"
-        },
-        {
-          "name": "--progress-bar-background",
-          "annotation": "prop",
-          "docs": "ページネーションの進行バーの背景"
-        },
-        {
-          "name": "--progress-bar-background-active",
-          "annotation": "prop",
-          "docs": "アクティブなページネーションの進行バーの背景"
-        },
-        {
-          "name": "--scroll-bar-background",
-          "annotation": "prop",
-          "docs": "ページネーション用スクロールバーの背景"
-        },
-        {
-          "name": "--scroll-bar-background-active",
-          "annotation": "prop",
-          "docs": "アクティブなページネーションのスクロールバーの背景"
         }
       ],
       "slots": [],
@@ -33329,7 +32948,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "リンク先のURLを表示する場所を指定します。href`を指定した場合のみ適用される。特別なキーワードがあります。_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "リンク先のURLを表示する場所を指定します。`href`を指定した場合のみ適用される。特別なキーワードがあります。`\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -33972,7 +33591,7 @@
           "mutable": false,
           "attr": "autocapitalize",
           "reflectToAttr": false,
-          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプションoff\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
+          "docs": "テキスト値がユーザーによって入力／編集される際に、自動的に大文字にするかどうか、またどのようにするかについて示します。利用可能なオプション: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
           "docsTags": [
             {
               "name": "default",
@@ -34030,7 +33649,7 @@
           "mutable": false,
           "attr": "clear-on-edit",
           "reflectToAttr": false,
-          "docs": "true`の場合、編集時にフォーカスが当たった後、値がクリアされる。",
+          "docs": "`true`の場合、編集時にフォーカスが当たった後、値がクリアされる。",
           "docsTags": [
             {
               "name": "default",
@@ -34263,7 +33882,7 @@
           "mutable": false,
           "attr": "enterkeyhint",
           "reflectToAttr": false,
-          "docs": "どのエンターキーを表示するかのブラウザへのヒント。指定可能な値。enter\"`, `\"done\"`, `\"go\"`, `\"next\"`, `\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "docs": "どのエンターキーを表示するかのブラウザへのヒント。指定可能な値。`\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`, `\"previous\"`, `\"search\"`, and `\"send\"`.",
           "docsTags": [],
           "values": [
             {
@@ -34340,7 +33959,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。`md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -34397,7 +34016,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値。none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値。`\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "docsTags": [],
           "values": [
             {
@@ -34898,7 +34517,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-textarea`のネイティブ `textarea` にフォーカスを設定する。グローバルメソッド `textarea.focus()` の代わりにこのメソッドを使用する。  詳細は [managing focus](/docs/developing/managing-focus) を参照してください。",
+          "docs": "`ion-textarea`のネイティブ `textarea` にフォーカスを設定する。グローバルメソッド `textarea.focus()` の代わりにこのメソッドを使用する。  詳細は [managing focus](/docs/developing/managing-focus) を参照してください。",
           "docsTags": []
         }
       ],
@@ -34939,7 +34558,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "onChange` イベントは、ユーザが textarea の値を変更したときに発生する。ionInput` イベントとは異なり、`ionChange` イベントは値が変更された後に要素のフォーカスが外れたときに発生する。  このイベントは、プログラムで `value` プロパティを設定した場合には発生しない。",
+          "docs": "onChange` イベントは、ユーザが textarea の値を変更したときに発生する。`ionInput` イベントとは異なり、`ionChange` イベントは値が変更された後に要素のフォーカスが外れたときに発生する。  このイベントは、プログラムで `value` プロパティを設定した場合には発生しない。",
           "docsTags": []
         },
         {
@@ -34978,7 +34597,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ionInput` イベントは、ユーザが textarea の値を変更するたびに発生する。ionChange` イベントとは異なり、 `ionInput` イベントは textarea の値が変更されるたびに発生する。これは通常、ユーザがキーを入力するたびに発生する。  clearOnEdit` が有効な場合、ユーザが textarea をクリアするためにキーダウンを行うと、 `ionInput` イベントが発生する。",
+          "docs": "`ionInput` イベントは、ユーザが textarea の値を変更するたびに発生する。`ionChange` イベントとは異なり、`ionInput` イベントは textarea の値が変更されるたびに発生する。これは通常、ユーザがキーを入力するたびに発生する。  `clearOnEdit` が有効な場合、ユーザが textarea をクリアするためにキーダウンを行うと、`ionInput` イベントが発生する。",
           "docsTags": []
         }
       ],
@@ -36100,7 +35719,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: `\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -36126,10 +35745,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: `\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "トーストのオーバーレイが提示された後、それを解除します。",
+          "docs": "Dismiss the toast overlay after it has been presented. This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -36137,7 +35756,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: `\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -37035,7 +36654,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "If true, screen readers will announce it as a required field. This property works only for accessibility purposes, it will not prevent the form from submitting if the value is invalid.",
+          "docs": "true の場合、スクリーンリーダーは必須項目として読み上げます。このプロパティはアクセシビリティ目的でのみ機能し、値が無効でもフォーム送信は妨げません。",
           "docsTags": [
             {
               "name": "default",
@@ -37652,312 +37271,6 @@
           "ion-toolbar"
         ]
       }
-    },
-    {
-      "filePath": "./src/components/virtual-scroll/virtual-scroll.tsx",
-      "encapsulation": "none",
-      "tag": "ion-virtual-scroll",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "approxFooterHeight",
-          "type": "number",
-          "mutable": false,
-          "attr": "approx-footer-height",
-          "reflectToAttr": false,
-          "docs": "各フッターテンプレートのセルのおおよその幅を指定します。この寸法は、初期化時に作成されるべきセルの数を決定したり、スクロール可能な領域の高さを計算したりするのに使用されます。この高さの値には `px` 単位しか使用できません。各セルの実際のレンダリングサイズはアプリのCSSから得られますが、この近似値はアイテムがレンダリングされる前に初期寸法を計算するために使用されることに注意してください。",
-          "docsTags": [],
-          "default": "30",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "approxHeaderHeight",
-          "type": "number",
-          "mutable": false,
-          "attr": "approx-header-height",
-          "reflectToAttr": false,
-          "docs": "各ヘッダーテンプレートのセルのおおよその高さを表します。この寸法は、初期化時に作成されるべきセルの数を決定したり、スクロール可能な領域の高さを計算したりするのに使用されます。この高さの値には `px` 単位しか使用できません。各セルの実際のレンダリングサイズはアプリのCSSから得られますが、この近似値はアイテムがレンダリングされる前に初期寸法を計算するために使用されることに注意してください。",
-          "docsTags": [],
-          "default": "30",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "approxItemHeight",
-          "type": "number",
-          "mutable": false,
-          "attr": "approx-item-height",
-          "reflectToAttr": false,
-          "docs": "仮想アイテムの高さがデフォルトよりかなり大きくなる場合は、これを指定することが重要です。 各仮想アイテムテンプレートのセルのおおよその高さ。この寸法は、初期化時に作成されるべきセルの数を決定したり、スクロール可能な領域の高さを計算したりするのに使用されます。この高さの値には `px` 単位しか使用できません。各セルの実際のレンダリングサイズはアプリの CSS から得られるもので、この近似値はアイテムがレンダリングされる前に初期寸法を計算するのに役立つものであることに注意してください。",
-          "docsTags": [],
-          "default": "45",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "footerFn",
-          "type": "((item: any, index: number, items: any[]) => string | null | undefined) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "セクションフッターと与えられたテンプレート内で使用されるデータは、`footerFn`に関数を渡すことで動的に作成することができます。フッター関数内のロジックは、フッターテンプレートを使用するかどうか、またフッターテンプレートにどのようなデータを与えるかを決定することができます。フッターセルが作成されない場合は、関数は `null` を返さなければなりません。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number, items: any[]) => string"
-            },
-            {
-              "type": "null"
-            },
-            {
-              "type": "undefined)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "footerHeight",
-          "type": "((item: any, index: number) => number) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "各項目のフッターをその高さ内にマッピングするオプション関数。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number) => number)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "headerFn",
-          "type": "((item: any, index: number, items: any[]) => string | null | undefined) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "セクションヘッダーとそのテンプレート内で使用されるデータは、`headerFn`に関数を渡すことによって動的に作成することができます。例えば、大きな連絡先リストでは、通常、アルファベットの各文字の間に仕切りがあります。アプリは独自のカスタム `headerFn` を提供することができ、データセット内の各レコードで呼び出される。ヘッダー関数内のロジックは、ヘッダーテンプレートを使用するかどうか、またヘッダーテンプレートにどのようなデータを与えるかを決定することができる。ヘッダーセルが作成されない場合は、この関数は `null` を返さなければなりません。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number, items: any[]) => string"
-            },
-            {
-              "type": "null"
-            },
-            {
-              "type": "undefined)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "headerHeight",
-          "type": "((item: any, index: number) => number) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "各項目のヘッダを高さの範囲内でマッピングするオプション関数。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number) => number)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "itemHeight",
-          "type": "((item: any, index: number) => number) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "各アイテムをその高さ内にマッピングするオプションの関数です。この関数が提供されると、`ion-virtual-scroll`によって重い最適化と高速パスが取られるようになり、大幅な性能向上が期待できる。  この関数は、DOMの読み込みをすべてスキップすることができ、Doingすることで大幅なパフォーマンスの向上につながります。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number) => number)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "items",
-          "type": "any[] | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "仮想スクロール内のテンプレートを構築するためのデータです。このデータが変更された場合、仮想スクロール全体がリセットされることになります。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "any[]"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "nodeRender",
-          "type": "((el: HTMLElement | null, cell: Cell, domIndex: number) => HTMLElement) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "注：Vanilla JS APIのみです。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((el: HTMLElement"
-            },
-            {
-              "type": "null, cell: Cell, domIndex: number) => HTMLElement)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "renderFooter",
-          "type": "((item: any, index: number) => any) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "注：ステンシル用のJSX APIのみ。  フッターをレンダリングするためのrender関数を提供します。JSXのvirtual-domを返します。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number) => any)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "renderHeader",
-          "type": "((item: any, index: number) => any) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "注：ステンシル用のJSX APIのみ。  レンダリングされるヘッダーのrender関数を提供します。JSXのvirtual-domを返します。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number) => any)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "renderItem",
-          "type": "((item: any, index: number) => any) | undefined",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "注：ステンシル用のJSX APIのみ。  レンダリングするアイテムのレンダー関数を用意します。JSXのvirtual-domを返します。",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "((item: any, index: number) => any)"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "checkEnd",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "checkEnd() => Promise<void>",
-          "parameters": [],
-          "docs": "このメソッドは、アイテム配列の末尾をダーティとしてマークし、再レンダリングできるようにします。  これは次のように呼び出すのと同じです： ``js virtualScroll.checkRange(lastItemLen); ```。",
-          "docsTags": []
-        },
-        {
-          "name": "checkRange",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "checkRange(offset: number, len?: number) => Promise<void>",
-          "parameters": [],
-          "docs": "このメソッドは、アイテムのサブセットをダーティとしてマークし、再レンダリングができるようにします。アイテムは、コンテンツまたはそのスタイルが変更されるたびに、ダーティとしてマークされる必要があります。  更新されるアイテムのサブセットは、オフセットと長さで指定することができます。",
-          "docsTags": []
-        },
-        {
-          "name": "positionForItem",
-          "returns": {
-            "type": "Promise<number>",
-            "docs": ""
-          },
-          "signature": "positionForItem(index: number) => Promise<number>",
-          "parameters": [],
-          "docs": "指定されたインデックスの位置にある仮想アイテムの位置を返します。",
-          "docsTags": []
-        }
-      ],
-      "events": [],
-      "listeners": [
-        {
-          "event": "resize",
-          "target": "window",
-          "capture": false,
-          "passive": true
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     }
   ]
 }

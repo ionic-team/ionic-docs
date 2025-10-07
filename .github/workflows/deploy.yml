@@ -36,7 +36,7 @@ jobs:
       # デプロイ
       - name: deploy
         run: |
-          npx netlify-cli deploy \
+          npx netlify-cli@23.7.3 deploy \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --dir www/ \
             --auth ${{ secrets.NETLIFY_TOKEN }} \
