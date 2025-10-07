@@ -636,7 +636,7 @@
           {
             "name": "role",
             "type": "string | undefined",
-            "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+            "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
           }
         ],
         "references": {
@@ -661,10 +661,10 @@
         {
           "name": "role",
           "type": "string | undefined",
-          "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+          "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
         }
       ],
-      "docs": "Dismiss the modal overlay after it has been presented.",
+      "docs": "Dismiss the modal overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
       "docsTags": [
         {
           "name": "param",
@@ -672,7 +672,7 @@
         },
         {
           "name": "param",
-          "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+          "text": "role The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
         }
       ]
     },
@@ -798,7 +798,7 @@
           {
             "name": "breakpoint",
             "type": "number",
-            "docs": ""
+            "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
           }
         ],
         "references": {
@@ -814,11 +814,16 @@
         {
           "name": "breakpoint",
           "type": "number",
-          "docs": ""
+          "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
         }
       ],
-      "docs": "Move a sheet style modal to a specific breakpoint. The breakpoint value must\nbe a value defined in your `breakpoints` array.",
-      "docsTags": []
+      "docs": "Move a sheet style modal to a specific breakpoint.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "breakpoint The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
+        }
+      ]
     }
   ],
   "events": [
@@ -979,7 +984,14 @@
       "docsTags": []
     }
   ],
-  "listeners": [],
+  "listeners": [
+    {
+      "event": "resize",
+      "target": "window",
+      "capture": false,
+      "passive": true
+    }
+  ],
   "styles": [
     {
       "name": "--backdrop-opacity",

@@ -929,7 +929,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -950,10 +950,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "アクションシートのオーバーレイが提示された後、それを解除します。",
+          "docs": "Dismiss the action sheet overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -961,7 +961,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -2003,7 +2003,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -2024,10 +2024,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "アラートオーバーレイが表示された後、解除します。",
+          "docs": "Dismiss the alert overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -2035,7 +2035,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -2412,7 +2412,7 @@
               {
                 "name": "elements",
                 "type": "HTMLElement[]",
-                "docs": ""
+                "docs": "An array of HTML elements to set focus on."
               }
             ],
             "references": {
@@ -2432,11 +2432,16 @@
             {
               "name": "elements",
               "type": "HTMLElement[]",
-              "docs": ""
+              "docs": "An array of HTML elements to set focus on."
             }
           ],
           "docs": "ion-focusable`を使用している要素にフォーカスを設定するために使用する。キーボードイベントの結果として要素にフォーカスを当てる場合は、このメソッドを使用しないでください。このメソッドは、他のユーザアクションの結果としてプログラム的に要素にフォーカスを当てたい場合に使用します。(例: ユーザーがポップオーバーを提示したときに、ポップオーバー内の最初の要素にフォーカスを当てますが、ポップオーバーは常にキーボード操作の結果として提示されるわけではありません)。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "elements An array of HTML elements to set focus on."
+            }
+          ]
         }
       ],
       "events": [],
@@ -9713,7 +9718,7 @@
               {
                 "name": "closeOverlay",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, closes the parent overlay. Defaults to `false`."
               }
             ],
             "references": {
@@ -9729,11 +9734,16 @@
             {
               "name": "closeOverlay",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, closes the parent overlay. Defaults to `false`."
             }
           ],
           "docs": "ionCancel イベントを発行し、オプションで datetime が表示されたポップオーバーまたはモーダルを閉じます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "closeOverlay If `true`, closes the parent overlay. Defaults to `false`."
+            }
+          ]
         },
         {
           "name": "confirm",
@@ -9747,7 +9757,7 @@
               {
                 "name": "closeOverlay",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, closes the parent overlay. Defaults to `false`."
               }
             ],
             "references": {
@@ -9763,11 +9773,16 @@
             {
               "name": "closeOverlay",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, closes the parent overlay. Defaults to `false`."
             }
           ],
           "docs": "選択されたdatetimeの値を確認し、`value`プロパティを更新し、オプションでdatetimeが表示されていたポップオーバーまたはモーダルを閉じます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "closeOverlay If `true`, closes the parent overlay. Defaults to `false`."
+            }
+          ]
         },
         {
           "name": "reset",
@@ -9781,7 +9796,7 @@
               {
                 "name": "startDate",
                 "type": "string | undefined",
-                "docs": ""
+                "docs": "A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
               }
             ],
             "references": {
@@ -9797,11 +9812,16 @@
             {
               "name": "startDate",
               "type": "string | undefined",
-              "docs": ""
+              "docs": "A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
             }
           ],
           "docs": "datetimeの内部状態をリセットするが、値は更新しません。有効なISO-8601文字列を渡すと、コンポーネントの状態は指定した日付にリセットされます。値が提供されない場合、内部状態はmin、max、todayのクランプされた値にリセットされます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "startDate A valid [ISO-8601 string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format) to reset the datetime state to."
+            }
+          ]
         }
       ],
       "events": [
@@ -17633,7 +17653,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -17654,10 +17674,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "ローディングオーバーレイが提示された後、それを解除します。",
+          "docs": "Dismiss the loading overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -17665,7 +17685,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
@@ -18795,12 +18815,12 @@
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
               },
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": ""
+                "docs": "The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -18816,16 +18836,25 @@
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
             },
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": ""
+              "docs": "The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
           "docs": "メニューを閉じる。メニューが既に閉じられていたり、閉じることができない場合は、`false`を返します。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when closing. If `false`,\nthe menu will close instantly without animation. Defaults to `true`."
+            },
+            {
+              "name": "param",
+              "text": "role The role of the element that is closing the menu.\nThis can be useful in a button handler for determining which button was\nclicked to close the menu. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
+            }
+          ]
         },
         {
           "name": "isActive",
@@ -18846,7 +18875,7 @@
           },
           "signature": "isActive() => Promise<boolean>",
           "parameters": [],
-          "docs": "メニューがアクティブであれば `true` を返します。  メニューがアクティブな状態とは、メニューを開いたり閉じたりできる状態、つまり有効な状態であり、`ion-split-pane`の一部でない状態であることを意味します。",
+          "docs": "Returns `true` if the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
           "docsTags": []
         },
         {
@@ -18883,7 +18912,7 @@
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
               }
             ],
             "references": {
@@ -18899,11 +18928,16 @@
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
             }
           ],
           "docs": "メニューを開く。メニューが既に開いているか、開くことができない場合は、`false`を返します。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when opening.\nIf `false`, the menu will open instantly without animation.\nDefaults to `true`."
+            }
+          ]
         },
         {
           "name": "setOpen",
@@ -18917,23 +18951,27 @@
               {
                 "name": "shouldOpen",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will open. If `false`, the menu\nwill close."
               },
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
               },
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": ""
+                "docs": "The role of the element that is closing the menu."
               }
             ],
             "references": {
               "Promise": {
                 "location": "global",
                 "id": "global::Promise"
+              },
+              "HTMLElement": {
+                "location": "global",
+                "id": "global::HTMLElement"
               }
             },
             "return": "Promise<boolean>"
@@ -18943,21 +18981,34 @@
             {
               "name": "shouldOpen",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will open. If `false`, the menu\nwill close."
             },
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
             },
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": ""
+              "docs": "The role of the element that is closing the menu."
             }
           ],
-          "docs": "ボタンを開いたり閉じたりします。操作が正常に完了しない場合は `false` を返します。",
-          "docsTags": []
+          "docs": "Opens or closes the menu.\nIf the operation can't be completed successfully, it returns `false`.",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "shouldOpen If `true`, the menu will open. If `false`, the menu\nwill close."
+            },
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation."
+            },
+            {
+              "name": "param",
+              "text": "role The role of the element that is closing the menu."
+            }
+          ]
         },
         {
           "name": "toggle",
@@ -18971,7 +19022,7 @@
               {
                 "name": "animated",
                 "type": "boolean",
-                "docs": ""
+                "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
               }
             ],
             "references": {
@@ -18987,11 +19038,16 @@
             {
               "name": "animated",
               "type": "boolean",
-              "docs": ""
+              "docs": "If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
             }
           ],
           "docs": "メニューを切り替えます。メニューが既に開かれている場合は閉じようとし、そうでない場合は開こうとします。操作が正常に完了しない場合は、`false`を返します。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "animated If `true`, the menu will animate when opening/closing.\nIf `false`, the menu will open/close instantly without animation.\nDefaults to `true`."
+            }
+          ]
         }
       ],
       "events": [
@@ -19822,7 +19878,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
               }
             ],
             "references": {
@@ -19847,10 +19903,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
             }
           ],
-          "docs": "モーダルオーバーレイが表示された後、それを解除します。",
+          "docs": "Dismiss the modal overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -19858,7 +19914,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
             }
           ]
         },
@@ -19984,7 +20040,7 @@
               {
                 "name": "breakpoint",
                 "type": "number",
-                "docs": ""
+                "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
               }
             ],
             "references": {
@@ -20000,11 +20056,16 @@
             {
               "name": "breakpoint",
               "type": "number",
-              "docs": ""
+              "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
             }
           ],
-          "docs": "シートスタイルモーダルを特定のブレークポイントに移動します。ブレークポイントの値は、 `breakpoints` 配列で定義された値でなければなりません。",
-          "docsTags": []
+          "docs": "Move a sheet style modal to a specific breakpoint.",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "breakpoint The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
+            }
+          ]
         }
       ],
       "events": [
@@ -20165,7 +20226,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
       "styles": [
         {
           "name": "--backdrop-opacity",
@@ -24057,12 +24125,12 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+                "docs": "The role of the element that is dismissing the popover. For example, `cancel` or `backdrop`."
               },
               {
                 "name": "dismissParentPopover",
                 "type": "boolean",
-                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
               }
             ],
             "references": {
@@ -24087,15 +24155,15 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+              "docs": "The role of the element that is dismissing the popover. For example, `cancel` or `backdrop`."
             },
             {
               "name": "dismissParentPopover",
               "type": "boolean",
-              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
             }
           ],
-          "docs": "ポップオーバーオーバーレイが提示された後、それを解除します。",
+          "docs": "Dismiss the popover overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -24103,11 +24171,11 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+              "text": "role The role of the element that is dismissing the popover. For example, `cancel` or `backdrop`."
             },
             {
               "name": "param",
-              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
             }
           ]
         },
@@ -24185,7 +24253,7 @@
               {
                 "name": "event",
                 "type": "MouseEvent | PointerEvent | TouchEvent | CustomEvent<any> | undefined",
-                "docs": ""
+                "docs": "The event to position the popover relative to."
               }
             ],
             "references": {
@@ -24221,11 +24289,16 @@
             {
               "name": "event",
               "type": "MouseEvent | PointerEvent | TouchEvent | CustomEvent<any> | undefined",
-              "docs": ""
+              "docs": "The event to position the popover relative to."
             }
           ],
           "docs": "ポップオーバーが作成された後に、ポップオーバーを表示します。開発者は、マウス、タッチ、またはポインタイベントを渡すことで、そのイベントがディスパッチされた場所と相対的にポップオーバーを配置することができます。",
-          "docsTags": []
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "event The event to position the popover relative to."
+            }
+          ]
         }
       ],
       "events": [
@@ -26975,7 +27048,7 @@
               "docs": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
             }
           ],
-          "docs": "再注文操作を完了します。ionItemReorder` イベントで呼び出す必要がある。  アイテムのリストが渡された場合、リストは適切な順序に並び替えられ、返される。  パラメータが渡されない場合、または `true` が渡された場合、並べ替えは完了し、アイテムはドラッグされた位置に留まります。 `false`が渡された場合、並び替えは完了し、アイテムは元の位置に跳ね返されます。",
+          "docs": "Completes the reorder operation. Must be called by the `ionReorderEnd` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
           "docsTags": [
             {
               "name": "param",
@@ -27002,7 +27075,67 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "再注文アクションを完了させるためにリッスンする必要があるイベント。イベントが発生したら、再注文のアクションを確定するために `complete()` メソッドを呼び出す必要があります。",
+          "docs": "Event that needs to be listened to in order to complete the reorder action.",
+          "docsTags": [
+            {
+              "name": "deprecated",
+              "text": "Use `ionReorderEnd` instead. If you are accessing\n`event.detail.from` or `event.detail.to` and relying on them\nbeing different you should now add checks as they are always emitted\nin `ionReorderEnd`, even when they are the same."
+            }
+          ],
+          "deprecation": "Use `ionReorderEnd` instead. If you are accessing\n`event.detail.from` or `event.detail.to` and relying on them\nbeing different you should now add checks as they are always emitted\nin `ionReorderEnd`, even when they are the same."
+        },
+        {
+          "event": "ionReorderEnd",
+          "detail": "ReorderEndEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "ReorderEndEventDetail",
+            "resolved": "ReorderEndEventDetail",
+            "references": {
+              "ReorderEndEventDetail": {
+                "location": "import",
+                "path": "./reorder-group-interface",
+                "id": "src/components/reorder-group/reorder-group-interface.ts::ReorderEndEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event that is emitted when the reorder gesture ends.\nThe from and to properties are always available, regardless of\nif the reorder gesture moved the item. If the item did not change\nfrom its start position, the from and to properties will be the same.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action.",
+          "docsTags": []
+        },
+        {
+          "event": "ionReorderMove",
+          "detail": "ReorderMoveEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "ReorderMoveEventDetail",
+            "resolved": "ReorderMoveEventDetail",
+            "references": {
+              "ReorderMoveEventDetail": {
+                "location": "import",
+                "path": "./reorder-group-interface",
+                "id": "src/components/reorder-group/reorder-group-interface.ts::ReorderMoveEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event that is emitted as the reorder gesture moves.",
+          "docsTags": []
+        },
+        {
+          "event": "ionReorderStart",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event that is emitted when the reorder gesture starts.",
           "docsTags": []
         }
       ],
@@ -27974,7 +28107,7 @@
               {
                 "name": "animation",
                 "type": "AnimationBuilder | undefined",
-                "docs": ""
+                "docs": "A custom animation to use for the transition."
               }
             ],
             "references": {
@@ -28010,7 +28143,7 @@
             {
               "name": "animation",
               "type": "AnimationBuilder | undefined",
-              "docs": ""
+              "docs": "A custom animation to use for the transition."
             }
           ],
           "docs": "指定されたパスに移動します。",
@@ -28022,6 +28155,10 @@
             {
               "name": "param",
               "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+            },
+            {
+              "name": "param",
+              "text": "animation A custom animation to use for the transition."
             }
           ]
         }
@@ -29171,7 +29308,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "ion-searchbar` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい開発者は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。  詳細については、[managing focus](/docs/developing/managing-focus)を参照してください。",
+          "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.\n\nSee [managing focus](/docs/developing/managing-focus) for more information.",
           "docsTags": []
         }
       ],
@@ -36100,7 +36237,7 @@
               {
                 "name": "role",
                 "type": "string | undefined",
-                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+                "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: `\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
               }
             ],
             "references": {
@@ -36126,10 +36263,10 @@
             {
               "name": "role",
               "type": "string | undefined",
-              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "docs": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: `\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "トーストのオーバーレイが提示された後、それを解除します。",
+          "docs": "Dismiss the toast overlay after it has been presented.\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
           "docsTags": [
             {
               "name": "param",
@@ -36137,7 +36274,7 @@
             },
             {
               "name": "param",
-              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.\n\nThis is a no-op if the overlay has not been presented yet. If you want\nto remove an overlay from the DOM that was never presented, use the\n[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method."
+              "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: `\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ]
         },
