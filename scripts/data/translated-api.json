@@ -953,7 +953,7 @@
               "docs": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "Dismiss the action sheet overlay after it has been presented. This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
+          "docs": "アクションシートのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -2027,7 +2027,7 @@
               "docs": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "Dismiss the alert overlay after it has been presented. This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
+          "docs": "アラートのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -6192,7 +6192,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "十字軸上のチェックボックスとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、チェックボックス `display` が `block` に変更されます。",
+          "docs": "十字軸上のチェックボックスとラベルの配置を制御する方法。`\"start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。`\"center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、チェックボックス `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -6349,7 +6349,7 @@
           "mutable": false,
           "attr": "error-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the checkbox label and displayed when an error is detected.",
+          "docs": "チェックボックスのラベルの下に配置され、エラーが検出されたときに表示されるテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -6375,7 +6375,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the checkbox label and displayed when no error is detected.",
+          "docs": "チェックボックスのラベルの下に配置され、エラーが検出されなかった場合に表示されるテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -6430,7 +6430,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "ラベルとチェックボックスを1行にまとめる方法。start\"`：ラベルとチェックボックスはLTRでは左に、RTLでは右に表示されます。end\"`：ラベルとチェックボックスはLTRでは右に、RTLでは左に表示されます。space-between\"`：ラベルとチェックボックスは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、チェックボックスの `display` が `block` に変更されます。",
+          "docs": "ラベルとチェックボックスを1行にまとめる方法。`\"start\"`：ラベルとチェックボックスはLTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとチェックボックスはLTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとチェックボックスは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、チェックボックスの `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -6465,7 +6465,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "チェックボックスに対するラベルの位置。start\"`：ラベルはLTRではチェックボックスの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではチェックボックスの右、RTLでは左に表示されます。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。積み重ね\"`：ラベルは向きに関係なくチェックボックスの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
+          "docs": "チェックボックスに対するラベルの位置。`\"start\"`：ラベルはLTRではチェックボックスの左に、RTLでは右に表示されます。`\"end\"`：ラベルはLTRではチェックボックスの右、RTLでは左に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。`\"stacked\"`：ラベルは向きに関係なくチェックボックスの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [
             {
               "name": "default",
@@ -6557,7 +6557,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "If true, screen readers will announce it as a required field. This property works only for accessibility purposes, it will not prevent the form from submitting if the value is invalid.",
+          "docs": "true の場合、スクリーンリーダーは必須項目として読み上げます。このプロパティはアクセシビリティ目的でのみ機能し、値が無効でもフォーム送信は妨げません。",
           "docsTags": [
             {
               "name": "default",
@@ -6804,11 +6804,11 @@
         },
         {
           "name": "error-text",
-          "docs": "Supporting text displayed beneath the checkbox label when the checkbox is invalid and touched."
+          "docs": "チェックボックスが無効かつ操作されたときに、ラベルの下に表示される補助テキスト。"
         },
         {
           "name": "helper-text",
-          "docs": "Supporting text displayed beneath the checkbox label when the checkbox is valid."
+          "docs": "チェックボックスが有効なときに、ラベルの下に表示される補助テキスト。"
         },
         {
           "name": "label",
@@ -6820,7 +6820,7 @@
         },
         {
           "name": "supporting-text",
-          "docs": "Supporting text displayed beneath the checkbox label."
+          "docs": "チェックボックスのラベルの下に表示される補助テキスト。"
         }
       ],
       "dependents": [
@@ -7084,7 +7084,7 @@
           "mutable": false,
           "attr": "offset-lg",
           "reflectToAttr": false,
-          "docs": "Lgスクリーン用のカラムをオフセットする量を、使用可能な合計の末尾に何カラム分シフトさせるかで指定します。",
+          "docs": "lgスクリーン用のカラムをオフセットする量を、使用可能な合計の末尾に何カラム分シフトさせるかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7188,7 +7188,7 @@
           "mutable": false,
           "attr": "offset-xs",
           "reflectToAttr": false,
-          "docs": "xs画面のカラムをオフセットする量を、利用可能な合計の末尾に何カラム分ずらすかで指定します。",
+          "docs": "xsスクリーンのカラムをオフセットする量を、利用可能な合計の末尾に何カラム分ずらすかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7240,7 +7240,7 @@
           "mutable": false,
           "attr": "pull-lg",
           "reflectToAttr": false,
-          "docs": "LGスクリーン用のカラムを引く量を、使用可能な合計の開始位置に何カラム分シフトさせるかで指定します。",
+          "docs": "lgスクリーン用のカラムを引く量を、使用可能な合計の開始位置に何カラム分シフトさせるかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7396,7 +7396,7 @@
           "mutable": false,
           "attr": "push-lg",
           "reflectToAttr": false,
-          "docs": "LGスクリーン用のカラムをプッシュする量を、使用可能な総カラムのうち何カラム分までシフトさせるかで指定します。",
+          "docs": "lgスクリーン用のカラムをプッシュする量を、使用可能な総カラムのうち何カラム分までシフトさせるかで指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7500,7 +7500,7 @@
           "mutable": false,
           "attr": "push-xs",
           "reflectToAttr": false,
-          "docs": "xs画面分の列を、利用可能な合計の末尾に何列分シフトさせるかを指定します。",
+          "docs": "xsスクリーン分の列を、利用可能な合計の末尾に何列分シフトさせるかを指定します。",
           "docsTags": [],
           "values": [
             {
@@ -7691,7 +7691,7 @@
         {
           "name": "--ion-grid-column-padding-lg",
           "annotation": "prop",
-          "docs": "LG以上の画面でのコラムのPadding"
+          "docs": "lg以上の画面でのコラムのPadding"
         },
         {
           "name": "--ion-grid-column-padding-md",
@@ -7706,7 +7706,7 @@
         {
           "name": "--ion-grid-column-padding-xl",
           "annotation": "prop",
-          "docs": "XL以上の画面でのカラムのPadding"
+          "docs": "xl以上の画面でのカラムのPadding"
         },
         {
           "name": "--ion-grid-column-padding-xs",
@@ -9440,7 +9440,7 @@
           "mutable": false,
           "attr": "show-adjacent-days",
           "reflectToAttr": false,
-          "docs": "If `true`, the datetime calendar displays a six-week (42-day) layout, including days from the previous and next months to fill the grid. These adjacent days are selectable unless disabled.",
+          "docs": "`true` の場合、グリッドを埋めるために前月・翌月の日も含めた6週間（42 日）のレイアウトでカレンダーを表示します。これらの隣接する日は無効化されていない限り選択できます。",
           "docsTags": [
             {
               "name": "default",
@@ -11290,12 +11290,12 @@
         {
           "name": "--ion-grid-padding-lg",
           "annotation": "prop",
-          "docs": "LG画面でのグリッドのPadding"
+          "docs": "lgスクリーンでのグリッドのPadding"
         },
         {
           "name": "--ion-grid-padding-md",
           "annotation": "prop",
-          "docs": "md画面におけるグリッドのPadding"
+          "docs": "mdスクリーンにおけるグリッドのPadding"
         },
         {
           "name": "--ion-grid-padding-sm",
@@ -11305,12 +11305,12 @@
         {
           "name": "--ion-grid-padding-xl",
           "annotation": "prop",
-          "docs": "XL画面でのグリッドのPadding"
+          "docs": "xlスクリーンでのグリッドのPadding"
         },
         {
           "name": "--ion-grid-padding-xs",
           "annotation": "prop",
-          "docs": "xs画面でのGridのPadding"
+          "docs": "xsスクリーンでのGridのPadding"
         },
         {
           "name": "--ion-grid-width",
@@ -11320,22 +11320,22 @@
         {
           "name": "--ion-grid-width-lg",
           "annotation": "prop",
-          "docs": "LGスクリーンで固定されたGridの幅"
+          "docs": "lgスクリーンで固定されたGridの幅"
         },
         {
           "name": "--ion-grid-width-md",
           "annotation": "prop",
-          "docs": "md画面での固定Gridの幅"
+          "docs": "mdスクリーンでの固定Gridの幅"
         },
         {
           "name": "--ion-grid-width-sm",
           "annotation": "prop",
-          "docs": "sm画面での固定Gridの幅"
+          "docs": "smスクリーンでの固定Gridの幅"
         },
         {
           "name": "--ion-grid-width-xl",
           "annotation": "prop",
-          "docs": "xl画面での固定Gridの幅"
+          "docs": "xlスクリーンでの固定Gridの幅"
         },
         {
           "name": "--ion-grid-width-xs",
@@ -12006,7 +12006,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "The fill for the input boxes. If `\"solid\"` the input boxes will have a background. If `\"outline\"` the input boxes will be transparent with a border.",
+          "docs": "入力ボックスの塗りつぶし。`\"solid\"` の場合は背景色が付き、`\"outline\"` の場合は枠線付きで透過表示になります。",
           "docsTags": [
             {
               "name": "default",
@@ -12043,7 +12043,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "A hint to the browser for which keyboard to display. Possible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.  For numbers (type=\"number\"): \"numeric\" For text (type=\"text\"): \"text\"",
+          "docs": "どのキーボードを表示するかのブラウザへのヒント。指定可能な値は `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`, `\"email\"`, `\"numeric\"`, `\"decimal\"`, `\"search\"`。数値入力（type=\"number\"）には \"numeric\"、テキスト（type=\"text\"）には \"text\" を使用します。",
           "docsTags": [],
           "values": [
             {
@@ -12098,7 +12098,7 @@
           "mutable": false,
           "attr": "length",
           "reflectToAttr": false,
-          "docs": "The number of input boxes to display.",
+          "docs": "表示する入力ボックスの数。",
           "docsTags": [
             {
               "name": "default",
@@ -12127,7 +12127,7 @@
           "mutable": false,
           "attr": "pattern",
           "reflectToAttr": false,
-          "docs": "A regex pattern string for allowed characters. Defaults based on type.  For numbers (`type=\"number\"`): `\"[\\p{N}]\"` For text (`type=\"text\"`): `\"[\\p{L}\\p{N}]\"`",
+          "docs": "許可される文字の正規表現パターン文字列。型に応じたデフォルトがあります。数値（type=\"number\"）は `\"[\\p{N}]\"`、テキスト（type=\"text\"）は `\"[\\p{L}\\p{N}]\"`。",
           "docsTags": [],
           "values": [
             {
@@ -12182,7 +12182,7 @@
           "mutable": false,
           "attr": "separators",
           "reflectToAttr": false,
-          "docs": "Where separators should be shown between input boxes. Can be a comma-separated string or an array of numbers.  For example: `\"3\"` will show a separator after the 3rd input box. `[1,4]` will show a separator after the 1st and 4th input boxes. `\"all\"` will show a separator between every input box.",
+          "docs": "入力ボックス間に区切り線を表示する場所。カンマ区切り文字列または数値配列で指定できます。例: `\"3\"` は 3 番目の入力ボックスの後に区切りを表示、`[1,4]` は 1 番目と 4 番目の後に表示、`\"all\"` はすべての入力ボックス間に表示します。",
           "docsTags": [],
           "values": [
             {
@@ -12211,7 +12211,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": false,
-          "docs": "The shape of the input boxes. If \"round\" they will have an increased border radius. If \"rectangular\" they will have no border radius. If \"soft\" they will have a soft border radius.",
+          "docs": "入力ボックスの形状。\"round\" は角の丸みを大きくし、\"rectangular\" は角丸なし、\"soft\" はやわらかい角丸になります。",
           "docsTags": [
             {
               "name": "default",
@@ -12249,7 +12249,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "The size of the input boxes.",
+          "docs": "入力ボックスのサイズ。",
           "docsTags": [
             {
               "name": "default",
@@ -12287,7 +12287,7 @@
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
-          "docs": "The type of input allowed in the input boxes.",
+          "docs": "入力ボックスに許可される入力種別。",
           "docsTags": [
             {
               "name": "default",
@@ -12321,7 +12321,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The value of the input group.",
+          "docs": "入力グループの値。",
           "docsTags": [
             {
               "name": "default",
@@ -12381,7 +12381,7 @@
               "docs": "- The index of the input box to focus (0-based).\nIf provided and the input box has a value, the input box at that index will be focused.\nOtherwise, the first empty input box or the last input if all are filled will be focused."
             }
           ],
-          "docs": "Sets focus to an input box.",
+          "docs": "任意の入力ボックスにフォーカスを設定します。",
           "docsTags": [
             {
               "name": "param",
@@ -12407,7 +12407,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the input group loses focus.",
+          "docs": "入力グループのフォーカスが外れたときに発行されます。",
           "docsTags": []
         },
         {
@@ -12427,7 +12427,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired when the user modifies the input's value. Unlike the `ionInput` event, the `ionChange` event is only fired when changes are committed, not as the user types.  The `ionChange` event fires when the `<ion-input-otp>` component loses focus after its value has changed.  This event will not emit when programmatically setting the `value` property.",
+          "docs": "ユーザーが入力値を変更したときに `ionChange` イベントが発生します。`ionInput` と異なり、`ionChange` は入力途中ではなく変更が確定したときにのみ発生します。`<ion-input-otp>` の値が変更された後にフォーカスを失ったときにも発生します。プログラムで `value` を設定した場合には発生しません。",
           "docsTags": []
         },
         {
@@ -12447,7 +12447,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when all input boxes have been filled with valid values.",
+          "docs": "すべての入力ボックスが有効な値で埋められたときに発行されます。",
           "docsTags": []
         },
         {
@@ -12466,7 +12466,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the input group has focus.",
+          "docs": "入力グループにフォーカスが当たったときに発行されます。",
           "docsTags": []
         },
         {
@@ -12495,73 +12495,73 @@
         {
           "name": "--background",
           "annotation": "prop",
-          "docs": "Background color of the input boxes",
+          "docs": "入力ボックスの背景色",
           "mode": "ios"
         },
         {
           "name": "--background",
           "annotation": "prop",
-          "docs": "Background color of the input boxes",
+          "docs": "入力ボックスの背景色",
           "mode": "md"
         },
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Border color of the input boxes",
+          "docs": "入力ボックスのボーダーカラー",
           "mode": "ios"
         },
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Border color of the input boxes",
+          "docs": "入力ボックスのボーダーカラー",
           "mode": "md"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the input boxes",
+          "docs": "入力ボックスのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the input boxes",
+          "docs": "入力ボックスのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Border width of the input boxes",
+          "docs": "入力ボックスのボーダー幅",
           "mode": "ios"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Border width of the input boxes",
+          "docs": "入力ボックスのボーダー幅",
           "mode": "md"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "Text color of the input",
+          "docs": "入力テキストの色",
           "mode": "ios"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "Text color of the input",
+          "docs": "入力テキストの色",
           "mode": "md"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "Height of input boxes",
+          "docs": "入力ボックスの高さ",
           "mode": "ios"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "Height of input boxes",
+          "docs": "入力ボックスの高さ",
           "mode": "md"
         },
         {
@@ -12603,169 +12603,169 @@
         {
           "name": "--margin-bottom",
           "annotation": "prop",
-          "docs": "Bottom margin of the input group",
+          "docs": "入力グループの下マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-bottom",
           "annotation": "prop",
-          "docs": "Bottom margin of the input group",
+          "docs": "入力グループの下マージン",
           "mode": "md"
         },
         {
           "name": "--margin-end",
           "annotation": "prop",
-          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-end",
           "annotation": "prop",
-          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左マージン",
           "mode": "md"
         },
         {
           "name": "--margin-start",
           "annotation": "prop",
-          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-start",
           "annotation": "prop",
-          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右マージン",
           "mode": "md"
         },
         {
           "name": "--margin-top",
           "annotation": "prop",
-          "docs": "Top margin of the input group",
+          "docs": "入力グループの上マージン",
           "mode": "ios"
         },
         {
           "name": "--margin-top",
           "annotation": "prop",
-          "docs": "Top margin of the input group",
+          "docs": "入力グループの上マージン",
           "mode": "md"
         },
         {
           "name": "--min-width",
           "annotation": "prop",
-          "docs": "Minimum width of input boxes",
+          "docs": "入力ボックスの最小幅",
           "mode": "ios"
         },
         {
           "name": "--min-width",
           "annotation": "prop",
-          "docs": "Minimum width of input boxes",
+          "docs": "入力ボックスの最小幅",
           "mode": "md"
         },
         {
           "name": "--padding-bottom",
           "annotation": "prop",
-          "docs": "Bottom padding of the input group",
+          "docs": "入力グループの下パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-bottom",
           "annotation": "prop",
-          "docs": "Bottom padding of the input group",
+          "docs": "入力グループの下パディング",
           "mode": "md"
         },
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた右/左パディング",
           "mode": "md"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group",
+          "docs": "入力グループの左右方向に応じた左/右パディング",
           "mode": "md"
         },
         {
           "name": "--padding-top",
           "annotation": "prop",
-          "docs": "Top padding of the input group",
+          "docs": "入力グループの上パディング",
           "mode": "ios"
         },
         {
           "name": "--padding-top",
           "annotation": "prop",
-          "docs": "Top padding of the input group",
+          "docs": "入力グループの上パディング",
           "mode": "md"
         },
         {
           "name": "--separator-border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the separator between boxes",
+          "docs": "ボックス間セパレーターのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--separator-border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the separator between boxes",
+          "docs": "ボックス間セパレーターのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--separator-color",
           "annotation": "prop",
-          "docs": "Color of the separator between boxes",
+          "docs": "ボックス間セパレーターの色",
           "mode": "ios"
         },
         {
           "name": "--separator-color",
           "annotation": "prop",
-          "docs": "Color of the separator between boxes",
+          "docs": "ボックス間セパレーターの色",
           "mode": "md"
         },
         {
           "name": "--separator-height",
           "annotation": "prop",
-          "docs": "Height of the separator between boxes",
+          "docs": "ボックス間セパレーターの高さ",
           "mode": "ios"
         },
         {
           "name": "--separator-height",
           "annotation": "prop",
-          "docs": "Height of the separator between boxes",
+          "docs": "ボックス間セパレーターの高さ",
           "mode": "md"
         },
         {
           "name": "--separator-width",
           "annotation": "prop",
-          "docs": "Width of the separator between boxes",
+          "docs": "ボックス間セパレーターの幅",
           "mode": "ios"
         },
         {
           "name": "--separator-width",
           "annotation": "prop",
-          "docs": "Width of the separator between boxes",
+          "docs": "ボックス間セパレーターの幅",
           "mode": "md"
         },
         {
           "name": "--width",
           "annotation": "prop",
-          "docs": "Width of input boxes",
+          "docs": "入力ボックスの幅",
           "mode": "ios"
         },
         {
           "name": "--width",
           "annotation": "prop",
-          "docs": "Width of input boxes",
+          "docs": "入力ボックスの幅",
           "mode": "md"
         }
       ],
@@ -17677,7 +17677,7 @@
               "docs": "The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading. Some examples include:\n`\"cancel\"`, `\"destructive\"`, `\"selected\"`, and `\"backdrop\"`."
             }
           ],
-          "docs": "Dismiss the loading overlay after it has been presented. This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
+          "docs": "ローディングのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -18875,7 +18875,7 @@
           },
           "signature": "isActive() => Promise<boolean>",
           "parameters": [],
-          "docs": "Returns `true` if the menu is active.  A menu is active when it can be opened or closed, meaning it's enabled and it's not part of a `ion-split-pane`.",
+          "docs": "メニューがアクティブな場合は `true` を返します。メニューが開閉可能で有効化されており、`ion-split-pane` の一部でないときにアクティブとみなされます。",
           "docsTags": []
         },
         {
@@ -18994,7 +18994,7 @@
               "docs": "The role of the element that is closing the menu."
             }
           ],
-          "docs": "Opens or closes the menu. If the operation can't be completed successfully, it returns `false`.",
+          "docs": "メニューを開くか閉じます。操作が正常に完了できない場合は `false` を返します。",
           "docsTags": [
             {
               "name": "param",
@@ -19465,7 +19465,7 @@
           "mutable": false,
           "attr": "expand-to-scroll",
           "reflectToAttr": false,
-          "docs": "Controls whether scrolling or dragging within the sheet modal expands it to a larger breakpoint. This only takes effect when `breakpoints` and `initialBreakpoint` are set.  If `true`, scrolling or dragging anywhere in the modal will first expand it to the next breakpoint. Once fully expanded, scrolling will affect the content. If `false`, scrolling will always affect the content. The modal will only expand when dragging the header or handle. The modal will close when dragging the header or handle. It can also be closed when dragging the content, but only if the content is scrolled to the top.",
+          "docs": "シートモーダル内でのスクロールやドラッグで、より大きいブレークポイントへ拡張するかを制御します。これは `breakpoints` と `initialBreakpoint` が設定されている場合にのみ有効です。`true` のとき、モーダル内のどこでスクロール/ドラッグしても、まず次のブレークポイントへ拡張します。最大まで拡張されると、スクロールはコンテンツに作用します。`false` のとき、スクロールは常にコンテンツに作用します。モーダルが拡張するのはヘッダーまたはハンドルをドラッグした場合のみです。ヘッダーやハンドルをドラッグするとモーダルは閉じます。コンテンツのドラッグでも閉じることがありますが、コンテンツが最上部までスクロールされている場合に限ります。",
           "docsTags": [
             {
               "name": "default",
@@ -19906,7 +19906,7 @@
               "docs": "The role of the element that is dismissing the modal.\nFor example, `cancel` or `backdrop`."
             }
           ],
-          "docs": "Dismiss the modal overlay after it has been presented. This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
+          "docs": "モーダルのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -20059,7 +20059,7 @@
               "docs": "The breakpoint value to move the sheet modal to.\nMust be a value defined in your `breakpoints` array."
             }
           ],
-          "docs": "Move a sheet style modal to a specific breakpoint.",
+          "docs": "シートスタイルのモーダルを指定したブレークポイントに移動します。",
           "docsTags": [
             {
               "name": "param",
@@ -24163,7 +24163,7 @@
               "docs": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
             }
           ],
-          "docs": "Dismiss the popover overlay after it has been presented. This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method.",
+          "docs": "ポップオーバーのオーバーレイが表示された後に閉じます。オーバーレイがまだ表示されていない場合は何もしません。表示されなかったオーバーレイを DOM から削除するには、[remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) メソッドを使用してください。",
           "docsTags": [
             {
               "name": "param",
@@ -24916,7 +24916,7 @@
           "mutable": false,
           "attr": "allow-empty-selection",
           "reflectToAttr": false,
-          "docs": "`true`の場合、ラジオを非選択にすることができる。",
+          "docs": "`true`の場合、Radioを非選択にすることができる。",
           "docsTags": [
             {
               "name": "default",
@@ -24983,7 +24983,7 @@
           "mutable": false,
           "attr": "error-text",
           "reflectToAttr": false,
-          "docs": "The error text to display at the top of the radio group.",
+          "docs": "ラジオグループ上部に表示するエラーテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -25009,7 +25009,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": false,
-          "docs": "The helper text to display at the top of the radio group.",
+          "docs": "ラジオグループ上部に表示するヘルパーテキスト。",
           "docsTags": [],
           "values": [
             {
@@ -25165,7 +25165,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "ラジオとラベルの十字軸上の配置を制御する方法。`\"start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。`\"center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、ラジオの `display` が `block` に変更されます。",
+          "docs": "Radioとラベルの十字軸上の配置を制御する方法。`\"start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。`\"center\"`：ラベルとコントロールはLTRでもRTLでも横軸の中央に表示されます。このプロパティを設定すると、Radioの `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -25264,7 +25264,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "`true`の場合、ユーザはラジオと対話することができません。",
+          "docs": "`true`の場合、ユーザはRadioと対話することができません。",
           "docsTags": [
             {
               "name": "default",
@@ -25293,7 +25293,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "ラベルとラジオを1行にまとめる方法。`\"start\"`：ラベルとラジオはLTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとラジオはLTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとラジオは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、ラジオの `display` が `block` に変更されます。",
+          "docs": "ラベルとRadioを1行にまとめる方法。`\"start\"`：ラベルとRadioはLTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとRadioはLTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとRadioは行の反対側に表示され、2つの要素の間にはスペースが入ります。このプロパティを設定すると、Radioの `display` が `block` に変更されます。",
           "docsTags": [],
           "values": [
             {
@@ -25328,7 +25328,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "ラジオに対してラベルを配置する位置。start\"`：ラベルはLTRではラジオの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではラジオの右、RTLでは左に表示される。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。stacked\"`：ラベルは向きに関係なくラジオの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
+          "docs": "Radioに対してラベルを配置する位置。start\"`：ラベルはLTRではRadioの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではRadioの右、RTLでは左に表示される。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。stacked\"`：ラベルは向きに関係なくRadioの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [
             {
               "name": "default",
@@ -25420,7 +25420,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "ラジオの値です。",
+          "docs": "Radioの値です。",
           "docsTags": [],
           "values": [
             {
@@ -25446,7 +25446,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ラジオボタンのフォーカスが外れたときに発行されます。",
+          "docs": "Radioボタンのフォーカスが外れたときに発行されます。",
           "docsTags": []
         },
         {
@@ -25460,7 +25460,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "ラジオボタンにフォーカスが当たったときに発行されます。",
+          "docs": "Radioボタンにフォーカスが当たったときに発行されます。",
           "docsTags": []
         }
       ],
@@ -25469,66 +25469,66 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "ラジオのボーダー半径",
+          "docs": "Radioのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "ラジオのボーダー半径",
+          "docs": "Radioのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "ラジオのカラー",
+          "docs": "Radioのカラー",
           "mode": "ios"
         },
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "ラジオのカラー",
+          "docs": "Radioのカラー",
           "mode": "md"
         },
         {
           "name": "--color-checked",
           "annotation": "prop",
-          "docs": "チェックしたラジオの色",
+          "docs": "チェックしたRadioの色",
           "mode": "ios"
         },
         {
           "name": "--color-checked",
           "annotation": "prop",
-          "docs": "チェックしたラジオの色",
+          "docs": "チェックしたRadioの色",
           "mode": "md"
         },
         {
           "name": "--inner-border-radius",
           "annotation": "prop",
-          "docs": "内側のチェック付きラジオのボーダー半径",
+          "docs": "内側のチェック付きRadioのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--inner-border-radius",
           "annotation": "prop",
-          "docs": "内側のチェック付きラジオのボーダー半径",
+          "docs": "内側のチェック付きRadioのボーダー半径",
           "mode": "md"
         }
       ],
       "slots": [
         {
           "name": "",
-          "docs": "ラジオに関連付けるラベルテキストです。\"labelPlacement\"プロパティを使用して、ラジオに対するラベルの相対的な配置を制御します。"
+          "docs": "Radioに関連付けるラベルテキストです。\"labelPlacement\"プロパティを使用して、Radioに対するラベルの相対的な配置を制御します。"
         }
       ],
       "parts": [
         {
           "name": "container",
-          "docs": "ラジオマークの入れ物です。"
+          "docs": "Radioマークの入れ物です。"
         },
         {
           "name": "label",
-          "docs": "ラジオを説明するラベルテキスト。"
+          "docs": "Radioを説明するラベルテキスト。"
         },
         {
           "name": "mark",
@@ -25613,7 +25613,7 @@
           "mutable": true,
           "attr": "active-bar-start",
           "reflectToAttr": false,
-          "docs": "レンジアクティブバーの開始位置です。この機能は、ノブが1つの場合のみ有効です（dualKnobs=\"false\"）。有効な値は、min値以上、max値以下です。",
+          "docs": "Rangeアクティブバーの開始位置です。この機能は、ノブが1つの場合のみ有効です（dualKnobs=\"false\"）。有効な値は、min値以上、max値以下です。",
           "docsTags": [],
           "values": [
             {
@@ -25707,7 +25707,7 @@
           "mutable": false,
           "attr": "debounce",
           "reflectToAttr": false,
-          "docs": "レンジの値が変化するたびに `ionInput` イベントをトリガーするまでの待ち時間（ミリ秒単位）。",
+          "docs": "Rangeの値が変化するたびに `ionInput` イベントをトリガーするまでの待ち時間（ミリ秒単位）。",
           "docsTags": [],
           "values": [
             {
@@ -26162,7 +26162,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "レンジの焦点が合わなくなったときに発行されます。",
+          "docs": "Rangeの焦点が合わなくなったときに発行されます。",
           "docsTags": []
         },
         {
@@ -26196,7 +26196,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "レンジのフォーカスが合ったときに発行されます。",
+          "docs": "Rangeのフォーカスが合ったときに発行されます。",
           "docsTags": []
         },
         {
@@ -26256,7 +26256,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "マウスドラッグ、タッチジェスチャー、キーボード操作など、ユーザーがレンジノブの移動を開始したときに発行されます。",
+          "docs": "マウスドラッグ、タッチジェスチャー、キーボード操作など、ユーザーがRangeノブの移動を開始したときに発行されます。",
           "docsTags": []
         }
       ],
@@ -26265,133 +26265,133 @@
         {
           "name": "--bar-background",
           "annotation": "prop",
-          "docs": "レンジバーの背景",
+          "docs": "Rangeバーの背景",
           "mode": "ios"
         },
         {
           "name": "--bar-background",
           "annotation": "prop",
-          "docs": "レンジバーの背景",
+          "docs": "Rangeバーの背景",
           "mode": "md"
         },
         {
           "name": "--bar-background-active",
           "annotation": "prop",
-          "docs": "アクティブレンジバーの背景",
+          "docs": "アクティブRangeバーの背景",
           "mode": "ios"
         },
         {
           "name": "--bar-background-active",
           "annotation": "prop",
-          "docs": "アクティブレンジバーの背景",
+          "docs": "アクティブRangeバーの背景",
           "mode": "md"
         },
         {
           "name": "--bar-border-radius",
           "annotation": "prop",
-          "docs": "レンジバーのボーダー半径",
+          "docs": "Rangeバーのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--bar-border-radius",
           "annotation": "prop",
-          "docs": "レンジバーのボーダー半径",
+          "docs": "Rangeバーのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--bar-height",
           "annotation": "prop",
-          "docs": "レンジバーの高さ",
+          "docs": "Rangeバーの高さ",
           "mode": "ios"
         },
         {
           "name": "--bar-height",
           "annotation": "prop",
-          "docs": "レンジバーの高さ",
+          "docs": "Rangeバーの高さ",
           "mode": "md"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "レンジの高さ",
+          "docs": "Rangeの高さ",
           "mode": "ios"
         },
         {
           "name": "--height",
           "annotation": "prop",
-          "docs": "レンジの高さ",
+          "docs": "Rangeの高さ",
           "mode": "md"
         },
         {
           "name": "--knob-background",
           "annotation": "prop",
-          "docs": "レンジノブの背景",
+          "docs": "Rangeノブの背景",
           "mode": "ios"
         },
         {
           "name": "--knob-background",
           "annotation": "prop",
-          "docs": "レンジノブの背景",
+          "docs": "Rangeノブの背景",
           "mode": "md"
         },
         {
           "name": "--knob-border-radius",
           "annotation": "prop",
-          "docs": "レンジツマミのボーダー半径",
+          "docs": "Rangeツマミのボーダー半径",
           "mode": "ios"
         },
         {
           "name": "--knob-border-radius",
           "annotation": "prop",
-          "docs": "レンジツマミのボーダー半径",
+          "docs": "Rangeツマミのボーダー半径",
           "mode": "md"
         },
         {
           "name": "--knob-box-shadow",
           "annotation": "prop",
-          "docs": "レンジノブのボックスシャドウ",
+          "docs": "Rangeノブのボックスシャドウ",
           "mode": "ios"
         },
         {
           "name": "--knob-box-shadow",
           "annotation": "prop",
-          "docs": "レンジノブのボックスシャドウ",
+          "docs": "Rangeノブのボックスシャドウ",
           "mode": "md"
         },
         {
           "name": "--knob-size",
           "annotation": "prop",
-          "docs": "レンジツマミの大きさ",
+          "docs": "Rangeツマミの大きさ",
           "mode": "ios"
         },
         {
           "name": "--knob-size",
           "annotation": "prop",
-          "docs": "レンジツマミの大きさ",
+          "docs": "Rangeツマミの大きさ",
           "mode": "md"
         },
         {
           "name": "--pin-background",
           "annotation": "prop",
-          "docs": "レンジピンの背景（MD mode時のみ有効）",
+          "docs": "Rangeピンの背景（MD mode時のみ有効）",
           "mode": "ios"
         },
         {
           "name": "--pin-background",
           "annotation": "prop",
-          "docs": "レンジピンの背景（MD mode時のみ有効）",
+          "docs": "Rangeピンの背景（MD mode時のみ有効）",
           "mode": "md"
         },
         {
           "name": "--pin-color",
           "annotation": "prop",
-          "docs": "レンジピンの色（MD mode時のみ有効）",
+          "docs": "Rangeピンの色（MD mode時のみ有効）",
           "mode": "ios"
         },
         {
           "name": "--pin-color",
           "annotation": "prop",
-          "docs": "レンジピンの色（MD mode時のみ有効）",
+          "docs": "Rangeピンの色（MD mode時のみ有効）",
           "mode": "md"
         }
       ],
@@ -27048,7 +27048,7 @@
               "docs": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
             }
           ],
-          "docs": "Completes the reorder operation. Must be called by the `ionReorderEnd` event.  If a list of items is passed, the list will be reordered and returned in the proper order.  If no parameters are passed or if `true` is passed in, the reorder will complete and the item will remain in the position it was dragged to. If `false` is passed, the reorder will complete and the item will bounce back to its original position.",
+          "docs": "並べ替え操作を完了します。`ionReorderEnd` イベントで呼び出す必要があります。アイテムの配列が渡された場合は並べ替えられ、正しい順序で返されます。引数がない、または `true` が渡された場合は並べ替えを確定し、アイテムはドラッグ先の位置に留まります。`false` の場合は並べ替えが完了し、アイテムは元の位置に戻ります。",
           "docsTags": [
             {
               "name": "param",
@@ -27075,7 +27075,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Event that needs to be listened to in order to complete the reorder action.",
+          "docs": "並べ替えアクションを完了するためにリッスンが必要なイベント。",
           "docsTags": [
             {
               "name": "deprecated",
@@ -31450,7 +31450,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "If true, screen readers will announce it as a required field. This property works only for accessibility purposes, it will not prevent the form from submitting if the value is invalid.",
+          "docs": "true の場合、スクリーンリーダーは必須項目として読み上げます。このプロパティはアクセシビリティ目的でのみ機能し、値が無効でもフォーム送信は妨げません。",
           "docsTags": [
             {
               "name": "default",
@@ -31738,13 +31738,13 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不 均一になることがあります。",
+          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不均一になることがあります。",
           "mode": "ios"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不 均一になることがあります。",
+          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不均一になることがあります。",
           "mode": "md"
         },
         {
@@ -31882,13 +31882,13 @@
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "選択Placeholderテキストの不透明度",
+          "docs": "セレクトPlaceholderテキストの不透明度",
           "mode": "ios"
         },
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "選択Placeholderテキストの不透明度",
+          "docs": "セレクトPlaceholderテキストの不透明度",
           "mode": "md"
         },
         {
@@ -31921,7 +31921,7 @@
       "parts": [
         {
           "name": "container",
-          "docs": "選択テキストまたはプレースホルダーのコンテナ。"
+          "docs": "セレクトテキストまたはプレースホルダーのコンテナ。"
         },
         {
           "name": "error-text",
@@ -36654,7 +36654,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "If true, screen readers will announce it as a required field. This property works only for accessibility purposes, it will not prevent the form from submitting if the value is invalid.",
+          "docs": "true の場合、スクリーンリーダーは必須項目として読み上げます。このプロパティはアクセシビリティ目的でのみ機能し、値が無効でもフォーム送信は妨げません。",
           "docsTags": [
             {
               "name": "default",
