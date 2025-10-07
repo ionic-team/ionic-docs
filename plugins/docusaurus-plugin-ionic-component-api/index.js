@@ -19,19 +19,29 @@ module.exports = function (context, options) {
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
-        const response = isCurrentVersion
-          ? await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`)
-          : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-        const { components } = await response.json();
-
+        const components = await (async () => {
+          if (isCurrentVersion) {
+            const { components } = require(process.cwd() + `/scripts/data/translated-api.json`);
+            return components;
+          } else {
+            const response = isCurrentVersion
+              ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+              : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+            const { components } = await response.json();
+            return components;
+          }
+        })();
+        // const response = isCurrentVersion
+        //   ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+        //   : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+        // const { components } = await response.json();
         const names = components.map((component) => component.tag.slice(4));
         // matches all relative markdown links to a component, e.g. (../button)
         COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
-
         components.forEach((comp) => {
           const compTag = comp.tag.slice(4);
           const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
-          comp = translateDocs(comp);
+
           data.push({
             outDir,
             componentTag: compTag,
@@ -326,46 +336,4 @@ function renderSlots({ slots }) {
 ${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
 
 `;
-}
-
-function translateDocs(comp) {
-  const { props, events, methods, parts, styles, slots } = comp;
-  return {
-    ...comp,
-    props: props.map((prop) => ({
-      ...prop,
-      docs: translate(prop.docs),
-    })),
-    events: events.map((event) => ({
-      ...event,
-      docs: translate(event.docs),
-    })),
-    methods: methods.map((method) => ({
-      ...method,
-      docs: translate(method.docs),
-    })),
-    parts: parts.map((part) => ({
-      ...part,
-      docs: translate(part.docs),
-    })),
-    styles: styles.map((styles) => ({
-      ...styles,
-      docs: translate(styles.docs),
-    })),
-    slots: slots.map((slot) => ({
-      ...slot,
-      docs: translate(slot.docs),
-    })),
-  };
-}
-
-function translate(docs) {
-  const TranslatedFile = require(process.cwd() + '/scripts/data/translated-cache.json');
-  const translated = TranslatedFile.cache;
-
-  if (translated.hasOwnProperty(docs)) {
-    return translated[docs];
-  }
-
-  return docs;
 }

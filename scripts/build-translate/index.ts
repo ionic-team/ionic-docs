@@ -1,16 +1,14 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { getTranslateType } from './translate-type';
-const translate = require('deepl');
-import DeeplConfig from './deepl.config.json';
-import TranslatedCache from '../data/translated-cache.json';
 
 const apply = async () => {
   const translateTypes = await getTranslateType();
 
-  const cacheTranslated = TranslatedCache.cache as { [key: string]: string };
-  const translatedNow = {} as { [key: string]: string };
-
   for (const translateType of translateTypes) {
+    const cachePath = process.cwd() + '/scripts/data/translated-cache-' + translateType.type + '.json';
+    const cache = JSON.parse(readFileSync(cachePath, { encoding: 'utf8' }));
+
+    const translatedNow = {} as { [key: string]: string };
     const directory = process.cwd() + '/src/translate/' + translateType.type;
     if (!existsSync(directory)) {
       continue;
@@ -40,32 +38,13 @@ const apply = async () => {
                   const translateText = ob[translateType.translateTargetKey].replace(/\n/g, ' ');
 
                   // キャッシュデータにあるか確認
-                  if (cacheTranslated.hasOwnProperty(translateText)) {
-                    ob[translateType.translateTargetKey] = cacheTranslated[translateText];
+                  if (cache.hasOwnProperty(translateText)) {
+                    ob[translateType.translateTargetKey] = cache[translateText];
+                    translatedNow[translateText] = cache[translateText];
                     return;
-                  }
-
-                  // 今回翻訳データにあるか確認
-                  // if (translatedNow.hasOwnProperty(ob[translateType.translateTargetKey])) {
-                  //   ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translatedNow[translateText]}`;
-                  //   return;
-                  // }
-
-                  try {
-                    const response = await translate({
-                      free_api: true,
-                      text: translateText,
-                      source_lang: DeeplConfig.fromLanguage,
-                      target_lang: DeeplConfig.toLanguage,
-                      auth_key: process.env.DEEPLAUTHKEY,
-                    });
-                    const translated = response.data.translations[0].text;
-                    translatedNow[translateText] = translated;
-                  } catch (e) {
+                  } else {
                     translatedNow[translateText] = translateText;
                   }
-
-                  // ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
                 }
               })
             );
@@ -87,15 +66,10 @@ const apply = async () => {
       JSON.stringify(resource, null, 2),
       { encoding: 'utf8' }
     );
+    writeFileSync(cachePath, JSON.stringify(translatedNow, null, 2), {
+      encoding: 'utf8',
+    });
   }
-
-  // 翻訳データの結合
-  const writeTranslateCache = {
-    cache: Object.assign(cacheTranslated, translatedNow),
-  };
-  writeFileSync(process.cwd() + '/scripts/data/translated-cache.json', JSON.stringify(writeTranslateCache, null, 2), {
-    encoding: 'utf8',
-  });
 };
 
 const create = async () => {
