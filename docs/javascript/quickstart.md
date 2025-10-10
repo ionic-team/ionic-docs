@@ -75,7 +75,86 @@ The `counter.js` and `style.css` files can be deleted. We will not be using them
 All file paths in the examples below are relative to the project root directory.
 :::
 
-Let's walk through these files to understand the app's structure.
+Let's configure the project, initialize Ionic, and add components to create our app.
+
+## Configure Vite
+
+Install the `vite-plugin-static-copy` package:
+
+```shell
+npm install vite-plugin-static-copy --save-dev
+```
+
+Add a `vite.config.js` file at the project root with the following:
+
+```js
+import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+
+export default defineConfig({
+  optimizeDeps: {
+    exclude: ['@ionic/core'],
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+      external: ['/ionic.esm.js'],
+    },
+  },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'node_modules/@ionic/core/dist/ionic/*',
+          dest: '',
+        },
+      ],
+    }),
+  ],
+});
+```
+
+This copies the necessary Ionic files that Capacitor will need to work with lazy loaded Ionic components.
+
+## Initialize Ionic
+
+Replace the contents of `src/main.js` with the following:
+
+```js
+// Determine if the app is running in Capacitor
+const isCapacitor =
+  location.protocol === 'capacitor:' ||
+  (window.Capacitor && window.Capacitor.platform !== 'web');
+
+// Load Ionic
+if (isCapacitor) {
+  // In Capacitor, import Ionic directly from copied dist files
+  import(/* @vite-ignore */ location.origin + '/ionic.esm.js');
+} else {
+  // In the browser, use the normal loader
+  import('@ionic/core/loader').then(m => m.defineCustomElements(window));
+}
+
+// Core CSS required for Ionic components to work properly
+import '@ionic/core/css/core.css';
+
+// Basic CSS for apps built with Ionic
+import '@ionic/core/css/normalize.css';
+import '@ionic/core/css/structure.css';
+import '@ionic/core/css/typography.css';
+
+// Optional CSS utils that can be commented out
+import '@ionic/core/css/padding.css';
+import '@ionic/core/css/float-elements.css';
+import '@ionic/core/css/text-alignment.css';
+import '@ionic/core/css/text-transformation.css';
+import '@ionic/core/css/flex-utils.css';
+import '@ionic/core/css/display.css';
+```
+
+This initializes Ionic based on the environment and then imports all of the available CSS files.
 
 ## Add the App Component
 
@@ -109,47 +188,6 @@ Update your `index.html` to configure the metadata and use Ionic components:
 
 This sets up the root of your application, using Ionic's `ion-app`, `ion-router`, and `ion-router-outlet` components. The key change is replacing the default `<div id="app">` with Ionic's routing and layout components. The router outlet is where your pages will be displayed.
 
-Replace the contents of `src/main.js` with the following:
-
-```js
-import { initialize } from '@ionic/core/components';
-
-// Component imports
-import { defineCustomElement as defineIonApp } from '@ionic/core/components/ion-app.js';
-
-// Router imports
-import { defineCustomElement as defineIonRoute } from '@ionic/core/components/ion-route.js';
-import { defineCustomElement as defineIonRouter } from '@ionic/core/components/ion-router.js';
-import { defineCustomElement as defineIonRouterOutlet } from '@ionic/core/components/ion-router-outlet.js';
-
-// Initialize Ionic core features
-initialize();
-
-// Core CSS required for Ionic components to work properly
-import '@ionic/core/css/core.css';
-
-// Basic CSS for apps built with Ionic
-import '@ionic/core/css/normalize.css';
-import '@ionic/core/css/structure.css';
-import '@ionic/core/css/typography.css';
-
-// Optional CSS utils that can be commented out
-import '@ionic/core/css/padding.css';
-import '@ionic/core/css/float-elements.css';
-import '@ionic/core/css/text-alignment.css';
-import '@ionic/core/css/text-transformation.css';
-import '@ionic/core/css/flex-utils.css';
-import '@ionic/core/css/display.css';
-
-// Core Components
-defineIonApp();
-
-// Router Components
-defineIonRoute();
-defineIonRouter();
-defineIonRouterOutlet();
-```
-
 ## View Routes
 
 Routes are defined in the `index.html` using `ion-route` components inside the `ion-router`:
@@ -165,74 +203,56 @@ When you visit the root URL (`/`), the `home-page` component will be loaded. Whe
 
 ## Add the Home Page
 
-Add a `<script>` tag which will contain the Home page in the `index.html` file after the `<ion-app>` component, before the `main.js` import:
+Create a new directory called `pages` inside the `src` folder, then add a file called `HomePage.js` in that directory with the following content:
 
-```html
-<script>
-  // Define the Home Page component
-  class HomePage extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Blank</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <div id="container">
-            <strong>Ready to create an app?</strong>
-            <p>
-              Start with Ionic
-              <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-            </p>
-          </div>
-        </ion-content>
-      `;
-    }
+```js
+class HomePage extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Blank</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div id="container">
+          <strong>Ready to create an app?</strong>
+          <p>
+            Start with Ionic
+            <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
+          </p>
+        </div>
+      </ion-content>
+    `;
   }
+}
 
-  // Register the custom element
-  customElements.define('home-page', HomePage);
-</script>
+customElements.define('home-page', HomePage);
 ```
 
 This creates a custom element called `home-page` that contains the layout for your Home page. The page uses Ionic's layout components to create a header with a toolbar and scrollable content area.
-
-Add the necessary component imports to the `main.js` file:
-
-```js
-import { initialize } from '@ionic/core/components';
-
-// Component imports
-import { defineCustomElement as defineIonApp } from '@ionic/core/components/ion-app.js';
-import { defineCustomElement as defineIonContent } from '@ionic/core/components/ion-content.js';
-import { defineCustomElement as defineIonHeader } from '@ionic/core/components/ion-header.js';
-import { defineCustomElement as defineIonTitle } from '@ionic/core/components/ion-title.js';
-import { defineCustomElement as defineIonToolbar } from '@ionic/core/components/ion-toolbar.js';
-
-// ...Router imports
-
-// ...Initialization and CSS imports
-
-// Core Components
-defineIonApp();
-defineIonContent();
-defineIonHeader();
-defineIonTitle();
-defineIonToolbar();
-
-// ...Router Components
-```
-
-At this point your browser should be displaying the Home page.
 
 :::tip Learn More
 For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
 :::
 
+Next, add a `<script>` tag before the `src/main.js` import in `index.html` to import the Home page:
+
+```html
+<script type="module">
+  import './src/pages/HomePage.js';
+</script>
+
+<script type="module" src="/src/main.js"></script>
+```
+
+At this point your browser should be displaying the Home page.
+
+![Screenshot of the Ionic Core Home page](/img/guides/quickstart/unstyled-home-page.png 'Ionic Core Home Component')
+
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) to navigate to another page. Update the `HomePage` component in `src/main.js`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) to navigate to another page. Update the `HomePage` component in `src/pages/HomePage.js`:
 
 ```js
 class HomePage extends HTMLElement {
@@ -257,48 +277,15 @@ class HomePage extends HTMLElement {
     `;
   }
 }
-```
 
-Then, include the imports for the button in `src/main.js`:
-
-```js
-import { initialize } from '@ionic/core/components';
-
-// Component imports
-import { defineCustomElement as defineIonApp } from '@ionic/core/components/ion-app.js';
-import { defineCustomElement as defineIonButton } from '@ionic/core/components/ion-button.js';
-import { defineCustomElement as defineIonContent } from '@ionic/core/components/ion-content.js';
-import { defineCustomElement as defineIonHeader } from '@ionic/core/components/ion-header.js';
-import { defineCustomElement as defineIonTitle } from '@ionic/core/components/ion-title.js';
-import { defineCustomElement as defineIonToolbar } from '@ionic/core/components/ion-toolbar.js';
-
-// Router imports
-import { defineCustomElement as defineIonRoute } from '@ionic/core/components/ion-route.js';
-import { defineCustomElement as defineIonRouter } from '@ionic/core/components/ion-router.js';
-import { defineCustomElement as defineIonRouterOutlet } from '@ionic/core/components/ion-router-outlet.js';
-
-// ...Initialization and CSS imports
-
-// Core Components
-defineIonApp();
-defineIonButton();
-defineIonContent();
-defineIonHeader();
-defineIonTitle();
-defineIonToolbar();
-
-// Router Components
-defineIonRoute();
-defineIonRouter();
-defineIonRouterOutlet();
+customElements.define('home-page', HomePage);
 ```
 
 ## Add a New Page
 
-Add a new page component to your `index.html` file. Add this code in the `<script>` block after the `HomePage` component:
+Add a new file named `NewPage.js` to `src/pages` with the following content:
 
 ```js
-// Define the New Page component
 class NewPage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -317,76 +304,28 @@ class NewPage extends HTMLElement {
   }
 }
 
-// Register the custom element
 customElements.define('new-page', NewPage);
-```
-
-Then, include the imports for the buttons and back button in `src/main.js`:
-
-```js
-import { initialize } from '@ionic/core/components';
-
-// Component imports
-import { defineCustomElement as defineIonApp } from '@ionic/core/components/ion-app.js';
-import { defineCustomElement as defineIonBackButton } from '@ionic/core/components/ion-back-button.js';
-import { defineCustomElement as defineIonButton } from '@ionic/core/components/ion-button.js';
-import { defineCustomElement as defineIonButtons } from '@ionic/core/components/ion-buttons.js';
-import { defineCustomElement as defineIonContent } from '@ionic/core/components/ion-content.js';
-import { defineCustomElement as defineIonHeader } from '@ionic/core/components/ion-header.js';
-import { defineCustomElement as defineIonTitle } from '@ionic/core/components/ion-title.js';
-import { defineCustomElement as defineIonToolbar } from '@ionic/core/components/ion-toolbar.js';
-
-// ...Router imports
-
-// ...Initialization and CSS imports
-
-// Core Components
-defineIonApp();
-defineIonBackButton();
-defineIonButton();
-defineIonButtons();
-defineIonContent();
-defineIonHeader();
-defineIonTitle();
-defineIonToolbar();
-
-// ...Router Components
 ```
 
 This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
+Next, update the `<script>` tag which imports the Home page in the `index.html` file to also import the New page:
+
+```html
+<script type="module">
+  import './src/pages/HomePage.js';
+  import './src/pages/NewPage.js';
+</script>
+```
+
 ## Navigate to the New Page
 
-To navigate to the new page, update the button in the `index.html` file's `HomePage` component to be inside of an `ion-router-link`:
+To navigate to the new page, update the button in `src/pages/HomePage.js` to be inside of an `ion-router-link`:
 
 ```html
 <ion-router-link href="/new">
   <ion-button>Navigate</ion-button>
 </ion-router-link>
-```
-
-Then, import and call `defineIonRouterLink` in `src/main.js`:
-
-```js
-import { initialize } from '@ionic/core/components';
-
-// ...Component imports
-
-// Router imports
-import { defineCustomElement as defineIonRoute } from '@ionic/core/components/ion-route.js';
-import { defineCustomElement as defineIonRouter } from '@ionic/core/components/ion-router.js';
-import { defineCustomElement as defineIonRouterLink } from '@ionic/core/components/ion-router-link.js';
-import { defineCustomElement as defineIonRouterOutlet } from '@ionic/core/components/ion-router-outlet.js';
-
-// ...Initialization and CSS imports
-
-// ...Core Components
-
-// Router Components
-defineIonRoute();
-defineIonRouter();
-defineIonRouterLink();
-defineIonRouterOutlet();
 ```
 
 When the button is clicked, Ionic's router will automatically navigate to the `/new` route and display the `new-page` component.
@@ -397,56 +336,23 @@ Navigating can also be performed programmatically using `document.querySelector(
 
 ## Add Icons to the New Page
 
-Ionic JavaScript comes with [Ionicons](https://ionic.io/ionicons/) support. First, you need to register the icons using `addIcons`, add the import for the icon, and then use them with the `ion-icon` component.
+Ionic JavaScript comes with [Ionicons](https://ionic.io/ionicons/) support. To use icons, you need to import them, register them with `addIcons`, and then use them with the `ion-icon` component.
 
-Add the necessary imports to `src/main.js`:
+Add the necessary imports and register the icons in `src/main.js`:
 
 ```js
-import { initialize } from '@ionic/core/components';
+// ...Ionic initialization
 
-// Component imports
-import { defineCustomElement as defineIonApp } from '@ionic/core/components/ion-app.js';
-import { defineCustomElement as defineIonBackButton } from '@ionic/core/components/ion-back-button.js';
-import { defineCustomElement as defineIonButton } from '@ionic/core/components/ion-button.js';
-import { defineCustomElement as defineIonButtons } from '@ionic/core/components/ion-buttons.js';
-import { defineCustomElement as defineIonContent } from '@ionic/core/components/ion-content.js';
-import { defineCustomElement as defineIonHeader } from '@ionic/core/components/ion-header.js';
-import { defineCustomElement as defineIonIcon } from '@ionic/core/components/ion-icon.js';
-import { defineCustomElement as defineIonTitle } from '@ionic/core/components/ion-title.js';
-import { defineCustomElement as defineIonToolbar } from '@ionic/core/components/ion-toolbar.js';
-
-// ...Router imports
-
-// Import Ionicons
+// Icon imports
 import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 
-// Initialize Ionic core features
-initialize();
-
-// Register icons
-addIcons({
-  heart,
-  logoIonic,
-});
+addIcons({ heart, logoIonic });
 
 // ...CSS imports
-
-// Core Components
-defineIonApp();
-defineIonBackButton();
-defineIonButton();
-defineIonButtons();
-defineIonContent();
-defineIonHeader();
-defineIonIcon();
-defineIonTitle();
-defineIonToolbar();
-
-// ...Router Components
 ```
 
-Then, update the `NewPage` component to include the icons:
+Next, update `src/pages/NewPage.js` to include the icons:
 
 ```js
 class NewPage extends HTMLElement {
@@ -469,13 +375,15 @@ class NewPage extends HTMLElement {
     `;
   }
 }
+
+customElements.define('new-page', NewPage);
 ```
 
 For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
-Let's add a button that can scroll the content area to the bottom. Update the `NewPage` component to include scrollable content and a scroll button:
+Let's add a button that can scroll the content area to the bottom. Update `src/pages/NewPage.js` to include scrollable content and a scroll button:
 
 ```js
 class NewPage extends HTMLElement {
@@ -531,79 +439,8 @@ class NewPage extends HTMLElement {
     });
   }
 }
-```
 
-Then, we need to add the imports for the additional components to `src/main.js`. Your final `src/main.js` should look like this:
-
-```js
-import { initialize } from '@ionic/core/components';
-
-// Component imports
-import { defineCustomElement as defineIonApp } from '@ionic/core/components/ion-app.js';
-import { defineCustomElement as defineIonBackButton } from '@ionic/core/components/ion-back-button.js';
-import { defineCustomElement as defineIonButton } from '@ionic/core/components/ion-button.js';
-import { defineCustomElement as defineIonButtons } from '@ionic/core/components/ion-buttons.js';
-import { defineCustomElement as defineIonContent } from '@ionic/core/components/ion-content.js';
-import { defineCustomElement as defineIonHeader } from '@ionic/core/components/ion-header.js';
-import { defineCustomElement as defineIonIcon } from '@ionic/core/components/ion-icon.js';
-import { defineCustomElement as defineIonItem } from '@ionic/core/components/ion-item.js';
-import { defineCustomElement as defineIonLabel } from '@ionic/core/components/ion-label.js';
-import { defineCustomElement as defineIonTitle } from '@ionic/core/components/ion-title.js';
-import { defineCustomElement as defineIonToolbar } from '@ionic/core/components/ion-toolbar.js';
-
-// Router imports
-import { defineCustomElement as defineIonRouterOutlet } from '@ionic/core/components/ion-router-outlet.js';
-import { defineCustomElement as defineIonRouter } from '@ionic/core/components/ion-router.js';
-import { defineCustomElement as defineIonRoute } from '@ionic/core/components/ion-route.js';
-import { defineCustomElement as defineIonRouterLink } from '@ionic/core/components/ion-router-link.js';
-
-// Import Ionicons
-import { addIcons } from 'ionicons';
-import { heart, logoIonic } from 'ionicons/icons';
-
-// Initialize Ionic core features
-initialize();
-
-// Register icons
-addIcons({
-  heart,
-  logoIonic,
-});
-
-// Core CSS required for Ionic components to work properly
-import '@ionic/core/css/core.css';
-
-// Basic CSS for apps built with Ionic
-import '@ionic/core/css/normalize.css';
-import '@ionic/core/css/structure.css';
-import '@ionic/core/css/typography.css';
-
-// Optional CSS utils that can be commented out
-import '@ionic/core/css/padding.css';
-import '@ionic/core/css/float-elements.css';
-import '@ionic/core/css/text-alignment.css';
-import '@ionic/core/css/text-transformation.css';
-import '@ionic/core/css/flex-utils.css';
-import '@ionic/core/css/display.css';
-
-// Core Components
-defineIonApp();
-defineIonBackButton();
-defineIonButton();
-defineIonButtons();
-defineIonContent();
-defineIonHeader();
-defineIonIcon();
-defineIonItem();
-defineIonLabel();
-defineIonTitle();
-defineIonToolbar();
-
-// Router Components
-defineIonRouterOutlet();
-defineIonRouter();
-defineIonRoute();
-defineIonRouterLink();
+customElements.define('new-page', NewPage);
 ```
 
 To call methods on Ionic components:
@@ -639,12 +476,6 @@ See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-sta
 ## Framework Integrations
 
 Ionic Core also works with other frameworks and libraries that support custom elements, such as [Alpine.js](https://alpinejs.dev/), [Lit](https://lit.dev/), and [Svelte](https://svelte.dev/). However, when using Ionic Core with these libraries, you won't have the built-in form and routing capabilities that are tightly coupled with Ionic's official Angular, React, and Vue framework integrations, and will need to use their respective routing and form solutions instead.
-
-Live examples:
-
-- [Alpine.js](https://stackblitz.com/edit/vitejs-vite-kg36bvri?file=index.html)
-- [Lit](https://stackblitz.com/edit/vitejs-vite-twfn9ilc?file=package.json)
-- [Svelte](https://stackblitz.com/edit/vitejs-vite-bp6vxnem?file=src%2FApp.svelte)
 
 ## Explore More
 
