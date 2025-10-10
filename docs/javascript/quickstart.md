@@ -124,9 +124,7 @@ Replace the contents of `src/main.js` with the following:
 
 ```js
 // Determine if the app is running in Capacitor
-const isCapacitor =
-  location.protocol === 'capacitor:' ||
-  (window.Capacitor && window.Capacitor.platform !== 'web');
+const isCapacitor = location.protocol === 'capacitor:' || (window.Capacitor && window.Capacitor.platform !== 'web');
 
 // Load Ionic
 if (isCapacitor) {
@@ -134,7 +132,7 @@ if (isCapacitor) {
   import(/* @vite-ignore */ location.origin + '/ionic.esm.js');
 } else {
   // In the browser, use the normal loader
-  import('@ionic/core/loader').then(m => m.defineCustomElements(window));
+  import('@ionic/core/loader').then((m) => m.defineCustomElements(window));
 }
 
 // Core CSS required for Ionic components to work properly
