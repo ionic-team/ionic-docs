@@ -1,18 +1,8 @@
 ```html
-<style scoped>
-  /* This style is for demonstration purposes only. */
-  /* It's not required for the tabs to function. */
-  .example-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-</style>
 <template>
   <ion-tabs>
     <ion-tab tab="home">
-      <div id="home-page">
+      <ion-page id="home-page">
         <ion-header>
           <ion-toolbar>
             <ion-title>Listen now</ion-title>
@@ -21,10 +11,10 @@
         <ion-content>
           <div class="example-content">Listen now content</div>
         </ion-content>
-      </div>
+      </ion-page>
     </ion-tab>
     <ion-tab tab="radio">
-      <div id="radio-page">
+      <ion-page id="radio-page">
         <ion-header>
           <ion-toolbar>
             <ion-title>Radio</ion-title>
@@ -33,10 +23,11 @@
         <ion-content>
           <div class="example-content">Radio content</div>
         </ion-content>
-      </div>
+      </ion-page>
     </ion-tab>
     <ion-tab tab="library">
-      <div id="library-page">
+      <ion-page id="library-page"
+        >>
         <ion-header>
           <ion-toolbar>
             <ion-title>Library</ion-title>
@@ -45,10 +36,11 @@
         <ion-content>
           <div class="example-content">Library content</div>
         </ion-content>
-      </div>
+      </ion-page>
     </ion-tab>
     <ion-tab tab="search">
-      <div id="search-page">
+      <ion-page id="search-page"
+        >>
         <ion-header>
           <ion-toolbar>
             <ion-title>Search</ion-title>
@@ -57,7 +49,7 @@
         <ion-content>
           <div class="example-content">Search content</div>
         </ion-content>
-      </div>
+      </ion-page>
     </ion-tab>
 
     <ion-tab-bar slot="bottom">
@@ -83,16 +75,28 @@
 
 <script setup lang="ts">
   import {
-    IonTabs,
-    IonTab,
-    IonToolbar,
-    IonTabBar,
-    IonTabButton,
     IonContent,
     IonHeader,
-    IonTitle,
     IonIcon,
+    IonPage,
+    IonTab,
+    IonTabs,
+    IonTabBar,
+    IonTabButton,
+    IonTitle,
+    IonToolbar,
   } from '@ionic/vue';
   import { playCircle, radio, library, search } from 'ionicons/icons';
 </script>
+
+<style scoped>
+  /* This style is for demonstration purposes only. */
+  /* It's not required for the tabs to function. */
+  .example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+</style>
 ```
