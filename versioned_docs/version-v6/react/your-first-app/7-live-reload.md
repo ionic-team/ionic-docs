@@ -26,7 +26,7 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `UserPhoto` from the `usePhotoGallery` hook:
+With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. In your code editor (not Android Studio or Xcode), open `Tab2.tsx` then import `useState` from React and `UserPhoto` from the `usePhotoGallery` hook:
 
 ```tsx
 import React, { useState } from 'react';
@@ -94,7 +94,7 @@ const deletePhoto = async (photo: UserPhoto) => {
   Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
   // delete photo file from filesystem
-  const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
+  const filename = photo.filepath.substring(photo.filepath.lastIndexOf('/') + 1);
   await Filesystem.deleteFile({
     path: filename,
     directory: Directory.Data,
