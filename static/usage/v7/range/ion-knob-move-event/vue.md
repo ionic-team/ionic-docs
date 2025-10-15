@@ -7,20 +7,15 @@
   ></ion-range>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonRange } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonRange },
-    methods: {
-      onIonKnobMoveStart({ detail }) {
-        console.log('ionKnobMoveStart:', detail.value);
-      },
-      onIonKnobMoveEnd({ detail }) {
-        console.log('ionKnobMoveEnd:', detail.value);
-      },
-    },
-  });
+  const onIonKnobMoveStart = ({ detail }) => {
+    console.log('ionKnobMoveStart:', detail.value);
+  };
+
+  const onIonKnobMoveEnd = ({ detail }) => {
+    console.log('ionKnobMoveEnd:', detail.value);
+  };
 </script>
 ```

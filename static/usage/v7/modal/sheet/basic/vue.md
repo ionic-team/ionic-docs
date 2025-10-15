@@ -54,7 +54,7 @@
   </ion-content>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import {
     IonButton,
     IonModal,

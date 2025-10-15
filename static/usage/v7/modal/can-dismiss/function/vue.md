@@ -26,7 +26,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonButtons,
     IonButton,
@@ -38,41 +38,37 @@
     IonPage,
     actionSheetController,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref, onMounted } from 'vue';
 
-  export default defineComponent({
-    components: { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage },
-    data() {
-      return {
-        presentingElement: undefined,
-      };
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-      async canDismiss() {
-        const actionSheet = await actionSheetController.create({
-          header: 'Are you sure?',
-          buttons: [
-            {
-              text: 'Yes',
-              role: 'confirm',
-            },
-            {
-              text: 'No',
-              role: 'cancel',
-            },
-          ],
-        });
-        actionSheet.present();
-        const { role } = await actionSheet.onWillDismiss();
-        return role === 'confirm';
-      },
-    },
-    mounted() {
-      this.presentingElement = this.$refs.page.$el;
-    },
+  const presentingElement = ref(undefined);
+  const page = ref();
+  const modal = ref();
+
+  const dismiss = () => {
+    modal.value.$el.dismiss();
+  };
+
+  const canDismiss = async () => {
+    const actionSheet = await actionSheetController.create({
+      header: 'Are you sure?',
+      buttons: [
+        {
+          text: 'Yes',
+          role: 'confirm',
+        },
+        {
+          text: 'No',
+          role: 'cancel',
+        },
+      ],
+    });
+    actionSheet.present();
+    const { role } = await actionSheet.onWillDismiss();
+    return role === 'confirm';
+  };
+
+  onMounted(() => {
+    presentingElement.value = page.value.$el;
   });
 </script>
 ```

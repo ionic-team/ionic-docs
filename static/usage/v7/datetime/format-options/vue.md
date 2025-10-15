@@ -5,9 +5,8 @@
   </ion-datetime>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { IonDatetime } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
   const formatOptions = {
     time: { hour: '2-digit', minute: '2-digit' },
