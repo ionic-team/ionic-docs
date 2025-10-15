@@ -26,7 +26,7 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality. In your code editor (not Android Studio or Xcode), open `Tab2Page.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
+With Live Reload running and the app open on your device, let’s implement photo deletion functionality. In your code editor (not Android Studio or Xcode), open `Tab2.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
 
 ```tsx
 import {
