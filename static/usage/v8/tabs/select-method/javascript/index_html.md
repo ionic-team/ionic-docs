@@ -7,8 +7,11 @@
           <ion-title>Listen now</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <div class="example-content">Listen now content</div>
+      <ion-content class="ion-padding">
+        <div class="example-content">
+          Listen now content
+          <ion-button onClick="selectRadio()">Go to Radio</ion-button>
+        </div>
       </ion-content>
     </div>
   </ion-tab>
@@ -68,4 +71,24 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+
+<script>
+  function selectRadio() {
+    const tabs = document.querySelector('ion-tabs');
+    tabs.select('radio');
+  }
+</script>
+
+<style>
+  /* This style is for demonstration purposes only. */
+  /* It's not required for the tabs to function. */
+  .example-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 10px;
+  }
+</style>
 ```

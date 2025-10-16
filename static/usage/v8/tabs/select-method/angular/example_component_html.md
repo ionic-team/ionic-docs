@@ -1,5 +1,5 @@
 ```html
-<ion-tabs>
+<ion-tabs #tabs>
   <ion-tab tab="home">
     <div id="home-page" class="ion-page">
       <ion-header>
@@ -8,7 +8,10 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <div class="example-content">Listen now content</div>
+        <div class="example-content">
+          Listen now content
+          <ion-button (click)="selectRadio()">Go to Radio</ion-button>
+        </div>
       </ion-content>
     </div>
   </ion-tab>
