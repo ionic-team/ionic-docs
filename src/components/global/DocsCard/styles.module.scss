@@ -116,20 +116,19 @@ docs-card[disabled]::after {
 
   .Card-icon-row {
     position: relative;
+    display: flex;
+    gap: 8px;
   }
 
-  .Card-iconset__container {
-    position: relative;
-  }
-
-  .Card-iconset__container .Card-icon {
-    position: absolute;
-    opacity: 0;
-    transition: 0.8s opacity;
-  }
-
-  .Card-iconset__container .Card-icon--active {
-    opacity: 1;
+  .Card-plus-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 48px;
+    color: var(--docs-card-border-c);
+    font-size: 22px;
+    font-weight: 600;
   }
 
   .Card-ionicon {

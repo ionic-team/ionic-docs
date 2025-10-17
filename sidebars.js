@@ -123,7 +123,7 @@ module.exports = {
             'react/your-first-app/distribute',
           ],
         },
-        'react/adding-ionic-react-to-an-existing-react-project',
+        'react/add-to-existing',
         'react/lifecycle',
         'react/navigation',
         'react/virtual-scroll',
