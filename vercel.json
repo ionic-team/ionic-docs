@@ -94,7 +94,15 @@
       "destination": "/docs/vue/your-first-app/deploying-mobile"
     },
     { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" },
-    { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
+    { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" },
+    {
+      "source": "/docs/react/adding-ionic-react-to-an-existing-react-project",
+      "destination": "/docs/react/add-to-existing"
+    },
+    {
+      "source": "/docs/:version(v7)/react/adding-ionic-react-to-an-existing-react-project",
+      "destination": "/docs/:version/react/add-to-existing"
+    }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },
