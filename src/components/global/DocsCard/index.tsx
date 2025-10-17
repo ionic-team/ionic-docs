@@ -34,14 +34,16 @@ function DocsCard(props: Props): JSX.Element {
         )}
         {props.ionicon && <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>}
         {props.iconset && (
-          <div className="Card-iconset__container">
-            {props.iconset.split(',').map((icon, index) => (
-              <img
-                src={useBaseUrl(icon)}
-                className={`Card-icon ${index === props.activeIndex ? 'Card-icon-active' : ''}`}
-                data-index={index}
-                key={index}
-              />
+          <div className="Card-icon-row">
+            {props.iconset.split(',').map((icon, index, array) => (
+              <React.Fragment key={index}>
+                <img src={useBaseUrl(icon)} className="Card-icon Card-icon-default" />
+                {index < array.length - 1 && (
+                  <div className="Card-plus-icon">
+                    <span>+</span>
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
         )}
