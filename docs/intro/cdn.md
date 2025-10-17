@@ -22,11 +22,19 @@ Start a new Ionic Angular app or add Ionic to your existing Angular project.
 
 <DocsCards>
 
-<DocsCard header="New Angular Project" href="../angular/quickstart" iconset="/icons/logo-angular-icon.png,/icons/guide-quickstart-icon.png">
+<DocsCard
+  header="New Angular Project"
+  href="../angular/quickstart"
+  iconset="/icons/logo-angular-icon.png,/icons/guide-quickstart-icon.png"
+>
   <p>Create a new Ionic Angular app using the Ionic CLI.</p>
 </DocsCard>
 
-<DocsCard header="Existing Angular Project" href="../angular/add-to-existing" iconset="/icons/logo-angular-icon.png,/icons/guide-package-icon.png">
+<DocsCard
+  header="Existing Angular Project"
+  href="../angular/add-to-existing"
+  iconset="/icons/logo-angular-icon.png,/icons/guide-package-icon.png"
+>
   <p>Add Ionic Angular to an existing Angular project.</p>
 </DocsCard>
 
@@ -38,11 +46,19 @@ Start a new Ionic React app or add Ionic to your existing React project.
 
 <DocsCards>
 
-<DocsCard header="New React Project" href="../react/quickstart" iconset="/icons/logo-react-icon.png,/icons/guide-quickstart-icon.png">
+<DocsCard
+  header="New React Project"
+  href="../react/quickstart"
+  iconset="/icons/logo-react-icon.png,/icons/guide-quickstart-icon.png"
+>
   <p>Create a new Ionic React app using the Ionic CLI.</p>
 </DocsCard>
 
-<DocsCard header="Existing React Project" href="../react/add-to-existing" iconset="/icons/logo-react-icon.png,/icons/guide-package-icon.png">
+<DocsCard
+  header="Existing React Project"
+  href="../react/add-to-existing"
+  iconset="/icons/logo-react-icon.png,/icons/guide-package-icon.png"
+>
   <p>Add Ionic React to an existing React project.</p>
 </DocsCard>
 
@@ -54,11 +70,19 @@ Start a new Ionic Vue app or add Ionic to your existing Vue project.
 
 <DocsCards>
 
-<DocsCard header="New Vue Project" href="../vue/quickstart" iconset="/icons/logo-vue-icon.png,/icons/guide-quickstart-icon.png">
+<DocsCard
+  header="New Vue Project"
+  href="../vue/quickstart"
+  iconset="/icons/logo-vue-icon.png,/icons/guide-quickstart-icon.png"
+>
   <p>Create a new Ionic Vue app using the Ionic CLI.</p>
 </DocsCard>
 
-<DocsCard header="Existing Vue Project" href="../vue/add-to-existing" iconset="/icons/logo-vue-icon.png,/icons/guide-package-icon.png">
+<DocsCard
+  header="Existing Vue Project"
+  href="../vue/add-to-existing"
+  iconset="/icons/logo-vue-icon.png,/icons/guide-package-icon.png"
+>
   <p>Add Ionic Vue to an existing Vue project.</p>
 </DocsCard>
 
@@ -70,7 +94,11 @@ Start a new Ionic JavaScript app.
 
 <DocsCards>
 
-<DocsCard header="New JavaScript Project" href="../javascript/quickstart" iconset="/icons/logo-javascript-icon.png,/icons/guide-quickstart-icon.png">
+<DocsCard
+  header="New JavaScript Project"
+  href="../javascript/quickstart"
+  iconset="/icons/logo-javascript-icon.png,/icons/guide-quickstart-icon.png"
+>
   <p>Create a new Ionic JavaScript app using Vite.</p>
 </DocsCard>
 
