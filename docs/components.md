@@ -32,10 +32,6 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Action Sheets display a set of options with the ability to confirm or cancel an action.</p>
 </DocsCard>
 
-<DocsCard header="Action Sheet" href="api/action-sheet" icon="/icons/component-action-sheet-icon.png">
-  <p>Action Sheets display a set of options with the ability to confirm or cancel an action.</p>
-</DocsCard>
-
 <DocsCard header="Alert" href="api/alert" icon="/icons/component-alert-icon.png">
   <p>Alerts are a great way to offer the user the ability to choose a specific action or list of actions.</p>
 </DocsCard>
