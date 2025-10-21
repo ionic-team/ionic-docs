@@ -47,9 +47,8 @@ Download and install these right away to ensure an optimal Ionic development exp
 - **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 - **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - **Command-line interface/terminal (CLI)**:
-  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
-    CLI, running in Administrator mode.
-  - **Mac/Linux** users, virtually any terminal will work.
+  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+  - **Mac/Linux** users: virtually any terminal will work.
 
 ## Install Ionic Tooling
 
@@ -99,7 +98,7 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
+Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
 It's a separate dependency, so install it next:
 
@@ -109,13 +108,13 @@ npm install @ionic/pwa-elements
 
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
-```tsx
+```ts
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 // CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader before the bootstrapModule/bootstrapApplication call
+// Call the element loader before the `bootstrapModule` call.
 defineCustomElements(window);
 
 platformBrowserDynamic()
@@ -141,7 +140,7 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif 'Live Reload Feature in Ionic App')
 
-Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+Open `/src/app/tab2/tab2.page.html`. We see:
 
 ```html
 <ion-header [translucent]="true">
@@ -172,14 +171,14 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Tab 2 </ion-title>
+    <ion-title>Photo Gallery</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -220,4 +219,4 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and t
 </ion-tabs>
 ```
 
-Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
+That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
