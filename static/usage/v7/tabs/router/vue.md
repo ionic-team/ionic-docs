@@ -70,12 +70,7 @@
   </ion-tabs>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonTabs, IonTabBar, IonTabButton, IonContent, IonHeader, IonTitle } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonTabs, IonTabBar, IonTabButton, IonContent, IonHeader, IonTitle },
-  });
 </script>
 ```

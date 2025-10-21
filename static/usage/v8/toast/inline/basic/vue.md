@@ -12,19 +12,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonHeader, IonContent, IonToolbar, IonTitle, IonToast } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonToast,
-    },
-  });
 </script>
 ```

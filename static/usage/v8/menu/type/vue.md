@@ -46,7 +46,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonButton,
     IonContent,
@@ -60,27 +60,8 @@
     IonTitle,
     IonToolbar,
   } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonContent,
-      IonHeader,
-      IonItem,
-      IonMenu,
-      IonMenuToggle,
-      IonPage,
-      IonRadio,
-      IonRadioGroup,
-      IonTitle,
-      IonToolbar,
-    },
-    setup() {
-      const menuType = ref('overlay');
-
-      return { menuType };
-    },
-  });
+  const menuType = ref('overlay');
 </script>
 ```

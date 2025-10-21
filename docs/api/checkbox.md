@@ -65,7 +65,7 @@ import Justify from '@site/static/usage/v8/checkbox/justify/index.md';
 import Indeterminate from '@site/static/usage/v8/checkbox/indeterminate/index.md';
 
 <Indeterminate />
-  
+
 ## Links inside of Labels
 
 Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
@@ -113,30 +113,6 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonCheckboxElement;
 }
 ```
-
-## Migrating from Legacy Checkbox Syntax
-
-A simpler checkbox syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup a checkbox, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one checkbox at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-### Using the Modern Syntax
-
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-checkbox`. The placement of the label can be configured using the `labelPlacement` property on `ion-checkbox`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-checkbox`.
-
-import Migration from '@site/static/usage/v8/checkbox/migration/index.md';
-
-<Migration />
-  
-
-:::note
-In past versions of Ionic, `ion-item` was required for `ion-checkbox` to function properly. Starting in Ionic 7.0, `ion-checkbox` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-checkbox` to function properly.
-:::
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern checkbox syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-checkbox` to `true` to force that instance of the checkbox to use the legacy syntax.
-
 
 ## Properties
 <Props />

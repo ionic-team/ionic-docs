@@ -6,19 +6,8 @@
   </ion-range>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonRange, IonIcon } from '@ionic/vue';
   import { snowOutline, sunnyOutline } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRange, IonIcon },
-    setup() {
-      return {
-        snowOutline,
-        sunnyOutline,
-      };
-    },
-  });
 </script>
 ```

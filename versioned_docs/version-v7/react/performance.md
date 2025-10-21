@@ -1,6 +1,6 @@
 ---
-sidebar_label: Performance
 title: React Performance
+sidebar_label: Performance
 ---
 
 <head>

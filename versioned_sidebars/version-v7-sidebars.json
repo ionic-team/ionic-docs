@@ -79,7 +79,7 @@
       "collapsed": false,
       "items": [
         "angular/overview",
-        "angular/build-options",
+        "angular/quickstart",
         {
           "type": "category",
           "label": "Build Your First App",
@@ -94,6 +94,7 @@
             "angular/your-first-app/distribute"
           ]
         },
+        "angular/build-options",
         "angular/lifecycle",
         "angular/navigation",
         "angular/virtual-scroll",
@@ -110,7 +111,7 @@
       "label": "React",
       "collapsed": false,
       "items": [
-        "react",
+        "react/overview",
         "react/quickstart",
         {
           "type": "category",
@@ -176,6 +177,7 @@
             "vue/your-first-app/distribute"
           ]
         },
+        "vue/build-options",
         "vue/lifecycle",
         "vue/navigation",
         "vue/virtual-scroll",
@@ -276,19 +278,19 @@
     },
     {
       "type": "category",
-      "label": "Action Sheet",
-      "collapsed": false,
-      "items": [
-        "api/action-sheet"
-      ]
-    },
-    {
-      "type": "category",
       "label": "Accordion",
       "collapsed": false,
       "items": [
         "api/accordion",
         "api/accordion-group"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Action Sheet",
+      "collapsed": false,
+      "items": [
+        "api/action-sheet"
       ]
     },
     {
@@ -309,7 +311,7 @@
     },
     {
       "type": "category",
-      "label": "Breadcrumb",
+      "label": "Breadcrumbs",
       "collapsed": false,
       "items": [
         "api/breadcrumb",
@@ -394,6 +396,14 @@
     },
     {
       "type": "category",
+      "label": "Icons",
+      "collapsed": false,
+      "items": [
+        "api/icon"
+      ]
+    },
+    {
+      "type": "category",
       "label": "Infinite Scroll",
       "collapsed": false,
       "items": [
@@ -403,15 +413,7 @@
     },
     {
       "type": "category",
-      "label": "Icons",
-      "collapsed": false,
-      "items": [
-        "api/icon"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "Input",
+      "label": "Inputs",
       "collapsed": false,
       "items": [
         "api/input",

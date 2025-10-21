@@ -6,19 +6,19 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonButton } from '@ionic/vue';
   import PageTwo from './PageTwo.vue';
 
-  export default {
-    components: { IonContent, IonButton },
-    props: ['nav'],
-    methods: {
-      navigateToPageTwo() {
-        const { nav } = this;
-        nav.push(PageTwo, { nav });
-      },
-    },
+  interface Props {
+    nav: any;
+  }
+
+  const props = defineProps<Props>();
+
+  const navigateToPageTwo = () => {
+    const { nav } = props;
+    nav.push(PageTwo, { nav });
   };
 </script>
 ```

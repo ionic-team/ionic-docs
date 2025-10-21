@@ -30,17 +30,9 @@
   </ion-list>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
   import { caretDownSharp } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonItem, IonList, IonSelect, IonSelectOption },
-    setup() {
-      return { caretDownSharp };
-    },
-  });
 </script>
 
 <style>
