@@ -4,10 +4,10 @@ sidebar_label: Build Your First App
 ---
 
 <head>
-  <title>React Apps | Build Your First Ionic Framework React Application</title>
+  <title>Build Your First Ionic Mobile App: React Development Tutorial</title>
   <meta
     name="description"
-    content="Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript."
+    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step React tutorial."
   />
 </head>
 
@@ -43,9 +43,8 @@ Download and install these right away to ensure an optimal Ionic development exp
 - **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 - **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - **Command-line interface/terminal (CLI)**:
-  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
-    CLI, running in Administrator mode.
-  - **Mac/Linux** users, virtually any terminal will work.
+  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+  - **Mac/Linux** users: virtually any terminal will work.
 
 ## Install Ionic Tooling
 
@@ -97,8 +96,6 @@ It's a separate dependency, so install it next:
 npm install @ionic/pwa-elements
 ```
 
-After installation, open up the project in your code editor of choice.
-
 Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
 
 ```tsx
@@ -108,7 +105,7 @@ import App from './App';
 // CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// CHANGE: Call the element loader before the render call
+// CHANGE: Call the element loader before the render call.
 defineCustomElements(window);
 
 const container = document.getElementById('root');
@@ -124,7 +121,7 @@ That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
 
-Run this command in your shell:
+Run this command next:
 
 ```shell
 ionic serve
@@ -141,30 +138,45 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 Open `/src/pages/Tab2.tsx`. We see:
 
 ```tsx
-<IonPage>
-  <IonHeader>
-    <IonToolbar>
-      <IonTitle>Tab 2</IonTitle>
-    </IonToolbar>
-  </IonHeader>
-  <IonContent>
-  <!-- some filler -->
-  </IonContent>
-</IonPage>
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import ExploreContainer from '../components/ExploreContainer';
+import './Tab2.css';
+
+const Tab2: React.FC = () => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Tab 2</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Tab 2</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <ExploreContainer name="Tab 2 page" />
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Tab2;
 ```
 
-`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
+`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
 
 ```tsx
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
+We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```tsx
 // CHANGE: Add the following import.
 import { camera, trash, close } from 'ionicons/icons';
-// CHANGE: Add the following import.
+// CHANGE: Update the following import.
 import {
   IonContent,
   IonHeader,
@@ -180,7 +192,8 @@ import {
   IonImg,
   IonActionSheet,
 } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+// CHANGE: Remove or comment out `ExploreContainer`.
+// import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
@@ -188,18 +201,24 @@ const Tab2: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+          <IonTitle>Photo Gallery</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <!-- CHANGE: Add the floating action button. -->
       <IonContent>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Photo Gallery</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        {/* CHANGE: Add the floating action button. */}
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton onClick={() => takePhoto()}>
+          <IonFabButton>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
       </IonContent>
-      <!-- END OF CODE BLOCK -->
+      {/* CHANGE: Remove or comment out `ExploreContainer`. */}
+      {/* <ExploreContainer name="Tab 2 page" /> */}
     </IonPage>
   );
 };
@@ -207,7 +226,7 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Next, open `src/App.tsx`, remove the `ellipse` icon from the import and import the `images` icon instead:
+Next, open `src/App.tsx` and replace the imported `ellipse` icon with the `images` icon.
 
 ```tsx
 import { images, square, triangle } from 'ionicons/icons';
@@ -217,42 +236,43 @@ Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the `el
 
 ```tsx
 // Keep other imports
-// CHANGE: Add the following import.
+// CHANGE: Update the following import.
 import { images, square, triangle } from 'ionicons/icons';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
-            <IonRouterOutlet>
-            <Route exact path="/tab1">
-                <Tab1 />
-            </Route>
-            <Route exact path="/tab2">
-                <Tab2 />
-            </Route>
-            <Route path="/tab3">
-                <Tab3 />
-            </Route>
-            <Route exact path="/">
-                <Redirect to="/tab1" />
-            </Route>
-            </IonRouterOutlet>
-            <IonTabBar slot="bottom">
-            <IonTabButton tab="tab1" href="/tab1">
-                <IonIcon aria-hidden="true" icon={triangle} />
-                <IonLabel>Tab 1</IonLabel>
-            </IonTabButton>
-            <!-- CHANGE: The label to `Photos` and the `ellipse` icon to `images` -->
-            <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={images} />
+        <IonRouterOutlet>
+          <Route exact path="/tab1">
+            <Tab1 />
+          </Route>
+          <Route exact path="/tab2">
+            <Tab2 />
+          </Route>
+          <Route path="/tab3">
+            <Tab3 />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/tab1" />
+          </Route>
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="tab1" href="/tab1">
+            <IonIcon aria-hidden="true" icon={triangle} />
+            <IonLabel>Tab 1</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab2" href="/tab2">
+            {/* CHANGE: Update icon. */}
+            <IonIcon aria-hidden="true" icon={images} />
+            {/* CHANGE: Update label. */}
             <IonLabel>Photos</IonLabel>
-            </IonTabButton>
-            <IonTabButton tab="tab3" href="/tab3">
-                <IonIcon aria-hidden="true" icon={square} />
-                <IonLabel>Tab 3</IonLabel>
-            </IonTabButton>
-            </IonTabBar>
+          </IonTabButton>
+          <IonTabButton tab="tab3" href="/tab3">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Tab 3</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
       </IonTabs>
     </IonReactRouter>
   </IonApp>
