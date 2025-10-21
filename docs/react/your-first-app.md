@@ -165,13 +165,13 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
+`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.md#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
 
 ```tsx
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
+We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab.md) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```tsx
 // CHANGE: Add the following import.
