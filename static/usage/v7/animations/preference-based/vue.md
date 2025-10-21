@@ -9,44 +9,27 @@
   <ion-button @click="stop()">Stop</ion-button>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonCard, IonCardContent, createAnimation } from '@ionic/vue';
   import type { Animation } from '@ionic/vue';
+  import { ref, onMounted } from 'vue';
 
-  import { defineComponent, ref, onMounted } from 'vue';
+  const cardEl = ref(null);
 
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonCard,
-      IonCardContent,
-    },
-    setup() {
-      const cardEl = ref(null);
+  let animation: Animation;
 
-      let animation: Animation;
-
-      onMounted(() => {
-        animation = createAnimation()
-          .addElement(cardEl.value.$el)
-          .duration(1500)
-          .iterations(Infinity)
-          .direction('alternate')
-          .fromTo('background', 'blue', 'var(--background)');
-      });
-
-      const play = () => animation.play();
-      const pause = () => animation.pause();
-      const stop = () => animation.stop();
-
-      return {
-        play,
-        pause,
-        stop,
-        cardEl,
-      };
-    },
+  onMounted(() => {
+    animation = createAnimation()
+      .addElement(cardEl.value.$el)
+      .duration(1500)
+      .iterations(Infinity)
+      .direction('alternate')
+      .fromTo('background', 'blue', 'var(--background)');
   });
+
+  const play = () => animation.play();
+  const pause = () => animation.pause();
+  const stop = () => animation.stop();
 </script>
 
 <style scoped>

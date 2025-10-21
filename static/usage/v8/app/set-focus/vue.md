@@ -12,22 +12,16 @@
   <ion-button @click="focusElement('#radioToFocus')">Focus Radio</ion-button>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonRadio, IonRadioGroup } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonRadio, IonRadioGroup },
-    methods: {
-      focusElement(id) {
-        const el = document.querySelector(id);
+  const focusElement = (id) => {
+    const el = document.querySelector(id);
 
-        const app = el.closest('ion-app');
-        if (app) {
-          app.setFocus([el]);
-        }
-      },
-    },
-  });
+    const app = el.closest('ion-app');
+    if (app) {
+      app.setFocus([el]);
+    }
+  };
 </script>
 ```

@@ -42,12 +42,7 @@
     <ion-button class="ion-margin-start" color="light">Clickable</ion-button>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
   import { IonBackdrop, IonHeader, IonToolbar, IonTitle, IonContent, IonCheckbox, IonButton } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonBackdrop, IonHeader, IonToolbar, IonTitle, IonContent, IonCheckbox, IonButton },
-  });
 </script>
 ```
