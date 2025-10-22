@@ -227,11 +227,7 @@ import {
 </script>
 ```
 
-<<<<<<< Updated upstream
-Next, open `src/views/TabsPage.vue`. Change the label to "Photos" for the middle tab button and replace the imported `ellipse` icon with the `images` icon.
-=======
 Next, open `src/views/TabsPage.vue`. Change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button.
->>>>>>> Stashed changes
 
 ```vue
 <template>
