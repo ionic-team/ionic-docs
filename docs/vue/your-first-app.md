@@ -55,7 +55,7 @@ To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 :::
 
 ```shell
-npm install -g @ionic/cli@latest native-run
+npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
@@ -88,7 +88,7 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+Some Capacitor plugins, including the [Camera API](../native/camera.md), provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
 It's a separate dependency, so install it next:
 
@@ -136,7 +136,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 ## Photo Gallery!!!
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+There are three tabs. Click on the "Tab2" tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/vue/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
 
@@ -227,7 +227,11 @@ import {
 </script>
 ```
 
+<<<<<<< Updated upstream
 Next, open `src/views/TabsPage.vue`. Change the label to "Photos" for the middle tab button and replace the imported `ellipse` icon with the `images` icon.
+=======
+Next, open `src/views/TabsPage.vue`. Change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button.
+>>>>>>> Stashed changes
 
 ```vue
 <template>
