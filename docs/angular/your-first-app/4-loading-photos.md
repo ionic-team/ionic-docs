@@ -1,4 +1,5 @@
 ---
+title: Loading Photos from the Filesystem
 sidebar_label: Loading Photos
 ---
 
@@ -6,29 +7,28 @@ sidebar_label: Loading Photos
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitorjs.com/docs/apis/preferences) to store our array of Photos in a key-value store.
+Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](../../native/preferences.md) to store our array of Photos in a key-value store.
 
 ## Preferences API
 
 Open `photo.service.ts` and begin by defining a new property in the `PhotoService` class that will act as the key for the store:
 
-```tsx
+```ts
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
   // CHANGE: Add a key for photo storage.
   private PHOTO_STORAGE: string = 'photos';
 
-  constructor() {}
-
-  // other code...
+  // Same old code from before.
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Preferences.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Next, at the end of the `addNewToGallery` method, add a call to `Preferences.set()` to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
-```tsx
+```ts
 public async addNewToGallery() {
+  // Take a photo
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
@@ -47,92 +47,34 @@ public async addNewToGallery() {
 }
 ```
 
-With the photo array data saved, create a new public method in the `PhotoService` class called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+With the photo array data saved, create a new public method in the `PhotoService` class called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array:
 
-```tsx
-public async addNewToGallery() {
-   // Same old code from before.
-}
-
-// CHANGE: Add the method to load the photo data.
-public async loadSaved() {
-  // Retrieve cached photo array data
-  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
-
-  // more to come...
-}
-
-private async savePicture(photo: Photo) {
-   // Same old code from before.
-}
-```
-
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` function:
-
-```tsx
-public async loadSaved() {
-  // Retrieve cached photo array data
-  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
-
-  // CHANGE: Display the photo by reading into base64 format.
-  for (let photo of this.photos) {
-    // Read each saved photo's data from the Filesystem
-    const readFile = await Filesystem.readFile({
-      path: photo.filepath,
-      directory: Directory.Data,
-    });
-
-    // Web platform only: Load the photo as base64 data
-    photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
-  }
-}
-```
-
-After these updates to the `PhotoService` class, your `photos.service.ts` file should look like this:
-
-```tsx
-import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
-
-@Injectable({
-  providedIn: 'root',
-})
+```ts
 export class PhotoService {
-  public photos: UserPhoto[] = [];
-  private PHOTO_STORAGE = 'photos';
+  // Same old code from before.
 
-  constructor() {}
-
-  public async addNewToGallery() {
-    // Take a photo
-    const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri, // file-based data; provides best performance
-      source: CameraSource.Camera, // automatically take a new photo with the camera
-      quality: 100, // highest quality (0 to 100)
-    });
-
-    const savedImageFile = await this.savePicture(capturedPhoto);
-
-    // Add new photo to Photos array
-    this.photos.unshift(savedImageFile);
-
-    // Cache all photo data for future retrieval
-    Preferences.set({
-      key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
-    });
+  // CHANGE: Add the method to load the photo data.
+  public async loadSaved() {
+    // Retrieve cached photo array data
+    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
+    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
   }
+}
+```
 
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method:
+
+```ts
+export class PhotoService {
+  // Same old code from before.
+
+  // CHANGE: Update the `loadSaved` method.
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
 
-    // Display the photo by reading into base64 format
+    // CHANGE: Display the photo by reading into base64 format.
     for (let photo of this.photos) {
       // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
@@ -143,6 +85,42 @@ export class PhotoService {
       // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
+  }
+}
+```
+
+`photo.service.ts` should now look like this:
+
+```ts
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PhotoService {
+  public photos: UserPhoto[] = [];
+
+  private PHOTO_STORAGE: string = 'photos';
+
+  public async addNewToGallery() {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    const savedImageFile = await this.savePicture(capturedPhoto);
+
+    this.photos.unshift(savedImageFile);
+
+    Preferences.set({
+      key: this.PHOTO_STORAGE,
+      value: JSON.stringify(this.photos),
+    });
   }
 
   private async savePicture(photo: Photo) {
@@ -173,8 +151,8 @@ export class PhotoService {
     return (await this.convertBlobToBase64(blob)) as string;
   }
 
-  private convertBlobToBase64 = (blob: Blob) =>
-    new Promise((resolve, reject) => {
+  private convertBlobToBase64(blob: Blob) {
+    return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
@@ -182,6 +160,13 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
+  }
+
+  public async loadSaved() {
+    // Retrieve cached photo array data
+    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
+    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+  }
 }
 
 export interface UserPhoto {
@@ -190,11 +175,11 @@ export interface UserPhoto {
 }
 ```
 
-Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to the Photo Gallery, all photos are loaded and displayed on the screen.
 
 Update `tab2.page.ts` to look like the following:
 
-```tsx
+```ts
 import { Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
 
@@ -223,4 +208,5 @@ If you're seeing broken image links or missing photos after following these step
 
 In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
 :::
+
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
