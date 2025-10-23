@@ -19,7 +19,13 @@ Because Ionic Apps are built with web technologies, they can run just as well as
 For the frameworks Ionic supports, we've created dedicated guides that go into more detail. Below are links for Angular, React, and Vue.
 
 <DocsCards>
-  <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg"></DocsCard>
-  <DocsCard header="React" href="../react/pwa" img="/img/frameworks/react.svg"></DocsCard>
-  <DocsCard header="Vue" href="../vue/pwa" img="/img/frameworks/vue.svg"></DocsCard>
+  <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg">
+    Get started with progressive web apps in Angular.
+  </DocsCard>
+  <DocsCard header="React" href="../react/pwa" img="/img/frameworks/react.svg">
+    Get started with progressive web apps in React.
+  </DocsCard>
+  <DocsCard header="Vue" href="../vue/pwa" img="/img/frameworks/vue.svg">
+    Get started with progressive web apps in Vue.
+  </DocsCard>
 </DocsCards>
