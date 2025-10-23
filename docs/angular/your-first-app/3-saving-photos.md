@@ -51,9 +51,7 @@ import { Preferences } from '@capacitor/preferences';
 })
 export class PhotoService {
   public photos: UserPhoto[] = [];
-
-  constructor() {}
-
+dd
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
