@@ -1,4 +1,5 @@
 ---
+title: Saving Photos to the Filesystem
 sidebar_label: Saving Photos
 ---
 
@@ -8,9 +9,9 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `photo` object, which represents the newly captured device photo:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class. We pass in the `photo` object, which represents the newly captured device photo:
 
-```tsx
+```ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -23,7 +24,12 @@ export class PhotoService {
   // Same old code from before.
 
   // CHANGE: Add the `savePicture` method.
-  private async savePicture(photo: Photo) {}
+  private async savePicture(photo: Photo) {
+    return {
+      filepath: 'soon...',
+      webviewPath: 'soon...',
+    };
+  }
 }
 
 export interface UserPhoto {
@@ -32,9 +38,9 @@ export interface UserPhoto {
 }
 ```
 
-We can use this new method immediately in `addNewToGallery()`:
+We can use this new method immediately in `addNewToGallery()`.
 
-```tsx
+```ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -56,7 +62,7 @@ export class PhotoService {
       quality: 100,
     });
 
-    // CHANGE: Add `savedImageFile`
+    // CHANGE: Add `savedImageFile` to save the picture and add it to photo collection.
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
@@ -64,7 +70,12 @@ export class PhotoService {
     this.photos.unshift(savedImageFile);
   }
 
-  private async savePicture(photo: Photo) {}
+  private async savePicture(photo: Photo) {
+    return {
+      filepath: 'soon...',
+      webviewPath: 'soon...',
+    };
+  }
 }
 
 export interface UserPhoto {
@@ -73,9 +84,13 @@ export interface UserPhoto {
 }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, set it then return the new Photo object.
+We'll use the Capacitor [Filesystem API](../../native/filesystem.md) to save the photo. First, convert the photo to base64 format using a helper method we'll define: `readAsBase64()`.
 
-```tsx
+Then, pass the data to the Filesystem's `writeFile` method. Recall that we display photos by setting the image's source path (`src`) to the `webviewPath` property. So, set the `webviewPath` and return the new `Photo` object.
+
+The `readAsBase64()` method is necessary because it isolates a small amount of platform-specific logic (more on that soon). For now, create two new helper methods, `readAsBase64()` and `convertBlobToBase64()`, to implement the necessary logic for running on the web.
+
+```ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -107,27 +122,6 @@ export class PhotoService {
       webviewPath: photo.webPath,
     };
   }
-}
-
-export interface UserPhoto {
-  filepath: string;
-  webviewPath?: string;
-}
-```
-
-`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) logic - more on that in a bit. For now, we'll create two new helper functions, `readAsBase64()` and `convertBlobToBase64()`, to implement the logic for running on the web:
-
-```tsx
-import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
-
-@Injectable({
-  providedIn: 'root',
-})
-export class PhotoService {
-  // Same old code from before.
 
   // CHANGE: Add the `readAsBase64` method.
   private async readAsBase64(photo: Photo) {
@@ -139,8 +133,8 @@ export class PhotoService {
   }
 
   // CHANGE: Add the `convertBlobToBase64` method.
-  private convertBlobToBase64 = (blob: Blob) =>
-    new Promise((resolve, reject) => {
+  private convertBlobToBase64(blob: Blob) {
+    return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
@@ -148,6 +142,7 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
+  }
 }
 
 export interface UserPhoto {
@@ -158,7 +153,7 @@ export interface UserPhoto {
 
 `photo.service.ts` should now look like this:
 
-```tsx
+```ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -170,9 +165,8 @@ import { Preferences } from '@capacitor/preferences';
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  constructor() {}
-
   public async addNewToGallery() {
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -181,7 +175,7 @@ export class PhotoService {
 
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
-    // update argument to unshift array method
+
     this.photos.unshift(savedImageFile);
   }
 
@@ -213,8 +207,8 @@ export class PhotoService {
     return (await this.convertBlobToBase64(blob)) as string;
   }
 
-  private convertBlobToBase64 = (blob: Blob) =>
-    new Promise((resolve, reject) => {
+  private convertBlobToBase64(blob: Blob) {
+    return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
@@ -222,6 +216,7 @@ export class PhotoService {
       };
       reader.readAsDataURL(blob);
     });
+  }
 }
 
 export interface UserPhoto {
