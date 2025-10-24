@@ -38,10 +38,10 @@ export interface EditorOptions {
    */
   mode?: string;
 
-  version?: number;
+  version?: string;
 }
 
-const loadSourceFiles = async (files: string[], version: number) => {
+const loadSourceFiles = async (files: string[], version: string) => {
   const versionDir = `v${version}`;
   const sourceFiles = await Promise.all(files.map((f) => fetch(`/docs/code/stackblitz/${versionDir}/${f}`)));
   return await Promise.all(sourceFiles.map((res) => res.text()));
@@ -159,7 +159,14 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     ...options?.files,
   };
 
-  files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
+  if (options?.version === '6') {
+    files[main] = files[main].replace(
+      'importProvidersFrom(IonicModule.forRoot({ }))',
+      `importProvidersFrom(IonicModule.forRoot({ mode: '${options?.mode}' }))`
+    );
+  } else {
+    files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
+  }
 
   sdk.openProject({
     template: 'node',

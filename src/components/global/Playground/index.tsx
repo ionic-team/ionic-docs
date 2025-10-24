@@ -153,7 +153,7 @@ export default function Playground({
    * The major version of Ionic to use in the generated StackBlitz examples.
    * This will also load assets for StackBlitz from the specified version directory.
    */
-  version: number;
+  version: string;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
