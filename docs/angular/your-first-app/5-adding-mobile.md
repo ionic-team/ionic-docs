@@ -69,33 +69,39 @@ private async readAsBase64(photo: Photo) {
 
 Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
 
-```tsx
+```ts
 import { Capacitor } from '@capacitor/core';
 ```
 
 Then update `savePicture()` to look like the following:
 
 ```ts
-// CHANGE: Update `loadSaved` method.
-public async loadSaved() {
-  // Retrieve cached photo array data
-  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+// CHANGE: Update `savePicture()` method.
+private async savePicture(photo: Photo) {
+  // Convert photo to base64 format, required by Filesystem API to save
+  const base64Data = await this.readAsBase64(photo);
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
-  if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
-    for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
-          path: photo.filepath,
-          directory: Directory.Data
-      });
+  // Write the file to the data directory
+  const fileName = Date.now() + '.jpeg';
+  const savedFile = await Filesystem.writeFile({
+    path: fileName,
+    data: base64Data,
+    directory: Directory.Data
+  });
 
-      // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
-    }
+  if (this.platform.is('hybrid')) {
+    // Display the new image by rewriting the 'file://' path to HTTP
+    return {
+      filepath: savedFile.uri,
+      webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+    };
+  } else {
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
+    return {
+      filepath: fileName,
+      webviewPath: photo.webPath
+    };
   }
 }
 ```
