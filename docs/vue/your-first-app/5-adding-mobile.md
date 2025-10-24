@@ -1,29 +1,82 @@
+---
+title: Adding Mobile
+strip_number_prefixes: false
+---
+
 # Adding Mobile
 
 Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
 
-Let’s start with making some small code changes - then our app will "just work" when we deploy it to a device.
+## Import Platform API
 
-## Platform-specific Logic
+Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
 
-First, we’ll update the photo saving functionality to support mobile. We'll run slightly different code depending on the platform - mobile or web. At the top of `usePhotoGallery.ts`, import `isPlatform` from Ionic Vue and `Capacitor` from Capacitor's `core` package:
+Import the Ionic [Platform API](../platform.md) into `usePhotoGallery.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile).
 
-```tsx
+Add `Platform` to the imports at the top of the file to use the `isPlatform` method. `Capacitor` is also imported to help with file paths on mobile devices.
+
+```ts
 import { ref, onMounted, watch } from 'vue';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-// CHANGE: Add imports from `@ionic/vue` and `@capcitor/core`.
+// CHANGE: Add imports.
 import { isPlatform } from '@ionic/vue';
 import { Capacitor } from '@capacitor/core';
 
 // Same old code from before.
 ```
 
-Next, update the `usePhotoGallery` function's `savePicture` method to check which platform the app is running on. If it’s "hybrid" (Capacitor, the native runtime), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.
+## Platform-specific Logic
 
-```tsx
-// CHANGE: Update the `savePicture` method to include branches for web and native.
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
+
+Update `savePicture` to look like the following:
+
+```ts
+// CHANGE: Update the `savePicture()` method.
+const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
+  let base64Data: string | Blob;
+
+  // CHANGE: Add platform check.
+  // "hybrid" will detect mobile - iOS or Android
+  if (isPlatform('hybrid')) {
+    const file = await Filesystem.readFile({
+      path: photo.path!,
+    });
+    base64Data = file.data;
+  } else {
+    // Fetch the photo, read as a blob, then convert to base64 format
+    const response = await fetch(photo.webPath!);
+    const blob = await response.blob();
+    base64Data = (await convertBlobToBase64(blob)) as string;
+  }
+
+  const savedFile = await Filesystem.writeFile({
+    path: fileName,
+    data: base64Data,
+    directory: Directory.Data,
+  });
+
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
+  return {
+    filepath: fileName,
+    webviewPath: photo.webPath,
+  };
+};
+```
+
+When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `usePhotoGallery.ts`.
+
+```ts
+import { Capacitor } from '@capacitor/core';
+```
+
+Then update `savePicture()` to look like the following:
+
+```ts
+// CHANGE: Update `savePicture()` method.
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string | Blob;
   // "hybrid" will detect mobile - iOS or Android
@@ -45,9 +98,9 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     directory: Directory.Data,
   });
 
+  // CHANGE: Add platform check.
   if (isPlatform('hybrid')) {
     // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
     return {
       filepath: savedFile.uri,
       webviewPath: Capacitor.convertFileSrc(savedFile.uri),
@@ -63,10 +116,10 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 };
 ```
 
-Next, add a new bit of logic in the `loadSaved` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved` function:
+Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
-```tsx
-// CHANGE: Update the `loadSaved` method to convert to base64 on web platform only.
+```ts
+// CHANGE: Update the `loadSaved` method.
 const loadSaved = async () => {
   const photoList = await Preferences.get({ key: PHOTO_STORAGE });
   const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
@@ -91,7 +144,7 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 
 `usePhotoGallery.ts` should now look like this:
 
-```tsx
+```ts
 import { ref, onMounted, watch } from 'vue';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -100,36 +153,21 @@ import { isPlatform } from '@ionic/vue';
 import { Capacitor } from '@capacitor/core';
 
 export const usePhotoGallery = () => {
-  const PHOTO_STORAGE = 'photos';
   const photos = ref<UserPhoto[]>([]);
 
+  const PHOTO_STORAGE = 'photos';
+
   const addNewToGallery = async () => {
-    const photo = await Camera.getPhoto({
+    const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
+
     const fileName = Date.now() + '.jpeg';
-    const savedFileImage = await savePicture(photo, fileName);
+    const savedFileImage = await savePicture(capturedPhoto, fileName);
 
     photos.value = [savedFileImage, ...photos.value];
-  };
-
-  const convertBlobToBase64 = (blob: Blob) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onerror = reject;
-      reader.onload = () => {
-        resolve(reader.result);
-      };
-      reader.readAsDataURL(blob);
-    });
-
-  const cachePhotos = () => {
-    Preferences.set({
-      key: PHOTO_STORAGE,
-      value: JSON.stringify(photos.value),
-    });
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
@@ -170,6 +208,24 @@ export const usePhotoGallery = () => {
     }
   };
 
+  const convertBlobToBase64 = (blob: Blob) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
+  };
+
+  const cachePhotos = () => {
+    Preferences.set({
+      key: PHOTO_STORAGE,
+      value: JSON.stringify(photos.value),
+    });
+  };
+
   const loadSaved = async () => {
     const photoList = await Preferences.get({ key: PHOTO_STORAGE });
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
@@ -193,8 +249,8 @@ export const usePhotoGallery = () => {
   watch(photos, cachePhotos);
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 
