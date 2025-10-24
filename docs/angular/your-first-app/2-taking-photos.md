@@ -11,7 +11,7 @@ sidebar_label: Taking Photos
   />
 </head>
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
 ## Photo Service
 
@@ -147,9 +147,10 @@ export class PhotoService {
 }
 ```
 
-Over in the `addNewToGallery` method, add the newly captured photo to the beginning of the Photos array.
+Over in the `addNewToGallery` method, add the newly captured photo to the beginning of the `photos` array.
 
 ```ts
+// CHANGE: Update `addNewToGallery()` method.
 public async addNewToGallery() {
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
@@ -169,7 +170,6 @@ public async addNewToGallery() {
 
 ```ts
 import { Injectable } from '@angular/core';
-// CHANGE: Add the following imports.
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
@@ -178,10 +178,8 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root',
 })
 export class PhotoService {
-  // CHANGE: Add the photos array.
   public photos: UserPhoto[] = [];
 
-  // CHANGE: Add the gallery function.
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
@@ -190,7 +188,6 @@ export class PhotoService {
       quality: 100,
     });
 
-    // CHANGE: Add the new photo to the photos array.
     this.photos.unshift({
       filepath: 'soon...',
       webviewPath: capturedPhoto.webPath!,
@@ -198,7 +195,6 @@ export class PhotoService {
   }
 }
 
-// CHANGE: Add the interface.
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;

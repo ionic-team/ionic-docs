@@ -34,9 +34,9 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 
 Highlights include:
 
-- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](../components.md).
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
+- Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
@@ -114,7 +114,7 @@ import { AppModule } from './app/app.module';
 // CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader before the `bootstrapModule` call.
+// CHANGE: Call the element loader before the `bootstrapModule` call.
 defineCustomElements(window);
 
 platformBrowserDynamic()

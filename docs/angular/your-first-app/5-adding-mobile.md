@@ -42,7 +42,7 @@ export class PhotoService {
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
+First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the logic as before when running the app on the web.
 
 Update `readAsBase64()` to look like the following:
 
@@ -106,7 +106,7 @@ private async savePicture(photo: Photo) {
 }
 ```
 
-Next, head back over to the `loadSaved()` method we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. Thus, only the web requires reading each image from the `Filesystem` into base64 format. Update this method to add an _if statement_ around the `Filesystem` code:
+Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
 ```ts
 // CHANGE: Update `loadSaved` method.
