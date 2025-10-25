@@ -20,7 +20,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Add the `savePicture` method.
+  // CHANGE: Add the `savePicture()` method.
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     return {
       filepath: 'soon...',
@@ -51,7 +51,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Update the `addNewToGallery` method.
+  // CHANGE: Update the `addNewToGallery()` method.
   const addNewToGallery = async () => {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
@@ -61,14 +61,14 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Add `savedImageFile`.
+    // CHANGE: Add `savedImageFile()`.
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     photos.value = [savedImageFile, ...photos.value];
   };
 
-  // CHANGE: Add the `savePicture` method.
+  // CHANGE: Add the `savePicture()` method.
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     return {
       filepath: 'soon...',
@@ -103,7 +103,7 @@ import { Preferences } from '@capacitor/preferences';
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Update the `savePicture` method.
+  // CHANGE: Update the `savePicture()` method.
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
@@ -124,7 +124,7 @@ export const usePhotoGallery = () => {
     };
   };
 
-  // CHANGE: Add the `convertBlobToBase64` method.
+  // CHANGE: Add the `convertBlobToBase64()` method.
   const convertBlobToBase64 = (blob: Blob) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();

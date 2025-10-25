@@ -165,9 +165,9 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
-    const savedFileImage = await savePicture(capturedPhoto, fileName);
+    const savedImageFile = await savePicture(capturedPhoto, fileName);
 
-    photos.value = [savedFileImage, ...photos.value];
+    photos.value = [savedImageFile, ...photos.value];
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {

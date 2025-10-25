@@ -67,7 +67,7 @@ export const usePhotoGallery = () => {
   return {
     photos,
     addNewToGallery,
-    // CHANGE: Export the `deletePhoto` method.
+    // CHANGE: Export `deletePhoto()` method.
     deletePhoto,
   };
 };

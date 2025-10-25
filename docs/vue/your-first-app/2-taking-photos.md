@@ -21,7 +21,7 @@ Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 
 Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
 
-```typescript
+```ts
 import { ref, onMounted, watch } from 'vue';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -110,7 +110,7 @@ Return to `usePhotoGallery.ts`.
 
 Outside of the `usePhotoGallery` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
 
-```typescript
+```ts
 export const usePhotoGallery = () => {
   // Same old code from before.
 };
@@ -133,7 +133,7 @@ export const usePhotoGallery = () => {
 };
 ```
 
-Over in the `addNewToGallery` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery` return statement with the `photos` array.
+Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery` return statement with the `photos` array.
 
 ```ts
 export const usePhotoGallery = () => {
@@ -148,14 +148,14 @@ export const usePhotoGallery = () => {
 
     // CHANGE: Create the `fileName` with current timestamp.
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Create `savedFileImage` matching `UserPhoto` interface.
-    const savedFileImage = {
+    // CHANGE: Create `savedImageFile` matching `UserPhoto` interface.
+    const savedImageFile = {
       filepath: fileName,
       webviewPath: capturedPhoto.webPath,
     };
 
     // CHANGE: Update the `photos` array with the new photo.
-    photos.value = [savedFileImage, ...photos.value];
+    photos.value = [savedImageFile, ...photos.value];
   };
 
   return {
@@ -185,12 +185,12 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
-    const savedFileImage = {
+    const savedImageFile = {
       filepath: fileName,
       webviewPath: capturedPhoto.webPath,
     };
 
-    photos.value = [savedFileImage, ...photos.value];
+    photos.value = [savedImageFile, ...photos.value];
   };
 
   return {

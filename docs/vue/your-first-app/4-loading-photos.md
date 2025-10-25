@@ -30,7 +30,7 @@ Next, at the end of the `usePhotoGallery` method, add a call to the `cachePhotos
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Add the `cachePhotos` method.
+  // CHANGE: Add `cachePhotos()` method.
   const cachePhotos = () => {
     Preferences.set({
       key: PHOTO_STORAGE,
@@ -47,7 +47,7 @@ export const usePhotoGallery = () => {
 
 Next, use the Vue [watch method](https://vuejs.org/api/reactivity-core.html#watch) to watch the `photos` array. Whenever the array is modified (in this case, taking or deleting photos), trigger the `cachePhotos` method. Not only do we get to reuse code, but it also doesn’t matter when the app user closes or switches to a different app - photo data is always saved.
 
-Add the call to the `watch` method above the return statement in `usePhotoGallery`:
+Add the call to the `watch()` method above the return statement in `usePhotoGallery`:
 
 ```ts
 export const usePhotoGallery = () => {
@@ -69,7 +69,7 @@ With the photo array data saved, create a new method in the `usePhotoGallery` ca
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Add the `loadSaved` method.
+  // CHANGE: Add `loadSaved()` method.
   const loadSaved = async () => {
     const photoList = await Preferences.get({ key: PHOTO_STORAGE });
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
@@ -90,7 +90,7 @@ On mobile (coming up next!), we can directly set the source of an image tag - `<
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Update the `loadSaved` method.
+  // CHANGE: Update `loadSaved()` method.
   const loadSaved = async () => {
     const photoList = await Preferences.get({ key: PHOTO_STORAGE });
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
@@ -138,9 +138,9 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
-    const savedFileImage = await savePicture(capturedPhoto, fileName);
+    const savedImageFile = await savePicture(capturedPhoto, fileName);
 
-    photos.value = [savedFileImage, ...photos.value];
+    photos.value = [savedImageFile, ...photos.value];
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
@@ -233,9 +233,9 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
-    const savedFileImage = await savePicture(capturedPhoto, fileName);
+    const savedImageFile = await savePicture(capturedPhoto, fileName);
 
-    photos.value = [savedFileImage, ...photos.value];
+    photos.value = [savedImageFile, ...photos.value];
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
@@ -291,7 +291,7 @@ export const usePhotoGallery = () => {
     photos.value = photosInPreferences;
   };
 
-  // CHANGE: Add call to `onMounted` with the `loadSaved` method.
+  // CHANGE: Add call to `onMounted()` with the `loadSaved()` method.
   onMounted(loadSaved);
   watch(photos, cachePhotos);
 
