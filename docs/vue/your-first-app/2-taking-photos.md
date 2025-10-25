@@ -15,7 +15,7 @@ Now for the fun part - adding the ability to take photos with the device’s cam
 
 ## Photo Gallery Composable
 
-We will create a standalone composition function paired with [Vue's Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) to manage the photos for the gallery.
+We will create a standalone composition method paired with [Vue's Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) to manage the photos for the gallery.
 
 Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 
@@ -122,7 +122,7 @@ export interface UserPhoto {
 }
 ```
 
-Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://vuejs.org/api/reactivity-core.html#ref).
+Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. Make it a reactive variable using Vue's [ref method](https://vuejs.org/api/reactivity-core.html#ref).
 
 ```ts
 export const usePhotoGallery = () => {
