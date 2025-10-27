@@ -4,55 +4,33 @@ sidebar_label: Taking Photos
 ---
 
 <head>
-  <title>Take Photos From The Camera on React Apps - Ionic Documentation</title>
+  <title>Build Camera API for iOS, Android & Web | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="To take photos from the device's camera on a React app, begin by building it for the web, then make some small tweaks for mobile use on iOS and Android devices."
+    content="Add the ability to take photos with your device's camera using the Ionic Capacitor Camera API for mobile iOS, Android, and the web. Learn how here."
   />
 </head>
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
-To do so, we will create our own custom React hook that will manage the photos for the gallery.
+## Photo Gallery Hook
 
-:::note
-If you are not familiar with React Hooks, [Introducing React Hooks](https://react.dev/reference/react/hooks) from the official React docs is a good resource to start with.
-:::
+We will create a [custom React hook](https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component) to manage the photos for the gallery.
 
 Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
 
-A custom hook is just a function that uses other React hooks. And that's what we will be doing! We will start by importing the various hooks and utilities we will be using from React core, the Ionic React Hooks project, and Capacitor:
+Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera.
 
-```tsx
-// CHANGE: Add the following imports
+```ts
 import { useState, useEffect } from 'react';
-import { isPlatform } from '@ionic/react';
-
-// CHANGE: Add the following imports
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-import { Capacitor } from '@capacitor/core';
-
-export function usePhotoGallery() {}
-```
-
-Next, create a function named usePhotoGallery:
-
-```tsx
-import { useState, useEffect } from 'react';
-import { isPlatform } from '@ionic/react';
-
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
-import { Capacitor } from '@capacitor/core';
 
 export function usePhotoGallery() {
-  // CHANGE: Add the usePhotoGallery function.
-  const takePhoto = async () => {
+  const addNewToGallery = async () => {
     // Take a photo
-    const photo = await Camera.getPhoto({
+    const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
@@ -60,37 +38,57 @@ export function usePhotoGallery() {
   };
 
   return {
-    takePhoto,
+    addNewToGallery,
   };
 }
 ```
 
-Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capacitor's getPhoto method.
-
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
-The last step we need to take is to use the new hook from the Tab2 page. Go back to Tab2.tsx and import the hook:
+Next, in `Tab2.tsx`, import the `usePhotoGallery` method and destructure it to call its `addNewToGallery` method.
 
 ```tsx
-// Keep the other imports
-
-// CHANGE: Import the usePhotoGallery hook
+import { camera, trash, close } from 'ionicons/icons';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonActionSheet,
+} from '@ionic/react';
+// CHANGE: Add `usePhotoGallery` import.
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
+import './Tab2.css';
 
 const Tab2: React.FC = () => {
-  // CHANGE: Get access to `takePhoto` method by using the hook
-  const { takePhoto } = usePhotoGallery();
+  // CHANGE: Destructure `addNewToGallery()` from `usePhotoGallery()`.
+  const { addNewToGallery } = usePhotoGallery();
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+          <IonTitle>Photo Gallery</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Photo Gallery</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton onClick={() => takePhoto()}>
+          {/* CHANGE: Add a click event listener to the floating action button. */}
+          <IonFabButton onClick={() => addNewToGallery()}>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
@@ -102,109 +100,114 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+If it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
 ![A photo gallery app displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png 'Webcam Selfie in Photo Gallery')
 
 _(Your selfie is probably much better than mine)_
 
-After taking a photo, it disappears. We still need to display it within our app and save it for future access.
+After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
 
 ## Displaying Photos
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following UserPhoto interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+Return to `usePhotoGallery.ts`.
 
-```tsx
-export functino usePhotoGallery {
-    // Same old code from before.
+Outside of the `usePhotoGallery` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata.
+
+```ts
+export function usePhotoGallery {
+  // Same old code from before.
 }
 
-// CHANGE: Add the interface.
+// CHANGE: Add the `UserPhoto` interface.
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
 ```
 
-Back at the top of the function (right after the call to `usePhotoGallery`, we will define a state variable to store the array of each photo captured with the Camera.
+Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. Make it a state variable using React's [useState hook](https://react.dev/reference/react/useState).
 
-```tsx
+```ts
 export function usePhotoGallery {
-    // CHANGE: Add the photos array.
-    const [photos, setPhotos] = useState<UserPhoto[]>([]);
+  // CHANGE: Add the photos array.
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
-    // Same old code from before.
+  // Same old code from before.
 }
 ```
 
-When the camera is done taking a picture, the resulting Photo returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidentally mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:
+Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery` return statement with the `photos` array.
 
-```tsx
-// Same old code from before.
-
+```ts
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
-  // CHANGE: Create new fileName variable with date and .jpeg
-  const fileName = Date.now() + '.jpeg';
 
-  const takePhoto = async () => {
-    // Same old code from before.
-
-    // CHANGE: Add in newPhotos after getPhoto call
-    const newPhotos = [
-      {
-        filepath: fileName,
-        webviewPath: photo.webPath,
-      },
-      ...photos,
-    ];
-    setPhotos(newPhotos);
-  };
-
-  // CHANGE: Update return statement to include photos.
-  return {
-    photos,
-    takePhoto,
-  };
-}
-
-// Same old code from before.
-```
-
-`usePhotoGallery.ts` should now look like this:
-
-```tsx
-import { useState, useEffect } from 'react';
-import { isPlatform } from '@ionic/react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
-import { Capacitor } from '@capacitor/core';
-
-export function usePhotoGallery() {
-  const [photos, setPhotos] = useState<UserPhoto[]>([]);
-  const fileName = Date.now() + '.jpeg';
-
-  const takePhoto = async () => {
-    const photo = await Camera.getPhoto({
+  const addNewToGallery = async () => {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
 
-    const newPhotos = [
+    // CHANGE: Create the `fileName` with current timestamp.
+    const fileName = Date.now() + '.jpeg';
+    // CHANGE: Create `savedImageFile` matching `UserPhoto` interface.
+    const savedImageFile = [
       {
         filepath: fileName,
-        webviewPath: photo.webPath,
+        webviewPath: capturedPhoto.webPath,
       },
       ...photos,
     ];
-    setPhotos(newPhotos);
+
+    // CHANGE: Update the `photos` array with the new photo.
+    setPhotos(savedImageFile);
   };
 
   return {
+    addNewToGallery,
+    // CHANGE: Update return statement to include `photos` array.
     photos,
-    takePhoto,
+  };
+}
+```
+
+`usePhotoGallery.ts` should now look like this:
+
+```ts
+import { useState, useEffect } from 'react';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+export function usePhotoGallery() {
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
+
+  const addNewToGallery = async () => {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    const fileName = Date.now() + '.jpeg';
+    const savedImageFile = [
+      {
+        filepath: fileName,
+        webviewPath: capturedPhoto.webPath,
+      },
+      ...photos,
+    ];
+
+    setPhotos(savedImageFile);
+  };
+
+  return {
+    addNewToGallery,
+    photos,
   };
 }
 
@@ -214,47 +217,50 @@ export interface UserPhoto {
 }
 ```
 
-Next, move over to `Tab2.tsx` so we can display the image on the screen. With the photo(s) stored into the main array we can display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<IonImg>`) for each. Point the `src` (source) to the photo’s path:
+Next, switch to `Tab2.tsx` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
 
 ```tsx
-// Same old code from before.
-
-// CHANGE: Import usePhotoGallery Hook
-import { usePhotoGallery } from '../hooks/usePhotoGallery';
-
 const Tab2: React.FC = () => {
-    // CHANGE: Get access to photos from usePhotoGallery
-    const { photos, takePhoto } = usePhotoGallery();
+  // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
+  const { photos, addNewToGallery } = usePhotoGallery();
 
-    return (
-        <IonPage>
-        <IonHeader>
-            <IonToolbar>
-            <IonTitle>Tab 2</IonTitle>
-            </IonToolbar>
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Photo Gallery</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Photo Gallery</IonTitle>
+          </IonToolbar>
         </IonHeader>
-            <IonContent>
-                <!-- CHANGE: Add grid component and loop through each photo in the Photos Array. -->
-                <IonGrid>
-                    <IonRow>
-                        {photos.map((photo, index) => (
-                        <IonCol size="6" key={photo.filepath}>
-                            <IonImg src={photo.webviewPath} />
-                        </IonCol>
-                        ))}
-                    </IonRow>
-                </IonGrid>
-                <IonFab vertical="bottom" horizontal="center" slot="fixed">
-                    <IonFabButton onClick={() => takePhoto()}>
-                        <IonIcon icon={camera}></IonIcon>
-                    </IonFabButton>
-                </IonFab>
-            </IonContent>
-        </IonPage>
-    );
+
+        {/* CHANGE: Add a grid component to display the photos. */}
+        <IonGrid>
+          <IonRow>
+            {/* CHANGE: Create a new column and image component for each photo. */}
+            {photos.map((photo) => (
+              <IonCol size="6" key={photo.filepath}>
+                <IonImg src={photo.webviewPath} />
+              </IonCol>
+            ))}
+          </IonRow>
+        </IonGrid>
+
+        <IonFab vertical="bottom" horizontal="center" slot="fixed">
+          <IonFabButton onClick={() => addNewToGallery()}>
+            <IonIcon icon={camera}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+      </IonContent>
+    </IonPage>
+  );
 };
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+Within the web browser, click the camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
