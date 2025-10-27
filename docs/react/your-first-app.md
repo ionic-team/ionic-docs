@@ -30,11 +30,11 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 
 Highlights include:
 
-- One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+- One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](../components.md).
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
+- Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
-Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
+Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/tutorial-photo-gallery-react).
 
 ## Download Required Tools
 
@@ -88,7 +88,7 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+Some Capacitor plugins, including the [Camera API](../native/camera.md), provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
 It's a separate dependency, so install it next:
 
@@ -131,7 +131,7 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 ## Photo Gallery!!!
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+There are three tabs. Click on the "Tab2" tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/react/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
 
@@ -226,18 +226,28 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Next, open `src/App.tsx` and replace the imported `ellipse` icon with the `images` icon.
+Next, open `src/App.tsx`. Change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button.
 
 ```tsx
-import { images, square, triangle } from 'ionicons/icons';
-```
-
-Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button:
-
-```tsx
-// Keep other imports
+import { Redirect, Route } from 'react-router-dom';
+import {
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+  setupIonicReact,
+} from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 // CHANGE: Update the following import.
 import { images, square, triangle } from 'ionicons/icons';
+import Tab1 from './pages/Tab1';
+import Tab2 from './pages/Tab2';
+import Tab3 from './pages/Tab3';
+
+/* Ionic styles are not shown in this example to keep it brief but will be included in the Ionic package downloaded for your app. Do not remove them. */
 
 const App: React.FC = () => (
   <IonApp>
@@ -278,9 +288,5 @@ const App: React.FC = () => (
   </IonApp>
 );
 ```
-
-:::note
-In Ionic React, icons are imported individually from `ionicons/icons` and set to the icon prop.
-:::
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
