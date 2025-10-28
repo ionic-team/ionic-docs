@@ -3,6 +3,14 @@ title: Loading Photos from the Filesystem
 sidebar_label: Loading Photos
 ---
 
+<head>
+  <title>Loading Photos from the Filesystem with Angular | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="We’ve implemented photo taking and saving to the filesystem, now learn how Ionic leverages Capacitor Preferences API for loading our photos in a key-value store."
+  />
+</head>
+
 # Loading Photos from the Filesystem
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
@@ -11,7 +19,7 @@ Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](../.
 
 ## Preferences API
 
-Open `photo.service.ts` and begin by defining a new property in the `PhotoService` class that will act as the key for the store:
+Open `photo.service.ts` and begin by defining a new property in the `PhotoService` class that will act as the key for the store.
 
 ```ts
 export class PhotoService {
@@ -24,7 +32,7 @@ export class PhotoService {
 }
 ```
 
-Next, at the end of the `addNewToGallery` method, add a call to `Preferences.set()` to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Next, at the end of the `addNewToGallery()` method, add a call to `Preferences.set()` to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
 public async addNewToGallery() {
@@ -56,8 +64,8 @@ export class PhotoService {
   // CHANGE: Add the method to load the photo data.
   public async loadSaved() {
     // Retrieve cached photo array data
-    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+    const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
+    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
   }
 }
 ```
@@ -71,13 +79,13 @@ export class PhotoService {
   // CHANGE: Update the `loadSaved` method.
   public async loadSaved() {
     // Retrieve cached photo array data
-    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+    const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
+    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
     // CHANGE: Display the photo by reading into base64 format.
     for (let photo of this.photos) {
       // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.file({
         path: photo.filepath,
         directory: Directory.Data,
       });
@@ -124,8 +132,10 @@ export class PhotoService {
   }
 
   private async savePicture(photo: Photo) {
-    // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(photo);
+    // Fetch the photo, read as a blob, then convert to base64 format
+    const response = await fetch(photo.webPath!);
+    const blob = await response.blob();
+    const base64Data = (await this.convertBlobToBase64(blob)) as string;
 
     // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
@@ -143,14 +153,6 @@ export class PhotoService {
     };
   }
 
-  private async readAsBase64(photo: Photo) {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-
-    return (await this.convertBlobToBase64(blob)) as string;
-  }
-
   private convertBlobToBase64(blob: Blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -164,8 +166,8 @@ export class PhotoService {
 
   public async loadSaved() {
     // Retrieve cached photo array data
-    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+    const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
+    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
   }
 }
 

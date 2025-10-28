@@ -3,6 +3,14 @@ title: Adding Mobile
 strip_number_prefixes: false
 ---
 
+<head>
+  <title>Adding Mobile Support with Angular | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Learn how to add mobile support to your Ionic Capacitor photo gallery app, enabling it to run on iOS, Android, and the web using one codebase."
+  />
+</head>
+
 # Adding Mobile
 
 Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
@@ -42,12 +50,15 @@ export class PhotoService {
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the logic as before when running the app on the web.
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
 
-Update `readAsBase64()` to look like the following:
+Update `savePicture()` to look like the following:
 
 ```ts
-private async readAsBase64(photo: Photo) {
+// CHANGE: Update the `savePicture()` method.
+private async savePicture(photo: Photo) {
+  let base64Data: string | Blob;
+
   // CHANGE: Add platform check.
   // "hybrid" will detect Cordova or Capacitor
   if (this.platform.is('hybrid')) {
@@ -55,19 +66,32 @@ private async readAsBase64(photo: Photo) {
     const file = await Filesystem.readFile({
       path: photo.path!
     });
-
-    return file.data;
+    base64Data = file.data;
   } else {
     // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
-
-    return await this.convertBlobToBase64(blob) as string;
+    base64Data = await this.convertBlobToBase64(blob) as string;
   }
+
+  // Write the file to the data directory
+  const fileName = Date.now() + '.jpeg';
+  const savedFile = await Filesystem.writeFile({
+    path: fileName,
+    data: base64Data,
+    directory: Directory.Data
+  });
+
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
+  return {
+    filepath: fileName,
+    webviewPath: photo.webPath,
+  };
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
+When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
 
 ```ts
 import { Capacitor } from '@capacitor/core';
@@ -78,17 +102,29 @@ Then update `savePicture()` to look like the following:
 ```ts
 // CHANGE: Update `savePicture()` method.
 private async savePicture(photo: Photo) {
-  // Convert photo to base64 format, required by Filesystem API to save
-  const base64Data = await this.readAsBase64(photo);
+  let base64Data: string | Blob;
+  // "hybrid" will detect mobile - iOS or Android
+  if (this.platform.is('hybrid')) {
+    const file = await Filesystem.readFile({
+      path: photo.path!,
+    });
+    base64Data = file.data;
+  } else {
+    // Fetch the photo, read as a blob, then convert to base64 format
+    const response = await fetch(photo.webPath!);
+    const blob = await response.blob();
+    base64Data = await this.convertBlobToBase64(blob) as string;
+  }
 
   // Write the file to the data directory
   const fileName = Date.now() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: Directory.Data
+    directory: Directory.Data,
   });
 
+  // CHANGE: Add platform check.
   if (this.platform.is('hybrid')) {
     // Display the new image by rewriting the 'file://' path to HTTP
     return {
@@ -100,7 +136,7 @@ private async savePicture(photo: Photo) {
     // already loaded into memory
     return {
       filepath: fileName,
-      webviewPath: photo.webPath
+      webviewPath: photo.webPath,
     };
   }
 }
@@ -111,23 +147,20 @@ Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can dire
 ```ts
 // CHANGE: Update `loadSaved` method.
 public async loadSaved() {
-  // Retrieve cached photo array data
-  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+  const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
+  this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
+  // CHANGE: Add platform check.
+  // If running on the web...
   if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.file({
           path: photo.filepath,
           directory: Directory.Data
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
 }
@@ -178,8 +211,23 @@ export class PhotoService {
   }
 
   private async savePicture(photo: Photo) {
-    // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(photo);
+    let base64Data: string | Blob;
+
+    // "hybrid" will detect Cordova or Capacitor
+    if (this.platform.is('hybrid')) {
+      // Read the file into base64 format
+      const file = await Filesystem.readFile({
+        path: photo.path!,
+      });
+
+      base64Data = file.data;
+    } else {
+      // Fetch the photo, read as a blob, then convert to base64 format
+      const response = await fetch(photo.webPath!);
+      const blob = await response.blob();
+
+      base64Data = (await this.convertBlobToBase64(blob)) as string;
+    }
 
     // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
@@ -205,24 +253,6 @@ export class PhotoService {
     }
   }
 
-  private async readAsBase64(photo: Photo) {
-    // "hybrid" will detect Cordova or Capacitor
-    if (this.platform.is('hybrid')) {
-      // Read the file into base64 format
-      const file = await Filesystem.readFile({
-        path: photo.path!,
-      });
-
-      return file.data;
-    } else {
-      // Fetch the photo, read as a blob, then convert to base64 format
-      const response = await fetch(photo.webPath!);
-      const blob = await response.blob();
-
-      return (await this.convertBlobToBase64(blob)) as string;
-    }
-  }
-
   private convertBlobToBase64(blob: Blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -236,22 +266,18 @@ export class PhotoService {
 
   public async loadSaved() {
     // Retrieve cached photo array data
-    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
+    const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
+    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-    // Easiest way to detect when running on the web:
-    // “when the platform is NOT hybrid, do this”
+    // If running on the web...
     if (!this.platform.is('hybrid')) {
-      // Display the photo by reading into base64 format
       for (let photo of this.photos) {
-        // Read each saved photo's data from the Filesystem
-        const readFile = await Filesystem.readFile({
+        const file = await Filesystem.file({
           path: photo.filepath,
           directory: Directory.Data,
         });
-
         // Web platform only: Load the photo as base64 data
-        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+        photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
       }
     }
   }

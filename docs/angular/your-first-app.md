@@ -4,12 +4,14 @@ sidebar_label: Build Your First App
 ---
 
 <head>
-  <title>Build Your First Ionic Mobile App: Angular Development Tutorial</title>
+  <title>Build Your First Ionic Mobile App with Angular | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
+    content="This Angular tutorial teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with Angular."
   />
 </head>
+
+# Your First Ionic App: Angular
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
@@ -38,7 +40,7 @@ Highlights include:
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
 - Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
-Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Find the [complete app code](https://github.com/ionic-team/tutorial-photo-gallery-angular) referenced in this guide on GitHub.
 
 ## Download Required Tools
 
@@ -70,7 +72,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 
 ## Create an App
 
-Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
+Next, create an Ionic Angular app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
 ionic start photo-gallery tabs --type=angular --capacitor
@@ -194,7 +196,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 </ion-content>
 ```
 
-Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button.
+Next, open `src/app/tabs/tabs.page.html`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
 
 ```html
 <ion-tabs>

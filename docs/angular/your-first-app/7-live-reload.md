@@ -4,11 +4,14 @@ sidebar_label: Live Reload
 ---
 
 <head>
+  <title>Rapid App Development with Live Reload with Angular | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
   />
 </head>
+
+# Rapid App Development with Live Reload
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
@@ -34,7 +37,7 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 With Live Reload running and the app open on your device, let’s implement photo deletion functionality.
 
-In `photo.service.ts`, add the `deletePicture()` method. The selected photo is removed from the `photos` array first. Then, we use the Capacitor Preferences API to update the cached version of the `photos` array. Finally, we delete the actual photo file itself using the Filesystem API.
+In `photo.service.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we use the Capacitor Preferences API to update the cached version of the `photos` array. Finally, we delete the actual photo file itself using the Filesystem API.
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -50,8 +53,8 @@ import { Capacitor } from '@capacitor/core';
 export class PhotoService {
   // Same old code from before.
 
-  // CHANGE: Add `deletePicture()` method.
-  public async deletePicture(photo: UserPhoto, position: number) {
+  // CHANGE: Add `deletePhoto()` method.
+  public async deletePhoto(photo: UserPhoto, position: number) {
     // Remove this photo from the Photos reference data array
     this.photos.splice(position, 1);
 
@@ -77,10 +80,12 @@ export interface UserPhoto {
 }
 ```
 
-Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePicture()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
+Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
 
 ```ts
 import { Component } from '@angular/core';
+// Change: Add import.
+import type { UserPhoto } from '../services/photo.service';
 import { PhotoService } from '../services/photo.service';
 // CHANGE: Add import.
 import { ActionSheetController } from '@ionic/angular';
@@ -107,7 +112,7 @@ export class Tab2Page {
           role: 'destructive',
           icon: 'trash',
           handler: () => {
-            this.photoService.deletePicture(photo, position);
+            this.photoService.deletePhoto(photo, position);
           },
         },
         {

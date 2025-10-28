@@ -4,12 +4,14 @@ sidebar_label: Taking Photos
 ---
 
 <head>
-  <title>Build Camera API for iOS, Android & Web | Ionic Capacitor Camera</title>
+  <title>Take Photos with Camera API for iOS, Android & Web with Angular | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Add the ability to take photos with your device's camera using the Ionic Capacitor Camera API for mobile iOS, Android, and the web. Learn how here."
   />
 </head>
+
+# Taking Photos with the Camera
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
@@ -21,7 +23,7 @@ All Capacitor logic (Camera usage and other native features) will be encapsulate
 ionic g service services/photo.service
 ```
 
-Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
+Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the `Camera`, `Filesystem`, and `Storage` plugins:
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -36,7 +38,7 @@ import { Preferences } from '@capacitor/preferences';
 export class PhotoService {}
 ```
 
-Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
+Next, define a new class method, `addNewToGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera.
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -57,7 +59,7 @@ export class PhotoService {
 }
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
 Next, in `tab2.page.ts`, import the `PhotoService` class and add a method to call its `addNewToGallery` method.
 
@@ -127,7 +129,7 @@ export class PhotoService {
   // Same old code from before.
 }
 
-// CHANGE: Add the interface.
+// CHANGE: Add the `UserPhoto` interface.
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
@@ -138,7 +140,7 @@ Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will
 
 ```ts
 export class PhotoService {
-  // CHANGE: Add the photos array.
+  // CHANGE: Add the `photos` array.
   public photos: UserPhoto[] = [];
 
   public async addNewToGallery() {
@@ -152,6 +154,7 @@ Over in the `addNewToGallery` method, add the newly captured photo to the beginn
 ```ts
 // CHANGE: Update `addNewToGallery()` method.
 public async addNewToGallery() {
+  // Take a photo
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
