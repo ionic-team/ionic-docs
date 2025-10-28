@@ -3,6 +3,14 @@ title: Adding Mobile
 strip_number_prefixes: false
 ---
 
+<head>
+  <title>Adding Mobile Support with Vue | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Learn how to add mobile support to your Ionic Capacitor photo gallery app, enabling it to run on iOS, Android, and the web using one codebase."
+  />
+</head>
+
 # Adding Mobile
 
 Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
@@ -79,6 +87,7 @@ Then update `savePicture()` to look like the following:
 // CHANGE: Update `savePicture()` method.
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string | Blob;
+  // CHANGE: Add platform check.
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
@@ -119,11 +128,12 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
 ```ts
-// CHANGE: Update the `loadSaved` method.
+// CHANGE: Update `loadSaved` method.
 const loadSaved = async () => {
   const photoList = await Preferences.get({ key: PHOTO_STORAGE });
   const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
+  // CHANGE: Add platform check.
   // If running on the web...
   if (!isPlatform('hybrid')) {
     for (const photo of photosInPreferences) {
@@ -158,6 +168,7 @@ export const usePhotoGallery = () => {
   const PHOTO_STORAGE = 'photos';
 
   const addNewToGallery = async () => {
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -165,6 +176,7 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
+    // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     photos.value = [savedImageFile, ...photos.value];
@@ -193,7 +205,6 @@ export const usePhotoGallery = () => {
 
     if (isPlatform('hybrid')) {
       // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),

@@ -4,11 +4,14 @@ sidebar_label: Live Reload
 ---
 
 <head>
+  <title>Rapid App Development with Live Reload with Vue | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
   />
 </head>
+
+# Rapid App Development with Live Reload
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
@@ -47,7 +50,7 @@ import { Capacitor } from '@capacitor/core';
 export const usePhotoGallery = () => {
   // Same old code from before.
 
-  // CHANGE: Add the `deletePhoto()` method.
+  // CHANGE: Add `deletePhoto()` method.
   const deletePhoto = async (photo: UserPhoto) => {
     // Remove this photo from the Photos reference data array
     photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
@@ -63,11 +66,10 @@ export const usePhotoGallery = () => {
   onMounted(loadSaved);
   watch(photos, cachePhotos);
 
-  // CHANGE: Add `deletePhoto()` to the return statement.
   return {
     photos,
     addNewToGallery,
-    // CHANGE: Export `deletePhoto()` method.
+    // CHANGE: Add `deletePhoto()` to the return statement.
     deletePhoto,
   };
 };
@@ -140,6 +142,7 @@ const showActionSheet = async (photo: UserPhoto) => {
 Add a click handler to the `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```vue
+<<<<<<< Updated upstream
 <template>
   <ion-page>
     <ion-header>
@@ -171,6 +174,16 @@ Add a click handler to the `<ion-img>` element. When the app user taps on a phot
 </template>
 
 <!-- Same old code from before. -->
+=======
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
+      <!-- CHANGE: Add a click event listener to each image. -->
+      <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+>>>>>>> Stashed changes
 ```
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.

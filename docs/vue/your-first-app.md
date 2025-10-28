@@ -4,12 +4,14 @@ sidebar_label: Build Your First App
 ---
 
 <head>
-  <title>Build Your First Ionic Mobile App: Vue Development Tutorial</title>
+  <title>Build Your First Ionic Mobile App with Vue | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Vue tutorial."
+    content="This Vue tutorial teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with Vue."
   />
 </head>
+
+# Your First Ionic App: Vue
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
@@ -34,7 +36,7 @@ Highlights include:
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
 - Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
-Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
+Find the [complete app code](github.com/ionic-team/photo-gallery-capacitor-vue) referenced in this guide on GitHub.
 
 ## Download Required Tools
 

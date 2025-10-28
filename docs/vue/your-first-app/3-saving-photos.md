@@ -3,13 +3,21 @@ title: Saving Photos to the Filesystem
 sidebar_label: Saving Photos
 ---
 
+<head>
+  <title>Saving Photos to the Filesystem with Vue | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="We’re now able to take multiple photos and display them in a photo gallery. Learn how to save these photos to the filesystem using the Ionic Capacitor Filesystem API."
+  />
+</head>
+
 # Saving Photos to the Filesystem
 
 We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `usePhotoGallery` method.
+Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `usePhotoGallery()` method.
 
 ```ts
 import { ref, onMounted, watch } from 'vue';
@@ -29,8 +37,8 @@ export const usePhotoGallery = () => {
   };
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 
@@ -61,14 +69,14 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Add `savedImageFile()`.
+    // CHANGE: Add `savedImageFile`.
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     photos.value = [savedImageFile, ...photos.value];
   };
 
-  // CHANGE: Add the `savePicture()` method.
+  // CHANGE: Add `savePicture()` method.
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     return {
       filepath: 'soon...',
@@ -77,8 +85,8 @@ export const usePhotoGallery = () => {
   };
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 
@@ -124,7 +132,7 @@ export const usePhotoGallery = () => {
     };
   };
 
-  // CHANGE: Add the `convertBlobToBase64()` method.
+  // CHANGE: Add `convertBlobToBase64()` method.
   const convertBlobToBase64 = (blob: Blob) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -137,8 +145,8 @@ export const usePhotoGallery = () => {
   };
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 
@@ -160,6 +168,7 @@ export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -167,6 +176,7 @@ export const usePhotoGallery = () => {
     });
 
     const fileName = Date.now() + '.jpeg';
+    // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     photos.value = [savedImageFile, ...photos.value];
@@ -217,5 +227,4 @@ export interface UserPhoto {
 
 Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
-Next up, we'll load and display our saved images.
+There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem. Next up, we'll load and display our saved images.

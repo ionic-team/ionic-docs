@@ -3,6 +3,14 @@ title: Loading Photos from the Filesystem
 sidebar_label: Loading Photos
 ---
 
+<head>
+  <title>Loading Photos from the Filesystem with Vue | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="We’ve implemented photo taking and saving to the filesystem, now learn how Ionic leverages Capacitor Preferences API for loading our photos in a key-value store."
+  />
+</head>
+
 # Loading Photos from the Filesystem
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
@@ -24,7 +32,7 @@ export const usePhotoGallery = () => {
 };
 ```
 
-Next, at the end of the `usePhotoGallery` method, add a call to the `cachePhotos` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Next, at the end of the `usePhotoGallery()` method, add a call to the `cachePhotos` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
 export const usePhotoGallery = () => {
@@ -47,7 +55,7 @@ export const usePhotoGallery = () => {
 
 Next, use the Vue [watch method](https://vuejs.org/api/reactivity-core.html#watch) to watch the `photos` array. Whenever the array is modified (in this case, taking or deleting photos), trigger the `cachePhotos` method. Not only do we get to reuse code, but it also doesn’t matter when the app user closes or switches to a different app - photo data is always saved.
 
-Add the call to the `watch()` method above the return statement in `usePhotoGallery`:
+Add the call to the `watch()` method above the return statement in `usePhotoGallery()`.
 
 ```ts
 export const usePhotoGallery = () => {
@@ -63,7 +71,7 @@ export const usePhotoGallery = () => {
 };
 ```
 
-With the photo array data saved, create a new method in the `usePhotoGallery` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
+With the photo array data saved, create a new method in the `usePhotoGallery()` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
 
 ```ts
 export const usePhotoGallery = () => {
@@ -84,7 +92,7 @@ export const usePhotoGallery = () => {
 };
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method:
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method.
 
 ```ts
 export const usePhotoGallery = () => {
@@ -210,7 +218,7 @@ export interface UserPhoto {
 }
 ```
 
-Our `usePhotoGallery` can now load the saved images, but we'll need to update the file to put that new code to work. We'll call `loadSaved` within the [onMounted](https://vuejs.org/api/composition-api-lifecycle.html#onmounted) lifecycle method so that when the user first navigates to the Photo Gallery, all photos are loaded and displayed on the screen.
+Our `usePhotoGallery()` can now load the saved images, but we'll need to update the file to put that new code to work. We'll call `loadSaved` within the [onMounted](https://vuejs.org/api/composition-api-lifecycle.html#onmounted) lifecycle method so that when the user first navigates to the Photo Gallery, all photos are loaded and displayed on the screen.
 
 Update `usePhotoGallery.ts` to look like the following:
 
@@ -226,6 +234,7 @@ export const usePhotoGallery = () => {
   const PHOTO_STORAGE = 'photos';
 
   const addNewToGallery = async () => {
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,

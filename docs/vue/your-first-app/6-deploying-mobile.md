@@ -4,12 +4,14 @@ sidebar_label: Deploying Mobile
 ---
 
 <head>
-  <title>Deploying to iOS and Android Apps - Capacitor Setup on Ionic</title>
+  <title>Adding Mobile Support with Vue | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
   />
 </head>
+
+# Deploying to iOS and Android
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 

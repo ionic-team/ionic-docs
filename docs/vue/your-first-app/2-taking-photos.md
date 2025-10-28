@@ -4,12 +4,14 @@ sidebar_label: Taking Photos
 ---
 
 <head>
-  <title>Build Camera API for iOS, Android & Web | Ionic Capacitor Camera</title>
+  <title>Take Photos with Camera API for iOS, Android & Web with Vue | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Add the ability to take photos with your device's camera using the Ionic Capacitor Camera API for mobile iOS, Android, and the web. Learn how here."
   />
 </head>
+
+# Taking Photos with the Camera
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
@@ -19,7 +21,7 @@ We will create a standalone composition method paired with [Vue's Composition AP
 
 Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 
-Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
+Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera.
 
 ```ts
 import { ref, onMounted, watch } from 'vue';
@@ -29,6 +31,7 @@ import { Preferences } from '@capacitor/preferences';
 
 export const usePhotoGallery = () => {
   const addNewToGallery = async () => {
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -44,7 +47,7 @@ export const usePhotoGallery = () => {
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
-Next, in `Tab2Page.vue`, import the `usePhotoGallery` method and destructure it to call its `addNewToGallery` method.
+Next, in `Tab2Page.vue`, import the `usePhotoGallery()` method and destructure it to call its `addNewToGallery()` method.
 
 ```vue
 <template>
@@ -108,7 +111,7 @@ After taking a photo, it disappears right away. We need to display it within our
 
 Return to `usePhotoGallery.ts`.
 
-Outside of the `usePhotoGallery` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
+Outside of the `usePhotoGallery()` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata.
 
 ```ts
 export const usePhotoGallery = () => {
@@ -133,13 +136,14 @@ export const usePhotoGallery = () => {
 };
 ```
 
-Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery` return statement with the `photos` array.
+Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery()` return statement with the `photos` array.
 
 ```ts
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
