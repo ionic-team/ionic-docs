@@ -1,180 +1,56 @@
 ---
+title: Rapid App Development with Live Reload
 sidebar_label: Live Reload
 ---
+
+<head>
+  <title>Rapid App Development with Live Reload with React | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
+  />
+</head>
 
 # Rapid App Development with Live Reload
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
+We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.md) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
 ## Live Reload
 
 Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
 
-We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins. Since we need to run native plugin code on a device in order to verify that it works, having a way to quickly write code, build and deploy it, then test it is crucial to keeping up our development speed.
+We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
 
 Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
 
 ```shell
-$ ionic cap run ios -l --external
+ionic cap run ios -l --external
 
-$ ionic cap run android -l --external
+ionic cap run android -l --external
 ```
 
 The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
 
 ## Deleting Photos
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality. In your code editor (not Android Studio or Xcode), open `Tab2.tsx` then import `useState` from React and `UserPhoto` from the `usePhotoGallery` hook:
+With Live Reload running and the app open on your device, let’s implement photo deletion functionality.
 
-```tsx
-// Other Imports
+In `usePhotoGallery.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we delete the actual photo file itself using the Filesystem API.
 
-// CHANGE: Import UserPhoto, usePhotoGallery hook and useState from react.
-import React, { useState } from 'react';
-import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
-
-const Tab2: React.FC = () => {};
-```
-
-Next, reference the `deletePhoto` function, which we'll create soon:
-
-```tsx
-// Same old code from before.
-
-const Tab2: React.FC = () => {
-  // CHANGE: Reference deletePhoto function
-  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
-
-  // Same old code from before.
-};
-```
-
-Next, add a state value to store information about the photo to delete:
-
-```tsx
-// Same old code from before.
-
-const Tab2: React.FC = () => {
-  // Same old code from before.
-
-  // CHANGE: Add a state value for photo deletion.
-  const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
-
-  // Same old code from before.
-};
-```
-
-When a user clicks on an image, we will show the action sheet by changing the state value to the photo. Update the `<IonImg>` element to:
-
-```tsx
-// Same old code from before.
-
-const Tab2: React.FC = () => {
-    // Same old code from before.
-
-    return (
-        <IonPage>
-        <IonHeader>
-            <IonToolbar>
-            <IonTitle>Tab 2</IonTitle>
-            </IonToolbar>
-        </IonHeader>
-        <IonContent>
-            <IonGrid>
-            <IonRow>
-                {photos.map((photo, index) => (
-                <IonCol size="6" key={photo.filepath}>
-                    <!-- CHANGE: Update IonImg -->
-                    <IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath} />
-                </IonCol>
-                ))}
-            </IonRow>
-            </IonGrid>
-            <IonFab vertical="bottom" horizontal="center" slot="fixed">
-            <IonFabButton onClick={() => takePhoto()}>
-                <IonIcon icon={camera}></IonIcon>
-            </IonFabButton>
-            </IonFab>
-        </IonContent>
-        </IonPage>
-    );
-};
-```
-
-Next, add an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog. We will set the isOpen property based on if photoToDelete has a value or not.
-
-In the JSX, put the following component before the closing `</IonContent>` tag.
-
-```tsx
-// Same old code from before.
-
-const Tab2: React.FC = () => {
-    // Same old code from before.
-
-    return (
-        <IonPage>
-        <IonHeader>
-            <IonToolbar>
-            <IonTitle>Tab 2</IonTitle>
-            </IonToolbar>
-        </IonHeader>
-        <IonContent>
-            <IonGrid>
-            <IonRow>
-                {photos.map((photo, index) => (
-                <IonCol size="6" key={photo.filepath}>
-                    <IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath} />
-                </IonCol>
-                ))}
-            </IonRow>
-            </IonGrid>
-            <IonFab vertical="bottom" horizontal="center" slot="fixed">
-            <IonFabButton onClick={() => takePhoto()}>
-                <IonIcon icon={camera}></IonIcon>
-            </IonFabButton>
-            </IonFab>
-            <!-- CHANGE: Add an IonActionSheet component -->
-            <IonActionSheet
-            isOpen={!!photoToDelete}
-            buttons={[
-                {
-                text: 'Delete',
-                role: 'destructive',
-                icon: trash,
-                handler: () => {
-                    if (photoToDelete) {
-                    deletePhoto(photoToDelete);
-                    setPhotoToDelete(undefined);
-                    }
-                },
-                },
-                {
-                text: 'Cancel',
-                icon: close,
-                role: 'cancel',
-                },
-            ]}
-            onDidDismiss={() => setPhotoToDelete(undefined)}
-            />
-        </IonContent>
-        </IonPage>
-    );
-};
-```
-
-Above, we added two options: `Delete` that calls `deletePhoto` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet. It's also important to set the onDidDismiss function and set our photoToDelete back to undefined when the modal goes away. That way, when another image is clicked, the action sheet notices the change in the value of photoToDelete.
-
-Next, we need to implement the deletePhoto method that will come from the `usePhotoGallery` hook. Open the file and paste in the following function in the hook:
-
-```tsx
-// Same old code from before.
+```ts
+import { useState, useEffect } from 'react';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+import { isPlatform } from '@ionic/react';
+import { Capacitor } from '@capacitor/core';
 
 export function usePhotoGallery() {
   // Same old code from before.
 
-  // CHANGE: Implement deletePhoto method within usePhotoGallery hook.
+  // CHANGE: Add `deletePhoto()` method.
   const deletePhoto = async (photo: UserPhoto) => {
     // Remove this photo from the Photos reference data array
     const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
@@ -188,75 +64,51 @@ export function usePhotoGallery() {
       path: filename,
       directory: Directory.Data,
     });
+
     setPhotos(newPhotos);
   };
 
-  // CHANGE: Update return and add deletePhoto function
   return {
     photos,
     takePhoto,
+    // CHANGE: Add `deletePhoto()` to the return statement.
     deletePhoto,
   };
 }
 
-// Same old code from before.
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Preferences API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
-
-Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
-
-In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.
-
-`Tab2.tsx` should look like this:
+Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
 
 ```tsx
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-  IonActionSheet,
-} from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
-import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
+// Same old code from before.
+// change: Add React import.
+import { useState } from 'react';
+// CHANGE: Add `UserPhoto` type import.
+import type { UserPhoto } from '../hooks/usePhotoGallery';
 
 const Tab2: React.FC = () => {
-  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+  // CHANGE: Add `deletePhoto()` method.
+  const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
+  // CHANGE: Add state for the photo to delete.
   const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent>
-        <IonGrid>
-          <IonRow>
-            {photos.map((photo, index) => (
-              <IonCol size="6" key={photo.filepath}>
-                <IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath} />
-              </IonCol>
-            ))}
-          </IonRow>
-        </IonGrid>
+        {/* Same old code from before. */}
+
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton onClick={() => takePhoto()}>
+          <IonFabButton onClick={() => addNewToGallery()}>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
+
+        {/* CHANGE: Add action sheet for deleting photos. */}
         <IonActionSheet
           isOpen={!!photoToDelete}
           buttons={[
@@ -275,43 +127,109 @@ const Tab2: React.FC = () => {
               text: 'Cancel',
               icon: close,
               role: 'cancel',
+              handler: () => {
+                // Nothing to do, action sheet is automatically closed
+              },
             },
           ]}
           onDidDismiss={() => setPhotoToDelete(undefined)}
-        />
+        ></IonActionSheet>
       </IonContent>
     </IonPage>
   );
 };
-
-export default Tab2;
 ```
 
-`usePhotoGallery.ts` should look like this:
+Add a click handler to the `<IonImg>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```tsx
+<IonGrid>
+  <IonRow>
+    {photos.map((photo) => (
+      <IonCol size="6" key={photo.filepath}>
+        {/* CHANGE: Add a click event listener to each image. */}
+        <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
+      </IonCol>
+    ))}
+  </IonRow>
+</IonGrid>
+```
+
+Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
+
+Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
+
+In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.
+
+<details>
+  <summary>Full code for `usePhotoGallery.ts`</summary>
+
+```ts
 import { useState, useEffect } from 'react';
-import { isPlatform } from '@ionic/react';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+import { isPlatform } from '@ionic/react';
 import { Capacitor } from '@capacitor/core';
-
-const PHOTO_STORAGE = 'photos';
 
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
+  const PHOTO_STORAGE = 'photos';
+
+  useEffect(() => {
+    const loadSaved = async () => {
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+
+      // If running on the web...
+      if (!isPlatform('hybrid')) {
+        for (const photo of photosInPreferences) {
+          const file = await Filesystem.readFile({
+            path: photo.filepath,
+            directory: Directory.Data,
+          });
+          photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+        }
+      }
+
+      setPhotos(photosInPreferences);
+    };
+
+    loadSaved();
+  }, []);
+
+  const addNewToGallery = async () => {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    const fileName = Date.now() + '.jpeg';
+    // Save the picture and add it to photo collection
+    const savedImageFile = await savePicture(capturedPhoto, fileName);
+
+    const newPhotos = [savedImageFile, ...photos];
+    setPhotos(newPhotos);
+
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  };
+
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     let base64Data: string | Blob;
-    // "hybrid" will detect Cordova or Capacitor:
+    // "hybrid" will detect mobile - iOS or Android
     if (isPlatform('hybrid')) {
       const file = await Filesystem.readFile({
         path: photo.path!,
       });
       base64Data = file.data;
     } else {
-      base64Data = await base64FromPath(photo.webPath!);
+      // Fetch the photo, read as a blob, then convert to base64 format
+      const response = await fetch(photo.webPath!);
+      const blob = await response.blob();
+      base64Data = (await convertBlobToBase64(blob)) as string;
     }
 
     const savedFile = await Filesystem.writeFile({
@@ -322,7 +240,6 @@ export function usePhotoGallery() {
 
     if (isPlatform('hybrid')) {
       // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
@@ -337,40 +254,18 @@ export function usePhotoGallery() {
     }
   };
 
-  useEffect(() => {
-    const loadSaved = async () => {
-      const { value } = await Preferences.get({ key: PHOTO_STORAGE });
-      const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
-
-      if (!isPlatform('hybrid')) {
-        for (let photo of photosInPreferences) {
-          const file = await Filesystem.readFile({
-            path: photo.filepath,
-            directory: Directory.Data,
-          });
-          // Web platform only: Load the photo as base64 data
-          photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
-        }
-      }
-      setPhotos(photosInPreferences);
-    };
-    loadSaved();
-  }, []);
-
-  const takePhoto = async () => {
-    const photo = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+  const convertBlobToBase64 = (blob: Blob) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
     });
-
-    const fileName = Date.now() + '.jpeg';
-    const savedFileImage = await savePicture(photo, fileName);
-    const newPhotos = [savedFileImage, ...photos];
-    setPhotos(newPhotos);
-    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
   };
 
+  // CHANGE: Add `deletePhoto()` method.
   const deletePhoto = async (photo: UserPhoto) => {
     // Remove this photo from the Photos reference data array
     const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
@@ -384,31 +279,16 @@ export function usePhotoGallery() {
       path: filename,
       directory: Directory.Data,
     });
+
     setPhotos(newPhotos);
   };
 
   return {
+    addNewToGallery,
     photos,
-    takePhoto,
+    // CHANGE: Add `deletePhoto()` to the return statement.
     deletePhoto,
   };
-}
-
-export async function base64FromPath(path: string): Promise<string> {
-  const response = await fetch(path);
-  const blob = await response.blob();
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = reject;
-    reader.onload = () => {
-      if (typeof reader.result === 'string') {
-        resolve(reader.result);
-      } else {
-        reject('method did not return a string');
-      }
-    };
-    reader.readAsDataURL(blob);
-  });
 }
 
 export interface UserPhoto {
@@ -416,3 +296,100 @@ export interface UserPhoto {
   webviewPath?: string;
 }
 ```
+
+</details>
+
+<details>
+  <summary>Full code for `Tab2.tsx`</summary>
+
+```tsx
+import { camera, trash, close } from 'ionicons/icons';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonActionSheet,
+} from '@ionic/react';
+import { useState } from 'react';
+import type { UserPhoto } from '../hooks/usePhotoGallery';
+import { usePhotoGallery } from '../hooks/usePhotoGallery';
+import './Tab2.css';
+
+const Tab2: React.FC = () => {
+  const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
+  const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
+
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Photo Gallery</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Photo Gallery</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
+        <IonGrid>
+          <IonRow>
+            {photos.map((photo) => (
+              <IonCol size="6" key={photo.filepath}>
+                {/* CHANGE: Add a click event listener to each image. */}
+                <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
+              </IonCol>
+            ))}
+          </IonRow>
+        </IonGrid>
+
+        <IonFab vertical="bottom" horizontal="center" slot="fixed">
+          <IonFabButton onClick={() => addNewToGallery()}>
+            <IonIcon icon={camera}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+
+        <IonActionSheet
+          isOpen={!!photoToDelete}
+          buttons={[
+            {
+              text: 'Delete',
+              role: 'destructive',
+              icon: trash,
+              handler: () => {
+                if (photoToDelete) {
+                  deletePhoto(photoToDelete);
+                  setPhotoToDelete(undefined);
+                }
+              },
+            },
+            {
+              text: 'Cancel',
+              icon: close,
+              role: 'cancel',
+              handler: () => {
+                // Nothing to do, action sheet is automatically closed
+              },
+            },
+          ]}
+          onDidDismiss={() => setPhotoToDelete(undefined)}
+        ></IonActionSheet>
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Tab2;
+```
+
+</details>
