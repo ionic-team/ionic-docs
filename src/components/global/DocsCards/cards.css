@@ -2,7 +2,11 @@ docs-cards {
   display: grid;
   font-size: 12px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 1.35rem;
+  gap: 1.35rem;
+}
+
+docs-cards:has(docs-card:only-child) {
+  grid-template-columns: 1fr 1fr;
 }
 
 docs-cards > docs-card {

@@ -1,6 +1,17 @@
-# Adding To An Existing React App
+---
+title: Add to Existing React App
+sidebar_label: Add to Existing React App
+---
 
-This post has been forked from [Ely Lucas' blog post](https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib) and updated to the latest version of Ionic.
+<head>
+  <title>Add Ionic React to Existing Project: Integration Guide</title>
+  <meta
+    name="description"
+    content="Learn how to add Ionic React to your existing React project. Step-by-step guide for integrating Ionic components and features into an existing React application."
+  />
+</head>
+
+This guide covers how to add Ionic React to an existing React project.
 
 ### Using Individual Ionic Components
 
