@@ -134,9 +134,25 @@ function formatType(attr, type) {
   return type.replace(/\|/g, '\uff5c');
 }
 
-function renderProperties({ props: properties }) {
+function renderProperties({ props: properties, docsTags }) {
   if (properties.length === 0) {
     return 'No properties available for this component.';
+  }
+
+  // Extract virtual property names from component-level docsTags
+  const virtualPropNames = [];
+  if (docsTags) {
+    docsTags.forEach((tag) => {
+      if (tag.name === 'virtualProp') {
+        // Check if any property name exists in the virtualProp tag text
+        // and add it to the virtualPropNames array
+        properties.forEach((prop) => {
+          if (tag.text.includes(prop.name)) {
+            virtualPropNames.push(prop.name);
+          }
+        });
+      }
+    });
   }
 
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
@@ -144,8 +160,15 @@ function renderProperties({ props: properties }) {
 ${properties
   .map((prop) => {
     const isDeprecated = prop.deprecation !== undefined;
+    const isVirtual = virtualPropNames.includes(prop.name);
 
-    const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    let docs = prop.docs;
+    if (isVirtual) {
+      docs = `${docs}\n\nThis is a [virtual property](/docs/core-concepts/fundamentals#virtual-properties) that is set once during initialization and will not update if you change its value after the initial render.`;
+    }
+    if (isDeprecated) {
+      docs = `${docs}\n\n**_Deprecated_** — ${prop.deprecation}`;
+    }
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
@@ -170,7 +193,15 @@ function renderEvents({ events }) {
   return `
 | Name | Description | Bubbles |
 | --- | --- | --- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | \`${event.bubbles}\` |`).join('\n')}`;
+${events
+  .map((event) => {
+    const isDeprecated = event.deprecation !== undefined;
+    const docs = isDeprecated ? `${event.docs}\n\n**_Deprecated_** — ${event.deprecation}` : event.docs;
+    return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
+      event.bubbles
+    }\` |`;
+  })
+  .join('\n')}`;
 }
 
 /**

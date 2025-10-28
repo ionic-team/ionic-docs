@@ -10,12 +10,7 @@
   </ion-footer>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonContent, IonFooter, IonTitle, IonToolbar },
-  });
 </script>
 ```

@@ -90,7 +90,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonContent,
     IonHeader,
@@ -103,26 +103,7 @@
     IonTitle,
     IonToolbar,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { chevronForward, listCircle } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonNote,
-      IonText,
-      IonTitle,
-      IonToolbar,
-    },
-    setup() {
-      return { chevronForward, listCircle };
-    },
-  });
 </script>
 
 <style scoped>

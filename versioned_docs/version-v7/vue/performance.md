@@ -1,4 +1,5 @@
 ---
+title: Vue Performance
 sidebar_label: Performance
 ---
 
@@ -21,27 +22,15 @@ By using `key` you can provide a stable identity for each loop element so Vue ca
   </ion-page>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonItem,
-      IonLabel,
-      IonPage
-    },
-    setup() {
-      const items = ref([
-        { id: 0, value: 'Item 0' },
-        { id: 1, value: 'Item 1' },
-        ...
-      ]);
-
-      return { items }
-    }
-  });
+  const items = ref([
+    { id: 0, value: 'Item 0' },
+    { id: 1, value: 'Item 1' },
+    ...
+  ]);
 </script>
 ```
 

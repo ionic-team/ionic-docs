@@ -3,40 +3,29 @@
   <ion-datetime presentation="date" :value="datetime"></ion-datetime>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonDatetime } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonDatetime,
-    },
-    setup() {
-      let datetime = ref('');
+  let datetime = ref('');
 
-      const date = new Date();
+  const date = new Date();
 
-      // Set the value of the datetime to 2 days
-      // before the current day
-      let dayChange = -2;
+  // Set the value of the datetime to 2 days
+  // before the current day
+  let dayChange = -2;
 
-      // If the day we are going to set the value to
-      // is in the previous month then set the day 2 days
-      // later instead so it remains in the same month
-      if (date.getDate() + dayChange <= 0) {
-        dayChange = -dayChange;
-      }
+  // If the day we are going to set the value to
+  // is in the previous month then set the day 2 days
+  // later instead so it remains in the same month
+  if (date.getDate() + dayChange <= 0) {
+    dayChange = -dayChange;
+  }
 
-      // Set the value of the datetime to the day
-      // calculated above
-      date.setDate(date.getDate() + dayChange);
-      datetime = date.toISOString();
-
-      return {
-        datetime,
-      };
-    },
-  });
+  // Set the value of the datetime to the day
+  // calculated above
+  date.setDate(date.getDate() + dayChange);
+  datetime = date.toISOString();
 </script>
 
 <style scoped>

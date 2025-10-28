@@ -19,16 +19,7 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonList, IonItem, IonInput } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonList,
-      IonItem,
-      IonInput,
-    },
-  });
 </script>
 ```
