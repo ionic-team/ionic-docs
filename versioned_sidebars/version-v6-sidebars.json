@@ -244,7 +244,7 @@
       "items": [
         {
           "type": "doc",
-          "id": "react"
+          "id": "react/overview"
         },
         {
           "type": "doc",
@@ -385,6 +385,10 @@
           ],
           "collapsible": true,
           "collapsed": true
+        },
+        {
+          "type": "doc",
+          "id": "vue/build-options"
         },
         {
           "type": "doc",

@@ -45,7 +45,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonBackButton,
     IonButton,
@@ -63,42 +63,19 @@
     IonToolbar,
   } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
-  import { defineComponent, ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonBackButton,
-      IonButton,
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonListHeader,
-      IonRange,
-      IonText,
-      IonToggle,
-      IonToolbar,
-    },
-    setup() {
-      // Use matchMedia to check the user preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  // Use matchMedia to check the user preference
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-      // Add or remove the "dark" class on the document body
-      const toggleDarkTheme = (shouldAdd) => {
-        document.body.classList.toggle('dark', shouldAdd);
-      };
+  // Add or remove the "dark" class on the document body
+  const toggleDarkTheme = (shouldAdd) => {
+    document.body.classList.toggle('dark', shouldAdd);
+  };
 
-      toggleDarkTheme(prefersDark.matches);
+  toggleDarkTheme(prefersDark.matches);
 
-      // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
-
-      return { personCircle, personCircleOutline, sunnyOutline, sunny, toggleDarkTheme };
-    },
-  });
+  // Listen for changes to the prefers-color-scheme media query
+  prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 </script>
 
 <style>

@@ -23,7 +23,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonContent,
     IonHeader,
@@ -35,63 +35,46 @@
     IonRefresherContent,
     IonTitle,
     IonToolbar,
+    RefresherCustomEvent,
   } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
   import { ellipse } from 'ionicons/icons';
 
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonIcon,
-      IonItem,
-      IonLabel,
-      IonList,
-      IonRefresher,
-      IonRefresherContent,
-      IonTitle,
-      IonToolbar,
-    },
-    setup() {
-      const names = [
-        'Burt Bear',
-        'Charlie Cheetah',
-        'Donald Duck',
-        'Eva Eagle',
-        'Ellie Elephant',
-        'Gino Giraffe',
-        'Isabella Iguana',
-        'Karl Kitten',
-        'Lionel Lion',
-        'Molly Mouse',
-        'Paul Puppy',
-        'Rachel Rabbit',
-        'Ted Turtle',
-      ];
-      let items = ref([]);
+  const names = [
+    'Burt Bear',
+    'Charlie Cheetah',
+    'Donald Duck',
+    'Eva Eagle',
+    'Ellie Elephant',
+    'Gino Giraffe',
+    'Isabella Iguana',
+    'Karl Kitten',
+    'Lionel Lion',
+    'Molly Mouse',
+    'Paul Puppy',
+    'Rachel Rabbit',
+    'Ted Turtle',
+  ];
+  const items = ref([]);
 
-      const chooseRandomName = () => {
-        return names[Math.floor(Math.random() * names.length)];
-      };
+  const chooseRandomName = () => {
+    return names[Math.floor(Math.random() * names.length)];
+  };
 
-      const addItems = (count, unread = false) => {
-        for (let i = 0; i < count; i++) {
-          items.value.unshift({ name: chooseRandomName(), unread });
-        }
-      };
+  const addItems = (count, unread = false) => {
+    for (let i = 0; i < count; i++) {
+      items.value.unshift({ name: chooseRandomName(), unread });
+    }
+  };
 
-      addItems(5);
+  addItems(5);
 
-      const handleRefresh = (event: CustomEvent) => {
-        setTimeout(() => {
-          addItems(3, true);
-          event.target.complete();
-        }, 2000);
-      };
-
-      return { ellipse, handleRefresh, items, names };
-    },
-  });
+  const handleRefresh = (event: RefresherCustomEvent) => {
+    setTimeout(() => {
+      addItems(3, true);
+      event.target.complete();
+    }, 2000);
+  };
 </script>
 
 <style scoped>
