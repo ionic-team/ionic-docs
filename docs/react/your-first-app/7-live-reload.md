@@ -58,7 +58,7 @@ export function usePhotoGallery() {
     // Update photos array cache by overwriting the existing photo array
     Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
-    // delete photo file from filesystem
+    // Delete photo file from filesystem
     const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
     await Filesystem.deleteFile({
       path: filename,

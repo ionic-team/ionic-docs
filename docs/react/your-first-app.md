@@ -228,7 +228,7 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Next, open `src/App.tsx`. Change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button.
+Next, open `src/views/TabsPage.vue`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
