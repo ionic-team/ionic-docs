@@ -86,7 +86,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
 ```ts
-// CHANGE: Update the `loadSaved` method.
+// CHANGE: Update `loadSaved` method.
 const loadSaved = async () => {
   const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
   const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];

@@ -4,12 +4,14 @@ sidebar_label: Build Your First App
 ---
 
 <head>
-  <title>Build Your First Ionic Mobile App: React Development Tutorial</title>
+  <title>Build Your First Ionic Mobile App with React | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step React tutorial."
+    content="This React tutorial teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with React."
   />
 </head>
+
+# Your First Ionic App: React
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
@@ -34,7 +36,7 @@ Highlights include:
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
 - Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
-Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/tutorial-photo-gallery-react).
+Find the [complete app code](https://github.com/ionic-team/tutorial-photo-gallery-react) referenced in this guide on GitHub.
 
 ## Download Required Tools
 
@@ -66,7 +68,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 
 ## Create an App
 
-Next, create an Ionic React app that uses the “Tabs” starter template and adds Capacitor for native functionality:
+Next, create an Ionic React app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
 ionic start photo-gallery tabs --type=react --capacitor

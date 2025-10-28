@@ -4,12 +4,14 @@ sidebar_label: Taking Photos
 ---
 
 <head>
-  <title>Build Camera API for iOS, Android & Web | Ionic Capacitor Camera</title>
+  <title>Take Photos with Camera API for iOS, Android & Web with React | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Add the ability to take photos with your device's camera using the Ionic Capacitor Camera API for mobile iOS, Android, and the web. Learn how here."
   />
 </head>
+
+# Taking Photos with the Camera
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
@@ -45,7 +47,7 @@ export function usePhotoGallery() {
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
-Next, in `Tab2.tsx`, import the `usePhotoGallery` method and destructure it to call its `addNewToGallery` method.
+Next, in `Tab2.tsx`, import the `usePhotoGallery()` method and destructure it to call its `addNewToGallery()` method.
 
 ```tsx
 import { camera, trash, close } from 'ionicons/icons';
@@ -112,7 +114,7 @@ After taking a photo, it disappears right away. We need to display it within our
 
 Return to `usePhotoGallery.ts`.
 
-Outside of the `usePhotoGallery` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata.
+Outside of the `usePhotoGallery()` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata.
 
 ```ts
 export function usePhotoGallery {
@@ -130,14 +132,14 @@ Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will
 
 ```ts
 export function usePhotoGallery {
-  // CHANGE: Add the photos array.
+  // CHANGE: Add the `photos` array.
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   // Same old code from before.
 }
 ```
 
-Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery` return statement with the `photos` array.
+Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery()` return statement with the `photos` array.
 
 ```ts
 export function usePhotoGallery() {

@@ -1,6 +1,15 @@
 ---
+title: Build and Deploy your App
 sidebar_label: Distribute
 ---
+
+<head>
+  <title>Build and Deploy your App with React | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Learn how to build and deploy your Ionic app using Appflow. Discover how to create builds, push live updates, and distribute your app to users."
+  />
+</head>
 
 # Build and Deploy your App
 

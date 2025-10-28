@@ -54,8 +54,8 @@ export function usePhotoGallery() {
   useEffect(() => {
     // CHANGE: Add `loadSaved()` method.
     const loadSaved = async () => {
-      const { value } = await Preferences.get({ key: PHOTO_STORAGE });
-      const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
     };
 
     loadSaved();
@@ -78,8 +78,8 @@ export function usePhotoGallery() {
   useEffect(() => {
     // CHANGE: Update `loadSaved()` method.
     const loadSaved = async () => {
-      const { value } = await Preferences.get({ key: PHOTO_STORAGE });
-      const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
       // CHANGE: Display the photo by reading into base64 format.
       for (const photo of photosInPreferences) {
@@ -115,8 +115,8 @@ export function usePhotoGallery() {
 
   useEffect(() => {
     const loadSaved = async () => {
-      const { value } = await Preferences.get({ key: PHOTO_STORAGE });
-      const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
       for (const photo of photosInPreferences) {
         const file = await Filesystem.readFile({

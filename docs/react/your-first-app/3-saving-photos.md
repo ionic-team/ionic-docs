@@ -3,6 +3,14 @@ title: Saving Photos to the Filesystem
 sidebar_label: Saving Photos
 ---
 
+<head>
+  <title>Saving Photos to the Filesystem with React | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="We’re now able to take multiple photos and display them in a photo gallery. Learn how to save these photos to the filesystem using the Ionic Capacitor Filesystem API."
+  />
+</head>
+
 # Saving Photos to the Filesystem
 
 We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
@@ -60,12 +68,13 @@ export function usePhotoGallery() {
     });
 
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Add `savedImageFile()`.
+    // CHANGE: Add `savedImageFile`.
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     // CHANGE: Update state with new photo.
-    setPhotos([savedImageFile, ...photos]);
+    const newPhotos = [savedImageFile, ...photos];
+    setPhotos(newPhotos);
   };
 
   // CHANGE: Add `savePicture()` method.
@@ -124,7 +133,7 @@ export function usePhotoGallery() {
     };
   };
 
-  // CHANGE: Add the `convertBlobToBase64()` method.
+  // CHANGE: Add `convertBlobToBase64()` method.
   const convertBlobToBase64 = (blob: Blob) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -171,7 +180,8 @@ export function usePhotoGallery() {
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
-    setPhotos([savedImageFile, ...photos]);
+    const newPhotos = [savedImageFile, ...photos];
+    setPhotos(newPhotos);
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
