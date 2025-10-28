@@ -55,7 +55,7 @@ export const usePhotoGallery = () => {
     // Remove this photo from the Photos reference data array
     photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
 
-    // delete photo file from filesystem
+    // Delete photo file from filesystem
     const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
     await Filesystem.deleteFile({
       path: filename,

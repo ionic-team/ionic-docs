@@ -36,7 +36,7 @@ Highlights include:
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
 - Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
-Find the [complete app code](github.com/ionic-team/photo-gallery-capacitor-vue) referenced in this guide on GitHub.
+Find the [complete app code](https://github.com/ionic-team/photo-gallery-capacitor-vue) referenced in this guide on GitHub.
 
 ## Download Required Tools
 
@@ -229,7 +229,7 @@ import {
 </script>
 ```
 
-Next, open `src/views/TabsPage.vue`. Change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button.
+Next, open `src/views/TabsPage.vue`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
 
 ```vue
 <template>

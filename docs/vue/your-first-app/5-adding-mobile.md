@@ -37,9 +37,9 @@ import { Capacitor } from '@capacitor/core';
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `savePicture` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
 
-Update `savePicture` to look like the following:
+Update `savePicture()` to look like the following:
 
 ```ts
 // CHANGE: Update the `savePicture()` method.
@@ -87,6 +87,7 @@ Then update `savePicture()` to look like the following:
 // CHANGE: Update `savePicture()` method.
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string | Blob;
+
   // CHANGE: Add platform check.
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
