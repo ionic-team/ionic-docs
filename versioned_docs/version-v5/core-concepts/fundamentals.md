@@ -38,3 +38,35 @@ Projects such as <a href="https://capacitorjs.com/" target="_blank">Capacitor</a
 ## Theming
 
 At the core, Ionic Framework is built using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> which allows us to take advantage of the flexibility that <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS properties (variables)</a> provide. This makes it incredibly easy to design an app that looks great while following the web standard. We provide a set of colors so developers can have some great defaults, but we encourage overriding them to create designs that match a brand, company or a desired color palette. Everything from the background color of an application to the text color is fully customizable. More information on app theming can be found in [Theming](../theming/basics.md).
+
+## Events
+
+Many Ionic components use [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) to inform developers of important state changes in the components. For example, an `ion-datetime` component will emit `ionChange` whenever the selected date has changed.
+
+Developers can use standard events such as `click` as they normally would. However, many events emitted within a component's [shadow root](../reference/glossary.md#shadow) will be [retargeted](https://dom.spec.whatwg.org/#retarget) to the host element. This may result in multiple `click` handlers executing even if the user only clicked once. As a result, developers should rely on Ionic's events to be properly informed of state changes on Ionic components. Ionic's events are prefixed with `ion` to avoid collisions with standard events. Each component's documentation page has a list of available events that developers can listen for in their applications.
+
+## Properties
+
+Properties are JavaScript properties that can be set on Ionic components to configure their behavior and appearance. Properties are defined in each component's [API documentation](/docs/api) page.
+
+### Reactive Properties
+
+Reactive properties automatically update the component when their values change. These are the most common type of property in Ionic components.
+
+```html
+<ion-button color="primary">Primary Button</ion-button>
+```
+
+The `color` property is a reactive property that configures how the button appears. If you change the `color` value after the initial render, the button will update to reflect the new value.
+
+### Virtual Properties
+
+Virtual properties are designed for one-time configuration during component initialization. They do not trigger re-renders when updated.
+
+```html
+<ion-button mode="ios">iOS Style Button</ion-button> <ion-button mode="md">Material Design Button</ion-button>
+```
+
+The `mode` property is a virtual property that determines which platform styles to use for a component. It can be set at the component level or globally through the app configuration. In both cases, it's set once during initialization and doesn't change during the component's lifecycle.
+
+For more information on Ionic modes, read the [Platform Styles documentation](/docs/theming/platform-styles).

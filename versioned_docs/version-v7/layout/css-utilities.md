@@ -14,13 +14,13 @@ inlineHtmlPreviews: true
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
 
-:::note
+:::important
 If your app was not started using an available Ionic Framework starter, the stylesheets listed in the [optional section of the global stylesheets](global-stylesheets.md#optional) will need to be included in order for these styles to work.
 :::
 
 ## Text Modification
 
-### Text Alignment
+### Text Align
 
 ```html
 <ion-grid>
@@ -78,7 +78,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 | `.ion-text-wrap`    | `white-space: normal` | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
 | `.ion-text-nowrap`  | `white-space: nowrap` | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
 
-### Text Transformation
+### Text Transform
 
 ```html
 <ion-grid>
@@ -129,7 +129,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ### Float Elements
 
-The float CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
+The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
 
 ```html
 <ion-grid>
@@ -190,7 +190,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ## Element Display
 
-The display CSS property determines if an element should be visible or not. The element will still be in the DOM, but not rendered, if it is hidden.
+The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex. It can also be used to completely hide an element from the layout.
 
 ```html
 <ion-grid>
@@ -215,7 +215,7 @@ The display CSS property determines if an element should be visible or not. The 
 | ----------- | --------------- | --------------------------- |
 | `.ion-hide` | `display: none` | The element will be hidden. |
 
-### Responsive Display Attributes
+### Responsive Display Classes
 
 There are also additional classes to modify the visibility based on the screen size. Instead of just `.ion-hide` for all screen sizes, use `.ion-hide-{breakpoint}-{dir}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints), and `{dir}` is whether the element should be hidden on all screen sizes above (`up`) or below (`down`) the specified breakpoint.
 
@@ -228,7 +228,7 @@ There are also additional classes to modify the visibility based on the screen s
 
 ## Content Space
 
-### Element Padding
+### Padding
 
 The padding class sets the padding area of an element. The padding area is the space between the content of the element and its border.
 
@@ -278,7 +278,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 | `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
 | `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
 
-### Element Margin
+### Margin
 
 The margin area extends the border area with an empty area used to separate the element from its neighbors.
 
@@ -518,7 +518,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 
 ## Border Display
 
-The border display CSS property determines if the border should be visible or not. The property can be applied to the ion-header and the ion-footer.
+The `.ion-no-border` utility class can be used to remove borders from Ionic components. This class can be applied to the `ion-header` and `ion-footer` components.
 
 ```html
 <ion-header class="ion-no-border">

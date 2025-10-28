@@ -127,29 +127,6 @@ import StartEndSlots from '@site/static/usage/v8/textarea/start-end-slots/index.
 
 <StartEndSlots />
 
-## Migrating from Legacy Textarea Syntax
-
-A simpler textarea syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an textarea, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one textarea at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-
-### Using the Modern Syntax
-
-Using the modern syntax involves three steps:
-
-1. Remove `ion-label` and use the `label` property on `ion-textarea` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-textarea`.
-2. Move textarea-specific properties from `ion-item` on to `ion-textarea`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
-3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-textarea` instead.
-
-import Migration from '@site/static/usage/v8/textarea/migration/index.md';
-
-<Migration />
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern textarea syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-textarea` to `true` to force that instance of the textarea to use the legacy syntax.
-
 ## Theming
 
 import ThemingPlayground from '@site/static/usage/v8/textarea/theming/index.md';
