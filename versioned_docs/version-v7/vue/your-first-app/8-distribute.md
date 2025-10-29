@@ -1,6 +1,15 @@
 ---
+title: Build and Deploy your App
 sidebar_label: Distribute
 ---
+
+<head>
+  <title>Build and Deploy your App with Vue | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Learn how to build and deploy your Ionic app using Appflow. Discover how to create builds, push live updates, and distribute your app to users."
+  />
+</head>
 
 # Build and Deploy your App
 
@@ -63,7 +72,7 @@ To dive into more details on the steps to deploy a live update, as well as addit
 
 Next up is a native binary for your app build and deploy process. This is done via the [Ionic Package](https://ionic.io/docs/appflow/package/intro) service. First things first, you will need to create a [Package build](https://ionic.io/docs/appflow/package/builds). This can be done by clicking the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right from the `Build > Builds` tab. Then you will select the proper commit for your build and fill in all of the several required fields and any optional fields that you want to specify. After filling in all of the information and the build begins, you can check out it's progress and review the logs if you encounter any errors.
 
-Given a successful Package build, and iOS binary (`.ipa` or IPA) or and Android binary (`.apk` or APK) file becomes available to you. The file can subsequently be downloaded so you can install it on a device by clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the `Download IPA/APK` icon on the build in the `Build > Builds` tab.
+Given a successful Package build, an iOS binary (`.ipa` or IPA) or/and an Android binary (`.apk` or APK) file becomes available to you. The file can subsequently be downloaded so you can install it on a device by clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the `Download IPA/APK` icon on the build in the `Build > Builds` tab.
 
 Further information regarding building native binaries can be found inside of the [Build a Native Binary](https://ionic.io/docs/appflow/quickstart/package) section inside the Appflow docs.
 
@@ -93,8 +102,8 @@ For access to the ability to create a Native Configuration, you will need to be 
 
 ## What’s Next?
 
-Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to you users devices!
+Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to your users' devices!
 
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature run the build and deploy process again through Appflow to get it out to your users.
+There are many paths to follow from here. Try adding another [Ionic UI component](../../components.md) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature, run the build and deploy process again through Appflow to get it out to your users.
 
 Happy app building! 💙
