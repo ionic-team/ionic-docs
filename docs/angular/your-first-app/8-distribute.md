@@ -61,7 +61,7 @@ Upon completion of the Web Build, additional versioning options are available to
 To receive this live update, you will need to run the app on a device or an emulator. The quickest and easiest way to do this is through the following command:
 
 ```shell
-ionic cordova run [ios | android] [options]
+ionic cap run [ios | android] [options]
 ```
 
 Assuming the app is configured correctly to listen to the channel you deployed to, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
