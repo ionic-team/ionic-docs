@@ -4,12 +4,14 @@ sidebar_label: Build Your First App
 ---
 
 <head>
-  <title>React Apps | Build Your First Ionic Framework React Application</title>
+  <title>Build Your First Ionic Mobile App with React | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript."
+    content="This React tutorial teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with React."
   />
 </head>
+
+# Your First Ionic App: React
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
@@ -19,9 +21,9 @@ Here’s the finished app running on all 3 platforms:
   width="560"
   height="315"
   src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
-  frameborder="0"
+  frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
+  allowFullScreen
 ></iframe>
 
 ## What We'll Build
@@ -30,11 +32,11 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 
 Highlights include:
 
-- One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+- One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](../components.md).
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
+- Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
 
-Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
+Find the [complete app code](https://github.com/ionic-team/tutorial-photo-gallery-react) referenced in this guide on GitHub.
 
 ## Download Required Tools
 
@@ -43,9 +45,8 @@ Download and install these right away to ensure an optimal Ionic development exp
 - **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 - **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - **Command-line interface/terminal (CLI)**:
-  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
-    CLI, running in Administrator mode.
-  - **Mac/Linux** users, virtually any terminal will work.
+  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+  - **Mac/Linux** users: virtually any terminal will work.
 
 ## Install Ionic Tooling
 
@@ -67,7 +68,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 
 ## Create an App
 
-Next, create an Ionic React app that uses the “Tabs” starter template and adds Capacitor for native functionality:
+Next, create an Ionic React app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
 ionic start photo-gallery tabs --type=react --capacitor
@@ -89,7 +90,7 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+Some Capacitor plugins, including the [Camera API](../native/camera.md), provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
 It's a separate dependency, so install it next:
 
@@ -97,22 +98,32 @@ It's a separate dependency, so install it next:
 npm install @ionic/pwa-elements
 ```
 
-After installation, open up the project in your code editor of choice.
-
 Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
 
 ```tsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+// CHANGE: Add the following import.
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader before the render call
+// CHANGE: Call the element loader before the render call.
 defineCustomElements(window);
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
 
-Run this command in your shell:
+Run this command next:
 
 ```shell
 ionic serve
@@ -122,35 +133,52 @@ And voilà! Your Ionic app is now running in a web browser. Most of your app can
 
 ## Photo Gallery!!!
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+There are three tabs. Click on the "Tab2" tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/react/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
 
 Open `/src/pages/Tab2.tsx`. We see:
 
 ```tsx
-<IonPage>
-  <IonHeader>
-    <IonToolbar>
-      <IonTitle>Tab 2</IonTitle>
-    </IonToolbar>
-  </IonHeader>
-  <IonContent>
-  <!-- some filler -->
-  </IonContent>
-</IonPage>
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import ExploreContainer from '../components/ExploreContainer';
+import './Tab2.css';
+
+const Tab2: React.FC = () => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Tab 2</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Tab 2</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <ExploreContainer name="Tab 2 page" />
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Tab2;
 ```
 
-`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
+`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.md#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
 
 ```tsx
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as some of the Ionic components we'll use shortly:
+We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab.md) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```tsx
+// CHANGE: Add the following import.
 import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Update the following import.
 import {
   IonContent,
   IonHeader,
@@ -166,39 +194,101 @@ import {
   IonImg,
   IonActionSheet,
 } from '@ionic/react';
+// CHANGE: Remove or comment out `ExploreContainer`.
+// import ExploreContainer from '../components/ExploreContainer';
+import './Tab2.css';
+
+const Tab2: React.FC = () => {
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Photo Gallery</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Photo Gallery</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        {/* CHANGE: Add the floating action button. */}
+        <IonFab vertical="bottom" horizontal="center" slot="fixed">
+          <IonFabButton>
+            <IonIcon icon={camera}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+      </IonContent>
+      {/* CHANGE: Remove or comment out `ExploreContainer`. */}
+      {/* <ExploreContainer name="Tab 2 page" /> */}
+    </IonPage>
+  );
+};
+
+export default Tab2;
 ```
 
-Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
+Next, open `src/views/TabsPage.vue`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
 
 ```tsx
-<IonContent>
-  <IonFab vertical="bottom" horizontal="center" slot="fixed">
-    <IonFabButton onClick={() => takePhoto()}>
-      <IonIcon icon={camera}></IonIcon>
-    </IonFabButton>
-  </IonFab>
-</IonContent>
-```
-
-We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
-
-Next, open `src/App.tsx`, remove the `ellipse` icon from the import and import the `images` icon instead:
-
-```tsx
+import { Redirect, Route } from 'react-router-dom';
+import {
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+  setupIonicReact,
+} from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+// CHANGE: Update the following import.
 import { images, square, triangle } from 'ionicons/icons';
+import Tab1 from './pages/Tab1';
+import Tab2 from './pages/Tab2';
+import Tab3 from './pages/Tab3';
+
+/* Ionic styles are not shown in this example to keep it brief but will be included in the Ionic package downloaded for your app. Do not remove them. */
+
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route exact path="/tab1">
+            <Tab1 />
+          </Route>
+          <Route exact path="/tab2">
+            <Tab2 />
+          </Route>
+          <Route path="/tab3">
+            <Tab3 />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/tab1" />
+          </Route>
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="tab1" href="/tab1">
+            <IonIcon aria-hidden="true" icon={triangle} />
+            <IonLabel>Tab 1</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab2" href="/tab2">
+            {/* CHANGE: Update icon. */}
+            <IonIcon aria-hidden="true" icon={images} />
+            {/* CHANGE: Update label. */}
+            <IonLabel>Photos</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab3" href="/tab3">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Tab 3</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
+    </IonReactRouter>
+  </IonApp>
+);
 ```
-
-Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the `ellipse` icon to `images` for the middle tab button:
-
-```tsx
-<IonTabButton tab="tab2" href="/tab2">
-  <IonIcon icon={images} />
-  <IonLabel>Photos</IonLabel>
-</IonTabButton>
-```
-
-:::note
-In Ionic React, icons are imported individually from `ionicons/icons` and set to the icon prop.
-:::
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
