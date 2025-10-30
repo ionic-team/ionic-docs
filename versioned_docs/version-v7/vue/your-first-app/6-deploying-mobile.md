@@ -4,12 +4,14 @@ sidebar_label: Deploying Mobile
 ---
 
 <head>
-  <title>Build and Deploy Vue Apps for iOS and Android with Capacitor</title>
+  <title>Adding Mobile Support with Vue | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Capacitor is Ionic’s official app runtime to deploy web apps to native platforms like iOS, Android, and more. Read for how to build and deploy Ionic Vue apps."
+    content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
   />
 </head>
+
+# Deploying to iOS and Android
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 
@@ -54,7 +56,7 @@ ionic cap sync
 To build an iOS app, you’ll need a Mac computer.
 :::
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Before running this app on an iOS device, there's a couple of steps to complete.
 
 First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
 
@@ -107,7 +109,7 @@ Scroll to the `Permissions` section and ensure these entries are included:
 
 Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
 
-![Arrows pointing to the run configuration and device selection in Android Studio.](/img/guides/first-app-cap-ng/android-device.png 'Android Studio Run Configuration')
+![The Android Studio interface with arrows pointing to the Run button and the connected device.](/img/guides/first-app-cap-ng/android-device.png 'Android Studio Run Configuration')
 
 Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
 
