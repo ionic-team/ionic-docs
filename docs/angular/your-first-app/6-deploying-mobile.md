@@ -44,7 +44,7 @@ Note: After making updates to the native portion of the code (such as adding a n
 ionic cap sync
 ```
 
-## iOS
+## iOS Deployment
 
 :::note
 To build an iOS app, you’ll need a Mac computer.
@@ -80,7 +80,7 @@ Upon tapping the Camera button on the Photo Gallery tab, the permission prompt w
 
 ![Two iPhones side by side, one showing the camera permission prompt and the other displaying a photo taken with the app.](/img/guides/first-app-cap-ng/ios-permissions-photo.png 'iOS Camera Permission Prompt and Photo Result')
 
-## Android
+## Android Deployment
 
 Capacitor Android apps are configured and managed through Android Studio. Before running this app on an Android device, there's a couple of steps to complete.
 
