@@ -25,7 +25,7 @@ Open the new `services/photo.service.ts` file, and let’s add the logic that wi
 
 ```ts
 import { Injectable } from '@angular/core';
-// CHANGE: Add the following imports.
+// CHANGE: Add the following imports
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
@@ -45,7 +45,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 export class PhotoService {
-  // CHANGE: Add the gallery function.
+  // CHANGE: Add the gallery method
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
@@ -63,7 +63,7 @@ Next, in `tab2.page.ts`, import the `PhotoService` class and add a method to cal
 
 ```ts
 import { Component } from '@angular/core';
-// CHANGE: Import the PhotoService.
+// CHANGE: Import the PhotoService
 import { PhotoService } from '../services/photo.service';
 
 @Component({
@@ -73,10 +73,10 @@ import { PhotoService } from '../services/photo.service';
   standalone: false,
 })
 export class Tab2Page {
-  // CHANGE: Update constructor to include `photoService`.
+  // CHANGE: Update constructor to include `photoService`
   constructor(public photoService: PhotoService) {}
 
-  // CHANGE: Add `addNewToGallery` method.
+  // CHANGE: Add `addNewToGallery()` method
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
   }
@@ -125,7 +125,7 @@ export class PhotoService {
   // ...existing code...
 }
 
-// CHANGE: Add the `UserPhoto` interface.
+// CHANGE: Add the `UserPhoto` interface
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
@@ -136,7 +136,7 @@ Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will
 
 ```ts
 export class PhotoService {
-  // CHANGE: Add the `photos` array.
+  // CHANGE: Add the `photos` array
   public photos: UserPhoto[] = [];
 
   public async addNewToGallery() {
@@ -148,7 +148,7 @@ export class PhotoService {
 Over in the `addNewToGallery` method, add the newly captured photo to the beginning of the `photos` array.
 
 ```ts
-// CHANGE: Update `addNewToGallery()` method.
+// CHANGE: Update `addNewToGallery()` method
 public async addNewToGallery() {
   // Take a photo
   const capturedPhoto = await Camera.getPhoto({
@@ -157,7 +157,7 @@ public async addNewToGallery() {
     quality: 100
   });
 
-  // CHANGE: Add the new photo to the photos array.
+  // CHANGE: Add the new photo to the photos array
   this.photos.unshift({
     filepath: "soon...",
     webviewPath: capturedPhoto.webPath!

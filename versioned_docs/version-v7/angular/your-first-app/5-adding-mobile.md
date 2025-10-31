@@ -26,7 +26,7 @@ import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-// CHANGE: Add import.
+// CHANGE: Add import
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
@@ -34,10 +34,10 @@ export class PhotoService {
 
   private PHOTO_STORAGE: string = 'photos';
 
-  // CHANGE: Add a property to track the app's running platform.
+  // CHANGE: Add a property to track the app's running platform
   private platform: Platform;
 
-  // CHANGE: Update constructor to set `platform`.
+  // CHANGE: Update constructor to set `platform`
   constructor(platform: Platform) {
     this.platform = platform;
   }
@@ -53,11 +53,11 @@ First, we’ll update the photo saving functionality to support mobile. In the `
 Update `savePicture()` to look like the following:
 
 ```ts
-// CHANGE: Update the `savePicture()` method.
+// CHANGE: Update the `savePicture()` method
 private async savePicture(photo: Photo) {
   let base64Data: string | Blob;
 
-  // CHANGE: Add platform check.
+  // CHANGE: Add platform check
   // "hybrid" will detect Cordova or Capacitor
   if (this.platform.is('hybrid')) {
     // Read the file into base64 format
@@ -98,7 +98,7 @@ import { Capacitor } from '@capacitor/core';
 Then update `savePicture()` to look like the following:
 
 ```ts
-// CHANGE: Update `savePicture()` method.
+// CHANGE: Update `savePicture()` method
 private async savePicture(photo: Photo) {
   let base64Data: string | Blob;
   // "hybrid" will detect mobile - iOS or Android
@@ -122,7 +122,7 @@ private async savePicture(photo: Photo) {
     directory: Directory.Data,
   });
 
-  // CHANGE: Add platform check.
+  // CHANGE: Add platform check
   if (this.platform.is('hybrid')) {
     // Display the new image by rewriting the 'file://' path to HTTP
     return {
@@ -143,12 +143,12 @@ private async savePicture(photo: Photo) {
 Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
 ```ts
-// CHANGE: Update `loadSaved` method.
+// CHANGE: Update `loadSaved()` method.
 public async loadSaved() {
   const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
   this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-  // CHANGE: Add platform check.
+  // CHANGE: Add platform check
   // If running on the web...
   if (!this.platform.is('hybrid')) {
     for (let photo of this.photos) {

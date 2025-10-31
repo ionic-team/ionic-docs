@@ -23,7 +23,7 @@ Open `photo.service.ts` and begin by defining a new property in the `PhotoServic
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  // CHANGE: Add a key for photo storage.
+  // CHANGE: Add a key for photo storage
   private PHOTO_STORAGE: string = 'photos';
 
   // ...existing code...
@@ -45,7 +45,7 @@ public async addNewToGallery() {
 
   this.photos.unshift(savedImageFile);
 
-  // CHANGE: Add method to cache all photo data for future retrieval.
+  // CHANGE: Add method to cache all photo data for future retrieval
   Preferences.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos),
@@ -59,7 +59,7 @@ With the photo array data saved, create a new public method in the `PhotoService
 export class PhotoService {
   // ...existing code...
 
-  // CHANGE: Add the method to load the photo data.
+  // CHANGE: Add the method to load the photo data
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
@@ -74,13 +74,13 @@ On mobile (coming up next!), we can directly set the source of an image tag - `<
 export class PhotoService {
   // ...existing code...
 
-  // CHANGE: Update the `loadSaved` method.
+  // CHANGE: Update the `loadSaved()` method
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-    // CHANGE: Display the photo by reading into base64 format.
+    // CHANGE: Display the photo by reading into base64 format
     for (let photo of this.photos) {
       // Read each saved photo's data from the Filesystem
       const file = await Filesystem.file({
@@ -175,7 +175,7 @@ export interface UserPhoto {
 }
 ```
 
-Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to the Photo Gallery, all photos are loaded and displayed on the screen.
+Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved()` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to the Photo Gallery, all photos are loaded and displayed on the screen.
 
 Update `tab2.page.ts` to look like the following:
 
@@ -192,7 +192,7 @@ import { PhotoService } from '../services/photo.service';
 export class Tab2Page {
   constructor(public photoService: PhotoService) {}
 
-  // CHANGE: Add call to `loadSaved` when navigating to the Photos tab.
+  // CHANGE: Add call to `loadSaved()` when navigating to the Photos tab
   async ngOnInit() {
     await this.photoService.loadSaved();
   }

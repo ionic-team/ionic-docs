@@ -51,7 +51,7 @@ import { Capacitor } from '@capacitor/core';
 export class PhotoService {
   // ...existing code...
 
-  // CHANGE: Add `deletePhoto()` method.
+  // CHANGE: Add `deletePhoto()` method
   public async deletePhoto(photo: UserPhoto, position: number) {
     // Remove this photo from the Photos reference data array
     this.photos.splice(position, 1);
@@ -82,10 +82,10 @@ Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding 
 
 ```ts
 import { Component } from '@angular/core';
-// Change: Add import.
+// Change: Add import
 import type { UserPhoto } from '../services/photo.service';
 import { PhotoService } from '../services/photo.service';
-// CHANGE: Add import.
+// CHANGE: Add import
 import { ActionSheetController } from '@ionic/angular';
 
 @Component({
@@ -95,12 +95,12 @@ import { ActionSheetController } from '@ionic/angular';
   standalone: false,
 })
 export class Tab2Page {
-  // CHANGE: Update constructor.
+  // CHANGE: Update constructor
   constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
 
   // ...existing code...
 
-  // CHANGE: Add `showActionSheet` method.
+  // CHANGE: Add `showActionSheet()` method
   public async showActionSheet(photo: UserPhoto, position: number) {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',

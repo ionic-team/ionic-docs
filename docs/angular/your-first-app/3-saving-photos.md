@@ -29,7 +29,7 @@ import { Preferences } from '@capacitor/preferences';
 export class PhotoService {
   // ...existing code...
 
-  // CHANGE: Add the `savePicture()` method.
+  // CHANGE: Add the `savePicture()` method
   private async savePicture(photo: Photo) {
     return {
       filepath: 'soon...',
@@ -58,7 +58,7 @@ import { Preferences } from '@capacitor/preferences';
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  // CHANGE: Update the `addNewToGallery()` method.
+  // CHANGE: Update the `addNewToGallery()` method
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
@@ -67,7 +67,7 @@ export class PhotoService {
       quality: 100,
     });
 
-    // CHANGE: Add `savedImageFile`.
+    // CHANGE: Add `savedImageFile`
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
@@ -107,7 +107,7 @@ import { Preferences } from '@capacitor/preferences';
 export class PhotoService {
   // ...existing code...
 
-  // CHANGE: Update the `savePicture()` method.
+  // CHANGE: Update the `savePicture()` method
   private async savePicture(photo: Photo) {
     // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
@@ -130,7 +130,7 @@ export class PhotoService {
     };
   }
 
-  // CHANGE: Add the `convertBlobToBase64` method.
+  // CHANGE: Add the `convertBlobToBase64` method
   private convertBlobToBase64(blob: Blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
