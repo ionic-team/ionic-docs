@@ -15,7 +15,7 @@
 
   const datetime = ref();
   const reset = () => datetime.value.$el.reset();
-  const cancel = () => datetime.value.$el.cancel();
+  const cancel = () => datetime.value.$el.dismiss();
   const confirm = () => datetime.value.$el.confirm();
 </script>
 ```
