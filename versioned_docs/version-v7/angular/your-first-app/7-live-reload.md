@@ -49,7 +49,7 @@ import { Capacitor } from '@capacitor/core';
   providedIn: 'root',
 })
 export class PhotoService {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add `deletePhoto()` method.
   public async deletePhoto(photo: UserPhoto, position: number) {
@@ -98,7 +98,7 @@ export class Tab2Page {
   // CHANGE: Update constructor.
   constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
 
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add `showActionSheet` method.
   public async showActionSheet(photo: UserPhoto, position: number) {

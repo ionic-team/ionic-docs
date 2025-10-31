@@ -27,7 +27,7 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root',
 })
 export class PhotoService {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add the `savePicture()` method.
   private async savePicture(photo: Photo) {
@@ -105,7 +105,7 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root',
 })
 export class PhotoService {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Update the `savePicture()` method.
   private async savePicture(photo: Photo) {

@@ -26,7 +26,7 @@ export class PhotoService {
   // CHANGE: Add a key for photo storage.
   private PHOTO_STORAGE: string = 'photos';
 
-  // Same old code from before.
+  // ...existing code...
 }
 ```
 
@@ -57,7 +57,7 @@ With the photo array data saved, create a new public method in the `PhotoService
 
 ```ts
 export class PhotoService {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add the method to load the photo data.
   public async loadSaved() {
@@ -72,7 +72,7 @@ On mobile (coming up next!), we can directly set the source of an image tag - `<
 
 ```ts
 export class PhotoService {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Update the `loadSaved` method.
   public async loadSaved() {

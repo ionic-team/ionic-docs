@@ -122,7 +122,7 @@ To define the data structure for our photo metadata, create a new interface name
 
 ```ts
 export class PhotoService {
-  // Same old code from before.
+  // ...existing code...
 }
 
 // CHANGE: Add the `UserPhoto` interface.
@@ -140,7 +140,7 @@ export class PhotoService {
   public photos: UserPhoto[] = [];
 
   public async addNewToGallery() {
-    // Same old code from before.
+    // ...existing code...
   }
 }
 ```
