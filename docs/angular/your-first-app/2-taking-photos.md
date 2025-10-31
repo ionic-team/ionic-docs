@@ -11,8 +11,6 @@ sidebar_label: Taking Photos
   />
 </head>
 
-# Taking Photos with the Camera
-
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
 ## Photo Service
