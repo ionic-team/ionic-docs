@@ -48,7 +48,7 @@ export class PhotoService {
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem.readFile()` method. Otherwise, use the same logic as before when running the app on the web.
 
 Update `savePicture()` to look like the following:
 
