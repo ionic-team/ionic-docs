@@ -83,7 +83,7 @@ export class PhotoService {
     // CHANGE: Display the photo by reading into base64 format
     for (let photo of this.photos) {
       // Read each saved photo's data from the Filesystem
-      const file = await Filesystem.file({
+      const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
