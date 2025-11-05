@@ -29,6 +29,9 @@ import { Preferences } from '@capacitor/preferences';
 // CHANGE: Add import
 import { Platform } from '@ionic/angular';
 
+@Injectable({
+  providedIn: 'root',
+})
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
