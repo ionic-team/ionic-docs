@@ -78,7 +78,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
+Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```ts
 import { Component } from '@angular/core';
