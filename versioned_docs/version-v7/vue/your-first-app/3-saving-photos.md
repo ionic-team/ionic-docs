@@ -74,7 +74,6 @@ export const usePhotoGallery = () => {
     photos.value = [savedImageFile, ...photos.value];
   };
 
-  // CHANGE: Add `savePicture()` method
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     return {
       filepath: 'soon...',
