@@ -28,7 +28,6 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 // CHANGE: Add imports
 import { isPlatform } from '@ionic/vue';
-import { Capacitor } from '@capacitor/core';
 
 // ...existing code...
 ```
