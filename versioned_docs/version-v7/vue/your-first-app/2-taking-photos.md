@@ -43,7 +43,7 @@ export const usePhotoGallery = () => {
 };
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto(` - that will open up the device's camera and allow us to take photos.
 
 Next, in `Tab2Page.vue`, import the `usePhotoGallery()` method and destructure it to call its `addNewToGallery()` method.
 
