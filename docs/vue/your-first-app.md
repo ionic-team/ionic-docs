@@ -104,7 +104,7 @@ import App from './App.vue';
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
-// CHANGE: Add the following import.
+// CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 /* Ionic styles are not shown in this example to keep it brief but will be included in the Ionic package downloaded for your app. Do not remove them. */
@@ -207,7 +207,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 <script setup lang="ts">
 // CHANGE: Add import from `ionicons/icons`
 import { camera, trash, close } from 'ionicons/icons';
-// CHANGE: Update import from `@ionic/vue` to include necessary Ionic components.
+// CHANGE: Update import from `@ionic/vue` to include necessary Ionic components
 import {
   IonPage,
   IonHeader,
@@ -222,7 +222,7 @@ import {
   IonCol,
   IonImg,
 } from '@ionic/vue';
-// CHANGE: Remove or comment out the ExploreContainer import.
+// CHANGE: Remove or comment out the ExploreContainer import
 // import ExploreContainer from '@/components/ExploreContainer.vue';
 </script>
 ```
@@ -258,7 +258,7 @@ Next, open `src/views/TabsPage.vue`. Change the label to "Photos" and the `ellip
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-// CHANGE: Update import by removing `ellipse` and adding `images`.
+// CHANGE: Update import by removing `ellipse` and adding `images`
 import { images, square, triangle } from 'ionicons/icons';
 </script>
 ```

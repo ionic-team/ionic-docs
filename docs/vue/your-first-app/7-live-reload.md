@@ -48,7 +48,7 @@ import { Capacitor } from '@capacitor/core';
 export const usePhotoGallery = () => {
   // ...existing code...
 
-  // CHANGE: Add `deletePhoto()` method.
+  // CHANGE: Add `deletePhoto()` method
   const deletePhoto = async (photo: UserPhoto) => {
     // Remove this photo from the Photos reference data array
     photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
@@ -67,7 +67,7 @@ export const usePhotoGallery = () => {
   return {
     photos,
     addNewToGallery,
-    // CHANGE: Add `deletePhoto()` to the return statement.
+    // CHANGE: Add `deletePhoto()` to the return statement
     deletePhoto,
   };
 };
@@ -98,18 +98,18 @@ import {
   IonRow,
   IonCol,
   IonImg,
-  // CHANGE: Add the `actionSheetController` import.
+  // CHANGE: Add the `actionSheetController` import
   actionSheetController,
 } from '@ionic/vue';
 
-// CHANGE: Add `UserPhoto` type import.
+// CHANGE: Add `UserPhoto` type import
 import type { UserPhoto } from '@/composables/usePhotoGallery';
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-// CHANGE: Add `deletePhoto()` method.
+// CHANGE: Add `deletePhoto()` method
 const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
 
-// CHANGE: Add `showActionSheet()` method.
+// CHANGE: Add `showActionSheet()` method
 const showActionSheet = async (photo: UserPhoto) => {
   const actionSheet = await actionSheetController.create({
     header: 'Photos',

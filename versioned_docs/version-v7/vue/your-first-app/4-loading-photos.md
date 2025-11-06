@@ -23,7 +23,7 @@ Open `usePhotoGallery.ts` and begin by defining a constant variable that will ac
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
-  // CHANGE: Add a key for photo storage.
+  // CHANGE: Add a key for photo storage
   const PHOTO_STORAGE = 'photos';
 
   // ...existing code...
@@ -36,7 +36,7 @@ Next, at the end of the `usePhotoGallery()` method, add a call to the `cachePhot
 export const usePhotoGallery = () => {
   // ...existing code...
 
-  // CHANGE: Add `cachePhotos()` method.
+  // CHANGE: Add `cachePhotos()` method
   const cachePhotos = () => {
     Preferences.set({
       key: PHOTO_STORAGE,
@@ -59,7 +59,7 @@ Add the call to the `watch()` method above the return statement in `usePhotoGall
 export const usePhotoGallery = () => {
   // ...existing code...
 
-  // CHANGE: Add call to `watch` with `photos` array and `cachePhotos` method.
+  // CHANGE: Add call to `watch` with `photos` array and `cachePhotos` method
   watch(photos, cachePhotos);
 
   return {
@@ -75,7 +75,7 @@ With the photo array data saved, create a new method in the `usePhotoGallery()` 
 export const usePhotoGallery = () => {
   // ...existing code...
 
-  // CHANGE: Add `loadSaved()` method.
+  // CHANGE: Add `loadSaved()` method
   const loadSaved = async () => {
     const photoList = await Preferences.get({ key: PHOTO_STORAGE });
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
@@ -96,12 +96,12 @@ On mobile (coming up next!), we can directly set the source of an image tag - `<
 export const usePhotoGallery = () => {
   // ...existing code...
 
-  // CHANGE: Update `loadSaved()` method.
+  // CHANGE: Update `loadSaved()` method
   const loadSaved = async () => {
     const photoList = await Preferences.get({ key: PHOTO_STORAGE });
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
-    // CHANGE: Display the photo by reading into base64 format.
+    // CHANGE: Display the photo by reading into base64 format
     for (const photo of photosInPreferences) {
       const file = await Filesystem.file({
         path: photo.filepath,
@@ -298,7 +298,7 @@ export const usePhotoGallery = () => {
     photos.value = photosInPreferences;
   };
 
-  // CHANGE: Add call to `onMounted()` with the `loadSaved()` method.
+  // CHANGE: Add call to `onMounted()` with the `loadSaved()` method
   onMounted(loadSaved);
   watch(photos, cachePhotos);
 

@@ -89,10 +89,10 @@ import {
   IonImg,
 } from '@ionic/vue';
 
-// CHANGE: Add `usePhotoGallery` import.
+// CHANGE: Add `usePhotoGallery` import
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-// CHANGE: Destructure `addNewToGallery` from `usePhotoGallery().
+// CHANGE: Destructure `addNewToGallery` from `usePhotoGallery()
 const { addNewToGallery } = usePhotoGallery();
 </script>
 ```
@@ -114,7 +114,7 @@ export const usePhotoGallery = () => {
   // ...existing code...
 };
 
-// CHANGE: Add the `UserPhoto` interface.
+// CHANGE: Add the `UserPhoto` interface
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
@@ -125,7 +125,7 @@ Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will
 
 ```ts
 export const usePhotoGallery = () => {
-  // CHANGE: Add the `photos` array.
+  // CHANGE: Add the `photos` array
   const photos = ref<UserPhoto[]>([]);
 
   // ...existing code...
@@ -154,13 +154,13 @@ export const usePhotoGallery = () => {
       webviewPath: capturedPhoto.webPath,
     };
 
-    // CHANGE: Update the `photos` array with the new photo.
+    // CHANGE: Update the `photos` array with the new photo
     photos.value = [savedImageFile, ...photos.value];
   };
 
   return {
     addNewToGallery,
-    // CHANGE: Update return statement to include `photos` array.
+    // CHANGE: Update return statement to include `photos` array
     photos,
   };
 };
@@ -261,7 +261,7 @@ import {
 
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-// CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
+// CHANGE: Add `photos` array to destructure from `usePhotoGallery()`
 const { photos, addNewToGallery } = usePhotoGallery();
 </script>
 ```
