@@ -26,7 +26,7 @@ export const usePhotoGallery = () => {
   // CHANGE: Add a key for photo storage.
   const PHOTO_STORAGE = 'photos';
 
-  // Same old code from before.
+  // ...existing code...
 };
 ```
 
@@ -34,7 +34,7 @@ Next, at the end of the `usePhotoGallery()` method, add a call to the `cachePhot
 
 ```ts
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add `cachePhotos()` method.
   const cachePhotos = () => {
@@ -57,7 +57,7 @@ Add the call to the `watch()` method above the return statement in `usePhotoGall
 
 ```ts
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add call to `watch` with `photos` array and `cachePhotos` method.
   watch(photos, cachePhotos);
@@ -73,7 +73,7 @@ With the photo array data saved, create a new method in the `usePhotoGallery()` 
 
 ```ts
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add `loadSaved()` method.
   const loadSaved = async () => {
@@ -94,7 +94,7 @@ On mobile (coming up next!), we can directly set the source of an image tag - `<
 
 ```ts
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Update `loadSaved()` method.
   const loadSaved = async () => {

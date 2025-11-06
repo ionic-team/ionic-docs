@@ -30,7 +30,7 @@ import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/vue';
 import { Capacitor } from '@capacitor/core';
 
-// Same old code from before.
+// ...existing code...
 ```
 
 ## Platform-specific Logic

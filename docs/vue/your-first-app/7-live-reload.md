@@ -46,7 +46,7 @@ import { isPlatform } from '@ionic/vue';
 import { Capacitor } from '@capacitor/core';
 
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add `deletePhoto()` method.
   const deletePhoto = async (photo: UserPhoto) => {
@@ -81,7 +81,7 @@ export interface UserPhoto {
 Next, in `Tab2Page.vue`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
 
 ```vue
-<!-- Same old code from before. -->
+<!-- ...existing code... -->
 
 <script setup lang="ts">
 import { camera, trash, close } from 'ionicons/icons';

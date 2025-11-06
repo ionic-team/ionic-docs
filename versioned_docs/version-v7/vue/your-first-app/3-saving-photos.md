@@ -24,7 +24,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add the `savePicture()` method.
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
@@ -55,7 +55,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Update the `addNewToGallery()` method.
   const addNewToGallery = async () => {
@@ -107,7 +107,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Update the `savePicture()` method.
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {

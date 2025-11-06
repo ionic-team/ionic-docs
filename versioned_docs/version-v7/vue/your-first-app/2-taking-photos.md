@@ -111,7 +111,7 @@ To define the data structure for our photo metadata, create a new interface name
 
 ```ts
 export const usePhotoGallery = () => {
-  // Same old code from before.
+  // ...existing code...
 };
 
 // CHANGE: Add the `UserPhoto` interface.
@@ -128,7 +128,7 @@ export const usePhotoGallery = () => {
   // CHANGE: Add the `photos` array.
   const photos = ref<UserPhoto[]>([]);
 
-  // Same old code from before.
+  // ...existing code...
 };
 ```
 
