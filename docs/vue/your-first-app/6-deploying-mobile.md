@@ -46,7 +46,7 @@ ionic cap sync
 
 ## iOS Deployment
 
-:::note
+:::important
 To build an iOS app, you’ll need a Mac computer.
 :::
 
