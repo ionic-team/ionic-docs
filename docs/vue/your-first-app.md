@@ -107,7 +107,7 @@ import { IonicVue } from '@ionic/vue';
 // CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-/* Ionic styles are not shown in this example to keep it brief but will be included in the Ionic package downloaded for your app. Do not remove them. */
+/* ...existing Ionic styles... */
 
 /* Theme variables */
 import './theme/variables.css';
