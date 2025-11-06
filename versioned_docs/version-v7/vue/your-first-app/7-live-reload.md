@@ -140,14 +140,37 @@ const showActionSheet = async (photo: UserPhoto) => {
 Add a click handler to the `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```vue
-<ion-grid>
-  <ion-row>
-    <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-      <!-- CHANGE: Add a click event listener to each image. -->
-      <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
+            <!-- CHANGE: Add a click event listener to each image. -->
+            <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button @click="addNewToGallery()">
+          <ion-icon :icon="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  </ion-page>
+</template>
 ```
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
