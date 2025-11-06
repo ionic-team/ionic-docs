@@ -11,8 +11,6 @@ sidebar_label: Saving Photos
   />
 </head>
 
-# Saving Photos to the Filesystem
-
 We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
 
 ## Filesystem API

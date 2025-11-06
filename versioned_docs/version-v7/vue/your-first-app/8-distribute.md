@@ -11,8 +11,6 @@ sidebar_label: Distribute
   />
 </head>
 
-# Build and Deploy your App
-
 Now that you have built your first app, you are going to want to get it distributed so everyone can start using it. The mechanics of building and deploying your application can be quite cumbersome. That is where [Appflow](https://ionic.io/docs/appflow/) comes into play. Appflow allows you to effectively generate web and native builds, push out live app updates, publish your app to the app stores, and automate the whole process. The entire Quickstart guide can be found [here](https://ionic.io/docs/appflow/quickstart).
 
 Below we will run through an overview of the steps.

@@ -11,8 +11,6 @@ sidebar_label: Loading Photos
   />
 </head>
 
-# Loading Photos from the Filesystem
-
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
 Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](../../native/preferences.md) to store our array of Photos in a key-value store.
