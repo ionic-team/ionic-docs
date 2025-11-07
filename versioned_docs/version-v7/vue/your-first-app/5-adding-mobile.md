@@ -19,7 +19,7 @@ Let’s start with making some small code changes - then our app will “just wo
 
 Import the Ionic [Platform API](../platform.md) into `usePhotoGallery.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile).
 
-Add `Platform` to the imports at the top of the file to use the `isPlatform` method. `Capacitor` is also imported to help with file paths on mobile devices.
+Add `Platform` to the imports at the top of the file to use the `isPlatform` method.
 
 ```ts
 import { ref, onMounted, watch } from 'vue';
