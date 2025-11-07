@@ -73,7 +73,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Next, create an Ionic Angular app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
-ionic start photo-gallery tabs --type=angular --capacitor
+ionic start photo-gallery tabs --type=angular
 ```
 
 :::note
