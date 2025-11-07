@@ -155,7 +155,7 @@ Add a click handler to the `<ion-img>` element. When the app user taps on a phot
       <ion-grid>
         <ion-row>
           <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-            <!-- CHANGE: Add a click event listener to each image. -->
+            <!-- CHANGE: Add a click event listener to each image -->
             <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
           </ion-col>
         </ion-row>

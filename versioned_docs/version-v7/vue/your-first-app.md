@@ -210,7 +210,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
         </ion-toolbar>
       </ion-header>
 
-      <!-- CHANGE: Add the floating action button. -->
+      <!-- CHANGE: Add the floating action button -->
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
         <ion-fab-button>
           <ion-icon :icon="camera"></ion-icon>
@@ -247,9 +247,9 @@ Next, open `src/views/TabsPage.vue`. Change the label to "Photos" and the `ellip
         </ion-tab-button>
 
         <ion-tab-button tab="tab2" href="/tabs/tab2">
-          <!-- CHANGE: Update icon. -->
+          <!-- CHANGE: Update icon -->
           <ion-icon aria-hidden="true" :icon="images" />
-          <!-- CHANGE: Update label. -->
+          <!-- CHANGE: Update label -->
           <ion-label>Photos</ion-label>
         </ion-tab-button>
 

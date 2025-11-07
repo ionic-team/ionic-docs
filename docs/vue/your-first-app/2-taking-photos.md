@@ -209,10 +209,10 @@ Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid componen
         </ion-toolbar>
       </ion-header>
 
-      <!-- CHANGE: Add a grid component to display the photos. -->
+      <!-- CHANGE: Add a grid component to display the photos -->
       <ion-grid>
         <ion-row>
-          <!-- CHANGE: Create a new column and image component for each photo. -->
+          <!-- CHANGE: Create a new column and image component for each photo -->
           <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
             <ion-img :src="photo.webviewPath"></ion-img>
           </ion-col>
@@ -220,7 +220,7 @@ Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid componen
       </ion-grid>
 
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <!-- CHANGE: Add a click event listener to the floating action button. -->
+        <!-- CHANGE: Add a click event listener to the floating action button -->
         <ion-fab-button @click="addNewToGallery()">
           <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
