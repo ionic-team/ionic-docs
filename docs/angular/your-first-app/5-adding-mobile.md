@@ -23,7 +23,8 @@ Add `Platform` to the imports at the top of the file and a new property `platfor
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 // CHANGE: Add import
@@ -95,7 +96,15 @@ private async savePicture(photo: Photo) {
 When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
 
 ```ts
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+// Change: Add import
 import { Capacitor } from '@capacitor/core';
+
+// ...existing code...
 ```
 
 Then update `savePicture()` to look like the following:
@@ -173,10 +182,10 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-import { Platform } from '@ionic/angular';
 import { Capacitor } from '@capacitor/core';
 
 @Injectable({

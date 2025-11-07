@@ -39,10 +39,10 @@ In `photo.service.ts`, add the `deletePhoto()` method. The selected photo is rem
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-import { Platform } from '@ionic/angular';
 import { Capacitor } from '@capacitor/core';
 
 @Injectable({
@@ -78,7 +78,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
+Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```ts
 import { Component } from '@angular/core';

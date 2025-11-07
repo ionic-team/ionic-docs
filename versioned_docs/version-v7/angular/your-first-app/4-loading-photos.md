@@ -33,23 +33,44 @@ export class PhotoService {
 Next, at the end of the `addNewToGallery()` method, add a call to `Preferences.set()` to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
-public async addNewToGallery() {
-  // Take a photo
-  const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri,
-    source: CameraSource.Camera,
-    quality: 100,
-  });
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+// CHANGE: Add import
+import { Filesystem, Directory } from '@capacitor/filesystem';
 
-  const savedImageFile = await this.savePicture(capturedPhoto);
+@Injectable({
+  providedIn: 'root',
+})
+export class PhotoService {
+  // ...existing code...
 
-  this.photos.unshift(savedImageFile);
+  // CHANGE: Update `addNewToGallery()` method
+  public async addNewToGallery() {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
 
-  // CHANGE: Add method to cache all photo data for future retrieval
-  Preferences.set({
-    key: this.PHOTO_STORAGE,
-    value: JSON.stringify(this.photos),
-  });
+    const savedImageFile = await this.savePicture(capturedPhoto);
+
+    this.photos.unshift(savedImageFile);
+
+    // CHANGE: Add method to cache all photo data for future retrieval
+    Preferences.set({
+      key: this.PHOTO_STORAGE,
+      value: JSON.stringify(this.photos),
+    });
+  }
+
+  // ...existing code...
+}
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
 }
 ```
 
@@ -99,7 +120,8 @@ export class PhotoService {
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 

@@ -23,7 +23,8 @@ Add `Platform` to the imports at the top of the file and a new property `platfor
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 // CHANGE: Add import
@@ -51,7 +52,7 @@ export class PhotoService {
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem`'s' `readFile()` method. Otherwise, use the same logic as before when running the app on the web.
+First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem.readFile()` method. Otherwise, use the same logic as before when running the app on the web.
 
 Update `savePicture()` to look like the following:
 
@@ -95,7 +96,15 @@ private async savePicture(photo: Photo) {
 When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
 
 ```ts
+import { Injectable } from '@angular/core';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+// Change: Add import
 import { Capacitor } from '@capacitor/core';
+
+// ...existing code...
 ```
 
 Then update `savePicture()` to look like the following:
@@ -146,7 +155,7 @@ private async savePicture(photo: Photo) {
 Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
 ```ts
-// CHANGE: Update `loadSaved()` method.
+// CHANGE: Update `loadSaved()` method
 public async loadSaved() {
   const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
   this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
@@ -173,10 +182,10 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-import { Platform } from '@ionic/angular';
 import { Capacitor } from '@capacitor/core';
 
 @Injectable({

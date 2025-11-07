@@ -18,10 +18,9 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class. We pass in the `photo` object, which represents the newly captured device photo:
 
 ```ts
-import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+// CHANGE: Add import
+import type { Photo } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root',
@@ -97,9 +96,10 @@ For now, create a new helper method, `convertBlobToBase64()`, to implement the n
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+// CHANGE: Add import
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
   providedIn: 'root',
@@ -153,9 +153,9 @@ export interface UserPhoto {
 
 ```ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
   providedIn: 'root',
