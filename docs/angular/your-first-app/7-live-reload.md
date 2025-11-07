@@ -147,7 +147,7 @@ Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. W
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <!-- CHANGE: Add a click event listener to each image. -->
+        <!-- CHANGE: Add a click event listener to each image -->
         <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
       </ion-col>
     </ion-row>
