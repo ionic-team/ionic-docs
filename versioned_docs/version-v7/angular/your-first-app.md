@@ -163,7 +163,23 @@ Open `/src/app/tab2/tab2.page.html`. We see:
 `ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.md#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
-<ion-title>Photo Gallery</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- CHANGE: Update title -->
+    <ion-title> Photo Gallery </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!-- CHANGE: Update title -->
+      <ion-title size="large">Photo Gallery</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content>
 ```
 
 We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab.md) (FAB) to the bottom of the page and set the camera image as the icon.
