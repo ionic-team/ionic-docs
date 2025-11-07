@@ -38,8 +38,9 @@ With Live Reload running and the app open on your device, let’s implement phot
 In `usePhotoGallery.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we delete the actual photo file itself using the Filesystem API.
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { ref, watch, onMounted } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/vue';
@@ -84,7 +85,9 @@ Next, in `Tab2Page.vue`, implement the `showActionSheet()` method. We're adding 
 <!-- ...existing code... -->
 
 <script setup lang="ts">
+// CHANGE: Update import
 import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Update import
 import {
   IonPage,
   IonHeader,
@@ -94,11 +97,6 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-  // CHANGE: Add the `actionSheetController` import
   actionSheetController,
 } from '@ionic/vue';
 

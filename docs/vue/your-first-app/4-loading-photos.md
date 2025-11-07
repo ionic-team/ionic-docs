@@ -33,6 +33,13 @@ export const usePhotoGallery = () => {
 Next, at the end of the `usePhotoGallery()` method, add a call to the `cachePhotos` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+// CHANGE: Add import
+import { Preferences } from '@capacitor/preferences';
+
 export const usePhotoGallery = () => {
   // ...existing code...
 
@@ -56,6 +63,13 @@ Next, use the Vue [watch method](https://vuejs.org/api/reactivity-core.html#watc
 Add the call to the `watch()` method above the return statement in `usePhotoGallery()`.
 
 ```ts
+// CHANGE: Update import
+import { ref, watch } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
 export const usePhotoGallery = () => {
   // ...existing code...
 
@@ -125,8 +139,9 @@ export const usePhotoGallery = () => {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { ref, watch } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 
@@ -221,8 +236,10 @@ Our `usePhotoGallery()` can now load the saved images, but we'll need to update 
 Update `usePhotoGallery.ts` to look like the following:
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+// CHANGE: Update import
+import { ref, watch, onMounted } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 

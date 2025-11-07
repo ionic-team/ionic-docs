@@ -22,8 +22,9 @@ Import the Ionic [Platform API](../platform.md) into `usePhotoGallery.ts`, which
 Add `Platform` to the imports at the top of the file to use the `isPlatform` method.
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { ref, watch, onMounted } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 // CHANGE: Add imports
@@ -75,7 +76,16 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `usePhotoGallery.ts`.
 
 ```ts
+import { ref, watch, onMounted } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+import { isPlatform } from '@ionic/vue';
+// CHANGE: Add import
 import { Capacitor } from '@capacitor/core';
+
+// ...existing code...
 ```
 
 Then update `savePicture()` to look like the following:
@@ -153,8 +163,9 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { ref, watch, onMounted } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/vue';

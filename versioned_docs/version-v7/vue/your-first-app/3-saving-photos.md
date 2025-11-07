@@ -18,10 +18,10 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `usePhotoGallery()` method in `usePhotoGallery.ts`.
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+// CHANGE: Add import
+import type { Photo } from '@capacitor/camera';
 
 export const usePhotoGallery = () => {
   // ...existing code...
@@ -49,10 +49,9 @@ export interface UserPhoto {
 We can use this new method immediately in `addNewToGallery()`.
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 
 export const usePhotoGallery = () => {
   // ...existing code...
@@ -100,10 +99,11 @@ Then, pass the data to the Filesystem's `writeFile` method. Recall that we displ
 For now, create a new helper method, `convertBlobToBase64()`, to implement the necessary logic for running on the web.
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+// CHANGE: Add import
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 
 export const usePhotoGallery = () => {
   // ...existing code...
@@ -156,10 +156,10 @@ export interface UserPhoto {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);

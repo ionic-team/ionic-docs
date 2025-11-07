@@ -22,10 +22,7 @@ Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera.
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 export const usePhotoGallery = () => {
   const addNewToGallery = async () => {
@@ -73,21 +70,8 @@ Next, in `Tab2Page.vue`, import the `usePhotoGallery()` method and destructure i
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
+import { camera } from 'ionicons/icons';
+import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 
 // CHANGE: Add `usePhotoGallery` import
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
@@ -135,6 +119,10 @@ export const usePhotoGallery = () => {
 Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery()` return statement with the `photos` array.
 
 ```ts
+// CHANGE: Add import
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);
 
@@ -169,10 +157,8 @@ export const usePhotoGallery = () => {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { ref } from 'vue';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 export const usePhotoGallery = () => {
   const photos = ref<UserPhoto[]>([]);

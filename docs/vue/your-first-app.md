@@ -225,22 +225,9 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 
 <script setup lang="ts">
 // CHANGE: Add import from `ionicons/icons`
-import { camera, trash, close } from 'ionicons/icons';
+import { camera } from 'ionicons/icons';
 // CHANGE: Update import from `@ionic/vue` to include necessary Ionic components
-import {
-  IonPage,
-  IonHeader,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-} from '@ionic/vue';
+import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 // CHANGE: Remove or comment out the ExploreContainer import
 // import ExploreContainer from '@/components/ExploreContainer.vue';
 </script>
