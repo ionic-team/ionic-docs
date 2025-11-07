@@ -103,7 +103,7 @@ export const usePhotoGallery = () => {
 
     // CHANGE: Display the photo by reading into base64 format
     for (const photo of photosInPreferences) {
-      const readFile = await Filesystem.file({
+      const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
