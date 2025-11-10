@@ -1,5 +1,5 @@
 ---
-title: Build and Deploy your App
+title: Build and Distribute your App
 sidebar_label: Distribute
 ---
 
