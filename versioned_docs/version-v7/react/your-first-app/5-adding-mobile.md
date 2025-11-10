@@ -28,7 +28,7 @@ import { useState, useEffect } from 'react';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-// CHANGE: Add imports
+// CHANGE: Add import
 import { isPlatform } from '@ionic/react';
 import { Capacitor } from '@capacitor/core';
 
@@ -113,7 +113,8 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 
 ```ts
 import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/react';

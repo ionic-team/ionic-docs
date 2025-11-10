@@ -194,23 +194,9 @@ We put the visual aspects of our app into `<IonContent>`. In this case, it’s w
 
 ```tsx
 // CHANGE: Add the following import
-import { camera, trash, close } from 'ionicons/icons';
+import { camera } from 'ionicons/icons';
 // CHANGE: Update the following import
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-  IonActionSheet,
-} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon } from '@ionic/react';
 // CHANGE: Remove or comment out `ExploreContainer`
 // import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
@@ -247,7 +233,7 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Next, open `src/views/TabsPage.vue`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
+Next, open `src/App.tsx`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';

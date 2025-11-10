@@ -24,10 +24,7 @@ Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
 Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera.
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 export function usePhotoGallery() {
   const addNewToGallery = async () => {
@@ -50,22 +47,8 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 Next, in `Tab2.tsx`, import the `usePhotoGallery()` method and destructure it to call its `addNewToGallery()` method.
 
 ```tsx
-import { camera, trash, close } from 'ionicons/icons';
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-  IonActionSheet,
-} from '@ionic/react';
+import { camera } from 'ionicons/icons';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon } from '@ionic/react';
 // CHANGE: Add `usePhotoGallery` import
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 import './Tab2.css';
@@ -131,6 +114,10 @@ export interface UserPhoto {
 Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. Make it a state variable using React's [useState hook](https://react.dev/reference/react/useState).
 
 ```ts
+// CHANGE: Add import
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+
 export function usePhotoGallery {
   // CHANGE: Add the `photos` array
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
@@ -145,6 +132,7 @@ Over in the `addNewToGallery()` method, add the newly captured photo to the begi
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
+  // CHANGE: Update `addNewToGallery()` method
   const addNewToGallery = async () => {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
@@ -179,10 +167,8 @@ export function usePhotoGallery() {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
@@ -222,6 +208,24 @@ export interface UserPhoto {
 Next, switch to `Tab2.tsx` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
 
 ```tsx
+import { camera } from 'ionicons/icons';
+// CHANGE: Update import
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+} from '@ionic/react';
+import { usePhotoGallery } from '../hooks/usePhotoGallery';
+
 const Tab2: React.FC = () => {
   // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`
   const { photos, addNewToGallery } = usePhotoGallery();

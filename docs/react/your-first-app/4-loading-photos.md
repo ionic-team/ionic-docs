@@ -34,17 +34,42 @@ export function usePhotoGallery() {
 Next, at the end of the `addNewToGallery()` method, add a call to the `Preferences.set()` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
-const addNewToGallery = async () => {
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+// CHANGE: Add import
+import { Preferences } from '@capacitor/preferences';
+
+export function usePhotoGallery() {
   // ...existing code...
 
-  // CHANGE: Add method to cache all photo data for future retrieval
-  Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
-};
+  const addNewToGallery = async () => {
+    // ...existing code...
+
+    // CHANGE: Add method to cache all photo data for future retrieval
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  };
+
+  // ...existing code...
+
+  return {
+    addNewToGallery,
+    photos,
+  };
+}
 ```
 
 With the photo array data saved, create a new method in the `usePhotoGallery()` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
 
 ```ts
+// CHANGE: Update import
+import { useState, useEffect } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
@@ -104,7 +129,8 @@ export function usePhotoGallery() {
 
 ```ts
 import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 

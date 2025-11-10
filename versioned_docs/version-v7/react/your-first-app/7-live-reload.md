@@ -41,7 +41,8 @@ In `usePhotoGallery.ts`, add the `deletePhoto()` method. The selected photo is r
 
 ```ts
 import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/react';
@@ -85,11 +86,30 @@ export interface UserPhoto {
 Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
 
 ```tsx
-// ...existing code...
-// change: Add React import
+// CHANGE: Add import
 import { useState } from 'react';
-// CHANGE: Add `UserPhoto` type import
+// CHANGE: Update import
+import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Update import
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonActionSheet,
+} from '@ionic/react';
+// CHANGE: Add import
 import type { UserPhoto } from '../hooks/usePhotoGallery';
+import { usePhotoGallery } from '../hooks/usePhotoGallery';
+import './Tab2.css';
 
 const Tab2: React.FC = () => {
   // CHANGE: Add `deletePhoto()` method

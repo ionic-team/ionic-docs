@@ -20,10 +20,10 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `usePhotoGallery()` method in `usePhotoGallery.ts`.
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+// CHANGE: Add import
+import type { Photo } from '@capacitor/camera';
 
 export function usePhotoGallery() {
   // ...existing code...
@@ -51,10 +51,9 @@ export interface UserPhoto {
 We can use this new method immediately in `addNewToGallery()`.
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
@@ -103,10 +102,11 @@ Then, pass the data to the Filesystem's `writeFile` method. Recall that we displ
 For now, create a new helper method, `convertBlobToBase64()`, to implement the necessary logic for running on the web.
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+// CHANGE: Add import
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 
 export function usePhotoGallery() {
   // ...existing code...
@@ -159,10 +159,10 @@ export interface UserPhoto {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
 
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
