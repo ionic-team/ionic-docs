@@ -182,8 +182,9 @@ export default Tab2;
         <IonTitle size="large">Photo Gallery</IonTitle>
       </IonToolbar>
     </IonHeader>
+
+    {/* ...existing code... */}
   </IonContent>
-  {/* ...existing code... */}
 </IonPage>
 ```
 
