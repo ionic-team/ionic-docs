@@ -81,7 +81,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
+Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```tsx
 // CHANGE: Add import
