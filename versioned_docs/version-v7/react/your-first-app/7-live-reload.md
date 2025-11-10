@@ -156,6 +156,8 @@ const Tab2: React.FC = () => {
     </IonPage>
   );
 };
+
+export default Tab2;
 ```
 
 Add a click handler to the `<IonImg>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.

@@ -261,6 +261,8 @@ const Tab2: React.FC = () => {
     </IonPage>
   );
 };
+
+export default Tab2;
 ```
 
 Within the web browser, click the camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
