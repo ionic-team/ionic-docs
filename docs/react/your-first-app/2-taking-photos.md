@@ -93,9 +93,7 @@ After taking a photo, it disappears right away. We need to display it within our
 
 ## Displaying Photos
 
-Return to `usePhotoGallery.ts`.
-
-Outside of the `usePhotoGallery()` method definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata.
+To define the data structure for our photo metadata, create a new interface named `UserPhoto`. Add this interface at the very bottom of the `usePhotoGallery.ts` file,  immediately after the `usePhotoGallery()` method definition.
 
 ```ts
 export function usePhotoGallery {
