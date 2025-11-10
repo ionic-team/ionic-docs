@@ -223,21 +223,23 @@ const Tab2: React.FC = () => {
           <IonTitle>Photo Gallery</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Photo Gallery</IonTitle>
           </IonToolbar>
         </IonHeader>
+
         {/* CHANGE: Add the floating action button */}
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
           <IonFabButton>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
+
+        {/* CHANGE: Remove or comment out `ExploreContainer` */}
+        {/* <ExploreContainer name="Tab 2 page" /> */}
       </IonContent>
-      {/* CHANGE: Remove or comment out `ExploreContainer` */}
-      {/* <ExploreContainer name="Tab 2 page" /> */}
     </IonPage>
   );
 };
