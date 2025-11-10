@@ -50,7 +50,7 @@ import { Capacitor } from '@capacitor/core';
 export function usePhotoGallery() {
   // Same old code from before.
 
-  // CHANGE: Add `deletePhoto()` method.
+  // CHANGE: Add `deletePhoto()` method
   const deletePhoto = async (photo: UserPhoto) => {
     // Remove this photo from the Photos reference data array
     const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
@@ -71,7 +71,7 @@ export function usePhotoGallery() {
   return {
     photos,
     addNewToGallery,
-    // CHANGE: Add `deletePhoto()` to the return statement.
+    // CHANGE: Add `deletePhoto()` to the return statement
     deletePhoto,
   };
 }
@@ -86,15 +86,15 @@ Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two 
 
 ```tsx
 // Same old code from before.
-// change: Add React import.
+// change: Add React import
 import { useState } from 'react';
 // CHANGE: Add `UserPhoto` type import.
 import type { UserPhoto } from '../hooks/usePhotoGallery';
 
 const Tab2: React.FC = () => {
-  // CHANGE: Add `deletePhoto()` method.
+  // CHANGE: Add `deletePhoto()` method
   const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
-  // CHANGE: Add state for the photo to delete.
+  // CHANGE: Add state for the photo to delete
   const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 
   return (
@@ -108,7 +108,7 @@ const Tab2: React.FC = () => {
           </IonFabButton>
         </IonFab>
 
-        {/* CHANGE: Add action sheet for deleting photos. */}
+        {/* CHANGE: Add action sheet for deleting photos */}
         <IonActionSheet
           isOpen={!!photoToDelete}
           buttons={[
@@ -147,7 +147,7 @@ Add a click handler to the `<IonImg>` element. When the app user taps on a photo
   <IonRow>
     {photos.map((photo) => (
       <IonCol size="6" key={photo.filepath}>
-        {/* CHANGE: Add a click event listener to each image. */}
+        {/* CHANGE: Add a click event listener to each image */}
         <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
       </IonCol>
     ))}

@@ -24,7 +24,7 @@ Open `usePhotoGallery.ts` and begin by defining a constant variable that will ac
 ```ts
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
-  // CHANGE: Add a key for photo storage.
+  // CHANGE: Add a key for photo storage
   const PHOTO_STORAGE = 'photos';
 
   // Same old code from before.
@@ -37,7 +37,7 @@ Next, at the end of the `addNewToGallery()` method, add a call to the `Preferenc
 const addNewToGallery = async () => {
   // Same old code from before.
 
-  // CHANGE: Add method to cache all photo data for future retrieval.
+  // CHANGE: Add method to cache all photo data for future retrieval
   Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 };
 ```
@@ -50,9 +50,9 @@ export function usePhotoGallery() {
 
   const PHOTO_STORAGE = 'photos';
 
-  // CHANGE: Add useEffect hook.
+  // CHANGE: Add useEffect hook
   useEffect(() => {
-    // CHANGE: Add `loadSaved()` method.
+    // CHANGE: Add `loadSaved()` method
     const loadSaved = async () => {
       const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
       const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
@@ -76,12 +76,12 @@ export function usePhotoGallery() {
   const PHOTO_STORAGE = 'photos';
 
   useEffect(() => {
-    // CHANGE: Update `loadSaved()` method.
+    // CHANGE: Update `loadSaved()` method
     const loadSaved = async () => {
       const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
       const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-      // CHANGE: Display the photo by reading into base64 format.
+      // CHANGE: Display the photo by reading into base64 format
       for (const photo of photosInPreferences) {
         const readFile = await Filesystem.readFile({
           path: photo.filepath,

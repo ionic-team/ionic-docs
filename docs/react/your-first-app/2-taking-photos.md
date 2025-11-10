@@ -66,12 +66,12 @@ import {
   IonImg,
   IonActionSheet,
 } from '@ionic/react';
-// CHANGE: Add `usePhotoGallery` import.
+// CHANGE: Add `usePhotoGallery` import
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
-  // CHANGE: Destructure `addNewToGallery()` from `usePhotoGallery()`.
+  // CHANGE: Destructure `addNewToGallery()` from `usePhotoGallery()`
   const { addNewToGallery } = usePhotoGallery();
 
   return (
@@ -89,7 +89,7 @@ const Tab2: React.FC = () => {
         </IonHeader>
 
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          {/* CHANGE: Add a click event listener to the floating action button. */}
+          {/* CHANGE: Add a click event listener to the floating action button */}
           <IonFabButton onClick={() => addNewToGallery()}>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
@@ -121,7 +121,7 @@ export function usePhotoGallery {
   // Same old code from before.
 }
 
-// CHANGE: Add the `UserPhoto` interface.
+// CHANGE: Add the `UserPhoto` interface
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
@@ -132,7 +132,7 @@ Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will
 
 ```ts
 export function usePhotoGallery {
-  // CHANGE: Add the `photos` array.
+  // CHANGE: Add the `photos` array
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   // Same old code from before.
@@ -153,9 +153,9 @@ export function usePhotoGallery() {
       quality: 100,
     });
 
-    // CHANGE: Create the `fileName` with current timestamp.
+    // CHANGE: Create the `fileName` with current timestamp
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Create `savedImageFile` matching `UserPhoto` interface.
+    // CHANGE: Create `savedImageFile` matching `UserPhoto` interface
     const savedImageFile = [
       {
         filepath: fileName,
@@ -164,13 +164,13 @@ export function usePhotoGallery() {
       ...photos,
     ];
 
-    // CHANGE: Update the `photos` array with the new photo.
+    // CHANGE: Update the `photos` array with the new photo
     setPhotos(savedImageFile);
   };
 
   return {
     addNewToGallery,
-    // CHANGE: Update return statement to include `photos` array.
+    // CHANGE: Update return statement to include `photos` array
     photos,
   };
 }
@@ -223,7 +223,7 @@ Next, switch to `Tab2.tsx` to display the images. We'll add a [Grid component](.
 
 ```tsx
 const Tab2: React.FC = () => {
-  // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`.
+  // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`
   const { photos, addNewToGallery } = usePhotoGallery();
 
   return (
@@ -240,10 +240,10 @@ const Tab2: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        {/* CHANGE: Add a grid component to display the photos. */}
+        {/* CHANGE: Add a grid component to display the photos */}
         <IonGrid>
           <IonRow>
-            {/* CHANGE: Create a new column and image component for each photo. */}
+            {/* CHANGE: Create a new column and image component for each photo */}
             {photos.map((photo) => (
               <IonCol size="6" key={photo.filepath}>
                 <IonImg src={photo.webviewPath} />

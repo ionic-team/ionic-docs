@@ -28,7 +28,7 @@ import { useState, useEffect } from 'react';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-// CHANGE: Add imports.
+// CHANGE: Add imports
 import { isPlatform } from '@ionic/react';
 import { Capacitor } from '@capacitor/core';
 
@@ -42,10 +42,10 @@ First, we’ll update the photo saving functionality to support mobile. In the `
 Update `savePicture()` to look like the following:
 
 ```ts
-// CHANGE: Update the `savePicture()` method.
+// CHANGE: Update the `savePicture()` method
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string | Blob;
-  // CHANGE: Add platform check.
+  // CHANGE: Add platform check
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
     const readFile = await Filesystem.readFile({
@@ -65,7 +65,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     directory: Directory.Data,
   });
 
-  // CHANGE: Add platform check.
+  // CHANGE: Add platform check
   if (isPlatform('hybrid')) {
     // Display the new image by rewriting the 'file://' path to HTTP
     return {
@@ -86,12 +86,12 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved()` method:
 
 ```ts
-// CHANGE: Update `loadSaved` method.
+// CHANGE: Update `loadSaved` method
 const loadSaved = async () => {
   const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
   const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-  // CHANGE: Add platform check.
+  // CHANGE: Add platform check
   // If running on the web...
   if (!isPlatform('hybrid')) {
     for (const photo of photosInPreferences) {

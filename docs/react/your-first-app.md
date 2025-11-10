@@ -104,10 +104,10 @@ Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-// CHANGE: Add the following import.
+// CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// CHANGE: Call the element loader before the render call.
+// CHANGE: Call the element loader before the render call
 defineCustomElements(window);
 
 const container = document.getElementById('root');
@@ -176,9 +176,9 @@ export default Tab2;
 We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab.md) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```tsx
-// CHANGE: Add the following import.
+// CHANGE: Add the following import
 import { camera, trash, close } from 'ionicons/icons';
-// CHANGE: Update the following import.
+// CHANGE: Update the following import
 import {
   IonContent,
   IonHeader,
@@ -194,7 +194,7 @@ import {
   IonImg,
   IonActionSheet,
 } from '@ionic/react';
-// CHANGE: Remove or comment out `ExploreContainer`.
+// CHANGE: Remove or comment out `ExploreContainer`
 // import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 
@@ -212,14 +212,14 @@ const Tab2: React.FC = () => {
             <IonTitle size="large">Photo Gallery</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {/* CHANGE: Add the floating action button. */}
+        {/* CHANGE: Add the floating action button */}
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
           <IonFabButton>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
       </IonContent>
-      {/* CHANGE: Remove or comment out `ExploreContainer`. */}
+      {/* CHANGE: Remove or comment out `ExploreContainer` */}
       {/* <ExploreContainer name="Tab 2 page" /> */}
     </IonPage>
   );
@@ -243,7 +243,7 @@ import {
   setupIonicReact,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-// CHANGE: Update the following import.
+// CHANGE: Update the following import
 import { images, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
@@ -275,9 +275,9 @@ const App: React.FC = () => (
             <IonLabel>Tab 1</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            {/* CHANGE: Update icon. */}
+            {/* CHANGE: Update icon */}
             <IonIcon aria-hidden="true" icon={images} />
-            {/* CHANGE: Update label. */}
+            {/* CHANGE: Update label */}
             <IonLabel>Photos</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
