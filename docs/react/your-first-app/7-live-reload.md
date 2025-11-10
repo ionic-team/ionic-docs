@@ -48,7 +48,7 @@ import { isPlatform } from '@ionic/react';
 import { Capacitor } from '@capacitor/core';
 
 export function usePhotoGallery() {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add `deletePhoto()` method
   const deletePhoto = async (photo: UserPhoto) => {
@@ -85,7 +85,7 @@ export interface UserPhoto {
 Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically closes the action sheet when assigned the "cancel" role.
 
 ```tsx
-// Same old code from before.
+// ...existing code...
 // change: Add React import
 import { useState } from 'react';
 // CHANGE: Add `UserPhoto` type import.
@@ -100,7 +100,7 @@ const Tab2: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        {/* Same old code from before. */}
+        {/* ...existing code... */}
 
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
           <IonFabButton onClick={() => addNewToGallery()}>
@@ -167,7 +167,7 @@ Add a click handler to the `<IonImg>` element. When the app user taps on a photo
       </IonRow>
     </IonGrid>
 
-    {/* Same old code from before. */}
+    {/* ...existing code... */}
   </IonContent>
 </IonPage>
 ```

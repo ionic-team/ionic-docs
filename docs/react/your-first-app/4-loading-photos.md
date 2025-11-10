@@ -27,7 +27,7 @@ export function usePhotoGallery() {
   // CHANGE: Add a key for photo storage
   const PHOTO_STORAGE = 'photos';
 
-  // Same old code from before.
+  // ...existing code...
 }
 ```
 
@@ -35,7 +35,7 @@ Next, at the end of the `addNewToGallery()` method, add a call to the `Preferenc
 
 ```ts
 const addNewToGallery = async () => {
-  // Same old code from before.
+  // ...existing code...
 
   // CHANGE: Add method to cache all photo data for future retrieval
   Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
@@ -61,7 +61,7 @@ export function usePhotoGallery() {
     loadSaved();
   }, []);
 
-  // Same old code from before.
+  // ...existing code...
 }
 ```
 
@@ -96,7 +96,7 @@ export function usePhotoGallery() {
     loadSaved();
   }, []);
 
-  // Same old code from before.
+  // ...existing code...
 }
 ```
 

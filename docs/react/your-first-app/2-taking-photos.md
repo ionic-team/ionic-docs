@@ -118,7 +118,7 @@ Outside of the `usePhotoGallery()` method definition (the very bottom of the fil
 
 ```ts
 export function usePhotoGallery {
-  // Same old code from before.
+  // ...existing code...
 }
 
 // CHANGE: Add the `UserPhoto` interface
@@ -135,7 +135,7 @@ export function usePhotoGallery {
   // CHANGE: Add the `photos` array
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
-  // Same old code from before.
+  // ...existing code...
 }
 ```
 
