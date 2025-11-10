@@ -71,7 +71,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Next, create an Ionic React app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
-ionic start photo-gallery tabs --type=react --capacitor
+ionic start photo-gallery tabs --type=react
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
