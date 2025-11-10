@@ -11,8 +11,6 @@ sidebar_label: Build Your First App
   />
 </head>
 
-# Your First Ionic App: React
-
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
 Here’s the finished app running on all 3 platforms:

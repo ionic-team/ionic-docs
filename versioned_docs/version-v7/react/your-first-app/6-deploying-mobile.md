@@ -11,8 +11,6 @@ sidebar_label: Deploying Mobile
   />
 </head>
 
-# Deploying to iOS and Android
-
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 
 :::note
