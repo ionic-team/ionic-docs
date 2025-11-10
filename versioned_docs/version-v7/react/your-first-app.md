@@ -173,12 +173,14 @@ export default Tab2;
 <IonPage>
   <IonHeader>
     <IonToolbar>
+      {/* CHANGE: Update title */}
       <IonTitle>Photo Gallery</IonTitle>
     </IonToolbar>
   </IonHeader>
   <IonContent>
     <IonHeader collapse="condense">
       <IonToolbar>
+        {/* CHANGE: Update title */}
         <IonTitle size="large">Photo Gallery</IonTitle>
       </IonToolbar>
     </IonHeader>
