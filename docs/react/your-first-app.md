@@ -292,6 +292,8 @@ const App: React.FC = () => (
     </IonReactRouter>
   </IonApp>
 );
+
+export default App;
 ```
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
