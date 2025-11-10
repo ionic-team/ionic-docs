@@ -20,7 +20,7 @@
   </ion-header>
   <ion-content class="ion-padding">
     <h2>Select an overlay type:</h2>
-    <ion-radio-group [(ngModel)]="menuType" #ctrl="ngModel">
+    <ion-radio-group [(ngModel)]="menuType">
       <ion-item>
         <ion-label>
           <code>overlay</code>
