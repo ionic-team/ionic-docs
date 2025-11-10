@@ -25,8 +25,8 @@
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { nextTick } from 'vue';
+<script setup lang="ts">
+  import { nextTick, ref } from 'vue';
   import {
     IonNav,
     IonPage,
@@ -40,21 +40,20 @@
   } from '@ionic/vue';
   import PageOne from './PageOne.vue';
 
-  export default {
-    components: { IonNav, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonModal, IonButtons },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-      async onWillPresent() {
-        // Need to wait two ticks before the ref is set
-        await nextTick();
-        await nextTick();
+  const modal = ref();
+  const nav = ref();
 
-        const nav = this.$refs.nav.$el;
-        nav.setRoot(PageOne, { nav });
-      },
-    },
+  const dismiss = () => {
+    modal.value.$el.dismiss();
+  };
+
+  const onWillPresent = async () => {
+    // Need to wait two ticks before the ref is set
+    await nextTick();
+    await nextTick();
+
+    const navEl = nav.value.$el;
+    navEl.setRoot(PageOne, { nav: navEl });
   };
 </script>
 ```

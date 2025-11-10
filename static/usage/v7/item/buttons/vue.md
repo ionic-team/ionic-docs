@@ -36,16 +36,8 @@
   </ion-item>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonIcon, IonItem, IonLabel } from '@ionic/vue';
   import { home, navigate, star } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonIcon, IonItem, IonLabel },
-    setup() {
-      return { home, navigate, star };
-    },
-  });
 </script>
 ```

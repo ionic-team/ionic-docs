@@ -3,17 +3,10 @@
   <ion-nav :root="component"></ion-nav>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonNav } from '@ionic/vue';
   import PageOne from './PageOne.vue';
 
-  export default {
-    components: { IonNav },
-    data() {
-      return {
-        component: PageOne,
-      };
-    },
-  };
+  const component = PageOne;
 </script>
 ```

@@ -10,16 +10,8 @@
   </ion-button>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonIcon } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { heart } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: { IonButton, IonIcon },
-    setup() {
-      return { heart };
-    },
-  });
 </script>
 ```

@@ -1,12 +1,13 @@
 import pkg from 'fs-extra';
 import fetch from 'node-fetch';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import { compare } from 'semver';
-import { URL } from 'url';
+import { URL, fileURLToPath } from 'url';
 
 import { renderMarkdown } from './utils.mjs';
 
-const __dirname = new URL('.', import.meta.url).pathname;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/ReleaseNotes/release-notes.json');
 
 // export default {

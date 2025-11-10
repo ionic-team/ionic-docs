@@ -18,7 +18,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import {
     IonContent,
     IonInfiniteScroll,
@@ -27,29 +27,13 @@
     IonItem,
     IonAvatar,
     IonLabel,
-    InfiniteScrollCustomEvent,
   } from '@ionic/vue';
-  import { defineComponent, reactive } from 'vue';
+  import { reactive } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonInfiniteScroll,
-      IonInfiniteScrollContent,
-      IonList,
-      IonItem,
-      IonAvatar,
-      IonLabel,
-    },
-    setup() {
-      const items = reactive([]);
+  const items = reactive([]);
 
-      for (let i = 1; i < 51; i++) {
-        items.push(`Item ${i}`);
-      }
-
-      return { items };
-    },
-  });
+  for (let i = 1; i < 51; i++) {
+    items.push(`Item ${i}`);
+  }
 </script>
 ```

@@ -9,58 +9,51 @@
   ></ion-picker>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonPicker } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonPicker },
-    setup() {
-      const isOpen = ref(false);
+  const isOpen = ref(false);
 
-      const pickerColumns = [
+  const pickerColumns = [
+    {
+      name: 'languages',
+      options: [
         {
-          name: 'languages',
-          options: [
-            {
-              text: 'JavaScript',
-              value: 'javascript',
-            },
-            {
-              text: 'TypeScript',
-              value: 'typescript',
-            },
-            {
-              text: 'Rust',
-              value: 'rust',
-            },
-            {
-              text: 'C#',
-              value: 'c#',
-            },
-          ],
-        },
-      ];
-
-      const pickerButtons = [
-        {
-          text: 'Cancel',
-          role: 'cancel',
+          text: 'JavaScript',
+          value: 'javascript',
         },
         {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`You selected: ${value.languages.value}`);
-          },
+          text: 'TypeScript',
+          value: 'typescript',
         },
-      ];
-
-      const setOpen = (state: boolean) => {
-        isOpen.value = state;
-      };
-
-      return { pickerColumns, pickerButtons, isOpen, setOpen };
+        {
+          text: 'Rust',
+          value: 'rust',
+        },
+        {
+          text: 'C#',
+          value: 'c#',
+        },
+      ],
     },
-  });
+  ];
+
+  const pickerButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+    },
+    {
+      text: 'Confirm',
+      handler: (value) => {
+        console.log(`You selected: ${value.languages.value}`);
+      },
+    },
+  ];
+
+  const setOpen = (state: boolean) => {
+    isOpen.value = state;
+  };
 </script>
 ```
