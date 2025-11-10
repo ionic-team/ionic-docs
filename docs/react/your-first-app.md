@@ -249,7 +249,7 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
-/* Ionic styles are not shown in this example to keep it brief but will be included in the Ionic package downloaded for your app. Do not remove them. */
+/* ...existing Ionic styles... */
 
 const App: React.FC = () => (
   <IonApp>
