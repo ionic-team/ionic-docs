@@ -120,12 +120,6 @@ const Tab2: React.FC = () => {
       <IonContent>
         {/* ...existing code... */}
 
-        <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton onClick={() => addNewToGallery()}>
-            <IonIcon icon={camera}></IonIcon>
-          </IonFabButton>
-        </IonFab>
-
         {/* CHANGE: Add action sheet for deleting photos */}
         <IonActionSheet
           isOpen={!!photoToDelete}
