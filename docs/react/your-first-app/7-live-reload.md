@@ -143,16 +143,33 @@ const Tab2: React.FC = () => {
 Add a click handler to the `<IonImg>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```tsx
-<IonGrid>
-  <IonRow>
-    {photos.map((photo) => (
-      <IonCol size="6" key={photo.filepath}>
-        {/* CHANGE: Add a click event listener to each image */}
-        <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
-      </IonCol>
-    ))}
-  </IonRow>
-</IonGrid>
+<IonPage>
+  <IonHeader>
+    <IonToolbar>
+      <IonTitle>Photo Gallery</IonTitle>
+    </IonToolbar>
+  </IonHeader>
+  <IonContent fullscreen>
+    <IonHeader collapse="condense">
+      <IonToolbar>
+        <IonTitle size="large">Photo Gallery</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+
+    <IonGrid>
+      <IonRow>
+        {photos.map((photo) => (
+          <IonCol size="6" key={photo.filepath}>
+            {/* CHANGE: Add a click event listener to each image. */}
+            <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
+          </IonCol>
+        ))}
+      </IonRow>
+    </IonGrid>
+
+    {/* Same old code from before. */}
+  </IonContent>
+</IonPage>
 ```
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
