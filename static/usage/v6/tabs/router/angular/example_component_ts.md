@@ -1,5 +1,5 @@
 ```ts
-import { Component } from '@angular/core';
+import { Component, EnvironmentInjector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
@@ -13,7 +13,7 @@ import { playCircle, library, radio, search } from 'ionicons/icons';
   standalone: true,
 })
 export class ExampleComponent {
-  constructor() {
+  constructor(public environmentInjector: EnvironmentInjector) {
     /**
      * Any icons you want to use in your application
      * can be registered in app.component.ts and then
