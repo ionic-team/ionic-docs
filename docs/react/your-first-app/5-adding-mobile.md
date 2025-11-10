@@ -48,10 +48,10 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
   // CHANGE: Add platform check.
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
-    const file = await Filesystem.readFile({
+    const readFile = await Filesystem.readFile({
       path: photo.path!,
     });
-    base64Data = file.data;
+    base64Data = readFile.data;
   } else {
     // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
@@ -95,11 +95,11 @@ const loadSaved = async () => {
   // If running on the web...
   if (!isPlatform('hybrid')) {
     for (const photo of photosInPreferences) {
-      const file = await Filesystem.readFile({
+      const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
-      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 
@@ -132,11 +132,11 @@ export function usePhotoGallery() {
       // If running on the web...
       if (!isPlatform('hybrid')) {
         for (const photo of photosInPreferences) {
-          const file = await Filesystem.readFile({
+          const readFile = await Filesystem.readFile({
             path: photo.filepath,
             directory: Directory.Data,
           });
-          photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+          photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
         }
       }
 
@@ -168,10 +168,10 @@ export function usePhotoGallery() {
     let base64Data: string | Blob;
     // "hybrid" will detect mobile - iOS or Android
     if (isPlatform('hybrid')) {
-      const file = await Filesystem.readFile({
+      const readFile = await Filesystem.readFile({
         path: photo.path!,
       });
-      base64Data = file.data;
+      base64Data = readFile.data;
     } else {
       // Fetch the photo, read as a blob, then convert to base64 format
       const response = await fetch(photo.webPath!);
