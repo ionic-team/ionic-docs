@@ -117,8 +117,33 @@ const Tab2: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent>
-        {/* ...existing code... */}
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Photo Gallery</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Photo Gallery</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
+        <IonGrid>
+          <IonRow>
+            {photos.map((photo) => (
+              <IonCol size="6" key={photo.filepath}>
+                <IonImg src={photo.webviewPath} />
+              </IonCol>
+            ))}
+          </IonRow>
+        </IonGrid>
+
+        <IonFab vertical="bottom" horizontal="center" slot="fixed">
+          <IonFabButton onClick={() => addNewToGallery()}>
+            <IonIcon icon={camera}></IonIcon>
+          </IonFabButton>
+        </IonFab>
 
         {/* CHANGE: Add action sheet for deleting photos */}
         <IonActionSheet
@@ -157,33 +182,16 @@ export default Tab2;
 Add a click handler to the `<IonImg>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```tsx
-<IonPage>
-  <IonHeader>
-    <IonToolbar>
-      <IonTitle>Photo Gallery</IonTitle>
-    </IonToolbar>
-  </IonHeader>
-  <IonContent fullscreen>
-    <IonHeader collapse="condense">
-      <IonToolbar>
-        <IonTitle size="large">Photo Gallery</IonTitle>
-      </IonToolbar>
-    </IonHeader>
-
-    <IonGrid>
-      <IonRow>
-        {photos.map((photo) => (
-          <IonCol size="6" key={photo.filepath}>
-            {/* CHANGE: Add a click event listener to each image. */}
-            <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
-          </IonCol>
-        ))}
-      </IonRow>
-    </IonGrid>
-
-    {/* ...existing code... */}
-  </IonContent>
-</IonPage>
+<IonGrid>
+  <IonRow>
+    {photos.map((photo) => (
+      <IonCol size="6" key={photo.filepath}>
+        {/* CHANGE: Add a click event listener to each image. */}
+        <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
+      </IonCol>
+    ))}
+  </IonRow>
+</IonGrid>
 ```
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
