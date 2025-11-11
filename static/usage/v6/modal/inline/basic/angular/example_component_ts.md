@@ -1,11 +1,14 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { IonModal } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { IonicModule, IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [FormsModule, IonicModule],
+  standalone: true,
 })
 export class ExampleComponent {
   @ViewChild(IonModal) modal: IonModal;
