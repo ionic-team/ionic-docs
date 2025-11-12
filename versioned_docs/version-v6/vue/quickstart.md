@@ -53,28 +53,29 @@ After running `ionic serve`, your project will open in the browser.
 
 ## Explore the Project Structure
 
-Your new app's `src` directory will look like this:
+Your new app's directory will look like this:
 
 ```shell
-├── App.vue
-├── main.ts
-├── router
-│   └── index.ts
-└── views
-    └── HomePage.vue
+└── src/
+    ├── App.vue
+    ├── main.ts
+    ├── router
+    │   └── index.ts
+    └── views
+       └── HomePage.vue
 ```
 
 :::info
-All file paths in the examples below are relative to the `src/` directory.
+All file paths in the examples below are relative to the project root directory.
 :::
 
 Let's walk through these files to understand the app's structure.
 
 ## View the App Component
 
-The root of your app is defined in `App.vue`:
+The root of your app is defined in `src/App.vue`:
 
-```tsx
+```vue title="src/App.vue"
 <template>
   <ion-app>
     <ion-router-outlet />
@@ -90,9 +91,9 @@ This sets up the root of your application, using Ionic's `ion-app` and `ion-rout
 
 ## View Routes
 
-Routes are defined in `router/index.ts`:
+Routes are defined in `src/router/index.ts`:
 
-```ts
+```ts title="src/router/index.ts"
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import HomePage from '../views/HomePage.vue';
@@ -121,9 +122,9 @@ When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `views/HomePage.vue`, imports the Ionic components and defines the page template:
+The Home page component, defined in `src/views/HomePage.vue`, imports the Ionic components and defines the page template:
 
-```html
+```vue title="src/views/HomePage.vue"
 <template>
   <ion-page>
     <ion-header :translucent="true">
@@ -169,7 +170,7 @@ For detailed information about Ionic layout components, see the [Header](/docs/a
 
 You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) at the end of the `ion-content`:
 
-```html
+```vue title="src/views/HomePage.vue"
 <ion-content>
   <!-- existing content -->
 
@@ -179,7 +180,7 @@ You can enhance your Home page with more Ionic UI components. For example, add a
 
 Then, import the `IonButton` component in the `<script>` tag:
 
-```html
+```vue title="src/views/HomePage.vue"
 <script setup lang="ts">
   import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
@@ -187,9 +188,9 @@ Then, import the `IonButton` component in the `<script>` tag:
 
 ## Add a New Page
 
-Create a new page at `views/NewPage.vue`:
+Create a new page at `src/views/NewPage.vue`:
 
-```html
+```vue title="src/views/NewPage.vue"
 <template>
   <ion-page>
     <ion-header :translucent="true">
@@ -218,23 +219,21 @@ Create a new page at `views/NewPage.vue`:
 
 This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
-:::warning Important
+:::warning
 When creating your own pages, always use `ion-page` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
 :::
 
 ## Navigate to the New Page
 
-To navigate to the new page, create a route for it by first importing it at the top of `router/index.ts` after the `HomePage` import:
+To navigate to the new page, create a route for it by first importing it at the top of `src/router/index.ts` after the `HomePage` import:
 
-To navigate to a new page, add the route to `router/index.ts`
-
-```tsx
+```ts title="src/router/index.ts"
 import NewPage from '../views/NewPage.vue';
 ```
 
 Then, add its route in the `routes` array:
 
-```tsx
+```ts title="src/router/index.ts"
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -253,9 +252,9 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Once that is done, update the button in `views/HomePage.vue`:
+Once that is done, update the button in `src/views/HomePage.vue`:
 
-```tsx
+```vue title="src/views/HomePage.vue"
 <ion-button router-link="/new">Navigate</ion-button>
 ```
 
@@ -267,9 +266,9 @@ Navigating can also be performed programmatically using Vue Router, and routes c
 
 Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `ion-icon` component.
 
-Update the imports in `views/NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
+Update the imports in `src/views/NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
-```html
+```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
   import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { heart, logoIonic } from 'ionicons/icons';
@@ -278,7 +277,7 @@ Update the imports in `views/NewPage.vue` to import `IonIcon` and the `heart` an
 
 Then, include them inside of the `ion-content`:
 
-```tsx
+```vue title="src/views/NewPage.vue"
 <ion-icon :icon="heart"></ion-icon>
 <ion-icon :icon="logoIonic"></ion-icon>
 ```
@@ -291,9 +290,9 @@ For more information, see the [Icon documentation](/docs/api/icon) and the [Ioni
 
 Let's add a button that can scroll the content area to the bottom.
 
-Update `views/NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
+Update `src/views/NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
 
-```html
+```vue title="src/views/NewPage.vue"
 <ion-content ref="content">
   <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
 
@@ -306,7 +305,7 @@ Update `views/NewPage.vue` to include a ref on `ion-content` and a button and so
 
 In the script section, add the new component imports and define the `scrollToBottom` function:
 
-```html
+```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
   import {
     IonBackButton,
@@ -371,15 +370,15 @@ Ionic Vue projects are created with TypeScript by default, but you can easily co
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
-2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `router/index.ts`, `main.ts`, and files in the `tests` directory.
+2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, and files in the `tests` directory.
 
 3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
 4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: 'off'` from `.eslintrc.js`.
 
-5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `router/index.js`.
+5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/HomePage.vue`.
+6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
 7. Delete `tsconfig.json` and `vite-env.d.ts`.
 
