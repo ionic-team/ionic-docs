@@ -83,6 +83,7 @@ module.exports = {
             'angular/your-first-app/distribute',
           ],
         },
+        'angular/add-to-existing',
         'angular/build-options',
         'angular/lifecycle',
         'angular/navigation',
