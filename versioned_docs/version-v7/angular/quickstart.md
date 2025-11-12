@@ -55,31 +55,33 @@ After running `ionic serve`, your project will open in the browser.
 
 ## Explore the Project Structure
 
-Your new app's `src/app` directory will look like this:
+Your new app's directory will look like this:
 
 ```shell
-├── app.component.html
-├── app.component.scss
-├── app.component.ts
-├── app.routes.ts
-└── home/
-    ├── home.page.html
-    ├── home.page.scss
-    ├── home.page.spec.ts
-    └── home.page.ts
+└── src/
+    └── app
+        ├── app.component.html
+        ├── app.component.scss
+        ├── app.component.ts
+        ├── app.routes.ts
+        └── home/
+            ├── home.page.html
+            ├── home.page.scss
+            ├── home.page.spec.ts
+            └── home.page.ts
 ```
 
 :::info
-All file paths in the examples below are relative to the `src/app/` directory.
+All file paths in the examples below are relative to the project root directory.
 :::
 
 Let's walk through these files to understand the app's structure.
 
 ## View the App Component
 
-The root of your app is defined in `app.component.ts`:
+The root of your app is defined in `src/app/app.component.ts`:
 
-```ts
+```ts title="src/app/app.component.ts"
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
@@ -93,9 +95,9 @@ export class AppComponent {
 }
 ```
 
-And its template in `app.component.html`:
+And its template in `src/app/app.component.html`:
 
-```html
+```html title="src/app/app.component.html"
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
@@ -105,9 +107,9 @@ This sets up the root of your application, using Ionic's `ion-app` and `ion-rout
 
 ## View Routes
 
-Routes are defined in `app.routes.ts`:
+Routes are defined in `src/app/app.routes.ts`:
 
-```ts
+```ts title="src/app/app.routes.ts"
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -127,9 +129,9 @@ When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `home/home.page.ts`, imports the Ionic components it uses:
+The Home page component, defined in `src/app/home/home.page.ts`, imports the Ionic components it uses:
 
-```ts
+```ts title="src/app/home/home.page.ts"
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 
@@ -144,9 +146,9 @@ export class HomePage {
 }
 ```
 
-And the template, in the `home.page.html` file, uses those components:
+And the template, in the `src/app/home/home.page.html` file, uses those components:
 
-```html
+```html title="src/app/home/home.page.html"
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title> Blank </ion-title>
@@ -180,7 +182,7 @@ For detailed information about Ionic layout components, see the [Header](/docs/a
 
 You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) at the end of the `ion-content`:
 
-```html
+```html title="src/app/home/home.page.html"
 <ion-content>
   <!-- existing content -->
 
@@ -188,9 +190,9 @@ You can enhance your Home page with more Ionic UI components. For example, add a
 </ion-content>
 ```
 
-Then, import the `IonButton` component in `home.page.ts`:
+Then, import the `IonButton` component in `src/app/home/home.page.ts`:
 
-```ts
+```ts title="src/app/home/home.page.ts"
 import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
@@ -207,11 +209,11 @@ To add a new page, generate it with the CLI:
 ionic generate page new
 ```
 
-A route will be automatically added to `app.routes.ts`.
+A route will be automatically added to `src/app/app.routes.ts`.
 
-In your `new/new.page.html`, you can add a [Back Button](/docs/api/back-button) to the [Toolbar](/docs/api/toolbar):
+In `src/app/new/new.page.html`, you can add a [Back Button](/docs/api/back-button) to the [Toolbar](/docs/api/toolbar):
 
-```html
+```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -222,9 +224,9 @@ In your `new/new.page.html`, you can add a [Back Button](/docs/api/back-button) 
 </ion-header>
 ```
 
-And import `IonBackButton` and `IonButtons` in `new/new.page.ts`:
+And import `IonBackButton` and `IonButtons` in `src/app/new/new.page.ts`:
 
-```ts
+```ts title="src/app/new/new.page.ts"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
@@ -237,15 +239,15 @@ The `ion-back-button` will automatically handle navigation back to the previous 
 
 ## Navigate to the New Page
 
-To navigate to the new page, update the button in `home/home.page.html`:
+To navigate to the new page, update the button in `src/app/home/home.page.html`:
 
-```html
+```html title="src/app/home/home.page.html"
 <ion-button [routerLink]="['/new']">Navigate</ion-button>
 ```
 
-Then, import `RouterLink` in `home/home.page.ts`:
+Then, import `RouterLink` in `src/app/home/home.page.ts`:
 
-```ts
+```ts title="src/app/home/home.page.ts"
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -260,9 +262,9 @@ Navigating can also be performed using Angular's Router service. See the [Angula
 
 ## Add Icons to the New Page
 
-Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `new/new.page.html`:
+Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `src/app/new/new.page.html`:
 
-```html
+```html title="src/app/new/new.page.html"
 <ion-content>
   <!-- existing content -->
 
@@ -271,9 +273,9 @@ Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. Y
 </ion-content>
 ```
 
-You'll also need to import and register these icons in `new/new.page.ts`:
+You'll also need to import and register these icons in `src/app/new/new.page.ts`:
 
-```ts
+```ts title="src/app/new/new.page.ts"
 // ...existing imports...
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
@@ -287,7 +289,7 @@ import { heart, logoIonic } from 'ionicons/icons';
 
 Then, update the constructor of the page to use `addIcons`:
 
-```ts
+```ts title="src/app/new/new.page.ts"
 export class NewPage implements OnInit {
   constructor() {
     addIcons({ heart, logoIonic });
@@ -297,7 +299,7 @@ export class NewPage implements OnInit {
 }
 ```
 
-Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
+Alternatively, you can register icons in `src/app/app.component.ts` to use them throughout your app.
 
 For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
@@ -305,9 +307,9 @@ For more information, see the [Icon documentation](/docs/api/icon) and the [Ioni
 
 Let's add a button that can scroll the content area to the bottom.
 
-Update the `ion-content` in your `new/new.page.html` to include a button and some items after the existing icons:
+Update the `ion-content` in your `src/app/new/new.page.html` to include a button and some items after the existing icons:
 
-```html
+```html title="src/app/new/new.page.html"
 <ion-content [fullscreen]="true" #content>
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -331,7 +333,7 @@ Update the `ion-content` in your `new/new.page.html` to include a button and som
 
 In the component, add the `ViewChild` import, the new component imports and define the `scrollToBottom` function:
 
-```ts
+```ts title="src/app/new/new.page.ts"
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   IonBackButton,
