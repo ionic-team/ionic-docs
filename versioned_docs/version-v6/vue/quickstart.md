@@ -154,7 +154,7 @@ The Home page component, defined in `src/views/HomePage.vue`, imports the Ionic 
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <!-- ...styles... -->
@@ -182,7 +182,7 @@ Then, import the `IonButton` component in the `<script>` tag:
 
 ```vue title="src/views/HomePage.vue"
 <script setup lang="ts">
-  import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -213,7 +213,7 @@ Create a new page at `src/views/NewPage.vue`:
 </template>
 
 <script setup lang="ts">
-  import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -270,8 +270,8 @@ Update the imports in `src/views/NewPage.vue` to import `IonIcon` and the `heart
 
 ```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
-  import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { heart, logoIonic } from 'ionicons/icons';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { heart, logoIonic } from 'ionicons/icons';
 </script>
 ```
 
@@ -307,27 +307,27 @@ In the script section, add the new component imports and define the `scrollToBot
 
 ```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
-  import {
-    IonBackButton,
-    IonButtons,
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { heart, logoIonic } from 'ionicons/icons';
-  import { ref } from 'vue';
+import {
+  IonBackButton,
+  IonButtons,
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import { heart, logoIonic } from 'ionicons/icons';
+import { ref } from 'vue';
 
-  const content = ref();
+const content = ref();
 
-  const scrollToBottom = () => {
-    content.value.$el.scrollToBottom(300);
-  };
+const scrollToBottom = () => {
+  content.value.$el.scrollToBottom(300);
+};
 </script>
 ```
 
