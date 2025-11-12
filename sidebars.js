@@ -174,6 +174,7 @@ module.exports = {
             'vue/your-first-app/distribute',
           ],
         },
+        'vue/add-to-existing',
         'vue/build-options',
         'vue/lifecycle',
         'vue/navigation',
