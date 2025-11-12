@@ -1,7 +1,10 @@
 ---
-title: Add to Existing React App
-sidebar_label: Add to Existing React App
+title: Add to Existing React Project
+sidebar_label: Add to Existing
 ---
+
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 <head>
   <title>Add Ionic React to Existing Project: Integration Guide</title>
@@ -11,69 +14,98 @@ sidebar_label: Add to Existing React App
   />
 </head>
 
-This guide covers how to add Ionic React to an existing React project.
+This guide covers how to add Ionic React to an existing React project. If you're looking to start a new project from scratch, check out the [Ionic React Quickstart](/docs/react/quickstart.md) guide. For an overview of how Ionic React works with React, including version support and tooling, check out the [Ionic React Overview](/docs/react/overview.md).
 
-### Using Individual Ionic Components
+:::tip
 
-Ionic React has around 100 components that you can begin using in your app immediately to help make it more mobile-friendly.
+This guide uses TypeScript examples. If you're using JavaScript, the setup process is the same, but you'll use `.jsx` file extensions instead of `.tsx`.
 
-To get started with using components install the `@ionic/react` package:
+:::
+
+## Setup
+
+Follow these steps to add Ionic React to your existing React project:
+
+#### 1. Install the Package
 
 ```bash
-npm i @ionic/react
+npm install @ionic/react
 ```
 
-Import the stylesheets from Ionic in your main app file:
+#### 2. Configure Ionic React
 
-```tsx title="App.tsx"
-import '@ionic/react/css/core.css';
-```
+Update `src/App.tsx` to include `setupIonicReact` and import the required Ionic Framework stylesheets:
 
-Add the `setupIonicReact` function to your app:
+```tsx title="src/App.tsx"
+// ...existing imports...
 
-```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
+
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
 
 setupIonicReact();
 
-const App = () => {
-  return (
-    ...
-  );
-}
+// ...existing app function and export...
+```
+
+These stylesheets are required for Ionic Framework components to render properly. `setupIonicReact` is a function that sets up the Ionic React components to work with your app. It is required to be called before using any of the Ionic React components.
+
+## Using Individual Components
+
+After completing the setup above, you can start using Ionic components in your existing React app. Here's an example of how to use them:
+
+Update `src/App.tsx` to the following:
+
+```tsx title="src/App.tsx"
+import { IonButton, IonDatetime, setupIonicReact } from '@ionic/react';
+import './App.css';
+
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+
+setupIonicReact();
+
+const App: React.FC = () => (
+  <>
+    <IonButton>Button</IonButton>
+    <IonDatetime></IonDatetime>
+  </>
+);
 
 export default App;
 ```
 
-:::note
+Visit the [components](/docs/components.md) page for all of the available Ionic components.
 
-`setupIonicReact` is a function that will set up the Ionic React components to work with your app. It is required to be called before using any of the Ionic React components.
+:::tip
+
+If your existing React app imports a global stylesheet (such as `index.css`) in `src/main.tsx`, you may want to remove it or update any styles that conflict with Ionic Framework components. Ionic Framework includes its own CSS reset and normalization, which may conflict with existing global styles.
 
 :::
 
-You can import any of the components and begin to use them right away. Here we are importing the `IonButton` and `IonDatetime` components and using them anywhere in our app:
+## Using Ionic Pages
 
-```tsx
-import React from 'react';
-import { IonButton, IonDatetime } from '@ionic/react';
+If you want to use Ionic pages with full navigation and page transitions, follow these additional setup steps.
 
-const MyComponent = () => {
-  return (
-    <>
-      <IonDatetime></IonDatetime>
-      <IonButton fill="clear">Start</IonButton>
-    </>
-  );
-};
-```
+#### 1. Add Additional Ionic Framework Stylesheets
 
-### Using Ionic Pages
+Update the imported stylesheets in `src/App.tsx`:
 
-If you want to convert part of your app and give it the whole Ionic experience, there are a few additional steps to take to get this setup.
+```tsx title="src/App.tsx"
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
 
-First, import some additional CSS files that help set up the overall structure of the page and some utility helpers:
-
-```js
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
@@ -88,70 +120,239 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 ```
 
-If you are using another CSS framework (like Bootstrap), you might want to isolate the Ionic pages away from them. This will help to ensure there aren't any CSS conflicts between the libraries.
+These stylesheets set up the overall page structure and provide [CSS utilities](/docs/layout/css-utilities.md) for faster development. Some stylesheets are optional. For details on which stylesheets are required, check out [Global Stylesheets](/docs/layout/global-stylesheets.md).
 
-Next, install the `@ionic/react-router` library:
+#### 2. Set up Theming
 
-```bash
-npm i @ionic/react-router
+Create a `src/theme/variables.css` file with the following content:
+
+```css title="src/theme/variables.css"
+/* For information on how to create your own theme, please refer to:
+http://ionicframework.com/docs/theming/ */
 ```
 
-The Ionic React Router library is a small wrapper around the popular React Router library and helps provide the functionality we need for native-like page transitions. The Ionic React Router library is compatible with v5 of React Router.
+Then, import the file and the dark palette stylesheet in `src/App.tsx`:
 
-The main Ionic page will need a couple of base components. First, use a `IonApp` component (from `@ionic/react`) as the root component, and then use `IonReactRouter` (from `@ionic/react-router`).
+```tsx title="src/App.tsx"
+// ...existing imports...
 
-`IonApp` sets up our main container, with the necessary styling needed for our structural components. `IonReactRouter` is a small wrapper for React Routers `BrowserRouter` and should be used in its place.
+// ...existing stylesheets...
 
-Then, wrap all your routes in an `IonRouterOutlet`, which is what manages our Ionic pages.
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please refer to:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
 
-```tsx
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+/* @import '@ionic/react/css/palettes/dark.always.css'; */
+/* @import '@ionic/react/css/palettes/dark.class.css'; */
+import '@ionic/react/css/palettes/dark.system.css';
+
+/* Theme variables */
+import './theme/variables.css';
+
+setupIonicReact();
+
+// ...existing app function and export...
+```
+
+The `variables.css` file can be used to create custom Ionic Framework themes. The `dark.system.css` import enables [dark mode support](/docs/theming/dark-mode.md) for your Ionic app when the system is set to prefer a dark appearance. You can customize the theming behavior by uncommenting different dark palette imports or adding custom CSS variables to `theme/variables.css`.
+
+#### 3. Update the App Component
+
+Update `src/App.tsx` to the following:
+
+```tsx title="src/App.tsx"
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
-...
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
 
-<IonApp>
-  <IonReactRouter>
-    <IonRouterOutlet>
-      <Route path="/" exact component={Home} />
-      <Route path="/about" exact component={About} />
-    </IonRouterOutlet>
-  </IonReactRouter>
-</IonApp>
+/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/display.css';
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please refer to:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import '@ionic/react/css/palettes/dark.always.css'; */
+/* @import '@ionic/react/css/palettes/dark.class.css'; */
+import '@ionic/react/css/palettes/dark.system.css';
+
+/* Theme variables */
+import './theme/variables.css';
+
+setupIonicReact();
+
+const App = () => {
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>{/* Routes will be added here */}</IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
+
+export default App;
 ```
 
-Now you can setup Ionic pages like so:
+#### 4. Create a Home Page
 
-```tsx
-<IonPage>
-  <IonHeader>
-    <IonToolbar>
-      <IonTitle>My Page</IonTitle>
-    </IonToolbar>
-  </IonHeader>
-  <IonContent>
-    <IonDatetime></IonDatetime>
-    <IonButton fill="clear">Start</IonButton>
-  </IonContent>
-</IonPage>
+Create a new file at `src/pages/Home.tsx` with the following:
+
+```tsx title="src/pages/Home.tsx"
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+
+import './Home.css';
+
+const Home = () => {
+  return (
+    <IonPage>
+      <IonHeader translucent={true}>
+        <IonToolbar>
+          <IonTitle>Home</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+
+      <IonContent fullscreen={true}>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Home</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
+        <div id="container">
+          <strong>Ready to create an app?</strong>
+          <p>
+            Start with Ionic{' '}
+            <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">
+              UI Components
+            </a>
+          </p>
+        </div>
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Home;
 ```
 
-:::note
+Then, create `src/pages/Home.css`:
 
-`IonPage` is important to have as the base component for your "Ionic" pages. `IonPage` is the element Ionic performs page transitions on.
+```css title="src/pages/Home.css"
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+```
+
+#### 5. Set up Routing
+
+:::important
+
+Ionic React Router currently only supports React Router v5. You must install the following specific versions of the router packages to set up routing with Ionic React.
 
 :::
 
-For more information on routing and navigation in Ionic React, see [here](/docs/react/navigation).
+Install the router packages:
 
-### Customize the Theme
+```bash
+npm install @ionic/react-router react-router@5 react-router-dom@5
+npm install @types/react-router-dom --save-dev
+```
 
-To customize the look and feel of the components, Ionic has CSS variables you can [override](https://ionicframework.com/docs/theming/colors#modifying-colors) to provide a theme for your components. Set these in your main CSS file.
+Then, update `src/App.tsx` to add the routes for the Home page:
 
-For more info on theming your Ionic app, see the guide [here](/docs/theming/themes).
+```tsx title="src/App.tsx"
+import { Redirect, Route } from 'react-router-dom';
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import Home from './pages/Home';
 
-### Wrapping up
+// ...existing Ionic Framework stylesheet imports...
 
-Adding Ionic React to an existing React project is fairly simple and can be done in just a few minutes.
+setupIonicReact();
 
-The great thing about using individual components from Ionic React is that you only import the component you need. This makes Ionic React ideal for adding it to existing projects that need to look and work great on mobile devices.
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </IonApp>
+);
+
+export default App;
+```
+
+You're all set! Your Ionic React app is now configured with full Ionic page support. Run `npm run dev` to start your development server and view your app.
+
+## Next Steps
+
+Now that you have Ionic React integrated into your project, check out:
+
+<DocsCards>
+
+<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>Discover how to handle routing and navigation in Ionic React apps using the React Router.</p>
+</DocsCard>
+
+<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+</DocsCard>
+
+<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+</DocsCard>
+
+<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
+</DocsCard>
+
+</DocsCards>
