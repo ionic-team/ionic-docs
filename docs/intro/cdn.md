@@ -116,7 +116,7 @@ It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Fram
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
+With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](/docs/layout/global-stylesheets.md).
 
 ## Ionicons CDN
 
