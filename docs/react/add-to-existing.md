@@ -24,6 +24,12 @@ This guide uses TypeScript examples. If you're using JavaScript, the setup proce
 
 ## Setup
 
+:::info
+
+This guide follows the structure of a React app created with Vite. If you started your React app using a different tool (such as Create React App), your file structure and setup may differ.
+
+:::
+
 Follow these steps to add Ionic React to your existing React project:
 
 #### 1. Install the Package

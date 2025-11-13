@@ -24,6 +24,12 @@ This guide uses `.css` file extensions for stylesheets. If you created your Angu
 
 ## Setup
 
+:::info
+
+This guide follows the structure of an Angular app created with the Angular CLI. If you started your Angular app using a different method, your file structure and setup may differ.
+
+:::
+
 You can add Ionic Angular to your existing Angular project using the Angular CLI's `ng add` feature or by installing it manually.
 
 ### Using ng add

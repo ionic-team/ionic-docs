@@ -24,6 +24,12 @@ This guide uses JavaScript examples. If you're using TypeScript, the setup proce
 
 ## Setup
 
+:::info
+
+This guide follows the structure of a Vue app created with `create-vue` (which uses Vite). If you started your Vue app using a different tool (such as Vue CLI), your file structure and setup may differ.
+
+:::
+
 Follow these steps to add Ionic Vue to your existing Vue project:
 
 #### 1. Install the Packages
