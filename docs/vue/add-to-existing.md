@@ -53,7 +53,11 @@ import '@ionic/vue/css/typography.css';
 createApp(App).use(IonicVue).mount('#app');
 ```
 
-These stylesheets are required for Ionic Framework components to render properly.
+:::info
+
+While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, see [Global Stylesheets](/docs/layout/global-stylesheets.md).
+
+:::
 
 ## Using Individual Components
 

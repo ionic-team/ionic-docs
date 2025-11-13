@@ -54,7 +54,13 @@ setupIonicReact();
 // ...existing app function and export...
 ```
 
-These stylesheets are required for Ionic Framework components to render properly. `setupIonicReact` is a function that sets up the Ionic React components to work with your app. It is required to be called before using any of the Ionic React components.
+`setupIonicReact` is a function that sets up the Ionic React components to work with your app. It is required to be called before using any of the Ionic React components.
+
+:::info
+
+While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, see [Global Stylesheets](/docs/layout/global-stylesheets.md).
+
+:::
 
 ## Using Individual Components
 
