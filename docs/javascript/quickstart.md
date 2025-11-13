@@ -120,7 +120,7 @@ This copies the necessary Ionic files that Capacitor will need to work with lazy
 
 ## Initialize Ionic
 
-Replace the contents of `src/main.js` with the following:
+Replace the contents of `main.js` with the following:
 
 ```js title="src/main.js"
 // Load Ionic
@@ -230,7 +230,7 @@ This creates a custom element called `home-page` that contains the layout for yo
 For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
 :::
 
-Next, add a `<script>` tag before the `src/main.js` import in `index.html` to import the Home page:
+Next, add a `<script>` tag before the `main.js` import in `index.html` to import the Home page:
 
 ```html title="index.html"
 <script type="module">
@@ -246,7 +246,7 @@ At this point your browser should be displaying the Home page.
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) to navigate to another page. Update the `HomePage` component in `src/pages/HomePage.js`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) to navigate to another page. Update the `HomePage` component in `HomePage.js`:
 
 ```js title="src/pages/HomePage.js"
 class HomePage extends HTMLElement {
@@ -314,7 +314,7 @@ Next, update the `<script>` tag which imports the Home page in the `index.html` 
 
 ## Navigate to the New Page
 
-To navigate to the new page, update the button in `src/pages/HomePage.js` to be inside of an `ion-router-link`:
+To navigate to the new page, update the button in `HomePage.js` to be inside of an `ion-router-link`:
 
 ```html title="src/pages/HomePage.js"
 <ion-router-link href="/new">
@@ -332,7 +332,7 @@ Navigating can also be performed programmatically using `document.querySelector(
 
 Ionic JavaScript comes with [Ionicons](https://ionic.io/ionicons/) support. To use icons, you need to import them, register them with `addIcons`, and then use them with the `ion-icon` component.
 
-Add the necessary imports and register the icons in `src/main.js`:
+Add the necessary imports and register the icons in `main.js`:
 
 ```js title="src/main.js"
 // ...Ionic initialization
@@ -346,7 +346,7 @@ addIcons({ heart, logoIonic });
 // ...CSS imports
 ```
 
-Next, update `src/pages/NewPage.js` to include the icons:
+Next, update `NewPage.js` to include the icons:
 
 ```js title="src/pages/NewPage.js"
 class NewPage extends HTMLElement {
@@ -377,7 +377,7 @@ For more information, see the [Icon documentation](/docs/api/icon) and the [Ioni
 
 ## Call Component Methods
 
-Let's add a button that can scroll the content area to the bottom. Update `src/pages/NewPage.js` to include scrollable content and a scroll button:
+Let's add a button that can scroll the content area to the bottom. Update `NewPage.js` to include scrollable content and a scroll button:
 
 ```js title="src/pages/NewPage.js"
 class NewPage extends HTMLElement {

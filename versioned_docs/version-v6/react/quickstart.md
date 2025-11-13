@@ -75,7 +75,7 @@ Let's walk through these files to understand the app's structure.
 
 ## View the App Component
 
-The root of your app is defined in `src/App.tsx`:
+The root of your app is defined in `App.tsx`:
 
 ```tsx title="src/App.tsx"
 import { Redirect, Route } from 'react-router-dom';
@@ -109,7 +109,7 @@ This sets up the root of your application, using Ionic's `IonApp` and `IonReactR
 
 ## View Routes
 
-Routes are defined within the `IonRouterOutlet` in `src/App.tsx`:
+Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
@@ -126,7 +126,7 @@ When you visit the root URL (`/`), the `Home` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `src/pages/Home.tsx`, imports the Ionic components and defines the page template:
+The Home page component, defined in `Home.tsx`, imports the Ionic components and defines the page template:
 
 ```tsx title="src/pages/Home.tsx"
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -164,7 +164,7 @@ For detailed information about Ionic layout components, see the [Header](/docs/a
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent` in `src/pages/Home.tsx`:
+You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent` in `Home.tsx`:
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -192,7 +192,7 @@ export default Home;
 
 ## Add a New Page
 
-Create a new page at `src/pages/New.tsx`:
+Create a new page at `New.tsx`:
 
 ```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -230,7 +230,7 @@ When creating your own pages, always use `IonPage` as the root component. This i
 
 ## Navigate to the New Page
 
-To navigate to the new page, create a route for it by first importing it at the top of `src/App.tsx` after the `Home` import:
+To navigate to the new page, create a route for it by first importing it at the top of `App.tsx` after the `Home` import:
 
 ```tsx title="src/App.tsx"
 import New from './pages/New';
@@ -252,7 +252,7 @@ Then, add its route in `IonRouterOutlet`:
 </IonRouterOutlet>
 ```
 
-Once that is done, update the button in `src/pages/Home.tsx`:
+Once that is done, update the button in `Home.tsx`:
 
 ```tsx title="src/pages/Home.tsx"
 <IonButton routerLink="/new">Navigate</IonButton>
@@ -266,7 +266,7 @@ Navigating can also be performed programmatically using React Router's `history`
 
 Ionic React comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `IonIcon` component.
 
-Update the imports in `src/pages/New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
+Update the imports in `New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
 ```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -288,7 +288,7 @@ For more information, see the [Icon documentation](/docs/api/icon) and the [Ioni
 
 Let's add a button that can scroll the content area to the bottom.
 
-Update `src/pages/New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
+Update `New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
 
 ```tsx title="src/pages/New.tsx"
 <IonContent ref={content}>

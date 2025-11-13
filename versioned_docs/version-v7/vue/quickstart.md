@@ -73,7 +73,7 @@ Let's walk through these files to understand the app's structure.
 
 ## View the App Component
 
-The root of your app is defined in `src/App.vue`:
+The root of your app is defined in `App.vue`:
 
 ```vue title="src/App.vue"
 <template>
@@ -91,7 +91,7 @@ This sets up the root of your application, using Ionic's `ion-app` and `ion-rout
 
 ## View Routes
 
-Routes are defined in `src/router/index.ts`:
+Routes are defined in `router/index.ts`:
 
 ```ts title="src/router/index.ts"
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -122,7 +122,7 @@ When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `src/views/HomePage.vue`, imports the Ionic components and defines the page template:
+The Home page component, defined in `HomePage.vue`, imports the Ionic components and defines the page template:
 
 ```vue title="src/views/HomePage.vue"
 <template>
@@ -188,7 +188,7 @@ import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from 
 
 ## Add a New Page
 
-Create a new page at `src/views/NewPage.vue`:
+Create a new page at `NewPage.vue`:
 
 ```vue title="src/views/NewPage.vue"
 <template>
@@ -225,7 +225,7 @@ When creating your own pages, always use `ion-page` as the root component. This 
 
 ## Navigate to the New Page
 
-To navigate to the new page, create a route for it by first importing it at the top of `src/router/index.ts` after the `HomePage` import:
+To navigate to the new page, create a route for it by first importing it at the top of `router/index.ts` after the `HomePage` import:
 
 ```ts title="src/router/index.ts"
 import NewPage from '../views/NewPage.vue';
@@ -252,7 +252,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Once that is done, update the button in `src/views/HomePage.vue`:
+Once that is done, update the button in `HomePage.vue`:
 
 ```vue title="src/views/HomePage.vue"
 <ion-button router-link="/new">Navigate</ion-button>
@@ -266,7 +266,7 @@ Navigating can also be performed programmatically using Vue Router, and routes c
 
 Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `ion-icon` component.
 
-Update the imports in `src/views/NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
+Update the imports in `NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
 ```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
@@ -290,7 +290,7 @@ For more information, see the [Icon documentation](/docs/api/icon) and the [Ioni
 
 Let's add a button that can scroll the content area to the bottom.
 
-Update `src/views/NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
+Update `NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
 
 ```vue title="src/views/NewPage.vue"
 <ion-content ref="content">
