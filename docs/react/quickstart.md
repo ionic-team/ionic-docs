@@ -156,15 +156,15 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
+For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent` in `Home.tsx`:
+You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button.md) at the end of the `IonContent` in `Home.tsx`:
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -222,7 +222,7 @@ const New: React.FC = () => {
 export default New;
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
 :::warning
 When creating your own pages, always use `IonPage` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
@@ -259,7 +259,7 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
-Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation#navigating-using-history) for more information.
+Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation.md#navigating-using-history) for more information.
 :::
 
 ## Add Icons to the New Page
@@ -282,7 +282,7 @@ Then, include them inside of the `IonContent`:
 
 Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
-For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
@@ -335,7 +335,7 @@ To call methods on Ionic components:
 
 This pattern is necessary because React refs store the component instance in the `.current` property.
 
-You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
 
 ## Run on a Device
 

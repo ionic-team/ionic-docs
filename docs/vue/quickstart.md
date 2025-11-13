@@ -160,15 +160,15 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 <!-- ...styles... -->
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
+For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) at the end of the `ion-content`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.md) at the end of the `ion-content`:
 
 ```vue title="src/views/HomePage.vue"
 <ion-content>
@@ -217,7 +217,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, Io
 </script>
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
 :::warning
 When creating your own pages, always use `ion-page` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
@@ -259,7 +259,7 @@ Once that is done, update the button in `HomePage.vue`:
 ```
 
 :::info
-Navigating can also be performed programmatically using Vue Router, and routes can be lazy loaded for better performance. See the [Vue Navigation documentation](/docs/vue/navigation) for more information.
+Navigating can also be performed programmatically using Vue Router, and routes can be lazy loaded for better performance. See the [Vue Navigation documentation](/docs/vue/navigation.md) for more information.
 :::
 
 ## Add Icons to the New Page
@@ -284,7 +284,7 @@ Then, include them inside of the `ion-content`:
 
 Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
-For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
@@ -339,7 +339,7 @@ To call methods on Ionic components:
 
 This pattern is necessary because Ionic components are built as Web Components. The `$el` property gives you access to the actual Web Component instance where the methods are defined.
 
-You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
 
 ## Run on a Device
 

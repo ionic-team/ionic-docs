@@ -172,15 +172,15 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
+For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) at the end of the `ion-content`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.md) at the end of the `ion-content`:
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -211,7 +211,7 @@ ionic generate page new
 
 A route will be automatically added to `app.routes.ts`.
 
-In `new.page.html`, you can add a [Back Button](/docs/api/back-button) to the [Toolbar](/docs/api/toolbar):
+In `new.page.html`, you can add a [Back Button](/docs/api/back-button.md) to the [Toolbar](/docs/api/toolbar.md):
 
 ```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
@@ -257,7 +257,7 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-Navigating can also be performed using Angular's Router service. See the [Angular Navigation documentation](/docs/angular/navigation#navigating-to-different-routes) for more information.
+Navigating can also be performed using Angular's Router service. See the [Angular Navigation documentation](/docs/angular/navigation.md#navigating-to-different-routes) for more information.
 :::
 
 ## Add Icons to the New Page
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
 
-For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
@@ -387,7 +387,7 @@ To call methods on Ionic components:
 1. Create a `ViewChild` reference for the component
 2. Call the method directly on the component instance
 
-You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
 
 ## Run on a Device
 
