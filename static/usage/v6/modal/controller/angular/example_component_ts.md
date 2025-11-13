@@ -1,12 +1,14 @@
 ```ts
 import { Component } from '@angular/core';
 
-import { ModalController } from '@ionic/angular';
+import { IonicModule, ModalController } from '@ionic/angular';
 import { ModalExampleComponent } from './modal-example.component';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule],
+  standalone: true,
 })
 export class ExampleComponent {
   message = 'This modal example uses the modalController to present and dismiss modals.';

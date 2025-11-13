@@ -38,10 +38,10 @@ export interface EditorOptions {
    */
   mode?: string;
 
-  version?: number;
+  version?: string;
 }
 
-const loadSourceFiles = async (files: string[], version: number) => {
+const loadSourceFiles = async (files: string[], version: string) => {
   const versionDir = `v${version}`;
   const sourceFiles = await Promise.all(files.map((f) => fetch(`/docs/code/stackblitz/${versionDir}/${f}`)));
   return await Promise.all(sourceFiles.map((res) => res.text()));
@@ -54,6 +54,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
       options?.includeIonContent ? 'html/index.withContent.html' : 'html/index.html',
       'html/variables.css',
       'html/package.json',
+      'html/package-lock.json',
       'html/tsconfig.json',
       'html/vite.config.ts',
     ],
@@ -72,11 +73,12 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
   const indexHtml = 'index.html';
   const files = {
     'package.json': JSON.stringify(package_json, null, 2),
+    'package-lock.json': defaultFiles[4],
     'index.ts': defaultFiles[0],
     [indexHtml]: defaultFiles[1],
     'theme/variables.css': defaultFiles[2],
-    'tsconfig.json': defaultFiles[4],
-    'vite.config.ts': defaultFiles[5],
+    'tsconfig.json': defaultFiles[5],
+    'vite.config.ts': defaultFiles[6],
     ...options?.files,
   };
 
@@ -106,6 +108,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'angular/package.json',
+      'angular/package-lock.json',
       'angular/angular.json',
       'angular/tsconfig.json',
       'angular/tsconfig.app.json',
@@ -136,26 +139,34 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 
   const files = {
     'package.json': JSON.stringify(package_json, null, 2),
-    'angular.json': defaultFiles[1],
-    'tsconfig.json': defaultFiles[2],
-    'tsconfig.app.json': defaultFiles[3],
-    [main]: defaultFiles[4],
-    'src/index.html': defaultFiles[5],
+    'package-lock.json': defaultFiles[1],
+    'angular.json': defaultFiles[2],
+    'tsconfig.json': defaultFiles[3],
+    'tsconfig.app.json': defaultFiles[4],
+    [main]: defaultFiles[5],
+    'src/index.html': defaultFiles[6],
     'src/polyfills.ts': `import 'zone.js';`,
-    'src/app/app.routes.ts': defaultFiles[6],
-    'src/app/app.component.ts': defaultFiles[7],
-    'src/app/app.component.css': defaultFiles[8],
-    'src/app/app.component.html': defaultFiles[9],
-    'src/app/example.component.ts': defaultFiles[10],
+    'src/app/app.routes.ts': defaultFiles[7],
+    'src/app/app.component.ts': defaultFiles[8],
+    'src/app/app.component.css': defaultFiles[9],
+    'src/app/app.component.html': defaultFiles[10],
+    'src/app/example.component.ts': defaultFiles[11],
     'src/app/example.component.html': code,
     'src/app/example.component.css': '',
-    'src/styles.css': defaultFiles[11],
-    'src/global.css': defaultFiles[12],
-    'src/theme/variables.css': defaultFiles[13],
+    'src/styles.css': defaultFiles[12],
+    'src/global.css': defaultFiles[13],
+    'src/theme/variables.css': defaultFiles[14],
     ...options?.files,
   };
 
-  files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
+  if (options?.version === '6') {
+    files[main] = files[main].replace(
+      'importProvidersFrom(IonicModule.forRoot({ }))',
+      `importProvidersFrom(IonicModule.forRoot({ mode: '${options?.mode}' }))`
+    );
+  } else {
+    files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
+  }
 
   sdk.openProject({
     template: 'node',
@@ -173,6 +184,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/variables.css',
       'react/tsconfig.json',
       'react/package.json',
+      'react/package-lock.json',
       'react/index.html',
       'react/vite.config.js',
       'react/browserslistrc',
@@ -192,16 +204,17 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 
   const appTsx = 'src/App.tsx';
   const files = {
-    '.eslintrc.js': defaultFiles[8],
-    '.browserslistrc': defaultFiles[7],
-    'vite.config.js': defaultFiles[6],
-    'index.html': defaultFiles[5],
+    '.eslintrc.js': defaultFiles[9],
+    '.browserslistrc': defaultFiles[8],
+    'vite.config.js': defaultFiles[7],
+    'index.html': defaultFiles[6],
     'src/index.tsx': defaultFiles[0],
     [appTsx]: defaultFiles[1],
     'src/main.tsx': code,
     'src/theme/variables.css': defaultFiles[2],
     'tsconfig.json': defaultFiles[3],
     'package.json': JSON.stringify(package_json, null, 2),
+    'package-lock.json': defaultFiles[5],
     ...options?.files,
     '.stackblitzrc': `{
   "startCommand": "yarn run start"
@@ -222,6 +235,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'vue/package.json',
+      'vue/package-lock.json',
       'vue/index.html',
       'vue/variables.css',
       'vue/vite.config.ts',
@@ -244,15 +258,16 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
 
   const mainTs = 'src/main.ts';
   const files = {
-    'src/App.vue': defaultFiles[5],
+    'src/App.vue': defaultFiles[6],
     'src/components/Example.vue': code,
-    [mainTs]: defaultFiles[4],
-    'src/theme/variables.css': defaultFiles[2],
-    'index.html': defaultFiles[1],
-    'vite.config.ts': defaultFiles[3],
+    [mainTs]: defaultFiles[5],
+    'src/theme/variables.css': defaultFiles[3],
+    'index.html': defaultFiles[2],
+    'vite.config.ts': defaultFiles[4],
     'package.json': JSON.stringify(package_json, null, 2),
-    'tsconfig.json': defaultFiles[6],
-    'tsconfig.node.json': defaultFiles[7],
+    'package-lock.json': defaultFiles[1],
+    'tsconfig.json': defaultFiles[7],
+    'tsconfig.node.json': defaultFiles[8],
     ...options?.files,
     '.stackblitzrc': `{
   "startCommand": "yarn run dev"

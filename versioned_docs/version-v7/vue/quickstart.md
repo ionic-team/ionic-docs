@@ -74,7 +74,7 @@ Let's walk through these files to understand the app's structure.
 
 The root of your app is defined in `App.vue`:
 
-```tsx
+```vue
 <template>
   <ion-app>
     <ion-router-outlet />
@@ -123,7 +123,7 @@ When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 The Home page component, defined in `views/HomePage.vue`, imports the Ionic components and defines the page template:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header :translucent="true">
@@ -153,7 +153,7 @@ The Home page component, defined in `views/HomePage.vue`, imports the Ionic comp
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <!-- ...styles... -->
@@ -169,7 +169,7 @@ For detailed information about Ionic layout components, see the [Header](/docs/a
 
 You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) at the end of the `ion-content`:
 
-```html
+```vue
 <ion-content>
   <!-- existing content -->
 
@@ -179,9 +179,9 @@ You can enhance your Home page with more Ionic UI components. For example, add a
 
 Then, import the `IonButton` component in the `<script>` tag:
 
-```html
+```vue
 <script setup lang="ts">
-  import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -189,7 +189,7 @@ Then, import the `IonButton` component in the `<script>` tag:
 
 Create a new page at `views/NewPage.vue`:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header :translucent="true">
@@ -212,7 +212,7 @@ Create a new page at `views/NewPage.vue`:
 </template>
 
 <script setup lang="ts">
-  import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -255,7 +255,7 @@ const routes: Array<RouteRecordRaw> = [
 
 Once that is done, update the button in `views/HomePage.vue`:
 
-```tsx
+```vue
 <ion-button router-link="/new">Navigate</ion-button>
 ```
 
@@ -269,16 +269,16 @@ Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You c
 
 Update the imports in `views/NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
-```html
+```vue
 <script setup lang="ts">
-  import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { heart, logoIonic } from 'ionicons/icons';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { heart, logoIonic } from 'ionicons/icons';
 </script>
 ```
 
 Then, include them inside of the `ion-content`:
 
-```tsx
+```vue
 <ion-icon :icon="heart"></ion-icon>
 <ion-icon :icon="logoIonic"></ion-icon>
 ```
@@ -293,7 +293,7 @@ Let's add a button that can scroll the content area to the bottom.
 
 Update `views/NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
 
-```html
+```vue
 <ion-content ref="content">
   <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
 
@@ -306,29 +306,29 @@ Update `views/NewPage.vue` to include a ref on `ion-content` and a button and so
 
 In the script section, add the new component imports and define the `scrollToBottom` function:
 
-```html
+```vue
 <script setup lang="ts">
-  import {
-    IonBackButton,
-    IonButtons,
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { heart, logoIonic } from 'ionicons/icons';
-  import { ref } from 'vue';
+import {
+  IonBackButton,
+  IonButtons,
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import { heart, logoIonic } from 'ionicons/icons';
+import { ref } from 'vue';
 
-  const content = ref();
+const content = ref();
 
-  const scrollToBottom = () => {
-    content.value.$el.scrollToBottom(300);
-  };
+const scrollToBottom = () => {
+  content.value.$el.scrollToBottom(300);
+};
 </script>
 ```
 
