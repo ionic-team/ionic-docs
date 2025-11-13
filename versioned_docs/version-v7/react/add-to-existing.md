@@ -140,7 +140,7 @@ Create a `src/theme/variables.css` file with the following content:
 
 ```css title="src/theme/variables.css"
 /* For information on how to create your own theme, please refer to:
-http://ionicframework.com/docs/theming/ */
+https://ionicframework.com/docs/theming/ */
 ```
 
 Then, import the file and the dark palette stylesheet in `src/App.tsx`:
