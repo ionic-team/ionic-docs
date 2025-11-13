@@ -121,7 +121,8 @@ pre[class*='language-'] {
 
 .token.tag.punctuation,
 .token.tag.class-name,
-.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']) {
+.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']),
+.token.tag.punctuation + .token.tag.language-vue:not(.attr-value) {
   color: #2b90ff;
 }
 

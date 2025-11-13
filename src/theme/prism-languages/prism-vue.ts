@@ -21,19 +21,31 @@
   });
 
   Prism.languages.insertBefore('vue', 'comment', {
+    // Add support for <script> blocks within Vue files
     script: {
       pattern: /<script[\s\S]*?>[\s\S]*?<\/script>/i,
       inside: {
+        'script-tag': {
+          pattern: /<script[\s\S]*?>|<\/script>/i,
+          inside: Prism.languages.markup,
+          alias: 'tag',
+        },
         rest: Prism.languages.javascript,
       },
-      alias: 'language-javascript',
+      alias: 'language-vue',
     },
+    // Add support for <style> blocks within Vue files
     style: {
       pattern: /<style[\s\S]*?>[\s\S]*?<\/style>/i,
       inside: {
+        'style-tag': {
+          pattern: /<style[\s\S]*?>|<\/style>/i,
+          inside: Prism.languages.markup,
+          alias: 'tag',
+        },
         rest: Prism.languages.css,
       },
-      alias: 'language-css',
+      alias: 'language-vue',
     },
   });
 
