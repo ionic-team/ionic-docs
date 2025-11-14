@@ -151,7 +151,26 @@ Open `/src/views/Tab2.vue`. We see:
 `ion-header` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
 
 ```html
-<ion-title>Photo Gallery</ion-title>
+<template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <!-- CHANGE: Update title. -->
+        <ion-title>Photo Gallery</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <!-- CHANGE: Update title. -->
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ExploreContainer name="Tab 2 page" />
+    </ion-content>
+  </ion-page>
+</template>
 ```
 
 We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. But first, remove the `ExploreContainer` component, beginning with the import statement:
