@@ -2,7 +2,17 @@ docs-cards {
   display: grid;
   font-size: 12px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 1.35rem;
+  gap: 1.35rem;
+}
+
+/*
+ * This prevents a single card from stretching the full width by
+ * forcing a 2-column grid layout (a single card will only take up
+ * 1 column instead of stretching across both). This is used on the
+ * Packages & CDN page by the JavaScript section.
+ */
+docs-cards:has(docs-card:only-child) {
+  grid-template-columns: 1fr 1fr;
 }
 
 docs-cards > docs-card {

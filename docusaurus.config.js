@@ -19,7 +19,7 @@ const VERSIONS_JSON = require('./versions.json');
  * Note that the urls specified in this file should
  * NOT have a trailing slash otherwise users will
  * briefly get a 404 Page Not Found error before
- * the docuementation website loads.
+ * the documentation website loads.
  */
 const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
 
@@ -325,7 +325,7 @@ module.exports = {
       theme: { plain: {}, styles: [] },
       // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
       // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
-      additionalLanguages: ['shell-session', 'http', 'diff'],
+      additionalLanguages: ['shell-session', 'http', 'diff', 'json'],
     },
     algolia: {
       appId: 'O9QSL985BS',
