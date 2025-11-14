@@ -53,6 +53,11 @@ code {
   [class*='codeBlockContainer_'] {
     box-shadow: none;
   }
+
+  // Code block title
+  [class*='codeBlockTitle_'] {
+    background: var(--code-block-bg-c);
+  }
 }
 
 /**
