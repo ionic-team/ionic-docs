@@ -194,7 +194,7 @@ Add a click handler to the `<IonImg>` element. When the app user taps on a photo
 </IonGrid>
 ```
 
-Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
+Remember that removing the photo from the `photos` array triggers the `setPhotos` method for us automatically.
 
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
