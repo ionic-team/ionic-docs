@@ -76,7 +76,7 @@ Replace the existing `styles` array in `angular.json` with the following:
 
 :::info
 
-While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, see [Global Stylesheets](/docs/layout/global-stylesheets.md).
+While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, refer to [Global Stylesheets](/docs/layout/global-stylesheets.md).
 
 :::
 
