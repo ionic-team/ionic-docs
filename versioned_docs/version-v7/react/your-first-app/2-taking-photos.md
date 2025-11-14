@@ -96,7 +96,7 @@ After taking a photo, it disappears right away. We need to display it within our
 To define the data structure for our photo metadata, create a new interface named `UserPhoto`. Add this interface at the very bottom of the `usePhotoGallery.ts` file, immediately after the `usePhotoGallery()` method definition.
 
 ```ts
-export function usePhotoGallery {
+export function usePhotoGallery() {
   // ...existing code...
 }
 
@@ -114,7 +114,7 @@ Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will
 import { useState } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
-export function usePhotoGallery {
+export function usePhotoGallery() {
   // CHANGE: Add the `photos` array
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
