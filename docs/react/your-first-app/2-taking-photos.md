@@ -122,7 +122,7 @@ export function usePhotoGallery() {
 }
 ```
 
-Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery()` return statement with the `photos` array.
+Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `usePhotoGallery()` return statement with the `photos` array.
 
 ```ts
 export function usePhotoGallery() {
