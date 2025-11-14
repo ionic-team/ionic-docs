@@ -51,12 +51,9 @@ code {
 // Overrides
 #__docusaurus {
   [class*='codeBlockContainer_'] {
-    box-shadow: none;
-  }
+    --prism-background-color: var(--code-block-bg-c);
 
-  // Code block title
-  [class*='codeBlockTitle_'] {
-    background: var(--code-block-bg-c);
+    box-shadow: none;
   }
 }
 
@@ -68,7 +65,6 @@ code {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--code-block-bg-c);
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
