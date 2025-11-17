@@ -36,8 +36,9 @@ Next, at the end of the `addNewToGallery()` method, add a call to `Preferences.s
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
-// CHANGE: Add import
 import { Filesystem, Directory } from '@capacitor/filesystem';
+// CHANGE: Add import
+import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
   providedIn: 'root',
