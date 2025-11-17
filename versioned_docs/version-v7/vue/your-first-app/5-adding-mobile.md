@@ -27,7 +27,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-// CHANGE: Add imports
+// CHANGE: Add import
 import { isPlatform } from '@ionic/vue';
 
 // ...existing code...
