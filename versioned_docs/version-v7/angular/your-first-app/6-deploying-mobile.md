@@ -4,20 +4,20 @@ sidebar_label: Deploying Mobile
 ---
 
 <head>
-  <title>Deploying to iOS and Android Apps - Capacitor Setup on Ionic</title>
+  <title>Adding Mobile Support with Angular | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
   />
 </head>
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 
 ## Capacitor Setup
 
 Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova).
 
-If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of your Ionic project, fixing any errors that it reports:
+If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of the Ionic project, fixing any errors that it reports:
 
 ```shell
 ionic build
@@ -26,8 +26,8 @@ ionic build
 Next, create both the iOS and Android projects:
 
 ```shell
-$ ionic cap add ios
-$ ionic cap add android
+ionic cap add ios
+ionic cap add android
 ```
 
 Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
@@ -46,7 +46,7 @@ ionic cap sync
 
 ## iOS Deployment
 
-:::note
+:::important
 To build an iOS app, you’ll need a Mac computer.
 :::
 
@@ -58,7 +58,7 @@ First, run the Capacitor `open` command, which opens the native iOS project in X
 ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled “Privacy - Camera Usage.” To set it, the `Info.plist` file must be modified ([more details here](https://capacitorjs.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled "Privacy - Camera Usage." To set it, the `Info.plist` file must be modified ([more details here](https://capacitorjs.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
 
 ![The Info.plist file in Xcode showing the NSCameraUsageDescription key added for camera access.](/img/guides/first-app-cap-ng/xcode-info-plist.png 'Xcode Info.plist Configuration')
 
@@ -111,4 +111,4 @@ Once again, upon tapping the Camera button on the Photo Gallery tab, the permiss
 
 Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
 
-In the next portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
+In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.

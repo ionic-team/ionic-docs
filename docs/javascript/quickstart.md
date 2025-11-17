@@ -87,7 +87,7 @@ npm install vite-plugin-static-copy --save-dev
 
 Add a `vite.config.js` file at the project root with the following:
 
-```js
+```js title="vite.config.js"
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -120,20 +120,16 @@ This copies the necessary Ionic files that Capacitor will need to work with lazy
 
 ## Initialize Ionic
 
-Replace the contents of `src/main.js` with the following:
+Replace the contents of `main.js` with the following:
 
-```js
-// Determine if the app is running in Capacitor
-const isCapacitor = location.protocol === 'capacitor:' || (window.Capacitor && window.Capacitor.platform !== 'web');
-
+```js title="src/main.js"
 // Load Ionic
-if (isCapacitor) {
-  // In Capacitor, import Ionic directly from copied dist files
-  import(/* @vite-ignore */ location.origin + '/ionic.esm.js');
-} else {
-  // In the browser, use the normal loader
-  import('@ionic/core/loader').then((m) => m.defineCustomElements(window));
-}
+(async () => {
+  // Set the path to a variable to
+  // prevent Vite from analyzing in dev
+  const ionicPath = '/ionic.esm.js';
+  await import(/* @vite-ignore */ ionicPath);
+})();
 
 // Core CSS required for Ionic components to work properly
 import '@ionic/core/css/core.css';
@@ -158,7 +154,7 @@ This initializes Ionic based on the environment and then imports all of the avai
 
 Update your `index.html` to configure the metadata and use Ionic components:
 
-```html
+```html title="index.html"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -190,7 +186,7 @@ This sets up the root of your application, using Ionic's `ion-app`, `ion-router`
 
 Routes are defined in the `index.html` using `ion-route` components inside the `ion-router`:
 
-```html
+```html title="index.html"
 <ion-router>
   <ion-route url="/" component="home-page"></ion-route>
   <ion-route url="/new" component="new-page"></ion-route>
@@ -203,7 +199,7 @@ When you visit the root URL (`/`), the `home-page` component will be loaded. Whe
 
 Create a new directory called `pages` inside the `src` folder, then add a file called `HomePage.js` in that directory with the following content:
 
-```js
+```js title="src/pages/HomePage.js"
 class HomePage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -231,12 +227,12 @@ customElements.define('home-page', HomePage);
 This creates a custom element called `home-page` that contains the layout for your Home page. The page uses Ionic's layout components to create a header with a toolbar and scrollable content area.
 
 :::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
+For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
-Next, add a `<script>` tag before the `src/main.js` import in `index.html` to import the Home page:
+Next, add a `<script>` tag before the `main.js` import in `index.html` to import the Home page:
 
-```html
+```html title="index.html"
 <script type="module">
   import './src/pages/HomePage.js';
 </script>
@@ -250,9 +246,9 @@ At this point your browser should be displaying the Home page.
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button) to navigate to another page. Update the `HomePage` component in `src/pages/HomePage.js`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.md) to navigate to another page. Update the `HomePage` component in `HomePage.js`:
 
-```js
+```js title="src/pages/HomePage.js"
 class HomePage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -283,7 +279,7 @@ customElements.define('home-page', HomePage);
 
 Add a new file named `NewPage.js` to `src/pages` with the following content:
 
-```js
+```js title="src/pages/NewPage.js"
 class NewPage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -305,11 +301,11 @@ class NewPage extends HTMLElement {
 customElements.define('new-page', NewPage);
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
 Next, update the `<script>` tag which imports the Home page in the `index.html` file to also import the New page:
 
-```html
+```html title="index.html"
 <script type="module">
   import './src/pages/HomePage.js';
   import './src/pages/NewPage.js';
@@ -318,9 +314,9 @@ Next, update the `<script>` tag which imports the Home page in the `index.html` 
 
 ## Navigate to the New Page
 
-To navigate to the new page, update the button in `src/pages/HomePage.js` to be inside of an `ion-router-link`:
+To navigate to the new page, update the button in `HomePage.js` to be inside of an `ion-router-link`:
 
-```html
+```html title="src/pages/HomePage.js"
 <ion-router-link href="/new">
   <ion-button>Navigate</ion-button>
 </ion-router-link>
@@ -329,16 +325,16 @@ To navigate to the new page, update the button in `src/pages/HomePage.js` to be 
 When the button is clicked, Ionic's router will automatically navigate to the `/new` route and display the `new-page` component.
 
 :::info
-Navigating can also be performed programmatically using `document.querySelector('ion-router').push('/new')`. See the [Ionic Router documentation](/docs/api/router) for more information.
+Navigating can also be performed programmatically using `document.querySelector('ion-router').push('/new')`. See the [Ionic Router documentation](/docs/api/router.md) for more information.
 :::
 
 ## Add Icons to the New Page
 
 Ionic JavaScript comes with [Ionicons](https://ionic.io/ionicons/) support. To use icons, you need to import them, register them with `addIcons`, and then use them with the `ion-icon` component.
 
-Add the necessary imports and register the icons in `src/main.js`:
+Add the necessary imports and register the icons in `main.js`:
 
-```js
+```js title="src/main.js"
 // ...Ionic initialization
 
 // Icon imports
@@ -350,9 +346,9 @@ addIcons({ heart, logoIonic });
 // ...CSS imports
 ```
 
-Next, update `src/pages/NewPage.js` to include the icons:
+Next, update `NewPage.js` to include the icons:
 
-```js
+```js title="src/pages/NewPage.js"
 class NewPage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -377,13 +373,13 @@ class NewPage extends HTMLElement {
 customElements.define('new-page', NewPage);
 ```
 
-For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
-Let's add a button that can scroll the content area to the bottom. Update `src/pages/NewPage.js` to include scrollable content and a scroll button:
+Let's add a button that can scroll the content area to the bottom. Update `NewPage.js` to include scrollable content and a scroll button:
 
-```js
+```js title="src/pages/NewPage.js"
 class NewPage extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -446,7 +442,7 @@ To call methods on Ionic components:
 1. Get a reference to the component element using `querySelector`
 2. Call the method directly on the element
 
-You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
 
 ## Run on a Device
 
