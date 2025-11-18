@@ -26,8 +26,7 @@
       </ion-page>
     </ion-tab>
     <ion-tab tab="library">
-      <ion-page id="library-page"
-        >>
+      <ion-page id="library-page">
         <ion-header>
           <ion-toolbar>
             <ion-title>Library</ion-title>
@@ -39,8 +38,7 @@
       </ion-page>
     </ion-tab>
     <ion-tab tab="search">
-      <ion-page id="search-page"
-        >>
+      <ion-page id="search-page">
         <ion-header>
           <ion-toolbar>
             <ion-title>Search</ion-title>
