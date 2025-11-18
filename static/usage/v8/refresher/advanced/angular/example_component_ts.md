@@ -11,6 +11,7 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
+  RefresherCustomEvent,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -82,10 +83,10 @@ export class ExampleComponent {
     }
   }
 
-  handleRefresh(event: CustomEvent) {
+  handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       this.addItems(3, true);
-      (event.target as HTMLIonRefresherElement).complete();
+      event.target.complete();
     }, 2000);
   }
 }

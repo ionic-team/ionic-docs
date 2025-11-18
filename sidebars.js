@@ -68,7 +68,7 @@ module.exports = {
       collapsed: false,
       items: [
         'angular/overview',
-        'angular/build-options',
+        'angular/quickstart',
         {
           type: 'category',
           label: 'Build Your First App',
@@ -83,8 +83,11 @@ module.exports = {
             'angular/your-first-app/distribute',
           ],
         },
+        'angular/add-to-existing',
+        'angular/build-options',
         'angular/lifecycle',
         'angular/navigation',
+        'angular/injection-tokens',
         'angular/virtual-scroll',
         'angular/slides',
         'angular/platform',
@@ -96,10 +99,16 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'JavaScript',
+      collapsed: false,
+      items: ['javascript/overview', 'javascript/quickstart'],
+    },
+    {
+      type: 'category',
       label: 'React',
       collapsed: false,
       items: [
-        'react',
+        'react/overview',
         'react/quickstart',
         {
           type: 'category',
@@ -115,7 +124,7 @@ module.exports = {
             'react/your-first-app/distribute',
           ],
         },
-        'react/adding-ionic-react-to-an-existing-react-project',
+        'react/add-to-existing',
         'react/lifecycle',
         'react/navigation',
         'react/virtual-scroll',
@@ -165,6 +174,8 @@ module.exports = {
             'vue/your-first-app/distribute',
           ],
         },
+        'vue/add-to-existing',
+        'vue/build-options',
         'vue/lifecycle',
         'vue/navigation',
         'vue/virtual-scroll',
@@ -252,15 +263,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Action Sheet',
-      collapsed: false,
-      items: ['api/action-sheet'],
-    },
-    {
-      type: 'category',
       label: 'Accordion',
       collapsed: false,
       items: ['api/accordion', 'api/accordion-group'],
+    },
+    {
+      type: 'category',
+      label: 'Action Sheet',
+      collapsed: false,
+      items: ['api/action-sheet'],
     },
     {
       type: 'category',
@@ -276,7 +287,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Breadcrumb',
+      label: 'Breadcrumbs',
       collapsed: false,
       items: ['api/breadcrumb', 'api/breadcrumbs'],
     },
@@ -337,21 +348,21 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Infinite Scroll',
-      collapsed: false,
-      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
-    },
-    {
-      type: 'category',
       label: 'Icons',
       collapsed: false,
       items: ['api/icon'],
     },
     {
       type: 'category',
-      label: 'Input',
+      label: 'Infinite Scroll',
       collapsed: false,
-      items: ['api/input', 'api/input-password-toggle', 'api/textarea'],
+      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
+    },
+    {
+      type: 'category',
+      label: 'Inputs',
+      collapsed: false,
+      items: ['api/input', 'api/input-password-toggle', 'api/input-otp', 'api/textarea'],
     },
     {
       type: 'category',

@@ -7,12 +7,12 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  RefresherEventDetail,
+  RefresherCustomEvent,
 } from '@ionic/react';
 import { chevronDownCircleOutline } from 'ionicons/icons';
 
 function Example() {
-  function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+  function handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       // Any calls to load data go here
       event.detail.complete();

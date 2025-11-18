@@ -22,32 +22,17 @@
   </ion-accordion-group>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonAccordion, IonAccordionGroup, IonItem, IonLabel, AccordionGroupCustomEvent } from '@ionic/vue';
-  import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonAccordion,
-      IonAccordionGroup,
-      IonItem,
-      IonLabel,
-    },
-    setup() {
-      const values = ['first', 'second', 'third'];
-      const accordionGroupChange = (event: AccordionGroupCustomEvent) => {
-        const collapsedItems = values.filter((value) => value !== event.detail.value);
-        const selectedValue = event.detail.value;
+  const values = ['first', 'second', 'third'];
+  const accordionGroupChange = (event: AccordionGroupCustomEvent) => {
+    const collapsedItems = values.filter((value) => value !== event.detail.value);
+    const selectedValue = event.detail.value;
 
-        console.log(
-          `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(
-            ', '
-          )}`
-        );
-      };
-
-      return { accordionGroupChange };
-    },
-  });
+    console.log(
+      `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
+    );
+  };
 </script>
 ```

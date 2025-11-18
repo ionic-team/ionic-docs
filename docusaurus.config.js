@@ -19,7 +19,7 @@ const VERSIONS_JSON = require('./versions.json');
  * Note that the urls specified in this file should
  * NOT have a trailing slash otherwise users will
  * briefly get a 404 Page Not Found error before
- * the docuementation website loads.
+ * the documentation website loads.
  */
 const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
 
@@ -33,7 +33,7 @@ const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).spl
 const BASE_URL = '/docs';
 
 module.exports = {
-  title: 'Ionic Documentation',
+  title: 'Ionic Framework',
   tagline:
     'Ionic is the app platform for web developers. Build amazing mobile and web apps with one shared code base and open web standards',
   url: 'https://ionicframework.com',
@@ -81,6 +81,7 @@ module.exports = {
           },
           exclude: ['README.md'],
           lastVersion: 'current',
+          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
               label: 'v8',
@@ -322,8 +323,9 @@ module.exports = {
     },
     prism: {
       theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/e6d323332b0363a633407fabab47b608088e3a4d/packages/generate-prism-languages/index.ts#L9-L25
-      additionalLanguages: ['shell-session', 'http'],
+      // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
+      // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
+      additionalLanguages: ['shell-session', 'http', 'diff', 'json'],
     },
     algolia: {
       appId: 'O9QSL985BS',
@@ -333,6 +335,7 @@ module.exports = {
     },
   },
   plugins: [
+    // Allows usage of Sass/SCSS in the CSS preprocessor.
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',

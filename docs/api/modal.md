@@ -157,6 +157,14 @@ import SheetHandleBehaviorExample from '@site/static/usage/v8/modal/sheet/handle
 
 <SheetHandleBehaviorExample />
 
+### Scrolling content at all breakpoints
+
+Sheet modals can be configured to allow scrolling content at all breakpoints, making them ideal for displaying content larger than the viewport. By setting the `expandToScroll` property to `false`, the content remains scrollable at every breakpoint. Otherwise, by default, scrolling is only enabled when the sheet modal is fully expanded.
+
+import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expand-to-scroll/index.md';
+
+<SheetScrollingContentExample />
+
 ## Styling
 
 Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.

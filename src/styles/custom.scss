@@ -61,6 +61,7 @@ html[data-theme='light'] {
 
   --ifm-code-background: var(--c-indigo-10);
   --ifm-font-color-base: var(--c-carbon-90);
+  --ifm-info-color-bg: var(--c-carbon-90);
 }
 
 html[data-theme='dark'] {
@@ -82,6 +83,7 @@ html[data-theme='dark'] {
   --ifm-font-color-base: var(--c-carbon-10);
   --ifm-background-color: var(--token-primary-bg-c);
   --ifm-dropdown-background-color: var(--token-secondary-bg-c);
+  --ifm-info-color-bg: var(--c-carbon-10);
 
   --ifm-menu-link-sublist-icon-filter: invert(100%);
 }
@@ -111,10 +113,6 @@ a {
 
 body {
   margin: 0;
-}
-
-.theme-doc-version-banner {
-  display: none;
 }
 
 .theme-doc-version-badge {
@@ -228,4 +226,28 @@ iframe {
       transition: color 0.2s ease-out;
     }
   }
+}
+
+.install-button {
+  background-color: var(--ifm-info-color-bg);
+  border: 2px solid var(--ifm-font-color-base);
+  border-radius: 100px;
+  color: var(--admonition-info-c-bg);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.docs-button {
+  background-color: transparent;
+  border: 2px solid var(--ifm-font-color-base);
+  border-radius: 100px;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
 }

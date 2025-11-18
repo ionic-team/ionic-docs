@@ -253,6 +253,16 @@ import TypeaheadExample from '@site/static/usage/v8/select/typeahead/index.md';
 
 <TypeaheadExample />
 
+## Helper & Error Text
+
+Helper and error text can be used inside of a select with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-select`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/v8/select/helper-error/index.md';
+
+<HelperError />
+
 ## Interfaces
 
 ### SelectChangeEventDetail
@@ -273,28 +283,6 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonSelectElement;
 }
 ```
-
-## Migrating from Legacy Select Syntax
-
-A simpler select syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an select, resolves accessibility issues, and improves the developer experience.
-
-Developers can perform this migration one select at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
-
-### Using the Modern Syntax
-
-Using the modern syntax involves two steps:
-
-1. Remove `ion-label` and use the `label` property on `ion-select` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-select`.
-2. Move any usage of `fill` and `shape` from `ion-item` on to `ion-select`.
-
-import Migration from '@site/static/usage/v8/select/migration/index.md';
-
-<Migration />
-
-### Using the Legacy Syntax
-
-Ionic uses heuristics to detect if an app is using the modern select syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-select` to `true` to force that instance of the input to use the legacy syntax.
 
 ## Accessibility
 

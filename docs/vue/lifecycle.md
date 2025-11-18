@@ -21,61 +21,52 @@ These lifecycles are only called on components directly mapped by a router. This
 
 The lifecycles are defined the same way Vue lifecycle methods are - as functions at the root of your Vue component:
 
-```tsx
+```vue
+<script setup lang="ts">
 import { IonPage } from '@ionic/vue';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'Home',
-  ionViewDidEnter() {
-    console.log('Home page did enter');
-  },
-  ionViewDidLeave() {
-    console.log('Home page did leave');
-  },
-  ionViewWillEnter() {
-    console.log('Home page will enter');
-  },
-  ionViewWillLeave() {
-    console.log('Home page will leave');
-  },
-  components: {
-    IonPage,
-  },
-});
+const ionViewDidEnter = () => {
+  console.log('Home page did enter');
+};
+
+const ionViewDidLeave = () => {
+  console.log('Home page did leave');
+};
+
+const ionViewWillEnter = () => {
+  console.log('Home page will enter');
+};
+
+const ionViewWillLeave = () => {
+  console.log('Home page will leave');
+};
+</script>
 ```
 
 ### Composition API Hooks
 
 These lifecycles can also be expressed using Vue 3's Composition API:
 
-```tsx
+```vue
+<script setup lang="ts">
 import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'Home',
-  components: {
-    IonPage,
-  },
-  setup() {
-    onIonViewDidEnter(() => {
-      console.log('Home page did enter');
-    });
-
-    onIonViewDidLeave(() => {
-      console.log('Home page did leave');
-    });
-
-    onIonViewWillEnter(() => {
-      console.log('Home page will enter');
-    });
-
-    onIonViewWillLeave(() => {
-      console.log('Home page will leave');
-    });
-  },
+onIonViewDidEnter(() => {
+  console.log('Home page did enter');
 });
+
+onIonViewDidLeave(() => {
+  console.log('Home page did leave');
+});
+
+onIonViewWillEnter(() => {
+  console.log('Home page will enter');
+});
+
+onIonViewWillLeave(() => {
+  console.log('Home page will leave');
+});
+</script>
 ```
 
 :::note

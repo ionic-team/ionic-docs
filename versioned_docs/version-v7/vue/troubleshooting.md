@@ -26,18 +26,13 @@ Without importing the component, you will only get the underlying Web Component,
 
 To resolve this issue, you need to import the component from `@ionic/vue` and provide it to your Vue component:
 
-```html
+```vue
 <template>
   <ion-button>Hello World</ion-button>
 </template>
 
-<script lang="ts">
-  import { IonButton } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton },
-  });
+<script setup lang="ts">
+import { IonButton } from '@ionic/vue';
 </script>
 ```
 
@@ -85,7 +80,7 @@ See the [Quickstart Guide](quickstart.md#calling-methods-on-components) for more
 
 In order for page transitions to work correctly, each page must have an `ion-page` component at the root:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -97,19 +92,8 @@ In order for page transitions to work correctly, each page must have an `ion-pag
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  });
+<script setup lang="ts">
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 

@@ -8,12 +8,7 @@
   </ion-radio-group>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonRadio, IonRadioGroup } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonRadio, IonRadioGroup },
-  });
 </script>
 ```

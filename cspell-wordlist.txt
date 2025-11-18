@@ -39,6 +39,7 @@ flexbox
 frontmatter
 fullscreen
 geolocation
+iconset
 interactives
 isopen
 jank
@@ -80,3 +81,4 @@ mozallowfullscreen
 msallowfullscreen
 oallowfullscreen
 webkitallowfullscreen
+webnative

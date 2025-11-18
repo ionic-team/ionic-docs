@@ -120,16 +120,8 @@
   </ion-list>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList } from '@ionic/vue';
   import { archive, heart, trash } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList },
-    setup() {
-      return { archive, heart, trash };
-    },
-  });
 </script>
 ```

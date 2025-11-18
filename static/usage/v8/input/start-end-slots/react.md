@@ -10,7 +10,7 @@ function Example() {
         <IonInput labelPlacement="stacked" label="Email" placeholder="email@domain.com">
           <IonIcon slot="start" icon={lockClosed} aria-hidden="true"></IonIcon>
           <IonButton fill="clear" slot="end" aria-label="Show/hide">
-            <IonIcon slot="icon-only" name={eye} aria-hidden="true"></IonIcon>
+            <IonIcon slot="icon-only" icon={eye} aria-hidden="true"></IonIcon>
           </IonButton>
         </IonInput>
       </IonItem>

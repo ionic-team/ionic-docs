@@ -7,21 +7,9 @@
   </ion-fab>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonFab, IonFabButton, IonIcon } from '@ionic/vue';
-  import { defineComponent } from 'vue';
   import { add } from 'ionicons/icons';
-
-  export default defineComponent({
-    components: {
-      IonFab,
-      IonFabButton,
-      IonIcon,
-    },
-    setup() {
-      return { add };
-    },
-  });
 </script>
 
 <style>

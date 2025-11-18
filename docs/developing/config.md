@@ -51,6 +51,14 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 <PerPlatformOverridesExample />
 
+## Accessing the Mode
+
+In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
+
+import IonicMode from '@site/static/usage/v8/config/mode/index.md';
+
+<IonicMode />
+
 ## Reading the Config (Angular)
 
 Ionic Angular provides a `Config` provider for accessing the Ionic Config.
@@ -178,6 +186,7 @@ Below are the config options that Ionic uses.
 | `loadingEnter`              | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".                                                                                                                                                                                           |
 | `loadingLeave`              | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-loading`, overriding the default "animation".                                                                                                                                                                                           |
 | `loadingSpinner`            | `SpinnerTypes`                                                                    | Overrides the default spinner for all `ion-loading` overlays.                                                                                                                                                                                                                          |
+| `logLevel`                  | `'OFF' \| 'ERROR' \| 'WARN'`                                                      | Configures the logging level for Ionic Framework. If `'OFF'`, no errors or warnings are logged. If `'ERROR'`, only errors are logged. If `'WARN'`, errors and warnings are logged.                                                                                                     |
 | `menuIcon`                  | `string`                                                                          | Overrides the default icon in all `<ion-menu-button>` components.                                                                                                                                                                                                                      |
 | `menuType`                  | `string`                                                                          | Overrides the default menu type for all `<ion-menu>` components.                                                                                                                                                                                                                       |
 | `modalEnter`                | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-modal`, overriding the default "animation".                                                                                                                                                                                             |

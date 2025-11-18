@@ -1,6 +1,6 @@
 # Virtual Scroll
 
-:::caution Looking for `ion-virtual-scroll`?
+:::warning Looking for `ion-virtual-scroll`?
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using a Vue library to accomplish this. We outline one approach using `vue-virtual-scroller` below.
 
@@ -69,7 +69,7 @@ This example will use the `RecycleScroller` component which only renders the vis
 
 The `RecycleScroller` component should be added inside of your `ion-content` component:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -89,24 +89,11 @@ The `RecycleScroller` component should be added inside of your `ion-content` com
   </ion-page>
 </template>
 
-<script>
-  import { defineComponent, ref } from 'vue';
-  import { IonAvatar, IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
+<script setup lang="ts">
+import { ref } from 'vue';
+import { IonAvatar, IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
 
-  export default defineComponent({
-    components: {
-      IonAvatar,
-      IonContent,
-      IonItem,
-      IonLabel,
-      IonPage,
-    },
-    setup() {
-      const list = ref([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-
-      return { list };
-    },
-  });
+const list = ref([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 </script>
 ```
 
@@ -126,7 +113,7 @@ Ionic Framework requires that features such as collapsible large titles, `ion-in
 
 For example:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content :scroll-y="false">

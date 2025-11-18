@@ -130,23 +130,27 @@ export const TabBarExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
 import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
 import { call, person, settings } from 'ionicons/icons';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonIcon, IonTabBar, IonTabButton, IonTabs },
-  setup() {
-    return { call, person, settings }
-  }
-});
 </script>
 ```
 
 </TabItem>
 
 </Tabs>
+
+## Badges in Tab Buttons
+
+Badges can be added inside a tab button, often used to indicate notifications or highlight additional items associated with the element.
+
+:::info
+Empty badges are only available for `md` mode.
+:::
+
+import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
+
+<InsideTabBar />
 
 ## Properties
 <Props />

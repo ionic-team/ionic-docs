@@ -103,7 +103,7 @@ Say we start on the `home` route, and we want to add a button that takes us to t
 
 We can also programmatically navigate in our app by using the router API:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -112,23 +112,11 @@ We can also programmatically navigate in our app by using the router API:
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { IonButton, IonContent, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-  import { useRouter } from 'vue-router';
+<script setup lang="ts">
+import { IonButton, IonContent, IonPage } from '@ionic/vue';
+import { useRouter } from 'vue-router';
 
-  export default defineComponent({
-    name: 'HomePage',
-    components: {
-      IonButton,
-      IonContent,
-      IonPage,
-    },
-    setup() {
-      const router = useRouter();
-      return { router };
-    },
-  });
+const router = useRouter();
 </script>
 ```
 
@@ -138,7 +126,7 @@ Both options provide the same navigation mechanism, just fitting different use c
 
 The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. The `router-link` attribute accepts string values as well as named routes, just like `router.push` from Vue Router. For additional control, the `router-direction` and `router-animation` attributes can be set as well.
 
-The `router-direction` attribute accepts values of `forward`, `back`, or `none` and is used to control the direction of the page transition.
+The `router-direction` attribute accepts values of `"forward"`, `"back"`, or `"root"` and is used to control the direction of the page transition.
 
 The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. See the [Animations documentation](../utilities/animations) for more information on using animations in Ionic Vue.
 
@@ -155,35 +143,21 @@ The `useIonRouter` utility is a function that provides methods for programmatic 
 This first example lets us push a new page onto the stack with a custom page transition:
 
 ```js
-import { defineComponent } from 'vue';
 import { useIonRouter } from '@ionic/vue';
 import { customAnimation } from '@/animations/customAnimation';
 
-export default defineComponent({
-  ...,
-  setup() {
-    const ionRouter = useIonRouter();
-
-    ionRouter.push('/page2', customAnimation);
-  }
-});
+const ionRouter = useIonRouter();
+ionRouter.push('/page2', customAnimation);
 ```
 
 `useIonRouter` provides convenience `push`, `replace`, `back`, and `forward` methods to make it easy to use common navigation actions. It also provides a `navigate` method which can be used in more complex navigation scenarios:
 
 ```js
-import { defineComponent } from 'vue';
 import { useIonRouter } from '@ionic/vue';
 import { customAnimation } from '@/animations/customAnimation';
 
-export default defineComponent({
-  ...,
-  setup() {
-    const ionRouter = useIonRouter();
-
-    ionRouter.navigate('/page2', 'forward', 'replace', customAnimation);
-  }
-});
+const ionRouter = useIonRouter();
+ionRouter.navigate('/page2', 'forward', 'replace', customAnimation);
 ```
 
 The example above has the app navigate to `/page2` with a custom animation that uses the forward direction. In addition, the `replace` value ensures that the app replaces the current history entry when navigating.
@@ -390,7 +364,7 @@ Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route o
 
 Let's start by taking a look at our `Tabs` component:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-tabs>
@@ -415,29 +389,9 @@ Let's start by taking a look at our `Tabs` component:
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-  import { ellipse, square, triangle } from 'ionicons/icons';
-
-  export default {
-    name: 'Tabs',
-    components: {
-      IonLabel,
-      IonTabs,
-      IonTabBar,
-      IonTabButton,
-      IonIcon,
-      IonPage,
-      IonRouterOutlet,
-    },
-    setup() {
-      return {
-        ellipse,
-        square,
-        triangle,
-      };
-    },
-  };
+<script setup lang="ts">
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+import { ellipse, square, triangle } from 'ionicons/icons';
 </script>
 ```
 
@@ -540,7 +494,7 @@ Nothing should be provided inside of `IonRouterOutlet` when setting it up in you
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -552,19 +506,8 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  });
+<script setup lang="ts">
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -607,7 +550,7 @@ Notice that we have now added `:id` to the end of our `detail` path string. URL 
 
 Let's look at how to use it in our component:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -620,26 +563,12 @@ Let's look at how to use it in our component:
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-  import { useRoute } from 'vue-router';
+<script setup lang="ts">
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { useRoute } from 'vue-router';
 
-  export default defineComponent({
-    name: 'Detail',
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-    setup() {
-      const route = useRoute();
-      const { id } = route.params;
-      return { id };
-    },
-  });
+const route = useRoute();
+const { id } = route.params;
 </script>
 ```
 

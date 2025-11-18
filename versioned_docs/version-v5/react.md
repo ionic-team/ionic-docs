@@ -109,6 +109,7 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 $ npm install -g @ionic/cli
 $ ionic start myApp tabs --type react
 
+$ cd myApp
 $ ionic serve █
 ```
 
