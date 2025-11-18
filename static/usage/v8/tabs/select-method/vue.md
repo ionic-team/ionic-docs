@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-tabs>
+  <ion-tabs ref="tabs">
     <ion-tab tab="home">
       <ion-page id="home-page">
         <ion-header>
@@ -9,7 +9,10 @@
           </ion-toolbar>
         </ion-header>
         <ion-content>
-          <div class="example-content">Listen now content</div>
+          <div class="example-content">
+            Listen now content
+            <ion-button @click="selectRadio()">Go to Radio</ion-button>
+          </div>
         </ion-content>
       </ion-page>
     </ion-tab>
@@ -72,7 +75,9 @@
 </template>
 
 <script setup lang="ts">
+  import { ref } from 'vue';
   import {
+    IonButton,
     IonContent,
     IonHeader,
     IonIcon,
@@ -85,6 +90,12 @@
     IonToolbar,
   } from '@ionic/vue';
   import { playCircle, radio, library, search } from 'ionicons/icons';
+
+  const tabs = ref();
+
+  const selectRadio = () => {
+    tabs.value.$el.select('radio');
+  };
 </script>
 
 <style scoped>
@@ -92,9 +103,11 @@
   /* It's not required for the tabs to function. */
   .example-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    gap: 10px;
   }
 </style>
 ```

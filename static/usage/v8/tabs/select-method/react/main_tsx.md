@@ -1,6 +1,7 @@
 ```tsx
-import React from 'react';
+import React, { useRef } from 'react';
 import {
+  IonButton,
   IonContent,
   IonIcon,
   IonHeader,
@@ -18,6 +19,11 @@ import { playCircle, radio, library, search } from 'ionicons/icons';
 import './main.css';
 
 function Example() {
+  const selectRadio = () => {
+    const tabs = document.querySelector('ion-tabs');
+    tabs?.select('radio');
+  };
+
   return (
     <IonTabs>
       <IonTab tab="home">
@@ -28,7 +34,10 @@ function Example() {
             </IonToolbar>
           </IonHeader>
           <IonContent>
-            <div className="example-content">Listen now content</div>
+            <div className="example-content">
+              Listen now content
+              <IonButton onClick={selectRadio}>Go to Radio</IonButton>
+            </div>
           </IonContent>
         </IonPage>
       </IonTab>
