@@ -1,8 +1,15 @@
 ---
+title: Build and Distribute your App
 sidebar_label: Distribute
 ---
 
-# Build and Deploy your App
+<head>
+  <title>Build and Deploy your App with Angular | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Learn how to build and deploy your Ionic app using Appflow. Discover how to create builds, push live updates, and distribute your app to users."
+  />
+</head>
 
 Now that you have built your first app, you are going to want to get it distributed so everyone can start using it. The mechanics of building and deploying your application can be quite cumbersome. That is where [Appflow](https://ionic.io/docs/appflow/) comes into play. Appflow allows you to effectively generate web and native builds, push out live app updates, publish your app to the app stores, and automate the whole process. The entire Quickstart guide can be found [here](https://ionic.io/docs/appflow/quickstart).
 
@@ -52,7 +59,7 @@ Upon completion of the Web Build, additional versioning options are available to
 To receive this live update, you will need to run the app on a device or an emulator. The quickest and easiest way to do this is through the following command:
 
 ```shell
-ionic [cordova | cap] run [ios | android] [options]
+ionic cap run [ios | android] [options]
 ```
 
 Assuming the app is configured correctly to listen to the channel you deployed to, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
@@ -93,8 +100,8 @@ For access to the ability to create a Native Configuration, you will need to be 
 
 ## What’s Next?
 
-Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to your users devices!
+Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to your users' devices!
 
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature, run the build and deploy process again through Appflow to get it out to your users.
+There are many paths to follow from here. Try adding another [Ionic UI component](../../components.md) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit. Once you have added another feature, run the build and deploy process again through Appflow to get it out to your users.
 
 Happy app building! 💙
