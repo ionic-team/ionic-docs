@@ -39,6 +39,7 @@ flexbox
 frontmatter
 fullscreen
 geolocation
+iconset
 interactives
 isopen
 jank

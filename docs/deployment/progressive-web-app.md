@@ -19,7 +19,13 @@ Ionic Apps は Web 技術で構築されているため、ネイティブアプ�
 Ionic が対応しているフレームワークについては、専用のガイドを作成し、より詳しく解説しています。以下は、Angular と React と Vue のリンクです。
 
 <DocsCards>
-  <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg"></DocsCard>
-  <DocsCard header="React" href="../react/pwa" img="/img/frameworks/react.svg"></DocsCard>
-  <DocsCard header="Vue" href="../vue/pwa" img="/img/frameworks/vue.svg"></DocsCard>
+  <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg">
+    Get started with progressive web apps in Angular.
+  </DocsCard>
+  <DocsCard header="React" href="../react/pwa" img="/img/frameworks/react.svg">
+    Get started with progressive web apps in React.
+  </DocsCard>
+  <DocsCard header="Vue" href="../vue/pwa" img="/img/frameworks/vue.svg">
+    Get started with progressive web apps in Vue.
+  </DocsCard>
 </DocsCards>

@@ -53,21 +53,22 @@ After running `ionic serve`, your project will open in the browser.
 
 ## Explore the Project Structure
 
-Your new app's `src` directory will look like this:
+Your new app's directory will look like this:
 
 ```shell
-├── App.tsx
-├── components
-│   ├── ExploreContainer.css
-│   └── ExploreContainer.tsx
-├── main.tsx
-└──  pages
-    ├── Home.css
-    └── Home.tsx
+└── src/
+    ├── App.tsx
+    ├── components
+    │   ├── ExploreContainer.css
+    │   └── ExploreContainer.tsx
+    ├── main.tsx
+    └── pages
+        ├── Home.css
+        └── Home.tsx
 ```
 
 :::info
-All file paths in the examples below are relative to the `src/` directory.
+All file paths in the examples below are relative to the project root directory.
 :::
 
 Let's walk through these files to understand the app's structure.
@@ -76,7 +77,7 @@ Let's walk through these files to understand the app's structure.
 
 The root of your app is defined in `App.tsx`:
 
-```tsx
+```tsx title="src/App.tsx"
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -110,7 +111,7 @@ This sets up the root of your application, using Ionic's `IonApp` and `IonReactR
 
 Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
-```tsx
+```tsx title="src/App.tsx"
 <IonRouterOutlet>
   <Route exact path="/home">
     <Home />
@@ -125,9 +126,9 @@ When you visit the root URL (`/`), the `Home` component will be loaded.
 
 ## View the Home Page
 
-The Home page component, defined in `pages/Home.tsx`, imports the Ionic components and defines the page template:
+The Home page component, defined in `Home.tsx`, imports the Ionic components and defines the page template:
 
-```tsx
+```tsx title="src/pages/Home.tsx"
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
@@ -155,17 +156,17 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
+For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent` in `pages/Home.tsx`:
+You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button.md) at the end of the `IonContent` in `Home.tsx`:
 
-```tsx
+```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 // ...existing imports...
 
@@ -191,9 +192,9 @@ export default Home;
 
 ## Add a New Page
 
-Create a new page at `pages/New.tsx`:
+Create a new page at `New.tsx`:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const New: React.FC = () => {
@@ -221,9 +222,9 @@ const New: React.FC = () => {
 export default New;
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
-:::warning Important
+:::warning
 When creating your own pages, always use `IonPage` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
 :::
 
@@ -231,13 +232,13 @@ When creating your own pages, always use `IonPage` as the root component. This i
 
 To navigate to the new page, create a route for it by first importing it at the top of `App.tsx` after the `Home` import:
 
-```tsx
+```tsx title="src/App.tsx"
 import New from './pages/New';
 ```
 
 Then, add its route in `IonRouterOutlet`:
 
-```tsx
+```tsx title="src/App.tsx"
 <IonRouterOutlet>
   <Route exact path="/home">
     <Home />
@@ -251,45 +252,45 @@ Then, add its route in `IonRouterOutlet`:
 </IonRouterOutlet>
 ```
 
-Once that is done, update the button in `pages/Home.tsx`:
+Once that is done, update the button in `Home.tsx`:
 
-```tsx
+```tsx title="src/pages/Home.tsx"
 <IonButton routerLink="/new">Navigate</IonButton>
 ```
 
 :::info
-Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation#navigating-using-history) for more information.
+Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation.md#navigating-using-history) for more information.
 :::
 
 ## Add Icons to the New Page
 
 Ionic React comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `IonIcon` component.
 
-Update the imports in `pages/New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
+Update the imports in `New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, logoIonic } from 'ionicons/icons';
 ```
 
 Then, include them inside of the `IonContent`:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 <IonIcon icon={heart} />
 <IonIcon icon={logoIonic} />
 ```
 
 Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
-For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
 Let's add a button that can scroll the content area to the bottom.
 
-Update `pages/New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
+Update `New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 <IonContent ref={content}>
   <IonIcon icon={heart} />
   <IonIcon icon={logoIonic} />
@@ -307,7 +308,7 @@ Update `pages/New.tsx` to add a `ref` on `IonContent` and a button and some item
 
 Then, add the imports for the additional components and define the `scrollToBottom` function:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 import { useRef } from 'react';
 import { IonButton, IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, logoIonic } from 'ionicons/icons';
@@ -334,7 +335,7 @@ To call methods on Ionic components:
 
 This pattern is necessary because React refs store the component instance in the `.current` property.
 
-You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
 
 ## Run on a Device
 

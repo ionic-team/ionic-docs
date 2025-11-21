@@ -4,7 +4,7 @@ sidebar_label: 写真の読み込み
 ---
 
 <head>
-  <title>Loading Photos from the Filesystem Using A Key-Value Store</title>
+  <title>Loading Photos from the Filesystem with React | Ionic Capacitor Camera</title>
   <meta
     name="description"
     content="We’ve implemented photo taking and saving to the filesystem, now learn how Ionic leverages Capacitor Preferences API for loading our photos in a key-value store."
@@ -13,53 +13,214 @@ sidebar_label: 写真の読み込み
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitorjs.com/docs/apis/preferences) to store our array of Photos in a key-value store.
+Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](../../native/preferences.md) to store our array of Photos in a key-value store.
 
 ## Preferences API
 
-Begin by defining a constant variable that will act as the key for the store before the `usePhotoGallery` function definition in `src/hooks/usePhotoGallery.ts`:
+Open `usePhotoGallery.ts` and begin by defining a constant variable that will act as the key for the store.
 
-```tsx
-const PHOTO_STORAGE = 'photos';
-export function usePhotoGallery() {}
+```ts
+export function usePhotoGallery() {
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
+  // CHANGE: Add a key for photo storage
+  const PHOTO_STORAGE = 'photos';
+
+  // ...existing code...
+}
 ```
 
-Then, use the `Storage` class to get access to the get and set methods for reading and writing to device storage:
+Next, at the end of the `addNewToGallery()` method, add a call to the `Preferences.set()` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
-At the end of the `takePhoto` function, add a call to `Preferences.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+```ts
+import { useState } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+// CHANGE: Add import
+import { Preferences } from '@capacitor/preferences';
 
-```tsx
-Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
-```
+export function usePhotoGallery() {
+  // ...existing code...
 
-With the photo array data saved, we will create a method that will retrieve the data when the hook loads. We will do so by using React's `useEffect` hook. Insert this above the `takePhoto` declaration. Here is the code, and we will break it down:
+  const addNewToGallery = async () => {
+    // ...existing code...
 
-```tsx
-useEffect(() => {
-  const loadSaved = async () => {
-    const { value } = await Preferences.get({ key: PHOTO_STORAGE });
-    const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
-
-    for (let photo of photosInPreferences) {
-      const file = await Filesystem.readFile({
-        path: photo.filepath,
-        directory: Directory.Data,
-      });
-      // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
-    }
-    setPhotos(photosInPreferences);
+    // CHANGE: Add method to cache all photo data for future retrieval
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
   };
-  loadSaved();
-}, []);
+
+  // ...existing code...
+
+  return {
+    addNewToGallery,
+    photos,
+  };
+}
 ```
 
-This seems a bit scary at first, so let's walk through it, first by looking at the second parameter we pass into the hook: the dependency array `[]`.
+With the photo array data saved, create a new method in the `usePhotoGallery()` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
 
-The useEffect hook, by default, gets called each time a component renders, unless, we pass in a dependency array. In that case, it will only run when a dependency gets updated. In our case we only want it to be called once. By passing in an empty array, which will not be changed, we can prevent the hook from being called multiple times.
+```ts
+// CHANGE: Update import
+import { useState, useEffect } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
 
-The first parameter to `useEffect` is the function that will be called by the effect. We pass in an anonymous arrow function, and inside of it we define another asynchronous method and then immediately call this. We have to call the async function from within the hook as the hook callback can't be asynchronous itself.
+export function usePhotoGallery() {
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood.
+  const PHOTO_STORAGE = 'photos';
+
+  // CHANGE: Add useEffect hook
+  useEffect(() => {
+    // CHANGE: Add `loadSaved()` method
+    const loadSaved = async () => {
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+    };
+
+    loadSaved();
+  }, []);
+
+  // ...existing code...
+}
+```
+
+The second parameter, the empty dependency array (`[]`), is what tells React to only run the function once. Normally, [useEffect hooks](https://react.dev/reference/react/useEffect) run after every render, but passing an empty array prevents it from running again because none of the dependencies, the values the hook relies on, will ever change.
+
+On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method.
+
+```ts
+export function usePhotoGallery() {
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
+
+  const PHOTO_STORAGE = 'photos';
+
+  useEffect(() => {
+    // CHANGE: Update `loadSaved()` method
+    const loadSaved = async () => {
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+
+      // CHANGE: Display the photo by reading into base64 format
+      for (const photo of photosInPreferences) {
+        const readFile = await Filesystem.readFile({
+          path: photo.filepath,
+          directory: Directory.Data,
+        });
+        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      }
+
+      setPhotos(photosInPreferences);
+    };
+
+    loadSaved();
+  }, []);
+
+  // ...existing code...
+}
+```
+
+`usePhotoGallery.ts` should now look like this:
+
+```ts
+import { useState, useEffect } from 'react';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+export function usePhotoGallery() {
+  const [photos, setPhotos] = useState<UserPhoto[]>([]);
+
+  const PHOTO_STORAGE = 'photos';
+
+  useEffect(() => {
+    const loadSaved = async () => {
+      const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
+      const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+
+      for (const photo of photosInPreferences) {
+        const readFile = await Filesystem.readFile({
+          path: photo.filepath,
+          directory: Directory.Data,
+        });
+        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      }
+
+      setPhotos(photosInPreferences);
+    };
+
+    loadSaved();
+  }, []);
+
+  const addNewToGallery = async () => {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+    const fileName = Date.now() + '.jpeg';
+    // Save the picture and add it to photo collection
+    const savedImageFile = await savePicture(capturedPhoto, fileName);
+
+    const newPhotos = [savedImageFile, ...photos];
+    setPhotos(newPhotos);
+
+    Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  };
+
+  const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
+    // Fetch the photo, read as a blob, then convert to base64 format
+    const response = await fetch(photo.webPath!);
+    const blob = await response.blob();
+    const base64Data = (await convertBlobToBase64(blob)) as string;
+
+    const savedFile = await Filesystem.writeFile({
+      path: fileName,
+      data: base64Data,
+      directory: Directory.Data,
+    });
+
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
+    return {
+      filepath: fileName,
+      webviewPath: photo.webPath,
+    };
+  };
+
+  const convertBlobToBase64 = (blob: Blob) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
+  };
+
+  return {
+    addNewToGallery,
+    photos,
+  };
+}
+
+export interface UserPhoto {
+  filepath: string;
+  webviewPath?: string;
+}
+```
+
+:::note
+If you're seeing broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
+
+In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
+:::
 
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!

@@ -103,7 +103,7 @@ const routes: Array<RouteRecordRaw> = [
 
 また、ルーター API を使用して、プログラムでアプリケーション内を移動することもできます:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -113,10 +113,10 @@ const routes: Array<RouteRecordRaw> = [
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonPage } from '@ionic/vue';
-  import { useRouter } from 'vue-router';
+import { IonButton, IonContent, IonPage } from '@ionic/vue';
+import { useRouter } from 'vue-router';
 
-  const router = useRouter();
+const router = useRouter();
 </script>
 ```
 
@@ -364,7 +364,7 @@ const routes: Array<RouteRecordRaw> = [
 
 まず、 `Tabs` コンポーネントをみていきましょう:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-tabs>
@@ -390,8 +390,8 @@ const routes: Array<RouteRecordRaw> = [
 </template>
 
 <script setup lang="ts">
-  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-  import { ellipse, square, triangle } from 'ionicons/icons';
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+import { ellipse, square, triangle } from 'ionicons/icons';
 </script>
 ```
 
@@ -494,7 +494,7 @@ The example below shows how the Spotify app reuses the same album component to s
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -507,7 +507,7 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -550,7 +550,7 @@ const routes: Array<RouteRecordRaw> = [
 
 コンポーネントでの使用方法を見てみましょう。
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -564,11 +564,11 @@ const routes: Array<RouteRecordRaw> = [
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { useRoute } from 'vue-router';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { useRoute } from 'vue-router';
 
-  const route = useRoute();
-  const { id } = route.params;
+const route = useRoute();
+const { id } = route.params;
 </script>
 ```
 
