@@ -1,30 +1,30 @@
 ---
-title: VS Code Extension
+title: VS Code拡張機能
 ---
 
 <head>
-  <title>VS Code Extension</title>
-  <meta name="description" content="Using the Ionic/Ionic-Framework VS Code Extension" />
+  <title>VS Code拡張機能</title>
+  <meta name="description" content="Ionic/Ionic-Framework VS Code拡張機能の使用" />
 </head>
 
-The [WebNative Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=WebNative.webnative) is a community-maintained plugin that helps you perform common Ionic Framework development tasks without needing to remember CLI commands.
+[WebNative Visual Studio Code 拡張機能](https://marketplace.visualstudio.com/items?itemName=WebNative.webnative)は、コミュニティがメンテナンスしているプラグインで、CLI コマンドを覚える必要なく、一般的な Ionic Framework 開発タスクを実行するのに役立ちます。
 
-If you have VS Code on this computer click Install below. You can also find the extension by searching for "WebNative".
+このコンピューターに VS Code がインストールされている場合は、下の「インストール」をクリックしてください。「WebNative」を検索して拡張機能を見つけることもできます。
 
 <a href="vscode:extension/webnative.webnative" target="_self">
-  <button className="install-button">Install</button>
+  <button className="install-button">インストール</button>
 </a>
 <a href="https://webnative.dev/introduction/getting-started/" target="_self">
-  <button className="docs-button">Docs</button>
+  <button className="docs-button">ドキュメント</button>
 </a>
 
-## Additional Documentation
+## 追加ドキュメント
 
-Full documentation of the WebNative extension can be found at [webnative.dev](https://webnative.dev/introduction/getting-started/) covering topics like:
+WebNative 拡張機能の完全なドキュメントは、[webnative.dev](https://webnative.dev/introduction/getting-started/)で見つけることができ、以下のようなトピックをカバーしています：
 
-- Building, debugging and running your Ionic Framework application.
-- Bundle analysis, dependency upgrades.
-- Migration from Cordova.
-- Changing native settings.
-- Splash Screens & Icons.
-- Developing without a Mac using the WebNative app.
+- Ionic Framework アプリケーションのビルド、デバッグ、実行。
+- バンドル分析、依存関係のアップグレード。
+- Cordova からの移行。
+- ネイティブ設定の変更。
+- スプラッシュスクリーンとアイコン。
+- WebNative アプリを使用した Mac なしでの開発。

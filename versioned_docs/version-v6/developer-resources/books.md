@@ -6,7 +6,7 @@ Angular. Vue. React. Vanilla JavaScript. All of these tools can be used to creat
 
 <!-- cspell:disable-next-line -->
 
-by [Paul Halliday](https:://developer.school)
+by [Paul Halliday](https://developer.school)
 
 ### [Creating Ionic Applications with StencilJS](https://www.joshmorony.com/creating-ionic-applications-with-stencil-js/) - [Free Preview](https://cdn2.hubspot.net/hubfs/3776657/PREVIEW-Creating-Ionic-Apps-with-StencilJS.pdf)
 

@@ -3,10 +3,10 @@ title: プラットフォームの外観
 ---
 
 <head>
-  <title>Ionic Platform Styles | Platform-Specific Styles for Ionic Apps</title>
+  <title>Ionicプラットフォームスタイル | Ionicアプリのプラットフォーム固有スタイル</title>
   <meta
     name="description"
-    content="Ionic provides platform-specific styles based on the app's device. Styling the components to match the device guidelines allows the app to feel native to users."
+    content="Ionicは、アプリのデバイスに基づいてプラットフォーム固有のスタイルを提供します。デバイスのガイドラインに合わせてコンポーネントをスタイリングすることで、アプリがユーザーにとってネイティブに感じられます。"
   />
 </head>
 

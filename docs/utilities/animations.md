@@ -7,20 +7,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Animations: Web Animations API to Build and Run on Ionic Apps</title>
+  <title>アニメーション: IonicアプリでWeb Animations APIを使用してアニメーションを構築・実行</title>
   <meta
     name="description"
-    content="Ionic apps use Web Animations API to build and run animations. Learn how this utility lets developers build complex animations in a platform agnostic manner."
+    content="IonicアプリはWeb Animations APIを使用してアニメーションを構築・実行します。このユーティリティが開発者がプラットフォームに依存しない方法で複雑なアニメーションを構築できるようにする方法を学びます。"
   />
 </head>
 
-## Overview
+## 概要
 
-Ionic Animations is a tool that enables developers to create complex animations in a platform-agnostic manner, without requiring a specific framework or an Ionic app.
+Ionic Animations は、特定のフレームワークや Ionic アプリを必要とせず、プラットフォームに依存しない方法で複雑なアニメーションを作成できるツールです。
 
-Creating efficient animations can be challenging, as developers are limited by the available libraries and hardware resources of the device. Moreover, many animation libraries use a JavaScript-driven approach, which can reduce the scalability of animations and use up CPU time.
+効率的なアニメーションの作成は困難な場合があります。開発者は利用可能なライブラリとデバイスのハードウェアリソースに制限されるためです。さらに、多くのアニメーションライブラリは JavaScript 駆動のアプローチを使用しており、アニメーションのスケーラビリティを低下させ、CPU 時間を消費する可能性があります。
 
-Ionic Animations, on the other hand, uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API), which offloads all the computation and running of animations to the browser. This approach allows the browser to optimize the animations and ensure their smooth execution. In cases where Web Animations are not supported, Ionic Animations will fall back to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), which should have a negligible difference in performance.
+一方、Ionic Animations は[Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)を使用しており、アニメーションの計算と実行をすべてブラウザにオフロードします。このアプローチにより、ブラウザはアニメーションを最適化し、スムーズな実行を保証できます。Web Animations がサポートされていない場合、Ionic Animations は[CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)にフォールバックしますが、パフォーマンスの差は無視できる程度です。
 
 ## Installation
 
@@ -39,7 +39,7 @@ Ionic Animations, on the other hand, uses the [Web Animations API](https://devel
 }>
 <TabItem value="javascript">
 
-Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+Ionic CoreとJavaScriptを使用する開発者は、最新バージョンの`@ionic/core`をインストールする必要があります。
 
 ```javascript
 import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
@@ -56,7 +56,7 @@ const animation = createAnimation()
 </TabItem>
 <TabItem value="typescript">
 
-Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+Ionic CoreとTypeScriptを使用する開発者は、最新バージョンの`@ionic/core`をインストールする必要があります。
 
 ```tsx
 import { createAnimation, Animation } from '@ionic/core';
@@ -72,7 +72,7 @@ const animation: Animation = createAnimation('')
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+Angularを使用する開発者は、最新バージョンの`@ionic/angular`をインストールする必要があります。アニメーションは`AnimationController`の依存性注入を介して作成できます。
 
 ```tsx
 
@@ -91,7 +91,7 @@ constructor(private animationCtrl: AnimationController) {
 </TabItem>
 <TabItem value="angular-standalone">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+Angularを使用する開発者は、最新バージョンの`@ionic/angular`をインストールする必要があります。アニメーションは`AnimationController`の依存性注入を介して作成できます。
 
 ```tsx
 
@@ -110,7 +110,7 @@ constructor(private animationCtrl: AnimationController) {
 </TabItem>
 <TabItem value="react">
 
-Developers using React should install the latest version of `@ionic/react`. React wrappers are in beta. Please report any issues on GitHub!
+Reactを使用する開発者は、最新バージョンの`@ionic/react`をインストールする必要があります。Reactラッパーはベータ版です。問題があればGitHubで報告してください！
 
 ```tsx
 
@@ -133,7 +133,7 @@ import { CreateAnimation, Animation } from '@ionic/react';
 </TabItem>
 <TabItem value="vue">
 
-Developers using Ionic Vue should install the latest version of `@ionic/vue`.
+Ionic Vueを使用する開発者は、最新バージョンの`@ionic/vue`をインストールする必要があります。
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -156,110 +156,110 @@ const animation = createAnimation()
 </Tabs>
 ````
 
-## Basic Animations
+## 基本的なアニメーション
 
-In the example below, an animation that changes the opacity on the `ion-card` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
+以下の例では、`ion-card`要素の不透明度を変更し、X 軸に沿って左から右に移動するアニメーションが作成されています。このアニメーションは無限に実行され、各反復は 1500ms 続きます。
 
-By default, all Ionic Animations are paused until the `play` method is called.
+デフォルトでは、すべての Ionic Animations は`play`メソッドが呼び出されるまで一時停止しています。
 
 import Basic from '@site/static/usage/v8/animations/basic/index.md';
 
 <Basic />
 
-## Keyframe Animations
+## キーフレームアニメーション
 
-Ionic Animations allows you to control the intermediate steps in an animation using keyframes. Any valid CSS property can be used here, and you can even use CSS Variables as values.
+Ionic Animations では、キーフレームを使用してアニメーションの中間ステップを制御できます。ここでは任意の有効な CSS プロパティを使用でき、値として CSS 変数も使用できます。
 
-Hyphenated CSS properties should be written using camel case when writing keyframes. For example, `border-radius` should be written as `borderRadius`. This also applies to the `fromTo()`, `from(),` and `to()` methods.
+キーフレームを記述する際、ハイフン付きの CSS プロパティはキャメルケースで記述する必要があります。たとえば、`border-radius`は`borderRadius`として記述する必要があります。これは`fromTo()`、`from()`、`to()`メソッドにも適用されます。
 
 import Keyframes from '@site/static/usage/v8/animations/keyframes/index.md';
 
 <Keyframes />
 
-In the example above, the card element will transition from its initial width, to a width defined by the `--width` variable, and then transition on to the final width.
+上記の例では、カード要素は初期幅から`--width`変数で定義された幅に遷移し、その後最終的な幅に遷移します。
 
-Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
+各キーフレームオブジェクトには`offset`プロパティが含まれています。`offset`は、キーフレームステップを定義する 0 から 1 の間の値です。オフセット値は昇順でなければならず、繰り返すことはできません。
 
-## Grouped Animations
+## グループ化されたアニメーション
 
-Multiple elements can be animated at the same time and controlled via a single parent animation object. Child animations inherit properties such as duration, easing, and iterations unless otherwise specified. A parent animation's `onFinish` callback will not be called until all child animations have completed.
+複数の要素を同時にアニメーション化し、単一の親アニメーションオブジェクトで制御できます。子アニメーションは、特に指定がない限り、duration、easing、iterations などのプロパティを継承します。親アニメーションの`onFinish`コールバックは、すべての子アニメーションが完了するまで呼び出されません。
 
-This example shows 3 child animations controlled by a single parent animation. Animations `cardA` and `cardB` inherit the parent animation's duration of 2000ms, but animation `cardC` has a duration of 5000ms since it was explicitly set.
+この例では、単一の親アニメーションによって制御される 3 つの子アニメーションを示しています。アニメーション`cardA`と`cardB`は親アニメーションの 2000ms の duration を継承しますが、アニメーション`cardC`は明示的に設定されているため、duration は 5000ms です。
 
 import Group from '@site/static/usage/v8/animations/group/index.md';
 
 <Group />
 
-## Before and After Hooks
+## Before/After フック
 
-Ionic Animations provides hooks that let you alter an element before an animation runs and after an animation completes. These hooks can be used to perform DOM reads and writes as well as add or remove classes and inline styles.
+Ionic Animations は、アニメーションが実行される前とアニメーションが完了した後に要素を変更できるフックを提供します。これらのフックは、DOM の読み取りと書き込み、クラスやインラインスタイルの追加や削除に使用できます。
 
-This example sets an inline filter which inverts the background color of the card by `75%` prior to the animation starting. Once the animation finishes, the box shadow on the element is set to `rgba(255, 0, 50, 0.4) 0px 4px 16px 6px`, a red glow, and the inline filter is cleared. The animation must be stopped in order to remove the box shadow and play it with the filter again.
+この例では、アニメーション開始前にカードの背景色を`75%`反転させるインラインフィルターを設定しています。アニメーションが終了すると、要素のボックスシャドウが`rgba(255, 0, 50, 0.4) 0px 4px 16px 6px`（赤いグロー）に設定され、インラインフィルターがクリアされます。ボックスシャドウを削除してフィルターを再度適用するには、アニメーションを停止する必要があります。
 
-See [Methods](#methods) for a complete list of hooks.
+フックの完全なリストについては、[Methods](#methods)を参照してください。
 
 import BeforeAndAfterHooks from '@site/static/usage/v8/animations/before-and-after-hooks/index.md';
 
 <BeforeAndAfterHooks />
 
-## Chained Animations
+## チェーンされたアニメーション
 
-Animations can be chained to run one after the other. The `play` method returns a Promise that resolves when the animation has completed.
+アニメーションは連鎖させて、次々に実行できます。`play`メソッドは、アニメーションが完了したときに解決される Promise を返します。
 
 import Chain from '@site/static/usage/v8/animations/chain/index.md';
 
 <Chain />
 
-## Gesture Animations
+## ジェスチャーアニメーション
 
-Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](gestures.md).
+Ionic Animations は、[Ionic Gestures](gestures.md)とシームレスに統合することで、強力なジェスチャーベースのアニメーションを作成する機能を開発者に提供します。
 
-In the following example we are creating a track along which we can drag the card element. Our `animation` object will take care of moving the card element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
+以下の例では、カード要素をドラッグできるトラックを作成しています。`animation`オブジェクトはカード要素を左右に移動する処理を行い、`gesture`オブジェクトは`animation`オブジェクトに移動方向を指示します。
 
 import Gesture from '@site/static/usage/v8/animations/gesture/index.md';
 
 <Gesture />
 
-## Preference-Based Animations
+## ユーザー設定ベースのアニメーション
 
-Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables.
+開発者は、CSS 変数を使用して、`prefers-reduced-motion`や`prefers-color-scheme`などのユーザー設定に合わせてアニメーションを調整することもできます。
 
-This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
+この方法は、初めてアニメーションを作成する際に、サポートされているすべてのブラウザで機能します。ほとんどのブラウザは、CSS 変数が変更されるとキーフレームアニメーションを動的に更新することもできます。
 
-Safari does not currently support dynamically updating keyframe animations. For developers who need this kind of support in Safari, they can use [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener).
+Safari は現在、キーフレームアニメーションの動的更新をサポートしていません。Safari でこのようなサポートが必要な開発者は、[MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener)を使用できます。
 
 import PreferenceBased from '@site/static/usage/v8/animations/preference-based/index.md';
 
 <PreferenceBased />
 
-## Overriding Ionic Component Animations
+## Ionic コンポーネントアニメーションのオーバーライド
 
-Certain Ionic components allow developers to provide custom animations. All animations are provided as either properties on the component or are set via a global config.
+特定の Ionic コンポーネントでは、開発者がカスタムアニメーションを提供できます。すべてのアニメーションは、コンポーネントのプロパティとして提供されるか、グローバル設定を介して設定されます。
 
-### Modals
+### モーダル
 
 import ModalOverride from '@site/static/usage/v8/animations/modal-override/index.md';
 
 <ModalOverride />
 
-## Performance Considerations
+## パフォーマンスの考慮事項
 
-CSS and Web Animations are usually handled on the compositor thread. This is different than the main thread where layout, painting, styling, and your JavaScript is executed. It is recommended that you prefer using properties that can be handled on the compositor thread for optimal animation performance.
+CSS と Web Animations は、通常、コンポジタースレッドで処理されます。これは、レイアウト、ペイント、スタイリング、JavaScript が実行されるメインスレッドとは異なります。最適なアニメーションパフォーマンスを得るには、コンポジタースレッドで処理できるプロパティを使用することをお勧めします。
 
-Animating properties such as `height` and `width` cause additional layouts and paints which can cause jank and degrade animation performance. On the other hand, animating properties such as `transform` and `opacity` are highly optimizable by the browser and typically do not cause much jank.
+`height`や`width`などのプロパティをアニメーション化すると、追加のレイアウトとペイントが発生し、ジャンクを引き起こし、アニメーションパフォーマンスを低下させる可能性があります。一方、`transform`や`opacity`などのプロパティをアニメーション化すると、ブラウザによって高度に最適化され、通常はジャンクをほとんど引き起こしません。
 
-For information on which CSS properties cause layouts or paints to occur, see [CSS Triggers](https://csstriggers.com/).
+どの CSS プロパティがレイアウトやペイントを引き起こすかについては、[CSS Triggers](https://csstriggers.com/)を参照してください。
 
-## Debugging
+## デバッグ
 
-For debugging animations in Chrome, there is a great blog post about inspecting animations using the Chrome DevTools: https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations.
+Chrome でアニメーションをデバッグするには、Chrome DevTools を使用してアニメーションを検査する優れたブログ投稿があります：https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations。
 
-It is also recommended to assign unique identifiers to your animations. These identifiers will show up in the Animations inspector in Chrome and should make it easier to debug:
+アニメーションに一意の識別子を割り当てることも推奨されます。これらの識別子は Chrome の Animations インスペクターに表示され、デバッグが容易になります：
 
 ```javascript
 /**
- * The animation for the .square element should
- * show "my-animation-identifier" in Chrome DevTools.
+ * .square要素のアニメーションは、
+ * Chrome DevToolsで"my-animation-identifier"を表示する必要があります。
  */
 const animation = createAnimation('my-animation-identifier')
   .addElement(document.querySelector('.square'))
@@ -269,9 +269,9 @@ const animation = createAnimation('my-animation-identifier')
 
 ## API
 
-This section provides a list of all the methods and properties available on the `Animation` class.
+このセクションでは、`Animation`クラスで利用可能なすべてのメソッドとプロパティのリストを提供します。
 
-### Interfaces
+### インターフェース
 
 #### AnimationDirection
 
@@ -293,7 +293,7 @@ type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
 
 :::note
 
-`opts` are additional options that are specific to the custom animation. For example, the sheet modal enter animation includes information for the current breakpoint.
+`opts`は、カスタムアニメーションに固有の追加オプションです。たとえば、シートモーダルのエンターアニメーションには、現在のブレークポイントの情報が含まれます。
 
 :::
 
@@ -321,47 +321,47 @@ interface AnimationPlayOptions {
 }
 ```
 
-### Properties
+### プロパティ
 
-| Name                           | Description                                       |
-| ------------------------------ | ------------------------------------------------- |
-| `childAnimations: Animation[]` | All child animations of a given parent animation. |
-| `elements: HTMLElement[]`      | All elements attached to an animation.            |
-| `parentAnimation?: Animation`  | The parent animation of a given animation object. |
+| Name                           | 説明                                                     |
+| ------------------------------ | -------------------------------------------------------- |
+| `childAnimations: Animation[]` | 指定された親アニメーションのすべての子アニメーション。   |
+| `elements: HTMLElement[]`      | アニメーションにアタッチされたすべての要素。             |
+| `parentAnimation?: Animation`  | 指定されたアニメーションオブジェクトの親アニメーション。 |
 
-### Methods
+### メソッド
 
-| Name                                                                                                                 | Description                                                                                                                                                                             |
-| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`                                                  | Group one or more animations together to be controlled by a parent animation.                                                                                                           |
-| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                                      | Add one or more elements to the animation.                                                                                                                                              |
-| `afterAddClass(className: string \| string[]): Animation`                                                            | Add a class or array of classes to be added to all elements in an animation after the animation ends.                                                                                   |
-| `afterAddRead(readFn: (): void): Animation`                                                                          | Add a function that performs a DOM read to be run after the animation ends.                                                                                                             |
-| `afterAddWrite(writeFn: (): void): Animation`                                                                        | Add a function that performs a DOM write to be run after the animation ends.                                                                                                            |
-| `afterClearStyles(propertyNames: string[]): Animation`                                                               | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends.                                                           |
-| `afterRemoveClass(className: string \| string[]): Animation`                                                         | Add a class or an array of classes to be removed from all elements in an animation after the animation ends.                                                                            |
-| `afterStyles(styles: { [property: string]: any }): Animation`                                                        | Add an object of styles to be applied to all elements in an animation after the animation ends.                                                                                         |
-| `beforeAddClass(className: string \| string[]): Animation`                                                           | Add a class or array of classes to be added to all elements in an animation before the animation starts.                                                                                |
-| `beforeAddRead(readFn: (): void): Animation`                                                                         | Add a function that performs a DOM read to be run before the animation starts.                                                                                                          |
-| `beforeAddWrite(writeFn: (): void): Animation`                                                                       | Add a function that performs a DOM write to be run before the animation starts.                                                                                                         |
-| `beforeClearStyles(propertyNames: string[]): Animation`                                                              | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts.                                                        |
-| `beforeRemoveClass(className: string \| string[]): Animation`                                                        | Add a class or an array of classes to be removed from all elements in an animation before the animation starts.                                                                         |
-| `beforeStyles(styles: { [property: string]: any }): Animation`                                                       | Add an object of styles to be applied to all elements in an animation before the animation starts.                                                                                      |
-| `direction(direction?: AnimationDirection): Animation`                                                               | Set the direction the animation should play in.                                                                                                                                         |
-| `delay(delay?: number): Animation`                                                                                   | Set the delay for the start of the animation in milliseconds.                                                                                                                           |
-| `destroy(clearStyleSheets?: boolean): Animation`                                                                     | Destroy the animation and clear all elements, child animations, and keyframes.                                                                                                          |
-| `duration(duration?: number): Animation`                                                                             | Set the duration of the animation in milliseconds.                                                                                                                                      |
-| `easing(easing?: string): Animation`                                                                                 | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
-| `from(property: string, value: any): Animation`                                                                      | Set the start styles of the animation.                                                                                                                                                  |
-| `fromTo(property: string, fromValue: any, toValue: any): Animation`                                                  | Set the start and end styles of the animation.                                                                                                                                          |
-| `fill(fill?: AnimationFill): Animation`                                                                              | Set how the animation applies styles to its elements before and after the animation's execution.                                                                                        |
-| `iterations(iterations: number): Animation`                                                                          | Set the number of times the animation cycle should be played before stopping.                                                                                                           |
-| `keyframes(keyframes: any[]): Animation`                                                                             | Set the keyframes for an animation.                                                                                                                                                     |
-| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending.                                                                                                                                     |
-| `pause(): Animation`                                                                                                 | Pause the animation.                                                                                                                                                                    |
-| `play(opts?: AnimationPlayOptions): Promise<void>`                                                                   | Play the animation.                                                                                                                                                                     |
-| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation`                                                | Stop seeking through an animation.                                                                                                                                                      |
-| `progressStart(forceLinearEasing?: boolean, step?: number): Animation`                                               | Begin seeking through an animation.                                                                                                                                                     |
-| `progressStep(step: number): Animation`                                                                              | Seek through an animation.                                                                                                                                                              |
-| `stop(): Animation`                                                                                                  | Stop the animation and reset all elements to their initial state.                                                                                                                       |
-| `to(property: string, value: any): Animation`                                                                        | Set the end styles of the animation.                                                                                                                                                    |
+| Name                                                                                                                 | 説明                                                                                                                                                                                                   |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`                                                  | 1 つ以上のアニメーションをグループ化して、親アニメーションによって制御します。                                                                                                                         |
+| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                                      | アニメーションに 1 つ以上の要素を追加します。                                                                                                                                                          |
+| `afterAddClass(className: string \| string[]): Animation`                                                            | アニメーション終了後に、アニメーション内のすべての要素に追加するクラスまたはクラスの配列を追加します。                                                                                                 |
+| `afterAddRead(readFn: (): void): Animation`                                                                          | アニメーション終了後に実行される DOM 読み取りを実行する関数を追加します。                                                                                                                              |
+| `afterAddWrite(writeFn: (): void): Animation`                                                                        | アニメーション終了後に実行される DOM 書き込みを実行する関数を追加します。                                                                                                                              |
+| `afterClearStyles(propertyNames: string[]): Animation`                                                               | アニメーション終了後に、アニメーション内のすべての要素のインラインスタイルからクリアするプロパティ名の配列を追加します。                                                                               |
+| `afterRemoveClass(className: string \| string[]): Animation`                                                         | アニメーション終了後に、アニメーション内のすべての要素から削除するクラスまたはクラスの配列を追加します。                                                                                               |
+| `afterStyles(styles: { [property: string]: any }): Animation`                                                        | アニメーション終了後に、アニメーション内のすべての要素に適用するスタイルのオブジェクトを追加します。                                                                                                   |
+| `beforeAddClass(className: string \| string[]): Animation`                                                           | アニメーション開始前に、アニメーション内のすべての要素に追加するクラスまたはクラスの配列を追加します。                                                                                                 |
+| `beforeAddRead(readFn: (): void): Animation`                                                                         | アニメーション開始前に実行される DOM 読み取りを実行する関数を追加します。                                                                                                                              |
+| `beforeAddWrite(writeFn: (): void): Animation`                                                                       | アニメーション開始前に実行される DOM 書き込みを実行する関数を追加します。                                                                                                                              |
+| `beforeClearStyles(propertyNames: string[]): Animation`                                                              | アニメーション開始前に、アニメーション内のすべての要素のインラインスタイルからクリアするプロパティ名の配列を追加します。                                                                               |
+| `beforeRemoveClass(className: string \| string[]): Animation`                                                        | アニメーション開始前に、アニメーション内のすべての要素から削除するクラスまたはクラスの配列を追加します。                                                                                               |
+| `beforeStyles(styles: { [property: string]: any }): Animation`                                                       | アニメーション開始前に、アニメーション内のすべての要素に適用するスタイルのオブジェクトを追加します。                                                                                                   |
+| `direction(direction?: AnimationDirection): Animation`                                                               | アニメーションの再生方向を設定します。                                                                                                                                                                 |
+| `delay(delay?: number): Animation`                                                                                   | アニメーション開始の遅延をミリ秒で設定します。                                                                                                                                                         |
+| `destroy(clearStyleSheets?: boolean): Animation`                                                                     | アニメーションを破棄し、すべての要素、子アニメーション、キーフレームをクリアします。                                                                                                                   |
+| `duration(duration?: number): Animation`                                                                             | アニメーションの継続時間をミリ秒で設定します。                                                                                                                                                         |
+| `easing(easing?: string): Animation`                                                                                 | アニメーションのイージングを設定します。受け入れられるイージング値のリストについては、[Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value)を参照してください。 |
+| `from(property: string, value: any): Animation`                                                                      | アニメーションの開始スタイルを設定します。                                                                                                                                                             |
+| `fromTo(property: string, fromValue: any, toValue: any): Animation`                                                  | アニメーションの開始スタイルと終了スタイルを設定します。                                                                                                                                               |
+| `fill(fill?: AnimationFill): Animation`                                                                              | アニメーションの実行前後で、アニメーションが要素にスタイルを適用する方法を設定します。                                                                                                                 |
+| `iterations(iterations: number): Animation`                                                                          | アニメーションサイクルが停止する前に再生される回数を設定します。                                                                                                                                       |
+| `keyframes(keyframes: any[]): Animation`                                                                             | アニメーションのキーフレームを設定します。                                                                                                                                                             |
+| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | アニメーション終了時に実行されるコールバックを追加します。                                                                                                                                             |
+| `pause(): Animation`                                                                                                 | アニメーションを一時停止します。                                                                                                                                                                       |
+| `play(opts?: AnimationPlayOptions): Promise<void>`                                                                   | アニメーションを再生します。                                                                                                                                                                           |
+| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation`                                                | アニメーションのシークを停止します。                                                                                                                                                                   |
+| `progressStart(forceLinearEasing?: boolean, step?: number): Animation`                                               | アニメーションのシークを開始します。                                                                                                                                                                   |
+| `progressStep(step: number): Animation`                                                                              | アニメーションをシークします。                                                                                                                                                                         |
+| `stop(): Animation`                                                                                                  | アニメーションを停止し、すべての要素を初期状態にリセットします。                                                                                                                                       |
+| `to(property: string, value: any): Animation`                                                                        | アニメーションの終了スタイルを設定します。                                                                                                                                                             |

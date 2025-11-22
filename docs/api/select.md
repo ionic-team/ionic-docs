@@ -154,7 +154,7 @@ Material DesignはセレクトにFilledスタイルを提供します。select �
 iOSでは、Selectの `mode` を `md` に設定することで、Filled Selectsを使うことができます。
 
 :::warning
-Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+コンポーネント間のスタイリングの競合のため、`fill`を使用するセレクトは`ion-item`内で使用すべきではありません。
 :::
 
 import FillExample from '@site/static/usage/v8/select/fill/index.md';
@@ -167,8 +167,8 @@ import FillExample from '@site/static/usage/v8/select/fill/index.md';
 
 `action-sheet` と `popover` インターフェースには `OK` ボタンがありません。オプションのいずれかをクリックすると自動的にオーバーレイが閉じ、その値が選択されます。 `popover` インターフェースには `Cancel` ボタンがなく、背景をクリックするとオーバーレイが閉じます。
 
-The `modal` interface has a single `Close` button in the header. This button is only responsible for dismissing the modal. Any selections made will persist
-after clicking this button or if the modal is dismissed using an alternative method.
+`modal`インターフェースには、ヘッダーに単一の`Close`ボタンがあります。このボタンは、モーダルを閉じることのみを担当します。
+このボタンをクリックした後、または代替方法でモーダルが閉じられた場合でも、行われた選択は保持されます。
 
 import ButtonTextExample from '@site/static/usage/v8/select/customization/button-text/index.md';
 
@@ -189,12 +189,12 @@ import InterfaceOptionsExample from '@site/static/usage/v8/select/customization/
 
 ## Start and End Slots
 
-The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
+`start`と`end`スロットは、セレクトの両側にアイコン、ボタン、またはプレフィックス/サフィックステキストを配置するために使用できます。スロットコンテンツがクリックされた場合、セレクトは開きません。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントには`aria-hidden="true"`を設定すべきです。詳細については、[Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
 
-If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+スロットコンテンツが操作対象である場合、[Button](./button.md)などのインタラクティブ要素でラップする必要があります。これにより、コンテンツにタブで移動できるようになります。
 :::
 
 import StartEndSlots from '@site/static/usage/v8/select/start-end-slots/index.md';
@@ -255,9 +255,9 @@ import TypeaheadExample from '@site/static/usage/v8/select/typeahead/index.md';
 
 ## Helper & Error Text
 
-Helper and error text can be used inside of a select with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-select`. This ensures errors are not shown before the user has a chance to enter data.
+ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使用してセレクト内で使用できます。エラーテキストは、`ion-invalid`と`ion-touched`クラスが`ion-select`に追加されていない限り表示されません。これにより、ユーザーがデータを入力する前にエラーが表示されることはありません。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v8/select/helper-error/index.md';
 
@@ -304,7 +304,7 @@ These keyboard interactions apply to all `ion-select` elements when the followin
 
 Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
 
-These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and focused.
+これらのキーボード操作は、オーバーレイが表示され、フォーカスされている場合に`ion-action-sheet`、`ion-alert`、`ion-popover`、および`ion-modal`要素に適用されます。
 
 | Key                   | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
@@ -321,7 +321,7 @@ These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popov
 
 Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
 
-These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and multiple selection is enabled.
+これらのキーボード操作は、オーバーレイが表示され、複数選択が有効になっている場合に`ion-alert`、`ion-popover`、および`ion-modal`要素に適用されます。
 
 | Key                | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |

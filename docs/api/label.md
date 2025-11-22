@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Labelは、主に[Item](./item.md)コンポーネントにテキストコンテンツを追加するために使用される要素です。Labelは、[Input](./input.md)や[Radio](./radio.md)のようなフォーム制御コンポーネントの内部で、可視ラベルを指定する場合にも使用できますが、必須ではありません。
 
-The position of the label inside of an item can be inline, fixed, stacked, or floating.
+アイテム内のラベルの位置は、inline、fixed、stacked、またはfloatingにすることができます。
 
 ## 基本的な使い方
 

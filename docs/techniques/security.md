@@ -3,27 +3,27 @@ title: Security
 ---
 
 <head>
-  <title>Security for Angular, React, and Vue Apps - Ionic Framework</title>
+  <title>Angular、React、Vueアプリのセキュリティ - Ionic Framework</title>
   <meta
     name="description"
-    content="View Ionic's security info for sanitizing user input, ejecting from the built-in sanitizer, and more. Learn about app security using Angular, React, and Vue."
+    content="ユーザー入力のサニタイズ、組み込みサニタイザーからの除外など、Ionicのセキュリティ情報を確認します。Angular、React、Vueを使用したアプリのセキュリティについて学びます。"
   />
 </head>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Sanitizing User Input
+## ユーザー入力のサニタイズ
 
-For components such as `ion-alert` developers can allow for custom or user-provided content. This content can be plain text or HTML and should be considered untrusted. As with any untrusted input, it is important to sanitize it before doing anything else with it. In particular, using things like `innerHTML` without sanitization provides an attack vector for bad actors to input malicious content and potentially launch a [Cross Site Scripting attack (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting).
+`ion-alert`などのコンポーネントでは、開発者はカスタムまたはユーザー提供のコンテンツを許可できます。このコンテンツはプレーンテキストまたは HTML であり、信頼できないものとして扱う必要があります。信頼できない入力と同様に、それを使用する前にサニタイズすることが重要です。特に、サニタイズせずに`innerHTML`のようなものを使用すると、悪意のある行為者が悪意のあるコンテンツを入力し、[クロスサイトスクリプティング攻撃（XSS）](https://en.wikipedia.org/wiki/Cross-site_scripting)を実行する攻撃ベクトルを提供する可能性があります。
 
-Ionic comes built in with a basic sanitization implementation for the components it provides. However, it is not a comprehensive solution. It is up to the developer to make sure all data that is passed is sanitized. Different frameworks have different solutions for sanitizing user input, so developers should familiarize themselves with what their specific framework offers.
+Ionic には、提供するコンポーネント用の基本的なサニタイズ実装が組み込まれています。ただし、これは包括的なソリューションではありません。渡されるすべてのデータがサニタイズされていることを確認するのは開発者の責任です。異なるフレームワークには、ユーザー入力をサニタイズするための異なるソリューションがあるため、開発者は特定のフレームワークが提供する機能に精通する必要があります。
 
-For developers who are not using a framework, or for developers whose framework does not provide the sanitization methods they need, we recommend using [sanitize-html](https://www.npmjs.com/package/sanitize-html). This package provides a simple HTML sanitizer that allows the developer to specify the exact tags and attributes that they want to allow in their application.
+フレームワークを使用していない開発者、またはフレームワークが必要なサニタイズメソッドを提供していない開発者には、[sanitize-html](https://www.npmjs.com/package/sanitize-html)の使用を推奨します。このパッケージは、開発者がアプリケーションで許可する正確なタグと属性を指定できるシンプルな HTML サニタイザーを提供します。
 
 ### Angular
 
-Angular comes built in with the `DomSanitizer` class. This helps prevent XSS issues by ensuring that values are safe to be used in the DOM. By default, Angular will mark any values it deems unsafe. For example, the following link would be marked as unsafe by Angular because it would attempt to execute some JavaScript.
+Angular には`DomSanitizer`クラスが組み込まれています。これは、値が DOM で安全に使用できることを保証することで、XSS の問題を防ぐのに役立ちます。デフォルトでは、Angular は安全でないと判断した値をマークします。たとえば、以下のリンクは、JavaScript を実行しようとするため、Angular によって安全でないとマークされます。
 
 ```tsx
 public myUrl: string = 'javascript:alert("oh no!")';
@@ -33,61 +33,61 @@ public myUrl: string = 'javascript:alert("oh no!")';
 <a [href]="myUrl">Click Me!</a>
 ```
 
-To learn more about the built-in protections that Angular provides, see the [Angular Security Guide](https://angular.io/guide/security).
+Angular が提供する組み込みの保護機能の詳細については、[Angular Security Guide](https://angular.io/guide/security)を参照してください。
 
 ### React
 
-React DOM escapes values embedded in JSX before rendering them by converting them to strings. For example, the following would be safe as `name` is converted to a string before being rendered:
+React DOM は、JSX に埋め込まれた値を文字列に変換してからレンダリングする前にエスケープします。たとえば、以下の例では、`name`がレンダリングされる前に文字列に変換されるため、安全です：
 
 ```jsx
 const name = values.name;
 const element = <h1>Hello, {name}!</h1>;
 ```
 
-However, this does not stop someone from injecting JavaScript into places such as the `href` attribute of an anchor element. The following is unsafe and can potentially allow an XSS attack to occur:
+ただし、これは誰かがアンカー要素の`href`属性などの場所に JavaScript を注入することを防ぐものではありません。以下は安全ではなく、XSS 攻撃が発生する可能性があります：
 
 ```jsx
 const userInput = 'javascript:alert("Oh no!")';
 const element = <a href={userInput}>Click Me!</a>;
 ```
 
-If the developer needs to achieve more comprehensive sanitization, they can use the [sanitize-html](https://www.npmjs.com/package/sanitize-html) package.
+開発者がより包括的なサニタイズを実現する必要がある場合は、[sanitize-html](https://www.npmjs.com/package/sanitize-html)パッケージを使用できます。
 
 ### Vue
 
-Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](https://www.npmjs.com/package/sanitize-html).
+Vue は組み込みのサニタイズメソッドを提供していません。開発者は[sanitize-html](https://www.npmjs.com/package/sanitize-html)などのパッケージを使用することを推奨します。
 
-To learn more about the security recommendations for binding to directives such as `v-html`, see the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
+`v-html`などのディレクティブにバインドする際のセキュリティ推奨事項の詳細については、[Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML)を参照してください。
 
-## Enabling Custom HTML Parsing via `innerHTML`
+## `innerHTML`を介したカスタム HTML 解析の有効化
 
-`ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, and `ion-toast` can accept custom HTML as strings for certain properties. These strings are added to the DOM using `innerHTML` and must be properly sanitized by the developer. This behavior is disabled by default which means values passed to the affected components will always be interpreted as plaintext. Developers can enable this custom HTML behavior by setting `innerHTMLTemplatesEnabled: true` in the [IonicConfig](../developing/config#ionicconfig).
+`ion-alert`、`ion-infinite-scroll-content`、`ion-loading`、`ion-refresher-content`、`ion-toast`は、特定のプロパティに対して文字列としてカスタム HTML を受け入れることができます。これらの文字列は`innerHTML`を使用して DOM に追加され、開発者が適切にサニタイズする必要があります。この動作はデフォルトで無効になっているため、影響を受けるコンポーネントに渡される値は常にプレーンテキストとして解釈されます。開発者は、[IonicConfig](../developing/config#ionicconfig)で`innerHTMLTemplatesEnabled: true`を設定することで、このカスタム HTML 動作を有効にできます。
 
-## Ejecting from the built-in sanitizer
+## 組み込みサニタイザーからの除外
 
-For developers who wish to add complex HTML to components such as `ion-toast`, they will need to eject from the sanitizer that is built into Ionic Framework. Developers can either disable the sanitizer across their entire app or bypass it on a case-by-case basis.
-
-:::note
-Bypassing sanitization functionality can make your application vulnerable to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noreferrer">XSS attacks</a>. Please exercise extreme caution when disabling the sanitizer.
-:::
-
-### Disabling the sanitizer via config
-
-Ionic Framework provides an application config option called `sanitizerEnabled` that is set to `true` by default. Set this value to `false` to globally disable Ionic Framework's built in sanitizer. Please note that this does not disable any sanitizing functionality provided by other frameworks such as Angular.
-
-### Bypassing the sanitizer on a case-by-case basis
-
-Developers can also choose to eject from the sanitizer in certain scenarios. Ionic Framework provides the `IonicSafeString` class that allows developers to do just that.
+`ion-toast`などのコンポーネントに複雑な HTML を追加したい開発者は、Ionic Framework に組み込まれているサニタイザーから除外する必要があります。開発者は、アプリ全体でサニタイザーを無効にするか、ケースバイケースでバイパスすることができます。
 
 :::note
-In order to bypass the sanitizer and use unsanitized custom HTML in the relevant Ionic components, `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config.
-
-`IonicSafeString` should not be used if `innerHTMLTemplatesEnabled` is set to `false`.
-
-See [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) for more information.
+サニタイズ機能をバイパスすると、アプリケーションが<a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noreferrer">XSS 攻撃</a>に対して脆弱になる可能性があります。サニタイザーを無効にする際は、十分に注意してください。
 :::
 
-#### Usage
+### 設定によるサニタイザーの無効化
+
+Ionic Framework は、デフォルトで`true`に設定されている`sanitizerEnabled`というアプリケーション設定オプションを提供します。この値を`false`に設定すると、Ionic Framework の組み込みサニタイザーをグローバルに無効にできます。これは、Angular などの他のフレームワークが提供するサニタイズ機能を無効にしないことに注意してください。
+
+### ケースバイケースでサニタイザーをバイパス
+
+開発者は、特定のシナリオでサニタイザーから除外することも選択できます。Ionic Framework は、開発者がこれを行うことを可能にする`IonicSafeString`クラスを提供します。
+
+:::note
+サニタイザーをバイパスして、関連する Ionic コンポーネントでサニタイズされていないカスタム HTML を使用するには、Ionic 設定で`innerHTMLTemplatesEnabled`を`true`に設定する必要があります。
+
+`innerHTMLTemplatesEnabled`が`false`に設定されている場合、`IonicSafeString`を使用しないでください。
+
+詳細については、[カスタム HTML 解析の有効化](#enabling-custom-html-parsing-via-innerhtml)を参照してください。
+:::
+
+#### 使用方法
 
 ````mdx-code-block
 <Tabs
@@ -182,15 +182,15 @@ export const ToastExample: React.FC = () => {
 </Tabs>
 ````
 
-## Content Security Policies (CSP)
+## コンテンツセキュリティポリシー（CSP）
 
-A [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a security mechanism that helps protect web applications against certain types of attacks, such as cross-site scripting (XSS) and data injection. It is implemented through an HTTP header that instructs the browser on which sources of content, such as scripts, stylesheets, and images, are allowed to be loaded and executed on a web page.
+[コンテンツセキュリティポリシー（CSP）](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)は、クロスサイトスクリプティング（XSS）やデータインジェクションなどの特定のタイプの攻撃から Web アプリケーションを保護するのに役立つセキュリティメカニズムです。これは、スクリプト、スタイルシート、画像などのコンテンツのソースを、Web ページで読み込みおよび実行できるようにするかどうかをブラウザに指示する HTTP ヘッダーを通じて実装されます。
 
-The main purpose of a CSP is to mitigate the risks associated with code injection attacks. By defining a policy, web developers can specify from which domains or sources the browser should allow the loading and execution of various types of content. This effectively limits the potential damage that can be caused by malicious scripts or unauthorized content.
+CSP の主な目的は、コードインジェクション攻撃に関連するリスクを軽減することです。ポリシーを定義することで、Web 開発者は、ブラウザがさまざまなタイプのコンテンツの読み込みと実行を許可するドメインまたはソースを指定できます。これにより、悪意のあるスクリプトや不正なコンテンツによって引き起こされる可能性のある損害を効果的に制限できます。
 
-### Enabling CSPs
+### CSP の有効化
 
-Developers can assign a CSP to their application by setting a meta tag with the policy details and the expected nonce value on script and style tags.
+開発者は、ポリシーの詳細とスクリプトおよびスタイルタグの期待される nonce 値を含む meta タグを設定することで、アプリケーションに CSP を割り当てることができます。
 
 ```html
 <meta
@@ -199,9 +199,9 @@ Developers can assign a CSP to their application by setting a meta tag with the 
 />
 ```
 
-### Ionic and CSP
+### Ionic と CSP
 
-Ionic Framework provides a function to help developers set the nonce value used when constructing the web component stylesheets. This function should be called before any Ionic components are loaded. This is required to pass the nonce value to the web components so that they can be used in a CSP environment.
+Ionic Framework は、Web コンポーネントのスタイルシートを構築する際に使用される nonce 値を設定するのに役立つ関数を提供します。この関数は、Ionic コンポーネントが読み込まれる前に呼び出す必要があります。これは、nonce 値を Web コンポーネントに渡して、CSP 環境で使用できるようにするために必要です。
 
 ```ts
 import { setNonce } from '@ionic/core/loader';
@@ -211,23 +211,23 @@ setNonce('randomNonceGoesHere');
 
 :::tip
 
-In Angular this can be called in the `main.ts` file, before the application is bootstrapped.
+Angular では、これはアプリケーションがブートストラップされる前に`main.ts`ファイルで呼び出すことができます。
 
 :::
 
-For more information on how to use CSPs with Stencil web components, see the [Stencil documentation](https://stenciljs.com/docs/csp-nonce).
+Stencil Web コンポーネントで CSP を使用する方法の詳細については、[Stencil documentation](https://stenciljs.com/docs/csp-nonce)を参照してください。
 
 ### Angular
 
-Starting in Angular 16, Angular provides two options for setting the nonce value.
+Angular 16 以降、Angular は nonce 値を設定するための 2 つのオプションを提供します。
 
-1. Set the `ngCspNonce` attribute on the root application element as `<app ngCspNonce="randomNonceGoesHere"></app>`. Use this approach if you have access to server-side templating that can add the nonce both to the header and the `index.html` when constructing the response.
-2. Provide the nonce using the [`CSP_NONCE`](https://angular.io/api/core/CSP_NONCE) injection token. Use this approach if you have access to the nonce at runtime and you want to be able to cache the `index.html`.
+1. ルートアプリケーション要素に`ngCspNonce`属性を`<app ngCspNonce="randomNonceGoesHere"></app>`として設定します。レスポンスを構築する際に、ヘッダーと`index.html`の両方に nonce を追加できるサーバーサイドテンプレートにアクセスできる場合は、このアプローチを使用します。
+2. [`CSP_NONCE`](https://angular.io/api/core/CSP_NONCE)インジェクショントークンを使用して nonce を提供します。実行時に nonce にアクセスでき、`index.html`をキャッシュできるようにしたい場合は、このアプローチを使用します。
 
 :::tip
 
-If providing the `CSP_NONCE` injection token, set the provider in your `AppModule` for module projects or within the `bootstrapApplication` for standalone projects.
+`CSP_NONCE`インジェクショントークンを提供する場合、モジュールプロジェクトの場合は`AppModule`にプロバイダーを設定し、スタンドアロンプロジェクトの場合は`bootstrapApplication`内に設定します。
 
 :::
 
-For more information on how to use CSPs with Angular, see the [Angular documentation](https://angular.io/guide/security#content-security-policy).
+Angular で CSP を使用する方法の詳細については、[Angular documentation](https://angular.io/guide/security#content-security-policy)を参照してください。

@@ -103,7 +103,7 @@ Say we start on the `home` route, and we want to add a button that takes us to t
 
 We can also programmatically navigate in our app by using the router API:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -113,10 +113,10 @@ We can also programmatically navigate in our app by using the router API:
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonPage } from '@ionic/vue';
-  import { useRouter } from 'vue-router';
+import { IonButton, IonContent, IonPage } from '@ionic/vue';
+import { useRouter } from 'vue-router';
 
-  const router = useRouter();
+const router = useRouter();
 </script>
 ```
 
@@ -364,7 +364,7 @@ Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route o
 
 Let's start by taking a look at our `Tabs` component:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-tabs>
@@ -390,8 +390,8 @@ Let's start by taking a look at our `Tabs` component:
 </template>
 
 <script setup lang="ts">
-  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-  import { ellipse, square, triangle } from 'ionicons/icons';
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+import { ellipse, square, triangle } from 'ionicons/icons';
 </script>
 ```
 
@@ -494,7 +494,7 @@ Nothing should be provided inside of `IonRouterOutlet` when setting it up in you
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -507,7 +507,7 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -550,7 +550,7 @@ Notice that we have now added `:id` to the end of our `detail` path string. URL 
 
 Let's look at how to use it in our component:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -564,11 +564,11 @@ Let's look at how to use it in our component:
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { useRoute } from 'vue-router';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { useRoute } from 'vue-router';
 
-  const route = useRoute();
-  const { id } = route.params;
+const route = useRoute();
+const { id } = route.params;
 </script>
 ```
 

@@ -31,11 +31,11 @@ import BasicPlayground from '@site/static/usage/v8/textarea/basic/index.md';
 
 ## Labels
 
-Labels should be used to describe the textarea. They can be used visually, and they will also be read out by screen readers when the user is focused on the textarea. This makes it easy for the user to understand the intent of the textarea. Textarea has several ways to assign a label:
+ラベルは、textareaを説明するために使用すべきです。視覚的に使用でき、ユーザーがtextareaにフォーカスしたときにスクリーンリーダーによって読み上げられます。これにより、ユーザーがtextareaの意図を理解しやすくなります。Textareaには、ラベルを割り当てるいくつかの方法があります：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels (experimental)
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label` プロパティ: プレーンテキストのラベルに使用
+- `label` スロット: カスタムHTMLラベルに使用（実験的）
+- `aria-label`: スクリーンリーダーにラベルを提供するために使用されますが、表示されるラベルは追加されません
 
 ### Label Placement
 
@@ -70,7 +70,7 @@ Material Designでは、テキストエリアの塗りつぶしスタイルが�
 iOSでは、Textareasの`mode`を`md`に設定することで、Filled Textareasを使うことができます。
 
 :::warning
-Textareas that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+コンポーネント間のスタイリングの競合のため、`fill`を使用するTextareaは`ion-item`内で使用すべきではありません。
 :::
 
 import Fill from '@site/static/usage/v8/textarea/fill/index.md';
@@ -113,14 +113,14 @@ import ClearOnEditPlayground from '@site/static/usage/v8/textarea/clear-on-edit/
 
 ## Start and End Slots (experimental)
 
-The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the textarea.
+`start`と`end`スロットは、textareaの両側にアイコン、ボタン、またはプレフィックス/サフィックステキストを配置するために使用できます。
 
-Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントには`aria-hidden="true"`を設定すべきです。詳細については、[Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
 
-If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+スロットコンテンツが操作対象である場合、[Button](./button.md)などのインタラクティブ要素でラップする必要があります。これにより、コンテンツにタブで移動できるようになります。
 :::
 
 import StartEndSlots from '@site/static/usage/v8/textarea/start-end-slots/index.md';

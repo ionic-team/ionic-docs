@@ -21,7 +21,7 @@ Ionic Framework はアプリで使えるいくつかのライフサイクルメ�
 
 ライフサイクルは、Vue のライフサイクルメソッドと同じように、Vue コンポーネントのルートで関数として定義されます：
 
-```tsx
+```vue
 <script setup lang="ts">
 import { IonPage } from '@ionic/vue';
 
@@ -47,7 +47,7 @@ const ionViewWillLeave = () => {
 
 These lifecycles can also be expressed using Vue 3's Composition API:
 
-```tsx
+```vue
 <script setup lang="ts">
 import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
 

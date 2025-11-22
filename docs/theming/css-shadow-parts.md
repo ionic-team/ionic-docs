@@ -3,10 +3,10 @@ title: CSS Shadow Parts
 ---
 
 <head>
-  <title>CSS Shadow Parts - Style CSS Properties Inside of A Shadow Tree</title>
+  <title>CSS Shadow Parts - シャドウツリー内のCSSプロパティをスタイル設定</title>
   <meta
     name="description"
-    content="CSS Shadow Parts allow developers to style CSS properties on elements inside of a shadow tree. Read to learn more about customizing Ionic Shadow DOM components."
+    content="CSS Shadow Partsにより、開発者はシャドウツリー内の要素のCSSプロパティをスタイル設定できます。Ionic Shadow DOMコンポーネントのカスタマイズについて詳しく学びましょう。"
   />
 </head>
 
@@ -41,7 +41,7 @@ ion-select .select-placeholder {
 }
 ```
 
-So how do we solve this? [CSS Shadow Parts](#shadow-parts-explained)!
+では、どうすれば解決できるでしょうか？[CSS Shadow Parts](#shadow-parts-explained)です！
 
 ## Shadow Parts の説明
 
@@ -65,7 +65,7 @@ Shadow Parts は、開発者がシャドウツリーの外側から、シャド�
 
 これらの Parts が公開されたことで、要素は [::part](#how-part-works) を使って直接スタイルを設定することができるようになりました。
 
-### How ::part works
+### ::part の動作方法
 
 <!-- prettier-ignore -->
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。

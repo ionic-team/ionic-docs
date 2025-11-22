@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonNav } from '@ionic/angular';
+import { IonicModule, IonNav } from '@ionic/angular';
 
 import { PageTwoComponent } from './page-two.component';
 
@@ -12,6 +12,8 @@ import { PageTwoComponent } from './page-two.component';
       <ion-button (click)="navigateToPageTwo()">Go to Page Two</ion-button>
     </ion-content>
   `,
+  imports: [IonicModule],
+  standalone: true,
 })
 export class PageOneComponent {
   constructor(private nav: IonNav) {}

@@ -15,7 +15,7 @@
   "Content is placed below the header and is shown or hidden based on expanded state.": "コンテンツはヘッダーの下に配置され、展開状態に応じて表示または非表示になります。",
   "Content is placed at the top and is used to expand or collapse the accordion item.": "コンテンツは上部に配置され、アコーディオンアイテムの拡大・縮小に使用されます。",
   "The wrapper element for the content slot.": "content slotのラッパー要素。",
-  "The expanded element. Can be used in combination with the `header` and `content` parts (i.e. `::part(header expanded)`).": "拡張された要素です。ヘッダ`とコンテンツ`の部分と組み合わせて使用することができます（例：`::part(header expanded)`）。",
+  "The expanded element. Can be used in combination with the `header` and `content` parts (i.e. `::part(header expanded)`).": "拡張された要素です。 `header` と `content` の部分を組み合わせて使用することができます（例：`::part(header expanded)`）。",
   "The wrapper element for the header slot.": "header slotのラッパーの要素です。",
   "If `true`, the action sheet will animate.": "`true`の場合、アクションシートはアニメーションを行います。",
   "If `true`, the action sheet will be dismissed when the backdrop is clicked.": "`true`の場合、バックドロップがクリックされるとアクションシートが解除されます。",

@@ -1,15 +1,16 @@
 ```tsx
 import React from 'react';
 import {
-  IonTabs,
-  IonTab,
-  IonToolbar,
-  IonTabBar,
-  IonTabButton,
-  IonHeader,
-  IonTitle,
   IonContent,
   IonIcon,
+  IonHeader,
+  IonTab,
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonTitle,
+  IonToolbar,
+  IonPage,
 } from '@ionic/react';
 
 import { playCircle, radio, library, search } from 'ionicons/icons';
@@ -20,7 +21,7 @@ function Example() {
   return (
     <IonTabs>
       <IonTab tab="home">
-        <div id="home-page">
+        <IonPage id="home-page">
           <IonHeader>
             <IonToolbar>
               <IonTitle>Listen now</IonTitle>
@@ -29,10 +30,10 @@ function Example() {
           <IonContent>
             <div className="example-content">Listen now content</div>
           </IonContent>
-        </div>
+        </IonPage>
       </IonTab>
       <IonTab tab="radio">
-        <div id="radio-page">
+        <IonPage id="radio-page">
           <IonHeader>
             <IonToolbar>
               <IonTitle>Radio</IonTitle>
@@ -41,10 +42,10 @@ function Example() {
           <IonContent>
             <div className="example-content">Radio content</div>
           </IonContent>
-        </div>
+        </IonPage>
       </IonTab>
       <IonTab tab="library">
-        <div id="library-page">
+        <IonPage id="library-page">
           <IonHeader>
             <IonToolbar>
               <IonTitle>Library</IonTitle>
@@ -53,10 +54,10 @@ function Example() {
           <IonContent>
             <div className="example-content">Library content</div>
           </IonContent>
-        </div>
+        </IonPage>
       </IonTab>
       <IonTab tab="search">
-        <div id="search-page">
+        <IonPage id="search-page">
           <IonHeader>
             <IonToolbar>
               <IonTitle>Search</IonTitle>
@@ -65,7 +66,7 @@ function Example() {
           <IonContent>
             <div className="example-content">Search content</div>
           </IonContent>
-        </div>
+        </IonPage>
       </IonTab>
 
       <IonTabBar slot="bottom">

@@ -4,41 +4,41 @@ sidebar_label: Quickstart
 ---
 
 <head>
-  <title>Ionic React Quickstart Using Ionic CLI: React Basics</title>
+  <title>Ionic CLIを使用したIonic Reactクイックスタート: Reactの基本</title>
   <meta
     name="description"
-    content="Ionic React Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
+    content="Ionic Reactクイックスタートでは、Ionic固有の機能を含むReactとIonicの基本をカバーします。Ionic CLIを使用してReactアプリを構築する方法を学びます。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Welcome! This guide will walk you through the basics of Ionic React development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic React before building your first real app.
+ようこそ！このガイドでは、Ionic React 開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionic コンポーネントの動作方法を学びます。最初の実際のアプリを構築する前に Ionic React に慣れるのに最適です。
 
-If you're looking for a high-level overview of what Ionic React is and how it fits into the React ecosystem, see the [Ionic React Overview](overview).
+Ionic React とは何か、React エコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic React の概要](overview)を参照してください。
 
-## Prerequisites
+## 前提条件
 
-Before you begin, make sure you have Node.js and npm installed on your machine.
-You can check by running:
+始める前に、マシンに Node.js と npm がインストールされていることを確認してください。
+次を実行して確認できます：
 
 ```shell
 node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+Node.js と npm がない場合は、[こちらから Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
 
-## Create a Project with the Ionic CLI
+## Ionic CLI でプロジェクトを作成
 
-First, install the latest [Ionic CLI](../cli):
+まず、最新の[Ionic CLI](../cli)をインストールします：
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-Then, run the following commands to create and run a new project:
+次に、次のコマンドを実行して新しいプロジェクトを作成し、実行します：
 
 ```shell
 ionic start myApp blank --type react
@@ -47,36 +47,37 @@ cd myApp
 ionic serve
 ```
 
-After running `ionic serve`, your project will open in the browser.
+`ionic serve`を実行すると、プロジェクトがブラウザで開きます。
 
 ![Screenshot of the Ionic React Home page](/img/guides/quickstart/home-page.png 'Ionic React Home Component')
 
 ## Explore the Project Structure
 
-Your new app's `src` directory will look like this:
+Your new app's directory will look like this:
 
 ```shell
-├── App.tsx
-├── components
-│   ├── ExploreContainer.css
-│   └── ExploreContainer.tsx
-├── main.tsx
-└──  pages
-    ├── Home.css
-    └── Home.tsx
+└── src/
+    ├── App.tsx
+    ├── components
+    │   ├── ExploreContainer.css
+    │   └── ExploreContainer.tsx
+    ├── main.tsx
+    └── pages
+        ├── Home.css
+        └── Home.tsx
 ```
 
 :::info
-All file paths in the examples below are relative to the `src/` directory.
+以下の例のすべてのファイルパスは、プロジェクトのルートディレクトリを基準にしています。
 :::
 
-Let's walk through these files to understand the app's structure.
+アプリの構造を理解するために、これらのファイルを見ていきましょう。
 
 ## View the App Component
 
 The root of your app is defined in `App.tsx`:
 
-```tsx
+```tsx title="src/App.tsx"
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -104,13 +105,13 @@ const App: React.FC = () => (
 export default App;
 ```
 
-This sets up the root of your application, using Ionic's `IonApp` and `IonReactRouter` components. The `IonRouterOutlet` is where your pages will be displayed.
+これにより、Ionic の`IonApp`と`IonReactRouter`コンポーネントを使用してアプリケーションのルートが設定されます。`IonRouterOutlet`は、ページが表示される場所です。
 
 ## View Routes
 
 Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
-```tsx
+```tsx title="src/App.tsx"
 <IonRouterOutlet>
   <Route exact path="/home">
     <Home />
@@ -121,13 +122,13 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 </IonRouterOutlet>
 ```
 
-When you visit the root URL (`/`), the `Home` component will be loaded.
+ルート URL（`/`）にアクセスすると、`Home`コンポーネントが読み込まれます。
 
 ## View the Home Page
 
-The Home page component, defined in `pages/Home.tsx`, imports the Ionic components and defines the page template:
+The Home page component, defined in `Home.tsx`, imports the Ionic components and defines the page template:
 
-```tsx
+```tsx title="src/pages/Home.tsx"
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
@@ -155,17 +156,17 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage`コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。2 番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
 
-:::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header), [Toolbar](/docs/api/toolbar), [Title](/docs/api/title), and [Content](/docs/api/content) documentation.
+:::tip 詳細情報
+Ionic レイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
-## Add an Ionic Component
+## Ionic コンポーネントを追加
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button) at the end of the `IonContent` in `pages/Home.tsx`:
+より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`Home.tsx`の`IonContent`の最後に[Button](/docs/api/button.md)をインポートして追加します：
 
-```tsx
+```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 // ...existing imports...
 
@@ -191,9 +192,9 @@ export default Home;
 
 ## Add a New Page
 
-Create a new page at `pages/New.tsx`:
+Create a new page at `New.tsx`:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const New: React.FC = () => {
@@ -221,23 +222,23 @@ const New: React.FC = () => {
 export default New;
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button) in the [Toolbar](/docs/api/toolbar). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+これにより、[Toolbar](/docs/api/toolbar.md)に[Back Button](/docs/api/back-button.md)を持つページが作成されます。戻るボタンは、前のページへのナビゲーション、または履歴がない場合は`/`へのナビゲーションを自動的に処理します。
 
-:::warning Important
-When creating your own pages, always use `IonPage` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
+:::warning
+独自のページを作成する際は、常に`IonPage`をルートコンポーネントとして使用してください。これは、ページ間の適切な遷移、Ionic コンポーネントが依存する基本 CSS スタイリング、アプリ全体での一貫したレイアウト動作に不可欠です。
 :::
 
 ## Navigate to the New Page
 
 To navigate to the new page, create a route for it by first importing it at the top of `App.tsx` after the `Home` import:
 
-```tsx
+```tsx title="src/App.tsx"
 import New from './pages/New';
 ```
 
 Then, add its route in `IonRouterOutlet`:
 
-```tsx
+```tsx title="src/App.tsx"
 <IonRouterOutlet>
   <Route exact path="/home">
     <Home />
@@ -251,45 +252,45 @@ Then, add its route in `IonRouterOutlet`:
 </IonRouterOutlet>
 ```
 
-Once that is done, update the button in `pages/Home.tsx`:
+Once that is done, update the button in `Home.tsx`:
 
-```tsx
+```tsx title="src/pages/Home.tsx"
 <IonButton routerLink="/new">Navigate</IonButton>
 ```
 
 :::info
-Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation#navigating-using-history) for more information.
+React Router の`history`プロップを使用して、プログラム的にナビゲーションを実行することもできます。詳細については、[React Navigation ドキュメント](/docs/react/navigation.md#navigating-using-history)を参照してください。
 :::
 
-## Add Icons to the New Page
+## 新しいページにアイコンを追加
 
-Ionic React comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `IonIcon` component.
+Ionic React には[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`IonIcon`コンポーネントの`icon`プロパティを設定することで、任意のアイコンを使用できます。
 
-Update the imports in `pages/New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
+`New.tsx`のインポートを更新して、`IonIcon`と`heart`および`logoIonic`アイコンをインポートします：
 
-```tsx
+```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, logoIonic } from 'ionicons/icons';
 ```
 
-Then, include them inside of the `IonContent`:
+次に、それらを`IonContent`内に含めます：
 
-```tsx
+```tsx title="src/pages/New.tsx"
 <IonIcon icon={heart} />
 <IonIcon icon={logoIonic} />
 ```
 
-Note that we are passing the imported SVG reference, **not** the icon name as a string.
+インポートされた SVG 参照を渡していることに注意してください。文字列としてのアイコン名**ではありません**。
 
-For more information, see the [Icon documentation](/docs/api/icon) and the [Ionicons documentation](https://ionic.io/ionicons/).
+詳細については、[Icon ドキュメント](/docs/api/icon.md)と[Ionicons ドキュメント](https://ionic.io/ionicons/)を参照してください。
 
-## Call Component Methods
+## コンポーネントメソッドを呼び出す
 
-Let's add a button that can scroll the content area to the bottom.
+コンテンツ領域を下部にスクロールできるボタンを追加しましょう。
 
-Update `pages/New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
+Update `New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 <IonContent ref={content}>
   <IonIcon icon={heart} />
   <IonIcon icon={logoIonic} />
@@ -307,7 +308,7 @@ Update `pages/New.tsx` to add a `ref` on `IonContent` and a button and some item
 
 Then, add the imports for the additional components and define the `scrollToBottom` function:
 
-```tsx
+```tsx title="src/pages/New.tsx"
 import { useRef } from 'react';
 import { IonButton, IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, logoIonic } from 'ionicons/icons';
@@ -332,13 +333,13 @@ To call methods on Ionic components:
 1. Create a `ref` for the component
 2. Call the method directly on `ref.current`
 
-This pattern is necessary because React refs store the component instance in the `.current` property.
+このパターンは、React refs がコンポーネントインスタンスを`.current`プロパティに保存するために必要です。
 
-You can find available methods for each component in the [Methods](/docs/api/content#methods) section of their API documentation.
+各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/docs/api/content.md#methods)セクションで見つけることができます。
 
-## Run on a Device
+## デバイスで実行
 
-Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
+Ionic のコンポーネントは、iOS、Android、PWA のどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
 
 ```shell
 ionic build
@@ -346,43 +347,45 @@ ionic cap add ios
 ionic cap add android
 ```
 
-Open the native projects in their IDEs:
+ネイティブプロジェクトを IDE で開きます：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+詳細については、[Capacitor の Getting Started ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
-## Explore More
+## さらに探索
 
-This guide covered the basics of creating an Ionic React app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
+このガイドでは、Ionic React アプリの作成、ナビゲーションの追加、ネイティブビルド用の Capacitor の導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
 
 <DocsCards>
 
-<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
-  <p>Build a real Photo Gallery app with Ionic React and native device features.</p>
+<DocsCard header="最初のアプリを構築" href="your-first-app" icon="/icons/component-content-icon.png">
+  <p>Ionic Reactとネイティブデバイス機能を使用して実際のPhoto Galleryアプリを構築します。</p>
 </DocsCard>
 
-<DocsCard header="React Documentation" href="https://react.dev/learn" icon="/icons/logo-react-icon.png">
-  <p>Learn more about React's core concepts, tools, and best practices from the official React documentation.</p>
+<DocsCard header="Reactドキュメント" href="https://react.dev/learn" icon="/icons/logo-react-icon.png">
+  <p>公式Reactドキュメントから、Reactのコアコンセプト、ツール、ベストプラクティスについて詳しく学びます。</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Discover how to handle routing and navigation in Ionic React apps using the React Router.</p>
+<DocsCard header="ナビゲーション" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>React Routerを使用してIonic Reactアプリでルーティングとナビゲーションを処理する方法を発見します。</p>
 </DocsCard>
 
-<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+<DocsCard header="コンポーネント" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>美しいアプリを構築するためのIonicの豊富なUIコンポーネントライブラリを探索します。</p>
 </DocsCard>
 
-<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
-  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+<DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
 </DocsCard>
 
-<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
+<DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>
+    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
+  </p>
 </DocsCard>
 
 </DocsCards>

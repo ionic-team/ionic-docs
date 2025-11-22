@@ -4,16 +4,16 @@ sidebar_label: はじめてのアプリ
 ---
 
 <head>
-  <title>Build Your First Ionic Mobile App: Angular Development Tutorial</title>
+  <title>Angularで最初のIonicモバイルアプリを構築 | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
+    content="このAngularチュートリアルでは、現実的なアプリを段階的に作成することで、Ionicアプリ開発の基礎を学びます。Angularで最初のIonicアプリを実行する方法を学びます。"
   />
 </head>
 
-Ionic の素晴らしいところは、1 つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。 Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ionic の素晴らしいところは、1 つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。現実的なアプリを段階的に作成しながら、Ionic アプリ開発の基礎を学びましょう。
 
-Here’s the finished app running on all 3 platforms:
+3 つのプラットフォームすべてで実行されている完成したアプリは次のとおりです：
 
 <iframe
   width="560"
@@ -25,38 +25,37 @@ Here’s the finished app running on all 3 platforms:
 ></iframe>
 
 :::note
-Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](../developer-resources/guides/first-app-v4/intro.md)
+Ionic 4 と Cordova をカバーしたこのガイドの以前のバージョンを探していますか？[こちらを参照してください。](../developer-resources/guides/first-app-v4/intro.md)
 :::
 
-## What We'll Build
+## 構築するもの
 
-We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
+デバイスのカメラで写真を撮影し、グリッドに表示し、デバイスに永続的に保存する機能を提供する Photo Gallery アプリを作成します。
 
-Highlights include:
+ハイライトには以下が含まれます：
 
-- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
+- Ionic Framework の[UI コンポーネント](../components.md)を使用して、Web、iOS、Android で実行される 1 つの Angular ベースのコードベース。
+- Ionic の公式ネイティブアプリランタイムである[Capacitor](https://capacitorjs.com)を使用して、ネイティブ iOS および Android モバイルアプリとしてデプロイ。
+- Capacitor の[Camera](../native/camera.md)、[Filesystem](../native/filesystem.md)、[Preferences](../native/preferences.md) API によって提供される Photo Gallery 機能。
 
-Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+このガイドで参照されている[完全なアプリコード](https://github.com/ionic-team/tutorial-photo-gallery-angular)を GitHub で見つけてください。
 
-## Download Required Tools
+## 必要なツールのダウンロード
 
-Download and install these right away to ensure an optimal Ionic development experience:
+最適な Ionic 開発体験を確保するために、以下をすぐにダウンロードしてインストールしてください：
 
-- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-- **Command-line interface/terminal (CLI)**:
-  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
-    CLI, running in Administrator mode.
-  - **Mac/Linux** users, virtually any terminal will work.
+- **Node.js** - Ionic エコシステムと対話するため。[LTS バージョンをこちらからダウンロード](https://nodejs.org/en/)。
+- **コードエディタ** - コードを書くため！[Visual Studio Code](https://code.visualstudio.com/)をお勧めします。
+- **コマンドラインインターフェース/ターミナル（CLI）**：
+  - **Windows**ユーザー：最適な Ionic 体験のために、管理者モードで実行される組み込みコマンドライン（cmd）または Powershell CLI をお勧めします。
+  - **Mac/Linux**ユーザー：事実上、どのターミナルでも動作します。
 
-## Install Ionic Tooling
+## Ionic ツールのインストール
 
-Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
+コマンドラインターミナルで以下を実行して、Ionic CLI（`ionic`）、デバイスやシミュレーター/エミュレーターでネイティブバイナリを実行するために使用される`native-run`、ネイティブアプリのアイコンとスプラッシュスクリーンを生成するために使用される`cordova-res`をインストールします：
 
 :::note
-To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+Visual Studio Code でターミナルを開くには、Terminal -> New Terminal に移動します。
 :::
 
 ```shell
@@ -64,9 +63,9 @@ npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
-The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+`-g`オプションは*グローバルにインストール*を意味します。パッケージをグローバルにインストールすると、`EACCES`権限エラーが発生する可能性があります。
 
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+昇格された権限なしで npm をグローバルに操作するように設定することを検討してください。詳細については、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## アプリの作成
@@ -74,7 +73,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 次に、"Tabs" というアプリテンプレートを使用して Ionic Angular アプリを生成し、Native 機能を使うために Capacitor を追加します。
 
 ```shell
-ionic start photo-gallery tabs --type=angular --capacitor
+ionic start photo-gallery tabs --type=angular
 ```
 
 :::note
@@ -91,7 +90,7 @@ ionic start photo-gallery tabs --type=angular --capacitor
 cd photo-gallery
 ```
 
-Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+次に、アプリのネイティブ機能を動作させるために必要な Capacitor プラグインをインストールする必要があります：
 
 ```shell
 npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
@@ -99,9 +98,9 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements
 
-Some Capacitor plugins, including the Camera API, provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/ionic-pwa-elements).
+[Camera API](../native/camera.md)を含む一部の Capacitor プラグインは、Ionic の[PWA Elements ライブラリ](https://github.com/ionic-team/pwa-elements)を介して Web ベースの機能と UI を提供します。
 
-It's a separate dependency, so install it next:
+これは別の依存関係なので、次にインストールします：
 
 ```shell
 npm install @ionic/pwa-elements
@@ -109,14 +108,21 @@ npm install @ionic/pwa-elements
 
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
-```tsx
+```ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+// CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader before the bootstrapModule/bootstrapApplication call
+// CHANGE: Call the element loader before the `bootstrapModule` call
 defineCustomElements(window);
+
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.log(err));
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+これで完了です！それでは、楽しい部分 - アプリの動作を見てみましょう。
 
 ## アプリを起動
 
@@ -126,57 +132,107 @@ That’s it! Now for the fun part - let’s see the app in action.
 ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
+そして、完成です！Ionic アプリが Web ブラウザで実行されています。アプリの大部分はブラウザ内で直接ビルドおよびテストできるため、開発とテストの速度が大幅に向上します。
 
-## Photo Gallery!!!
+## Photo Gallery
 
-There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+3 つのタブがあります。「Tab2」タブをクリックしてください。これは空白のキャンバス、つまり Photo Gallery に変換するのに最適な場所です。Ionic CLI には Live Reload 機能があるため、変更を加えて保存すると、アプリがすぐに更新されます！
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif 'Live Reload Feature in Ionic App')
 
-Open the photo-gallery app folder in your code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+`/src/app/tab2/tab2.page.html`を開きます。次のようになっています：
 
 ```html
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Tab 2</ion-title>
+    <ion-title> Tab 2 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content>
+```
+
+`ion-header`は上部のナビゲーションとツールバーを表し、「Tab 2」がタイトルです（iOS の[折りたたみ可能な大きなタイトル](../api/title.md#collapsible-large-titles)サポートにより、2 つあります）。両方の`ion-title`要素を次のように変更します：
+
+```html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- CHANGE: Update title -->
+    <ion-title> Photo Gallery </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!-- CHANGE: Update title -->
+      <ion-title size="large">Photo Gallery</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content>
+```
+
+アプリの視覚的な側面を`<ion-content>`に配置します。この場合、デバイスのカメラを開くボタンと、カメラでキャプチャした画像を表示する場所を追加します。まず、ページの下部に[フローティングアクションボタン](../api/fab.md)（FAB）を追加し、カメラ画像をアイコンとして設定します。
+
+```html
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Photo Gallery</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
-```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](https://ionicframework.com/docs/api/title#collapsible-large-titles) support). Rename both `ion-title` elements to:
-
-```html
-<ion-title>Photo Gallery</ion-title>
-```
-
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
-
-```html
-<ion-content>
+  <!-- CHANGE: Add the floating action button -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <!-- CHANGE: Remove or comment out `app-explore-container` -->
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>
 ```
 
-Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
+次に、`src/app/tabs/tabs.page.html`を開きます。中央のタブボタンのラベルを「Photos」に変更し、`ellipse`アイコンを`images`に変更します。
 
 ```html
-<ion-tab-button tab="tab2">
-  <ion-icon name="images"></ion-icon>
-  <ion-label>Photos</ion-label>
-</ion-tab-button>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" href="/tabs/tab1">
+      <ion-icon aria-hidden="true" name="triangle"></ion-icon>
+      <ion-label>Tab 1</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" href="/tabs/tab2">
+      <!-- CHANGE: Update icon -->
+      <ion-icon aria-hidden="true" name="images"></ion-icon>
+      <!-- CHANGE: Update label -->
+      <ion-label>Photos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" href="/tabs/tab3">
+      <ion-icon aria-hidden="true" name="square"></ion-icon>
+      <ion-label>Tab 3</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 ```
 
-Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
+これは、Ionic でできるすべての素晴らしいことの始まりに過ぎません。次に、Web でカメラ撮影機能を実装し、その後 iOS と Android 用にビルドします。
