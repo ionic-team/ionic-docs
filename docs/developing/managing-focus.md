@@ -6,44 +6,44 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Managing Focus</title>
+  <title>フォーカス管理</title>
   <meta
     name="description"
-    content="Learn how to manage focus in Ionic applications using the setFocus API instead of the autofocus attribute."
+    content="autofocus属性の代わりにsetFocus APIを使用してIonicアプリケーションでフォーカスを管理する方法を学びます。"
   />
 </head>
 
-## Manual Focus Management
+## 手動フォーカス管理
 
-Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
+Ionicは、[Input](../api/input)、[Searchbar](../api/searchbar)、[Textarea](../api/textarea)などのコンポーネントに`setFocus` APIを提供し、開発者が要素に手動でフォーカスを設定できるようにします。このAPIは`autofocus`属性の代わりに使用し、以下のタイミングで呼び出す必要があります：
 
-- The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
-- The `didPresent` lifecycle event for overlays when an overlay is presented.
-- The `appload` event for vanilla JavaScript applications when the application loads.
-- The result of a user gesture or interaction.
+- ルーティングアプリケーションでページが入力されたときの`ionViewDidEnter`ライフサイクルイベント。
+- オーバーレイが表示されたときのオーバーレイの`didPresent`ライフサイクルイベント。
+- アプリケーションが読み込まれたときのバニラJavaScriptアプリケーションの`appload`イベント。
+- ユーザーのジェスチャーやインタラクションの結果。
 
-### Why not autofocus?
+### なぜautofocusを使わないのか？
 
-The `autofocus` attribute is a standard HTML attribute that allows developers to set focus to an element when a page loads. This attribute is commonly used to set focus to the first input element on a page. However, the `autofocus` attribute can cause issues in routing applications when navigating between pages. This is because the `autofocus` attribute will set focus to the element when the page loads, but will not set focus to the element when the page is revisited. Learn more about the `autofocus` attribute in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus).
+`autofocus`属性は、ページが読み込まれたときに要素にフォーカスを設定できる標準のHTML属性です。この属性は、通常、ページの最初の入力要素にフォーカスを設定するために使用されます。ただし、`autofocus`属性は、ページ間をナビゲートする際にルーティングアプリケーションで問題を引き起こす可能性があります。これは、`autofocus`属性がページが読み込まれたときに要素にフォーカスを設定しますが、ページが再訪問されたときに要素にフォーカスを設定しないためです。`autofocus`属性の詳細については、[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus)を参照してください。
 
-### Platform Restrictions
+### プラットフォームの制限
 
-There are platform restrictions you should be aware of when using the `setFocus` API, including:
+`setFocus` APIを使用する際に注意すべきプラットフォームの制限があります：
 
-1. Android requires user interaction before setting focus to an element. This can be as simple as a user tapping on the screen.
-2. Interactive elements can only focused a result of a user gesture on Mobile Safari (iOS), such as calling `setFocus` as the result of a button click.
+1. Androidでは、要素にフォーカスを設定する前にユーザーのインタラクションが必要です。これは、ユーザーが画面をタップするだけでも可能です。
+2. Mobile Safari（iOS）では、インタラクティブ要素はユーザーのジェスチャーの結果としてのみフォーカスできます。たとえば、ボタンクリックの結果として`setFocus`を呼び出すなどです。
 
-### Basic Usage
+### 基本的な使用方法
 
-The example below demonstrates how to use the `setFocus` API to request focus on an input when the user clicks a button.
+以下の例は、ユーザーがボタンをクリックしたときに`setFocus` APIを使用して入力にフォーカスを要求する方法を示しています。
 
 import Basic from '@site/static/usage/v8/input/set-focus/index.md';
 
 <Basic />
 
-### Routing
+### ルーティング
 
-Developers can use the `ionViewDidEnter` lifecycle event to set focus to an element when a page is entered.
+開発者は、`ionViewDidEnter`ライフサイクルイベントを使用して、ページが入力されたときに要素にフォーカスを設定できます。
 
 ````mdx-code-block
 <Tabs
@@ -128,9 +128,9 @@ export default Home;
 </Tabs>
 ````
 
-### Overlays
+### オーバーレイ
 
-Developers can use the `didPresent` lifecycle event to set focus to an element when an overlay is presented.
+開発者は、`didPresent`ライフサイクルイベントを使用して、オーバーレイが表示されたときに要素にフォーカスを設定できます。
 
 ````mdx-code-block
 <Tabs
@@ -239,43 +239,43 @@ export default Home;
 </Tabs>
 ````
 
-## Assistive Technology Focus Management
+## アシスティブテクノロジーのフォーカス管理
 
-By default, Single Page Applications have no built-in way of informing screen readers that the active view has changed in a browser or webview. This means that users who rely on assistive technology do not always know if a navigation event occurred.
+デフォルトでは、シングルページアプリケーションには、ブラウザまたはWebViewでアクティブなビューが変更されたことをスクリーンリーダーに通知する組み込みの方法がありません。これは、アシスティブテクノロジーに依存するユーザーが、ナビゲーションイベントが発生したかどうかを常に知ることができないことを意味します。
 
-Developers who enable the [focusManagerPriority config](./config#ionicconfig) can delegate focus management to Ionic during page transitions. When enabled, Ionic will move focus to the correct element as specified in the config option. This will inform screen readers that a navigation event occurred.
+[focusManagerPriority設定](./config#ionicconfig)を有効にした開発者は、ページ遷移中にフォーカス管理をIonicに委任できます。有効にすると、Ionicは設定オプションで指定された正しい要素にフォーカスを移動します。これにより、スクリーンリーダーにナビゲーションイベントが発生したことが通知されます。
 
-### Types
+### 型
 
 ```typescript
 type FocusManagerPriority = 'content' | 'heading' | 'banner';
 ```
 
-### Content Types
+### コンテンツタイプ
 
-The following table explains what each content type represents:
+次の表は、各コンテンツタイプが何を表すかを説明しています：
 
-| Type      | Description                   | Ionic Component           | Semantic HTML Equivalent                                                     | Landmark Equivalent                                                                                                                                                                                                   |
+| Type      | 説明                   | Ionic Component           | Semantic HTML Equivalent                                                     | Landmark Equivalent                                                                                                                                                                                                   |
 | --------- | ----------------------------- | ------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `content` | The main portion of the view. | [Content](../api/content) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)     | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)                                                                                                                      |
-| `heading` | The title of the view.        | [Title](../api/title)     | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)         | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) with [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
-| `banner`  | The header of the view.       | [Header](../api/header)   | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
+| `content` | ビューの主要部分。 | [Content](../api/content) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)     | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)                                                                                                                      |
+| `heading` | ビューのタイトル。        | [Title](../api/title)     | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)         | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) with [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
+| `banner`  | ビューのヘッダー。       | [Header](../api/header)   | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
 
 :::important
-Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title) on each view. Since multiple [Title](../api/title) components can be used in a single view, Ionic does not automatically assign these attributes.
+開発者は、各ビューの主要な[Title](../api/title)に`role="heading"`と`aria-level="1"`を割り当てる必要があります。単一のビューで複数の[Title](../api/title)コンポーネントを使用できるため、Ionicはこれらの属性を自動的に割り当てません。
 :::
 
-### Specifying Priority
+### 優先順位の指定
 
-The config should be specified in order of decreasing priority. In the following example, Ionic will always focus headings to start. Ionic only proceeds to the next focus priority, banner, if a view does not have a heading:
+設定は優先順位の降順で指定する必要があります。次の例では、Ionicは常に最初に見出しにフォーカスします。ビューに見出しがない場合にのみ、Ionicは次のフォーカス優先順位であるbannerに進みます：
 
 ```js
 focusManagerPriority: ['heading', 'banner'];
 ```
 
-### Implementation Notes
+### 実装に関する注意事項
 
-- When specifying a focus priority, browsers may still move focus within that focus priority. For example, when specifying a `'content'` focus priority, Ionic will move focus to the content. However, the browser may then move focus within that content to the first focusable element such as a button.
-- If none of the focus priorities are found in a view, Ionic will instead focus the view itself to ensure focus generally moves to the correct place. Browsers may then adjust focus within the view.
-- When navigating from the current view to the previous view, Ionic will move focus back to the element that presented the current view.
-- The focus manager can be overridden on a per-view basis as shown in [Manual Focus Management with Routing](#routing).
+- フォーカス優先順位を指定する場合、ブラウザはそのフォーカス優先順位内でフォーカスを移動する場合があります。たとえば、`'content'`フォーカス優先順位を指定すると、Ionicはコンテンツにフォーカスを移動します。ただし、ブラウザはその後、そのコンテンツ内の最初のフォーカス可能な要素（ボタンなど）にフォーカスを移動する場合があります。
+- ビューでフォーカス優先順位が見つからない場合、Ionicは代わりにビュー自体にフォーカスを移動して、フォーカスが一般的に正しい場所に移動するようにします。その後、ブラウザはビュー内でフォーカスを調整する場合があります。
+- 現在のビューから前のビューにナビゲートする場合、Ionicは現在のビューを表示した要素にフォーカスを戻します。
+- フォーカスマネージャーは、[ルーティングでの手動フォーカス管理](#routing)に示すように、ビューごとにオーバーライドできます。

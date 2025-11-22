@@ -7,32 +7,32 @@ sidebar_label: Androidでの開発
   <title>Androidアプリ開発ガイド: Build Ionic Apps in Android Studio</title>
   <meta
     name="description"
-    content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
+    content="この開発ガイドでは、AndroidエミュレーターとデバイスでIonicアプリを実行およびデバッグする方法を説明します。ビルドを開始するためにAndroid Studioをインストールする方法を学びます。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info Looking for the legacy Android guide?
+:::info レガシーAndroidガイドをお探しですか？
 
-The Developing for Android guide has officially migrated to the [Capacitor documentation for Android](https://capacitorjs.com/docs/android). If you need to access the legacy documentation, you can find it under the [legacy developing for Android guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android).
+Android開発ガイドは、正式に[CapacitorのAndroidドキュメント](https://capacitorjs.com/docs/android)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシーAndroid開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android)で見つけることができます。
 
 :::
 
 <DocsCards>
   <DocsCard
-    header="Developing for Android with Capacitor (Recommended)"
+    header="Capacitorを使用したAndroid開発（推奨）"
     href="https://capacitorjs.com/docs/android"
     icon="/icons/capacitor-logo.svg"
   >
-    <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Capacitor.</p>
+    <p>Ionic FrameworkとCapacitorを使用してAndroidアプリの構築を開始するために知っておく必要がある基本を学びます。</p>
   </DocsCard>
   <DocsCard
-    header="Developing for Android with Cordova (Legacy)"
+    header="Cordovaを使用したAndroid開発（レガシー）"
     href="https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android"
     icon="/icons/native-cordova-bot.png"
   >
-    <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Cordova.</p>
+    <p>Ionic FrameworkとCordovaを使用してAndroidアプリの構築を開始するために知っておく必要がある基本を学びます。</p>
   </DocsCard>
 </DocsCards>
