@@ -1,11 +1,14 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { IonModal } from '@ionic/angular';
+import { IonicModule, IonModal } from '@ionic/angular';
+import { TypeaheadComponent } from './typeahead.component';
 import { Item } from './types';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
+  imports: [IonicModule, TypeaheadComponent],
+  standalone: true,
 })
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;

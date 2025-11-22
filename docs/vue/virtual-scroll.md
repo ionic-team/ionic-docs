@@ -69,7 +69,7 @@ This example will use the `RecycleScroller` component which only renders the vis
 
 The `RecycleScroller` component should be added inside of your `ion-content` component:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -90,10 +90,10 @@ The `RecycleScroller` component should be added inside of your `ion-content` com
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonAvatar, IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
+import { ref } from 'vue';
+import { IonAvatar, IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
 
-  const list = ref([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+const list = ref([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 </script>
 ```
 
@@ -113,7 +113,7 @@ Ionic Framework requires that features such as collapsible large titles, `ion-in
 
 For example:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content :scroll-y="false">

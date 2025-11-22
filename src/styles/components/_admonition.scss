@@ -1,11 +1,13 @@
 html[data-theme='light'] {
   --admonition-note-c-bg: var(--c-yellow-10);
+  --admonition-important-c-bg: var(--c-purple-0);
   --admonition-info-c-bg: var(--c-blue-0);
   --admonition-tip-c-bg: var(--c-green-10);
   --admonition-warning-c-bg: var(--c-orange-10);
   --admonition-danger-c-bg: var(--c-red-0);
 
   --admonition-code-note-c-bg: var(--c-yellow-30);
+  --admonition-code-important-c-bg: var(--c-purple-10);
   --admonition-code-info-c-bg: var(--c-blue-10);
   --admonition-code-tip-c-bg: var(--c-green-20);
   --admonition-code-warning-c-bg: var(--c-orange-20);
@@ -14,12 +16,14 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   --admonition-note-c-bg: #241800;
+  --admonition-important-c-bg: #0d0024;
   --admonition-info-c-bg: #000d24;
   --admonition-tip-c-bg: #00240a;
   --admonition-warning-c-bg: #240b00;
   --admonition-danger-c-bg: #240002;
 
   --admonition-code-note-c-bg: #3d2900;
+  --admonition-code-important-c-bg: #16003d;
   --admonition-code-info-c-bg: #00163d;
   --admonition-code-tip-c-bg: #003d11;
   --admonition-code-warning-c-bg: #3d1200;
@@ -28,12 +32,14 @@ html[data-theme='dark'] {
 
 :root {
   --admonition-bar-note-c-bg: var(--c-yellow-80);
+  --admonition-bar-important-c-bg: var(--c-purple-80);
   --admonition-bar-info-c-bg: var(--c-blue-80);
   --admonition-bar-tip-c-bg: var(--c-green-80);
   --admonition-bar-warning-c-bg: var(--c-orange-80);
   --admonition-bar-danger-c-bg: var(--c-red-60);
 
   --admonition-link-note-c: var(--c-yellow-90);
+  --admonition-link-important-c: var(--c-purple-90);
   --admonition-link-info-c: var(--c-blue-90);
   --admonition-link-tip-c: var(--c-green-90);
   --admonition-link-warning-c: var(--c-orange-90);
@@ -88,6 +94,12 @@ html[data-theme='dark'] {
     --admonition-bar-c-bg: var(--admonition-bar-note-c-bg);
     --admonition-code-c-bg: var(--admonition-code-note-c-bg);
     --admonition-link-c: var(--admonition-link-note-c);
+  }
+  &-important {
+    --ifm-alert-background-color: var(--admonition-important-c-bg);
+    --admonition-bar-c-bg: var(--admonition-bar-important-c-bg);
+    --admonition-code-c-bg: var(--admonition-code-important-c-bg);
+    --admonition-link-c: var(--admonition-link-important-c);
   }
   &-info {
     --ifm-alert-background-color: var(--admonition-info-c-bg);

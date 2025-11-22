@@ -1,11 +1,13 @@
 ```ts
 import { Component } from '@angular/core';
-
-import { ModalController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { IonicModule, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-example',
   templateUrl: 'modal-example.component.html',
+  imports: [FormsModule, IonicModule],
+  standalone: true,
 })
 export class ModalExampleComponent {
   name: string;

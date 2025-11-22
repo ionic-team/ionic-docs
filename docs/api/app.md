@@ -26,9 +26,9 @@ AppはIonicアプリケーションのコンテナ要素です。1つのプロ�
 * Material Design モードでのボタン操作時の[Ripple effect](./リップルエフェクト) が使えます。
 * Ionicアプリの使用感をよりネイティブなものにする、その他のタップやフォーカスのユーティリティが使えます。
 
-## Programmatic Focus
+## プログラムによるフォーカス
 
-Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
+Ionicは、`ion-focusable`クラスを持つコンポーネント用のフォーカスユーティリティを提供します。これらのユーティリティは、<kbd>Tab</kbd>などの特定のキーボードキーが押されたときに、コンポーネントのフォーカスを自動的に管理します。コンポーネントは、`ion-app`の`setFocus`メソッドを使用して、ユーザーのアクションに応じてプログラムでフォーカスを設定することもできます。
 
 import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
 

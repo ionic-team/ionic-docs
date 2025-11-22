@@ -137,7 +137,7 @@ See the [Keyboard Documentation](../developing/keyboard) for more information an
 
 Ionic Vue provides several lifecycle hooks for the `setup()` function to tap into the Ionic Framework page lifecycle.
 
-```js
+```vue
 <script setup lang="ts">
 import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
 

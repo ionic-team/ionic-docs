@@ -7,10 +7,10 @@ import NewColorGenerator from '@components/page/theming/NewColorGenerator';
 import CodeColor from '@components/page/theming/CodeColor';
 
 <head>
-  <title>Ionic CSS Color Component: Style or Change Default App Colors</title>
+  <title>Ionic CSS Colorコンポーネント: デフォルトアプリの色をスタイル設定または変更</title>
   <meta
     name="description"
-    content="Ionic has nine default colors that can be used to change the color of many components. Learn how to utilize Ionic CSS color properties to style your apps."
+    content="Ionicには、多くのコンポーネントの色を変更するために使用できる9つのデフォルトカラーがあります。Ionic CSS colorプロパティを活用してアプリをスタイル設定する方法を学びます。"
   />
 </head>
 
@@ -37,7 +37,7 @@ Ionic には、多くのコンポーネントの配色を変更するために�
 
 <LayeredColorsSelect />
 
-## Modifying Colors
+## 色の変更
 
 配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下の CSS プロパティが必要です。
 
@@ -107,7 +107,7 @@ div {
 
 CSS 変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](css-variables.md) をご覧ください。
 
-## New Color Creator
+## 新しい色の作成
 
 名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色を Ionic プロジェクトで利用できます。
 

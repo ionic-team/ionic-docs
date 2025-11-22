@@ -11,7 +11,7 @@ When using `v-for` with Ionic components, we recommend using Vue's `key` attribu
 
 By using `key` you can provide a stable identity for each loop element so Vue can track insertions and deletions within the iterator. Below is an example of how to use `key`:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -23,14 +23,14 @@ By using `key` you can provide a stable identity for each loop element so Vue ca
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const items = ref([
-    { id: 0, value: 'Item 0' },
-    { id: 1, value: 'Item 1' },
-    ...
-  ]);
+const items = ref([
+  { id: 0, value: 'Item 0' },
+  { id: 1, value: 'Item 1' },
+  ...
+]);
 </script>
 ```
 

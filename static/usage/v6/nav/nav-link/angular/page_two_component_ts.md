@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-
+import { IonicModule } from '@ionic/angular';
 import { PageThreeComponent } from './page-three.component';
 
 @Component({
@@ -23,6 +23,8 @@ import { PageThreeComponent } from './page-three.component';
       </div>
     </ion-content>
   `,
+  imports: [IonicModule],
+  standalone: true,
 })
 export class PageTwoComponent {
   component = PageThreeComponent;

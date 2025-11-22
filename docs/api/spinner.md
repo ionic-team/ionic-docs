@@ -39,7 +39,7 @@ import Colors from '@site/static/usage/v8/spinner/theming/colors/index.md';
 
 ### Styling
 
-You may use custom CSS to style the spinner. For example, you can resize the spinner by setting the width and height.
+カスタムCSSを使用してスピナーのスタイルを設定できます。たとえば、幅と高さを設定してスピナーのサイズを変更できます。
 
 import Resizing from '@site/static/usage/v8/spinner/theming/resizing/index.md';
 

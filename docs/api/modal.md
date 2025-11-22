@@ -143,9 +143,9 @@ import SheetBackgroundContentExample from '@site/static/usage/v8/modal/sheet/bac
 
 ### 任意の高さのシート
 
-Developers should use the `--height` CSS Variable to change the height of the sheet modal instead of changing the last breakpoint in the `breakpoints` array. The reason for this is changing the last breakpoint in the `breakpoints` array to a value less than `1` will cause some of the modal to be inaccessible outside of the viewport.
+開発者は、`breakpoints`配列の最後のブレークポイントを変更する代わりに、`--height` CSS変数を使用してシートモーダルの高さを変更すべきです。その理由は、`breakpoints`配列の最後のブレークポイントを`1`未満の値に変更すると、モーダルの一部がビューポート外でアクセスできなくなるためです。
 
-The following example shows how to get a sheet modal that is automatically sized based on its content. Note that by keeping the maximum breakpoint at `1` we ensure that the entire modal is accessible in the viewport.
+次の例は、コンテンツに基づいて自動的にサイズ調整されるシートモーダルを取得する方法を示しています。最大ブレークポイントを`1`に保つことで、モーダル全体がビューポート内でアクセス可能であることを保証することに注意してください。
 
 import SheetAutoHeightExample from '@site/static/usage/v8/modal/sheet/auto-height/index.md';
 
@@ -161,7 +161,7 @@ import SheetHandleBehaviorExample from '@site/static/usage/v8/modal/sheet/handle
 
 ### Scrolling content at all breakpoints
 
-Sheet modals can be configured to allow scrolling content at all breakpoints, making them ideal for displaying content larger than the viewport. By setting the `expandToScroll` property to `false`, the content remains scrollable at every breakpoint. Otherwise, by default, scrolling is only enabled when the sheet modal is fully expanded.
+シートモーダルは、すべてのブレークポイントでコンテンツのスクロールを許可するように設定でき、ビューポートより大きいコンテンツを表示するのに理想的です。`expandToScroll`プロパティを`false`に設定すると、コンテンツはすべてのブレークポイントでスクロール可能なままです。それ以外の場合、デフォルトでは、シートモーダルが完全に展開されている場合にのみスクロールが有効になります。
 
 import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expand-to-scroll/index.md';
 
@@ -272,7 +272,7 @@ interface ModalCustomEvent extends CustomEvent {
 
 開発者が手動でフォーカスを移動しても、アシストはモーダル要素のコンテンツへのナビゲーションを制限しません。ただし、Ionic では、フォーカスのトラッピングが有効になっているモーダルに対して、モーダルの外側に手動でフォーカスを移動することはサポートされていません。
 
-See https://w3c.github.io/aria/#aria-modal for more information.
+詳細については、https://w3c.github.io/aria/#aria-modal を参照してください。
 
 ### フォーカスのトラッピング
 

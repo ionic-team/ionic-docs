@@ -16,9 +16,9 @@ import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it, the `ionReorderEnd` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
+Reorder groupは、[reorder](./reorder)コンポーネントを使用するアイテムのコンテナです。ユーザーがアイテムをドラッグしてドロップすると、`ionReorderEnd`イベントが発行されます。このイベントのハンドラを実装し、`complete`メソッドを呼び出す必要があります。
 
-The `detail` property of the `ionReorderEnd` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` an index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
+`ionReorderEnd`イベントの`detail`プロパティには、`from`と`to`のインデックスを含む、reorder操作に関するすべての関連情報が含まれています。reorderのコンテキストでは、アイテムはインデックス`from`からインデックス`to`に移動します。reorder groupの使用例については、[reorder](./reorder)ドキュメントを参照してください。
 
 
 ## Interfaces
@@ -44,7 +44,7 @@ interface ReorderEndEventDetail {
 
 ### ReorderMoveCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行されるIonicイベントでより強く型付けを行うために、`CustomEvent`インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface ReorderMoveCustomEvent extends CustomEvent {
@@ -56,7 +56,7 @@ interface ReorderMoveCustomEvent extends CustomEvent {
 
 ### ReorderEndCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行されるIonicイベントでより強く型付けを行うために、`CustomEvent`インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface ReorderEndCustomEvent extends CustomEvent {

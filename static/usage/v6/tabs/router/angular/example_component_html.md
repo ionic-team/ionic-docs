@@ -1,5 +1,5 @@
 ```html
-<ion-tabs>
+<ion-tabs [environmentInjector]="environmentInjector">
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="play-circle"></ion-icon>

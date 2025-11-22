@@ -39,7 +39,7 @@ Modal can use Nav to offer a linear navigation that is independent of the URL.
 
 :::note
 
-The example below uses a reference to Nav and the public method APIs to push and pop views. It is recommended to use NavLink in implementations that do not require this level of granular access and control.
+以下の例では、Navへの参照とパブリックメソッドAPIを使用してビューをプッシュおよびポップします。このレベルの細かいアクセスと制御が必要ない実装では、NavLinkを使用することをお勧めします。
 
 :::
 

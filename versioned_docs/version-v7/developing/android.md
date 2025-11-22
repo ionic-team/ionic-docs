@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 :::info Looking for the legacy Android guide?
 
-The Developing for Android guide has officially migrated to the [Capacitor documentation for Android](https://capacitorjs.com/docs/android). If you need to access the legacy documentation, you can find it under the [legacy developing for Android guide](https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/v6/developing/android).
+The Developing for Android guide has officially migrated to the [Capacitor documentation for Android](https://capacitorjs.com/docs/android). If you need to access the legacy documentation, you can find it under the [legacy developing for Android guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android).
 
 :::
 
@@ -30,7 +30,7 @@ The Developing for Android guide has officially migrated to the [Capacitor docum
   </DocsCard>
   <DocsCard
     header="Developing for Android with Cordova (Legacy)"
-    href="https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/v6/developing/android"
+    href="https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android"
     icon="/icons/native-cordova-bot.png"
   >
     <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Cordova.</p>

@@ -7,18 +7,18 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Gestures | Ionic App Utility for Custom Gestures and Interactions</title>
+  <title>ジェスチャー | カスタムジェスチャーとインタラクション用のIonicアプリユーティリティ</title>
   <meta
     name="description"
-    content="Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their app in a platform agnostic manner. Read to learn more."
+    content="Ionic Gesturesは、開発者がプラットフォームに依存しない方法でアプリのカスタムジェスチャーとインタラクションを構築できるユーティリティです。詳しく学びましょう。"
   />
 </head>
 
-## Overview
+## 概要
 
-Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their application in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app! As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Gestures.
+Ionic Gestures は、開発者がプラットフォームに依存しない方法でアプリケーションのカスタムジェスチャーとインタラクションを構築できるユーティリティです。開発者は、React や Angular などの特定のフレームワークを使用する必要はなく、Ionic アプリを構築する必要もありません！開発者が Ionic Framework v5.0 以降にアクセスできる限り、Ionic Gestures のすべてにアクセスできます。
 
-Building complex gestures can be time consuming. Other libraries that provide custom gestures are often times too heavy handed and end up capturing mouse or touch events and not letting them propagate. This can result in other elements no longer being scrollable or clickable.
+複雑なジェスチャーの構築には時間がかかる場合があります。カスタムジェスチャーを提供する他のライブラリは、しばしば過度に重く、マウスやタッチイベントをキャプチャして伝播させないため、他の要素がスクロール可能またはクリック可能でなくなる可能性があります。
 
 ## Installation
 
@@ -36,7 +36,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 }>
 <TabItem value="javascript">
 
-Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+Ionic CoreとJavaScriptを使用する開発者は、最新バージョンの`@ionic/core`をインストールする必要があります。
 
 ```javascript
 import { createGesture } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
@@ -54,7 +54,7 @@ const gesture = createGesture({
 </TabItem>
 <TabItem value="typescript">
 
-Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+Ionic CoreとTypeScriptを使用する開発者は、最新バージョンの`@ionic/core`をインストールする必要があります。
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/core';
@@ -71,10 +71,10 @@ const gesture: Gesture = createGesture({
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Gestures can be created via the `GestureController` dependency injection.
+Angularを使用する開発者は、最新バージョンの`@ionic/angular`をインストールする必要があります。ジェスチャーは`GestureController`の依存性注入を介して作成できます。
 
-By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
-or they can wrap their callbacks in an `NgZone.run()` call.
+デフォルトでは、ジェスチャーのコールバックはNgZone内で実行されません。
+開発者は、ジェスチャーを作成する際に`runInsideAngularZone`パラメータを`true`に設定するか、コールバックを`NgZone.run()`呼び出しでラップできます。
 
 ```tsx
 import { Gesture, GestureController } from '@ionic/angular';
@@ -95,10 +95,10 @@ constructor(private gestureCtrl: GestureController) {
 </TabItem>
 <TabItem value="angular-standalone">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Gestures can be created via the `GestureController` dependency injection.
+Angularを使用する開発者は、最新バージョンの`@ionic/angular`をインストールする必要があります。ジェスチャーは`GestureController`の依存性注入を介して作成できます。
 
-By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
-or they can wrap their callbacks in an `NgZone.run()` call.
+デフォルトでは、ジェスチャーのコールバックはNgZone内で実行されません。
+開発者は、ジェスチャーを作成する際に`runInsideAngularZone`パラメータを`true`に設定するか、コールバックを`NgZone.run()`呼び出しでラップできます。
 
 ```tsx
 import { Gesture, GestureController } from '@ionic/angular/standalone';
@@ -119,7 +119,7 @@ constructor(private gestureCtrl: GestureController) {
 </TabItem>
 <TabItem value="react">
 
-Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
+Reactを使用する開発者は、最新バージョンの`@ionic/react`をインストールする必要があります。完全なReactラッパーは近日公開予定です！
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/react';
@@ -136,7 +136,7 @@ const gesture: Gesture = createGesture({
 </TabItem>
 <TabItem value="vue">
 
-Developers using Ionic Vue should install the latest version of `@ionic/vue`.
+Ionic Vueを使用する開発者は、最新バージョンの`@ionic/vue`をインストールする必要があります。
 
 ```javascript
 import { createGesture } from '@ionic/vue';
@@ -160,78 +160,78 @@ const gesture = createGesture({
 </Tabs>
 ````
 
-## Basic Gestures
+## 基本的なジェスチャー
 
 import Basic from '@site/static/usage/v8/gestures/basic/index.md';
 
-In this example, our app listens for gestures on the `ion-content` element. When a gesture movement has started, the `onStart` function is called and a class is added to our `ion-card` to add a colored box shadow. When a gesture movement was detected, the `onMove` function is called and our app prints the current gesture information within the `ion-card`. Finally, when a gesture movement has ended, the `onEnd` function is called and the custom class is removed from our `ion-card`.
+この例では、アプリは`ion-content`要素でジェスチャーをリッスンします。ジェスチャーの移動が開始されると、`onStart`関数が呼び出され、`ion-card`にクラスが追加されて色付きのボックスシャドウが追加されます。ジェスチャーの移動が検出されると、`onMove`関数が呼び出され、アプリは`ion-card`内に現在のジェスチャー情報を出力します。最後に、ジェスチャーの移動が終了すると、`onEnd`関数が呼び出され、カスタムクラスが`ion-card`から削除されます。
 
 <Basic />
 
-## Double Click Gesture
+## ダブルクリックジェスチャー
 
 import DoubleClick from '@site/static/usage/v8/gestures/double-click/index.md';
 
-In the example below, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
+以下の例では、要素のダブルクリックを検出できるようにします。`threshold`を`0`に設定することで、ジェスチャーオブジェクトがクリックを検出できるようにします。さらに、連続して発生する 2 つのクリックのみがダブルクリックとしてカウントされるように、クリックの閾値を定義します。
 
 <DoubleClick />
 
-## Gesture Animations
+## ジェスチャーアニメーション
 
-See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
+ジェスチャーアニメーションの実装ガイドについては、[Ionic Animations を使用したジェスチャーアニメーション](animations.md#gesture-animations)を参照してください。
 
-## Types
+## 型
 
-| Name              | Value                                        |
+| Name              | 値                                           |
 | ----------------- | -------------------------------------------- |
 | `GestureCallback` | `(detail: GestureDetail) => boolean \| void` |
 
-## Interfaces
+## インターフェース
 
 ### GestureConfig
 
-| Property        | Type                                       | Default     | Description                                                                                                                                                                                                                                                                                                             |
-| --------------- | ------------------------------------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| el              | `Node`                                     | `undefined` | The element to listen on for gestures.                                                                                                                                                                                                                                                                                  |
-| disableScroll   | `boolean \| undefined`                     | `false`     | If true, scrolling will be disabled on `el` while the gesture is enabled.                                                                                                                                                                                                                                               |
-| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis.                                                                                                                                                                                                                                                              |
-| gestureName     | `string`                                   | `undefined` | The name of the gesture to create.                                                                                                                                                                                                                                                                                      |
-| gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another.                                                                                                                                                                |
-| passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
-| maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture.                                                                                                                                                                                                                                                                    |
-| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture starts.                                                                                                                                                                                                                                                         |
-| blurOnStart     | `boolean \| undefined`                     | `undefined` | If true, the gesture will blur any active selectable element such as an input or a textarea before firing the `onStart` callback.                                                                                                                                                                                       |
-| canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start.                                                                                                                                                                                                                                                          |
-| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that fires when a gesture is about to start. This is fired after `canStart` but before `onStart`.                                                                                                                                                                                                            |
-| onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started.                                                                                                                                                                                                                                                                       |
-| onMove          | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture movement was detected.                                                                                                                                                                                                                                                             |
-| onEnd           | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released.                                                                                                                                                                                                                       |
-| notCaptured     | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has not been captured. This usually happens when there is a conflicting gesture with a higher priority.                                                                                                                                                                            |
+| Property        | 型                                         | デフォルト  | 説明                                                                                                                                                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| el              | `Node`                                     | `undefined` | ジェスチャーをリッスンする要素。                                                                                                                                                                                                                                                                                                             |
+| disableScroll   | `boolean \| undefined`                     | `false`     | true の場合、ジェスチャーが有効な間、`el`でのスクロールが無効になります。                                                                                                                                                                                                                                                                    |
+| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | 特定の軸に沿った移動にジェスチャー検出を制限します。                                                                                                                                                                                                                                                                                         |
+| gestureName     | `string`                                   | `undefined` | 作成するジェスチャーの名前。                                                                                                                                                                                                                                                                                                                 |
+| gesturePriority | `number \| undefined`                      | `0`         | 優先度の高いジェスチャーは、優先度の低いジェスチャーをオーバーライドします。複数のジェスチャーが衝突しないようにするのに役立ちます。                                                                                                                                                                                                         |
+| passive         | `boolean \| undefined`                     | `true`      | true の場合、ジェスチャーが`preventDefault()`を呼び出すことはないことを示します。これはスクロールパフォーマンスを向上させるために使用できます。詳細については、[Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners)を参照してください。 |
+| maxAngle        | `number \| undefined`                      | `40`        | ジェスチャーを検出する際に許可する最大角度。                                                                                                                                                                                                                                                                                                 |
+| threshold       | `number \| undefined`                      | `10`        | ジェスチャーが開始する前にポインターが移動する必要がある量を定義します。                                                                                                                                                                                                                                                                     |
+| blurOnStart     | `boolean \| undefined`                     | `undefined` | true の場合、ジェスチャーは`onStart`コールバックを発火する前に、input や textarea などのアクティブな選択可能な要素をぼかします。                                                                                                                                                                                                             |
+| canStart        | `GestureCallback \| undefined`             | `undefined` | ジェスチャーが開始を許可されている場合に true を返すコールバック。                                                                                                                                                                                                                                                                           |
+| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | ジェスチャーが開始されようとしているときに発火するコールバック。これは`canStart`の後、`onStart`の前に発火します。                                                                                                                                                                                                                            |
+| onStart         | `GestureCallback \| undefined`             | `undefined` | ジェスチャーが開始されたときに発火するコールバック。                                                                                                                                                                                                                                                                                         |
+| onMove          | `GestureCallback \| undefined`             | `undefined` | ジェスチャーの移動が検出されたときに発火するコールバック。                                                                                                                                                                                                                                                                                   |
+| onEnd           | `GestureCallback \| undefined`             | `undefined` | ジェスチャーが終了したときに発火するコールバック。通常、ポインターが解放されたときです。                                                                                                                                                                                                                                                     |
+| notCaptured     | `GestureCallback \| undefined`             | `undefined` | ジェスチャーがキャプチャされなかったときに発火するコールバック。通常、優先度の高い競合するジェスチャーがある場合に発生します。                                                                                                                                                                                                               |
 
 ### GestureDetail
 
-| Property       | Type               | Description                                                                                                                               |
-| -------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| type           | `string`           | The type of gesture that was detected.                                                                                                    |
-| startX         | `number`           | The starting x coordinate of the gesture.                                                                                                 |
-| startY         | `number`           | The starting y coordinate of the gesture.                                                                                                 |
-| startTimeStamp | `number`           | The timestamp at which the gesture was started.                                                                                           |
-| currentX       | `number`           | The current x coordinate of the gesture.                                                                                                  |
-| currentY       | `number`           | The current y coordinate of the gesture.                                                                                                  |
-| velocityX      | `number`           | How fast the gesture is currently moving on the x axis.                                                                                   |
-| velocityY      | `number`           | How fast the gesture is currently moving on the y axis.                                                                                   |
-| deltaX         | `number`           | How much the gesture has moved on the x axis since it started.                                                                            |
-| deltaY         | `number`           | How much the gesture has moved on the y axis since it started.                                                                            |
-| timeStamp      | `number`           | The current timestamp of the gesture.                                                                                                     |
-| event          | `UIEvent`          | The native event dispatched by the browser. See [UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) for more information. |
-| data           | `any \| undefined` | Any data specified by the user. This can be set and read in any of the callbacks.                                                         |
+| Property       | 型                 | 説明                                                                                                                                                          |
+| -------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type           | `string`           | 検出されたジェスチャーのタイプ。                                                                                                                              |
+| startX         | `number`           | ジェスチャーの開始 x 座標。                                                                                                                                   |
+| startY         | `number`           | ジェスチャーの開始 y 座標。                                                                                                                                   |
+| startTimeStamp | `number`           | ジェスチャーが開始されたタイムスタンプ。                                                                                                                      |
+| currentX       | `number`           | ジェスチャーの現在の x 座標。                                                                                                                                 |
+| currentY       | `number`           | ジェスチャーの現在の y 座標。                                                                                                                                 |
+| velocityX      | `number`           | ジェスチャーが現在 x 軸上で移動している速度。                                                                                                                 |
+| velocityY      | `number`           | ジェスチャーが現在 y 軸上で移動している速度。                                                                                                                 |
+| deltaX         | `number`           | ジェスチャーが開始されてから x 軸上で移動した量。                                                                                                             |
+| deltaY         | `number`           | ジェスチャーが開始されてから y 軸上で移動した量。                                                                                                             |
+| timeStamp      | `number`           | ジェスチャーの現在のタイムスタンプ。                                                                                                                          |
+| event          | `UIEvent`          | ブラウザによってディスパッチされたネイティブイベント。詳細については、[UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)を参照してください。 |
+| data           | `any \| undefined` | ユーザーによって指定された任意のデータ。これは任意のコールバックで設定および読み取ることができます。                                                          |
 
-## Methods
+## メソッド
 
 #### `enable(enable: boolean = true) => void`
 
-Enable or disable the gesture.
+ジェスチャーを有効または無効にします。
 
 #### `destroy() => void`
 
-Destroy the gesture instance and stop listening on the target element.
+ジェスチャーインスタンスを破棄し、ターゲット要素でのリッスンを停止します。

@@ -1,7 +1,7 @@
 ```html
 <ion-tabs>
   <ion-tab tab="home">
-    <div id="home-page">
+    <div id="home-page" class="ion-page">
       <ion-header>
         <ion-toolbar>
           <ion-title>Listen now</ion-title>
@@ -13,7 +13,7 @@
     </div>
   </ion-tab>
   <ion-tab tab="radio">
-    <div id="radio-page">
+    <div id="radio-page" class="ion-page">
       <ion-header>
         <ion-toolbar>
           <ion-title>Radio</ion-title>
@@ -25,7 +25,7 @@
     </div>
   </ion-tab>
   <ion-tab tab="library">
-    <div id="library-page">
+    <div id="library-page" class="ion-page">
       <ion-header>
         <ion-toolbar>
           <ion-title>Library</ion-title>
@@ -37,7 +37,7 @@
     </div>
   </ion-tab>
   <ion-tab tab="search">
-    <div id="search-page">
+    <div id="search-page" class="ion-page">
       <ion-header>
         <ion-toolbar>
           <ion-title>Search</ion-title>

@@ -67,7 +67,7 @@ this.platform.ready().then(() => {
 
 <img src={require('@site/static/img/building/cross-platform-items.png').default} />
 
-To improve this experience, we can wrap the items in a [Grid](../api/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
+このエクスペリエンスを改善するために、アイテムを[Grid](../api/grid.md)コンポーネントで囲むことができます。ビューは、大きな画面でより使いやすくなるように簡単に書き直すことができます：
 
 ```html
 <ion-grid>

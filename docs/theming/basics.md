@@ -9,7 +9,7 @@ import ColorAccordion from '@components/page/theming/ColorAccordion';
   <title>テーマ | Ionic Apps: Color and Theming Basics Definition</title>
   <meta
     name="description"
-    content="The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify."
+    content="アプリのテーマ設定の定義が簡素化されました。Ionic Frameworkは、変更や修正が非常に簡単な事前に用意されたスタイルと色で構築されています。"
   />
 </head>
 
@@ -23,7 +23,7 @@ Ionic には 9 つのデフォルトカラーがあり、多くのコンポー�
 
 <ColorAccordion />
 
-## Platform Standards
+## プラットフォーム標準
 
 Ionic コンポーネントは、アプリが動作しているプラットフォームに応じて、見た目や動作を調整します。私たちはこれを **Adaptive Styling** と呼んでいます。これにより、開発者は複数のプラットフォームで同じコードベースを使用しながら、特定のプラットフォームで「ネイティブ」な外観のアプリを構築することができます。
 

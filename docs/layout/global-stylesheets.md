@@ -6,7 +6,7 @@ title: グローバルスタイルシート
   <title>グローバルスタイルシート: Styled CSS Component Options for Ionic Apps</title>
   <meta
     name="description"
-    content="While Ionic component styles are self-contained, there are several global stylesheets and CSS options to include to utilize all features. Read to learn more."
+    content="Ionicコンポーネントのスタイルは自己完結していますが、すべての機能を利用するために含める必要があるグローバルスタイルシートとCSSオプションがいくつかあります。詳細を読んで学びましょう。"
   />
 </head>
 

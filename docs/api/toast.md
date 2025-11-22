@@ -202,7 +202,7 @@ const toast = await toastController.create({
 
 ### Tips
 
-While this is not a complete list, here are some guidelines to follow when using toasts.
+これは完全なリストではありませんが、トーストを使用する際に従うべきガイドラインを以下に示します。
 
 * Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
 

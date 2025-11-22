@@ -48,7 +48,13 @@ Ionicでは、タブを使ったルーティングパターンのベストプラ
 
 :::
 
-<Router />
+## Programmatically Selecting Tabs
+
+タブは`select`メソッドを使用してプログラムで選択できます。これは、ボタンのクリックに応答したり、フォームを完了した後など、アプリケーションロジックからタブの変更をトリガーする必要がある場合に便利です。次の例では、ボタンを使用して`select`メソッドを呼び出し、別のタブにナビゲートする方法を示しています。
+
+import SelectMethod from '@site/static/usage/v8/tabs/select-method/index.md';
+
+<SelectMethod />
 
 ## Interfaces
 

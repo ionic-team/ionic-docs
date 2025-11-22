@@ -42,7 +42,7 @@ import IsOpen from '@site/static/usage/v8/alert/presenting/isOpen/index.md';
 
 ## Controller Alerts
 
-`alertController`は、アラートを表示するタイミングや解除するタイミングをより細かく制御する必要がある場合に使用することができる。
+`alertController`は、アラートを表示するタイミングや解除するタイミングをより細かく制御する必要がある場合に使用することができます。
 
 import Controller from '@site/static/usage/v8/alert/presenting/controller/index.md';
 
@@ -186,7 +186,7 @@ const alert = await alertController.create({
 
 #### Alert Buttons の概要
 
-Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
+テキストを含むボタンはスクリーンリーダーによって読み取られます。既存のテキスト以外の説明が必要な場合は、ボタンの`htmlAttributes`プロパティに`aria-label`を渡して、ボタンにラベルを設定できます。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 

@@ -38,7 +38,7 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 ## Label Wrapping
 
-Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. You can enable text wrapping by adding the `ion-text-wrap` class to a wrapper around the radio text or styling the `label` shadow part using the `::part()` selector.
+ラベルの配置に関係なく、長いテキストはデフォルトで折り返されません。ラジオの幅が制約されている場合、オーバーフローしたテキストは省略記号で切り詰められます。ラジオテキストの周りのラッパーに`ion-text-wrap`クラスを追加するか、`::part()`セレクタを使用して`label`シャドウパーツをスタイリングすることで、テキストの折り返しを有効にできます。
 
 import LabelWrap from '@site/static/usage/v8/radio/label-wrap/index.md';
 
@@ -54,10 +54,10 @@ import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/inde
 
 ## Alignment
 
-Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+開発者は`alignment`プロパティを使用して、ラベルとコントロールがクロス軸上でどのように配置されるかを制御できます。このプロパティは、flexboxの`align-items`プロパティを反映しています。
 
 :::note
-Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+スタックされたラジオは、`alignment`プロパティを使用して配置できます。ラベルとコントロールを水平方向に中央揃えする必要がある場合に便利です。
 :::
 
 import Alignment from '@site/static/usage/v8/radio/alignment/index.md';
@@ -86,9 +86,9 @@ import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md
 
 ## Helper & Error Text
 
-Helper and error text can be used inside of a radio group with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-radio-group`. This ensures errors are not shown before the user has a chance to enter data.
+ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使用してラジオグループ内で使用できます。エラーテキストは、`ion-invalid`と`ion-touched`クラスが`ion-radio-group`に追加されていない限り表示されません。これにより、ユーザーがデータを入力する前にエラーが表示されることはありません。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
 

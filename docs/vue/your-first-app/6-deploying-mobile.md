@@ -4,18 +4,14 @@ sidebar_label: モバイルへのデプロイ
 ---
 
 <head>
-  <title>Build and Deploy Vue Apps for iOS and Android with Capacitor</title>
+  <title>Adding Mobile Support with Vue | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="Capacitor is Ionic’s official app runtime to deploy web apps to native platforms like iOS, Android, and more. Read for how to build and deploy Ionic Vue apps."
+    content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
   />
 </head>
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
-
-:::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-vue).
-:::
 
 ## Capacitor Setup
 
@@ -48,13 +44,13 @@ Note: After making updates to the native portion of the code (such as adding a n
 ionic cap sync
 ```
 
-## iOS
+## iOS Deployment
 
-:::note
+:::important
 To build an iOS app, you’ll need a Mac computer.
 :::
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by CocoaPods. Before running this app on an iOS device, there's a couple of steps to complete.
+Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Before running this app on an iOS device, there's a couple of steps to complete.
 
 First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
 
@@ -84,7 +80,7 @@ Upon tapping the Camera button on the Photo Gallery tab, the permission prompt w
 
 ![Two iPhones side by side, one showing the camera permission prompt and the other displaying a photo taken with the app.](/img/guides/first-app-cap-ng/ios-permissions-photo.png 'iOS Camera Permission Prompt and Photo Result')
 
-## Android
+## Android Deployment
 
 Capacitor Android apps are configured and managed through Android Studio. Before running this app on an Android device, there's a couple of steps to complete.
 
