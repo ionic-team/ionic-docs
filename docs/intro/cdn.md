@@ -4,21 +4,21 @@ sidebar_label: パッケージ & CDN
 ---
 
 <head>
-  <title>Ionic Framework Packages: CDN, Angular, Vue, React, and JavaScript</title>
+  <title>Ionic Frameworkパッケージ: CDN、Angular、Vue、React、JavaScript</title>
   <meta
     name="description"
-    content="View our different packages that can be used to quickly start using Ionic Framework or Ionicons CDN in a test environment, Angular, Vue, React, or JavaScript."
+    content="テスト環境、Angular、Vue、React、またはJavaScriptでIonic FrameworkやIonicons CDNをすぐに使い始めるために使用できるさまざまなパッケージを確認してください。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Ionic Framework offers npm packages for Angular, React, Vue, and JavaScript, plus CDN links for quick prototyping. Choose your framework below to get started, or use the CDN to test Ionic Framework components in the browser.
+Ionic Frameworkは、Angular、React、Vue、JavaScript用のnpmパッケージと、迅速なプロトタイピング用のCDNリンクを提供しています。下記からフレームワークを選択して始めるか、CDNを使用してブラウザでIonic Frameworkコンポーネントをテストしてください。
 
 ## Ionic Angular
 
-Start a new Ionic Angular app or add Ionic to your existing Angular project.
+新しいIonic Angularアプリを開始するか、既存のAngularプロジェクトにIonicを追加します。
 
 <DocsCards>
 
@@ -27,22 +27,22 @@ Start a new Ionic Angular app or add Ionic to your existing Angular project.
   href="../angular/quickstart"
   iconset="/icons/logo-angular-icon.png,/icons/guide-quickstart-icon.png"
 >
-  <p>Create a new Ionic Angular app using the Ionic CLI.</p>
+  <p>Ionic CLIを使用して新しいIonic Angularアプリを作成します。</p>
 </DocsCard>
 
 <DocsCard
-  header="Existing Angular Project"
+  header="既存のAngularプロジェクト"
   href="../angular/add-to-existing"
   iconset="/icons/logo-angular-icon.png,/icons/guide-package-icon.png"
 >
-  <p>Add Ionic Angular to an existing Angular project.</p>
+  <p>既存のAngularプロジェクトにIonic Angularを追加します。</p>
 </DocsCard>
 
 </DocsCards>
 
 ## Ionic React
 
-Start a new Ionic React app or add Ionic to your existing React project.
+新しいIonic Reactアプリを開始するか、既存のReactプロジェクトにIonicを追加します。
 
 <DocsCards>
 
@@ -51,22 +51,22 @@ Start a new Ionic React app or add Ionic to your existing React project.
   href="../react/quickstart"
   iconset="/icons/logo-react-icon.png,/icons/guide-quickstart-icon.png"
 >
-  <p>Create a new Ionic React app using the Ionic CLI.</p>
+  <p>Ionic CLIを使用して新しいIonic Reactアプリを作成します。</p>
 </DocsCard>
 
 <DocsCard
-  header="Existing React Project"
+  header="既存のReactプロジェクト"
   href="../react/add-to-existing"
   iconset="/icons/logo-react-icon.png,/icons/guide-package-icon.png"
 >
-  <p>Add Ionic React to an existing React project.</p>
+  <p>既存のReactプロジェクトにIonic Reactを追加します。</p>
 </DocsCard>
 
 </DocsCards>
 
 ## Ionic Vue
 
-Start a new Ionic Vue app or add Ionic to your existing Vue project.
+新しいIonic Vueアプリを開始するか、既存のVueプロジェクトにIonicを追加します。
 
 <DocsCards>
 
@@ -75,22 +75,22 @@ Start a new Ionic Vue app or add Ionic to your existing Vue project.
   href="../vue/quickstart"
   iconset="/icons/logo-vue-icon.png,/icons/guide-quickstart-icon.png"
 >
-  <p>Create a new Ionic Vue app using the Ionic CLI.</p>
+  <p>Ionic CLIを使用して新しいIonic Vueアプリを作成します。</p>
 </DocsCard>
 
 <DocsCard
-  header="Existing Vue Project"
+  header="既存のVueプロジェクト"
   href="../vue/add-to-existing"
   iconset="/icons/logo-vue-icon.png,/icons/guide-package-icon.png"
 >
-  <p>Add Ionic Vue to an existing Vue project.</p>
+  <p>既存のVueプロジェクトにIonic Vueを追加します。</p>
 </DocsCard>
 
 </DocsCards>
 
 ## Ionic JavaScript
 
-Start a new Ionic JavaScript app.
+新しいIonic JavaScriptアプリを開始します。
 
 <DocsCards>
 
@@ -99,14 +99,14 @@ Start a new Ionic JavaScript app.
   href="../javascript/quickstart"
   iconset="/icons/logo-javascript-icon.png,/icons/guide-quickstart-icon.png"
 >
-  <p>Create a new Ionic JavaScript app using Vite.</p>
+  <p>Viteを使用して新しいIonic JavaScriptアプリを作成します。</p>
 </DocsCard>
 
 </DocsCards>
 
 ## Ionic Framework CDN
 
-Ionic Framework can be included from a CDN for quick testing in a [StackBlitz](https://stackblitz.com/), [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
+Ionic Frameworkは、[StackBlitz](https://stackblitz.com/)、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタで迅速にテストするために、CDNから含めることができます！
 
 CDN からフレームワークにアクセスするには、 [jsdelivr](https://www.jsdelivr.com/) を使用することをお勧めします。最新バージョンを入手するためには HTML ファイルの `<head>` 要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
 
@@ -116,7 +116,7 @@ CDN からフレームワークにアクセスするには、 [jsdelivr](https:/
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](/docs/layout/global-stylesheets.md).
+これにより、フレームワークをインストールすることなく、Ionic Frameworkのすべてのコアコンポーネントを使用できます。CSSバンドルには、Ionicのすべての[グローバルスタイルシート](/docs/layout/global-stylesheets.md)が含まれます。
 
 ## Ionicons CDN
 
@@ -127,4 +127,4 @@ Ionicons はデフォルトで Ionic Framework に同梱されているので、
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-For more information on using Ionicons, visit the [Ionicons documentation](https://ionic.io/ionicons/usage).
+Ioniconsの使用に関する詳細については、[Ioniconsドキュメント](https://ionic.io/ionicons/usage)をご覧ください。
