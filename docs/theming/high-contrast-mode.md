@@ -6,26 +6,26 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>High Contrast Mode to Increase Color Contrast</title>
+  <title>ハイコントラストモード: 色のコントラストを向上</title>
   <meta
     name="description"
-    content="Developers are adding high contrast mode CSS on native applications to support their user preferences. Read to learn more about high contrast color schemes for Ionic apps."
+    content="開発者は、ユーザーの好みをサポートするためにネイティブアプリケーションにハイコントラストモードCSSを追加しています。Ionicアプリのハイコントラストカラースキームについて詳しく学びましょう。"
   />
 </head>
 
-Ionic offers palettes with increased contrast for users with low vision. These palettes work by amplifying the contrast between foreground content, such as text, and background content, such as UI components. Ionic provides both light and dark variants for achieving high contrast.
+Ionicは、視力の低いユーザー向けにコントラストを向上させたパレットを提供します。これらのパレットは、テキストなどの前景コンテンツとUIコンポーネントなどの背景コンテンツ間のコントラストを増幅することで機能します。Ionicは、ハイコントラストを実現するためにライトとダークの両方のバリアントを提供します。
 
-## Overview
+## 概要
 
-The default palette in Ionic provides [Ionic colors](./colors.md) that meet [Level AA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) as defined by Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The [Ionic colors](./colors.md) in the high contrast palette have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. Notably, improvements have been made to the contrast of UI components, including border, text, and background colors. However, it's important to note that within the high contrast palette, priority is given to text legibility. This means that if adjusting the contrast of a UI component against the page background would significantly compromise the contrast between the component's text and its background, the contrast of the UI component background will remain unchanged.
+Ionicのデフォルトパレットは、適切なコントラストカラーと組み合わせて使用すると、Web Content Accessibility Guidelines（WCAG）で定義されている[Level AA色コントラスト](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)を満たす[Ionic colors](./colors.md)を提供します。ハイコントラストパレットの[Ionic colors](./colors.md)は、適切なコントラストカラーと組み合わせて使用すると、[Level AAA色コントラスト](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)を満たすように更新されています。特に、ボーダー、テキスト、背景色を含むUIコンポーネントのコントラストが改善されています。ただし、ハイコントラストパレット内では、テキストの可読性が優先されることに注意することが重要です。これは、ページの背景に対するUIコンポーネントのコントラストを調整すると、コンポーネントのテキストとその背景間のコントラストが大幅に損なわれる場合、UIコンポーネントの背景のコントラストは変更されないままになることを意味します。
 
-## Enabling High Contrast Theme
+## ハイコントラストテーマを有効にする
 
-There are three provided ways to enable the high contrast palette in an app: **always**, based on **system** settings, or by using a CSS **class**.
+アプリでハイコントラストパレットを有効にする方法は3つあります：**always**、**system**設定に基づく方法、またはCSS**class**を使用する方法です。
 
 ### Always
 
-The high contrast palette can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast palette regardless of the system settings for contrast preference.
+ハイコントラストパレットは、適切なファイルに以下のスタイルシートをインポートすることで有効にできます。このアプローチは、コントラスト設定のシステム設定に関係なく、ハイコントラストパレットを有効にします。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -64,9 +64,9 @@ import '@ionic/vue/css/palettes/high-contrast.always.css'; // Light palette
 
 </Tabs>
 
-The high contrast dark palette can be applied by importing `high-contrast-dark.always.css` instead of `high-contrast.always.css`.
+ハイコントラストダークパレットは、`high-contrast.always.css`の代わりに`high-contrast-dark.always.css`をインポートすることで適用できます。
 
-The following example will always display the high contrast light palette, regardless of the user's preference for high contrast or dark mode.
+以下の例は、ユーザーのハイコントラストまたはダークモードの設定に関係なく、常にハイコントラストライトパレットを表示します。
 
 import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-contrast-mode/index.md';
 
@@ -74,9 +74,9 @@ import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-co
 
 ### System
 
-The system approach to enabling high contrast mode involves checking the system settings for the user's preferred contrast. This is the default when starting a new Ionic Framework app. Importing the following stylesheets in the appropriate file will automatically retrieve the user's preference from the system settings and apply the high contrast palette when high contrast is preferred.
+ハイコントラストモードを有効にするシステムアプローチでは、ユーザーの好みのコントラストをシステム設定で確認します。これは、新しいIonic Frameworkアプリを起動するときのデフォルトです。適切なファイルに以下のスタイルシートをインポートすると、システム設定からユーザーの好みを自動的に取得し、ハイコントラストが優先される場合にハイコントラストパレットを適用します。
 
-The following example shows how to include both the high contrast light palette as well as the high contrast dark palette. The system's dark mode preference will be checked to show either the light or dark variant of the high contrast palette.
+以下の例は、ハイコントラストライトパレットとハイコントラストダークパレットの両方を含める方法を示しています。システムのダークモード設定が確認され、ハイコントラストパレットのライトまたはダークバリアントが表示されます。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -115,12 +115,12 @@ import '@ionic/vue/css/palettes/high-contrast-dark.system.css';
 
 </Tabs>
 
-This approach activates the high contrast palette when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`. The `prefers-contrast` media query is supported by [all modern browsers](https://caniuse.com/?search=prefers-contrast). If support for an older browser is required, we recommend using the [CSS class](#css-class) approach.
+このアプローチは、[CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)が`more`の場合にハイコントラストパレットをアクティブにします。`prefers-contrast`メディアクエリは[すべてのモダンブラウザ](https://caniuse.com/?search=prefers-contrast)でサポートされています。古いブラウザのサポートが必要な場合は、[CSS class](#css-class)アプローチを使用することをお勧めします。
 
-The following example uses the system settings to decide when to show high contrast mode.
+以下の例は、ハイコントラストモードを表示するタイミングを決定するためにシステム設定を使用しています。
 
 :::info
-Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
+システム設定の変更方法がわからないですか？[Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025)と[macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac)でハイコントラストモードを有効にする方法はこちらです。
 :::
 
 import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
@@ -128,13 +128,13 @@ import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-co
 <SystemHighContrastMode />
 
 :::caution
-The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.md#corecss), and the
-high contrast dark palette must be imported after `dark.system.css`. Otherwise, the standard contrast palette will take priority.
+ハイコントラストライトパレットは[core.css](../layout/global-stylesheets.md#corecss)の後にインポートする必要があり、
+ハイコントラストダークパレットは`dark.system.css`の後にインポートする必要があります。そうしないと、標準のコントラストパレットが優先されます。
 :::
 
 ### CSS Class
 
-While the previous approaches are excellent for enabling the high contrast palette through file imports alone, there are scenarios where you may need more control over where it is applied. In cases where you need to apply the high contrast palette conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a high contrast palette class file. This file applies the high contrast palette when a specific class is added to an app. Importing the following stylesheets into the appropriate file will provide the necessary styles for using the high contrast palette with the class:
+以前のアプローチは、ファイルのインポートだけでハイコントラストパレットを有効にするのに優れていますが、適用場所をより制御する必要があるシナリオもあります。トグルなどを通じてハイコントラストパレットを条件付きで適用する必要がある場合、またはシステム設定に基づいて機能を拡張したい場合、ハイコントラストパレットクラスファイルを提供します。このファイルは、特定のクラスがアプリに追加されたときにハイコントラストパレットを適用します。適切なファイルに以下のスタイルシートをインポートすると、クラスでハイコントラストパレットを使用するために必要なスタイルが提供されます：
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -173,12 +173,12 @@ import '@ionic/vue/css/palettes/high-contrast-dark.class.css';
 
 </Tabs>
 
-This approach activates the high contrast palette when the `.ion-palette-high-contrast` class is set on the `html` element. This class must be applied by the developer. This can be combined with the [`.ion-palette-dark` class](./dark-mode.md#css-class) to conditionally apply the high contrast dark palette.
+このアプローチは、`.ion-palette-high-contrast`クラスが`html`要素に設定されている場合にハイコントラストパレットをアクティブにします。このクラスは開発者が適用する必要があります。これは[`.ion-palette-dark`クラス](./dark-mode.md#css-class)と組み合わせて、条件付きでハイコントラストダークパレットを適用できます。
 
-The following example combines site settings, system settings, and the toggle to decide when to show high contrast mode. The site's palette takes precedence over system settings. If your system settings differ from the site's palette when the demo loads, it will use the site's palette.
+以下の例は、サイト設定、システム設定、トグルを組み合わせて、ハイコントラストモードを表示するタイミングを決定しています。サイトのパレットはシステム設定よりも優先されます。デモのロード時にシステム設定がサイトのパレットと異なる場合、サイトのパレットが使用されます。
 
 :::info
-Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
+システム設定の変更方法がわからないですか？[Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025)と[macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac)でハイコントラストモードを有効にする方法はこちらです。
 :::
 
 import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
@@ -186,59 +186,59 @@ import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-cont
 <ClassHighContrastMode />
 
 :::caution
-The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.md#corecss),
-and the high contrast dark palette must be imported after `dark.class.css`. Otherwise, the standard contrast palette will take
-priority.
+ハイコントラストライトパレットは[core.css](../layout/global-stylesheets.md#corecss)の後にインポートする必要があり、
+ハイコントラストダークパレットは`dark.class.css`の後にインポートする必要があります。
+そうしないと、標準のコントラストパレットが優先されます。
 :::
 
 :::caution
-The `.ion-palette-high-contrast` class **must** be added to the `html` element in order to work with the imported high contrast palette.
+インポートされたハイコントラストパレットを機能させるには、`.ion-palette-high-contrast`クラスを`html`要素に追加する**必要があります**。
 :::
 
-## Customizing Ionic High Contrast Theme
+## Ionicハイコントラストテーマのカスタマイズ
 
-Ionic has a recommended high contrast palette that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the high contrast palette file with the corresponding name.
+Ionicには、3つの異なる方法で有効にできる推奨のハイコントラストパレットがあります：[always](#always)、[system](#system)設定に基づく方法、または[CSS class](#css-class)を使用する方法です。これらの各方法には、対応する名前のハイコントラストパレットファイルをインポートすることが含まれます。
 
-The theme variables are set by importing the relevant high contrast palette file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.md) section.
+テーマ変数は、関連するハイコントラストパレットファイルをインポートすることで設定され、アプリにコピーする必要はありません。変更される変数、さらなるカスタマイズのための追加変数を含む詳細については、[Themes](themes.md)セクションを参照してください。
 
-The following provides details on how to customize the high contrast palette depending on how it was applied in an application.
+以下は、アプリケーションで適用された方法に応じてハイコントラストパレットをカスタマイズする方法の詳細を提供します。
 
 <Tabs groupId="highContrastFile" defaultValue="always" values={[{ value: 'always', label: 'Always' }, { value: 'system', label: 'System' }, { value: 'class', label: 'Class' }]}>
 
 <TabItem value="always">
 
-The **always** high contrast palette can be accessed by importing `high-contrast.always.css` for the light variant and `high-contrast-dark.always.css` for the dark variant.
+**always**ハイコントラストパレットは、ライトバリアントには`high-contrast.always.css`を、ダークバリアントには`high-contrast-dark.always.css`をインポートすることでアクセスできます。
 
-The **always** high contrast palette behaves in the following ways:
+**always**ハイコントラストパレットは、以下のように動作します：
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
-2. Setting variables for the high contrast palette on `ios` devices using the `:root.ios` selector.
-3. Setting variables for the high contrast palette on `md` devices using the `:root.md` selector.
+1. `:root`セレクタで、すべての[modes](platform-styles.md#ionic-modes)の[Ionic colors](colors.md)をハイコントラストパレットに補完するように設定します。[`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)セレクタは、[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)が高いことを除いて、セレクタ`html`と同一です。
+2. `:root.ios`セレクタを使用して、`ios`デバイスでハイコントラストパレットの変数を設定します。
+3. `:root.md`セレクタを使用して、`md`デバイスでハイコントラストパレットの変数を設定します。
 
 </TabItem>
 
 <TabItem value="system">
 
-The **system** high contrast palette can be accessed by importing `high-contrast.system.css` for the light variant and `high-contrast-dark.system.css` for the dark variant.
+**system**ハイコントラストパレットは、ライトバリアントには`high-contrast.system.css`を、ダークバリアントには`high-contrast-dark.system.css`をインポートすることでアクセスできます。
 
-The **system** high contrast palette behaves in the following ways:
+**system**ハイコントラストパレットは、以下のように動作します：
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
-2. Setting variables for the high contrast palette on `ios` devices using the `:root.ios` selector.
-3. Setting variables for the high contrast palette on `md` devices using the `:root.md` selector.
-4. Only applies these variables when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`.
+1. `:root`セレクタで、すべての[modes](platform-styles.md#ionic-modes)の[Ionic colors](colors.md)をハイコントラストパレットに補完するように設定します。[`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)セレクタは、[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)が高いことを除いて、セレクタ`html`と同一です。
+2. `:root.ios`セレクタを使用して、`ios`デバイスでハイコントラストパレットの変数を設定します。
+3. `:root.md`セレクタを使用して、`md`デバイスでハイコントラストパレットの変数を設定します。
+4. [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)が`more`の場合にのみ、これらの変数を適用します。
 
 </TabItem>
 
 <TabItem value="class">
 
-The **class** high contrast palette can be accessed by importing `high-contrast.class.css` for the light variant and `high-contrast-dark.class.css` for the dark variant.
+**class**ハイコントラストパレットは、ライトバリアントには`high-contrast.class.css`を、ダークバリアントには`high-contrast-dark.class.css`をインポートすることでアクセスできます。
 
-The **class** high contrast palette behaves in the following ways:
+**class**ハイコントラストパレットは、以下のように動作します：
 
-1. Sets the [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement a high contrast palette in the `.ion-palette-high-contrast` selector. The `.ion-palette-high-contrast` class must be added to the `html` element in an app.
-2. Setting variables for the high contrast palette on `ios` devices using the `.ion-palette-high-contrast.ios` selector.
-3. Setting variables for the high contrast palette on `md` devices using the `.ion-palette-high-contrast.md` selector.
+1. `.ion-palette-high-contrast`セレクタで、すべての[modes](platform-styles.md#ionic-modes)の[Ionic colors](colors.md)をハイコントラストパレットに補完するように設定します。`.ion-palette-high-contrast`クラスは、アプリの`html`要素に追加する必要があります。
+2. `.ion-palette-high-contrast.ios`セレクタを使用して、`ios`デバイスでハイコントラストパレットの変数を設定します。
+3. `.ion-palette-high-contrast.md`セレクタを使用して、`md`デバイスでハイコントラストパレットの変数を設定します。
 
 </TabItem>
 

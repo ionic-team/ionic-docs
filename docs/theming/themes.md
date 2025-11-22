@@ -6,10 +6,10 @@ import CodeColor from '@components/page/theming/CodeColor';
 import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerator';
 
 <head>
-  <title>Ionicアプリのテーマ | Change Default App Background Themes & Colors</title>
+  <title>Ionicアプリのテーマ | デフォルトアプリの背景テーマと色を変更</title>
   <meta
     name="description"
-    content="Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes."
+    content="いくつかのグローバル変数がアプリケーション全体のデフォルトテーマを変更します。Ionicテーマを使用して、アプリのカスタム背景とテキストカラーテーマを作成します。"
   />
 </head>
 
@@ -21,34 +21,34 @@ Ionic は、アプリケーション全体のデフォルトテーマを変更�
 
 背景とテキストの色変数は、RGB である必要があります: <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. なぜ `rgb` プロパティも必要であるかは [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。
 
-| Name                                       | Description                                          |
+| Name                                       | 説明                                          |
 | ------------------------------------------ | ---------------------------------------------------- |
-| `--ion-background-color`                   | Background color of the entire app                   |
-| `--ion-background-color-rgb`               | Background color of the entire app, rgb format       |
-| `--ion-text-color`                         | Text color of the entire app                         |
-| `--ion-text-color-rgb`                     | Text color of the entire app, rgb format             |
-| `--ion-backdrop-color`                     | Color of the Backdrop component                      |
-| `--ion-backdrop-opacity`                   | Opacity of the Backdrop component                    |
-| `--ion-overlay-background-color`           | Background color of the overlays                     |
-| `--ion-border-color`                       | Border color                                         |
-| `--ion-box-shadow-color`                   | Box shadow color                                     |
-| `--ion-tab-bar-background`                 | Background of the Tab Bar                            |
-| `--ion-tab-bar-background-focused`         | Background of the focused Tab Bar                    |
-| `--ion-tab-bar-border-color`               | Border color of the Tab Bar                          |
-| `--ion-tab-bar-color`                      | Color of the Tab Bar                                 |
-| `--ion-tab-bar-color-selected`             | Color of the selected Tab Button                     |
-| `--ion-toolbar-background`                 | Background of the Toolbar                            |
-| `--ion-toolbar-border-color`               | Border color of the Toolbar                          |
-| `--ion-toolbar-color`                      | Color of the components in the Toolbar               |
-| `--ion-toolbar-segment-color`              | Color of the Segment Buttons in the Toolbar          |
-| `--ion-toolbar-segment-color-checked`      | Color of the checked Segment Buttons in the Toolbar  |
-| `--ion-toolbar-segment-background`         | Background of the Segment Buttons in the Toolbar     |
-| `--ion-toolbar-segment-background-checked` | Background of the Segment Buttons in the Toolbar     |
-| `--ion-toolbar-segment-indicator-color`    | Color of the Segment Button indicator in the Toolbar |
-| `--ion-item-background`                    | Background of the Item                               |
-| `--ion-item-border-color`                  | Border color of the Item                             |
-| `--ion-item-color`                         | Color of the components in the Item                  |
-| `--ion-placeholder-color`                  | Color of the placeholder in Inputs                   |
+| `--ion-background-color`                   | アプリ全体の背景色                   |
+| `--ion-background-color-rgb`               | アプリ全体の背景色、rgb形式       |
+| `--ion-text-color`                         | アプリ全体のテキスト色                         |
+| `--ion-text-color-rgb`                     | アプリ全体のテキスト色、rgb形式             |
+| `--ion-backdrop-color`                     | Backdropコンポーネントの色                      |
+| `--ion-backdrop-opacity`                   | Backdropコンポーネントの不透明度                    |
+| `--ion-overlay-background-color`           | オーバーレイの背景色                     |
+| `--ion-border-color`                       | ボーダーの色                                         |
+| `--ion-box-shadow-color`                   | ボックスシャドウの色                                     |
+| `--ion-tab-bar-background`                 | Tab Barの背景                            |
+| `--ion-tab-bar-background-focused`         | フォーカスされたTab Barの背景                    |
+| `--ion-tab-bar-border-color`               | Tab Barのボーダー色                          |
+| `--ion-tab-bar-color`                      | Tab Barの色                                 |
+| `--ion-tab-bar-color-selected`             | 選択されたTab Buttonの色                     |
+| `--ion-toolbar-background`                 | Toolbarの背景                            |
+| `--ion-toolbar-border-color`               | Toolbarのボーダー色                          |
+| `--ion-toolbar-color`                      | Toolbar内のコンポーネントの色               |
+| `--ion-toolbar-segment-color`              | Toolbar内のSegment Buttonsの色          |
+| `--ion-toolbar-segment-color-checked`      | Toolbar内のチェックされたSegment Buttonsの色  |
+| `--ion-toolbar-segment-background`         | Toolbar内のSegment Buttonsの背景     |
+| `--ion-toolbar-segment-background-checked` | Toolbar内のチェックされたSegment Buttonsの背景     |
+| `--ion-toolbar-segment-indicator-color`    | Toolbar内のSegment Buttonインジケーターの色 |
+| `--ion-item-background`                    | Itemの背景                               |
+| `--ion-item-border-color`                  | Itemのボーダー色                             |
+| `--ion-item-color`                         | Item内のコンポーネントの色                  |
+| `--ion-placeholder-color`                  | Input内のプレースホルダーの色                   |
 
 ### ステップカラー
 
@@ -62,7 +62,7 @@ Ionic では、テキストカラーと背景カラーを別々に更新でき�
 
 デフォルトでは、Ionic の段階的なテキストカラーは、デフォルトのテキストカラー値<CodeColor color="#000000">#000000</CodeColor> から始まり、背景カラー値<CodeColor color="#ffffff">#ffffff</CodeColor> と増加するパーセンテージで混合します。Ionic の背景の段階的な色は、デフォルトの背景色値 <CodeColor color="#ffffff">#ffffff</CodeColor> から始まり、増加する割合でテキスト色値 <CodeColor color="#000000">#000000</CodeColor> と混ざります。ステップカラーの完全なリストは、以下のジェネレータに示されています。
 
-## Stepped Color Generator
+## ステップカラージェネレータ
 
 アプリのカスタム背景色とテキスト色のテーマを作成します。以下の背景色またはテキスト色の 16 進数値を更新し、生成されたコードを Ionic プロジェクトに直接コピー＆ペーストしてください。
 

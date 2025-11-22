@@ -6,10 +6,10 @@ sidebar_label: 高度なカスタマイズ
 import CodeColor from '@components/page/theming/CodeColor';
 
 <head>
-  <title>高度なカスタマイズ: Quickly Customize App Colors using CSS | Ionic</title>
+  <title>高度なカスタマイズ: CSSを使用してアプリの色をすばやくカスタマイズ | Ionic</title>
   <meta
     name="description"
-    content="CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming."
+    content="CSSベースのテーマ設定により、CSSファイルをロードするか、CSSプロパティ値を変更することで、アプリの色をすばやくカスタマイズできます。Ionic高度なテーマ設定について学びましょう。"
   />
 </head>
 
@@ -52,35 +52,35 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 
 テーマセクションのアプリケーション変数とステップ変数は、アプリケーションの色を変更するのに便利ですが、しばしば、複数のコンポーネントで使用される変数が必要になることがあります。以下の変数は、コンポーネント間で共有され、グローバルなパディング設定などを変更することができます。
 
-### Application Variables
+### アプリケーション変数
 
-| Name                        | Description                                                                                          |
+| Name                        | 説明                                                                                          |
 | --------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `--ion-font-family`         | Font family of the app                                                                               |
-| `--ion-statusbar-padding`   | Statusbar padding top of the app                                                                     |
-| `--ion-safe-area-top`       | Adjust the safe area inset top of the app                                                            |
-| `--ion-safe-area-right`     | Adjust the safe area inset right of the app                                                          |
-| `--ion-safe-area-bottom`    | Adjust the safe area inset bottom of the app                                                         |
-| `--ion-safe-area-left`      | Adjust the safe area inset left of the app                                                           |
-| `--ion-margin`              | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)              |
-| `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)           |
-| `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
+| `--ion-font-family`         | アプリのフォントファミリー                                                                               |
+| `--ion-statusbar-padding`   | アプリのステータスバーの上部パディング                                                                     |
+| `--ion-safe-area-top`       | アプリのセーフエリアインセット上部を調整                                                            |
+| `--ion-safe-area-right`     | アプリのセーフエリアインセット右側を調整                                                          |
+| `--ion-safe-area-bottom`    | アプリのセーフエリアインセット下部を調整                                                         |
+| `--ion-safe-area-left`      | アプリのセーフエリアインセット左側を調整                                                           |
+| `--ion-margin`              | [Margin属性](../layout/css-utilities.md#element-margin)のマージンを調整              |
+| `--ion-padding`             | [Padding属性](../layout/css-utilities.md#element-padding)のパディングを調整           |
+| `--ion-placeholder-opacity` | input、textarea、searchbar、selectコンポーネントで使用されるプレースホルダーの不透明度を調整 |
 
-### Grid Variables
+### グリッド変数
 
-| Name                           | Description                                    |
+| Name                           | 説明                                    |
 | ------------------------------ | ---------------------------------------------- |
-| `--ion-grid-columns`           | Number of columns in the grid                  |
-| `--ion-grid-padding-xs`        | Padding of the grid for xs breakpoints         |
-| `--ion-grid-padding-sm`        | Padding of the grid for sm breakpoints         |
-| `--ion-grid-padding-md`        | Padding of the grid for md breakpoints         |
-| `--ion-grid-padding-lg`        | Padding of the grid for lg breakpoints         |
-| `--ion-grid-padding-xl`        | Padding of the grid for xl breakpoints         |
-| `--ion-grid-column-padding-xs` | Padding of the grid columns for xs breakpoints |
-| `--ion-grid-column-padding-sm` | Padding of the grid columns for sm breakpoints |
-| `--ion-grid-column-padding-md` | Padding of the grid columns for md breakpoints |
-| `--ion-grid-column-padding-lg` | Padding of the grid columns for lg breakpoints |
-| `--ion-grid-column-padding-xl` | Padding of the grid columns for xl breakpoints |
+| `--ion-grid-columns`           | グリッドの列数                  |
+| `--ion-grid-padding-xs`        | xsブレークポイントのグリッドのパディング         |
+| `--ion-grid-padding-sm`        | smブレークポイントのグリッドのパディング         |
+| `--ion-grid-padding-md`        | mdブレークポイントのグリッドのパディング         |
+| `--ion-grid-padding-lg`        | lgブレークポイントのグリッドのパディング         |
+| `--ion-grid-padding-xl`        | xlブレークポイントのグリッドのパディング         |
+| `--ion-grid-column-padding-xs` | xsブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-sm` | smブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-md` | mdブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-lg` | lgブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-xl` | xlブレークポイントのグリッド列のパディング |
 
 ## 既知の変数の制限
 
@@ -163,9 +163,9 @@ $text-darker: darken($text, 15);
 $text-lighter: lighten($text, 15);
 ```
 
-After running through the Sass compiler, the colors will have the following values:
+Sassコンパイラを実行した後、色は次の値になります：
 
-| Variable            | Value                                          |
+| Variable            | 値                                          |
 | ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
 | `$background-shade` | <CodeColor color="#004acd">#004acd</CodeColor> |
@@ -178,23 +178,23 @@ After running through the Sass compiler, the colors will have the following valu
 
 これは通常は問題にはなりませんが、アプリケーションに動的なテーマカラーの設定が必要な場合は問題になります。Ionic では、これが[各色にバリエーションがある](colors.md#layered-colors)理由であり、テーマ設定に[stepped colors](themes.md#stepped-colors)が必要な理由でもあります。
 
-There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
+これを可能にする[色の変更提案](https://github.com/w3c/csswg-drafts/issues/3187)について議論しているドラフトとイシューがあります。
 
-## Safe Area Padding
+## セーフエリアパディング
 
-The safe area of a display is the section that is not covered by the device's notch, status bar, or other elements that are part of the device's UI and not the app's. The dimensions of the safe area are different across devices and orientations (portrait or landscape).
+ディスプレイのセーフエリアは、デバイスのノッチ、ステータスバー、またはデバイスのUIの一部でありアプリの一部ではないその他の要素によって覆われていないセクションです。セーフエリアの寸法は、デバイスや向き（縦向きまたは横向き）によって異なります。
 
-For example, below are screenshots of an iPhone 14 Pro Max. The red section is the safe area, and the white sections are places where the app's content would be covered up.
+たとえば、以下はiPhone 14 Pro Maxのスクリーンショットです。赤いセクションがセーフエリアで、白いセクションはアプリのコンテンツが覆われる場所です。
 
 | Portrait                                                                       | Landscape                                                                        |
 | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
 
-To accommodate this, Ionic automatically adds padding to certain components. For example, the first `ion-toolbar` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
+これに対応するため、Ionicは特定のコンポーネントに自動的にパディングを追加します。たとえば、`ion-modal`内に配置された最初の`ion-toolbar`コンポーネントは、デバイスのセーフエリアの上端に応じてパディングを受け取ります。これにより、デバイスのノッチがヘッダーテキストを覆うことを防ぎます。
 
 <img src={require('@site/static/img/theming/modal-header-padding.png').default} />
 
-This padding can be manually adjusted through CSS using the `--ion-safe-area-(dir)` variables described in [Application Variables](#application-variables). Values can be set for the whole application, or on a per component basis. For example:
+このパディングは、[アプリケーション変数](#application-variables)で説明されている`--ion-safe-area-(dir)`変数を使用してCSSで手動で調整できます。値はアプリケーション全体、またはコンポーネントごとに設定できます。例：
 
 ```css
 html {

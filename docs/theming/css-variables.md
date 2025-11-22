@@ -3,10 +3,10 @@ title: CSS変数
 ---
 
 <head>
-  <title>CSS Variables | CSS Custom Properties for Variables & Components</title>
+  <title>CSS変数 | 変数とコンポーネント用のCSSカスタムプロパティ</title>
   <meta
     name="description"
-    content="Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places."
+    content="Ionicコンポーネントは、カスタムアプリプロパティを簡単にするためにCSS変数で構築されています。1か所に値を保存し、複数の場所から参照できます。"
   />
 </head>
 
@@ -16,7 +16,7 @@ Ionic のコンポーネントは、アプリケーションを簡単にカス�
 
 ### グローバル変数
 
-CSS 変数は、アプリケーションの `:root` セレクタでグローバルに設定できます。They can also be applied only for a specific mode. Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
+CSS 変数は、アプリケーションの `:root` セレクタでグローバルに設定できます。特定のモードにのみ適用することもできます。Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
 
 Ionic CLI を使用して Angular、React、または Vue プロジェクトを開始すると Ionic のデフォルト変数を上書きすることができる `src/theme/variables.scss` が作成されます。
 
