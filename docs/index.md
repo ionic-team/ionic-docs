@@ -14,7 +14,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>モバイルとディスクトップアプリをつくるためのオープンソースのUIキット</title>
   <meta
     name="description"
-    content="Ionic Framework is an open-source UI toolkit to create your own mobile apps using web technologies with integrations for popular frameworks."
+    content="Ionic Frameworkは、人気フレームワークとの統合を備えたWeb技術を使用して独自のモバイルアプリを作成するためのオープンソースUIツールキットです。"
   />
   <link rel="canonical" href="https://ionicframework.com/docs" />
   <link rel="alternate" href="https://ionicframework.com/docs" hreflang="x-default" />
@@ -22,19 +22,19 @@ import DocsCards from '@components/global/DocsCards';
   <meta property="og:url" content="https://ionicframework.com/docs" />
 </head>
 
-Ionic is an open source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react/overview.md), and [Vue](vue/overview.md).
+Ionicは、Web技術（HTML、CSS、JavaScript）を使用して、高性能で高品質なモバイルアプリを構築するためのオープンソースUIツールキットで、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの人気フレームワークとの統合を提供しています。
 
 [Ionic のインストール](intro/cli.md) や [First App Tutorial](intro/next.md#build-your-first-app) を参考に、主な概念を学ぶことができます。
 
 <intro-end />
 
 <DocsCards>
-  <DocsCard header="Installation Guide" href="/intro/cli" icon="/icons/guide-installation-icon.svg" hoverIcon="/icons/guide-installation-icon-hover.svg">
+  <DocsCard header="インストールガイド" href="/intro/cli" icon="/icons/guide-installation-icon.svg" hoverIcon="/icons/guide-installation-icon-hover.svg">
     <p>あなたのシステムの設定方法とフレームワークのインストールガイド。</p>
   </DocsCard>
 
 <DocsCard
-  header="UI Components"
+  header="UIコンポーネント"
   href="/components"
   icon="/icons/guide-components-icon.svg"
   hoverIcon="/icons/guide-components-icon-hover.svg"
@@ -43,7 +43,7 @@ Ionic is an open source UI toolkit for building performant, high-quality mobile 
 </DocsCard>
 
 <DocsCard
-  header="Native Functionality"
+  header="ネイティブ機能"
   href="/native"
   icon="/icons/guide-native-icon.svg"
   hoverIcon="/icons/guide-native-icon-hover.svg"
@@ -58,7 +58,7 @@ Ionic is an open source UI toolkit for building performant, high-quality mobile 
 
 ## 概要
 
-Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionicは、アプリのフロントエンドUXとUIインタラクションに焦点を当てています — UIコントロール、インタラクション、ジェスチャー、アニメーション。学習が容易で、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの他のライブラリやフレームワークと統合できます。また、シンプルな[script include](intro/cdn.md)を使用して、フロントエンドフレームワークなしでスタンドアロンで使用することもできます。Ionicについて詳しく知りたい場合は、<a href="https://youtu.be/p3AN3igqiRc" target="_blank">基本を説明する動画</a>を作成しました。
 
 ### どこでもひとつのコードで
 
@@ -115,7 +115,7 @@ Ionic は現在、人気の React ライブラリを公式にサポートして�
 
 Ionic は現在、人気の Vue3 ライブラリを公式にサポートしています。 Ionic Vue を使用すると、Vue 開発者は既存の Web スキルを使用して、iOS、Android、Web、およびデスクトップを対象とするアプリを構築できます。 `@ionic/vue` を使用すると、すべてのコア Ionic コンポーネントを使用できますが、ネイティブの Vue コンポーネントを使用しているように感じられます。
 
-### Future Support
+### 将来のサポート
 
 他のフレームワークのサポートは、将来のリリースで検討される予定です。
 
@@ -140,10 +140,10 @@ Ionic Framework はコアチームによって積極的に開発され、メン�
 Ionic の開発者は世界 200 か国以上に何百万人もいます。コミュニティへの参加方法をいくつか紹介します:
 
 <!-- prettier-ignore -->
-- <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-- <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
+- <a href="https://forum.ionicframework.com/" target="_blank">フォーラム:</a> 質問をしたり、アイデアを共有したりするのに最適な場所です。
+- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> アップデートを投稿し、Ionicコミュニティからのコンテンツを共有しています。
+- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> バグの報告や新機能のリクエストは、こちらでイシューを作成してください。プルリクエストも歓迎します！
+- <a href="https://ionicframework.com/contributors" target="_blank">コンテンツ作成:</a> 技術ブログを書いたり、Ionicコミュニティにあなたのストーリーを共有したりしてください。
 
 ## ライセンス
 
