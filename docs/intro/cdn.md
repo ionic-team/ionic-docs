@@ -14,11 +14,11 @@ sidebar_label: パッケージ & CDN
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Ionic Frameworkは、Angular、React、Vue、JavaScript用のnpmパッケージと、迅速なプロトタイピング用のCDNリンクを提供しています。下記からフレームワークを選択して始めるか、CDNを使用してブラウザでIonic Frameworkコンポーネントをテストしてください。
+Ionic Framework は、Angular、React、Vue、JavaScript 用の npm パッケージと、迅速なプロトタイピング用の CDN リンクを提供しています。下記からフレームワークを選択して始めるか、CDN を使用してブラウザで Ionic Framework コンポーネントをテストしてください。
 
 ## Ionic Angular
 
-新しいIonic Angularアプリを開始するか、既存のAngularプロジェクトにIonicを追加します。
+新しい Ionic Angular アプリを開始するか、既存の Angular プロジェクトに Ionic を追加します。
 
 <DocsCards>
 
@@ -42,7 +42,7 @@ Ionic Frameworkは、Angular、React、Vue、JavaScript用のnpmパッケージ�
 
 ## Ionic React
 
-新しいIonic Reactアプリを開始するか、既存のReactプロジェクトにIonicを追加します。
+新しい Ionic React アプリを開始するか、既存の React プロジェクトに Ionic を追加します。
 
 <DocsCards>
 
@@ -66,7 +66,7 @@ Ionic Frameworkは、Angular、React、Vue、JavaScript用のnpmパッケージ�
 
 ## Ionic Vue
 
-新しいIonic Vueアプリを開始するか、既存のVueプロジェクトにIonicを追加します。
+新しい Ionic Vue アプリを開始するか、既存の Vue プロジェクトに Ionic を追加します。
 
 <DocsCards>
 
@@ -90,7 +90,7 @@ Ionic Frameworkは、Angular、React、Vue、JavaScript用のnpmパッケージ�
 
 ## Ionic JavaScript
 
-新しいIonic JavaScriptアプリを開始します。
+新しい Ionic JavaScript アプリを開始します。
 
 <DocsCards>
 
@@ -106,7 +106,7 @@ Ionic Frameworkは、Angular、React、Vue、JavaScript用のnpmパッケージ�
 
 ## Ionic Framework CDN
 
-Ionic Frameworkは、[StackBlitz](https://stackblitz.com/)、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタで迅速にテストするために、CDNから含めることができます！
+Ionic Framework は、[StackBlitz](https://stackblitz.com/)、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタで迅速にテストするために、CDN から含めることができます！
 
 CDN からフレームワークにアクセスするには、 [jsdelivr](https://www.jsdelivr.com/) を使用することをお勧めします。最新バージョンを入手するためには HTML ファイルの `<head>` 要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
 
@@ -116,7 +116,7 @@ CDN からフレームワークにアクセスするには、 [jsdelivr](https:/
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-これにより、フレームワークをインストールすることなく、Ionic Frameworkのすべてのコアコンポーネントを使用できます。CSSバンドルには、Ionicのすべての[グローバルスタイルシート](/docs/layout/global-stylesheets.md)が含まれます。
+これにより、フレームワークをインストールすることなく、Ionic Framework のすべてのコアコンポーネントを使用できます。CSS バンドルには、Ionic のすべての[グローバルスタイルシート](/docs/layout/global-stylesheets.md)が含まれます。
 
 ## Ionicons CDN
 
@@ -127,4 +127,4 @@ Ionicons はデフォルトで Ionic Framework に同梱されているので、
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-Ioniconsの使用に関する詳細については、[Ioniconsドキュメント](https://ionic.io/ionicons/usage)をご覧ください。
+Ionicons の使用に関する詳細については、[Ionicons ドキュメント](https://ionic.io/ionicons/usage)をご覧ください。

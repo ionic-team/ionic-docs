@@ -14,13 +14,13 @@ sidebar_label: Quickstart
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-ようこそ！このガイドでは、Ionic React開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionicコンポーネントの動作方法を学びます。最初の実際のアプリを構築する前にIonic Reactに慣れるのに最適です。
+ようこそ！このガイドでは、Ionic React 開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionic コンポーネントの動作方法を学びます。最初の実際のアプリを構築する前に Ionic React に慣れるのに最適です。
 
-Ionic Reactとは何か、Reactエコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic Reactの概要](overview)を参照してください。
+Ionic React とは何か、React エコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic React の概要](overview)を参照してください。
 
 ## 前提条件
 
-始める前に、マシンにNode.jsとnpmがインストールされていることを確認してください。
+始める前に、マシンに Node.js と npm がインストールされていることを確認してください。
 次を実行して確認できます：
 
 ```shell
@@ -28,9 +28,9 @@ node -v
 npm -v
 ```
 
-Node.jsとnpmがない場合は、[こちらからNode.jsをダウンロード](https://nodejs.org/en/download)してください（npmが含まれています）。
+Node.js と npm がない場合は、[こちらから Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
 
-## Ionic CLIでプロジェクトを作成
+## Ionic CLI でプロジェクトを作成
 
 まず、最新の[Ionic CLI](../cli)をインストールします：
 
@@ -105,7 +105,7 @@ const App: React.FC = () => (
 export default App;
 ```
 
-これにより、Ionicの`IonApp`と`IonReactRouter`コンポーネントを使用してアプリケーションのルートが設定されます。`IonRouterOutlet`は、ページが表示される場所です。
+これにより、Ionic の`IonApp`と`IonReactRouter`コンポーネントを使用してアプリケーションのルートが設定されます。`IonRouterOutlet`は、ページが表示される場所です。
 
 ## View Routes
 
@@ -122,7 +122,7 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 </IonRouterOutlet>
 ```
 
-ルートURL（`/`）にアクセスすると、`Home`コンポーネントが読み込まれます。
+ルート URL（`/`）にアクセスすると、`Home`コンポーネントが読み込まれます。
 
 ## View the Home Page
 
@@ -156,15 +156,15 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage`コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。2番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage`コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。2 番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
 
 :::tip 詳細情報
-Ionicレイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
+Ionic レイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
-## Ionicコンポーネントを追加
+## Ionic コンポーネントを追加
 
-より多くのIonic UIコンポーネントでHomeページを強化できます。たとえば、`Home.tsx`の`IonContent`の最後に[Button](/docs/api/button.md)をインポートして追加します：
+より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`Home.tsx`の`IonContent`の最後に[Button](/docs/api/button.md)をインポートして追加します：
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -225,7 +225,7 @@ export default New;
 これにより、[Toolbar](/docs/api/toolbar.md)に[Back Button](/docs/api/back-button.md)を持つページが作成されます。戻るボタンは、前のページへのナビゲーション、または履歴がない場合は`/`へのナビゲーションを自動的に処理します。
 
 :::warning
-独自のページを作成する際は、常に`IonPage`をルートコンポーネントとして使用してください。これは、ページ間の適切な遷移、Ionicコンポーネントが依存する基本CSSスタイリング、アプリ全体での一貫したレイアウト動作に不可欠です。
+独自のページを作成する際は、常に`IonPage`をルートコンポーネントとして使用してください。これは、ページ間の適切な遷移、Ionic コンポーネントが依存する基本 CSS スタイリング、アプリ全体での一貫したレイアウト動作に不可欠です。
 :::
 
 ## Navigate to the New Page
@@ -259,12 +259,12 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
-React Routerの`history`プロップを使用して、プログラム的にナビゲーションを実行することもできます。詳細については、[React Navigationドキュメント](/docs/react/navigation.md#navigating-using-history)を参照してください。
+React Router の`history`プロップを使用して、プログラム的にナビゲーションを実行することもできます。詳細については、[React Navigation ドキュメント](/docs/react/navigation.md#navigating-using-history)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
 
-Ionic Reactには[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`IonIcon`コンポーネントの`icon`プロパティを設定することで、任意のアイコンを使用できます。
+Ionic React には[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`IonIcon`コンポーネントの`icon`プロパティを設定することで、任意のアイコンを使用できます。
 
 `New.tsx`のインポートを更新して、`IonIcon`と`heart`および`logoIonic`アイコンをインポートします：
 
@@ -280,9 +280,9 @@ import { heart, logoIonic } from 'ionicons/icons';
 <IonIcon icon={logoIonic} />
 ```
 
-インポートされたSVG参照を渡していることに注意してください。文字列としてのアイコン名**ではありません**。
+インポートされた SVG 参照を渡していることに注意してください。文字列としてのアイコン名**ではありません**。
 
-詳細については、[Iconドキュメント](/docs/api/icon.md)と[Ioniconsドキュメント](https://ionic.io/ionicons/)を参照してください。
+詳細については、[Icon ドキュメント](/docs/api/icon.md)と[Ionicons ドキュメント](https://ionic.io/ionicons/)を参照してください。
 
 ## コンポーネントメソッドを呼び出す
 
@@ -333,13 +333,13 @@ To call methods on Ionic components:
 1. Create a `ref` for the component
 2. Call the method directly on `ref.current`
 
-このパターンは、React refsがコンポーネントインスタンスを`.current`プロパティに保存するために必要です。
+このパターンは、React refs がコンポーネントインスタンスを`.current`プロパティに保存するために必要です。
 
-各コンポーネントの利用可能なメソッドは、APIドキュメントの[Methods](/docs/api/content.md#methods)セクションで見つけることができます。
+各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/docs/api/content.md#methods)セクションで見つけることができます。
 
 ## デバイスで実行
 
-Ionicのコンポーネントは、iOS、Android、PWAのどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
+Ionic のコンポーネントは、iOS、Android、PWA のどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
 
 ```shell
 ionic build
@@ -347,18 +347,18 @@ ionic cap add ios
 ionic cap add android
 ```
 
-ネイティブプロジェクトをIDEで開きます：
+ネイティブプロジェクトを IDE で開きます：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-詳細については、[CapacitorのGetting Startedガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
+詳細については、[Capacitor の Getting Started ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
 ## さらに探索
 
-このガイドでは、Ionic Reactアプリの作成、ナビゲーションの追加、ネイティブビルド用のCapacitorの導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
+このガイドでは、Ionic React アプリの作成、ナビゲーションの追加、ネイティブビルド用の Capacitor の導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
 
 <DocsCards>
 
@@ -383,7 +383,9 @@ ionic cap open android
 </DocsCard>
 
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
+  <p>
+    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
+  </p>
 </DocsCard>
 
 </DocsCards>

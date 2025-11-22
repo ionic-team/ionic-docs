@@ -203,7 +203,7 @@ color-scheme: light dark;
 :::
 
 :::note
-iOS 15のSafariのステータスバーの下またはmacOSのSafariのツールバーのテーマカラーをカスタマイズしたい開発者は、[`theme-color` Meta](./advanced.md#theme-color-meta)を参照してください。
+iOS 15 の Safari のステータスバーの下または macOS の Safari のツールバーのテーマカラーをカスタマイズしたい開発者は、[`theme-color` Meta](./advanced.md#theme-color-meta)を参照してください。
 :::
 
 ## Ionic Dark Palette
@@ -223,11 +223,11 @@ Ionic には推奨のダークパレットがあり、3 種類の方法で有効
 3. `:root.md`セレクタを使用して、`md`デバイスでダークパレットの変数を設定します。
 
 :::caution
-Ionicダークパレット変数のいずれかをオーバーライドする場合は、specificityに注意することが重要です。たとえば、`--ion-item-background`変数は各モードで設定されているため、`:root`セレクタでオーバーライドできません。`:root.ios`などのより高いspecificityセレクタが必要です。
+Ionic ダークパレット変数のいずれかをオーバーライドする場合は、specificity に注意することが重要です。たとえば、`--ion-item-background`変数は各モードで設定されているため、`:root`セレクタでオーバーライドできません。`:root.ios`などのより高い specificity セレクタが必要です。
 :::
 
 :::info
-Ionicのダークパレットの内容は[GitHubで確認できます](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss)。**always**ダークパレットを適用するために使用されるCSSは、[リポジトリ](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.always.scss)で見つけることができます。
+Ionic のダークパレットの内容は[GitHub で確認できます](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss)。**always**ダークパレットを適用するために使用される CSS は、[リポジトリ](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.always.scss)で見つけることができます。
 :::
 
 </TabItem>
@@ -242,11 +242,11 @@ Ionicのダークパレットの内容は[GitHubで確認できます](https://g
 4. [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)が`dark`の場合にのみ、これらの変数を適用します。
 
 :::caution
-Ionicダークパレット変数のいずれかをオーバーライドする場合は、specificityに注意することが重要です。たとえば、`--ion-item-background`変数は各モードで設定されているため、`:root`セレクタでオーバーライドできません。`:root.ios`などのより高いspecificityセレクタが必要です。
+Ionic ダークパレット変数のいずれかをオーバーライドする場合は、specificity に注意することが重要です。たとえば、`--ion-item-background`変数は各モードで設定されているため、`:root`セレクタでオーバーライドできません。`:root.ios`などのより高い specificity セレクタが必要です。
 :::
 
 :::info
-Ionicのダークパレットの内容は[GitHubで確認できます](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss)。**system**ダークパレットを適用するために使用されるCSSは、[リポジトリ](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.system.scsss)で見つけることができます。
+Ionic のダークパレットの内容は[GitHub で確認できます](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss)。**system**ダークパレットを適用するために使用される CSS は、[リポジトリ](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.system.scsss)で見つけることができます。
 :::
 
 </TabItem>
@@ -260,11 +260,11 @@ Ionicのダークパレットの内容は[GitHubで確認できます](https://g
 3. `.ion-palette-dark.md`セレクタを使用して、`md`デバイスでダークパレットの変数を設定します。
 
 :::caution
-Ionicダークパレット変数のいずれかをオーバーライドする場合は、specificityに注意することが重要です。たとえば、`--ion-item-background`変数は各モードで設定されているため、`.ion-palette-dark`セレクタでオーバーライドできません。`.ion-palette-dark.ios`などのより高いspecificityセレクタが必要です。
+Ionic ダークパレット変数のいずれかをオーバーライドする場合は、specificity に注意することが重要です。たとえば、`--ion-item-background`変数は各モードで設定されているため、`.ion-palette-dark`セレクタでオーバーライドできません。`.ion-palette-dark.ios`などのより高い specificity セレクタが必要です。
 :::
 
 :::info
-Ionicのダークパレットの内容は[GitHubで確認できます](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss)。**class**ダークパレットを適用するために使用されるCSSは、[リポジトリ](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.class.scss)で見つけることができます。
+Ionic のダークパレットの内容は[GitHub で確認できます](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.scss)。**class**ダークパレットを適用するために使用される CSS は、[リポジトリ](https://github.com/ionic-team/ionic-framework/blob/main/core/src/css/palettes/dark.class.scss)で見つけることができます。
 :::
 
 </TabItem>

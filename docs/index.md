@@ -22,7 +22,7 @@ import DocsCards from '@components/global/DocsCards';
   <meta property="og:url" content="https://ionicframework.com/docs" />
 </head>
 
-Ionicは、Web技術（HTML、CSS、JavaScript）を使用して、高性能で高品質なモバイルアプリを構築するためのオープンソースUIツールキットで、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの人気フレームワークとの統合を提供しています。
+Ionic は、Web 技術（HTML、CSS、JavaScript）を使用して、高性能で高品質なモバイルアプリを構築するためのオープンソース UI ツールキットで、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの人気フレームワークとの統合を提供しています。
 
 [Ionic のインストール](intro/cli.md) や [First App Tutorial](intro/next.md#build-your-first-app) を参考に、主な概念を学ぶことができます。
 
@@ -58,7 +58,7 @@ Ionicは、Web技術（HTML、CSS、JavaScript）を使用して、高性能で�
 
 ## 概要
 
-Ionicは、アプリのフロントエンドUXとUIインタラクションに焦点を当てています — UIコントロール、インタラクション、ジェスチャー、アニメーション。学習が容易で、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの他のライブラリやフレームワークと統合できます。また、シンプルな[script include](intro/cdn.md)を使用して、フロントエンドフレームワークなしでスタンドアロンで使用することもできます。Ionicについて詳しく知りたい場合は、<a href="https://youtu.be/p3AN3igqiRc" target="_blank">基本を説明する動画</a>を作成しました。
+Ionic は、アプリのフロントエンド UX と UI インタラクションに焦点を当てています — UI コントロール、インタラクション、ジェスチャー、アニメーション。学習が容易で、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの他のライブラリやフレームワークと統合できます。また、シンプルな[script include](intro/cdn.md)を使用して、フロントエンドフレームワークなしでスタンドアロンで使用することもできます。Ionic について詳しく知りたい場合は、<a href="https://youtu.be/p3AN3igqiRc" target="_blank">基本を説明する動画</a>を作成しました。
 
 ### どこでもひとつのコードで
 

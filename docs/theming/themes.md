@@ -21,34 +21,34 @@ Ionic は、アプリケーション全体のデフォルトテーマを変更�
 
 背景とテキストの色変数は、RGB である必要があります: <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. なぜ `rgb` プロパティも必要であるかは [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。
 
-| Name                                       | 説明                                          |
-| ------------------------------------------ | ---------------------------------------------------- |
-| `--ion-background-color`                   | アプリ全体の背景色                   |
-| `--ion-background-color-rgb`               | アプリ全体の背景色、rgb形式       |
-| `--ion-text-color`                         | アプリ全体のテキスト色                         |
-| `--ion-text-color-rgb`                     | アプリ全体のテキスト色、rgb形式             |
-| `--ion-backdrop-color`                     | Backdropコンポーネントの色                      |
-| `--ion-backdrop-opacity`                   | Backdropコンポーネントの不透明度                    |
-| `--ion-overlay-background-color`           | オーバーレイの背景色                     |
-| `--ion-border-color`                       | ボーダーの色                                         |
-| `--ion-box-shadow-color`                   | ボックスシャドウの色                                     |
-| `--ion-tab-bar-background`                 | Tab Barの背景                            |
-| `--ion-tab-bar-background-focused`         | フォーカスされたTab Barの背景                    |
-| `--ion-tab-bar-border-color`               | Tab Barのボーダー色                          |
-| `--ion-tab-bar-color`                      | Tab Barの色                                 |
-| `--ion-tab-bar-color-selected`             | 選択されたTab Buttonの色                     |
-| `--ion-toolbar-background`                 | Toolbarの背景                            |
-| `--ion-toolbar-border-color`               | Toolbarのボーダー色                          |
-| `--ion-toolbar-color`                      | Toolbar内のコンポーネントの色               |
-| `--ion-toolbar-segment-color`              | Toolbar内のSegment Buttonsの色          |
-| `--ion-toolbar-segment-color-checked`      | Toolbar内のチェックされたSegment Buttonsの色  |
-| `--ion-toolbar-segment-background`         | Toolbar内のSegment Buttonsの背景     |
-| `--ion-toolbar-segment-background-checked` | Toolbar内のチェックされたSegment Buttonsの背景     |
-| `--ion-toolbar-segment-indicator-color`    | Toolbar内のSegment Buttonインジケーターの色 |
-| `--ion-item-background`                    | Itemの背景                               |
-| `--ion-item-border-color`                  | Itemのボーダー色                             |
-| `--ion-item-color`                         | Item内のコンポーネントの色                  |
-| `--ion-placeholder-color`                  | Input内のプレースホルダーの色                   |
+| Name                                       | 説明                                              |
+| ------------------------------------------ | ------------------------------------------------- |
+| `--ion-background-color`                   | アプリ全体の背景色                                |
+| `--ion-background-color-rgb`               | アプリ全体の背景色、rgb 形式                      |
+| `--ion-text-color`                         | アプリ全体のテキスト色                            |
+| `--ion-text-color-rgb`                     | アプリ全体のテキスト色、rgb 形式                  |
+| `--ion-backdrop-color`                     | Backdrop コンポーネントの色                       |
+| `--ion-backdrop-opacity`                   | Backdrop コンポーネントの不透明度                 |
+| `--ion-overlay-background-color`           | オーバーレイの背景色                              |
+| `--ion-border-color`                       | ボーダーの色                                      |
+| `--ion-box-shadow-color`                   | ボックスシャドウの色                              |
+| `--ion-tab-bar-background`                 | Tab Bar の背景                                    |
+| `--ion-tab-bar-background-focused`         | フォーカスされた Tab Bar の背景                   |
+| `--ion-tab-bar-border-color`               | Tab Bar のボーダー色                              |
+| `--ion-tab-bar-color`                      | Tab Bar の色                                      |
+| `--ion-tab-bar-color-selected`             | 選択された Tab Button の色                        |
+| `--ion-toolbar-background`                 | Toolbar の背景                                    |
+| `--ion-toolbar-border-color`               | Toolbar のボーダー色                              |
+| `--ion-toolbar-color`                      | Toolbar 内のコンポーネントの色                    |
+| `--ion-toolbar-segment-color`              | Toolbar 内の Segment Buttons の色                 |
+| `--ion-toolbar-segment-color-checked`      | Toolbar 内のチェックされた Segment Buttons の色   |
+| `--ion-toolbar-segment-background`         | Toolbar 内の Segment Buttons の背景               |
+| `--ion-toolbar-segment-background-checked` | Toolbar 内のチェックされた Segment Buttons の背景 |
+| `--ion-toolbar-segment-indicator-color`    | Toolbar 内の Segment Button インジケーターの色    |
+| `--ion-item-background`                    | Item の背景                                       |
+| `--ion-item-border-color`                  | Item のボーダー色                                 |
+| `--ion-item-color`                         | Item 内のコンポーネントの色                       |
+| `--ion-placeholder-color`                  | Input 内のプレースホルダーの色                    |
 
 ### ステップカラー
 

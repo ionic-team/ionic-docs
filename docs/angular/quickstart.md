@@ -14,13 +14,13 @@ sidebar_label: Quickstart
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-ようこそ！このガイドでは、Ionic Angular開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionicコンポーネントの動作方法を学びます。最初の実際のアプリを構築する前にIonic Angularに慣れるのに最適です。
+ようこそ！このガイドでは、Ionic Angular 開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionic コンポーネントの動作方法を学びます。最初の実際のアプリを構築する前に Ionic Angular に慣れるのに最適です。
 
-Ionic Angularとは何か、Angularエコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic Angularの概要](overview)を参照してください。
+Ionic Angular とは何か、Angular エコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic Angular の概要](overview)を参照してください。
 
 ## 前提条件
 
-始める前に、マシンにNode.jsとnpmがインストールされていることを確認してください。
+始める前に、マシンに Node.js と npm がインストールされていることを確認してください。
 次を実行して確認できます：
 
 ```shell
@@ -28,9 +28,9 @@ node -v
 npm -v
 ```
 
-Node.jsとnpmがない場合は、[こちらからNode.jsをダウンロード](https://nodejs.org/en/download)してください（npmが含まれています）。
+Node.js と npm がない場合は、[こちらから Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
 
-## Ionic CLIでプロジェクトを作成
+## Ionic CLI でプロジェクトを作成
 
 まず、最新の[Ionic CLI](../cli)をインストールします：
 
@@ -103,7 +103,7 @@ And its template in `app.component.html`:
 </ion-app>
 ```
 
-これにより、Ionicの`ion-app`と`ion-router-outlet`コンポーネントを使用してアプリケーションのルートが設定されます。ルーターアウトレットは、ページが表示される場所です。
+これにより、Ionic の`ion-app`と`ion-router-outlet`コンポーネントを使用してアプリケーションのルートが設定されます。ルーターアウトレットは、ページが表示される場所です。
 
 ## View Routes
 
@@ -125,7 +125,7 @@ export const routes: Routes = [
 ];
 ```
 
-ルートURL（`/`）にアクセスすると、`HomePage`コンポーネントが読み込まれます。
+ルート URL（`/`）にアクセスすると、`HomePage`コンポーネントが読み込まれます。
 
 ## View the Home Page
 
@@ -172,15 +172,15 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。2番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。2 番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
 
 :::tip 詳細情報
-Ionicレイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
+Ionic レイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
-## Ionicコンポーネントを追加
+## Ionic コンポーネントを追加
 
-より多くのIonic UIコンポーネントでHomeページを強化できます。たとえば、`ion-content`の最後に[Button](/docs/api/button.md)を追加します：
+より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`ion-content`の最後に[Button](/docs/api/button.md)を追加します：
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -257,12 +257,12 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-AngularのRouterサービスを使用してナビゲーションを実行することもできます。詳細については、[Angular Navigationドキュメント](/docs/angular/navigation.md#navigating-to-different-routes)を参照してください。
+Angular の Router サービスを使用してナビゲーションを実行することもできます。詳細については、[Angular Navigation ドキュメント](/docs/angular/navigation.md#navigating-to-different-routes)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
 
-Ionic Angularには[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`ion-icon`コンポーネントの`name`プロパティを設定することで、任意のアイコンを使用できます。次のアイコンを`new.page.html`に追加します：
+Ionic Angular には[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`ion-icon`コンポーネントの`name`プロパティを設定することで、任意のアイコンを使用できます。次のアイコンを`new.page.html`に追加します：
 
 ```html title="src/app/new/new.page.html"
 <ion-content>
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 または、`app.component.ts`でアイコンを登録して、アプリ全体で使用することもできます。
 
-詳細については、[Iconドキュメント](/docs/api/icon.md)と[Ioniconsドキュメント](https://ionic.io/ionicons/)を参照してください。
+詳細については、[Icon ドキュメント](/docs/api/icon.md)と[Ionicons ドキュメント](https://ionic.io/ionicons/)を参照してください。
 
 ## コンポーネントメソッドを呼び出す
 
@@ -382,16 +382,16 @@ export class NewPage implements OnInit {
 }
 ```
 
-Ionicコンポーネントのメソッドを呼び出すには：
+Ionic コンポーネントのメソッドを呼び出すには：
 
 1. コンポーネントの`ViewChild`参照を作成します
 2. コンポーネントインスタンスでメソッドを直接呼び出します
 
-各コンポーネントの利用可能なメソッドは、APIドキュメントの[Methods](/docs/api/content.md#methods)セクションで見つけることができます。
+各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/docs/api/content.md#methods)セクションで見つけることができます。
 
 ## デバイスで実行
 
-Ionicのコンポーネントは、iOS、Android、PWAのどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
+Ionic のコンポーネントは、iOS、Android、PWA のどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
 
 ```shell
 ionic build
@@ -399,18 +399,18 @@ ionic cap add ios
 ionic cap add android
 ```
 
-ネイティブプロジェクトをIDEで開きます：
+ネイティブプロジェクトを IDE で開きます：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-詳細については、[CapacitorのGetting Startedガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
+詳細については、[Capacitor の Getting Started ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
 ## さらに探索
 
-このガイドでは、Ionic Angularアプリの作成、ナビゲーションの追加、ネイティブビルド用のCapacitorの導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
+このガイドでは、Ionic Angular アプリの作成、ナビゲーションの追加、ネイティブビルド用の Capacitor の導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
 
 <DocsCards>
 
@@ -435,7 +435,9 @@ ionic cap open android
 </DocsCard>
 
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
+  <p>
+    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
+  </p>
 </DocsCard>
 
 </DocsCards>

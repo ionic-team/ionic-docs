@@ -55,11 +55,11 @@ Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" ta
 
 ## プロパティ
 
-プロパティは、Ionicコンポーネントの動作と外観を設定するためにIonicコンポーネントに設定できるJavaScriptプロパティです。プロパティは各コンポーネントの[API documentation](/docs/api)ページで定義されています。
+プロパティは、Ionic コンポーネントの動作と外観を設定するために Ionic コンポーネントに設定できる JavaScript プロパティです。プロパティは各コンポーネントの[API documentation](/docs/api)ページで定義されています。
 
 ### リアクティブプロパティ
 
-リアクティブプロパティは、値が変更されるとコンポーネントを自動的に更新します。これらはIonicコンポーネントで最も一般的なタイプのプロパティです。
+リアクティブプロパティは、値が変更されるとコンポーネントを自動的に更新します。これらは Ionic コンポーネントで最も一般的なタイプのプロパティです。
 
 ```html
 <ion-button color="primary">Primary Button</ion-button>
@@ -69,7 +69,7 @@ Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" ta
 
 ### 仮想プロパティ
 
-仮想プロパティは、コンポーネントの初期化中に1回だけ設定するように設計されています。更新されても再レンダリングをトリガーしません。
+仮想プロパティは、コンポーネントの初期化中に 1 回だけ設定するように設計されています。更新されても再レンダリングをトリガーしません。
 
 ```html
 <ion-button mode="ios">iOS Style Button</ion-button> <ion-button mode="md">Material Design Button</ion-button>
@@ -77,4 +77,4 @@ Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" ta
 
 `mode`プロパティは、コンポーネントに使用するプラットフォームスタイルを決定する仮想プロパティです。コンポーネントレベルで設定することも、アプリ設定を通じてグローバルに設定することもできます。どちらの場合も、初期化中に一度設定され、コンポーネントのライフサイクル中は変更されません。
 
-Ionicモードの詳細については、[Platform Styles documentation](/docs/theming/platform-styles)を参照してください。
+Ionic モードの詳細については、[Platform Styles documentation](/docs/theming/platform-styles)を参照してください。

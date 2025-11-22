@@ -28,7 +28,7 @@ Ionic Web View プラグインは、最新の JavaScript アプリケーショ�
 
 ### CORS
 
-Web Viewは[CORS](../reference/glossary.md#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。IonicアプリでCORSを処理する方法については、[CORS FAQs](../troubleshooting/cors.md)を参照してください。
+Web View は[CORS](../reference/glossary.md#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。Ionic アプリで CORS を処理する方法については、[CORS FAQs](../troubleshooting/cors.md)を参照してください。
 
 ### File プロトコル
 
@@ -42,7 +42,7 @@ import { Capacitor } from '@capacitor/core';
 Capacitor.convertFileSrc(filePath);
 ```
 
-Cordovaアプリの場合、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)は、File URIを変換するためのユーティリティ関数を提供します：`window.Ionic.WebView.convertFileSrc()`。対応するIonic Nativeプラグインもあります：[`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview)。
+Cordova アプリの場合、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)は、File URI を変換するためのユーティリティ関数を提供します：`window.Ionic.WebView.convertFileSrc()`。対応する Ionic Native プラグインもあります：[`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview)。
 
 ### 実装
 

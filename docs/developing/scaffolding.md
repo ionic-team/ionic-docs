@@ -48,7 +48,7 @@ src/
 This command is only supported in Ionic Angular.
 :::
 
-Ionic CLIは、[`ionic generate`](../cli/commands/generate.md)コマンドを使用して新しいアプリ機能を生成できます。コマンドラインで`ionic generate`を実行すると、生成可能な利用可能な機能をリストする選択プロンプトが表示されます。
+Ionic CLI は、[`ionic generate`](../cli/commands/generate.md)コマンドを使用して新しいアプリ機能を生成できます。コマンドラインで`ionic generate`を実行すると、生成可能な利用可能な機能をリストする選択プロンプトが表示されます。
 
 ```shell-session
 $ ionic generate

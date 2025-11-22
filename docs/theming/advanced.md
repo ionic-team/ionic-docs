@@ -55,32 +55,32 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 ### アプリケーション変数
 
 | Name                        | 説明                                                                                          |
-| --------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `--ion-font-family`         | アプリのフォントファミリー                                                                               |
-| `--ion-statusbar-padding`   | アプリのステータスバーの上部パディング                                                                     |
-| `--ion-safe-area-top`       | アプリのセーフエリアインセット上部を調整                                                            |
-| `--ion-safe-area-right`     | アプリのセーフエリアインセット右側を調整                                                          |
-| `--ion-safe-area-bottom`    | アプリのセーフエリアインセット下部を調整                                                         |
-| `--ion-safe-area-left`      | アプリのセーフエリアインセット左側を調整                                                           |
-| `--ion-margin`              | [Margin属性](../layout/css-utilities.md#element-margin)のマージンを調整              |
-| `--ion-padding`             | [Padding属性](../layout/css-utilities.md#element-padding)のパディングを調整           |
-| `--ion-placeholder-opacity` | input、textarea、searchbar、selectコンポーネントで使用されるプレースホルダーの不透明度を調整 |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| `--ion-font-family`         | アプリのフォントファミリー                                                                    |
+| `--ion-statusbar-padding`   | アプリのステータスバーの上部パディング                                                        |
+| `--ion-safe-area-top`       | アプリのセーフエリアインセット上部を調整                                                      |
+| `--ion-safe-area-right`     | アプリのセーフエリアインセット右側を調整                                                      |
+| `--ion-safe-area-bottom`    | アプリのセーフエリアインセット下部を調整                                                      |
+| `--ion-safe-area-left`      | アプリのセーフエリアインセット左側を調整                                                      |
+| `--ion-margin`              | [Margin 属性](../layout/css-utilities.md#element-margin)のマージンを調整                      |
+| `--ion-padding`             | [Padding 属性](../layout/css-utilities.md#element-padding)のパディングを調整                  |
+| `--ion-placeholder-opacity` | input、textarea、searchbar、select コンポーネントで使用されるプレースホルダーの不透明度を調整 |
 
 ### グリッド変数
 
-| Name                           | 説明                                    |
-| ------------------------------ | ---------------------------------------------- |
-| `--ion-grid-columns`           | グリッドの列数                  |
-| `--ion-grid-padding-xs`        | xsブレークポイントのグリッドのパディング         |
-| `--ion-grid-padding-sm`        | smブレークポイントのグリッドのパディング         |
-| `--ion-grid-padding-md`        | mdブレークポイントのグリッドのパディング         |
-| `--ion-grid-padding-lg`        | lgブレークポイントのグリッドのパディング         |
-| `--ion-grid-padding-xl`        | xlブレークポイントのグリッドのパディング         |
-| `--ion-grid-column-padding-xs` | xsブレークポイントのグリッド列のパディング |
-| `--ion-grid-column-padding-sm` | smブレークポイントのグリッド列のパディング |
-| `--ion-grid-column-padding-md` | mdブレークポイントのグリッド列のパディング |
-| `--ion-grid-column-padding-lg` | lgブレークポイントのグリッド列のパディング |
-| `--ion-grid-column-padding-xl` | xlブレークポイントのグリッド列のパディング |
+| Name                           | 説明                                        |
+| ------------------------------ | ------------------------------------------- |
+| `--ion-grid-columns`           | グリッドの列数                              |
+| `--ion-grid-padding-xs`        | xs ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-sm`        | sm ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-md`        | md ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-lg`        | lg ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-xl`        | xl ブレークポイントのグリッドのパディング   |
+| `--ion-grid-column-padding-xs` | xs ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-sm` | sm ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-md` | md ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-lg` | lg ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-xl` | xl ブレークポイントのグリッド列のパディング |
 
 ## 既知の変数の制限
 
@@ -163,9 +163,9 @@ $text-darker: darken($text, 15);
 $text-lighter: lighten($text, 15);
 ```
 
-Sassコンパイラを実行した後、色は次の値になります：
+Sass コンパイラを実行した後、色は次の値になります：
 
-| Variable            | 値                                          |
+| Variable            | 値                                             |
 | ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
 | `$background-shade` | <CodeColor color="#004acd">#004acd</CodeColor> |
@@ -182,19 +182,19 @@ Sassコンパイラを実行した後、色は次の値になります：
 
 ## セーフエリアパディング
 
-ディスプレイのセーフエリアは、デバイスのノッチ、ステータスバー、またはデバイスのUIの一部でありアプリの一部ではないその他の要素によって覆われていないセクションです。セーフエリアの寸法は、デバイスや向き（縦向きまたは横向き）によって異なります。
+ディスプレイのセーフエリアは、デバイスのノッチ、ステータスバー、またはデバイスの UI の一部でありアプリの一部ではないその他の要素によって覆われていないセクションです。セーフエリアの寸法は、デバイスや向き（縦向きまたは横向き）によって異なります。
 
-たとえば、以下はiPhone 14 Pro Maxのスクリーンショットです。赤いセクションがセーフエリアで、白いセクションはアプリのコンテンツが覆われる場所です。
+たとえば、以下は iPhone 14 Pro Max のスクリーンショットです。赤いセクションがセーフエリアで、白いセクションはアプリのコンテンツが覆われる場所です。
 
 | Portrait                                                                       | Landscape                                                                        |
 | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
 
-これに対応するため、Ionicは特定のコンポーネントに自動的にパディングを追加します。たとえば、`ion-modal`内に配置された最初の`ion-toolbar`コンポーネントは、デバイスのセーフエリアの上端に応じてパディングを受け取ります。これにより、デバイスのノッチがヘッダーテキストを覆うことを防ぎます。
+これに対応するため、Ionic は特定のコンポーネントに自動的にパディングを追加します。たとえば、`ion-modal`内に配置された最初の`ion-toolbar`コンポーネントは、デバイスのセーフエリアの上端に応じてパディングを受け取ります。これにより、デバイスのノッチがヘッダーテキストを覆うことを防ぎます。
 
 <img src={require('@site/static/img/theming/modal-header-padding.png').default} />
 
-このパディングは、[アプリケーション変数](#application-variables)で説明されている`--ion-safe-area-(dir)`変数を使用してCSSで手動で調整できます。値はアプリケーション全体、またはコンポーネントごとに設定できます。例：
+このパディングは、[アプリケーション変数](#application-variables)で説明されている`--ion-safe-area-(dir)`変数を使用して CSS で手動で調整できます。値はアプリケーション全体、またはコンポーネントごとに設定できます。例：
 
 ```css
 html {

@@ -31,18 +31,18 @@ Ionic Framework は、サポートされている環境でユーザーがハー�
 
 以下の表は、環境によってハードウェアの戻るボタンのサポートがどのように異なるかを示しています。
 
-| Environment | Status                                                                                                    |
-| ----------- | --------------------------------------------------------------------------------------------------------- |
+| Environment | Status                                                                                                                  |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Capacitor   | `@capacitor/app`パッケージがインストールされている場合のみサポートされます。                                            |
-| Cordova     | サポートされています                                                                                                 |
-| Browser     | `experimentalCloseWatcher`が`true`で、プラットフォームがClose Watcher APIをサポートしている場合のみサポートされます。 |
-| PWA         | `experimentalCloseWatcher`が`true`で、プラットフォームがClose Watcher APIをサポートしている場合のみサポートされます。 |
+| Cordova     | サポートされています                                                                                                    |
+| Browser     | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
+| PWA         | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
 
-### ブラウザまたはPWAでのハードウェアの戻るボタン
+### ブラウザまたは PWA でのハードウェアの戻るボタン
 
-Ionicは、[IonicConfigで`experimentalCloseWatcher: true`を設定](./config.md)することで、ブラウザまたはPWAでハードウェアの戻るボタンを処理する実験的なサポートを提供します。この機能が有効になっている場合、Ionicは[Close Watcher API](https://github.com/WICG/close-watcher)を使用して、すべての閉じるリクエストを`ionBackButton`イベントを通じて渡します。これには、ナビゲーションのためにハードウェアの戻るボタンを押すことや、モーダルを閉じるためにEscapeキーを押すことが含まれます。
+Ionic は、[IonicConfig で`experimentalCloseWatcher: true`を設定](./config.md)することで、ブラウザまたは PWA でハードウェアの戻るボタンを処理する実験的なサポートを提供します。この機能が有効になっている場合、Ionic は[Close Watcher API](https://github.com/WICG/close-watcher)を使用して、すべての閉じるリクエストを`ionBackButton`イベントを通じて渡します。これには、ナビゲーションのためにハードウェアの戻るボタンを押すことや、モーダルを閉じるために Escape キーを押すことが含まれます。
 
-Chromeは[Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120)からClose Watcherをサポートしています。
+Chrome は[Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120)から Close Watcher をサポートしています。
 
 ハードウェアバックボタンを完全にサポートするには、Capacitor または Cordova の使用をお勧めします。
 

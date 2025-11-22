@@ -19,7 +19,7 @@ import DocsCards from '@components/global/DocsCards';
   `}</style>
 </head>
 
-Ionicアプリは、コンポーネントと呼ばれる高レベルのビルディングブロックで構成されており、アプリのUIを迅速に構築できます。Ionicには、カード、リスト、タブなど、多数のコンポーネントが標準装備されています。基本を理解したら、各コンポーネントとサブコンポーネントの完全なリストについては[API Index](api.md)を参照してください。
+Ionic アプリは、コンポーネントと呼ばれる高レベルのビルディングブロックで構成されており、アプリの UI を迅速に構築できます。Ionic には、カード、リスト、タブなど、多数のコンポーネントが標準装備されています。基本を理解したら、各コンポーネントとサブコンポーネントの完全なリストについては[API Index](api.md)を参照してください。
 
 <intro-end />
 
@@ -49,9 +49,7 @@ Ionicアプリは、コンポーネントと呼ばれる高レベルのビルデ
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>
-    カードは重要なコンテンツを表示する優れた方法であり、画像、ボタン、テキストなどを含めることができます。
-  </p>
+  <p>カードは重要なコンテンツを表示する優れた方法であり、画像、ボタン、テキストなどを含めることができます。</p>
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">

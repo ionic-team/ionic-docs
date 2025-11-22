@@ -14,9 +14,9 @@ sidebar_label: Androidでの開発
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info レガシーAndroidガイドをお探しですか？
+:::info レガシー Android ガイドをお探しですか？
 
-Android開発ガイドは、正式に[CapacitorのAndroidドキュメント](https://capacitorjs.com/docs/android)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシーAndroid開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android)で見つけることができます。
+Android 開発ガイドは、正式に[Capacitor の Android ドキュメント](https://capacitorjs.com/docs/android)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシー Android 開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android)で見つけることができます。
 
 :::
 

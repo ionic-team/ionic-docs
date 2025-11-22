@@ -5,13 +5,13 @@ title: Config
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Ionic Configは、アプリ全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリモード、タブボタンのレイアウト、アニメーションなどを設定できます。
+Ionic Config は、アプリ全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリモード、タブボタンのレイアウト、アニメーションなどを設定できます。
 
 ## グローバル設定
 
 利用可能な設定キーは、[`IonicConfig`](#ionicconfig)インターフェースで見つけることができます。
 
-次の例では、リップル効果を無効にし、モードをMaterial Designにデフォルト設定します：
+次の例では、リップル効果を無効にし、モードを Material Design にデフォルト設定します：
 
 import GlobalExample from '@site/docs/developing/config/global/index.md';
 
@@ -19,7 +19,7 @@ import GlobalExample from '@site/docs/developing/config/global/index.md';
 
 ## コンポーネントごとの設定
 
-Ionic Configはリアクティブではありません。コンポーネントがレンダリングされた後に設定の値を更新しても、以前の値のままになります。リアクティブな値が必要な場合は、設定を更新する代わりに、コンポーネントのプロパティを使用することをお勧めします。
+Ionic Config はリアクティブではありません。コンポーネントがレンダリングされた後に設定の値を更新しても、以前の値のままになります。リアクティブな値が必要な場合は、設定を更新する代わりに、コンポーネントのプロパティを使用することをお勧めします。
 
 import PerComponentExample from '@site/docs/developing/config/per-component/index.md';
 
@@ -27,9 +27,9 @@ import PerComponentExample from '@site/docs/developing/config/per-component/inde
 
 ## プラットフォームごとの設定
 
-Ionic Configは、プラットフォームごとに設定することもできます。たとえば、これにより、潜在的に遅いデバイスのブラウザでアプリが実行されている場合にアニメーションを無効にできます。開発者は、Platformユーティリティを活用してこれを実現できます。
+Ionic Config は、プラットフォームごとに設定することもできます。たとえば、これにより、潜在的に遅いデバイスのブラウザでアプリが実行されている場合にアニメーションを無効にできます。開発者は、Platform ユーティリティを活用してこれを実現できます。
 
-次の例では、モバイルWebブラウザでアプリが実行されている場合にのみ、Ionicアプリのすべてのアニメーションを無効にしています。
+次の例では、モバイル Web ブラウザでアプリが実行されている場合にのみ、Ionic アプリのすべてのアニメーションを無効にしています。
 
 import PerPlatformExample from '@site/docs/developing/config/per-platform/index.md';
 
@@ -53,7 +53,7 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 ## モードへのアクセス
 
-場合によっては、アプリケーションロジック内で現在のIonicモードにプログラム的にアクセスする必要があるかもしれません。これは、条件付き動作を適用したり、特定のアセットを取得したり、アクティブなスタイリングモードに基づいて他のアクションを実行したりするのに役立ちます。
+場合によっては、アプリケーションロジック内で現在の Ionic モードにプログラム的にアクセスする必要があるかもしれません。これは、条件付き動作を適用したり、特定のアセットを取得したり、アクティブなスタイリングモードに基づいて他のアクションを実行したりするのに役立ちます。
 
 import IonicMode from '@site/static/usage/v8/config/mode/index.md';
 
@@ -61,14 +61,14 @@ import IonicMode from '@site/static/usage/v8/config/mode/index.md';
 
 ## 設定の読み取り（Angular）
 
-Ionic Angularは、Ionic Configにアクセスするための`Config`プロバイダーを提供します。
+Ionic Angular は、Ionic Config にアクセスするための`Config`プロバイダーを提供します。
 
 ### get
 
-|                 |                                                                                  |
-| --------------- | -------------------------------------------------------------------------------- |
-| **説明** | 設定値を`any`として返します。設定が定義されていない場合は`null`を返します。 |
-| **シグネチャ**   | `get(key: string, fallback?: any) => any`                                        |
+|                |                                                                             |
+| -------------- | --------------------------------------------------------------------------- |
+| **説明**       | 設定値を`any`として返します。設定が定義されていない場合は`null`を返します。 |
+| **シグネチャ** | `get(key: string, fallback?: any) => any`                                   |
 
 #### 例
 
@@ -112,10 +112,10 @@ class AppComponent {
 
 ### getBoolean
 
-|                 |                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------ |
-| **説明** | 設定値を`boolean`として返します。設定が定義されていない場合は`false`を返します。 |
-| **シグネチャ**   | `getBoolean(key: string, fallback?: boolean) => boolean`                             |
+|                |                                                                                  |
+| -------------- | -------------------------------------------------------------------------------- |
+| **説明**       | 設定値を`boolean`として返します。設定が定義されていない場合は`false`を返します。 |
+| **シグネチャ** | `getBoolean(key: string, fallback?: boolean) => boolean`                         |
 
 #### 例
 
@@ -159,18 +159,18 @@ class AppComponent {
 
 ### getNumber
 
-|                 |                                                                                 |
-| --------------- | ------------------------------------------------------------------------------- |
-| **説明** | 設定値を`number`として返します。設定が定義されていない場合は`0`を返します。 |
-| **シグネチャ**   | `getNumber(key: string, fallback?: number) => number`                           |
+|                |                                                                             |
+| -------------- | --------------------------------------------------------------------------- |
+| **説明**       | 設定値を`number`として返します。設定が定義されていない場合は`0`を返します。 |
+| **シグネチャ** | `getNumber(key: string, fallback?: number) => number`                       |
 
 ## インターフェース
 
 ### IonicConfig
 
-以下は、Ionicが使用する設定オプションです。
+以下は、Ionic が使用する設定オプションです。
 
-| Config                      | Type                                                                              | 説明                                                                                                                                                                                                                                                                            |
+| Config                      | Type                                                                              | 説明                                                                                                                                                                                                                                                                                   |
 | --------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `actionSheetEnter`          | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-action-sheet`, overriding the default "animation".                                                                                                                                                                                      |
 | `actionSheetLeave`          | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-action-sheet`, overriding the default "animation".                                                                                                                                                                                      |

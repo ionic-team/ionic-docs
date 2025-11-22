@@ -15,9 +15,9 @@ skipIntros: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info レガシーiOSガイドをお探しですか？
+:::info レガシー iOS ガイドをお探しですか？
 
-iOS開発ガイドは、正式に[CapacitorのiOSドキュメント](https://capacitorjs.com/docs/ios)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシーiOS開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios)で見つけることができます。
+iOS 開発ガイドは、正式に[Capacitor の iOS ドキュメント](https://capacitorjs.com/docs/ios)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシー iOS 開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios)で見つけることができます。
 
 :::
 

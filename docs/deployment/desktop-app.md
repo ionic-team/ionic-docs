@@ -32,7 +32,7 @@ Electron チームは、macOS 用のアプリを公開する方法について�
 
 Windows アプリをストアでアプリを公開するには、2 つの厳しい要件があります。
 
-- Anniversary Update付きWindows 10（2016年8月2日リリース）
+- Anniversary Update 付き Windows 10（2016 年 8 月 2 日リリース）
 - Windows 10 SDK、[こちらからダウンロード](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 - Node
 - electron-windows-store CLI

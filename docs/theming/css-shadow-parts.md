@@ -65,7 +65,7 @@ Shadow Parts は、開発者がシャドウツリーの外側から、シャド�
 
 これらの Parts が公開されたことで、要素は [::part](#how-part-works) を使って直接スタイルを設定することができるようになりました。
 
-### ::partの動作方法
+### ::part の動作方法
 
 <!-- prettier-ignore -->
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。

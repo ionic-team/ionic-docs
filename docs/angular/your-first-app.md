@@ -11,9 +11,9 @@ sidebar_label: はじめてのアプリ
   />
 </head>
 
-Ionic の素晴らしいところは、1 つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。現実的なアプリを段階的に作成しながら、Ionicアプリ開発の基礎を学びましょう。
+Ionic の素晴らしいところは、1 つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。現実的なアプリを段階的に作成しながら、Ionic アプリ開発の基礎を学びましょう。
 
-3つのプラットフォームすべてで実行されている完成したアプリは次のとおりです：
+3 つのプラットフォームすべてで実行されている完成したアプリは次のとおりです：
 
 <iframe
   width="560"
@@ -25,37 +25,37 @@ Ionic の素晴らしいところは、1 つのコードベースで、使い慣
 ></iframe>
 
 :::note
-Ionic 4とCordovaをカバーしたこのガイドの以前のバージョンを探していますか？[こちらを参照してください。](../developer-resources/guides/first-app-v4/intro.md)
+Ionic 4 と Cordova をカバーしたこのガイドの以前のバージョンを探していますか？[こちらを参照してください。](../developer-resources/guides/first-app-v4/intro.md)
 :::
 
 ## 構築するもの
 
-デバイスのカメラで写真を撮影し、グリッドに表示し、デバイスに永続的に保存する機能を提供するPhoto Galleryアプリを作成します。
+デバイスのカメラで写真を撮影し、グリッドに表示し、デバイスに永続的に保存する機能を提供する Photo Gallery アプリを作成します。
 
 ハイライトには以下が含まれます：
 
-- Ionic Frameworkの[UIコンポーネント](../components.md)を使用して、Web、iOS、Androidで実行される1つのAngularベースのコードベース。
-- Ionicの公式ネイティブアプリランタイムである[Capacitor](https://capacitorjs.com)を使用して、ネイティブiOSおよびAndroidモバイルアプリとしてデプロイ。
-- Capacitorの[Camera](../native/camera.md)、[Filesystem](../native/filesystem.md)、[Preferences](../native/preferences.md) APIによって提供されるPhoto Gallery機能。
+- Ionic Framework の[UI コンポーネント](../components.md)を使用して、Web、iOS、Android で実行される 1 つの Angular ベースのコードベース。
+- Ionic の公式ネイティブアプリランタイムである[Capacitor](https://capacitorjs.com)を使用して、ネイティブ iOS および Android モバイルアプリとしてデプロイ。
+- Capacitor の[Camera](../native/camera.md)、[Filesystem](../native/filesystem.md)、[Preferences](../native/preferences.md) API によって提供される Photo Gallery 機能。
 
-このガイドで参照されている[完全なアプリコード](https://github.com/ionic-team/tutorial-photo-gallery-angular)をGitHubで見つけてください。
+このガイドで参照されている[完全なアプリコード](https://github.com/ionic-team/tutorial-photo-gallery-angular)を GitHub で見つけてください。
 
 ## 必要なツールのダウンロード
 
-最適なIonic開発体験を確保するために、以下をすぐにダウンロードしてインストールしてください：
+最適な Ionic 開発体験を確保するために、以下をすぐにダウンロードしてインストールしてください：
 
-- **Node.js** - Ionicエコシステムと対話するため。[LTSバージョンをこちらからダウンロード](https://nodejs.org/en/)。
+- **Node.js** - Ionic エコシステムと対話するため。[LTS バージョンをこちらからダウンロード](https://nodejs.org/en/)。
 - **コードエディタ** - コードを書くため！[Visual Studio Code](https://code.visualstudio.com/)をお勧めします。
 - **コマンドラインインターフェース/ターミナル（CLI）**：
-  - **Windows**ユーザー：最適なIonic体験のために、管理者モードで実行される組み込みコマンドライン（cmd）またはPowershell CLIをお勧めします。
+  - **Windows**ユーザー：最適な Ionic 体験のために、管理者モードで実行される組み込みコマンドライン（cmd）または Powershell CLI をお勧めします。
   - **Mac/Linux**ユーザー：事実上、どのターミナルでも動作します。
 
-## Ionicツールのインストール
+## Ionic ツールのインストール
 
 コマンドラインターミナルで以下を実行して、Ionic CLI（`ionic`）、デバイスやシミュレーター/エミュレーターでネイティブバイナリを実行するために使用される`native-run`、ネイティブアプリのアイコンとスプラッシュスクリーンを生成するために使用される`cordova-res`をインストールします：
 
 :::note
-Visual Studio Codeでターミナルを開くには、Terminal -> New Terminalに移動します。
+Visual Studio Code でターミナルを開くには、Terminal -> New Terminal に移動します。
 :::
 
 ```shell
@@ -63,9 +63,9 @@ npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
-`-g`オプションは_グローバルにインストール_を意味します。パッケージをグローバルにインストールすると、`EACCES`権限エラーが発生する可能性があります。
+`-g`オプションは*グローバルにインストール*を意味します。パッケージをグローバルにインストールすると、`EACCES`権限エラーが発生する可能性があります。
 
-昇格された権限なしでnpmをグローバルに操作するように設定することを検討してください。詳細については、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
+昇格された権限なしで npm をグローバルに操作するように設定することを検討してください。詳細については、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## アプリの作成
@@ -90,7 +90,7 @@ ionic start photo-gallery tabs --type=angular
 cd photo-gallery
 ```
 
-次に、アプリのネイティブ機能を動作させるために必要なCapacitorプラグインをインストールする必要があります：
+次に、アプリのネイティブ機能を動作させるために必要な Capacitor プラグインをインストールする必要があります：
 
 ```shell
 npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
@@ -98,7 +98,7 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements
 
-[Camera API](../native/camera.md)を含む一部のCapacitorプラグインは、Ionicの[PWA Elementsライブラリ](https://github.com/ionic-team/pwa-elements)を介してWebベースの機能とUIを提供します。
+[Camera API](../native/camera.md)を含む一部の Capacitor プラグインは、Ionic の[PWA Elements ライブラリ](https://github.com/ionic-team/pwa-elements)を介して Web ベースの機能と UI を提供します。
 
 これは別の依存関係なので、次にインストールします：
 
@@ -132,11 +132,11 @@ platformBrowserDynamic()
 ionic serve
 ```
 
-そして、完成です！IonicアプリがWebブラウザで実行されています。アプリの大部分はブラウザ内で直接ビルドおよびテストできるため、開発とテストの速度が大幅に向上します。
+そして、完成です！Ionic アプリが Web ブラウザで実行されています。アプリの大部分はブラウザ内で直接ビルドおよびテストできるため、開発とテストの速度が大幅に向上します。
 
 ## Photo Gallery
 
-3つのタブがあります。「Tab2」タブをクリックしてください。これは空白のキャンバス、つまりPhoto Galleryに変換するのに最適な場所です。Ionic CLIにはLive Reload機能があるため、変更を加えて保存すると、アプリがすぐに更新されます！
+3 つのタブがあります。「Tab2」タブをクリックしてください。これは空白のキャンバス、つまり Photo Gallery に変換するのに最適な場所です。Ionic CLI には Live Reload 機能があるため、変更を加えて保存すると、アプリがすぐに更新されます！
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif 'Live Reload Feature in Ionic App')
 
@@ -160,7 +160,7 @@ ionic serve
 </ion-content>
 ```
 
-`ion-header`は上部のナビゲーションとツールバーを表し、「Tab 2」がタイトルです（iOSの[折りたたみ可能な大きなタイトル](../api/title.md#collapsible-large-titles)サポートにより、2つあります）。両方の`ion-title`要素を次のように変更します：
+`ion-header`は上部のナビゲーションとツールバーを表し、「Tab 2」がタイトルです（iOS の[折りたたみ可能な大きなタイトル](../api/title.md#collapsible-large-titles)サポートにより、2 つあります）。両方の`ion-title`要素を次のように変更します：
 
 ```html
 <ion-header [translucent]="true">
@@ -235,4 +235,4 @@ ionic serve
 </ion-tabs>
 ```
 
-これは、Ionicでできるすべての素晴らしいことの始まりに過ぎません。次に、Webでカメラ撮影機能を実装し、その後iOSとAndroid用にビルドします。
+これは、Ionic でできるすべての素晴らしいことの始まりに過ぎません。次に、Web でカメラ撮影機能を実装し、その後 iOS と Android 用にビルドします。

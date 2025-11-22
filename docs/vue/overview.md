@@ -14,21 +14,21 @@ sidebar_label: 概要
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-`@ionic/vue`は、Ionic Frameworkの全機能をVue開発者にもたらします。Vueエコシステムとのシームレスな統合を提供するため、使い慣れたVueツール、コンポーネント、ベストプラクティスを使用して高品質なクロスプラットフォームアプリを構築できます。また、Ionicの豊富なUIライブラリとネイティブ機能にもアクセスできます。
+`@ionic/vue`は、Ionic Framework の全機能を Vue 開発者にもたらします。Vue エコシステムとのシームレスな統合を提供するため、使い慣れた Vue ツール、コンポーネント、ベストプラクティスを使用して高品質なクロスプラットフォームアプリを構築できます。また、Ionic の豊富な UI ライブラリとネイティブ機能にもアクセスできます。
 
 ## Vue バージョンサポート
 
-Ionic Vue v8はVue 3.xをサポートしています。サポートされているバージョンとサポートポリシーの詳細については、[Ionic Vueサポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
+Ionic Vue v8 は Vue 3.x をサポートしています。サポートされているバージョンとサポートポリシーの詳細については、[Ionic Vue サポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
 
 ## Vue ツール
 
-Ionic Vueプロジェクトは、標準のVue CLIプロジェクトと同じツールを使用するため、アプリのビルド、テスト、デプロイにVue CLIの全機能セットを活用できます。スタータープロジェクトには、ナビゲーション用のVue Routerや、型安全性と開発者体験の向上のためのTypeScriptサポートなど、デフォルトで有効になっている便利な機能が含まれています。
+Ionic Vue プロジェクトは、標準の Vue CLI プロジェクトと同じツールを使用するため、アプリのビルド、テスト、デプロイに Vue CLI の全機能セットを活用できます。スタータープロジェクトには、ナビゲーション用の Vue Router や、型安全性と開発者体験の向上のための TypeScript サポートなど、デフォルトで有効になっている便利な機能が含まれています。
 
 ## ネイティブツール
 
-[Capacitor](https://capacitorjs.com)は、Ionic Vueの公式クロスプラットフォームランタイムで、単一のコードベースでiOS、Android、Web上でネイティブにアプリを実行できます。
+[Capacitor](https://capacitorjs.com)は、Ionic Vue の公式クロスプラットフォームランタイムで、単一のコードベースで iOS、Android、Web 上でネイティブにアプリを実行できます。
 
-Ionic Vueで多くの[Cordova](https://cordova.apache.org/)プラグインを使用できますが、Capacitorが推奨され、完全にサポートされているソリューションです。[Ionic CLI](../cli.md)は、Ionic Vueプロジェクトの公式Cordova統合を提供していません。CapacitorでCordovaプラグインを使用する方法の詳細については、[Capacitorドキュメント](https://capacitorjs.com/docs/cordova)を参照してください。
+Ionic Vue で多くの[Cordova](https://cordova.apache.org/)プラグインを使用できますが、Capacitor が推奨され、完全にサポートされているソリューションです。[Ionic CLI](../cli.md)は、Ionic Vue プロジェクトの公式 Cordova 統合を提供していません。Capacitor で Cordova プラグインを使用する方法の詳細については、[Capacitor ドキュメント](https://capacitorjs.com/docs/cordova)を参照してください。
 
 ## インストール
 
@@ -65,7 +65,9 @@ $ ionic serve █
 </DocsCard>
 
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
+  <p>
+    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
+  </p>
 </DocsCard>
 
 </DocsCards>
