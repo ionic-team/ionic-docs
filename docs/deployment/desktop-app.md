@@ -4,10 +4,10 @@ sidebar_label: Electronデスクトップアプリ
 ---
 
 <head>
-  <title>WindowsとmacOS App Storesのためにデスクトップアプリとしてビルド</title>
+  <title>WindowsとmacOS App Stores向けにデスクトップアプリとしてビルド</title>
   <meta
     name="description"
-    content="Building an Ionic desktop application for Windows and macOS app stores lets you reuse 100% of your code. Learn more about deploying a desktop app with Ionic."
+    content="WindowsとmacOSアプリストア向けにIonicデスクトップアプリケーションを構築すると、コードを100%再利用できます。Ionicでデスクトップアプリをデプロイする方法について詳しく学びます。"
   />
 </head>
 
@@ -32,8 +32,8 @@ Electron チームは、macOS 用のアプリを公開する方法について�
 
 Windows アプリをストアでアプリを公開するには、2 つの厳しい要件があります。
 
-- Windows 10 with Anniversary Update (released August 2nd, 2016)
-- The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
+- Anniversary Update付きWindows 10（2016年8月2日リリース）
+- Windows 10 SDK、[こちらからダウンロード](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 - Node
 - electron-windows-store CLI
 

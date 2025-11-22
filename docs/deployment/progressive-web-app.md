@@ -10,7 +10,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>Progressive Web Applicationへのデプロイ</title>
   <meta
     name="description"
-    content="Ionic Applications are built with web technologies that run just as well as a Progressive Web App as they do a native app. Learn how to deploy a PWA with Ionic."
+    content="IonicアプリケーションはWeb技術で構築されており、ネイティブアプリと同様にProgressive Web Appとしても動作します。IonicでPWAをデプロイする方法を学びます。"
   />
 </head>
 
@@ -20,12 +20,12 @@ Ionic が対応しているフレームワークについては、専用のガ�
 
 <DocsCards>
   <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg">
-    Get started with progressive web apps in Angular.
+    AngularでProgressive Web Appを始めましょう。
   </DocsCard>
   <DocsCard header="React" href="../react/pwa" img="/img/frameworks/react.svg">
-    Get started with progressive web apps in React.
+    ReactでProgressive Web Appを始めましょう。
   </DocsCard>
   <DocsCard header="Vue" href="../vue/pwa" img="/img/frameworks/vue.svg">
-    Get started with progressive web apps in Vue.
+    VueでProgressive Web Appを始めましょう。
   </DocsCard>
 </DocsCards>

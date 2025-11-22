@@ -7,10 +7,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>iOS App Storeでのリリース: Apple App Store Deployment for Ionic</title>
+  <title>iOS App Storeでのリリース: Ionic向けApple App Storeデプロイメント</title>
   <meta
     name="description"
-    content="Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
+    content="IonicアプリをApple iOS App Storeに公開するための要件を確認します。リリースビルドの生成方法とその他のデプロイメントに必要な手順を学びます。"
   />
 </head>
 
@@ -36,7 +36,7 @@ iOS プラットフォームがまだ追加されていない場合は、必ず�
 ionic cap add ios
 ```
 
-With the platform added, run the build command with the `--prod` flag:
+プラットフォームが追加されたら、`--prod`フラグを付けてビルドコマンドを実行します：
 
 ```shell
 ionic build --prod

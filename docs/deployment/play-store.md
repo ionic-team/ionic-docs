@@ -4,10 +4,10 @@ sidebar_label: Android Play Store
 ---
 
 <head>
-  <title>Android Play Storeでのリリース: Publish Your Ionic Apps</title>
+  <title>Android Play Storeでのリリース: Ionicアプリを公開</title>
   <meta
     name="description"
-    content="Ionic documentation for Android Play Store app deployment. Read about how to generate a release build and publish your Ionic apps to the Google Play Store."
+    content="Android Play Storeアプリデプロイメント用のIonicドキュメント。リリースビルドの生成方法とIonicアプリをGoogle Play Storeに公開する方法を読んでください。"
   />
 </head>
 
