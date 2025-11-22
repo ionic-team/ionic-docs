@@ -3,10 +3,10 @@ title: Web View
 ---
 
 <head>
-  <title>Capacitor Web View for iOS and Android Apps - Ionic Framework</title>
+  <title>iOSおよびAndroidアプリ用Capacitor Web View - Ionic Framework</title>
   <meta
     name="description"
-    content="What is a Web View? Web Views are a full screen and full-powered web browser. Read to learn more about Capacitor Web View on Ionic Framework apps."
+    content="Web Viewとは何ですか？Web Viewはフルスクリーンでフル機能のWebブラウザです。Ionic FrameworkアプリでのCapacitor Web Viewについて詳しく学びましょう。"
   />
 </head>
 
@@ -28,7 +28,7 @@ Ionic Web View プラグインは、最新の JavaScript アプリケーショ�
 
 ### CORS
 
-Web Views enforce [CORS](../reference/glossary.md#cors), so it's important that external services properly handle cross-origin requests. See the [CORS FAQs](../troubleshooting/cors.md) for information on dealing with CORS in Ionic apps.
+Web Viewは[CORS](../reference/glossary.md#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。IonicアプリでCORSを処理する方法については、[CORS FAQs](../troubleshooting/cors.md)を参照してください。
 
 ### File プロトコル
 
@@ -42,7 +42,7 @@ import { Capacitor } from '@capacitor/core';
 Capacitor.convertFileSrc(filePath);
 ```
 
-For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview).
+Cordovaアプリの場合、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)は、File URIを変換するためのユーティリティ関数を提供します：`window.Ionic.WebView.convertFileSrc()`。対応するIonic Nativeプラグインもあります：[`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview)。
 
 ### 実装
 

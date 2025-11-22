@@ -7,7 +7,7 @@ title: Progressive Web Apps
   <title>Progressive Web Applications: PWAとは - Ionic Documentation</title>
   <meta
     name="description"
-    content="What is a PWA? A Progressive Web Application uses modern web capabilities to deliver an app-like experience. Read our core concept documentation to learn more."
+    content="PWAとは何ですか？Progressive Web Applicationは、最新のWeb機能を使用してアプリのようなエクスペリエンスを提供します。コアコンセプトドキュメントを読んで詳しく学びましょう。"
   />
 </head>
 
