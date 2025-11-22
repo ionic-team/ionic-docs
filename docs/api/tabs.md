@@ -50,7 +50,7 @@ Ionicでは、タブを使ったルーティングパターンのベストプラ
 
 ## Programmatically Selecting Tabs
 
-Tabs can be selected programmatically using the `select` method. This is useful when tab changes need to be triggered from application logic, such as in response to a button click or after completing a form. The following example demonstrates using a button to call the `select` method to navigate to a different tab.
+タブは`select`メソッドを使用してプログラムで選択できます。これは、ボタンのクリックに応答したり、フォームを完了した後など、アプリケーションロジックからタブの変更をトリガーする必要がある場合に便利です。次の例では、ボタンを使用して`select`メソッドを呼び出し、別のタブにナビゲートする方法を示しています。
 
 import SelectMethod from '@site/static/usage/v8/tabs/select-method/index.md';
 

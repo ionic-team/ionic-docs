@@ -24,7 +24,7 @@ router linkコンポーネントは、指定されたリンクに移動するた
  Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
-See the [Router](./router) documentation for more information.
+詳細については、[Router](./router)ドキュメントを参照してください。
 
 ## プロパティ
 <Props />

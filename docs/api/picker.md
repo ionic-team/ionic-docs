@@ -53,7 +53,7 @@ import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
 ### Screen Readers
 
-Picker supports navigation using a screen reader by implementing the [`slider` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role) on each [Picker Column](./picker-column). The following gestures can be used to navigate the Picker.
+Pickerは、各[Picker Column](./picker-column)に[`slider` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role)を実装することで、スクリーンリーダーを使用したナビゲーションをサポートします。以下のジェスチャーを使用してPickerをナビゲートできます。
 
 | Gesture | Function |
 | - | - |

@@ -19,17 +19,17 @@ import DocsCards from '@components/global/DocsCards';
   `}</style>
 </head>
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you're familiar with the basics, refer to the [API Index](api.md) for a complete list of each component and sub-component.
+Ionicアプリは、コンポーネントと呼ばれる高レベルのビルディングブロックで構成されており、アプリのUIを迅速に構築できます。Ionicには、カード、リスト、タブなど、多数のコンポーネントが標準装備されています。基本を理解したら、各コンポーネントとサブコンポーネントの完全なリストについては[API Index](api.md)を参照してください。
 
 <intro-end />
 
 <DocsCards>
 <DocsCard header="Accordion" href="api/accordion" img="/icons/feature-component-accordion-icon.png">
-  <p>Accordions provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information.</p>
+  <p>アコーディオンは、情報を整理・グループ化する方法を提供しながら、垂直方向のスペースを減らすために、コンテンツに折りたたみ可能なセクションを提供します。</p>
 </DocsCard>
 
 <DocsCard header="Action Sheet" href="api/action-sheet" icon="/icons/component-action-sheet-icon.png">
-  <p>Action Sheets display a set of options with the ability to confirm or cancel an action.</p>
+  <p>アクションシートは、アクションを確認またはキャンセルする機能とともに、一連のオプションを表示します。</p>
 </DocsCard>
 
 <DocsCard header="Alert" href="api/alert" icon="/icons/component-alert-icon.png">
@@ -41,7 +41,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Breadcrumbs" href="api/breadcrumbs" icon="/icons/component-breadcrumbs-icon.png">
-  <p>Breadcrumbs are navigation items that are used to indicate where a user is on an app.</p>
+  <p>Breadcrumbsは、ユーザーがアプリ内のどこにいるかを示すために使用されるナビゲーションアイテムです。</p>
 </DocsCard>
 
 <DocsCard header="Button" href="api/button" icon="/icons/component-button-icon.png">
@@ -50,7 +50,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
   <p>
-    Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
+    カードは重要なコンテンツを表示する優れた方法であり、画像、ボタン、テキストなどを含めることができます。
   </p>
 </DocsCard>
 
@@ -59,15 +59,15 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Chip" href="api/chip" icon="/icons/component-chip-icon.png">
-  <p>チップはデータやアクションを表示するためのコンパクトな方法です。</p>
+  <p>Chipはデータやアクションを表示するためのコンパクトな方法です。</p>
 </DocsCard>
 
 <DocsCard header="Content" href="api/content" icon="/icons/component-content-icon.png">
-  <p>コンテンツは、アプリと対話してアプリをナビゲートするための典型的な方法です。</p>
+  <p>Contentは、アプリと対話してアプリをナビゲートするための典型的な方法です。</p>
 </DocsCard>
 
 <DocsCard header="Date & Time Pickers" href="api/datetime" img="/icons/feature-component-datetime-icon.png">
-  <p>Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</p>
+  <p>Date & Timeピッカーは、ユーザーが日付と時刻を簡単に選択できるインターフェースを提供するために使用されます。</p>
 </DocsCard>
 
 <DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
@@ -81,7 +81,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Icons" href="api/icon" icon="/icons/component-icons-icon.png">
-  <p>Beautifully designed icons for use in web, iOS, and Android apps.</p>
+  <p>Web、iOS、Androidアプリで使用するために美しくデザインされたアイコン。</p>
 </DocsCard>
 
 <DocsCard header="Infinite Scroll" href="api/infinite-scroll" icon="/icons/component-infinitescroll-icon.png">
@@ -89,13 +89,13 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Inputs" href="api/input" icon="/icons/component-input-icon.png">
-  <p>Inputs provides a way for users to enter data in your app.</p>
+  <p>Inputは、ユーザーがアプリにデータを入力する方法を提供します。</p>
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
   <p>
-    Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements.
-    Items can be swiped, deleted, reordered, edited, and more.
+    Itemは、テキスト、アイコン、アバター、画像、入力、およびその他のネイティブまたはカスタム要素を含むことができる要素です。
+    Itemは、スワイプ、削除、並び替え、編集などが可能です。
   </p>
 </DocsCard>
 
@@ -105,8 +105,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
   <p>
-    A collection of media components, including avatars, icons, images, and thumbnails, designed to enhance visual
-    content.
+    アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚的なコンテンツを強化するように設計されています。
   </p>
 </DocsCard>
 
@@ -123,7 +122,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Navigation" href="api/nav" icon="/icons/component-navigation-icon.png">
-  <p>Navigation is how users move between different pages in your app.</p>
+  <p>Navigationは、ユーザーがアプリ内の異なるページ間を移動する方法です。</p>
 </DocsCard>
 
 <DocsCard header="Popover" href="api/popover" icon="/icons/component-popover-icon.png">
@@ -139,11 +138,11 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Range" href="api/range" icon="/icons/component-range-icon.png">
-  <p>Range sliders let users select a value by dragging a knob along a track.</p>
+  <p>Rangeスライダーは、ユーザーがトラックに沿ってノブをドラッグして値を選択できるようにします。</p>
 </DocsCard>
 
 <DocsCard header="Refresher" href="api/refresher" img="/icons/feature-component-refresher-icon.png">
-  <p>Refresher provides pull-to-refresh functionality on a content component.</p>
+  <p>Refresherは、コンテンツコンポーネントにプルツーリフレッシュ機能を提供します。</p>
 </DocsCard>
 
 <DocsCard header="Reorder" href="api/reorder" icon="/icons/component-reorder-icon.png">
@@ -155,7 +154,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Searchbar" href="api/searchbar" icon="/icons/component-searchbar-icon.png">
-  <p>Searchbar is used to search or filter items, usually from a toolbar.</p>
+  <p>検索バーは、通常ツールバーから、アイテムを検索またはフィルタリングするために使用されます。</p>
 </DocsCard>
 
 <DocsCard header="Segment" href="api/segment" icon="/icons/component-segment-icon.png">
@@ -173,7 +172,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>Toasts are subtle notifications that appear over your app's content without interrupting user interaction.</p>
+  <p>Toastは、ユーザーの操作を中断することなく、アプリのコンテンツの上に表示される控えめな通知です。</p>
 </DocsCard>
 
 <DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">
@@ -181,10 +180,10 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Toolbar" href="api/toolbar" icon="/icons/component-toolbar-icon.png">
-  <p>Toolbars are used to house information and actions relating to your app.</p>
+  <p>Toolbarは、アプリに関連する情報とアクションを配置するために使用されます。</p>
 </DocsCard>
 
 <DocsCard header="Typography" href="api/text" icon="/icons/component-typography-icon.png">
-  <p>Text is used to style or change the color of text within an application.</p>
+  <p>Typographyは、アプリケーション内のテキストのスタイルを設定したり、色を変更したりするために使用されます。</p>
 </DocsCard>
 </DocsCards>

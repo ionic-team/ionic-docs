@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Reorderは、アイテムのグループ内での順序を変更するためにアイテムをドラッグできるようにするコンポーネントです。視覚的なドラッグ＆ドロップのインターフェイスを提供するために、[reorder group](./reorder-group)内で使用されなければなりません。
 
-The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `ionReorderEnd` event will be dispatched from the reorder group and the `complete` method needs to be called.
+Reorderは、アイテムをドラッグ＆ドロップするために使用されるアンカーです。Reorderが完了すると、reorder groupから`ionReorderEnd`イベントが発行され、`complete`メソッドを呼び出す必要があります。
 
 
 ## 基本的な使い方
