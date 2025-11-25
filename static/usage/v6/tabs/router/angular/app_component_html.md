@@ -1,3 +1,5 @@
 ```html
-<ion-router-outlet></ion-router-outlet>
+<ion-app>
+  <ion-router-outlet [environmentInjector]="environmentInjector"></ion-router-outlet>
+</ion-app>
 ```

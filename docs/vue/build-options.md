@@ -28,7 +28,7 @@ Also note that locally registered components are not available in subcomponents.
 
 Let's take a look at how local component registration works:
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -38,8 +38,8 @@ Let's take a look at how local component registration works:
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonPage } from '@ionic/vue';
-  import SubComponent from '@/components/SubComponent.vue';
+import { IonContent, IonPage } from '@ionic/vue';
+import SubComponent from '@/components/SubComponent.vue';
 </script>
 ```
 
@@ -70,7 +70,7 @@ app.component('ion-page', IonPage);
 
 **MyComponent.vue**
 
-```html
+```vue
 <template>
   <ion-page>
     <ion-content>
@@ -80,7 +80,7 @@ app.component('ion-page', IonPage);
 </template>
 
 <script setup lang="ts">
-  import SubComponent from '@/components/SubComponent.vue';
+import SubComponent from '@/components/SubComponent.vue';
 </script>
 ```
 

@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v8/item-divider/basic/index.md';
 
 ## テーマ
 
-### Colors
+### 配色
 
 import Colors from '@site/static/usage/v8/item-divider/theming/colors/index.md';
 

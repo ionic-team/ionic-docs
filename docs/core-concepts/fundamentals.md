@@ -4,10 +4,10 @@ sidebar_label: 基本的な考え方
 ---
 
 <head>
-  <title>App Development Core Concepts and Tools - Ionic Framework API</title>
+  <title>アプリ開発のコアコンセプトとツール - Ionic Framework API</title>
   <meta
     name="description"
-    content="For those new to Ionic app development, a high-level understanding of the core concepts and tools behind the project helps. Read to learn more about Ionic API."
+    content="Ionicアプリ開発を始めたばかりの方には、プロジェクトの背景にあるコアコンセプトとツールの高レベルの理解が役立ちます。Ionic APIについて詳しく学びましょう。"
   />
 </head>
 
@@ -53,28 +53,28 @@ Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" ta
 
 開発者は通常通り click などの標準的なイベントを使用することができる。しかし、コンポーネントの [shadow root](../reference/glossary.md#shadow) 内で発生した多くのイベントは、ホスト要素に [retargeted](https://dom.spec.whatwg.org/#retarget) されます。この結果、ユーザーが 1 回しかクリックしなくても、複数の click ハンドラが実行される可能性があります。そのため、開発者は Ionic コンポーネントの状態変化を適切に通知するために、Ionic のイベントに頼る必要があります。Ionic のイベントには、標準的なイベントとの衝突を避けるために ion というプレフィックスが付けられています。各コンポーネントのドキュメントページには、開発者がアプリケーションでリッスンできる利用可能なイベントのリストがあります。
 
-## Properties
+## プロパティ
 
-Properties are JavaScript properties that can be set on Ionic components to configure their behavior and appearance. Properties are defined in each component's [API documentation](/docs/api) page.
+プロパティは、Ionic コンポーネントの動作と外観を設定するために Ionic コンポーネントに設定できる JavaScript プロパティです。プロパティは各コンポーネントの[API documentation](/docs/api)ページで定義されています。
 
-### Reactive Properties
+### リアクティブプロパティ
 
-Reactive properties automatically update the component when their values change. These are the most common type of property in Ionic components.
+リアクティブプロパティは、値が変更されるとコンポーネントを自動的に更新します。これらは Ionic コンポーネントで最も一般的なタイプのプロパティです。
 
 ```html
 <ion-button color="primary">Primary Button</ion-button>
 ```
 
-The `color` property is a reactive property that configures how the button appears. If you change the `color` value after the initial render, the button will update to reflect the new value.
+`color`プロパティは、ボタンの外観を設定するリアクティブプロパティです。初期レンダリング後に`color`値を変更すると、ボタンは新しい値を反映するように更新されます。
 
-### Virtual Properties
+### 仮想プロパティ
 
-Virtual properties are designed for one-time configuration during component initialization. They do not trigger re-renders when updated.
+仮想プロパティは、コンポーネントの初期化中に 1 回だけ設定するように設計されています。更新されても再レンダリングをトリガーしません。
 
 ```html
 <ion-button mode="ios">iOS Style Button</ion-button> <ion-button mode="md">Material Design Button</ion-button>
 ```
 
-The `mode` property is a virtual property that determines which platform styles to use for a component. It can be set at the component level or globally through the app configuration. In both cases, it's set once during initialization and doesn't change during the component's lifecycle.
+`mode`プロパティは、コンポーネントに使用するプラットフォームスタイルを決定する仮想プロパティです。コンポーネントレベルで設定することも、アプリ設定を通じてグローバルに設定することもできます。どちらの場合も、初期化中に一度設定され、コンポーネントのライフサイクル中は変更されません。
 
-For more information on Ionic modes, read the [Platform Styles documentation](/docs/theming/platform-styles).
+Ionic モードの詳細については、[Platform Styles documentation](/docs/theming/platform-styles)を参照してください。

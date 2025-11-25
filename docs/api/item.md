@@ -189,7 +189,7 @@ This feature is not enabled by default on clickable items for the `md` mode, but
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](/docs/theming/css-variables) for more information.
+詳細については、[theming documentation](/docs/theming/css-variables)を参照してください。
 
 -->
 

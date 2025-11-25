@@ -51,6 +51,8 @@ code {
 // Overrides
 #__docusaurus {
   [class*='codeBlockContainer_'] {
+    --prism-background-color: var(--code-block-bg-c);
+
     box-shadow: none;
   }
 }
@@ -63,7 +65,6 @@ code {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--code-block-bg-c);
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -121,7 +122,8 @@ pre[class*='language-'] {
 
 .token.tag.punctuation,
 .token.tag.class-name,
-.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']) {
+.token.tag.punctuation + .token.tag:not(.attr-value):not([class*='language-']),
+.token.tag.punctuation + .token.tag.language-vue:not(.attr-value) {
   color: #2b90ff;
 }
 

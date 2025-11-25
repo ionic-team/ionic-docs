@@ -86,7 +86,7 @@ Material Design では、Inputに塗りつぶしのスタイルが用意され�
 Filled inputs をiOSで使うためには、inputの `mode` を `md` に設定する必要があります。
 
 :::warning
-Inputs that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+コンポーネント間のスタイリングの競合のため、`fill`を使用する入力は`ion-item`内で使用すべきではありません。
 :::
 
 import Fill from '@site/static/usage/v8/input/fill/index.md';
@@ -108,13 +108,13 @@ import HelperError from '@site/static/usage/v8/input/helper-error/index.md';
 
 Input Counterは、Inputの下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
-The `counter` and `counterFormatter` properties on `ion-item` were [deprecated in Ionic 7](/docs/api/input#using-the-modern-syntax) and should be used directly on `ion-input` instead.
+`ion-item`の`counter`と`counterFormatter`プロパティは[Ionic 7で非推奨](/docs/api/input#using-the-modern-syntax)となり、代わりに`ion-input`で直接使用すべきです。
 
 import Counter from '@site/static/usage/v8/input/counter/index.md';
 
 <Counter />
 
-Inputs with a counter add a border between the input and the counter, therefore they should not be placed inside of an `ion-item` which adds an additional border under the item. The `ion-padding-start` class can be added to align the counter inputs with inputs inside of items.
+カウンター付きのInputは、Inputとカウンターの間にボーダーを追加するため、アイテムの下に追加のボーダーを追加する`ion-item`内に配置すべきではありません。`ion-padding-start`クラスを追加して、カウンターInputとアイテム内Inputを揃えることができます。
 
 import CounterAlignment from '@site/static/usage/v8/input/counter-alignment/index.md';
 
