@@ -1,5 +1,45 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>checkbox, toggle, radio-group:</strong> improve screen reader announcement timing for validation errors (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30714\">#30714</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/92db36489cca944caf1593dbd518a1f025a171a2\">92db364</a>)</li>\n</ul>\n",
+    "name": "v8.7.10",
+    "published_at": "November 20 2025",
+    "tag_name": "v8.7.10",
+    "type": "patch",
+    "version": "8.7.10"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>accordion-group:</strong> skip initial animation (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30729\">#30729</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/58d563805fca1db88caeeb40a8f710ac30416d93\">58d5638</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30613\">#30613</a></li>\n</ul>\n",
+    "name": "v8.7.9",
+    "published_at": "November 6 2025",
+    "tag_name": "v8.7.9",
+    "type": "patch",
+    "version": "8.7.9"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>checkbox, toggle:</strong> fire ionFocus and ionBlur (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30733\">#30733</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/54a1c86d6a5d533b0c8c2d18edc62454a7c17bab\">54a1c86</a>)</li>\n</ul>\n",
+    "name": "v8.7.8",
+    "published_at": "October 30 2025",
+    "tag_name": "v8.7.8",
+    "type": "patch",
+    "version": "8.7.8"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>header:</strong> ensure one banner role in condensed header (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30718\">#30718</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/12084af163ed811b9c6bda3c7850fc0c53c60c7b\">12084af</a>)</li>\n<li><strong>header:</strong> prevent flickering during iOS page transitions (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30705\">#30705</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/820fa2854331722d22efd0e38a1936117477967a\">820fa28</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25326\">#25326</a></li>\n<li><strong>select:</strong> improve screen reader announcement timing for validation errors (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30723\">#30723</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/03303d73f0bfe2380ced7931525fc52fd8576367\">03303d7</a>)</li>\n</ul>\n",
+    "name": "v8.7.7",
+    "published_at": "October 16 2025",
+    "tag_name": "v8.7.7",
+    "type": "patch",
+    "version": "8.7.7"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>tabs:</strong> respect stencil lifecycle order for tab selection (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30702\">#30702</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/7bb9535f601d2469ce60687a9c03f8b1cfe4aba4\">7bb9535</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30611\">#30611</a></li>\n</ul>\n",
+    "name": "v8.7.6",
+    "published_at": "October 9 2025",
+    "tag_name": "v8.7.6",
+    "type": "patch",
+    "version": "8.7.6"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>modal:</strong> allow sheet modals to skip focus trap (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30689\">#30689</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a40d957ad9c1897af365a91b45b00228a00d614c\">a40d957</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30684\">#30684</a></li>\n<li><strong>vue:</strong> emit component-specific overlay events (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30688\">#30688</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/024d090122548e26ec2cdcfae4637dde8f288278\">024d090</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30641\">#30641</a></li>\n</ul>\n",
     "name": "v8.7.5",
     "published_at": "September 25 2025",
@@ -198,45 +238,5 @@
     "tag_name": "v8.4.6",
     "type": "patch",
     "version": "8.4.6"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>vue:</strong> pin Vue output target to latest release (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30248\">#30248</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/3799d456d9461faac9a5e2c44f187329f113b3db\">3799d45</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30221\">#30221</a></li>\n</ul>\n",
-    "name": "v8.4.5",
-    "published_at": "March 14 2025",
-    "tag_name": "v8.4.5",
-    "type": "patch",
-    "version": "8.4.5"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>alert:</strong> change focused element and improve keyboard navigation (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30220\">#30220</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/4df0e0f4c00faec33f5ddc802945bf4ad9dc53d3\">4df0e0f</a>)</li>\n<li><strong>capacitor:</strong> replace deprecated platform check method (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30195\">#30195</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/b6b43ae2925f8a12b35cabd43abd9d838bc9714f\">b6b43ae</a>)</li>\n<li><strong>capacitor:</strong> use proper types for capacitor v7 support (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30228\">#30228</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2149ba2c8d56a3a8ef4a6de89de1292f6efe3031\">2149ba2</a>)</li>\n<li><strong>range:</strong> handle unsupported values for range min and max (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30070\">#30070</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/322319397ca46bafda7ca0d2e3fb4cc554432d6a\">3223193</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29667\">#29667</a></li>\n<li><strong>segment-button:</strong> protect connectedCallback for when segment-content has not yet been created (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30138\">#30138</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/14b6538d98303cb753d881ec6978fb98f53ed54c\">14b6538</a>)</li>\n<li><strong>select:</strong> auto-scroll to selected item for all interfaces (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30202\">#30202</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/8eaeb22e7a967100ffaadae8c8221e2e4888a3b6\">8eaeb22</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/19296\">#19296</a></li>\n<li><strong>toggle:</strong> trigger focus and blur on click (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30234\">#30234</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/ba8d8f489607537b3dac915cfc9f2c32a74b994c\">ba8d8f4</a>)</li>\n<li><strong>vue:</strong> update output target and properly emit events (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30227\">#30227</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/11554a5d3590c660dbf609931dcb63cc2daf79cb\">11554a5</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30206\">#30206</a> <a href=\"https://github.com/ionic-team/ionic-framework/issues/30178\">#30178</a> <a href=\"https://github.com/ionic-team/ionic-framework/issues/30177\">#30177</a> <a href=\"https://github.com/ionic-team/ionic-framework/issues/30170\">#30170</a></li>\n<li><strong>vue:</strong> update output target and resolve type issues (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30239\">#30239</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/6dcb143307682793ac4fd46d03efa5868a49e87d\">6dcb143</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30179\">#30179</a></li>\n</ul>\n",
-    "name": "v8.4.4",
-    "published_at": "March 14 2025",
-    "tag_name": "v8.4.4",
-    "type": "patch",
-    "version": "8.4.4"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>vue:</strong> update Stencil Vue output target (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30159\">#30159</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/eb725fce6eb15facd8a1c21be11a1b2d46336479\">eb725fc</a>)</li>\n</ul>\n",
-    "name": "v8.4.3",
-    "published_at": "January 30 2025",
-    "tag_name": "v8.4.3",
-    "type": "patch",
-    "version": "8.4.3"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>segment:</strong> add logic to connect to segment-view in <code>componentDidLoad()</code> callback (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30060\">#30060</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/000f55303e459c583e642337fb1894f419f37d48\">000f553</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/30000\">#30000</a></li>\n<li><strong>select-modal:</strong> match radio styles to iOS native (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30119\">#30119</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/3f8346e718ae3a6eb5008d739f10b6898b84ca9b\">3f8346e</a>)</li>\n</ul>\n",
-    "name": "v8.4.2",
-    "published_at": "January 23 2025",
-    "tag_name": "v8.4.2",
-    "type": "patch",
-    "version": "8.4.2"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>header:</strong> use aria attributes to hide small title when collapsed (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30027\">#30027</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/23763abf797f9a4ba8262225760f718e9dcc4782\">23763ab</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29347\">#29347</a></li>\n<li><strong>menu:</strong> hide from screen readers while animating (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30036\">#30036</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/845071c97a856d45eb5e0bb81d9c270bc38bb604\">845071c</a>)</li>\n<li><strong>overlays:</strong> announce info after opening based on platform (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30025\">#30025</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/f6188c47e9278fe69fd9d250c65156edbe5ef32e\">f6188c4</a>)</li>\n<li><strong>overlays:</strong> focus management with checkbox/radio (<a href=\"https://github.com/ionic-team/ionic-framework/issues/30026\">#30026</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/8ee42bbc1e0bf4731d20040c7853756722f1a4b2\">8ee42bb</a>)</li>\n<li><strong>toast:</strong> swipe gesture works with custom container layout (<a href=\"https://github.com/ionic-team/ionic-framework/issues/29999\">#29999</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/470decca7b6b89ef74095ef0bb7909b93640cd78\">470decc</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/29998\">#29998</a></li>\n</ul>\n",
-    "name": "v8.4.1",
-    "published_at": "November 28 2024",
-    "tag_name": "v8.4.1",
-    "type": "patch",
-    "version": "8.4.1"
   }
 ]
