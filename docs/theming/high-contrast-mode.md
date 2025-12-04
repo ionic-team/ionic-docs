@@ -68,7 +68,7 @@ The high contrast dark palette can be applied by importing `high-contrast-dark.a
 
 The following example will always display the high contrast light palette, regardless of the user's preference for high contrast or dark mode.
 
-import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-contrast-mode/index.md';
+import AlwaysHighContrastMode from '@site/static/usage/v9/theming/always-high-contrast-mode/index.md';
 
 <AlwaysHighContrastMode />
 
@@ -123,7 +123,7 @@ The following example uses the system settings to decide when to show high contr
 Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
 :::
 
-import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
+import SystemHighContrastMode from '@site/static/usage/v9/theming/system-high-contrast-mode/index.md';
 
 <SystemHighContrastMode />
 
@@ -181,7 +181,7 @@ The following example combines site settings, system settings, and the toggle to
 Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
 :::
 
-import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
+import ClassHighContrastMode from '@site/static/usage/v9/theming/class-high-contrast-mode/index.md';
 
 <ClassHighContrastMode />
 

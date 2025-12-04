@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datetime</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+    <script type="module">
+      import { loadingController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/index.esm.js';
+      window.loadingController = loadingController;
+    </script>
+    <style>
+      ion-loading.custom-loading {
+        --background: #e3edff;
+        --spinner-color: #1c6dff;
+
+        color: #1c6dff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-button id="open-loading">Show Loading</ion-button>
+          <ion-loading class="custom-loading" trigger="open-loading" message="Loading..." duration="3000"></ion-loading>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

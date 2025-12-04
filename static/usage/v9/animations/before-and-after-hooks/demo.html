@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+
+    <script type="module">
+      import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/index.esm.js';
+      window.createAnimation = createAnimation;
+
+      const card = createAnimation()
+        .addElement(document.querySelector('#card'))
+        .duration(2000)
+        .beforeStyles({
+          filter: 'invert(75%)',
+        })
+        .beforeClearStyles(['box-shadow'])
+        .afterStyles({
+          'box-shadow': 'rgba(255, 0, 50, 0.4) 0px 4px 16px 6px',
+        })
+        .afterClearStyles(['filter'])
+        .keyframes([
+          { offset: 0, transform: 'scale(1)' },
+          { offset: 0.5, transform: 'scale(1.5)' },
+          { offset: 1, transform: 'scale(1)' },
+        ]);
+
+      document.querySelector('#play').addEventListener('click', async () => {
+        await card.play();
+      });
+
+      document.querySelector('#pause').addEventListener('click', async () => {
+        await card.pause();
+      });
+
+      document.querySelector('#stop').addEventListener('click', async () => {
+        await card.stop();
+      });
+    </script>
+
+    <style>
+      .container {
+        flex-direction: column;
+      }
+
+      ion-card {
+        width: 70%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-card id="card">
+            <ion-card-content>Card</ion-card-content>
+          </ion-card>
+
+          <div>
+            <ion-button id="play">Play</ion-button>
+            <ion-button id="pause">Pause</ion-button>
+            <ion-button id="stop">Stop</ion-button>
+          </div>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

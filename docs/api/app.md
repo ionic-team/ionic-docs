@@ -1,12 +1,12 @@
 ---
 title: "ion-app"
 ---
-import Props from '@ionic-internal/component-api/v8/app/props.md';
-import Events from '@ionic-internal/component-api/v8/app/events.md';
-import Methods from '@ionic-internal/component-api/v8/app/methods.md';
-import Parts from '@ionic-internal/component-api/v8/app/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/app/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/app/slots.md';
+import Props from '@ionic-internal/component-api/v9/app/props.md';
+import Events from '@ionic-internal/component-api/v9/app/events.md';
+import Methods from '@ionic-internal/component-api/v9/app/methods.md';
+import Parts from '@ionic-internal/component-api/v9/app/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/app/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/app/slots.md';
 
 <head>
   <title>ion-app: Container Element for an Ionic Application</title>
@@ -30,7 +30,7 @@ Using `ion-app` enables the following behaviors:
 
 Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
 
-import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
+import SetFocus from '@site/static/usage/v9/app/set-focus/index.md';
 
 <SetFocus />
 

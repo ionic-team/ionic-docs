@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+
+    <style>
+      ion-toast.custom-toast {
+        --background: #f4f4fa;
+        --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+        --color: #4b4a50;
+      }
+
+      ion-toast.custom-toast::part(message) {
+        font-style: italic;
+      }
+
+      ion-toast.custom-toast::part(button) {
+        border-left: 1px solid #d2d2d2;
+        color: #030207;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Toast</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div class="container">
+          <ion-button id="open-toast">Open Toast</ion-button>
+          <ion-toast
+            trigger="open-toast"
+            duration="3000"
+            message="Hello Styled World!"
+            class="custom-toast"
+          ></ion-toast>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const toast = document.querySelector('ion-toast');
+      toast.buttons = [
+        {
+          text: 'Dismiss',
+          role: 'cancel',
+        },
+      ];
+    </script>
+  </body>
+</html>

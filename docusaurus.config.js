@@ -84,7 +84,7 @@ module.exports = {
           /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
-              label: 'v8',
+              label: 'v9',
             },
           },
         },
@@ -184,8 +184,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'updating/8-0',
-          label: 'Ionic v8.0.0 Upgrade Guide',
+          docId: 'updating/9-0',
+          label: 'Ionic v9.0.0 Upgrade Guide',
           position: 'left',
           className: 'cta',
         },

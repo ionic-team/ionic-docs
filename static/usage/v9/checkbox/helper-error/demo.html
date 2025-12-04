@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="my-form">
+        <ion-checkbox
+          helper-text="Agree to the terms before continuing"
+          error-text="You must agree to the terms to continue"
+        >
+          I agree to the terms and conditions
+        </ion-checkbox>
+
+        <br />
+
+        <ion-button type="submit" size="small">Submit</ion-button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById('my-form');
+      const agree = form.querySelector('ion-checkbox');
+
+      form.addEventListener('submit', (event) => submit(event));
+      agree.addEventListener('ionChange', (event) => validateCheckbox(event));
+
+      const validateCheckbox = (event) => {
+        agree.classList.add('ion-touched');
+
+        if (!event.detail.checked) {
+          agree.classList.add('ion-invalid');
+          agree.classList.remove('ion-valid');
+        } else {
+          agree.classList.remove('ion-invalid');
+          agree.classList.add('ion-valid');
+        }
+      };
+
+      const submit = (event) => {
+        event.preventDefault();
+
+        validateCheckbox({ detail: { checked: agree.checked } });
+      };
+    </script>
+  </body>
+</html>

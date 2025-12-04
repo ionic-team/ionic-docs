@@ -31,6 +31,7 @@ function writePage(page) {
   writeFileSync(`docs/${path}`, data);
   writeFileSync(`versioned_docs/version-v6/${path}`, data);
   writeFileSync(`versioned_docs/version-v7/${path}`, data);
+  writeFileSync(`versioned_docs/version-v8/${path}`, data);
 }
 
 function renderFrontmatter({ name, groups }) {

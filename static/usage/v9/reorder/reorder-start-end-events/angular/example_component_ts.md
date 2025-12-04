@@ -1,0 +1,62 @@
+```ts
+import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import {
+  ReorderEndCustomEvent,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonReorder,
+  IonReorderGroup,
+  IonIcon,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { caretDown, ellipse, warning } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, IonIcon],
+})
+export class ExampleComponent {
+  items = [
+    { label: 'Buy groceries', icon: 'warning', color: 'warning' },
+    { label: 'Call the bank', icon: 'warning', color: 'warning' },
+    { label: 'Finish project report', icon: 'ellipse', color: 'light' },
+    { label: 'Book flight tickets', icon: 'ellipse', color: 'light' },
+    { label: 'Read a book', icon: 'caret-down', color: 'secondary' },
+  ];
+
+  @ViewChildren('icon', { read: ElementRef }) icons!: QueryList<ElementRef<HTMLIonIconElement>>;
+
+  constructor() {
+    /**
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
+     */
+    addIcons({ caretDown, ellipse, warning });
+  }
+
+  handleReorderStart() {
+    console.log('Reorder started');
+
+    // Hide the icons when the reorder starts
+    this.icons.forEach((icon) => {
+      icon.nativeElement.style.opacity = '0';
+    });
+  }
+
+  handleReorderEnd(event: ReorderEndCustomEvent) {
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+
+    // Show the icons again
+    this.icons.forEach((icon) => {
+      icon.nativeElement.style.opacity = '1';
+    });
+
+    // Finish the reorder and update the items data
+    this.items = event.detail.complete(this.items);
+  }
+}
+```

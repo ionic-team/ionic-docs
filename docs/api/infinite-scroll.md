@@ -2,12 +2,12 @@
 title: "ion-infinite-scroll"
 ---
 
-import Props from '@ionic-internal/component-api/v8/infinite-scroll/props.md';
-import Events from '@ionic-internal/component-api/v8/infinite-scroll/events.md';
-import Methods from '@ionic-internal/component-api/v8/infinite-scroll/methods.md';
-import Parts from '@ionic-internal/component-api/v8/infinite-scroll/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/infinite-scroll/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/infinite-scroll/slots.md';
+import Props from '@ionic-internal/component-api/v9/infinite-scroll/props.md';
+import Events from '@ionic-internal/component-api/v9/infinite-scroll/events.md';
+import Methods from '@ionic-internal/component-api/v9/infinite-scroll/methods.md';
+import Parts from '@ionic-internal/component-api/v9/infinite-scroll/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/infinite-scroll/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/infinite-scroll/slots.md';
 
 <head>
   <title>ion-infinite-scroll: Infinite Scroller Action Component</title>
@@ -23,7 +23,7 @@ The expression assigned to the `ionInfinite` event is called when the user reach
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/infinite-scroll/basic/index.md';
+import Basic from '@site/static/usage/v9/infinite-scroll/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v8/infinite-scroll/basic/index.md';
 
 The `ion-infinite-scroll-content` is responsible for the visual display of the infinite scroll interaction. By default this component changes its look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. Both the spinner and loading text can be customized by setting properties on the `ion-infinite-scroll-content` component.
 
-import InfiniteScrollContent from '@site/static/usage/v8/infinite-scroll/infinite-scroll-content/index.md';
+import InfiniteScrollContent from '@site/static/usage/v9/infinite-scroll/infinite-scroll-content/index.md';
 
 <InfiniteScrollContent />
 
@@ -39,7 +39,7 @@ import InfiniteScrollContent from '@site/static/usage/v8/infinite-scroll/infinit
 
 Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
 
-import CustomContent from '@site/static/usage/v8/infinite-scroll/custom-infinite-scroll-content/index.md';
+import CustomContent from '@site/static/usage/v9/infinite-scroll/custom-infinite-scroll-content/index.md';
 
 <CustomContent />
 

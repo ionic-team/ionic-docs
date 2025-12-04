@@ -60,7 +60,7 @@ This sets the [application colors](/docs/theming/themes#application-colors) and 
 
 The following example will always display the dark palette, regardless of the system settings for dark mode.
 
-import AlwaysDarkMode from '@site/static/usage/v8/theming/always-dark-mode/index.md';
+import AlwaysDarkMode from '@site/static/usage/v9/theming/always-dark-mode/index.md';
 
 <AlwaysDarkMode />
 
@@ -113,7 +113,7 @@ The following example uses the system settings to decide when to show dark mode.
 Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
 :::
 
-import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index.md';
+import SystemDarkMode from '@site/static/usage/v9/theming/system-dark-mode/index.md';
 
 <SystemDarkMode />
 
@@ -166,7 +166,7 @@ The following example combines site settings, system settings, and the toggle to
 Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
 :::
 
-import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.md';
+import ClassDarkMode from '@site/static/usage/v9/theming/class-dark-mode/index.md';
 
 <ClassDarkMode />
 

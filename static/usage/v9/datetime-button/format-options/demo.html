@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datetime Button</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+          <ion-modal keep-contents-mounted="{true}">
+            <ion-datetime id="datetime" presentation="date-time" value="2023-11-02T01:22:00"></ion-datetime>
+          </ion-modal>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const datetime = document.querySelector('ion-datetime');
+      datetime.formatOptions = {
+        date: {
+          weekday: 'short',
+          month: 'long',
+          day: '2-digit',
+        },
+        time: {
+          hour: '2-digit',
+          minute: '2-digit',
+        },
+      };
+    </script>
+  </body>
+</html>

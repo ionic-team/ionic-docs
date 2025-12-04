@@ -2,12 +2,12 @@
 title: "ion-segment-content"
 ---
 
-import Props from '@ionic-internal/component-api/v8/segment-content/props.md';
-import Events from '@ionic-internal/component-api/v8/segment-content/events.md';
-import Methods from '@ionic-internal/component-api/v8/segment-content/methods.md';
-import Parts from '@ionic-internal/component-api/v8/segment-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/segment-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/segment-content/slots.md';
+import Props from '@ionic-internal/component-api/v9/segment-content/props.md';
+import Events from '@ionic-internal/component-api/v9/segment-content/events.md';
+import Methods from '@ionic-internal/component-api/v9/segment-content/methods.md';
+import Parts from '@ionic-internal/component-api/v9/segment-content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/segment-content/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/segment-content/slots.md';
 
 <head>
   <title>ion-segment-content: Display control element for swipeable segments</title>
@@ -29,7 +29,7 @@ Each `ion-segment-content` needs a unique `id` attribute. This will be used to l
 
 <!-- Reuse swipeable segments playground -->
 
-import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
+import Swipeable from '@site/static/usage/v9/segment/swipeable/index.md';
 
 <Swipeable />
 
