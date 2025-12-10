@@ -36,17 +36,25 @@ import Toggle from '@site/static/usage/v8/accordion/toggle/index.md';
 
 ## Listen for Accordion State Changes
 
+Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
+
+import ListenChanges from '@site/static/usage/v8/accordion/listen-changes/index.md';
+
+<ListenChanges />
+
 :::caution
 Most `ionChange` events emitted by other components such as [Input](./input) and [Textarea](./textarea) bubble. As a result, these events will bubble up and cause your `ionChange` listener on the Accordion Group to fire if the associated components are used inside of an Accordion.
 
 When using other components that emit `ionChange` inside of Accordion it is recommended to have the `ionChange` callback on Accordion Group check the `target` key on the event passed to the callback to verify that `ionChange` is coming from the Accordion Group and not any descendants.
 :::
 
-Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
+### skip-accordion-toggle
 
-import ListenChanges from '@site/static/usage/v8/accordion/listen-changes/index.md';
+There are cases where you might require to have interactive components inside the accordion header which shouldn't trigger the `ionChange` event for the Accordion Group (e.g. creating a selectable tree view using radio buttons or checkboxes). In those cases you can add the `skip-accordion-toggle` attribute to the component inside the Accordion header and it won't toggle the Accordion.
 
-<ListenChanges />
+import SkipAccordionToggle from '@site/static/usage/v8/accordion/skip-accordion-toggle/index.md';
+
+<SkipAccordionToggle />
 
 ## Multiple Accordions
 
