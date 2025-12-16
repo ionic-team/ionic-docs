@@ -494,6 +494,8 @@ Nothing should be provided inside of `IonRouterOutlet` when setting it up in you
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
+`IonPage` is also required for proper styling. It provides a flex container that ensures page content, such as `IonContent`, is properly sized and does not overlap other UI elements like `IonTabBar`.
+
 ```vue
 <template>
   <ion-page>

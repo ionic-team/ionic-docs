@@ -1,9 +1,9 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const HomePage = () => (
-  <>
+  <IonPage>
     <IonHeader>
       <IonToolbar>
         <IonTitle>Listen now</IonTitle>
@@ -21,7 +21,7 @@ const HomePage = () => (
         Listen now content
       </div>
     </IonContent>
-  </>
+  </IonPage>
 );
 
 export default HomePage;
