@@ -1,6 +1,6 @@
 ---
 title: Overlay Components
-sidebar_label: Overlay Components
+sidebar_label: Overlays
 ---
 
 <head>
@@ -187,15 +187,15 @@ export class FeatureComponent {
 }
 ```
 
-## Angular Options Interfaces
+## Angular Options Types
 
-Ionic provides Angular-specific option interfaces that extend the core options with Angular-specific properties:
+Ionic Angular exports its own `ModalOptions` and `PopoverOptions` types that extend the core options with Angular-specific properties like `injector`:
 
-- `AngularModalOptions` - Extends `ModalOptions` with the `injector` property
-- `AngularPopoverOptions` - Extends `PopoverOptions` with the `injector` property
+- `ModalOptions` - Extends core `ModalOptions` with the `injector` property
+- `PopoverOptions` - Extends core `PopoverOptions` with the `injector` property
 
 These types are exported from `@ionic/angular` and `@ionic/angular/standalone`:
 
 ```typescript
-import type { AngularModalOptions, AngularPopoverOptions } from '@ionic/angular/standalone';
+import type { ModalOptions, PopoverOptions } from '@ionic/angular/standalone';
 ```
