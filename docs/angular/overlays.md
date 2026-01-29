@@ -199,3 +199,15 @@ These types are exported from `@ionic/angular` and `@ionic/angular/standalone`:
 ```typescript
 import type { ModalOptions, PopoverOptions } from '@ionic/angular/standalone';
 ```
+
+## Docs for Overlays in Ionic
+
+For full docs and to see usage examples, visit the docs page for each of the overlays in Ionic:
+
+- [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
+- [Alert](https://ionicframework.com/docs/api/alert)
+- [Loading](https://ionicframework.com/docs/api/loading)
+- [Modal](https://ionicframework.com/docs/api/modal)
+- [Picker](https://ionicframework.com/docs/api/picker)
+- [Popover](https://ionicframework.com/docs/api/popover)
+- [Toast](https://ionicframework.com/docs/api/toast)
