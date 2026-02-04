@@ -41,6 +41,7 @@ import ShowAdjacentDays from '@site/static/usage/v8/datetime/show-adjacent-days/
 import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
+import HeaderStyling from '@site/static/usage/v8/datetime/styling/header/index.md';
 import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
 import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
@@ -351,6 +352,12 @@ Ionic's powerful theming system can be used to easily change your entire app to 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
 <GlobalTheming />
+
+### Header
+
+The header in a grid-style `ion-datetime` can be styled using CSS shadow parts.
+
+<HeaderStyling />
 
 ### Calendar Days
 
