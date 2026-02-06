@@ -40,6 +40,7 @@ import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlighted
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
+import CalendarHeaderStyling from '@site/static/usage/v7/datetime/styling/calendar-header/index.md';
 import CalendarDaysStyling from '@site/static/usage/v7/datetime/styling/calendar-days/index.md';
 import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
 
@@ -340,6 +341,12 @@ Ionic's powerful theming system can be used to easily change your entire app to 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
 <GlobalTheming />
+
+### Calender Header
+
+The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
+
+<CalendarHeaderStyling />
 
 ### Calendar Days
 
