@@ -43,6 +43,7 @@ import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
 import CalendarHeaderStyling from '@site/static/usage/v8/datetime/styling/calendar-header/index.md';
 import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
+import DatetimeHeaderStyling from '@site/static/usage/v8/datetime/styling/datetime-header/index.md';
 import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
 <head>
@@ -370,6 +371,16 @@ The example below selects the day 2 days ago, unless that day is in the previous
 :::
 
 <CalendarDaysStyling />
+
+### Datetime Header
+
+The datetime header manages the content for the `title` slot and the selected date.
+
+:::note
+The selected date will not render if `preferWheel` is set to `true`.
+:::
+
+<DatetimeHeaderStyling />
 
 ### Wheel Pickers
 
