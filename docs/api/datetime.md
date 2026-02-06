@@ -41,7 +41,7 @@ import ShowAdjacentDays from '@site/static/usage/v8/datetime/show-adjacent-days/
 import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
-import HeaderStyling from '@site/static/usage/v8/datetime/styling/header/index.md';
+import CalendarHeaderStyling from '@site/static/usage/v8/datetime/styling/calendar-header/index.md';
 import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
 import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
@@ -353,11 +353,13 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 
 <GlobalTheming />
 
-### Header
+### Calender Header
 
-The header in a grid-style `ion-datetime` can be styled using CSS shadow parts.
+The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
 
-<HeaderStyling />
+The header can be styled using CSS shadow parts.
+
+<CalendarHeaderStyling />
 
 ### Calendar Days
 

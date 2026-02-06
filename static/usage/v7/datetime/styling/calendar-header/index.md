@@ -12,7 +12,7 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="8"
+  version="7"
   code={{
     javascript,
     react: {
@@ -30,6 +30,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/datetime/styling/header/demo.html"
+  src="usage/v7/datetime/styling/calendar-header/demo.html"
   size="medium"
 />
