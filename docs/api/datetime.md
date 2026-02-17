@@ -354,6 +354,16 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 
 <GlobalTheming />
 
+### Datetime Header
+
+The datetime header manages the content for the `title` slot and the selected date.
+
+:::note
+The selected date will not render if `preferWheel` is set to `true`.
+:::
+
+<DatetimeHeaderStyling />
+
 ### Calender Header
 
 The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
@@ -371,16 +381,6 @@ The example below selects the day 2 days ago, unless that day is in the previous
 :::
 
 <CalendarDaysStyling />
-
-### Datetime Header
-
-The datetime header manages the content for the `title` slot and the selected date.
-
-:::note
-The selected date will not render if `preferWheel` is set to `true`.
-:::
-
-<DatetimeHeaderStyling />
 
 ### Wheel Pickers
 
