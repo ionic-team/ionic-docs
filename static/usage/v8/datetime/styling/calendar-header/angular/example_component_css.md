@@ -11,11 +11,11 @@ ion-datetime::part(month-year-button) {
   background-color: lightblue;
 }
 
-ion-datetime::part(prev-next-buttons) {
+ion-datetime::part(navigation-button) {
   background-color: firebrick;
 }
 
-ion-datetime::part(prev-button) {
+ion-datetime::part(previous-button) {
   color: white;
 }
 
@@ -23,7 +23,7 @@ ion-datetime::part(next-button) {
   color: black;
 }
 
-ion-datetime::part(days-of-week) {
+ion-datetime::part(calendar-days-of-week) {
   background-color: #9ad162;
   color: white;
 }
