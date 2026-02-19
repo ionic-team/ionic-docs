@@ -113,6 +113,14 @@ interface RefresherEventDetail {
 }
 ```
 
+### RefresherPullEndEventDetail
+
+```typescript
+interface RefresherPullEndEventDetail {
+  reason: 'complete' | 'cancel';
+}
+```
+
 ### RefresherCustomEvent
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
@@ -120,6 +128,17 @@ While not required, this interface can be used in place of the `CustomEvent` int
 ```typescript
 interface RefresherCustomEvent extends CustomEvent {
   detail: RefresherEventDetail;
+  target: HTMLIonRefresherElement;
+}
+```
+
+### RefresherPullEndCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with the `ionPullEnd` event.
+
+```typescript
+interface RefresherPullEndCustomEvent extends CustomEvent {
+  detail: RefresherPullEndEventDetail;
   target: HTMLIonRefresherElement;
 }
 ```
