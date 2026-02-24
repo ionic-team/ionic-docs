@@ -7,6 +7,7 @@ import Methods from '@ionic-internal/component-api/v8/modal/methods.md';
 import Parts from '@ionic-internal/component-api/v8/modal/parts.md';
 import CustomProps from '@ionic-internal/component-api/v8/modal/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/modal/slots.md';
+import SheetDragEvents from '@site/static/usage/v8/modal/sheet/drag-events/index.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
@@ -164,6 +165,12 @@ Sheet modals can be configured to allow scrolling content at all breakpoints, ma
 import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expand-to-scroll/index.md';
 
 <SheetScrollingContentExample />
+
+### Drag Events
+
+When using a sheet modal, you may want to perform certain actions based on the dragging of the sheet. Ionic emits several events related to dragging that can be used for this purpose, such as `ionDragStart`, `ionDragMove`, and `ionDragEnd`.
+
+<SheetDragEvents />
 
 ## Styling
 
