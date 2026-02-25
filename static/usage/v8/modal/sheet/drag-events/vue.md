@@ -29,6 +29,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonLabel } from '@ionic/vue';
+import type { ModalDragEventDetail } from '@ionic/vue';
 
 const modal = ref();
 
@@ -46,7 +47,7 @@ const onDragStart = () => {
   modalEl.style.transition = 'none';
 };
 
-const onDragMove = (event: CustomEvent) => {
+const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
   const { progress } = event.detail;
   const modalEl = modal.value.$el;
@@ -95,7 +96,7 @@ const onDragMove = (event: CustomEvent) => {
   modalEl.style.setProperty('--backdrop-opacity', dynamicOpacity.toString());
 };
 
-const onDragEnd = (event: CustomEvent) => {
+const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
   // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
   const { currentBreakpoint } = event.detail;
   const modalEl = modal.value.$el;

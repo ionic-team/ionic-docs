@@ -1,6 +1,7 @@
 ```ts
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonModal, IonLabel } from '@ionic/angular/standalone';
+import type { ModalDragEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-example',
@@ -36,7 +37,7 @@ export class ExampleComponent implements OnInit {
     appEl.style.transition = 'none';
   }
 
-  onDragMove(event: any) {
+  onDragMove(event: CustomEvent<ModalDragEventDetail>) {
     // `progress` is a value from 1 (top) to 0 (bottom)
     const { progress } = event.detail;
 
@@ -54,7 +55,7 @@ export class ExampleComponent implements OnInit {
     appEl.style.setProperty('filter', `brightness(${brightnessValue}%)`, 'important');
   }
 
-  onDragEnd(event: any) {
+  onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
     // `progress` is a value from 1 (top) to 0 (bottom)
     const { progress } = event.detail;
 

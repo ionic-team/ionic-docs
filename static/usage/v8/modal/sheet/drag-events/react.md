@@ -1,6 +1,7 @@
 ```tsx
 import React, { useRef } from 'react';
 import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage, IonLabel } from '@ionic/react';
+import type { ModalDragEventDetail } from '@ionic/react';
 
 function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -18,7 +19,7 @@ function Example() {
     modalEl.style.transition = 'none';
   };
 
-  const onDragMove = (event: CustomEvent) => {
+  const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
     // `progress` is a value from 1 (top) to 0 (bottom)
     const { progress } = event.detail;
     const modalEl = modal.current!;
@@ -67,7 +68,7 @@ function Example() {
     modalEl.style.setProperty('--backdrop-opacity', dynamicOpacity.toString());
   };
 
-  const onDragEnd = (event: CustomEvent) => {
+  const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
     // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
     const { currentBreakpoint } = event.detail;
     const modalEl = modal.current!;
@@ -111,7 +112,7 @@ function Example() {
           ref={modal}
           trigger="open-modal"
           initialBreakpoint={0.25}
-          breakpoints={[0, 0.25, 0.5, 0.75]}
+          breakpoints={[0, 0.25, 0.5, 0.75, 1]}
           onIonDragStart={onDragStart}
           onIonDragMove={onDragMove}
           onIonDragEnd={onDragEnd}

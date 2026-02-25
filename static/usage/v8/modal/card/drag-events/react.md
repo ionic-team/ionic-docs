@@ -1,6 +1,7 @@
 ```tsx
 import React, { useRef, useState, useEffect } from 'react';
 import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage, IonLabel } from '@ionic/react';
+import type { ModalDragEventDetail } from '@ionic/react';
 
 function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -26,7 +27,7 @@ function Example() {
     page.current!.style.transition = 'none';
   };
 
-  const onDragMove = (event: CustomEvent) => {
+  const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
     // `progress` is a value from 1 (top) to 0 (bottom)
     const { progress } = event.detail;
 
@@ -43,7 +44,7 @@ function Example() {
     page.current!.style.setProperty('filter', `brightness(${brightnessValue}%)`, 'important');
   };
 
-  const onDragEnd = (event: CustomEvent) => {
+  const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
     // `progress` is a value from 1 (top) to 0 (bottom)
     const { progress } = event.detail;
 

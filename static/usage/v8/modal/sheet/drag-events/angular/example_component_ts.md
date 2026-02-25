@@ -1,6 +1,7 @@
 ```ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonButton, IonContent, IonHeader, IonLabel, IonModal, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import type { ModalDragEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-example',
@@ -26,7 +27,7 @@ export class ExampleComponent {
     modalEl.style.transition = 'none';
   }
 
-  onDragMove(event: any) {
+  onDragMove(event: CustomEvent<ModalDragEventDetail>) {
     // `progress` is a value from 1 (top) to 0 (bottom)
     const { progress } = event.detail;
     const modalEl = this.modal.nativeElement;
@@ -75,7 +76,7 @@ export class ExampleComponent {
     modalEl.style.setProperty('--backdrop-opacity', dynamicOpacity.toString());
   }
 
-  onDragEnd(event: any) {
+  onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
     // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
     const { currentBreakpoint } = event.detail;
     const modalEl = this.modal.nativeElement;

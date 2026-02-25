@@ -11,7 +11,7 @@
     #modal
     trigger="open-modal"
     [initialBreakpoint]="0.25"
-    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    [breakpoints]="[0, 0.25, 0.5, 0.75, 1]"
     (ionDragStart)="onDragStart()"
     (ionDragMove)="onDragMove($event)"
     (ionDragEnd)="onDragEnd($event)"

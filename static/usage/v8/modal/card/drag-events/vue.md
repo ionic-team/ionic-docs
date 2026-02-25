@@ -17,7 +17,7 @@
         @ionDragStart="onDragStart()"
         @ionDragMove="onDragMove($event)"
         @ionDragEnd="onDragEnd($event)"
-        @willDismiss="onWillDismiss"
+        @willDismiss="onWillDismiss()"
       >
         <ion-header>
           <ion-toolbar>
@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { IonPage, IonModal, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonLabel } from '@ionic/vue';
+import type { ModalDragEventDetail } from '@ionic/vue';
 
 const modal = ref();
 const page = ref<HTMLDivElement | null>(null);
@@ -67,7 +68,7 @@ const onDragStart = () => {
   appEl.style.transition = 'none';
 };
 
-const onDragMove = (event: CustomEvent) => {
+const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
   const { progress } = event.detail;
 
@@ -85,7 +86,7 @@ const onDragMove = (event: CustomEvent) => {
   appEl.style.setProperty('filter', `brightness(${brightnessValue}%)`, 'important');
 };
 
-const onDragEnd = (event: CustomEvent) => {
+const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
   const { progress } = event.detail;
 
