@@ -10,7 +10,6 @@
       <ion-button id="open-modal" expand="block">Open Card Modal</ion-button>
 
       <ion-modal
-        ref="modal"
         trigger="open-modal"
         :presenting-element="presentingElement"
         @willPresent="onWillPresent()"
@@ -39,22 +38,21 @@ import { ref, onMounted } from 'vue';
 import { IonPage, IonModal, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonLabel } from '@ionic/vue';
 import type { ModalDragEventDetail } from '@ionic/vue';
 
-const modal = ref();
-const page = ref<HTMLDivElement | null>(null);
-const presentingElement = ref<HTMLElement | null>(null);
+const page = ref<InstanceType<typeof IonPage>>();
+const presentingElement = ref<HTMLElement>();
 
 const DARKEST_PERCENT = 50;
 const BRIGHTNESS_RANGE = 100 - DARKEST_PERCENT;
 
 onMounted(() => {
-  presentingElement.value = page.value.$el;
+  presentingElement.value = page.value!.$el;
 });
 
 /**
  * Sync the background dimming with the modal's entry animation.
  */
 const onWillPresent = () => {
-  const appEl = page.value.$el;
+  const appEl = page.value!.$el;
 
   appEl.style.transition = 'filter 0.4s ease';
   // Set to max darkness immediately
@@ -62,7 +60,7 @@ const onWillPresent = () => {
 };
 
 const onDragStart = () => {
-  const appEl = page.value.$el;
+  const appEl = page.value!.$el;
 
   // Ensure transitions are off during the active drag
   appEl.style.transition = 'none';
@@ -72,7 +70,7 @@ const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
   const { progress } = event.detail;
 
-  const appEl = page.value.$el;
+  const appEl = page.value!.$el;
   /**
    * Calculate the current brightness based on how far the user has
    * dragged.
@@ -90,7 +88,7 @@ const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
   const { progress } = event.detail;
 
-  const appEl = page.value.$el;
+  const appEl = page.value!.$el;
   /**
    * Snap the background brightness based on the user's drag intent.
    * Progress > 0.4 implies an intent to open (snap dark),
@@ -106,7 +104,7 @@ const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
 };
 
 const onWillDismiss = () => {
-  const appEl = page.value.$el;
+  const appEl = page.value!.$el;
 
   // Clean up styles when the modal is dismissed
   appEl.style.removeProperty('filter');

@@ -31,13 +31,13 @@ import { ref } from 'vue';
 import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonLabel } from '@ionic/vue';
 import type { ModalDragEventDetail } from '@ionic/vue';
 
-const modal = ref();
+const modal = ref<InstanceType<typeof IonModal>>();
 
 let baseOpacity: number;
 const MAX_OPACITY = 0.8;
 
 const onDragStart = () => {
-  const modalEl = modal.value.$el;
+  const modalEl = modal.value!.$el;
   const style = window.getComputedStyle(modalEl);
 
   // Fetch the current variable value
@@ -50,7 +50,7 @@ const onDragStart = () => {
 const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
   const { progress } = event.detail;
-  const modalEl = modal.value.$el;
+  const modalEl = modal.value!.$el;
   const initialBreakpoint = modalEl.initialBreakpoint || 0.25;
   let dynamicOpacity: number;
 
@@ -99,7 +99,7 @@ const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
 const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
   // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
   const { currentBreakpoint } = event.detail;
-  const modalEl = modal.value.$el;
+  const modalEl = modal.value!.$el;
 
   /**
    * If the modal is snapping to the closed state (0), reset the
@@ -117,7 +117,7 @@ const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
    * visual effect.
    */
   if (currentBreakpoint === 1) {
-    targetOpacity = this.MAX_OPACITY;
+    targetOpacity = MAX_OPACITY;
   }
 
   // Re-enable transition for a smooth snap-back

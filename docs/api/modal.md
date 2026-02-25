@@ -265,6 +265,59 @@ interface ModalCustomEvent extends CustomEvent {
 }
 ```
 
+### ModalDragEventDetail
+
+When using the `ionDragMove` and `ionDragEnd` events, the event detail contains the following properties:
+
+```typescript
+interface ModalDragEventDetail {
+  /**
+   * The current Y position of the modal.
+   * 
+   * This can be used to determine how far the modal has been dragged.
+   */
+  currentY: number;
+  /**
+   * The change in Y position since the last event.
+   * 
+   * This can be used to determine the direction of the drag.
+   */
+  deltaY: number;
+  /**
+   * The velocity of the drag in the Y direction.
+   * 
+   * This can be used to determine how fast the modal is being dragged.
+   */
+  velocityY: number;
+  /**
+   * A number between 0 and 1.
+   * 
+   * In a sheet modal, progress represents the relative position between
+   * the lowest and highest defined breakpoints.
+   * 
+   * In a card modal, it measures the relative position between the
+   * bottom of the screen and the top of the modal when it is fully
+   * open.
+   * 
+   * This can be used to style content based on how far the modal has
+   * been dragged.
+   */
+  progress: number;
+  /**
+   * If the modal is a sheet modal, this will be the breakpoint that 
+   * the modal will snap to if the user lets go of the modal at the
+   * current moment.
+   * 
+   * If it's a card modal, this property will not be included in the
+   * event payload.
+   * 
+   * This can be used to style content based on where the modal will
+   * snap to upon release.
+   */
+  currentBreakpoint?: number;
+}
+```
+
 ## Accessibility
 
 ### Keyboard Interactions

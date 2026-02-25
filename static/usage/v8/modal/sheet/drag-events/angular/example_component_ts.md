@@ -1,7 +1,7 @@
 ```ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonButton, IonContent, IonHeader, IonLabel, IonModal, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import type { ModalDragEventDetail } from '@ionic/core';
+import type { ModalDragEventDetail } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
