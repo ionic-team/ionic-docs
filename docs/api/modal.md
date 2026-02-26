@@ -117,7 +117,7 @@ import CardExample from '@site/static/usage/v8/modal/card/basic/index.md';
 
 <CardExample />
 
-### Drag Events
+### Drag Events for Card Modals
 
 When using a card modal, you may want to perform certain actions based on the dragging of the card. Ionic emits several events related to dragging that can be used for this purpose, such as `ionDragStart`, `ionDragMove`, and `ionDragEnd`.
 
@@ -173,7 +173,7 @@ import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expa
 
 <SheetScrollingContentExample />
 
-### Drag Events
+### Drag Events for Sheet Modals
 
 When using a sheet modal, you may want to perform certain actions based on the dragging of the sheet. Ionic emits several events related to dragging that can be used for this purpose, such as `ionDragStart`, `ionDragMove`, and `ionDragEnd`.
 
