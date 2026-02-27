@@ -292,7 +292,7 @@ interface ModalDragEventDetail {
    */
   currentY: number;
   /**
-   * The change in Y position since the last event.
+   * The change in Y position since the gesture started.
    * 
    * This can be used to determine the direction of the drag.
    */
