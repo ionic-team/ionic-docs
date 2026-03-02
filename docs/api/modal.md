@@ -7,7 +7,8 @@ import Methods from '@ionic-internal/component-api/v8/modal/methods.md';
 import Parts from '@ionic-internal/component-api/v8/modal/parts.md';
 import CustomProps from '@ionic-internal/component-api/v8/modal/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/modal/slots.md';
-import SheetDragEvents from '@site/static/usage/v8/modal/sheet/drag-events/index.md';
+import SheetDragStartEndEvents from '@site/static/usage/v8/modal/sheet/drag-start-end-events/index.md';
+import SheetDragMoveEvent from '@site/static/usage/v8/modal/sheet/drag-move-event/index.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
@@ -213,19 +214,19 @@ A few things to keep in mind when creating custom dialogs:
 
 ## Event Handling
 
-### Using `ionDragStart`
+### Using `ionDragStart` and `ionDragEnd`
 
-The `ionDragStart` event is emitted as soon as the user begins a dragging gesture on the modal. This event fires at the moment the user initiates contact with the handle or modal surface, before any actual displacement occurs. It is particularly useful for preparing the interface for a transition, such as blurring background content or disabling certain interactive elements to ensure a smooth dragging experience.
+The `ionDragStart` event is emitted as soon as the user begins a dragging gesture on the modal. This event fires at the moment the user initiates contact with the handle or modal surface, before any actual displacement occurs. It is particularly useful for preparing the interface for a transition, such as hiding certain interactive elements (like headers or buttons) to ensure a smooth dragging experience.
+
+The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final `ModalDragEventDetail` [object](#modaldrageventdetail). This event is commonly used to finalize state changes once the modal has come to a rest.
+
+<SheetDragStartEndEvents />
 
 ### Using `ionDragMove`
 
-The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a `ModalDragEventDetail` [object](#modaldrageventdetail) containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken the backdrop's opacity as the modal is dragged upward.
+The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a `ModalDragEventDetail` [object](#modaldrageventdetail) containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
 
-### Using `ionDragEnd`
-
-The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final `ModalDragEventDetail` [object](#modaldrageventdetail). This event is commonly used to finalize state changes once the modal has come to a rest. For example, you might use the `predictedBreakpoint` property to determine which content to load or to update the application's routing state once the user has finished swiping the sheet to a specific height.
-
-<SheetDragEvents />
+<SheetDragMoveEvent />
 
 ## Interfaces
 

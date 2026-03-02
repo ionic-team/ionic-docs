@@ -22,7 +22,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/modal/sheet/drag-events/demo.html"
+  src="usage/v8/modal/sheet/drag-start-end-events/demo.html"
   devicePreview
   includeIonContent={false}
 />
