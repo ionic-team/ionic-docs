@@ -213,9 +213,6 @@ A few things to keep in mind when creating custom dialogs:
 
 ## Event Handling
 
-### Using Drag Events
-
-When using card or sheet modals, Ionic emits several events related to the dragging gesture. These events allow developers to perform specific actions or UI updates based on the movement of the modal.
 
 #### Using `ionDragStart`
 
