@@ -25,4 +25,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
   src="usage/v8/modal/sheet/drag-move-event/demo.html"
   devicePreview
   includeIonContent={false}
+  showConsole={true}
 />

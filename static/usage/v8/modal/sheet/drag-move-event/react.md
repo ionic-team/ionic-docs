@@ -22,6 +22,8 @@ function Example() {
   };
 
   const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
+    console.log('Drag ended', event.detail);
+
     // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
     const { progress, currentBreakpoint } = event.detail;
     const headerEl = header.current!;
