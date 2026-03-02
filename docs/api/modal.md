@@ -213,12 +213,11 @@ A few things to keep in mind when creating custom dialogs:
 
 ## Event Handling
 
-
-#### Using `ionDragStart`
+### Using `ionDragStart`
 
 The `ionDragStart` event is emitted as soon as the user begins a dragging gesture on the modal. This event fires at the moment the user initiates contact with the handle or modal surface, before any actual displacement occurs. It is particularly useful for preparing the interface for a transition, such as blurring background content or disabling certain interactive elements to ensure a smooth dragging experience.
 
-#### Using `ionDragMove`
+### Using `ionDragMove`
 
 The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a `ModalDragEventDetail` [object](#modaldrageventdetail) containing real-time data:
 
