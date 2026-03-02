@@ -219,14 +219,7 @@ The `ionDragStart` event is emitted as soon as the user begins a dragging gestur
 
 ### Using `ionDragMove`
 
-The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a `ModalDragEventDetail` [object](#modaldrageventdetail) containing real-time data:
-
-- `currentY` and `deltaY`: Track the absolute position and the change in distance since the last frame, useful for calculating drag direction.
-- `velocityY`: Measures the speed of the drag, which can be used to trigger specific animations if a user "flicks" the modal.
-- `progress`: A normalized value between 0 and 1 representing how far the modal is open. This is ideal for dynamically adjusting the opacity of an overlay or scaling background content as the modal moves.
-- `predictedBreakpoint`: For sheet modals, this identifies which breakpoint the modal will snap to if released at that moment.
-
-This event is essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken the backdrop's opacity as the modal is dragged upward.
+The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a `ModalDragEventDetail` [object](#modaldrageventdetail) containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken the backdrop's opacity as the modal is dragged upward.
 
 ### Using `ionDragEnd`
 
