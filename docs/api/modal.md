@@ -228,7 +228,7 @@ The `ionDragMove` event is emitted continuously while the user is actively dragg
 
 This event is essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken the backdrop's opacity as the modal is dragged upward.
 
-#### Using `ionDragEnd`
+### Using `ionDragEnd`
 
 The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final `ModalDragEventDetail` [object](#modaldrageventdetail). This event is commonly used to finalize state changes once the modal has come to a rest. For example, you might use the `predictedBreakpoint` property to determine which content to load or to update the application's routing state once the user has finished swiping the sheet to a specific height.
 
