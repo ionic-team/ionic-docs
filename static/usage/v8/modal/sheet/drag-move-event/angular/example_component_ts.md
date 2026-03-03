@@ -31,15 +31,15 @@ export class ExampleComponent {
   onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
     console.log('Drag ended', event.detail);
 
-    // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
-    const { progress, currentBreakpoint } = event.detail;
+    // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+    const { progress, snapBreakpoint } = event.detail;
     const headerEl = this.header.nativeElement;
 
     /**
      * If the modal is snapping to the closed state (0), reset the
      * styles.
      */
-    if (currentBreakpoint === 0) {
+    if (snapBreakpoint === 0) {
       headerEl.style.removeProperty('opacity');
       headerEl.style.removeProperty('transition');
       return;
@@ -51,6 +51,10 @@ export class ExampleComponent {
     headerEl.style.opacity = (1 - progress).toString();
   }
 
+  /**
+   * If the user dismisses the modal (e.g. tapping the backdrop),
+   * reset the styles.
+   */
   onWillDismiss() {
     const headerEl = this.header.nativeElement;
 

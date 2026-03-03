@@ -38,14 +38,14 @@
   modal.addEventListener('ionDragEnd', (event) => {
     console.log('Drag ended', event.detail);
 
-    // `currentBreakpoint` tells us which snap point the modal will animate to after the drag ends
-    const { progress, currentBreakpoint } = event.detail;
+    // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+    const { progress, snapBreakpoint } = event.detail;
 
     /**
      * If the modal is snapping to the closed state (0), reset the
      * styles.
      */
-    if (currentBreakpoint === 0) {
+    if (snapBreakpoint === 0) {
       header.style.removeProperty('opacity');
       return;
     }
@@ -56,6 +56,10 @@
     header.style.opacity = 1 - progress;
   });
 
+  /**
+   * If the user dismisses the modal (e.g. tapping the backdrop),
+   * reset the styles.
+   */
   modal.addEventListener('willDismiss', (event) => {
     // Reset styles when the modal is dismissed
     header.style.removeProperty('opacity');
