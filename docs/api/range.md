@@ -124,6 +124,8 @@ import CSSProps from '@site/static/usage/v8/range/theming/css-properties/index.m
 
 Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
 
+Range exposes additional Shadow Parts that allow styling each knob independently when `dualKnobs` is enabled. These parts are available in two forms: **static identity parts** (`A` and `B`) and **dynamic position parts** (`lower` and `upper`). The A and B parts always refer to the same physical knobs, even if the knobs cross over each other. In contrast, the lower and upper parts reflect the current value position, meaning they swap automatically if the knobs cross. This provides flexibility to style knobs either by consistent identity or by their relative value within the range.
+
 import CSSParts from '@site/static/usage/v8/range/theming/css-shadow-parts/index.md';
 
 <CSSParts />
