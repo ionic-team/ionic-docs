@@ -224,7 +224,7 @@ The `ionDragEnd` event is emitted when the user completes the dragging gesture b
 
 ### Using `ionDragMove`
 
-The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a `ModalDragEventDetail` [object](#modaldrageventdetail) containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
+The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a [`ModalDragEventDetail`](#modaldrageventdetail) object containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
 
 <SheetDragMoveEvent />
 
