@@ -7,8 +7,8 @@ import Methods from '@ionic-internal/component-api/v8/modal/methods.md';
 import Parts from '@ionic-internal/component-api/v8/modal/parts.md';
 import CustomProps from '@ionic-internal/component-api/v8/modal/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/modal/slots.md';
-import DragStartEndEvents from '@site/static/usage/v8/modal/drag-start-end-events/index.md';
-import DragMoveEvent from '@site/static/usage/v8/modal/drag-move-event/index.md';
+import DragStartEndEvents from '@site/static/usage/v8/modal/sheet/drag-start-end-events/index.md';
+import DragMoveEvent from '@site/static/usage/v8/modal/sheet/drag-move-event/index.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
@@ -220,13 +220,13 @@ The `ionDragStart` event is emitted as soon as the user begins a dragging gestur
 
 The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final [`ModalDragEventDetail`](#modaldrageventdetail) object. This event is commonly used to finalize state changes once the modal has come to a rest.
 
-<SheetDragStartEndEvents />
+<DragStartEndEvents />
 
 ### Using `ionDragMove`
 
 The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a [`ModalDragEventDetail`](#modaldrageventdetail) object containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
 
-<SheetDragMoveEvent />
+<DragMoveEvent />
 
 ## Interfaces
 
