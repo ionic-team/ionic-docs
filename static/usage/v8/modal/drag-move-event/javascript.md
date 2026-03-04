@@ -46,8 +46,6 @@
   });
 
   modal.addEventListener('ionDragEnd', (event) => {
-    console.log('Drag ended', event.detail);
-
     // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
     const { progress, snapBreakpoint } = event.detail;
 

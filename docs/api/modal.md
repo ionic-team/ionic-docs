@@ -7,8 +7,6 @@ import Methods from '@ionic-internal/component-api/v8/modal/methods.md';
 import Parts from '@ionic-internal/component-api/v8/modal/parts.md';
 import CustomProps from '@ionic-internal/component-api/v8/modal/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/modal/slots.md';
-import DragStartEndEvents from '@site/static/usage/v8/modal/sheet/drag-start-end-events/index.md';
-import DragMoveEvent from '@site/static/usage/v8/modal/sheet/drag-move-event/index.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
@@ -220,11 +218,15 @@ The `ionDragStart` event is emitted as soon as the user begins a dragging gestur
 
 The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final [`ModalDragEventDetail`](#modaldrageventdetail) object. This event is commonly used to finalize state changes once the modal has come to a rest.
 
+import DragStartEndEvents from '@site/static/usage/v8/modal/drag-start-end-events/index.md';
+
 <DragStartEndEvents />
 
 ### Using `ionDragMove`
 
 The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a [`ModalDragEventDetail`](#modaldrageventdetail) object containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
+
+import DragMoveEvent from '@site/static/usage/v8/modal/drag-move-event/index.md';
 
 <DragMoveEvent />
 
@@ -277,44 +279,44 @@ When using the `ionDragMove` and `ionDragEnd` events, the event detail contains 
 interface ModalDragEventDetail {
   /**
    * The current Y position of the modal.
-   * 
+   *
    * This can be used to determine how far the modal has been dragged.
    */
   currentY: number;
   /**
    * The change in Y position since the gesture started.
-   * 
+   *
    * This can be used to determine the direction of the drag.
    */
   deltaY: number;
   /**
    * The velocity of the drag in the Y direction.
-   * 
+   *
    * This can be used to determine how fast the modal is being dragged.
    */
   velocityY: number;
   /**
    * A number between 0 and 1.
-   * 
+   *
    * In a sheet modal, progress represents the relative position between
    * the lowest and highest defined breakpoints.
-   * 
+   *
    * In a card modal, it measures the relative position between the
    * bottom of the screen and the top of the modal when it is fully
    * open.
-   * 
+   *
    * This can be used to style content based on how far the modal has
    * been dragged.
    */
   progress: number;
   /**
-   * If the modal is a sheet modal, this will be the breakpoint that 
+   * If the modal is a sheet modal, this will be the breakpoint that
    * the modal will snap to if the user lets go of the modal at the
    * current moment.
-   * 
+   *
    * If it's a card modal, this property will not be included in the
    * event payload.
-   * 
+   *
    * This can be used to style content based on where the modal will
    * snap to upon release.
    */
