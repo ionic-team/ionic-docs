@@ -218,7 +218,7 @@ A few things to keep in mind when creating custom dialogs:
 
 The `ionDragStart` event is emitted as soon as the user begins a dragging gesture on the modal. This event fires at the moment the user initiates contact with the handle or modal surface, before any actual displacement occurs. It is particularly useful for preparing the interface for a transition, such as hiding certain interactive elements (like headers or buttons) to ensure a smooth dragging experience.
 
-The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final `ModalDragEventDetail` [object](#modaldrageventdetail). This event is commonly used to finalize state changes once the modal has come to a rest.
+The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final [`ModalDragEventDetail`](#modaldrageventdetail) object. This event is commonly used to finalize state changes once the modal has come to a rest.
 
 <SheetDragStartEndEvents />
 
