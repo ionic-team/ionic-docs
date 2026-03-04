@@ -7,8 +7,8 @@ import Methods from '@ionic-internal/component-api/v8/modal/methods.md';
 import Parts from '@ionic-internal/component-api/v8/modal/parts.md';
 import CustomProps from '@ionic-internal/component-api/v8/modal/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/modal/slots.md';
-import SheetDragStartEndEvents from '@site/static/usage/v8/modal/sheet/drag-start-end-events/index.md';
-import SheetDragMoveEvent from '@site/static/usage/v8/modal/sheet/drag-move-event/index.md';
+import DragStartEndEvents from '@site/static/usage/v8/modal/drag-start-end-events/index.md';
+import DragMoveEvent from '@site/static/usage/v8/modal/drag-move-event/index.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
