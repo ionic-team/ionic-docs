@@ -19,11 +19,21 @@
 <script>
   const modal = document.querySelector('ion-modal');
   const header = document.querySelector('ion-header');
+  // Assign the current snap breakpoint to the initial breakpoint so
+  // that we can track changes during the drag
+  let currentSnap = 0.25;
   modal.breakpoints = [0, 0.25, 0.5, 0.75, 1];
 
   modal.addEventListener('ionDragMove', (event) => {
     // `progress` is a value from 1 (top) to 0 (bottom)
-    const { progress } = event.detail;
+    // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+    const { progress, snapBreakpoint } = event.detail;
+
+    if (currentSnap !== snapBreakpoint) {
+      currentSnap = snapBreakpoint;
+
+      console.log('Current snap breakpoint:', snapBreakpoint);
+    }
 
     /**
      * Inverse relationship:

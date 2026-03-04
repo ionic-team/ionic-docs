@@ -12,10 +12,20 @@ import type { ModalDragEventDetail } from '@ionic/angular/standalone';
 export class ExampleComponent {
   @ViewChild('header', { read: ElementRef })
   header!: ElementRef<HTMLIonHeaderElement>;
+  // Assign the current snap breakpoint to the initial breakpoint so
+  // that we can track changes during the drag
+  currentSnap = 0.25;
 
   onDragMove(event: CustomEvent<ModalDragEventDetail>) {
     // `progress` is a value from 1 (top) to 0 (bottom)
-    const { progress } = event.detail;
+    // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+    const { progress, snapBreakpoint } = event.detail;
+
+    if (this.currentSnap !== snapBreakpoint) {
+      this.currentSnap = snapBreakpoint as number;
+
+      console.log('Current snap breakpoint:', snapBreakpoint);
+    }
 
     const headerEl = this.header.nativeElement;
     /**
@@ -31,6 +41,7 @@ export class ExampleComponent {
   onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
     console.log('Drag ended', event.detail);
 
+    // `progress` is a value from 1 (top) to 0 (bottom)
     // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
     const { progress, snapBreakpoint } = event.detail;
     const headerEl = this.header.nativeElement;

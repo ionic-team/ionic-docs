@@ -31,11 +31,21 @@ import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonLa
 import type { ModalDragEventDetail } from '@ionic/vue';
 
 const header = ref<InstanceType<typeof IonHeader>>();
+// Assign the current snap breakpoint to the initial breakpoint so
+// that we can track changes during the drag
+let currentSnap = 0.25;
 
 const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
   // `progress` is a value from 1 (top) to 0 (bottom)
-  const { progress } = event.detail;
+  // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+  const { progress, snapBreakpoint } = event.detail;
   const headerEl = header.value!.$el;
+
+  if (currentSnap !== snapBreakpoint) {
+    currentSnap = snapBreakpoint;
+
+    console.log('Current snap breakpoint:', snapBreakpoint);
+  }
 
   /**
    * Inverse relationship:
@@ -50,6 +60,7 @@ const onDragMove = (event: CustomEvent<ModalDragEventDetail>) => {
 const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
   console.log('Drag ended', event.detail);
 
+  // `progress` is a value from 1 (top) to 0 (bottom)
   // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
   const { progress, snapBreakpoint } = event.detail;
   const headerEl = header.value!.$el;
