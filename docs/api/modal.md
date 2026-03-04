@@ -318,7 +318,7 @@ interface ModalDragEventDetail {
    * This can be used to style content based on where the modal will
    * snap to upon release.
    */
-  predictedBreakpoint?: number;
+  snapBreakpoint?: number;
 }
 ```
 
