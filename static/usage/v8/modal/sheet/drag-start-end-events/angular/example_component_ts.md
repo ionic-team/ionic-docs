@@ -22,7 +22,7 @@ export class ExampleComponent {
   }
 
   onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
-    console.log('Drag ended', event.detail);
+    console.log('Drag ended');
 
     const headerEl = this.header.nativeElement;
 

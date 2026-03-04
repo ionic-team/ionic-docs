@@ -15,7 +15,7 @@ function Example() {
   };
 
   const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
-    console.log('Drag ended', event.detail);
+    console.log('Drag ended');
 
     const headerEl = header.current!;
 

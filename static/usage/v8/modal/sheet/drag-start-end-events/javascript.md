@@ -29,7 +29,7 @@
   });
 
   modal.addEventListener('ionDragEnd', (event) => {
-    console.log('Drag ended', event.detail);
+    console.log('Drag ended');
 
     header.style.opacity = 1;
   });
