@@ -32,6 +32,7 @@
   import { ref } from 'vue';
   import {
     IonCheckbox,
+    IonContent,
     IonHeader,
     IonItem,
     IonLabel,
@@ -64,7 +65,7 @@
   const handlePullEnd = (event: RefresherPullEndCustomEvent) => {
     console.log('Pull ended with reason: "' + event.detail.reason + '"');
 
-    // Enable the checkboxes when the pull starts
+    // Enable the checkboxes when the pull ends
     items.value.forEach((item) => {
       item.disabled = false;
     });

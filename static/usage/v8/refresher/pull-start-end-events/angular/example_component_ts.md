@@ -56,7 +56,7 @@ export class ExampleComponent {
   handlePullEnd(event: RefresherPullEndCustomEvent) {
     console.log('Pull ended with reason: "' + event.detail.reason + '"');
 
-    // Enable the checkboxes when the pull starts
+    // Enable the checkboxes when the pull ends
     this.items.forEach((item) => {
       item.disabled = false;
     });

@@ -74,7 +74,7 @@ function Example() {
         <p>Pull this content down to trigger the refresh.</p>
 
         <IonList lines="full">
-          {items.map((item: TodoItem, i: number) => (
+          {items.map((item: TodoItem) => (
             <IonItem key={item.label}>
               <IonCheckbox slot="start" checked={item.checked} disabled={item.disabled}></IonCheckbox>
               <IonLabel>{item.label}</IonLabel>
