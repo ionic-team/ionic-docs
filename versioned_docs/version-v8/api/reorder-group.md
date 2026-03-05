@@ -1,6 +1,7 @@
 ---
-title: "ion-reorder-group"
+title: 'ion-reorder-group'
 ---
+
 import Props from '@ionic-internal/component-api/v8/reorder-group/props.md';
 import Events from '@ionic-internal/component-api/v8/reorder-group/events.md';
 import Methods from '@ionic-internal/component-api/v8/reorder-group/methods.md';
@@ -10,16 +11,17 @@ import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
 
 <head>
   <title>ion-reorder-group: Wrapper Component for Reorder Items</title>
-  <meta name="description" content="ion-reorder-group is a wrapper component for items using the ion-reorder component on Ionic apps. Read to learn more about ion-reorder-group usage." />
+  <meta
+    name="description"
+    content="ion-reorder-group is a wrapper component for items using the ion-reorder component on Ionic apps. Read to learn more about ion-reorder-group usage."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it, the `ionReorderEnd` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
 
 The `detail` property of the `ionReorderEnd` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` an index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
-
 
 ## Interfaces
 
@@ -51,7 +53,6 @@ interface ReorderMoveCustomEvent extends CustomEvent {
   detail: ReorderMoveEventDetail;
   target: HTMLIonReorderGroupElement;
 }
-
 ```
 
 ### ReorderEndCustomEvent
@@ -88,21 +89,26 @@ interface ItemReorderCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

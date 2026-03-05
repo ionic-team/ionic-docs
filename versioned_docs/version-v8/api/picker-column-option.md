@@ -1,6 +1,7 @@
 ---
-title: "ion-picker-column-option"
+title: 'ion-picker-column-option'
 ---
+
 import Props from '@ionic-internal/component-api/v8/picker-column-option/props.md';
 import Events from '@ionic-internal/component-api/v8/picker-column-option/events.md';
 import Methods from '@ionic-internal/component-api/v8/picker-column-option/methods.md';
@@ -20,19 +21,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 An individual column option in a picker. Visit the [`ion-picker`](./picker.md) documentation for more details.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

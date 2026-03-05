@@ -1,6 +1,7 @@
 ---
-title: "ion-datetime-button"
+title: 'ion-datetime-button'
 ---
+
 import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
 import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
 import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
-  <meta name="description" content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more." />
+  <meta
+    name="description"
+    content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -62,19 +66,25 @@ TODO
 -->
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

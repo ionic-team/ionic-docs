@@ -1,6 +1,7 @@
 ---
-title: "ion-toast"
+title: 'ion-toast'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,7 +14,10 @@ import Slots from '@ionic-internal/component-api/v8/toast/slots.md';
 
 <head>
   <title>ion-toast: A Dismissible App Notification Alert Component</title>
-  <meta name="description" content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction." />
+  <meta
+    name="description"
+    content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -204,13 +208,13 @@ const toast = await toastController.create({
 
 While this is not a complete list, here are some guidelines to follow when using toasts.
 
-* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
+- Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
 
-* For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
+- For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
 
-* If adding buttons to a toast, always provide alternative ways of completing the actions associated with each button. This ensures that even if the toast dismisses before a user can read it, they can still complete the actions shown in the toast.
+- If adding buttons to a toast, always provide alternative ways of completing the actions associated with each button. This ensures that even if the toast dismisses before a user can read it, they can still complete the actions shown in the toast.
 
-* Avoid showing a toast with buttons from inside another overlay such as a [modal](./modal). Modals and other overlays implement [focus trapping](./modal#focus-trapping) that will prevent screen readers from moving focus to the toast to complete the actions. This may be confusing for users since the toast will still be announced by screen readers. This is true even if alternative ways of completing the actions associated with each button are implemented. Consider creating a [live region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) within the focus-trapped modal instead of using a toast.
+- Avoid showing a toast with buttons from inside another overlay such as a [modal](./modal). Modals and other overlays implement [focus trapping](./modal#focus-trapping) that will prevent screen readers from moving focus to the toast to complete the actions. This may be confusing for users since the toast will still be announced by screen readers. This is true even if alternative ways of completing the actions associated with each button are implemented. Consider creating a [live region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) within the focus-trapped modal instead of using a toast.
 
 ## Interfaces
 
@@ -253,19 +257,25 @@ interface ToastOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

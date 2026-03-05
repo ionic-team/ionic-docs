@@ -1,6 +1,7 @@
 ---
-title: "ion-tabs"
+title: 'ion-tabs'
 ---
+
 import Props from '@ionic-internal/component-api/v8/tabs/props.md';
 import Events from '@ionic-internal/component-api/v8/tabs/events.md';
 import Methods from '@ionic-internal/component-api/v8/tabs/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v8/tabs/slots.md';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
-  <meta name="description" content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps." />
+  <meta
+    name="description"
+    content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -70,19 +74,25 @@ interface TabsCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

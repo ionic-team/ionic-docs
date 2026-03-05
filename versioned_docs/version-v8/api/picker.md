@@ -1,6 +1,7 @@
 ---
-title: "ion-picker"
+title: 'ion-picker'
 ---
+
 import Props from '@ionic-internal/component-api/v8/picker/props.md';
 import Events from '@ionic-internal/component-api/v8/picker/events.md';
 import Methods from '@ionic-internal/component-api/v8/picker/methods.md';
@@ -55,12 +56,12 @@ import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
 Picker supports navigation using a screen reader by implementing the [`slider` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role) on each [Picker Column](./picker-column). The following gestures can be used to navigate the Picker.
 
-| Gesture | Function |
-| - | - |
-| Swipe Left | Move focus to the previous Picker Column. |
-| Swipe Right | Move focus to the next Picker Column. |
-| Swipe Up | Select the next option in the Picker Column. |
-| Swipe Down | Select the previous option in the Picker Column. |
+| Gesture                      | Function                                                                                               |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Swipe Left                   | Move focus to the previous Picker Column.                                                              |
+| Swipe Right                  | Move focus to the next Picker Column.                                                                  |
+| Swipe Up                     | Select the next option in the Picker Column.                                                           |
+| Swipe Down                   | Select the previous option in the Picker Column.                                                       |
 | Double Tap and Slide Up/Down | Adjust the selected option in the Picker Column. Can be used as an alternative to swiping up and down. |
 
 :::caution
@@ -81,19 +82,25 @@ Each [Picker Column](./picker-column) can be navigated using the keyboard when f
 | <kbd>End</kbd>       | Scroll to the last option.           |
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

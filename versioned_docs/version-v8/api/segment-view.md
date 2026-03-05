@@ -1,5 +1,5 @@
 ---
-title: "ion-segment-view"
+title: 'ion-segment-view'
 ---
 
 import Props from '@ionic-internal/component-api/v8/segment-view/props.md';
@@ -11,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v8/segment-view/slots.md';
 
 <head>
   <title>ion-segment-view: Controller element for swipeable segments</title>
-  <meta name="description" content="ion-segment-views are wrapper elements that link a group of segment contents to a segment" />
+  <meta
+    name="description"
+    content="ion-segment-views are wrapper elements that link a group of segment contents to a segment"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -22,19 +25,25 @@ Segment view is a wrapper element that links a group of [segment contents](./seg
 See our [swipeable segments](./segment.md#swipeable-segments) documentation for more information on how to use segment views.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

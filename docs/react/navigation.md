@@ -43,10 +43,7 @@ Directly after the `Route`, we define our default `Navigate`, which, when a user
 You can also conditionally redirect based on a condition, like checking if a user is authenticated or not:
 
 ```tsx
-<Route
-  path="/dashboard/*"
-  element={isAuthed ? <DashboardPage /> : <Navigate to="/login" replace />}
-/>
+<Route path="/dashboard/*" element={isAuthed ? <DashboardPage /> : <Navigate to="/login" replace />} />
 ```
 
 ## IonReactRouter

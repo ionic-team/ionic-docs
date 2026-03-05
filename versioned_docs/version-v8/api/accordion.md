@@ -1,6 +1,7 @@
 ---
-title: "ion-accordion"
+title: 'ion-accordion'
 ---
+
 import Props from '@ionic-internal/component-api/v8/accordion/props.md';
 import Events from '@ionic-internal/component-api/v8/accordion/events.md';
 import Methods from '@ionic-internal/component-api/v8/accordion/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
 
 <head>
   <title>ion-accordion: Accordion Components: How to Build & Examples</title>
-  <meta name="description" content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples." />
+  <meta
+    name="description"
+    content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Accordions provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information. All `ion-accordion` components should be grouped inside `ion-accordion-group` components.
 
@@ -120,18 +123,18 @@ import ExpansionStyles from '@site/static/usage/v8/accordion/customization/expan
 
 You can customize the expansion behavior by styling based on the accordion's state. There are four state classes applied to `ion-accordion`. Styling using these classes can allow you to create advanced state transitions:
 
-| Class Name | Description |
-| ---------- | ----------- |
-| `.accordion-expanding` | Applied when the accordion is actively expanding |
-| `.accordion-expanded` | Applied when the accordion is fully expanded |
+| Class Name              | Description                                       |
+| ----------------------- | ------------------------------------------------- |
+| `.accordion-expanding`  | Applied when the accordion is actively expanding  |
+| `.accordion-expanded`   | Applied when the accordion is fully expanded      |
 | `.accordion-collapsing` | Applied when the accordion is actively collapsing |
-| `.accordion-collapsed` | Applied when the accordion is fully collapsed |
+| `.accordion-collapsed`  | Applied when the accordion is fully collapsed     |
 
 If you need to target specific pieces of the accordion, we recommend targeting the element directly. For example, if you want to customize the ion-item in your header slot when the accordion is expanded, you can use the following selector:
 
 ```css
-ion-accordion.accordion-expanding ion-item[slot="header"],
-ion-accordion.accordion-expanded ion-item[slot="header"] {
+ion-accordion.accordion-expanding ion-item[slot='header'],
+ion-accordion.accordion-expanded ion-item[slot='header'] {
   --color: red;
 }
 ```
@@ -174,15 +177,15 @@ import AccessibilityAnimations from '@site/static/usage/v8/accordion/accessibili
 
 When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
 
-| Key                                  | Description                                                  |
-| ------------------------------------ | ------------------------------------------------------------ |
-| <kbd>Space</kbd> or <kbd>Enter</kbd> | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component. |
-| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.                   |
-| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element.               |
-| <kbd>Down Arrow</kbd>                | - When focus is on an accordion header, moves focus to the next accordion header.  <br />- When focus is on the last accordion header, moves focus to the first accordion header. |
-| <kbd>Up Arrow</kbd>                  | - When focus is on an accordion header, moves focus to the previous accordion header.  <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
-| <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header. |
-| <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header. |
+| Key                                  | Description                                                                                                                                                                          |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component.                                                                |
+| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.                                                                                                                                           |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element.                                                                                                                                       |
+| <kbd>Down Arrow</kbd>                | - When focus is on an accordion header, moves focus to the next accordion header. <br />- When focus is on the last accordion header, moves focus to the first accordion header.     |
+| <kbd>Up Arrow</kbd>                  | - When focus is on an accordion header, moves focus to the previous accordion header. <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
+| <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header.                                                                                                     |
+| <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header.                                                                                                      |
 
 ## Performance
 
@@ -190,7 +193,7 @@ When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard sup
 
 The accordion animation works by knowing the height of the `content` slot when the animation starts. The accordion expects that this height will remain consistent throughout the animation. As a result, developers should avoid performing any operation that may change the height of the content during the animation.
 
-For example, using [ion-img](./img) may cause layout shifts as it lazily loads images. This means that as the animation plays, `ion-img` will load the image data, and the dimensions of  `ion-img` will change to account for the loaded image data. This can result in the height of the `content` slot changing. Developers have a few options for avoiding this:
+For example, using [ion-img](./img) may cause layout shifts as it lazily loads images. This means that as the animation plays, `ion-img` will load the image data, and the dimensions of `ion-img` will change to account for the loaded image data. This can result in the height of the `content` slot changing. Developers have a few options for avoiding this:
 
 1. Use an `img` element without any lazy loading. `ion-img` always uses lazy loading, but `img` does not use lazy loading by default. This is the simplest option and works well if you have small images that do not significantly benefit from lazy loading.
 
@@ -199,19 +202,25 @@ For example, using [ion-img](./img) may cause layout shifts as it lazily loads i
 3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
