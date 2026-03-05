@@ -12,9 +12,8 @@ import {
   IonTitle,
   IonToolbar,
   RefresherCustomEvent,
+  RefresherPullEndCustomEvent,
 } from '@ionic/angular/standalone';
-// TODO: this needs to be exported by angular
-import { RefresherPullEndCustomEvent } from '@ionic/core';
 
 @Component({
   selector: 'app-example',
