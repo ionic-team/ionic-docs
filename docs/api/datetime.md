@@ -43,6 +43,7 @@ import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
 import CalendarHeaderStyling from '@site/static/usage/v8/datetime/styling/calendar-header/index.md';
 import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
+import DatetimeHeaderStyling from '@site/static/usage/v8/datetime/styling/datetime-header/index.md';
 import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
 <head>
@@ -352,6 +353,16 @@ Ionic's powerful theming system can be used to easily change your entire app to 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
 <GlobalTheming />
+
+### Datetime Header
+
+The datetime header manages the content for the `title` slot and the selected date.
+
+:::note
+The selected date will not render if `preferWheel` is set to `true`.
+:::
+
+<DatetimeHeaderStyling />
 
 ### Calender Header
 

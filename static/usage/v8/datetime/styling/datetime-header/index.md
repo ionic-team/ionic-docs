@@ -13,13 +13,12 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="8"
-  size="550px"
   code={{
     javascript,
     react: {
       files: {
-        'src/main.css': react_main_css,
         'src/main.tsx': react_main_tsx,
+        'src/main.css': react_main_css,
       },
     },
     vue,
@@ -31,5 +30,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/range/theming/css-shadow-parts/demo.html"
+  src="usage/v8/datetime/styling/datetime-header/demo.html"
+  size="450px"
 />
