@@ -146,6 +146,8 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
+`IonPage` is also required for proper styling. It provides a flex container that ensures page content, such as `IonContent`, is properly sized and does not overlap other UI elements like `IonTabBar`.
+
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';

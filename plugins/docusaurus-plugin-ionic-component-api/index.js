@@ -20,11 +20,21 @@ module.exports = function (context, options) {
        */
       const generateMarkdownForVersion = async (version, npmTag, lang, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
-        const response =
-          isCurrentVersion && lang === 'ja'
-            ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
-            : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-        const { components } = await response.json();
+        const components = await (async () => {
+          if (isCurrentVersion) {
+            const { components } = require(process.cwd() + `/scripts/data/translated-api.json`);
+            return components;
+          } else {
+            const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+            const { components } = await response.json();
+            return components;
+          }
+        })();
+        // const response =
+        //   isCurrentVersion && lang === 'ja'
+        //     ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+        //     : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+        // const { components } = await response.json();
 
         const names = components.map((component) => component.tag.slice(4));
         // matches all relative markdown links to a component, e.g. (../button)
