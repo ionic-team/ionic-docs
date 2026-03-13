@@ -8,6 +8,7 @@ docs/native
 versioned_docs/version-v*/native
 docs/cli/commands
 docs/reference/glossary.md
+versioned_docs/version-v*/reference/glossary.md
 
 static/code/stackblitz
 

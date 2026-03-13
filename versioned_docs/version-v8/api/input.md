@@ -1,6 +1,7 @@
 ---
-title: "ion-input"
+title: 'ion-input'
 ---
+
 import Props from '@ionic-internal/component-api/v8/input/props.md';
 import Events from '@ionic-internal/component-api/v8/input/events.md';
 import Methods from '@ionic-internal/component-api/v8/input/methods.md';
@@ -10,23 +11,23 @@ import Slots from '@ionic-internal/component-api/v8/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
-  <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It integrates with the keyboard on mobile devices." />
+  <meta
+    name="description"
+    content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It integrates with the keyboard on mobile devices."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
 The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input and integrates with the keyboard on mobile devices.
-
 
 ## Basic Usage
 
 import Basic from '@site/static/usage/v8/input/basic/index.md';
 
 <Basic />
-
 
 ## Types
 
@@ -78,7 +79,6 @@ import Clear from '@site/static/usage/v8/input/clear/index.md';
 
 <Clear />
 
-
 ## Filled Inputs
 
 Material Design offers filled styles for an input. The `fill` property on the input can be set to either `"solid"` or `"outline"`.
@@ -92,7 +92,6 @@ Inputs that use `fill` should not be used in an `ion-item` due to styling confli
 import Fill from '@site/static/usage/v8/input/fill/index.md';
 
 <Fill />
-
 
 ## Helper & Error Text
 
@@ -173,7 +172,7 @@ import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.md'
 Setting the `color` property changes the color palette for each input. On `ios` mode, this property changes the caret color. On `md` mode, this property changes the caret color and the highlight/underline color.
 
 :::note
-The `color` property does *not* change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
+The `color` property does _not_ change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
 :::
 
 import Colors from '@site/static/usage/v8/input/theming/colors/index.md';
@@ -209,21 +208,26 @@ interface InputCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

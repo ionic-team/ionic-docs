@@ -64,7 +64,7 @@ setupIonicReact();
 
 :::info
 
-While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, refer to [Global Stylesheets](/docs/layout/global-stylesheets.md).
+While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, handle scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, refer to [Global Stylesheets](/docs/layout/global-stylesheets.md).
 
 :::
 
@@ -302,21 +302,20 @@ Then, create `src/pages/Home.css`:
 
 :::important
 
-Ionic React Router currently only supports React Router v5. You must install the following specific versions of the router packages to set up routing with Ionic React.
+Ionic React requires React Router v6. Install the following specific versions of the router packages to set up routing with Ionic React.
 
 :::
 
 Install the router packages:
 
 ```bash
-npm install @ionic/react-router react-router@5 react-router-dom@5
-npm install @types/react-router-dom --save-dev
+npm install @ionic/react-router react-router@6 react-router-dom@6
 ```
 
 Then, update `src/App.tsx` to add the routes for the Home page:
 
 ```tsx title="src/App.tsx"
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
@@ -329,12 +328,8 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

@@ -1,5 +1,5 @@
 ---
-title: "ion-segment-content"
+title: 'ion-segment-content'
 ---
 
 import Props from '@ionic-internal/component-api/v8/segment-content/props.md';
@@ -11,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v8/segment-content/slots.md';
 
 <head>
   <title>ion-segment-content: Display control element for swipeable segments</title>
-  <meta name="description" content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments." />
+  <meta
+    name="description"
+    content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -34,19 +37,25 @@ import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
 <Swipeable />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

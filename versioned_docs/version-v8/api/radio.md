@@ -1,6 +1,7 @@
 ---
-title: "ion-radio"
+title: 'ion-radio'
 ---
+
 import Props from '@ionic-internal/component-api/v8/radio/props.md';
 import Events from '@ionic-internal/component-api/v8/radio/events.md';
 import Methods from '@ionic-internal/component-api/v8/radio/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
 
 <head>
   <title>ion-radio: Radio Component for iOS and Android</title>
-  <meta name="description" content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation." />
+  <meta
+    name="description"
+    content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Radios should be used inside of a [radio group](./radio-group). Pressing a radio will check it and uncheck the previously selected radio, if there is one. They can also be checked programmatically by setting the value property of the parent radio group to the value of the radio.
 
@@ -30,7 +33,7 @@ import Basic from '@site/static/usage/v8/radio/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.  This property mirrors the flexbox `flex-direction` property.
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
 import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md';
 
@@ -94,7 +97,6 @@ import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
 
 <HelperError />
 
-
 ## Theming
 
 ### Colors
@@ -116,19 +118,25 @@ import CSSParts from '@site/static/usage/v8/radio/theming/css-shadow-parts/index
 <CSSParts />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
