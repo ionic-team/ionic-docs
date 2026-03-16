@@ -212,6 +212,26 @@ import CustomDialogs from '@site/static/usage/v8/modal/custom-dialogs/index.md';
 * `ion-content` は、フルページモダル、カード、シートで使用することを意図しています。カスタムダイアログのサイズが動的であったり、不明であったりする場合は、 `ion-content` を使用するべきではありません。
 * カスタムダイアログを作成することは、デフォルトのモーダルエクスペリエンスから逃れる方法を提供します。そのため、カスタムダイアログは、カードやシートのモーダルでは使用しないでください。
 
+## Event Handling
+
+### Using `ionDragStart` and `ionDragEnd`
+
+The `ionDragStart` event is emitted as soon as the user begins a dragging gesture on the modal. This event fires at the moment the user initiates contact with the handle or modal surface, before any actual displacement occurs. It is particularly useful for preparing the interface for a transition, such as hiding certain interactive elements (like headers or buttons) to ensure a smooth dragging experience.
+
+The `ionDragEnd` event is emitted when the user completes the dragging gesture by releasing the modal. Like the move event, it includes the final [`ModalDragEventDetail`](#modaldrageventdetail) object. This event is commonly used to finalize state changes once the modal has come to a rest.
+
+import DragStartEndEvents from '@site/static/usage/v8/modal/drag-start-end-events/index.md';
+
+<DragStartEndEvents />
+
+### Using `ionDragMove`
+
+The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a [`ModalDragEventDetail`](#modaldrageventdetail) object containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
+
+import DragMoveEvent from '@site/static/usage/v8/modal/drag-move-event/index.md';
+
+<DragMoveEvent />
+
 ## Interfaces
 
 ### ModalOptions
@@ -253,7 +273,60 @@ interface ModalCustomEvent extends CustomEvent {
 }
 ```
 
-## アクセシビリティ
+### ModalDragEventDetail
+
+When using the `ionDragMove` and `ionDragEnd` events, the event detail contains the following properties:
+
+```typescript
+interface ModalDragEventDetail {
+  /**
+   * The current Y position of the modal.
+   *
+   * This can be used to determine how far the modal has been dragged.
+   */
+  currentY: number;
+  /**
+   * The change in Y position since the gesture started.
+   *
+   * This can be used to determine the direction of the drag.
+   */
+  deltaY: number;
+  /**
+   * The velocity of the drag in the Y direction.
+   *
+   * This can be used to determine how fast the modal is being dragged.
+   */
+  velocityY: number;
+  /**
+   * A number between 0 and 1.
+   *
+   * In a sheet modal, progress represents the relative position between
+   * the lowest and highest defined breakpoints.
+   *
+   * In a card modal, it measures the relative position between the
+   * bottom of the screen and the top of the modal when it is fully
+   * open.
+   *
+   * This can be used to style content based on how far the modal has
+   * been dragged.
+   */
+  progress: number;
+  /**
+   * If the modal is a sheet modal, this will be the breakpoint that
+   * the modal will snap to if the user lets go of the modal at the
+   * current moment.
+   *
+   * If it's a card modal, this property will not be included in the
+   * event payload.
+   *
+   * This can be used to style content based on where the modal will
+   * snap to upon release.
+   */
+  snapBreakpoint?: number;
+}
+```
+
+## Accessibility
 
 ### Keyboard Interactions
 

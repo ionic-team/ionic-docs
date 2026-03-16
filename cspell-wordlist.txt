@@ -13,6 +13,7 @@ Udemy
 Vetur
 Wistia
 WCAG
+CDK
 
 actionsheet
 fabs
@@ -85,6 +86,3 @@ webnative
 
 browserslistrc
 ionicframework
-tappable
-Overscroll
-expressjs
