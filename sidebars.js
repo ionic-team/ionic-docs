@@ -127,6 +127,7 @@ module.exports = {
         'react/add-to-existing',
         'react/lifecycle',
         'react/navigation',
+        'react/utility-functions',
         'react/virtual-scroll',
         'react/slides',
         'react/platform',
