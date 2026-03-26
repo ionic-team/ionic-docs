@@ -10,6 +10,8 @@ import Slots from '@ionic-internal/component-api/v9/item/slots.md';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BestPracticeFigure from '@components/global/BestPracticeFigure';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
@@ -34,7 +36,7 @@ import Basic from '@site/static/usage/v9/item/basic/index.md';
 
 ## Content Types
 
-While items in a list take many forms, they typically support 5 different content types: supporting visuals, text, metadata, actions, and controls. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
+While items in a list take many forms, they typically support 5 different content types: supporting visuals, text, metadata, actions, and controls. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to use them in an application.
 
 ### Supporting Visuals
 
@@ -108,7 +110,7 @@ import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md
 
 ### Actions
 
-Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
+Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, each action's tap target should be large enough to be usable.
 
 Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
 
@@ -163,11 +165,114 @@ import Controls from '@site/static/usage/v9/item/content-types/controls/index.md
 
 ## Clickable Items
 
-An item is considered "clickable" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
+An item is considered "clickable" if it has an `href`, `button`, or `routerLink` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
 
 import Clickable from '@site/static/usage/v9/item/clickable/index.md';
 
 <Clickable />
+
+
+## Routing
+
+Items support client-side navigation using the `routerLink` property. Setting `routerLink` renders the item as an anchor and navigates to the specified route when tapped. The `routerDirection` property controls the transition animation direction, and `routerAnimation` accepts a custom animation builder.
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+In Angular, `routerLink` is a directive provided by `@angular/router`. When used on Ionic components, also import `IonRouterLink` from `@ionic/angular/standalone` to enable `routerDirection` and `routerAnimation` support.
+
+```html
+<ion-list>
+  <ion-item [routerLink]="['/home']">
+    <ion-label>Go to Home</ion-label>
+  </ion-item>
+  <ion-item [routerLink]="['/home']" routerDirection="back">
+    <ion-label>Go Back to Home</ion-label>
+  </ion-item>
+</ion-list>
+```
+
+```typescript
+import { Component } from '@angular/core';
+import { IonItem, IonLabel, IonList, IonRouterLink } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
+  imports: [IonItem, IonLabel, IonList, RouterLink, IonRouterLink],
+})
+export class ExampleComponent {}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+In JavaScript, set the `router-link` attribute on `ion-item` to navigate using [ion-router](./router).
+
+```html
+<ion-list>
+  <ion-item router-link="/home">
+    <ion-label>Go to Home</ion-label>
+  </ion-item>
+  <ion-item router-link="/home" router-direction="back">
+    <ion-label>Go Back to Home</ion-label>
+  </ion-item>
+</ion-list>
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+In React, `IonItem` accepts a `routerLink` prop that triggers client-side navigation via Ionic's React Router integration.
+
+```tsx
+import { IonItem, IonLabel, IonList } from '@ionic/react';
+
+function Example() {
+  return (
+    <IonList>
+      <IonItem routerLink="/home">
+        <IonLabel>Go to Home</IonLabel>
+      </IonItem>
+      <IonItem routerLink="/home" routerDirection="back">
+        <IonLabel>Go Back to Home</IonLabel>
+      </IonItem>
+    </IonList>
+  );
+}
+export default Example;
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+In Vue, use the `router-link` attribute on `ion-item`. The `router-direction` and `router-animation` attributes are also available for controlling the transition.
+
+```html
+<template>
+  <ion-list>
+    <ion-item router-link="/home">
+      <ion-label>Go to Home</ion-label>
+    </ion-item>
+    <ion-item router-link="/home" router-direction="back">
+      <ion-label>Go Back to Home</ion-label>
+    </ion-item>
+  </ion-list>
+</template>
+
+<script setup lang="ts">
+  import { IonItem, IonLabel, IonList } from '@ionic/vue';
+</script>
+```
+
+</TabItem>
+
+</Tabs>
 
 
 ## Detail Arrows
@@ -238,7 +343,7 @@ import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.md
 
 ## Guidelines
 
-The following guidelines will help ensure your list items are easy to understand and use.
+The following guidelines will help make your list items easy to understand and use.
 
 1. Items should only be used inside of [Lists](./list).
 2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
