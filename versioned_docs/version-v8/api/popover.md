@@ -1,6 +1,7 @@
 ---
-title: "ion-popover"
+title: 'ion-popover'
 ---
+
 import Props from '@ionic-internal/component-api/v8/popover/props.md';
 import Events from '@ionic-internal/component-api/v8/popover/events.md';
 import Methods from '@ionic-internal/component-api/v8/popover/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v8/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
-  <meta name="description" content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices." />
+  <meta
+    name="description"
+    content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.
 
@@ -51,7 +54,7 @@ Since the component you passed in needs to be created when the popover is presen
 A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
 
 :::note
- Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
 :::
 
 import InlineTrigger from '@site/static/usage/v8/popover/presenting/inline-trigger/index.md';
@@ -63,7 +66,6 @@ import InlineTrigger from '@site/static/usage/v8/popover/presenting/inline-trigg
 Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
-
 
 import IsOpenTrigger from '@site/static/usage/v8/popover/presenting/inline-isopen/index.md';
 
@@ -87,19 +89,17 @@ import ControllerExample from '@site/static/usage/v8/popover/presenting/controll
 
 <ControllerExample />
 
-
 ## Styling
 
 Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 import Styling from '@site/static/usage/v8/popover/customization/styling/index.md';
 
 <Styling />
-
 
 ## Positioning
 
@@ -142,13 +142,12 @@ When using `ion-popover` inline, you can nested popovers to create nested dropdo
 You can use the `dismissOnSelect` property to automatically close the popover when the popover content has been clicked. This behavior does not apply when clicking a trigger element for another popover.
 
 :::note
- Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
+Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
 :::
 
 import NestedPopover from '@site/static/usage/v8/popover/nested/index.md';
 
 <NestedPopover />
-
 
 ## Interfaces
 
@@ -181,7 +180,6 @@ interface PopoverOptions {
   arrow?: boolean;
 }
 ```
-
 
 ## Types
 
@@ -233,26 +231,32 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 - This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can pass the contents to be rendered into the popover, and the contents will be rendered automatically.
 
 - This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
 
 - Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

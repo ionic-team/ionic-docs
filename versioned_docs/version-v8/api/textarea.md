@@ -1,6 +1,7 @@
 ---
-title: "ion-textarea"
+title: 'ion-textarea'
 ---
+
 import Props from '@ionic-internal/component-api/v8/textarea/props.md';
 import Events from '@ionic-internal/component-api/v8/textarea/events.md';
 import Methods from '@ionic-internal/component-api/v8/textarea/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v8/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
-  <meta name="description" content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements." />
+  <meta
+    name="description"
+    content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -155,19 +159,25 @@ interface TextareaCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

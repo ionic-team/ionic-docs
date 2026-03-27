@@ -1,6 +1,7 @@
 ---
-title: "ion-segment"
+title: 'ion-segment'
 ---
+
 import Props from '@ionic-internal/component-api/v8/segment/props.md';
 import Events from '@ionic-internal/component-api/v8/segment/events.md';
 import Methods from '@ionic-internal/component-api/v8/segment/methods.md';
@@ -10,18 +11,19 @@ import Slots from '@ionic-internal/component-api/v8/segment/slots.md';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
-  <meta name="description" content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage." />
+  <meta
+    name="description"
+    content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.
 
 Their functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.
-
 
 ## Basic Usage
 
@@ -31,7 +33,6 @@ import Basic from '@site/static/usage/v8/segment/basic/index.md';
 
 <Basic />
 
-
 ## Scrollable Segments
 
 Segments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.
@@ -40,14 +41,13 @@ import Scrollable from '@site/static/usage/v8/segment/scrollable/index.md';
 
 <Scrollable />
 
-
 ## Segments in Toolbars
 
 <!-- Reuse the playground from the Toolbar directory -->
+
 import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 
 <Toolbar />
-
 
 ## Swipeable Segments
 
@@ -78,7 +78,6 @@ import Colors from '@site/static/usage/v8/segment/theming/colors/index.md';
 import CSSProps from '@site/static/usage/v8/segment/theming/css-properties/index.md';
 
 <CSSProps />
-
 
 ## Accessibility
 
@@ -115,21 +114,26 @@ interface SegmentCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

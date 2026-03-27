@@ -78,7 +78,7 @@ Let's walk through these files to understand the app's structure.
 The root of your app is defined in `App.tsx`:
 
 ```tsx title="src/App.tsx"
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
@@ -91,12 +91,8 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
@@ -113,12 +109,8 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
-  <Route exact path="/home">
-    <Home />
-  </Route>
-  <Route exact path="/">
-    <Redirect to="/home" />
-  </Route>
+  <Route path="/home" element={<Home />} />
+  <Route path="/" element={<Navigate to="/home" replace />} />
 </IonRouterOutlet>
 ```
 
@@ -240,15 +232,9 @@ Then, add its route in `IonRouterOutlet`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
-  <Route exact path="/home">
-    <Home />
-  </Route>
-  <Route exact path="/new">
-    <New />
-  </Route>
-  <Route exact path="/">
-    <Redirect to="/home" />
-  </Route>
+  <Route path="/home" element={<Home />} />
+  <Route path="/new" element={<New />} />
+  <Route path="/" element={<Navigate to="/home" replace />} />
 </IonRouterOutlet>
 ```
 
@@ -259,7 +245,7 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
-Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation.md#navigating-using-history) for more information.
+Navigating can also be performed programmatically using the `useIonRouter` hook. See the [React Navigation documentation](/docs/react/navigation.md#useionrouter) for more information.
 :::
 
 ## Add Icons to the New Page

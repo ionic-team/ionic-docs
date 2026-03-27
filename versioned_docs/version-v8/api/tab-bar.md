@@ -1,6 +1,7 @@
 ---
-title: "ion-tab-bar"
+title: 'ion-tab-bar'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,18 +14,17 @@ import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>
-  <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
+  <meta
+    name="description"
+    content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
-
-
-
 
 ## Usage
 
@@ -51,7 +51,6 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 </TabItem>
 
-
 <TabItem value="javascript">
 
 ```html
@@ -77,7 +76,6 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -106,9 +104,7 @@ export const TabBarExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -131,8 +127,8 @@ export const TabBarExample: React.FC = () => (
 </template>
 
 <script setup lang="ts">
-import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
-import { call, person, settings } from 'ionicons/icons';
+  import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
+  import { call, person, settings } from 'ionicons/icons';
 </script>
 ```
 
@@ -153,19 +149,25 @@ import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
 <InsideTabBar />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

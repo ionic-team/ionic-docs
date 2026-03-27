@@ -1,6 +1,7 @@
 ---
-title: "ion-fab"
+title: 'ion-fab'
 ---
+
 import Props from '@ionic-internal/component-api/v8/fab/props.md';
 import Events from '@ionic-internal/component-api/v8/fab/events.md';
 import Methods from '@ionic-internal/component-api/v8/fab/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v8/fab/slots.md';
 
 <head>
   <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>
-  <meta name="description" content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework." />
+  <meta
+    name="description"
+    content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -112,19 +116,25 @@ import CSSShadowParts from '@site/static/usage/v8/fab/theming/css-shadow-parts/i
 Since FABs are allowed to contain only icons, developers must provide an `aria-label` on each `ion-fab-button` instance. Without this label, assistive technologies will not be able to announce the purpose of each button.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

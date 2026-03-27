@@ -1,6 +1,7 @@
 ---
-title: "ion-datetime"
+title: 'ion-datetime'
 ---
+
 import Props from '@ionic-internal/component-api/v8/datetime/props.md';
 import Events from '@ionic-internal/component-api/v8/datetime/events.md';
 import Methods from '@ionic-internal/component-api/v8/datetime/methods.md';
@@ -46,7 +47,10 @@ import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/i
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
-  <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
+  <meta
+    name="description"
+    content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -75,15 +79,15 @@ and parse within JSON objects and databases.
 
 Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
-| Description          | Format                   | Datetime Value Example          |
-| -------------------- | ------------------------ | ------------------------------  |
-| Year                 | `YYYY`                   | `1994`                          |
-| Year and Month       | `YYYY-MM`                | `1994-12`                       |
-| Complete Date        | `YYYY-MM-DD`             | `1994-12-15`                    |
-| Date and Time        | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`              |
-| UTC Timezone         | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`          |
-| Timezone Offset      | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00`     |
-| Hour and Minute      | `HH:mm`                  | `13:47`                         |
+| Description     | Format                   | Datetime Value Example      |
+| --------------- | ------------------------ | --------------------------- |
+| Year            | `YYYY`                   | `1994`                      |
+| Year and Month  | `YYYY-MM`                | `1994-12`                   |
+| Complete Date   | `YYYY-MM-DD`             | `1994-12-15`                |
+| Date and Time   | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`          |
+| UTC Timezone    | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`      |
+| Timezone Offset | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00` |
+| Hour and Minute | `HH:mm`                  | `13:47`                     |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing
@@ -156,17 +160,16 @@ The time label is not automatically localized. See [Time Label](#time-label) for
 
 There are 4 primary hour cycle types:
 
-| Hour cycle type | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `'h12'`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
-| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
-| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
-| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
+| Hour cycle type | Description                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------- |
+| `'h12'`         | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00.     |
+| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am.  |
+| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00.     |
 
 :::note
-  Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
+Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
 :::
-
 
 There may be scenarios where you need to have more control over which hour cycle is used. This is where the `hourCycle` property can help.
 
@@ -195,7 +198,7 @@ For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you c
 <LocaleExtensionTags />
 
 :::note
-Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)  for `Intl.Locale` before using it in your app.
+Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility) for `Intl.Locale` before using it in your app.
 :::
 
 ## Presentation
@@ -415,7 +418,6 @@ console.log(formattedString); // Jun 4, 2021
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
 
-
 ## Advanced Datetime Validation and Manipulation
 
 The datetime picker provides the simplicity of selecting an exact format, and
@@ -481,19 +483,25 @@ interface DatetimeCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
