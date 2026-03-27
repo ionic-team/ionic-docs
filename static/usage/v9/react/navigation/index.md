@@ -18,6 +18,6 @@ import react_settings_page_tsx from './react/settings_page_tsx.md';
       },
     },
   }}
-  size="xlarge"
+  size="large"
   includeIonContent={false}
 />

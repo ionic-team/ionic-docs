@@ -4,6 +4,7 @@ sidebar_label: Navigation/Routing
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import NavigationPlayground from '@site/static/usage/v9/angular/navigation/index.md';
 
 <head>
   <title>Angular Navigation: How Routing & Redirects Work in Angular Apps</title>
@@ -201,7 +202,7 @@ To get started with standalone components [visit Angular's official docs](https:
 
 ## Live Example
 
-If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
+<NavigationPlayground />
 
 ## Linear Routing versus Non-Linear Routing
 
