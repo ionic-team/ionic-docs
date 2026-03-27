@@ -4,6 +4,7 @@ sidebar_label: Navigation/Routing
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import NavigationPlayground from '@site/static/usage/v9/react/navigation/index.md';
 
 <head>
   <title>React Navigation: Router Link Redirect to Navigate to Another Page</title>
@@ -57,19 +58,17 @@ Inside the Dashboard page, we define more routes related to this specific sectio
 **DashboardPage.tsx**
 
 ```tsx
-const DashboardPage: React.FC = () => {
-  return (
-    <IonPage>
-      <IonRouterOutlet>
-        <Route index element={<UsersListPage />} />
-        <Route path="users/:id" element={<UserDetailPage />} />
-      </IonRouterOutlet>
-    </IonPage>
-  );
-};
+const DashboardPage: React.FC = () => (
+  <IonRouterOutlet ionPage>
+    <Route index element={<UsersListPage />} />
+    <Route path="users/:id" element={<UserDetailPage />} />
+  </IonRouterOutlet>
+);
 ```
 
 Since the parent route already matches `/dashboard/*`, the child routes use **relative paths**. The `index` route matches the parent path (`/dashboard`) and `"users/:id"` resolves to `/dashboard/users/:id`. Absolute paths (e.g., `path="/dashboard/users/:id"`) still work if you prefer explicit full paths.
+
+Note the `ionPage` prop on `IonRouterOutlet`. When a component serves as a nested outlet rendered directly by a `Route` in a parent outlet, the inner `IonRouterOutlet` must include the `ionPage` prop. Without it, router outlets can overlap during navigation and cause broken transitions. Wrapping the outlet in an `IonPage` is not needed and should be avoided in this case.
 
 These routes are grouped in an `IonRouterOutlet`, let's discuss that next.
 
@@ -90,17 +89,13 @@ We can define a fallback route by placing a `Route` component with a `path` of `
 **DashboardPage.tsx**
 
 ```tsx
-const DashboardPage: React.FC = () => {
-  return (
-    <IonPage>
-      <IonRouterOutlet>
-        <Route index element={<UsersListPage />} />
-        <Route path="users/:id" element={<UserDetailPage />} />
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
-      </IonRouterOutlet>
-    </IonPage>
-  );
-};
+const DashboardPage: React.FC = () => (
+  <IonRouterOutlet ionPage>
+    <Route index element={<UsersListPage />} />
+    <Route path="users/:id" element={<UserDetailPage />} />
+    <Route path="*" element={<Navigate to="/dashboard" replace />} />
+  </IonRouterOutlet>
+);
 ```
 
 Here, we see that in the event a location does not match the first two `Route`s the `IonRouterOutlet` will redirect the Ionic React app to the `/dashboard` path.
@@ -108,17 +103,13 @@ Here, we see that in the event a location does not match the first two `Route`s 
 You can alternatively supply a component to render instead of providing a redirect.
 
 ```tsx
-const DashboardPage: React.FC = () => {
-  return (
-    <IonPage>
-      <IonRouterOutlet>
-        <Route index element={<UsersListPage />} />
-        <Route path="users/:id" element={<UserDetailPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </IonRouterOutlet>
-    </IonPage>
-  );
-};
+const DashboardPage: React.FC = () => (
+  <IonRouterOutlet ionPage>
+    <Route index element={<UsersListPage />} />
+    <Route path="users/:id" element={<UserDetailPage />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </IonRouterOutlet>
+);
 ```
 
 ## IonPage
@@ -351,12 +342,10 @@ const App: React.FC = () => (
 );
 
 const DashboardRouterOutlet: React.FC = () => (
-  <IonPage>
-    <IonRouterOutlet>
-      <Route index element={<DashboardMainPage />} />
-      <Route path="stats" element={<DashboardStatsPage />} />
-    </IonRouterOutlet>
-  </IonPage>
+  <IonRouterOutlet ionPage>
+    <Route index element={<DashboardMainPage />} />
+    <Route path="stats" element={<DashboardStatsPage />} />
+  </IonRouterOutlet>
 );
 ```
 
@@ -509,7 +498,7 @@ The example below shows how the Spotify app reuses the same album component to s
 
 ## Live Example
 
-If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-react-routing?file=src/index.tsx) of the topics above on StackBlitz.
+<NavigationPlayground />
 
 ### IonRouterOutlet in a Tabs View
 
