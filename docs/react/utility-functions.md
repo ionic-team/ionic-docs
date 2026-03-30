@@ -97,7 +97,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-See the [React Navigation Documentation](./navigation) for more navigation examples.
+Review the [React Navigation Documentation](./navigation.md) for more navigation examples.
 
 ### Interfaces
 

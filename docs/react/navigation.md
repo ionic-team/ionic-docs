@@ -186,7 +186,7 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 
 We recommend using one of the above methods whenever possible for routing. The advantage to these approaches is that they both render an anchor (`<a>`)tag, which is suitable for overall app accessibility.
 
-For programmatic navigation, use the `useIonRouter` hook (see [Utility Functions](./utility-functions#useionrouter)) or React Router's [`useNavigate`](https://reactrouter.com/6.28.0/hooks/use-navigate) hook:
+For programmatic navigation, use the `useIonRouter` hook (review [Utility Functions](./utility-functions.md#useionrouter)) or React Router's [`useNavigate`](https://reactrouter.com/6.28.0/hooks/use-navigate) hook:
 
 ```tsx
 import { useNavigate } from 'react-router-dom';
@@ -217,7 +217,7 @@ Say you have the following application history:
 
 If you were to call `navigate(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `navigate(2)`, you would be brought to `/pageC`.
 
-Using `navigate()` with delta values is not recommended in Ionic React because it follows the browser's linear history, which does not account for Ionic's non-linear tab and nested outlet navigation stacks. Use the `useIonRouter` hook's [`goBack()`](./utility-functions#back-navigation) method instead, which navigates within the current Ionic navigation stack.
+Using `navigate()` with delta values is not recommended in Ionic React because it follows the browser's linear history, which does not account for Ionic's non-linear tab and nested outlet navigation stacks. Use the `useIonRouter` hook's [`goBack()`](./utility-functions.md#back-navigation) method instead, which navigates within the current Ionic navigation stack.
 
 ## URL Parameters
 
@@ -308,9 +308,9 @@ We recommend keeping your application as simple as possible until you need to ad
 
 The two most common uses of non-linear routing is with tabs and nested `IonRouterOutlets`. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+For more on tabs, refer to [Working with Tabs](#working-with-tabs).
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+For more on nested router outlets, refer to [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
@@ -531,4 +531,4 @@ When a user navigates to a session detail page ("/sessions/1" for instance), `Io
 
 For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out their docs at [https://reactrouter.com/6.28.0](https://reactrouter.com/6.28.0).
 
-For documentation on `useIonRouter` and other utility functions, see [Utility Functions](./utility-functions).
+For documentation on `useIonRouter` and other utility functions, review [Utility Functions](./utility-functions.md).
