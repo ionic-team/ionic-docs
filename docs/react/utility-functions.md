@@ -4,7 +4,7 @@ sidebar_label: Utility Functions
 ---
 
 <head>
-  <title>Ionic React Utility Functions: useIonRouter Hook</title>
+  <title>Ionic React Utility Functions</title>
   <meta
     name="description"
     content="Ionic React utility functions including useIonRouter for programmatic navigation with custom transitions, Ionic-aware back navigation, and routing history control."
@@ -15,13 +15,15 @@ Ionic React provides utility functions for common tasks like programmatic naviga
 
 ## Router
 
-### useIonRouter
+### Functions
+
+#### useIonRouter
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](#useionrouterresult)
 
 Returns the Ionic router instance, which provides methods for programmatic navigation with control over page transitions. Use this hook instead of React Router's `useNavigate` when you need to customize the transition animation or use Ionic-aware back navigation.
 
-#### Customizing Page Transitions
+##### Customizing Page Transitions
 
 ```tsx
 import { useIonRouter } from '@ionic/react';
@@ -42,7 +44,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-#### Back Navigation
+##### Back Navigation
 
 The `goBack()` method navigates within the current Ionic navigation stack, unlike React Router's `navigate(-1)` which follows the browser's linear history.
 
@@ -62,7 +64,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-#### canGoBack
+##### canGoBack
 
 Use `canGoBack()` to check whether there are additional routes in the Ionic router's history. This is useful when deciding whether to show a back button or handle the hardware back button on Android.
 
@@ -79,7 +81,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-#### navigateRoot
+##### navigateRoot
 
 Use `navigateRoot()` to navigate to a new root pathname, clearing the navigation history and unmounting all previous views. After navigation, `canGoBack()` will return `false`. This is useful for navigating to a new root after login or logout.
 
