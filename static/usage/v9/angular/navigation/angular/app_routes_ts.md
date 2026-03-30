@@ -9,18 +9,15 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadComponent: () =>
-          import('./dashboard/dashboard-page.component').then((m) => m.DashboardPageComponent),
+        loadComponent: () => import('./dashboard/dashboard-page.component').then((m) => m.DashboardPageComponent),
       },
       {
         path: 'dashboard/:id',
-        loadComponent: () =>
-          import('./item-detail/item-detail-page.component').then((m) => m.ItemDetailPageComponent),
+        loadComponent: () => import('./item-detail/item-detail-page.component').then((m) => m.ItemDetailPageComponent),
       },
       {
         path: 'settings',
-        loadComponent: () =>
-          import('./settings/settings-page.component').then((m) => m.SettingsPageComponent),
+        loadComponent: () => import('./settings/settings-page.component').then((m) => m.SettingsPageComponent),
       },
       {
         path: '',

@@ -1,14 +1,6 @@
 ```tsx
 import React from 'react';
-import {
-  IonBackButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/react';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailPage: React.FC = () => {
