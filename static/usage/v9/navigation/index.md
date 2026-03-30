@@ -12,9 +12,14 @@ import angular_item_detail_page_component_ts from './angular/item_detail_page_co
 import angular_settings_page_component_html from './angular/settings_page_component_html.md';
 import angular_settings_page_component_ts from './angular/settings_page_component_ts.md';
 
+import react_main_tsx from './react/main_tsx.md';
+import react_dashboard_page_tsx from './react/dashboard_page_tsx.md';
+import react_item_detail_page_tsx from './react/item_detail_page_tsx.md';
+import react_settings_page_tsx from './react/settings_page_tsx.md';
+
 <Playground
   version="9"
-  src="usage/v9/angular/navigation/demo.html"
+  src="usage/v9/navigation/demo.html"
   code={{
     angular: {
       files: {
@@ -31,7 +36,16 @@ import angular_settings_page_component_ts from './angular/settings_page_componen
         'src/app/settings/settings-page.component.ts': angular_settings_page_component_ts,
       },
     },
+    react: {
+      files: {
+        'src/main.tsx': react_main_tsx,
+        'src/pages/DashboardPage.tsx': react_dashboard_page_tsx,
+        'src/pages/ItemDetailPage.tsx': react_item_detail_page_tsx,
+        'src/pages/SettingsPage.tsx': react_settings_page_tsx,
+      },
+    },
   }}
   size="large"
   includeIonContent={false}
+  devicePreview={true}
 />

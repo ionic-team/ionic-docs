@@ -4,7 +4,6 @@ sidebar_label: Navigation/Routing
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import NavigationPlayground from '@site/static/usage/v9/angular/navigation/index.md';
 
 <head>
   <title>Angular Navigation: How Routing & Redirects Work in Angular Apps</title>
@@ -201,6 +200,8 @@ If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to a
 To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).
 
 ## Live Example
+
+import NavigationPlayground from '@site/static/usage/v9/navigation/index.md';
 
 <NavigationPlayground />
 

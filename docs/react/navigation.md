@@ -4,7 +4,6 @@ sidebar_label: Navigation/Routing
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import NavigationPlayground from '@site/static/usage/v9/react/navigation/index.md';
 
 <head>
   <title>React Navigation: Router Link Redirect to Navigate to Another Page</title>
@@ -497,6 +496,8 @@ The example below shows how the Spotify app reuses the same album component to s
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Live Example
+
+import NavigationPlayground from '@site/static/usage/v9/navigation/index.md';
 
 <NavigationPlayground />
 
