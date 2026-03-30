@@ -1,5 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import {
   IonContent,
   IonHeader,
@@ -14,7 +15,7 @@ import {
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: 'dashboard-page.component.html',
-  imports: [IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonRouterLink],
+  imports: [IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonRouterLink, RouterLink],
 })
 export class DashboardPageComponent {
   items = [
