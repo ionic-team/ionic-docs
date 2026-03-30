@@ -71,9 +71,11 @@ const DashboardPage: React.FC = () => {
 
 Since the parent route already matches `/dashboard/*`, the child routes use **relative paths**. The `index` route matches the parent path (`/dashboard`) and `"users/:id"` resolves to `/dashboard/users/:id`. Absolute paths (e.g., `path="/dashboard/users/:id"`) still work if you prefer explicit full paths.
 
-These routes are grouped in an `IonRouterOutlet`, let's discuss that next.
+These routes are grouped in an `IonRouterOutlet`.
 
-## IonRouterOutlet
+## Components
+
+### IonRouterOutlet
 
 The `IonRouterOutlet` component provides a container for Routes that render Ionic "pages". When a page is in an `IonRouterOutlet`, the container controls the transition animation between the pages as well as controls when a page is created and destroyed, which helps maintain the state between the views when switching back and forth between them.
 
@@ -81,7 +83,7 @@ The `DashboardPage` above shows a users list page and a details page. When navig
 
 An `IonRouterOutlet` should only contain `Route`s. Any other component should be rendered either as a result of a `Route` or outside of the `IonRouterOutlet`.
 
-## Fallback Route
+### Fallback Route
 
 A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined.
 
@@ -121,7 +123,7 @@ const DashboardPage: React.FC = () => {
 };
 ```
 
-## IonPage
+### IonPage
 
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
