@@ -444,10 +444,15 @@ export default function Playground({
 
         /**
          * Load the stored mode and/or usage target, if present
-         * from previously being toggled.
+         * from previously being toggled. Skip the usage target
+         * reset when defaultFramework is set, since the initial
+         * value is already correct and user tab clicks should
+         * be preserved.
          */
         setIonicMode(getDefaultMode());
-        setUsageTarget(getDefaultUsageTarget());
+        if (!defaultFramework) {
+          setUsageTarget(getDefaultUsageTarget());
+        }
 
         /**
          * If the iframes weren't already loaded, load them now.
