@@ -129,6 +129,7 @@ module.exports = {
         'react/navigation',
         'react/virtual-scroll',
         'react/slides',
+        'react/utility-functions',
         'react/platform',
         'react/pwa',
         'react/overlays',

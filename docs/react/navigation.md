@@ -71,7 +71,9 @@ Note the `ionPage` prop on `IonRouterOutlet`. When a component serves as a neste
 
 These routes are grouped in an `IonRouterOutlet`, let's discuss that next.
 
-## IonRouterOutlet
+## Components
+
+### IonRouterOutlet
 
 The `IonRouterOutlet` component provides a container for Routes that render Ionic "pages". When a page is in an `IonRouterOutlet`, the container controls the transition animation between the pages as well as controls when a page is created and destroyed, which helps maintain the state between the views when switching back and forth between them.
 
@@ -79,7 +81,7 @@ The `DashboardPage` above shows a users list page and a details page. When navig
 
 An `IonRouterOutlet` should only contain `Route`s. Any other component should be rendered either as a result of a `Route` or outside of the `IonRouterOutlet`.
 
-## Fallback Route
+### Fallback Route
 
 A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined.
 
@@ -111,7 +113,7 @@ const DashboardPage: React.FC = () => (
 );
 ```
 
-## IonPage
+### IonPage
 
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
@@ -176,7 +178,7 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 
 We recommend using one of the above methods whenever possible for routing. The advantage to these approaches is that they both render an anchor (`<a>`)tag, which is suitable for overall app accessibility.
 
-For programmatic navigation, use the `useIonRouter` hook (see [Utilities](#useionrouter)) or React Router's [`useNavigate`](https://reactrouter.com/6.28.0/hooks/use-navigate) hook:
+For programmatic navigation, use the `useIonRouter` hook (review [Utility Functions](./utility-functions.md#useionrouter)) or React Router's [`useNavigate`](https://reactrouter.com/6.28.0/hooks/use-navigate) hook:
 
 ```tsx
 import { useNavigate } from 'react-router-dom';
@@ -207,7 +209,7 @@ Say you have the following application history:
 
 If you were to call `navigate(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `navigate(2)`, you would be brought to `/pageC`.
 
-Using `navigate()` with delta values is not recommended in Ionic React because it follows the browser's linear history, which does not account for Ionic's non-linear tab and nested outlet navigation stacks. Use the `useIonRouter` hook's [`goBack()`](#useionrouter) method instead, which navigates within the current Ionic navigation stack.
+Using `navigate()` with delta values is not recommended in Ionic React because it follows the browser's linear history, which does not account for Ionic's non-linear tab and nested outlet navigation stacks. Use the `useIonRouter` hook's [`goBack()`](./utility-functions.md#back-navigation) method instead, which navigates within the current Ionic navigation stack.
 
 ## URL Parameters
 
@@ -298,9 +300,9 @@ We recommend keeping your application as simple as possible until you need to ad
 
 The two most common uses of non-linear routing is with tabs and nested `IonRouterOutlets`. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+For more on tabs, refer to [Working with Tabs](#working-with-tabs).
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+For more on nested router outlets, refer to [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
@@ -566,63 +568,8 @@ For example, the routes for a view with two tabs (sessions and speakers) can be 
 
 When a user navigates to a session detail page ("/sessions/1" for instance), `IonRouterOutlet` sees that both the list and detail pages share the same "sessions" path prefix and provides an animated page transition to the new view. If a user navigates to a different tab ("speakers" in this case), `IonRouterOutlet` knows not to provide the animation.
 
-## Utilities
-
-### useIonRouter
-
-The `useIonRouter` hook gives you more control over routing in Ionic React, including custom page transition animations and Ionic-aware back navigation via `goBack()`.
-
-The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing:
-
-```typescript
-type UseIonRouterResult = {
-  /**
-   * Navigates to a new pathname
-   * @param pathname - The path to navigate to
-   * @param routerDirection - Optional - The RouterDirection to use for transition purposes, defaults to 'forward'
-   * @param routeAction - Optional - The RouteAction to use for history purposes, defaults to 'push'
-   * @param routerOptions - Optional - Any additional parameters to pass to the router
-   * @param animationBuilder - Optional - A custom transition animation to use
-   */
-  push(
-    pathname: string,
-    routerDirection?: RouterDirection,
-    routeAction?: RouteAction,
-    routerOptions?: RouterOptions,
-    animationBuilder?: AnimationBuilder
-  ): void;
-  /**
-   * Navigates backwards in history, using the IonRouter to determine history
-   * @param animationBuilder - Optional - A custom transition animation to use
-   */
-  goBack(animationBuilder?: AnimationBuilder): void;
-  /**
-   * Determines if there are any additional routes in the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
-   */
-  canGoBack(): boolean;
-  /**
-   * Information about the current route.
-   */
-  routeInfo: RouteInfo;
-};
-```
-
-The following example shows how to use `useIonRouter`:
-
-```tsx
-import { useIonRouter } from '@ionic/react';
-
-const MyComponent: React.FC = () => {
-  const router = useIonRouter();
-  const goToPage = () => {
-    router.push('/my-page', 'root', 'replace');
-  };
-
-  ...
-}
-
-```
-
 ## More Information
 
 For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out their docs at [https://reactrouter.com/6.28.0](https://reactrouter.com/6.28.0).
+
+For documentation on `useIonRouter` and other utility functions, review [Utility Functions](./utility-functions.md).
