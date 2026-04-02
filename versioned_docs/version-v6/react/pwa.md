@@ -73,7 +73,7 @@ With the Firebase CLI installed, run `firebase init` within your Ionic project. 
 
 **"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
-**"What do you want to use as your public directory?"** Enter "build".
+**"What do you want to use as your public directory?"** Enter "dist".
 
 :::note
 Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
