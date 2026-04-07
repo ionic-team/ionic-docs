@@ -67,7 +67,6 @@ html {
     <div class="child">Child element with 80px</div>
   </div>
 </div>
-```
 
 <div style={{ fontSize: '20px' }}>
   Parent element with 20px
@@ -76,6 +75,7 @@ html {
     <div style={{ fontSize: '2em' }}>Child element with 80px</div>
   </div>
 </div>
+```
 
 この複合効果により、ダイナミックフォントスケーリングで作業する際は、`em`単位の代わりに`rem`単位を使用することを強くお勧めします。`rem`単位は、要素のフォントサイズをルート要素（通常は`<html>`）のフォントサイズを基準に設定します。ルート要素のデフォルトフォントサイズは通常`16px`です。
 
