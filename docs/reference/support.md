@@ -65,6 +65,7 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
+|    v9     |          v18+          |    3.7+    |
 |    v8     |          v17+          |    3.7+    |
 |    v7     |          v17+          |    3.7+    |
 |    v6     |          v17+          |    3.7+    |
