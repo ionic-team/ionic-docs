@@ -54,7 +54,7 @@ module.exports = function (context, options) {
         await generateMarkdownForVersion(version, npmTag, context.i18n.currentLocale, false);
       }
 
-      let npmTag = 'latest';
+      let npmTag = '8.8.6-dev.11777569278.1613db2e';
       if (currentVersion.banner === 'unreleased') {
         npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
