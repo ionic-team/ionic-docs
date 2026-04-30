@@ -21,7 +21,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Gallery is a container for displaying images, cards, and other content in a responsive CSS grid. It supports `uniform` and `masonry` layouts, configurable column counts (fixed or breakpoint-based), and masonry ordering with `sequential` or `best-fit`.
+The gallery is a container for displaying images, cards, and other content in a responsive CSS grid. It supports `uniform` and `masonry` layouts, configurable column counts (fixed or breakpoint-based), and masonry ordering with `sequential` or `best-fit`.
+
+## Basic Usage
+
+import Basic from '@site/static/usage/v9/gallery/basic/index.md';
+
+<Basic />
 
 ## Interfaces
 
