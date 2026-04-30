@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/toast/inline/basic/demo.html"
+  src="usage/v9/toast/inline/basic/demo.html"
   devicePreview
   includeIonContent={false}
 />

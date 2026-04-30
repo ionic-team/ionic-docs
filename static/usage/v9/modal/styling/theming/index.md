@@ -29,7 +29,7 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v8/modal/styling/theming/demo.html"
+  src="usage/v9/modal/styling/theming/demo.html"
   devicePreview
   includeIonContent={false}
 />

@@ -30,7 +30,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/content/fixed/demo.html"
+  src="usage/v9/content/fixed/demo.html"
   includeIonContent={false}
   devicePreview={true}
 />

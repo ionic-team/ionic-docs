@@ -30,6 +30,6 @@ import react_main_css from './react/main_css.md';
       },
     },
   }}
-  src="usage/v8/picker/theming/css-properties/demo.html"
+  src="usage/v9/picker/theming/css-properties/demo.html"
   size="medium"
 />

@@ -27,5 +27,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/breadcrumbs/icons/custom-separators/demo.html"
+  src="usage/v9/breadcrumbs/icons/custom-separators/demo.html"
 />

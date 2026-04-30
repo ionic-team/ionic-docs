@@ -20,5 +20,5 @@ import vue from './vue.md';
       },
     },
   }}
-  src="usage/v8/loading/spinners/demo.html"
+  src="usage/v9/loading/spinners/demo.html"
 />

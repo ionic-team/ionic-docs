@@ -36,7 +36,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v8/refresher/advanced/demo.html"
+  src="usage/v9/refresher/advanced/demo.html"
   devicePreview
   includeIonContent={false}
 />

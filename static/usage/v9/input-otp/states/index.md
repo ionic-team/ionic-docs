@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="medium"
-  src="usage/v8/input-otp/states/demo.html"
+  src="usage/v9/input-otp/states/demo.html"
 />

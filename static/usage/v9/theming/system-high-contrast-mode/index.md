@@ -42,7 +42,7 @@ import vue_main_ts from './vue/main_ts.md';
       },
     },
   }}
-  src="usage/v8/theming/system-high-contrast-mode/demo.html"
+  src="usage/v9/theming/system-high-contrast-mode/demo.html"
   devicePreview
   includeIonContent={false}
 />

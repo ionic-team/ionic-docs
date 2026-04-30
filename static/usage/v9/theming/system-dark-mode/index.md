@@ -52,7 +52,7 @@ import variables_css from './theme/variables_css.md';
       },
     },
   }}
-  src="usage/v8/theming/system-dark-mode/demo.html"
+  src="usage/v9/theming/system-dark-mode/demo.html"
   devicePreview
   includeIonContent={false}
 />

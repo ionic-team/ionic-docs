@@ -20,6 +20,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/item/basic/demo.html"
+  src="usage/v9/item/basic/demo.html"
   size="medium"
 />

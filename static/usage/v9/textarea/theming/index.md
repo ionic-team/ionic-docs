@@ -33,5 +33,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v8/textarea/theming/demo.html"
+  src="usage/v9/textarea/theming/demo.html"
 />

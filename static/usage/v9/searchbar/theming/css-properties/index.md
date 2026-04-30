@@ -30,5 +30,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/searchbar/theming/css-properties/demo.html"
+  src="usage/v9/searchbar/theming/css-properties/demo.html"
 />

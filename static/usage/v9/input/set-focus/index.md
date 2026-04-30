@@ -20,5 +20,5 @@ import react from './react.md';
       },
     },
   }}
-  src="usage/v8/input/set-focus/demo.html"
+  src="usage/v9/input/set-focus/demo.html"
 />

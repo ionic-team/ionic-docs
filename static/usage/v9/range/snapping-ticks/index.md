@@ -20,5 +20,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/range/snapping-ticks/demo.html"
+  src="usage/v9/range/snapping-ticks/demo.html"
 />

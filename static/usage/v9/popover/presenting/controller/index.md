@@ -32,6 +32,6 @@ import angular_popover_component_ts from './angular/popover_component_ts.md';
       },
     },
   }}
-  src="usage/v8/popover/presenting/controller/demo.html"
+  src="usage/v9/popover/presenting/controller/demo.html"
   showConsole={true}
 />

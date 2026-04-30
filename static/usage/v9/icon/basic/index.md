@@ -28,5 +28,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="xsmall"
-  src="usage/v8/icon/basic/demo.html"
+  src="usage/v9/icon/basic/demo.html"
 />

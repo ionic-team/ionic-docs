@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/item/content-types/controls/demo.html"
+  src="usage/v9/item/content-types/controls/demo.html"
   includeIonContent={false}
   devicePreview={true}
 />
