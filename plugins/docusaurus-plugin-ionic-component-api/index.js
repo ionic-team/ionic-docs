@@ -331,7 +331,12 @@ function renderSlots({ slots }) {
   return `
 | Name | Description |
 | --- | --- |
-${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
-
+${slots
+  .map((slot) => {
+    const slotName = slot.name?.trim();
+    const displayedSlotName = slotName ? `\`${slotName}\`` : '';
+    return `| ${displayedSlotName} | ${formatMultiline(slot.docs)} |`;
+  })
+  .join('\n')}
 `;
 }
