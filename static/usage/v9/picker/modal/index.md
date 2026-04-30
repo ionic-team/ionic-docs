@@ -30,7 +30,7 @@ import vue from './vue.md';
       },
     },
   }}
-  src="usage/v8/picker/modal/demo.html"
+  src="usage/v9/picker/modal/demo.html"
   size="medium"
   showConsole={true}
   devicePreview={true}

@@ -27,7 +27,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/layout/dynamic-font-scaling/demo.html"
+  src="usage/v9/layout/dynamic-font-scaling/demo.html"
   devicePreview={true}
   includeIonContent={false}
 />

@@ -38,6 +38,6 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v8/fab/safe-area/demo.html"
+  src="usage/v9/fab/safe-area/demo.html"
   devicePreview={true}
 />

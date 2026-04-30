@@ -28,5 +28,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="250px"
-  src="usage/v8/item/buttons/demo.html"
+  src="usage/v9/item/buttons/demo.html"
 />

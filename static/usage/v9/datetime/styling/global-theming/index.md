@@ -45,5 +45,5 @@ import variables_css from './theme/variables_css.md';
       },
     },
   }}
-  src="usage/v8/datetime/styling/global-theming/demo.html"
+  src="usage/v9/datetime/styling/global-theming/demo.html"
 />

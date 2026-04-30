@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/alert/inputs/text-inputs/demo.html"
+  src="usage/v9/alert/inputs/text-inputs/demo.html"
 />

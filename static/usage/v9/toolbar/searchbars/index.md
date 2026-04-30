@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/toolbar/searchbars/demo.html"
+  src="usage/v9/toolbar/searchbars/demo.html"
   devicePreview
   includeIonContent={false}
 />

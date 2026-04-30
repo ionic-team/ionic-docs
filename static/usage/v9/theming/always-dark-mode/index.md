@@ -48,7 +48,7 @@ import variables_css from './theme/variables_css.md';
       },
     },
   }}
-  src="usage/v8/theming/always-dark-mode/demo.html"
+  src="usage/v9/theming/always-dark-mode/demo.html"
   devicePreview
   includeIonContent={false}
 />

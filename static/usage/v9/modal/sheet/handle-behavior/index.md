@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/modal/sheet/handle-behavior/demo.html"
+  src="usage/v9/modal/sheet/handle-behavior/demo.html"
   devicePreview
   includeIonContent={false}
 />

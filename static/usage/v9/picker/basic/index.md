@@ -20,6 +20,6 @@ import vue from './vue.md';
       },
     },
   }}
-  src="usage/v8/picker/basic/demo.html"
+  src="usage/v9/picker/basic/demo.html"
   size="medium"
 />

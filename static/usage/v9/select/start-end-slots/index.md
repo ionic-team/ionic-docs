@@ -28,5 +28,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="300px"
-  src="usage/v8/select/start-end-slots/demo.html"
+  src="usage/v9/select/start-end-slots/demo.html"
 />

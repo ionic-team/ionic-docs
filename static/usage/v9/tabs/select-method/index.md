@@ -36,7 +36,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v8/tabs/select-method/demo.html"
+  src="usage/v9/tabs/select-method/demo.html"
   devicePreview
   includeIonContent={false}
 />

@@ -20,6 +20,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/spinner/theming/colors/demo.html"
+  src="usage/v9/spinner/theming/colors/demo.html"
   size="100px"
 />

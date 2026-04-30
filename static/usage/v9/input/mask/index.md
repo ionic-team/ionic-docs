@@ -51,6 +51,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/input/mask/demo.html"
+  src="usage/v9/input/mask/demo.html"
   size="300px"
 />

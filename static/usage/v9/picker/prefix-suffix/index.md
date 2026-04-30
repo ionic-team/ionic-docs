@@ -20,6 +20,6 @@ import vue from './vue.md';
       },
     },
   }}
-  src="usage/v8/picker/prefix-suffix/demo.html"
+  src="usage/v9/picker/prefix-suffix/demo.html"
   size="medium"
 />

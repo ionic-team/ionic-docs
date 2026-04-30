@@ -5,7 +5,7 @@ import javascript from './javascript.md';
 <Playground
   version="9"
   code={{ javascript }}
-  src="usage/v8/router/basic/demo.html"
+  src="usage/v9/router/basic/demo.html"
   devicePreview={true}
   includeIonContent={false}
 />

@@ -35,6 +35,6 @@ import angular_child_component_ts from './angular/child_component_ts.md';
       },
     },
   }}
-  src="usage/v8/modal/can-dismiss/child-state/demo.html"
+  src="usage/v9/modal/can-dismiss/child-state/demo.html"
   devicePreview
 />

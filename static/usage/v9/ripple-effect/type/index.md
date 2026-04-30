@@ -30,6 +30,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/ripple-effect/type/demo.html"
+  src="usage/v9/ripple-effect/type/demo.html"
   size="175px"
 />

@@ -20,6 +20,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v8/label/input/demo.html"
+  src="usage/v9/label/input/demo.html"
   size="medium"
 />
