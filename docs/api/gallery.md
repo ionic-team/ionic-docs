@@ -29,6 +29,26 @@ import Basic from '@site/static/usage/v9/gallery/basic/index.md';
 
 <Basic />
 
+## Uniform
+
+import Uniform from '@site/static/usage/v9/gallery/uniform/index.md';
+
+<Uniform />
+
+## Masonry
+
+### Sequential
+
+import MasonrySequential from '@site/static/usage/v9/gallery/masonry-sequential/index.md';
+
+<MasonrySequential />
+
+### Best Fit
+
+import MasonryBestFit from '@site/static/usage/v9/gallery/masonry-best-fit/index.md';
+
+<MasonryBestFit />
+
 ## Interfaces
 
 ### GalleryBreakpointColumns
