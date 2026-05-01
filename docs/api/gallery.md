@@ -49,6 +49,12 @@ import MasonryBestFit from '@site/static/usage/v9/gallery/masonry-best-fit/index
 
 <MasonryBestFit />
 
+## Columns
+
+import Columns from '@site/static/usage/v9/gallery/columns/index.md';
+
+<Columns />
+
 ## Interfaces
 
 ### GalleryBreakpointColumns
