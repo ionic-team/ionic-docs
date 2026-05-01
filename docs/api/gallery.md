@@ -77,7 +77,16 @@ import Images from '@site/static/usage/v9/gallery/images/index.md';
 
 Columns can be configured with the `columns` property using either a single number for a fixed column count, or a breakpoint map to change columns across screen sizes.
 
-If no value is provided, or if an invalid value is used, the gallery falls back to its default responsive column behavior.
+If no value is provided, or if an invalid value is used, the gallery falls back to its default responsive column behavior. The default column counts by breakpoint are:
+
+| Breakpoint | Min Width | Default Columns |
+| --- | --- | ---|
+| `xs` | `0` | `2` |
+| `sm` | `576px` | `3` |
+| `md` | `768px` | `4` |
+| `lg` | `992px` | `6` |
+| `xl` | `1200px` | `8` |
+| `xxl` | `1400px` | `10` |
 
 import Columns from '@site/static/usage/v9/gallery/columns/index.md';
 
