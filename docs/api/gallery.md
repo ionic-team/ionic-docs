@@ -49,6 +49,12 @@ import MasonryBestFit from '@site/static/usage/v9/gallery/masonry-best-fit/index
 
 <MasonryBestFit />
 
+### Images
+
+import Images from '@site/static/usage/v9/gallery/images/index.md';
+
+<Images />
+
 ## Columns
 
 import Columns from '@site/static/usage/v9/gallery/columns/index.md';
