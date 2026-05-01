@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@8.8.6-dev.11777569278.1613db2e/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@8.8.6-dev.11777569278.1613db2e/css/ionic.bundle.css"
+    />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content class="ion-padding">
+        <div class="container">
+          <ion-gallery layout="masonry">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </ion-gallery>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <style>
+      /* For demo purposes */
+      ion-gallery {
+        width: 100%;
+        padding: 16px 36px;
+      }
+
+      ion-gallery div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 16px;
+      }
+
+      ion-gallery div:nth-child(1) {
+        background: #ff6b6b;
+        height: 175px;
+      }
+
+      ion-gallery div:nth-child(2) {
+        background: #4ecdc4;
+        height: 30px;
+      }
+
+      ion-gallery div:nth-child(3) {
+        background: #ffe66d;
+        color: #333;
+        height: 90px;
+      }
+
+      ion-gallery div:nth-child(4) {
+        background: #5f27cd;
+        height: 50px;
+      }
+
+      ion-gallery div:nth-child(5) {
+        background: #7f8c8d;
+        height: 110px;
+      }
+
+      ion-gallery div:nth-child(6) {
+        background: #ff9f43;
+        height: 175px;
+      }
+    </style>
+  </body>
+</html>
