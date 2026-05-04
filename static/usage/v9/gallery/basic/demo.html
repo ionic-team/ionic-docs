@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@8.8.6-dev.11777668103.132817bd/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@8.8.6-dev.11777668103.132817bd/css/ionic.bundle.css"
+    />
+
+    <style>
+      /* Content padding + home indicator height */
+      .ios {
+        --ion-safe-area-bottom: 36px;
+      }
+
+      ion-content::part(scroll) {
+        padding-bottom: var(--ion-safe-area-bottom, 0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-gallery>
+          <img src="/docs/img/demos/gallery/01.png" alt="Image 1" />
+          <img src="/docs/img/demos/gallery/02.png" alt="Image 2" />
+          <img src="/docs/img/demos/gallery/03.png" alt="Image 3" />
+          <img src="/docs/img/demos/gallery/04.png" alt="Image 4" />
+          <img src="/docs/img/demos/gallery/05.png" alt="Image 5" />
+          <img src="/docs/img/demos/gallery/06.png" alt="Image 6" />
+          <img src="/docs/img/demos/gallery/07.png" alt="Image 7" />
+          <img src="/docs/img/demos/gallery/08.png" alt="Image 8" />
+          <img src="/docs/img/demos/gallery/09.png" alt="Image 9" />
+          <img src="/docs/img/demos/gallery/10.png" alt="Image 10" />
+          <img src="/docs/img/demos/gallery/11.png" alt="Image 11" />
+          <img src="/docs/img/demos/gallery/12.png" alt="Image 12" />
+        </ion-gallery>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>

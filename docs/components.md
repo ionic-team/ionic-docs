@@ -74,8 +74,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
 </DocsCard>
 
-<DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
-  <p>The grid is a powerful mobile-first system for building custom layouts.</p>
+<DocsCard header="Grids" href="api/grid" icon="/icons/component-grid-icon.png">
+  <p>A collection of layout components for building responsive grids and image layouts.</p>
 </DocsCard>
 
 <DocsCard header="Icons" href="api/icon" icon="/icons/component-icons-icon.png">
@@ -87,7 +87,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Inputs" href="api/input" icon="/icons/component-input-icon.png">
-  <p>Inputs provides a way for users to enter data in your app.</p>
+  <p>Inputs provide a way for users to enter data in your app.</p>
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
