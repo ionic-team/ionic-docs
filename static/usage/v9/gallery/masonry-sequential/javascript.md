@@ -9,6 +9,8 @@
 </ion-gallery>
 
 <style>
+  /* These styles are for demonstration only. */
+  /* They are not required for gallery to work. */
   ion-gallery div {
     display: flex;
     align-items: center;
