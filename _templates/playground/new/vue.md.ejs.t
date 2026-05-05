@@ -2,7 +2,7 @@
 arbitrary: <% pascalComponent = h.changeCase.pascal(component) %>
 to: "<%= `static/usage/v${version}/${name}/${path}/vue.md` %>"
 ---
-```html
+```vue
 <template>
   <<%= component %>></<%= component %>>
 </template>
