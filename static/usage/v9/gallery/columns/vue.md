@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-gallery :columns="columns">
     <div>1</div>

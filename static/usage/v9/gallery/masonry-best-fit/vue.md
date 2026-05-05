@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-gallery layout="masonry" order="best-fit">
     <div>1</div>
