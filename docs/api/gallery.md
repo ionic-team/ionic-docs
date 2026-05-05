@@ -65,8 +65,16 @@ import MasonryBestFit from '@site/static/usage/v9/gallery/masonry-best-fit/index
 
 In masonry layouts, top-level `img` elements are given default styles to ensure consistent rendering. These styles make images fill their container while preserving their aspect ratio and keeping them centered.
 
-:::note
-Images wrapped in other elements (for example, inside a `figure`) do not inherit these defaults. Apply the same styles to the nested `img` if you want matching behavior.
+:::tip
+Images wrapped in other elements (for example, inside a `figure`) do not inherit these defaults. Apply the same styles to the nested `img` if you want matching behavior, for example:
+
+```css
+figure img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+```
 :::
 
 import Images from '@site/static/usage/v9/gallery/images/index.md';
