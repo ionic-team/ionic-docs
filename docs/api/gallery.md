@@ -71,8 +71,11 @@ Images wrapped in other elements (for example, inside a `figure`) do not inherit
 ```css
 figure img {
   display: block;
+
   object-fit: cover;
   object-position: center;
+
+  aspect-ratio: inherit;
 }
 ```
 :::
