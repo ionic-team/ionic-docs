@@ -76,10 +76,21 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 | Framework | Required Vue Version | TypeScript |
 | :-------: | :------------------: | :--------: |
+|    v9     |        v3.5+         |    3.9+    |
 |    v8     |       v3.0.6+        |    3.9+    |
 |    v7     |       v3.0.6+        |    3.9+    |
 |    v6     |       v3.0.6+        |    3.9+    |
 |    v5     |        v3.0+         |    3.9+    |
+
+#### Ionic Vue Router
+
+| Framework | Required Vue Router Version |
+| :-------: | :-------------------------: |
+|    v9     |             v5+             |
+|    v8     |             v4+             |
+|    v7     |             v4+             |
+|    v6     |             v4+             |
+|    v5     |             v4+             |
 
 ### Native Bridges
 
