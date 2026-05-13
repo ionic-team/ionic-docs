@@ -103,6 +103,16 @@ import Columns from '@site/static/usage/v9/gallery/columns/index.md';
 
 <Columns />
 
+## Gap
+
+Gap can be configured with the `gap` property using either a single value for a fixed gap, or a breakpoint map to change gap across screen sizes.
+
+If no value is provided, or if an invalid value is used, the gallery falls back to its default gap value. The default value is `16px`.
+
+import Gap from '@site/static/usage/v9/gallery/gap/index.md';
+
+<Gap />
+
 ## Interfaces
 
 ### GalleryBreakpointColumns
