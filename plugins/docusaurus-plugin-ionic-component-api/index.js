@@ -132,6 +132,38 @@ function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
 }
 
+/**
+ * Kebab-case slug for API identifiers (camelCase props, method names).
+ */
+function apiIdentifierSlug(name) {
+  return name
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/_/g, '-')
+    .toLowerCase();
+}
+
+/**
+ * Heading id for Properties subheadings.
+ * Prefixes IDs with `prop-` so they never collide with narrative sections on the same
+ * doc page that use headings like "Shape", "Fill", or "Size".
+ *
+ * Anchors become `#prop-${slug}` rather than `#${slug}`.
+ */
+function propertyHeadingId(propName) {
+  return `prop-${apiIdentifierSlug(propName)}`;
+}
+
+/**
+ * Heading id for Methods subheadings.
+ * Prefixes IDs with `method-` so they never collide with narrative sections on the same
+ * doc page that use headings like "Dismiss", "Present", or "Close".
+ *
+ * Anchors become `#method-${slug}` rather than `#${slug}`.
+ */
+function methodHeadingId(methodName) {
+  return `method-${apiIdentifierSlug(methodName)}`;
+}
+
 function formatType(attr, type) {
   if (attr === 'color') {
     /**
@@ -181,7 +213,7 @@ ${properties
     }
 
     return `
-### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
+### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {#${propertyHeadingId(prop.name)}}
 
 | | |
 | --- | --- |
@@ -243,7 +275,7 @@ function renderMethods({ methods }) {
 ${methods
   .map(
     (method) => `
-### ${method.name}
+### ${method.name} {#${methodHeadingId(method.name)}}
 
 | | |
 | --- | --- |
