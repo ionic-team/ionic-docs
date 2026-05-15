@@ -116,3 +116,25 @@ await modal.present();
 ```
 
 This is done to align with how developers bind events in their Vue templates by using kebab-case: https://vuejs.org/guide/essentials/component-basics.html#case-insensitivity
+
+## Blank white screen in Capacitor native build
+
+If your app runs correctly in the browser but shows a blank white screen when launched in a Capacitor iOS or Android build, the most common cause is a non-default `base` in `vite.config.js` (or `publicPath` in `vue.config.js` for legacy Vue CLI projects).
+
+This option is often added so the app can be hosted from a subdirectory, such as a GitHub Pages deploy:
+
+```js
+// vite.config.js
+export default defineConfig({
+  base: '/my-repo/',
+});
+```
+
+In a Capacitor build the bundled assets are served from a local origin (`capacitor://localhost` on iOS and `https://localhost` on Android by default), so the prefixed paths never resolve and the app fails to bootstrap.
+
+To fix it, reset `base` to `/` (or remove the option) before running `npx cap copy`. If you need both targets, keep a separate config file for each and select it at build time with `vite build --config`.
+
+To confirm this is the cause, inspect the device log for 404s on the prefixed asset paths:
+
+- **Android:** Run `adb logcat` from the command line, or open **Logcat** in Android Studio.
+- **iOS:** Open Safari's **Develop** menu and inspect the Simulator or device webview.
