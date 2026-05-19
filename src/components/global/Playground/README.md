@@ -71,3 +71,11 @@ To opt-out of this behavior, set `includeIonContent={false}` to disable this wra
 ```tsx
 <Playground includeIonContent={false} />
 ```
+
+## Ionic Config
+
+Pass an [IonicConfig](/docs/developing/config#ionicconfig) object so generated StackBlitz projects bootstrap with the same settings. This is merged with the active preview `mode` when opening the editor. Only string, number, and boolean values are injected into generated code:
+
+```tsx
+<Playground version="9" ionicConfig={{ innerHTMLTemplatesEnabled: true }} />
+```

@@ -4,7 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { useColorMode } from '@docusaurus/theme-common';
-import { ConsoleItem, Mode, UsageTarget } from './playground.types';
+import { ConsoleItem, IonicConfig, Mode, UsageTarget } from './playground.types';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -120,8 +120,14 @@ interface UsageTargetOptions {
  * @param description Optional description of the generated playground example. Specify to customize the StackBlitz description.
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param mode Restricts the playground to a single specified mode. Acceptable values are: `ios` or `md`.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
  * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
+ * @param includeIonContent Whether to include the `ion-app` and `ion-content` elements in the generated StackBlitz example.
+ * @param ionicConfig Ionic config values to inject into generated StackBlitz examples.
+ * @param version The major version of Ionic to use in the generated StackBlitz example.
+ * @param defaultFramework The framework to select by default when no user preference is stored.
+ * @returns The generated StackBlitz example.
  */
 export default function Playground({
   code,
@@ -133,6 +139,7 @@ export default function Playground({
   devicePreview,
   showConsole,
   includeIonContent = true,
+  ionicConfig,
   version,
   defaultFramework,
 }: {
@@ -150,6 +157,12 @@ export default function Playground({
   devicePreview?: boolean;
   showConsole?: boolean;
   includeIonContent: boolean;
+  /**
+   * Ionic config values to inject into generated StackBlitz examples. For
+   * example: `{ innerHTMLTemplatesEnabled: true }`. Merges with the active
+   * preview `mode` when opening the editor.
+   */
+  ionicConfig?: IonicConfig;
   /**
    * The major version of Ionic to use in the generated StackBlitz examples.
    * This will also load assets for StackBlitz from the specified version directory.
@@ -551,6 +564,7 @@ export default function Playground({
       title,
       description,
       includeIonContent,
+      ionicConfig,
       mode: isIOS ? 'ios' : 'md',
       version,
     };
