@@ -132,7 +132,16 @@ export default defineConfig({
 
 In a Capacitor build the bundled assets are served from a local origin (`capacitor://localhost` on iOS and `https://localhost` on Android by default), so the prefixed paths never resolve and the app fails to bootstrap.
 
-To fix it, reset `base` to `/` (or remove the option) before running `npx cap copy`. If you need both targets, keep a separate config file for each and select it at build time with `vite build --config`.
+To fix it, reset `base` to `/` (or remove the option) before running `npx cap copy`.
+
+```js
+// vite.config.js
+export default defineConfig({
+  base: '/',
+});
+```
+
+If you need both targets, keep a separate config file for each and select it at build time with `vite build --config`.
 
 To confirm this is the cause, inspect the device log for 404s on the prefixed asset paths:
 
