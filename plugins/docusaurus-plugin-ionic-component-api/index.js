@@ -54,6 +54,8 @@ module.exports = function (context, options) {
         await generateMarkdownForVersion(version, npmTag, context.i18n.currentLocale, false);
       }
 
+      // Dev build based on the `next` branch of `ionic-framework`.
+      // This must be used to build the docs with the new components.
       let npmTag = '8.8.7-dev.11779221548.1d38f927';
       if (currentVersion.banner === 'unreleased') {
         npmTag = 'next';
