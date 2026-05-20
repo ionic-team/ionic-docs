@@ -201,6 +201,14 @@ import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md
 
 <StartEndSlots />
 
+## Rich Content Options
+
+TODO
+
+import RichContentOptions from '@site/static/usage/v9/select/rich-content-options/index.md';
+
+<RichContentOptions />
+
 ## Customization
 
 There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
