@@ -336,9 +336,9 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Grid',
+      label: 'Grids',
       collapsed: false,
-      items: ['api/grid', 'api/col', 'api/row'],
+      items: ['api/grid', 'api/col', 'api/row', 'api/gallery'],
     },
     {
       type: 'category',
