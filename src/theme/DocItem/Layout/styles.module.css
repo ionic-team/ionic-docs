@@ -1,0 +1,21 @@
+.copyPageArticleAction {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 37px;
+  margin-bottom: 1rem;
+}
+
+.copyPageContainer {
+  display: inline-block;
+}
+
+.copyPageButton,
+.copyPageDropdown {
+  font-family: var(--ifm-font-family-base);
+}
+
+@media (min-width: 997px) {
+  .copyPageArticleAction {
+    display: none;
+  }
+}

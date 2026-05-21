@@ -1,0 +1,18 @@
+.copyPageAction {
+  padding: 0 var(--sidebar-spacing-horizontal) 1rem;
+}
+
+.copyPageContainer {
+  display: block;
+  width: 100%;
+}
+
+.copyPageButton {
+  width: 100%;
+  justify-content: space-between;
+  font-family: var(--ifm-font-family-base);
+}
+
+.copyPageDropdown {
+  font-family: var(--ifm-font-family-base);
+}
