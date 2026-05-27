@@ -14,7 +14,6 @@ import angular_global_css from './angular/global_css.md';
 
 <Playground
   version="9"
-  ionicConfig={{ innerHTMLTemplatesEnabled: true }}
   code={{
     javascript: {
       files: {

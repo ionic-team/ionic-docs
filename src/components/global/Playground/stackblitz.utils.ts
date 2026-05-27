@@ -1,7 +1,5 @@
 import sdk from '@stackblitz/sdk';
 
-import type { IonicConfig } from './playground.types';
-
 // The default title to use for StackBlitz examples (when not overwritten)
 const DEFAULT_EDITOR_TITLE = 'Ionic Docs Example';
 // The default description to use for StackBlitz examples (when not overwritten)
@@ -40,45 +38,8 @@ export interface EditorOptions {
    */
   mode?: string;
 
-  /**
-   * Ionic config values to inject into the generated StackBlitz bootstrap.
-   */
-  ionicConfig?: IonicConfig;
-
-  /**
-   * The major version of Ionic to use in the generated StackBlitz example.
-   * For example: `9` for Ionic 9.
-   */
   version?: string;
 }
-
-/**
- * Formats the Ionic config object for the generated StackBlitz example.
- * @param options The editor options.
- * @param indent The number of spaces to indent the formatted Ionic config object.
- * @returns The formatted Ionic config object.
- */
-const getFormattedIonicConfig = (options?: EditorOptions, indent = 0) => {
-  const config: IonicConfig = {
-    ...options?.ionicConfig,
-    ...(options?.mode ? { mode: options.mode } : {}),
-  };
-
-  const entries = Object.entries(config).filter(
-    (entry): entry is [string, boolean | number | string] =>
-      typeof entry[1] === 'boolean' || typeof entry[1] === 'number' || typeof entry[1] === 'string'
-  );
-
-  if (entries.length === 0) {
-    return '{}';
-  }
-
-  const pad = ' '.repeat(indent);
-  const propertyPad = ' '.repeat(indent + 2);
-  const lines = entries.map(([key, value]) => `${propertyPad}${JSON.stringify(key)}: ${JSON.stringify(value)}`);
-
-  return `{\n${lines.join(',\n')}\n${pad}}`;
-};
 
 const loadSourceFiles = async (files: string[], version: string) => {
   const versionDir = `v${version}`;
@@ -121,15 +82,15 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     ...options?.files,
   };
 
-  const ionicConfig = getFormattedIonicConfig(options, 6);
-
   files[indexHtml] = defaultFiles[1].replace(/{{ TEMPLATE }}/g, code).replace(
     '</head>',
     `
   <script>
     window.Ionic = {
-      config: ${ionicConfig}
-    };
+      config: {
+        mode: '${options?.mode}'
+      }
+    }
   </script>
 </head>
 `
@@ -198,18 +159,13 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     ...options?.files,
   };
 
-  const ionicConfig = getFormattedIonicConfig(options, 4);
-
   if (options?.version === '6') {
     files[main] = files[main].replace(
       'importProvidersFrom(IonicModule.forRoot({ }))',
-      `importProvidersFrom(IonicModule.forRoot(${ionicConfig}))`
+      `importProvidersFrom(IonicModule.forRoot({ mode: '${options?.mode}' }))`
     );
   } else {
-    files[main] = files[main].replace(
-      /provideIonicAngular\(\s*(\{[^}]*\})?\s*\)/s,
-      `provideIonicAngular(${ionicConfig})`
-    );
+    files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
   }
 
   sdk.openProject({
@@ -265,9 +221,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 }`,
   };
 
-  const ionicConfig = getFormattedIonicConfig(options);
-
-  files[appTsx] = files[appTsx].replace(/setupIonicReact\(\s*(\{[^}]*\})?\s*\)/s, `setupIonicReact(${ionicConfig})`);
+  files[appTsx] = files[appTsx].replace('setupIonicReact()', `setupIonicReact({ mode: '${options?.mode}' })`);
 
   sdk.openProject({
     template: 'node',
@@ -320,9 +274,12 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
 }`,
   };
 
-  const ionicConfig = getFormattedIonicConfig(options);
-
-  files[mainTs] = files[mainTs].replace(/\.use\(IonicVue(?:,\s*\{[^}]*\})?\)/s, `.use(IonicVue, ${ionicConfig})`);
+  files[mainTs] = files[mainTs].replace(
+    '.use(IonicVue)',
+    `.use(IonicVue, {
+  mode: '${options?.mode}'
+})`
+  );
 
   /**
    * We have to use StackBlitz web containers here (node template), due

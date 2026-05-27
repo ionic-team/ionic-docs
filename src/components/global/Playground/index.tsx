@@ -4,7 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { useColorMode } from '@docusaurus/theme-common';
-import { ConsoleItem, IonicConfig, Mode, UsageTarget } from './playground.types';
+import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -124,7 +124,6 @@ interface UsageTargetOptions {
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
  * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
  * @param includeIonContent Whether to include the `ion-app` and `ion-content` elements in the generated StackBlitz example.
- * @param ionicConfig Ionic config values to inject into generated StackBlitz examples.
  * @param version The major version of Ionic to use in the generated StackBlitz example.
  * @param defaultFramework The framework to select by default when no user preference is stored.
  * @returns The generated StackBlitz example.
@@ -139,7 +138,6 @@ export default function Playground({
   devicePreview,
   showConsole,
   includeIonContent = true,
-  ionicConfig,
   version,
   defaultFramework,
 }: {
@@ -157,12 +155,6 @@ export default function Playground({
   devicePreview?: boolean;
   showConsole?: boolean;
   includeIonContent: boolean;
-  /**
-   * Ionic config values to inject into generated StackBlitz examples. For
-   * example: `{ innerHTMLTemplatesEnabled: true }`. Merges with the active
-   * preview `mode` when opening the editor.
-   */
-  ionicConfig?: IonicConfig;
   /**
    * The major version of Ionic to use in the generated StackBlitz examples.
    * This will also load assets for StackBlitz from the specified version directory.
@@ -564,7 +556,6 @@ export default function Playground({
       title,
       description,
       includeIonContent,
-      ionicConfig,
       mode: isIOS ? 'ios' : 'md',
       version,
     };
