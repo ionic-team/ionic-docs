@@ -8,12 +8,10 @@
 
 import React, { useEffect } from 'react';
 import { useLocation } from '@docusaurus/router';
-import CopyPageButton from 'docusaurus-plugin-copy-page-button/react';
 import DocSidebar from '@theme-original/DocSidebar';
 import type { Props } from '@theme/DocSidebar';
 
 import Logo from '@theme-original/Logo';
-import styles from './styles.module.css';
 
 export default function DocSidebarWrapper(props: Props): JSX.Element {
   const location = useLocation();
@@ -30,15 +28,6 @@ export default function DocSidebarWrapper(props: Props): JSX.Element {
   return (
     <>
       <Logo />
-      <div className={styles.copyPageAction}>
-        <CopyPageButton
-          customStyles={{
-            container: { className: styles.copyPageContainer },
-            button: { className: styles.copyPageButton },
-            dropdown: { className: styles.copyPageDropdown },
-          }}
-        />
-      </div>
       <DocSidebar {...props} />
     </>
   );
