@@ -1,4 +1,16 @@
 ```html
+<script>
+  /**
+   * `innerHTMLTemplatesEnabled` must be enabled for rich-content
+   * select options to render correctly.
+   */
+  window.Ionic = {
+    config: {
+      innerHTMLTemplatesEnabled: true,
+    },
+  };
+</script>
+
 <ion-list>
   <!-- Dynamically created Select components will be added here -->
 </ion-list>
