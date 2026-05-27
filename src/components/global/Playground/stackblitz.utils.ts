@@ -4,6 +4,16 @@ import sdk from '@stackblitz/sdk';
 const DEFAULT_EDITOR_TITLE = 'Ionic Docs Example';
 // The default description to use for StackBlitz examples (when not overwritten)
 const DEFAULT_EDITOR_DESCRIPTION = '';
+// Temporary marker used while stripping/restoring HTML comments.
+const HTML_COMMENT_PLACEHOLDER = '__HTML_COMMENT_PLACEHOLDER_';
+const HTML_COMMENT_REGEX = /<!--[\s\S]*?-->/g;
+// Matches a live `window.Ionic = { config: ... }` assignment.
+// Also captures JS comments directly above it (// or /* */).
+// Captures: (1) leading indent, (2) optional comment block,
+// and (3) inner config object so comments can be re-attached
+// when the assignment is moved into the generated head script.
+const WINDOW_IONIC_CONFIG_ASSIGNMENT_REGEX =
+  /^([ \t]*)((?:\/\/[^\n]*\n[ \t]*)+|\/\*[\s\S]*?\*\/\s*)?window\.Ionic\s*=\s*\{\s*config\s*:\s*(\{[\s\S]*?\})\s*,?\s*\};?[ \t]*/m;
 
 export interface EditorOptions {
   /**
@@ -31,23 +41,221 @@ export interface EditorOptions {
    * `true` if `ion-app` and `ion-content` should automatically be injected into the
    * StackBlitz example.
    */
-  includeIonContent: boolean;
+  includeIonContent?: boolean;
 
   /**
    * The mode of the StackBlitz example.
    */
   mode?: string;
 
-  version?: string;
+  /**
+   * The major version of Ionic to use in the generated StackBlitz example.
+   * For example: `9` for Ionic 9.
+   */
+  version: string;
 }
 
+// Returns the inner content of a `{ ... }` config string.
+// If braces are missing or malformed, returns an empty string.
+const getConfigInnerContent = (config: string) => {
+  const firstBrace = config.indexOf('{');
+  const lastBrace = config.lastIndexOf('}');
+  if (firstBrace === -1 || lastBrace === -1 || firstBrace >= lastBrace) {
+    return '';
+  }
+  return config.slice(firstBrace + 1, lastBrace);
+};
+
+/**
+ * Formats the Ionic config object for the generated StackBlitz example.
+ * Always emits canonical 2-space indentation, and returns `{}` when mode is missing.
+ */
+const getFormattedIonicConfig = (options?: Pick<EditorOptions, 'mode'>) => {
+  if (!options?.mode) {
+    return '{}';
+  }
+  return `{\n  mode: ${JSON.stringify(options.mode)}\n}`;
+};
+
+// Merges the generated mode config into an existing config object string.
+// The existing inner content is re-indented to canonical 2 spaces so embedded
+// comments and properties align consistently, regardless of how deep the source
+// snippet's config was nested.
+const mergeFormattedIonicConfig = (existingConfig: string | undefined, modeConfig: string) => {
+  if (!existingConfig) {
+    return modeConfig;
+  }
+
+  const modeInner = getConfigInnerContent(modeConfig).trim();
+  if (modeInner.length === 0) {
+    return existingConfig;
+  }
+
+  const existingLines = getConfigInnerContent(existingConfig)
+    .split('\n')
+    .filter((line) => line.trim().length > 0);
+  if (existingLines.length === 0) {
+    return `{\n  ${modeInner}\n}`;
+  }
+
+  const minIndent = Math.min(...existingLines.map((line) => line.match(/^\s*/)?.[0].length ?? 0));
+  const normalizedInner = existingLines
+    .map((line) => `  ${line.slice(minIndent)}`)
+    .join('\n')
+    .replace(/,$/, '');
+
+  return `{\n${normalizedInner},\n  ${modeInner}\n}`;
+};
+
+// Indents every line after the first so a multi-line config can be
+// safely inlined after `config:` without shifting the first line.
+const indentConfig = (config: string, baseIndent: string) =>
+  config
+    .split('\n')
+    .map((line, index) => (index === 0 ? line : `${baseIndent}${line}`))
+    .join('\n');
+
+// Normalizes a captured comment block to a target indent while preserving
+// relative spacing inside the block (for example `*` alignment in JSDoc).
+const reindentCommentBlock = (comment: string | undefined, indent: string) => {
+  if (!comment) return '';
+  const lines = comment.split('\n').filter((line) => line.trim().length > 0);
+  if (lines.length === 0) return '';
+  const minIndent = Math.min(...lines.map((line) => line.match(/^\s*/)?.[0].length ?? 0));
+  return lines.map((line) => `${indent}${line.slice(minIndent)}`).join('\n');
+};
+
+// Inserts the final Ionic config object into the generated framework code.
+// The merged config is re-indented to align with the call expression's own
+// indentation in the source, so deeply nested calls (e.g. provideIonicAngular
+// inside a providers array) stay visually consistent.
+const injectFrameworkIonicConfig = (
+  source: string,
+  pattern: RegExp,
+  ionicConfig: string,
+  rebuild: (mergedConfig: string) => string
+) =>
+  source.replace(pattern, (...args: unknown[]) => {
+    const existing = args[1] as string | undefined;
+    const offset = args[args.length - 2] as number;
+    const full = args[args.length - 1] as string;
+
+    const lineStart = full.lastIndexOf('\n', offset - 1) + 1;
+    const callIndent = full.slice(lineStart, offset).match(/^[ \t]*/)?.[0] ?? '';
+
+    const merged = mergeFormattedIonicConfig(existing, ionicConfig);
+    return rebuild(indentConfig(merged, callIndent));
+  });
+
+// Temporarily masks HTML comments so window.Ionic extraction does not parse
+// commented-out script blocks as live code.
+const maskHtmlComments = (html: string) => {
+  const commentPlaceholders: string[] = [];
+  const maskedHtml = html.replace(HTML_COMMENT_REGEX, (commentBlock) => {
+    const placeholder = `${HTML_COMMENT_PLACEHOLDER}${commentPlaceholders.length}__`;
+    commentPlaceholders.push(commentBlock);
+    return placeholder;
+  });
+
+  return {
+    maskedHtml,
+    restore: (text: string) =>
+      text.replace(
+        new RegExp(`${HTML_COMMENT_PLACEHOLDER}(\\d+)__`, 'g'),
+        (_, index: string) => commentPlaceholders[Number(index)]
+      ),
+  };
+};
+
+// Extracts live `window.Ionic = { config: ... }` assignments from snippet code.
+// Returns cleaned source, merged config payload, and an attached leading
+// JS comment (if present) so callers can re-inject it in generated output.
+const extractHtmlIonicConfig = (code: string, ionicConfig: string) => {
+  let existingConfig: string | undefined;
+  let leadingComment: string | undefined;
+  const { maskedHtml, restore } = maskHtmlComments(code);
+
+  let cleanedCode = maskedHtml.replace(
+    WINDOW_IONIC_CONFIG_ASSIGNMENT_REGEX,
+    (_, indent: string, comment: string | undefined, config: string) => {
+      if (comment && comment.trim().length > 0) {
+        // Re-attach the leading indent that `^[ \t]*` consumed so the
+        // comment's first line stays aligned with the rest of the block.
+        leadingComment = `${indent}${comment.trim()}`;
+      }
+      existingConfig = config;
+      return '';
+    }
+  );
+
+  cleanedCode = cleanedCode
+    .replace(/<script>\s*\n([ \t]*\n)+/g, '<script>\n')
+    .replace(/<script>\s*<\/script>/g, '')
+    .replace(/\n{3,}/g, '\n\n');
+
+  return {
+    code: restore(cleanedCode),
+    ionicConfig: mergeFormattedIonicConfig(existingConfig, ionicConfig),
+    leadingComment,
+  };
+};
+
+// Inserts the final `window.Ionic` script into the generated HTML head,
+// preserving snippet content and reattached config comments.
+const injectHtmlIonicConfig = (templateHtml: string, code: string, options?: Pick<EditorOptions, 'mode'>) => {
+  const htmlConfig = extractHtmlIonicConfig(code, getFormattedIonicConfig(options));
+  const ionicConfig = indentConfig(htmlConfig.ionicConfig, '      ');
+  const leadingComment = reindentCommentBlock(htmlConfig.leadingComment, '    ');
+
+  return templateHtml.replace(/{{ TEMPLATE }}/g, htmlConfig.code).replace(
+    '</head>',
+    `
+  <script>
+${leadingComment ? `${leadingComment}\n` : ''}    window.Ionic = {
+      config: ${ionicConfig}
+    };
+  </script>
+</head>
+`
+  );
+};
+
+// Merges playground-specific dependency overrides
+// into package.json dependencies.
+const mergeEditorDependencies = (packageJson: any, dependencies?: Record<string, string>) => {
+  if (!dependencies) {
+    return packageJson;
+  }
+
+  return {
+    ...packageJson,
+    dependencies: {
+      ...packageJson.dependencies,
+      ...dependencies,
+    },
+  };
+};
+
+// Opens a StackBlitz project with shared template/title/description defaults.
+const openStackBlitzProject = (files: Record<string, string>, options?: EditorOptions) => {
+  sdk.openProject({
+    template: 'node',
+    title: options?.title ?? DEFAULT_EDITOR_TITLE,
+    description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
+    files,
+  });
+};
+
+// Loads framework template files from static StackBlitz scaffolds
+// for a docs version.
 const loadSourceFiles = async (files: string[], version: string) => {
   const versionDir = `v${version}`;
   const sourceFiles = await Promise.all(files.map((f) => fetch(`/docs/code/stackblitz/${versionDir}/${f}`)));
   return await Promise.all(sourceFiles.map((res) => res.text()));
 };
 
-const openHtmlEditor = async (code: string, options?: EditorOptions) => {
+// Builds and opens the HTML playground project.
+const openHtmlEditor = async (code: string, options: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'html/index.ts',
@@ -61,14 +269,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     options.version
   );
 
-  const package_json = JSON.parse(defaultFiles[3]);
-
-  if (options?.dependencies) {
-    package_json.dependencies = {
-      ...package_json.dependencies,
-      ...options.dependencies,
-    };
-  }
+  const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[3]), options?.dependencies);
 
   const indexHtml = 'index.html';
   const files = {
@@ -82,29 +283,13 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     ...options?.files,
   };
 
-  files[indexHtml] = defaultFiles[1].replace(/{{ TEMPLATE }}/g, code).replace(
-    '</head>',
-    `
-  <script>
-    window.Ionic = {
-      config: {
-        mode: '${options?.mode}'
-      }
-    }
-  </script>
-</head>
-`
-  );
+  files[indexHtml] = injectHtmlIonicConfig(defaultFiles[1], code, options);
 
-  sdk.openProject({
-    template: 'node',
-    title: options?.title ?? DEFAULT_EDITOR_TITLE,
-    description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files,
-  });
+  openStackBlitzProject(files, options);
 };
 
-const openAngularEditor = async (code: string, options?: EditorOptions) => {
+// Builds and opens the Angular playground project.
+const openAngularEditor = async (code: string, options: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'angular/package.json',
@@ -126,14 +311,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     options.version
   );
 
-  const package_json = JSON.parse(defaultFiles[0]);
-
-  if (options?.dependencies) {
-    package_json.dependencies = {
-      ...package_json.dependencies,
-      ...options.dependencies,
-    };
-  }
+  const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[0]), options?.dependencies);
 
   const main = 'src/main.ts';
 
@@ -159,24 +337,28 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     ...options?.files,
   };
 
-  if (options?.version === '6') {
-    files[main] = files[main].replace(
-      'importProvidersFrom(IonicModule.forRoot({ }))',
-      `importProvidersFrom(IonicModule.forRoot({ mode: '${options?.mode}' }))`
-    );
-  } else {
-    files[main] = files[main].replace('provideIonicAngular()', `provideIonicAngular({ mode: '${options?.mode}' })`);
-  }
+  const ionicConfig = getFormattedIonicConfig(options);
+  // Angular v6 uses IonicModule.forRoot. Angular v7+ use provideIonicAngular.
+  files[main] =
+    options.version === '6'
+      ? injectFrameworkIonicConfig(
+          files[main],
+          /IonicModule\.forRoot\(\s*(\{[\s\S]*?\})?\s*\)/s,
+          ionicConfig,
+          (c) => `IonicModule.forRoot(${c})`
+        )
+      : injectFrameworkIonicConfig(
+          files[main],
+          /provideIonicAngular\(\s*(\{[\s\S]*?\})?\s*\)/s,
+          ionicConfig,
+          (c) => `provideIonicAngular(${c})`
+        );
 
-  sdk.openProject({
-    template: 'node',
-    title: options?.title ?? DEFAULT_EDITOR_TITLE,
-    description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files,
-  });
+  openStackBlitzProject(files, options);
 };
 
-const openReactEditor = async (code: string, options?: EditorOptions) => {
+// Builds and opens the React playground project.
+const openReactEditor = async (code: string, options: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'react/index.tsx',
@@ -193,14 +375,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     options.version
   );
 
-  const package_json = JSON.parse(defaultFiles[4]);
-
-  if (options?.dependencies) {
-    package_json.dependencies = {
-      ...package_json.dependencies,
-      ...options.dependencies,
-    };
-  }
+  const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[4]), options?.dependencies);
 
   const appTsx = 'src/App.tsx';
   const files = {
@@ -221,17 +396,18 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 }`,
   };
 
-  files[appTsx] = files[appTsx].replace('setupIonicReact()', `setupIonicReact({ mode: '${options?.mode}' })`);
+  files[appTsx] = injectFrameworkIonicConfig(
+    files[appTsx],
+    /setupIonicReact\(\s*(\{[\s\S]*?\})?\s*\)/s,
+    getFormattedIonicConfig(options),
+    (c) => `setupIonicReact(${c})`
+  );
 
-  sdk.openProject({
-    template: 'node',
-    title: options?.title ?? DEFAULT_EDITOR_TITLE,
-    description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files,
-  });
+  openStackBlitzProject(files, options);
 };
 
-const openVueEditor = async (code: string, options?: EditorOptions) => {
+// Builds and opens the Vue playground project.
+const openVueEditor = async (code: string, options: EditorOptions) => {
   const defaultFiles = await loadSourceFiles(
     [
       'vue/package.json',
@@ -247,14 +423,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     options.version
   );
 
-  const package_json = JSON.parse(defaultFiles[0]);
-
-  if (options?.dependencies) {
-    package_json.dependencies = {
-      ...package_json.dependencies,
-      ...options.dependencies,
-    };
-  }
+  const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[0]), options?.dependencies);
 
   const mainTs = 'src/main.ts';
   const files = {
@@ -274,11 +443,11 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
 }`,
   };
 
-  files[mainTs] = files[mainTs].replace(
-    '.use(IonicVue)',
-    `.use(IonicVue, {
-  mode: '${options?.mode}'
-})`
+  files[mainTs] = injectFrameworkIonicConfig(
+    files[mainTs],
+    /\.use\(IonicVue(?:,\s*(\{[\s\S]*?\}))?\)/s,
+    getFormattedIonicConfig(options),
+    (c) => `.use(IonicVue, ${c})`
   );
 
   /**
@@ -287,12 +456,8 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
    *
    * https://github.com/stackblitz/core/issues/1308
    */
-  sdk.openProject({
-    template: 'node',
-    title: options?.title ?? DEFAULT_EDITOR_TITLE,
-    description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files,
-  });
+  openStackBlitzProject(files, options);
 };
 
 export { openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor };
+export { getFormattedIonicConfig, mergeFormattedIonicConfig, extractHtmlIonicConfig };
