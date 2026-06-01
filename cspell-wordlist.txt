@@ -62,6 +62,8 @@ runtimes
 scroller
 subcomponent
 subcomponents
+subpath
+subpaths
 swipeable
 templating
 transpiling
