@@ -364,7 +364,7 @@ The selected date will not render if `preferWheel` is set to `true`.
 
 <DatetimeHeaderStyling />
 
-### Calender Header
+### Calendar Header
 
 The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
 
