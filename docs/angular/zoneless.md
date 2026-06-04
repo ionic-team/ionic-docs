@@ -11,7 +11,7 @@ sidebar_label: Zoneless
   />
 </head>
 
-Angular 21 makes [zoneless change detection](https://angular.dev/guide/zoneless) the default, removing the dependency on Zone.js. This guide covers what you need to know to run an Ionic Angular app without Zone.js.
+Angular 21 and 22 make [zoneless change detection](https://angular.dev/guide/zoneless) the default, removing the dependency on Zone.js. This guide covers what you need to know to run an Ionic Angular app without Zone.js.
 
 With Zone.js, Angular automatically re-renders after almost any asynchronous task. Without it, Angular only re-renders when you explicitly tell it the view is out of date. Most of your app keeps working unchanged, but a few patterns that relied on Zone.js need a small adjustment.
 
@@ -25,6 +25,10 @@ You do not need to change these. Angular schedules change detection for them in 
 - The `async` pipe.
 - Ionic page lifecycle hooks (`ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, `ionViewDidLeave`) that set state synchronously. Ionic notifies Angular after each hook runs.
 - Navigation, route transitions, and tab switching.
+
+:::note Angular 22
+Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. For the migration path, refer to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/docs/updating/9-0.md#onpush-change-detection-on-angular-22).
+:::
 
 ## What needs a notification
 
