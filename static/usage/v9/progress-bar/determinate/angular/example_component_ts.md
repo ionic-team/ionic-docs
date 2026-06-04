@@ -1,5 +1,5 @@
 ```ts
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { IonProgressBar } from '@ionic/angular/standalone';
 
 @Component({
@@ -9,17 +9,17 @@ import { IonProgressBar } from '@ionic/angular/standalone';
   imports: [IonProgressBar],
 })
 export class ExampleComponent {
-  public progress = 0;
+  readonly progress = signal(0);
 
   constructor() {
     setInterval(() => {
-      this.progress += 0.01;
+      this.progress.update((value) => value + 0.01);
 
       // Reset the progress bar when it reaches 100%
       // to continuously show the demo
-      if (this.progress > 1) {
+      if (this.progress() > 1) {
         setTimeout(() => {
-          this.progress = 0;
+          this.progress.set(0);
         }, 1000);
       }
     }, 50);

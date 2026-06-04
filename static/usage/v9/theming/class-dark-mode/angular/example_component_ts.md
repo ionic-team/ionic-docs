@@ -1,6 +1,5 @@
 ```ts
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, signal } from '@angular/core';
 import {
   IonBackButton,
   IonButton,
@@ -27,7 +26,6 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [
-    FormsModule,
     IonBackButton,
     IonButton,
     IonButtons,
@@ -46,7 +44,9 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
   ],
 })
 export class ExampleComponent implements OnInit {
-  paletteToggle = false;
+  // A signal so the palette state set from the matchMedia listener (which fires
+  // outside Angular) re-renders the toggle on its own, with no manual change detection.
+  readonly paletteToggle = signal(false);
 
   constructor() {
     /**
@@ -71,13 +71,13 @@ export class ExampleComponent implements OnInit {
 
   // Check/uncheck the toggle and update the palette based on isDark
   initializeDarkPalette(isDark: boolean) {
-    this.paletteToggle = isDark;
+    this.paletteToggle.set(isDark);
     this.toggleDarkPalette(isDark);
   }
 
   // Listen for the toggle check/uncheck to toggle the dark palette
   toggleChange(event: CustomEvent) {
-    this.toggleDarkPalette(event.detail.checked);
+    this.initializeDarkPalette(event.detail.checked);
   }
 
   // Add or remove the "ion-palette-dark" class on the html element

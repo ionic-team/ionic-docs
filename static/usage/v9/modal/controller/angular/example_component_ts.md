@@ -1,5 +1,5 @@
 ```ts
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar, ModalController } from '@ionic/angular/standalone';
 
@@ -12,7 +12,7 @@ import { ModalExampleComponent } from './modal-example.component';
   imports: [FormsModule, IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  message = 'This modal example uses the modalController to present and dismiss modals.';
+  readonly message = signal('This modal example uses the modalController to present and dismiss modals.');
 
   constructor(private modalCtrl: ModalController) {}
 
@@ -25,7 +25,7 @@ export class ExampleComponent {
     const { data, role } = await modal.onWillDismiss();
 
     if (role === 'confirm') {
-      this.message = `Hello, ${data}!`;
+      this.message.set(`Hello, ${data}!`);
     }
   }
 }

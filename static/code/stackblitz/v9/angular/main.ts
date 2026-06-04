@@ -8,7 +8,8 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    // Angular 21 defaults to zoneless change detection; Ionic requires zone-based.
+    // Angular 21+ defaults to zoneless change detection. The playground opts into
+    // Zone.js so the embedded examples render without per-example signal wiring.
     provideZoneChangeDetection(),
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),

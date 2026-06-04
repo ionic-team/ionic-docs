@@ -1,3 +1,3 @@
 ```html
-<ion-progress-bar [value]="progress"></ion-progress-bar>
+<ion-progress-bar [value]="progress()"></ion-progress-bar>
 ```
