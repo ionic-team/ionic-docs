@@ -1,16 +1,16 @@
 ```html
 <ion-gallery [columns]="columns">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>
-  <div>10</div>
-  <div>11</div>
-  <div>12</div>
+  <ion-gallery-item>1</ion-gallery-item>
+  <ion-gallery-item>2</ion-gallery-item>
+  <ion-gallery-item>3</ion-gallery-item>
+  <ion-gallery-item>4</ion-gallery-item>
+  <ion-gallery-item>5</ion-gallery-item>
+  <ion-gallery-item>6</ion-gallery-item>
+  <ion-gallery-item>7</ion-gallery-item>
+  <ion-gallery-item>8</ion-gallery-item>
+  <ion-gallery-item>9</ion-gallery-item>
+  <ion-gallery-item>10</ion-gallery-item>
+  <ion-gallery-item>11</ion-gallery-item>
+  <ion-gallery-item>12</ion-gallery-item>
 </ion-gallery>
 ```
