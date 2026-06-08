@@ -21,7 +21,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The gallery arranges images, cards, and other content in a responsive grid. It supports uniform and masonry layouts, configurable column counts (fixed or breakpoint-based), and multiple masonry ordering modes.
+The Gallery arranges images, cards, and other content in a responsive grid. It supports uniform and masonry layouts, configurable column counts (fixed or breakpoint-based), and multiple masonry ordering modes.
+
+Each [Gallery Item](./gallery-item.md) is a single cell of the grid and can contain plain text or any element, such as an `img`, a `figure` with a caption, or a [Card](./card.md).
 
 ## Basic Usage
 
@@ -41,10 +43,6 @@ import Uniform from '@site/static/usage/v9/gallery/uniform/index.md';
 
 Masonry preserves each item's natural height and stacks items vertically within each column, creating a staggered layout with minimal gaps. Masonry supports two ordering modes: sequential and best fit.
 
-:::important
-Avoid adding margin to top-level items in a masonry layout, as it can cause incorrect item placement. To add spacing, wrap the content in a child element and apply margin to that wrapper instead.
-:::
-
 ### Sequential
 
 Sequential is the default masonry ordering mode. Items are placed in DOM order, filling columns from left to right.
@@ -63,10 +61,10 @@ import MasonryBestFit from '@site/static/usage/v9/gallery/masonry-best-fit/index
 
 ### Images
 
-In masonry layouts, top-level `img` elements are given default styles to ensure consistent rendering. These styles make images fill their container while preserving their aspect ratio and keeping them centered.
+An `img` placed directly inside a Gallery Item is given default styles to ensure consistent rendering. These styles make images fill their cell while preserving their aspect ratio and keeping them centered.
 
 :::tip
-Images wrapped in other elements (for example, inside a `figure`) do not inherit these defaults. Apply the same styles to the nested `img` if you want matching behavior, for example:
+Images wrapped in another element (for example, inside a `figure`) do not receive these defaults. Apply the same styles to the nested `img` if you want matching behavior, for example:
 
 ```css
 figure img {
@@ -88,7 +86,7 @@ import Images from '@site/static/usage/v9/gallery/images/index.md';
 
 Columns can be configured with the `columns` property using either a single number for a fixed column count, or a breakpoint map to change columns across screen sizes.
 
-If no value is provided, or if an invalid value is used, the gallery falls back to its default responsive column behavior. The default column counts by breakpoint are:
+If no value is provided, or if an invalid value is used, the Gallery falls back to its default responsive column behavior. The default column counts by breakpoint are:
 
 | Breakpoint | Min Width | Default Columns |
 | --- | --- | ---|
@@ -112,7 +110,11 @@ Whether provided as a single value or as a value inside a breakpoint map, each g
 - A **string** can be any valid CSS [length-percentage](https://developer.mozilla.org/en-US/docs/Web/CSS/length-percentage) (such as `16px`, `1rem`, or `20%`), a math function (such as `calc(1rem + 8px)`), or a CSS variable (such as `var(--app-gallery-gap)`).
 - A **number** is treated as a pixel value, so `16` is equivalent to `"16px"`.
 
-If no value is provided, or if an invalid value is used, the gallery falls back to its default gap value. The default value is `16px`.
+If no value is provided, or if an invalid value is used, the Gallery falls back to its default gap value. The default value is `16px`.
+
+:::tip
+Use the `gap` property to space items apart rather than CSS margins. Margins set on item content are reset so they cannot disrupt the layout calculations, so they will not produce the spacing you expect. Use `gap` for the space _between_ items, and `padding` on your content to inset it _within_ an item.
+:::
 
 import Gap from '@site/static/usage/v9/gallery/gap/index.md';
 
