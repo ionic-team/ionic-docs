@@ -6,8 +6,14 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="../../common.css" />
     <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@8.8.9-dev.11780945313.14080cb4/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@8.8.9-dev.11780945313.14080cb4/css/ionic.bundle.css"
+    />
   </head>
 
   <body>
@@ -15,12 +21,12 @@
       <ion-content class="ion-padding">
         <div class="container">
           <ion-gallery>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
+            <ion-gallery-item>1</ion-gallery-item>
+            <ion-gallery-item>2</ion-gallery-item>
+            <ion-gallery-item>3</ion-gallery-item>
+            <ion-gallery-item>4</ion-gallery-item>
+            <ion-gallery-item>5</ion-gallery-item>
+            <ion-gallery-item>6</ion-gallery-item>
           </ion-gallery>
         </div>
       </ion-content>
@@ -33,7 +39,7 @@
         padding: 16px 36px;
       }
 
-      ion-gallery div {
+      ion-gallery-item {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -41,28 +47,28 @@
         border-radius: 16px;
       }
 
-      ion-gallery div:nth-child(1) {
+      ion-gallery-item:nth-child(1) {
         background: #ff6b6b;
       }
 
-      ion-gallery div:nth-child(2) {
+      ion-gallery-item:nth-child(2) {
         background: #4ecdc4;
       }
 
-      ion-gallery div:nth-child(3) {
+      ion-gallery-item:nth-child(3) {
         background: #ffe66d;
         color: #333;
       }
 
-      ion-gallery div:nth-child(4) {
+      ion-gallery-item:nth-child(4) {
         background: #5f27cd;
       }
 
-      ion-gallery div:nth-child(5) {
+      ion-gallery-item:nth-child(5) {
         background: #7f8c8d;
       }
 
-      ion-gallery div:nth-child(6) {
+      ion-gallery-item:nth-child(6) {
         background: #ff9f43;
       }
     </style>
