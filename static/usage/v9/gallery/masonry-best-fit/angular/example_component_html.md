@@ -1,10 +1,10 @@
 ```html
 <ion-gallery layout="masonry" order="best-fit">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
+  <ion-gallery-item>1</ion-gallery-item>
+  <ion-gallery-item>2</ion-gallery-item>
+  <ion-gallery-item>3</ion-gallery-item>
+  <ion-gallery-item>4</ion-gallery-item>
+  <ion-gallery-item>5</ion-gallery-item>
+  <ion-gallery-item>6</ion-gallery-item>
 </ion-gallery>
 ```
