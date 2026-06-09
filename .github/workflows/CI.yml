@@ -25,6 +25,8 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
+    - name: Test
+      run: npm run test
     - name: Spell Check
       run: npm run spellcheck
     # Lint and spell check changes should be pushed
