@@ -107,6 +107,11 @@ import Columns from '@site/static/usage/v9/gallery/columns/index.md';
 
 Gap can be configured with the `gap` property using either a single value for a fixed gap, or a breakpoint map to change gap across screen sizes.
 
+Whether provided as a single value or as a value inside a breakpoint map, each gap value can be either a **string** or a **number**:
+
+- A **string** can be any valid CSS [length-percentage](https://developer.mozilla.org/en-US/docs/Web/CSS/length-percentage) (such as `16px`, `1rem`, or `20%`), a math function (such as `calc(1rem + 8px)`), or a CSS variable (such as `var(--app-gallery-gap)`).
+- A **number** is treated as a pixel value, so `16` is equivalent to `"16px"`.
+
 If no value is provided, or if an invalid value is used, the gallery falls back to its default gap value. The default value is `16px`.
 
 import Gap from '@site/static/usage/v9/gallery/gap/index.md';
