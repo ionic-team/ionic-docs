@@ -94,6 +94,7 @@ module.exports = {
         'angular/testing',
         'angular/storage',
         'angular/performance',
+        'angular/zoneless',
         'angular/pwa',
       ],
     },
