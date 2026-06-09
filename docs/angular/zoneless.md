@@ -35,11 +35,11 @@ When you update component state from an asynchronous callback that Angular did n
 - `Platform` event subscriptions (`backButton`, `resize`, `pause`, `resume`, keyboard events) and `Platform.ready()`.
 - Any `setTimeout`, `setInterval`, or RxJS subscription that assigns to a component field.
 
-There are two ways to fix this. Prefer signals.
+You can notify Angular in two ways: write to a [signal](https://angular.dev/guide/signals) that the template reads, or inject `ChangeDetectorRef` and call `markForCheck()` after the update. We recommend signals because they work the same with or without Zone.js.
 
-## Recommended: signals
+### Signals (recommended)
 
-Writing a [signal](https://angular.dev/guide/signals) that a template reads schedules change detection automatically. This works the same with or without Zone.js, so it is the most portable option.
+Writing a signal that a template reads schedules change detection automatically, so there is nothing extra to remember after the update.
 
 ```ts
 import { Component, inject, signal } from '@angular/core';
@@ -62,13 +62,13 @@ export class HomePage {
     await modal.present();
 
     const { data } = await modal.onWillDismiss<string>();
-    // Writing the signal updates the view. No markForCheck needed.
+    // Writing the signal updates the view automatically.
     this.selected.set(data);
   }
 }
 ```
 
-## Alternative: `ChangeDetectorRef.markForCheck()`
+### `ChangeDetectorRef.markForCheck()`
 
 If you are not using signals for a particular piece of state, inject `ChangeDetectorRef` and call `markForCheck()` after the asynchronous update. It is a no-op-or-better under Zone.js, so it is safe to leave in place if you later re-enable zones.
 
@@ -93,7 +93,11 @@ export class ListPage {
 }
 ```
 
-## Inline overlays with dynamic content
+## Common Ionic patterns
+
+These apply the two approaches above to patterns you are likely to hit in an Ionic app.
+
+### Inline overlays with dynamic content
 
 Content projected into an inline `ion-modal` or `ion-popover` follows the same rule. If you populate it asynchronously, update a signal or call `markForCheck()`:
 
@@ -124,7 +128,7 @@ export class InlinePage {
 
 Inline overlays also expose their events as outputs (for example `ionModalDidDismiss`), which you can convert to a signal with [`toSignal`](https://angular.dev/api/core/rxjs-interop/toSignal) if you prefer a reactive style.
 
-## Platform events
+### Platform events
 
 `Platform` exposes its events as RxJS subjects. Update a signal inside the subscription so the view reflects the change:
 
