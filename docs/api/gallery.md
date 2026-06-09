@@ -122,16 +122,16 @@ import Gap from '@site/static/usage/v9/gallery/gap/index.md';
 
 ## Interfaces
 
-### GalleryBreakpointColumns
+### GalleryBreakpoints
 
 ```typescript
-interface GalleryBreakpointColumns {
-  xs?: string | number;
-  sm?: string | number;
-  md?: string | number;
-  lg?: string | number;
-  xl?: string | number;
-  xxl?: string | number;
+interface GalleryBreakpoints<T = string | number> {
+  xs?: T;
+  sm?: T;
+  md?: T;
+  lg?: T;
+  xl?: T;
+  xxl?: T;
 }
 ```
 
@@ -140,7 +140,13 @@ interface GalleryBreakpointColumns {
 ### GalleryColumns
 
 ```typescript
-type GalleryColumns = GalleryBreakpointColumns | string | number;
+type GalleryColumns = GalleryBreakpoints | string | number;
+```
+
+### GalleryGap
+
+```typescript
+type GalleryGap = GalleryBreakpoints | string | number;
 ```
 
 ## Properties
