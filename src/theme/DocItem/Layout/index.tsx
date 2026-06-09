@@ -13,7 +13,6 @@ import React from 'react';
 import clsx from 'clsx';
 import {useWindowSize} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
-import CopyPageButton from 'docusaurus-plugin-copy-page-button/react';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
@@ -24,7 +23,6 @@ import DocItemContent from '@theme/DocItem/Content';
 import ContentVisibility from '@theme/ContentVisibility';
 import type {Props} from '@theme/DocItem/Layout';
 import styles from '@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.module.css';
-import copyPageStyles from './styles.module.css';
 
 // CUSTOM CODE
 import DocDemo from '@components/global/DocDemo';
@@ -88,15 +86,6 @@ export default function DocItemLayout({children, ...props}: Props): JSX.Element 
             <article>
               <DocVersionBadge />
               {docTOC.mobile}
-              <div className={copyPageStyles.copyPageArticleAction}>
-                <CopyPageButton
-                  customStyles={{
-                    container: {className: copyPageStyles.copyPageContainer},
-                    button: {className: copyPageStyles.copyPageButton},
-                    dropdown: {className: copyPageStyles.copyPageDropdown},
-                  }}
-                />
-              </div>
               <DocItemContent>{children}</DocItemContent>
               <DocItemFooter />
             </article>

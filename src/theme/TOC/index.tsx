@@ -11,14 +11,11 @@ import React, { useState, useEffect } from 'react';
 import TOC from '@theme-original/TOC';
 import type { Props } from '@theme/TOC';
 
-import CopyPageButton from 'docusaurus-plugin-copy-page-button/react';
 import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
-
-import styles from './styles.module.css';
 
 interface TOCProps extends Props {
   editUrl: string;
@@ -40,15 +37,6 @@ export default function TOCWrapper(props: TOCProps): JSX.Element {
 
   return (
     <div className="toc-wrapper">
-      <div className={styles.copyPageAction}>
-        <CopyPageButton
-          customStyles={{
-            container: { className: styles.copyPageContainer },
-            button: { className: styles.copyPageButton },
-            dropdown: { className: styles.copyPageDropdown },
-          }}
-        />
-      </div>
       <h2>Contents</h2>
       <TOC {...props} />
       <EditThisPage editUrl={metadata.editUrl} />
