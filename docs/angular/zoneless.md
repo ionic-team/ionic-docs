@@ -11,7 +11,7 @@ sidebar_label: Zoneless
   />
 </head>
 
-Angular 21 and 22 make [zoneless change detection](https://angular.dev/guide/zoneless) the default, removing the dependency on Zone.js. This guide covers what you need to know to run an Ionic Angular app without Zone.js.
+Angular 21 made [zoneless change detection](https://angular.dev/guide/zoneless) the default, removing the dependency on Zone.js. This guide covers what you need to know to run an Ionic Angular app without Zone.js.
 
 With Zone.js, Angular automatically re-renders after almost any asynchronous task. Without it, Angular only re-renders when you explicitly tell it the view is out of date. Most of your app keeps working unchanged, but a few patterns that relied on Zone.js need a small adjustment.
 

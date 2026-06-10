@@ -44,8 +44,8 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
   ],
 })
 export class ExampleComponent implements OnInit {
-  // A signal so the palette state set from the matchMedia listener (which fires
-  // outside Angular) re-renders the toggle on its own, with no manual change detection.
+  // Backs the toggle's checked state. Using a signal keeps the toggle in sync
+  // when the value is updated from the matchMedia listener, even without Zone.js.
   readonly paletteToggle = signal(false);
 
   constructor() {
