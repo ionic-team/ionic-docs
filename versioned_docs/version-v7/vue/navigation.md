@@ -494,6 +494,8 @@ Nothing should be provided inside of `IonRouterOutlet` when setting it up in you
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
+`IonPage` is also required for proper styling. It provides a flex container that ensures page content, such as `IonContent`, is properly sized and does not overlap other UI elements like `IonTabBar`.
+
 ```vue
 <template>
   <ion-page>
@@ -525,7 +527,7 @@ For example usages, please refer to our [Utility Functions](utility-functions#us
 
 ## URL Parameters
 
-Let's expand upon our original routing example to show how we can use URL parameters:
+Let's expand upon our original routing example to show how we can use URL parameters. We recommend [passing URL parameters as props](https://router.vuejs.org/guide/essentials/passing-props.html) so that the component does not need a direct reference to the router, which makes it easier to reuse and test in isolation.
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -542,11 +544,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/detail/:id',
     name: 'Detail',
     component: DetailPage,
+    props: true,
   },
 ];
 ```
 
-Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders.
+Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders. Setting `props: true` on the route record tells Vue Router to pass the matched URL parameters to the component as props.
 
 Let's look at how to use it in our component:
 
@@ -565,14 +568,12 @@ Let's look at how to use it in our component:
 
 <script setup lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-import { useRoute } from 'vue-router';
 
-const route = useRoute();
-const { id } = route.params;
+defineProps<{ id: string }>();
 </script>
 ```
 
-Our `route` variable contains an instance of the current route. It also contains any parameters we have passed in. We can obtain the `id` parameter from here and display it on the screen.
+The `id` parameter from the URL is received as a prop and rendered on the screen. The component has no dependency on the router itself.
 
 ## Router History
 

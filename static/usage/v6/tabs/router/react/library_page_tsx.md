@@ -1,9 +1,9 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const LibraryPage = () => (
-  <>
+  <IonPage>
     <IonHeader>
       <IonToolbar>
         <IonTitle>Library</IonTitle>
@@ -21,7 +21,7 @@ const LibraryPage = () => (
         Library content
       </div>
     </IonContent>
-  </>
+  </IonPage>
 );
 
 export default LibraryPage;

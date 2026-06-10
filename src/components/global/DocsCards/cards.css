@@ -7,12 +7,15 @@ docs-cards {
 
 /*
  * This prevents a single card from stretching the full width by
- * forcing a 2-column grid layout (a single card will only take up
- * 1 column instead of stretching across both). This is used on the
+ * adding an invisible pseudo-element as a second grid item. This
+ * creates a 2-column layout on larger screens (card takes 1 column)
+ * and collapses to full width on smaller screens. This is used on the
  * Packages & CDN page by the JavaScript section.
  */
-docs-cards:has(docs-card:only-child) {
-  grid-template-columns: 1fr 1fr;
+docs-cards:has(docs-card:only-child)::after {
+  content: '';
+  display: block;
+  visibility: hidden;
 }
 
 docs-cards > docs-card {

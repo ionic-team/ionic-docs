@@ -15,11 +15,15 @@ module.exports = function (context, options) {
        * Generates the markdown files for all components in a given version.
        * @param {*} version The version, e.g.: v6
        * @param {*} npmTag The npm tag, e.g.: 6 or next
+       * @param {*} lang The language, e.g.: en or ja
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
-      const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
+      const generateMarkdownForVersion = async (version, npmTag, lang, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
-        const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+        const response =
+          isCurrentVersion && lang === 'ja'
+            ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+            : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
         const names = components.map((component) => component.tag.slice(4));
@@ -47,7 +51,7 @@ module.exports = function (context, options) {
       for (const version of options.versions) {
         const npmTag = version.slice(1);
 
-        await generateMarkdownForVersion(version, npmTag, false);
+        await generateMarkdownForVersion(version, npmTag, context.i18n.currentLocale, false);
       }
 
       let npmTag = 'latest';
@@ -57,7 +61,12 @@ module.exports = function (context, options) {
         npmTag = currentVersion.path.slice(1);
       }
       // Latest version
-      await generateMarkdownForVersion(currentVersion.path || currentVersion.label, npmTag, true);
+      await generateMarkdownForVersion(
+        currentVersion.path || currentVersion.label,
+        npmTag,
+        context.i18n.currentLocale,
+        true
+      );
 
       return data;
     },
@@ -83,6 +92,7 @@ module.exports = function (context, options) {
 
       await Promise.all(promises);
     },
+
     configureWebpack(config, isServer, utils) {
       /**
        * Adds a custom import alias to the webpack configuration, so that the markdown files
@@ -120,6 +130,38 @@ function getDirectoryPath(componentTag, version, isCurrentVersion) {
  */
 function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
+}
+
+/**
+ * Kebab-case slug for API identifiers (camelCase props, method names).
+ */
+function apiIdentifierSlug(name) {
+  return name
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/_/g, '-')
+    .toLowerCase();
+}
+
+/**
+ * Heading id for Properties subheadings.
+ * Prefixes IDs with `prop-` so they never collide with narrative sections on the same
+ * doc page that use headings like "Shape", "Fill", or "Size".
+ *
+ * Anchors become `#prop-${slug}` rather than `#${slug}`.
+ */
+function propertyHeadingId(propName) {
+  return `prop-${apiIdentifierSlug(propName)}`;
+}
+
+/**
+ * Heading id for Methods subheadings.
+ * Prefixes IDs with `method-` so they never collide with narrative sections on the same
+ * doc page that use headings like "Dismiss", "Present", or "Close".
+ *
+ * Anchors become `#method-${slug}` rather than `#${slug}`.
+ */
+function methodHeadingId(methodName) {
+  return `method-${apiIdentifierSlug(methodName)}`;
 }
 
 function formatType(attr, type) {
@@ -171,7 +213,7 @@ ${properties
     }
 
     return `
-### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
+### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {#${propertyHeadingId(prop.name)}}
 
 | | |
 | --- | --- |
@@ -233,7 +275,7 @@ function renderMethods({ methods }) {
 ${methods
   .map(
     (method) => `
-### ${method.name}
+### ${method.name} {#${methodHeadingId(method.name)}}
 
 | | |
 | --- | --- |
@@ -321,7 +363,12 @@ function renderSlots({ slots }) {
   return `
 | Name | Description |
 | --- | --- |
-${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
-
+${slots
+  .map((slot) => {
+    const slotName = slot.name?.trim();
+    const displayedSlotName = slotName ? `\`${slotName}\`` : '';
+    return `| ${displayedSlotName} | ${formatMultiline(slot.docs)} |`;
+  })
+  .join('\n')}
 `;
 }
