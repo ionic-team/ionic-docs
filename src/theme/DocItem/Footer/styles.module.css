@@ -9,16 +9,19 @@
   flex-wrap: wrap;
 }
 
-/* Divider between "Edit this page" and "Copy page" — only when both render */
+/* Divider between "Edit this page" and "Copy page" — only when both render.
+ * Logical properties so the divider/spacing respect RTL layouts. */
 .editMetaActions > :not(:first-child) {
-  margin-left: 0.85rem;
-  padding-left: 0.85rem;
-  border-left: 1px solid var(--ifm-color-emphasis-300);
+  margin-inline-start: 0.85rem;
+  padding-inline-start: 0.85rem;
+  border-inline-start: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .copyPageContainer {
   display: inline-flex;
   align-items: center;
+  /* Match the "Edit this page" link's top margin so the two sit on one row */
+  margin-block-start: 1.25rem;
 }
 
 /* Strip the default button chrome so it reads as a link, matching the
