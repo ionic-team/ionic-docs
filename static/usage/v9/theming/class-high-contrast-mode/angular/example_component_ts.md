@@ -1,6 +1,5 @@
 ```ts
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, signal } from '@angular/core';
 import {
   IonBackButton,
   IonButton,
@@ -27,7 +26,6 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [
-    FormsModule,
     IonBackButton,
     IonButton,
     IonButtons,
@@ -46,8 +44,10 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
   ],
 })
 export class ExampleComponent implements OnInit {
-  darkPaletteToggle = false;
-  highContrastPaletteToggle = false;
+  // Signals so the palette state set from the matchMedia listeners (which fire
+  // outside Angular) re-renders the toggles on its own, with no manual change detection.
+  readonly darkPaletteToggle = signal(false);
+  readonly highContrastPaletteToggle = signal(false);
 
   constructor() {
     /**
@@ -77,24 +77,24 @@ export class ExampleComponent implements OnInit {
 
   // Check/uncheck the toggle and update the palette based on isDark
   initializeDarkPalette(isDark: boolean) {
-    this.darkPaletteToggle = isDark;
+    this.darkPaletteToggle.set(isDark);
     this.toggleDarkPalette(isDark);
   }
 
   // Check/uncheck the toggle and update the palette based on isHighContrast
   initializeHighContrastPalette(isHighContrast: boolean) {
-    this.highContrastPaletteToggle = isHighContrast;
+    this.highContrastPaletteToggle.set(isHighContrast);
     this.toggleHighContrastPalette(isHighContrast);
   }
 
   // Listen for the toggle check/uncheck to toggle the dark palette
   darkPaletteToggleChange(event: CustomEvent) {
-    this.toggleDarkPalette(event.detail.checked);
+    this.initializeDarkPalette(event.detail.checked);
   }
 
   // Listen for the toggle check/uncheck to toggle the high contrast palette
   highContrastPaletteToggleChange(event: CustomEvent) {
-    this.toggleHighContrastPalette(event.detail.checked);
+    this.initializeHighContrastPalette(event.detail.checked);
   }
 
   // Add or remove the "ion-palette-dark" class on the html element

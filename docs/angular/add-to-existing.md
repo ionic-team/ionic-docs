@@ -96,7 +96,7 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-This reflects the Angular 21 scaffold, which is zoneless by default. If your existing app is on Angular 18 through 20, it still has `provideZoneChangeDetection({ eventCoalescing: true })`; keep that provider and add `provideIonicAngular({})` alongside it. Refer to [Zoneless Change Detection](/docs/angular/zoneless.md) for details.
+This reflects the Angular 21 and 22 scaffold, which is zoneless by default. If your existing app is on Angular 18 through 20, it still has `provideZoneChangeDetection({ eventCoalescing: true })`; keep that provider and add `provideIonicAngular({})` alongside it. Refer to [Zoneless Change Detection](/docs/angular/zoneless.md) for details.
 
 ## Using Individual Components
 
