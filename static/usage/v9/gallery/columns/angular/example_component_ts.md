@@ -1,12 +1,12 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonGallery } from '@ionic/angular/standalone';
+import { IonGallery, IonGalleryItem } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
-  imports: [IonGallery],
+  imports: [IonGallery, IonGalleryItem],
 })
 export class ExampleComponent {
   columns = {

@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonGallery } from '@ionic/react';
+import { IonGallery, IonGalleryItem } from '@ionic/react';
 
 import './main.css';
 
@@ -16,12 +16,12 @@ function Example() {
         xxl: '12px',
       }}
     >
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
+      <IonGalleryItem>1</IonGalleryItem>
+      <IonGalleryItem>2</IonGalleryItem>
+      <IonGalleryItem>3</IonGalleryItem>
+      <IonGalleryItem>4</IonGalleryItem>
+      <IonGalleryItem>5</IonGalleryItem>
+      <IonGalleryItem>6</IonGalleryItem>
     </IonGallery>
   );
 }
