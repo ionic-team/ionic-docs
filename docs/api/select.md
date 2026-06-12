@@ -201,6 +201,22 @@ import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md
 
 <StartEndSlots />
 
+## Rich Content Options
+
+:::important
+Rich content in select options is disabled by default. Set [`innerHTMLTemplatesEnabled`](/docs/developing/config.md#ionicconfig) to `true` in your [global Ionic config](/docs/developing/config.md#global-config). Markup inside options is treated as plain text when it is disabled. Refer to [Security](/docs/techniques/security.md) for sanitization guidance when enabling custom HTML.
+:::
+
+In addition to single text labels, [Select Options](./select-option.md) can include HTML rich content in the select interface. Elements added inside of an option without a named slot will go into the default slot. The `start` and `end` slots will place elements on either side of the default slot. The `description` attribute can be used for additional supporting text displayed under the label.
+
+This is separate from [Start and End Slots](#start-and-end-slots) on `ion-select`, which decorate the closed field. The rich content options display in the interface after opening the select.
+
+When an option is selected, the closed field shows the option's text content as plain text only. HTML markup is stripped, and the `start` and `end` slots and the `description` attribute are not included in the selected display.
+
+import RichContentOptions from '@site/static/usage/v9/select/rich-content-options/index.md';
+
+<RichContentOptions />
+
 ## Customization
 
 There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.

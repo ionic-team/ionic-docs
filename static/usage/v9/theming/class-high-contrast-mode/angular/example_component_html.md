@@ -17,13 +17,13 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list [inset]="true">
     <ion-item>
-      <ion-toggle [(ngModel)]="darkPaletteToggle" (ionChange)="darkPaletteToggleChange($event)" justify="space-between"
+      <ion-toggle [checked]="darkPaletteToggle()" (ionChange)="darkPaletteToggleChange($event)" justify="space-between"
         >Dark Mode</ion-toggle
       >
     </ion-item>
     <ion-item>
       <ion-toggle
-        [(ngModel)]="highContrastPaletteToggle"
+        [checked]="highContrastPaletteToggle()"
         (ionChange)="highContrastPaletteToggleChange($event)"
         justify="space-between"
         >High Contrast Mode</ion-toggle

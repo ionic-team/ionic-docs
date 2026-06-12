@@ -7,6 +7,7 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
+  IonInput,
   IonItem,
   IonTitle,
   IonToolbar,
@@ -16,7 +17,7 @@ import {
 @Component({
   selector: 'app-modal-example',
   templateUrl: 'modal-example.component.html',
-  imports: [FormsModule, IonButton, IonButtons, IonContent, IonHeader, IonItem, IonTitle, IonToolbar],
+  imports: [FormsModule, IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonTitle, IonToolbar],
 })
 export class ModalExampleComponent {
   name!: string;

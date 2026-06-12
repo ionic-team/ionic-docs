@@ -120,8 +120,13 @@ interface UsageTargetOptions {
  * @param description Optional description of the generated playground example. Specify to customize the StackBlitz description.
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param mode Restricts the playground to a single specified mode. Acceptable values are: `ios` or `md`.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
  * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
+ * @param includeIonContent Whether to include the `ion-app` and `ion-content` elements in the generated StackBlitz example.
+ * @param version The major version of Ionic to use in the generated StackBlitz example.
+ * @param defaultFramework The framework to select by default when no user preference is stored.
+ * @returns The generated StackBlitz example.
  */
 export default function Playground({
   code,
