@@ -21,7 +21,7 @@ Open `photo.service.ts` and begin by defining a new property in the `PhotoServic
 
 ```ts
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   // CHANGE: Add a key for photo storage
   private PHOTO_STORAGE: string = 'photos';
@@ -57,12 +57,12 @@ export class PhotoService {
 
     const savedImageFile = await this.savePicture(capturedPhoto);
 
-    this.photos.unshift(savedImageFile);
+    this.photos.update((photos) => [savedImageFile, ...photos]);
 
     // CHANGE: Add method to cache all photo data for future retrieval
     Preferences.set({
       key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
+      value: JSON.stringify(this.photos()),
     });
   }
 
@@ -85,7 +85,7 @@ export class PhotoService {
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+    this.photos.set((photoList ? JSON.parse(photoList) : []) as UserPhoto[]);
   }
 }
 ```
@@ -100,10 +100,10 @@ export class PhotoService {
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+    const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
     // CHANGE: Display the photo by reading into base64 format
-    for (let photo of this.photos) {
+    for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
         path: photo.filepath,
@@ -113,6 +113,9 @@ export class PhotoService {
       // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
+
+    // CHANGE: Set the signal so the gallery view updates
+    this.photos.set(photos);
   }
 }
 ```
@@ -120,7 +123,7 @@ export class PhotoService {
 `photo.service.ts` should now look like this:
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -130,7 +133,7 @@ import { Preferences } from '@capacitor/preferences';
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   private PHOTO_STORAGE: string = 'photos';
 
@@ -145,11 +148,11 @@ export class PhotoService {
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
-    this.photos.unshift(savedImageFile);
+    this.photos.update((photos) => [savedImageFile, ...photos]);
 
     Preferences.set({
       key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
+      value: JSON.stringify(this.photos()),
     });
   }
 
@@ -189,9 +192,9 @@ export class PhotoService {
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+    const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-    for (let photo of this.photos) {
+    for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
       const readFile = await Filesystem.readFile({
         path: photo.filepath,
@@ -201,6 +204,8 @@ export class PhotoService {
       // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
+
+    this.photos.set(photos);
   }
 }
 
@@ -215,17 +220,48 @@ Our `PhotoService` can now load the saved images, but we'll need to update `tab2
 Update `tab2.page.ts` to look like the following:
 
 ```ts
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+} from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { camera } from 'ionicons/icons';
 import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  standalone: false,
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+  ],
 })
-export class Tab2Page {
-  constructor(public photoService: PhotoService) {}
+export class Tab2Page implements OnInit {
+  public photoService = inject(PhotoService);
+
+  constructor() {
+    addIcons({ camera });
+  }
 
   // CHANGE: Add call to `loadSaved()` when navigating to the Photos tab
   async ngOnInit() {
