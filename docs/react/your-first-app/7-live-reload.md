@@ -187,7 +187,7 @@ Wrap each image in a `<button>` element with a click handler. When the app user 
       <IonCol size="6" key={index}>
         {/* CHANGE: Wrap the image in a button element and add a click event listener. */}
         <button onClick={() => setPhotoToDelete(photo)}>
-          <img src={photo.webviewPath} alt={`Photo ${index + 1}`} loading="lazy"/>
+          <img src={photo.webviewPath} alt={`Photo ${index + 1}`} loading="lazy" />
         </button>
       </IonCol>
     ))}

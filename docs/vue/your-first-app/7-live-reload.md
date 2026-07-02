@@ -157,7 +157,7 @@ Wrap each image in a `<button>` element with a click handler. When the app user 
           <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
             <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
             <button @click="showActionSheet(photo)">
-              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy"/>
+              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
             </button>
           </ion-col>
         </ion-row>

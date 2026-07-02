@@ -108,18 +108,7 @@ import { PhotoService } from '../services/photo.service';
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonFab,
-    IonFabButton,
-    IonIcon,
-  ],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon],
 })
 export class Tab2Page implements OnInit {
   public photoService = inject(PhotoService);
@@ -186,12 +175,12 @@ Open `tab2.page.html` and wrap each image in a `<button>` element with a click h
   <ion-grid>
     <ion-row>
       @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
-        <ion-col size="6">
-          <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
-          <button (click)="showActionSheet(photo, position)">
-            <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy"/>
-          </button>
-        </ion-col>
+      <ion-col size="6">
+        <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
+        <button (click)="showActionSheet(photo, position)">
+          <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
+        </button>
+      </ion-col>
       }
     </ion-row>
   </ion-grid>
