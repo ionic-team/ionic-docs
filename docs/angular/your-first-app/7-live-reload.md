@@ -38,7 +38,7 @@ With Live Reload running and the app open on your device, let’s implement phot
 In `photo.service.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we use the Capacitor Preferences API to update the cached version of the `photos` array. Finally, we delete the actual photo file itself using the Filesystem API.
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -54,13 +54,13 @@ export class PhotoService {
 
   // CHANGE: Add `deletePhoto()` method
   public async deletePhoto(photo: UserPhoto, position: number) {
-    // Remove this photo from the Photos reference data array
-    this.photos.splice(position, 1);
+    // Remove this photo from the photos signal
+    this.photos.update((photos) => photos.filter((_, index) => index !== position));
 
     // Update photos array cache by overwriting the existing photo array
     Preferences.set({
       key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
+      value: JSON.stringify(this.photos()),
     });
 
     // Delete photo file from filesystem
@@ -82,24 +82,64 @@ export interface UserPhoto {
 Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```ts
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  // CHANGE: Add import
+  ActionSheetController,
+} from '@ionic/angular';
+import { addIcons } from 'ionicons';
+// CHANGE: Register the `trash` and `close` icons used by the action sheet
+import { camera, trash, close } from 'ionicons/icons';
 // Change: Add import
 import type { UserPhoto } from '../services/photo.service';
 import { PhotoService } from '../services/photo.service';
-// CHANGE: Add import
-import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  standalone: false,
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+  ],
 })
-export class Tab2Page {
-  // CHANGE: Update constructor
-  constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
+export class Tab2Page implements OnInit {
+  public photoService = inject(PhotoService);
+  // CHANGE: Inject the ActionSheetController
+  private actionSheetController = inject(ActionSheetController);
 
-  // ...existing code...
+  constructor() {
+    // CHANGE: Register the icons this page uses
+    addIcons({ camera, trash, close });
+  }
+
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+  }
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
 
   // CHANGE: Add `showActionSheet()` method
   public async showActionSheet(photo: UserPhoto, position: number) {
@@ -147,10 +187,12 @@ Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. W
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+      @for (photo of photoService.photos(); track photo.webviewPath; let position = $index) {
+      <ion-col size="6">
         <!-- CHANGE: Add a click event listener to each image -->
         <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
       </ion-col>
+      }
     </ion-row>
   </ion-grid>
 

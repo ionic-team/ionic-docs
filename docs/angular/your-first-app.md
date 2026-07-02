@@ -78,7 +78,7 @@ ionic start photo-gallery tabs --type=angular
 
 :::note
 
-When prompted to choose between `NgModules` and `Standalone`, opt for `NgModules` as this tutorial follows the `NgModules` approach.
+When prompted to choose between `NgModules` and `Standalone`, choose `Standalone` as this tutorial follows the standalone components approach.
 
 :::
 
@@ -109,17 +109,25 @@ npm install @ionic/pwa-elements
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 // CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// CHANGE: Call the element loader before the `bootstrapModule` call
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+
+// CHANGE: Call the element loader before the `bootstrapApplication` call
 defineCustomElements(window);
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.log(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideIonicAngular(),
+    provideRouter(routes, withPreloading(PreloadAllModules)),
+  ],
+}).catch((err) => console.error(err));
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.
