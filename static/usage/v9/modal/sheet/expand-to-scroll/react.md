@@ -12,7 +12,6 @@ import {
   IonItem,
   IonLabel,
   IonAvatar,
-  IonImg,
 } from '@ionic/react';
 
 function Example() {
@@ -37,7 +36,7 @@ function Example() {
             <IonList>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=b" />
+                  <img src="https://i.pravatar.cc/300?u=b" alt="Portrait of Connor Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Connor Smith</h2>
@@ -46,10 +45,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=m" alt="Portrait of Jack Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Jack Smith</h2>
@@ -58,7 +54,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=a" />
+                  <img src="https://i.pravatar.cc/300?u=a" alt="Portrait of Daniel Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Daniel Smith</h2>
@@ -67,10 +63,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=f" alt="Portrait of Claire Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Claire Smith</h2>
@@ -79,7 +72,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=c" />
+                  <img src="https://i.pravatar.cc/300?u=c" alt="Portrait of Kim Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Kim Smith</h2>
@@ -88,10 +81,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=e" alt="Portrait of Alex Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Alex Smith</h2>
@@ -100,10 +90,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=o" alt="Portrait of Eric Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Eric Smith</h2>
@@ -112,10 +99,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=x" alt="Portrait of Grace Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Grace Smith</h2>
@@ -124,10 +108,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=q" alt="Portrait of Henry Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Henry Smith</h2>
@@ -136,7 +117,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=d" />
+                  <img src="https://i.pravatar.cc/300?u=d" alt="Portrait of Greg Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Greg Smith</h2>
@@ -145,7 +126,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=e" />
+                  <img src="https://i.pravatar.cc/300?u=l" alt="Portrait of Zoey Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Zoey Smith</h2>
@@ -154,10 +135,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg
-                    alt="Silhouette of a person's head"
-                    src="https://ionicframework.com/docs/img/demos/avatar.svg"
-                  />
+                  <img src="https://i.pravatar.cc/300?u=p" alt="Portrait of Oliver Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Oliver Smith</h2>
@@ -166,7 +144,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=f" />
+                  <img src="https://i.pravatar.cc/300?u=r" alt="Portrait of Emma Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Emma Smith</h2>

@@ -5,7 +5,6 @@ import {
   IonButton,
   IonContent,
   IonHeader,
-  IonImg,
   IonItem,
   IonLabel,
   IonList,
@@ -18,19 +17,7 @@ import {
   selector: 'app-example',
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
-  imports: [
-    IonAvatar,
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonImg,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonModal,
-    IonTitle,
-    IonToolbar,
-  ],
+  imports: [IonAvatar, IonButton, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {}
 ```
