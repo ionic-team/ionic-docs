@@ -135,7 +135,7 @@ const showActionSheet = async (photo: UserPhoto) => {
 </script>
 ```
 
-Add a click handler to the `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Wrap each image in a `<button>` element with a click handler. When the app user taps on a photo in our gallery, we'll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```vue
 <template>
@@ -154,9 +154,11 @@ Add a click handler to the `<ion-img>` element. When the app user taps on a phot
 
       <ion-grid>
         <ion-row>
-          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-            <!-- CHANGE: Add a click event listener to each image -->
-            <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+          <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
+            <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
+            <button @click="showActionSheet(photo)">
+              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy"/>
+            </button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -169,6 +171,25 @@ Add a click handler to the `<ion-img>` element. When the app user taps on a phot
     </ion-content>
   </ion-page>
 </template>
+
+<style scoped>
+ion-col > button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
 ```
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
