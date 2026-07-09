@@ -71,7 +71,6 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonImg,
   IonFab,
   IonFabButton,
   IonIcon,
@@ -87,19 +86,7 @@ import { PhotoService } from '../services/photo.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   // CHANGE: Add the standalone component imports
-  imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonImg,
-    IonFab,
-    IonFabButton,
-    IonIcon,
-  ],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon],
 })
 export class Tab2Page {
   // CHANGE: Inject the PhotoService
@@ -242,7 +229,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, switch to `tab2.page.html` to display the images. We'll add a [Grid component](../../api/grid.md) so the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `PhotoService`'s `photos` signal with the built-in [`@for`](https://angular.dev/guide/templates/control-flow#for-block-repeaters) block - calling `photoService.photos()` reads the signal's current value. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
+Next, switch to `tab2.page.html` to display the images. We'll add a [Grid component](../../api/grid.md) so the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `PhotoService`'s `photos` signal with the built-in [`@for`](https://angular.dev/guide/templates/control-flow#for-block-repeaters) block - calling `photoService.photos()` reads the signal's current value. For each item, add an `<img>` element and set its `src` property to the photo's path.
 
 ```html
 <ion-header [translucent]="true">
@@ -261,10 +248,10 @@ Next, switch to `tab2.page.html` to display the images. We'll add a [Grid compon
   <!-- CHANGE: Add a grid component to display the photos. -->
   <ion-grid>
     <ion-row>
-      <!-- CHANGE: Create a new column and image component for each photo -->
-      @for (photo of photoService.photos(); track photo.webviewPath; let position = $index) {
+      <!-- CHANGE: Create a new column and image element for each photo -->
+      @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
       <ion-col size="6">
-        <ion-img [src]="photo.webviewPath"></ion-img>
+        <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
       </ion-col>
       }
     </ion-row>

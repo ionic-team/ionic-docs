@@ -91,7 +91,6 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonImg,
   IonFab,
   IonFabButton,
   IonIcon,
@@ -109,19 +108,7 @@ import { PhotoService } from '../services/photo.service';
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonImg,
-    IonFab,
-    IonFabButton,
-    IonIcon,
-  ],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon],
 })
 export class Tab2Page implements OnInit {
   public photoService = inject(PhotoService);
@@ -169,7 +156,7 @@ export class Tab2Page implements OnInit {
 }
 ```
 
-Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Open `tab2.page.html` and wrap each image in a `<button>` element with a click handler. When the app user taps on a photo in our gallery, we'll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
 <ion-header [translucent]="true">
@@ -187,10 +174,12 @@ Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. W
 
   <ion-grid>
     <ion-row>
-      @for (photo of photoService.photos(); track photo.webviewPath; let position = $index) {
+      @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
       <ion-col size="6">
-        <!-- CHANGE: Add a click event listener to each image -->
-        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
+        <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
+        <button (click)="showActionSheet(photo, position)">
+          <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
+        </button>
       </ion-col>
       }
     </ion-row>
@@ -204,10 +193,31 @@ Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. W
 </ion-content>
 ```
 
+Add the following CSS to `tab2.page.scss` to style the gallery buttons and images:
+
+```css
+ion-col > button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+```
+
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/tutorial-photo-gallery-angular).
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.
