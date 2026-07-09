@@ -155,7 +155,7 @@ We can install the `IonicSlides` module by importing and passing it to the `modu
 ```typescript
 // home.page.ts
 
-import { IonicSlides } from '@ionic/angular';
+import { IonicSlides } from '@ionic/angular/lazy';
 
 @Component({
   ...
@@ -171,7 +171,7 @@ export class HomePage {
 ```typescript
 // home.page.ts
 
-import { IonicSlides } from '@ionic/angular/standalone';
+import { IonicSlides } from '@ionic/angular';
 
 @Component({
   ...

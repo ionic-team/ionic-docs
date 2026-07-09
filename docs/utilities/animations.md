@@ -76,7 +76,7 @@ Developers using Angular should install the latest version of `@ionic/angular`. 
 
 ```tsx
 
-import { Animation, AnimationController } from '@ionic/angular';
+import { Animation, AnimationController } from '@ionic/angular/lazy';
 
 ...
 
@@ -95,7 +95,7 @@ Developers using Angular should install the latest version of `@ionic/angular`. 
 
 ```tsx
 
-import { Animation, AnimationController } from '@ionic/angular/standalone';
+import { Animation, AnimationController } from '@ionic/angular';
 
 ...
 

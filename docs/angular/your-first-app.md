@@ -111,7 +111,7 @@ Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 ```ts
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
-import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/lazy';
 // CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 

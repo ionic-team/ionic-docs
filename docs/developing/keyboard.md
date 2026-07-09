@@ -103,7 +103,7 @@ window.addEventListener('ionKeyboardDidHide', () => {
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 ...
 
@@ -122,7 +122,7 @@ constructor(private platform: Platform) {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 ...
 

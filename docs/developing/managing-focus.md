@@ -61,7 +61,7 @@ Developers can use the `ionViewDidEnter` lifecycle event to set focus to an elem
 ```ts
 /* example.component.ts */
 import { Component, ViewChild } from '@angular/core';
-import { IonInput } from '@ionic/angular';
+import { IonInput } from '@ionic/angular/lazy';
 
 @Component({
   selector: 'app-example',
@@ -167,7 +167,7 @@ Developers can use the `didPresent` lifecycle event to set focus to an element w
 ```ts
 /* example.component.ts */
 import { Component, ViewChild } from '@angular/core';
-import { IonInput } from '@ionic/angular';
+import { IonInput } from '@ionic/angular/lazy';
 
 @Component({
   selector: 'app-example',

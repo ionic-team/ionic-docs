@@ -103,7 +103,7 @@ See [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) 
 <TabItem value="angular">
 
 ```tsx
-import { IonicSafeString, ToastController } from '@ionic/angular';
+import { IonicSafeString, ToastController } from '@ionic/angular/lazy';
 
 ...
 
@@ -122,7 +122,7 @@ async presentToast() {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { IonicSafeString, ToastController } from '@ionic/angular/standalone';
+import { IonicSafeString, ToastController } from '@ionic/angular';
 
 ...
 
