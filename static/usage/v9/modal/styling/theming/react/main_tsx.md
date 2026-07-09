@@ -13,7 +13,6 @@ import {
   IonItem,
   IonLabel,
   IonAvatar,
-  IonImg,
 } from '@ionic/react';
 
 import './main.css';
@@ -49,7 +48,7 @@ function Example() {
             <IonList>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=b" />
+                  <img src="https://i.pravatar.cc/300?u=b" alt="Portrait of Connor Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Connor Smith</h2>
@@ -58,7 +57,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=a" />
+                  <img src="https://i.pravatar.cc/300?u=a" alt="Portrait of Daniel Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Daniel Smith</h2>
@@ -67,7 +66,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=d" />
+                  <img src="https://i.pravatar.cc/300?u=d" alt="Portrait of Greg Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Greg Smith</h2>
@@ -76,7 +75,7 @@ function Example() {
               </IonItem>
               <IonItem>
                 <IonAvatar slot="start">
-                  <IonImg src="https://i.pravatar.cc/300?u=e" />
+                  <img src="https://i.pravatar.cc/300?u=l" alt="Portrait of Zoey Smith" />
                 </IonAvatar>
                 <IonLabel>
                   <h2>Zoey Smith</h2>

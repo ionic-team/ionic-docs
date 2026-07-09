@@ -12,7 +12,7 @@
       <ion-list>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="https://i.pravatar.cc/300?u=b" />
+            <img src="https://i.pravatar.cc/300?u=b" alt="Portrait of Connor Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Connor Smith</h2>
@@ -21,7 +21,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=m" alt="Portrait of Jack Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Jack Smith</h2>
@@ -30,7 +30,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="https://i.pravatar.cc/300?u=a" />
+            <img src="https://i.pravatar.cc/300?u=a" alt="Portrait of Daniel Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Daniel Smith</h2>
@@ -39,7 +39,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=f" alt="Portrait of Claire Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Claire Smith</h2>
@@ -48,7 +48,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="https://i.pravatar.cc/300?u=c" />
+            <img src="https://i.pravatar.cc/300?u=c" alt="Portrait of Kim Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Kim Smith</h2>
@@ -57,7 +57,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=e" alt="Portrait of Alex Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Alex Smith</h2>
@@ -66,7 +66,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=o" alt="Portrait of Eric Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Eric Smith</h2>
@@ -75,7 +75,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=x" alt="Portrait of Grace Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Grace Smith</h2>
@@ -84,7 +84,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=q" alt="Portrait of Henry Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Henry Smith</h2>
@@ -93,7 +93,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="https://i.pravatar.cc/300?u=d" />
+            <img src="https://i.pravatar.cc/300?u=d" alt="Portrait of Greg Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Greg Smith</h2>
@@ -102,7 +102,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="https://i.pravatar.cc/300?u=e" />
+            <img src="https://i.pravatar.cc/300?u=l" alt="Portrait of Zoey Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Zoey Smith</h2>
@@ -111,7 +111,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=p" alt="Portrait of Oliver Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Oliver Smith</h2>
@@ -120,7 +120,7 @@
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img src="https://i.pravatar.cc/300?u=r" alt="Portrait of Emma Smith" />
           </ion-avatar>
           <ion-label>
             <h2>Emma Smith</h2>
