@@ -10,7 +10,7 @@ import {
   IonLabel,
   IonList,
   IonThumbnail,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

@@ -1,6 +1,6 @@
 ```tsx
 import { Component, OnInit } from '@angular/core';
-import { IonAvatar, IonContent, IonInfiniteScroll, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
+import { IonAvatar, IonContent, IonInfiniteScroll, IonItem, IonLabel, IonList } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

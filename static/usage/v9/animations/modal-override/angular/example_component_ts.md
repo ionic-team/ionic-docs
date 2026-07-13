@@ -8,8 +8,8 @@ import {
   IonModal,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
-import { AnimationController } from '@ionic/angular/standalone';
+} from '@ionic/angular';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

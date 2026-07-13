@@ -8,7 +8,7 @@ import {
   IonLabel,
   IonList,
   IonPopover,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

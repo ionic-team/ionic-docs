@@ -9,7 +9,7 @@ import {
   IonListHeader,
   IonSkeletonText,
   IonThumbnail,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { musicalNotes } from 'ionicons/icons';

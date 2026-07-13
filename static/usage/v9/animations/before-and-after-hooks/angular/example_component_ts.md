@@ -1,9 +1,9 @@
 ```ts
 import { Component, ElementRef, ViewChildren } from '@angular/core';
-import { IonButton, IonCard, IonCardContent } from '@ionic/angular/standalone';
+import { IonButton, IonCard, IonCardContent } from '@ionic/angular';
 import type { QueryList } from '@angular/core';
-import type { Animation } from '@ionic/angular/standalone';
-import { AnimationController } from '@ionic/angular/standalone';
+import type { Animation } from '@ionic/angular';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

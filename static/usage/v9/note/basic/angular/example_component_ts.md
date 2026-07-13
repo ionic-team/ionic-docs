@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonNote } from '@ionic/angular/standalone';
+import { IonNote } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   selector: 'app-page-two',

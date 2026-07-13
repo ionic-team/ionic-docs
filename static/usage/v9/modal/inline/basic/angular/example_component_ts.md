@@ -11,7 +11,7 @@ import {
   IonModal,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({

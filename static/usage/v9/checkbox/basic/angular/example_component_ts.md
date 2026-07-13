@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonCheckbox } from '@ionic/angular/standalone';
+import { IonCheckbox } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

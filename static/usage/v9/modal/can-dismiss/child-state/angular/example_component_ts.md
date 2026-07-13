@@ -9,7 +9,7 @@ import {
   IonModal,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { ChildComponent } from './child.component';
 

@@ -10,7 +10,7 @@ import {
   IonTitle,
   IonToolbar,
   IonRouterLink,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard-page',

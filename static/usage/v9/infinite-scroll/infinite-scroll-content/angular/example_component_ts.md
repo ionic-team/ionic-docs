@@ -8,7 +8,7 @@ import {
   IonItem,
   IonLabel,
   IonList,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

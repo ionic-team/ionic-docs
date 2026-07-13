@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonButton, IonContent, IonNav } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonNav } from '@ionic/angular';
 
 import { PageTwoComponent } from './page-two.component';
 

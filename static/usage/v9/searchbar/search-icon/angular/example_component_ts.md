@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonSearchbar } from '@ionic/angular/standalone';
+import { IonSearchbar } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { searchCircle } from 'ionicons/icons';

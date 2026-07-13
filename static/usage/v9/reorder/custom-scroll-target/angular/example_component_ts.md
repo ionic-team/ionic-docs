@@ -8,7 +8,7 @@ import {
   IonList,
   IonReorder,
   IonReorderGroup,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

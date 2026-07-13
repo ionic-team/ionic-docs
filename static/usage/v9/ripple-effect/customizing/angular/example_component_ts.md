@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonRippleEffect } from '@ionic/angular/standalone';
+import { IonRippleEffect } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

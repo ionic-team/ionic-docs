@@ -9,7 +9,7 @@ import {
   IonNav,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { PageOneComponent } from './page-one.component';
 

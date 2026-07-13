@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonRange } from '@ionic/angular/standalone';
+import { IonRange } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

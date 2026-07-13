@@ -7,7 +7,7 @@ import {
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
