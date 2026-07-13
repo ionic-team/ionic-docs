@@ -1,16 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import {
-  IonContent,
-  IonHeader,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonTitle,
-  IonToolbar,
-  IonRouterLink,
-} from '@ionic/angular';
+import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonToolbar, IonRouterLink } from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard-page',

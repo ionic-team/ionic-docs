@@ -1,15 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import {
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonModal,
-  IonNav,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/angular';
+import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonNav, IonTitle, IonToolbar } from '@ionic/angular';
 
 import { PageOneComponent } from './page-one.component';
 

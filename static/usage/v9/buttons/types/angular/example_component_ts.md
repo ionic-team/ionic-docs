@@ -1,14 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import {
-  IonBackButton,
-  IonButton,
-  IonButtons,
-  IonIcon,
-  IonMenuButton,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/angular';
+import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';

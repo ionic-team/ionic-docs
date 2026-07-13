@@ -1,14 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import {
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonModal,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/angular';
+import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar } from '@ionic/angular';
 import { AnimationController } from '@ionic/angular';
 
 @Component({
