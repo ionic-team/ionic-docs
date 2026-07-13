@@ -172,7 +172,7 @@ import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
-  inports: [IonInput],
+  imports: [IonInput],
   templateUrl: './example.component.html',
 })
 export class ExampleComponent {
