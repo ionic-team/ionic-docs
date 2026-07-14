@@ -302,7 +302,7 @@ By default, `ionChange` is emitted with the new datetime value whenever a new da
 
 ### Showing Confirmation Buttons
 
-The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#confirm) and [`cancel`](#cancel) methods, respectively.
+The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#method-confirm) and [`cancel`](#method-cancel) methods, respectively.
 
 <ShowingConfirmationButtons />
 
