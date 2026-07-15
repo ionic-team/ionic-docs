@@ -1,5 +1,6 @@
 :root {
   --edit-this-page-c: var(--ifm-link-color);
+  --edit-this-page-opacity: 0.7;
 }
 
 .theme-edit-this-page {
@@ -9,8 +10,6 @@
 
   grid-template-columns: 0.875rem 1fr;
 
-  margin-block-start: 1.25rem;
-
   color: var(--edit-this-page-c);
 
   transition: opacity 0.2s ease-out;
@@ -19,6 +18,6 @@
   &:active,
   &:focus {
     color: var(--edit-this-page-c);
-    opacity: 0.7;
+    opacity: var(--edit-this-page-opacity);
   }
 }

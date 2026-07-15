@@ -67,7 +67,6 @@ However, the `em` unit has a compounding effect which can cause issues. In the f
     <div class="child">Child element with 80px</div>
   </div>
 </div>
-```
 
 <div style={{ fontSize: '20px' }}>
   Parent element with 20px
@@ -76,6 +75,7 @@ However, the `em` unit has a compounding effect which can cause issues. In the f
     <div style={{ fontSize: '2em' }}>Child element with 80px</div>
   </div>
 </div>
+```
 
 Due to this compounding effect, we strongly recommend using `rem` units instead of `em` units when working with Dynamic Font Scaling. `rem` units set the font size of an element relative to the font size of the root element, which is typically `<html>`. The default font size of the root element is typically `16px`.
 
