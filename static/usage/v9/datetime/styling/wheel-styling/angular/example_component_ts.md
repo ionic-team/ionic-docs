@@ -1,6 +1,6 @@
 ```ts
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IonDatetime } from '@ionic/angular/standalone';
+import { IonDatetime } from '@ionic/angular';
 
 // ViewEncapsulation is turned off for this demo due to
 // a lack of support for styling multiple css shadow parts

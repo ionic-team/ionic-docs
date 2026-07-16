@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonInput, IonItem, IonList } from '@ionic/angular/standalone';
+import { IonInput, IonItem, IonList } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
 import { MaskitoOptions, MaskitoElementPredicate, maskitoTransform } from '@maskito/core';

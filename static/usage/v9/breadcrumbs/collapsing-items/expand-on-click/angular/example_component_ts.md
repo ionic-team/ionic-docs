@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
+import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

@@ -11,7 +11,7 @@ import {
   IonText,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { chevronForward, listCircle } from 'ionicons/icons';

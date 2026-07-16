@@ -83,7 +83,7 @@ Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 <TabItem value="angular">
 
 ```ts
-import { Config } from '@ionic/angular';
+import { Config } from '@ionic/angular/lazy';
 
 @Component(...)
 class AppComponent {
@@ -97,7 +97,7 @@ class AppComponent {
 <TabItem value="angular-standalone">
 
 ```ts
-import { Config } from '@ionic/angular/standalone';
+import { Config } from '@ionic/angular';
 
 @Component(...)
 class AppComponent {
@@ -130,7 +130,7 @@ class AppComponent {
 <TabItem value="angular">
 
 ```ts
-import { Config } from '@ionic/angular';
+import { Config } from '@ionic/angular/lazy';
 
 @Component(...)
 class AppComponent {
@@ -144,7 +144,7 @@ class AppComponent {
 <TabItem value="angular-standalone">
 
 ```ts
-import { Config } from '@ionic/angular/standalone';
+import { Config } from '@ionic/angular';
 
 @Component(...)
 class AppComponent {

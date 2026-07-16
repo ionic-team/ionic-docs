@@ -8,7 +8,7 @@ import {
   IonPickerColumn,
   IonPickerColumnOption,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

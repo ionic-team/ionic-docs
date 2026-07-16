@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonAlert, IonButton } from '@ionic/angular/standalone';
+import { IonAlert, IonButton } from '@ionic/angular';
 import type { OverlayEventDetail } from '@ionic/core';
 
 @Component({

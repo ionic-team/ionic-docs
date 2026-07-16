@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
+import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular';
 
 interface Food {
   id: number;

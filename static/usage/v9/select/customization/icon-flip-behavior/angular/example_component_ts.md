@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
+import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { caretDownSharp } from 'ionicons/icons';

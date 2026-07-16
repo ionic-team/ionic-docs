@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonItem, IonList, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonItem, IonList, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

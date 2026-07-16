@@ -4,7 +4,7 @@ to: "<%= `static/usage/v${version}/${name}/${path}/angular/example_component_ts.
 ---
 ```ts
 import { Component } from '@angular/core';
-import { <%= pascalComponent %> } from '@ionic/angular/standalone';
+import { <%= pascalComponent %> } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

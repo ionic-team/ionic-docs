@@ -32,7 +32,7 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 ### Usage with Standalone-based Applications
 
 :::warning
-All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+All Ionic imports should be imported from the `@ionic/angular` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular/lazy` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 
 **Bootstrapping and Configuration**
@@ -43,7 +43,7 @@ Ionic Angular needs to be configured when the Angular application calls `bootstr
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
-import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
+import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -59,11 +59,11 @@ bootstrapApplication(AppComponent, {
 
 **Components**
 
-In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
+In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular` and passing them to `imports` for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
 
 ```typescript title="home.page.ts"
 import { Component } from '@angular/core';
-import { IonButton, IonContent } from '@ionic/angular/standalone';
+import { IonButton, IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -87,7 +87,7 @@ For developers using Ionicons 7.2 or newer, passing only the SVG data will cause
 
 ```typescript title="home.page.ts"
 import { Component } from '@angular/core';
-import { IonIcon } from '@ionic/angular/standalone';
+import { IonIcon } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { logoIonic } from 'ionicons/icons';
 
@@ -153,7 +153,7 @@ Developers who wish to use `routerLink`, `routerAction`, or `routerDirection` on
 ```typescript title="home.page.ts"
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+import { IonButton, IonRouterLink } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -199,7 +199,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 ### Usage with NgModule-based Applications
 
 :::warning
-All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+All Ionic imports should be imported from the `@ionic/angular` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular/lazy` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 
 **Bootstrapping and Configuration**
@@ -211,7 +211,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -227,11 +227,11 @@ export class AppModule {}
 
 **Components**
 
-In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` array in the Angular component's NgModule for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
+In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular` and passing them to `imports` array in the Angular component's NgModule for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
 
 ```typescript title="home.module.ts"
 import { NgModule } from '@angular/core';
-import { IonButton, IonContent } from '@ionic/angular/standalone';
+import { IonButton, IonContent } from '@ionic/angular';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -315,7 +315,7 @@ Developers who wish to use `routerLink`, `routerAction`, or `routerDirection` on
 ```typescript title="home.module.ts"
 import { NgModule } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+import { IonButton, IonRouterLink } from '@ionic/angular';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -416,14 +416,14 @@ Follow these steps if your Angular application is already using the standalone a
 
 2. Run `npm install ionicons@latest` to ensure you are running the latest version of Ionicons. Ionicons v7.2 brings usability improvements that reduce the code boilerplate needed to use icons with standalone components.
 
-3. Remove the `IonicModule` call in `main.ts` in favor of `provideIonicAngular` imported from `@ionic/angular/standalone`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
+3. Remove the `IonicModule` call in `main.ts` in favor of `provideIonicAngular` imported from `@ionic/angular`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
 
 ```diff title="main.ts"
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
-- import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-+ import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
+- import { IonicModule, IonicRouteStrategy } from '@ionic/angular/lazy';
++ import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -446,18 +446,18 @@ bootstrapApplication(AppComponent, {
 
 4. Remove any references to `IonicModule` found elsewhere in your application.
 
-5. Update any existing imports from `@ionic/angular` to import from `@ionic/angular/standalone` instead.
+5. Update any existing imports from `@ionic/angular/lazy` to import from `@ionic/angular` instead.
 
 ```diff
-- import { Platform } from '@ionic/angular';
-+ import { Platform } from '@ionic/angular/standalone';
+- import { Platform } from '@ionic/angular/lazy';
++ import { Platform } from '@ionic/angular';
 ```
 
 6. Add imports for each Ionic component in the Angular component where they are used. Be sure to pass the imports to the `imports` array on your Angular component.
 
 ```diff title="app.component.ts"
 import { Component } from '@angular/core';
-+ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
++ import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -475,7 +475,7 @@ export class AppComponent {
 
 ```diff title="test.component.ts"
 import { Component } from '@angular/core';
-+ import { IonIcon } from '@ionic/angular/standalone';
++ import { IonIcon } from '@ionic/angular';
 + import { addIcons } from 'ionicons';
 + import { alarm, logoIonic } from 'ionicons/icons';
 
@@ -507,8 +507,8 @@ export class TestComponent {
 
 ```diff title="test.component.ts"
 import { Component } from '@angular/core';
-- import { IonButton } from '@ionic/angular/standalone';
-+ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+- import { IonButton } from '@ionic/angular';
++ import { IonButton, IonRouterLink } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -523,11 +523,11 @@ import { Component } from '@angular/core';
 export class TestComponent {}
 ```
 
-10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular` module specifiers for import recommendations.
+10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular/lazy` module specifiers for import recommendations.
 
 ```json title=".vscode/settings.json"
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular/lazy"]
 }
 ```
 
@@ -539,14 +539,14 @@ Follow these steps if your Angular application is still using the NgModule archi
 
 2. Run `npm install ionicons@latest` to ensure you are running the latest version of Ionicons. Ionicons v7.2 brings usability improvements that reduce the code boilerplate needed to use icons with standalone components.
 
-3. Remove the `IonicModule` call in `app.module.ts` in favor of `provideIonicAngular` imported from `@ionic/angular/standalone`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
+3. Remove the `IonicModule` call in `app.module.ts` in favor of `provideIonicAngular` imported from `@ionic/angular`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
 
 ```diff title="app.module.ts"
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
-- import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-+ import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
+- import { IonicModule, IonicRouteStrategy } from '@ionic/angular/lazy';
++ import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -572,11 +572,11 @@ export class AppModule {}
 
 4. Remove any references to `IonicModule` found elsewhere in your application.
 
-5. Update any existing imports from `@ionic/angular` to import from `@ionic/angular/standalone` instead.
+5. Update any existing imports from `@ionic/angular/lazy` to import from `@ionic/angular` instead.
 
 ```diff
-- import { Platform } from '@ionic/angular';
-+ import { Platform } from '@ionic/angular/standalone';
+- import { Platform } from '@ionic/angular/lazy';
++ import { Platform } from '@ionic/angular';
 ```
 
 6. Add imports for each Ionic component in the NgModule for the Angular component where they are used. Be sure to pass the components to the `imports` array on the module.
@@ -585,8 +585,8 @@ export class AppModule {}
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
-- import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
-+ import { provideIonicAngular, IonicRouteStrategy, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+- import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular';
++ import { provideIonicAngular, IonicRouteStrategy, IonApp, IonRouterOutlet } from '@ionic/angular';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -614,7 +614,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-+ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
++ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @NgModule({
   imports: [
@@ -653,7 +653,7 @@ export class TestComponent {
 ```diff title="test.module.ts"
 import { NgModule } from '@angular/core';
 import { TestComponent } from './test.component';
-+ import { IonIcon } from '@ionic/angular/standalone';
++ import { IonIcon } from '@ionic/angular';
 
 @NgModule({
   imports: [
@@ -679,8 +679,8 @@ export class TestComponentModule {}
 ```diff title="test.module.ts"
 import { NgModule } from '@angular/core';
 import { TestComponent } from './test.component';
-- import { IonButton } from '@ionic/angular/standalone';
-+ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+- import { IonButton } from '@ionic/angular';
++ import { IonButton, IonRouterLink } from '@ionic/angular';
 
 @NgModule({
   imports: [
@@ -691,10 +691,10 @@ import { TestComponent } from './test.component';
 })
 ```
 
-10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular` module specifiers for import recommendations.
+10. If you are using VSCode it is recommended to ignore the `@ionic/angular/common` and `@ionic/angular/lazy` module specifiers for import recommendations.
 
 ```json title=".vscode/settings.json"
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular/lazy"]
 }
 ```

@@ -8,7 +8,7 @@ import {
   IonReorder,
   IonReorderGroup,
   IonIcon,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { caretDown, ellipse, warning } from 'ionicons/icons';
 

@@ -14,7 +14,7 @@ import {
   IonNote,
   IonToolbar,
   IonTitle,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-child',

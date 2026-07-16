@@ -1,14 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import {
-  IonBreadcrumb,
-  IonBreadcrumbs,
-  IonContent,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonPopover,
-} from '@ionic/angular/standalone';
+import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

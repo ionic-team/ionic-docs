@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/angular/standalone';
+import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

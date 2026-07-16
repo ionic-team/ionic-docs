@@ -16,7 +16,7 @@ import {
   IonTitle,
   IonToggle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { create } from 'ionicons/icons';

@@ -12,7 +12,7 @@ import {
   IonTitle,
   IonToolbar,
   RefresherCustomEvent,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { ellipse } from 'ionicons/icons';

@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonBreadcrumb, IonBreadcrumbs, IonIcon } from '@ionic/angular/standalone';
+import { IonBreadcrumb, IonBreadcrumbs, IonIcon } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { arrowForwardCircle } from 'ionicons/icons';

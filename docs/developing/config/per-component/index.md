@@ -47,7 +47,7 @@ window.Ionic = {
 **Not recommended**
 
 ```ts
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -84,7 +84,7 @@ class MyComponent {
 **Not recommended**
 
 ```ts
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 
 bootstrapApplication(AppComponent, {
   providers: [

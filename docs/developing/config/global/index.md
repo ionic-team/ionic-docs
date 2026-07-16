@@ -27,7 +27,7 @@ window.Ionic = {
 <TabItem value="angular">
 
 ```tsx title="app.module.ts"
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -45,7 +45,7 @@ import { IonicModule } from '@ionic/angular';
 <TabItem value="angular-standalone">
 
 ```ts title="main.ts"
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 
 bootstrapApplication(AppComponent, {
   providers: [

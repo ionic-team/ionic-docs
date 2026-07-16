@@ -180,7 +180,7 @@ Items support client-side navigation using the `routerLink` property. Setting `r
 
 <TabItem value="angular">
 
-In Angular, `routerLink` is a directive provided by `@angular/router`. When used on Ionic components, also import `IonRouterLink` from `@ionic/angular/standalone` to enable `routerDirection` and `routerAnimation` support.
+In Angular, `routerLink` is a directive provided by `@angular/router`. When used on Ionic components, also import `IonRouterLink` from `@ionic/angular` to enable `routerDirection` and `routerAnimation` support.
 
 ```html
 <ion-list>
@@ -195,7 +195,7 @@ In Angular, `routerLink` is a directive provided by `@angular/router`. When used
 
 ```typescript
 import { Component } from '@angular/core';
-import { IonItem, IonLabel, IonList, IonRouterLink } from '@ionic/angular/standalone';
+import { IonItem, IonLabel, IonList, IonRouterLink } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 
 @Component({

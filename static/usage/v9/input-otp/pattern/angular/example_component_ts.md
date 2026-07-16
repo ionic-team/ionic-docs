@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonInputOtp } from '@ionic/angular/standalone';
+import { IonInputOtp } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

@@ -8,7 +8,7 @@ import {
   IonReorder,
   IonReorderGroup,
   ReorderEndCustomEvent,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

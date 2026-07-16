@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonChip } from '@ionic/angular/standalone';
+import { IonChip } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

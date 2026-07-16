@@ -371,6 +371,12 @@ module.exports = {
         versions: VERSIONS_JSON,
       },
     ],
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        injectButton: false,
+      },
+    ],
   ],
   customFields: {},
   themes: [],

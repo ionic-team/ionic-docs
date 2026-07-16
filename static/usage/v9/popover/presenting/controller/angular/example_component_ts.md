@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonButton, PopoverController } from '@ionic/angular/standalone';
+import { IonButton, PopoverController } from '@ionic/angular';
 
 import { PopoverComponent } from './popover.component';
 

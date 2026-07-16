@@ -83,7 +83,7 @@ The root of your app is defined in `app.component.ts`:
 
 ```ts title="src/app/app.component.ts"
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -133,7 +133,7 @@ The Home page component, defined in `home.page.ts`, imports the Ionic components
 
 ```ts title="src/app/home/home.page.ts"
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -172,7 +172,7 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip Learn More
 For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
@@ -193,7 +193,7 @@ You can enhance your Home page with more Ionic UI components. For example, add a
 Then, import the `IonButton` component in `home.page.ts`:
 
 ```ts title="src/app/home/home.page.ts"
-import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   // ...existing config...
@@ -227,7 +227,7 @@ In `new.page.html`, you can add a [Back Button](/docs/api/back-button.md) to the
 And import `IonBackButton` and `IonButtons` in `new.page.ts`:
 
 ```ts title="src/app/new/new.page.ts"
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   // ...existing config...
@@ -277,7 +277,7 @@ You'll also need to import and register these icons in `new.page.ts`:
 
 ```ts title="src/app/new/new.page.ts"
 // ...existing imports...
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 
@@ -346,7 +346,7 @@ import {
   IonLabel,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 

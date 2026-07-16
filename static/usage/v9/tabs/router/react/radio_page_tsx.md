@@ -1,9 +1,9 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const RadioPage = () => (
-  <>
+  <IonPage>
     <IonHeader>
       <IonToolbar>
         <IonTitle>Radio</IonTitle>
@@ -21,7 +21,7 @@ const RadioPage = () => (
         Radio content
       </div>
     </IonContent>
-  </>
+  </IonPage>
 );
 
 export default RadioPage;

@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonCol, IonGrid, IonRow } from '@ionic/angular/standalone';
+import { IonCol, IonGrid, IonRow } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

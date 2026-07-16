@@ -1,6 +1,6 @@
 ```ts
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { IonDatetime } from '@ionic/angular/standalone';
+import { IonDatetime } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
 // ViewEncapsulation is turned off for this demo due to

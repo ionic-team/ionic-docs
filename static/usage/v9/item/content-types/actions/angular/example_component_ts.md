@@ -13,7 +13,7 @@ import {
   IonList,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { pin, share, trash } from 'ionicons/icons';

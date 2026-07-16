@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonProgressBar } from '@ionic/angular/standalone';
+import { IonProgressBar } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

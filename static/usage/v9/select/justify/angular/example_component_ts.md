@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonItem, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
+import { IonItem, IonSelect, IonSelectOption } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
