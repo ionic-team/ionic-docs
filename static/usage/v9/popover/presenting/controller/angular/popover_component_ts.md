@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-popover',

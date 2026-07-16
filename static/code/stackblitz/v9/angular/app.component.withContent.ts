@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonApp, IonContent } from '@ionic/angular/standalone';
+import { IonApp, IonContent } from '@ionic/angular';
 import { ExampleComponent } from './example.component';
 
 @Component({

@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonAvatar, IonIcon, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
+import { IonAvatar, IonIcon, IonItem, IonLabel, IonList } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import { airplane, bluetooth, call, wifi } from 'ionicons/icons';

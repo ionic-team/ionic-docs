@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonGallery, IonGalleryItem } from '@ionic/angular/standalone';
+import { IonGallery, IonGalleryItem } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

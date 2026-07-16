@@ -1,6 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

@@ -13,7 +13,7 @@ import {
   IonSearchbar,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 import { Item } from './types';
 

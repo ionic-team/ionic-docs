@@ -1,7 +1,7 @@
 ```ts
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar, ModalController } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar, ModalController } from '@ionic/angular';
 
 import { ModalExampleComponent } from './modal-example.component';
 

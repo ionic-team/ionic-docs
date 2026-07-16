@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonContent, ScrollDetail } from '@ionic/angular/standalone';
+import { IonContent, ScrollDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

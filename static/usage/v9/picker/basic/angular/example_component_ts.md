@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonPicker, IonPickerColumn, IonPickerColumnOption } from '@ionic/angular/standalone';
+import { IonPicker, IonPickerColumn, IonPickerColumnOption } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

@@ -9,7 +9,7 @@ import {
   AbstractControl,
   ValidationErrors,
 } from '@angular/forms';
-import { IonInputOtp } from '@ionic/angular/standalone';
+import { IonInputOtp } from '@ionic/angular';
 
 function otpRequiredLength(length: number) {
   return (control: AbstractControl): ValidationErrors | null => {

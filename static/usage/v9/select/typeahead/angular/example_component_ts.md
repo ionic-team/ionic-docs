@@ -1,6 +1,6 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { IonContent, IonItem, IonLabel, IonList, IonModal } from '@ionic/angular/standalone';
+import { IonContent, IonItem, IonLabel, IonList, IonModal } from '@ionic/angular';
 import { Item } from './types';
 
 import { TypeaheadComponent } from './typeahead.component';

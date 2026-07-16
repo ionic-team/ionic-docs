@@ -1,15 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import {
-  IonContent,
-  IonFab,
-  IonFabButton,
-  IonFabList,
-  IonHeader,
-  IonIcon,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/angular/standalone';
+import { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import {

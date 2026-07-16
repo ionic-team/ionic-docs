@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonButton, IonRadio, IonRadioGroup } from '@ionic/angular/standalone';
+import { IonButton, IonRadio, IonRadioGroup } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
