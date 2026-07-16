@@ -13,6 +13,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="9"
+  size="550px"
   code={{
     javascript,
     react: {

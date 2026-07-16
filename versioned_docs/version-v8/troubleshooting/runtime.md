@@ -212,7 +212,7 @@ class MyApp {
 
 ## Accessing `this` in a function callback returns `undefined` {#accessing-this}
 
-Certain components, such as [counterFormatter on ion-input](../api/input#counterformatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
+Certain components, such as [counterFormatter on ion-input](../api/input#prop-counter-formatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
 
 The first way to bind `this` is to use the `bind()` method on a function instance. If you want to pass a callback called `counterFormatterFn`, then you would write `counterFormatterFn.bind(this)`.
 

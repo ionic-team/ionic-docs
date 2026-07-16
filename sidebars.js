@@ -87,6 +87,7 @@ module.exports = {
         'angular/build-options',
         'angular/lifecycle',
         'angular/navigation',
+        'angular/overlays',
         'angular/injection-tokens',
         'angular/virtual-scroll',
         'angular/slides',
