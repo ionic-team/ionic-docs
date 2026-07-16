@@ -20,7 +20,7 @@ See the [Angular Platform Documentation](../angular/platform) for the types of p
 :::
 
 ```ts title="app.module.ts"
-import { isPlatform, IonicModule } from '@ionic/angular';
+import { isPlatform, IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -43,7 +43,7 @@ See the [Angular Platform Documentation](../angular/platform) for the types of p
 :::
 
 ```ts title="main.ts"
-import { isPlatform, provideIonicAngular } from '@ionic/angular/standalone';
+import { isPlatform, provideIonicAngular } from '@ionic/angular';
 
 bootstrapApplication(AppComponent, {
   providers: [

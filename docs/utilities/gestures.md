@@ -77,7 +77,7 @@ By default, gesture callbacks do not run inside of NgZone. Developers can either
 or they can wrap their callbacks in an `NgZone.run()` call.
 
 ```tsx
-import { Gesture, GestureController } from '@ionic/angular';
+import { Gesture, GestureController } from '@ionic/angular/lazy';
 
 ...
 
@@ -101,7 +101,7 @@ By default, gesture callbacks do not run inside of NgZone. Developers can either
 or they can wrap their callbacks in an `NgZone.run()` call.
 
 ```tsx
-import { Gesture, GestureController } from '@ionic/angular/standalone';
+import { Gesture, GestureController } from '@ionic/angular';
 
 ...
 

@@ -47,7 +47,7 @@ Writing a signal that a template reads schedules change detection automatically,
 
 ```ts
 import { Component, inject, signal } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
 import { PickerModal } from './picker.modal';
 
 @Component({

@@ -28,7 +28,7 @@ The Platform service can be used to get information about your current device. Y
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 @Component({...})
 export class MyPage {
@@ -42,7 +42,7 @@ export class MyPage {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 @Component({...})
 export class MyPage {
@@ -96,7 +96,7 @@ Below is a table listing all the possible platform values along with correspondi
 The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](../developing/config). Each function takes `window` as a parameter and returns a boolean.
 
 ```tsx
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
