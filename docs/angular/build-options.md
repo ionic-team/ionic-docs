@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 Developers have two options for using Ionic components: Standalone or Modules. This guide covers both options as well as the benefits and downsides of each approach.
 
-While the Standalone approach is newer and makes use of more modern Angular APIs, the Modules approach will continue to be supported in Ionic. Most of the Angular examples on this documentation website use the Modules approach.
+The Standalone approach makes use of modern Angular APIs and is the recommended way to use Ionic. The Modules approach and its `IonicModule` are **deprecated** as of Ionic 9 and will be removed in a future major version. Existing apps continue to work, but new apps should use the Standalone approach, and existing apps should plan to migrate. Refer to [Migrating from Modules to Standalone](#migrating-from-modules-to-standalone).
 
 ## Standalone
 
@@ -17,7 +17,7 @@ Ionic UI components as Angular standalone components is supported starting in Io
 
 Developers can use Ionic components as standalone components to take advantage of treeshaking and newer Angular features. This option involves importing specific Ionic components in the Angular components you want to use them in. Developers can use Ionic standalone components even if their Angular application is NgModule-based.
 
-See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for instructions on how to update your Ionic app to make use of Ionic standalone components.
+Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for instructions on how to update your Ionic app to make use of Ionic standalone components.
 
 **Benefits**
 
@@ -28,6 +28,10 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 **Drawbacks**
 
 1. Ionic components need to be imported into every Angular component they are used in which can be time consuming to set up.
+
+:::info Code splitting
+Ionic ships standalone components from a single entry point (`@ionic/angular`). Bundlers such as Webpack and esbuild cannot split code from a single entry point across separate chunks, so the Ionic components you import are included in the main bundle rather than in the chunk for the route or component where they are used. Unused components are still tree-shaken out of the build. Refer to the [code splitting tracking issue](https://github.com/ionic-team/ionic-framework/issues/28574) for details.
+:::
 
 ### Usage with Standalone-based Applications
 
@@ -361,6 +365,10 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 
 ## Modules
 
+:::warning Deprecation Notice
+The Modules approach and its `IonicModule` are deprecated as of Ionic 9 and will be removed in a future major version. `IonicModule` remains fully functional in Ionic 9, so existing apps continue to work without changes. New apps should use the [Standalone](#standalone) approach, and existing apps should plan to migrate using the [migration guide](#migrating-from-modules-to-standalone).
+:::
+
 ### Overview
 
 Developers can also use the Modules approach by importing `IonicModule` and calling `IonicModule.forRoot()` in the `imports` array in `app.module.ts`. This registers a version of Ionic where Ionic components will be lazily loaded at runtime.
@@ -382,7 +390,7 @@ In the example below, we are using `IonicModule` to create a lazily loaded versi
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular/lazy';
 
 import { AppComponent } from './app.component';
 
@@ -399,7 +407,7 @@ export class AppModule {}
 :::tip
 Try our automated utility for migrating to standalone!
 
-See https://github.com/ionic-team/ionic-angular-standalone-codemods for instructions on how to get started. All issues related to the migration utility should be filed on the linked repo.
+Refer to the [standalone migration codemods](https://github.com/ionic-team/ionic-angular-standalone-codemods) for instructions on how to get started. All issues related to the migration utility should be filed on the linked repo.
 :::
 
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.

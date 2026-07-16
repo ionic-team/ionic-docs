@@ -20,6 +20,10 @@ See the [Angular Platform Documentation](../angular/platform) for the types of p
 :::
 
 ```ts title="app.module.ts"
+/*
+ * IonicModule is deprecated as of Ionic 9 and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
 import { isPlatform, IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
