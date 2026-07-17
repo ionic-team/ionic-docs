@@ -15,22 +15,15 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 //   task: async () => outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 })
 // };
 
-// Get the GitHub Releases from Ionic
+// Get the GitHub Releases from Ionic Framework
 // -------------------------------------------------------------------------------
-// This requires an environment GITHUB_TOKEN otherwise it may fail
-//
-// To add a GITHUB_TOKEN, follow the steps to create a personal access token:
-// https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-// and then authorize it to work with SSO:
-// https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on
+// Fetches from the public GitHub API. Unauthenticated requests have a 60 req/hour limit.
+// To increase the rate limit, set a GITHUB_TOKEN environment variable.
 const getReleases = async () => {
   try {
-    const request = await fetch(new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'), {
-      headers: {
-        Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
-      },
-    });
-
+    const url = new URL('repos/ionic-team/ionic-framework/releases', 'https://api.github.com');
+    const headers = process.env.GITHUB_TOKEN ? { Authorization: `token ${process.env.GITHUB_TOKEN}` } : {};
+    const request = await fetch(url, { headers });
     const releases = await request.json();
 
     // Check that the response is an array in case it was
@@ -97,8 +90,29 @@ function getVersionType(version) {
 }
 
 async function run() {
-  const { outputJson } = pkg;
-  outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 });
+  const { outputJson, readJson } = pkg;
+  const newReleases = await getReleases();
+
+  // Successfully fetched new releases, save them
+  if (newReleases.length > 0) {
+    outputJson(OUTPUT_PATH, newReleases, { spaces: 2 });
+    console.log(`🚀 Release Notes Generated`);
+    return;
+  }
+
+  // If the fetch failed but we have existing data, keep it
+  try {
+    const existingData = await readJson(OUTPUT_PATH);
+    if (Array.isArray(existingData) && existingData.length > 0) {
+      console.log(`🚀 Release Notes Preserved`);
+      return;
+    }
+  } catch (error) {
+    console.warn(`⚠️  Could not read existing release notes: ${error.message}`);
+  }
+
+  // If we have no new data and no cached data, error
+  throw new Error('Failed to fetch release notes from GitHub and no cached data available');
 }
 
 run();
