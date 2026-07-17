@@ -42,9 +42,9 @@ import BasicExample from '@site/static/usage/v9/router/basic/index.md';
 
 ## Using ion-nav within a Routed Page
 
-`ion-router` and [`ion-nav`](./nav.md) are separate systems. `ion-router` coordinates URL-based navigation through `ion-router-outlet`, while `ion-nav` manages a local stack that is independent of the URL. As of Ionic 9, `ion-nav` no longer integrates with `ion-router`: placing an `ion-nav` inside an `ion-router` does not turn it into a routed outlet, and pushing or popping views on an `ion-nav` never changes the URL. Refer to the [migration guide](../updating/9-0.md#nav) for details.
+`ion-router` and [`ion-nav`](./nav.md) are separate systems. `ion-router` coordinates URL-based navigation through `ion-router-outlet`, while `ion-nav` manages a local stack that is independent of the URL. `ion-nav` does not integrate with `ion-router`: placing an `ion-nav` inside an `ion-router` does not turn it into a routed outlet, and pushing or popping views on an `ion-nav` never changes the URL. 
 
-The two can still be composed. A routed page rendered by `ion-router-outlet` can host its own `ion-nav` for local, URL-less navigation within that page. In the example below, navigating to Details updates the URL, but stepping through the `ion-nav` inside that page does not.
+The two can still be composed. A routed page rendered by `ion-router-outlet` can host its own `ion-nav` for local, URL-less navigation within that page. In the example below, navigating to `/details` updates the URL, but stepping through the `ion-nav` inside that page does not.
 
 import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/index.md';
 
