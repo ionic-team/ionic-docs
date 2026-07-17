@@ -107,7 +107,7 @@ The function used to detect a specific platform can be overridden by providing a
 
 ```tsx title="app.module.ts"
 /*
- * IonicModule is deprecated as of Ionic 9 and will be removed in a future major version.
+ * IonicModule is deprecated and will be removed in a future major version.
  * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
  */
 import { IonicModule } from '@ionic/angular/lazy';
