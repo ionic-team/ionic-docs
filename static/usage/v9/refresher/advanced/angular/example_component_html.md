@@ -11,7 +11,7 @@
   </ion-refresher>
 
   <ion-list>
-    @for (item of items; track item) {
+    @for (item of items(); track item) {
     <ion-item [button]="true">
       <ion-icon slot="start" color="primary" [name]="item.unread ? 'ellipse' : ''"></ion-icon>
       <ion-label>

@@ -1,5 +1,5 @@
 ```ts
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {
   IonContent,
   IonHeader,
@@ -55,7 +55,7 @@ export class ExampleComponent {
     'Rachel Rabbit',
     'Ted Turtle',
   ];
-  public items: Item[] = [];
+  readonly items = signal<Item[]>([]);
 
   constructor() {
     /**
@@ -75,12 +75,14 @@ export class ExampleComponent {
   }
 
   addItems(count: number, unread = false) {
+    const newItems: Item[] = [];
     for (let i = 0; i < count; i++) {
-      this.items.unshift({
+      newItems.unshift({
         name: this.chooseRandomName(),
         unread: unread,
       });
     }
+    this.items.update((items) => [...newItems, ...items]);
   }
 
   handleRefresh(event: RefresherCustomEvent) {

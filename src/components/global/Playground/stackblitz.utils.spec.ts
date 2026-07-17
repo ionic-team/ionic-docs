@@ -394,6 +394,26 @@ bootstrapApplication(AppComponent, {
       mode: "md"
     })),`);
     });
+
+    it('omits the Zone.js polyfill for v9 (zoneless)', async () => {
+      global.fetch = createMockFetch({ 'angular/package.json': '{}' });
+
+      await openAngularEditor('<p>hi</p>', { version: '9', mode: 'md' });
+
+      const openProjectMock = (sdk as any).openProject as ReturnType<typeof vi.fn>;
+      const polyfills = openProjectMock.mock.calls[0][0].files['src/polyfills.ts'] as string;
+      expect(polyfills).toBe('');
+    });
+
+    it('includes the Zone.js polyfill for zone-based versions (v8)', async () => {
+      global.fetch = createMockFetch({ 'angular/package.json': '{}' }, 'v8');
+
+      await openAngularEditor('<p>hi</p>', { version: '8', mode: 'md' });
+
+      const openProjectMock = (sdk as any).openProject as ReturnType<typeof vi.fn>;
+      const polyfills = openProjectMock.mock.calls[0][0].files['src/polyfills.ts'] as string;
+      expect(polyfills).toContain(`import 'zone.js';`);
+    });
   });
 
   describe('openReactEditor()', () => {
