@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 Developers have two options for using Ionic components: Standalone or Modules. This guide covers both options as well as the benefits and downsides of each approach.
 
-The Standalone approach makes use of modern Angular APIs and is the recommended way to use Ionic. The Modules approach and its `IonicModule` are **deprecated** as of Ionic 9 and will be removed in a future major version. Existing apps continue to work, but new apps should use the Standalone approach, and existing apps should plan to migrate. Refer to [Migrating from Modules to Standalone](#migrating-from-modules-to-standalone).
+The Standalone approach uses modern Angular APIs and is the recommended way to build Ionic applications. The Modules approach, including `IonicModule`, is **deprecated** and will be removed in a future major release. New projects should use the Standalone approach. Existing apps will continue to work but should plan to migrate. Refer to [Migrating from Modules to Standalone](#migrating-from-modules-to-standalone) for migration guidance.
 
 ## Standalone
 
@@ -17,7 +17,7 @@ Ionic UI components as Angular standalone components is supported starting in Io
 
 Developers can use Ionic components as standalone components to take advantage of treeshaking and newer Angular features. This option involves importing specific Ionic components in the Angular components you want to use them in. Developers can use Ionic standalone components even if their Angular application is NgModule-based.
 
-Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for instructions on how to update your Ionic app to make use of Ionic standalone components.
+Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for instructions on migrating your Ionic app to the Standalone approach.
 
 **Benefits**
 
@@ -30,7 +30,7 @@ Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone)
 1. Ionic components need to be imported into every Angular component they are used in which can be time consuming to set up.
 
 :::info Code splitting
-Ionic ships standalone components from a single entry point (`@ionic/angular`). Bundlers such as Webpack and esbuild cannot split code from a single entry point across separate chunks, so the Ionic components you import are included in the main bundle rather than in the chunk for the route or component where they are used. Unused components are still tree-shaken out of the build. Refer to the [code splitting tracking issue](https://github.com/ionic-team/ionic-framework/issues/28574) for details.
+Ionic ships standalone components from a single entry point (`@ionic/angular`). Bundlers such as Webpack and esbuild cannot split code from a single entry point across separate chunks, so the Ionic components you import are included in the main bundle rather than in the chunk for the route or component where they are used. Unused components are still tree-shaken out of the build.
 :::
 
 ### Usage with Standalone-based Applications
@@ -366,7 +366,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 ## Modules
 
 :::warning Deprecation Notice
-The Modules approach and its `IonicModule` are deprecated as of Ionic 9 and will be removed in a future major version. `IonicModule` remains fully functional in Ionic 9, so existing apps continue to work without changes. New apps should use the [Standalone](#standalone) approach, and existing apps should plan to migrate using the [migration guide](#migrating-from-modules-to-standalone).
+The Modules approach, including `IonicModule`, is **deprecated** and will be removed in a future major release. Existing applications will continue to work during the deprecation period but should migrate using the [Standalone migration guide](#migrating-from-modules-to-standalone). New applications should use the [Standalone](#standalone) approach.
 :::
 
 ### Overview
