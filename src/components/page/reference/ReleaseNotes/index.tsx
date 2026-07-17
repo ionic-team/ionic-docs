@@ -26,7 +26,7 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
     return [
       <p>
         Unable to load Releases. Please see all releases{' '}
-        <a href="https://github.com/ionic-team/ionic/releases" target="_blank">
+        <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
           on GitHub
         </a>
         .
@@ -38,7 +38,7 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
     <article>
       <p className={styles.intro}>
         A complete release history for Ionic Framework is available{' '}
-        <a href="https://github.com/ionic-team/ionic/releases" target="_blank">
+        <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
           on GitHub
         </a>
         . Documentation for recent releases can also be found below.
@@ -53,7 +53,7 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
           <section className={clsx(styles['release-note'], styles[`release-note-${release.type}`])}>
             <div className={styles['release-info']}>
               <div className={styles['release-header']}>
-                <a href={`https://github.com/ionic-team/ionic/releases/v${release.version}`}>
+                <a href={`https://github.com/ionic-team/ionic-framework/releases/v${release.version}`}>
                   <h2>
                     <span className={styles['release-version']}>{release.version}</span>
                   </h2>
@@ -79,7 +79,7 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
       </div>
       <blockquote>
         To see more releases, visit{' '}
-        <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">
+        <a href="https://github.com/ionic-team/ionic-framework/releases/" target="_blank">
           GitHub
         </a>
         .
