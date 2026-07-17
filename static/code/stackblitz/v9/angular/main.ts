@@ -5,7 +5,6 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
-// Angular 22 defaults to zoneless change detection, so no Zone.js provider is needed.
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
