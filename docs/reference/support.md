@@ -97,16 +97,20 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 ### Native Bridges
 
-|  Framework   |               Cordova                |        Capacitor         |
-| :----------: | :----------------------------------: | :----------------------: |
-| V5 - Angular | cordova-android 8.X, cordova-ios 5.X |        Latest 2.X        |
-|  V5 - React  |            Not supported             |        Latest 2.x        |
-|   V5 - Vue   |            Not supported             |        Latest 2.X        |
-| V4 - Angular | cordova-android 8.X, cordova-ios 5.X |        Latest 2.X        |
-|  V4 - React  |            Not supported             |        Latest 2.x        |
-|      V3      | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
+|   Framework    |               Cordova                |        Capacitor         |
+| :------------: | :----------------------------------: | :----------------------: |
+|  V9: Angular   | cordova-android 8.X, cordova-ios 5.X |           7.X+           |
+|   V9: React    |            Not supported             |           7.x+           |
+|    V9: Vue     |            Not supported             |           7.X+           |
+| V5-V8: Angular | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
+|  V5-V8: React  |            Not supported             |           2.x+           |
+|   V5-V8: Vue   |            Not supported             |           2.X+           |
+|  V4: Angular   | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
+|   V4: React    |            Not supported             |           2.x+           |
+|       V3       | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
 
 - As iOS and Android (and related tools) are updated, you can expect more updates for Cordova and Capacitor, so it is recommended to stay on the latest version(s) of Cordova and Capacitor.
+- Starting with Ionic v9, Capacitor 7 is the minimum officially supported version. Earlier versions of Ionic ran on Capacitor 2 and later.
 
 ### Ionic Platform & Products
 
