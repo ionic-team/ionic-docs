@@ -10,57 +10,59 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/ReleaseNotes/release-notes.json');
 
-// export default {
-//   title: 'Build Release Notes data',
-//   task: async () => outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 })
-// };
-
 // Get the GitHub Releases from Ionic Framework
 // -------------------------------------------------------------------------------
-// Fetches from the public GitHub API. Unauthenticated requests have a 60 req/hour limit.
-// To increase the rate limit, set a GITHUB_TOKEN environment variable.
+// Requires a GITHUB_TOKEN environment variable.
+// Refer to CONTRIBUTING.md for setup instructions.
 const getReleases = async () => {
-  try {
-    const url = new URL('repos/ionic-team/ionic-framework/releases', 'https://api.github.com');
-    const headers = process.env.GITHUB_TOKEN ? { Authorization: `token ${process.env.GITHUB_TOKEN}` } : {};
-    const request = await fetch(url, { headers });
-    const releases = await request.json();
+  if (!process.env.GITHUB_TOKEN) {
+    throw new Error('GITHUB_TOKEN environment variable is required.');
+  }
 
-    // Check that the response is an array in case it was
-    // successful but returned an object
-    if (Array.isArray(releases)) {
-      return releases
-        .filter((release) => {
-          const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+  const url = new URL('repos/ionic-team/ionic-framework/releases', 'https://api.github.com');
+  const headers = { Authorization: `token ${process.env.GITHUB_TOKEN}` };
+  const request = await fetch(url, { headers });
 
-          // All non-prerelease, non-alpha, non-beta, non-rc release
-          return releasePattern.test(release.tag_name);
-        })
-        .map((release) => {
-          const body = renderMarkdown(release.body.replace(/^#.*/, '')).value;
-          const published_at = parseDate(release.published_at);
-          const version = release.tag_name.replace('v', '');
-          const type = getVersionType(version);
-          const { name, tag_name } = release;
+  if (!request.ok) {
+    const error = await request.json().catch(() => ({}));
+    let message = `GitHub API returned ${request.status} ${request.statusText}: ${error.message ?? 'Unknown error'}.`;
 
-          return {
-            body,
-            name,
-            published_at,
-            tag_name,
-            type,
-            version,
-          };
-        })
-        .sort((a, b) => {
-          return -compare(a.tag_name, b.tag_name);
-        });
-    } else {
-      console.error('There was an issue getting releases:', releases);
-      return [];
+    if (request.status === 401 && error.message?.includes('Bad credentials')) {
+      message += ' Check that GITHUB_TOKEN is set and is a valid GitHub Personal Access Token.';
     }
-  } catch (error) {
-    return [];
+
+    throw new Error(message);
+  }
+
+  const releases = await request.json();
+
+  // Check that the response is an array in case it was
+  // successful but returned an object
+  if (Array.isArray(releases)) {
+    return releases
+      .filter((release) => {
+        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+        return releasePattern.test(release.tag_name);
+      })
+      .map((release) => {
+        const body = renderMarkdown(release.body.replace(/^#.*/, '')).value;
+        const published_at = parseDate(release.published_at);
+        const version = release.tag_name.replace('v', '');
+        const type = getVersionType(version);
+        const { name, tag_name } = release;
+
+        return {
+          body,
+          name,
+          published_at,
+          tag_name,
+          type,
+          version,
+        };
+      })
+      .sort((a, b) => -compare(a.tag_name, b.tag_name));
+  } else {
+    throw new Error('GitHub API returned an unexpected response format.');
   }
 };
 
@@ -90,29 +92,15 @@ function getVersionType(version) {
 }
 
 async function run() {
-  const { outputJson, readJson } = pkg;
-  const newReleases = await getReleases();
-
-  // Successfully fetched new releases, save them
-  if (newReleases.length > 0) {
-    outputJson(OUTPUT_PATH, newReleases, { spaces: 2 });
-    console.log(`🚀 Release Notes Generated`);
-    return;
-  }
-
-  // If the fetch failed but we have existing data, keep it
+  const { outputJson } = pkg;
   try {
-    const existingData = await readJson(OUTPUT_PATH);
-    if (Array.isArray(existingData) && existingData.length > 0) {
-      console.log(`🚀 Release Notes Preserved`);
-      return;
-    }
+    const releases = await getReleases();
+    outputJson(OUTPUT_PATH, releases, { spaces: 2 });
+    console.log(`🚀 Release Notes Generated`);
   } catch (error) {
-    console.warn(`⚠️  Could not read existing release notes: ${error.message}`);
+    console.error(`\n❌ Release Notes Failed\n  ⇢ ${error.message}\n`);
+    process.exit(1);
   }
-
-  // If we have no new data and no cached data, error
-  throw new Error('Failed to fetch release notes from GitHub and no cached data available');
 }
 
 run();

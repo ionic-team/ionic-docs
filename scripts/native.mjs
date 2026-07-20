@@ -1,7 +1,6 @@
 import { writeFileSync } from 'fs';
 import fetch from 'node-fetch';
 
-// replace with latest once it's relased
 const tag = 'latest';
 
 const pluginApis = [
@@ -51,7 +50,7 @@ function createApiPage(pluginId, readme, pkgJson) {
 
   /**
    * Cleanup and transform JSDoc content for compatibility with MDX/Docusaurus:
-   * 
+   *
    * - Remove HTML comments (`<!-- ... -->`) which are not valid in MDX and will cause parsing errors.
    * - Escape `{` characters inside <code> blocks because MDX treats `{}` as JavaScript expressions. Unescaped `{` inside code blocks can cause parsing errors.
    * - Convert JSDoc-style {@link URL|Text} and {@link URL} to proper Markdown links:
