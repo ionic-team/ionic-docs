@@ -27,6 +27,10 @@ window.Ionic = {
 <TabItem value="angular">
 
 ```tsx title="app.module.ts"
+/*
+ * IonicModule is deprecated and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
 import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({

@@ -33,6 +33,7 @@ autogrow
 automations
 autoplay
 Callout
+codemods
 comparewith
 composables
 engageable

@@ -47,6 +47,10 @@ window.Ionic = {
 **Not recommended**
 
 ```ts
+/*
+ * IonicModule is deprecated and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
 import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
