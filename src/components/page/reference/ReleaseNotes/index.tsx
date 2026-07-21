@@ -20,7 +20,7 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
     );
 
     return [
-      <p>
+      <p key="empty-releases">
         Unable to load Releases. Please see all releases{' '}
         <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
           on GitHub
@@ -46,7 +46,7 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
       </p>
       <div className={styles['release-notes']}>
         {releases.map((release: Release, index) => (
-          <section className={clsx(styles['release-note'], styles[`release-note-${release.type}`])}>
+          <section key={release.tag_name} className={clsx(styles['release-note'], styles[`release-note-${release.type}`])}>
             <div className={styles['release-info']}>
               <div className={styles['release-header']}>
                 <a href={`https://github.com/ionic-team/ionic-framework/releases/v${release.version}`}>
