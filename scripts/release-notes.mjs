@@ -12,8 +12,9 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 
 // Get the GitHub Releases from Ionic Framework
 // -------------------------------------------------------------------------------
-// Requires a GITHUB_TOKEN environment variable.
-// Refer to CONTRIBUTING.md for setup instructions.
+// Requires a GITHUB_TOKEN environment variable. Refer to
+// https://github.com/ionic-team/ionic-docs/blob/main/CONTRIBUTING.md#github-token
+// for setup instructions.
 const getReleases = async () => {
   if (!process.env.GITHUB_TOKEN) {
     throw new Error('GITHUB_TOKEN environment variable is required.');

@@ -37,7 +37,7 @@ npm start
 
 #### GitHub Token
 
-The documentation build requires a GitHub Personal Access Token to fetch Ionic Framework release notes.
+The documentation build requires a GitHub Personal Access Token to fetch Ionic Framework release notes. The build will still work locally without it (release notes will be empty), but it's required for Vercel preview and production builds.
 
 **Local Development:**
 
@@ -54,7 +54,7 @@ The documentation build requires a GitHub Personal Access Token to fetch Ionic F
 
 3. Reload your shell or run `source ~/.zshrc` (or equivalent)
 
-**Vercel (Production):**
+**Vercel:**
 
 1. Create a [fine-grained Personal Access Token](https://github.com/settings/personal-access-tokens/new) with the same settings as above, but with:
 
