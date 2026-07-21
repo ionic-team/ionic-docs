@@ -45,7 +45,7 @@ const getReleases = async () => {
         return releasePattern.test(release.tag_name);
       })
       .map((release) => {
-        const body = renderMarkdown(release.body.replace(/^#.*/, '')).value;
+        const body = renderMarkdown((release.body ?? '').replace(/^#.*/, '')).value;
         const published_at = parseDate(release.published_at);
         const version = release.tag_name.replace('v', '');
         const type = getVersionType(version);
@@ -98,8 +98,15 @@ async function run() {
     outputJson(OUTPUT_PATH, releases, { spaces: 2 });
     console.log(`🚀 Release Notes Generated`);
   } catch (error) {
-    console.error(`\n❌ Release Notes Failed\n  ⇢ ${error.message}\n`);
-    process.exit(1);
+    // Only fail the build in CI environments and the preview
+    // or production Vercel environments.
+    const shouldFail = process.env.CI || ['production', 'preview'].includes(process.env.VERCEL_ENV);
+    if (shouldFail) {
+      console.error(`\n❌ Release Notes Failed\n  ⇢ ${error.message}\n`);
+      process.exit(1);
+    }
+    console.warn(`\n⚠️  Release Notes Failed\n  ⇢ ${error.message}`);
+    outputJson(OUTPUT_PATH, [], { spaces: 2 });
   }
 }
 
