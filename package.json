@@ -48,7 +48,6 @@
     "@stackblitz/sdk": "^1.6.0",
     "@tippyjs/react": "^4.2.6",
     "clsx": "^1.1.1",
-    "concurrently": "^6.2.0",
     "crowdin": "^3.5.0",
     "docusaurus-plugin-copy-page-button": "^0.8.2",
     "docusaurus-plugin-module-alias": "^0.0.2",
