@@ -25,6 +25,7 @@
     {
       "matchPackageNames": ["vite", "vite-plugin-static-copy"],
       "groupName": "vite-html",
+      "allowedVersions": "^7.0.0",
       "matchFileNames": [
         "static/code/stackblitz/**/html/package.json"
       ]
@@ -32,6 +33,7 @@
     {
       "matchPackageNames": ["vite", "@vitejs/plugin-react"],
       "groupName": "vite-react",
+      "allowedVersions": "^7.0.0",
       "matchFileNames": [
         "static/code/stackblitz/**/react/package.json"
       ]
@@ -39,6 +41,7 @@
     {
       "matchPackageNames": ["vite", "@vitejs/plugin-vue"],
       "groupName": "vite-vue",
+      "allowedVersions": "^7.0.0",
       "matchFileNames": [
         "static/code/stackblitz/**/vue/package.json"
       ]
