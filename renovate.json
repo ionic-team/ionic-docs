@@ -44,6 +44,22 @@
       ]
     },
     {
+      "matchPackageNames": ["vite"],
+      "allowedVersions": "^7.0.0",
+      "matchFileNames": [
+        "static/code/stackblitz/**/html/package.json",
+        "static/code/stackblitz/**/react/package.json",
+        "static/code/stackblitz/**/vue/package.json"
+      ]
+    },
+    {
+      "matchPackageNames": ["@vitejs/plugin-react"],
+      "allowedVersions": "^5.0.0",
+      "matchFileNames": [
+        "static/code/stackblitz/**/react/package.json"
+      ]
+    },
+    {
       "matchPackagePatterns": ["@ionic/"],
       "minimumReleaseAge": "0 days",
       "allowedVersions": "^8.0.0",
