@@ -20,6 +20,11 @@ import Basic from '@site/static/usage/v9/icon/basic/index.md';
 
 <Basic />
 
+## Font Icons
+
+import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
+
+<FontIcons />
 
 ## Accessibility
 
