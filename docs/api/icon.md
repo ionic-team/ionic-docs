@@ -26,6 +26,12 @@ import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
 
 <FontIcons />
 
+## Custom SVGs
+
+import CustomSVGs from '@site/static/usage/v9/icon/custom-svgs/index.md';
+
+<CustomSVGs />
+
 ## Accessibility
 
 Icons that are purely decorative content should have <code>aria-hidden="true"</code>. This will not visually hide the icon, but it will hide the element from assistive technology.
