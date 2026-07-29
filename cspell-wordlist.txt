@@ -66,6 +66,7 @@ subcomponent
 subcomponents
 subpath
 subpaths
+svgs
 swipeable
 templating
 transpiling
