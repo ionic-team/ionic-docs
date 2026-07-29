@@ -1,25 +1,9 @@
 ```vue
 <template>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-  <!-- Phosphor Icons -->
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-  />
-
   <h2>Font Awesome Icons</h2>
   <div class="row">
     <ion-icon color="primary">
-      <i class="fas fa-home"></i>
+      <i class="fas fa-house"></i>
     </ion-icon>
     <ion-icon color="secondary">
       <i class="fas fa-heart"></i>
@@ -28,10 +12,10 @@
       <i class="fas fa-star"></i>
     </ion-icon>
     <ion-icon color="success">
-      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-circle-check"></i>
     </ion-icon>
     <ion-icon color="warning">
-      <i class="fas fa-exclamation-triangle"></i>
+      <i class="fas fa-triangle-exclamation"></i>
     </ion-icon>
     <ion-icon color="danger">
       <i class="fas fa-trash"></i>
@@ -40,7 +24,7 @@
   <div class="row">
     <ion-button size="small" fill="outline">
       <ion-icon slot="start">
-        <i class="fas fa-home"></i>
+        <i class="fas fa-house"></i>
       </ion-icon>
       Home
     </ion-button>
@@ -100,43 +84,43 @@
     </ion-button>
   </div>
 
-  <h2>Material Icons</h2>
+  <h2>Remix Icons</h2>
   <div class="row">
     <ion-icon color="primary">
-      <span class="material-icons">home</span>
+      <i class="ri-home-fill"></i>
     </ion-icon>
     <ion-icon color="secondary">
-      <span class="material-icons">favorite</span>
+      <i class="ri-heart-fill"></i>
     </ion-icon>
     <ion-icon color="tertiary">
-      <span class="material-icons">star</span>
+      <i class="ri-star-fill"></i>
     </ion-icon>
     <ion-icon color="success">
-      <span class="material-icons">check_circle</span>
+      <i class="ri-checkbox-circle-fill"></i>
     </ion-icon>
     <ion-icon color="warning">
-      <span class="material-icons">warning</span>
+      <i class="ri-alert-fill"></i>
     </ion-icon>
     <ion-icon color="danger">
-      <span class="material-icons">delete</span>
+      <i class="ri-delete-bin-fill"></i>
     </ion-icon>
   </div>
   <div class="row">
     <ion-button size="small" fill="outline">
       <ion-icon slot="start">
-        <span class="material-icons">home</span>
+        <i class="ri-home-fill"></i>
       </ion-icon>
       Home
     </ion-button>
     <ion-button size="small" fill="outline" color="tertiary">
       <ion-icon slot="start">
-        <span class="material-icons">star</span>
+        <i class="ri-star-fill"></i>
       </ion-icon>
       Save
     </ion-button>
     <ion-button size="small" fill="outline" color="danger">
       <ion-icon slot="start">
-        <span class="material-icons">delete</span>
+        <i class="ri-delete-bin-fill"></i>
       </ion-icon>
       Trash
     </ion-button>

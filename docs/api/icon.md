@@ -22,7 +22,7 @@ import Basic from '@site/static/usage/v9/icon/basic/index.md';
 
 ## Font Icons
 
-Font-based icons from libraries such as Font Awesome, Bootstrap Icons, Material Icons, and Phosphor Icons can be displayed by slotting them into Icon.
+Font-based icons from libraries such as Font Awesome, Bootstrap Icons, Remix Icons, and Phosphor Icons can be displayed by slotting them into Icon.
 
 import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
 
