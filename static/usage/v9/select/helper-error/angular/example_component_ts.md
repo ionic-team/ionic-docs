@@ -5,7 +5,6 @@ import { IonSelect, IonSelectOption, IonButton } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
-  standalone: true,
   imports: [IonSelect, IonSelectOption, IonButton, ReactiveFormsModule],
   templateUrl: './example.component.html',
   styleUrl: './example.component.css',

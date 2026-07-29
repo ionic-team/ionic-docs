@@ -5,7 +5,6 @@ import { IonRadioGroup, IonRadio, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
-  standalone: true,
   imports: [IonRadioGroup, IonRadio, IonButton, ReactiveFormsModule],
   templateUrl: './example.component.html',
   styleUrl: './example.component.css',
