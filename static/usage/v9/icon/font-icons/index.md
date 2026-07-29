@@ -28,8 +28,8 @@ import angular_global_css from './angular/global_css.md';
         '@fortawesome/fontawesome-free': '^7.3.0',
         '@phosphor-icons/web': '^2.1.0',
         'bootstrap-icons': '^1.13.0',
-        'remixicon': '^4.9.0',
-      }
+        remixicon: '^4.9.0',
+      },
     },
     react: {
       files: {
@@ -41,8 +41,8 @@ import angular_global_css from './angular/global_css.md';
         '@fortawesome/fontawesome-free': '^7.3.0',
         '@phosphor-icons/web': '^2.1.0',
         'bootstrap-icons': '^1.13.0',
-        'remixicon': '^4.9.0',
-      }
+        remixicon: '^4.9.0',
+      },
     },
     vue: {
       files: {
@@ -53,8 +53,8 @@ import angular_global_css from './angular/global_css.md';
         '@fortawesome/fontawesome-free': '^7.3.0',
         '@phosphor-icons/web': '^2.1.0',
         'bootstrap-icons': '^1.13.0',
-        'remixicon': '^4.9.0',
-      }
+        remixicon: '^4.9.0',
+      },
     },
     angular: {
       files: {
@@ -67,8 +67,8 @@ import angular_global_css from './angular/global_css.md';
         '@fortawesome/fontawesome-free': '^7.3.0',
         '@phosphor-icons/web': '^2.1.0',
         'bootstrap-icons': '^1.13.0',
-        'remixicon': '^4.9.0',
-      }
+        remixicon: '^4.9.0',
+      },
     },
   }}
   size="large"
