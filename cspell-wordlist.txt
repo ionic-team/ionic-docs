@@ -38,6 +38,8 @@ comparewith
 composables
 engageable
 flexbox
+fontawesome
+fortawesome
 frontmatter
 fullscreen
 geolocation
@@ -59,6 +61,7 @@ preconfigured
 preflighted
 proxying
 quickstart
+remixicon
 retargeted
 runtimes
 scroller
