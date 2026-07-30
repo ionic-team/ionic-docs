@@ -6,7 +6,6 @@ import type { ModalDragEventDetail } from '@ionic/angular/standalone';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  standalone: true,
   imports: [IonButton, IonContent, IonHeader, IonLabel, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
