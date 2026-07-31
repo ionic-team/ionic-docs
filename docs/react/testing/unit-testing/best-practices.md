@@ -49,3 +49,7 @@ test('example', async () => {
 ```
 
 For more information on `user-event`, see the [user-event documentation](https://testing-library.com/docs/user-event/intro/).
+
+## Import `componentOnReady` for standalone projects
+
+When testing Ionic components, use the exported `componentOnReady` helper from `@ionic/core` instead of calling `el.componentOnReady()` directly. The helper works with both lazy-loaded and custom-element builds, making it more likely the component has finished rendering before making assertions against its rendered DOM or running accessibility tests.
