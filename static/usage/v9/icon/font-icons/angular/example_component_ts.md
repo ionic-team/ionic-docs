@@ -1,4 +1,4 @@
-```typescript
+```ts
 import { Component } from '@angular/core';
 import { IonButton, IonIcon } from '@ionic/angular';
 
