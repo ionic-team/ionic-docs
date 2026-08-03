@@ -9,12 +9,12 @@
     "start": "vite preview"
   },
   "dependencies": {
-    "@ionic/core": "8.8.14-dev.11784216165.1ecbf364",
-    "ionicons": "8.0.13"
+    "@ionic/core": "8.8.16-dev.11785274070.1b3387c9",
+    "ionicons": "8.1.0"
   },
   "devDependencies": {
     "typescript": "~5.9.0",
-    "vite": "^8.0.0",
+    "vite": "^7.0.0",
     "vite-plugin-static-copy": "^4.0.0"
   }
 }
