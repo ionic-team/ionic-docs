@@ -1,9 +1,9 @@
 ```html
 <h2>External SVG Files</h2>
 <div class="row">
-  <ion-icon src="https://ionic-docs-git-fw-7625-ionic1.vercel.app/img/demos/home.svg" color="primary"></ion-icon>
-  <ion-icon src="https://ionic-docs-git-fw-7625-ionic1.vercel.app/img/demos/star.svg" color="tertiary"></ion-icon>
-  <ion-icon src="https://ionic-docs-git-fw-7625-ionic1.vercel.app/img/demos/trash.svg" color="danger"></ion-icon>
+  <ion-icon src="https://ionicframework.com/docs/img/demos/home.svg" color="primary"></ion-icon>
+  <ion-icon src="https://ionicframework.com/docs/img/demos/star.svg" color="tertiary"></ion-icon>
+  <ion-icon src="https://ionicframework.com/docs/img/demos/trash.svg" color="danger"></ion-icon>
 </div>
 
 <h2>Inline SVG Content</h2>

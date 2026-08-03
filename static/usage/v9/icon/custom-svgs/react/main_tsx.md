@@ -9,9 +9,9 @@ function Example() {
     <>
       <h2>External SVG Files</h2>
       <div className="row">
-        <IonIcon src="https://ionic-docs-git-fw-7625-ionic1.vercel.app/img/demos/home.svg" color="primary"></IonIcon>
-        <IonIcon src="https://ionic-docs-git-fw-7625-ionic1.vercel.app/img/demos/star.svg" color="tertiary"></IonIcon>
-        <IonIcon src="https://ionic-docs-git-fw-7625-ionic1.vercel.app/img/demos/trash.svg" color="danger"></IonIcon>
+        <IonIcon src="https://ionicframework.com/docs/img/demos/home.svg" color="primary"></IonIcon>
+        <IonIcon src="https://ionicframework.com/docs/img/demos/star.svg" color="tertiary"></IonIcon>
+        <IonIcon src="https://ionicframework.com/docs/img/demos/trash.svg" color="danger"></IonIcon>
       </div>
 
       <h2>Inline SVG Content</h2>
