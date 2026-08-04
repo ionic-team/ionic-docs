@@ -10,7 +10,6 @@ import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
-import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Footer from '@theme/Footer';
@@ -29,8 +28,6 @@ export default function Layout(props: Props): ReactNode {
     description,
   } = props;
 
-  useKeyboardNavigation();
-
   return (
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
@@ -44,7 +41,12 @@ export default function Layout(props: Props): ReactNode {
 
       <div
         id={SkipToContentFallbackId}
-        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
+        className={clsx(
+          ThemeClassNames.layout.main.container,
+          ThemeClassNames.wrapper.main,
+          styles.mainWrapper,
+          wrapperClassName
+        )}
       >
         <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>
       </div>

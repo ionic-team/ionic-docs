@@ -37,10 +37,10 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/mdx-loader": "^3.7.0",
-    "@docusaurus/plugin-client-redirects": "^3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/mdx-loader": "^3.10.2",
+    "@docusaurus/plugin-client-redirects": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
     "@floating-ui/react": "^0.27.20",
     "@ionic-internal/ionic-ds": "^7.0.0",
     "@mdx-js/react": "^3.0.0",
@@ -63,8 +63,8 @@
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/tsconfig": "^3.7.0",
+    "@docusaurus/module-type-aliases": "^3.10.2",
+    "@docusaurus/tsconfig": "^3.10.2",
     "@ionic/prettier-config": "^3.0.0",
     "@types/react": "^19.2.18",
     "cspell": "^6.31.3",

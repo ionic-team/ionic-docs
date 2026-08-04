@@ -8,7 +8,7 @@ import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 
 import Tooltip from '../Tooltip';
 import PlaygroundTabs from '../PlaygroundTabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '../PlaygroundTabs/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
@@ -651,9 +651,7 @@ export default function Playground({
               value={fileName}
               label={fileName}
               key={fileName}
-              {...{
-                icon: getFileIcon(fileName),
-              }}
+              icon={getFileIcon(fileName)}
             >
               <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
             </TabItem>

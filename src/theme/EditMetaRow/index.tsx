@@ -30,7 +30,7 @@ export default function EditMetaRow({ className, editUrl, lastUpdatedAt, lastUpd
   return (
     <div className={clsx('row', className)}>
       {/* CUSTOM CODE — "Edit this page | Copy page" as peer links on one row */}
-      <div className={clsx('col', styles.editMetaActions)}>
+      <div className={clsx('col', globalStyles.noPrint, styles.editMetaActions)}>
         {editUrl && <EditThisPage editUrl={editUrl} />}
         <CopyPageButton
           customStyles={{
