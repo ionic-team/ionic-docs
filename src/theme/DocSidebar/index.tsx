@@ -6,14 +6,14 @@
  * - Scroll to the active item in the sidebar
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, type ReactNode } from 'react';
 import { useLocation } from '@docusaurus/router';
 import DocSidebar from '@theme-original/DocSidebar';
 import type { Props } from '@theme/DocSidebar';
 
 import Logo from '@theme-original/Logo';
 
-export default function DocSidebarWrapper(props: Props): JSX.Element {
+export default function DocSidebarWrapper(props: Props): ReactNode {
   const location = useLocation();
 
   useEffect(() => {

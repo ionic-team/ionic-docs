@@ -353,7 +353,7 @@ module.exports = {
         name: 'ionic-docs-ads',
         async loadContent() {
           const repoName = 'ionicframeworkcom';
-          const endpoint = prismic.getEndpoint(repoName);
+          const endpoint = prismic.getRepositoryEndpoint(repoName);
           const client = prismic.createClient(endpoint, {
             fetch,
           });
