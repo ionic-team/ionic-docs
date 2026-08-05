@@ -17,3 +17,30 @@ This document provides an overview of how to test an application built with `@io
 ### Waiting for Components
 
 When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/vue` uses Stencil's custom elements build, where that method does not exist on the element. The helper waits one animation frame instead, giving the component's inner contents a chance to render.
+
+```tsx
+import { mount } from '@vue/test-utils';
+import { IonApp } from '@ionic/vue';
+import { componentOnReady } from '@ionic/core';
+
+import Example from './Example.vue';
+
+const TestComponent = {
+  components: { IonApp, Example },
+  template: `
+    <ion-app>
+      <Example />
+    </ion-app>
+  `,
+};
+
+test('renders the submit button', async () => {
+  const wrapper = mount(TestComponent);
+
+  const button = wrapper.element.querySelector('ion-button')!;
+
+  await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
+
+  expect(button.textContent).toContain('Submit');
+});
+```
