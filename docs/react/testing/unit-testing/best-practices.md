@@ -54,20 +54,3 @@ For more information on `user-event`, see the [user-event documentation](https:/
 
 When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/react` uses Stencil's custom elements build, where that method does not exist on the element. The helper waits one animation frame instead, giving the component's inner contents a chance to render.
 
-```tsx
-import { test, expect } from 'vitest';
-import { render } from '@testing-library/react';
-import { componentOnReady } from '@ionic/core';
-
-import App from './App';
-
-test('renders the submit button', async () => {
-  const { container } = render(<App />);
-
-  const button = container.querySelector('ion-button');
-
-  await new Promise<void>((resolve) => componentOnReady(button!, () => resolve()));
-
-  expect(button?.textContent).toContain('Submit');
-});
-```
