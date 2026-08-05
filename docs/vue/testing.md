@@ -12,14 +12,10 @@ title: Testing
 
 # Testing Ionic Vue
 
-This document provides an overview of how to test an application built with `@ionic/vue`. It covers the basics of testing with Vue, as well as the specific tools and libraries developers can use to test their applications.
+This document provides an overview of how to test an application built with `@ionic/vue`. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [Vue Test Utils](https://test-utils.vuejs.org), and for end-to-end testing with [Cypress](https://www.cypress.io).
 
-## Introduction
+## Unit Testing
 
-Testing is an important part of the development process, and it helps to ensure that an application is working as intended.
+### Waiting for Components
 
-## Best Practices
-
-### Import `componentOnReady` for standalone projects
-
-When testing Ionic components, use the exported `componentOnReady` helper from `@ionic/core` instead of calling `el.componentOnReady()` directly. The helper works with both lazy-loaded and custom-element builds, making it more likely the component has finished rendering before making assertions against its rendered DOM or running accessibility tests.
+When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/vue` uses Stencil's custom elements build, where that method does not exist on the element. The helper waits one animation frame instead, giving the component's inner contents a chance to render.

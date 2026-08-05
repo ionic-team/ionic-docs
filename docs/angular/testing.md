@@ -178,46 +178,10 @@ describe('PayrolService', () => {
 });
 ```
 
-### Import `componentOnReady` for standalone projects
+### Waiting for Components
 
-When testing Ionic components, use the exported `componentOnReady` helper from `@ionic/core` instead of calling `el.componentOnReady()` directly. The helper works with both lazy-loaded and custom-element builds, making it more likely the component has finished rendering before making assertions against its rendered DOM or running accessibility tests. See an example here:
+When testing Ionic components, use the `componentOnReady` helper exported from `@ionic/core` rather than calling `el.componentOnReady()` directly. That method only exists on lazy-loaded elements. Calling it directly throws on custom-element builds, which is what standalone projects use. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists. Otherwise it waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
 
-```tsx
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { axe, toHaveNoViolations } from 'jasmine-axe';
-import { componentOnReady } from '@ionic/core';
-
-import { Component } from './component';
-
-describe('Component', () => {
-  let component: Component;
-  let fixture: ComponentFixture<Component>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Component],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(Component);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should pass accessibility test', async () => {
-    const el = fixture.nativeElement.querySelector('ion-button');
-
-    await new Promise<void>((resolve) => {
-      componentOnReady(el, () => resolve());
-    });
-
-    jasmine.addMatchers(toHaveNoViolations);
-
-    const a11y = await axe(fixture.nativeElement);
-
-    expect(a11y).toHaveNoViolations();
-  });
-});
-```
 
 #### Testing HTTP Data Services
 
