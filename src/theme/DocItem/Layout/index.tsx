@@ -1,10 +1,10 @@
 /**
  * DocItemLayout is a component that renders the layout of a page like
  * the individual component pages, guide pages, etc.
- * 
+ *
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/DocItem/Layout/index.tsx
- * 
+ *
  * Reason for overriding:
  * - Add a phone demo to the right of the page, e.g. /docs
  */
@@ -95,8 +95,8 @@ export default function DocItemLayout({children, ...props}: Props): ReactNode {
         {/* ------- CUSTOM CODE -------- */}
         {/* Ideally this would only render if there is a demoUrl and the it's a mobile device. However,the `windowSize` does not provide a tablet so we have to hide it through CSS. */}
         {demoUrl && (
-          <div className='col col--4'>
-            <div className='doc-demo-wrapper'>
+          <div className="col col--4">
+            <div className="doc-demo-wrapper">
               <DocDemo url={demoUrl} source={demoSourceUrl} />
             </div>
           </div>
