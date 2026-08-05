@@ -10,8 +10,6 @@ title: Testing
   />
 </head>
 
-# Testing Ionic Vue
-
 This document provides an overview of how to test an application built with `@ionic/vue`. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [Vue Test Utils](https://test-utils.vuejs.org), and for end-to-end testing with [Cypress](https://www.cypress.io).
 
 ## Unit Testing

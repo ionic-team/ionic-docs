@@ -109,6 +109,34 @@ describe('TabsPage', () => {
 
 When doing component class testing, the component object is accessed using the component object defined via `component = fixture.componentInstance;`. This is an instance of the component class. When doing DOM testing, the `fixture.nativeElement` property is used. This is the actual `HTMLElement` for the component, which allows the test to use standard HTML API methods such as `HTMLElement.querySelector` in order to examine the DOM.
 
+### Waiting for Components
+
+When testing Ionic components, use the `componentOnReady` helper exported from `@ionic/core` rather than calling `el.componentOnReady()` directly. The `el.componentOnReady()` method only exists on lazy-loaded elements and calling it directly throws an error on custom-element builds, which is what standalone projects use. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists. Otherwise it waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
+
+```tsx
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { componentOnReady } from '@ionic/core';
+import { HomePage } from './home.page';
+
+describe('HomePage', () => {
+  let fixture: ComponentFixture<HomePage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomePage],
+    }).compileComponents();
+    fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+  });
+
+  it('renders the submit button', async () => {
+    const button = fixture.nativeElement.querySelector('ion-button');
+    await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
+    expect(button.textContent).toContain('Submit');
+  });
+});
+```
+
 ## Services
 
 Services often fall into one of two broad categories: utility services that perform calculations and other operations, and data services that perform primarily HTTP operations and data manipulation.
@@ -177,11 +205,6 @@ describe('PayrolService', () => {
   });
 });
 ```
-
-### Waiting for Components
-
-When testing Ionic components, use the `componentOnReady` helper exported from `@ionic/core` rather than calling `el.componentOnReady()` directly. That method only exists on lazy-loaded elements. Calling it directly throws on custom-element builds, which is what standalone projects use. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists. Otherwise it waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
-
 
 #### Testing HTTP Data Services
 
