@@ -1,11 +1,9 @@
 :root:root {
   --docsearch-searchbox-background: var(--token-primary-bg-c);
-  --docsearch-searchbox-height: 2.25rem;
   --docsearch-searchbox-focus-background: var(--token-primary-bg-c);
 
-  --docsearch-key-gradient: var(--token-primary-bg-c);
-  --docsearch-key-shadow: none;
   --docsearch-key-background: var(--token-primary-bg-c);
+  --docsearch-search-button-background: var(--token-primary-bg-c);
 }
 
 html[data-theme='light'] {
