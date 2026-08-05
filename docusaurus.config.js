@@ -47,7 +47,11 @@ module.exports = {
     },
   },
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
@@ -353,7 +357,7 @@ module.exports = {
         name: 'ionic-docs-ads',
         async loadContent() {
           const repoName = 'ionicframeworkcom';
-          const endpoint = prismic.getEndpoint(repoName);
+          const endpoint = prismic.getRepositoryEndpoint(repoName);
           const client = prismic.createClient(endpoint, {
             fetch,
           });

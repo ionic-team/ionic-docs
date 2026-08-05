@@ -9,7 +9,7 @@
  * - Add a phone demo to the right of the page, e.g. /docs
  */
 
-import React from 'react';
+import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import {useWindowSize} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
@@ -66,7 +66,7 @@ function useDocDemo() {
 }
 // CUSTOM CODE END
 
-export default function DocItemLayout({children, ...props}: Props): JSX.Element {
+export default function DocItemLayout({children, ...props}: Props): ReactNode {
   const docTOC = useDocTOC();
   const {metadata} = useDoc();
   // CUSTOM CODE
