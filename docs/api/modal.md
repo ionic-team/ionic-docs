@@ -322,7 +322,8 @@ interface ModalDragEventDetail {
    */
   snapBreakpoint?: number;
   /**
-   * Whether the modal will begin dismissing when the drag gesture ends.
+   * Whether the modal is attempting to dismiss when the drag gesture
+   * ends.
    *
    * In a sheet modal, this is `true` when the modal will snap to a
    * breakpoint of 0. In a card modal, it is `true` when the gesture
