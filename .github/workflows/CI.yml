@@ -2,7 +2,7 @@
 # https://help.github.com/en/articles/about-github-actions
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 
-name: Install Dependencies, Lint
+name: Validate Docs
 
 on: [pull_request]
 
@@ -27,8 +27,23 @@ jobs:
       run: npm run lint
     - name: Spell Check
       run: npm run spellcheck
+    # Surfaces failures unique to a translated locale, such as duplicate
+    # translation keys, while the changes are still in review. Previews only
+    # build the default locale, so translated locale issues would not surface
+    # until after merging into main.
+    #
+    # The result is the same on every OS, so this only runs on the first one.
+    - name: Check Translation Keys
+      if: strategy.job-index == 0
+      shell: bash
+      run: |
+        trap 'rm -rf i18n' EXIT
+        npm run generate-markdown
+        npx docusaurus write-translations --locale ja
     # Lint and spell check changes should be pushed
     # to the branch before the branch is merge eligible.
+    #
+    # The translation keys check should not produce any changes.
     - name: Check Diff
       run: git diff --exit-code
       shell: bash
