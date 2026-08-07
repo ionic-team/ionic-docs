@@ -68,7 +68,7 @@ test('renders the submit button', async () => {
     </IonApp>
   );
 
-  const button = container.querySelector('ion-button');
+  const button = container.querySelector('ion-button')!;
 
   await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
 
