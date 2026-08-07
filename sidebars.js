@@ -205,7 +205,7 @@ module.exports = {
       type: 'category',
       label: 'Techniques',
       collapsed: false,
-      items: ['techniques/security'],
+      items: ['techniques/security-test'],
     },
     {
       type: 'category',
