@@ -8,13 +8,15 @@ runs:
     # build the default locale, so translated locale issues would not surface
     # until after merging into main.
     #
-    # The sidebars reference docs that are generated rather than committed, so
-    # those have to exist before the translations can be extracted.
+    # The sidebars reference the native and CLI docs, which are generated rather
+    # than committed, so those have to exist before the translations can be
+    # extracted.
     - name: 🇯🇵 Extract Translations
       shell: bash
       run: |
         trap 'rm -rf i18n' EXIT
-        npm run generate-markdown
+        node scripts/native.mjs
+        node scripts/cli.mjs
         npx docusaurus write-translations --locale ja
     # The Japanese docs mirror this file tree from the translation/jp branch, so
     # renaming or removing an English doc orphans its translation and breaks the
