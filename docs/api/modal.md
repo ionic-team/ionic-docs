@@ -321,6 +321,24 @@ interface ModalDragEventDetail {
    * snap to upon release.
    */
   snapBreakpoint?: number;
+  /**
+   * Whether the modal is attempting to dismiss when the drag gesture
+   * ends.
+   *
+   * In a sheet modal, this is `true` when the modal will snap to a
+   * breakpoint of 0. In a card modal, it is `true` when the gesture
+   * passed the threshold required to close the modal.
+   *
+   * If a `canDismiss` callback is set, it can still cancel the dismiss
+   * after this event is emitted. Listen for `ionModalDidDismiss` to
+   * confirm that the modal closed.
+   *
+   * This property is only included on `ionDragEnd`.
+   *
+   * This can be used to react as soon as the user releases the modal,
+   * such as dismissing the keyboard while the modal animates away.
+   */
+  isDismissing?: boolean;
 }
 ```
 
