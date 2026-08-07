@@ -186,6 +186,7 @@ module.exports = {
         'vue/slides',
         'vue/utility-functions',
         'vue/platform',
+        'vue/testing',
         'vue/pwa',
         'vue/storage',
         'vue/troubleshooting',
