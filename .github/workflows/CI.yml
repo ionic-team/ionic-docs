@@ -20,10 +20,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        # Needed to diff against the base branch when looking for renamed docs.
-        # Refer to `check-translations` action for more details.
-        fetch-depth: 0
     - name: ⚙️ Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v4
       with:

@@ -18,18 +18,3 @@ runs:
         node scripts/native.mjs
         node scripts/cli.mjs
         npx docusaurus write-translations --locale ja
-    # The Japanese docs mirror this file tree from the translation/jp branch, so
-    # renaming or removing an English doc orphans its translation and breaks the
-    # relative links pointing at it. That branch is synced separately, so this
-    # only warns.
-    #
-    # Diffing against the base branch requires the full history, so the calling
-    # workflow has to check out with `fetch-depth: 0`.
-    - name: ⚠️ Flag Docs Needing Translation Sync
-      shell: bash
-      run: |
-        renamed=$(git diff --diff-filter=DR --name-only "origin/${{ github.base_ref }}...HEAD" -- 'docs/**/*.md')
-        if [ -n "$renamed" ]; then
-          echo "::warning::Renamed or deleted docs need the same change on the translation/jp branch:"
-          echo "$renamed"
-        fi
