@@ -207,14 +207,6 @@ module.exports = {
       collapsed: false,
       items: ['techniques/security'],
     },
-    // THROWAWAY: duplicates the label above so the translation check fails.
-    // Revert this commit before merging.
-    {
-      type: 'category',
-      label: 'Techniques',
-      collapsed: false,
-      items: ['techniques/security'],
-    },
     {
       type: 'category',
       label: 'Troubleshooting',
