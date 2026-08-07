@@ -10,6 +10,8 @@ jobs:
   test:
     name: Test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    # Build processes work differently across operating systems, so the checks
+    # run on each one to make sure anyone can contribute to the docs.
     strategy:
       matrix:
         node_version: [20]
@@ -17,33 +19,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node_version }}
+      with:
+        # Needed to diff against the base branch when looking for renamed docs.
+        # Refer to `check-translations` action for more details.
+        fetch-depth: 0
+    - name: ⚙️ Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node_version }}
-    - name: Install Dependencies
+    - name: 🕸️ Install Dependencies
       run: npm ci --legacy-peer-deps
-    - name: Lint
+    - name: 🖌️ Lint
       run: npm run lint
-    - name: Spell Check
+    - name: 🔤 Spell Check
       run: npm run spellcheck
-    # Surfaces failures unique to a translated locale, such as duplicate
-    # translation keys, while the changes are still in review. Previews only
-    # build the default locale, so translated locale issues would not surface
-    # until after merging into main.
-    #
-    # The result is the same on every OS, so this only runs on the first one.
-    - name: Check Translation Keys
-      if: strategy.job-index == 0
-      shell: bash
-      run: |
-        trap 'rm -rf i18n' EXIT
-        npm run generate-markdown
-        npx docusaurus write-translations --locale ja
+    - uses: ./.github/workflows/actions/check-translations
     # Lint and spell check changes should be pushed
     # to the branch before the branch is merge eligible.
     #
     # The translation keys check should not produce any changes.
-    - name: Check Diff
+    - name: 🔍 Check Diff
       run: git diff --exit-code
       shell: bash
