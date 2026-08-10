@@ -60,7 +60,7 @@ title: Glossary
   <a href="#cli">
     <h3>CLI</h3>
   </a>
-  A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="https://ionic.io/appflow" target="_blank">Ionic commercial services</a> .
+  A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="https://ionic.io/appflow" target="_blank">Ionic commercial services</a>.
 </section>
 
 <!-- cspell:enable -->
@@ -216,7 +216,7 @@ title: Glossary
   <a href="#package-id">
     <h3>Package ID</h3>
   </a>
-  Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a> .
+  Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.
 </section>
 
 <section id="polyfill">
@@ -237,21 +237,21 @@ title: Glossary
   <a href="#sass">
     <h3>Sass</h3>
   </a>
-  Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a> , <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">loops</a>.
+  Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a>, <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">loops</a>.
 </section>
 
 <section id="scoped">
   <a href="#scoped">
     <h3>Scoped Encapsulation</h3>
   </a>
-  A component that uses scoped encapsulation will automatically scope its CSS by appending each of the styles with a data attribute at run time. Overriding scoped selectors in CSS requires a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">higher specificity</a> selector. Scoped components can also be styled using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a> .
+  A component that uses scoped encapsulation will automatically scope its CSS by appending each of the styles with a data attribute at run time. Overriding scoped selectors in CSS requires a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">higher specificity</a> selector. Scoped components can also be styled using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a>.
 </section>
 
 <section id="shadow">
   <a href="#shadow">
     <h3>Shadow DOM</h3>
   </a>
-  <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">Shadow DOM</a> is a native browser solution for DOM and style encapsulation of a component. It shields the component from its surrounding environment. To externally style internal elements of a Shadow DOM component you must use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">CSS Shadow Parts</a> .
+  <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">Shadow DOM</a> is a native browser solution for DOM and style encapsulation of a component. It shields the component from its surrounding environment. To externally style internal elements of a Shadow DOM component you must use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">CSS Shadow Parts</a>.
 </section>
 
 <section id="shim">
@@ -265,14 +265,14 @@ title: Glossary
   <a href="#transpiler">
     <h3>Transpiler</h3>
   </a>
-  Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a> ( <a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
+  Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a> (<a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
 </section>
 
 <section id="typescript">
   <a href="#typescript">
     <h3>TypeScript</h3>
   </a>
-  <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> is a superset of JavaScript, which means it gives you JavaScript, along with a number of extra features such as <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">type declarations</a> and <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">interfaces</a> . Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
+  <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> is a superset of JavaScript, which means it gives you JavaScript, along with a number of extra features such as <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">type declarations</a> and <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">interfaces</a>. Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
 </section>
 
 <section id="unit-tests">
@@ -293,7 +293,7 @@ title: Glossary
   <a href="#web-standards">
     <h3>Web Standards</h3>
   </a>
-  The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop <a href="https://www.w3.org/standards/" target="_blank">web standards</a> , which are a set of protocols, specifications, and technologies that define the Web Platform.
+  The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop <a href="https://www.w3.org/standards/" target="_blank">web standards</a>, which are a set of protocols, specifications, and technologies that define the Web Platform.
 </section>
 
 <section id="xcode">
