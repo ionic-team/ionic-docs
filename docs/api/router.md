@@ -2,12 +2,12 @@
 title: "ion-router"
 ---
 
-import Props from '@ionic-internal/component-api/v9/router/props.md';
-import Events from '@ionic-internal/component-api/v9/router/events.md';
-import Methods from '@ionic-internal/component-api/v9/router/methods.md';
-import Parts from '@ionic-internal/component-api/v9/router/parts.md';
-import CustomProps from '@ionic-internal/component-api/v9/router/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/router/slots.md';
+import Props from '@ionic-internal/component-api/v10/router/props.md';
+import Events from '@ionic-internal/component-api/v10/router/events.md';
+import Methods from '@ionic-internal/component-api/v10/router/methods.md';
+import Parts from '@ionic-internal/component-api/v10/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v10/router/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v10/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
@@ -36,7 +36,7 @@ To configure this relationship between components (to load/select) and URLs, `io
 
 ## Basic Usage
 
-import BasicExample from '@site/static/usage/v9/router/basic/index.md';
+import BasicExample from '@site/static/usage/v10/router/basic/index.md';
 
 <BasicExample />
 
@@ -46,7 +46,7 @@ import BasicExample from '@site/static/usage/v9/router/basic/index.md';
 
 The two can still be composed. A routed page rendered by `ion-router-outlet` can host its own `ion-nav` for local, URL-less navigation within that page. In the example below, navigating to `/details` updates the URL, but stepping through the `ion-nav` inside that page does not.
 
-import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/index.md';
+import NavWithinPageExample from '@site/static/usage/v10/router/nav-within-page/index.md';
 
 <NavWithinPageExample />
 

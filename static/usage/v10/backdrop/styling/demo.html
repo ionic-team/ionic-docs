@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backdrop</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+    <style>
+      ion-backdrop {
+        opacity: 0.9;
+        background: var(--ion-color-primary);
+      }
+
+      #box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--ion-background-color, #fff);
+        width: 90%;
+        height: 100px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-backdrop visible="true"></ion-backdrop>
+      <div class="ion-page">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Backdrop</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cum aspernatur cupiditate nesciunt totam
+            perspiciatis delectus soluta laboriosam, ullam impedit porro eaque laborum optio natus sed nostrum,
+            provident expedita vero!
+          </p>
+        </ion-content>
+      </div>
+      <div id="box">
+        <ion-checkbox color="light"></ion-checkbox>
+        <ion-button class="ion-margin-start" color="light">Clickable</ion-button>
+      </div>
+    </ion-app>
+  </body>
+</html>

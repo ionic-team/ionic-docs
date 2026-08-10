@@ -323,9 +323,8 @@ const openAngularEditor = async (code: string, options: EditorOptions) => {
     'tsconfig.app.json': defaultFiles[4],
     [main]: defaultFiles[5],
     'src/index.html': defaultFiles[6],
-    // Ionic v9's playground runs on a zoneless Angular 22 setup, so it needs no Zone.js polyfill.
-    // Earlier versions are zone-based and still require it.
-    'src/polyfills.ts': options.version === '9' ? '' : `import 'zone.js';`,
+    // Zoneless from v9 on, so no Zone.js polyfill. Earlier versions are zone-based.
+    'src/polyfills.ts': Number(options.version) >= 9 ? '' : `import 'zone.js';`,
     'src/app/app.routes.ts': defaultFiles[7],
     'src/app/app.component.ts': defaultFiles[8],
     'src/app/app.component.css': defaultFiles[9],

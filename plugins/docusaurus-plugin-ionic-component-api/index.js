@@ -1,5 +1,11 @@
 const fetch = require('node-fetch');
 
+// Versioned docs resolve `v8` to `@ionic/docs@8`, but `@ionic/docs@9` isn't published yet.
+// TODO(FW-7665): drop the v9 entry once it is. Built from `major-9.0` (sha a334b43).
+const NPM_TAG_OVERRIDES = {
+  v9: '8.8.16-dev.11784913436.1a334b43',
+};
+
 module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
@@ -49,15 +55,14 @@ module.exports = function (context, options) {
       };
 
       for (const version of options.versions) {
-        const npmTag = version.slice(1);
+        const npmTag = NPM_TAG_OVERRIDES[version] ?? version.slice(1);
 
         await generateMarkdownForVersion(version, npmTag, context.i18n.currentLocale, false);
       }
 
-      // TODO(FW-7097): Replace this with `latest` when v9 is released.
-      // Dev build based on the `next` branch of `ionic-framework`.
-      // This must be used to build the docs with the new components.
-      let npmTag = '8.8.9-dev.11781201980.1b6e8398';
+      // TODO(FW-7097): Replace this with `latest` when v10 is released.
+      // Dev build from the `next` branch of `ionic-framework` (sha 9605941).
+      let npmTag = '8.8.18-dev.11786361672.19605941';
       if (currentVersion.banner === 'unreleased') {
         npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
@@ -223,7 +228,7 @@ ${properties
 | **Description** | ${formatMultiline(docs)} |
 | **Attribute** | \`${prop.attr}\` |
 | **Type** | \`${formatType(prop.attr, prop.type)}\` |
-| **Default** | \`${prop.default}\` |
+| **Default** | \`${formatMultiline(String(prop.default))}\` |
 
 `;
   })

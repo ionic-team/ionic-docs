@@ -1,12 +1,12 @@
 ---
 title: "ion-card-content"
 ---
-import Props from '@ionic-internal/component-api/v9/card-content/props.md';
-import Events from '@ionic-internal/component-api/v9/card-content/events.md';
-import Methods from '@ionic-internal/component-api/v9/card-content/methods.md';
-import Parts from '@ionic-internal/component-api/v9/card-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v9/card-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/card-content/slots.md';
+import Props from '@ionic-internal/component-api/v10/card-content/props.md';
+import Events from '@ionic-internal/component-api/v10/card-content/events.md';
+import Methods from '@ionic-internal/component-api/v10/card-content/methods.md';
+import Parts from '@ionic-internal/component-api/v10/card-content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v10/card-content/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v10/card-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

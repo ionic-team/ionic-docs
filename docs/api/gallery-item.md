@@ -2,12 +2,12 @@
 title: "ion-gallery-item"
 ---
 
-import Props from '@ionic-internal/component-api/v9/gallery-item/props.md';
-import Events from '@ionic-internal/component-api/v9/gallery-item/events.md';
-import Methods from '@ionic-internal/component-api/v9/gallery-item/methods.md';
-import Parts from '@ionic-internal/component-api/v9/gallery-item/parts.md';
-import CustomProps from '@ionic-internal/component-api/v9/gallery-item/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/gallery-item/slots.md';
+import Props from '@ionic-internal/component-api/v10/gallery-item/props.md';
+import Events from '@ionic-internal/component-api/v10/gallery-item/events.md';
+import Methods from '@ionic-internal/component-api/v10/gallery-item/methods.md';
+import Parts from '@ionic-internal/component-api/v10/gallery-item/parts.md';
+import CustomProps from '@ionic-internal/component-api/v10/gallery-item/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v10/gallery-item/slots.md';
 
 <head>
   <title>ion-gallery-item: Gallery Cell for Text, Images, and Cards</title>

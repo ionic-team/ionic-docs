@@ -41,6 +41,7 @@ async function buildPluginApiDocs(pluginId) {
   writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
   writeFileSync(`versioned_docs/version-v7/native/${fileName}`, apiContent);
   writeFileSync(`versioned_docs/version-v8/native/${fileName}`, apiContent);
+  writeFileSync(`versioned_docs/version-v9/native/${fileName}`, apiContent);
 }
 
 function createApiPage(pluginId, readme, pkgJson) {

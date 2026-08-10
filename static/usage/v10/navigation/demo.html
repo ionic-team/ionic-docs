@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation</title>
+    <link rel="stylesheet" href="../common.css" />
+    <script src="../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-tabs>
+        <ion-tab tab="dashboard">
+          <ion-nav id="dashboard-nav"></ion-nav>
+          <div id="dashboard-page">
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Dashboard</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content>
+              <ion-list>
+                <ion-item button id="item-1">
+                  <ion-label>Item One</ion-label>
+                </ion-item>
+                <ion-item button id="item-2">
+                  <ion-label>Item Two</ion-label>
+                </ion-item>
+                <ion-item button id="item-3">
+                  <ion-label>Item Three</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </div>
+        </ion-tab>
+        <ion-tab tab="settings">
+          <ion-nav id="settings-nav"></ion-nav>
+          <div id="settings-page">
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Settings</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">Settings content</ion-content>
+          </div>
+        </ion-tab>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="dashboard">
+            <ion-icon name="grid-outline"></ion-icon>
+            <ion-label>Dashboard</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="settings">
+            <ion-icon name="settings-outline"></ion-icon>
+            <ion-label>Settings</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-app>
+
+    <script>
+      const dashboardNav = document.querySelector('#dashboard-nav');
+      const dashboardPage = document.querySelector('#dashboard-page');
+      dashboardNav.root = dashboardPage;
+
+      const settingsNav = document.querySelector('#settings-nav');
+      const settingsPage = document.querySelector('#settings-page');
+      settingsNav.root = settingsPage;
+
+      function createDetailPage(itemId) {
+        const page = document.createElement('div');
+        page.innerHTML = `
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-back-button default-href="/dashboard"></ion-back-button>
+              </ion-buttons>
+              <ion-title>Item ${itemId}</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">You navigated to item ${itemId}.</ion-content>
+        `;
+        return page;
+      }
+
+      ['1', '2', '3'].forEach((id) => {
+        document.querySelector(`#item-${id}`).addEventListener('click', () => {
+          dashboardNav.push(createDetailPage(id));
+        });
+      });
+    </script>
+  </body>
+</html>

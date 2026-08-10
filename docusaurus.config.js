@@ -84,7 +84,7 @@ module.exports = {
           /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
-              label: 'v9',
+              label: 'v10',
             },
           },
         },

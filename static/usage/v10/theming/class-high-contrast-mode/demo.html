@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theming</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/palettes/dark.class.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/palettes/high-contrast.class.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/palettes/high-contrast-dark.class.css"
+    />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button default-href="#"></ion-back-button>
+          </ion-buttons>
+          <ion-title>Display</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="dark">
+              <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content color="light">
+        <ion-list-header>Appearance</ion-list-header>
+        <ion-list inset="true">
+          <ion-item>
+            <ion-toggle justify="space-between" id="darkModeToggle">Dark Mode</ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-toggle justify="space-between" id="highContrastModeToggle">High Contrast Mode</ion-toggle>
+          </ion-item>
+        </ion-list>
+
+        <ion-list inset="true">
+          <ion-item button="true">Text Size</ion-item>
+          <ion-item>
+            <ion-toggle justify="space-between">Bold Text</ion-toggle>
+          </ion-item>
+        </ion-list>
+
+        <ion-list-header>Brightness</ion-list-header>
+        <ion-list inset="true">
+          <ion-item>
+            <ion-range value="40">
+              <ion-icon name="sunny-outline" slot="start"></ion-icon>
+              <ion-icon name="sunny" slot="end"></ion-icon>
+            </ion-range>
+          </ion-item>
+          <ion-item>
+            <ion-toggle justify="space-between" checked>True Tone</ion-toggle>
+          </ion-item>
+        </ion-list>
+
+        <ion-list inset="true">
+          <ion-item button="true">
+            <ion-label>Night Shift</ion-label>
+            <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      // Query for the toggle that is used to change between palettes
+      const darkModeToggle = document.querySelector('#darkModeToggle');
+      const highContrastModeToggle = document.querySelector('#highContrastModeToggle');
+
+      // Listen for the toggle check/uncheck to toggle the dark palette
+      darkModeToggle.addEventListener('ionChange', (event) => {
+        toggleDarkPalette(event.detail.checked);
+      });
+
+      highContrastModeToggle.addEventListener('ionChange', (event) => {
+        toggleHighContrastPalette(event.detail.checked);
+      });
+
+      // Use matchMedia to check the user preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const prefersContrast = window.matchMedia('(prefers-contrast: more)');
+
+      // Initialize the dark palette based on the initial
+      // value of the prefers-color-scheme media query
+      initializeDarkPalette(prefersDark.matches);
+      initializeHighContrastPalette(prefersContrast.matches);
+
+      // Listen for changes to the prefers-color-scheme media query
+      prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
+      prefersContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
+
+      // Check/uncheck the toggle and update the palette based on isDark
+      function initializeDarkPalette(isDark) {
+        darkModeToggle.checked = isDark;
+        toggleDarkPalette(isDark);
+      }
+
+      function initializeHighContrastPalette(isHighContrast) {
+        highContrastModeToggle.checked = isHighContrast;
+        toggleHighContrastPalette(isHighContrast);
+      }
+
+      // Add or remove the "ion-palette-dark" class on the html element
+      function toggleDarkPalette(shouldAdd) {
+        document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
+      }
+
+      function toggleHighContrastPalette(shouldAdd) {
+        document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
+      }
+
+      // Demo only code below
+      // ----------------------------------------------------
+      window.addEventListener('demoReady', (event) => {
+        const palette = event.target.localStorage.getItem('palette');
+        const isDark = palette === 'dark' ? true : false;
+
+        // Initialize the dark palette based on the initial
+        // value of the palette stored in localStorage
+        initializeDarkPalette(isDark);
+      });
+
+      window.addEventListener('message', (event) => {
+        darkModeToggle.checked = event.data.darkMode;
+      });
+    </script>
+
+    <style>
+      /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+      ion-item {
+        --transition: none;
+      }
+    </style>
+  </body>
+</html>

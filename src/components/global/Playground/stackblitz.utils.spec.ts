@@ -405,6 +405,16 @@ bootstrapApplication(AppComponent, {
       expect(polyfills).toBe('');
     });
 
+    it('omits the Zone.js polyfill for v10 (zoneless)', async () => {
+      global.fetch = createMockFetch({ 'angular/package.json': '{}' }, 'v10');
+
+      await openAngularEditor('<p>hi</p>', { version: '10', mode: 'md' });
+
+      const openProjectMock = (sdk as any).openProject as ReturnType<typeof vi.fn>;
+      const polyfills = openProjectMock.mock.calls[0][0].files['src/polyfills.ts'] as string;
+      expect(polyfills).toBe('');
+    });
+
     it('includes the Zone.js polyfill for zone-based versions (v8)', async () => {
       global.fetch = createMockFetch({ 'angular/package.json': '{}' }, 'v8');
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Scroll</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <ion-list></ion-list>
+        <ion-infinite-scroll>
+          <ion-infinite-scroll-content loading-text="Please wait..." loading-spinner="bubbles">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </ion-content>
+    </ion-app>
+    <script>
+      const list = document.querySelector('ion-list');
+
+      function generateItems() {
+        const count = list.childElementCount + 1;
+        const total = count + 50;
+        for (let i = count; i < total; i++) {
+          const el = document.createElement('ion-item');
+
+          const avatar = document.createElement('ion-avatar');
+          avatar.slot = 'start';
+          const img = document.createElement('img');
+          img.src = `https://picsum.photos/80/80?random=${i}`;
+          img.alt = 'Avatar';
+
+          avatar.appendChild(img);
+          el.appendChild(avatar);
+
+          const text = document.createElement('ion-label');
+          text.textContent = `Item ${i}`;
+
+          el.appendChild(text);
+
+          list.appendChild(el);
+        }
+      }
+
+      generateItems();
+    </script>
+  </body>
+</html>

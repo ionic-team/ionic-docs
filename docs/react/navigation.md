@@ -501,7 +501,7 @@ The example below shows how the Spotify app reuses the same album component to s
 
 ## Live Example
 
-import NavigationPlayground from '@site/static/usage/v9/navigation/index.md';
+import NavigationPlayground from '@site/static/usage/v10/navigation/index.md';
 
 <NavigationPlayground defaultFramework="react" />
 

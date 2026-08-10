@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picker | Basic</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@8/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@8/css/ionic.bundle.css" />
+    <style>
+      ion-modal {
+        --height: auto;
+
+        align-items: end;
+      }
+
+      ion-picker {
+        margin-bottom: var(--ion-safe-area-bottom);
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-button id="open-modal">Open modal</ion-button>
+
+          <ion-modal trigger="open-modal" is-open="true">
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button onclick="modal.dismiss(null, 'cancel')">Cancel</ion-button>
+              </ion-buttons>
+              <ion-buttons slot="end">
+                <ion-button onclick="modal.dismiss(currentValue, 'confirm')">Done</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+            <ion-picker>
+              <ion-picker-column value="javascript">
+                <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
+                <ion-picker-column-option value="javascript">Javascript</ion-picker-column-option>
+                <ion-picker-column-option value="typescript">Typescript</ion-picker-column-option>
+                <ion-picker-column-option value="rust">Rust</ion-picker-column-option>
+                <ion-picker-column-option value="c#">C#</ion-picker-column-option>
+              </ion-picker-column>
+            </ion-picker>
+          </ion-modal>
+        </div>
+      </ion-content>
+    </ion-app>
+    <script>
+      const modal = document.querySelector('ion-modal');
+
+      let currentValue = 'javascript';
+
+      modal.addEventListener('didDismiss', (event) => {
+        console.log('didDismiss', JSON.stringify(event.detail));
+      });
+
+      const pickerColumn = document.querySelector('ion-picker-column');
+      pickerColumn.addEventListener('ionChange', (event) => {
+        currentValue = event.detail.value;
+      });
+    </script>
+  </body>
+</html>

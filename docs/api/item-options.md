@@ -1,12 +1,12 @@
 ---
 title: "ion-item-options"
 ---
-import Props from '@ionic-internal/component-api/v9/item-options/props.md';
-import Events from '@ionic-internal/component-api/v9/item-options/events.md';
-import Methods from '@ionic-internal/component-api/v9/item-options/methods.md';
-import Parts from '@ionic-internal/component-api/v9/item-options/parts.md';
-import CustomProps from '@ionic-internal/component-api/v9/item-options/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/item-options/slots.md';
+import Props from '@ionic-internal/component-api/v10/item-options/props.md';
+import Events from '@ionic-internal/component-api/v10/item-options/events.md';
+import Methods from '@ionic-internal/component-api/v10/item-options/methods.md';
+import Parts from '@ionic-internal/component-api/v10/item-options/parts.md';
+import CustomProps from '@ionic-internal/component-api/v10/item-options/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v10/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
