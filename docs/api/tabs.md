@@ -42,7 +42,7 @@ import Router from '@site/static/usage/v8/tabs/router/index.md';
 
 <Router />
 
-:::tip Best Practices
+:::tip[Best Practices]
 
 Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
 
