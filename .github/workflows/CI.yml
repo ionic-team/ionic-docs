@@ -2,7 +2,7 @@
 # https://help.github.com/en/articles/about-github-actions
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 
-name: Install Dependencies, Lint
+name: Validate Docs
 
 on: [pull_request]
 
@@ -13,22 +13,28 @@ jobs:
     strategy:
       matrix:
         node_version: [20]
+        # Build processes work differently across operating systems, so the 
+        # checks run on each one to make sure anyone can contribute to the
+        # docs.
         os: [windows-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node_version }}
+    - name: ⚙️ Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node_version }}
-    - name: Install Dependencies
+    - name: 🕸️ Install Dependencies
       run: npm ci --legacy-peer-deps
-    - name: Lint
+    - name: 🖌️ Lint
       run: npm run lint
-    - name: Spell Check
+    - name: 🔤 Spell Check
       run: npm run spellcheck
+    - uses: ./.github/workflows/actions/check-translations
     # Lint and spell check changes should be pushed
     # to the branch before the branch is merge eligible.
-    - name: Check Diff
+    #
+    # The translation keys check should not produce any changes.
+    - name: 🔍 Check Diff
       run: git diff --exit-code
       shell: bash
