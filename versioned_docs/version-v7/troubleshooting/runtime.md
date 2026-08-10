@@ -138,9 +138,8 @@ This change will only affect applications that depend on zone.js `0.8.27` or
 newer. Older versions will not be affected by this change.
 
 :::note
-This flag is automatically included when creating an Ionic app via
+This flag is automatically included when creating an Ionic app via the Ionic CLI.
 :::
-the Ionic CLI.
 
 ## Cordova plugins not working in the browser
 
