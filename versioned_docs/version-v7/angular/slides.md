@@ -340,7 +340,7 @@ Effects such as Cube or Fade can be used in Swiper Element with no additional im
 ```
 
 :::note
-For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">Swiper API effects documentation</a>.
+For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">Swiper API fade effect documentation</a>.
 :::
 
 ## Wrap Up
