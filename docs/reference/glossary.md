@@ -75,7 +75,7 @@ title: Glossary
   </p>
 </section>
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <section id="cli">
   <a href="#cli">
@@ -91,7 +91,7 @@ title: Glossary
   </p>
 </section>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 <section id="commonjs">
   <a href="#commonjs">
