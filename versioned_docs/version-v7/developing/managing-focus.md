@@ -181,7 +181,7 @@ export class ExampleComponent {
 ```
 
 ```html
-{/* example.component.html */}
+<!-- example.component.html -->
 <ion-modal (didPresent)="onDidPresent()">
   <ion-input #input></ion-input>
 </ion-modal>
