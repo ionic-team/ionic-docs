@@ -67,7 +67,7 @@ Your new app's directory will look like this:
     └── style.css
 ```
 
-:::warning Delete files
+:::warning[Delete files]
 The `counter.js` and `style.css` files can be deleted. We will not be using them.
 :::
 
@@ -226,7 +226,7 @@ customElements.define('home-page', HomePage);
 
 This creates a custom element called `home-page` that contains the layout for your Home page. The page uses Ionic's layout components to create a header with a toolbar and scrollable content area.
 
-:::tip Learn More
+:::tip[Learn More]
 For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
