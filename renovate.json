@@ -90,7 +90,8 @@
   "schedule": ["every weekday before 11am"],
   "semanticCommits": "enabled",
   "includePaths": [
-    "static/code/stackblitz/**/*/package.json"
+    "static/code/stackblitz/**/*/package.json",
+    ".github/workflows/**"
   ],
   "ignorePaths": [
     "static/code/stackblitz/v6/**"
