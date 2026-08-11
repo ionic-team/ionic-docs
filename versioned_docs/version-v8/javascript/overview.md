@@ -53,9 +53,7 @@ $ npm run dev █
   href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   icon="/icons/logo-javascript-icon.png"
 >
-  <p>
-    Learn more about JavaScript's core concepts, tools, and best practices from the official JavaScript documentation.
-  </p>
+  Learn more about JavaScript's core concepts, tools, and best practices from the official JavaScript documentation.
 </DocsCard>
 
 <DocsCard header="Navigation" href="/docs/api/router" icon="/icons/component-navigation-icon.png">

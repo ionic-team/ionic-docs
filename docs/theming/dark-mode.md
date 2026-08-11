@@ -64,7 +64,7 @@ import AlwaysDarkMode from '@site/static/usage/v9/theming/always-dark-mode/index
 
 <AlwaysDarkMode />
 
-:::caution Important
+:::caution[Important]
 Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
@@ -117,7 +117,7 @@ import SystemDarkMode from '@site/static/usage/v9/theming/system-dark-mode/index
 
 <SystemDarkMode />
 
-:::caution Important
+:::caution[Important]
 Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
@@ -170,7 +170,7 @@ import ClassDarkMode from '@site/static/usage/v9/theming/class-dark-mode/index.m
 
 <ClassDarkMode />
 
-:::caution Important
+:::caution[Important]
 The `.ion-palette-dark` class **must** be added to the `html` element in order to work with the imported dark palette.
 :::
 

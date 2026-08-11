@@ -26,7 +26,7 @@ You do not need to change these. Angular schedules change detection for them in 
 - Ionic page lifecycle hooks (`ionViewWillEnter`, `ionViewDidEnter`, `ionViewWillLeave`, `ionViewDidLeave`) that set state synchronously. Ionic notifies Angular after each hook runs.
 - Navigation, route transitions, and tab switching.
 
-:::note Angular 22
+:::note[Angular 22]
 Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. For the migration path, refer to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/docs/updating/9-0.md#onpush-change-detection-on-angular-22).
 :::
 

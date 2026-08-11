@@ -51,19 +51,12 @@ import FormatOptions from '@site/static/usage/v7/datetime-button/format-options/
 
 `ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
 
-<!--
-## Customization
-
-TODO
-
-### Buttons
-
-TODO
-
-### Theming
-
-TODO
--->
+{/* ## Customization */}
+{/* TODO */}
+{/* ### Buttons */}
+{/* TODO */}
+{/* ### Theming */}
+{/* TODO */}
 
 ## Properties
 

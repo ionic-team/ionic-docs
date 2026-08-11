@@ -292,19 +292,12 @@ import DetailArrows from '@site/static/usage/v7/item/detail-arrows/index.md';
 
 <DetailArrows />
 
-<!--
-
-TODO add this functionality back as a css variable
-
-This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:
-
-```css
---item-detail-push-show: true;
-```
-
-See the [theming documentation](/docs/theming/css-variables) for more information.
-
--->
+{/* TODO add this functionality back as a css variable */}
+{/* This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable: */}
+{/* ```css */}
+{/* --item-detail-push-show: true; */}
+{/* ``` */}
+{/* See the [theming documentation](/docs/theming/css-variables) for more information. */}
 
 ## Item Lines
 

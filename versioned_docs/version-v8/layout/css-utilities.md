@@ -224,7 +224,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 
 ### Deprecated Classes
 
-:::warning Deprecation Notice
+:::warning[Deprecation Notice]
 
 The following classes are deprecated and will be removed in the next major release. Use the recommended `.ion-display-*` classes instead.
 
@@ -443,7 +443,7 @@ The table below shows the default behavior, where `{property}` is one of the fol
 
 ### Deprecated Classes
 
-:::warning Deprecation Notice
+:::warning[Deprecation Notice]
 
 The following classes are deprecated and will be removed in the next major release. Use the recommended `.ion-flex-*` classes instead.
 

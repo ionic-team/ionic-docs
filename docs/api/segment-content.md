@@ -27,7 +27,7 @@ for more information on how to use segment contents.
 Each `ion-segment-content` needs a unique `id` attribute. This will be used to link the segment content to a segment button via the button's
 [contentId property](./segment-button.md#properties).
 
-<!-- Reuse swipeable segments playground -->
+{/* Reuse swipeable segments playground */}
 
 import Swipeable from '@site/static/usage/v9/segment/swipeable/index.md';
 

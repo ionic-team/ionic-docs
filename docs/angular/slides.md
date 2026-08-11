@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-:::warning Looking for `ion-slides`?
+:::warning[Looking for `ion-slides`?]
 `ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
 :::
 
@@ -71,7 +71,7 @@ From there, we just have to replace `ion-slides` elements with `swiper-container
 
 By default, make sure you import the `register` function from `swiper/element/bundle`. This uses the bundled version of Swiper, which automatically includes all modules and stylesheets needed to run Swiper's various features.
 
-If you would like to use the Core version instead, which does not include additional modules automatically, see <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#core-version-and-modules</a>. The rest of this migration guide will assume you are using the bundled version.
+If you would like to use the Core version instead, which does not include additional modules automatically, refer to <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">Swiper's core version and modules documentation</a>. The rest of this migration guide will assume you are using the bundled version.
 
 ## Swiping with Style
 
@@ -93,7 +93,7 @@ If you were using the CSS custom properties found on `ion-slides`, below is a li
 | `--scroll-bar-background`          | `--swiper-scrollbar-bg-color`               |
 | `--scroll-bar-background-active`   | `--swiper-scrollbar-drag-bg-color`          |
 
-For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. See <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#injecting-styles</a> for instructions.
+For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. Refer to <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">Swiper's guide on injecting styles</a> for instructions.
 
 ### Additional `ion-slides` Styles
 
@@ -227,7 +227,7 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager   | Use the `pagination` property instead.                                                                                                  |
 
 :::note
-All properties available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#parameters</a>.
+All properties available in Swiper Element can be found in the <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">Swiper API parameters documentation</a>.
 :::
 
 ## Events
@@ -276,7 +276,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `swiperinit`                       |
 
 :::note
-All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a> and should be lowercased and prefixed with the word `swiper`.
+All events available in Swiper Element can be found in the <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API events documentation</a> and should be lowercased and prefixed with the word `swiper`.
 :::
 
 ## Methods
@@ -328,7 +328,7 @@ Below is a full list of method changes when going from `ion-slides` to Swiper El
 | `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 :::note
-All methods and properties available on the Swiper instance can be found at <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#methods-and-properties</a>.
+All methods and properties available on the Swiper instance can be found in the <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">Swiper API methods and properties documentation</a>.
 :::
 
 ## Effects
@@ -340,7 +340,7 @@ Effects such as Cube or Fade can be used in Swiper Element with no additional im
 ```
 
 :::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#fade-effect</a>.
+For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">Swiper API fade effect documentation</a>.
 :::
 
 ## Wrap Up
@@ -361,6 +361,6 @@ If you are running into issues with the migration, please create a post on the [
 
 Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
 
-If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
+If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
+If you are running into problems with the `IonicSlides` module, new bugs should be filed on the <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework issue tracker</a>.

@@ -383,19 +383,6 @@
   background: var(--playground-code-background);
 }
 
-/* Tooltip styling */
-.tippy-box[data-theme="playground"] {
-  background-color: var(--c-carbon-90);
-  border-radius: 8px;
-  line-height: initial;
-  font-size: 12px;
-}
-
-.tippy-box[data-theme="playground"] .tippy-content {
-  padding: 6px 10px;
-}
-
-
 /* Loading Screen */
 .playground .playground__loading {
   position: absolute;
