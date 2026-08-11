@@ -54,7 +54,7 @@ title: Glossary
   <a href="https://capacitorjs.com/" target="_blank">Capacitor</a> is an open source cross-platform app runtime that allows web-based apps to run natively on iOS, Android, Electron, and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality. Capacitor was created and is actively developed/supported by Ionic, the company.
 </section>
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <section id="cli">
   <a href="#cli">
@@ -63,7 +63,7 @@ title: Glossary
   A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing <a href="https://ionic.io/appflow" target="_blank">Ionic commercial services</a>.
 </section>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 <section id="commonjs">
   <a href="#commonjs">

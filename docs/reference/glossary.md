@@ -63,7 +63,7 @@ title: Glossary
   Capacitor was created and is actively developed/supported by Ionic, the company.
 </section>
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <section id="cli">
   <a href="#cli">
@@ -77,7 +77,7 @@ title: Glossary
   <a href="https://ionic.io/appflow" target="_blank">Ionic commercial services</a>.
 </section>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 <section id="commonjs">
   <a href="#commonjs">
