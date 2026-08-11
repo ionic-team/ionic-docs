@@ -14,6 +14,10 @@ docs/cli/commands
 docs/reference/glossary.md
 versioned_docs/version-v*/reference/glossary.md
 
+# Archived versions
+versioned_docs/version-v5
+versioned_docs/version-v6
+
 static/code/stackblitz
 
 .docusaurus
