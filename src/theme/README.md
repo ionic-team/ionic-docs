@@ -7,4 +7,4 @@ Wrapped components import from `@theme-original` and are our own code, so they f
 All code updates should be marked with comments to allow more seamless version updating. The styles file for components that have been unsafely swizzled should absolutely not be edited. All styling should be done from the [component partials](/src/styles/components).
 
 - Original theme: [`@docusaurus/theme-classic`](https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic)
-- [Original theme source](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)
+- [Original theme source](https://github.com/facebook/docusaurus/tree/v3.10.2/packages/docusaurus-theme-classic/src/theme)
