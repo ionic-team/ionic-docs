@@ -153,4 +153,4 @@ git commit -m “added camera functionality”
 git push ionic master
 ```
 
-Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
+Next, we’ll cover how to transform the app into a photo gallery, as well as how to save the photos to your device!

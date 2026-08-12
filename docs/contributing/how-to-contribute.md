@@ -71,7 +71,7 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 #### Modifying Components
 
 1. Locate the component(s) to modify inside `/core/src/components/`.
-2. Take a look at the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
+2. Refer to the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
 3. Make your changes to the component. If the change is overly complex or out of the ordinary, add comments so we can understand the changes.
 4. [Preview your changes](#preview-changes) locally.
 5. [Modify the documentation](#modifying-documentation) if needed.

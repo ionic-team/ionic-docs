@@ -17,7 +17,7 @@ This guide covers how routing works in an app built with Ionic and Vue.
 
 The `IonRouterOutlet` component uses the popular [Vue Router](https://router.vuejs.org/) library under the hood. With Ionic and Vue Router, you can create multi-page apps with rich page transitions.
 
-Everything you know about routing using Vue Router carries over into Ionic Vue. Let's take a look at the basics of an Ionic Vue app and how routing works with it.
+Everything you know about routing using Vue Router carries over into Ionic Vue. Let's walk through the basics of an Ionic Vue app and how routing works with it.
 
 ## A Brief Note
 
@@ -170,7 +170,7 @@ Refer to the [useIonRouter documentation](./utility-functions#router) for more d
 
 ### Navigating using `router.go`
 
-Vue Router has a [router.go](https://router.vuejs.org/api/#go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+Vue Router has a [router.go](https://router.vuejs.org/api/#go) method that allows developers to move forward or backward through the application history. Let's walk through an example.
 
 Say you have the following application history:
 
@@ -327,7 +327,7 @@ There are very few use cases in which nested routes make sense in mobile applica
 
 ## Working with Tabs
 
-When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's examine the routing setup for this:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -362,7 +362,7 @@ const routes: Array<RouteRecordRaw> = [
 
 Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of the `children` array. In this example, we call the path `tabs`, but this can be customized.
 
-Let's start by taking a look at our `Tabs` component:
+Let's start with our `Tabs` component:
 
 ```vue
 <template>
@@ -450,7 +450,7 @@ Since each tab is its own navigation stack, it is important to note that these n
 
 A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
 
-Let's take a look at a couple common mistakes that are made with tabs.
+Let's go over a couple common mistakes that are made with tabs.
 
 **A Settings Tab That Multiple Tabs Reference**
 
@@ -551,7 +551,7 @@ const routes: Array<RouteRecordRaw> = [
 
 Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders. Setting `props: true` on the route record tells Vue Router to pass the matched URL parameters to the component as props.
 
-Let's look at how to use it in our component:
+Let's walk through how to use it in our component:
 
 ```vue
 <template>
@@ -577,7 +577,7 @@ The `id` parameter from the URL is received as a prop and rendered on the screen
 
 ## Router History
 
-Vue Router ships with a configurable history mode. Let's look at the different options and why you might want to use each one.
+Vue Router ships with a configurable history mode. Let's go over the different options and why you might want to use each one.
 
 - `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
 

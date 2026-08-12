@@ -190,4 +190,4 @@ Building native app binaries for Android and iOS can be painful. The tooling isn
 
 [Start packaging your app in the cloud](https://dashboard.ionicframework.com/settings/billing) along with 10,000 Ionic Deploys per month.
 
-Up next, we look at Appflow Monitoring - track your app errors in realtime.
+Up next, we cover Appflow Monitoring - track your app errors in realtime.

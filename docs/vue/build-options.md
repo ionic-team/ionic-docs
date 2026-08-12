@@ -26,7 +26,7 @@ The one downside to this approach is that it may be tedious to re-import your Io
 
 Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
 
-Let's take a look at how local component registration works:
+Let's walk through how local component registration works:
 
 ```vue
 <template>
@@ -55,7 +55,7 @@ The other option for registering components is to use global registration. Globa
 
 While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
 
-Let's take a look at how global component registration works:
+Let's walk through how global component registration works:
 
 **main.ts**
 

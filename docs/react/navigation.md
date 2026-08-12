@@ -17,7 +17,7 @@ This guide covers how routing works in an app built with Ionic and React.
 
 `IonReactRouter` uses the popular [React Router](https://github.com/remix-run/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
 
-Everything you know about routing using React Router carries over into Ionic React. Let's take a look at the basics of an Ionic React app and how routing works with it.
+Everything you know about routing using React Router carries over into Ionic React. Let's walk through the basics of an Ionic React app and how routing works with it.
 
 ## Routing in Ionic React
 
@@ -228,7 +228,7 @@ A programmatic option for navigation is using the [`history`](https://v5.reactro
 
 ### Navigating using `history.go`
 
-React Router uses the `history` package which has a [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+React Router uses the `history` package which has a [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) method that allows developers to move forward or backward through the application history. Let's walk through an example.
 
 Say you have the following application history:
 
@@ -400,7 +400,7 @@ There are very few use cases in which nested routes make sense in mobile applica
 
 ## Working with Tabs
 
-When working with tabs, Ionic needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+When working with tabs, Ionic needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's examine the routing setup for this:
 
 ```tsx
 <IonApp>
@@ -417,7 +417,7 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 
 Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of this component. In this example, we call the path `tabs`, but this can be customized.
 
-Let's start by taking a look at our `Tabs` component:
+Let's start with our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
@@ -526,7 +526,7 @@ Since each tab is its own navigation stack, it is important to note that these n
 
 A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
 
-Let's take a look at a couple common mistakes that are made with tabs.
+Let's go over a couple common mistakes that are made with tabs.
 
 **A Settings Tab That Multiple Tabs Reference**
 
