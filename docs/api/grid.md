@@ -61,7 +61,7 @@ import Basic from '@site/static/usage/v8/grid/basic/index.md';
 
 ## Fixed Grid
 
-Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, refer to [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen; the grid width changes.
+Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, refer to [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to observe how the grid width changes.
 
 | Name | Value  | Description                                       |
 | ---- | ------ | ------------------------------------------------- |
@@ -99,7 +99,7 @@ import Size from '@site/static/usage/v8/grid/size/index.md';
 
 ### Responsive size
 
-The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen; the column widths change.
+The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen to observe how the column widths change.
 
 import SizeResponsive from '@site/static/usage/v8/grid/size-responsive/index.md';
 
@@ -120,7 +120,7 @@ import Offset from '@site/static/usage/v8/grid/offset/index.md';
 
 ### Responsive offset
 
-The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen; the column offsets change.
+The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen to observe how the column offsets change.
 
 import OffsetResponsive from '@site/static/usage/v8/grid/offset-responsive/index.md';
 
@@ -141,7 +141,7 @@ import PushPull from '@site/static/usage/v8/grid/push-pull/index.md';
 
 ### Responsive push & pull
 
-The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen; the column positions change.
+The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen to observe how the column positions change.
 
 import PushPullResponsive from '@site/static/usage/v8/grid/push-pull-responsive/index.md';
 
@@ -172,7 +172,7 @@ Using our built-in CSS variables, it’s possible to customize the predefined gr
 
 ### Fixed Width
 
-The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen; the grid width changes.
+The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to observe how the grid width changes.
 
 import Width from '@site/static/usage/v8/grid/customizing/width/index.md';
 
