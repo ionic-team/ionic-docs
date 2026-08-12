@@ -18,13 +18,13 @@ title: Development Tips
 Using `sudo` with npm is **not recommended** because it can lead to further complications.
 :::
 
-This guide offers two options for resolving permission issues. See the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
+This guide offers two options for resolving permission issues. Refer to the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
 
 ### Option 1
 
 The best way to avoid permission issues is to reinstall NodeJS and npm using a node version manager.
 
-This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and usage. See the [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. See the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) for additional options and instructions for Windows.
+This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and usage. Refer to the [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. Refer to the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) for additional options and instructions for Windows.
 
 1. Install nvm.
 
@@ -118,7 +118,7 @@ When an app runs, it will pause at this function. From there, the developer tool
 By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
 
 :::note
-This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
+This will not change which platform the browser detects. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
 :::
 
 ![Chrome DevTools showing the device mode with iPhone X selected.](/img/faq/tips/change-device-platform.png 'Chrome DevTools Device Mode')

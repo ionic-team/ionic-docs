@@ -47,7 +47,7 @@ In the example above, we are using the `IonPage` and `IonContent` components. To
 
 Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `SubComponent` unless we register them there as well.
 
-For more information, see the [Local Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#local-registration).
+For more information, refer to the [Local Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#local-registration).
 
 ### Global Component Registration
 
@@ -86,7 +86,7 @@ import SubComponent from '@/components/SubComponent.vue';
 
 In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
 
-For more information, see the [Global Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#global-registration).
+For more information, refer to the [Global Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#global-registration).
 
 ## Build Optimization
 

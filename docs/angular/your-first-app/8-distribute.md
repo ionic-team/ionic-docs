@@ -11,7 +11,7 @@ sidebar_label: Distribute
   />
 </head>
 
-Now that you have built your first app, you are going to want to get it distributed so everyone can start using it. The mechanics of building and deploying your application can be quite cumbersome. That is where [Appflow](https://ionic.io/docs/appflow/) comes into play. Appflow allows you to effectively generate web and native builds, push out live app updates, publish your app to the app stores, and automate the whole process. The entire Quickstart guide can be found [here](https://ionic.io/docs/appflow/quickstart).
+Now that you have built your first app, you are going to want to get it distributed so everyone can start using it. The mechanics of building and deploying your application can be quite cumbersome. That is where [Appflow](https://ionic.io/docs/appflow/) comes into play. Appflow allows you to effectively generate web and native builds, push out live app updates, publish your app to the app stores, and automate the whole process. Refer to the [Appflow Quickstart guide](https://ionic.io/docs/appflow/quickstart).
 
 Below we will run through an overview of the steps.
 
@@ -46,7 +46,7 @@ git commit -m "added appflow sdk" #  commit staged changes
 git push origin main # push the changes from the main branch to your git host
 ```
 
-After the push is made, you will then see your commit under the `Commits` tab of the Appflow Dashboard. For more on this, take a look at the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
+After the push is made, your commit appears under the `Commits` tab of the Appflow Dashboard. For more on this, take a look at the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
 
 ## Deploy a Live Update
 
@@ -62,7 +62,7 @@ To receive this live update, you will need to run the app on a device or an emul
 ionic cap run [ios | android] [options]
 ```
 
-Assuming the app is configured correctly to listen to the channel you deployed to, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
+Assuming the app is configured correctly to listen to the channel you deployed to, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and the updates are applied!
 
 To dive into more details on the steps to deploy a live update, as well as additional information such as disabling deploy for development, check out the [Deploy a Live Update](https://ionic.io/docs/appflow/quickstart/deploy) section inside the Appflow docs.
 
@@ -78,7 +78,7 @@ Further information regarding building native binaries can be found inside of th
 
 [Automations](https://ionic.io/docs/appflow/automation/intro) enable you and your team to utilize the full CI/CD powers of Appflow. You can create automations that trigger [Package builds](https://ionic.io/docs/appflow/package/builds) and [Deploy builds](https://ionic.io/docs/appflow/deploy/builds) every time your team commits new code to a given branch. The automations can also be configured to use different environments and native configurations for building different versions of your app for development, staging, QA and production.
 
-For more information, visit the [Create an Automation](https://ionic.io/docs/appflow/quickstart/automation) section within the Appflow docs. There you will see details on creating a single automation. However, you can create multiple automations for different branches or workflows and customize them to fit your needs. An important note is that the ability to create an automation is available for those on our [Basic plans](https://ionic.io/pricing) and above.
+For more information, visit the [Create an Automation](https://ionic.io/docs/appflow/quickstart/automation) section within the Appflow docs. That section covers creating a single automation. However, you can create multiple automations for different branches or workflows and customize them to fit your needs. An important note is that the ability to create an automation is available for those on our [Basic plans](https://ionic.io/pricing) and above.
 
 ## Create an Environment
 

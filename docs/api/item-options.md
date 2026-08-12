@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The item options component is a container for the [item option](./item-option) buttons in a sliding item. These buttons can be placed either on the [start or end side](#side-description).
 
-See the [item sliding](./item-sliding) documentation for more information.
+Refer to the [item sliding](./item-sliding) documentation for more information.
 
 
 ## Side Description

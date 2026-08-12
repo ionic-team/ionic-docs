@@ -149,7 +149,7 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+For more information about the `firebase.json` properties, refer to the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
 Next, build an optimized version of the app by running:
 

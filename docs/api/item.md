@@ -25,7 +25,7 @@ Items are elements that can contain text, icons, avatars, images, inputs, and an
 
 ## Basic Usage
 
-Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
+Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
 
 import Basic from '@site/static/usage/v8/item/basic/index.md';
 
@@ -184,7 +184,7 @@ import DetailArrows from '@site/static/usage/v8/item/detail-arrows/index.md';
 {/* ```css */}
 {/* --item-detail-push-show: true; */}
 {/* ``` */}
-{/* See the [theming documentation](/docs/theming/css-variables) for more information. */}
+{/* Refer to the [theming documentation](/docs/theming/css-variables) for more information. */}
 
 
 ## Item Lines

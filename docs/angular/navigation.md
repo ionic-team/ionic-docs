@@ -128,7 +128,7 @@ Say you have the following application history:
 
 If you were to call `LocationStrategy.historyGo(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `LocationStrategy.historyGo(2)`, you would be brought to `/pageC`.
 
-An key characteristic of `LocationStrategy.historyGo()` is that it expects your application history to be linear. This means that `LocationStrategy.historyGo()` should not be used in applications that make use of non-linear routing. See [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
+An key characteristic of `LocationStrategy.historyGo()` is that it expects your application history to be linear. This means that `LocationStrategy.historyGo()` should not be used in applications that make use of non-linear routing. Refer to [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
 
 ## Lazy loading routes
 
@@ -263,9 +263,9 @@ We recommend keeping your application as simple as possible until you need to ad
 
 The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+For more on tabs, please refer to [Working with Tabs](#working-with-tabs).
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+For more on nested router outlets, please refer to [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
@@ -319,7 +319,7 @@ The above routes are nested because they are in the `children` array of the pare
 
 Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
 
-Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, the first `ion-router-outlet` renders the `ion-tab-bar` and `ion-tabs` components. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
@@ -378,7 +378,7 @@ Each tab in Ionic is treated as an individual navigation stack. This means if yo
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
 
-Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
 

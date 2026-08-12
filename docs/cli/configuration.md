@@ -14,7 +14,7 @@ title: Configuration
 
 Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](commands/config-get.md) and [`ionic config set`](commands/config-set.md).
+The CLI provides commands for setting and printing config values from project config files and the global CLI config file. Run `ionic config --help` or refer to the documentation for usage of [`ionic config get`](commands/config-get.md) and [`ionic config set`](commands/config-set.md).
 
 ### Project Configuration File
 
@@ -40,7 +40,7 @@ Each Ionic project has a project configuration file, usually at the project's ro
     }
   },
 
-  // Hook configuration--see the Hooks section below for details.
+  // Hook configuration--refer to the Hooks section below for details.
   "hooks": {
     ...
   }
@@ -52,7 +52,7 @@ Each Ionic project has a project configuration file, usually at the project's ro
 The CLI will look for the following environment variables:
 
 - `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
-- `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
+- `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. Refer to [Using a Proxy](using-a-proxy.md).
 - `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
 ## Flags
@@ -126,19 +126,19 @@ The Ionic CLI supports a multi-app configuration setup, which involves multiple 
 :::note
 These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
 
-If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+If you're using Angular, please refer to [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
 :::
 
 ### Setup Steps
 
-1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
-1. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. See [Config File](#config-file) for full details.
+1. Create a directory and initialize a monorepo (refer to [Project Structure](#project-structure) for full details).
+1. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. Refer to [Config File](#config-file) for full details.
 
    ```shell
    $ ionic init --multi-app
    ```
 
-1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
+1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (refer to [Adding an App](#adding-an-app) for full details).
 
 ### Project Structure
 
