@@ -103,7 +103,7 @@ Note that later versions of Ionic do not support iOS 13; refer to the [mobile su
 |  V4 - React  |  `@ionic/react` 4.X   |               Use latest available                |
 |      V3      | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
 
-- Native Premier Plugins require `@ionic-enterprise/cordova` for installation, refer to the [Premier Plugins tooling setup](https://ionic.io/docs/premier-plugins/setup#install-tooling)
+- Native Premier Plugins require `@ionic-enterprise/cordova` for installation. Refer to the [Premier Plugins tooling setup](https://ionic.io/docs/premier-plugins/setup#install-tooling).
 - For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
 - If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
 
