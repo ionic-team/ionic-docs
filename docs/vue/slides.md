@@ -491,7 +491,7 @@ If you are running into issues with the migration, please create a post on the [
 
 ### Where do I file bug reports?
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
+Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to check if your issue can be resolved by the community.
 
 If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
 

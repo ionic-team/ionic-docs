@@ -22,7 +22,7 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
 
    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
-   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. Refer to [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
 2. **Open the project in <b>Xcode</b>.**
 

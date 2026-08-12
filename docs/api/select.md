@@ -115,7 +115,7 @@ import ModalExample from '@site/static/usage/v8/select/interfaces/modal/index.md
 
 ## Responding to Interaction
 
-The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
+The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. Refer to [Events](#events) for more details on these and other events that select fires.
 
 import RespondingToInteractionExample from '@site/static/usage/v8/select/basic/responding-to-interaction/index.md';
 
@@ -178,7 +178,7 @@ import ButtonTextExample from '@site/static/usage/v8/select/customization/button
 
 Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
+Refer to the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
 for the properties that each interface accepts.
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
@@ -192,7 +192,7 @@ import InterfaceOptionsExample from '@site/static/usage/v8/select/customization/
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
@@ -225,7 +225,7 @@ that interface's documentation:
 - [Popover](popover.md#css-shadow-parts)
 - [Modal](modal.md#css-shadow-parts)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, refer to the [Select Options documentation](select-option.md) for usage examples of customizing options.
 
 ### Custom Toggle Icons
 

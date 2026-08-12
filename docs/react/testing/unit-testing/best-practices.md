@@ -48,7 +48,7 @@ test('example', async () => {
 });
 ```
 
-For more information on `user-event`, see the [user-event documentation](https://testing-library.com/docs/user-event/intro/).
+For more information on `user-event`, refer to the [user-event documentation](https://testing-library.com/docs/user-event/intro/).
 
 ## Waiting for Components
 

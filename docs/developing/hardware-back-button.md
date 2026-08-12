@@ -132,7 +132,7 @@ useBackButton(10, () => {
 
 In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
 
-In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. See [Handlers with the Same Priorities](#handlers-with-the-same-priorities) for more information.
+In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. Refer to [Handlers with the Same Priorities](#handlers-with-the-same-priorities) for more information.
 
 ## Calling Multiple Handlers
 
