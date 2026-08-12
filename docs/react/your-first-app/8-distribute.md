@@ -46,7 +46,7 @@ git commit -m "added appflow sdk" #  commit staged changes
 git push origin main # push the changes from the main branch to your git host
 ```
 
-After the push is made, your commit appears under the `Commits` tab of the Appflow Dashboard. For more on this, take a look at the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
+After the push is made, your commit appears under the `Commits` tab of the Appflow Dashboard. For more information, refer to the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
 
 ## Deploy a Live Update
 
