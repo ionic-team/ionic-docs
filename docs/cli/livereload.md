@@ -70,4 +70,4 @@ For example, with an Angular application you can run the following to pass a cer
 ionic capacitor run android --livereload --external --ssl -- --ssl-cert='server.crt' --ssl-key='server.key'
 ```
 
-Using a self signed certificate and ensuring it is trusted by the device is a complicated topic and is covered in [this article](https://ionic.zendesk.com/hc/en-us/articles/11384425513623).
+Using a self signed certificate and ensuring it is trusted by the device is a complicated topic and is covered in the [Ionic support article on self signed certificates](https://ionic.zendesk.com/hc/en-us/articles/11384425513623).

@@ -17,7 +17,7 @@ Of course, a code editor is also required. [Visual Studio Code](https://code.vis
 ## Terminal
 
 :::note
-Much of Ionic development requires familiarity with the command line. If you're new to the command line, refer to [this Blog Post](https://ionicframework.com/blog/new-to-the-command-line/) for a quick introduction.
+Much of Ionic development requires familiarity with the command line. If you're new to the command line, refer to the [New to the Command Line](https://ionicframework.com/blog/new-to-the-command-line/) blog post for a quick introduction.
 :::
 
 In general, we recommend using the built-in terminals. Many third-party terminals work well with Ionic, but may not be supported.

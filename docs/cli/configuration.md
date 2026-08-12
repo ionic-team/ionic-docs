@@ -126,7 +126,7 @@ The Ionic CLI supports a multi-app configuration setup, which involves multiple 
 :::note
 These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
 
-If you're using Angular, please refer to [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+If you're using Angular, please refer to [the Angular monorepo guide](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
 :::
 
 ### Setup Steps
