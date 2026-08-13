@@ -10,34 +10,32 @@ import Slots from '@ionic-internal/component-api/v8/menu-toggle/slots.md';
 
 <head>
   <title>ion-menu-toggle: MenuToggle Component to Open/Close Menus</title>
-  <meta name="description" content="The MenuToggle component can be used to toggle a menu open or closed—by default, it's only visible when the selected menu is active. Read more about usage." />
+  <meta name="description" content="MenuToggleコンポーネントは、メニューの開閉を切り替えるために使用します。デフォルトでは、選択されたメニューがアクティブなときにのみ表示されます。使用方法についてもっと読む。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+Menu Toggleコンポーネントは、メニューの開閉を切り替えるために使用することができます。
 
-The Menu Toggle component can be used to toggle a menu open or closed.
+メニュートグルは、選択されたメニューが有効な場合にのみ表示されます。メニューが無効になっている場合や、分割ペインとして表示されている場合は、メニュートグルは非表示になります。常にメニュートグルを表示するには、`autoHide`プロパティを`false`に設定します。
 
-Menu toggles are only visible when the selected menu is enabled. If the menu is disabled or it's being presented as a split pane, the menu toggle will be hidden. To always display the menu toggle, the `autoHide` property can be set to `false`.
+詳細については、[メニュー](./menu#menu-toggle)のドキュメントを参照してください。
 
-Refer to the [menu](./menu#menu-toggle) documentation for more information.
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

@@ -60,7 +60,7 @@ $ cd photo-gallery
 $ git push ionic master
 ```
 
-That’s it! Now for the fun part - let’s run it.
+それで完了です！では、楽しい部分に入りましょう - 実行してみましょう。
 
 ## Run the App
 
@@ -78,7 +78,7 @@ There are three tabs: “Home”, “About”, and “Contact.” Click on the A
 
 ![Animated GIF demonstrating the LiveReload feature in Ionic, showing real-time updates in the app after code changes.](/img/guides/first-app-v3/email-photogallery.gif 'Ionic LiveReload Feature Demonstration')
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/pages/about/about.html`. It contains:
+お気に入りのコードエディタでフォトギャラリーアプリのフォルダを開き、次に`/src/pages/about/about.html`に移動します。そこには以下が含まれています：
 
 ```html
 <ion-header>

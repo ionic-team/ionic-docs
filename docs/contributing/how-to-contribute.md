@@ -8,7 +8,7 @@ Thanks for the interest in contributing to Ionic Framework!
 
 ## Contributing Etiquette
 
-Please refer to the [Contributor Code of Conduct](coc.md) for information on the rules of conduct.
+行動規範のルールに関する情報については、[貢献者行動規範](coc.md)を参照してください。
 
 ## Creating an Issue
 
@@ -20,7 +20,7 @@ Please refer to the [Contributor Code of Conduct](coc.md) for information on the
 
 - Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
 
-- If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to check if there is a similar one reported. Include closed issues as it may have been closed with a solution.
+- バグを見つけた、または新機能のアイデアがある場合は、まず同じ内容がすでに[報告されていないか](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue)確認してください。既存の Issue を検索して、類似する報告がないか確認できます。解決策とともにクローズされている場合もあるため、クローズ済みの Issue も対象にしてください。
 
 - Next, [create a new issue](https://github.com/ionic-team/ionic/issues/new/choose) that thoroughly explains the problem. Please fill out the populated issue form before submitting the issue.
 
@@ -70,15 +70,15 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 
 #### Modifying Components
 
-1. Locate the component(s) to modify inside `/core/src/components/`.
-2. Refer to the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
-3. Make your changes to the component. If the change is overly complex or out of the ordinary, add comments so we can understand the changes.
-4. [Preview your changes](#preview-changes) locally.
-5. [Modify the documentation](#modifying-documentation) if needed.
-6. [Run lint](#lint-changes) on the directory and make sure there are no errors.
-7. [Build the project](#building-changes).
-8. After the build is finished, commit the changes. Please follow the [commit message format](#commit-message-format) for every commit.
-9. [Submit a Pull Request](#submit-pull-request) of your changes.
+1. `/core/src/components/` 内の変更するコンポーネントを特定します。
+2. [Stencil Documentation](https://stenciljs.com/docs/introduction/) およびその他のコンポーネントを参照して、これらのコンポーネントの実装を理解します。
+3. コンポーネントに変更を加えます。変更が複雑すぎる場合や一般的でない場合は、変更内容を理解できるようにコメントを追加してください。
+4. [変更をローカルでプレビュー](#preview-changes) します。
+5. 必要に応じて [ドキュメントを修正](#modifying-documentation) します。
+6. ディレクトリで [lint を実行](#lint-changes) し、エラーがないことを確認します。
+7. [プロジェクトをビルド](#building-changes) します。
+8. ビルドが完了したら、変更をコミットします。すべてのコミットには、[コミットメッセージの形式](#commit-message-format) に従ってください。
+9. [変更のプルリクエストを提出](#submit-pull-request) します。
 
 #### Preview Changes
 
@@ -107,20 +107,20 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 
 #### Modifying Tests
 
-1. Locate the test to modify inside the `test/` folder in the component's directory.
-2. If a test exists, modify the test by adding an example to reproduce the problem fixed or feature added.
-3. If a new test is needed, the easiest way is to copy the `basic/` directory from the component's `test/` directory, rename it, and edit the content in both the `index.html` and `e2e.ts` file (refer to [Screenshot Tests](#screenshot-tests) for more information on this file).
-4. The `preview/` directory is used in the documentation as a demo. Only update this test if there is a bug in the test or if the API has a change that hasn't been updated in the test.
+1. コンポーネントのディレクトリ内の `test/` フォルダで変更するテストを特定します。
+2. テストが存在する場合、修正された問題や追加された機能を再現する例を追加してテストを修正します。
+3. 新しいテストが必要な場合、最も簡単な方法は、コンポーネントの `test/` ディレクトリから `basic/` ディレクトリをコピーし、それに名前を付け直し、`index.html` および `e2e.ts` ファイルの内容を編集することです（このファイルについては [Screenshot Tests](#screenshot-tests) を参照してください）。
+4. `preview/` ディレクトリはドキュメントでデモとして使用されます。テストにバグがある場合または API に変更があり、テストに反映されていない場合のみ、このテストを更新してください。
 
 ##### Screenshot Tests
 
-1. If the test exists in screenshot, there will be a file named `e2e.ts` in the directory of the test.
-2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. Refer to [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
-3. **Important:** each `test()` should have only one screenshot (`page.compareScreenshot()`) call **or** it should check the expect at the end of each test. If there is a mismatch it will fail the test which will prevent the rest of the test from running, i.e. if the first screenshot fails the remaining screenshot calls would not be called _unless_ they are in a separate test or all of the expects are called at the end.
-4. To run screenshot locally, use the following command: `npm run test.screenshot`.
-   - To run screenshot for a specific test, pass the path to the test or a string to search for.
-   - For example, running all `alert` tests: `npm run test.screenshot alert`.
-   - Or, running the basic `alert` tests: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
+1. テストがスクリーンショットに存在する場合、そのテストのディレクトリには`e2e.ts`という名前のファイルが存在します。
+2. スクリーンショットテストは、このファイルを含め、`page.compareScreenshot()`への呼び出しを含む 1 つ以上の`test()`呼び出しを追加することで追加できます。例については、[Stencil のエンドツーエンドテスト](https://stenciljs.com/docs/end-to-end-testing)および`core/`の既存テストを参照してください。
+3. **重要:** 各`test()`は 1 回のスクリーンショット（`page.compareScreenshot()`）呼び出しのみを持つべきです**または**、各テストの最後で expect をチェックする必要があります。不一致がある場合、テストは失敗し、残りのテストが実行されないことがあります。つまり、最初のスクリーンショットが失敗した場合、残りのスクリーンショット呼び出しは別のテストに含まれているか、すべての expect が最後に呼び出されない限り実行されません。
+4. スクリーンショットをローカルで実行するには、次のコマンドを使用してください: `npm run test.screenshot`。
+   - 特定のテストのスクリーンショットを実行するには、テストのパスまたは検索文字列を渡してください。
+   - 例えば、すべての`alert`テストを実行する場合: `npm run test.screenshot alert`。
+   - または、基本的な`alert`テストを実行する場合: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`。
 
 #### Building Changes
 
@@ -131,9 +131,9 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 
 ### Submit Pull Request
 
-1. [Create a new pull request](https://github.com/ionic-team/ionic/compare) with the `master` branch as the `base`. You may need to click on `compare across forks` to find your changes.
-2. Refer to the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
-3. Please fill out the provided Pull Request template to the best of your ability and include any issues that are related.
+1. [新しいプルリクエストを作成](https://github.com/ionic-team/ionic/compare)し、`master`ブランチを`base`として指定します。変更を見つけるために`compare across forks`をクリックする必要がある場合があります。
+2. 詳細については、[フォークからプルリクエストを作成する](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)GitHub のヘルプ記事を参照してください。
+3. 提供されたプルリクエストテンプレートを可能な限り記入し、関連する問題を必ず含めてください。
 
 ## Commit Message Guidelines
 

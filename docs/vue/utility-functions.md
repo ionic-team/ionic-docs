@@ -71,7 +71,7 @@ useIonRouter(): UseIonRouterResult;
 
 - The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
 
-Refer to the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
+詳細な使用例については、[Vue ナビゲーション ドキュメント](./navigation#navigating-using-useionrouter)を参照してください。
 
 ## Hardware Back Button
 
@@ -98,10 +98,10 @@ interface UseBackButtonResult {
 useBackButton(priority: number, handler: Handler): UseBackButtonResult;
 ```
 
-Refer to the [Hardware Back Button Documentation](../developing/hardware-back-button) for more information and usage examples.
+詳細や使用例については、[ハードウェアバックボタンのドキュメント](../developing/hardware-back-button)を参照してください。
 
 :::note
-The `useBackButton` callback will only fire when your app is running in Capacitor or Cordova. Refer to [Hardware Back Button in Capacitor and Cordova](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova) for more information.
+`useBackButton` コールバックは、アプリが Capacitor または Cordova で実行されているときにのみ発火します。詳細については、[Capacitor および Cordova におけるハードウェアバックボタン](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova)を参照してください。
 :::
 
 ## Keyboard
@@ -131,7 +131,7 @@ interface UseKeyboardResult {
 useKeyboard(): UseKeyboardResult;
 ```
 
-Refer to the [Keyboard Documentation](../developing/keyboard) for more information and usage examples.
+詳細情報や使用例については、[キーボードのドキュメント](../developing/keyboard)を参照してください。
 
 ## Ionic Lifecycles
 
@@ -163,4 +163,4 @@ onIonViewWillLeave(() => {
 Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
 :::
 
-Refer to the [Vue Lifecycle Documentation](./lifecycle) for more information and usage examples.
+詳細情報や使用例については、[Vue ライフサイクルのドキュメント](./lifecycle)を参照してください。

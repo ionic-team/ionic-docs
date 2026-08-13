@@ -1,6 +1,6 @@
 # 仮想スクロール
 
-:::warning[Looking for `ion-virtual-scroll`?]
+:::warning[`ion-virtual-scroll`を探していますか？]
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Virtuoso package detailed below.
 
@@ -73,4 +73,4 @@ For example:
 
 ## Further Reading
 
-This guide only covers a small portion of what `Virtuoso` is capable of. For more details, please refer to the [Virtuoso documentation](https://virtuoso.dev/).
+このガイドは`Virtuoso`の機能のごく一部しかカバーしていません。詳細については、[Virtuoso documentation](https://virtuoso.dev/)を参照してください。

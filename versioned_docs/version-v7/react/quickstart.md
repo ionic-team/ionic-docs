@@ -156,10 +156,10 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+これはヘッダーとスクロール可能なコンテンツ領域を持つページを作成します。`IonPage` コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。二番目のヘッダーは[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を表示し、内容の上部にある iOS デバイスで表示され、スクロールすると一番目のヘッダーで小さいタイトルに縮小されます。
 
-:::tip[Learn More]
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip[さらに学ぶ]
+Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、および[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
 ## Add an Ionic Component

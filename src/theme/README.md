@@ -1,10 +1,10 @@
 # Theme folder
 
-This folder is used to override the base docusaurus theme. It houses [swizzled components](https://docusaurus.io/docs/swizzling). Components should NOT be swizzled unless absolutely necessary to allow for changes in future versions. If it is possible to shallow swizzle a component using the `@theme-original` alias, then that should be heavily considered.
+このフォルダーは、ベースの Docusaurus テーマを上書きするために使用されます。ここには[スウィズルされたコンポーネント](https://docusaurus.io/docs/swizzling)が格納されます。将来のバージョンでの変更を可能にするため、コンポーネントは絶対に必要な場合を除きスウィズルしてはいけません。もし`@theme-original`エイリアスを使用してコンポーネントを浅くスウィズルできる場合は、十分に検討するべきです。
 
-Wrapped components import from `@theme-original` and are our own code, so they follow the repo's Prettier config. Ejected components are full copies of upstream, so each one is listed in `.prettierignore` by path to keep upstream's formatting so the copy can still be compared against `@docusaurus/theme-classic`. Add that entry as part of ejecting a component. Nothing in CI checks for it, so a missing entry means Prettier reformats the copy and the difference from upstream is lost without anyone noticing.
+ラップされたコンポーネントは`@theme-original`からインポートされ、当社自身のコードであるため、リポジトリの Prettier 設定に従います。エジェクトされたコンポーネントは上流の完全なコピーであるため、それぞれが`.prettierignore`にパスで一覧されており、上流のフォーマットを維持することでコピーを`@docusaurus/theme-classic`と比較できるようにしています。コンポーネントをエジェクトする際にそのエントリーを追加してください。CI ではチェックされないため、エントリーがない場合、Prettier によってコピーが再フォーマットされ、上流との差異が誰にも気づかれずに失われます。
 
-All code updates should be marked with comments to allow more seamless version updating. The styles file for components that have been unsafely swizzled should absolutely not be edited. All styling should be done from the [component partials](/src/styles/components).
+すべてのコード更新にはコメントを付けて、よりスムーズなバージョン更新を可能にしてください。安全でない方法でスウィズルされたコンポーネントのスタイルファイルは絶対に編集してはいけません。スタイリングはすべて[コンポーネントパーシャル](/src/styles/components)から行うべきです。
 
-- Original theme: [`@docusaurus/theme-classic`](https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic)
-- [Original theme source](https://github.com/facebook/docusaurus/tree/v3.10.2/packages/docusaurus-theme-classic/src/theme)
+- オリジナルテーマ: [`@docusaurus/theme-classic`](https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic)
+- [オリジナルテーマのソース](https://github.com/facebook/docusaurus/tree/v3.10.2/packages/docusaurus-theme-classic/src/theme)

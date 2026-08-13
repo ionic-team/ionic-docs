@@ -20,7 +20,7 @@ Have an issue that you think should be covered here? <a href="https://github.com
 [Vue warn]: Failed to resolve component: ion-button
 ```
 
-If you encounter this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered, meaning you need to import them each time you want to use them.
+この警告が表示された場合、`@ionic/vue`からコンポーネントをインポートしていない可能性があります。デフォルトでは、すべての Ionic Vue コンポーネントはローカルに登録されているため、使用するたびにインポートする必要があります。
 
 Without importing the component, you will only get the underlying Web Component, and Vue-specific features such as `v-model` will not work.
 
@@ -58,7 +58,7 @@ module.exports = {
 
 If you are using VSCode and have the Vetur plugin installed, you are likely getting this warning because of Vetur, not ESLint. By default, Vetur loads the default Vue 3 linting rules and ignores any custom ESLint rules.
 
-To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. Refer to the <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a> for more information.
+この問題を解決するには、`vetur.validation.template: false`で Vetur のテンプレート検証をオフにする必要があります。詳細については、<a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a>を参照してください。
 
 ## Method on component is not a function
 
@@ -74,7 +74,7 @@ ionContentRef.value.scrollToBottom();
 
 In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
 
-Refer to the [Quickstart Guide](quickstart.md#calling-methods-on-components) for more information.
+詳細については、[Quickstart Guide](quickstart.md#calling-methods-on-components)を参照してください。
 
 ## Page transitions are not working
 
@@ -97,7 +97,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 </script>
 ```
 
-Refer to the [IonPage documentation](navigation.md#ionpage) for more information.
+詳細については、[IonPage ドキュメント](navigation.md#ionpage)を参照してください。
 
 ## Ionic events bound in JavaScript are not firing
 
@@ -117,11 +117,11 @@ await modal.present();
 
 This is done to align with how developers bind events in their Vue templates by using kebab-case: https://vuejs.org/guide/essentials/component-basics.html#case-insensitivity
 
-## Blank white screen in Capacitor native build
+## Capacitor ネイティブビルドでの白い空白画面
 
-If your app runs correctly in the browser but shows a blank white screen when launched in a Capacitor iOS or Android build, the most common cause is a non-default `base` in `vite.config.js` (or `publicPath` in `vue.config.js` for legacy Vue CLI projects).
+アプリがブラウザ上では正しく動作するが、Capacitor の iOS や Android ビルドで起動すると白い空白画面が表示される場合、最も一般的な原因は`vite.config.js`内のデフォルトでない`base`（またはレガシー Vue CLI プロジェクトでは`vue.config.js`内の`publicPath`）です。
 
-This option is often added so the app can be hosted from a subdirectory, such as a GitHub Pages deploy:
+このオプションは、アプリを GitHub Pages のようなサブディレクトリからホストできるようにするために追加されることがよくあります。
 
 ```js
 // vite.config.js
@@ -130,9 +130,9 @@ export default defineConfig({
 });
 ```
 
-In a Capacitor build the bundled assets are served from a local origin (`capacitor://localhost` on iOS and `https://localhost` on Android by default), so the prefixed paths never resolve and the app fails to bootstrap.
+Capacitor では、バンドルされたアセットはローカルオリジン（デフォルトでは iOS では`capacitor://localhost`、Android では`https://localhost`）から提供されるため、プレフィックス付きのパスは解決されず、アプリのブートストラップに失敗します。
 
-To fix it, reset `base` to `/` (or remove the option) before running `npx cap copy`.
+これを修正するには、`npx cap copy`を実行する前に、`base`を`/`にリセットする（またはオプションを削除する）必要があります。
 
 ```js
 // vite.config.js
@@ -141,9 +141,9 @@ export default defineConfig({
 });
 ```
 
-If you need both targets, keep a separate config file for each and select it at build time with `vite build --config`.
+両方のターゲットが必要な場合は、それぞれのために別々の設定ファイルを用意し、ビルド時に`vite build --config`で選択してください。
 
-To confirm this is the cause, inspect the device log for 404s on the prefixed asset paths:
+これが原因であることを確認するには、接頭辞付きのアセットパスでの 404 をデバイスログで確認してください:
 
-- **Android:** Run `adb logcat` from the command line, or open **Logcat** in Android Studio.
-- **iOS:** Open Safari's **Develop** menu and inspect the Simulator or device webview.
+- **Android:** コマンドラインから `adb logcat` を実行するか、Android Studio で **Logcat** を開きます。
+- **iOS:** Safari の **Develop** メニューを開き、Simulator またはデバイスの WebView を検査します。

@@ -12,25 +12,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+カードヘッダは、カードの子コンポーネントで、カードコンテンツの前に配置する必要があります。[カードタイトル](./card-title)と[カードサブタイトル](./card-subtitle)を含むことができます。
 
-Card header is a child component of card that should be placed before the card content. It can contain a [card title](./card-title) and a [card subtitle](./card-subtitle).
+詳細は[Card](./card)のドキュメントを参照してください。
 
-Refer to the [Card](./card) documentation for more information.
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

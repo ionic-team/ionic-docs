@@ -1,6 +1,6 @@
 # Virtual Scroll
 
-:::warning[Looking for `ion-virtual-scroll`?]
+:::warning[`ion-virtual-scroll`を探していますか？]
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using a Vue library to accomplish this. We outline one approach using `vue-virtual-scroller` below.
 

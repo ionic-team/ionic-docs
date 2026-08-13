@@ -1,25 +1,25 @@
 ---
-sidebar_label: Lifecycle
+sidebar_label: ライフサイクル
 ---
 
-# Vue Lifecycle
+# Vue のライフサイクル
 
-This guide discusses how to use the Ionic Framework Lifecycle events in an Ionic Vue application.
+このガイドでは、Ionic Framework のライフサイクルイベントを Ionic Vue アプリケーションで使用する方法について説明します。
 
-## Ionic Framework Lifecycle Methods
+## Ionic Framework のライフサイクルメソッド
 
-Ionic Framework provides a few lifecycle methods that you can use in your apps:
+Ionic Framework はアプリで使えるいくつかのライフサイクルメソッドを提供します:
 
-| Event Name         | Description                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has _finished_ animating.      |
-| `ionViewWillLeave` | Fired when the component routing _from_ is about to animate.       |
-| `ionViewDidLeave`  | Fired when the component routing _from_ has _finished_ animating.  |
+| イベント名         | 説明                                                                     |
+| ------------------ | ------------------------------------------------------------------------ |
+| `ionViewWillEnter` | コンポーネントが表示されるアニメーションが **はじまる時に** 発火します。 |
+| `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが **終了した時に** 発火します。 |
+| `ionViewWillLeave` | コンポーネントを離脱するアニメーションが **はじまる時に** 発火します。   |
+| `ionViewDidLeave`  | コンポーネントを離脱するアニメーションが **終了した時に** 発火します。   |
 
-These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
+これらのライフサイクルは、ルーターによって直接マッピングされたコンポーネントに対してのみ呼び出されます。つまり、`/pageOne`が`PageOneComponent`にマッピングされた場合、Ionic ライフサイクルは`PageOneComponent`で呼び出されますが、`PageOneComponent`がレンダリングする子コンポーネントでは呼び出されません。
 
-The lifecycles are defined the same way Vue lifecycle methods are - as functions at the root of your Vue component:
+ライフサイクルは、Vue のライフサイクルメソッドと同じように、Vue コンポーネントのルートで関数として定義されます：
 
 ```vue
 <script setup lang="ts">
@@ -73,26 +73,26 @@ onIonViewWillLeave(() => {
 Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
 :::
 
-## How Ionic Framework Handles the Life of a Page
+## Ionic Framework がページのライフを処理する仕組み
 
-Ionic Framework has its router outlet, called `<ion-router-outlet>`. This outlet extends Vue Router's `<router-view>` with some additional functionality to enable better experiences for mobile devices.
+Ionic Framework には `<ion-router-outlet>` と呼ばれるルータアウトレットがあります。このアウトレットは、Vue Router の `<router-view>` を拡張し、モバイルデバイスのエクスペリエンスを向上させるためのいくつかの追加機能を提供します。
 
-When an app is wrapped in `<ion-router-outlet>`, Ionic Framework treats navigation a bit differently. When you navigate to a new page, Ionic Framework will keep the old page in the existing DOM, but hide it from your view and transition the new page. The reason we do this is two-fold:
+アプリが `<ion-router-outlet>` でラップされている場合、Ionic Framework はナビゲーションを少し異なる扱いにします。新しいページに移動すると、Ionic Framework は古いページを既存の DOM に保持しますが、ビューからは非表示にして新しいページに移動します。これを行う理由は 2 つあります:
 
-1. We can maintain the state of the old page (data on the screen, scroll position, etc...).
-2. We can provide a smoother transition back to the page since it is already there and does not need to be created.
+1. 古いページの状態を維持できます(画面上のデータ、スクロール位置など...)
+2. ページはすでに存在しており、作成する必要がないため、よりスムーズにページに戻ることができます。
 
-Pages are only removed from the DOM when they are "popped", for instance, by pressing the back button in the UI or the browsers back button.
+ページが DOM から削除されるのは、UI の戻るボタンやブラウザーの戻るボタンを押すなど、ページが "popped" された場合のみです。
 
-Because of this special handling, certain Vue Router components such as `<keep-alive>`, `<transition>`, and `<router-view>` should not be used in Ionic Vue applications. Additionally, Vue Router's Scroll Behavior API is not needed here as each page's scroll position is preserved automatically.
+この特別な処理のため、 `<keep-alive>`, `<transition>`,`<router-view>` などの特定の Vue ルータコンポーネントは、Ionic Vue アプリケーションでは使用しないでください。また、各ページのスクロール位置は自動的に保存されるため、ここでは Vue Router のスクロール動作 API は必要ありません。
 
-All the lifecycle methods in Vue (`mounted`, `beforeUnmount`, etc..) are available for you to use as well. However, since Ionic Vue manages the lifetime of a page, certain events might not fire when you expect them to. For instance, `mounted` fires the first time a page is displayed, but if you navigate away from the page Ionic Framework might keep the page around in the DOM, and a subsequent visit to the page might not call `mounted` again. This scenario is the main reason the Ionic Framework lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
+Vue のすべてのライフサイクルメソッド(`mounted` や `beforeUnmount`など)も使用可能です。ただし、Ionic Vue はページのライフタイムを管理するため、特定のイベントは予期したときに起動しない場合があります。たとえば、mounted はページが最初に表示されたときに起動しますが、ページから離れると、Ionic Framework によってページが DOM 内に保持され、その後ページにアクセスしても再度 `mounted` が呼び出されることはありません。このシナリオは、Ionic Framework のライフサイクル・メソッドが存在する主な理由であり、ネイティブ・フレームワークのイベントが起動しない可能性がある場合でも、ビューの開始時と終了時にロジックを呼び出す方法を提供します。
 
-## Guidance for Each Lifecycle Method
+## 各ライフサイクルメソッドのガイダンス
 
-Below are some tips on use cases for each of the life cycle events.
+以下は、ライフサイクルイベントごとのユースケースに関するヒントです。
 
-- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it is a good method to load data from services.
-- `ionViewDidEnter` - If you encounter performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. However, this event will not fire until after the page is visible to the user, so you might want to use either a loading indicator or a skeleton screen such as [ion-skeleton-text](../api/skeleton-text), so content does not flash in un-naturally after the transition is complete.
-- `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from data sources. Since `beforeUnmount` might not fire when you navigate from the current page, put your cleanup code here if you do not want it active while the screen is not in view.
-- `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
+- `ionViewWillEnter` - `ionViewWillEnter` はビューにナビゲートされるたびに呼び出されるため（初期化されているかどうかに関わらず）、サービスからデータをロードする方法として適しています。
+- `ionViewDidEnter` - データをロードする際に `ionViewWillEnter` を使ってパフォーマンスの問題が発生する場合は、代わりに `ionViewDidEnter` でデータ呼び出しを行うことができます。ただし、このイベントはページがユーザーに表示されるまで発火しないため、ロード中のインジケーターや [ion-skeleton-text](../api/skeleton-text) のようなスケルトンスクリーンを使用して、コンテンツが遷移完了後に不自然にフラッシュしないようにすることをおすすめします。
+- `ionViewWillLeave` - データソースの購読解除などのクリーンアップに使用できます。現在のページからナビゲートした場合に `beforeUnmount` が発火しないことがあるため、表示中でない状態でアクティブにしたくない場合は、クリーンアップコードをここに置きます。
+- `ionViewDidLeave` - このイベントが発火した時点で、新しいページが完全に遷移されたことが分かるため、ビューが表示されている時には通常行わないロジックをここに入れることができます。

@@ -10,7 +10,7 @@ title: Migrating From IonSlides to Swiper.js
   />
 </head>
 
-:::warning[Looking for `IonSlides`?]
+:::warning[`IonSlides`をお探しですか？]
 
 `IonSlides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
 
@@ -257,7 +257,7 @@ export default Home;
 ```
 
 :::note
-Refer to <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener noreferrer">Swiper's React usage documentation</a> for a full list of modules.
+モジュールの完全なリストについては、<a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener noreferrer">Swiper の React 使用ドキュメント</a>を参照してください。
 :::
 
 ## The IonicSlides Module
@@ -356,7 +356,7 @@ Below is a full list of property changes when going from `IonSlides` to Swiper R
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
 
 :::note
-All properties available in Swiper React can be found in the <a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">Swiper React props documentation</a>.
+Swiper React で使用可能なすべてのプロパティは、<a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">Swiper React の props ドキュメント</a>で確認できます。
 :::
 
 ## Events
@@ -413,7 +413,7 @@ Below is a full list of event name changes when going from `IonSlides` to Swiper
 | `onIonSlidesDidLoad`        | `onInit`                       |
 
 :::note
-All events available in Swiper can be found in the <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API events documentation</a>.
+Swiper で使用可能なすべてのイベントは、<a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API のイベントドキュメント</a>で確認できます。
 :::
 
 ## Methods
@@ -545,7 +545,7 @@ export default Home;
 ```
 
 :::note
-For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/react#effects" target="_blank" rel="noopener noreferrer">Swiper React effects documentation</a>.
+Swiper のエフェクトに関する詳細については、<a href="https://swiperjs.com/react#effects" target="_blank" rel="noopener noreferrer">Swiper React のエフェクトドキュメント</a>を参照してください。
 :::
 
 ## Wrap Up
@@ -564,8 +564,8 @@ If you are running into issues with the migration, please create a post on the [
 
 ### Where do I file bug reports?
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to check if your issue can be resolved by the community.
+問題を提出する前に、まず<a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a>または<a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a>に投稿して、コミュニティで問題が解決できるか確認することを検討してください。
 
-If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
+Swiper ライブラリに問題が発生している場合、新しいバグは<a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper のイシュートラッカー</a>に報告してください。
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework issue tracker</a>.
+`IonicSlides`モジュールに問題が発生している場合、新しいバグは<a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework のイシュートラッカー</a>に報告してください。

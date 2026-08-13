@@ -1,50 +1,50 @@
 ---
-title: Hardware Back Button
+title: ハードウェアの戻るボタン
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Hardware Back Button for Capacitor & Cordova on Android Devices</title>
+  <title>Androidデバイスでのハードウェアの戻るボタン</title>
   <meta
     name="description"
     content="The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications."
   />
 </head>
 
-The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous view exists in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
+ハードウェアの戻るボタンは、ほとんどの Android デバイスにあります。ネイティブアプリケーションでは、これを使って、モデルを閉じたり、前のビューに移動したり、アプリを終了したりすることができる。既定値では、 戻るボタンを押すと、現在のビューがナビゲーションスタックからポップされ、前のビューが表示されます。ナビゲーションスタックに前のビューが存在しない場合は、何も起こりません。このガイドでは、ハードウェアの戻るボタンの動作をカスタマイズする方法について説明します。
 
 :::note
-The hardware back button refers to the physical back button on an Android device and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices.
+ハードウェアの 「戻る」 ボタンとは Android デバイスの物理的な 「戻る」 ボタンのことであり、ブラウザの 「戻る」 ボタンや `ion-back-button` ボタンと混同しないでください。このガイドの情報は、Android デバイスにのみ適用されます。
 :::
 
-## Overview
+## 概要
 
-Ionic Framework emits an `ionBackButton` event when a user presses the hardware back button in supported environments.
+Ionic Framework は、サポートされている環境でユーザーがハードウェアの戻るボタンを押すと、`ionBackButton`イベントを発行します。
 
-When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
+`ionBackButton` イベントを監視して、起動するハンドラを登録できます。このハンドラは、アプリケーションの終了や確認ダイアログのオープンなどのアクションを実行できます。各ハンドラには優先順位を割り当てる必要があります。既定では、ハードウェアの戻るボタンを押すごとに 1 つのハンドラだけが起動されます。優先順位の値は、どのコールバックを呼び出すかを決定するために使用されます。これが便利なのは、モーダルを開いている場合、ハードウェアの戻るボタンを押したときにモーダルが閉じられたり、アプリが後方に移動したりしないようにしたいからです。一度に 1 つのハンドラだけを実行すると、モーダルを閉じることができますが、戻るにはハードウェアの戻るボタンをもう一度押す必要があります。
 
-There are situations where you might want to have multiple handlers fired. Each handler callback passes in a function as a parameter that can be used to tell Ionic to call the next handler.
+複数のハンドラを起動したい場合があります。各ハンドラのコールバックは、フレームワークに次のハンドラを呼び出すように指示するために使用できるパラメーターとして関数を渡します。
 
-## Support
+## サポート
 
-The table below shows how hardware back button support varies by environment.
+以下の表は、環境によってハードウェアの戻るボタンのサポートがどのように異なるかを示しています。
 
-| Environment | Status                                                                                                    |
-| ----------- | --------------------------------------------------------------------------------------------------------- |
-| Capacitor   | Supported only when the `@capacitor/app` package is installed.                                            |
-| Cordova     | Supported                                                                                                 |
-| Browser     | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
-| PWA         | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+| 環境      | 対応状況                                                                                                                |
+| --------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Capacitor | `@capacitor/app`パッケージがインストールされている場合のみサポートされます。                                            |
+| Cordova   | サポートされています                                                                                                    |
+| ブラウザ  | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
+| PWA       | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
 
-### Hardware Back Button in a Browser or a PWA
+### ブラウザまたは PWA でのハードウェアの戻るボタン
 
-Ionic has experimental support for handling the hardware back button in a browser or a PWA by setting [`experimentalCloseWatcher: true` in the IonicConfig](./config.md). When this feature is enabled, Ionic will use the [Close Watcher API](https://github.com/WICG/close-watcher) to pass any close requests through the `ionBackButton` event. This includes pressing the hardware back button to navigate or the Escape key to dismiss a modal.
+Ionic は、[IonicConfig で`experimentalCloseWatcher: true`を設定](./config.md)することで、ブラウザまたは PWA でハードウェアの戻るボタンを処理する実験的なサポートを提供します。この機能が有効になっている場合、Ionic は[Close Watcher API](https://github.com/WICG/close-watcher)を使用して、すべての閉じるリクエストを`ionBackButton`イベントを通じて渡します。これには、ナビゲーションのためにハードウェアの戻るボタンを押すことや、モーダルを閉じるために Escape キーを押すことが含まれます。
 
-Chrome has support for Close Watcher starting in [Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120).
+Chrome は[Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120)から Close Watcher をサポートしています。
 
-For complete hardware back button support, we recommend using Capacitor or Cordova.
+ハードウェアバックボタンを完全にサポートするには、Capacitor または Cordova の使用をお勧めします。
 
 :::note
 The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA if Close Watcher is unsupported or `experimentalCloseWatcher` is `false`.
@@ -130,13 +130,13 @@ useBackButton(10, () => {
 </Tabs>
 ````
 
-In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
+この例では、ハードウェアバックボタンが押されたときに呼び出されるハンドラを登録しています。優先度を 10 に設定し、次のハンドラを呼び出すことをフレームワークに指定していません。その結果、優先順位が 10 未満のハンドラは呼び出されません。優先度が 10 より大きいハンドラが最初に呼び出されます。
 
-In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. Refer to [Handlers with the Same Priorities](#handlers-with-the-same-priorities) for more information.
+同じ優先度のハンドラが存在する場合、最後に登録されたハンドラが呼び出されます。詳細については、[同じ優先度のハンドラ](#handlers-with-the-same-priorities)を参照してください。
 
-## Calling Multiple Handlers
+## 複数ハンドラの呼び出し
 
-Each hardware back button callback has a `processNextHandler` parameter. Calling this function allows you to continue calling hardware back button handlers.
+各ハードウェアバックボタンコールバックには、 `processNextHandler` パラメータがあります。この関数を呼び出すと、ハードウェアバックボタンハンドラの呼び出しを続行できます。
 
 ````mdx-code-block
 <Tabs
@@ -246,11 +246,11 @@ useBackButton(10, (processNextHandler) => {
 </Tabs>
 ````
 
-This example shows how to indicate to Ionic Framework that you want the next handler to be fired. All callbacks are provided with a `processNextHandler` function as a parameter. Calling this will cause the next handler, if any exists, to be fired.
+この例は、次のハンドラを起動するように Ionic Framework に指示する方法を示しています。すべてのコールバックには、パラメータとして `processNextHandler` 関数が用意されています。これをコールすると、次のハンドラ (存在する場合) が起動されます。
 
-## Handlers with the Same Priorities
+## 同じ優先順位のハンドラ {/* #handlers-with-the-same-priorities */}
 
-Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
+内部的には、Ionic Framework はハードウェアのバックボタンハンドラを管理するためにプライオリティキューに似たものを使用します。優先順位の値が最大のハンドラが最初に呼び出されます。同じ優先順位のハンドラが複数存在する場合、このキューに追加された同じ優先順位の _last_ handler が、最初に呼び出されるハンドラになります。
 
 ```javascript
 document.addEventListener('ionBackButton', (event) => {
@@ -270,11 +270,11 @@ document.addEventListener('ionBackButton', (event) => {
 });
 ```
 
-In the example above, both handlers A and B have a priority of 10. Since handler B was registered last, Ionic Framework will call handler B before it calls handler A.
+上の例では、ハンドラ A と B の両方の優先度は 10 です。ハンドラ B は最後に登録されているため、Ionic Framework はハンドラ A を呼び出す前にハンドラ B を呼び出します。
 
-## Exiting the App
+## アプリの終了
 
-In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event combined with methods that Capacitor/Cordova provide.
+場合によっては、ハードウェアの戻るボタンを押したときにアプリケーションを終了することをお勧めします。これは、Capacitor/Cordova が提供するメソッドと組み合わせた `ionBackButton` イベントを使用することで実現できます。
 
 ````mdx-code-block
 <Tabs
@@ -388,13 +388,13 @@ useBackButton(-1, () => {
 </Tabs>
 ````
 
-This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
+この例は、ユーザがハードウェアの戻るボタンを押したときにアプリケーションが終了し、ナビゲーションスタックに何も残っていないことを示しています。アプリを終了する前に確認ダイアログを表示することも可能です。
 
-It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React and Ionic Vue.
+アプリケーションを終了する前に、ユーザーがルート・ページにあるかどうかを確認することをお勧めします。開発者は、Ionic Angular の `IonRouterOutlet` で`canGoBack` 、 Ionic React および Ionic Vue の `IonRouter` で `canGoBack` メソッドを使用できます。
 
-## Internal Framework Handlers
+## 内部フレームワークハンドラ
 
-The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
+次の表は、Ionic Framework が使用するすべての内部ハードウェアバックボタンイベントハンドラの一覧です。 `Propagates` 列は、その特定のハンドラが Ionic Framework に次の戻るボタンハンドラを呼び出すように指示するかどうかを示します。
 
 | Handler    | Priority | Propagates | Description                                                                                                                 |
 | ---------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------- |

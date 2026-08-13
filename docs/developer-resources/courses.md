@@ -62,13 +62,7 @@ Progressive Web Application anywhere you desire.
 
 by Michael Callaghan at Pluralsight
 
-Since its inception, the Ionic Framework has included a rudimentary command line interface. Though only a few
-years old, it has matured into a powerful tool that should be part of every developer’s toolbox. This course,
-Ionic CLI, will start at the top and explore the Ionic CLI. First, you'll learn how to create projects and
-components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects
-with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have
-been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have
-the confidence to use the Ionic CLI as part of your everyday Ionic development.
+Ionic フレームワークは、その創設当初から基本的なコマンドラインインターフェースを備えていました。数年しか経っていませんが、すでに強力なツールへと成長しており、すべての開発者のツールボックスに含まれるべきです。このコース「Ionic CLI」では、Ionic CLI をトップから学習していきます。まず、プロジェクトやコンポーネントの作成方法を学びます。次に、アプリのビルドと提供方法を学びます。最後に、プロジェクトを他の人と共有する方法や、他のビルドツールとの統合方法を学びます。Ionic をこれから探索し始める方でも、ベータ以前の時代から使用している方でも、ここにはあなたに役立つ内容があります。コースの終わりまでには、日常の Ionic 開発の一部として Ionic CLI を自信を持って使用できるようになります。
 
 ### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
 

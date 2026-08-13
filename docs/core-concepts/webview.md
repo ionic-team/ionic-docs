@@ -3,38 +3,38 @@ title: Web View
 ---
 
 <head>
-  <title>Capacitor Web View for iOS and Android Apps - Ionic Framework</title>
+  <title>iOSおよびAndroidアプリ用Capacitor Web View - Ionic Framework</title>
   <meta
     name="description"
-    content="What is a Web View? Web Views are a full screen and full-powered web browser. Read to learn more about Capacitor Web View on Ionic Framework apps."
+    content="Web Viewとは何ですか？Web Viewはフルスクリーンでフル機能のWebブラウザです。Ionic FrameworkアプリでのCapacitor Web Viewについて詳しく学びましょう。"
   />
 </head>
 
-Web Views power web apps on native devices.
+Web View は、ネイティブデバイス上の Web アプリを強化します。
 
-The Web View is automatically provided for apps integrated with [Capacitor](../reference/glossary.md#capacitor).
+[Capacitor](../reference/glossary.md#capacitor) と統合されたアプリでは、Web View は自動的に提供されます。
 
-For [Cordova](../reference/glossary.md#cordova), Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a>. The plugin is provided by default when using the Ionic CLI.
+[Cordova](../reference/glossary.md#cordova)については、Ionic が<a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View のプラグイン</a>を管理しています。このプラグインは、Ionic CLI を使用する際にデフォルトで提供されます。
 
-## What is a Web View?
+## Web View とは
 
-Ionic apps are built using [web technologies](../reference/glossary.md#web-standards) and are rendered using Web Views, which are a full screen and full-powered web browser.
+Ionic アプリは[Web 技術](../reference/glossary.md#web-standards)をつかって構築され、フルスクリーンでの表示、Web ブラウザのすべての機能が使える Web View を使ってレンダリングされます。
 
-Modern Web Views offer many built-in <a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a> for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
+最近の Web View は、カメラ、センサー、GPS、スピーカー、Bluetooth などのハードウェア機能のための組み込み<a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a>を多数提供していますが、プラットフォーム固有のハードウェア API にアクセスする必要がある場合もあります。Ionic アプリでは、通常は JavaScript API を利用してネイティブプラグインにアクセスしてブリッジする形でハードウェア API を利用することができます。
 
 ![Diagram illustrating the architecture of a Web View in Ionic apps, showing the bridge between native app components and web components.](/img/building/webview-architecture.png 'Web View Architecture Diagram')
 
-The Ionic Web View plugin is specialized for modern JavaScript apps. For both iOS and Android, app files are always hosted using the `http://` protocol with an optimized HTTP server that runs on the local device.
+Ionic Web View プラグインは、最新の JavaScript アプリケーションに特化しています。iOS と Android の両方で、アプリファイルは常に `http://` プロトコルを使ってデバイス上で動作する最適化された HTTP サーバーにホストされます。
 
 ### CORS
 
-Web Views enforce [CORS](../reference/glossary.md#cors), so it's important that external services properly handle cross-origin requests. Refer to the [CORS FAQs](../troubleshooting/cors.md) for information on dealing with CORS in Ionic apps.
+Web ビューは[CORS](../reference/glossary.md#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。Ionic アプリで CORS に対処する方法については、[CORS FAQ](../troubleshooting/cors.md)を参照してください。
 
-### File Protocol
+### File プロトコル {/* #file-protocol */}
 
-Capacitor and Cordova apps are hosted on a local HTTP server and are served with the `http://` protocol. Some plugins, however, attempt to access device files via the `file://` protocol. To avoid difficulties between `http://` and `file://`, paths to device files must be rewritten to use the local HTTP server. For example, `file:///path/to/device/file` must be rewritten as `http://<host>:<port>/<prefix>/path/to/device/file` before being rendered in the app.
+Cordova と Capacitor のアプリはローカルの HTTP サーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を回避するためには、ファイルアクセスするパスをローカルの HTTP サーバに書き換える必要があります。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
 
-For Capacitor apps, convert file URIs like so:
+Capacitor アプリの場合、URI はこのように変換します。
 
 ```javascript
 import { Capacitor } from '@capacitor/core';
@@ -42,9 +42,9 @@ import { Capacitor } from '@capacitor/core';
 Capacitor.convertFileSrc(filePath);
 ```
 
-For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview).
+Cordova アプリの場合、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)は、File URI を変換するためのユーティリティ関数を提供します：`window.Ionic.WebView.convertFileSrc()`。対応する Ionic Native プラグインもあります：[`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview)。
 
-### Implementations
+### 実装
 
 - **iOS**: <a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank">WKWebView</a>
 - **Android**: <a href="https://developer.android.com/reference/android/webkit/WebView" target="_blank">WebView for Android</a>

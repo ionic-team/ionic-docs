@@ -12,10 +12,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
+アコーディオン・グループは、アコーディオンインスタンスのためのコンテナです。これは、アコーディオンの状態を管理し、キーボードナビゲーションを提供します。
 
-Refer to the [Accordion](./accordion) documentation for more information.
-
+詳細については、[アコーディオン](./accordion)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -29,7 +28,7 @@ interface AccordionGroupChangeEventDetail<T = any> {
 
 ### AccordionGroupCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
@@ -38,21 +37,19 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

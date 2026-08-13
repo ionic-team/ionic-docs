@@ -18,8 +18,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Segment view is a wrapper element that links a group of [segment contents](./segment-content.md) to a [segment](./segment.md) when using swipeable segments.
-Refer to our [swipeable segments](./segment.md#swipeable-segments) documentation for more information on how to use segment views.
+セグメントビューは、スワイプ可能なセグメントを使用する際に、[セグメントコンテンツ](./segment-content.md)のグループを[セグメント](./segment.md)にリンクするラッパー要素です。
+セグメントビューの使用方法については、[スワイプ可能なセグメント](./segment.md#swipeable-segments)のドキュメントを参照してください。
 
 ## Properties
 <Props />
@@ -36,5 +36,5 @@ Refer to our [swipeable segments](./segment.md#swipeable-segments) documentation
 ## CSS Custom Properties
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

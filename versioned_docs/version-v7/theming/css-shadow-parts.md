@@ -123,7 +123,10 @@ CSS Shadow Parts are supported in the recent versions of all of the major browse
 
 ### Vendor Prefixed Pseudo-Elements
 
-Pseudo-elements that are <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">vendor prefixed</a> are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
+  ベンダープリフィックス付き
+</a>
+の疑似要素は、現時点ではサポートされていません。これの例としては、`::-webkit-scrollbar`の疑似要素が挙げられます。
 
 ```css
 /* Does NOT work */

@@ -11,32 +11,31 @@ import Slots from '@ionic-internal/component-api/v8/split-pane/slots.md';
 
 <head>
   <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
-  <meta name="description" content="ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases." />
+  <meta name="description" content="ion-split-paneは、マルチビューのアプリレイアウトを作成する際に便利です。これにより、メニューなどのUI要素を、ビューポートの幅が広がるにつれて表示することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be
-displayed as the viewport width increases.
+分割ペインは、マルチビューレイアウトを作成する際に便利です。
+メニューのようなUI要素は、分割されたペインで表示することができます。ビューポートの幅が大きくなるにつれて表示されます。
 
-If the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.
+デバイスの画面幅が特定のサイズより小さい場合、分割ペインは縮小され、メニューは非表示になります。これは、ブラウザで提供され、アプリストアを通じてスマートフォンやタブレットにデプロイされるアプリを作成するのに理想的な動作です。
 
-## Basic Usage
+## 基本的な使い方
 
 :::note
-This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. Refer to [Setting Breakpoints](#setting-breakpoints) for more information. 
+このデモでは、`when`プロパティを`'xs'`に設定しているため、スプリットペインが常に表示されます。小さいビューポートでスプリットペインを折りたたむ場合、この設定は必要ありません。詳細については、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
 :::
 
 import Basic from '@site/static/usage/v8/split-pane/basic/index.md';
 
 <Basic />
 
-## Setting Breakpoints
+## ブレイキング・ポイントを決める {/* #setting-breakpoints */}
 
-By default, the split pane will expand when the screen is larger than 992px. To customize this, pass a breakpoint in the `when` property. The `when` property can accept a boolean value, any valid media query, or one of Ionic's predefined sizes.
-
+デフォルトでは、画面が992pxを超えると分割ペインが拡張表示されます。これをカスタマイズするには、 `when` プロパティにブレークポイントを渡します。`when` プロパティには、真偽値、有効なメディア・クエリー、またはIonicの事前定義サイズのいずれかを指定できます。
 
 ```html
 <!-- can be "xs", "sm", "md", "lg", or "xl" -->
@@ -46,7 +45,6 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 <ion-split-pane when="(min-width: 40px)"></ion-split-pane>
 ```
 
-
  | Size | Value                 | Description                                                           |
  |------|-----------------------|-----------------------------------------------------------------------|
  | `xs` | `(min-width: 0px)`    | Show the split-pane when the min-width is 0px (meaning, always)       |
@@ -54,28 +52,28 @@ By default, the split pane will expand when the screen is larger than 992px. To 
  | `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
  | `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
  | `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProperties from '@site/static/usage/v8/split-pane/theming/css-properties/index.md';
 
 <CSSProperties />
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

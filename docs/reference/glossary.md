@@ -1,5 +1,5 @@
 ---
-title: Glossary
+title: 用語集
 ---
 
 <head>
@@ -14,53 +14,44 @@ title: Glossary
 
 <section id="a11y">
   <a href="#a11y">
-    <h3>Accessibility</h3>
+    <h3>アクセシビリティ</h3>
   </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank">Accessibility</a> (a11y) is the practice of enabling as many people as possible to use the content, even if people have limited abilities. This include people with disabilities, those using mobile devices, and those with slow network connections. Content should be developed to be as accessible as technology allows.
+  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank">アクセシビリティ</a>（a11y）とは、能力に制限のある人であっても、できるだけ多くの人がコンテンツを利用できるようにする実践のことです。これには障害を持つ人、モバイルデバイスを使用する人、ネットワーク接続が遅い人が含まれます。コンテンツは、可能な限り技術が許す範囲でアクセス可能に開発されるべきです。
 </section>
 
 <section id="android-sdk">
   <a href="#android-sdk">
     <h3>Android SDK</h3>
   </a>
-  The <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a> is a software development kit built for developers building for Google's Android Platform. It includes tools for building, testing, and debugging Android applications.
+  <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK</a>は、GoogleのAndroidプラットフォーム向けに開発する開発者のために構築されたソフトウェア開発キットです。これには、Androidアプリケーションの構築、テスト、デバッグのためのツールが含まれます。
 </section>
 
 <section id="android-studio">
   <a href="#android-studio">
     <h3>Android Studio</h3>
   </a>
-  <a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the official
-  Integrated Development Environment (IDE) for Native Android app development.
+  <a href="https://developer.android.com/studio/" target="_blank">Android Studio</a>は、ネイティブAndroidアプリ開発の公式統合開発環境（IDE）です。
 </section>
 
 <section id="autoprefixer">
   <a href="#autoprefixer">
     <h3>Autoprefixer</h3>
   </a>
-  <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a> is a tool that adds
-  vendor-specific-prefixes to hand-written Sass/CSS code. This ensures that standardized CSS rules
-  you write will be applied across all supporting browsers. For example, instead of having to know every flexbox
-  syntax used by various browsers, autoprefixer allows you to just write <code>display: flex;</code> and it'll
-  automatically plug in the correct CSS.
+  <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a>は、手書きのSass/CSSコードにベンダー固有のプレフィックスを追加するツールです。これにより、あなたが書いた標準化されたCSSルールがすべての対応ブラウザで適用されることが保証されます。たとえば、さまざまなブラウザで使用されるすべてのフレックスボックスの構文を覚える代わりに、Autoprefixerを使えば単に<code>display: flex;</code>と書くだけで、自動的に正しいCSSが挿入されます。
 </section>
 
 <section id="bundling">
   <a href="#bundling">
-    <h3>Bundling</h3>
+    <h3>バンドリング</h3>
   </a>
-  Bundling is the process of taking an app's dependencies (code you've written plus any npm modules installed) and
-  compiling/transpiling them down to one single file.
+  バンドリングとは、アプリの依存関係（あなたが書いたコードやインストールしたnpmモジュール）を一つのファイルにコンパイル/トランスパイルするプロセスです。
 </section>
 
 <section id="capacitor">
   <a href="#capacitor">
     <h3>Capacitor</h3>
   </a>
-  <a href="https://capacitorjs.com/" target="_blank">Capacitor</a> is an open source cross-platform app runtime
-  that allows web-based apps to run natively on iOS, Android, Electron, and the web. It's helpful to refer to these
-  apps "Native Progressive Web Apps" and they represent the next evolution beyond the traditional Hybrid app mentality.
-  Capacitor was created and is actively developed/supported by Ionic, the company.
+  <a href="https://capacitorjs.com/" target="_blank">Capacitor</a>は、WebベースのアプリをiOS、Android、Electron、Web上でネイティブに実行できるオープンソースのクロスプラットフォームアプリランタイムです。これらのアプリを「ネイティブプログレッシブWebアプリ」と呼ぶと便利で、従来のハイブリッドアプリの考え方を超えた次の進化を表しています。CapacitorはIonic社によって作成され、現在も開発およびサポートが行われています。
 </section>
 
 {/* cspell:disable */}
@@ -69,12 +60,8 @@ title: Glossary
   <a href="#cli">
     <h3>CLI</h3>
   </a>
-  A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for
-  interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often
-  use Command Prompt. The Ionic community often uses this term to refer to
-  <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such
-  as creating production builds of an app, running the development server, and accessing
-  <a href="https://ionic.io/appflow" target="_blank">Ionic commercial services</a>.
+  CLI、または<strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterfaceは、
+  プログラムと対話するためのテキストベースのインターフェースです。Macユーザーに一般的なコマンドラインアプリはTerminalアプリであり、WindowsユーザーはしばしばCommand Promptを使用します。Ionicコミュニティでは、この用語は<a href="https://ionicframework.com/docs/cli">IonicのCLI</a>を指すことがよくあります。IonicのCLIは、アプリの本番ビルドの作成、開発サーバーの実行、<a href="https://ionic.io/appflow" target="_blank">Ionic商用サービス</a>へのアクセスなど、さまざまなことに使用できます。
 </section>
 
 {/* cspell:enable */}
@@ -83,18 +70,14 @@ title: Glossary
   <a href="#commonjs">
     <h3>CommonJS</h3>
   </a>
-  <a href="https://webpack.github.io/docs/commonjs.html" target="_blank">CommonJS</a> is a group that defines
-  standard formats for JavaScript APIs. They have defined standards for JavaScript modules and packages.
+  <a href="https://webpack.github.io/docs/commonjs.html" target="_blank">CommonJS</a>は、JavaScriptのAPIの標準フォーマットを定義するグループです。JavaScriptモジュールおよびパッケージの標準を定義しています。
 </section>
 
 <section id="cordova">
   <a href="#cordova">
     <h3>Cordova</h3>
   </a>
-  <a href="https://cordova.apache.org" target="_blank">Apache Cordova</a> is an open source mobile application
-  development framework that transforms standard HTML/CSS/JS into full-fledged native apps. It provides a JavaScript
-  API for accessing native device functionality, such as the camera or accelerometer. Cordova contains the necessary
-  build tools for packaging webapps for iOS, Android, and Windows Phone.
+  <a href="https://cordova.apache.org" target="_blank">Apache Cordova</a>は、標準のHTML/CSS/JSを本格的なネイティブアプリに変換するオープンソースのモバイルアプリケーション開発フレームワークです。カメラや加速度計などのネイティブデバイス機能にアクセスするためのJavaScript APIを提供します。Cordovaには、iOS、Android、およびWindows Phone用にウェブアプリをパッケージ化するための必要なビルドツールが含まれています。
 </section>
 
 <section id="cors">
@@ -102,296 +85,245 @@ title: Glossary
     <h3>CORS</h3>
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a>
-  (Cross-Origin Resource Sharing) is a mechanism for servers to control client access to web assets. See the
-  <a href="../troubleshooting/cors">CORS FAQs</a> for more information.
+  （クロスオリジンリソース共有）は、サーバーがクライアントのウェブ資産へのアクセスを制御するための仕組みです。詳細は<a href="../troubleshooting/cors">CORSよくある質問</a>をご覧ください。
 </section>
 
 <section id="css-variables">
   <a href="#css-variables">
-    <h3>CSS Variables</h3>
+    <h3>CSS変数</h3>
   </a>
-  You may be familiar with variables from Sass.
-  <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">CSS Variables</a>
-  enable the same functionality but are built into the browser. CSS Variables are available in all evergreen browsers.
+  あなたはSassの変数に馴染みがあるかもしれません。
+  <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">CSS変数</a>は同じ機能を提供しますが、ブラウザに組み込まれています。CSS変数はすべての最新ブラウザで利用可能です。
 </section>
 
 <section id="decorators">
   <a href="#decorators">
-    <h3>Decorators</h3>
+    <h3>デコレーター</h3>
   </a>
-  Decorators are expressions that return a function. They allow you to take an existing function, and extend its
-  behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a
-  <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the
-  decorator will add some functionality when the constructor is called, and will then return the original constructor.
-  When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that
-  parameter. The decorator will add functionality when an argument is passed to the method, and then return the
-  original argument.
+  デコレーターは、関数を返す式です。既存の関数を取り、その挙動を拡張することができます。TypeScriptでは、<i>クラス</i>や<i>パラメーター</i>もデコレーションできます。
+  <strong>クラス</strong>をデコレーションすると、そのコンストラクターの挙動をラップして拡張します。言い換えれば、デコレーターはコンストラクターが呼ばれた際に機能を追加し、元のコンストラクターを返します。
+  <strong>パラメーター</strong>をデコレーションすると、そのパラメーターに渡される引数をラップします。デコレーターは、メソッドに引数が渡された際に機能を追加し、元の引数を返します。
 </section>
 
 <section id="es5">
   <a href="#es5">
     <h3>ES5</h3>
   </a>
-  ES5 refers to EcmaScript 5th Edition. A simple way to put it is that ES5 is the version of JavaScript which
-  developers are most familiar with today.
+  ES5はEcmaScriptの第5版を指します。簡単に言えば、ES5は今日の開発者が最もよく知っているJavaScriptのバージョンです。
 </section>
 
 <section id="es2015-es6">
   <a href="#es2015-es6">
     <h3>ES2015/ES6</h3>
   </a>
-  A wide range of new features were introduced in this version of JavaScript, including classes, modules, iterators,
-  and promises. Evergreen browsers (Chrome, Safari, Firefox and Edge) have full support for ES6, but to use ES6
-  features in older browsers, tools such as <a href="#babel">Babel</a> and <a href="#typescript">TypeScript</a> have
-  to <a href="#transpiler">transpile</a> ES6 code down to ES5.
+  このバージョンのJavaScriptでは、クラス、モジュール、イテレーター、プロミスなど、幅広い新機能が導入されました。エバーグリーンブラウザ（Chrome、Safari、Firefox、Edge）はES6を完全にサポートしていますが、古いブラウザでES6の機能を使用するには、<a href="#babel">Babel</a>や<a href="#typescript">TypeScript</a>などのツールでES6のコードをES5に<a href="#transpiler">トランスパイル</a>する必要があります。
 </section>
 
 <section id="es2016-es7">
   <a href="#es2016-es7">
     <h3>ES2016/ES7</h3>
   </a>
-  This version of JavaScript added a number of new features to the language, including <code>Array.includes</code> and
-  the exponentiation operator. This version of JavaScript is fully supported by all evergreen browsers (Chrome,
-  Safari, Firefox and Edge)
+  このバージョンの JavaScript では、<code>Array.includes</code> や指数演算子など、多数の新機能が言語に追加されました。このバージョンの JavaScript は、すべてのエバーグリーンブラウザ（Chrome、Safari、Firefox、Edge）で完全にサポートされています。
 </section>
 
 <section id="es2017-es8">
   <a href="#es2017-es8">
     <h3>ES2017/ES8</h3>
   </a>
-  This version of JavaScript is the latest standard. It is currently in the final stage before becoming the new
-  official standard. This spec includes Async/Await (already in all evergreen browsers) and shared memory/atomics.
+  このバージョンのJavaScriptは最新の標準です。現在、新しい公式標準になる前の最終段階にあります。この仕様には、Async/Await（すでにすべての最新ブラウザで使用可能）と共有メモリ/アトミクスが含まれています。
 </section>
 
 <section id="genymotion">
   <a href="#genymotion">
     <h3>Genymotion</h3>
   </a>
-  Genymotion is a third-party Android emulator. It is extremely fast, and is useful for quickly testing your app on
-  Android. Check out our <a href="../developing/tips#using-genymotion-android">resource section</a> on Genymotion for
-  more info.
+  Genymotionはサードパーティ製のAndroidエミュレーターです。非常に高速で、Android上でアプリを素早くテストするのに役立ちます。
+  Genymotionに関する詳細情報は、<a href="../developing/tips#using-genymotion-android">リソースセクション</a>をご覧ください。
 </section>
 
 <section id="git">
   <a href="#git">
     <h3>Git</h3>
   </a>
-  <a href="https://git-scm.com/" target="_blank">Git</a> is a distributed version control system for managing code.
-  It allows development teams to contribute code to the same project without causing code conflicts.
+  <a href="https://git-scm.com/" target="_blank">Git</a>はコードを管理するための分散型バージョン管理システムです。
+  これにより、開発チームは同じプロジェクトにコードを追加しても、コードの競合を引き起こすことなく作業できます。
 </section>
 
 <section id="gulp">
   <a href="#gulp">
     <h3>Gulp</h3>
   </a>
-  <a href="http://gulpjs.com/" target="_blank">Gulp</a> is a tool for running tasks which can be used to build your app.
-  Common build tasks include transpiling <a href="#es2015-es6">ES6</a> to <a href="#es5">ES5</a>, turning
-  <a href="#sass">Sass</a> into CSS, minifying code, and concatenating files.
+  <a href="http://gulpjs.com/" target="_blank">Gulp</a>は、アプリをビルドするためのタスクを実行するツールです。
+  一般的なビルドタスクには、<a href="#es2015-es6">ES6</a>を<a href="#es5">ES5</a>に変換すること、<a href="#sass">Sass</a>をCSSに変換すること、コードの最小化、ファイルの結合などがあります。
 </section>
 
 <section id="es-modules">
   <a href="#es-modules">
     <h3>ES Modules</h3>
   </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">ES Modules</a>
-  brings the concept of modules natively to JavaScript. With modules, classes and variables are no longer in the
-  global scope and have to be explicitly imported into your project to be used. This makes it much easier to
-  understand where your code is coming from and increases modularity and compartmentalization of functionality.
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">ES Modules</a>は、JavaScriptにネイティブでモジュールの概念をもたらします。
+  モジュールを使用すると、クラスや変数はもはやグローバルスコープではなく、プロジェクト内で使用するには明示的にインポートする必要があります。
+  これにより、コードの出どころを理解しやすくなり、機能のモジュール化および分離が向上します。
 </section>
 
 <section id="ionicons">
   <a href="#ionicons">
     <h3>Ionicons</h3>
   </a>
-  <a href="https://ionic.io/ionicons/" target="_blank">Ionicons</a> is an open-source icon set used and created
-  by Ionic. It includes 1:1 iOS and Material Design icons, as well as commonly used social/application icons.
-  Ionicons is included by default in Ionic distributions, but they can also be used in any project.
+  <a href="https://ionic.io/ionicons/" target="_blank">Ionicons</a> は、Ionic によって作成および使用されるオープンソースのアイコンセットです。これには、1:1 の iOS アイコンと Material Design アイコン、さらに一般的に使用されるソーシャル/アプリケーションアイコンが含まれます。Ionicons は Ionic の配布版にデフォルトで含まれていますが、任意のプロジェクトでも使用できます。
 </section>
 
 <section id="karma">
   <a href="#karma">
     <h3>Karma</h3>
   </a>
-  <a href="https://karma-runner.github.io/latest/index.html" target="_blank">Karma</a> is a test runner that
-  will run an app's test inside a real browser. It executes test cases, written in any testing framework, in
-  a real browser. Karma was originally written for use with Angular 1.
+  <a href="https://karma-runner.github.io/latest/index.html" target="_blank">Karma</a> は、アプリのテストを実際のブラウザ内で実行するテストランナーです。任意のテストフレームワークで書かれたテストケースを実際のブラウザで実行します。Karma はもともと Angular 1 用に書かれました。
 </section>
 
 <section id="module">
   <a href="#module">
-    <h3>Module</h3>
+    <h3>モジュール</h3>
   </a>
-  Modules in JavaScript are small, independent, and reusable pieces or code that are isolated from one another and the
-  Global scope.
+  JavaScript のモジュールは、小さく独立して再利用可能なコードの断片で、互いに隔離されており、グローバルスコープからも独立しています。
 </section>
 
 <section id="monorepo">
   <a href="#monorepo">
-    <h3>Monorepo</h3>
+    <h3>モノレポ</h3>
   </a>
-  A <strong>monorepo</strong> is a single git repository with multiple projects. Advantages include simpler
-  organization, shared tooling and dependencies, and better collaboration with teammates.
+  <strong>モノレポ</strong> は、複数のプロジェクトを含む単一の git リポジトリです。利点には、組織の簡素化、ツールや依存関係の共有、チームメンバーとの協力の向上などがあります。
 </section>
 
 <section id="livereload">
   <a href="#livereload">
-    <h3>Live Reload</h3>
+    <h3>ライブリロード</h3>
   </a>
-  <strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or
-  <a href="../core-concepts/webview">Web View</a> when it detects changes in your app. In some cases, it can replace
-  parts of your app without having to reload the entire window. See the
-  <a href="../cli/livereload">Live Reload docs</a> for more information.
+  <strong>ライブリロード</strong>（または <strong>live-reload</strong>）は、アプリの変更を検出すると自動的にブラウザや
+  <a href="../core-concepts/webview">Webビュー</a>をリロードするツールです。場合によっては、ウィンドウ全体をリロードせずに
+  アプリの一部を置き換えることもできます。詳細は<a href="../cli/livereload">ライブリロードのドキュメント</a>を参照してください。
 </section>
 
 <section id="node">
   <a href="#node">
     <h3>Node</h3>
   </a>
-  <a href="https://nodejs.org/" target="_blank">Node</a> is a runtime environment that allows JavaScript to be
-  written on the server-side. In addition to being used for web services, node is often used to build developer
-  tools, such as the <a href="#cli">Ionic CLI</a>.
+  <a href="https://nodejs.org/" target="_blank">Node</a> は、サーバーサイドで JavaScript を書くことを可能にするランタイム環境です。ウェブサービスで使用されることに加えて、node は開発者ツールの構築にもよく使用されます。例えば <a href="#cli">Ionic CLI</a> のようなものです。
 </section>
 
 <section id="npm">
   <a href="#npm">
     <h3>npm</h3>
   </a>
-  <a href="https://www.npmjs.com/" target="_blank">npm</a> is the package manager for <a href="#node">node</a>.
-  It allows developers to install, share, and package node modules. Ionic can be installed with npm, along with
-  a number of its dependencies.
+  <a href="https://www.npmjs.com/" target="_blank">npm</a>は<a href="#node">node</a>のパッケージマネージャーです。
+  これにより、開発者はノードモジュールをインストール、共有、パッケージ化することができます。Ionicはnpmでインストールでき、その依存関係のいくつかも一緒にインストール可能です。
 </section>
 
 <section id="observable">
   <a href="#observable">
-    <h3>Observable</h3>
+    <h3>オブザーバブル</h3>
   </a>
-  An observable is an object that emits events (or notifications). An observer is an object that listens for these
-  events, and does something when an event is received. Together, they create a pattern that can be used for
-  programming asynchronously.
+  オブザーバブルはイベント（または通知）を発行するオブジェクトです。オブザーバーはこれらのイベントを受け取るオブジェクトで、イベントを受信したときに何かを行います。一緒に使用すると、非同期プログラミングに利用できるパターンが作られます。
 </section>
 
 <section id="package-id">
   <a href="#package-id">
-    <h3>Package ID</h3>
+    <h3>パッケージID</h3>
   </a>
-  Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the
-  <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string
-  formatted in <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">reverse-DNS notation</a>.
+  Appleでは<strong>バンドルID</strong>、Androidでは<strong>アプリケーションID</strong>と呼ばれる<strong>パッケージID</strong>は、App Store/Play Storeに公開されるアプリの識別に使用されます。これは<a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">リバースDNS表記</a>でフォーマットされた文字列です。
 </section>
 
 <section id="polyfill">
   <a href="#polyfill">
-    <h3>Polyfill</h3>
+    <h3>ポリフィル</h3>
   </a>
-  A <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">polyfill</a> is a bit of code that
-  adds functionality to the browser and normalizes browser differences. This is similar to a <a href="#shim">shim</a>,
-  but where a shim has it's own API, a polyfill let's the expect API of the browser be used.
+  <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">ポリフィル</a>は、ブラウザに機能を追加し、ブラウザ間の違いを統一するコードのことです。これは<a href="#shim">シム</a>に似ていますが、シムは独自のAPIを持つのに対し、ポリフィルはブラウザが提供する期待されるAPIを使用できるようにします。
 </section>
 
 <section id="protractor">
   <a href="#protractor">
-    <h3>Protractor</h3>
+    <h3>プロトラクター</h3>
   </a>
-  <a href="https://angular.github.io/protractor/#/" target="_blank">Protractor</a> is a testing framework written for
-  and by the Angular team. Protractor can be used with test runners, like Karma, for end-to-end testing. Test runners
-  allow you to quickly and programmatically verify code quality.
+  <a href="https://angular.github.io/protractor/#/" target="_blank">プロトラクター</a>はAngularチームによって書かれたテストフレームワークです。プロトラクターはKarmaなどのテストランナーと組み合わせて、エンドツーエンドテストに使用できます。テストランナーを使うことで、コードの品質を迅速かつプログラム的に検証できます。
 </section>
 
 <section id="sass">
   <a href="#sass">
     <h3>Sass</h3>
   </a>
-  Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features
-  such as <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a>,
-  <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">mixins</a>, and
-  <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">loops</a>.
+  SassはCSSにコンパイルされ、Ionicで使用されるスタイルシート言語です。SassはCSSのようなものですが、次のような追加機能があります：<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">変数</a>、
+  <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">ミックスイン</a>、および
+  <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">ループ</a>。
 </section>
 
 <section id="scoped">
   <a href="#scoped">
-    <h3>Scoped Encapsulation</h3>
+    <h3>Scoped Encapsulation（スコープ付きカプセル化）</h3>
   </a>
-  A component that uses scoped encapsulation will automatically scope its CSS by appending each of the styles with a
-  data attribute at run time. Overriding scoped selectors in CSS requires a
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">higher specificity</a>
-  selector. Scoped components can also be styled using
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a>.
+  スコープ付きカプセル化を使用するコンポーネントは、実行時に各スタイルにデータ属性を付加することで自動的にCSSのスコープを設定します。CSSでスコープ付きセレクタを上書きするには<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">より高い特異性</a>のセレクタが必要です。スコープ付きコンポーネントは<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSカスタムプロパティ</a>を使ってスタイリングすることもできます。
 </section>
 
 <section id="shadow">
   <a href="#shadow">
-    <h3>Shadow DOM</h3>
+    <h3>シャドウDOM</h3>
   </a>
-  <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">Shadow DOM</a>
-  is a native browser solution for DOM and style encapsulation of a component. It shields the component from its
-  surrounding environment. To externally style internal elements of a Shadow DOM component you must use
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Custom Properties</a>
-  or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">CSS Shadow Parts</a>.
+  <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">シャドウDOM</a>
+  は、コンポーネントのDOMおよびスタイルのカプセル化のためのネイティブブラウザソリューションです。コンポーネントを周囲の環境から遮蔽します。シャドウDOMコンポーネントの内部要素を外部からスタイルするには、
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSカスタムプロパティ</a>
+  または <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">CSSシャドウパーツ</a> を使用する必要があります。
 </section>
 
 <section id="shim">
   <a href="#shim">
-    <h3>Shim</h3>
+    <h3>シム</h3>
   </a>
-  A shim is a piece of code that normalizes an APIs across browsers. A shim can have it's own API that hides the
-  browser specific implementation from the end user.
+  シムは、ブラウザ間のAPIを標準化するコードのことです。シムは、エンドユーザーからブラウザ固有の実装を隠す独自のAPIを持つことができます。
 </section>
 
 <section id="transpiler">
   <a href="#transpiler">
-    <h3>Transpiler</h3>
+    <h3>トランスパイラ</h3>
   </a>
-  Transpilation is the process of converting code from one language to another language prior to execution. Typically,
-  a transpiler will convert a high-level language to another high-level language. The most common type of
-  <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a>
-  (<a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
+  トランスパイルとは、コードを実行前にある言語から別の言語に変換するプロセスのことです。通常、トランスパイラは高水準言語から別の高水準言語に変換します。Ionic Frameworkで最も一般的な<em>トランスパイル</em>の種類は、<a href="#es2015-es6">ES2015/ES6</a>（<a href="#typescript">TypeScript</a>）を <a href="#es5">ES5</a>（従来のJavaScript）に変換することです。
 </section>
 
 <section id="typescript">
   <a href="#typescript">
     <h3>TypeScript</h3>
   </a>
-  <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> is a superset of JavaScript,
-  which means it gives you JavaScript, along with a number of extra features such as
-  <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">type declarations</a>
-  and <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">interfaces</a>.
-  Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
+  <a href="http://www.typescriptlang.org" target="_blank">TypeScript</a> は JavaScript のスーパーセットであり、これは JavaScript に加えて次のような多くの追加機能を提供することを意味します：
+  <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">型宣言</a>
+  および <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">インターフェース</a>。
+  Ionic は TypeScript で構築されていますが、Ionic アプリを作成する際に TypeScript を使用するかどうかは完全に任意です。
 </section>
 
 <section id="unit-tests">
   <a href="#unit-tests">
-    <h3>Unit Tests</h3>
+    <h3>ユニットテスト</h3>
   </a>
-  Unit Tests and unit testing are a way to test small pieces of code to check if they behave as expected. Unit testing
-  frameworks include Jasmine, Mocha, QUnit, and many others.
+  ユニットテストおよびユニットテストは、小さなコードの部分が期待通りに動作するかどうかを確認する方法です。ユニットテスト
+  フレームワークには Jasmine、Mocha、QUnit、その他多くがあります。
 </section>
 
 <section id="webpack">
   <a href="#webpack">
     <h3>Webpack</h3>
   </a>
-  <a href="https://webpack.github.io/" target="_blank">Webpack</a> bundles together JavaScript modules and other assets.
-  It can be used to create single or multiple "chunks" that are only loaded when needed. Webpack can be used to take
-  many files and dependencies and bundle them into one file, or other types.
+  <a href="https://webpack.github.io/" target="_blank">Webpack</a> は JavaScript モジュールおよびその他のアセットをまとめます。
+  必要な時にのみ読み込まれる単一または複数の「チャンク」を作成するために使用できます。Webpack は、多数のファイルや依存関係をまとめて 1 つのファイルまたはその他の種類にバンドルするために使用できます。
 </section>
 
 <section id="web-standards">
   <a href="#web-standards">
-    <h3>Web Standards</h3>
+    <h3>ウェブ標準</h3>
   </a>
-  The <a href="https://www.w3.org/" target="_blank">World Wide Web Consortium</a> (W3C) is the standards organization
-  for the Web. Together, industry leaders and the public work together to develop
-  <a href="https://www.w3.org/standards/" target="_blank">web standards</a>, which are a set of protocols, specifications,
-  and technologies that define the Web Platform.
+  <a href="https://www.w3.org/" target="_blank">ワールド・ワイド・ウェブ・コンソーシアム</a>（W3C）は、ウェブの標準化団体です。業界のリーダーと一般の人々が一緒に協力し、<a href="https://www.w3.org/standards/" target="_blank">ウェブ標準</a>を開発します。ウェブ標準とは、ウェブプラットフォームを定義する一連のプロトコル、仕様、および技術のことです。
 </section>
 
 <section id="xcode">
   <a href="#xcode">
     <h3>Xcode</h3>
   </a>
-  <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> is an Apple IDE (integrated development
-  environment) for software development on Apple operating systems (macOS, iOS, watchOS and tvOS), with extensions
-  available for other languages and platforms.
+  <a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a>は、Appleのオペレーティングシステム（macOS、iOS、watchOS、tvOS）向けソフトウェア開発用のAppleの統合開発環境（IDE）であり、他の言語やプラットフォーム向けの拡張も利用可能です。
 </section>
 
 </div>

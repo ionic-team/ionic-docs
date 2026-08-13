@@ -1,5 +1,5 @@
 ---
-title: Native Errors
+title: ネイティブエラー
 ---
 
 <head>
@@ -10,47 +10,47 @@ title: Native Errors
   />
 </head>
 
-## Code Signing errors
+## コードの署名エラー
 
 ```shell
 Code Signing Error: Failed to create provisioning profile. The app ID "com.csform.ionic.yellow" cannot be registered to your development team. Change your bundle identifier to a unique string to try again. Code Signing Error: No profiles for 'com.csform.ionic.yellow' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.csform.ionic.yellow'. Code Signing Error: Code signing is required for product type 'Application' in SDK 'iOS 11.1'
 ```
 
-Running an app on an iOS device requires a provisioning profile. If a provisioning profile has not been created yet follow these directions:
+iOS デバイスでアプリケーションを実行するには、プロビジョニングプロファイルが必要です。プロビジョニングプロファイルが作成されていない場合は、次の手順に従います:
 
-1. **Set the [Package ID](../reference/glossary.md#package-id).**
+1. **[Package ID](../reference/glossary.md#package-id) を設定します。**
 
-   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+   Capacitor の場合、`capacitor.config.json` ファイルを開き `appId` プロパティを修正します。
 
-   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. Refer to [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+Cordova の場合、`config.xml`ファイルを開き、ルート要素`<widget>`の`id`属性を変更します。詳細については[Cordova のドキュメント](https://cordova.apache.org/docs/en/latest/config_ref/#widget)を参照してください。
 
-2. **Open the project in <b>Xcode</b>.**
+2. **プロジェクトを<b>Xcode</b>で開きます。**
 
-   For Capacitor, run the following to open the app in Xcode:
+   Capacitor の場合、以下を実行し Xcode でアプリケーションを開いてください:
 
    ```shell
    $ ionic capacitor open ios
    ```
 
-   For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
+   Cordova の場合、Xcode を開きます。**ファイル（File）** &raquo; **開く（Open）** からアプリケーションを見つけます。アプリケーション内の `platforms/ios` ディレクトリを開きます。
 
-3. **In <b>Project navigator</b>, select the project root to open the project editor. Under the <b>Identity</b> section, verify that the Package ID that was set matches the Bundle Identifier.**
+3. **<b>プロジェクトナビゲータ</b>でプロジェクトのルートを選択してプロジェクトエディタを開きます。<b>識別情報（Identity）</b>セクションで、設定したパッケージ ID がバンドル識別子と一致していることを確認します。**
 
-   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
+![Xcodeで表示されるiOSアプリのIdentityセクションには、表示名、バンドル識別子、バージョン、ビルドのフィールドがあります。](/img/running/ios-xcode-identity-setup.png 'Xcodeの識別情報セクション')
 
-4. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+4. **同じプロジェクトエディタの<b>署名（Signing）</b>セクションで、<b>署名を自動管理（Automatically manage signing）</b>が有効になっていることを確認します。** その後、開発チームを選択します。開発チームを設定すると、Xcode はプロビジョニングと署名を自動的に準備しようとします。
 
-   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
+![Xcodeで「署名を自動的に管理」を有効にし、開発チームが選択されている署名セクションを表示している。](/img/running/ios-xcode-signing-setup.png 'Xcodeの署名セクション')
 
-## Xcode build error 65
+## Xcode のビルドエラー 65
 
 ```shell
 Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/ionitron/projects/my-project/platforms/ios/cordova/build-debug.xcconfig,-workspace,SC project.xcworkspace,-scheme,SC project,-configuration,Debug,-sdk,iphonesimulator,-destination,platform=iOS Simulator,name=iPhone X,build,CONFIGURATION_BUILD_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/emulator,SHARED_PRECOMPS_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/sharedpch
 ```
 
-This error is an error code from Xcode that can be caused by provisioning issues or outdated cordova dependencies. To fix this error first make sure a provisioning profile has been generated using the above instructions and then try to [run the app from Xcode](../developing/ios.md#running-with-xcode).
+このエラーは Xcode のエラーコードで、プロビジョニングの問題または古い cordova 依存関係が原因で発生する可能性があります。このエラーを修正するには、まず上記の手順でプロビジョニングプロファイルが生成されていることを確認したのち、[Xcode からアプリケーションを実行します](../developing/ios.md#running-with-xcode)。
 
-If this does not fix the error then run the following commands:
+もしそれでもエラーが解決しない場合は、次のコマンドを実行してください:
 
 ```shell
 rm -rf node_modules
@@ -63,25 +63,25 @@ ionic cordova build ios --prod
 
 Once these commands have been ran a fresh build can be done.
 
-## Clashing Google Play Services versions
+## Google Play Services のバージョンが衝突
 
 ```shell
 Error: more than one library with package name com.google.android.gms
 ```
 
-This error is caused by two separate plugins trying to use different versions of the `Google Play Services`. To fix this issue make sure you are running `cordova` version `7.1.0` or higher and `cordova-android` `6.3.0` or higher. To install latest `cordova` run:
+このエラーは、2 つの異なるプラグインが異なるバージョンの `Google Play Services` を使用しようとしたことが原因です。この問題を解決するには、バージョンが `7.1.0` 以上の `cordova` および バージョンが `6.3.0` 以上の `cordova-android` を実行していることを確認してください。最新の `cordova` をインストールするには次を実行してください:
 
 ```shell
 npm install cordova@latest
 ```
 
-and to update `cordova-android` run:
+また、`cordova-android` をアップデートするには次を実行してください:
 
 ```shell
 cordova platform update android
 ```
 
-Plugins that depend on `Google Play Services` can now be updated to use the same version. For example, if `pluginA` uses version 11.0 and `pluginB` uses version 15.0 they can be updated to use the same version with the following snippet in the `config.xml` file:
+`Google Play Services` に依存するプラグインをアップデートして、同じバージョンを使用できるようになりました。例えば、`pluginA` ではバージョン 11.0 を使用し、`pluginB` では バージョン 15.0 を使用する場合、`config.xml` ファイルでは以下のスニペットで同じバージョンを使用するように更新できます:
 
 ```xml
 <plugin name="pluginA" spec="npm">

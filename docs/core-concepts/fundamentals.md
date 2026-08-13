@@ -1,79 +1,80 @@
 ---
-title: Core Concepts
-sidebar_label: Fundamentals
+title: 基本的な考え方
+sidebar_label: 基本的な考え方
 ---
 
 <head>
-  <title>App Development Core Concepts and Tools - Ionic Framework API</title>
+  <title>アプリ開発のコアコンセプトとツール - Ionic Framework API</title>
   <meta
     name="description"
-    content="For those new to Ionic app development, a high-level understanding of the core concepts and tools behind the project helps. Read to learn more about Ionic API."
+    content="Ionicアプリ開発を始めたばかりの方には、プロジェクトの背景にあるコアコンセプトとツールの高レベルの理解が役立ちます。Ionic APIについて詳しく学びましょう。"
   />
 </head>
 
-For those completely new to Ionic app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we'll cover the basics of what Ionic Framework is, and how it works.
+Ionic アプリの開発に慣れていない人には、Ionic プロジェクトの背景にある基本的な哲学、概念、およびツールについて知ることが、理解を深めることに役立ちます。複雑なトピックに入る前に、Ionic Framework とは何か、そしてそれがどのように機能するかについての基本を説明します。
 
-## UI Components
+## UI コンポーネント
 
-Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Ionic Components are built with [web standards](../reference/glossary.md#web-standards) using HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please refer to [Theming](../theming/basics.md).
+Ionic Framework は、アプリケーションの構成要素として機能する再利用可能な要素である UI コンポーネントのライブラリです。Ionic コンポーネントは、HTML、CSS、JavaScript を使用して[ウェブ標準](../reference/glossary.md#web-standards)で構築されています。コンポーネントは事前に作成されていますが、アプリがそれぞれのコンポーネントを独自のものにできるように最初から高度にカスタマイズ可能に設計されており、各アプリに独自の外観や操作感を持たせることができます。具体的には、Ionic コンポーネントは簡単にテーマ設定ができ、アプリ全体の外観をグローバルに変更することが可能です。外観のカスタマイズに関する詳細は、[Theming](../theming/basics.md)をご参照ください。
 
-## Adaptive Styling
+## スタイルの適用 {/* #adaptive-styling */}
 
-Adaptive Styling is a built-in feature of Ionic Framework which allows app developers to use the same code base for multiple platforms. Every Ionic component adapts its look to the platform on which the app is running on. For example, Apple devices, such as the iPhone and iPad, use Apple's own <a href="https://www.apple.com/ios" target="_blank">iOS design language</a>. Similarly, Android devices use Google's design language called <a href="https://material.io/guidelines/" target="_blank">Material Design</a>.
+スタイルの適用は、アプリ開発者が複数のプラットフォームで共通したベースとなるコードを使用できる Ionic Framework に組み込まれている機能です。すべての Ionic コンポーネントは、自動的にアプリケーションが実行されているプラットフォームに外観を合わせます。たとえば、iPhone や iPad などの Apple デバイスは、Apple 独自の<a href="https://www.apple.com/ios" target="_blank">iOS デザイン</a>を使用します。同様に、Android デバイスは、<a href="https://material.io/guidelines/" target="_blank">Material Design</a>と呼ばれる Google のデザインを使用します。
 
-By making subtle design changes between the platforms, users are provided with a familiar app experience. An Ionic app downloaded from Apple's App Store will get the iOS theme, while an Ionic app downloaded from Android's Play Store will get the Material Design theme. For the apps that are viewed as a Progressive Web App (PWA) from a browser, Ionic will default to using the Material Design theme. Additionally, deciding which platform to use in certain scenarios is entirely configurable. More information about adaptive styling can be found in [Theming](../theming/basics.md).
+プラットフォーム間で微妙なデザイン変更を行うことで、ユーザーに使い慣れたアプリの UX を提供します。Apple の App Store からダウンロードした Ionic アプリは iOS テーマを使用し、Android の Play Store からダウンロードした Ionic アプリは Material Design テーマを取得します。ブラウザから Progressive Web Apps（PWA）として表示アプリを表示する場合、Ionic はデフォルトで Material Design テーマを使用します。さらに、特定のシナリオで使用するプラットフォームを決定することはすべて設定可能です。スタイルの適用についてのさらなる情報は[Theming](../theming/basics.md)をご覧ください。
 
-## Navigation
+## ナビゲーション
 
-Traditional web apps use a linear history, meaning that the user navigates forward to a page and can hit the back button to navigate back.
-An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack.
+従来の Web アプリケーションは「線形」のナビゲーションを使用します。つまりユーザーは、ページに移動して、戻るボタンを押すと戻ることができます。
+この例としては、ユーザが、Wikipedia のようなページで、ブラウザの履歴から「進む」「戻る」をつかっているのが挙げられます。
 
-In contrast, mobile apps often utilize parallel, "non-linear" navigation. For example, a tabbed interface can have separate navigation stacks for each tab, making sure the user never loses their place as they navigate and switch between tabs.
+これとは対照的に、モバイルアプリはしばしば平行な「非線形」ナビゲーションを利用します。たとえば、タブのついたインタフェースでは、タブごとにナビゲーションスタックを個別に設定できるため、ユーザがタブ間を移動したり切り替えたりするときにユーザが自分の場所を失うことはありません。
 
-Ionic apps embrace this mobile navigation approach, supporting parallel navigation histories that can also be nested, all while maintaining the familiar browser-style navigation concepts web developers are familiar with.
+Ionic アプリは、このモバイルナビゲーションのアプローチを採用しており、Web 開発者が慣れ親しんでいるブラウザスタイルのナビゲーション概念を維持しながら、ネストすることもできる並列ナビゲーション履歴をサポートしています。
 
-For apps that are built with Angular and `@ionic/angular`, we recommend using the <a href="https://angular.io/guide/router" target="_blank">Angular Router</a> which comes out of the box for every new Ionic 4 Angular app.
+Angular と`@ionic/angular`で構築するアプリは、<a href="https://angular.jp/guide/router" target="_blank">Angular Router</a>を使用することをお勧めします。これは Angular と Ionic 4 の組み合わせから使うことができます。
 
-## Native Access
+## Native アクセス
 
-An amazing feature of apps built with web technologies (such as Ionic apps!) is that it can run on virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work on many platforms because it is based on web standards and common APIs that are shared across these platforms.
+Web テクノロジで構築されたアプリ（Ionic アプリなど）の素晴らしい点は、デスクトップコンピュータ、携帯電話、タブレット、自動車、冷蔵庫など、ほとんどすべてのプラットフォームで実行できることです。Ionic アプリ用のベースとなるコードは、Web 標準とこれらのプラットフォーム間で共有される共通の API に基づいているため、多くのプラットフォームで機能します。
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> and <a href="https://play.google.com/" target="_blank">Play Store</a>. Both iOS and Android software development kits (SDKs) provide [Web Views](webview.md) which render any Ionic app, while still allowing for <i>full</i> Native SDK access.
+Ionic の最も一般的な使用例の 1 つは、 <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> と <a href="https://play.google.com/" target="_blank">Play Store</a> の両方からダウンロードできるアプリを作成することです。iOS と Android の両方のソフトウェア開発キット（SDK）は、完全なネイティブ SDK アクセスを可能にしながら、あらゆる Ionic アプリをレンダリングする [Web Views](webview.md) を提供します。
 
-Projects such as <a href="https://capacitorjs.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more.
+{/* prettier-ignore */}
+<a href="https://capacitorjs.com/" target="_blank">Capacitor</a> や <a href="https://cordova.apache.org/" target="_blank">Cordova</a> などのプロジェクトは、IonicアプリにネイティブSDKへのアクセスを与えるためによく使われています。つまり、開発者は一般的なWeb開発ツールを使ってアプリを素早く構築することができ、かつデバイスの加速度センサー、カメラ、GPSなどのネイティブ機能にアクセスすることができるのです。
 
-## Theming
+## テーマ
 
-At the core, Ionic Framework is built using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> which allows us to take advantage of the flexibility that <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS properties (variables)</a> provide. This makes it incredibly easy to design an app that looks great while following the web standard. We provide a set of colors so developers can have some great defaults, but we encourage overriding them to create designs that match a brand, company or a desired color palette. Everything from the background color of an application to the text color is fully customizable. More information on app theming can be found in [Theming](../theming/basics.md).
+Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>を使って構築されており、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS プロパティ（変数）</a>が提供する柔軟性を活用できます。これにより、ウェブ標準に従いつつ、見栄えのするアプリを驚くほど簡単にデザインできます。私たちは、開発者がいくつかの素晴らしいデフォルトを持つことができるように色のセットを提供しますが、ブランド、企業、または希望のカラーパレットに一致するデザインを作成するためにそれらを上書きすることをお勧めします。アプリケーションの背景色からテキストの色まで、すべてカスタマイズ可能です。アプリのテーマ設定の詳細については、[テーマ設定](../theming/basics.md)を参照してください。
 
-## Events
+## イベント
 
-Many Ionic components use [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) to inform developers of important state changes in the components. For example, an `ion-datetime` component will emit `ionChange` whenever the selected date has changed.
+多くの Ionic コンポーネントは [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) を使用して、コンポーネントの重要な状態変化を開発者に通知します。例えば、 `ion-datetime` コンポーネントは、選択された日付が変更されると `ionChange` を発行します。
 
-Developers can use standard events such as `click` as they normally would. However, many events emitted within a component's [shadow root](../reference/glossary.md#shadow) will be [retargeted](https://dom.spec.whatwg.org/#retarget) to the host element. This may result in multiple `click` handlers executing even if the user only clicked once. As a result, developers should rely on Ionic's events to be properly informed of state changes on Ionic components. Ionic's events are prefixed with `ion` to avoid collisions with standard events. Each component's documentation page has a list of available events that developers can listen for in their applications.
+開発者は通常通り click などの標準的なイベントを使用することができる。しかし、コンポーネントの [shadow root](../reference/glossary.md#shadow) 内で発生した多くのイベントは、ホスト要素に [retargeted](https://dom.spec.whatwg.org/#retarget) されます。この結果、ユーザーが 1 回しかクリックしなくても、複数の click ハンドラが実行される可能性があります。そのため、開発者は Ionic コンポーネントの状態変化を適切に通知するために、Ionic のイベントに頼る必要があります。Ionic のイベントには、標準的なイベントとの衝突を避けるために ion というプレフィックスが付けられています。各コンポーネントのドキュメントページには、開発者がアプリケーションでリッスンできる利用可能なイベントのリストがあります。
 
-## Properties
+## プロパティ
 
-Properties are JavaScript properties that can be set on Ionic components to configure their behavior and appearance. Properties are defined in each component's [API documentation](/docs/api) page.
+プロパティは、Ionic コンポーネントの動作と外観を設定するために Ionic コンポーネントに設定できる JavaScript プロパティです。プロパティは各コンポーネントの[API documentation](/docs/api)ページで定義されています。
 
-### Reactive Properties
+### リアクティブプロパティ
 
-Reactive properties automatically update the component when their values change. These are the most common type of property in Ionic components.
+リアクティブプロパティは、値が変更されるとコンポーネントを自動的に更新します。これらは Ionic コンポーネントで最も一般的なタイプのプロパティです。
 
 ```html
 <ion-button color="primary">Primary Button</ion-button>
 ```
 
-The `color` property is a reactive property that configures how the button appears. If you change the `color` value after the initial render, the button will update to reflect the new value.
+`color`プロパティは、ボタンの外観を設定するリアクティブプロパティです。初期レンダリング後に`color`値を変更すると、ボタンは新しい値を反映するように更新されます。
 
-### Virtual Properties
+### 仮想プロパティ
 
-Virtual properties are designed for one-time configuration during component initialization. They do not trigger re-renders when updated.
+仮想プロパティは、コンポーネントの初期化中に 1 回だけ設定するように設計されています。更新されても再レンダリングをトリガーしません。
 
 ```html
 <ion-button mode="ios">iOS Style Button</ion-button> <ion-button mode="md">Material Design Button</ion-button>
 ```
 
-The `mode` property is a virtual property that determines which platform styles to use for a component. It can be set at the component level or globally through the app configuration. In both cases, it's set once during initialization and doesn't change during the component's lifecycle.
+`mode`プロパティは、コンポーネントに使用するプラットフォームスタイルを決定する仮想プロパティです。コンポーネントレベルで設定することも、アプリ設定を通じてグローバルに設定することもできます。どちらの場合も、初期化中に一度設定され、コンポーネントのライフサイクル中は変更されません。
 
-For more information on Ionic modes, read the [Platform Styles documentation](/docs/theming/platform-styles).
+Ionic モードの詳細については、[Platform Styles documentation](/docs/theming/platform-styles)を参照してください。

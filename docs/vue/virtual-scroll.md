@@ -1,6 +1,6 @@
 # 仮想スクロール
 
-:::warning[Looking for `ion-virtual-scroll`?]
+:::warning[`ion-virtual-scroll`を探していますか？]
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using a Vue library to accomplish this. We outline one approach using `vue-virtual-scroller` below.
 
@@ -44,7 +44,7 @@ app.use(VueVirtualScroller);
 After doing this, all virtual scroll components will be available for use in our app.
 
 :::note
-Installing all components may result in unused virtual scroll components being added to your application bundle. Refer to the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
+すべてのコンポーネントをインストールすると、使用されない仮想スクロールコンポーネントがアプリケーションバンドルに追加される可能性があります。ツリーシェイキングにより適した方法については、下記の[特定コンポーネントのインストール](#installing-specific-components)セクションを参照してください。
 :::
 
 ### Installing Specific Components
@@ -127,4 +127,4 @@ For example:
 
 ## Further Reading
 
-This guide only covers a small portion of what `vue-virtual-scroller` is capable of. For more details, please refer to the [vue-virtual-scroller documentation](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md).
+このガイドは、`vue-virtual-scroller`の機能のほんの一部しかカバーしていません。詳細については、[vue-virtual-scroller のドキュメント](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md)を参照してください。

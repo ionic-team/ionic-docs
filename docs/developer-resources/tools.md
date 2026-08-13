@@ -2,19 +2,19 @@
 
 ### [Angular CLI](https://github.com/angular/angular-cli)
 
-Learn more about the power of the Angular CLI
+Angular CLI の機能の詳細
 
 ### [StackBlitz](https://stackblitz.com/)
 
-Quickly get started with a new Ionic app entirely in the browser!
+ブラウザで 0 から新しい Ionic アプリを始めましょう！
 
 ### [TypeScript](https://www.typescriptlang.org/)
 
-Check out the features that make working with TypeScript amazing.
+TypeScript での作業を素晴らしいものにする機能を調べてください。
 
 ### [Glossary](../reference/glossary.md)
 
-A list of common terms you'll encounter while developing in Ionic.
+Ionic で開発する際によく出会う用語のリストです。
 
 ### [Starter Apps](https://ionicthemes.com)
 

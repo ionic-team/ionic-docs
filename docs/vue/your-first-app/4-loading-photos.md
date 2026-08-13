@@ -332,7 +332,7 @@ export interface UserPhoto {
 ```
 
 :::note
-If you encounter broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
+これらの手順に従った後、画像リンクが壊れていたり写真が欠けている場合は、ブラウザの開発者ツールを開き、[localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage)と[IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb)の両方をクリアする必要があるかもしれません。
 
 In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
 :::

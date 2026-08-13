@@ -55,10 +55,10 @@ Remember, with the `--external` option, others on your Wi-Fi network will be abl
 
 ## Tips
 
-- With Cordova, use the `--device`, `--emulator`, and `--target` options to narrow down target devices. Use the `--list` option to list all targets. See usage in the [command docs](commands/cordova-run.md).
-- You can separate the dev server process and the deploy process by using `ionic serve` and the `--livereload-url` option of `ionic cordova run` or `ionic capacitor run`.
-- For Android, it is possible to configure [adb](https://developer.android.com/studio/command-line/adb) to always forward ports while the adb server is running (refer to `adb reverse`). With port forwarding set up, an external address would no longer be required. You can also setup the adb bridge over TCP such that subsequent deploys no longer need a USB cable.
-- If you are using a development container with Angular, live reload may not work. To fix it, set `projects.app.architect.serve.configurations.development.poll` to `1` in `angular.json`.
+- Cordova では、`--device`、`--emulator`、および`--target`オプションを使用してターゲットデバイスを絞り込みます。`--list`オプションを使用すると、すべてのターゲットを一覧表示できます。使用方法は[コマンドドキュメント](commands/cordova-run.md)を参照してください。
+- `ionic serve`および`ionic cordova run`または`ionic capacitor run`の`--livereload-url`オプションを使用することで、開発サーバープロセスとデプロイプロセスを分離できます。
+- Android の場合、[adb](https://developer.android.com/studio/command-line/adb)を設定して、adb サーバー実行中に常にポートを転送することが可能です（`adb reverse`を参照）。ポート転送が設定されると、外部アドレスは不要になります。また、後続のデプロイに USB ケーブルを使用しなくても、TCP 経由で adb ブリッジを設定することもできます。
+- Angular を使用した開発コンテナでは、ライブリロードが動作しない場合があります。これを修正するには、`angular.json`内で`projects.app.architect.serve.configurations.development.poll`を`1`に設定してください。
 
 ### Using SSL
 
@@ -70,4 +70,4 @@ For example, with an Angular application you can run the following to pass a cer
 ionic capacitor run android --livereload --external --ssl -- --ssl-cert='server.crt' --ssl-key='server.key'
 ```
 
-Using a self signed certificate and ensuring it is trusted by the device is a complicated topic and is covered in the [Ionic support article on self signed certificates](https://ionic.zendesk.com/hc/en-us/articles/11384425513623).
+自己署名証明書を使用し、デバイスによって信頼されるようにすることは複雑なトピックであり、[Ionic サポート記事の自己署名証明書に関する記事](https://ionic.zendesk.com/hc/en-us/articles/11384425513623)で取り上げられています。

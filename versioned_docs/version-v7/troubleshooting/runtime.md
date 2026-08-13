@@ -138,7 +138,7 @@ This change will only affect applications that depend on zone.js `0.8.27` or
 newer. Older versions will not be affected by this change.
 
 :::note
-This flag is automatically included when creating an Ionic app via the Ionic CLI.
+このフラグは、Ionic CLI を使用して Ionic アプリを作成する際に自動的に含まれます。
 :::
 
 ## Cordova plugins not working in the browser
@@ -209,7 +209,7 @@ class MyApp {
 
 {/* This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. */}
 
-## Accessing `this` in a function callback returns `undefined` {/* #accessing-this */}
+## 関数コールバックで `this` にアクセスすると `undefined` {/* #accessing-this */} が返されます
 
 Certain components, such as [counterFormatter on ion-input](../api/input#counterformatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
 

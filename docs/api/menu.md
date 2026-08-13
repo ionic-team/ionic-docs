@@ -10,64 +10,58 @@ import Slots from '@ionic-internal/component-api/v8/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API." />
+  <meta name="description" content="ion-menuコンポーネントは、現在のビューの横からスライドして入ってくるナビゲーションドロワーです。Ionic APIで利用可能なメニューの種類については、フレームワークのドキュメントをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+メニューコンポーネントは、現在のビューの横からスライドしてくるナビゲーションドロワーです。デフォルトでは、開始側を使用し、LTRの場合は左から、RTLの場合は右からスライドさせますが、サイドをオーバーライドすることができます。メニューの表示はモードによって異なりますが、表示タイプは利用可能なメニュータイプのいずれかに変更することができます。
 
-The menu component is a navigation drawer that slides in from the side of the current view. By default, it uses the start side, making it slide in from the left for LTR and right for RTL, but the side can be overridden. The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
+メニュー要素はルートコンテンツ要素の兄弟要素でなければなりません。コンテンツにはいくつでもメニューを付けることができる。これらのメニューはテンプレートから制御するか、`MenuController`を使用してプログラムで制御することができます。
 
-The menu element should be a sibling to the root content element. There can be any number of menus attached to the content. These can be controlled from the templates, or programmatically using the `MenuController`.
-
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v8/menu/basic/index.md';
 
 <Basic />
 
-
 ## Menu Toggle
 
-The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+[menu toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
 
 import MenuToggle from '@site/static/usage/v8/menu/toggle/index.md';
 
 <MenuToggle />
 
-
 ## Menu Types
 
-The `type` property can be used to customize how menus display in your application.
+`type`プロパティは、アプリケーションでのメニューの表示方法をカスタマイズするために使用することができます。
 
 import MenuType from '@site/static/usage/v8/menu/type/index.md';
 
 <MenuType />
 
-
 ## Menu Sides
 
-Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
+メニューはデフォルトでは`"start"`側に表示されます。左から右へ移動するアプリでは左側に、右から左へ移動するアプリでは右側に表示されます。メニューは`"start"`の反対側である`"end"`側に表示させることもできます。
 
-If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. Refer to the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
+アプリで両側にメニューが必要な場合は、`side`の値を`MenuController`の`open`メソッドに渡すことでメニューを開くことができます。サイドが指定されていない場合、`"start"`側のメニューが開きます。`MenuController`を使用した例については、以下の[複数のメニュー](#multiple-menus)セクションを参照してください。
 
 import Sides from '@site/static/usage/v8/menu/sides/index.md';
 
 <Sides />
 
+## 複数メニュー {/* #multiple-menus */}
 
-## Multiple Menus
-
-When multiple menus exist on the same side, we need refer to them by ID instead of side. Otherwise, the wrong menu may be activated.
+同じサイドに複数のメニューが存在する場合、サイドではなくIDで参照する必要があります。そうしないと、間違ったメニューがアクティブになる可能性がある。
 
 import Multiple from '@site/static/usage/v8/menu/multiple/index.md';
 
 <Multiple />
 
-
-## Theming
+## テーマ
 
 ### CSS Shadow Parts
 
@@ -79,7 +73,7 @@ import Theming from '@site/static/usage/v8/menu/theming/index.md';
 
 ### MenuCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface MenuCustomEvent<T = any> extends CustomEvent {
@@ -88,22 +82,19 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

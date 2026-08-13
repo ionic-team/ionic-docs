@@ -1,6 +1,6 @@
 # Realtime App Updates with Appflow Live Updates
 
-As demonstrated so far, building web and mobile apps is quick and easy with the Ionic Framework. However, nothing disrupts rapid iteration faster than App Store delays. Fortunately, with Appflow’s Deploy feature, you can send live code changes directly to your users. Paired with seamless background updates, they are always upgraded to the latest version.
+これまでに示したように、Ionic Framework を使用すると、ウェブおよびモバイルアプリの構築は迅速かつ簡単です。しかし、App Store の遅延ほど迅速な反復を妨げるものはありません。幸いにも、Appflow の Deploy 機能を使用すれば、ユーザーに直接ライブのコード変更を送信できます。シームレスなバックグラウンドアップデートと組み合わせることで、常に最新バージョンにアップグレードされます。
 
 Setting it up is quick and easy. For reference, continue to refer to [the part 3 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3) on GitHub. First, install the Appflow JavaScript library:
 
@@ -86,7 +86,7 @@ iOS is [a bit trickier to set up](../../../developing/ios.md) than Android and r
 ionic cordova build ios --prod
 ```
 
-Then, continue to follow the [app store deployment instructions](../../../deployment/app-store.md) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
+その後、署名証明書などに関しては[アプリストアのデプロイメント手順](../../../deployment/app-store.md)に従って進めてください。アプリのネイティブバージョンを作成したら、選択したデバイスにコピーしましょう。
 
 ## Add the Native App to Your Local Device
 
@@ -166,7 +166,7 @@ $ git commit -m “change name to Photo Viewer”
 $ git push ionic master
 ```
 
-Log into the [Appflow dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. This newest commit begins to build immediately. Since we assigned the Appflow plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
+[Appflow ダッシュボード](https://dashboard.ionicframework.com)にログインし、Deploy -> Builds に移動します。この最新のコミットは直ちにビルドを開始します。Appflow プラグインを常に Git Push する Master ブランチに割り当てたため、Channel ラベルもこのコミットを指し、この変更がすべてのアプリユーザーに自動的に反映されます：
 
 ![The Deploy Builds section in the Appflow dashboard.](/img/guides/first-app-v3/deploy-channel.png 'Appflow Deploy Builds')
 
@@ -190,4 +190,4 @@ Building native app binaries for Android and iOS can be painful. The tooling isn
 
 [Start packaging your app in the cloud](https://dashboard.ionicframework.com/settings/billing) along with 10,000 Ionic Deploys per month.
 
-Up next, we cover Appflow Monitoring - track your app errors in realtime.
+次は、Appflow 監視について説明します - アプリのエラーをリアルタイムで追跡します。

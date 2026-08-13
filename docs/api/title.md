@@ -10,15 +10,14 @@ import Slots from '@ionic-internal/component-api/v8/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
-  <meta name="description" content="ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps." />
+  <meta name="description" content="ion-titleは、ツールバーのタイトルを設定するコンポーネントです。Ionic Frameworkアプリのtitleとcollapsible titleコンポーネントの詳細と使用方法については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-Title is a text component that sets the title for a [toolbar](./toolbar). It can be used to describe the screen or section a user is currently on or the app being used.
+Titleは、[ツールバー](./toolbar)のタイトルを設定するテキストコンポーネントです。ユーザーが現在いる画面やセクション、使用中のアプリを説明するために使用することができます。
 
 ## Basic
 
@@ -26,9 +25,9 @@ import Basic from '@site/static/usage/v8/title/basic/index.md';
 
 <Basic />
 
-## Collapsible Large Titles
+## 折りたたみ式ラージタイトル {/* #collapsible-large-titles */}
 
-The large title will display when the [content](./content) is scrolled to the start of the scroll container. When the title is scrolled behind the header, the condensed title will fade in.
+大きなタイトルは、[content](./content)がスクロールコンテナの開始位置までスクロールされたときに表示されます。タイトルがヘッダーの後ろにスクロールされると、縮小されたタイトルがフェードインします。
 
 :::info
 
@@ -40,56 +39,55 @@ import CollapsibleLargeTitle from '@site/static/usage/v8/title/collapsible-large
 
 <CollapsibleLargeTitle />
 
-### Collapsible Buttons
+### 折りたたみ式ボタン
 
-The [buttons](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
-
+[buttons](./buttons.md)コンポーネントは、[`collapse`](./buttons.md#collapse)プロパティと共に使用すると、ツールバーが折りたたまれたときにヘッダーに追加表示することができます。
 
 import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
-## Accessibility
+## アクセシビリティ
 
-### Headings
+### 見出し
 
-When creating headings, we typically recommend using [semantic heading elements (h1-h6)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements). However, there may be instances where you need to update Title to be treated as a particular heading by assistive technologies. For example, if you have a Title at the top of a view, you may want this to be considered a level 1 heading.
+見出しを作成する場合、一般的には[セマンティック見出し要素(h1-h6)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)を使うことをお勧めします。しかし、支援技術によって特定の見出しとして扱われるようにTitleを更新する必要がある場合があります。例えば、ビューの一番上にTitleがある場合、これをレベル1の見出しと見なしたいかもしれません。
 
-To achieve this, developers should use the [`heading` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) on Title. This will indicate to assistive technologies that Title is a type of heading. From there, developers should use the [`aria-level` attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) to set the heading level.
+これを実現するために、開発者はTitleで[`heading` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role)を使用する必要があります。これにより、Titleが見出しの一種であることを支援技術に示すことができます。そこから、開発者は[`aria-level`属性](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level)を使用して見出しレベルを設定する必要があります。
 
-For example, if we wanted to make a Title behave like an `h1` element, we would set `role="heading"` and `aria-level="1"` on the Title. This is necessary when using the [Focus Manager](../developing/managing-focus#assistive-technology-focus-management).
+例えば、Titleを`h1`要素のように動作させたい場合、Titleに`role="heading"`と`aria-level="1"`を設定します。これは[Focus Manager](../developing/managing-focus#assistive-technology-focus-management)を使用するときに必要です。
 
-Since multiple Title elements can be used on a view in conjunction with semantic heading elements, Ionic does not automatically set the Title's `role` or `aria-level`. It is the responsibility of the developer to handle this.
+複数のTitle要素をセマンティック見出し要素と組み合わせてビューで使用することができるため、Ionicは自動的にTitleの`role`や`aria-level`を設定しません。これを処理するのは開発者の責任です。
 
 ## Theming
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the toolbar containing the collapsible large title should always match the background color of the content.
+折りたたみ式ラージタイトルは、コンテンツの他の部分との関係でシームレスに表示される必要があります。つまり、折りたたみ可能なラージタイトルを含むツールバーの背景色は、常にコンテンツの背景色と一致する必要があります。
 
-By default, the toolbar that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color behind the standard title is actually the background color of the content.
+デフォルトでは、標準のタイトルを含むツールバーは`opacity: 0`によって非表示にされ、大きなタイトルをスクロールで折りたたむと段階的に表示されます。その結果、標準タイトルの背後の背景色は実際にはコンテンツの背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、CSS変数に `--background` を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダーの色が変わるという効果が得られます。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSCustomProperties from '@site/static/usage/v8/title/theming/css-properties/index.md';
 
 <CSSCustomProperties />
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

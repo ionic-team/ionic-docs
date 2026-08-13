@@ -3,26 +3,26 @@ title: CSS Shadow Parts
 ---
 
 <head>
-  <title>CSS Shadow Parts - Style CSS Properties Inside of A Shadow Tree</title>
+  <title>CSS Shadow Parts - シャドウツリー内のCSSプロパティをスタイル設定</title>
   <meta
     name="description"
-    content="CSS Shadow Parts allow developers to style CSS properties on elements inside of a shadow tree. Read to learn more about customizing Ionic Shadow DOM components."
+    content="CSS Shadow Partsにより、開発者はシャドウツリー内の要素のCSSプロパティをスタイル設定できます。Ionic Shadow DOMコンポーネントのカスタマイズについて詳しく学びましょう。"
   />
 </head>
 
-CSS Shadow Parts allow developers to style CSS properties on an element inside of a shadow tree. This is extremely useful in customizing Ionic Framework <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a> components.
+CSS Shadow Parts は、開発者がシャドウツリー内の要素に CSS プロパティをスタイル設定することを可能にします。これは、Ionic Framework <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a>コンポーネントをカスタマイズする際に非常に便利です。
 
-## Why Shadow Parts?
+## なぜ Shadow Parts?
 
-Ionic Framework is a distributed set of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>. Web Components follow the <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM specification</a> in order to encapsulate styles and markup.
+Ionic Framework は、<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>の分散型セットです。Web Components は、スタイルとマークアップをカプセル化するために<a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM の仕様</a>に従っています。
 
 :::note
-Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its [component documentation](../components.md). An example of a Shadow DOM component is the [button component](../api/button.md).
+Ionic Framework のコンポーネントは、すべてが Shadow DOM コンポーネントというわけ**ではありません**。Shadow DOM コンポーネントの場合、その[コンポーネントのドキュメント](../components.md)の右上にバッジが表示されます。Shadow DOM コンポーネントの例としては、[ボタンコンポーネント](../api/button.md)があります。
 :::
 
-Shadow DOM is useful for preventing styles from leaking out of components and unintentionally applying to other elements. For example, we assign a `.button` class to our `ion-button` component. Without Shadow DOM encapsulation, if a user were to set the class `.button` on one of their own elements, it would inherit the Ionic Framework button styles. Since `ion-button` is a Shadow component, this is not a problem.
+Shadow DOM は、スタイルがコンポーネントから漏れて、意図せずに他の要素に適用されるのを防ぐのに便利です。例えば、`ion-button` コンポーネントに `.button` クラスを割り当てています。Shadow DOM によるカプセル化がなければ、ユーザーが自分の要素に `.button` クラスを設定した場合、Ionic Framework のボタンスタイルを継承してしまうでしょう。`ion-button` は Shadow コンポーネントであるため、これは問題ではありません。
 
-However, due to this encapsulation, styles aren’t able to bleed into inner elements of Shadow components either. This means that if a Shadow component renders elements inside of its shadow tree, the inner elements cannot be targeted directly with CSS. Using the `ion-select` component as an example, it renders the following markup:
+しかし、このカプセル化のために、スタイルは Shadow コンポーネントの内部要素に侵入することができません。つまり、Shadow コンポーネントがそのシャドウツリーの内部にある要素をレンダリングする場合、その内部要素を CSS で直接ターゲットにすることはできません。例として `ion-select` コンポーネントを使用すると、次のようなマークアップがレンダリングされます。
 
 ```html
 <ion-select>
@@ -32,7 +32,7 @@ However, due to this encapsulation, styles aren’t able to bleed into inner ele
 </ion-select>
 ```
 
-The placeholder text and icon elements are inside of the `#shadow-root`, which means the following CSS will **NOT** work to style the placeholder:
+プレースホルダーのテキストとアイコン要素は `#shadow-root` の内部にあるため、以下の CSS はプレースホルダーのスタイル付けに **無効** です。
 
 ```css
 /* Does NOT work */
@@ -41,17 +41,17 @@ ion-select .select-placeholder {
 }
 ```
 
-So how do we solve this? [CSS Shadow Parts](#shadow-parts-explained)!
+では、どうすれば解決できるでしょうか？[CSS Shadow Parts](#shadow-parts-explained)です！
 
-## Shadow Parts Explained
+## Shadow Parts の説明 {/* #shadow-parts-explained */}
 
-Shadow parts allow developers to style inside a shadow tree, from outside of that shadow tree. In order to do so, the [part must be exposed](#exposing-a-part) and then it can be styled by using [::part](#how-part-works).
+Shadow Parts は、開発者がシャドウツリーの外側から、シャドウツリー内のスタイルを設定することを可能にします。これを行うには、[part](#exposing-a-part) を公開し 、[::part](#how-part-works) を使用してスタイルを設定する必要があります。
 
-### Exposing a part
+### Parts の公開 {/* #exposing-a-part */}
 
-When creating a Shadow DOM component, a part can be added to an element inside of a shadow tree by assigning a `part` attribute on the element. This is added to the component in Ionic Framework and requires no action from an end user.
+シャドウ DOM コンポーネントを作成する際、シャドウツリー内の要素に `part` 属性を割り当てることで、パートを追加することができます。これは Ionic Framework でコンポーネントに追加され、エンドユーザーからのアクションは必要ありません。
 
-Continuing to use the `ion-select` component as an example, the markup is updated to look like the following:
+引き続き、例として `ion-select` コンポーネントを使用し、マークアップは以下のように更新されます。
 
 ```html
 <ion-select>
@@ -61,15 +61,16 @@ Continuing to use the `ion-select` component as an example, the markup is update
 </ion-select>
 ```
 
-The above shows two parts: `placeholder` and `icon`. Refer to the [select documentation](../api/select.md#css-shadow-parts) for all of its parts.
+上記は 2 つの部分を示しています：`placeholder`および`icon`。そのすべての部分については、[select のドキュメント](../api/select.md#css-shadow-parts)を参照してください。
 
-With these parts exposed, the element can now be styled directly using [::part](#how-part-works).
+これらの Parts が公開されたことで、要素は [::part](#how-part-works) を使って直接スタイルを設定することができるようになりました。
 
-### How ::part works
+### ::part の動作方法 {/* #how-part-works */}
 
-The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> pseudo-element allows developers to select elements inside of a shadow tree that have been exposed via a part attribute.
+{/* prettier-ignore */}
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。
 
-Since we know that `ion-select` exposes a `placeholder` part for styling the text when there is no value selected, we can customize it in the following way:
+`ion-select` は、値が選択されていないときにテキストをスタイル付けするための `placeholder` Part を公開していることが分かっているので、次のようにカスタマイズすることができます。
 
 ```css
 ion-select::part(placeholder) {
@@ -78,9 +79,9 @@ ion-select::part(placeholder) {
 }
 ```
 
-Styling using `::part` allows any CSS property that is accepted by that element to be changed.
+`part` を使ったスタイリングでは、その要素で受け付けられる任意の CSS プロパティを変更することができます。
 
-In addition to being able to target the part, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank" rel="noopener noreferrer">pseudo-elements</a> can be styled without them being explicitly exposed:
+part をターゲットにできることに加え、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank" rel="noopener noreferrer">擬似要素</a>を明示的に露出させずにスタイル付けすることができます。
 
 ```css
 ion-select::part(placeholder)::first-letter {
@@ -89,7 +90,7 @@ ion-select::part(placeholder)::first-letter {
 }
 ```
 
-Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">pseudo-classes</a>, as well:
+Parts は、ほとんどの<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">擬似クラス</a>でも動作します。
 
 ```css
 ion-item::part(native):hover {
@@ -98,32 +99,35 @@ ion-item::part(native):hover {
 ```
 
 :::note
-There are some known limitations with [vendor prefixed pseudo-elements](#vendor-prefixed-pseudo-elements) and [structural pseudo-classes](#structural-pseudo-classes).
+[ベンダープレフィックス擬似要素](#vendor-prefixed-pseudo-elements) と [構造擬似クラス](#structural-pseudo-classes) には、いくつかの既知の制限があります。
 :::
 
-## Ionic Framework Parts
+## Ionic Framework の Parts
 
-All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, refer to the [Component documentation](../components.md).
+Ionic Framework のコンポーネントのすべての公開部分は、その API ページの CSS Shadow Parts 見出しの下で確認できます。すべてのコンポーネントとその API ページを確認するには、[コンポーネントのドキュメント](../components.md)を参照してください。
 
-In order to have parts a component must meet the following criteria:
+コンポーネントが Parts を持つためには、以下の条件を満たしている必要があります。
 
-- It is a [Shadow DOM](../reference/glossary.md#shadow) component. If it is a [Scoped](../reference/glossary.md#scoped) or Light DOM component, the child elements can be targeted directly. If a component is Scoped or Shadow, it will be listed by its name on its [component documentation page](../components.md).
-- It contains children elements. For example, `ion-card-header` is a Shadow component, but all styles are applied to the host element. Since it has no child elements, there’s no need for parts.
-- The children elements are not structural. In certain components, including `ion-title`, the child element is a structural element used to position the inner elements. We do not recommend customizing structural elements as this can have unexpected results.
+- [Shadow DOM](../reference/glossary.md#shadow) コンポーネントであること。 [Scoped](../reference/glossary.md#scoped) または Light DOM コンポーネントの場合、子要素を直接対象とすることができる。コンポーネントが Scoped または Shadow の場合、[コンポーネントのドキュメントページ](../components.md) にその名前で表示されます。
+- これは子要素を含んでいます。例えば、`ion-card-header` は Shadow コンポーネントですが、すべてのスタイルはホストエレメントに適用されます。子要素を持たないので、Parts は必要ありません。
+- 子要素は構造的なものではありません。`ion-title` を含む特定のコンポーネントでは、子要素は内部要素を配置するために使用される構造的な要素です。構造的な要素をカスタマイズすることは、予期しない結果をもたらす可能性があるため、お勧めしません。
 
 :::note
-We welcome recommendations for additional parts. Please create a <a href="https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+" target="_blank" rel="noopener noreferrer">new GitHub issue</a> with as much information as possible when requesting a part.
+追加 parts の推奨を歓迎します。parts をリクエストする際は、<a href="https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+" target="_blank" rel="noopener noreferrer">new GitHub issue</a> にできるだけ多くの情報を添えて作成してください。
 :::
 
-## Known Limitations
+## 既知の制限
 
-### Browser Support
+### ブラウザサポート
 
-CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the <a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">browser support</a> meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](../theming/css-variables.md) for styling.
+CSS Shadow Parts は最近のすべてのメジャーブラウザでサポートされています。ただし、一部の古いバージョンでは shadow parts がサポートされていません。アプリに parts を実装する前に、<a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">ブラウザのサポート</a>が要件を満たしていることを確認してください。旧バージョンのブラウザのサポートが必要な場合は、引き続き [CSS Variables](../theming/css-variables.md) を使用してスタイリングすることをお勧めします。
 
-### Vendor Prefixed Pseudo-Elements
+### ベンダープレフィックス擬似要素 {/* #vendor-prefixed-pseudo-elements */}
 
-Pseudo-elements that are <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">vendor prefixed</a> are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
+  ベンダープレフィックス付き
+</a>
+の疑似要素は、現時点ではサポートされていません。例としては、`::-webkit-scrollbar`のいずれかの疑似要素が挙げられます。
 
 ```css
 /* Does NOT work */
@@ -132,11 +136,11 @@ my-component::part(scroll)::-webkit-scrollbar {
 }
 ```
 
-Refer to <a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">this issue on GitHub</a> for more information.
+詳細については、<a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">GitHub のこの issue</a>を参照してください。
 
-### Structural Pseudo-Classes
+### 構造的な擬似クラス {/* #structural-pseudo-classes */}
 
-Most pseudo-classes are supported with parts, however, <a href="https://www.w3.org/TR/selectors-4/#structural-pseudos" target="_blank" rel="noopener noreferrer">structural pseudo-classes</a> are not. An example of structural pseudo-classes that do not work is below.
+ほとんどの擬似クラスは Parts でサポートされていますが、<a href="https://www.w3.org/TR/selectors-4/#structural-pseudos" target="_blank" rel="noopener noreferrer">構造的な擬似クラス</a>はサポートされていません。動作しない構造的擬似クラスの例を以下に示します。
 
 ```css
 /* Does NOT work */
@@ -150,10 +154,10 @@ my-component::part(container):last-child {
 }
 ```
 
-### Chaining Parts
+### Parts の連結
 
-The `::part()` pseudo-element can not match additional `::part()`s.
+擬似要素 `::part()` は追加の `::part()` にマッチすることができません。
 
-For example, `my-component::part(button)::part(label)` does not match anything. This is because doing so would expose more structural information than is intended.
+例えば、`my-component::part(button)::part(label)`は何もマッチしません。これは、そうすることで意図した以上の構造的な情報を露出してしまうからです。
 
-If the `<my-component>`’s internal button uses something like `part="label => button-label"` to forward the button’s internal parts up into the panel’s own part element map, then a selector like `my-component::part(button-label)` would select just the one button’s label, ignoring any other labels.
+もし `<my-component>` の内部ボタンが `part="label => button-label"` のようなものを使って、ボタンの内部 Parts をパネル自身の part 要素マップに転送していた場合、 `my-component::part(button-label)` といったセレクタはボタンのラベルだけを選び、他のラベルを無視することになるでしょう。

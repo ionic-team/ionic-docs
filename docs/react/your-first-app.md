@@ -40,11 +40,11 @@ Find the [complete app code](https://github.com/ionic-team/tutorial-photo-galler
 
 Download and install these right away to ensure an optimal Ionic development experience:
 
-- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version](https://nodejs.org/en/).
-- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-- **Command-line interface/terminal (CLI)**:
-  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
-  - **Mac/Linux** users: virtually any terminal will work.
+- **Ionic エコシステムと連携するための Node.js**。[LTS バージョンをダウンロード](https://nodejs.org/en/)。
+- **コードエディタ**：コードを書くためのものです！私たちは[Visual Studio Code](https://code.visualstudio.com/)のファンです。
+- **コマンドラインインターフェイス/ターミナル（CLI）**：
+  - **Windows**ユーザー：最適な Ionic 体験のために、組み込みのコマンドライン（cmd）または管理者モードで実行する Powershell CLI を推奨します。
+  - **Mac/Linux**ユーザー：ほぼすべてのターミナルで動作します。
 
 ## Install Ionic Tooling
 
@@ -61,7 +61,7 @@ npm install -g @ionic/cli native-run cordova-res
 :::note
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
-Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+npm を権限なしでグローバルに操作できるように設定することを検討してください。詳細は[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## Create an App
@@ -117,7 +117,7 @@ root.render(
 );
 ```
 
-That’s it! Now for the fun part - let’s run the app.
+以上です！では楽しい部分、アプリを実行してみましょう。
 
 ## Run the App
 
@@ -135,7 +135,7 @@ There are three tabs. Click on the "Tab2" tab. It’s a blank canvas, aka the pe
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/react/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
 
-Open `/src/pages/Tab2.tsx`. It contains:
+`/src/pages/Tab2.tsx`を開きます。内容は次の通りです：
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';

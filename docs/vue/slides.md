@@ -10,8 +10,8 @@ title: Migrating From ion-slides to Swiper.js
   />
 </head>
 
-:::warning[Looking for `ion-slides`?]
-`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+:::warning[`ion-slides` を探していますか？]
+`ion-slides` は v6.0.0 で非推奨となり、v7.0.0 で削除されました。直接 Swiper.js ライブラリを使用することをお勧めします。移行手順は以下の通りです。
 :::
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
@@ -212,7 +212,7 @@ const modules = [Autoplay, Keyboard, Pagination, Scrollbar, Zoom];
 ```
 
 :::note
-Refer to <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">Swiper's Vue usage documentation</a> for a full list of modules.
+フルモジュール一覧は <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">Swiper の Vue 使用方法のドキュメント</a> を参照してください。
 :::
 
 ## The IonicSlides Module
@@ -294,7 +294,7 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
 
 :::note
-All properties available in Swiper Vue can be found in the <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">Swiper Vue props documentation</a>.
+Swiper Vue で使用可能なすべてのプロパティは <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">Swiper Vue プロパティのドキュメント</a> に記載されています。
 :::
 
 ## Events
@@ -347,7 +347,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `init`                       |
 
 :::note
-All events available in Swiper Vue can be found in the <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">Swiper Vue events documentation</a>.
+Swiper Vue で使用可能なすべてのイベントは <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">Swiper Vue イベントのドキュメント</a> に記載されています。
 :::
 
 ## Methods
@@ -472,7 +472,7 @@ const modules = [EffectFade, IonicSlides];
 ```
 
 :::note
-For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">Swiper Vue effects documentation</a>.
+Swiper のエフェクトに関する詳細は <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">Swiper Vue エフェクトのドキュメント</a> を参照してください。
 :::
 
 ## Wrap Up
@@ -491,8 +491,8 @@ If you are running into issues with the migration, please create a post on the [
 
 ### Where do I file bug reports?
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to check if your issue can be resolved by the community.
+問題を報告する前に、コミュニティによって問題が解決できるかを確認するために、<a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a>または<a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a>に投稿を作成することを検討してください。
 
-If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
+Swiper ライブラリで問題が発生している場合、新しいバグは<a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper のイシュートラッカー</a>に報告する必要があります。
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework issue tracker</a>.
+`IonicSlides`モジュールで問題が発生している場合、新しいバグは<a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework のイシュートラッカー</a>に報告する必要があります。

@@ -111,7 +111,7 @@ Create a new Firebase project or select an existing one.
 
 **"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
-**"What do you want to use as your public directory?"** Enter "dist".
+**「パブリックディレクトリとして何を使用しますか？」** 「dist」と入力します。
 
 :::note
 Answering this next question will ensure that routing, hard reload, and deep linking work in the app:

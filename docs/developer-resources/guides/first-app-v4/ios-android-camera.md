@@ -151,4 +151,4 @@ export class Tab2Page {
 
 このファイルを保存し、DevApp の Camera ボタンをタップします。ほら見て！デバイスでカメラが起動します。撮影した写真は、フォトギャラリーページに表示されます。
 
-Next, we’ll cover how to transform the app into a photo gallery, as well as how to save the photos to your device!
+次に、アプリを写真ギャラリーに変換する方法、および写真をデバイスに保存する方法を説明します!

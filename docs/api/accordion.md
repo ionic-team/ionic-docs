@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props
 import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
 
 <head>
-  <title>ion-accordion: Accordion Components: How to Build & Examples</title>
+  <title>ion-accordion: アコーディオンコンポーネント: 作り方と例</title>
   <meta name="description" content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and explore examples." />
 </head>
 
@@ -17,117 +17,116 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+アコーディオンは、情報を整理してグループ化する方法を提供しながら、垂直方向のスペースを減らすために、コンテンツに折り畳み可能なセクションを提供します。すべての `ion-accordion` コンポーネントは `ion-accordion-group` コンポーネントの中にグループ化されている必要があります。
 
-Accordions provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information. All `ion-accordion` components should be grouped inside `ion-accordion-group` components.
-
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v8/accordion/basic/index.md';
 
 <Basic />
 
-## Toggle Accordions
+## アコーディオンをトグルする方法
 
-Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions.
+どのアコーディオンを開くかは、`ion-accordion-group` の `value` プロパティを設定することで制御できます。このプロパティを設定することで、開発者はプログラムによって特定のアコーディオンを展開したり折りたたんだりすることができます。
 
 import Toggle from '@site/static/usage/v8/accordion/toggle/index.md';
 
 <Toggle />
 
-## Listen for Accordion State Changes
+## アコーディオンの状態変化を監視
 
 :::caution
-Most `ionChange` events emitted by other components such as [Input](./input) and [Textarea](./textarea) bubble. As a result, these events will bubble up and cause your `ionChange` listener on the Accordion Group to fire if the associated components are used inside of an Accordion.
+[Input](./input) や [Textarea](./textarea) などの他のコンポーネントが発する `ionChange` イベントのほとんどはバブル化されます。その結果、アコーディオンの中で関連コンポーネントが使用されている場合、これらのイベントはバブルアップし、アコーディオングループの `ionChange` リスナーを発火させます。
 
-When using other components that emit `ionChange` inside of Accordion it is recommended to have the `ionChange` callback on Accordion Group check the `target` key on the event passed to the callback to verify that `ionChange` is coming from the Accordion Group and not any descendants.
+アコーディオンの内部で `ionChange` を発する他のコンポーネントを使用する場合は、アコーディオングループの `ionChange` コールバックに、コールバックに渡されたイベントの `target` キーをチェックさせ、`ionChange` がアコーディオングループからのものであり、子孫からのものでないことを確認することをお勧めします。
 :::
 
-Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
+開発者は `ionChange` イベントをリッスンして、アコーディオンが展開または折りたたまれたときに通知を受けることができます。
 
 import ListenChanges from '@site/static/usage/v8/accordion/listen-changes/index.md';
 
 <ListenChanges />
 
-## Multiple Accordions
+## 複数のアコーディオン
 
-Developers can allow multiple accordions to be open at once with the `multiple` property.
+開発者は `multiple` プロパティを使用して、複数のアコーディオンを一度に開くことができるようにすることができます。
 
 import Multiple from '@site/static/usage/v8/accordion/multiple/index.md';
 
 <Multiple />
 
-## Disabling Accordions
+## アコーディオンの無効化
 
-### Individual Accordion
+### アコーディオンを無効にする
 
-Individual accordions can be disabled with the `disabled` property on `ion-accordion`.
+個々のアコーディオンは、`ion-accordion` の `disabled` プロパティで無効にできます。
 
 import DisableIndividual from '@site/static/usage/v8/accordion/disable/individual/index.md';
 
 <DisableIndividual />
 
-### Accordion Group
+### アコーディオングループ
 
-The accordion group can be disabled with the `disabled` property on `ion-accordion-group`.
+アコーディオングループは、`ion-accordion-group` の `disabled` プロパティで無効にすることができます。
 
 import DisableGroup from '@site/static/usage/v8/accordion/disable/group/index.md';
 
 <DisableGroup />
 
-## Readonly Accordions
+## 読み込み可能なアコーディオン
 
-### Individual Accordion
+### アコーディオンを無効にする
 
-Individual accordions can be disabled with the `readonly` property on `ion-accordion`.
+個々のアコーディオンは、`ion-accordion` の `readonly` プロパティで無効にできます。
 
 import ReadonlyIndividual from '@site/static/usage/v8/accordion/readonly/individual/index.md';
 
 <ReadonlyIndividual />
 
-### Accordion Group
+### アコーディオングループ
 
-The accordion group can be disabled with the `readonly` property on `ion-accordion-group`.
+アコーディオングループは、`ion-accordion-group` の `readonly` プロパティで無効にできます。
 
 import ReadonlyGroup from '@site/static/usage/v8/accordion/readonly/group/index.md';
 
 <ReadonlyGroup />
 
-## Anatomy
+## 構造
 
-### Header
+## ヘッダー
 
-The `header` slot is used as the toggle that will expand or collapse your accordion. We recommend you use an `ion-item` here to take advantage of the accessibility and theming functionalities.
+`header` slotは、アコーディオンを展開または折りたたむためのトグルとして使用されます。アクセシビリティとテーマ機能を利用するために、ここでは `ion-item` を使用することをお勧めします。
 
-When using `ion-item` in the `header` slot, the `ion-item`'s `button` prop is set to `true` and the `detail` prop is set to `false`. In addition, we will also automatically add a toggle icon to the `ion-item`. This icon will automatically be rotated when you expand or collapse the accordion. Refer to [Customizing Icons](#icons) for more information.
+`header`スロットで`ion-item`を使用する場合、`ion-item`の`button`プロパティは`true`に、`detail`プロパティは`false`に設定されます。さらに、`ion-item`にはトグルアイコンも自動的に追加されます。このアイコンはアコーディオンを展開または折りたたむ際に自動的に回転します。詳細については、[アイコンのカスタマイズ](#icons)を参照してください。
 
-### Content
+### コンテンツ
 
-The `content` slot is used as the part of the accordion that is revealed or hidden depending on the state of your accordion. You can place anything here except for another `ion-content` instance as only one instance of `ion-content` should be added per page.
+`content` slotは、アコーディオンの状態に応じて表示/非表示される部分として使用されます。1ページに1つだけ `ion-content` インスタンスを追加する必要があるため、ここには他の `ion-content` インスタンスを除いて何でも置くことができます。
 
-## Customization
+## カスタマイズ
 
-### Expansion Styles
+### 拡張スタイル
 
-There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`.
+組み込みの拡張スタイルには、`compact` と `inset` の 2 種類があります。この拡張スタイルは `ion-accordion-group` の `expand` プロパティによって設定されます。
 
-When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
+`expand="inset"` の場合、アコーディオングループにはborder radiusが与えられます。 `md` モードでは、アコーディオン全体を開くと下に移動します。
 
 import ExpansionStyles from '@site/static/usage/v8/accordion/customization/expansion-styles/index.md';
 
 <ExpansionStyles />
 
-### Advanced Expansion Styles
+### 高度な拡張スタイル
 
-You can customize the expansion behavior by styling based on the accordion's state. There are four state classes applied to `ion-accordion`. Styling using these classes can allow you to create advanced state transitions:
+アコーディオンの状態に応じてスタイルを設定することで、展開の動作をカスタマイズすることができます。 `ion-accordion` には4つのステートクラスが適用されています。これらのクラスを使ってスタイリングすることで、高度な状態遷移を作成することができます。
 
-| Class Name | Description |
-| ---------- | ----------- |
-| `.accordion-expanding` | Applied when the accordion is actively expanding |
-| `.accordion-expanded` | Applied when the accordion is fully expanded |
-| `.accordion-collapsing` | Applied when the accordion is actively collapsing |
-| `.accordion-collapsed` | Applied when the accordion is fully collapsed |
+| クラス名   | 説明                              |
+| ---------- |-----------------------------------|
+| `.accordion-expanding` | アコーディオンがアクティブに展開しているときに適用されます。    |
+| `.accordion-expanded` | アコーディオンが完全に展開されたときに適用されます。        |
+| `.accordion-collapsing` | アコーディオンがアクティブに折りたたまれているときに適用されます。 |
+| `.accordion-collapsed` | アコーディオンが完全に折りたたまれているときに適用されます。    |
 
-If you need to target specific pieces of the accordion, we recommend targeting the element directly. For example, if you want to customize the ion-item in your header slot when the accordion is expanded, you can use the following selector:
+アコーディオンの特定の部分をターゲットにする必要がある場合、要素を直接ターゲットにすることをお勧めします。例えば、アコーディオンが展開されたときに `header` slot の ion-item をカスタマイズしたい場合、以下のセレクタを使用することができます。
 
 ```css
 ion-accordion.accordion-expanding ion-item[slot="header"],
@@ -140,39 +139,39 @@ import AdvancedExpansionStyles from '@site/static/usage/v8/accordion/customizati
 
 <AdvancedExpansionStyles />
 
-### Icons
+### アイコン {/* #icons */}
 
-When using an `ion-item` in the `header` slot, we automatically add an `ion-icon`. The type of icon used can be controlled by the `toggleIcon` property, and the slot it is added to can be controlled with the `toggleIconSlot` property.
+`header` slot に `ion-item` を使用する場合、自動的に `ion-icon` が追加されます。使用するアイコンの種類は `toggleIcon` プロパティで制御でき、追加するスロットも `toggleIconSlot` プロパティで制御することができます。
 
-If you would like to manage the icon yourself or use an icon that is not an `ion-icon`, you can add the `ion-accordion-toggle-icon` class to the icon element.
+アイコンを自分で管理したい場合や、`ion-icon` 以外のアイコンを使用したい場合は、icon 要素に `ion-accordion-toggle-icon` クラスを追加することができます。
 
-Regardless of which option you choose, the icon will automatically be rotated when you expand or collapse the accordion.
+どのオプションを選択しても、アコーディオンを展開または折りたたむと、アイコンは自動的に回転します。
 
 import Icons from '@site/static/usage/v8/accordion/customization/icons/index.md';
 
 <Icons />
 
-### Theming
+### テーマ
 
-Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
+`ion-accordion` はヘッダーとコンテンツ要素を囲むシェルとして機能するので、アコーディオンを簡単に好きなようにテーマ化することができます。ヘッダーのテーマは、スロットの `ion-item` をターゲットにすることで行うことができます。 `ion-item` を使用しているので、 [ion-item CSS Variables](./item#css-custom-properties) と  [ion-item Shadow Parts](./item#css-shadow-parts) にもすべてアクセスすることができます。コンテンツのテイムも、`content` slotにある要素をターゲットにすることで簡単に実現できます。
 
 import Theming from '@site/static/usage/v8/accordion/customization/theming/index.md';
 
 <Theming />
 
-## Accessibility
+## アクセシビリティ
 
-### Animations
+### アニメーション
 
-By default, animations are enabled when expanding or collapsing an accordion item. Animations will be automatically disabled when the `prefers-reduced-motion` media query is supported and set to `reduce`. For browsers that do not support this, animations can be disabled by setting the `animated` config in your Ionic Framework app.
+デフォルトでは、アコーディオン・アイテムを展開したり折りたたんだりする際にアニメーションが有効になります。アニメーションは `prefers-reduced-motion` メディアクエリがサポートされ、`reduce` に設定されると自動的に無効化されます。対応していないブラウザでは、Ionic Frameworkアプリで `animated` を設定することで、アニメーションを無効にすることができます。
 
 import AccessibilityAnimations from '@site/static/usage/v8/accordion/accessibility/animations/index.md';
 
 <AccessibilityAnimations />
 
-### Keyboard Interactions
+### キーボードインタラクション
 
-When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
+`ion-accordion-group` の中で使用する場合、`ion-accordion` はキーボードによる操作を完全にサポートしています。次の表は、それぞれのキーが何をするのかの詳細です。
 
 | Key                                  | Description                                                  |
 | ------------------------------------ | ------------------------------------------------------------ |
@@ -184,33 +183,33 @@ When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard sup
 | <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header. |
 | <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header. |
 
-## Performance
+## パフォーマンス
 
-### Animations
+### アニメーション
 
-The accordion animation works by knowing the height of the `content` slot when the animation starts. The accordion expects that this height will remain consistent throughout the animation. As a result, developers should avoid performing any operation that may change the height of the content during the animation.
+アコーディオンアニメーションは、アニメーションを開始するときに `content` slotの高さを知ることによって動作します。アコーディオンは、この高さがアニメーションの間、一貫して保たれることを期待します。そのため、開発者はアニメーション中にコンテンツの高さを変更するような操作を行わないようにしなければなりません。
 
-For example, using [ion-img](./img) may cause layout shifts as it lazily loads images. This means that as the animation plays, `ion-img` will load the image data, and the dimensions of  `ion-img` will change to account for the loaded image data. This can result in the height of the `content` slot changing. Developers have a few options for avoiding this:
+例えば、[ion-img](./img) を使用すると、画像を遅延ロードするため、レイアウトのずれが生じることがあります。つまり、アニメーションを再生すると、 `ion-img` が画像データをロードし、ロードされた画像データを考慮して `ion-img` の寸法が変更されることになります。その結果、 `content` slotの高さが変化してしまうことがあります。これを避けるために、開発者にはいくつかのオプションがあります。
 
-1. Use an `img` element without any lazy loading. `ion-img` always uses lazy loading, but `img` does not use lazy loading by default. This is the simplest option and works well if you have small images that do not significantly benefit from lazy loading.
+1. 遅延読み込みを行わない `img` 要素を使用します。`ion-img` は常に遅延読み込みを使用しますが、`img` はデフォルトでは遅延読み込みを使用しません。これは最も単純なオプションで、遅延読み込みの恩恵をあまり受けない小さな画像を使用する場合に有効です。
 
-2. Set a minimum width and height on `ion-img`. If you need to use lazy loading and know the dimensions of the images ahead of time (such as if you are loading icons of the same size), you can set the `ion-img` to have a minimum width or height using CSS. This gives developers the benefit of lazy loading while avoiding layout shifts. This works when using an `img` element with `loading="lazy"` too!
+2. `ion-img` に最小の幅と高さを設定します。遅延読み込みを使用する必要があり、前もって画像の寸法がわかっている場合（同じサイズのアイコンを読み込む場合など）、CSS を使用して `ion-img` に最小限の幅または高さを設定することができます。これにより、開発者はレイアウトの崩れを防ぎつつ、遅延ロードの恩恵を受けることができます。これは、 `img` 要素を `loading="lazy"` と共に使用する場合にも有効です!
 
-3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
+3. これらの解決方法を選択できない場合、開発者は [ion-accordion-group](./accordion-group) の `animated` プロパティを使用してアニメーションを完全に無効にすることを検討することができます。
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

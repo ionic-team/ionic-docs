@@ -42,7 +42,7 @@ trackItems(index: number, itemObject: any) {
 
 In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using `trackBy`, we pass a `trackItems` function which returns the `id` of each object. This `id` is used to provide a stable identity for each loop element.
 
-For more information, refer to the [Angular NgForOf change propagation documentation](https://angular.io/api/common/NgForOf#change-propagation).
+詳細については、[Angular NgForOf の変更伝播に関するドキュメント](https://angular.io/api/common/NgForOf#change-propagation)を参照してください。
 
 ## From the Ionic Team
 

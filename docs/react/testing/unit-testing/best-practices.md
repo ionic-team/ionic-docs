@@ -48,11 +48,11 @@ test('example', async () => {
 });
 ```
 
-For more information on `user-event`, refer to the [user-event documentation](https://testing-library.com/docs/user-event/intro/).
+`user-event`の詳細については、[user-event documentation](https://testing-library.com/docs/user-event/intro/)を参照してください。
 
-## Waiting for Components
+## コンポーネントの待機
 
-When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/react` uses Stencil's custom elements build, where that method does not exist on the element. The helper waits one animation frame instead, giving the component's inner contents a chance to render.
+Ionic コンポーネントがレンダリングされるのを待ってからその DOM に対してアサートする必要がある場合は、`@ionic/core`からエクスポートされる`componentOnReady`ヘルパーを使用してください。`el.componentOnReady()`を直接呼び出さないでください。`@ionic/react`は Stencil のカスタムエレメントビルドを使用しており、そのメソッドは要素上に存在しません。ヘルパーは代わりに 1 フレーム待機し、コンポーネントの内部コンテンツがレンダリングされる機会を与えます。
 
 ```tsx
 import { IonApp } from '@ionic/react';

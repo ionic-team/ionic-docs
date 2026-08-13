@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-:::warning[Deprecation Notice]
+:::warning[非推奨通知]
 
 `ion-picker-legacy` is deprecated and will be removed in the next major release. Migrate to [`ion-picker`](./picker.md) as soon as possible.
 

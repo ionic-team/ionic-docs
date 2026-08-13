@@ -160,10 +160,10 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 <!-- ...styles... -->
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。2 番目のヘッダーは、iOS デバイスでコンテンツの上部に表示されるときに[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を表示し、スクロールダウンすると最初のヘッダーに表示される小さなタイトルに縮小されます。
 
-:::tip[Learn More]
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip[詳細はこちら]
+Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、および[Content](/docs/api/content.md)のドキュメントをご覧ください。
 :::
 
 ## Add an Ionic Component

@@ -13,8 +13,8 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-:::caution[Looking for `ion-slides`?]
-`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+:::caution[`ion-slides`を探していますか？]
+`ion-slides`は v6.0.0 で非推奨となり、v7.0.0 で削除されました。Swiper.js ライブラリを直接使用することをお勧めします。移行プロセスは以下に詳しく説明されています。
 :::
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. Swiper 9 introduced <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as a replacement for its Angular component, so this guide will go over how to get Swiper Element set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to Swiper Element.
@@ -71,7 +71,7 @@ From there, we just have to replace `ion-slides` elements with `swiper-container
 
 By default, make sure you import the `register` function from `swiper/element/bundle`. This uses the bundled version of Swiper, which automatically includes all modules and stylesheets needed to run Swiper's various features.
 
-If you would like to use the Core version instead, which does not include additional modules automatically, refer to <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">Swiper's core version and modules documentation</a>. The rest of this migration guide will assume you are using the bundled version.
+もし自動的に追加モジュールが含まれない Core バージョンを使用したい場合は、<a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">Swiper のコアバージョンとモジュールのドキュメント</a>を参照してください。このマイグレーションガイドの残りでは、バンドル版を使用していることを前提とします。
 
 ## Swiping with Style
 
@@ -93,7 +93,7 @@ If you were using the CSS custom properties found on `ion-slides`, below is a li
 | `--scroll-bar-background`          | `--swiper-scrollbar-bg-color`               |
 | `--scroll-bar-background-active`   | `--swiper-scrollbar-drag-bg-color`          |
 
-For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. Refer to <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">Swiper's guide on injecting styles</a> for instructions.
+追加のカスタム CSS については、Swiper Element が Shadow DOM のカプセル化を使用しているため、スタイルを Shadow DOM スコープ内に注入する必要があります。手順については、<a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">Swiper のスタイル注入ガイド</a>を参照してください。
 
 ### Additional `ion-slides` Styles
 
@@ -227,7 +227,7 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager   | Use the `pagination` property instead.                                                                                                  |
 
 :::note
-All properties available in Swiper Element can be found in the <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">Swiper API parameters documentation</a>.
+Swiper Element で利用可能なすべてのプロパティは、<a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">Swiper API パラメータのドキュメント</a>で確認できます。
 :::
 
 ## Events
@@ -276,7 +276,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `init`                       |
 
 :::note
-All events available in Swiper Element can be found in the <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API events documentation</a>.
+Swiper Element で利用可能なすべてのイベントは、<a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API イベントのドキュメント</a>で確認できます。
 :::
 
 ## Methods
@@ -328,7 +328,7 @@ Below is a full list of method changes when going from `ion-slides` to Swiper El
 | `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 :::note
-All methods and properties available on the Swiper instance can be found in the <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">Swiper API methods and properties documentation</a>.
+Swiper インスタンスで利用可能なすべてのメソッドとプロパティは、<a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">Swiper API メソッドとプロパティのドキュメント</a>で確認できます。
 :::
 
 ## Effects
@@ -340,7 +340,7 @@ Effects such as Cube or Fade can be used in Swiper Element with no additional im
 ```
 
 :::note
-For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">Swiper API fade effect documentation</a>.
+Swiper のエフェクトに関する詳細は、<a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">Swiper API フェードエフェクトのドキュメント</a>を参照してください。
 :::
 
 ## Wrap Up
@@ -361,6 +361,6 @@ If you are running into issues with the migration, please create a post on the [
 
 Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
 
-If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
+Swiper ライブラリで問題が発生している場合は、新しいバグを<a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper のイシュートラッカー</a>に登録してください。
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework issue tracker</a>.
+`IonicSlides`モジュールで問題が発生している場合は、新しいバグを<a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework のイシュートラッカー</a>に登録してください。

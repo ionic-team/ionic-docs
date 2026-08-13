@@ -6,21 +6,21 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
   <b>TABLE OF CONTENTS</b>
 </sub>
 
-- [Development Workflow](#development-workflow)
-  - [Previewing Changes](#previewing-changes)
-  - [Linting Documentation](#linting-documentation)
-  - [Spell Check](#spell-check)
-- [Using VS Code on Windows](#using-vs-code-on-windows)
-- [Project Structure](#project-structure)
-  - [Directories](#directories)
-- [Authoring Content](#authoring-content)
-  - [Reference Content](#reference-content)
-- [Translation](#translation)
-- [Reporting Issues](#reporting-issues)
-- [Pull Request Guidelines](#pull-request-guidelines)
-- [Deploying](#deploying)
-  - [Archiving a Version](#archiving-a-version)
-- [License](#license)
+- [開発ワークフロー](#development-workflow)
+  - [変更のプレビュー](#previewing-changes)
+  - [ドキュメントのリンティング](#linting-documentation)
+  - [スペルチェック](#spell-check)
+- [Windows での VS Code の使用](#using-vs-code-on-windows)
+- [プロジェクト構造](#project-structure)
+  - [ディレクトリ](#directories)
+- [コンテンツ作成](#authoring-content)
+  - [参照コンテンツ](#reference-content)
+- [翻訳](#translation)
+- [問題報告](#reporting-issues)
+- [プルリクエストガイドライン](#pull-request-guidelines)
+- [デプロイ](#deploying)
+  - [バージョンのアーカイブ](#archiving-a-version)
+- [ライセンス](#license)
 
 ---
 
@@ -35,41 +35,41 @@ npm install
 npm start
 ```
 
-#### GitHub Token
+#### GitHub トークン
 
-The documentation build requires a GitHub Personal Access Token to fetch Ionic Framework release notes. The build will still work locally without it (release notes will be empty), but it's required for Vercel preview and production builds.
+ドキュメンテーションのビルドには、Ionic Framework のリリースノートを取得するために GitHub パーソナルアクセストークンが必要です。ローカルではそれがなくてもビルドは動作します（リリースノートは空になります）が、Vercel のプレビューおよび本番ビルドには必要です。
 
-**Local Development:**
+**ローカル開発:**
 
-1. Create a [fine-grained Personal Access Token](https://github.com/settings/personal-access-tokens/new) with:
+1. 次の条件で[詳細なパーソナルアクセストークン](https://github.com/settings/personal-access-tokens/new)を作成する:
 
-   - **Repository access**: Public repositories (read-only)
-   - **Expiration**: 366 days (update annually)
+- **リポジトリアクセス**: 公開リポジトリ（読み取り専用）
+- **有効期限**: 366 日（毎年更新）
 
-2. Add the token to your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
+2. トークンをシェルのプロファイルに追加します（`~/.zshrc`、`~/.bashrc`、など）：
 
    ```sh
    export GITHUB_TOKEN=github_pat_...
    ```
 
-3. Reload your shell or run `source ~/.zshrc` (or equivalent)
+3. シェルをリロードするか、`source ~/.zshrc`（または同等のもの）を実行してください
 
 **Vercel:**
 
-1. Create a [fine-grained Personal Access Token](https://github.com/settings/personal-access-tokens/new) with the same settings as above, but with:
+1. 上記と同じ設定で、ただし以下の条件で[細かい粒度のパーソナルアクセストークン](https://github.com/settings/personal-access-tokens/new)を作成します:
 
-   - **Owner**: ionic-team organization (not your personal account)
+- **所有者**: ionic-team 組織（あなたの個人アカウントではありません）
 
-2. Add the token to Vercel project settings:
+2. トークンを Vercel プロジェクトの設定に追加してください:
 
-   - Go to your project on Vercel
-   - Navigate to **Settings → Environment Variables**
-   - Add `GITHUB_TOKEN` with the token value
-   - Select Production and Preview environments
+- Vercel でプロジェクトに移動する
+- **設定 → 環境変数**に移動する
+- `GITHUB_TOKEN`をトークン値で追加する
+- 本番およびプレビュ環境を選択する
 
-3. Redeploy the project for the token to take effect
+3. トークンを有効にするためにプロジェクトを再デプロイする
 
-Without the token, the build will fail with an error message indicating the token is missing.
+トークンがないと、ビルドはトークンが欠落していることを示すエラーメッセージとともに失敗します。
 
 ### Linting Documentation
 
@@ -212,19 +212,19 @@ When submitting pull requests, please keep the scope of your change contained to
 
 The Ionic documentation's `main` branch is deployed automatically and separately from the [Ionic site](https://github.com/ionic-team/ionic-site) itself. The Ionic site then uses a proxy for paths under `/docs` to request the deployed documentation.
 
-### Archiving a Version
+### バージョンのアーカイブ {/* #archiving-a-version */}
 
-Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. Two files control this:
+アーカイブされたバージョンは、毎回`main`デプロイごとに再構築されるのではなく、凍結された Vercel デプロイメントから提供されるため、ビルド時間とメモリ使用量を低く抑えられます。これを制御するファイルは 2 つあります：
 
-- [`versions.json`](./versions.json): lists the versions Docusaurus rebuilds on every deploy.
-- [`versionsArchived.json`](./versionsArchived.json): maps each archived version to the frozen deployment URL the version picker links to.
+- [`versions.json`](./versions.json)：Docusaurus が毎回のデプロイで再構築するバージョンをリストします。
+- [`versionsArchived.json`](./versionsArchived.json)：各アーカイブされたバージョンを、バージョンピッカーがリンクする固定されたデプロイ URL にマッピングします。
 
-The archived URL has to point at a build that _included_ the version, so you build it first, then move it to `versionsArchived.json`:
+アーカイブされた URL は、そのバージョンを*含む*ビルドを指す必要があるので、まずビルドを作成し、それから`versionsArchived.json`に移動します:
 
-1. **Build the version.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
-2. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
-3. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
-4. **Archive it.** Remove the version from `versions.json`, then add it to `versionsArchived.json` with `/docs/<version>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
+1. **バージョンをビルドします。** `versions.json` にあることを確認してください。すでにアーカイブされているバージョンを更新する場合は、`versionsArchived.json` から取り出して `versions.json` に戻します。コミットしてプッシュし、Vercel にデプロイさせます。
+2. **デプロイをプロモートします。** Vercel ダッシュボードでそのデプロイを開き、**本番にプロモート**してクリーンアップされないようにします。ビルドが完了するまで再度プッシュしないでください。さもないとキャンセルされる場合があります。
+3. **URL をコピーします。** デプロイのユニークな `ionic-docs-<hash>-ionic1.vercel.app` URL を使用し、ブランチや本番エイリアスは使用しないでください。
+4. **アーカイブします。** `versions.json` からバージョンを削除し、`/docs/<version>` を追加して末尾のスラッシュなしで `versionsArchived.json` に追加します（末尾のスラッシュは一瞬の 404 フラッシュを引き起こします）。
 
    ```json
    {
@@ -232,12 +232,12 @@ The archived URL has to point at a build that _included_ the version, so you bui
    }
    ```
 
-5. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building that version.
+5. **PR を開きます。** マージされると、バージョンピッカーはアーカイブへのリンクになり、`main`そのバージョンのビルドを停止します。
 
-Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
+削除されたバージョンは`versioned_docs/`と`versioned_sidebars/`の内容を保持しているため、`versions.json`に戻すことでいつでも再構築できます。
 
-> [!NOTE]
-> Ionic v3 and v4 use other build tools and are not managed here.
+> [!注意]
+> Ionic v3 と v4 は別のビルドツールを使用しており、ここでは管理されていません。
 
 ---
 

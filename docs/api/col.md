@@ -10,39 +10,34 @@ import Slots from '@ionic-internal/component-api/v8/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding and Other Properties</title>
-  <meta name="description" content="ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties." />
+  <meta name="description" content="ion-colは、rowの内側に入るカラムコンポーネントです。グリッド内のコンテンツは、カラムの中に入ります。列のパディング、サイズ、その他のプロパティについては、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+Columnは、[Grid](./grid) システムのセルラーコンポーネントで、[row](./row)の内部に配置されます。列は行を埋めるように拡張されます。グリッド内のすべてのコンテンツは、カラムの内部に配置する必要があります。
 
-Columns are cellular components of the [grid](./grid) system and go inside of a [row](./row). They will expand to fill the row. All content within a grid should go inside of a column.
-
-Refer to the [grid](./grid) documentation for more information.
-
+詳細は[grid](./grid)のドキュメントを参照してください。
 
 ## Column Alignment
 
-By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
+デフォルトでは、カラムは行の高さ全体を埋めるように引き伸ばされます。カラムは[フレックスアイテム](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)なので、この動作をカスタマイズするために、カラムに適用できるいくつかの[CSSクラス](/docs/layout/css-utilities#flex-item-properties) があります。
 
-
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

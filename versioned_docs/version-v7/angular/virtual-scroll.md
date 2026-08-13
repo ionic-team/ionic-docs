@@ -1,6 +1,6 @@
 # Virtual Scroll
 
-:::caution[Looking for `ion-virtual-scroll`?]
+:::caution[`ion-virtual-scroll`をお探しですか？]
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the `@angular/cdk` package detailed below.
 

@@ -1,39 +1,40 @@
 ---
-title: Environment Setup
+title: 環境設定
 ---
 
 <head>
-  <title>Environment Setup | Node & NPM Environment for Ionic App Setup</title>
+  <title>環境設定 | IonicアプリをはじめるためのNode と NPM 環境</title>
   <meta
     name="description"
     content="To get started with Ionic Framework, the only requirement is a Node & npm environment. Learn what environment setup is required for your Ionic apps."
   />
 </head>
 
-To get started with Ionic Framework, the only requirement is a [Node & npm](#node--npm) environment.
+Ionic Framework をはじめるためには、[Node と npm](#node--npm)がインストールされている環境が必要です。
 
-Of course, a code editor is also required. [Visual Studio Code](https://code.visualstudio.com/) is recommended. Visual Studio Code is a free, batteries-included text editor made by Microsoft.
+もちろん、エディタも必要でしょう。[Visual Studio Code](https://code.visualstudio.com/) をおすすめします。Visual Studio Code は
+Microsoft 製の無料でとてもパワフルなテキストエディタです。
 
-## Terminal
+## ターミナル
 
 :::note
-Much of Ionic development requires familiarity with the command line. If you're new to the command line, refer to the [New to the Command Line](https://ionicframework.com/blog/new-to-the-command-line/) blog post for a quick introduction.
+Ionic の開発の多くはコマンドラインに慣れていることが必要です。コマンドラインに慣れていない場合は、[コマンドライン初心者向け](https://ionicframework.com/blog/new-to-the-command-line/)のブログ記事で簡単な紹介を参照してください。
 :::
 
-In general, we recommend using the built-in terminals. Many third-party terminals work well with Ionic, but may not be supported.
+一般的に、OS に最初からついているターミナルの使用をお勧めします。多くのサードパーティ端末は Ionic で正常に動作しますが、サポートされていない場合があります。
 
-- For Windows, **Command Prompt** and **PowerShell** are supported. <a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a> is known to work with Ionic, but may not be supported.
-- For macOS, the built-in **Terminal** app is supported.
+- Windows では、 **コマンドプロンプト** と **PowerShell** がサポートされています。<a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a>は Ionic で動作することがわかっていますが、サポートされていない可能性があります。
+- macOS では、組み込みの **ターミナル** アプリがサポートされています。
 
-Git Bash (from <a href="https://git-scm.com" target="_blank">git-scm.com</a>) does not support TTY interactivity and is **not supported** by Ionic.
+Git Bash（<a href="https://git-scm.com" target="_blank">git-scm.com</a>）は TTY 対話機能をサポートしておらず、Ionic はサポートしていません。
 
-## Node & npm
+## Node と npm {/* #node-npm */}
 
-Almost all tooling for modern JavaScript projects is based in [Node.js](../reference/glossary.md#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
+モダンな JavaScript プロジェクトのほとんどのツールは[Node.js](../reference/glossary.md#node)で作られています。[ダウンロードページ](https://nodejs.org/en/download/)には、すべてのプラットフォームのインストールパッケージが事前に用意されています。互換性を確保するために LTS バージョンを選択することをお勧めします。
 
-Node is bundled with [npm](../reference/glossary.md#npm), the package manager for JavaScript.
+Node には JavaScript パッケージマネージャーである [npm](../reference/glossary.md#npm) がバンドルされています。
 
-To verify the installation, open a new terminal window and run:
+インストールできているかを確認するためには、新しいターミナルウィンドウを開いて以下を実行します。
 
 ```shell
 $ node --version
@@ -41,22 +42,22 @@ $ npm --version
 ```
 
 :::note
-Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, refer to [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors).
+macOS でグローバルパッケージを`npm`を使ってインストールすると、権限エラーが一般的に発生します。`EACCES`エラーが発生した場合は、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## Git
 
-Although not required, the version control system [Git](../reference/glossary.md#git) is highly recommended.
+必須ではありませんが、バージョン管理システムの[Git](../reference/glossary.md#git)の利用を強くお勧めします。
 
-Git is often accompanied by a Git Host, such as [GitHub](https://github.com/), in which case additional setup is required. Follow the tutorial from the Git Host's documentation to set up Git:
+Git は [GitHub](https://github.com/) のような Git ホスティングサービスを利用することが多いですが、これらのサービスは最初にサインアップが必要となります。これらの Git ホスティングサービスのチュートリアルをご確認ください:
 
 - GitHub: [Set up Git](https://help.github.com/en/articles/set-up-git)
 - GitLab: [Installing Git](https://docs.gitlab.com/ee/topics/git/how_to_install_git)
 - Bitbucket: [Install Git](https://www.atlassian.com/git/tutorials/install-git)
 
-Otherwise, follow the [official installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). The command-line utility can be downloaded from the [download page](https://git-scm.com/downloads).
+それ以外の場合は、 [公式のインストール手順](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) をご確認ください。コマンドラインユーティリティは、[download page](https://git-scm.com/downloads) からダウンロードできます。.
 
-To verify the installation, open a new terminal window and run:
+インストールできているかを確認するためには、新しいターミナルウィンドウを開いて以下を実行します。
 
 ```shell
 git --version
@@ -64,4 +65,4 @@ git --version
 
 ### Git GUI
 
-Git is a command-line utility, but there are many [GUI clients](https://git-scm.com/downloads/guis/) available. [GitHub Desktop](https://desktop.github.com/) is recommended, and works well with GitHub.
+Git はコマンドラインユーティリティですが、利用可能な [GUI クライアント](https://git-scm.com/downloads/guis/) は多数あります。[GitHub Desktop](https://desktop.github.com/)を推奨しており、GitHub とうまく連携します。

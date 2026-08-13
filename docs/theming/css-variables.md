@@ -1,24 +1,24 @@
 ---
-title: CSS Variables
+title: CSS変数
 ---
 
 <head>
-  <title>CSS Variables | CSS Custom Properties for Variables & Components</title>
+  <title>CSS変数 | 変数とコンポーネント用のCSSカスタムプロパティ</title>
   <meta
     name="description"
-    content="Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places."
+    content="Ionicコンポーネントは、カスタムアプリプロパティを簡単にするためにCSS変数で構築されています。1か所に値を保存し、複数の場所から参照できます。"
   />
 </head>
 
-Ionic components are built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Variables</a> for easy customization of an application. CSS variables allow a value to be stored in one place, then referenced in multiple other places. They also make it possible to change CSS dynamically at runtime (which previously required a CSS preprocessor). CSS variables make it easier than ever to override Ionic components to match a brand or theme.
+Ionic のコンポーネントは、アプリケーションを簡単にカスタマイズできるように<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS 変数</a>を使用して構築されています。CSS 変数を使用すると、1 か所に保存している値を、他の複数の場所から参照できます。また、実行時に動的に CSS を変更することを可能にします（以前は CSS プリプロセッサが必要でした）。CSS 変数を使用すると、ブランディングやテーマに合わせて Ionic コンポーネントをオーバーライドすることが、これまでになく簡単になります。
 
-## Setting Values
+## 変数の設定
 
-### Global Variables
+### グローバル変数
 
-CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. Refer to [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
+CSS 変数は、アプリケーション内で`:root` セレクターでグローバルに設定できます。また、特定のモードに対してのみ適用することもできます。Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
 
-When using the Ionic CLI to start an Angular, React or Vue project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
+Ionic CLI を使用して Angular、React、または Vue プロジェクトを開始すると Ionic のデフォルト変数を上書きすることができる `src/theme/variables.scss` が作成されます。
 
 ```css
 /* Set variables for all modes */
@@ -41,9 +41,9 @@ When using the Ionic CLI to start an Angular, React or Vue project, the `src/the
 }
 ```
 
-### Component Variables
+### コンポーネント変数
 
-To set a CSS variable for a specific component, add the variable inside of its selector. Refer to [Ionic Variables](#ionic-variables) for more information on the component-level variables Ionic provides.
+特定のコンポーネントに CSS 変数を設定するには、そのセレクター内に変数を追加します。コンポーネントレベルの変数についての詳細は、[Ionic 変数](#ionic-variables)を参照してください。
 
 ```css
 /* Set the color on all ion-button elements */
@@ -57,20 +57,20 @@ ion-button {
 }
 ```
 
-### Variables set via JavaScript
+### JavaScript で変数を設定
 
-CSS variables can also be changed via JavaScript using [setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty):
+CSS 変数は[setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty) を使って JavaScript で変更することもできます:
 
 ```js
 const el = document.querySelector('.fancy-button');
 el.style.setProperty('--background', '#36454f');
 ```
 
-## Getting Values
+## 変数を利用する
 
-### Using CSS
+### CSS での使い方
 
-The [var() CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/var) can be used to get the value of a CSS variable, along with any number of fallback values, if desired. In the below example, the `--background` property will be set to the value of the `--charcoal` variable, if defined, and if not it will use `#36454f`.
+[CSS の var() 関数](https://developer.mozilla.org/en-US/docs/Web/CSS/var) を使うと、失敗した時の設定とともに CSS 変数を取得することができます。 例えば、以下の例では `--background` プロパティに `--charcoal` 変数を利用しますが、もし値を取得できなければ代わりに `#36454f` が適用されます。
 
 ```css
 .fancy-button {
@@ -78,21 +78,21 @@ The [var() CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/var) c
 }
 ```
 
-### Using JavaScript
+### JavaScript での使い方
 
-The value of a CSS variable can be read in JavaScript using [getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue):
+CSS 変数の値は、[getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue) を使用して JavaScript で読み取ることができます:
 
 ```js
 const el = document.querySelector('.fancy-button');
 const color = el.style.getPropertyValue('--background');
 ```
 
-## Ionic Variables
+## Ionic 変数 {/* #ionic-variables */}
 
-### Component Variables
+### コンポーネント変数
 
-Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, refer to the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
+Ionic では、`--background` や `--color` など、コンポーネントレベルで存在する変数を提供しています。コンポーネントが受け入れるカスタムプロパティの一覧は、その `CSS Custom Properties` セクションの [API リファレンス](../api.md)を確認してください。例えば、[Button CSS カスタムプロパティ](../api/button.md#css-custom-properties) を参照してください。
 
-### Global Variables
+### グローバル変数
 
-There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, refer to [Colors](colors.md), [Themes](themes.md) and [Advanced Theming](advanced.md).
+Ionic は、アプリケーション全体のテーマ設定を簡単にするために提供するいくつかのグローバル変数があります。詳細については、[Colors](colors.md)、[Themes](themes.md)、および [Advanced Theming](advanced.md)を参照してください。

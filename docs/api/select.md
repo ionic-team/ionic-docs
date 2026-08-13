@@ -10,33 +10,32 @@ import Slots from '@ionic-internal/component-api/v8/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
-  <meta name="description" content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list." />
+  <meta name="description" content="ion-selectは、選択された値（複数可）、またはプレースホルダー、ドロップダウンのアイコンによって表現されます。 selectをタップすると、選択しやすいリストを表示するダイアログボックスが表示されます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+セレクトは、一連のオプションから1つまたは複数のオプションを選択するためのフォームコントロールです。ユーザーがセレクトをタップすると、ダイアログが表示され、すべてのオプションが大きく選択しやすいリストに表示されます。
 
-Selects are form controls to select an option, or options, from a set of options. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
+selectは、子要素 `<ion-select-option>` とともに使用する必要があります。子要素のオプションに`value`属性が指定されていない場合、そのtextが値として使用されます。
 
-A select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.
-
-If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
+`value` が `<ion-select>` にセットされている場合、オプションはその値に基づいて選択済みになります。
 
 ## Labels
 
-Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
+ラベルは、Selectを説明するために使用します。これらは視覚的に使用することができ、また、ユーザーがSelectにフォーカスしているときには、スクリーンリーダーによって読み上げられます。これにより、ユーザーはSelectの意図を理解しやすくなります。セレクトには、ラベルを割り当てるいくつかの方法があります：
 
-Select has several options for supplying a label for the component:
+セレクトには、コンポーネントにラベルを指定するためのいくつかのオプションがあります：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label`プロパティ：プレーンテキストのラベルに使用します。
+- `label`スロット：カスタム HTML ラベルに使用する。
+- `aria-label`：スクリーンリーダー用のラベルとして使用されるが、ラベルは表示されない。
 
 ### Label Placement
 
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+ラベルはデフォルトではコンテンツの幅を占めます。開発者は `labelPlacement` プロパティを使用して、コントロールに対するラベルの配置を制御することができます。ここでは `label` プロパティを使用しているが、`labelPlacement` は `label` スロットと一緒に使用することもできます。
 
 import LabelPlacement from '@site/static/usage/v8/select/label-placement/index.md';
 
@@ -44,7 +43,7 @@ import LabelPlacement from '@site/static/usage/v8/select/label-placement/index.m
 
 ### Label Slot
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+プレーンテキストのラベルは `label` プロパティで渡すべきですが、カスタムHTMLが必要な場合は、代わりに `label` スロットで渡すことができます。
 
 import LabelSlot from '@site/static/usage/v8/select/label-slot/index.md';
 
@@ -52,7 +51,7 @@ import LabelSlot from '@site/static/usage/v8/select/label-slot/index.md';
 
 ### No Visible Label
 
-If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
+表示するラベルが必要ない場合でも、開発者は`aria-label`を指定する必要があります
 
 import NoVisibleLabel from '@site/static/usage/v8/select/no-visible-label/index.md';
 
@@ -60,40 +59,39 @@ import NoVisibleLabel from '@site/static/usage/v8/select/no-visible-label/index.
 
 ## Single Selection
 
-By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
+デフォルトでは、selectを使用すると、ユーザは1つのOptionだけを選択できます。Alertのインターフェースでは、Optionのリストがradio button形式で表示されます。action sheetインタフェースは、1つの値選択でのみ使用できます。selectコンポーネントの値は、選択したオプションの値の値を受け取ります。
 
-Keyboard interactions for single selection are described in the [Keyboard Interactions](#single-selection-1) section below.
+単一選択時のキーボード操作については、以下の[キーボード操作](#single-selection-1)のセクションで説明しています。
 
 import SingleSelectionExample from '@site/static/usage/v8/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
-## Multiple Selection
+## 複数選択
 
-By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert, popover, or modal overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
+select に `multiple` 属性を追加することで、ユーザは複数のオプションを選択することができます。複数のオプションを選択できる場合、アラート、ポップオーバー、またはモーダルオーバーレイは、チェックボックススタイルのオプションリストをユーザに提示します。select コンポーネントの値は、選択されたすべてのオプション値の配列を受け取ります。
 
 :::note
 
-The `action-sheet` interface is not supported with multiple selection.
+注意: `action-sheet` インターフェースは複数選択では動作しません。
 
 :::
 
-Keyboard interactions for multiple selection are described in the [Keyboard Interactions](#multiple-selection-1) section below.
+複数選択時のキーボード操作については、以下の[キーボード操作](#multiple-selection-1)のセクションで説明しています。
 
 import MultipleSelectionExample from '@site/static/usage/v8/select/basic/multiple-selection/index.md';
 
 <MultipleSelectionExample />
 
-## Interfaces
+## インターフェイス {/* #interfaces */}
 
-By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md), [ion-popover](popover.md), or [ion-modal](modal.md) by passing `action-sheet`, `popover`, or `modal`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+デフォルトでは、selectは [ion-alert](alert.md) を使用してアラートのオプションのオーバーレイを開きます。インターフェイスは、`interface` プロパティに `action-sheet`、`popover`、`modal` を渡すことで、[ion-action-sheet](action-sheet.md)、[ion-popover](popover.md)、[ion-modal](modal.md) を使用するように変更することができます。それぞれのインターフェースの制限事項については、他のセクションを参照してください。
 
 ### Alert
 
 import AlertExample from '@site/static/usage/v8/select/basic/single-selection/index.md';
 
 <AlertExample />
-
 
 ### Action Sheet
 
@@ -115,17 +113,17 @@ import ModalExample from '@site/static/usage/v8/select/interfaces/modal/index.md
 
 ## Responding to Interaction
 
-The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. Refer to [Events](#events) for more details on these and other events that select fires.
+Selectとのユーザーインタラクションを処理する主な方法は、`ionChange`、`ionDismiss`、および`ionCancel`イベントです。これらおよびSelectが発火する他のイベントの詳細については、[Events](#events)を参照してください。
 
 import RespondingToInteractionExample from '@site/static/usage/v8/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
-## Object Value References
+## オブジェクト値の参照
 
-When using objects for select values, it is possible for the identities of these objects to change if they are coming from a server or database, while the selected value's identity remains the same. For example, this can occur when an existing record with the desired object value is loaded into the select, but the newly retrieved select options now have different identities. This will result in the select appearing to have no value at all, even though the original selection in still intact.
+Selectの値にオブジェクトを使用する場合、Selectの値のidentityはそのままで、サーバやデータベースから取得したオブジェクトのidentityが変わってしまうことがあります。例えば、希望するオブジェクト値を持つ既存のレコードがSelectに読み込まれたが、新しく取得されたselectオプションのIDが異なる場合、このようなことが起こりえます。その結果、Selectは、元のSelectがそのまま残っているにもかかわらず、全く値がないように見えることになります。
 
-By default, the select uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+デフォルトでは、Select はオプションが選択されているかどうかを決定するために厳密な等式 (`===`) を使用します。これは、プロパティ名または関数を `compareWith` プロパティに指定することでオーバーライドできます。
 
 ### Using compareWith
 
@@ -141,7 +139,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v8/selec
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+開発者は `justify` プロパティを使って、ラベルとコントロールの行の詰め方をコントロールすることができる。
 
 import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
@@ -149,12 +147,12 @@ import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
 ## Filled Selects
 
-Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
+Material DesignはセレクトにFilledスタイルを提供します。select の `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定できます。
 
-Filled selects can be used on iOS by setting the select's `mode` to `md`.
+iOSでは、Selectの `mode` を `md` に設定することで、Filled Selectsを使うことができます。
 
 :::warning
-Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+コンポーネント間のスタイリングの競合のため、`fill`を使用するセレクトは`ion-item`内で使用すべきではありません。
 :::
 
 import FillExample from '@site/static/usage/v8/select/fill/index.md';
@@ -163,25 +161,24 @@ import FillExample from '@site/static/usage/v8/select/fill/index.md';
 
 ## Select Buttons
 
-The alert supports two buttons: `Cancel` and `OK`. Each button's text can be customized using the `cancelText` and `okText` properties.
+アラートは `Cancel` と `OK` の2つのボタンをサポートしている。それぞれのボタンのテキストは `cancelText` と `okText` プロパティを使ってカスタマイズすることができます。
 
-The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
+`action-sheet` と `popover` インターフェースには `OK` ボタンがありません。オプションのいずれかをクリックすると自動的にオーバーレイが閉じ、その値が選択されます。 `popover` インターフェースには `Cancel` ボタンがなく、背景をクリックするとオーバーレイが閉じます。
 
-The `modal` interface has a single `Close` button in the header. This button is only responsible for dismissing the modal. Any selections made will persist
-after clicking this button or if the modal is dismissed using an alternative method.
+`modal`インターフェースには、ヘッダーに単一の`Close`ボタンがあります。このボタンは、モーダルを閉じることのみを担当します。
+このボタンをクリックした後、または代替方法でモーダルが閉じられた場合でも、行われた選択は保持されます。
 
 import ButtonTextExample from '@site/static/usage/v8/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
-## Interface Options
+## インターフェイスオプション
 
-Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
+selectはalert、action sheet、popover、modalの各インターフェイスを使用するので、`interfaceOptions`プロパティを通してこれらのコンポーネントにオプションを渡すことができます。これを使用して、カスタムヘッダー、サブヘッダー、CSS クラスなどを渡すことができます。
 
-Refer to the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
-for the properties that each interface accepts.
+各インターフェースが受け入れるプロパティについては、[ion-alertドキュメント](alert.md)、[ion-action-sheetドキュメント](action-sheet.md)、[ion-popoverドキュメント](popover.md)、および[ion-modalドキュメント](modal.md)を参照してください。
 
-Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+注意: `alert` インターフェイスでは、`interfaceOptions` は `inputs` や `buttons` を上書きしません。
 
 import InterfaceOptionsExample from '@site/static/usage/v8/select/customization/interface-options/index.md';
 
@@ -189,57 +186,57 @@ import InterfaceOptionsExample from '@site/static/usage/v8/select/customization/
 
 ## Start and End Slots
 
-The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
+`start`と`end`スロットは、セレクトの両側にアイコン、ボタン、またはプレフィックス/サフィックステキストを配置するために使用できます。スロットコンテンツがクリックされた場合、セレクトは開きません。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントは`aria-hidden="true"`を持つべきです。詳細については、[Iconアクセシビリティドキュメント](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
 
-If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+スロットコンテンツが操作対象である場合、[Button](./button.md)などのインタラクティブ要素でラップする必要があります。これにより、コンテンツにタブで移動できるようになります。
 :::
 
 import StartEndSlots from '@site/static/usage/v8/select/start-end-slots/index.md';
 
 <StartEndSlots />
 
-## Customization
+## カスタマイズ
 
-There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
+Selectコンポーネントには2つのユニットがあり、それぞれ別々にスタイルを設定する必要があります。 `ion-select`要素は、ビュー上で選択された値、ない場合はプレースホルダ、ドロップダウンのアイコンによって表現されます。インターフェイスは上記の[インターフェイス](#interfaces)セクションで定義されており、`ion-select`をクリックしたときに開くダイアログです。インターフェイスには `ion-select-option` 要素を追加することで定義されるすべてのオプションが含まれています。以下のセクションでは、これらのスタイリングの違いについて説明します。
 
-### Styling Select Element
+### Select要素のスタイリング
 
-As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties).
+前述の通り、`ion-select`要素は値、プレースホルダ、ビューに表示されるアイコンのみで構成されています。これをカスタマイズするには、CSSと[CSSカスタムプロパティ](#css-custom-properties)を組み合わせてスタイルを設定します。
 
-Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
+また、必要な[ブラウザサポート](https://caniuse.com/#feat=mdn-css_selectors_part)によっては、CSSのシャドウパーツを使用してセレクトのスタイルを設定することもできます。 `part` を使用することで、要素上の任意の CSS プロパティを対象とすることができることに注意してください。
 
 import StylingSelectExample from '@site/static/usage/v8/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
-### Styling Select Interface
+### セレクトインターフェースのスタイリング
 
-Customizing the interface dialog should be done by following the styling sections (CSS shadow parts, CSS custom properties, and slots) in
-that interface's documentation:
+インターフェイス・ダイアログのカスタマイズは、そのインターフェイスのドキュメントのスタイリングセクション（CSS Shadow Parts、CSS カスタムプロパティ、スロット）に
+従って行ってください。
 
 - [Alert](alert.md#css-shadow-parts)
 - [Action Sheet](action-sheet.md#css-shadow-parts)
 - [Popover](popover.md#css-shadow-parts)
 - [Modal](modal.md#css-shadow-parts)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, refer to the [Select Options documentation](select-option.md) for usage examples of customizing options.
+ただし、Select Optionはスタイリングを容易にするためにクラスを設定し、オーバーレイオプションにクラスを渡すことができます。オプションのカスタマイズ例については、[Select Optionsドキュメント](select-option.md)を参照してください。
 
-### Custom Toggle Icons
+### カスタム切り替えアイコン {/* #custom-toggle-icons */}
 
-The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
+選択テキストの隣に表示されるアイコンは、`toggleIcon` プロパティと `expandedIcon` プロパティを使用して、任意の [Ionicon](https://ionic.io/ionicons) に設定することができます。
 
 import CustomToggleIconsExample from '@site/static/usage/v8/select/customization/custom-toggle-icons/index.md';
 
 <CustomToggleIconsExample />
 
-### Icon Flip Behavior
+### アイコンの反転動作
 
-By default, when the select is open, the toggle icon will automatically rotate on `md` mode and remain static on `ios` mode. This behavior can be customized using CSS.
+デフォルトでは、セレクトを開いているとき、トグルアイコンは `md` モードでは自動的に回転し、`ios` モードでは静止します。この動作はCSSを使ってカスタマイズすることができます。
 
-The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
+以下の例では[custom `toggleIcon`](#custom-toggle-icons)を使って、`ios`モードでのトグルアイコンの反転動作をより分かりやすく説明しています。
 
 import IconFlipBehaviorExample from '@site/static/usage/v8/select/customization/icon-flip-behavior/index.md';
 
@@ -247,7 +244,7 @@ import IconFlipBehaviorExample from '@site/static/usage/v8/select/customization/
 
 ## Typeahead Component
 
-Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+Typeaheadまたはオートコンプリート機能は、既存のIonicコンポーネントを使用して構築できます。利用可能なスクリーンスペースを最大限に活用するために、`ion-modal`を使用することをお勧めします。
 
 import TypeaheadExample from '@site/static/usage/v8/select/typeahead/index.md';
 
@@ -255,15 +252,15 @@ import TypeaheadExample from '@site/static/usage/v8/select/typeahead/index.md';
 
 ## Helper & Error Text
 
-Helper and error text can be used inside of a select with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-select`. This ensures errors are not shown before the user has a chance to enter data.
+ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使用してセレクト内で使用できます。エラーテキストは、`ion-invalid`と`ion-touched`クラスが`ion-select`に追加されていない限り表示されません。これにより、ユーザーがデータを入力する前にエラーが表示されることはありません。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v8/select/helper-error/index.md';
 
 <HelperError />
 
-## Interfaces
+## インターフェイス
 
 ### SelectChangeEventDetail
 
@@ -275,7 +272,7 @@ interface SelectChangeEventDetail<T = any> {
 
 ### SelectCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このインターフェイスを `CustomEvent` インターフェイスの代わりに使用することで、このコンポーネントから発行される Ionic イベントをより強力に片付けすることができます。
 
 ```typescript
 interface SelectCustomEvent<T = any> extends CustomEvent {
@@ -284,65 +281,66 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Accessibility
+## アクセシビリティ
 
-### Keyboard Interactions
+### キーボード操作
 
-Ionic's keyboard interactions follow the implementation patterns of the web instead of the native iOS select for a consistent experience across all platforms.
+Ionic のキーボード操作は、すべてのプラットフォームで一貫した体験を提供するため、iOS ネイティブの選択要素ではなく Web の実装パターンに従います。
 
-These keyboard interactions apply to all `ion-select` elements when the following conditions are met:
-- The select is closed.
-- The select is focused.
-- The select is not disabled.
+次の条件を満たす場合、これらのキーボード操作はすべての `ion-select` 要素に適用されます。
 
-| Key                | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
-| <kbd>Space</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
+- 選択要素が閉じている。
+- 選択要素にフォーカスがある。
+- 選択要素が無効化されていない。
 
-#### Single Selection
+| キー             | 説明                                                                                                               |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------ |
+| <kbd>Enter</kbd> | オーバーレイを開き、最初に選択されているオプションにフォーカスします。選択がない場合は最初の項目に移動します。     |
+| <kbd>Space</kbd> | オーバーレイを開き、最初に選択されているオプションにフォーカスします。選択がない場合は最初の項目に移動します。     |
 
-Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
+#### 単一選択 {/* #single-selection-1 */}
 
-These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and focused.
+単一選択のキーボード操作は、[ARIA のラジオボタン実装パターン](https://www.w3.org/WAI/ARIA/apg/patterns/radio/)に従います。
 
-| Key                   | Description                                                  |
-| --------------------- | ------------------------------------------------------------ |
-| <kbd>ArrowDown</kbd>  | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowLeft</kbd>  | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
-| <kbd>ArrowRight</kbd> | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowUp</kbd>    | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
-| <kbd>Enter</kbd>      | If an option is focused, it will select the option. Overlays **without** an 'OK' button will commit the value immediately, dismiss the overlay and return focus to the `ion-select` element.<br /><br/>If the 'OK' button is focused, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>     | Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss. |
-| <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option. |
+これらのキーボード操作は、オーバーレイが表示され、フォーカスされている場合に`ion-action-sheet`、`ion-alert`、`ion-popover`、および`ion-modal`要素に適用されます。
 
-#### Multiple Selection
+| キー                  | 説明                                                                                                                                                                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>ArrowDown</kbd>  | リスト内の次のオプションにフォーカスして選択します。次のオプションがない場合は、先頭に戻ります。                                                                                                                                                                               |
+| <kbd>ArrowLeft</kbd>  | リスト内の前のオプションにフォーカスして選択します。前のオプションがない場合は、末尾に移動します。                                                                                                                                                                             |
+| <kbd>ArrowRight</kbd> | リスト内の次のオプションにフォーカスして選択します。次のオプションがない場合は、先頭に戻ります。                                                                                                                                                                               |
+| <kbd>ArrowUp</kbd>    | リスト内の前のオプションにフォーカスして選択します。前のオプションがない場合は、末尾に移動します。                                                                                                                                                                             |
+| <kbd>Enter</kbd>      | オプションにフォーカスがある場合は、そのオプションを選択します。「OK」ボタンが**ない**オーバーレイでは、値をすぐに確定し、オーバーレイを閉じて `ion-select` 要素へフォーカスを戻します。<br /><br/>「OK」ボタンにフォーカスがある場合は、選択内容を保存してオーバーレイを閉じ、`ion-select` 要素へフォーカスを戻します。 |
+| <kbd>Escape</kbd>     | 選択内容を変更せずにオーバーレイを閉じ、`ion-select` 要素へフォーカスを戻します。                                                                                                                                                                                              |
+| <kbd>Space</kbd>      | フォーカス中のラジオボタンが未選択なら、現在の選択を解除してそのボタンを選択します。すでに選択されている場合は何もしません。「OK」ボタンがないオーバーレイでは、値をすぐに確定してオーバーレイを閉じます。                                                                         |
+| <kbd>Tab</kbd>        | オーバーレイ上の次のフォーカス可能な要素（キャンセルボタン、「OK」ボタン、選択中または最初のオプション）へ移動します。次の要素がオプションなら選択中のオプションに、そうでなければ最初のオプションにフォーカスします。                                                             |
 
-Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
+#### 複数選択 {/* #multiple-selection-1 */}
 
-These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and multiple selection is enabled.
+複数選択のキーボード操作は、[ARIA のチェックボックス実装パターン](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/)に従います。
 
-| Key                | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>  | Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>   | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately. |
-| <kbd>Tab</kbd>     | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
+これらのキーボード操作は、オーバーレイが表示され、複数選択が有効になっている場合に`ion-alert`、`ion-popover`、および`ion-modal`要素に適用されます。
 
-## Properties
+| キー             | 説明                                                                                                                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Enter</kbd> | 「OK」ボタンにフォーカスがある場合は、選択内容を保存してオーバーレイを閉じ、`ion-select` 要素へフォーカスを戻します。                                                                                 |
+| <kbd>Escape</kbd> | 選択内容を変更せずにオーバーレイを閉じ、`ion-select` 要素へフォーカスを戻します。                                                                                                                    |
+| <kbd>Space</kbd> | 現在フォーカスしているオプションを選択または選択解除します。他の選択済みオプションは解除しません。「OK」ボタンがないオーバーレイでは、値をすぐに確定します。                                         |
+| <kbd>Tab</kbd>   | オーバーレイ上の次のフォーカス可能な要素（キャンセルボタン、「OK」ボタン、いずれかのオプション）へ移動します。次の要素がオプションリストの場合は、各オプションを順に移動します。                       |
+
+## プロパティ
 <Props />
 
-## Events
+## イベント {/* #events */}
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS カスタムプロパティ {/* #css-custom-properties */}
 <CustomProps />
 
 ## Slots

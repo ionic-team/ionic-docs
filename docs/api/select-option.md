@@ -10,33 +10,31 @@ import Slots from '@ionic-internal/component-api/v8/select-option/slots.md';
 
 <head>
   <title>ion-select-option: Option For a Select Dialog</title>
-  <meta name="description" content="What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog." />
+  <meta name="description" content="Select Optionとは？Select OptionはSelectの子要素で、定義された各オプションはSelectダイアログに渡され表示されます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+セレクトオプションは、セレクトの子要素となるコンポーネントです。定義された各オプションは、Selectダイアログに渡され表示されます。
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog.
+使用例については、[Select](./select)のドキュメントを参照してください。
 
-For usage examples, refer to the [Select](./select) documentation.
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

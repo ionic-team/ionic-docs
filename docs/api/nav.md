@@ -10,24 +10,24 @@ import Slots from '@ionic-internal/component-api/v8/nav/slots.md';
 
 <head>
   <title>ion-nav: Nav View Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers." />
+  <meta name="description" content="ion-navは、任意のコンポーネントをロードしたり、新しいコンポーネントをスタックにPushするために単独で利用できます。ナビビューをロードしたり、他をプッシュしても、ルータ全体に影響を与えることはありません。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
+Navは、任意のコンポーネントをロードし、スタックに新しいコンポーネントを追加するためのスタンドアロンコンポーネントです。
 
-Unlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. For example, you should not push a new component to `ion-nav` and expect the URL to update. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL.
+Router Outletとは異なり、Navは特定のルーターに縛られることはありません。つまり、Navコンポーネントをロードし、他のコンポーネントをスタックにプッシュしても、アプリ全体のルーターには影響しない。例えば、新しいコンポーネントを`ion-nav`にプッシュして、URLが更新されることを期待するべきではありません。これは、アプリのURLに関連付けずに、独自のサブナビゲーションが必要なモーダルがあるような使用例に適しています。
 
 :::note
-`ion-nav` is not meant to be used for routing.  Instead, refer to the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation), or [`ion-router`](./router) for vanilla JavaScript projects.
-:::
+`ion-nav`はルーティングには使用されません。代わりに、[Angular](../angular/navigation)、[React](../react/navigation)、および[Vue](../vue/navigation)のルーティングガイド、または[`ion-router`](./router)のバニラJavaScriptプロジェクト用ガイドを参照してください。
 
-## Using NavLink
+{/* cspell:disable-next-line */}
+## NavLinkを利用する {/* #using-navlink */}
 
-NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating. 
+NavLinkは、Navと対話する際の簡素化されたAPIです。開発者はコンポーネントをカスタマイズしたり、コンポーネントのプロパティを渡したり、ルートアニメーションの方向を変更したり、ナビゲート時のカスタムアニメーションを定義したりすることができます。
 
 import NavLinkExample from '@site/static/usage/v8/nav/nav-link/index.md'; 
 
@@ -39,7 +39,7 @@ Modal can use Nav to offer a linear navigation that is independent of the URL.
 
 :::note
 
-The example below uses a reference to Nav and the public method APIs to push and pop views. It is recommended to use NavLink in implementations that do not require this level of granular access and control.
+以下の例では、Navへの参照とパブリックメソッドAPIを使用してビューをプッシュおよびポップします。このレベルの細かいアクセスと制御が必要ない実装では、NavLinkを使用することをお勧めします。
 
 :::
 
@@ -51,7 +51,7 @@ import ModalNavigationExample from '@site/static/usage/v8/nav/modal-navigation/i
 
 ### NavCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface NavCustomEvent extends CustomEvent {
@@ -59,21 +59,19 @@ interface NavCustomEvent extends CustomEvent {
 }
 ```
 
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

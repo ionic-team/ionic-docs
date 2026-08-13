@@ -2,21 +2,21 @@
 title: Cross Platform
 ---
 
-# Cross Platform
+# クロスプラットフォーム
 
-Ionic is built from the ground up to make development easy, no matter what platform you are building for. Ionic apps are truly cross-platform: able to run as an Android, iOS, Electron, and Progressive Web App (PWA), all from a single codebase. There are some points to keep in mind when optimizing an app to work across these platforms.
+Ionic は、どんなプラットフォーム向けに開発を行う場合でも簡単に開発できるように構築されています。まさにクロスプラットフォームに対応したフレームワークです。つまり、Android、iOS、Electron、Progressive Web App（PWA）として実行することができ、すべて単一のコードベースで実装可能です。それぞれのプラットフォームにアプリを最適化するために、いくつか注意すべき点があります。
 
-## Hardware APIs
+## ハードウェア API
 
-In a native application, it's common to make API calls to communicate with the device, such as opening the camera or accessing geolocation. These API calls won’t work when called in a web environment because there’s no native bridge. There are a few ways Ionic handles this.
+ネイティブアプリには、カメラを起動したり、位置情報を取得したりといったデバイス内の情報を取得するための API を呼び出すことがよくあります。これらの API 呼び出し処理はウェブブラウザ環境では動きません。なぜならネイティブブリッジが存在しないからです。Ionic にはこの問題に対応するためのいくつかの方法があります。
 
 ### Ionic Native
 
-[Ionic Native](../native.md) has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will print a warning if it is not a native environment and there are no Cordova plugins available. The app won’t break and it will continue to work, although without the native functionality.
+[Ionic Native](../native.md) はネイティブ環境内かどうか検出するための独自の内部ロジックを持っています。それにより、ネイティブ環境ではなかったり Cordova プラグインが存在しない場合は、ランタイムエラーを発生させるかわりに警告メッセージを表示させます。ネイティブ機能が存在しなくても、アプリがクラッシュすることなく動き続けるということです。
 
-### Platform Detection
+### プラットフォーム検知
 
-In an app’s logic, whenever it is needed to make a native API call, it is recommended to always check the status of the native environment first. For example:
+Ionic アプリ内では、ネイティブ API を呼び出す際はいつでも、現在の環境がネイティブ環境かどうかを確認することが推奨されます。例:
 
 ```tsx
 this.platform.ready().then(() => {
@@ -29,19 +29,19 @@ this.platform.ready().then(() => {
 });
 ```
 
-This bit of code can be incredibly helpful when targeting environments where access to the native APIs is uncertain.
+このコードは、ネイティブ API が使えるかどうか不確かな環境向けに開発していたとしても非常に役に立ちます。
 
-### Browser Fallbacks
+### ブラウザのフォールバック
 
-Many native APIs that people use (for example, the File API), are not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform the app is running on.
+多くのネイティブ API（例えば File API）はブラウザで利用できません。API は常に改良されネイティブに追いついているので、それらを調査することをお勧めします。これらの 2 つの点を考慮すると、アプリが実行されているプラ ​​ ットフォームに適応するような素晴らしいエクスペリエンスを作成するのはかなり簡単です。
 
 ## Responsive UI
 
-When planning to deploy an app that may be used across a variety of devices, it is important to ensure the app works smoothly on larger screen sizes.
+さまざまなデバイスで使用される可能性のあるアプリのデプロイを計画している場合、アプリが大きな画面サイズでスムーズに動作することを確認することが重要です。
 
-### Layout
+### レイアウト
 
-Many people rarely notice the layout of an app, but it can have a massive impact on experience and usability. Consider this common UI pattern:
+多くの人がアプリのレイアウトに気付くことはめったにありませんが、ユーザビリティやユーザエクスペリエンスに大きな影響をあたえる可能性があります。下記の一般的な UI パターンを考えてください:
 
 ```html
 <ion-content>
@@ -63,11 +63,11 @@ Many people rarely notice the layout of an app, but it can have a massive impact
 </ion-content>
 ```
 
-This will render 5 items with a width of 100% each. This may look great on a phone, but viewing this on a larger screen is a different story. The items become stretched to fill the entire screen because of the wide screen width, leaving screen space unused.
+この場合、5 つのアイテムがそれぞれ 100％の幅で表示されます。これは携帯電話ではきれいに見えるかもしれませんが、大きな画面で見ると話は別です。画面幅が広いため、アイテムが画面いっぱいに引き伸ばされ、画面スペースが使われないままになってしまうのです。
 
 <img src={require('@site/static/img/building/cross-platform-items.png').default} />
 
-To improve this experience, we can wrap the items in a [Grid](../api/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
+このエクスペリエンスを改善するために、アイテムを[Grid](../api/grid.md)コンポーネントで囲むことができます。ビューは、大きな画面でより使いやすくなるように簡単に書き直すことができます：
 
 ```html
 <ion-grid>
@@ -101,15 +101,15 @@ To improve this experience, we can wrap the items in a [Grid](../api/grid.md) co
 </ion-grid>
 ```
 
-By wrapping the items in an `ion-grid` element, the Ionic grid system is added to our layout. Wrapping each item in a column makes the items take up equal-width inside of the grid, along the same row.
+全体を `ion-grid` 要素で囲むことで、Ionic のグリッドシステムがこのレイアウトに適用されます。それぞれの項目を一つの列で囲むことで、各項目をグリッド内で同じ幅に保ち、同じ行内に表示させます。
 
 <img src={require('@site/static/img/building/cross-platform-grid.png').default} />
 
-We can take this even further by adding the `fixed` attribute to the `<ion-grid>` element. This tells the grid to have a fixed width based on the screen size. This is perfect for larger screens when items will begin to stretch again without a width on the grid.
+`<ion-grid>` 要素に `fixed` 属性を追加することでより良くすることができます。これにより、グリッドは画面幅に基づいて固定幅を持つようになります。どんなに大きな画面でもグリッド幅が不自然に大きくなることはありません。
 
 <img src={require('@site/static/img/building/cross-platform-grid-fixed.png').default} />
 
-The grid can be further customized to change the sizes of columns with the addition of the `ion-col` properties.
+`ion-col` プロパティを追加することで列の幅をよりカスタマイズすることができます。
 
 ```html
 <ion-grid fixed>
@@ -143,23 +143,23 @@ The grid can be further customized to change the sizes of columns with the addit
 </ion-grid>
 ```
 
-There’s a lot going on in the example above. These are the key points:
+上の例ではたくさんのコードが追加されていますが、キーポイントは下記になります:
 
-- The `ion-col` gets its width from the `size` attribute added to it, where the value of size is the number of columns to take up out of the total available columns. The default number of available columns is 12.
+- `ion-col`は`size`属性からその幅の値を取得します。`size`の値は使用可能な列の合計数になり、デフォルト値は 12 です。
 
-- The `size` attribute can have a breakpoint added to it, `size-{breakpoint}`. This value sets the size for the specified breakpoint and above.
+- `size`属性は`size-{breakpoint}`の形式で各画面幅に応じたブレークポイントを持つこともできます。
 
-For more information on customizing with grid, refer to the [Grid](../api/grid.md) documentation.
+グリッドでカスタマイズする方法の詳細については、[Grid](../api/grid.md)のドキュメントを参照してください。
 
-## Storage
+## ストレージ
 
-Most apps at some point will need to store some sort of data locally. Whether it’s storing some JSON from an XHR request, or saving an auth token, there are many different storage options available. On top of this, if the app is running in a native environment, it is possible to create a full SQLite database and store data there. All of these different storage mechanisms have their own advantages and disadvantages, but Ionic developers should not have to worry about that.
+ほとんどのアプリは何らかの種類のデータをローカルに保存する必要があります。 XHR リクエストから JSON を保存する場合でも、認証トークンを保存する場合でも、さまざまなストレージの選択肢があります。さらに、アプリがネイティブ環境で実行されている場合には、SQLite データベースが利用され、そこにデータを格納することが可能です。これらのさまざまなストレージメカニズムにはそれぞれ独自の長所と短所がありますが、Ionic 開発者はそれを心配する必要はありません。
 
 ### Ionic Storage
 
-In this case, <a href="https://github.com/ionic-team/ionic-storage" target="_blank">Ionic’s Storage library</a> is a perfect candidate for the multi-environment use case. Built on top of the well tested LocalForage library, Ionic’s storage class provides an adaptable storage mechanism that will pick the best storage solution for the current run time.
+この場合、<a href="https://github.com/ionic-team/ionic-storage" target="_blank">Ionic のストレージライブラリ</a>は複数の環境において最適な選択肢です。Ionic のストレージクラスは、十分にテストされた LocalForage ライブラリ上に構築され、適応性の高いストレージメカニズムを提供します。
 
-Currently this means it will run through SQLite for native, IndexedDB (if available), WebSql, or Local Storage. By handling all of this, it allows writing to storage using a stable API.
+現在、ネイティブ向けには SQLite を通して実行され、他にも IndexedDB（使用可能であれば）、WebSql、ローカルストレージなどが内部的に使用されます。これらのすべてに対応し、安定した API を使ってデータの読み書きが可能です。
 
 ```tsx
 class MyClass {
@@ -177,4 +177,4 @@ class MyClass {
 }
 ```
 
-There are other storage solutions out there as well, such as PouchDB, which provide a similar, adaptable storage mechanism.
+PouchDB といった他のストレージを選択することも可能です。

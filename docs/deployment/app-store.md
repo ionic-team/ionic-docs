@@ -1,5 +1,5 @@
 ---
-title: iOS App Store Deployment
+title: iOS App Storeへの開発
 sidebar_label: iOS App Store
 ---
 
@@ -7,58 +7,58 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Publish to iOS App Store: Apple App Store Deployment for Ionic</title>
+  <title>iOS App Storeでのリリース: Ionic向けApple App Storeデプロイメント</title>
   <meta
     name="description"
-    content="Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
+    content="IonicアプリをApple iOS App Storeに公開するための要件を確認します。リリースビルドの生成方法とその他のデプロイメントに必要な手順を学びます。"
   />
 </head>
 
-## Requirements
+## 要件
 
-Submitting an App to the iOS App store requires a few things:
+iOS App Store にアプリを提出するには、いくつかのことが必要です。
 
 - Xcode
-- A Paid Apple Developers account
-- A valid provisioning profile
-- App Development and Distribution certificates
+- 有料の Apple Developers アカウント
+- 有効なプロビジョニングプロファイル
+- アプリの開発および配布に関する証明書
 
-Follow the [Apple Developer Program enrollment instructions](https://developer.apple.com/programs/) to get started.
+開始するには、[Apple Developer Program の登録手順](https://developer.apple.com/programs/)に従ってください。
 
-## Generating a release build
+## リリースビルドの作成
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
 
-If the iOS platform is not already added, be sure to add it:
+iOS プラットフォームがまだ追加されていない場合は、必ず追加してください：
 
 ```shell
 ionic cap add ios
 ```
 
-With the platform added, run the build command with the `--prod` flag:
+プラットフォームが追加されたら、`--prod`フラグを付けてビルドコマンドを実行します：
 
 ```shell
 ionic build --prod
 ```
 
-This will generate the minified code for the web portion of an app.
+これによって、アプリのウェブ部分の minified されたコードが生成されます。
 
-For this first build, and after you make any binary changes like adding a plugin, use the sync command:
+この最初のビルドと、プラグインの追加などバイナリーの変更を行った後は、sync コマンドを使用します：
 
 ```shell
 npx cap sync ios
 ```
 
-This will also copy the minified web code over. However, if your build is only source change then you can just copy the minified web files using:
+これにより、minified された Web アセットもコピーされます。しかし、ビルドがソースの変更だけであれば、minified されたウェブファイルをコピーするだけですみます：
 
 ```shell
 npx cap copy ios
 ```
 
-From here, the project is now managed as if it was a native Xcode app (because it is).
+ここから、プロジェクトはあたかも Xcode のネイティブアプリであるかのように管理することができます（実際そうなのです）。
 
-Open the project in `./ios/` to start Xcode:
+Xcode で `./ios/` からプロジェクトを開いてください：
 
 ```shell
 npx cap open ios
@@ -67,57 +67,58 @@ npx cap open ios
 </TabItem>
 <TabItem value="cordova" label="Cordova">
 
-If the iOS platform is not already added, be sure to add it:
+iOS プラットフォームがまだ追加されていない場合は、必ず追加してください：
 
 ```shell
 ionic cordova platform add ios
 ```
 
-With the platform added, run the build command with the `--prod` flag:
+プラットフォームが追加されたら、`--prod`フラグを付けてビルドコマンドを実行します：
 
 ```shell
 ionic cordova build ios --prod
 ```
 
-This will generate the minified code for the web portion of an app and copy it over the iOS code base.
+これで、アプリの Web 部分の minified コードが生成され、iOS のコードベースにコピーされます。
 
-From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
+ここから、`.xcworkspace` ファイルを `./platforms/ios/` に開き、Xcode を起動します。
 
 :::tip
-You can also have a release build generated automatically by using the `--release` flag.
+`release`フラグを使えば、リリースビルドを自動的に生成させることもできます。
 :::
 
 </TabItem>
 </Tabs>
 
-## Generating Signing Certs
+## 署名証明書の生成
 
-Generating certificates for iOS is a bit of an involved process, so be sure to check [Apple's official documentation](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) on what certificates are and how to generate them.
+iOS 用の証明書の生成は少し複雑なので、証明書とは何か、どのように生成するかについては、[Apple の公式ドキュメント](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) を必ず確認してください。
 
-To create the certificates and profiles needed, visit [Apple's member center](https://developer.apple.com/membercenter) and follow the links described in Apple's documentation.
+必要な証明書とプロファイルを作成するには、[Apple のメンバーセンター](https://developer.apple.com/membercenter) にアクセスし、Apple のドキュメントに記載されているリンクをたどってください。
 
-There are two types of certificates that matter here, Development, and Distribution. Development Certificates are just that, meant for development time. They are meant to sign an app and deploy it to devices that the certificate has access to.
+ここで重要なのは、開発用と配布用の 2 種類の証明書があることです。開発用証明書は、まさに開発時のためのものです。アプリに署名して、その証明書がアクセスできるデバイスにデプロイするためのものです。
 
-Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
+ディストリビューション証明書は、アプリをストアに配布するためのものです。アプリがディストリビューション証明書で署名されると、どのデバイスにもインストールできるようになります。
 
-## Signing the App in Xcode
+## XCode でのアプリへの署名
 
-After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
+正しい証明書を生成した後、Xcode に自動的に証明書を管理させるか、手動で管理するかのオプションがあります。Xcode が自動的に証明書を管理するようにすることをお勧めします。これは、選択されたビルドタイプに基づいて、正しい Development と Distribution の証明書が使用されることを確認するためです。
 
-With this option selected, select `Archive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
+このオプションを選択した状態で、`Product > Archive`メニューから`Archive`を選択します。これにより、アプリストアで配布するためのアプリのバージョンが構築されます。アーカイブが作成された後、Xcode Organizer が開かれます。
 
-Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'.
-There should be a place to select the team followed by some more information on the app and an 'Upload' button to click.
+Xcode Organizer は、現在のアプリのビルドを含むリストを表示します。最後のビルドを選び、'Upload to App Store'をクリックします。
+チームを選択する場所があり、アプリの詳細情報と'Upload'ボタンをクリックします。
 
-If the upload is successful the app should be listed under 'Activities' on [iTunes Connect](https://itunesconnect.apple.com) or listed under 'Apps' on [App Store Connect](https://appstoreconnect.apple.com/). From there, the app can be published to TestFlight, or it can be sent to Apple for approval for the App Store.
+アップロードに成功すると、アプリは[iTunes Connect](https://itunesconnect.apple.com)の「アクティビティ」に表示されるか、[App Store Connect](https://appstoreconnect.apple.com/)の「Apps」に表示されます。ここから、アプリを TestFlight に公開したり、Apple に送信して App Store の承認を得ることができます。
 
-## Updating an app
+## アプリのアップデート
 
-As an app grows, it will need to be updated with new features and fixes.
-An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
+アプリが成長するにつれ、新機能や修正を加えて更新する必要があります。
+アプリのアップデートは、Apple に新バージョンを提出するか、Appflow のような<a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update 機能</a>を使用することで可能です。
 
-With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
+<strong>Live Updates</strong>を使うと, アプリの変更は、App
+Storeの承認を待つことなく、Appflowのダッシュボードから直接ユーザーにリアルタイムでプッシュすることができます。
 
 :::note
-In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
+iOS App Store が更新されたビルドを受け入れるには、config.xml ファイルを編集してバージョン値を増やし、上記の手順でアプリをリリース用に再構築する必要があります。
 :::

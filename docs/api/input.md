@@ -17,16 +17,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
 input コンポーネントは、HTML input 要素のラッパーで、カスタムスタイルと追加機能を備えています。HTML入力と同じプロパティのほとんどを受け入れ、モバイルデバイスのキーボードと統合します。
-
 
 ## 基本的な使い方
 
 import Basic from '@site/static/usage/v8/input/basic/index.md';
 
 <Basic />
-
 
 ## Types
 
@@ -78,7 +75,6 @@ import Clear from '@site/static/usage/v8/input/clear/index.md';
 
 <Clear />
 
-
 ## Filled Inputs
 
 Material Design では、Inputに塗りつぶしのスタイルが用意されています。Inputの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
@@ -92,7 +88,6 @@ Filled inputs をiOSで使うためには、inputの `mode` を `md` に設定�
 import Fill from '@site/static/usage/v8/input/fill/index.md';
 
 <Fill />
-
 
 ## Helper & Error Text
 
@@ -157,7 +152,7 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 この機能は [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) のシミュレート版に依存しているため、実験的なものであることに注意してください。そのため、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントは`aria-hidden="true"`を持つべきです。詳細については、[Iconアクセシビリティのドキュメント](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
@@ -208,7 +203,6 @@ interface InputCustomEvent extends CustomEvent {
   target: HTMLIonInputElement;
 }
 ```
-
 
 ## プロパティ
 <Props />

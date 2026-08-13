@@ -10,47 +10,46 @@ import Slots from '@ionic-internal/component-api/v8/back-button/slots.md';
 
 <head>
   <title>ion-back-button: Custom Menu Back Button for Applications</title>
-  <meta name="description" content="The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications." />
+  <meta name="description" content="ion-back-buttonは、Android、iOS、およびProgressive Web Apps用のカスタムメニューアイコンです。Ionic Frameworkのコンポーネントを使用して、簡単にアプリケーションを構築できます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+Back Buttonは、クリックされるとアプリの履歴に戻るようにナビゲートします。このボタンは、ナビゲーションスタックに履歴があるときのみ表示されます。ただし、 [`defaultHref`](#default-back-history) が設定されている場合は除きます。戻るボタンはモードに応じて異なるテキストとアイコンを表示しますが、これはカスタマイズすることができます。
 
-The back button navigates back in the app's history when clicked. It is only displayed when there is history in the navigation stack, unless [`defaultHref`](#default-back-history) is set. The back button displays different text and icon based on the mode, but this can be customized.
-
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v8/back-button/basic/index.md';
 
 <Basic />
 
-## Custom Back Button
+## カスタムのBack Button
 
-By default, the back button will display the text `"Back"` with a `"chevron-back"` icon on `ios`, and an `"arrow-back-sharp"` icon on `md`. This can be customized per back button component by setting the `icon` or `text` properties. Alternatively, it can be set globally using the `backButtonIcon` or `backButtonText` properties in the global config. Refer to the [Config docs](../developing/config) for more information.
+デフォルトでは、戻るボタンは`ios`では`"chevron-back"`アイコン付きで`"Back"`のテキストを表示し、`md`では`"arrow-back-sharp"`アイコンを表示します。これは、各戻るボタンコンポーネントごとに`icon`または`text`プロパティを設定することでカスタマイズ可能です。あるいは、グローバル設定で`backButtonIcon`または`backButtonText`プロパティを使用してグローバルに設定することもできます。詳細は[Configドキュメント](../developing/config)を参照してください。
 
 import Custom from '@site/static/usage/v8/back-button/custom/index.md';
 
 <Custom />
 
-## Default Back History
+## デフォルトのBack履歴 {/* #default-back-history */}
 
-Occasionally an app may need to show the back button and navigate back when there is no history. This can be done by setting the `defaultHref` on the back button to a path. In order to use `defaultHref`, the app must contain a router with paths set.
+時折、アプリが履歴がないときに戻るボタンを表示し、ナビゲートする必要がある場合があります。この場合、戻るボタンの `defaultHref` をパスに設定することで実現できます。 `defaultHref` を使用するには、アプリにパスが設定されたルーターが含まれている必要があります。
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

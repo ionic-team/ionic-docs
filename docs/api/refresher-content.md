@@ -10,25 +10,23 @@ import Slots from '@ionic-internal/component-api/v8/refresher-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+リフレッシュコンテンツには、プルトゥリフレッシュ時に表示するテキスト、アイコン、スピナーが含まれます。Ionicは、プラットフォームに基づいて、プルアイコンとリフレッシュスピナーを表示します。ただし、デフォルトのアイコン、スピナー、テキストは、リフレッシュの状態に応じてカスタマイズできます。
 
-The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic displays a pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.
+使用例については、[Refresher](/docs/api/refresher)のドキュメントを参照してください。
 
-For usage examples, refer to the [Refresher](/docs/api/refresher) documentation.
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

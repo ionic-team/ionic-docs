@@ -1,31 +1,31 @@
 ---
-title: Advanced Theming
-sidebar_label: Advanced
+title: 高度なカスタマイズ
+sidebar_label: 高度なカスタマイズ
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
 
 <head>
-  <title>Advanced Theming: Quickly Customize App Colors using CSS | Ionic</title>
+  <title>高度なカスタマイズ: CSSを使用してアプリの色をすばやくカスタマイズ | Ionic</title>
   <meta
     name="description"
-    content="CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming."
+    content="CSSベースのテーマ設定により、CSSファイルをロードするか、CSSプロパティ値を変更することで、アプリの色をすばやくカスタマイズできます。Ionic高度なテーマ設定について学びましょう。"
   />
 </head>
 
-CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
+CSS ベースのテーマ設定では、CSS ファイルをロードするか、いくつかの CSS プロパティ値を変更することで、アプリの配色をすばやくカスタマイズできます。
 
 ## `theme-color` Meta
 
-The `theme-color` value for a meta tag indicates a color that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
+メタタグの `theme-color` は、ブラウザがページや周囲のインターフェイスの表示をカスタマイズするために使用する色を示します。この種類の meta タグはメディアクエリも受け付けることができ、開発者はライトモードとダークモードの両方でテーマカラーを設定することができます。
 
-The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
+メタタグ `theme-color` の `content` 値には、有効な <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> を含める必要があり、CSS Variables を含めることはできません。
 
 :::note
-The `theme-color` meta controls the interface theme when running in a web browser or as a PWA and has no effect when an app is deployed using Capacitor or Cordova. If you are looking to customize the area under the status bar, we recommend using the [Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar).
+`Theme-color`メタは、Web ブラウザまたは PWA として実行するときにインターフェースのテーマを制御し、アプリが Capacitor または Cordova を使用してデプロイされるときには影響しません。ステータスバーの下の領域をカスタマイズしたい場合は、[Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar)を使用することをお勧めします。
 :::
 
-The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
+以下の例では、iOS 15 でブラウザのインターフェイスをスタイルするために `theme-color` を使用する方法を示しています。
 
 ```html
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0054e9" />
@@ -36,57 +36,57 @@ The example below demonstrates how to use `theme-color` to style the browser int
 | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
 | ![The light mode theme color in a browser interface.](/img/theming/theme-color-light.png 'Light Mode Theme Color') | ![The dark mode theme color in a browser interface.](/img/theming/theme-color-dark.png 'Dark Mode Theme Color') |
 
-The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
+macOS Monterey 以降の Safari では、`theme-color`メタを使用してツールバーをカスタマイズすることもできます。
 
-Safari on iOS 15 and macOS will automatically determine an appropriate theme color to use, but adding this meta tag is useful if you need more control over the theme.
+iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定しますが、テーマをより細かく制御したい場合はこの meta タグを追加すると便利です。
 
-There is a small subset of colors that browsers will not use as they interfere with the browser interface. For example, setting `content="red"` will not work in Safari on macOS because that color interferes with the red close button in the toolbar. If you run into this situation, try altering your color selection slightly.
+ブラウザのインターフェイスに干渉するため、ブラウザが使用しない色の小さなサブセットがあります。例えば、`content="red"`と設定すると、macOS の Safari では、ツールバーの赤い閉じるボタンと干渉してしまうため、動作しません。このような状況に遭遇した場合は、色の選択を少し変えてみてください。
 
 :::note
-Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if both are present.
+ブラウザは `manifest.json` に `theme` よりも `theme-color` メタが存在する場合、それを優先します。
 :::
 
-For more information, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a>.
+詳細については、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN のテーマカラードキュメント</a>を参照してください。
 
-## Global Variables
+## グローバル変数
 
-While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
+テーマセクションのアプリケーション変数とステップ変数は、アプリケーションの色を変更するのに便利ですが、しばしば、複数のコンポーネントで使用される変数が必要になることがあります。以下の変数は、コンポーネント間で共有され、グローバルなパディング設定などを変更することができます。
 
-### Application Variables
+### アプリケーション変数 {/* #application-variables */}
 
-| Name                        | Description                                                                                          |
-| --------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `--ion-font-family`         | Font family of the app                                                                               |
-| `--ion-statusbar-padding`   | Statusbar padding top of the app                                                                     |
-| `--ion-safe-area-top`       | Adjust the safe area inset top of the app                                                            |
-| `--ion-safe-area-right`     | Adjust the safe area inset right of the app                                                          |
-| `--ion-safe-area-bottom`    | Adjust the safe area inset bottom of the app                                                         |
-| `--ion-safe-area-left`      | Adjust the safe area inset left of the app                                                           |
-| `--ion-margin`              | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)              |
-| `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)           |
-| `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
+| Name                        | 説明                                                                                          |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| `--ion-font-family`         | アプリのフォントファミリー                                                                    |
+| `--ion-statusbar-padding`   | アプリのステータスバーの上部パディング                                                        |
+| `--ion-safe-area-top`       | アプリのセーフエリアインセット上部を調整                                                      |
+| `--ion-safe-area-right`     | アプリのセーフエリアインセット右側を調整                                                      |
+| `--ion-safe-area-bottom`    | アプリのセーフエリアインセット下部を調整                                                      |
+| `--ion-safe-area-left`      | アプリのセーフエリアインセット左側を調整                                                      |
+| `--ion-margin`              | [Margin 属性](../layout/css-utilities.md#element-margin)のマージンを調整                      |
+| `--ion-padding`             | [Padding 属性](../layout/css-utilities.md#element-padding)のパディングを調整                  |
+| `--ion-placeholder-opacity` | input、textarea、searchbar、select コンポーネントで使用されるプレースホルダーの不透明度を調整 |
 
-### Grid Variables
+### グリッド変数
 
-| Name                           | Description                                    |
-| ------------------------------ | ---------------------------------------------- |
-| `--ion-grid-columns`           | Number of columns in the grid                  |
-| `--ion-grid-padding-xs`        | Padding of the grid for xs breakpoints         |
-| `--ion-grid-padding-sm`        | Padding of the grid for sm breakpoints         |
-| `--ion-grid-padding-md`        | Padding of the grid for md breakpoints         |
-| `--ion-grid-padding-lg`        | Padding of the grid for lg breakpoints         |
-| `--ion-grid-padding-xl`        | Padding of the grid for xl breakpoints         |
-| `--ion-grid-column-padding-xs` | Padding of the grid columns for xs breakpoints |
-| `--ion-grid-column-padding-sm` | Padding of the grid columns for sm breakpoints |
-| `--ion-grid-column-padding-md` | Padding of the grid columns for md breakpoints |
-| `--ion-grid-column-padding-lg` | Padding of the grid columns for lg breakpoints |
-| `--ion-grid-column-padding-xl` | Padding of the grid columns for xl breakpoints |
+| Name                           | 説明                                        |
+| ------------------------------ | ------------------------------------------- |
+| `--ion-grid-columns`           | グリッドの列数                              |
+| `--ion-grid-padding-xs`        | xs ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-sm`        | sm ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-md`        | md ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-lg`        | lg ブレークポイントのグリッドのパディング   |
+| `--ion-grid-padding-xl`        | xl ブレークポイントのグリッドのパディング   |
+| `--ion-grid-column-padding-xs` | xs ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-sm` | sm ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-md` | md ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-lg` | lg ブレークポイントのグリッド列のパディング |
+| `--ion-grid-column-padding-xl` | xl ブレークポイントのグリッド列のパディング |
 
-## Known Limitations with Variables
+## 既知の変数の制限
 
-### The Alpha Problem
+### アルファ値の問題 {/* #the-alpha-problem */}
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+16 進数カラーのアルファ使用については、まだ完全な<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">ブラウザサポート</a>はありません。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> 関数は、`R, G, B, A`（赤、緑、青、アルファ）のフォーマットのみ利用可能です。次のコードは、`rgba()` に受け渡される正しい値と間違った値の例を示しています。
 
 ```css
 /* These examples use the same color: blueviolet. */
@@ -106,10 +106,10 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 ```
 
 :::note
-Refer to the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
+CSS 変数の取得方法や設定方法については、[CSS Variables](css-variables.md)のセクションを参照してください。
 :::
 
-Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
+Ionic はいくつかのコンポーネントで不透明度（アルファ）を ​​ 持つ色を使用します。これが機能するためには、それらのプロパティは RGB フォーマットで提供されなければなりません。末尾にバリエーションがあるプロパティのいずれかを変更する場合、 `-rgb` で終わる括弧なしのカンマ区切り形式でも提供されることが重要です。以下は、テキストと背景色を変更するための例です。
 
 ```css
 :root {
@@ -123,7 +123,7 @@ Ionic uses colors with an opacity (alpha) in several components. In order for th
 }
 ```
 
-Note that the RGB formatted colors are the exact same color as the hex properties, but can now be used with `rgba()`. For example, `--ion-text-color-rgb` can now be used in the following way
+RGB 形式の色は hex プロパティとまったく同じ色ですが、現在は `rgba()` で使用できることに注意してください。例えば、`--ion-text-color-rgb` は以下のように利用できます。
 
 ```css
 body {
@@ -131,9 +131,9 @@ body {
 }
 ```
 
-### Variables in Media Queries
+### メディアクエリ内の変数 {/* #variables-in-media-queries */}
 
-CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) are not currently supported, but there are open drafts to add [custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) and [custom environment variables](https://drafts.csswg.org/css-env-1/) that would solve this problem! However, with the current state of support, the following will **not** work:
+[メディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries)内の CSS 変数は現在サポートされていませんが、この問題を解決する[カスタムメディアクエリ](https://drafts.csswg.org/mediaqueries-5/#custom-mq)と[カスタム環境変数](https://drafts.csswg.org/css-env-1/)を追加するための公開草案があります。ただし、現在のサポート状態では、次の機能は動作しません。
 
 ```css
 :root {
@@ -145,11 +145,11 @@ CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CS
 }
 ```
 
-### Modifying CSS Color Variables
+### CSS カラー変数の変更
 
-While it is possible to easily alter a color in Sass using its built-in functions, it is currently not as easy to modify colors set in CSS Variables. This can be accomplished in CSS by splitting the [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) channels and modifying each value, but it is complex and has missing functionality.
+Sass の組み込み関数を使用して簡単に色を変更することは可能ですが、現在のところ CSS 変数で設定された色を変更するのはそれほど簡単ではありません。これは、CSS で [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) チャネルまたは HSL チャネルを分割してそれぞれの値を変更することで実現できますが、複雑で機能が不足しています。
 
-What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, allows us to use functions to manipulate a single color. For example, we can create the following colors in Sass:
+正確に説明します。基本的に、Sass などの CSS プリプロセッサを使用すると、関数を使用して単一の色を操作できます。たとえば、Sass には次のカラーを作成できます:
 
 ```scss
 // Background color, shade, and tint
@@ -163,9 +163,9 @@ $text-darker: darken($text, 15);
 $text-lighter: lighten($text, 15);
 ```
 
-After running through the Sass compiler, the colors will have the following values:
+Sass コンパイラを実行した後、色は次の値になります：
 
-| Variable            | Value                                          |
+| Variable            | 値                                             |
 | ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#0054e9">#0054e9</CodeColor> |
 | `$background-shade` | <CodeColor color="#004acd">#004acd</CodeColor> |
@@ -174,27 +174,27 @@ After running through the Sass compiler, the colors will have the following valu
 | `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
 | `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |
 
-However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
+ただし、CSS 変数は実行時に設定でき、より動的であるため、現時点では単純な関数を使用して操作することはできません。
 
-This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](colors.md#layered-colors), and it is also why [stepped colors](themes.md#stepped-colors) are necessary for theming.
+これは通常は問題にはなりませんが、アプリケーションに動的なテーマカラーの設定が必要な場合は問題になります。Ionic では、これが[各色にバリエーションがある](colors.md#layered-colors)理由であり、テーマ設定に[stepped colors](themes.md#stepped-colors)が必要な理由でもあります。
 
-There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
+これを可能にする[色の変更提案](https://github.com/w3c/csswg-drafts/issues/3187)について議論しているドラフトとイシューがあります。
 
-## Safe Area Padding
+## セーフエリアパディング {/* #safe-area-padding */}
 
-The safe area of a display is the section that is not covered by the device's notch, status bar, or other elements that are part of the device's UI and not the app's. The dimensions of the safe area are different across devices and orientations (portrait or landscape).
+ディスプレイのセーフエリアは、デバイスのノッチ、ステータスバー、またはデバイスの UI の一部でありアプリの一部ではないその他の要素によって覆われていないセクションです。セーフエリアの寸法は、デバイスや向き（縦向きまたは横向き）によって異なります。
 
-For example, below are screenshots of an iPhone 14 Pro Max. The red section is the safe area, and the white sections are places where the app's content would be covered up.
+たとえば、以下は iPhone 14 Pro Max のスクリーンショットです。赤いセクションがセーフエリアで、白いセクションはアプリのコンテンツが覆われる場所です。
 
 | Portrait                                                                       | Landscape                                                                        |
 | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
 
-To accommodate this, Ionic automatically adds padding to certain components. For example, the first `ion-toolbar` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
+これに対応するため、Ionic は特定のコンポーネントに自動的にパディングを追加します。たとえば、`ion-modal`内に配置された最初の`ion-toolbar`コンポーネントは、デバイスのセーフエリアの上端に応じてパディングを受け取ります。これにより、デバイスのノッチがヘッダーテキストを覆うことを防ぎます。
 
 <img src={require('@site/static/img/theming/modal-header-padding.png').default} />
 
-This padding can be manually adjusted through CSS using the `--ion-safe-area-(dir)` variables described in [Application Variables](#application-variables). Values can be set for the whole application, or on a per component basis. For example:
+このパディングは、[アプリケーション変数](#application-variables)で説明されている`--ion-safe-area-(dir)`変数を使用して CSS で手動で調整できます。値はアプリケーション全体、またはコンポーネントごとに設定できます。例：
 
 ```css
 html {

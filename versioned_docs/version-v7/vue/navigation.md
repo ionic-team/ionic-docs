@@ -527,7 +527,7 @@ For example usages, please refer to our [Utility Functions](utility-functions#us
 
 ## URL Parameters
 
-Let's expand upon our original routing example to show how we can use URL parameters. We recommend [passing URL parameters as props](https://router.vuejs.org/guide/essentials/passing-props.html) so that the component does not need a direct reference to the router, which makes it easier to reuse and test in isolation.
+元のルーティングの例を拡張して、URL パラメータの使用方法を示しましょう。コンポーネントがルーターを直接参照する必要がないように、URL パラメータを [プロップとして渡す](https://router.vuejs.org/guide/essentials/passing-props.html) ことを推奨します。これにより、コンポーネントを孤立して再利用およびテストすることが容易になります。
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -549,7 +549,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders. Setting `props: true` on the route record tells Vue Router to pass the matched URL parameters to the component as props.
+今、`:id` を `detail` パス文字列の末尾に追加したことに注意してください。URL パラメータはルートパスの動的な部分です。ユーザーが `/details/1` のような URL に移動すると、「1」が "id" という名前のパラメータとして保存され、ルートがレンダリングされる際にコンポーネントでアクセスできます。ルートレコードに `props: true` を設定すると、Vue Router は一致した URL パラメータをプロップとしてコンポーネントに渡します。
 
 Let's look at how to use it in our component:
 
@@ -573,7 +573,7 @@ defineProps<{ id: string }>();
 </script>
 ```
 
-The `id` parameter from the URL is received as a prop and rendered on the screen. The component has no dependency on the router itself.
+URL からの `id` パラメータはプロップとして受け取り、画面にレンダリングされます。コンポーネントはルーター自体に依存しません。
 
 ## Router History
 

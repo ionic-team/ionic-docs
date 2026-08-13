@@ -142,10 +142,10 @@ There are millions of Ionic developers in over 200 countries worldwide. Here are
 {/* Keep the prettier-ignore below. Without it, Prettier reformats these list items and the page stops building. These links stay as HTML because target="_blank" opens them in a new tab, which a markdown link cannot do. */}
 
 {/* prettier-ignore */}
-- <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-- <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
+- <a href="https://forum.ionicframework.com/" target="_blank">フォーラム:</a> 質問をしたりアイデアを共有したりするのに最適な場所です。
+- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Ionicコミュニティからのアップデートやコンテンツを共有する場所です。
+- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> バグ報告や新機能リクエストはここでIssueを作成してください。PRも歓迎です！
+- <a href="https://ionicframework.com/contributors" target="_blank">コンテンツ作成:</a> 技術ブログを書いたり、Ionicコミュニティとあなたのストーリーを共有しましょう。
 
 ## License
 

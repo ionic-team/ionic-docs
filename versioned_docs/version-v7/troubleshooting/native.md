@@ -18,13 +18,13 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 
 Running an app on an iOS device requires a provisioning profile. If a provisioning profile has not been created yet follow these directions:
 
-1. **Set the [Package ID](../reference/glossary.md#package-id).**
+1. **[Package ID](../reference/glossary.md#package-id) を設定します。**
 
    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
-2. **Open the project in <b>Xcode</b>.**
+2. **<b>Xcode</b>でプロジェクトを開きます。**
 
    For Capacitor, run the following to open the app in Xcode:
 
@@ -34,13 +34,13 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
 
    For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
 
-3. **In <b>Project navigator</b>, select the project root to open the project editor. Under the <b>Identity</b> section, verify that the Package ID that was set matches the Bundle Identifier.**
+3. **<b>Project navigator</b> でプロジェクトルートを選択し、プロジェクトエディタを開きます。<b>Identity</b> セクションで、設定した Package ID が Bundle Identifier と一致していることを確認します。**
 
-   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
+![Xcodeで、iOSアプリのIdentityセクションを表示しており、表示名、バンドル識別子、バージョン、ビルドのフィールドがあります。](/img/running/ios-xcode-identity-setup.png 'Xcodeの識別情報セクション')
 
-4. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+4. **同じプロジェクトエディタで、<b>署名</b>のセクションの下に、<b>署名を自動的に管理</b>が有効になっていることを確認します。** その後、開発チームを選択します。開発チームを指定すると、Xcode はプロビジョニングと署名を自動的に準備しようとします。
 
-   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
+![Xcodeが署名セクションを表示しており、「署名を自動的に管理」が有効で、開発チームが選択されています。](/img/running/ios-xcode-signing-setup.png 'Xcodeの署名セクション')
 
 ## Xcode build error 65
 

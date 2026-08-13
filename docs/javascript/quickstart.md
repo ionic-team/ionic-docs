@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Welcome! This guide will walk you through the basics of Ionic JavaScript development using Vite. You'll learn how to set up your development environment, create a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic JavaScript before building your first real app.
 
-If you're looking for a high-level overview of what Ionic JavaScript is and how it fits into the web development ecosystem, refer to the [Ionic JavaScript Overview](overview).
+Ionic JavaScript が何であるか、そしてウェブ開発エコシステムにどのように適合するかの高レベルな概要を知りたい場合は、[Ionic JavaScript 概要](overview)を参照してください。
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js](https://nodejs.org/en/download) (which includes npm).
+Node.js と npm を持っていない場合は、[Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
 
 ## Create a Project with Vite
 
@@ -67,8 +67,8 @@ Your new app's directory will look like this:
     └── style.css
 ```
 
-:::warning[Delete files]
-The `counter.js` and `style.css` files can be deleted. We will not be using them.
+:::warning[ファイルを削除]
+`counter.js` と `style.css` のファイルは削除できます。これらは使用しません。
 :::
 
 :::info
@@ -226,8 +226,8 @@ customElements.define('home-page', HomePage);
 
 This creates a custom element called `home-page` that contains the layout for your Home page. The page uses Ionic's layout components to create a header with a toolbar and scrollable content area.
 
-:::tip[Learn More]
-For detailed information about Ionic layout components, refer to the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip[詳しく学ぶ]
+Ionic のレイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、および[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
 Next, add a `<script>` tag before the `main.js` import in `index.html` to import the Home page:
@@ -325,7 +325,7 @@ To navigate to the new page, update the button in `HomePage.js` to be inside of 
 When the button is clicked, Ionic's router will automatically navigate to the `/new` route and display the `new-page` component.
 
 :::info
-Navigating can also be performed programmatically using `document.querySelector('ion-router').push('/new')`. Refer to the [Ionic Router documentation](/docs/api/router.md) for more information.
+ナビゲーションは、`document.querySelector('ion-router').push('/new')` を使用してプログラムで行うこともできます。詳細は [Ionic Router ドキュメント](/docs/api/router.md) を参照してください。
 :::
 
 ## Add Icons to the New Page
@@ -373,7 +373,7 @@ class NewPage extends HTMLElement {
 customElements.define('new-page', NewPage);
 ```
 
-For more information, refer to the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
+詳細については、[Icon ドキュメント](/docs/api/icon.md) および [Ionicons ドキュメント](https://ionic.io/ionicons/) を参照してください。
 
 ## Call Component Methods
 
@@ -465,7 +465,7 @@ npx cap open ios
 npx cap open android
 ```
 
-Refer to [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+さらに詳しくは、[Capacitor のはじめにガイド](https://capacitorjs.com/docs/getting-started/with-ionic) を参照してください。
 
 ## Framework Integrations
 

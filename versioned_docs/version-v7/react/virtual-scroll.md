@@ -1,6 +1,6 @@
 # Virtual Scroll
 
-:::caution[Looking for `ion-virtual-scroll`?]
+:::caution[`ion-virtual-scroll`を探していますか？]
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Virtuoso package detailed below.
 

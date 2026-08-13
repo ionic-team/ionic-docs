@@ -11,21 +11,15 @@ import Parts from '@ionic-internal/component-api/v8/tab-button/parts.md';
 import CustomProps from '@ionic-internal/component-api/v8/tab-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/tab-button/slots.md';
 
-
-
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+タブボタンは、[タブバー](tab-bar.md)の内部に配置される UI コンポーネントです。タブボタンを使用すると、アイコンとラベルのレイアウトを指定し、[タブビュー](tab.md)に接続できます。
 
-A tab button is a UI component that is placed inside of a [tab bar](tab-bar.md). The tab button can specify the layout of the icon and label and connect to a [tab view](tab.md).
+タブの設定の詳細については、[tabs ドキュメント](tabs.md)を参照してください。
 
-Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
-
-
-
-
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -58,9 +52,7 @@ Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -108,9 +100,7 @@ Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -149,9 +139,7 @@ export const TabButtonExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -195,24 +183,23 @@ import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
 </script>
 ```
 
-
 </TabItem>
 
 </Tabs>
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

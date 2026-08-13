@@ -10,14 +10,12 @@ import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
 
 <head>
   <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
-  <meta name="description" content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage." />
+  <meta name="description" content="radio groupとは、radioボタンのグループです。radio groupは、ユーザーがセットから最大1つのradioボタンを選択できるようにします。 ion-radio-groupの使用方法について、詳しくはこちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, refer to the [radio](./radio) documentation.
-
+ラジオグループは、[ラジオボタン](./radio)のグループのコンテナです。ユーザーは、セット内のラジオボタンを最大で1つだけ選択できます。ラジオグループに属する1つのラジオボタンをチェックすると、同じグループ内で以前にチェックされたラジオボタンはすべてチェック解除されます。ラジオグループの使用例については、[ラジオ](./radio)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -31,7 +29,7 @@ interface RadioGroupChangeEventDetail<T = any> {
 
 ### RadioGroupCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface RadioGroupCustomEvent<T = any> extends CustomEvent {
@@ -40,20 +38,19 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

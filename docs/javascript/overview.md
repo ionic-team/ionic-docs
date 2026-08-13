@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## JavaScript Version Support
 
-Ionic Core supports the latest versions of JavaScript. For detailed information on supported JavaScript runtime versions, refer to the [Stencil Support Policy](https://stenciljs.com/docs/support-policy#javascript-runtime).
+Ionic Core は最新の JavaScript バージョンをサポートしています。サポートされる JavaScript ランタイムバージョンの詳細については、[Stencil サポートポリシー](https://stenciljs.com/docs/support-policy#javascript-runtime)を参照してください。
 
 ## JavaScript Tooling
 
@@ -53,7 +53,7 @@ $ npm run dev █
   href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   icon="/icons/logo-javascript-icon.png"
 >
-  Learn more about JavaScript's core concepts, tools, and best practices from the official JavaScript documentation.
+  公式のJavaScriptドキュメントから、JavaScriptのコアコンセプト、ツール、ベストプラクティスについて詳しく学びましょう。
 </DocsCard>
 
 <DocsCard header="Navigation" href="/docs/api/router" icon="/icons/component-navigation-icon.png">

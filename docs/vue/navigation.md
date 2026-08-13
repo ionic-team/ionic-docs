@@ -1,6 +1,6 @@
 ---
-title: Vue Navigation
-sidebar_label: Navigation/Routing
+title: Vueナビゲーション
+sidebar_label: ナビゲーション/ルーティング
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,19 +13,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   />
 </head>
 
-This guide covers how routing works in an app built with Ionic and Vue.
+このガイドでは、Ionic と Vue で構築されたアプリでルーティングがどのように機能するかについて説明します。
 
-The `IonRouterOutlet` component uses the popular [Vue Router](https://router.vuejs.org/) library under the hood. With Ionic and Vue Router, you can create multi-page apps with rich page transitions.
+`IonRouterOutlet` コンポーネントは、内部で一般的な [Vue Router](https://router.vuejs.org/) ライブラリを使用します。Ionic と Vue Router を使えば、リッチなページ遷移を持つマルチページアプリを作ることができます。
 
-Everything you know about routing using Vue Router carries over into Ionic Vue. Let's walk through the basics of an Ionic Vue app and how routing works with it.
+Vue Router を使ったルーティングで知っていることはすべて Ionic Vue にも引き継がれます。Ionic Vue アプリの基本と、ルーティングの仕組みについて見ていきましょう。
 
-## A Brief Note
+## 簡単なメモ
 
-While reading this guide, you may notice that most of these concepts are very similar to the concepts found in Vue Router without Ionic Framework. Your observation would be correct! Ionic Vue leverages the best parts of Vue Router to make the transition to building apps with Ionic Framework as seamless as possible. As a result, we recommend relying on Vue Router features as much as possible rather than trying to build your own routing solutions.
+このガイドを読んでいると、これらのコンセプトのほとんどが、Ionic Framework を使わずに Vue Router で見られるコンセプトと非常に似ていることに気がつくかもしれません。あなたの観察は正しいでしょう! Ionic Vue は、Ionic Framework でアプリを構築するための移行をできるだけシームレスにするために、Vue Router の最良の部分を活用しています。そのため、独自のルーティングソリューションを構築しようとするよりも、できるだけ Vue Router の機能に依存することをお勧めします。
 
-## A Simple Route
+## 簡単な Route
 
-Here is a sample routing configuration that defines a single route to the "/home" URL. When you visit "/home", the route renders the `HomePage` component.
+次に示すのは、 "/home" URL への単一のルートを定義するルーティング設定の例です。 "/home" にアクセスすると、ルートによって `HomePage` コンポーネントがレンダリングされます。
 
 **router/index.ts**
 
@@ -50,11 +50,11 @@ const router = createRouter({
 export default router;
 ```
 
-On the app's initial load, the app will render the `HomePage` component as that is what is configured here.
+アプリケーションが最初にロードされると、 `HomePage` コンポーネントがここで設定したとおりに表示されます。
 
-## Handling Redirects
+## リダイレクトの設定
 
-What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but just includes some different keys:
+最初ロードされたパスに別のパスを設定したい場合はどうすればよいでしょうか。これには、ルータリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように機能しますが、いくつかの異なるキーが含まれています。
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -70,11 +70,11 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `home` route.
+このリダイレクトでは、最初にインデックスのパスが参照されます。そして、 `home` route にリダイレクトしてロードを行います。
 
-## Navigating to Different Routes
+## 異なる Routes へのナビゲーション
 
-This is all great, but how does one actually navigate to a route? For this, we can use the `router-link` property. Let's create a new routing setup:
+これは素晴らしいことですが、実際にルートにナビゲートするにはどうすればよいのでしょうか。これには、 `router-link` プロパティを使用できます。新しいルーティング設定を作成します:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -95,13 +95,13 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Say we start on the `home` route, and we want to add a button that takes us to the `detail` route. We can do this using the following HTML to navigate to the `detail` route:
+`home` route で開始し、`detail` route に移動するボタンを追加するとします。`detail` route に移動するには、次の HTML を使用します:
 
 ```html
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-We can also programmatically navigate in our app by using the router API:
+また、ルーター API を使用して、プログラムでアプリケーション内を移動することもできます:
 
 ```vue
 <template>
@@ -120,7 +120,7 @@ const router = useRouter();
 </script>
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+どちらのオプションも同じナビゲーション機構を提供し、異なるユースケースに対応します。
 
 ### Navigating using `router-link`
 
@@ -128,7 +128,7 @@ The `router-link` attribute can be set on any Ionic Vue component, and the route
 
 The `router-direction` attribute accepts values of `"forward"`, `"back"`, or `"root"` and is used to control the direction of the page transition.
 
-The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. Refer to the [Animations documentation](../utilities/animations) for more information on using animations in Ionic Vue.
+`router-animation` 属性は `AnimationBuilder` 関数を受け入れ、提供されたコンポーネントをクリックしたときのみ使用されるカスタムページ遷移を提供するために使用されます。`AnimationBuilder` 型は Ionic Animation インスタンスを返す関数です。Ionic Vue でのアニメーションの使用方法については、[Animations ドキュメント](../utilities/animations)を参照してください。
 
 ```html
 <ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">Click Me</ion-button>
@@ -166,11 +166,11 @@ The example above has the app navigate to `/page2` with a custom animation that 
 `useIonRouter` uses the Vue `inject()` function and should only be used inside of your `setup()` function.
 :::
 
-Refer to the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
+詳細および型情報については、[useIonRouter ドキュメント](./utility-functions#router)も参照してください。
 
 ### Navigating using `router.go`
 
-Vue Router has a [router.go](https://router.vuejs.org/api/#go) method that allows developers to move forward or backward through the application history. Let's walk through an example.
+Vue Router には[router.go](https://router.vuejs.org/api/#go) メソッドがあり、開発者はアプリケーションの履歴を前後に移動できます。例を見てみましょう。
 
 Say you have the following application history:
 
@@ -178,11 +178,11 @@ Say you have the following application history:
 
 If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
 
-A key characteristic of `router.go()` is that it expects your application history to be linear. This means that `router.go()` should not be used in applications that make use of non-linear routing. Refer to [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
+`router.go()` の重要な特徴は、アプリケーションの履歴が線形であることを前提としている点です。これは非線形ルーティングを使用するアプリケーションでは `router.go()` を使用すべきでないことを意味します。詳細は [線形ルーティングと非線形ルーティング](#linear-routing-versus-non-linear-routing)を参照してください。
 
 ## Lazy Loading Routes
 
-The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
+現在の route の設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるように route を設定できます。
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -259,23 +259,23 @@ If tapping the back button simply called `router.go(-1)` from the `Ted Lasso` vi
 
 Non-linear routing allows for sophisticated user flows that linear routing cannot handle. However, certain linear routing APIs such as `router.go()` cannot be used in this non-linear environment. This means that `router.go()` should not be used when using tabs or nested outlets.
 
-### Which one should I choose?
+### どちらを選ぶべきか
 
 We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
 
 The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please refer to [Working with Tabs](#working-with-tabs).
+タブについての詳細は、[タブの操作](#working-with-tabs)を参照してください。
 
-For more on nested router outlets, please refer to [Nested Routes](#nested-routes).
+ネストされたルーターアウトレットについての詳細は、[ネストされたルート](#nested-routes)を参照してください。
 
 ## Shared URLs versus Nested Routes
 
 A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
 
-### Shared URLs
+### 共有 URL
 
-Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+共有 URL は、ルートが共通の URL の一部を持つルート設定です。共有 URL 設定の例を次に示します:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -290,11 +290,11 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+上記のルートは、URL の `dashboard` 部分を再利用するため、 "shared" と見なされます。
 
-### Nested Routes
+### ネストされた Route {/* #nested-routes */}
 
-Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+Nested Routes は、ルートが他のルートの子としてリストされるルート設定です。ネストされたルート設定の例を次に示します:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -315,19 +315,19 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `ion-router-outlet`.
+上記のルートは、親ルートの `children` 配列にあるため、ネストされています。親ルートが `DashboardRouterOutlet` コンポーネントをレンダリングしていることに注目してください。ルートをネストする場合は、 `ion-router-outlet` の別のインスタンスをレンダリングする必要があります。
 
-### Which one should I choose?
+### どちらを選ぶべきか
 
-Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+共有 URL は、URL の 2 つのページ間の関係を維持しながら、ページ A からページ B に遷移する場合に便利です。前述の例では、 `/dashboard` ページのボタンで `/dashboard/stats` ページに移行できます。2 つのページ間の関係は、a) ページの遷移と b) URL によって維持されます。
 
-Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, the first `ion-router-outlet` renders the `ion-tab-bar` and `ion-tabs` components. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+ネストされたルートは、アウトレット A でコンテンツを表示しつつ、ネストされたアウトレット B 内にサブコンテンツを表示したい場合に使用します。最も一般的な使用例はタブです。タブの Ionic スターターアプリケーションを読み込むと、最初の `ion-router-outlet` が `ion-tab-bar` および `ion-tabs` コンポーネントをレンダリングします。`ion-tabs` コンポーネントは別の `ion-router-outlet` をレンダリングし、各タブのコンテンツをレンダリングする役割を担います。
 
-There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
+モバイルアプリケーションでネストされたルートが意味をなすユースケースはほとんどありません。疑わしい場合は、共有 URL ルート設定を使用します。ネストされたルーティングをタブ以外のコンテキストで使用すると、アプリのナビゲーションが混乱する可能性があるため、使用しないように強く注意しています。
 
-## Working with Tabs
+## タブの操作 {/* #working-with-tabs */}
 
-When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's examine the routing setup for this:
+タブを扱う際、Ionic Vue はどのビューがどのタブに属しているかを認識する方法が必要です。ここで役立つのが `IonTabs` コンポーネントですが、そのルーティング設定を見てみましょう：
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -360,9 +360,9 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of the `children` array. In this example, we call the path `tabs`, but this can be customized.
+ここで、 `tabs` パスは `Tabs` コンポーネントをロードします。各タブは、 `children` 配列内のルートオブジェクトとして提供されます。この例では、パスを `tabs` としていますがこれはカスタマイズできます。
 
-Let's start with our `Tabs` component:
+まずは `Tabs` コンポーネントから始めます：
 
 ```vue
 <template>
@@ -395,15 +395,15 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 </script>
 ```
 
-If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component and provide an `ion-tab-bar`. The `ion-tab-bar` provides `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `ion-router-outlet` to give `ion-tabs` an outlet to render the different tab views in.
+以前に Ionic Framework を使ったことがある人なら、このことをよく知っているはずです。`ion-tabs` コンポーネントを作成し、 `ion-tab-bar` を提供します。`ion-tab-bar` は `ion-tab-button` コンポーネントを提供し、それぞれにルータの設定の対応するタブに関連付けられた `tab` プロパティがあります。
 
-### How Tabs in Ionic Work
+### タブ内の子ルート
 
 Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
 
-Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations in other UI libraries. Read on to learn more about some of these differences.
+Ionic は開発者がモバイルアプリを作るのを助けることに重点を置いているため、Ionic のタブはネイティブのモバイルタブにできるだけ近づくよう設計されています。その結果、Ionic のタブには他の UI ライブラリのタブ実装とは異なる挙動がある場合があります。これらの違いについて詳しく知りたい場合は続きをお読みください。
 
 ### Child Routes within Tabs
 
@@ -450,7 +450,7 @@ Since each tab is its own navigation stack, it is important to note that these n
 
 A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
 
-Let's go over a couple common mistakes that are made with tabs.
+タブでよくあるいくつかの間違いについて説明しましょう。
 
 **A Settings Tab That Multiple Tabs Reference**
 
@@ -486,9 +486,9 @@ The example below shows how the Spotify app reuses the same album component to s
 
 ### IonRouterOutlet
 
-The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
+`IonRouterOutlet` コンポーネントは、ビューをレンダリングするためのコンテナを提供します。これは他の Vue アプリケーションに見られる `RouterView` コンポーネントに似ていますが、 `IonRouterOutlet` は同じアウトレット内の DOM で複数のページをレンダリングできるという点が異なります。コンポーネントが `IonRouterOutlet` でレンダリングされる場合、これは Ionic Framework "Page"と見なされます。ルーター・アウトレット・コンテナーは、ページ間の遷移アニメーションを制御するだけでなく、ページがいつ作成および破棄されるかを制御します。これにより、ビューを切り替えるときにビュー間の状態を維持することができます。
 
-Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. Refer to [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
+テンプレートで `IonRouterOutlet` を設定する際には、内部に何も提供してはいけません。`IonRouterOutlet` は子コンポーネントにネストすることができますが、通常アプリ内のナビゲーションが混乱しやすくなるため、この方法は避けることを推奨します。詳細は [共有 URL とネストされたルート](#shared-urls-versus-nested-routes) を参照してください。
 
 ### IonPage
 
@@ -525,9 +525,9 @@ Returns the Ionic router instance, containing API methods for navigating, custom
 
 For example usages, please refer to our [Utility Functions](utility-functions#useionrouter).
 
-## URL Parameters
+## URL パラメーター
 
-Let's expand upon our original routing example to show how we can use URL parameters. We recommend [passing URL parameters as props](https://router.vuejs.org/guide/essentials/passing-props.html) so that the component does not need a direct reference to the router, which makes it easier to reuse and test in isolation.
+元のルーティング例を拡張して、URL パラメータをどのように使えるか示しましょう。コンポーネントがルーターへの直接参照を必要としないよう、URL パラメータは [props として渡すこと](https://router.vuejs.org/guide/essentials/passing-props.html) を推奨します。これにより、コンポーネントを再利用したり、単独でテストしたりするのが容易になります。
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -549,9 +549,9 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders. Setting `props: true` on the route record tells Vue Router to pass the matched URL parameters to the component as props.
+私たちは現在、`detail`パス文字列の末尾に`:id`を追加したことに注意してください。URL パラメータはルートパスの動的部分です。ユーザーが`/details/1`のような URL に移動すると、"1"は"id"という名前のパラメータに保存され、ルートがレンダリングされる際にコンポーネント内でアクセスできます。ルートレコードに`props: true`を設定すると、Vue Router は一致した URL パラメータをコンポーネントに props として渡すようになります。
 
-Let's walk through how to use it in our component:
+コンポーネントでの使用方法を見てみましょう:
 
 ```vue
 <template>
@@ -573,11 +573,11 @@ defineProps<{ id: string }>();
 </script>
 ```
 
-The `id` parameter from the URL is received as a prop and rendered on the screen. The component has no dependency on the router itself.
+URL からの`id`パラメータは prop として受け取られ、画面にレンダリングされます。コンポーネント自体はルーターに依存しません。
 
 ## Router History
 
-Vue Router ships with a configurable history mode. Let's go over the different options and why you might want to use each one.
+Vue Router には構成可能な履歴モードが付属しています。異なるオプションと、それぞれを使用する理由を確認しましょう。
 
 - `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
 
@@ -587,4 +587,4 @@ Vue Router ships with a configurable history mode. Let's go over the different o
 
 ## More Information
 
-For more info on routing in Vue using Vue Router, check out the [Vue Router documentation](https://router.vuejs.org/).
+Vue でのルーティングの詳細については、[Vue Router のドキュメント](https://router.vuejs.org/)を参照してください。

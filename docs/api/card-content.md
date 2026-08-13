@@ -10,25 +10,23 @@ import Slots from '@ionic-internal/component-api/v8/card-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+カードコンテンツは、カードの子コンポーネントで、そのコンテンツの周りにパディングを追加します。カードのテキストコンテンツは、カードコンテンツの中に配置することが推奨されます。
 
-Card content is a child component of card that adds padding around its contents. It is recommended that any text content for a card should be placed inside of card content.
+詳細は[Card](./card)のドキュメントを参照してください。
 
-Refer to the [Card](./card) documentation for more information.
-
-
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

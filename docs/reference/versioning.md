@@ -2,23 +2,22 @@
 
 {/* TOC goes here */}
 
-Ionic Framework follows the <a href="https://semver.org/" target="_blank">Semantic Versioning (SemVer)</a> convention: <code>major.minor.patch.</code> Incompatible API changes increment the <code>major</code> version, adding backwards-compatible functionality increments the <code>minor</code> version, and backwards-compatible bug fixes increment the <code>patch</code> version.
+Ionic フレームワークは <a href="https://semver.org/" target="_blank">セマンティックバージョニング (SemVer)</a> の規約に従っています： <code>major.minor.patch</code>。互換性のない API 変更は <code>メジャー</code> バージョンを増加させ、後方互換性のある機能追加は <code>マイナー</code> バージョンを増加させ、後方互換性のあるバグ修正は <code>パッチ</code> バージョンを増加させます。
 
-## Release Schedule
+## リリーススケジュール
 
-### Major Release
+### メジャーリリース
 
-A major release will be published when there is a breaking change introduced in the API. Major releases will occur roughly every **6 months** and may contain breaking changes. Several release candidates will be published prior to a major release in order to get feedback before the final release. An outline of what is changing and why will be included with the release candidates.
+API に破壊的な変更が導入された場合にメジャーリリースが公開されます。メジャーリリースはおおよそ **6 か月** ごとに行われ、破壊的変更を含む場合があります。最終リリース前にフィードバックを得るため、メジャーリリースの前にいくつかのリリース候補が公開されます。変更内容とその理由の概要はリリース候補に含まれます。
 
-### Minor Release
+### マイナーリリース
 
-A minor release will be published when a new feature is added or API changes that are non-breaking are introduced. We will heavily test any changes so that we are confident with the release, but with new code comes the potential for new issues. We are scheduled to release a minor version **every 4 weeks**, if any features or API changes were made.
+新機能が追加された場合や、破壊的でない API 変更が導入された場合にマイナーリリースが公開されます。リリースに自信を持てるように変更は徹底的にテストされますが、新しいコードには新たな問題の可能性が伴います。変更があった場合、マイナーバージョンは **4 週間ごと** にリリースされる予定です。
 
-### Patch Release
+### パッチリリース
 
-A patch release will be published when bug fixes were included, but the API has not changed and no breaking changes were introduced. We are scheduled to release a new patch version **every week**, but there may be times where we need to release sooner or later than scheduled. To ensure patch releases can fix existing code without introducing new issues from the new features, patch releases will always be published prior to a minor release.
+パッチリリースは、バグ修正が含まれている場合に公開されますが、API は変更されず、破壊的な変更は導入されません。新しいパッチバージョン**は毎週**リリースする予定ですが、予定より早くまたは遅くリリースする必要がある場合もあります。既存のコードを修正し、新機能による新しい問題を導入しないようにするため、パッチリリースは常にマイナーリリースの前に公開されます。
 
 ## Changelog
 
-For a list of all notable changes to Ionic please refer to the <a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>. This contains an ordered
-list of all bug fixes and new features under each release.
+Ionic に関するすべての注目すべき変更の一覧については、<a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>を参照してください。ここには、各リリースごとのすべてのバグ修正と新機能の順序付きリストが含まれています。

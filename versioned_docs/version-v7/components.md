@@ -49,7 +49,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
+  カードは重要なコンテンツを表示するのに最適な方法で、画像、ボタン、テキストなどを含めることができます。
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -89,8 +89,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
-  Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements.
-  Items can be swiped, deleted, reordered, edited, and more.
+  アイテムは、テキスト、アイコン、アバター、画像、入力欄、その他のネイティブまたはカスタム要素を含むことができる要素です。
+  アイテムはスワイプ、削除、並べ替え、編集などが可能です。
 </DocsCard>
 
 <DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
@@ -98,8 +98,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
-  A collection of media components, including avatars, icons, images, and thumbnails, designed to enhance visual
-  content.
+  アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚的コンテンツを向上させるために設計されています。
 </DocsCard>
 
 <DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">
