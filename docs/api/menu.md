@@ -51,7 +51,7 @@ import MenuType from '@site/static/usage/v9/menu/type/index.md';
 
 Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
 
-If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
+If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. Refer to the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
 
 import Sides from '@site/static/usage/v9/menu/sides/index.md';
 

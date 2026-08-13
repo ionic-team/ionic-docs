@@ -33,7 +33,7 @@ public myUrl: string = 'javascript:alert("oh no!")';
 <a [href]="myUrl">Click Me!</a>
 ```
 
-To learn more about the built-in protections that Angular provides, see the [Angular Security Guide](https://angular.io/guide/security).
+To learn more about the built-in protections that Angular provides, refer to the [Angular Security Guide](https://angular.io/guide/security).
 
 ### React
 
@@ -57,7 +57,7 @@ If the developer needs to achieve more comprehensive sanitization, they can use 
 
 Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](https://www.npmjs.com/package/sanitize-html).
 
-To learn more about the security recommendations for binding to directives such as `v-html`, see the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
+To learn more about the security recommendations for binding to directives such as `v-html`, refer to the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
 
 ## Enabling Custom HTML Parsing via `innerHTML`
 
@@ -84,7 +84,7 @@ In order to bypass the sanitizer and use unsanitized custom HTML in the relevant
 
 `IonicSafeString` should not be used if `innerHTMLTemplatesEnabled` is set to `false`.
 
-See [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) for more information.
+Refer to [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) for more information.
 :::
 
 #### Usage
@@ -215,7 +215,7 @@ In Angular this can be called in the `main.ts` file, before the application is b
 
 :::
 
-For more information on how to use CSPs with Stencil web components, see the [Stencil documentation](https://stenciljs.com/docs/csp-nonce).
+For more information on how to use CSPs with Stencil web components, refer to the [Stencil documentation](https://stenciljs.com/docs/csp-nonce).
 
 ### Angular
 
@@ -230,4 +230,4 @@ If providing the `CSP_NONCE` injection token, set the provider in your `AppModul
 
 :::
 
-For more information on how to use CSPs with Angular, see the [Angular documentation](https://angular.io/guide/security#content-security-policy).
+For more information on how to use CSPs with Angular, refer to the [Angular documentation](https://angular.io/guide/security#content-security-policy).

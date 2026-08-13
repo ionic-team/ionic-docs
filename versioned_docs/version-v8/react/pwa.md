@@ -35,14 +35,14 @@ export default defineConfig({
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
 
-For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+For more information on configuring the Vite PWA Plugin, refer to the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
 
-See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+Refer to the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
 
 ## Making your React app a PWA with Create React App
 
 :::note
-As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. See [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
+As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. Refer to [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
 :::
 
 The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
@@ -163,7 +163,7 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+For more information about the `firebase.json` properties, refer to the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
 Next, build an optimized version of the app by running:
 

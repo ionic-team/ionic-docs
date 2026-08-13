@@ -6,10 +6,9 @@ import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, open
 import { useColorMode } from '@docusaurus/theme-common';
 import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+import Tooltip from '../Tooltip';
 import PlaygroundTabs from '../PlaygroundTabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '../PlaygroundTabs/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
@@ -47,10 +46,10 @@ const ControlButton = forwardRef(
     );
     if (disabled) {
       return (
-        <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
-          {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
+        <Tooltip content={`Unavailable for ${label}`}>
+          {/* Disabled elements do not emit pointer events, so the wrapper is what triggers the tooltip. */}
           <div>{controlButton}</div>
-        </Tippy>
+        </Tooltip>
       );
     }
     return controlButton;
@@ -675,9 +674,7 @@ export default function Playground({
               value={fileName}
               label={fileName}
               key={fileName}
-              {...{
-                icon: getFileIcon(fileName),
-              }}
+              icon={getFileIcon(fileName)}
             >
               <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
             </TabItem>
@@ -765,7 +762,7 @@ export default function Playground({
             />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
+            <Tooltip content="Open in StackBlitz">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
                 <svg
                   aria-hidden="true"
@@ -782,11 +779,8 @@ export default function Playground({
                   />
                 </svg>
               </button>
-            </Tippy>
-            <Tippy
-              theme="playground"
-              arrow={false}
-              placement="bottom"
+            </Tooltip>
+            <Tooltip
               content={
                 hasUsageTargetOptions
                   ? 'For multi-file examples, use the copy buttons on the code blocks'
@@ -815,8 +809,8 @@ export default function Playground({
                   <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="current" />
                 </svg>
               </button>
-            </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Reset demo">
+            </Tooltip>
+            <Tooltip content="Reset demo">
               <button className="playground__icon-button" onClick={resetDemo}>
                 <svg
                   aria-hidden="true"
@@ -840,8 +834,8 @@ export default function Playground({
                   />
                 </svg>
               </button>
-            </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
+            </Tooltip>
+            <Tooltip content="Report an issue">
               <a
                 className="playground__icon-button"
                 href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
@@ -856,7 +850,7 @@ export default function Playground({
                   />
                 </svg>
               </a>
-            </Tippy>
+            </Tooltip>
           </div>
         </div>
         {renderIframes

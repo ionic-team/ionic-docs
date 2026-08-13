@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The item option component is an button for a sliding item. It must be placed inside of [item options](./item-options). The `ionSwipe` event and the `expandable` property can be combined to create a full swipe action for the item.
 
-See the [item sliding](./item-sliding) documentation for more information.
+Refer to the [item sliding](./item-sliding) documentation for more information.
 
 ## Properties
 

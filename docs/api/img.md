@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-:::warning Deprecated
+:::warning[Deprecated]
 `ion-img` is deprecated and will be removed in Ionic 10. Use a native `<img>` tag with [loading="lazy"](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading) instead. Refer to the [migration guide](../updating/9-0.md#img) for details on replacing events and styling.
 :::
 

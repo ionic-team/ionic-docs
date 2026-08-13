@@ -14,7 +14,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
 
-See the [Accordion](./accordion) documentation for more information.
+Refer to the [Accordion](./accordion) documentation for more information.
 
 
 ## Interfaces

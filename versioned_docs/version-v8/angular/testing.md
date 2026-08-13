@@ -109,6 +109,34 @@ describe('TabsPage', () => {
 
 When doing component class testing, the component object is accessed using the component object defined via `component = fixture.componentInstance;`. This is an instance of the component class. When doing DOM testing, the `fixture.nativeElement` property is used. This is the actual `HTMLElement` for the component, which allows the test to use standard HTML API methods such as `HTMLElement.querySelector` in order to examine the DOM.
 
+### Waiting for Components
+
+When testing Ionic components, use the `componentOnReady` helper exported from `@ionic/core` rather than calling `el.componentOnReady()` directly. The `el.componentOnReady()` method only exists on lazy-loaded elements and calling it directly throws an error on custom-element builds, which is what standalone projects use. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists. Otherwise it waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
+
+```tsx
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { componentOnReady } from '@ionic/core';
+import { HomePage } from './home.page';
+
+describe('HomePage', () => {
+  let fixture: ComponentFixture<HomePage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomePage],
+    }).compileComponents();
+    fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+  });
+
+  it('renders the submit button', async () => {
+    const button = fixture.nativeElement.querySelector('ion-button');
+    await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
+    expect(button.textContent).toContain('Submit');
+  });
+});
+```
+
 ## Services
 
 Services often fall into one of two broad categories: utility services that perform calculations and other operations, and data services that perform primarily HTTP operations and data manipulation.
@@ -180,7 +208,7 @@ describe('PayrolService', () => {
 
 #### Testing HTTP Data Services
 
-Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please see Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
+Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please refer to Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
 
 This basic setup for such a test looks like this:
 
@@ -233,7 +261,7 @@ describe('IssTrackingDataService', () => {
 
 A pipe is like a service with a specifically defined interface. It is a class that contains one public method, `transform`, which manipulates the input value (and other optional arguments) in order to create the output that is rendered on the page. To test a pipe: instantiate the pipe, call the transform method, and verify the results.
 
-As a simple example, let's look at a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
+As a simple example, let's consider a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
 
 ```tsx
 import { NamePipe } from './name.pipe';

@@ -151,4 +151,4 @@ Take notice: there’s no mention of iOS or Android! This is the awesome power o
 
 Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
 
-Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
+Next, we’ll cover how to transform the app into a photo gallery, as well as how to save the photos to your device!

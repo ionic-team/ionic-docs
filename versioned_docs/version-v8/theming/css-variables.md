@@ -16,7 +16,7 @@ Ionic components are built with <a href="https://developer.mozilla.org/en-US/doc
 
 ### Global Variables
 
-CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. See [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
+CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. Refer to [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
 
 When using the Ionic CLI to start an Angular, React or Vue project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
 
@@ -43,7 +43,7 @@ When using the Ionic CLI to start an Angular, React or Vue project, the `src/the
 
 ### Component Variables
 
-To set a CSS variable for a specific component, add the variable inside of its selector. See [Ionic Variables](#ionic-variables) for more information on the component-level variables Ionic provides.
+To set a CSS variable for a specific component, add the variable inside of its selector. Refer to [Ionic Variables](#ionic-variables) for more information on the component-level variables Ionic provides.
 
 ```css
 /* Set the color on all ion-button elements */
@@ -91,8 +91,8 @@ const color = el.style.getPropertyValue('--background');
 
 ### Component Variables
 
-Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, see the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
+Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, refer to the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
 
 ### Global Variables
 
-There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, see [Colors](colors.md), [Themes](themes.md) and [Advanced Theming](advanced.md).
+There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, refer to [Colors](colors.md), [Themes](themes.md) and [Advanced Theming](advanced.md).

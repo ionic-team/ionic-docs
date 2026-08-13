@@ -18,6 +18,8 @@
     "versioned_docs/**/api",
     "versioned_docs/**/cli",
     "versioned_docs/**/native",
+    "versioned_docs/version-v5",
+    "versioned_docs/version-v6",
     "node_modules"
   ],
   "flagWords": [

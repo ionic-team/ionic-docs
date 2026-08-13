@@ -1,0 +1,20 @@
+name: 'Check Translations'
+description: 'Validates the translated locales without building them'
+runs:
+  using: 'composite'
+  steps:
+    # Surfaces failures unique to a translated locale, such as duplicate
+    # translation keys, while the changes are still in review. Previews only
+    # build the default locale, so translated locale issues would not surface
+    # until after merging into main.
+    #
+    # The sidebars reference the native and CLI docs, which are generated rather
+    # than committed, so those have to exist before the translations can be
+    # extracted.
+    - name: 🇯🇵 Extract Translations
+      shell: bash
+      run: |
+        trap 'rm -rf i18n' EXIT
+        node scripts/native.mjs
+        node scripts/cli.mjs
+        npx docusaurus write-translations --locale ja
