@@ -46,7 +46,7 @@
     "@prismicio/client": "^7.22.0",
     "@prismicio/react": "^3.4.1",
     "@stackblitz/sdk": "^1.11.1",
-    "clsx": "^1.1.1",
+    "clsx": "^2.1.1",
     "crowdin": "^3.5.0",
     "docusaurus-plugin-copy-page-button": "^0.8.4",
     "docusaurus-plugin-module-alias": "^0.0.2",
