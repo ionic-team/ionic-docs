@@ -13,29 +13,35 @@
  * row.
  */
 
-import React, { type ReactNode } from 'react';
+import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 // CUSTOM CODE
 import CopyPageButton from 'docusaurus-plugin-copy-page-button/react';
 // CUSTOM CODE END
 import EditThisPage from '@theme/EditThisPage';
-import type { Props } from '@theme/EditMetaRow';
+import type {Props} from '@theme/EditMetaRow';
 
 import LastUpdated from '@theme/LastUpdated';
 
 import globalStyles from '@docusaurus/theme-classic/lib/theme/EditMetaRow/styles.module.css';
 import styles from './styles.module.css';
 
-export default function EditMetaRow({ className, editUrl, lastUpdatedAt, lastUpdatedBy }: Props): ReactNode {
+export default function EditMetaRow({
+  className,
+  editUrl,
+  lastUpdatedAt,
+  lastUpdatedBy,
+}: Props): ReactNode {
   return (
     <div className={clsx('row', className)}>
       {/* CUSTOM CODE — "Edit this page | Copy page" as peer links on one row */}
-      <div className={clsx('col', globalStyles.noPrint, styles.editMetaActions)}>
+      <div
+        className={clsx('col', globalStyles.noPrint, styles.editMetaActions)}>
         {editUrl && <EditThisPage editUrl={editUrl} />}
         <CopyPageButton
           customStyles={{
-            container: { className: styles.copyPageContainer },
-            button: { className: styles.copyPageButton },
+            container: {className: styles.copyPageContainer},
+            button: {className: styles.copyPageButton},
           }}
         />
       </div>
@@ -43,7 +49,10 @@ export default function EditMetaRow({ className, editUrl, lastUpdatedAt, lastUpd
       {/* CUSTOM CODE — wrap the whole column in the conditional, not just its contents */}
       {(lastUpdatedAt || lastUpdatedBy) && (
         <div className={clsx('col', globalStyles.lastUpdated)}>
-          <LastUpdated lastUpdatedAt={lastUpdatedAt} lastUpdatedBy={lastUpdatedBy} />
+          <LastUpdated
+            lastUpdatedAt={lastUpdatedAt}
+            lastUpdatedBy={lastUpdatedBy}
+          />
         </div>
       )}
       {/* CUSTOM CODE END */}

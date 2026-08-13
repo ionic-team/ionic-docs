@@ -10,4 +10,4 @@ If any member of the community violates this code of conduct, the maintainers of
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please email us at devrel@ionic.io.
 
-Please click <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener">here</a> to review to Ionic's full code of conduct.
+Please review <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener">Ionic's full code of conduct</a>.

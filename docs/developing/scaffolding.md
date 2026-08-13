@@ -92,4 +92,4 @@ The Ionic CLI uses the underlying framework tooling to stay close to best practi
 
 After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development lifecycle moving.
 
-For more details, run `ionic g --help` from the command line or see [the documentation](../cli/commands/generate.md) for `ionic generate`.
+For more details, run `ionic g --help` from the command line or refer to the [`ionic generate` documentation](../cli/commands/generate.md).

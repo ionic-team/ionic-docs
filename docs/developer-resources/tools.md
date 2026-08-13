@@ -14,7 +14,7 @@ Check out the features that make working with TypeScript amazing.
 
 ### [Glossary](../reference/glossary.md)
 
-A list of common terms you'll see while developing in Ionic.
+A list of common terms you'll encounter while developing in Ionic.
 
 ### [Starter Apps](https://ionicthemes.com)
 

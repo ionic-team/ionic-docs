@@ -7,15 +7,15 @@
  * - Removed the original styles that were applied to the language icon. We want to use our own styles.
  */
 
-import React, { type ReactNode } from 'react';
+import React, {type ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
-import { translate } from '@docusaurus/Translate';
-import { mergeSearchStrings, useHistorySelector } from '@docusaurus/theme-common';
+import {useAlternatePageUtils} from '@docusaurus/theme-common/internal';
+import {translate} from '@docusaurus/Translate';
+import {mergeSearchStrings, useHistorySelector} from '@docusaurus/theme-common';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import IconLanguage from '@theme/Icon/Language';
-import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
-import type { Props } from '@theme/NavbarItem/LocaleDropdownNavbarItem';
+import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
+import type {Props} from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 
 import styles from '@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/styles.module.css';
 import customStyles from './styles.module.css';
@@ -23,7 +23,7 @@ import customStyles from './styles.module.css';
 function useLocaleDropdownUtils() {
   const {
     siteConfig,
-    i18n: { localeConfigs },
+    i18n: {localeConfigs},
   } = useDocusaurusContext();
   const alternatePageUtils = useAlternatePageUtils();
   const search = useHistorySelector((history) => history.location.search);
@@ -32,7 +32,9 @@ function useLocaleDropdownUtils() {
   const getLocaleConfig = (locale: string) => {
     const localeConfig = localeConfigs[locale];
     if (!localeConfig) {
-      throw new Error(`Docusaurus bug, no locale config found for locale=${locale}`);
+      throw new Error(
+        `Docusaurus bug, no locale config found for locale=${locale}`,
+      );
     }
     return localeConfig;
   };
@@ -55,12 +57,15 @@ function useLocaleDropdownUtils() {
   };
 
   return {
-    getURL: (locale: string, options: { queryString: string | undefined }) => {
+    getURL: (locale: string, options: {queryString: string | undefined}) => {
       // We have 2 query strings because
       // - there's the current one
       // - there's one user can provide through navbar config
       // see https://github.com/facebook/docusaurus/pull/8915
-      const finalSearch = mergeSearchStrings([search, options.queryString], 'append');
+      const finalSearch = mergeSearchStrings(
+        [search, options.queryString],
+        'append',
+      );
       return `${getBaseURLForLocale(locale)}${finalSearch}${hash}`;
     },
     getLabel: (locale: string) => {
@@ -82,14 +87,14 @@ export default function LocaleDropdownNavbarItem({
   const utils = useLocaleDropdownUtils();
 
   const {
-    i18n: { currentLocale, locales },
+    i18n: {currentLocale, locales},
   } = useDocusaurusContext();
 
   const localeItems = locales.map((locale): LinkLikeNavbarItemProps => {
     return {
       label: utils.getLabel(locale),
       lang: utils.getLang(locale),
-      to: utils.getURL(locale, { queryString }),
+      to: utils.getURL(locale, {queryString}),
       target: '_self',
       autoAddBaseUrl: false,
       className:
@@ -124,7 +129,9 @@ export default function LocaleDropdownNavbarItem({
         <>
           <IconLanguage className={styles.iconLanguage} />
           {/* CUSTOM CODE - added span in order to hide the text */}
-          <span className={customStyles.localeVisuallyHidden}>{dropdownLabel}</span>
+          <span className={customStyles.localeVisuallyHidden}>
+            {dropdownLabel}
+          </span>
         </>
       }
       items={items}

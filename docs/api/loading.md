@@ -42,7 +42,7 @@ import Controller from '@site/static/usage/v8/loading/controller/index.md';
 
 ### Spinners
 
-The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
+The spinner that is used can be customized using the `spinner` property. Refer to the [spinner property documentation](#spinner) for a full list of options.
 
 import Spinners from '@site/static/usage/v8/loading/spinners/index.md';
 

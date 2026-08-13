@@ -17,7 +17,7 @@ Ionic UI components as Angular standalone components is supported starting in Io
 
 Developers can use Ionic components as standalone components to take advantage of treeshaking and newer Angular features. This option involves importing specific Ionic components in the Angular components you want to use them in. Developers can use Ionic standalone components even if their Angular application is NgModule-based.
 
-See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for instructions on how to update your Ionic app to make use of Ionic standalone components.
+Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for instructions on how to update your Ionic app to make use of Ionic standalone components.
 
 **Benefits**
 
