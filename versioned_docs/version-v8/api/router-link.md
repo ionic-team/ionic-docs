@@ -27,7 +27,7 @@ The router link component is used for navigating to a specified link. Similar to
 Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router.
 :::
 
-See the [Router](./router) documentation for more information.
+Refer to the [Router](./router) documentation for more information.
 
 ## Properties
 

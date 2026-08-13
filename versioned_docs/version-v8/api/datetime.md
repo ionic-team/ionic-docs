@@ -151,7 +151,7 @@ The following example shows how to set the locale to Spanish (Spain).
 <CustomLocale />
 
 :::note
-The time label is not automatically localized. See [Time Label](#time-label) for more information.
+The time label is not automatically localized. Refer to [Time Label](#time-label) for more information.
 :::
 
 ### Hour Cycle
@@ -179,7 +179,7 @@ In the following example, we can use the `hourCycle` property to force `ion-date
 
 ### First Day of the Week
 
-For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
+For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (refer to [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
 
 <FirstDayOfWeek />
 
@@ -459,7 +459,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels
 
-The wheel picker in Datetime uses [Picker](./picker) internally. See [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
+The wheel picker in Datetime uses [Picker](./picker) internally. Refer to [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces
 
