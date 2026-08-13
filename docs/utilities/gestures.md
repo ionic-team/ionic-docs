@@ -119,7 +119,7 @@ constructor(private gestureCtrl: GestureController) {
 </TabItem>
 <TabItem value="react">
 
-Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
+Developers using React should install the latest version of `@ionic/react`.
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/react';
