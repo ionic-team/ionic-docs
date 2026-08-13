@@ -55,9 +55,8 @@ module.exports = function (context, options) {
       }
 
       // TODO(FW-7097): Replace this with `latest` when v9 is released.
-      // Dev build based on the `next` branch of `ionic-framework`.
-      // This must be used to build the docs with the new components.
-      let npmTag = '8.8.9-dev.11781201980.1b6e8398';
+      // Dev build from the `major-9.0` branch of `ionic-framework` (sha a334b43).
+      let npmTag = '8.8.16-dev.11784913436.1a334b43';
       if (currentVersion.banner === 'unreleased') {
         npmTag = 'next';
       } else if (currentVersion.path !== undefined) {
