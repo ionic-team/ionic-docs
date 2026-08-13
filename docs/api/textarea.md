@@ -1,12 +1,12 @@
 ---
 title: "ion-textarea"
 ---
-import Props from '@ionic-internal/component-api/v8/textarea/props.md';
-import Events from '@ionic-internal/component-api/v8/textarea/events.md';
-import Methods from '@ionic-internal/component-api/v8/textarea/methods.md';
-import Parts from '@ionic-internal/component-api/v8/textarea/parts.md';
+import Props from '@ionic-internal/component-api/v8/textarea/props.mdx';
+import Events from '@ionic-internal/component-api/v8/textarea/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/textarea/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/textarea/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/textarea/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/textarea/slots.md';
+import Slots from '@ionic-internal/component-api/v8/textarea/slots.mdx';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>

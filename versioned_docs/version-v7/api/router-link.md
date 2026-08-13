@@ -2,12 +2,12 @@
 title: 'ion-router-link'
 ---
 
-import Props from '@ionic-internal/component-api/v7/router-link/props.md';
-import Events from '@ionic-internal/component-api/v7/router-link/events.md';
-import Methods from '@ionic-internal/component-api/v7/router-link/methods.md';
-import Parts from '@ionic-internal/component-api/v7/router-link/parts.md';
+import Props from '@ionic-internal/component-api/v7/router-link/props.mdx';
+import Events from '@ionic-internal/component-api/v7/router-link/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/router-link/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/router-link/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/router-link/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/router-link/slots.md';
+import Slots from '@ionic-internal/component-api/v7/router-link/slots.mdx';
 
 <head>
   <title>ion-router-link: Navigate To a Specified Link</title>

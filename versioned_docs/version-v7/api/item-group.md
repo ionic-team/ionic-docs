@@ -2,12 +2,12 @@
 title: 'ion-item-group'
 ---
 
-import Props from '@ionic-internal/component-api/v7/item-group/props.md';
-import Events from '@ionic-internal/component-api/v7/item-group/events.md';
-import Methods from '@ionic-internal/component-api/v7/item-group/methods.md';
-import Parts from '@ionic-internal/component-api/v7/item-group/parts.md';
+import Props from '@ionic-internal/component-api/v7/item-group/props.mdx';
+import Events from '@ionic-internal/component-api/v7/item-group/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/item-group/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/item-group/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/item-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/item-group/slots.md';
+import Slots from '@ionic-internal/component-api/v7/item-group/slots.mdx';
 
 <head>
   <title>ion-item-group: Group Items to Divide into Multiple Sections</title>

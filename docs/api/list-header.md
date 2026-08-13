@@ -1,12 +1,12 @@
 ---
 title: "ion-list-header"
 ---
-import Props from '@ionic-internal/component-api/v8/list-header/props.md';
-import Events from '@ionic-internal/component-api/v8/list-header/events.md';
-import Methods from '@ionic-internal/component-api/v8/list-header/methods.md';
-import Parts from '@ionic-internal/component-api/v8/list-header/parts.md';
+import Props from '@ionic-internal/component-api/v8/list-header/props.mdx';
+import Events from '@ionic-internal/component-api/v8/list-header/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/list-header/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/list-header/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/list-header/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/list-header/slots.md';
+import Slots from '@ionic-internal/component-api/v8/list-header/slots.mdx';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

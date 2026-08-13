@@ -2,12 +2,12 @@
 title: 'ion-item-sliding'
 ---
 
-import Props from '@ionic-internal/component-api/v7/item-sliding/props.md';
-import Events from '@ionic-internal/component-api/v7/item-sliding/events.md';
-import Methods from '@ionic-internal/component-api/v7/item-sliding/methods.md';
-import Parts from '@ionic-internal/component-api/v7/item-sliding/parts.md';
+import Props from '@ionic-internal/component-api/v7/item-sliding/props.mdx';
+import Events from '@ionic-internal/component-api/v7/item-sliding/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/item-sliding/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/item-sliding/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/item-sliding/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/item-sliding/slots.md';
+import Slots from '@ionic-internal/component-api/v7/item-sliding/slots.mdx';
 
 <head>
   <title>ion-item-sliding: Slide Buttons | Slide Right to Left</title>

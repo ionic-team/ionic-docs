@@ -1,12 +1,12 @@
 ---
 title: "ion-accordion-group"
 ---
-import Props from '@ionic-internal/component-api/v8/accordion-group/props.md';
-import Events from '@ionic-internal/component-api/v8/accordion-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/accordion-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/accordion-group/parts.md';
+import Props from '@ionic-internal/component-api/v8/accordion-group/props.mdx';
+import Events from '@ionic-internal/component-api/v8/accordion-group/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/accordion-group/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/accordion-group/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/accordion-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/accordion-group/slots.md';
+import Slots from '@ionic-internal/component-api/v8/accordion-group/slots.mdx';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

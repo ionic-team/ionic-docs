@@ -4,12 +4,12 @@ title: "ion-action-sheet"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/action-sheet/props.md';
-import Events from '@ionic-internal/component-api/v8/action-sheet/events.md';
-import Methods from '@ionic-internal/component-api/v8/action-sheet/methods.md';
-import Parts from '@ionic-internal/component-api/v8/action-sheet/parts.md';
+import Props from '@ionic-internal/component-api/v8/action-sheet/props.mdx';
+import Events from '@ionic-internal/component-api/v8/action-sheet/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/action-sheet/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/action-sheet/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/action-sheet/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/action-sheet/slots.md';
+import Slots from '@ionic-internal/component-api/v8/action-sheet/slots.mdx';
 
 <head>
   <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>

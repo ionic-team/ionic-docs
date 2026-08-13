@@ -81,12 +81,12 @@ module.exports = function (context, options) {
          * directory within the plugin directory.
          */
         promises.push(
-          createData(`${basePath}/props.md`, data.props),
-          createData(`${basePath}/events.md`, data.events),
-          createData(`${basePath}/methods.md`, data.methods),
-          createData(`${basePath}/parts.md`, data.parts),
+          createData(`${basePath}/props.mdx`, data.props),
+          createData(`${basePath}/events.mdx`, data.events),
+          createData(`${basePath}/methods.mdx`, data.methods),
+          createData(`${basePath}/parts.mdx`, data.parts),
           createData(`${basePath}/custom-props.mdx`, data.customProps),
-          createData(`${basePath}/slots.md`, data.slots)
+          createData(`${basePath}/slots.mdx`, data.slots)
         );
       }
 

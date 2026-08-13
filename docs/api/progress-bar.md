@@ -1,12 +1,12 @@
 ---
 title: "ion-progress-bar"
 ---
-import Props from '@ionic-internal/component-api/v8/progress-bar/props.md';
-import Events from '@ionic-internal/component-api/v8/progress-bar/events.md';
-import Methods from '@ionic-internal/component-api/v8/progress-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/progress-bar/parts.md';
+import Props from '@ionic-internal/component-api/v8/progress-bar/props.mdx';
+import Events from '@ionic-internal/component-api/v8/progress-bar/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/progress-bar/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/progress-bar/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/progress-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/progress-bar/slots.md';
+import Slots from '@ionic-internal/component-api/v8/progress-bar/slots.mdx';
 
 <head>
   <title>ion-progress-bar: App Progress Bar for Loading Indicator</title>

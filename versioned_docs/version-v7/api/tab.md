@@ -2,12 +2,12 @@
 title: 'ion-tab'
 ---
 
-import Props from '@ionic-internal/component-api/v7/tab/props.md';
-import Events from '@ionic-internal/component-api/v7/tab/events.md';
-import Methods from '@ionic-internal/component-api/v7/tab/methods.md';
-import Parts from '@ionic-internal/component-api/v7/tab/parts.md';
+import Props from '@ionic-internal/component-api/v7/tab/props.mdx';
+import Events from '@ionic-internal/component-api/v7/tab/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/tab/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/tab/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/tab/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/tab/slots.md';
+import Slots from '@ionic-internal/component-api/v7/tab/slots.mdx';
 
 <head>
   <title>ion-tab: Ionic Framework Application Component</title>

@@ -2,12 +2,12 @@
 title: 'ion-picker'
 ---
 
-import Props from '@ionic-internal/component-api/v7/picker/props.md';
-import Events from '@ionic-internal/component-api/v7/picker/events.md';
-import Methods from '@ionic-internal/component-api/v7/picker/methods.md';
-import Parts from '@ionic-internal/component-api/v7/picker/parts.md';
+import Props from '@ionic-internal/component-api/v7/picker/props.mdx';
+import Events from '@ionic-internal/component-api/v7/picker/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/picker/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/picker/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/picker/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
+import Slots from '@ionic-internal/component-api/v7/picker/slots.mdx';
 
 <head>
   <title>ion-picker: A Dialog That Displays Buttons and Columns</title>

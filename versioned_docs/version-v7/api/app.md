@@ -2,12 +2,12 @@
 title: 'ion-app'
 ---
 
-import Props from '@ionic-internal/component-api/v7/app/props.md';
-import Events from '@ionic-internal/component-api/v7/app/events.md';
-import Methods from '@ionic-internal/component-api/v7/app/methods.md';
-import Parts from '@ionic-internal/component-api/v7/app/parts.md';
+import Props from '@ionic-internal/component-api/v7/app/props.mdx';
+import Events from '@ionic-internal/component-api/v7/app/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/app/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/app/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/app/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/app/slots.md';
+import Slots from '@ionic-internal/component-api/v7/app/slots.mdx';
 
 <head>
   <title>ion-app: Container Element for an Ionic Application</title>
