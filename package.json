@@ -41,7 +41,7 @@
     "@docusaurus/faster": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
     "@floating-ui/react": "^0.27.20",
-    "@ionic-internal/ionic-ds": "^7.0.0",
+    "@ionic-internal/ionic-ds": "^8.0.0",
     "@mdx-js/react": "^3.1.1",
     "@prismicio/client": "^7.22.0",
     "@prismicio/react": "^3.4.1",
