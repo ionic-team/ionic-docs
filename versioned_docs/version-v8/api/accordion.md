@@ -13,7 +13,7 @@ import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
   <title>ion-accordion: Accordion Components: How to Build & Examples</title>
   <meta
     name="description"
-    content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples."
+    content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and explore examples."
   />
 </head>
 
@@ -101,7 +101,7 @@ import ReadonlyGroup from '@site/static/usage/v8/accordion/readonly/group/index.
 
 The `header` slot is used as the toggle that will expand or collapse your accordion. We recommend you use an `ion-item` here to take advantage of the accessibility and theming functionalities.
 
-When using `ion-item` in the `header` slot, the `ion-item`'s `button` prop is set to `true` and the `detail` prop is set to `false`. In addition, we will also automatically add a toggle icon to the `ion-item`. This icon will automatically be rotated when you expand or collapse the accordion. See [Customizing Icons](#icons) for more information.
+When using `ion-item` in the `header` slot, the `ion-item`'s `button` prop is set to `true` and the `detail` prop is set to `false`. In addition, we will also automatically add a toggle icon to the `ion-item`. This icon will automatically be rotated when you expand or collapse the accordion. Refer to [Customizing Icons](#icons) for more information.
 
 ### Content
 

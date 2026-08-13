@@ -49,9 +49,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>
-    Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
-  </p>
+  Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -74,8 +72,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
 </DocsCard>
 
-<DocsCard header="Grids" href="api/grid" icon="/icons/component-grid-icon.png">
-  <p>A collection of layout components for building responsive grids and image layouts.</p>
+<DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
+  <p>The grid is a powerful mobile-first system for building custom layouts.</p>
 </DocsCard>
 
 <DocsCard header="Icons" href="api/icon" icon="/icons/component-icons-icon.png">
@@ -91,10 +89,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
-  <p>
-    Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements.
-    Items can be swiped, deleted, reordered, edited, and more.
-  </p>
+  Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements.
+  Items can be swiped, deleted, reordered, edited, and more.
 </DocsCard>
 
 <DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
@@ -102,10 +98,8 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
-  <p>
-    A collection of media components, including avatars, icons, images, and thumbnails, designed to enhance visual
-    content.
-  </p>
+  A collection of media components, including avatars, icons, images, and thumbnails, designed to enhance visual
+  content.
 </DocsCard>
 
 <DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">

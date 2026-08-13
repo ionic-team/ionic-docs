@@ -22,7 +22,7 @@ The Menu Toggle component can be used to toggle a menu open or closed.
 
 Menu toggles are only visible when the selected menu is enabled. If the menu is disabled or it's being presented as a split pane, the menu toggle will be hidden. To always display the menu toggle, the `autoHide` property can be set to `false`.
 
-See the [menu](./menu#menu-toggle) documentation for more information.
+Refer to the [menu](./menu#menu-toggle) documentation for more information.
 
 
 ## Properties

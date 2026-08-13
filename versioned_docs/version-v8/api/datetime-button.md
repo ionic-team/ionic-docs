@@ -37,11 +37,11 @@ import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
 
 ## Localization
 
-The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
+The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. Refer to [Datetime Localization](./datetime#localization) for more details.
 
 ## Format Options
 
-You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. See [Datetime Format Options](./datetime#format-options) for more details.
+You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. Refer to [Datetime Format Options](./datetime#format-options) for more details.
 
 import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
 
@@ -50,20 +50,6 @@ import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/
 ## Usage with Modals and Popovers
 
 `ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
-
-<!--
-## Customization
-
-TODO
-
-### Buttons
-
-TODO
-
-### Theming
-
-TODO
--->
 
 ## Properties
 

@@ -10,64 +10,60 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/ReleaseNotes/release-notes.json');
 
-// export default {
-//   title: 'Build Release Notes data',
-//   task: async () => outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 })
-// };
-
-// Get the GitHub Releases from Ionic
+// Get the GitHub Releases from Ionic Framework
 // -------------------------------------------------------------------------------
-// This requires an environment GITHUB_TOKEN otherwise it may fail
-//
-// To add a GITHUB_TOKEN, follow the steps to create a personal access token:
-// https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-// and then authorize it to work with SSO:
-// https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on
+// Requires a GITHUB_TOKEN environment variable. Refer to
+// https://github.com/ionic-team/ionic-docs/blob/main/CONTRIBUTING.md#github-token
+// for setup instructions.
 const getReleases = async () => {
-  try {
-    const request = await fetch(new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'), {
-      headers: {
-        Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
-      },
-    });
+  if (!process.env.GITHUB_TOKEN) {
+    throw new Error('GITHUB_TOKEN environment variable is required.');
+  }
 
-    const releases = await request.json();
+  const url = new URL('repos/ionic-team/ionic-framework/releases', 'https://api.github.com');
+  const headers = { Authorization: `token ${process.env.GITHUB_TOKEN}` };
+  const request = await fetch(url, { headers });
 
-    // Check that the response is an array in case it was
-    // successful but returned an object
-    if (Array.isArray(releases)) {
-      return releases
-        .filter((release) => {
-          const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+  if (!request.ok) {
+    const error = await request.json().catch(() => ({}));
+    let message = `GitHub API returned ${request.status} ${request.statusText}: ${error.message ?? 'Unknown error'}.`;
 
-          // All non-prerelease, non-alpha, non-beta, non-rc release
-          return releasePattern.test(release.tag_name);
-        })
-        .map((release) => {
-          const body = renderMarkdown(release.body.replace(/^#.*/, '')).value;
-          const published_at = parseDate(release.published_at);
-          const version = release.tag_name.replace('v', '');
-          const type = getVersionType(version);
-          const { name, tag_name } = release;
-
-          return {
-            body,
-            name,
-            published_at,
-            tag_name,
-            type,
-            version,
-          };
-        })
-        .sort((a, b) => {
-          return -compare(a.tag_name, b.tag_name);
-        });
-    } else {
-      console.error('There was an issue getting releases:', releases);
-      return [];
+    if (request.status === 401 && error.message?.includes('Bad credentials')) {
+      message += ' Check that GITHUB_TOKEN is set and is a valid GitHub Personal Access Token.';
     }
-  } catch (error) {
-    return [];
+
+    throw new Error(message);
+  }
+
+  const releases = await request.json();
+
+  // Check that the response is an array in case it was
+  // successful but returned an object
+  if (Array.isArray(releases)) {
+    return releases
+      .filter((release) => {
+        const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
+        return releasePattern.test(release.tag_name);
+      })
+      .map((release) => {
+        const body = renderMarkdown((release.body ?? '').replace(/^#.*/, '')).value;
+        const published_at = parseDate(release.published_at);
+        const version = release.tag_name.replace('v', '');
+        const type = getVersionType(version);
+        const { name, tag_name } = release;
+
+        return {
+          body,
+          name,
+          published_at,
+          tag_name,
+          type,
+          version,
+        };
+      })
+      .sort((a, b) => -compare(a.tag_name, b.tag_name));
+  } else {
+    throw new Error('GitHub API returned an unexpected response format.');
   }
 };
 
@@ -98,7 +94,21 @@ function getVersionType(version) {
 
 async function run() {
   const { outputJson } = pkg;
-  outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 });
+  try {
+    const releases = await getReleases();
+    outputJson(OUTPUT_PATH, releases, { spaces: 2 });
+    console.log(`🚀 Release Notes Generated`);
+  } catch (error) {
+    // Only fail the build in CI environments and the preview
+    // or production Vercel environments.
+    const shouldFail = process.env.CI || ['production', 'preview'].includes(process.env.VERCEL_ENV);
+    if (shouldFail) {
+      console.error(`\n❌ Release Notes Failed\n  ⇢ ${error.message}\n`);
+      process.exit(1);
+    }
+    console.warn(`\n⚠️  Release Notes Failed\n  ⇢ ${error.message}`);
+    outputJson(OUTPUT_PATH, [], { spaces: 2 });
+  }
 }
 
 run();

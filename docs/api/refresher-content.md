@@ -13,7 +13,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic displays a pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.
 
-For usage examples, see the [Refresher](/docs/api/refresher) documentation.
+For usage examples, refer to the [Refresher](/docs/api/refresher) documentation.
 
 
 ## Properties

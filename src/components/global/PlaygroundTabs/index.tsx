@@ -5,12 +5,21 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useState, cloneElement, isValidElement, type ReactElement, useRef, createRef, useEffect } from 'react';
+import React, {
+  useState,
+  cloneElement,
+  isValidElement,
+  type ReactElement,
+  type ReactNode,
+  useRef,
+  createRef,
+  useEffect,
+} from 'react';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { duplicates } from '@docusaurus/theme-common';
 import { useScrollPositionBlocker } from '@docusaurus/theme-common/internal';
 import type { Props } from '@theme/Tabs';
-import type { Props as TabItemProps } from '@theme/TabItem';
+import type { TabItemProps } from './TabItem';
 
 import clsx from 'clsx';
 
@@ -18,11 +27,12 @@ import styles from './styles.module.css';
 
 // A very rough duck type, but good enough to guard against mistakes while
 // allowing customization
-function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps & { icon?: JSX.Element }> {
-  return typeof comp.props.value !== 'undefined';
+function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps & { icon?: ReactNode }> {
+  const { props } = comp;
+  return !!props && typeof props === 'object' && 'value' in props;
 }
 
-function TabsComponent(props: Props): JSX.Element {
+function TabsComponent(props: Props): ReactNode {
   const { lazy, block, defaultValue: defaultValueProp, values: valuesProp, groupId, className } = props;
   const [leftNavVisible, setLeftNavVisible] = useState(false);
   const [rightNavVisible, setRightNavVisible] = useState(false);
@@ -233,7 +243,7 @@ function TabsComponent(props: Props): JSX.Element {
   );
 }
 
-export default function PlaygroundTabs(props: Props): JSX.Element {
+export default function PlaygroundTabs(props: Props): ReactNode {
   const isBrowser = useIsBrowser();
   return (
     <TabsComponent

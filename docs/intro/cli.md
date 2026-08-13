@@ -19,7 +19,7 @@ Ionic apps are created and developed primarily through the Ionic [command-line](
 
 ## Install the Ionic CLI
 
-Before proceeding, make sure your computer has [Node.js](../reference/glossary.md#node) installed. See [these instructions](environment.md) to set up an environment for Ionic.
+Before proceeding, make sure your computer has [Node.js](../reference/glossary.md#node) installed. Refer to the [environment setup guide](environment.md) to prepare your machine.
 
 Install the Ionic CLI with npm:
 
@@ -37,7 +37,7 @@ $ npm install -g @ionic/cli
 
 :::note
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
 :::
 
 ## Start an App
@@ -50,7 +50,7 @@ ionic start
 
 ![Three thumbnail previews of Ionic app templates: blank, tabs, and side menu.](/img/installation/start-app-thumbnails.png 'Ionic App Starter Templates')
 
-To learn more about starting Ionic apps, see the [Starting Guide](../developing/starting.md).
+To learn more about starting Ionic apps, refer to the [Starting Guide](../developing/starting.md).
 
 ## Run the App
 
@@ -61,4 +61,4 @@ $ cd myApp
 $ ionic serve
 ```
 
-There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](../developing/previewing.md).
+There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, refer to the [Running an App Guide](../developing/previewing.md).

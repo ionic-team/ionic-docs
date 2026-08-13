@@ -44,27 +44,27 @@ The following set of CSS files are optional and can safely be commented out or r
 
 #### padding.css
 
-Adds utility classes to modify the padding or margin on any element, see [CSS Utilities](css-utilities.md#content-space) for usage information.
+Adds utility classes to modify the padding or margin on any element, refer to [CSS Utilities](css-utilities.md#content-space) for usage information.
 
 #### float-elements.css
 
-Adds utility classes to float an element based on the breakpoint and side, see [CSS Utilities](css-utilities.md#element-placement) for usage information.
+Adds utility classes to float an element based on the breakpoint and side, refer to [CSS Utilities](css-utilities.md#element-placement) for usage information.
 
 #### text-alignment.css
 
-Adds utility classes to align the text of an element or adjust the white space based on the breakpoint, see [CSS Utilities](css-utilities.md#text-alignment) for usage information.
+Adds utility classes to align the text of an element or adjust the white space based on the breakpoint, refer to [CSS Utilities](css-utilities.md#text-alignment) for usage information.
 
 #### text-transformation.css
 
-Adds utility classes to transform the text of an element to `uppercase`, `lowercase` or `capitalize` based on the breakpoint, see [CSS Utilities](css-utilities.md#text-transformation) for usage information.
+Adds utility classes to transform the text of an element to `uppercase`, `lowercase` or `capitalize` based on the breakpoint, refer to [CSS Utilities](css-utilities.md#text-transformation) for usage information.
 
 #### flex-utils.css
 
-Adds utility classes to align flex containers and items, see [CSS Utilities](css-utilities.md#flex-properties) for usage information.
+Adds utility classes to align flex containers and items, refer to [CSS Utilities](css-utilities.md#flex-properties) for usage information.
 
 #### display.css
 
-Adds utility classes to hide any element based on the breakpoint, see [CSS Utilities](css-utilities.md#element-display) for usage information.
+Adds utility classes to hide any element based on the breakpoint, refer to [CSS Utilities](css-utilities.md#element-display) for usage information.
 
 ## Usage
 

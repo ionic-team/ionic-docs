@@ -47,7 +47,25 @@ module.exports = {
     },
   },
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  /**
+   * Docusaurus Faster replaces the Webpack/Babel/Terser toolchain with
+   * Rspack/SWC/Lightning CSS, which cuts build times and memory usage on a
+   * site with this many versioned pages. It becomes the default in v4.
+   *
+   * `removeLegacyPostBuildHeadAttribute` is required by the `ssgWorkerThreads`
+   * part of `faster`, so it has to be enabled alongside it.
+   */
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    faster: true,
+  },
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
@@ -353,7 +371,7 @@ module.exports = {
         name: 'ionic-docs-ads',
         async loadContent() {
           const repoName = 'ionicframeworkcom';
-          const endpoint = prismic.getEndpoint(repoName);
+          const endpoint = prismic.getRepositoryEndpoint(repoName);
           const client = prismic.createClient(endpoint, {
             fetch,
           });

@@ -23,7 +23,7 @@ A navigation link is used to navigate to a specified component. The component ca
 
 It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
 
-See the [nav](./nav#using-navlink) documentation for more information.
+Refer to the [nav](./nav#using-navlink) documentation for more information.
 
 ## Properties
 

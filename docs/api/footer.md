@@ -27,7 +27,7 @@ import Basic from '@site/static/usage/v9/footer/basic/index.md';
 
 ## Translucent Footer
 
-Footers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+Footers can match the transparency found in native iOS applications by setting the `translucent` property. In order for the content to scroll behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
 import Translucent from '@site/static/usage/v9/footer/translucent/index.md';
 
