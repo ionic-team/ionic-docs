@@ -202,7 +202,7 @@ import type { ModalOptions, PopoverOptions } from '@ionic/angular';
 
 ## Docs for Overlays in Ionic
 
-For full docs and to see usage examples, visit the docs page for each of the overlays in Ionic:
+For full docs and usage examples, visit the docs page for each of the overlays in Ionic:
 
 - [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
 - [Alert](https://ionicframework.com/docs/api/alert)

@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## JavaScript Version Support
 
-Ionic Core supports the latest versions of JavaScript. For detailed information on supported JavaScript runtime versions, see the [Stencil Support Policy](https://stenciljs.com/docs/support-policy#javascript-runtime).
+Ionic Core supports the latest versions of JavaScript. For detailed information on supported JavaScript runtime versions, refer to the [Stencil Support Policy](https://stenciljs.com/docs/support-policy#javascript-runtime).
 
 ## JavaScript Tooling
 

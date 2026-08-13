@@ -244,7 +244,7 @@ The following classes are deprecated and will be removed in the next major relea
 
 The padding class sets the padding area of an element. The padding area is the space between the content of the element and its border.
 
-The default amount of `padding` to be applied is `16px` and is set by the `--ion-padding` variable. See the [CSS Variables](../theming/css-variables.md) section for more information on how to change these values.
+The default amount of `padding` to be applied is `16px` and is set by the `--ion-padding` variable. Refer to the [CSS Variables](../theming/css-variables.md) section for more information on how to change these values.
 
 ```html
 <ion-grid>
@@ -294,7 +294,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 
 The margin area extends the border area with an empty area used to separate the element from its neighbors.
 
-The default amount of `margin` to be applied is `16px` and is set by the `--ion-margin` variable. See the [CSS Variables](../theming/css-variables.md) section for more information on how to change these values.
+The default amount of `margin` to be applied is `16px` and is set by the `--ion-margin` variable. Refer to the [CSS Variables](../theming/css-variables.md) section for more information on how to change these values.
 
 ```html
 <ion-grid>
@@ -342,7 +342,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 
 ## Flex Container Properties
 
-Flexbox properties are divided into two categories: **container properties** that control the layout of all flex items, and **item properties** that control individual flex items. See [Flex Item Properties](#flex-item-properties) for item-level alignment.
+Flexbox properties are divided into two categories: **container properties** that control the layout of all flex items, and **item properties** that control individual flex items. Refer to [Flex Item Properties](#flex-item-properties) for item-level alignment.
 
 <img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
 

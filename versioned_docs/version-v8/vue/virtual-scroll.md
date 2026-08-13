@@ -44,7 +44,7 @@ app.use(VueVirtualScroller);
 After doing this, all virtual scroll components will be available for use in our app.
 
 :::note
-Installing all components may result in unused virtual scroll components being added to your application bundle. See the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
+Installing all components may result in unused virtual scroll components being added to your application bundle. Refer to the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
 :::
 
 ### Installing Specific Components
@@ -127,4 +127,4 @@ For example:
 
 ## Further Reading
 
-This guide only covers a small portion of what `vue-virtual-scroller` is capable of. For more details, please see the [vue-virtual-scroller documentation](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md).
+This guide only covers a small portion of what `vue-virtual-scroller` is capable of. For more details, please refer to the [vue-virtual-scroller documentation](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md).

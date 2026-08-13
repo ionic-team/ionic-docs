@@ -73,4 +73,4 @@ For example:
 
 ## Further Reading
 
-This guide only covers a small portion of what `Virtuoso` is capable of. For more details, please see the [Virtuoso documentation](https://virtuoso.dev/).
+This guide only covers a small portion of what `Virtuoso` is capable of. For more details, please refer to the [Virtuoso documentation](https://virtuoso.dev/).

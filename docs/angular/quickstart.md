@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Welcome! This guide will walk you through the basics of Ionic Angular development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Angular before building your first real app.
 
-If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, see the [Ionic Angular Overview](overview).
+If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, refer to the [Ionic Angular Overview](overview).
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+If you don't have Node.js and npm, [download Node.js](https://nodejs.org/en/download) (which includes npm).
 
 ## Create a Project with the Ionic CLI
 
@@ -175,7 +175,7 @@ And the template, in the `home.page.html` file, uses those components:
 This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip[Learn More]
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+For detailed information about Ionic layout components, refer to the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
 ## Add an Ionic Component
@@ -257,7 +257,7 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-Navigating can also be performed using Angular's Router service. See the [Angular Navigation documentation](/docs/angular/navigation.md#navigating-to-different-routes) for more information.
+Navigating can also be performed using Angular's Router service. Refer to the [Angular Navigation documentation](/docs/angular/navigation.md#navigating-to-different-routes) for more information.
 :::
 
 ## Add Icons to the New Page
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
 
-For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, refer to the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
@@ -406,7 +406,7 @@ ionic cap open ios
 ionic cap open android
 ```
 
-See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+Refer to [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
 
 ## Explore More
 

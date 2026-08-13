@@ -17,7 +17,7 @@ This guide covers how routing works in an app built with Ionic and React.
 
 `IonReactRouter` uses the popular [React Router](https://github.com/remix-run/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
 
-Everything you know about routing using React Router carries over into Ionic React. Let's take a look at the basics of an Ionic React app and how routing works with it.
+Everything you know about routing using React Router carries over into Ionic React. Let's walk through the basics of an Ionic React app and how routing works with it.
 
 ## Routing in Ionic React
 
@@ -126,7 +126,7 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 };
 ```
 
-Here, we see that in the event a location does not match the first two `Route`s the `IonRouterOutlet` will redirect the Ionic React app to the `match.url` path.
+Here, in the event a location does not match the first two `Route`s, the `IonRouterOutlet` redirects the Ionic React app to the `match.url` path.
 
 You can alternatively supply a component to render instead of providing a redirect.
 
@@ -228,7 +228,7 @@ A programmatic option for navigation is using the [`history`](https://v5.reactro
 
 ### Navigating using `history.go`
 
-React Router uses the `history` package which has a [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+React Router uses the `history` package which has a [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) method that allows developers to move forward or backward through the application history. Let's walk through an example.
 
 Say you have the following application history:
 
@@ -236,11 +236,11 @@ Say you have the following application history:
 
 If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
 
-Using `history.go()` in Ionic React is not supported at the moment. Interested in seeing support for this get added to Ionic React? [Let us know on GitHub](https://github.com/ionic-team/ionic-framework/issues/23775)!
+Using `history.go()` in Ionic React is not supported at the moment. Interested in support for this being added to Ionic React? [Let us know on GitHub](https://github.com/ionic-team/ionic-framework/issues/23775)!
 
 ## URL Parameters
 
-The second route defined in the Dashboard Page has a URL parameter defined (the ":id" portion in the path). URL parameters are dynamic portions of the `path`, and when the user navigates to a URL such as "/dashboard/users/1", the "1" is saved to a parameter named "id", which can be accessed in the component the route renders. Let's see how that's done.
+The second route defined in the Dashboard Page has a URL parameter defined (the ":id" portion in the path). URL parameters are dynamic portions of the `path`, and when the user navigates to a URL such as "/dashboard/users/1", the "1" is saved to a parameter named "id", which can be accessed in the component the route renders. Let's walk through how that's done.
 
 **UserDetailPage.tsx**
 
@@ -328,9 +328,9 @@ We recommend keeping your application as simple as possible until you need to ad
 
 The two most common uses of non-linear routing is with tabs and nested `IonRouterOutlets`. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+For more on tabs, please refer to [Working with Tabs](#working-with-tabs).
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+For more on nested router outlets, please refer to [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
@@ -394,13 +394,13 @@ The above routes are nested because they are in the `children` array of the pare
 
 Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
 
-Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `IonTabBar` and `IonTabs` components rendered in the first `IonRouterOutlet`. The `IonTabs` component renders another `IonRouterOutlet` which is responsible for rendering the contents of each tab.
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, the first `IonRouterOutlet` renders the `IonTabBar` and `IonTabs` components. The `IonTabs` component renders another `IonRouterOutlet` which is responsible for rendering the contents of each tab.
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
 ## Working with Tabs
 
-When working with tabs, Ionic needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+When working with tabs, Ionic needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's examine the routing setup for this:
 
 ```tsx
 <IonApp>
@@ -417,7 +417,7 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 
 Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of this component. In this example, we call the path `tabs`, but this can be customized.
 
-Let's start by taking a look at our `Tabs` component:
+Let's start with our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
@@ -477,7 +477,7 @@ Each tab in Ionic is treated as an individual navigation stack. This means if yo
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
 
-Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
 
@@ -526,7 +526,7 @@ Since each tab is its own navigation stack, it is important to note that these n
 
 A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
 
-Let's take a look at a couple common mistakes that are made with tabs.
+Let's go over a couple common mistakes that are made with tabs.
 
 **A Settings Tab That Multiple Tabs Reference**
 
@@ -580,7 +580,7 @@ For example, the routes for a view with two tabs (sessions and speakers) can be 
 
 If the navigated URL were "/sessions", it would match the first route and add a URL parameter named "tab" with the value of "sessions" to the resulting `match` object passed into `SessionsPage`.
 
-When a user navigates to a session detail page ("/sessions/1" for instance), the second route adds a URL parameter named "tab" with a value of "sessions". When `IonRouterOutlet` sees that both pages are in the same "sessions" tab, it provides an animated page transition to the new view. If a user navigates to a new tab ("speakers" in this case), `IonRouterOutlet` knows not to provide the animation.
+When a user navigates to a session detail page ("/sessions/1" for instance), the second route adds a URL parameter named "tab" with a value of "sessions". When `IonRouterOutlet` detects that both pages are in the same "sessions" tab, it provides an animated page transition to the new view. If a user navigates to a new tab ("speakers" in this case), `IonRouterOutlet` knows not to provide the animation.
 
 ### Switches in IonRouterOutlet
 
@@ -645,7 +645,7 @@ const MyComponent: React.FC = () => {
 
 ## More Information
 
-For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out their docs at [https://v5.reactrouter.com/web](https://v5.reactrouter.com/web).
+For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out the [React Router v5 documentation](https://v5.reactrouter.com/web).
 
 ## From the Community
 

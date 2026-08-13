@@ -362,7 +362,7 @@ title: Glossary
   <a href="#unit-tests">
     <h3>Unit Tests</h3>
   </a>
-  Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing
+  Unit Tests and unit testing are a way to test small pieces of code to check if they behave as expected. Unit testing
   frameworks include Jasmine, Mocha, QUnit, and many others.
 </section>
 

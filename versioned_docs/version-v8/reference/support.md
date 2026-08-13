@@ -6,7 +6,7 @@ title: Support Policy
   <title>App Development Support Policy - Ionic Framework API</title>
   <meta
     name="description"
-    content="Ionic Framework API is 100% open-source (MIT), and always will be. Read our support policy to see why users know Ionic is the right choice for app development."
+    content="Ionic Framework API is 100% open-source (MIT), and always will be. Read our support policy to learn why users know Ionic is the right choice for app development."
   />
 </head>
 
@@ -59,7 +59,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 Angular's support policy for iOS is the two most recent major versions. This means that changes to your Angular project may be necessary to use Ionic Angular v4-v6 on iOS 13. To support iOS 13, change the project `target` specified in `compilerOptions` in the tsconfig.json to `es5`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on app startup in iOS 13.
 
-Note that later versions of Ionic do not support iOS 13; see [mobile support table here](./browser-support#mobile-browsers).
+Note that later versions of Ionic do not support iOS 13; refer to the [mobile support table](./browser-support.md#mobile-platforms).
 
 #### Ionic React
 
@@ -103,7 +103,7 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 |  V4 - React  |  `@ionic/react` 4.X   |               Use latest available                |
 |      V3      | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
 
-- Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](https://ionic.io/docs/premier-plugins/setup#install-tooling)
+- Native Premier Plugins require `@ionic-enterprise/cordova` for installation. Refer to the [Premier Plugins tooling setup](https://ionic.io/docs/premier-plugins/setup#install-tooling).
 - For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
 - If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
 

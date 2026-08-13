@@ -130,4 +130,4 @@ For example:
 
 ## Further Reading
 
-This only covers a small portion of what the CDK Virtual Scroller is capable of. For more details, please see the [Angular CDK Virtual Scrolling docs](https://material.angular.io/cdk/scrolling/overview).
+This only covers a small portion of what the CDK Virtual Scroller is capable of. For more details, please refer to the [Angular CDK Virtual Scrolling docs](https://material.angular.io/cdk/scrolling/overview).
