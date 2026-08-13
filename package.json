@@ -39,8 +39,6 @@
   "dependencies": {
     "@docusaurus/core": "^3.10.2",
     "@docusaurus/faster": "^3.10.2",
-    "@docusaurus/mdx-loader": "^3.10.2",
-    "@docusaurus/plugin-client-redirects": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
     "@floating-ui/react": "^0.27.20",
     "@ionic-internal/ionic-ds": "^7.0.0",
@@ -69,7 +67,6 @@
     "@ionic/prettier-config": "^3.0.0",
     "@types/react": "^19.2.18",
     "cspell": "^6.31.3",
-    "html-loader": "^3.1.0",
     "hygen": "^6.2.11",
     "prettier": "^2.8.8",
     "typescript": "^5.2.2"
