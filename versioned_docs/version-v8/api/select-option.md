@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog.
 
-For usage examples, see the [Select](./select) documentation.
+For usage examples, refer to the [Select](./select) documentation.
 
 ## Properties
 

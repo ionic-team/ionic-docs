@@ -39,7 +39,7 @@ The `type` property automatically sets both the `inputmode` and `pattern` attrib
   - Sets `inputmode="text"` to show a standard keyboard
   - Sets `pattern="[\p{L}\p{N}]"` to allow alphanumeric input
 
-See the [Pattern](#pattern) section for more details on pattern validation and customization.
+Refer to the [Pattern](#pattern) section for more details on pattern validation and customization.
 
 import Type from '@site/static/usage/v10/input-otp/type/index.md';
 

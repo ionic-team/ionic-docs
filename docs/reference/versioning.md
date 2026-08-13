@@ -1,7 +1,5 @@
 # Versioning
 
-<!-- TOC goes here -->
-
 Ionic Framework follows the <a href="https://semver.org/" target="_blank">Semantic Versioning (SemVer)</a> convention: <code>major.minor.patch.</code> Incompatible API changes increment the <code>major</code> version, adding backwards-compatible functionality increments the <code>minor</code> version, and backwards-compatible bug fixes increment the <code>patch</code> version.
 
 ## Release Schedule
@@ -20,5 +18,5 @@ A patch release will be published when bug fixes were included, but the API has 
 
 ## Changelog
 
-To see a list of all notable changes to Ionic please refer to the <a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>. This contains an ordered
+For a list of all notable changes to Ionic please refer to the <a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>. This contains an ordered
 list of all bug fixes and new features under each release.

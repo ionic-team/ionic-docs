@@ -57,9 +57,9 @@ The iOS and Material Design native refreshers are enabled by default in Ionic. H
 
 The native refresher uses a `circular` spinner for Material Design, while iOS uses the `lines` spinner. On iOS, the tick marks will progressively show as the page is pulled down.
 
-Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
+Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. Refer to [Properties](#properties) for more information on unsupported properties.
 
-The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. See the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
+The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. Refer to the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
 
 ## Usage with Virtual Scroll
 
@@ -99,6 +99,18 @@ import Advanced from '@site/static/usage/v8/refresher/advanced/index.md';
 
 <Advanced />
 
+## Event Handling
+
+### Using `ionPullStart` and `ionPullEnd`
+
+The `ionPullStart` event is emitted when the user begins a pull gesture. This event fires when the user starts to pull the refresher down.
+
+The `ionPullEnd` event is emitted when the refresher returns to an inactive state, with a reason property of `'complete'` or `'cancel'` indicating whether the refresh operation completed successfully or was canceled.
+
+import PullStartEndEvents from '@site/static/usage/v8/refresher/pull-start-end-events/index.md';
+
+<PullStartEndEvents />
+
 ## Interfaces
 
 ### RefresherEventDetail
@@ -109,6 +121,14 @@ interface RefresherEventDetail {
 }
 ```
 
+### RefresherPullEndEventDetail
+
+```typescript
+interface RefresherPullEndEventDetail {
+  reason: 'complete' | 'cancel';
+}
+```
+
 ### RefresherCustomEvent
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
@@ -116,6 +136,17 @@ While not required, this interface can be used in place of the `CustomEvent` int
 ```typescript
 interface RefresherCustomEvent extends CustomEvent {
   detail: RefresherEventDetail;
+  target: HTMLIonRefresherElement;
+}
+```
+
+### RefresherPullEndCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with the `ionPullEnd` event.
+
+```typescript
+interface RefresherPullEndCustomEvent extends CustomEvent {
+  detail: RefresherPullEndEventDetail;
   target: HTMLIonRefresherElement;
 }
 ```

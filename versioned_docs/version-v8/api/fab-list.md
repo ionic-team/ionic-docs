@@ -15,7 +15,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The fab list component is a container for multiple [fab buttons](./fab-button). It contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to `"start"`, `"end"`, `"top"`, or `"bottom"`.
 
-For usage examples, see the [fab documentation](./fab).
+For usage examples, refer to the [fab documentation](./fab).
 
 ## Properties
 

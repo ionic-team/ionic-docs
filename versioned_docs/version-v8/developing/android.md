@@ -14,7 +14,7 @@ sidebar_label: Developing for Android
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info Looking for the legacy Android guide?
+:::info[Looking for the legacy Android guide?]
 
 The Developing for Android guide has officially migrated to the [Capacitor documentation for Android](https://capacitorjs.com/docs/android). If you need to access the legacy documentation, you can find it under the [legacy developing for Android guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android).
 

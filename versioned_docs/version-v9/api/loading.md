@@ -1,6 +1,7 @@
 ---
-title: "ion-loading"
+title: 'ion-loading'
 ---
+
 import Props from '@ionic-internal/component-api/v9/loading/props.md';
 import Events from '@ionic-internal/component-api/v9/loading/events.md';
 import Methods from '@ionic-internal/component-api/v9/loading/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/loading/slots.md';
 
 <head>
   <title>ion-loading: Loading | Application Loading Indicator Overlay</title>
-  <meta name="description" content="The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed." />
+  <meta
+    name="description"
+    content="The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
-
 
 An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.
 
@@ -42,7 +45,7 @@ import Controller from '@site/static/usage/v9/loading/controller/index.md';
 
 ### Spinners
 
-The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#prop-spinner) for a full list of options.
+The spinner that is used can be customized using the `spinner` property. Refer to the [spinner property documentation](#prop-spinner) for a full list of options.
 
 import Spinners from '@site/static/usage/v9/loading/spinners/index.md';
 
@@ -59,15 +62,15 @@ import Theming from '@site/static/usage/v9/loading/theming/index.md';
 <Theming />
 
 :::note
- `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
+`ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
 ## Accessibility
-  
+
 Ionic automatically sets Loading's `role` to [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role).
 
 If the `message` property is defined for Loading, then the `aria-labelledby` attribute will be automatically set to the message element's ID. Otherwise, `aria-labelledby` will not be set, and developers must provide an `aria-label` using the `htmlAttributes` property.
-  
+
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of Loading.
 
 ## Interfaces
@@ -94,21 +97,26 @@ interface LoadingOptions {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

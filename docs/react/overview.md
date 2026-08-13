@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## React Version Support
 
-Ionic React supports the latest versions of React. For detailed information on supported versions and our support policy, see the [Ionic React Support Policy](/docs/reference/support#ionic-react).
+Ionic React supports the latest versions of React. For detailed information on supported versions and our support policy, refer to the [Ionic React Support Policy](/docs/reference/support#ionic-react).
 
 ## React Tooling
 

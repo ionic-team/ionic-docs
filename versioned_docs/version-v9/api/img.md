@@ -1,5 +1,5 @@
 ---
-title: "ion-img"
+title: 'ion-img'
 ---
 
 import Props from '@ionic-internal/component-api/v9/img/props.md';
@@ -11,14 +11,17 @@ import Slots from '@ionic-internal/component-api/v9/img/slots.md';
 
 <head>
   <title>ion-img: Img Tag to Lazy Load Images in Viewport</title>
-  <meta name="description" content="The ion-img component lazily loads images as they enter the viewport. It is deprecated in favor of a native img tag with lazy loading." />
+  <meta
+    name="description"
+    content="The ion-img component lazily loads images as they enter the viewport. It is deprecated in favor of a native img tag with lazy loading."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-:::warning Deprecated
+:::warning[Deprecated]
 `ion-img` is deprecated and will be removed in Ionic 10. Use a native `<img>` tag with [loading="lazy"](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading) instead. Refer to the [migration guide](../updating/9-0.md#img) for details on replacing events and styling.
 :::
 
@@ -31,19 +34,25 @@ import Basic from '@site/static/usage/v9/img/basic/index.md';
 <Basic />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

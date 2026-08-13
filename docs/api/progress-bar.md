@@ -48,7 +48,7 @@ import Indeterminate from '@site/static/usage/v10/progress-bar/indeterminate/ind
 
 ## Progress Bars in Toolbars
 
-<!-- Reuse the playground from the Toolbar directory -->
+{/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v10/toolbar/progress-bars/index.md';
 
 <Toolbar />

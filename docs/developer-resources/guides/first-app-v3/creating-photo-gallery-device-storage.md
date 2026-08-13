@@ -192,4 +192,4 @@ git commit -m “implemented photo gallery”
 git push ionic master
 ```
 
-Next up, we’ll look at how to apply a custom theme to an Ionic app.
+Next up, we’ll cover how to apply a custom theme to an Ionic app.

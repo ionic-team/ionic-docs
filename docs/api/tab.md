@@ -28,7 +28,7 @@ In JavaScript, this component can be used with the `ion-tabs` component configur
 :::
 
 
-See the [tabs documentation](tabs.md) for more details on configuring tabs.
+Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 
 

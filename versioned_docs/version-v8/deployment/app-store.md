@@ -23,7 +23,7 @@ Submitting an App to the iOS App store requires a few things:
 - A valid provisioning profile
 - App Development and Distribution certificates
 
-To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
+Follow the [Apple Developer Program enrollment instructions](https://developer.apple.com/programs/) to get started.
 
 ## Generating a release build
 

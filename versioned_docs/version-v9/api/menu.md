@@ -1,6 +1,7 @@
 ---
-title: "ion-menu"
+title: 'ion-menu'
 ---
+
 import Props from '@ionic-internal/component-api/v9/menu/props.md';
 import Events from '@ionic-internal/component-api/v9/menu/events.md';
 import Methods from '@ionic-internal/component-api/v9/menu/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API." />
+  <meta
+    name="description"
+    content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The menu component is a navigation drawer that slides in from the side of the current view. By default, it uses the start side, making it slide in from the left for LTR and right for RTL, but the side can be overridden. The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
 
@@ -28,7 +31,6 @@ import Basic from '@site/static/usage/v9/menu/basic/index.md';
 
 <Basic />
 
-
 ## Menu Toggle
 
 The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
@@ -36,7 +38,6 @@ The [menu toggle](./menu-toggle) component can be used to create custom button t
 import MenuToggle from '@site/static/usage/v9/menu/toggle/index.md';
 
 <MenuToggle />
-
 
 ## Menu Types
 
@@ -46,17 +47,15 @@ import MenuType from '@site/static/usage/v9/menu/type/index.md';
 
 <MenuType />
 
-
 ## Menu Sides
 
 Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
 
-If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
+If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. Refer to the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
 
 import Sides from '@site/static/usage/v9/menu/sides/index.md';
 
 <Sides />
-
 
 ## Multiple Menus
 
@@ -65,7 +64,6 @@ When multiple menus exist on the same side, we need refer to them by ID instead 
 import Multiple from '@site/static/usage/v9/menu/multiple/index.md';
 
 <Multiple />
-
 
 ## Theming
 
@@ -88,23 +86,26 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

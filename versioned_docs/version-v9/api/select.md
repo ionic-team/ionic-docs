@@ -1,6 +1,7 @@
 ---
-title: "ion-select"
+title: 'ion-select'
 ---
+
 import Props from '@ionic-internal/component-api/v9/select/props.md';
 import Events from '@ionic-internal/component-api/v9/select/events.md';
 import Methods from '@ionic-internal/component-api/v9/select/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
-  <meta name="description" content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list." />
+  <meta
+    name="description"
+    content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Selects are form controls to select an option, or options, from a set of options. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
 
@@ -94,7 +97,6 @@ import AlertExample from '@site/static/usage/v9/select/basic/single-selection/in
 
 <AlertExample />
 
-
 ### Action Sheet
 
 import ActionSheetExample from '@site/static/usage/v9/select/interfaces/action-sheet/index.md';
@@ -115,7 +117,7 @@ import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.md
 
 ## Responding to Interaction
 
-The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
+The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. Refer to [Events](#events) for more details on these and other events that select fires.
 
 import RespondingToInteractionExample from '@site/static/usage/v9/select/basic/responding-to-interaction/index.md';
 
@@ -178,7 +180,7 @@ import ButtonTextExample from '@site/static/usage/v9/select/customization/button
 
 Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
+Refer to the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
 for the properties that each interface accepts.
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
@@ -192,7 +194,7 @@ import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
@@ -241,7 +243,7 @@ that interface's documentation:
 - [Popover](popover.md#css-shadow-parts)
 - [Modal](modal.md#css-shadow-parts)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, refer to the [Select Options documentation](select-option.md) for usage examples of customizing options.
 
 ### Custom Toggle Icons
 
@@ -307,14 +309,15 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 Ionic's keyboard interactions follow the implementation patterns of the web instead of the native iOS select for a consistent experience across all platforms.
 
 These keyboard interactions apply to all `ion-select` elements when the following conditions are met:
+
 - The select is closed.
 - The select is focused.
 - The select is not disabled.
 
-| Key                | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
-| <kbd>Space</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
+| Key              | Description                                                                                                                      |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Enter</kbd> | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
+| <kbd>Space</kbd> | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
 
 #### Single Selection
 
@@ -322,16 +325,16 @@ Single selection keyboard interaction follows the [ARIA implementation patterns 
 
 These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and focused.
 
-| Key                   | Description                                                  |
-| --------------------- | ------------------------------------------------------------ |
-| <kbd>ArrowDown</kbd>  | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowLeft</kbd>  | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
-| <kbd>ArrowRight</kbd> | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowUp</kbd>    | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
+| Key                   | Description                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>ArrowDown</kbd>  | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.                                                                                                                                                                                                                     |
+| <kbd>ArrowLeft</kbd>  | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.                                                                                                                                                                                                              |
+| <kbd>ArrowRight</kbd> | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.                                                                                                                                                                                                                     |
+| <kbd>ArrowUp</kbd>    | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.                                                                                                                                                                                                              |
 | <kbd>Enter</kbd>      | If an option is focused, it will select the option. Overlays **without** an 'OK' button will commit the value immediately, dismiss the overlay and return focus to the `ion-select` element.<br /><br/>If the 'OK' button is focused, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>     | Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss. |
-| <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option. |
+| <kbd>Escape</kbd>     | Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element.                                                                                                                                                                                                                              |
+| <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss.                                                                   |
+| <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.                                                                       |
 
 #### Multiple Selection
 
@@ -339,27 +342,33 @@ Multiple selection keyboard interaction follows the [ARIA implementation pattern
 
 These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and multiple selection is enabled.
 
-| Key                | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>  | Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>   | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately. |
-| <kbd>Tab</kbd>     | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
+| Key               | Description                                                                                                                                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Enter</kbd>  | When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element.                                                                      |
+| <kbd>Escape</kbd> | Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element.                                                                                            |
+| <kbd>Space</kbd>  | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately.                 |
+| <kbd>Tab</kbd>    | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

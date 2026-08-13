@@ -15,7 +15,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Card header is a child component of card that should be placed before the card content. It can contain a [card title](./card-title) and a [card subtitle](./card-subtitle).
 
-See the [Card](./card) documentation for more information.
+Refer to the [Card](./card) documentation for more information.
 
 ## Properties
 

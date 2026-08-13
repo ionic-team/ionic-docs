@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Columns are cellular components of the [grid](./grid) system and go inside of a [row](./row). They will expand to fill the row. All content within a grid should go inside of a column.
 
-See the [grid](./grid) documentation for more information.
+Refer to the [grid](./grid) documentation for more information.
 
 ## Column Alignment
 

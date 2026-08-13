@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The Menu Button component contains an icon and automatically adds functionality to open a menu when clicked.
 
-See the [menu](./menu) documentation for more information.
+Refer to the [menu](./menu) documentation for more information.
 
 
 ## Properties

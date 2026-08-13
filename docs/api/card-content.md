@@ -13,7 +13,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Card content is a child component of card that adds padding around its contents. It is recommended that any text content for a card should be placed inside of card content.
 
-See the [Card](./card) documentation for more information.
+Refer to the [Card](./card) documentation for more information.
 
 
 ## Properties

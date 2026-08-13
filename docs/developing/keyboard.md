@@ -23,7 +23,7 @@ Since `inputmode` is a global attribute, it can be used on Ionic components such
 
 Inputs that _require_ a certain data type should use the `type` attribute instead. For example, inputs that require an email should use `type="email"` rather than specifying an `inputmode.` This is because the data that will be entered is always going to be in the form of an email. On the other hand, if the input accepts an email or a username, using `inputmode=”email”` is appropriate because the data being entered is not always going to be an email address.
 
-For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
+For a list of accepted values, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
 
 ### Usage
 
@@ -41,7 +41,7 @@ The `enterkeyhint` attribute allows developers to specify what type of action la
 
 Since `enterkeyhint` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
 
-For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
+For a list of accepted values, refer to the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
 
 ### Usage
 
@@ -59,7 +59,7 @@ By default the keyboard theme is determined by the OS. For example, if dark mode
 
 When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, refer to the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## Hiding the Accessory Bar
 
@@ -67,7 +67,7 @@ When running any kind of web based application, iOS will show an accessory bar a
 
 When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
 
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, refer to the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## Keyboard Lifecycle Events
 

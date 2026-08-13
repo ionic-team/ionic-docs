@@ -15,7 +15,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Card subtitle is a child component of card that should be placed inside of a [card header](./card-header).
 
-See the [Card](./card) documentation for more information.
+Refer to the [Card](./card) documentation for more information.
 
 ## Properties
 
