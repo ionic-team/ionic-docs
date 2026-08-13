@@ -1,0 +1,42 @@
+.editMetaActions {
+  display: inline-flex;
+  align-items: center;
+}
+
+.editMetaActions > :not(:first-child) {
+  margin-inline-start: 0.85rem;
+  padding-inline-start: 0.85rem;
+  border-inline-start: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.copyPageContainer {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Make the "Copy page" button look like the "Edit this page" link */
+.copyPageButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: none;
+  background: transparent !important;
+  padding: 0;
+  margin: 0;
+  color: var(--edit-this-page-c) !important;
+  font: inherit;
+}
+
+.copyPageButton:hover,
+.copyPageButton:active,
+.copyPageButton:focus {
+  opacity: var(--edit-this-page-opacity);
+}
+
+/* The plugin hides the button's text label for small screens; keep it visible at all sizes. */
+@media (max-width: 767px) {
+  .copyPageButton [class*='copyPageText'] {
+    display: inline;
+  }
+}
+/* CUSTOM CODE END */

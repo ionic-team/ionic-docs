@@ -18,14 +18,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポーネントです。tab buttonを使用すると、iconとlabelのレイアウトを指定し、[tab view](tab.md)に接続できます。
+A tab button is a UI component that is placed inside of a [tab bar](tab-bar.md). The tab button can specify the layout of the icon and label and connect to a [tab view](tab.md).
 
-タブの設定の詳細については、[tabs documentation](tabs.md)を参照してください。
-
-
+Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 
-## 使い方
+
+
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -200,19 +200,19 @@ import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
 
 </Tabs>
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

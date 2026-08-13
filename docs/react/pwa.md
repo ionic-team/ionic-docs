@@ -35,22 +35,19 @@ export default defineConfig({
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
 
-For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+For more information on configuring the Vite PWA Plugin, refer to the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
 
-See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+Refer to the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
 
 ## Making your React app a PWA with Create React App
 
 :::note
-As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. See [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
+As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. Refer to [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
 :::
 
 The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
 
-PWA の主な要件は、 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> と <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a> の 2 つです。これらの両方を手動でアプリに追加することは可能ですが、Create React App (CRA)と Ionic CLI のベースプロジェクトがこれらをすでに提供しています。
-
-アプリケーションの `index.ts` には、`serviceWorker.unregister()` 関数の呼び出しがあります。基本 CRA が提供する service workers はオプトイン機能なので、有効にする必要があります。
-有効にするには、`serviceWorker.register ()`を呼び出します。
+In the `index.ts` for your app, there is a call to a `serviceWorker.unregister()` function. The base that CRA provides has service workers as an opt-in feature, so it must be enabled. To enable, call `serviceWorker.register()`.
 
 ```ts
 import React from 'react';
@@ -72,31 +69,31 @@ root.render(
 serviceWorkerRegistration.register();
 ```
 
-このパッケージを追加したら、 `ionic build` を実行し、 `build` ディレクトリを PWA としてデプロイする準備ができます。
+Once this package has been added, run `ionic build` and the `build` directory will be ready to deploy as a PWA.
 
 :::note
-デフォルトでは、React アプリのパッケージには、アプリアイコン用の Ionic ロゴが付属しています。正しいアプリケーション名を使用するように manifest を更新し、アイコンを置き換えてください。
+By default, react apps package comes with the Ionic logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
 :::
 
 :::note
-Service Workers や多くの JavaScript API (位置情報など)のような機能は、セキュアなコンテキストでアプリをホストする必要があります。ホスティングサービスを介してアプリケーションを配備する場合は、Service Workers を最大限に活用するために HTTPS が必要になることに注意してください。
+Features like Service Workers and many JavaScript APIs (such as geolocation) require the app to be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
 :::
 
-### Service Worker の設定
+### Service Worker configuration
 
-デフォルトでは、CRA/React Script には [Workbox の Webpack プラグイン](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいて事前設定された Service Worker セットアップが付属しています。これはキャッシュファースト戦略を利用しており、ネットワークが新しいバージョンのアプリを返しても、アプリはキャッシュからロードされます。
+By default, CRA/React Scripts come with a preconfigured Service Worker setup based on [Workbox's Webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). This utilizes a cache-first strategy, meaning that your app will load from a cache, even if the network returns a newer version of the app.
 
-CRA/React Scripts の性質上、この設定は React Scripts の内部で行われるため、React Scripts から抽出しない限りはカスタマイズできません。現在、Ionic CLI は React App のイジェクトをサポートしていないため、このアクションを実行する場合は、Ionic CLI の代わりに npm/year スクリプトを使用する必要があります。
+Because of the nature of CRA/React Scripts, the configuration for this is internal to React Scripts, meaning that it cannot be customized without ejecting from React Scripts. Currently, the Ionic CLI does not support an ejected React App, so if this action is taken, you'll need to use npm/yarn scripts instead of the Ionic CLI.
 
-### デプロイ
+### Deploying
 
 #### Firebase
 
-Firebase ホスティングは Progressive Web Apps に多くの利点を提供しており、CDN による高速応答、デフォルトで有効になっている HTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
+Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-まず、まだ使用していない場合は、Firebase で [プロジェクトを作成](https://console.firebase.google.com) します。
+First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
 
-次にターミナルで Firebase CLI をインストールします:
+Next, in a Terminal, install the Firebase CLI:
 
 ```shell
 npm install -g firebase-tools
@@ -112,17 +109,17 @@ With the Firebase CLI installed, run `firebase init` within your Ionic project. 
 
 Create a new Firebase project or select an existing one.
 
-**"Select a default Firebase project for this directory:"** Firebase の Web サイト上で作成したプロジェクトを選択します。
+**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
-**"What do you want to use as your public directory?"** "dist" を選択ください。
+**"What do you want to use as your public directory?"** Enter "dist".
 
 :::note
 Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
 :::
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** "Yes" を選択します.
+**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
 
-**"File dist/index.html already exists. Overwrite?"** "No" を選択します。
+**"File build/index.html already exists. Overwrite?"** Enter "No".
 
 **Set up automatic builds and deploys with Github?** Enter "Yes".
 
@@ -138,7 +135,7 @@ Answering this next question will ensure that routing, hard reload, and deep lin
 
 A `firebase.json` config file is generated, configuring the app for deployment.
 
-最後に、キャッシング・ヘッダーが正しく設定されていることを確認する必要があります。これを行うには、 `headers` スニペットを `firebase.json` に追加します。完全な`firebase。json`は次のようになります:
+The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
 
 ```json
 {
@@ -166,18 +163,18 @@ A `firebase.json` config file is generated, configuring the app for deployment.
 }
 ```
 
-より詳しい `firebase.json` についての設定は [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json) を参照ください。
+For more information about the `firebase.json` properties, refer to the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
-次に、次のコマンドを実行して、アプリケーションの最適化バージョンを構築します:
+Next, build an optimized version of the app by running:
 
 ```shell
 ionic build --prod
 ```
 
-最後に、アプリをデプロイします:
+Last, deploy the app by running:
 
 ```shell
 firebase deploy
 ```
 
-これが完了すると、アプリがライブになります。
+After this completes, the app will be live.

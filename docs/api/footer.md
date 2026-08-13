@@ -10,69 +10,69 @@ import Slots from '@ionic-internal/component-api/v8/footer/slots.md';
 
 <head>
   <title>ion-footer: Page Footer | Ionic App Footer Root Component</title>
-  <meta name="description" content="footerはページの下部に配置されるルートコンポーネントのことです。Ionicのfooterはion-toolbarのラッパーとして、コンテンツ領域が正しいサイズであることを確認することができます。" />
+  <meta name="description" content="A footer is a root component that sits at the bottom of a page. Ionic footers can be a wrapper for ion-toolbar to make sure the content area is sized correctly." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-フッターは、ページの下部に配置されるページのルートコンポーネントです。1つ以上の [ツールバー](./toolbar) のラッパーとして使用することが推奨されますが、あらゆる要素をラップするために使用することができます。ツールバーがフッターの中で使用される場合、コンテンツは正しいサイズに調整され、フッターはデバイスセーフエリアを考慮したものになります。
+Footer is a root component of a page that aligns itself to the bottom of the page. It is recommended to be used as a wrapper for one or more [toolbars](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a footer, the content will be adjusted so it is sized correctly, and the footer will account for any device safe areas.
 
-## 基本的な使い方
+## Basic Usage
 
 import Basic from '@site/static/usage/v8/footer/basic/index.md';
 
 <Basic />
 
 
-## 半透明のフッター
+## Translucent Footer
 
-フッターは、`translucent`プロパティを設定することで、ネイティブのiOSアプリケーションに見られるような透明度に合わせることができます。フッターの後ろにスクロールするコンテンツを見るには、コンテンツに `fullscreen` プロパティを設定する必要があります。この効果は、モードが `"ios"` で、デバイスが [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) をサポートしている場合にのみ適用されます。
+Footers can match the transparency found in native iOS applications by setting the `translucent` property. In order for the content to scroll behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
 import Translucent from '@site/static/usage/v8/footer/translucent/index.md';
 
 <Translucent />
 
 
-## フェードフッター
+## Fade Footer
 
-多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、フッターの `collapse` プロパティを `"fade"` に設定することで実現できます。コンテンツが最後までスクロールされると、フッターの背景とボーダーはフェードアウトします。この効果は、モードが `"ios"` のときだけ適用されます。
+Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the footer to `"fade"`. When the content is scrolled to the end, the background and border on the footer will fade away. This effect will only apply when the mode is `"ios"`.
 
 import Fade from '@site/static/usage/v8/footer/fade/index.md';
 
 <Fade />
 
 
-### 仮想スクロールでの使用方法
+### Usage with Virtual Scroll
 
-フェードフッターを正しく動作させるためには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを提供する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
+A fade footer requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
 import CustomScrollTarget from '@site/static/usage/v8/footer/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 
-## ボーダー
+## Borders
 
-`"md"`モードでは、フッターは上部に `box-shadow` が表示されます。`"ios"`モードでは、上部に `border` が表示されます。これらは、フッターに `.ion-no-border` クラスを追加することで削除することができます。
+In `"md"` mode, the footer will have a `box-shadow` on the top. In `"ios"` mode, it will receive a `border` on the top. These can be removed by adding the `.ion-no-border` class to the footer.
 
 import NoBorder from '@site/static/usage/v8/footer/no-border/index.md';
 
 <NoBorder />
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

@@ -1,33 +1,33 @@
 ---
-title: Ionicのインストール
-sidebar_label: CLIインストール
+title: Installing Ionic
+sidebar_label: CLI Installation
 ---
 
 import AppWizard from '@components/page/intro/AppWizard';
 
 <head>
-  <title>Ionic Framework CLIのインストール方法</title>
+  <title>How to Install The Ionic Framework CLI to Build Mobile Apps</title>
   <meta
     name="description"
     content="The Ionic CLI is the preferred method of installation—offering a wide range of dev tools and help options. Learn how to install Ionic and begin building apps."
   />
 </head>
 
-Ionic アプリは、主に Ionic CLI（[command-line](../reference/glossary.md#cli)）を利用して作成・開発します。Ionic CLI は、幅広い開発ツールと開発を手助けするオプションを提供している、Ionic team が推奨しているインストール方法です。Ionic CLI は、アプリの実行や、Appflow といった他のサービスに接続などができる重要なツールです。
+Ionic apps are created and developed primarily through the Ionic [command-line](../reference/glossary.md#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Appflow.
 
 <AppWizard />
 
-## Ionic CLI をインストール
+## Install the Ionic CLI
 
-続行する前に、コンピュータに [Node.js](../reference/glossary.md#node) がインストールされているかを確認ください。[この説明で](environment.md)で Ionic をセットアップできる環境を説明しています。
+Before proceeding, make sure your computer has [Node.js](../reference/glossary.md#node) installed. Refer to the [environment setup guide](environment.md) to prepare your machine.
 
-npm を使って Ionic CLI をインストールします:
+Install the Ionic CLI with npm:
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-Ionic CLI が以前にインストールされていた場合は、パッケージ名が変更されているため、アンインストールする必要があります。
+If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
 
 ```shell
 $ npm uninstall -g ionic
@@ -36,13 +36,13 @@ $ npm install -g @ionic/cli
 ```
 
 :::note
-`-g` オプションは、 _グローバルにインストール_ することを意味しています。パッケージをグローバルにインストールすると `EACCES` パーミッションエラーが起きる可能性があります。
-管理権限なしで npm がグローバルで動作するように設定することを検討してください。詳細については [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) をご覧ください。
+The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
 :::
 
-## アプリケーションの起動
+## Start an App
 
-Ionic アプリを作成するには、スターターテンプレートを利用するか、まっさらな状態からつくるための`blank`テンプレートを利用して作成します。汎用的な 3 つのスターターテンプレートは、`blank`、`tabs`、`sidemenu`があります。`ionic start`コマンドで作成を開始できます。
+Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
 
 ```shell
 ionic start
@@ -50,15 +50,15 @@ ionic start
 
 ![Three thumbnail previews of Ionic app templates: blank, tabs, and side menu.](/img/installation/start-app-thumbnails.png 'Ionic App Starter Templates')
 
-Ionic アプリのはじめ方をもっと知りたい方は、[スタートガイド](../developing/starting.md)を参照してください。
+To learn more about starting Ionic apps, refer to the [Starting Guide](../developing/starting.md).
 
-## アプリケーションを実行する
+## Run the App
 
-ほとんどの Ionic アプリは、`ionic serve`コマンドを利用することによってブラウザですぐに利用することができます。
+The majority of Ionic app development can be spent right in the browser using the `ionic serve` command:
 
 ```shell
 $ cd myApp
 $ ionic serve
 ```
 
-アプリを実行する方法は他にもたくさんありますが、まずはこのワークフローから始めることをおすすめします。デバイスやエミュレーターでアプリを開発・テストするには、[アプリの実行ガイド](../developing/previewing.md) を参照してください。
+There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, refer to the [Running an App Guide](../developing/previewing.md).

@@ -60,7 +60,7 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team](https://angular.io/guide/service-worker-config).
 
 ## Deploying
 
@@ -149,7 +149,7 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+For more information about the `firebase.json` properties, refer to the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
 Next, build an optimized version of the app by running:
 

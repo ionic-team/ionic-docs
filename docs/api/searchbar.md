@@ -58,7 +58,7 @@ import CancelButton from '@site/static/usage/v8/searchbar/cancel-button/index.md
 
 検索バーは、ツールバーの中に配置されたときにネイティブに見えるようにスタイルされています。iOSでは、検索バーは、ページタイトルを含むツールバーの下にある、独自のツールバーに配置されるべきです。Material Designでは、検索バーは、独自のツールバーに永続的に表示されるか、ページタイトルを含むツールバーの上に展開されるかのいずれかです。
 
-<!-- Reuse the playground from the Toolbar directory -->
+{/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v8/toolbar/searchbars/index.md';
 
 <Toolbar />

@@ -13,34 +13,34 @@ import BestPracticeFigure from '@components/global/BestPracticeFigure';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
-  <meta name="description" content="iOS/Android用ion-item要素は、テキスト、アイコン、画像、その他のカスタム要素を含みます。これらはリストに配置され、入力、削除、編集などが可能です。" />
+  <meta name="description" content="ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-アイテムは、テキスト、アイコン、アバター、画像、Input、その他のネイティブまたはカスタム要素を含むことができる要素です。アイテムは他のアイテムと一緒に[リスト](./list)の行としてのみ使用してください。アイテムはスワイプ、削除、並び替え、編集などができます。
+Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [List](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
 
-## 基本的な使い方
+## Basic Usage
 
-アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-nowrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
+Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
 
 import Basic from '@site/static/usage/v8/item/basic/index.md';
 
 <Basic />
 
 
-## コンテンツの種類
+## Content Types
 
-リスト内のアイテムは様々な形をとりますが、一般的にビジュアル、テキスト、メタデータ、アクション、コントロールの5つの異なるコンテンツタイプをサポートします。しかし、これらのコンテンツタイプをすべて同時に使うべきではありません。以下のガイドでは、異なるコンテンツタイプと、アプリケーションでの適切な利用方法を示します。
+While items in a list take many forms, they typically support 5 different content types: supporting visuals, text, metadata, actions, and controls. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
 
-### 補助ビジュアル
+### Supporting Visuals
 
-補助ビジュアル 補助ビジュアルはアイテムの装飾アイコンやその他の飾りです。サポーティングビジュアルの一般的な例は、[アバター](./avatar)、 [アイコン](./icon)、[サムネイル](./thumbnail)です。このコンテンツはアイテムの意図を理解するために必要ではないので、通常`aria-hidden="true"`を使ってスクリーンリーダーから隠されます。
+Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the item, it is typically hidden from screen readers using `aria-hidden="true"`.
 
-アイコン・ボタンのように、アイテムとのインタラクションにビジュアルが必要な場合、そのビジュアルはサポート・ビジュアルではなく、 [アクション](#actions) となります。
+If a visual is required to interact with the item, such as an icon button, then the visual is an [action](#actions) not a supporting visual.
 
 <BestPracticeFigure
   text="Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse."
@@ -50,15 +50,15 @@ import Basic from '@site/static/usage/v8/item/basic/index.md';
   doNotImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. Some icons are rendered at the start of the line, and some icons are rendered at the end of the line" src={useBaseUrl('img/item/visuals-do-not.jpg')} />}
 />
 
-下の例では、ビジュアルをサポートする2つのリストを作成しています。最初のリストはアイコンを使い、2番目のリストはアバターを使います。ビジュアルは装飾的なものなので、すべて `aria-hidden="true"` を指定しています。さらに、これらは `start` スロットで一貫して表示されます。
+In the example below, we are creating two lists with supporting visuals. The first list uses icons, and the second list uses avatars. The visuals are decorative, so they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
 
 import SupportingVisuals from '@site/static/usage/v8/item/content-types/supporting-visuals/index.md';
 
 <SupportingVisuals />
 
-### テキスト
+### Text
 
-テキスト・コンテンツ・タイプには、フォーム制御ラベルやその他の可視テキストが含まれます。このテキストは項目の意図を示す役割を果たします。テキストは短く、要点をまとめるようにしてください。
+The text content type includes form control labels or other visible text. This text serves to indicate the intent of the item. Try to keep the text short and to the point.
 
 <BestPracticeFigure
   text={<>If you find that you need a few more sentences to clarify the item's purpose, consider moving the additional sentences to a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list. Adding the item to its own list makes it clear which item the text is associated with.</>}
@@ -68,19 +68,19 @@ import SupportingVisuals from '@site/static/usage/v8/item/content-types/supporti
   doNotImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-do-not.jpg')} />}
 />
 
-下の例では、さまざまなタイプのテキストでリストを作成しています。"First Name"と "Last Name "のラベルは、テキスト入力に何を入力すべきかを示しています。
+In the example below, we are creating a list with different types of text. The "First Name" and "Last Name" labels serve to indicate what to type into the text inputs.
 
-トグルの "Allow Notifications"ラベルの下には、ユーザーが通知を無効にできることを示すテキストが追加されています。このテキストは短いので、アイテムの内側に配置されています。
+The "Allow Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
 
-そのリストの下には、 [Note](./note) の下に長いテキストを含むtextareaを含む別のリストがあります。textareaは、長いテキストが他のフィールドではなく、textareaに関連付けられていることを明らかにするために、それ自身のリストに配置されました。
+Below that list is another list containing a textarea with a [Note](./note) containing long text underneath. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
 
 import Text from '@site/static/usage/v8/item/content-types/text/index.md';
 
 <Text />
 
-### メタデータ
+### Metadata
 
-メタデータは、ステータステキストやカウントのようなアイテムの追加コンテキストを提供します。Badge](./badge)や[Note](./note)のようなコンポーネントは、メタデータを表示する素晴らしい方法です。
+Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
 
 <BestPracticeFigure
   text="Limit the amount of metadata you include to only the most relevant information."
@@ -98,19 +98,19 @@ import Text from '@site/static/usage/v8/item/content-types/text/index.md';
   cautionImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/metadata-important-caution.jpg')} />}
 />
 
-以下の例では、異なる種類のメタデータを持つ2つのリストを作成している。最初のリストは[Note](./note)を使って、それぞれのToDoリストにいくつのタスクがあるかを表示している。
+In the example below, we are creating two lists with different kinds of metadata. The first list uses [Note](./note) to show how many tasks are in each to-do list.
 
-つ目のリストは、iOSのメールアプリを真似て受信トレイを表示しています。このリストでは、"開始"スロットに "未読メッセージ"インジケータ、"終了"スロットにタイムスタンプとカスタム詳細アイコンを含むカスタムメタデータを使用しています。"未読メッセージ"インジケータは、未読メッセージにユーザーの注意を引くために青くハイライトされ、タイムスタンプはより控えめです。
+The second list mimics the iOS Mail app to show an inbox. This list makes use of custom metadata including an "unread message" indicator in the "start" slot as well as a timestamp and custom detail icon in the "end" slot. The "unread message" indicator is highlighted in blue to draw the user's attention to the unread messages, while the timestamp is more subtle.
 
 import Metadata from '@site/static/usage/v8/item/content-types/metadata/index.md';
 
 <Metadata />
 
-### アクション
+### Actions
 
-アクションは、アクティブにすると何かをするインタラクティブな要素です。アイテムは1行に複数のアクションを表示することができます。しかし、開発者は、各アクションのタップターゲットが十分に大きいことを確認する必要があります。
+Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
-開発者は、<a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">入れ子になったインタラクティブ機能</a>を作成することは避けるべきです。例えば、 `button` プロパティが `true` に設定されている場合、開発者はアイテムのメインコンテンツ内にボタンを追加することを避けるべきです。
+Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
 
 <BestPracticeFigure
   text={<>Actions can be added by using the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component. Actions can also be placed directly inside of the Item without the use of Item Sliding, but this should be limited to no more than 2 actions.</>}
@@ -120,15 +120,15 @@ import Metadata from '@site/static/usage/v8/item/content-types/metadata/index.md
   doNotImage={<img alt="A list that contains several items, each representing a contact. Each item has text that states the contact's name as well as several actions including pinning the contact, sharing the contact, and deleting the contact. The actions are placed directly on the item. Since there are so many actions, some of the text is cut off." src={useBaseUrl('img/item/actions-do-not.jpg')} />}
 />
 
-下の例では、連絡先のリストを作成しています。各項目は、その項目の完全な連絡先ページに移動するためのスタブボタンです。各項目には、ユーザーが項目をスワイプすることで表示できる追加アクションがあります。
+In the example below, we are creating a list of contacts. Each item is a stubbed button intended to bring you to the full contact page for that item. There are additional actions associated with each item that users can reveal by swiping on the item.
 
 import Actions from '@site/static/usage/v8/item/content-types/actions/index.md';
 
 <Actions />
 
-### コントロール
+### Controls
 
-コントロールは、チェックボックス、入力、ラジオなどのフォームコンポーネントです。リスト内の各項目は、画面スペースの制約上、最大でも2つのコントロールを持つ必要があります。
+Controls are form components such as checkboxes, inputs, radios, and more. Each item in a list should have at most two controls due to screen space constraints.
 
 <BestPracticeFigure
   text={<>Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. <a href={useBaseUrl('api/input#filled-inputs')}>Filled Inputs</a> are a great way of visually defining the input container outside of a list.</>}
@@ -154,16 +154,16 @@ import Actions from '@site/static/usage/v8/item/content-types/actions/index.md';
   doNotImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-count-do-not.jpg')} />}
 />
 
-以下の例では、ToDoタスクのリストを作成しています。それぞれの項目にはチェックボックスと入力があります。チェックボックスはユーザーがタスクを完了としてマークできるようにし、入力はユーザーがタスクの名前を変更できるようにします。
+In the example below, we are creating a list of to-do tasks. Each item has a checkbox and an input. The checkbox lets the user mark a task as complete, and the input lets the user change the name of the task.
 
 import Controls from '@site/static/usage/v8/item/content-types/controls/index.md';
 
 <Controls />
 
 
-## クリック可能なItems
+## Clickable Items
 
-`href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
+An item is considered "clickable" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
 
 import Clickable from '@site/static/usage/v8/item/clickable/index.md';
 
@@ -172,31 +172,24 @@ import Clickable from '@site/static/usage/v8/item/clickable/index.md';
 
 ## Detail Arrows
 
-デフォルトでは、[clickableなitems](/#clickable-items) は、`ios` modeで右矢印アイコンを表示します。clickableな要素の右矢印アイコンを非表示にするには、 `detail` プロパティを `false` に設定します。自動的に表示されない項目に右矢印アイコンを表示するには、`detail`プロパティを `true` に設定します。
+By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
 
 import DetailArrows from '@site/static/usage/v8/item/detail-arrows/index.md';
 
 <DetailArrows />
 
 
-<!--
-
-TODO add this functionality back as a css variable
-
-This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:
-
-```css
---item-detail-push-show: true;
-```
-
-詳細については、[theming documentation](/docs/theming/css-variables)を参照してください。
-
--->
+{/* TODO add this functionality back as a css variable */}
+{/* This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable: */}
+{/* ```css */}
+{/* --item-detail-push-show: true; */}
+{/* ``` */}
+{/* Refer to the [theming documentation](/docs/theming/css-variables) for more information. */}
 
 
 ## Item Lines
 
-アイテムはデフォルトで下部のボーダーを挿入して表示します。ボーダーは左側にパディングを持ち、 `"start"` スロットにスロットされたコンテンツの下に表示されることはありません。 `lines` プロパティを `"full"` または `"none"` に変更すると、それぞれ全幅のボーダーが表示され、ボーダーを表示しないようになります。
+Items show an inset bottom border by default. The border has padding on the left and does not appear under any content that is slotted in the `"start"` slot. The `lines` property can be modified to `"full"` or `"none"` which will show a full width border or no border, respectively.
 
 import Lines from '@site/static/usage/v8/item/lines/index.md';
 
@@ -204,7 +197,7 @@ import Lines from '@site/static/usage/v8/item/lines/index.md';
 
 ## Buttons in Items
 
-Buttonsは、アイテムの外側にあるときよりも、アイテムの内側にあるときの方が小さくスタイルされます。ボタンのサイズをアイテムの外側のボタンと同じにするには、`size`属性に`"default"`を設定します。
+Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
 
 import Buttons from '@site/static/usage/v8/item/buttons/index.md';
 
@@ -216,7 +209,7 @@ import Inputs from '@site/static/usage/v8/item/inputs/index.md';
 
 <Inputs />
 
-## テーマ
+## Theming
 
 ### Colors
 
@@ -230,24 +223,24 @@ import CSSParts from '@site/static/usage/v8/item/theming/css-shadow-parts/index.
 
 <CSSParts />
 
-## CSSカスタムプロパティ
+### CSS Custom Properties
 
 import CSSProps from '@site/static/usage/v8/item/theming/css-properties/index.md';
 
 <CSSProps />
 
-## ガイドライン
+## Guidelines
 
-以下のガイドラインは、リスト項目を理解しやすく、使いやすくするのに役立ちます。
+The following guidelines will help ensure your list items are easy to understand and use.
 
-1. アイテムは [Lists](./list) の中だけで使用してください。
-2. リスト内のアイテムは、一貫したフォーマットで表示されるべきです。例えば、アイテムに装飾的なアイコンを表示する場合、アイコンはアイテム間で同じように配置されるべきです。
-3. アイテムは決して[入れ子になったインタラクティヴ](https://dequeuniversity.com/rules/axe/4.4/nested-interactive)をレンダリングすべきではありません。入れ子になったインタラクティブ要素が使用されている場合、スクリーンリーダーは正しいインタラクティブ要素を選択することができません。例えば、`button="true"`を持つ`ion-item`の中にボタンを置くことは避けてください。
-4. コンテントタイプ](#content-types)を正しく使用してください。Itemコンポーネントは、[List](./list)内の行として設計されており、汎用コンテナとして使用すべきではありません。
+1. Items should only be used inside of [Lists](./list).
+2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
+3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
+4. Use [content types](#content-types) correctly. The Item component is designed to be a row in a [List](./list) and should not be used as a general purpose container.
 
-## アクセシビリティ
+## Accessibility
 
-### キーボードインタラクション
+### Keyboard Interactions
 
 An `<ion-item>` has the following keyboard interactions when any of these conditions are met:
 - The `button` property is set to `"true"`, rendering a native `<button>` element.
@@ -279,16 +272,16 @@ When an `<ion-item>` renders a native `<a>` element, the keyboard interactions f
 ## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

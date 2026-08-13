@@ -15,7 +15,7 @@ skipIntros: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info Looking for the legacy iOS guide?
+:::info[Looking for the legacy iOS guide?]
 
 The Developing for iOS guide has officially migrated to the [Capacitor documentation for iOS](https://capacitorjs.com/docs/ios). If you need to access the legacy documentation, you can find it under the [legacy developing for iOS guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios).
 

@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
-  <meta name="description" content="Buttonsコンポーネントは、コンテナ要素です。ツールバーに配置されるボタンはion-buttons要素の中にあるべきで、名前付きスロットを使って配置することができます。" />
+  <meta name="description" content="The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,9 +18,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-Buttonsコンポーネントは、コンテナ要素です。 [ツールバー](./toolbar) の内部で使用し、標準の[ボタン](./button)、[メニューボタン](./menu-button)、[戻るボタン](./back-button)を含むいくつかのタイプのボタンを含めることができる。
+The Buttons component is a container element. It should be used inside of a [toolbar](./toolbar) and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
 
-## 基本的な使い方
+## Basic Usage
 
 import Basic from '@site/static/usage/v8/buttons/basic/index.md';
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v8/buttons/basic/index.md';
 
 ## Buttons Placement
 
-ツールバー内のボタンは、スロットという名前を使って配置することができます。下図は各スロットの説明です。
+Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
@@ -43,9 +43,9 @@ import Placement from '@site/static/usage/v8/buttons/placement/index.md';
 <Placement />
 
 
-## Buttonsのタイプ
+## Types of Buttons
 
-ツールバーのボタンは、デフォルトでは透明ですが、ボタンの [`fill`](./button#fill) プロパティで変更することが可能です。この例で [バックボタン](./back-button) と [メニューボタン](./menu-button) に含まれるプロパティは表示目的であり、正しい使用方法はそれぞれのドキュメントをご覧ください。
+A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; refer to their respective documentation for proper usage.
 
 import Types from '@site/static/usage/v8/buttons/types/index.md';
 
@@ -54,33 +54,33 @@ import Types from '@site/static/usage/v8/buttons/types/index.md';
 
 ## Collapsible Buttons
 
-ボタンに `collapse` プロパティを設定すると、ヘッダーが折りたたまれたときにボタンが折りたたまれます。これは通常、[collapsible large titles](./title#collapsible-large-titles) と共に使用します。
+The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).
 
 :::info
 
-この機能はiOS modeでのみ有効です。
+This feature is only available for iOS.
 
 :::
 
-<!-- Reuse the playground from the Title directory -->
+{/* Reuse the playground from the Title directory */}
 import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

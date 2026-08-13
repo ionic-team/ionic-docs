@@ -1,21 +1,21 @@
 ---
 title: Ionic CLI
-sidebar_label: 概要
+sidebar_label: Overview
 ---
 
 <head>
   <title>Ionic CLI Framework: Command-Line Interface to Develop Apps</title>
   <meta
     name="description"
-    content="Ionicのコマンドラインインターフェイス（CLI）は、Ionicアプリの開発に最適なツールです。npmでフレームワークをグローバルにインストールします。"
+    content="The Ionic command-line interface (CLI) is the go-to tool for developing Ionic apps. Install our framework globally with npm."
   />
 </head>
 
-The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) は、Ionic アプリを開発する時に頼りになるツールです。
+The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go-to tool for developing Ionic apps.
 
-## インストール
+## Installation
 
-Ionic CLI は npm でグローバルにインストールできます:
+The Ionic CLI can be installed globally with npm:
 
 ```shell
 npm install -g @ionic/cli
@@ -23,7 +23,7 @@ npm install -g @ionic/cli
 
 ## Help
 
-Ionic CLI では `--help` フラグをつけることでコマンドのドキュメントを利用できます。
+The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
 
 ```shell
 $ ionic --help
@@ -32,23 +32,23 @@ $ ionic <command> <subcommand> --help
 ```
 
 :::note
-プロジェクトディレクトリで `ionic <command> --help` を必ず実行してください。
+Be sure to run `ionic <command> --help` in your project directory.
 
-コマンドの中には `ionic serve` のように、React と Angular のように、プロジェクトのタイプに応じたヘルプが表示されるものがあります。
+For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
 :::
 
-<!-- TODO: image? -->
+{/* TODO: image? */}
 
-## 構成
+## Architecture
 
-Ionic CLI は、[TypeScript](/docs/reference/glossary#typescript)と [Node.js](/docs/reference/glossary#node)で構築されています。Node 10.3+をサポートしていますが、最新の Node LTS が推奨です。Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
+The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
 
-## トラブルシューティング
+## Troubleshooting
 
-Ionic CLI の問題をトラブルシューティングするには、以下の方法が役立ちます:
+To troubleshoot issues with the Ionic CLI, the following may be useful:
 
-- Ionic CLI の最新バージョンがインストールされていることを確認します。 `ionic --version` を実行して、インストールされている Ionic CLI のバージョンを取得します。Ionic CLI のバージョンは Ionic Framework のバージョンとは関係ありません。
-- 最新の Node LTS がインストールされていることを確認する。 [Node & npm](/docs/intro/environment#node-npm) 環境設定を参照してください。
-- `verbose` フラグはデバッグメッセージを表示し、問題を絞り込むことができます。
-- 接続の問題は、プロキシの設定が適切でないことが原因かもしれません。リクエストのプロキシ設定については、[プロキシを使う](/docs/cli/using-a-proxy)を参照してください。
-- グローバル Ionic CLI 設定ディレクトリは、すべてのプラットフォームで `~/.ionic` です。このディレクトリは安全に削除でき、Ionic CLI が再作成しますが、すべての設定（ユーザーセッションを含む）は失われます。このディレクトリを[CLI 環境変数](/docs/cli/configuration#environment-variables)で設定します。
+- Make sure the latest version of the Ionic CLI is installed. Get the installed Ionic CLI version by running `ionic --version`. The Ionic CLI version is not related to the Ionic Framework version.
+- Make sure the latest Node LTS is installed. Refer to [Node & npm](/docs/intro/environment#node-npm) environment setup.
+- The `--verbose` flag prints debugging messages, which may narrow down the issue.
+- Connection issues may be due to improperly configured proxy settings. Refer to [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
+- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).

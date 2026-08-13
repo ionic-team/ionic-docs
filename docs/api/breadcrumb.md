@@ -13,9 +13,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
+A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.
 
-詳しい説明は [Breadcrumbs](./breadcrumbs) を参照ください。
+Refer to the [Breadcrumbs](./breadcrumbs) documentation for more information.
 
 ## Interfaces
 
@@ -29,7 +29,7 @@ interface BreadcrumbCollapsedClickEventDetail {
 
 ### BreadcrumbCustomEvent
 
-必須ではありませんが、より強い型付けのために、このインターフェースを `CustomEvent` インターフェースの代わりに使用することができます。
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing .
 
 ```typescript
 interface BreadcrumbCustomEvent extends CustomEvent {
@@ -41,19 +41,19 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

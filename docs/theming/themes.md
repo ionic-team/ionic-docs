@@ -1,69 +1,69 @@
 ---
-title: テーマのカスタマイズ
+title: Themes
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
 import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerator';
 
 <head>
-  <title>Ionicアプリのテーマ | デフォルトアプリの背景テーマと色を変更</title>
+  <title>Ionic App Themes | Change Default App Background Themes & Colors</title>
   <meta
     name="description"
-    content="いくつかのグローバル変数がアプリケーション全体のデフォルトテーマを変更します。Ionicテーマを使用して、アプリのカスタム背景とテキストカラーテーマを作成します。"
+    content="Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes."
   />
 </head>
 
-Ionic は、アプリケーション全体のデフォルトテーマを変更するために、コンポーネント全体で使用できるいくつかのグローバル変数を提供します。次のセクションでは、さまざまなテーマ変数を用途別に分類しています: [Application Colors](#application-colors), [Stepped Colors](#stepped-colors)
+Ionic provides several global variables that are used throughout components to change the default theme of an entire application. [Application Colors](#application-colors) are useful to change the look of most of the Ionic components, and [Stepped Colors](#stepped-colors) are used as variations in some of the Ionic components.
 
-### アプリケーションの配色
+## Application Colors
 
-アプリケーションカラーは、Ionic の複数の場所で使用されています。これらは、ブランドにマッチしたダークパレットやテーマを簡単に作成するのに便利です。
+The application colors are used in multiple places in Ionic. These are useful for easily creating dark palettes or themes that match a brand.
 
-背景とテキストの色変数は、RGB である必要があります: <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. なぜ `rgb` プロパティも必要であるかは [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。
+It is important to note that the background and text color variables also require a rgb variable to be set in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. Refer to [The Alpha Problem](advanced.md#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
 
-| Name                                       | 説明                                              |
-| ------------------------------------------ | ------------------------------------------------- |
-| `--ion-background-color`                   | アプリ全体の背景色                                |
-| `--ion-background-color-rgb`               | アプリ全体の背景色、rgb 形式                      |
-| `--ion-text-color`                         | アプリ全体のテキスト色                            |
-| `--ion-text-color-rgb`                     | アプリ全体のテキスト色、rgb 形式                  |
-| `--ion-backdrop-color`                     | Backdrop コンポーネントの色                       |
-| `--ion-backdrop-opacity`                   | Backdrop コンポーネントの不透明度                 |
-| `--ion-overlay-background-color`           | オーバーレイの背景色                              |
-| `--ion-border-color`                       | ボーダーの色                                      |
-| `--ion-box-shadow-color`                   | ボックスシャドウの色                              |
-| `--ion-tab-bar-background`                 | Tab Bar の背景                                    |
-| `--ion-tab-bar-background-focused`         | フォーカスされた Tab Bar の背景                   |
-| `--ion-tab-bar-border-color`               | Tab Bar のボーダー色                              |
-| `--ion-tab-bar-color`                      | Tab Bar の色                                      |
-| `--ion-tab-bar-color-selected`             | 選択された Tab Button の色                        |
-| `--ion-toolbar-background`                 | Toolbar の背景                                    |
-| `--ion-toolbar-border-color`               | Toolbar のボーダー色                              |
-| `--ion-toolbar-color`                      | Toolbar 内のコンポーネントの色                    |
-| `--ion-toolbar-segment-color`              | Toolbar 内の Segment Buttons の色                 |
-| `--ion-toolbar-segment-color-checked`      | Toolbar 内のチェックされた Segment Buttons の色   |
-| `--ion-toolbar-segment-background`         | Toolbar 内の Segment Buttons の背景               |
-| `--ion-toolbar-segment-background-checked` | Toolbar 内のチェックされた Segment Buttons の背景 |
-| `--ion-toolbar-segment-indicator-color`    | Toolbar 内の Segment Button インジケーターの色    |
-| `--ion-item-background`                    | Item の背景                                       |
-| `--ion-item-border-color`                  | Item のボーダー色                                 |
-| `--ion-item-color`                         | Item 内のコンポーネントの色                       |
-| `--ion-placeholder-color`                  | Input 内のプレースホルダーの色                    |
+| Name                                       | Description                                          |
+| ------------------------------------------ | ---------------------------------------------------- |
+| `--ion-background-color`                   | Background color of the entire app                   |
+| `--ion-background-color-rgb`               | Background color of the entire app, rgb format       |
+| `--ion-text-color`                         | Text color of the entire app                         |
+| `--ion-text-color-rgb`                     | Text color of the entire app, rgb format             |
+| `--ion-backdrop-color`                     | Color of the Backdrop component                      |
+| `--ion-backdrop-opacity`                   | Opacity of the Backdrop component                    |
+| `--ion-overlay-background-color`           | Background color of the overlays                     |
+| `--ion-border-color`                       | Border color                                         |
+| `--ion-box-shadow-color`                   | Box shadow color                                     |
+| `--ion-tab-bar-background`                 | Background of the Tab Bar                            |
+| `--ion-tab-bar-background-focused`         | Background of the focused Tab Bar                    |
+| `--ion-tab-bar-border-color`               | Border color of the Tab Bar                          |
+| `--ion-tab-bar-color`                      | Color of the Tab Bar                                 |
+| `--ion-tab-bar-color-selected`             | Color of the selected Tab Button                     |
+| `--ion-toolbar-background`                 | Background of the Toolbar                            |
+| `--ion-toolbar-border-color`               | Border color of the Toolbar                          |
+| `--ion-toolbar-color`                      | Color of the components in the Toolbar               |
+| `--ion-toolbar-segment-color`              | Color of the Segment Buttons in the Toolbar          |
+| `--ion-toolbar-segment-color-checked`      | Color of the checked Segment Buttons in the Toolbar  |
+| `--ion-toolbar-segment-background`         | Background of the Segment Buttons in the Toolbar     |
+| `--ion-toolbar-segment-background-checked` | Background of the Segment Buttons in the Toolbar     |
+| `--ion-toolbar-segment-indicator-color`    | Color of the Segment Button indicator in the Toolbar |
+| `--ion-item-background`                    | Background of the Item                               |
+| `--ion-item-border-color`                  | Border color of the Item                             |
+| `--ion-item-color`                         | Color of the components in the Item                  |
+| `--ion-placeholder-color`                  | Color of the placeholder in Inputs                   |
 
-### ステップカラー
+## Stepped Colors
 
-Ionic テーマをカスタマイズするためのさまざまな方法を検討した結果、1 つの背景色またはテキスト色しか使用できないことがわかりました。デザイン全体を通して重要性と深度を暗示するためには、背景色とテキスト色の色合いを変える必要があります。このパターンに対応するために、ステップカラーを作成しました。
+After exploring different ways to customize the Ionic theme, we found that we couldn't use just one background or text color. In order to imply importance and depth throughout the design, we need to use different shades of the background and text colors. To accommodate this pattern, we created stepped colors.
 
-background 変数（--ion-background-color`）とtext変数（--ion-text-color`）を更新すると、ほとんどのコンポーネントでアプリの見た目が変わりますが、特定の Ionic コンポーネントでは見た目が崩れたり、壊れたりすることがあります。これは、暗いパレットを適用するとより明らかになります。
+While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker palette.
 
-一部のコンポーネントでは、背景よりも暗い、またはテキストよりも明るい色合いを使用しています。たとえば、item の見出しテキストは、私たちのデフォルトのテキストカラーよりも数段階明るい色である <CodeColor color="#404040">#404040</CodeColor> になります。一方、ローディングコンポーネントの背景は白よりも濃い色 <CodeColor color="#f2f2f2">#f2f2f2</CodeColor> になります。私達はこれらのわずかな変化を定義するために、ステップカラーを利用します。アプリケーションの背景色やテキストの色を更新するときは、ステップカラーを更新することが重要です。
+In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor color="#404040">#404040</CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor color="#f2f2f2">#f2f2f2</CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-Ionic では、テキストカラーと背景カラーを別々に更新できるように、別々のステップカラーを提供しています。これは、テキストと背景の両方のステップカラーを使用するコンポーネントに便利で、[ハイコントラストパレット](./high-contrast-mode)を効果的に実装できます。
+Ionic provides separate step colors for text and background colors so they can be updated separately. This is useful for components that use both text and background stepped colors and allows us to effectively implement the [high contrast palette](./high-contrast-mode).
 
-デフォルトでは、Ionic の段階的なテキストカラーは、デフォルトのテキストカラー値<CodeColor color="#000000">#000000</CodeColor> から始まり、背景カラー値<CodeColor color="#ffffff">#ffffff</CodeColor> と増加するパーセンテージで混合します。Ionic の背景の段階的な色は、デフォルトの背景色値 <CodeColor color="#ffffff">#ffffff</CodeColor> から始まり、増加する割合でテキスト色値 <CodeColor color="#000000">#000000</CodeColor> と混ざります。ステップカラーの完全なリストは、以下のジェネレータに示されています。
+By default, the Ionic text stepped colors start at the default text color value <CodeColor color="#000000">#000000</CodeColor> and mix with the background color value <CodeColor color="#ffffff">#ffffff</CodeColor> using an increasing percentage. The Ionic background stepped colors start at the default background color value <CodeColor color="#ffffff">#ffffff</CodeColor> and mix with the text color value <CodeColor color="#000000">#000000</CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 
-## ステップカラージェネレータ
+## Stepped Color Generator
 
-アプリのカスタム背景色とテキスト色のテーマを作成します。以下の背景色またはテキスト色の 16 進数値を更新し、生成されたコードを Ionic プロジェクトに直接コピー＆ペーストしてください。
+Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
 
 <SteppedColorGenerator useTextAndBackgroundStepColors={true} />

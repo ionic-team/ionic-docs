@@ -1,6 +1,6 @@
 ---
-title: Angular ナビゲーション
-sidebar_label: ナビゲーション/ルーティング
+title: Angular Navigation
+sidebar_label: Navigation/Routing
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,13 +13,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   />
 </head>
 
-このガイドでは、Ionic と Angular を使用して構築されたアプリでのルーティングのしくみについて説明します。
+This guide covers how routing works in an app built with Ionic and Angular.
 
-Angular Router は、Angular アプリケーションで最も重要なライブラリの 1 つです。これがなければ、アプリはシングルビュー/シングルコンテキストアプリになるか、ブラウザのリロード時にナビゲーションのステートを維持できなくなります。Angular Router を使用すると、リンク可能でリッチなアニメーションを持つリッチなアプリを作成できます（もちろん、Ionic と組み合わせると！）。Angular Router の基本と、それを Ionic アプリケーション用に設定する方法を見てみましょう。
+The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's walk through the basics of the Angular Router and how we can configure it for Ionic apps.
 
-## シンプルな Route
+## A simple Route
 
-ほとんどのアプリでは、some sort of route を持つことがしばしば必要になります。最も基本的な設定はこのようになります：
+For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
 
 ```tsx
 
@@ -36,11 +36,11 @@ import { RouterModule } from '@angular/router';
 })
 ```
 
-URL path と Component の組み合わせを確認する最も簡単な方法は、ここをみるすることです。アプリがロードされると、ルーターはユーザーがロードしようとしている URL を読むことで動作を開始します。私たちのサンプルでは、Route は `''` を参照します。これは本質的に私たちのインデックスルートとなります。そうすると、一致するエントリを探し出して、 `LoginComponent` がロードされます。かなり簡単です。この処理は `path` が一致するまで、設定されているすべての Route のエントリを参照します。しかし、初期ロードと異なるパスをロードしたい場合はどうなりますか？
+The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
 
-## リダイレクトの処理
+## Handling Redirects
 
-そういう場合には、ルーターリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように書くことができますが、いくつかの異なるキーが含まれます。
+For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
 
 ```tsx
 [
@@ -50,29 +50,29 @@ URL path と Component の組み合わせを確認する最も簡単な方法は
 ];
 ```
 
-このリダイレクトでは、アプリのインデックス（`''`）を探しはじめると、`login` にリダイレクトします。最後の `pathMatch` キーは、ルータにパスの検索方法を指示するために必要です。
+In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `login` route. The last key of `pathMatch` is required to tell the router how it should look up the path.
 
-`full` を使用すると、たとえ最後まで `/route1/route2/route3` と一致する path がなかったとしても、フルパスを比較する必要があることをルータに伝えることができます。つまり、次のようになります。
+Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
 
 ```tsx
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-このように書くと `/route1/route2/route3` をロードすると、リダイレクトを行います。けれど仮に `/route1/route2/route4` であれば、すべての path が一致しないのでリダイレクトを行いません。
+And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
 
-あるいは、こういう書き方もできます:
+Alternatively, if we used:
 
 ```tsx
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-`/route1/route2/route3` と `/route1/route2/route4` の両方を読み込んだとおき, どちらの場合もリダイレクトします。 `pathMatch: 'prefix'` によって、一部でも一致したら該当するからです。
+Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
 
-## routes へのナビゲーション
+## Navigating to different routes
 
-routes について説明してきましたが、それではどのようにしてそのルートにナビゲーションしたらいいのでしょうか。これには、 `routerLink` directive を利用します。先ほどの簡単な router 設定でこれを確認してみましょう:
+Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
 
 ```ts
 RouterModule.forRoot([
@@ -81,7 +81,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-わたしたちは、次の HTML を利用することで、`LoginComponent` から `detail` route に遷移することができます。
+Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
 
 ```html
 <ion-header>
@@ -95,9 +95,9 @@ RouterModule.forRoot([
 </ion-content>
 ```
 
-ここで重要なのは`ion-button` と `routerLink` directive です。RouterLink は典型的な `href` と同様の考えで動作しますが、URL を文字列として構築する代わりに配列として構築することができ、それによってより複雑なパスを書くこともできます。
+The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
 
-Router API を使用して、プログラムで遷移することもできます。
+We also can programmatically navigate in our app by using the router API.
 
 ```tsx
 import { Component } from '@angular/core';
@@ -116,23 +116,23 @@ export class LoginComponent {
 }
 ```
 
-どちらのオプションも同様のナビゲーションメカニズムを提供し、異なるユースケースで利用することができます。
+Both options provide the same navigation mechanism, just fitting different use cases.
 
-### LocationStrategy.historyGo を使ったナビゲーション
+### Navigating using LocationStrategy.historyGo
 
-Angular Router には [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) メソッドがあり、アプリケーションの履歴を進んだり戻ったりすることができます。例を見てみましょう。
+Angular Router has a [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) method that allows developers to move forward or backward through the application history. Let's walk through an example.
 
-次のようなアプリケーションの履歴があるとします：
+Say you have the following application history:
 
-`/ページA` --> `/ページB` --> `/ページC`。
+`/pageA` --> `/pageB` --> `/pageC`
 
-もし `/pageC` で `LocationStrategy.historyGo(-2)` を呼び出すと、 `/pageA` に戻る。その後、 `LocationStrategy.historyGo(2)` を呼び出すと、 `/pageC` に戻る。
+If you were to call `LocationStrategy.historyGo(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `LocationStrategy.historyGo(2)`, you would be brought to `/pageC`.
 
-`LocationStrategy.historyGo()` の主な特徴は、アプリケーションの履歴が線形であることを想定していることです。つまり、`LocationStrategy.historyGo()` は非線形のルーティングを使用するアプリケーションでは使用すべきではありません。詳しくは [リニアルーティング対非リニアルーティング](#linear-routing-versus-non-linear-routing) を参照してください。
+An key characteristic of `LocationStrategy.historyGo()` is that it expects your application history to be linear. This means that `LocationStrategy.historyGo()` should not be used in applications that make use of non-linear routing. Refer to [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
 
 ## Lazy loading routes
 
-現在のルート設定では、すべての Component が、ルートとなる `app.module` と同じ `chunk` に含まれているので理想的ではありません。代わりに、ルータにはコンポーネントを独自の `chunk` に分離できるように設定されています。
+Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
 
 ```tsx
 
@@ -150,7 +150,7 @@ import { RouterModule } from '@angular/router';
 })
 ```
 
-`loadChildren` プロパティはコンポーネントの代わりにネイティブインポートを直接仕様してモジュールを参照する方法です。ただしこれを行うには、コンポーネントごとにモジュールを作成する必要があります。
+While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. In order to do this though, we need to create a module for each of the components.
 
 ```tsx
 ...
@@ -168,10 +168,10 @@ import { LoginComponent } from './login.component';
 ```
 
 :::note
-一部のコードを省略して紹介しています
+We're excluding some additional content and only including the necessary parts.
 :::
 
-ここでは、`RouterModule` のインポートとともに、典型的な `Angular Module` の設定がありますが、`RouterModule` では `forChild` によってコンポーネントを使用することを宣言しています。この設定では、ビルドを実行するときに、`App Component`（Root）、 `login Component` 、および `detail Component` において別々のチャンクを作成します。
+Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
 
 ## Standalone Components
 
@@ -263,9 +263,9 @@ We recommend keeping your application as simple as possible until you need to ad
 
 The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+For more on tabs, please refer to [Working with Tabs](#working-with-tabs).
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+For more on nested router outlets, please refer to [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
@@ -319,13 +319,13 @@ The above routes are nested because they are in the `children` array of the pare
 
 Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
 
-Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, the first `ion-router-outlet` renders the `ion-tab-bar` and `ion-tabs` components. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
 ## Working with Tabs
 
-タブを使用すると、Angular Router にどのコンポーネントをロードする必要があるかを知るためのメカニズムを Ionic が提供しますが、タブコンポーネントでは複雑な作業が行われます。簡単な例を見てみましょう。
+With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's walk through a simple example.
 
 ```ts
 const routes: Routes = [
@@ -357,7 +357,7 @@ const routes: Routes = [
 ];
 ```
 
-ここでは、 `tabs` パスを読み込んでいます。この例では、path を `tabs` としていますが、これは変更可能です。あなたのアプリに合った名前にすることができます。このルートオブジェクトでは、子ルートも定義することができます。この例では、トップレベルの子ルート「tab1」が「outlet」として機能し、さらに子ルートをロードすることができます。この例では、1 つの子ルートがあり、新しいコンポーネントをロードするだけです。Tabs のマークアップは、次のとおりです:
+Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as follows:
 
 ```html
 <ion-tabs>
@@ -370,7 +370,7 @@ const routes: Routes = [
 </ion-tabs>
 ```
 
-Ionic を使ってアプリを作成したことがあれば、このマークアップはおなじみのはずです。`ion-tabs` コンポーネントを作成し、`ion-tab-bar` を提供します。`ion-tab-bar` は、 `tab`と一緒に`ion-tab-button`を提供します。最新の `@ionic/angular` はもはや `<ion-tab>` を必要とせず、開発者がタブバーを完全にカスタマイズできるようになり、すべての設定は Router の設定によって行えるようになりました。
+If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
 
 ### How Tabs in Ionic Work
 
@@ -378,7 +378,7 @@ Each tab in Ionic is treated as an individual navigation stack. This means if yo
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
 
-Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
 
@@ -442,7 +442,7 @@ Since each tab is its own navigation stack, it is important to note that these n
 
 A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
 
-Let's take a look at a couple common mistakes that are made with tabs.
+Let's go over a couple common mistakes that are made with tabs.
 
 **A Settings Tab That Multiple Tabs Reference**
 

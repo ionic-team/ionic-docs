@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/item-option/slots.md';
 
 <head>
   <title>ion-item-option: Option Button for Sliding Item in Ionic</title>
-  <meta name="description" content="ion-item-optionはion-item-slidingのオプションボタンで、ion-item-optionsの中に配置する必要があります。プロパティの詳細については、こちらをご覧ください。" />
+  <meta name="description" content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,24 +18,24 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-アイテムオプションコンポーネントは、スライドアイテムのためのボタンです。アイテムオプション](./item-options)の中に配置する必要があります。ionSwipe`イベントと `expandable` プロパティを組み合わせることで、アイテムの完全なスワイプアクションを作成することができます。
+The item option component is an button for a sliding item. It must be placed inside of [item options](./item-options). The `ionSwipe` event and the `expandable` property can be combined to create a full swipe action for the item.
 
-詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
+Refer to the [item sliding](./item-sliding) documentation for more information.
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

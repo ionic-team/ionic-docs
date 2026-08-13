@@ -1,76 +1,76 @@
 ---
-title: Ionic PageのLife Cycle
-sidebar_label: ライフサイクル
+title: Ionic Page Life Cycle
+sidebar_label: Lifecycle
 ---
 
 <head>
-  <title>AngularのページコンポーネントのLife Cycle - すべてのイベントのドキュメンテーション</title>
+  <title>Angular Page Component Life Cycle - App Events Documentation</title>
   <meta
     name="description"
     content="This guide covers how the page life cycle works in an Ionic app built with Angular. Learn how Ionic embraces life cycle events provided by Angular components."
   />
 </head>
 
-このガイドでは、Ionic と Angular を使用して構築されたアプリでの Page Life Cycle のしくみについて説明します。（追記：Life Cycle とは、表示をはじめてから破棄するまでを指します。この間の特定のタイミングに設定されているイベントを Life Cycle Events といいます）
+This guide covers how the page life cycle works in an app built with Ionic and Angular.
 
 ![Flowchart illustrating the Ionic page life cycle events and their sequence.](/img/guides/lifecycle/ioniclifecycle.png 'Ionic Lifecycle Diagram')
 
-## Angular の Life Cycle Events
+## Angular Life Cycle Events
 
-Ionic は Angular が提供する Life Cycle Events を取り入れています。最もよく使う 2 つの Angular イベントは次のとおりです。
+Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
 
-| Event Name    | Description                                                                                                                                             |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ngOnInit`    | コンポーネントの初期化中に発生します。このイベントを使用して、ローカルメンバーを初期化し、一度だけ実行する必要がある Service を呼び出すことができます。 |
-| `ngOnDestroy` | Angular がビューを破棄する直前に発生します。 observables の unsubscribe などのクリーンアップに役立ちます。                                              |
+| Event Name    | Description                                                                                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ngOnInit`    | Fired once during component initialization. This event can be used to initialize local members and make calls into services that only need to be done once. |
+| `ngOnDestroy` | Fired right before Angular destroys the view. Useful for cleanup like unsubscribing from observables.                                                       |
 
-Angular の Component Life Cycle イベントの詳細については、それらの [component lifecycle docs](https://angular.jp/guide/lifecycle-hooks) をご覧ください。
+For more info on the Angular Component Life Cycle events, visit their [component lifecycle docs](https://angular.io/guide/lifecycle-hooks).
 
 :::note
-`ion-nav` または `ion-router-outlet` を使用するコンポーネントは、 `OnPush` 変更検出方式を使用しないでください。そうすることで、 `ngOnInit` などのライフサイクル・フックが起動するのを防ぐことができます。また、非同期状態の変更は正しくレンダリングされない場合があります。
+Components that use `ion-nav` or `ion-router-outlet` should not use the `OnPush` change detection strategy. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
 :::
 
-## Ionic の Page Events
+## Ionic Page Events
 
-Angular の Life Cycle Events に加えて、Ionic Angular には、使用可能ないくつかの追加イベントがあります:
+In addition to the Angular life cycle events, Ionic Angular provides a few additional events that you can use:
 
-| Event Name         | Description                                                              |
-| ------------------ | ------------------------------------------------------------------------ |
-| `ionViewWillEnter` | コンポーネントが表示されるアニメーションがはじまる時に発火します。       |
-| `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが **終了した時に** 発火します。 |
-| `ionViewWillLeave` | コンポーネントを離脱するアニメーションが **はじまる時に** 発火します。   |
-| `ionViewDidLeave`  | コンポーネントを離脱するアニメーションが **終了した時に** 発火します。   |
+| Event Name         | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
+| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
+| `ionViewDidEnter`  | Fired when the component routing to has _finished_ animating.      |
+| `ionViewWillLeave` | Fired when the component routing _from_ is about to animate.       |
+| `ionViewDidLeave`  | Fired when the component routing _from_ has _finished_ animating.  |
 
-これらのライフサイクルは、ルーターによって直接マッピングされたコンポーネントに対してのみ呼び出されます。つまり、`/pageOne`が`PageOneComponent`にマッピングされた場合、Ionic ライフサイクルは`PageOneComponent`で呼び出されますが、`PageOneComponent`がレンダリングする子コンポーネントでは呼び出されません。
+These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
 
-`ionViewWillEnter`と`ionViewDidEnter`の違いは、いつ発火するかです。前者は `ngOnInit` の直後でページ遷移が始まる前に、後者は遷移が終わった後に直接呼び出されます。
+The difference between `ionViewWillEnter` and `ionViewDidEnter` is when they fire. The former fires right after `ngOnInit` but before the page transition begins, and the latter directly after the transition ends.
 
-`ionViewWillLeave` と `ionViewDidLeave` についてですが、 `ionViewWillLeave` は現在のページから離脱する処理がはじまる前に呼び出されますが、 `ionViewDidLeave` は新しいページに遷移する処理が成功してから呼び出されます (新しいページの `ionViewDidEnter` が発火した後になります)。
+For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called directly before the transition away from the current page begins, and `ionViewDidLeave` does not get called until after the new page gets successfully transitioned into (after the new pages `ionViewDidEnter` fires).
 
 ![Animated GIF showing Ionic page life cycle events in a console log as a page transition occurs.](/img/guides/lifecycle/ioniclifecycle.gif 'Ionic Lifecycle Animation')
 
-## Ionic が Page の Life をどのように処理するか
+## How Ionic Handles the Life of a Page
 
-Ionic は `<ion-router-outlet />` という router outlet を持っています。この outlet が Angular の `<router-outlet />` を継承し、さらに拡張して、モバイルデバイスのためのより良い体験を可能にしました。
+Ionic has its router outlet, called `<ion-router-outlet />`. This outlet extends Angular's `<router-outlet />` with some additional functionality to enable better experiences for mobile devices.
 
-`<ion-router-outlet />` にアプリがラップされることで、Ionic はナビゲーションの扱いを少し変更します。新しいページに遷移すると、Ionic は古いページを既存の DOM に残しますが、ビューから隠して新しいページに移行します。これを行う理由は 2 つあります:
+When an app is wrapped in `<ion-router-outlet />`, Ionic treats navigation a bit differently. When you navigate to a new page, Ionic will keep the old page in the existing DOM, but hide it from your view and transition the new page. The reason we do this is two-fold:
 
-1. 古いページの状態を維持することができます（画面上のデータ、スクロール位置など）。
-2. ページがすでに存在しており作成し直す必要がないため、ページへの移行がスムーズになります。
+1. We can maintain the state of the old page (data on the screen, scroll position, etc..)
+2. We can provide a smoother transition back to the page since it is already there and doesn't need to be recreated.
 
-たとえば、UI の "戻る" ボタンまたはブラウザの "戻る" ボタンを押すことによってページが「Pop」されると、ページは DOM から削除されるだけとなります。
+Pages are only removed from the DOM when they are "popped", for instance, by pressing the back button in the UI or the browsers back button.
 
-この特別な処理のために、`ngOnInit` と `ngOnDestroy` のメソッドは通常そうあるべきだと思うときには発火しないかもしれません。
+Because of this special handling, the `ngOnInit` and `ngOnDestroy` methods might not fire when you would usually think they should.
 
-`ngOnInit` はページが新しく作成されるたびに発火するだけなので、ページに戻ったときには発火されません。たとえば、タブのインタフェースで各ページ間を移動しても、各ページの `ngOnInit` メソッドは最初の 1 回だけ呼び出され、その後の表示では呼び出されません。`ngOnDestroy` はページが 「Pop」したときにのみ発生します。
+`ngOnInit` will only fire each time the page is freshly created, but not when navigated back to the page. For instance, navigating between each page in a tabs interface will only call each page's `ngOnInit` method once, but not on subsequent visits. `ngOnDestroy` will only fire when a page "popped".
 
-## ルートガード
+## Route Guards
 
-Ionic 3 では、いつページにアクセスすることができるか（ `ionViewCanEnter` ）と離脱できるか（`ionViewCanLeave`）を制御するのに役立つ、いくつかの追加のライフサイクルメソッドがありました。これらは、許可されていないユーザーからページを保護したり、ユーザーがページを離れたくないときにユーザーをページ上に保持したりするために使用できます（フォーム入力中など）。
+In Ionic 3, there were a couple of additional life cycle methods that were useful to control when a page could be entered (`ionViewCanEnter`) and left (`ionViewCanLeave`). These could be used to protect pages from unauthorized users and to keep a user on a page when you don't want them to leave (like during a form fill).
 
-これらの方法は、Angular のルートガードを使用するために Ionic 4 で削除されました。
+These methods were removed in Ionic 4 in favor of using Angular's Route Guards.
 
-ルートガードは、ルートに対して特定のアクションを実行できるかどうかを判断するのに役立ちます。それらは特定のインターフェースを実装するクラスです。`CanActive` と `CanDeactivate` のインターフェイスは、`ionViewCanEnter` と `ionViewCanLeave` と同様のロジックでイベントを削除することができます。
+A route guard helps determine if a particular action can be taken against a route. They are classes that implement a certain interface. The `CanActivate` and `CanDeactivate` interfaces can be used to implement the same type of logic that the removed events `ionViewCanEnter` and `ionViewCanLeave` did.
 
 ```tsx
 @Injectable()
@@ -83,21 +83,21 @@ export class AuthGuard implements CanActivate {
 }
 ```
 
-このガードを使用するには、それをルート定義の適切なパラメータに追加します:
+To use this guard, add it to the appropriate param in the route definition:
 
 ```tsx
 { path: 'settings', canActivate: [AuthGuard], loadChildren: '...',  }
 ```
 
-ルートガードの使い方の詳細については、Angular の [router documentation](https://angular.jp/guide/router) を参照してください。
+For more info on how to use route guards, go to Angular's [router documentation](https://angular.io/guide/router).
 
-## Life Cycle メソッドのガイダンス
+## Guidance for Each Life Cycle Method
 
-以下は、life cycle events ごとのユースケースに関するヒントです。
+Below are some tips on use cases for each of the life cycle events.
 
-- `ngOnInit` - コンポーネントを初期化し、Service からアクセスごとに更新する必要がないデータをロードします。
-- `ionViewWillEnter` - `ionViewWillEnter` は View がナビゲートされる度に呼び出されるので（初期化されているかどうかにかかわらず）、Service からデータをロードするのに適したメソッドです。ただし、アニメーション中にデータがを取得すると、大量の DOM 操作が開始される可能性があります。これにより、ぎこちないアニメーションが発生する可能性があります。
-- `ionViewDidEnter` - `ionViewWillEnter` を使ってデータを取得していてパフォーマンスに問題がある時は、`ionViewDidEnter` を代わりに使うことができます。ただし、Page がユーザーに表示されるまではこのイベントは発火しません。そのため、ロードインジケータまたはスケルトン画面を使用することをお勧めします。これにより、遷移が完了した後にコンテンツが不自然に点滅することはありません。
-- `ionViewWillLeave` - observables の unsubscribing のように、クリーンアップで利用します。 `ngOnDestroy` はあなたが現在のページから遷移する時には発火しない可能性がありますので、画面が表示されていない時にアクティブにしたくない場合はここでクリーンアップの処理を行います。
-- `ionViewDidLeave` - このイベントが発生すると、新しいページへと完全に遷移したことがわかります。そのため、ビューが表示されているときに通常は行わない可能性があるロジックはすべてここに移動できます。
-- `ngOnDestroy` - `ionViewWillLeave` でクリーンアップしたくないページのクリーンアップロジックはここにおいてください。
+- `ngOnInit` - Initialize your component and load data from services that don't need refreshing on each subsequent visit.
+- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it's a good method to load data from services. However, if your data comes back during the animation, it can start lots of DOM manipulation, which can cause some janky animations.
+- `ionViewDidEnter` - If you encounter performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. This event won't fire until after the page is visible by the user, however, so you might want to use either a loading indicator or a skeleton screen, so content doesn't flash in un-naturally after the transition is complete.
+- `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from observables. Since `ngOnDestroy` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
+- `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
+- `ngOnDestroy` - Cleanup logic for your pages that you don't want to clean up in `ionViewWillLeave`.

@@ -1,36 +1,36 @@
 ---
-title: 'Ionic Vueの概要'
-sidebar_label: 概要
+title: 'Ionic Vue Overview'
+sidebar_label: Overview
 ---
 
 <head>
-  <title>Ionic Vueの概要 | Vue.jsフレームワークドキュメント</title>
+  <title>Ionic Vue Overview | Vue.js Framework Documentation</title>
   <meta
     name="description"
-    content="この概要を読んで、Ionic VueがコアIonic FrameworkをVue.js開発者向けに調整されたツールとAPIと組み合わせる方法を学びましょう。"
+    content="Read this overview to learn how Ionic Vue combines the core Ionic Framework with the tooling and APIs that are tailored to Vue.js developers."
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-`@ionic/vue`は、Ionic Framework の全機能を Vue 開発者にもたらします。Vue エコシステムとのシームレスな統合を提供するため、使い慣れた Vue ツール、コンポーネント、ベストプラクティスを使用して高品質なクロスプラットフォームアプリを構築できます。また、Ionic の豊富な UI ライブラリとネイティブ機能にもアクセスできます。
+`@ionic/vue` brings the full power of the Ionic Framework to Vue developers. It offers seamless integration with the Vue ecosystem, so you can build high-quality cross-platform apps using familiar Vue tools, components, and best practices. You also get access to Ionic's extensive UI library and native capabilities.
 
-## Vue バージョンサポート
+## Vue Version Support
 
-Ionic Vue v8 は Vue 3.x をサポートしています。サポートされているバージョンとサポートポリシーの詳細については、[Ionic Vue サポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
+Ionic Vue v8 supports Vue 3.x. For detailed information on supported versions and our support policy, refer to the [Ionic Vue Support Policy](/docs/reference/support#ionic-vue).
 
-## Vue ツール
+## Vue Tooling
 
-Ionic Vue プロジェクトは、標準の Vue CLI プロジェクトと同じツールを使用するため、アプリのビルド、テスト、デプロイに Vue CLI の全機能セットを活用できます。スタータープロジェクトには、ナビゲーション用の Vue Router や、型安全性と開発者体験の向上のための TypeScript サポートなど、デフォルトで有効になっている便利な機能が含まれています。
+Ionic Vue projects use the same tooling as standard Vue CLI projects, so you can take advantage of the full Vue CLI feature set for building, testing, and deploying your apps. Starter projects come with useful features enabled by default, such as Vue Router for navigation and TypeScript support for type safety and improved developer experience.
 
-## ネイティブツール
+## Native Tooling
 
-[Capacitor](https://capacitorjs.com)は、Ionic Vue の公式クロスプラットフォームランタイムで、単一のコードベースで iOS、Android、Web 上でネイティブにアプリを実行できます。
+[Capacitor](https://capacitorjs.com) is the official cross-platform runtime for Ionic Vue, enabling your apps to run natively on iOS, Android, and the web with a single codebase.
 
-Ionic Vue で多くの[Cordova](https://cordova.apache.org/)プラグインを使用できますが、Capacitor が推奨され、完全にサポートされているソリューションです。[Ionic CLI](../cli.md)は、Ionic Vue プロジェクトの公式 Cordova 統合を提供していません。Capacitor で Cordova プラグインを使用する方法の詳細については、[Capacitor ドキュメント](https://capacitorjs.com/docs/cordova)を参照してください。
+While you can use many [Cordova](https://cordova.apache.org/) plugins with Ionic Vue, Capacitor is the recommended and fully supported solution. The [Ionic CLI](../cli.md) does not provide official Cordova integration for Ionic Vue projects. For more information on using Cordova plugins with Capacitor, refer to the [Capacitor documentation](https://capacitorjs.com/docs/cordova).
 
-## インストール
+## Installation
 
 ```shell-session
 $ npm install -g @ionic/cli
@@ -40,34 +40,32 @@ $ cd myApp
 $ ionic serve █
 ```
 
-## リソース
+## Resources
 
 <DocsCards>
 
-<DocsCard header="はじめに" href="quickstart" icon="/icons/guide-quickstart-icon.png">
-  <p>最初のIonic Vueアプリを迅速にセットアップし、フレームワークとCLIの基本を学びます。</p>
+<DocsCard header="Getting Started" href="quickstart" icon="/icons/guide-quickstart-icon.png">
+  <p>Quickly set up your first Ionic Vue app and learn the basics of the framework and CLI.</p>
 </DocsCard>
 
-<DocsCard header="Vueドキュメント" href="https://vuejs.org/guide/introduction.html" icon="/icons/logo-vue-icon.png">
-  <p>公式Vueドキュメントから、Vueのコアコンセプト、ツール、ベストプラクティスについて詳しく学びます。</p>
+<DocsCard header="Vue Documentation" href="https://vuejs.org/guide/introduction.html" icon="/icons/logo-vue-icon.png">
+  <p>Learn more about Vue's core concepts, tools, and best practices from the official Vue documentation.</p>
 </DocsCard>
 
-<DocsCard header="ナビゲーション" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Vue Routerを使用してIonic Vueアプリでルーティングとナビゲーションを処理する方法を発見します。</p>
+<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>Discover how to handle routing and navigation in Ionic Vue apps using the Vue Router.</p>
 </DocsCard>
 
-<DocsCard header="コンポーネント" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>美しいアプリを構築するためのIonicの豊富なUIコンポーネントライブラリを探索します。</p>
+<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
 </DocsCard>
 
-<DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
-  <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
+<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
 </DocsCard>
 
-<DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
 </DocsCard>
 
 </DocsCards>

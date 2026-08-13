@@ -1,6 +1,6 @@
 ---
 title: React Lifecycle
-sidebar_label: ライフサイクル
+sidebar_label: Lifecycle
 ---
 
 <head>
@@ -11,36 +11,36 @@ sidebar_label: ライフサイクル
   />
 </head>
 
-このガイドでは、Ionic React アプリケーションで Ionic のライフサイクルイベントを利用する方法について説明します。
+This guide discusses how to use the Ionic Lifecycle events in an Ionic React application.
 
-## Ionic のライフサイクルメソッド
+## Ionic Lifecycle Methods
 
-Ionic は、アプリで利用できるいくつかのライフサイクルメソッドを提供します:
+Ionic provides a few lifecycle methods that you can use in your apps:
 
-| Event Name         | Description                                                              |
-| ------------------ | ------------------------------------------------------------------------ |
-| `ionViewWillEnter` | コンポーネントが表示されるアニメーションが **はじまる時に** 発火します。 |
-| `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが **終了した時に** 発火します。 |
-| `ionViewWillLeave` | コンポーネントを離脱するアニメーションが **はじまる時に** 発火します。   |
-| `ionViewDidLeave`  | コンポーネントを離脱するアニメーションが **終了した時に**発火します。    |
+| Event Name         | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
+| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
+| `ionViewDidEnter`  | Fired when the component routing to has _finished_ animating.      |
+| `ionViewWillLeave` | Fired when the component routing _from_ is about to animate.       |
+| `ionViewDidLeave`  | Fired when the component routing _from_ has _finished_ animating.  |
 
-これらのライフサイクルは、ルーターによって直接マッピングされたコンポーネントに対してのみ呼び出されます。つまり、`/pageOne`が`PageOneComponent`にマッピングされた場合、Ionic ライフサイクルは`PageOneComponent`で呼び出されますが、`PageOneComponent`がレンダリングする子コンポーネントでは呼び出されません。
+These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
 
-これらのメソッドにアクセスする方法は、クラスベースのコンポーネントを使用しているか、機能的なコンポーネントを使用しているかによって異なります。以下では、両方の方法について説明します。
+The way you access these methods varies based on if you are using class-based components or functional components. We cover both methods below.
 
-## クラスベースのコンポーネントにおけるライフサイクルメソッド
+## Lifecycle Methods in Class-Based Components
 
-クラスベースのコンポーネントで Ionic のライフサイクルメソッドを使用するには、次のように `withIonLifeCycle` という higher order component (HOC) でコンポーネントをラップする必要があります:
+to use the Ionic Lifecycle methods in a class-based component, you must wrap your component with the `withIonLifeCycle` higher order component (HOC) like so:
 
 ```tsx
 export default withIonLifeCycle(HomePage);
 ```
 
 :::note
-`withIonLifeCycle` は `@ionic/react` からインポートします
+`withIonLifeCycle` is imported from `@ionic/react`
 :::
 
-そして、クラスコンポーネントに適切なライフサイクルメソッドを追加すると、イベントが発生した時に HOC がそのメソッドを呼び出します。以下は、各ライフサイクルメソッドを実装したコンポーネント全体です:
+You can then create the appropriate lifecycle method on your class component, and the HOC calls that method when the event happens. Below is the entire component with each of the lifecycle methods implemented:
 
 ```tsx
 import React from 'react';
@@ -80,9 +80,9 @@ class HomePage extends React.Component {
 export default withIonLifeCycle(HomePage);
 ```
 
-## Function ベースのコンポーネントにおけるライフサイクルメソッド
+## Lifecycle Methods in Functional Components
 
-Ionic React は、ファンクションコンポーネントで使用できる各ライフサイクルメソッドのフックをエクスポートします。各フックは、イベントが発生したときに呼び出すメソッドを実行します。
+Ionic React exports hooks for each of the lifecycle methods that you can use in your functional components. Each of the hooks takes the method you want called when the event fires.
 
 ```tsx
 import {
@@ -130,7 +130,7 @@ export default HomePage;
 ```
 
 :::note
-クラスコンポーネントのように、ファンクションコンポーネントを `withIonLifeCycle` HOC でラップする必要はありません。
+Functional components don't need to be wrapped with the `withIonLifeCycle` HOC as class components do.
 :::
 
 Developers can also optionally pass reactive dependencies to each lifecycle hook. These are then passed to the underlying [React useEffect hook](https://react.dev/reference/react/useEffect#useeffect):
@@ -143,25 +143,25 @@ useIonViewDidEnter(() => {
 }, [data]);
 ```
 
-## React ライフサイクルメソッド
+## React LifeCycle Methods
 
-React のすべてのライフサイクルメソッド（ `componentDidMount` 、`componentWillUnmount` など）も使用できます。 ただし、Ionic React はページのライフタイムを管理するため、特定のイベントが期待どおりに発生しない場合があります。 たとえば、最初にページが表示されたときは `componentDidMount` が起動しますが、ページから移動した時に Ionic はページを DOM ツリーに保持しているため、その後の当該ページへのアクセスでは `componentDidMount` を再度呼び出さない場合があります。 このシナリオは、Ionic ライフサイクルメソッドが存在する主な理由であり、ネイティブフレームワークのイベントが発生しない場合にビューが開始および終了するときにロジックを呼び出す方法を提供します。
+All the lifecycle methods in React (`componentDidMount`, `componentWillUnmount`, etc..) are available for you to use as well. However, since Ionic React manages the lifetime of a page, certain events might not fire when you expect them to. For instance, `componentDidMount` fires the first time a page is displayed, but if you navigate away from the page Ionic might keep the page around in the DOM, and a subsequent visit to the page might not call `componentDidMount` again. This scenario is the main reason the Ionic lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
 
-## 各ライフサイクルメソッドのガイドライン
+## Guidance for Each LifeCycle Method
 
-以下は、各ライフサイクルイベントのユースケースに関するヒントです。
+Below are some tips on use cases for each of the life cycle events.
 
-- `ionViewWillEnter` - コンポーネントが初期化されているかどうかに関係なくビューが表示される度に `ionViewWillEnter` が呼び出されるため、サービスからデータをロードするのに適したメソッドです。
-- `ionViewDidEnter` - データのロード時に `ionViewWillEnter` を使用することでパフォーマンスの問題が発生する場合は、代わりに `ionViewDidEnter` でデータ呼び出しを行うことができます。 ただし、ページがユーザーに表示されるまでこのイベントは発生しません。そのため、ロードインジケーターまたはスケルトンスクリーンを使用して、表示が完了した後にコンテンツが不自然にフラッシュしないようにすることができます。
-- `ionViewWillLeave` - データソースからの unsubscribe など、クリーンアップに使用できます。 `componentWillUnmount` は現在のページから移動しても起動しない場合があるため、画面が表示されていないときにアクティブにしたくない場合は、クリーンアップコードをここに配置します。
-- `ionViewDidLeave` - このイベントが発生すると、新しいページに完全に移行したことがわかります。そのため、ビューが表示されているときに通常実行しないロジックはここに移動できます。
+- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it's a good method to load data from services.
+- `ionViewDidEnter` - If you encounter performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. This event won't fire until after the page is visible to the user, however, so you might want to use either a loading indicator or a skeleton screen, so content doesn't flash in un-naturally after the transition is complete.
+- `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from data sources. Since `componentWillUnmount` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
+- `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
 
-## ページ間で状態を受け渡す
+## Passing state between pages
 
-Ionic React はページのライフタイムを管理するため、ユーザーがアプリケーションをナビゲートすると、以前のページの状態が更新されることがあります。これは、React の `useEffect` や React Router の `useLocation` を使って決定された状態に影響を与えることがあります。例えば、`PageA` が `useLocation` を呼び出した場合、ユーザーが `PageA` から `PageB` に移動すると `useLocation` の状態は変化します。
+Since Ionic React manages the lifetime of a page, state on previous pages may update as users navigate your application. This can impact state that is determined using `useEffect` from React or `useLocation` from React Router. For example, if `PageA` calls `useLocation`, the state of `useLocation` will change when the user navigates from `PageA` to `PageB`.
 
-開発者は、前のページが定義された状態にしかアクセスしないことを保証するために、適切なチェックを含める必要があります。
+Developers should include the appropriate checks to ensure that previous pages only access defined states.
 
-例えば、以下のコードは `testObject` が定義されていない場合、エラーになります： `{ state.testObject.childKey }` となります。
+For example, the following code will error if `testObject` is not defined: `{ state.testObject.childKey }`
 
-その代わりに、開発者は `testObject` が定義されている場合にのみ `childKey` にアクセスする必要があります： `{ state.testObject?.childKey }` となります。
+Instead, developers should access `childKey` only if `testObject` is defined: `{ state.testObject?.childKey }`

@@ -35,29 +35,29 @@ export default defineConfig({
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
 
-For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+For more information on configuring the Vite PWA Plugin, refer to the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
 
-See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+Refer to the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
 
 ## Making your Vue app a PWA with Vue CLI
 
 :::note
-As of Ionic CLI v7, Ionic Vue starter apps ship with Vite instead of Vue CLI. See [Making your Vue app a PWA with Vite](#making-your-vue-app-a-pwa-with-vite) for Vite instructions.
+As of Ionic CLI v7, Ionic Vue starter apps ship with Vite instead of Vue CLI. Refer to [Making your Vue app a PWA with Vite](#making-your-vue-app-a-pwa-with-vite) for Vite instructions.
 :::
 
 The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
 
-既存のプロジェクトの場合は、 `vue add` コマンドを実行して、Vue の PWA プラグインをインストールできます。
+For existing projects, you can run the `vue add` command to install the PWA plugin for Vue.
 
 ```shell
 vue add pwa
 ```
 
 :::note
-変更する前に、現在の状況を必ず Git にコミットしてください。
+If you have changes already in place, be sure to commit them in Git.
 :::
 
-これが完了すると、Vue の CLI は新しく `registerServiceWorker.ts` を作成します。それを `main.ts` ファイルにインポートします。
+Once this is completed, Vue's CLI will have created a new `registerServiceWorker.ts` file and imported it into our `main.ts`.
 
 ```tsx
 import { createApp } from 'vue';
@@ -69,7 +69,7 @@ import './registerServiceWorker';
 createApp(App).use(router).mount('#app');
 ```
 
-`registerServiceWorker.ts` は CLI がビルド時に作成する service worker です。ここでは、service worker がアップデート、ネットワーク接続の変更、またはエラーを検出したときのユーザの操作性をカスタマイズできます。
+The `registerServiceWorker.ts` file will point to a service worker that the CLI will create at build time. Inside of here we can customize the experience users will have when the service worker detects an update, change in network connectivity, or receives an error.
 
 ```tsx
 import { register } from 'register-service-worker';
@@ -103,13 +103,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-生成される Service Worker は、 [Workbox's webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいており、デフォルトで `GenerateSW()` を使用するように設定されています。つまり、Workbox はビルド時に、処理するすべてのファイルの Service Worker キャッシュを自動的に生成します。
+The service worker that is generated is based on [Workbox's webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin), and by default is setup to use `GenerateSW()`. Meaning that at build time, Workbox will automatically generate a service worker cache for all the files it processes.
 
-これを設定してデフォルトの動作を変更したい場合は、GitHub にある [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) をチェックアウトします。
+If you want to configure this and change the default behavior, checkout the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
 
 ### Manifest
 
-Service Worker に加えて、Vue PWA プラグインはアプリケーションの manifest ファイルも作成します。デフォルトでは、CLI は次のエントリーを含む manifest を生成します。
+In addition to the service worker, the Vue PWA plugin also is responsible for creating a manifest file for your app as well. By default, the CLI will generate a manifest that contains the following entries.
 
 ```json
 {
@@ -146,19 +146,19 @@ Service Worker に加えて、Vue PWA プラグインはアプリケーション
 }
 ```
 
-`public/img/icons` 内のアイコンは、必ずご使用のブランドに合わせて更新してください。テーマの色や名前をカスタマイズしたい場合は、GitHub にある [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) のドキュメントを必ず読んでください。
+Be sure to update the icons in `public/img/icons` to match your own brand. If you wanted to customize the theme color or name, be sure to read the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
 
 ### Deploying
 
-Firebase, Vercel, Netlify,さらには Azure Static Web Apps など、さまざまなホストを使用することができる。いずれの場合も、同様のセットアッププロセスを完了する必要があります。このガイドでは、ホストの例として Firebase を使用します。このガイドに加えて、 [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) のドキュメントには、さまざまなプロバイダーにデプロイするためのガイドも含まれています。
+You can use various hosts like Firebase, Vercel, Netlify, or even Azure Static Web Apps. All will have similar setup processes that need to be completed. For this guide, Firebase will be used as the hosting example. In addition to this guide, the [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) also have a guide on how to deploy to various providers.
 
 #### Firebase
 
-Firebase ホスティングは Progressive Web Apps に多くの利点を提供しており、CDN による高速応答、デフォルトで有効になっている HTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
+Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
-まず、まだ使用していない場合は、Firebase で [プロジェクトを作成](https://console.firebase.google.com) します。
+First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
 
-次にターミナルで Firebase CLI をインストールします:
+Next, in a Terminal, install the Firebase CLI:
 
 ```shell
 npm install -g firebase-tools
@@ -174,15 +174,15 @@ With the Firebase CLI installed, run `firebase init` within your Ionic project. 
 
 Create a new Firebase project or select an existing one.
 
-**"Select a default Firebase project for this directory:"** Firebase の Web サイト上で作成したプロジェクトを選択します。
+**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
-**"What do you want to use as your public directory?"** "dist" を選択ください。
+**"What do you want to use as your public directory?"** Enter "dist".
 
 :::note
 Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
 :::
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** "Yes" を選択します.
+**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
 
 **"File build/index.html already exists. Overwrite?"** Enter "No".
 
@@ -198,9 +198,9 @@ Answering this next question will ensure that routing, hard reload, and deep lin
 
 **What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
 
-`firebase.json` という設定ファイルが生成されるので、アプリの設定にあわせて変更します。
+A `firebase.json` config file is generated, configuring the app for deployment.
 
-最後に、キャッシング・ヘッダーが正しく設定されていることを確認する必要があります。これを行うには、 `headers` スニペットを `firebase.json` に追加します。完全な`firebase。json`は次のようになります:
+The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
 
 ```json
 {
@@ -246,18 +246,18 @@ Answering this next question will ensure that routing, hard reload, and deep lin
 }
 ```
 
-より詳しい `firebase.json` についての設定は [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json) を参照ください。
+For more information about the `firebase.json` properties, refer to the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
 
-次に、次のコマンドを実行して、アプリケーションの最適化バージョンを構築します:
+Next, build an optimized version of the app by running:
 
 ```shell
 ionic build
 ```
 
-最後に、アプリをデプロイします:
+Last, deploy the app by running:
 
 ```shell
 firebase deploy
 ```
 
-これが完了すると、アプリがライブになります。
+After this completes, the app will be live.

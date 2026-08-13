@@ -1,53 +1,53 @@
 ---
-sidebar_label: PWAとは?
+sidebar_label: What are PWAs?
 title: Progressive Web Apps
 ---
 
 <head>
-  <title>Progressive Web Applications: PWAとは - Ionic Documentation</title>
+  <title>Progressive Web Applications: What is a PWA - Ionic Documentation</title>
   <meta
     name="description"
-    content="PWAとは何ですか？Progressive Web Applicationは、最新のWeb機能を使用してアプリのようなエクスペリエンスを提供します。コアコンセプトドキュメントを読んで詳しく学びましょう。"
+    content="What is a PWA? A Progressive Web Application uses modern web capabilities to deliver an app-like experience. Read our core concept documentation to learn more."
   />
 </head>
 
-<!-- TOC goes here -->
+{/* TOC goes here */}
 
-### The web...それよりもいいもの
+### The web...but better
 
-Progressive Web App (PWA) は、最新の Web 機能を使用して、ユーザーにアプリのようなエクスペリエンスを提供する Web アプリです。
-これらのアプリは、特定の要件（下記参照）を満たし、サーバーに展開され、URL からアクセスでき、検索エンジンにインデックスされます。
+A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users.
+These apps meet certain requirements (described below), are deployed to servers, accessible through URLs, and indexed by search engines.
 
-[Capacitor](https://capacitorjs.com)と連携して、すべてのユーザーに複数のデプロイ対象を提供することができます。
-アプリを PWA としてデプロイするだけでなく、ネイティブアプリとしてデプロイし、両方のチャネルを活用することができます。
+This can work in conjunction with [Capacitor](https://capacitorjs.com) to provide a multiple deploy targets for all your users.
+You can deploy your app as a PWA as well as Native app and take advantage of both channels.
 
-Ionic では、アプリストアへのリリースだけでなく、PWA としてモバイル Web にデプロイすることも可能です。
+Ionic allows you to ship your app to not only the app store, but also deploy to the mobile web as a PWA.
 
-### 要求されるもの
+### What is required
 
-Progressive Web App と見なされるには、アプリが以下の要件を満たしている必要があります。
+To be considered a Progressive Web App, your app must be:
 
-- プログレッシブ - ブラウザの種類に関係なく、すべてのユーザーに対して機能します。これは、プログレッシブ・エンハンスメントを中核として構築されているためです。
+- Progressive - Work for every user, regardless of browser choice, because they are built with progressive enhancement as a core tenet.
 
-- レスポンシブ - デスクトップ、モバイル、タブレットなど、あらゆるフォームファクターに対応。
+- Responsive - Fit any form factor, desktop, mobile, tablet, or whatever is next.
 
-- 接続に依存しない - オフラインや低品質のネットワークでも動作するように、サービスワーカーが強化されています。
+- Connectivity independent - Enhanced with service workers to work offline or on low quality networks.
 
-- アプリライク - アプリシェルモデルを使用し、アプリスタイルのナビゲーションとインタラクションを提供します。
+- App-like - Use the app-shell model to provide app-style navigation and interactions.
 
-- フレッシュ - サービスワーカーの更新プロセスにより、常に最新の情報を提供します。
+- Fresh - Always up-to-date thanks to the service worker update process.
 
-- 安全 - HTTPS 経由で提供され、盗聴を防止し、コンテンツが改ざんされていないことを確認します。
+- Safe - Served via HTTPS to prevent snooping and ensure content has not been tampered with.
 
-- 発見性 - W3C マニフェストとサービスワーカー登録により、「アプリケーション」として識別可能であり、検索エンジンに見つけてもらうことができます。
+- Discoverable - Are identifiable as “applications” thanks to W3C manifests and service worker registration scope allowing search engines to find them.
 
-- 再エンゲージメント - プッシュ通知などの機能により、再エンゲージメントを容易にします。
+- Re-engageable - Make re-engagement easy through features like push notifications.
 
-- インストール可能 - アプリストアのような煩わしさがなく、ユーザーが最も便利だと思うアプリをホーム画面に置いておくことができます。
+- Installable - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app store.
 
-- リンク可能 - 複雑なインストールを必要とせず、URL で簡単に共有できます。
+- Linkable - Easily share via URL and not require complex installation.
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
@@ -55,18 +55,18 @@ Progressive Web App と見なされるには、アプリが以下の要件を満
   </a>
 </em>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
-たくさんありますが、Ionic アプリの場合はいくつかのポイントに集約されます。
+There is a lot here, but it boils down to a few points for Ionic apps.
 
-#### オフライン対応
+#### Offline Support
 
-アプリはオフラインで動作する必要があります。適切な「オフライン」メッセージの表示や、表示用にアプリデータをキャッシュすることなどです。
+Apps should be able to work offline. Whether that be displaying a proper "offline" message or caching app data for display purpose.
 
 #### <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Web App Manifest</a>
 
-App Manifest ファイルには、アプリに必要なリソースを記述する必要があります。これには、アプリの表示名、アイコン、スプラッシュ画面などが含まれます。index.html Manifest ファイルにリンクすると、ブラウザがそれを検出し、リソースを読み込むようになります。
+An app manifest file should describe the resources your app will need. This includes your app's displayed name, icons, as well as splash screen. If you link to the manifest file in your index.html, browsers will detect that and load the resources for you.
 
 #### <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service Worker</a>
 
-Service Worker については、オフライン サポートの項でも触れましたが、本当は独自のセクションが必要です。Service Worker は、アプリのリソースをキャッシュするためのプログラム的な方法を提供します。JavaScript ファイルであれ、HTTP リクエストの JSON データであれ、です。プログラム的な API により、開発者はキャッシュをどのように処理するかを決定でき、他の選択肢よりもはるかに柔軟なエクスペリエンスを提供します。
+Service worker could be mentioned in Offline Support, but it really deserves its own section. Service worker provides a programmatic way to cache app resources. Be it JavaScript files or JSON data from a HTTP request. The programmatic API allows developers to decide how to handle caching and provides a much more flexible experience than other options.

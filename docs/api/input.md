@@ -157,7 +157,7 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 この機能は [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) のシミュレート版に依存しているため、実験的なものであることに注意してください。そのため、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::

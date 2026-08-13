@@ -10,20 +10,20 @@ import Slots from '@ionic-internal/component-api/v8/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
-  <meta name="description" content="Textareaは複数行の入力のためのものです。このコンポーネントは、Ionicのプロパティに加えて、ネイティブのtextareaの属性を受け付けます。使用方法とCSS要素については、こちらをご覧ください。" />
+  <meta name="description" content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-textareaコンポーネントは、複数行のテキスト入力に使用されます。ネイティブの textarea 要素は、コンポーネントの内部でレンダリングされます。ネイティブのtextareaを制御することで、textareaコンポーネントのユーザーエクスペリエンスとインタラクティブ性を向上させることができます。
+The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.
 
-ネイティブのtextarea要素とは異なり、Ionicのtextareaは要素内部のコンテンツからその値を読み込むことをサポートしていません。textareaの値は`value`属性で設定しなくてはなりません。
+Unlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.
 
-textareaコンポーネントはIonicのプロパティに加えて [ネイティブのtextareaの属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) に対応します。
+The textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.
 
-## 基本的な使い方
+## Basic Usage
 
 import BasicPlayground from '@site/static/usage/v8/textarea/basic/index.md';
 
@@ -31,25 +31,25 @@ import BasicPlayground from '@site/static/usage/v8/textarea/basic/index.md';
 
 ## Labels
 
-ラベルは、textareaを説明するために使用すべきです。視覚的に使用でき、ユーザーがtextareaにフォーカスしたときにスクリーンリーダーによって読み上げられます。これにより、ユーザーがtextareaの意図を理解しやすくなります。Textareaには、ラベルを割り当てるいくつかの方法があります：
+Labels should be used to describe the textarea. They can be used visually, and they will also be read out by screen readers when the user is focused on the textarea. This makes it easy for the user to understand the intent of the textarea. Textarea has several ways to assign a label:
 
-- `label` プロパティ: プレーンテキストのラベルに使用
-- `label` スロット: カスタムHTMLラベルに使用（実験的）
-- `aria-label`: スクリーンリーダーにラベルを提供するために使用されますが、表示されるラベルは追加されません
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels (experimental)
+- `aria-label`: used to provide a label for screen readers but adds no visible label
 
 ### Label Placement
 
-ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
 import LabelPlacement from '@site/static/usage/v8/textarea/label-placement/index.md';
 
 <LabelPlacement />
 
-### Label Slot (実験的)
+### Label Slot (experimental)
 
-プレーンテキストのラベルは `label` プロパティを通して渡されるべきですが、カスタム HTML が必要な場合は、代わりに `label` スロットを通して渡すことができます。
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
-この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
 import LabelSlot from '@site/static/usage/v8/textarea/label-slot/index.md';
 
@@ -57,7 +57,7 @@ import LabelSlot from '@site/static/usage/v8/textarea/label-slot/index.md';
 
 ### No Visible Label
 
-ラベルの表示が必要ない場合でも、開発者は`aria-label`を指定して、textareaがスクリーンリーダーにアクセスできるようにすべきです。
+If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
 
 import NoVisibleLabel from '@site/static/usage/v8/textarea/no-visible-label/index.md';
 
@@ -65,12 +65,12 @@ import NoVisibleLabel from '@site/static/usage/v8/textarea/no-visible-label/inde
 
 ## Filled Textareas
 
-Material Designでは、テキストエリアの塗りつぶしスタイルが用意されています。アイテムの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
+Material Design offers filled styles for a textarea. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
 
-iOSでは、Textareasの`mode`を`md`に設定することで、Filled Textareasを使うことができます。
+Filled textareas can be used on iOS by setting the textarea's `mode` to `md`.
 
 :::warning
-コンポーネント間のスタイリングの競合のため、`fill`を使用するTextareaは`ion-item`内で使用すべきではありません。
+Textareas that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
 :::
 
 import Fill from '@site/static/usage/v8/textarea/fill/index.md';
@@ -79,9 +79,9 @@ import Fill from '@site/static/usage/v8/textarea/fill/index.md';
 
 ## Helper & Error Text
 
-ヘルパーテキストとエラーテキストは、`helperText` と `errorText` プロパティを使って textarea 内で使用することができます。エラーテキストは、`ion-invalid` と `ion-touched` クラスが `ion-textarea` に追加されていない限り表示されません。これにより、ユーザがデータを入力する前にエラーが表示されることはありません。
+Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-textarea`. This ensures errors are not shown before the user has a chance to enter data.
 
-Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
 import HelperError from '@site/static/usage/v8/textarea/helper-error/index.md';
 
@@ -89,7 +89,7 @@ import HelperError from '@site/static/usage/v8/textarea/helper-error/index.md';
 
 ## Textarea Counter
 
-textareaカウンターは、textareaの下に表示されるテキストで、textareaが受け付ける合計文字数のうち、何文字が入力されたかをユーザーに通知します。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
+The textarea counter is text that displays under a textarea to notify the user of how many characters have been entered out of the total that the textarea will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
 import Counter from '@site/static/usage/v8/textarea/counter/index.md';
 
@@ -97,7 +97,7 @@ import Counter from '@site/static/usage/v8/textarea/counter/index.md';
 
 ## Autogrow
 
-`autoGrow`プロパティが`true`に設定されている場合、テキストエリアはその内容に基づいて拡大・縮小します。
+When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
 
 import AutogrowPlayground from '@site/static/usage/v8/textarea/autogrow/index.md';
 
@@ -105,7 +105,7 @@ import AutogrowPlayground from '@site/static/usage/v8/textarea/autogrow/index.md
 
 ## Clear on Edit
 
-`clearOnEdit`プロパティを`true`に設定すると、テキストエリアが編集削除された後、再度入力されるとクリアされます。
+Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
 
 import ClearOnEditPlayground from '@site/static/usage/v8/textarea/clear-on-edit/index.md';
 
@@ -113,14 +113,14 @@ import ClearOnEditPlayground from '@site/static/usage/v8/textarea/clear-on-edit/
 
 ## Start and End Slots (experimental)
 
-`start`と`end`スロットは、textareaの両側にアイコン、ボタン、またはプレフィックス/サフィックステキストを配置するために使用できます。
+The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the textarea.
 
-この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
 :::note
-ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントには`aria-hidden="true"`を設定すべきです。詳細については、[Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
-スロットコンテンツが操作対象である場合、[Button](./button.md)などのインタラクティブ要素でラップする必要があります。これにより、コンテンツにタブで移動できるようになります。
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
 import StartEndSlots from '@site/static/usage/v8/textarea/start-end-slots/index.md';
@@ -145,7 +145,7 @@ interface TextareaChangeEventDetail {
 
 ### TextareaCustomEvent
 
-必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
 ```typescript
 interface TextareaCustomEvent extends CustomEvent {
@@ -154,19 +154,19 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

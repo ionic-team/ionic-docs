@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/menu-button/slots.md';
 
 <head>
   <title>ion-menu-button: Menu Button to Open an App Menu on a Page</title>
-  <meta name="description" content="Menu Buttonは、アプリのページでメニューを開くためのアイコンと機能を自動的に作成するコンポーネントです。ion-menu-buttonの詳細については、こちらをご覧ください。" />
+  <meta name="description" content="Menu Button is component that automatically creates the icon and functionality to open a menu on an app page. Read to learn more about ion-menu-button." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,24 +18,24 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Menu Buttonコンポーネントは、アイコンを含み、クリックされるとメニューを開く機能を自動的に追加します。
+The Menu Button component contains an icon and automatically adds functionality to open a menu when clicked.
 
-詳しくは、[menu](./menu)のドキュメントをご覧ください。
+Refer to the [menu](./menu) documentation for more information.
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

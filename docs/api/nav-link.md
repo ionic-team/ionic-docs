@@ -10,32 +10,32 @@ import Slots from '@ionic-internal/component-api/v8/nav-link/slots.md';
 
 <head>
   <title>ion-nav-link: Navigation Links to a Specified Component</title>
-  <meta name="description" content="ナビゲーションリンクは、指定されたコンポーネントにナビゲートします。これは、push(), pop(), setRoot() メソッドを呼び出すための要素形式です。ion-nav-linkの詳細については、こちらをご覧ください。" />
+  <meta name="description" content="Navigation links navigate to specified components. It is the element form of calling the push(), pop(), and setRoot() methods. Read for more on ion-nav-link." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-ナビゲーションリンクは指定されたコンポーネントに移動するために使用されます。コンポーネントは `forward`, `back` または `root` コンポーネントとして移動することができます。
+A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.
 
-これは、ナビゲーションコントローラの `push()`, `pop()`, `setRoot()` メソッドを呼び出すための要素形式となります。
+It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
 
-詳しくは[nav](./nav#using-navlink)のドキュメントを参照ください。
+Refer to the [nav](./nav#using-navlink) documentation for more information.
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

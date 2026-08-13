@@ -1,5 +1,5 @@
 ---
-title: テスト
+title: Testing
 ---
 
 <head>
@@ -10,53 +10,53 @@ title: テスト
   />
 </head>
 
-Ionic CLI を使用して `@ionic/angular` アプリケーションを生成すると、アプリケーションのユニットテストとエンドツーエンドのテスト用に自動的に準備されます。これは Angular CLI で使われる設定と同じものです。Angular で作られたアプリケーションのテストについての詳細は <a href="https://angular.jp/guide/testing" target="_blank">Angular Testing Guide</a> をご参照ください。
+When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application. This is the same setup that is used by the Angular CLI. Refer to the <a href="https://angular.io/guide/testing" target="_blank">Angular Testing Guide</a> for detailed information on testing Angular applications.
 
-## テストの原則
+## Testing Principles
 
-アプリケーションをテストするときは、テストによってシステムに欠陥があるかどうかを確認できる、ということを覚えておくことが一番です。しかし、どんなささいなシステムも完全に欠陥のないことを証明することは不可能です。このため、テストの目的はコードが正しいことを確認することではなく、コードの中の問題を見つけることです。これは微妙ですが、重要な違いです。
+When testing an application, it is best to keep in mind that testing can show if defects are present in a system. However, it is impossible to prove that any non-trivial system is completely free of defects. For this reason, the goal of testing is not to verify that the code is correct but to find problems within the code. This is a subtle but important distinction.
 
-もし私たちがコードが正しいことを証明しようとするのであれば、私たちはコードを通じて幸せな道を歩み続けようとするでしょう。もし私が問題の発見しようとするのであれば、コードをより完全に実行し、そこに潜むバグを発見する可能性が高くなります。
+If we set out to prove that the code is correct, we are more likely to stick to the happy path through the code. If we set out to find problems, we are more likely to more fully exercise the code and find the bugs that are lurking there.
 
-最初からアプリケーションのテストを開始することも最良です。これにより、修正が容易な段階で早期に欠陥を発見できます。またこれにより、システムに新しい機能が追加されたときに、コードを確実にリファクタリングすることもできます。
+It is also best to begin testing an application from the very start. This allows defects to be found early in the process when they are easier to fix. This also allows code to be refactored with confidence as new features are added to the system.
 
-## ユニットテスト
+## Unit Testing
 
-ユニットテストでは、システムの他の部分から分離して、単一のコードユニット（Component、Page、Service、Pipe など）を実行します。分離は、コードの依存関係の代わりにモックオブジェクトを注入することによって実現されます。モックオブジェクトによって、テストは依存関係の切り出しをきめ細かく制御することができます。モックによって、どの依存関係が呼び出され、何が渡されたかをテストで判断することもできます。
+Unit tests exercise a single unit of code (component, page, service, pipe, etc) in isolation from the rest of the system. Isolation is achieved through the injection of mock objects in place of the code's dependencies. The mock objects allow the test to have fine-grained control of the outputs of the dependencies. The mocks also allow the test to determine which dependencies have been called and what has been passed to them.
 
-適切に記述されたユニットテストは、コードの単位とそれに含まれる機能が `describe()` コールバックによって記述されるように構成されています。コード単位とその機能の要件は、`it()` コールバックによってテストされます。`describe()` コールバックと `it()` コールバックの説明を読むと、フレーズとして意味がわかります。ネストされた `describe()` と最後の `it()` の記述をつなげると、テストケースを完全に記述する文が形成されます。
+Well-written unit tests are structured such that the unit of code and the features it contains are described via `describe()` callbacks. The requirements for the unit of code and its features are tested via `it()` callbacks. When the descriptions for the `describe()` and `it()` callbacks are read, they make sense as a phrase. When the descriptions for nested `describe()`s and a final `it()` are concatenated together, they form a sentence that fully describes the test case.
 
-ユニットテストはコードを分離して実行するため、高速で堅牢であり、高度なコードカバレッジが可能です。
+Since unit tests exercise the code in isolation, they are fast, robust, and allow for a high degree of code coverage.
 
-### モックの利用
+### Using Mocks
 
-ユニットテストでは、コードをコードをモジュールで分離して実行します。これを簡単にするには、Jasmine(https://jasmine.github.io/) を使用することをお勧めします。Jasmine は、テスト実行中に依存関係の代わりにモックオブジェクト(Jasmine は 「スパイ」 と呼んでいます)を作成します。モックオブジェクトを使用すると、テストはその依存関係への呼び出しによって返される値を制御できるため、依存関係に加えられた変更から現在のテストを独立させることができます。これにより、テストのセットアップも簡単になり、テスト対象のモジュール内のコードだけをテストすることができます。
+Unit tests exercise a code module in isolation. To facilitate this, we recommend using Jasmine (https://jasmine.github.io/). Jasmine creates mock objects (which Jasmine calls "spies") to take the place of dependencies while testing. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
 
-モックを使用すると、モックが呼び出されたかどうか、および `toHaveBeenCalled*` セットの関数を介してどのように呼び出されたかを判断するために、テストでモックを確認することもできます。これらの関数では、メソッドが呼び出されたことをテストするときに、`toHaveBeenCalled` メソッドの呼び出しよりも `toHaveBeenCalledTimes` の呼び出しを優先して、テストをできるだけ具体的に行う必要があります。つまり、`expect(mock.foo).toHaveBeenCalledTimes(1)` は `expect(mock.foo).toHaveBeenCalled()` よりも優れています。何かが呼ばれていないこと（`expect(mock.foo).not.toHaveBeenCalled()`）をテストする際は、逆のアドバイスに従うべきです。
+Using mocks also allows the test to query the mock to determine if it was called and how it was called via the `toHaveBeenCalled*` set of functions. Tests should be as specific as possible with these functions, favoring calls to `toHaveBeenCalledTimes` over calls to `toHaveBeenCalled` when testing that a method has been called. That is `expect(mock.foo).toHaveBeenCalledTimes(1)` is better than `expect(mock.foo).toHaveBeenCalled()`. The opposite advice should be followed when testing that something has not been called (`expect(mock.foo).not.toHaveBeenCalled()`).
 
-Jasmine でモックオブジェクトを作成する一般的な方法は 2 つあります。モックオブジェクトは、`jasmine.createSpy` と`jasmine.createSpyObj` を使ってスクラッチで作成することも、`spyOn()` と `spyOnProperty()` を使って既存のオブジェクトにスパイをインストールすることもできます。
+There are two common ways to create mock objects in Jasmine. Mock objects can be constructed from scratch using `jasmine.createSpy` and `jasmine.createSpyObj` or spies can be installed onto existing objects using `spyOn()` and `spyOnProperty()`.
 
-### `jasmine.createSpy` と `jasmine.createSpyObj` の利用
+#### Using `jasmine.createSpy` and `jasmine.createSpyObj`
 
-`jasmine.createSpyObj` は、作成時に定義された一連のモックメソッドを使用して、完全なモックオブジェクトをスクラッチで作成します。これはとてもシンプルで便利です。テストのために何かを組み立てたり注入したりする必要はありません。この関数の使用する欠点は、実際のオブジェクトと一致しないオブジェクトを生成できることです。
+`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. The disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
 
-`jasmine.createSpy` も似ていますが、スタンドアロンのモック関数を作成します。
+`jasmine.createSpy` is similar but it creates a stand-alone mock function.
 
-#### `spyOn()` と `spyOnProperty()` の利用
+#### Using `spyOn()` and `spyOnProperty()`
 
-`spyOn()` は、既存のオブジェクトにスパイをインストールします。この手法を使用する利点は、オブジェクト上に存在しないメソッドをスパイしようとすると、例外が発生することです。これにより、テストが存在しないメソッドをモックすることを防ぎます。欠点は、テストが最初から完全に整形されたオブジェクトを必要とすることであり、これはテストに必要なセットアップの量を増加させるかと思います。
+`spyOn()` installs the spy on an existing object. The advantage of using this technique is that if an attempt is made to spy on a method that does not exist on the object, an exception is raised. This prevents the test from mocking methods that do not exist. The disadvantage is that the test needs a fully formed object to begin with, which may increase the amount of test setup required.
 
-`spyOnProperty()` は似ていますが、メソッドではなくプロパティに対してスパイするという点で異なります。
+`spyOnProperty()` is similar with the difference being that it spies on a property and not a method.
 
-### 一般的なテストの構成
+### General Testing Structure
 
-ユニットテストは、エンティティ（Component、Page、Service、Pipe など）ごとに 1 つの `spec` ファイルを持つ `spec` ファイルに含まれています。`spec` ファイルは、テスト中のソースと一緒に存在し、かつその名前が付けられます。たとえば、プロジェクトに WeatherService という Service がある場合、そのコードは`weather.service.ts` という名前のファイルにあり、テストは `weather.service.spec.ts` という名前のファイルにあります。これらのファイルは両方とも同じフォルダにあります。
+Unit tests are contained in `spec` files with one `spec` file per entity (component, page, service, pipe, etc.). The `spec` files live side-by-side with and are named after the source that they are testing. For example, if the project has a service called WeatherService, the code for it is in a file named `weather.service.ts` with the tests in a file named `weather.service.spec.ts`. Both of those files are in the same folder.
 
-`spec` ファイル自体には、そのテスト全体を定義するただ一つの `describe` コールが含まれています。その中には、主要な機能領域を定義する他の `describe` コールがネストされています。各 `describe` コールには、setup コードと teardown コード（一般的に `beforeEach` と `afterEach` コールによって処理される）、機能を階層的に分解した `describe` コール、また個々のテストケースを定義する `it` コールが含まれます。
+The `spec` files themselves contain a single `describe` call that defines that overall test. Nested within it are other `describe` calls that define major areas of functionality. Each `describe` call can contain setup and teardown code (generally handled via `beforeEach` and `afterEach` calls), more `describe` calls forming a hierarchical breakdown of functionality, and `it` calls which define individual test cases.
 
-`describe` と `it` コールには、説明のテキストラベルも含まれます。適切な形式のテストでは、`describe` と `it` をコールすると、ラベルと組み合わせた適切なフレーズが実行され、各テストケースのすべてのラベルが `describe` と `it` ラベルを組み合わせて構成され、完全な文が作成されます。
+The `describe` and `it` calls also contain a descriptive text label. In well-formed tests, the `describe` and `it` calls combine with their labels to perform proper phrases and the full label for each test case, formed by combining the `describe` and `it` labels, creates a full sentence.
 
-例:
+For example:
 
 ```tsx
 describe('Calculation', () => {
@@ -72,13 +72,13 @@ describe('Calculation', () => {
 });
 ```
 
-外側の `describe` コールは `Calculation` Service がテストされていることを示し、内側の `describe` コールはテストされている機能を正確に示し、そして `it` コールはテストケースが何であるかを示しています。各テストケースの完全なラベルを実行すると、意味のある文になります(卑劣な 0 での除算という計算を拒否しました)。
+The outer `describe` call states that the `Calculation` service is being tested, the inner `describe` calls state exactly what functionality is being tested, and the `it` calls state what the test cases are. When run the full label for each test case is a sentence that makes sense (Calculation divide cowardly refuses to divide by zero).
 
-### ページとコンポーネント
+### Pages and Components
 
-Pages は単なる Angular コンポーネントです。そのため、ページとコンポーネントは両方とも <a href="https://angular.jp/guide/testing#コンポーネントテストの基本">Angular のコンポーネントテストガイドライン</a> を使ってテストされます。
+Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidelines.
 
-ページとコンポーネントには TypeScript コードと HTML テンプレートマークアップの両方が含まれているため、コンポーネントクラスのテストとコンポーネント DOM のテストの両方を実行できます。ページが作成されると、生成されるテンプレートテストは次のようになります:
+Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
 
 ```tsx
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -107,17 +107,45 @@ describe('TabsPage', () => {
 });
 ```
 
-コンポーネントクラスのテストを行う場合、コンポーネントオブジェクトは `component=fixture.componentInstance;` によって定義されたコンポーネントオブジェクトを使用してアクセスされます。これはコンポーネントクラスのインスタンスです。DOM テストを行う際には、`fixture.nativeElement` プロパティが使用されます。これはコンポーネントの実際の `HTMLElement`であり、テストで DOM を調べるために `HTMLElement.querySelector` などの標準の HTML API メソッドを使うことを可能にします。
+When doing component class testing, the component object is accessed using the component object defined via `component = fixture.componentInstance;`. This is an instance of the component class. When doing DOM testing, the `fixture.nativeElement` property is used. This is the actual `HTMLElement` for the component, which allows the test to use standard HTML API methods such as `HTMLElement.querySelector` in order to examine the DOM.
 
-## Service
+### Waiting for Components
 
-Service は、多くの場合、計算やその他の操作を実行するユーティリティの service と、主に HTTP 操作やデータ操作を実行するデータの service の 2 つの大まかなカテゴリーのいずれかに分類されます。
+When testing Ionic components, use the `componentOnReady` helper exported from `@ionic/core` rather than calling `el.componentOnReady()` directly. The `el.componentOnReady()` method only exists on lazy-loaded elements and calling it directly throws an error on custom-element builds, which is what standalone projects use. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists. Otherwise it waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
 
-### 基本的な Service のテスト
+```tsx
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { componentOnReady } from '@ionic/core';
+import { HomePage } from './home.page';
 
-ほとんどの service をテストするために推奨する方法は、service をインスタンス化し、service が持つ依存関係のモックを手動で注入することです。こうすることで、コードを分離してテストすることができます。
+describe('HomePage', () => {
+  let fixture: ComponentFixture<HomePage>;
 
-たとえば、タイムカードの配列を取得して差引支給額を計算するメソッドを持つ service があるとします。また税金計算は、現在の service が依存しているもう一つの service を介して処理されるとします。この給与計算の service は、このようにテストすることができます:
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomePage],
+    }).compileComponents();
+    fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+  });
+
+  it('renders the submit button', async () => {
+    const button = fixture.nativeElement.querySelector('ion-button');
+    await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
+    expect(button.textContent).toContain('Submit');
+  });
+});
+```
+
+## Services
+
+Services often fall into one of two broad categories: utility services that perform calculations and other operations, and data services that perform primarily HTTP operations and data manipulation.
+
+### Basic Service Testing
+
+The suggested way to test most services is to instantiate the service and manually inject mocks for any dependency the service has. This way, the code can be tested in isolation.
+
+Let's say that there is a service with a method that takes an array of timecards and calculates net pay. Let's also assume that the tax calculations are handled via another service that the current service depends on. This payroll service could be tested as such:
 
 ```tsx
 import { PayrollService } from './payroll.service';
@@ -142,9 +170,9 @@ describe('PayrollService', () => {
 });
 ```
 
-これにより、テストでは `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)` などのモックの設定を介して様々な税金計算から戻される値を制御できます。これにより、「差引支給額」のテストを税金計算ロジックから独立させることができます。税金のコードが変更された場合、修正する必要があるのは税金 service 関連のコードとテストのみです。差引支給額のテストは、税金がどのように計算されるかを考慮せず、値が適切に適用されるのみであるため、そのまま機能し続けることができます。
+This allows the test to control the values returned by the various tax calculations via mock setup such as `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`. This allows the "net pay" tests to be independent of the tax calculation logic. When the tax codes change, only the tax service related code and tests need to change. The tests for the net pay can continue to operate as they are since these tests do not care how the tax is calculated, just that the value is applied properly.
 
-`ionic g service name` で service を生成するときに使われる scaffold は Angular のテストユーティリティを使ってテストモジュールをセットアップします。必ずしもそうする必要はありません。ただし、このコードを残しておくことで、手動でサービスを構築したり、次のように注入したりすることができます:
+The scaffolding that is used when a service is generated via `ionic g service name` uses Angular's testing utilities and sets up a testing module. Doing so is not strictly necessary. That code may be left in, however, allowing the service to be built manually or injected as such:
 
 ```tsx
 import { TestBed, inject } from '@angular/core/testing';
@@ -178,11 +206,11 @@ describe('PayrolService', () => {
 });
 ```
 
-#### HTTP データ Service のテスト
+#### Testing HTTP Data Services
 
-HTTP 操作を実行するほとんどの service は、それらの操作を実行するために Angular の HttpClient service を使用します。そのようなテストには、Angular の `HttpClientTestingModule` を使うことが推奨されています。このモジュールの詳細なドキュメントは <a href="https://angular.jp/guide/http#testing-http-requests" target="_blank">Angular の HTTP リクエストをテストする</a> のガイドを参照してください。
+Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please refer to Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
 
-このようなテストの基本的な設定は次のようになります:
+This basic setup for such a test looks like this:
 
 ```tsx
 import { HttpBackend, HttpClient } from '@angular/common/http';
@@ -229,11 +257,11 @@ describe('IssTrackingDataService', () => {
 });
 ```
 
-### Pipe
+### Pipes
 
-pipe は、特別に定義されたインタフェースを持つ service のようなものです。このクラスには、入力値(およびその他のオプションの引数)を操作してページにレンダリングされる出力を作成するための public メソッド `transform` が含まれています。パイプをテストするには、パイプをインスタンス化し、transform メソッドを呼び出して結果を検証します。
+A pipe is like a service with a specifically defined interface. It is a class that contains one public method, `transform`, which manipulates the input value (and other optional arguments) in order to create the output that is rendered on the page. To test a pipe: instantiate the pipe, call the transform method, and verify the results.
 
-簡単な例として、`Person` オブジェクトを受け取り、名前をフォーマットする pipe を見てみましょう。簡単にするために、`Person` は `id`、`firstName`、`lastName`、`middleInitial` で構成されるとします。パイプの要件は、名・姓・ミドルネームのいずれかが存在しない場合に、名前を「性、名 M(ミドルネーム)。」として出力することです。このようなテストは次のようになります:
+As a simple example, let's consider a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
 
 ```tsx
 import { NamePipe } from './name.pipe';
@@ -279,34 +307,34 @@ describe('NamePipe', () => {
 });
 ```
 
-また、pipe を利用するコンポーネントおよびページでの DOM テストを介して pipe を実行することも有益です。
+It is also beneficial to exercise the pipe via DOM testing in the components and pages that utilize the pipe.
 
-## エンドツーエンドテスト
+## End-to-end Testing
 
-エンドツーエンドのテストは、アプリケーションが全体として機能し、多くの場合、ライブデータへの接続を含むことを検証するために使用されます。一方で、ユニットテストは分離されたコードユニットに重点を置いているため、アプリケーションロジックの低レベルのテストが可能ですが、エンドツーエンドテストはさまざまなユーザーストーリーや使用・シナリオに重点を置いており、アプリケーション全体を通したデータフローの総合的な高レベルのテストを提供します。また一方で、ユニットテストではアプリケーションのロジックの問題を明らかにしようとしますが、エンドツーエンドテストでは、個々のユニットが一緒に使用される場合に発生する問題を明らかにしようとします。エンドツーエンドのテストにより、アプリケーションの全体的なアーキテクチャに関する問題が明らかになります。
+End-to-end testing is used to verify that an application works as a whole and often includes a connection to live data. Whereas unit tests focus on code units in isolation and thus allow for low-level testing of the application logic, end-to-end tests focus on various user stories or usage scenarios, providing high-level testing of the overall flow of data through the application. Whereas unit tests try to uncover problems with an application's logic, end-to-end tests try to uncover problems that occur when those individual units are used together. End-to-end tests uncover problems with the overall architecture of the application.
 
-エンドツーエンドテストはユーザーストーリーを実行し、個々のコードモジュールではなくアプリケーション全体を対象とするため、エンドツーエンドテストは、メインアプリケーション自体のコードとは別に、プロジェクト内の独自のアプリケーションとして存在します。ほとんどのエンドツーエンドテストは、アプリケーションとの共通のユーザー対話を自動化し、それらの対話の結果を判別するために DOM を調査します。
+Since end-to-end tests exercise user stories and cover the application as a whole rather than individual code modules, end-to-end tests exist in their own application in the project apart from the code for the main application itself. Most end-to-end tests operate by automating common user interactions with the application and examining the DOM to determine the results of those interactions.
 
-### テストの構成
+### Test Structure
 
-`@ionic/angular` アプリケーションが作成されると、 デフォルトのエンドツーエンドのテストアプリケーションが `e2e` フォルダに生成されます。このアプリケーションは <a href="https://www.protractortest.org/" target="_blank">Protractor</a> を使用してブラウザを制御し、<a href="https://jasmine.github.io/" target="_blank">Jasmine</a> を使用してテストを構築し、実行します。アプリケーションは、初期時は次の 4 つのファイルで構成されています:
+When an `@ionic/angular` application is generated, a default end-to-end test application is generated in the `e2e` folder. This application uses <a href="">Protractor</a> to control the browser and <a href="">Jasmine</a> to structure and execute the tests. The application initially consists of four files:
 
-- `protractor.conf.js` - Protractor の設定ファイル
-- `tsconfig.e2e.json` - テストアプリケーション用の特定の TypeScript の設定
-- `src/app.po.ts` - アプリケーションをナビゲートするメソッド、DOM 内の要素を照会するメソッド、ページ上の要素を操作するメソッドを含むページオブジェクト
-- `src/app.e2e-spec.ts` - テスト用のスクリプト
+- `protractor.conf.js` - the Protractor configuration file
+- `tsconfig.e2e.json` - specific TypeScript configuration for the testing application
+- `src/app.po.ts` - a page object containing methods that navigate the application, query elements in the DOM, and manipulate elements on the page
+- `src/app.e2e-spec.ts` - a testing script
 
-#### ページオブジェクト
+#### Page Objects
 
-エンドツーエンドのテストは、アプリケーションとの共通のユーザー対話を自動化し、アプリケーションが応答するのを待ち、対話の結果を判別するために DOM を検査します。これには、多くの DOM 操作と試験が必要です。これらをすべて手作業で行うと、テストは非常に脆くなり、見て理解することや保守が困難になります。
+End-to-end tests operate by automating common user interactions with the application, waiting for the application to respond, and examining the DOM to determine the results of the interaction. This involves a lot of DOM manipulation and examination. If this were all done manually, the tests would be very brittle and difficult to read and maintain.
 
-ページオブジェクトは、TypeScript クラスの単一ページの HTML をカプセル化し、テスト用のスクリプトがアプリケーションと対話するために使用する API を提供します。DOM 操作ロジックをページオブジェクト内にカプセル化することで、テストが読みやすくなり、かつ判断することがはるかに簡単になり、テストの保守コストが大幅に削減されます。洗練されたページオブジェクトを作成することは、高品質で保守しやすいエンドツーエンドのテストを作成するための鍵です。
+Page objects encapsulate the HTML for a single page in a TypeScript class, providing an API that the test scripts use to interact with the application. The encapsulation of the DOM manipulation logic in page objects makes the tests more readable and far easier to reason about, lowering the maintenance costs of the test. Creating well-crafted page objects is the key to creating high quality and maintainable end-to-end tests.
 
-##### ベースページオブジェクト
+##### Base Page Object
 
-多くのテストは、ページが表示されるのを待ったり、input にテキストを入力したり、ボタンをクリックするなどのアクションに依存しています。これを行うために使用されるメソッドは、適切な DOM 要素の変更を取得するために使用される CSS セレクターのみと一貫性があります。したがって、このロジックを、他のページオブジェクトが使用できるベースクラスに抽象化することは理にかなっています。
+A lot of tests rely on actions such as waiting for a page to be visible, entering text into an input, and clicking a button. The methods used to do this remain consistent with only the CSS selectors used to get the appropriate DOM element changing. Therefore it makes sense to abstract this logic into a base class that can be used by the other page objects.
 
-すべてのページオブジェクトがサポートを必要とするいくつかのベースメソッドを実装する例を次に示します:
+Here is an example that implements a few basic methods that all page objects will need to support.
 
 ```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
@@ -368,11 +396,11 @@ export class PageObjectBase {
 }
 ```
 
-##### ページ毎の要約
+##### Per-Page Abstractions
 
-アプリケーションの各ページには、そのページの要素を抽象化する独自のページオブジェクトクラスがあります。ベースとなるページオブジェクトクラスを使用する場合、ページオブジェクトを作成するには、ほとんどの場合そのページに固有の要素のカスタムメソッドを作成する必要があります。多くの場合、これらのカスタム要素は、必要な作業を実行するためにベースクラスのメソッドの恩恵を受けます。
+Each page in the application will have its own page object class that abstracts the elements on that page. If a base page object class is used, creating the page object involves mostly creating custom methods for elements that are specific to that page. Often, these custom elements take advantage of methods in the base class in order to perform the work that is required.
 
-次に、単純ですが典型的なログインページのページオブジェクトの例を示します。`enterEMail()` のような多くのメソッドは、作業の大部分を行うベースクラスのメソッドを呼び出すことに注意してください。
+Here is an example page object for a simple but typical login page. Notice that many of the methods, such as `enterEMail()`, call methods in the base class that perform the bulk of the work.
 
 ```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
@@ -405,13 +433,13 @@ export class LoginPage extends PageObjectBase {
 }
 ```
 
-#### テストスクリプト
+#### Testing Scripts
 
-ユニットテストと同様に、エンドツーエンドのテストスクリプトはネストされた `describe()` と `it()` 関数で構成されています。エンドツーエンドのテストの場合、`describe()` 関数は一般に、特定のシナリオを、そのシナリオ内でアクションが実行されるときにアプリケーションによって表されるべき特定の振る舞いを示す `it()` 関数とともに示します。
+Similar to unit tests, end-to-end test scripts consist of nested `describe()` and `it()` functions. In the case of end-to-end tests, the `describe()` functions generally denote specific scenarios with the `it()` functions denoting specific behaviors that should be exhibited by the application as actions are performed within that scenario.
 
-また、ユニットテストと同様に、`describe()` および `it()` 関数で使用されるラベルは、"describe" または "it"と、完全なテストケースを形成するためにともに連結されるとき、両方とも意味をなします。
+Also similar to unit tests, the labels used in the `describe()` and `it()` functions should make sense both with the "describe" or "it" and when concatenated together to form the complete test case.
 
-典型的なログインシナリオを実行するエンドツーエンドのテストスクリプトの簡単な例を次に示します。
+Here is a sample end-to-end test script that exercises some typical login scenarios.
 
 ```tsx
 import { AppPage } from '../page-objects/pages/app.po';
@@ -499,17 +527,17 @@ describe('Login', () => {
 });
 ```
 
-### 設定
+### Configuration
 
-デフォルトの設定では、開発に使用される同じ `environment.ts` ファイルを使います。エンドツーエンドのテストで使用するデータをより適切に制御するには、テスト用の特定の環境を用意し、テストにその環境を使用すると便利なことが多いです。このセクションでは、この設定を作成する 1 つの方法を示します。
+The default configuration uses the same `environment.ts` file that is used for development. In order to provide better control over the data used by the end-to-end tests, it is often useful to create a specific environment for testing and use that environment for the tests. This section shows one possible way to create this configuration.
 
-#### テスト環境
+#### Testing Environment
 
-テスト環境を設定するには、テスト専用のバックエンドを使用する新しい環境ファイルを作成し、その環境を使うために `angular.json` ファイルを更新し、`package.json` 中の `e2e` スクリプトを `test` 環境を指定するように修正します。
+Setting up a testing environment involves creating a new environment file that uses a dedicated testing backend, updating the `angular.json` file to use that environment, and modifying the `e2e` script in the `package.json` to specify the `test` environment.
 
-##### `environment.e2e.ts` ファイルを生成
+##### Create the `environment.e2e.ts` File
 
-Angular の `environment.ts` と `environment.prod.ts` ファイルは、アプリケーションのバックエンドのデータサービスのベース URL などの情報を格納するために度々使用されます。また、同じ情報を提供する `environment.e2e.ts` を作成してください。これは、開発または本番のバックエンドサービスではなく、テスト専用のバックエンドサービスにのみ接続します。以下に例を示します:
+The Angular `environment.ts` and `environment.prod.ts` files are often used to store information such as the base URL for the application's backend data services. Create an `environment.e2e.ts` that provides the same information, only connecting to backend services that are dedicated to testing rather than the development or production backend services. Here is an example:
 
 ```tsx
 export const environment = {
@@ -519,11 +547,11 @@ export const environment = {
 };
 ```
 
-##### `angular.json` ファイルを修正
+##### Modify the `angular.json` File
 
-`angular.json` ファイルを使用するには、このファイルを修正する必要があります。これは階層化プロセスです。以下の XPath リストに従って、必要な設定を追加しましょう。
+The `angular.json` file needs to be modified to use this file. This is a layered process. Follow the XPaths listed below to add the configuration that is required.
 
-`/projects/app/architect/build/configurations` にファイルの置換を行う `test` という名前の設定を追加します:
+Add a configuration at `/projects/app/architect/build/configurations` called `test` that does the file replacement:
 
 ```json
 "test": {
@@ -536,7 +564,7 @@ export const environment = {
 }
 ```
 
-`/projects/app/architect/serve/configurations` に、上記で定義した `test` というビルドの設定をブラウザターゲットに指定する `test` という名前の設定を追加します。
+Add a configuration at `/projects/app/architect/serve/configurations` called `test` that points the browser target at the `test` build configuration that was defined above.
 
 ```json
 "test": {
@@ -544,7 +572,7 @@ export const environment = {
 }
 ```
 
-`/projects/app-e2e/architect/e2e/configurations` に、上記で定義した `test` という起動設定で開発サーバーターゲットを指定する `test` という名前の設定を追加します。
+Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `test` that does points the dev server target at the `test` serve configuration defined above.
 
 ```json
 "test": {
@@ -552,9 +580,9 @@ export const environment = {
 }
 ```
 
-##### `package.json` ファイルを修正
+##### Modify the `package.json` File
 
-`npm run e2e` が `test` の設定を使うように `package.json` ファイルを修正します。
+Modify the `package.json` file so that `npm run e2e` uses the `test` configuration.
 
 ```json
 "scripts": {
@@ -568,14 +596,14 @@ export const environment = {
 },
 ```
 
-#### テストクリーンアップ
+#### Test Cleanup
 
-エンドツーエンドテストが何らかの方法でデータを変更する場合は、テストが完了したらデータを既知の状態に一度リセットすると便利です。そのための 1 つの方法は:
+If the end-to-end tests modify data in any way it is helpful to reset the data to a known state once the test completes. One way to do that is to:
 
-1. クリーンアップを実行するエンドポイントを生成する。
-1. `protractor.conf.js` ファイルによってエクスポートされる `config` オブジェクトに `onCleanUp()` 関数を追加する
+1. Create an endpoint that performs the cleanup.
+1. Add a `onCleanUp()` function to the `config` object exported by the `protractor.conf.js` file.
 
-次に例を示します:
+Here is an example:
 
 ```javascript
 onCleanUp() {

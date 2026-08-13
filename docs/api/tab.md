@@ -11,7 +11,7 @@ import Slots from '@ionic-internal/component-api/v8/tab/slots.md';
 
 <head>
   <title>ion-tab: Ionic Framework Application Component</title>
-  <meta name="description" content="ion-tabは、タブの子コンポーネントです。各ion-tabは、アプリケーションまたは単一のビューのトップレベルのナビゲーションスタックを含むことができます。詳しくは、こちらをご覧ください。" />
+  <meta name="description" content="ion-tab is a child component of tabs. Each ion-tab can contain a top level navigation stack for an application or a single view. Read to learn more." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -19,32 +19,32 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-タブコンポーネントは、[tabs](tabs.md) の子コンポーネントです。各タブには、アプリまたは単一のビューのトップレベルのナビゲーション スタックを含めることができます。アプリには多くのタブがあり、それぞれが独立したナビゲーションを持つことができます。
+The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
 
 :::note
-Angular、React、Vue は、`ion-tabs` コンポーネントが [basic usage](./tabs.md#basic-usage) に設定されている場合にのみ、このコンポーネントを使用できます。ルーティングでタブを設定する場合、`ion-tab`コンポーネントは使用できません。
+Angular, React, and Vue can only use this component when the `ion-tabs` component is configured for [basic usage](./tabs.md#basic-usage). When setting up tabs with routing, the `ion-tab` component cannot be used.
 
-JavaScript では、このコンポーネントは `ion-tabs` コンポーネントを [basic usage](./tabs.md#basic-usage) または [usage with router](./tabs.md#usage-with-router) に設定した場合に使用できます。
+In JavaScript, this component can be used with the `ion-tabs` component configured for either [basic usage](./tabs.md#basic-usage) or [usage with router](./tabs.md#usage-with-router).
 :::
 
 
-詳しい設定方法は [tabs documentation](tabs.md) をご覧ください。
+Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

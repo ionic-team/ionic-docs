@@ -15,6 +15,7 @@ const commandToKebab = (str) =>
   const { commands } = cliJSON;
 
   commands.map(writePage);
+  console.log(`📟 CLI Commands Generated`);
 })();
 
 function writePage(page) {

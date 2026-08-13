@@ -1,39 +1,39 @@
 ---
-title: iOSでの開発
-sidebar_label: iOSでの開発
+title: iOS Development
+sidebar_label: Developing for iOS
 skipIntros: true
 ---
 
 <head>
-  <title>iOSアプリ開発ガイド: Xcode Setup to Build and Run iOS Apps</title>
+  <title>iOS App Development Guide: Xcode Setup to Build and Run iOS Apps</title>
   <meta
     name="description"
-    content="IonicのiOS開発ガイドでは、iOSシミュレーターとデバイスでIonicアプリをビルドおよび実行する方法を説明します。iOSアプリは、XcodeがセットアップされたmacOSでのみ開発できます。"
+    content="Ionic's iOS development guide covers how to build and run Ionic apps on iOS simulators and devices. iOS apps can only be developed on macOS with Xcode setup."
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info レガシー iOS ガイドをお探しですか？
+:::info[Looking for the legacy iOS guide?]
 
-iOS 開発ガイドは、正式に[Capacitor の iOS ドキュメント](https://capacitorjs.com/docs/ios)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシー iOS 開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios)で見つけることができます。
+The Developing for iOS guide has officially migrated to the [Capacitor documentation for iOS](https://capacitorjs.com/docs/ios). If you need to access the legacy documentation, you can find it under the [legacy developing for iOS guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios).
 
 :::
 
 <DocsCards>
   <DocsCard
-    header="Capacitorを使用したiOS開発（推奨）"
+    header="Developing for iOS with Capacitor (Recommended)"
     href="https://capacitorjs.com/docs/ios"
     icon="/icons/capacitor-logo.svg"
   >
-    <p>Ionic FrameworkとCapacitorを使用してiOSアプリの構築を開始するために知っておく必要がある基本を学びます。</p>
+    <p>Learn the fundamentals you need to know to start building iOS apps with Ionic Framework and Capacitor.</p>
   </DocsCard>
   <DocsCard
-    header="Cordovaを使用したiOS開発（レガシー）"
+    header="Developing for iOS with Cordova (Legacy)"
     href="https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios"
     icon="/icons/native-cordova-bot.png"
   >
-    <p>Ionic FrameworkとCordovaを使用してiOSアプリの構築を開始するために知っておく必要がある基本を学びます。</p>
+    <p>Learn the fundamentals you need to know to start building iOS apps with Ionic Framework and Cordova.</p>
   </DocsCard>
 </DocsCards>

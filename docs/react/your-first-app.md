@@ -40,7 +40,7 @@ Find the [complete app code](https://github.com/ionic-team/tutorial-photo-galler
 
 Download and install these right away to ensure an optimal Ionic development experience:
 
-- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version](https://nodejs.org/en/).
 - **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - **Command-line interface/terminal (CLI)**:
   - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
@@ -61,7 +61,7 @@ npm install -g @ionic/cli native-run cordova-res
 :::note
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
 :::
 
 ## Create an App
@@ -117,7 +117,7 @@ root.render(
 );
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+That’s it! Now for the fun part - let’s run the app.
 
 ## Run the App
 
@@ -135,7 +135,7 @@ There are three tabs. Click on the "Tab2" tab. It’s a blank canvas, aka the pe
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/react/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
 
-Open `/src/pages/Tab2.tsx`. We see:
+Open `/src/pages/Tab2.tsx`. It contains:
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';

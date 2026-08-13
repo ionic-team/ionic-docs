@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/fab-button/slots.md';
 
 <head>
   <title>ion-fab-button: Ionic FAB Button Icon for Primary Action</title>
-  <meta name="description" content="フローティング・アクション・ボタン（FAB）は、アプリ内の主要なアクションを表します。アイコンは円形で、ボタンを押すと、関連するアクションを開くことができます。" />
+  <meta name="description" content="Floating Action Buttons (FABs) represent the primary action in an app. The icons are circular and, when pressed, the button may open more related actions." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,25 +18,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-フローティングアクションボタン（FAB）は、アプリケーションの主要なアクションを表します。デフォルトでは、円形の形をしています。ボタンが押されると、関連するアクションがさらに開かれることもあります。
+Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions.
 
-その名が示すように、FABは一般的に固定された位置でコンテンツの上に浮かんでいます。これは、FABボタンを[fab](./fab)コンポーネントで包むことで実現されます。もしボタンがfabで包まれていない場合は、コンテンツと一緒にスクロールします。
+As the name suggests, FABs generally float over the content in a fixed position. This is achieved by wrapping the fab button in a [fab](./fab) component. If the button is not wrapped with a fab, it will scroll with the content.
 
-使用例については、[fab documentation](./fab)を参照してください。
+For usage examples, refer to the [fab documentation](./fab).
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

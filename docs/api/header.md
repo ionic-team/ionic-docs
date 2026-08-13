@@ -10,54 +10,54 @@ import Slots from '@ionic-internal/component-api/v8/header/slots.md';
 
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-headerは、ツールバーを保持する親コンポーネントです。ion-headerは、ページの3つのルート要素のうちの1つである必要があることに注意することが重要です。" />
+  <meta name="description" content="Ion-header is a parent component that holds the toolbar. It's important to note that ion-header needs to be the one of the three root elements of a page." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-ヘッダーは、ページの上部に配置されるページのルートコンポーネントです。1つ以上の[ツールバー](./toolbar)のラッパーとして使用することが推奨されていますが、あらゆる要素をラップするために使用することができます。ツールバーがヘッダー内で使用される場合、コンテンツは正しいサイズになるように調整され、ヘッダーはデバイスセーフ領域を考慮します。
+Header is a root component of a page that aligns itself to the top of the page. It is recommended to be used as a wrapper for one or more [toolbars](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a header, the content will be adjusted so it is sized correctly, and the header will account for any device safe areas.
 
 
-## 基本的な使い方
+## Basic Usage
 
 import Basic from '@site/static/usage/v8/header/basic/index.md';
 
 <Basic />
 
 
-## 半透明のヘッダー
+## Translucent Header
 
-ヘッダーは、`translucent`プロパティを設定することで、ネイティブのiOSアプリケーションに見られるような透明度に合わせることができます。ヘッダーの後ろにスクロールするコンテンツを見るには、コンテンツに `fullscreen` プロパティを設定する必要があります。この効果は、モードが `"ios"` で、デバイスが [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) をサポートしている場合にのみ適用されます。
+Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order for the content to scroll behind the header, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
 import Translucent from '@site/static/usage/v8/header/translucent/index.md';
 
 <Translucent />
 
 
-## 折りたたみのヘッダー
+## Condensed Header
 
-Ionicでは、iOSネイティブアプリケーションで見られる、大きなツールバーのタイトルを表示し、スクロールすると小さなタイトルに折りたたむ機能を提供しています。これは、コンテンツの上に1つ、コンテンツの中に1つ、合計2つのヘッダーを追加し、コンテンツの中にあるヘッダーに `collapse` プロパティを `"condense"` に設定することで実現できます。この効果は、モードが "ios "のときのみ適用されます。
+Ionic provides the functionality found in native iOS applications to show a large toolbar title and then collapse it to a small title when scrolling. This can be done by adding two headers, one above the content and one inside of the content, and then setting the `collapse` property to `"condense"` on the header inside of the content. This effect will only apply when the mode is "ios".
 
 import Condense from '@site/static/usage/v8/header/condense/index.md';
 
 <Condense />
 
 
-## フェードヘッダー
+## Fade Header
 
-多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、ヘッダーの `collapse` プロパティを `"fade"` に設定することで実現可能です。ページが最初に読み込まれたとき、ヘッダーの背景と境界線は非表示になります。コンテンツがスクロールされると、ヘッダーは再びフェードインします。この効果は、モードが「ios」のときだけ適用されます。
+Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the header to `"fade"`. When the page is first loaded, the background and border on the header will be hidden. As the content is scrolled, the header will fade back in. This effect will only apply when the mode is "ios".
 
-この機能は、[Condensed Header](#condensed-header)と組み合わせることができます。collapse`プロパティに`"fade"`を設定した場合は、コンテンツの外側にあるヘッダーに適用されるはずです。
+This functionality can be combined with a [Condensed Header](#condensed-header) as well. The `collapse` property with a value set to `"fade"` should be on the header outside of the content.
 
 import Fade from '@site/static/usage/v8/header/fade/index.md';
 
 <Fade />
 
 
-### 仮想スクロールの使用方法
+### Usage with Virtual Scroll
 
-フェードヘッダーが正しく動作するためには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを提供する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
+A fade header requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
 import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-target/index.md';
 
@@ -66,26 +66,26 @@ import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-targe
 
 ## Borders
 
-`"md"`モードでは、ヘッダーの下部に `box-shadow` が表示されます。 `"ios"`モードでは、ヘッダの下部に `border` が表示されます。これらは、ヘッダーに `.ion-no-border` クラスを追加することで削除することができます。
+In `"md"` mode, the header will have a `box-shadow` on the bottom. In `"ios"` mode, it will receive a `border` on the bottom. These can be removed by adding the `.ion-no-border` class to the header.
 
 import NoBorder from '@site/static/usage/v8/header/no-border/index.md';
 
 <NoBorder />
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

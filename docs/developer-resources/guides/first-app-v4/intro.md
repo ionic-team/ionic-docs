@@ -12,7 +12,7 @@ Download/install these right away to ensure an optimal Ionic development experie
 
 - [Git](https://git-scm.com/downloads) for version control.
 - <strong>SSH client</strong>, such as [PuTTy](https://putty.software/), for secure login to Appflow.
-- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version](https://nodejs.org/en/).
 - <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we
   recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>
@@ -30,7 +30,7 @@ npm install -g @ionic/cli cordova
 :::note
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../../../developing/tips.md#resolving-permission-errors) for more information.
+Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../../../developing/tips.md#resolving-permission-errors) for more information.
 :::
 
 ## Create an App
@@ -49,7 +49,7 @@ Next, change into the app folder:
 cd photo-gallery
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+That’s it! Now for the fun part - let’s run the app.
 
 ## Run the App
 
@@ -67,7 +67,7 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 
 ![Animated GIF demonstrating the LiveReload feature in Ionic, showing real-time updates in the app after code changes.](/img/guides/first-app-v3/email-photogallery.gif 'Ionic LiveReload Feature Demonstration')
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. It contains:
 
 ```html
 <ion-header>

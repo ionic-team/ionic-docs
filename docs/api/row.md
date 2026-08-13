@@ -10,39 +10,39 @@ import Slots from '@ionic-internal/component-api/v8/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components of the Grid System</title>
-  <meta name="description" content="Rowsはグリッドシステムの水平方向のコンポーネントで、さまざまな数のカラムを含んでいます。行の配置や使用方法については、ion-row API Docs を参照してください。" />
+  <meta name="description" content="Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Rowは[Grid](./grid)システムの水平方向の構成要素で、さまざまな数の
-[columns](./col)を含む。列が適切に配置されるようにします。
+Rows are horizontal components of the [grid](./grid) system and contain varying numbers of
+[columns](./col). They ensure the columns are positioned properly.
 
-詳しくは[grid](./grid)のドキュメントを参照してください。
+Refer to the [grid](./grid) documentation for more information.
 
 
 ## Row Alignment
 
-デフォルトでは、列は行の高さ全体を埋めるように伸縮し、必要に応じて折り返されます。行は [Flexコンテナ](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container) なので、この動作をカスタマイズするために、行に適用できるいくつかの [CSS クラス](/docs/layout/css-utilities#flex-container-properties) が用意されています。
+By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities#flex-container-properties) that can be applied to a row to customize this behavior.
 
 
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

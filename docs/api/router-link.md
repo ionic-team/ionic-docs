@@ -11,34 +11,34 @@ import Slots from '@ionic-internal/component-api/v8/router-link/slots.md';
 
 <head>
   <title>ion-router-link: Navigate To a Specified Link</title>
-  <meta name="description" content="ion-router-linkコンポーネントを使用すると、指定したリンクに移動することができます。ルーターリンクは、hrefで場所を、directionで遷移のアニメーションを指定することができます。" />
+  <meta name="description" content="Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-router linkコンポーネントは、指定されたリンクに移動するために使用します。ブラウザのアンカータグと同様に、hrefで場所を、directionで遷移のアニメーションを指定することができます。
+The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
 
 :::note
- Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+ Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router.
 :::
 
-詳細については、[Router](./router)ドキュメントを参照してください。
+Refer to the [Router](./router) documentation for more information.
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

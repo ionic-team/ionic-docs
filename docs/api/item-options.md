@@ -10,15 +10,15 @@ import Slots from '@ionic-internal/component-api/v8/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
-  <meta name="description" content="ion-item-optionsはion-item-slidingのためのものです。このオプションボタンは、開始側と終了側のどちらにも配置することができます。Ionicアプリでの使用については、こちらをご覧ください。" />
+  <meta name="description" content="ion-item-options are for ion-item-sliding. These option buttons can be placed either on the start or end side. Read to learn more about use on Ionic apps." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-アイテムオプションコンポーネントは、スライドアイテムの[アイテムオプション](./item-option)ボタンのためのコンテナです。これらのボタンは、[startまたはend](#side-description)のいずれかに配置することができます。
+The item options component is a container for the [item option](./item-option) buttons in a sliding item. These buttons can be placed either on the [start or end side](#side-description).
 
-詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
+Refer to the [item sliding](./item-sliding) documentation for more information.
 
 
 ## Side Description
@@ -31,19 +31,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

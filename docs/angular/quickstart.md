@@ -4,41 +4,41 @@ sidebar_label: Quickstart
 ---
 
 <head>
-  <title>Ionic CLIを使用したIonic Angularクイックスタート: Angularの基本</title>
+  <title>Ionic Angular Quickstart Using Ionic CLI: Angular Basics</title>
   <meta
     name="description"
-    content="Ionic Angularクイックスタートでは、Ionic固有の機能を含むAngularとIonicの基本をカバーします。Ionic CLIを使用してAngularアプリを構築する方法を学びます。"
+    content="Ionic Angular Quickstart covers the basics of Angular and Ionic, including any Ionic-specific features. Learn how to build Angular apps using the Ionic CLI."
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-ようこそ！このガイドでは、Ionic Angular 開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionic コンポーネントの動作方法を学びます。最初の実際のアプリを構築する前に Ionic Angular に慣れるのに最適です。
+Welcome! This guide will walk you through the basics of Ionic Angular development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Angular before building your first real app.
 
-Ionic Angular とは何か、Angular エコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic Angular の概要](overview)を参照してください。
+If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, refer to the [Ionic Angular Overview](overview).
 
-## 前提条件
+## Prerequisites
 
-始める前に、マシンに Node.js と npm がインストールされていることを確認してください。
-次を実行して確認できます：
+Before you begin, make sure you have Node.js and npm installed on your machine.
+You can check by running:
 
 ```shell
 node -v
 npm -v
 ```
 
-Node.js と npm がない場合は、[こちらから Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
+If you don't have Node.js and npm, [download Node.js](https://nodejs.org/en/download) (which includes npm).
 
-## Ionic CLI でプロジェクトを作成
+## Create a Project with the Ionic CLI
 
-まず、最新の[Ionic CLI](../cli)をインストールします：
+First, install the latest [Ionic CLI](../cli):
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-次に、次のコマンドを実行して新しいプロジェクトを作成し、実行します：
+Then, run the following commands to create and run a new project:
 
 ```shell
 ionic start myApp blank --type angular
@@ -47,9 +47,9 @@ cd myApp
 ionic serve
 ```
 
-最初のプロンプトで、`Standalone`を選択します。
+At the first prompt, choose `Standalone`.
 
-`ionic serve`を実行すると、プロジェクトがブラウザで開きます。
+After running `ionic serve`, your project will open in the browser.
 
 ![Screenshot of the Ionic Angular Home page](/img/guides/quickstart/home-page.png 'Ionic Angular Home Component')
 
@@ -72,10 +72,10 @@ Your new app's directory will look like this:
 ```
 
 :::info
-以下の例のすべてのファイルパスは、プロジェクトのルートディレクトリを基準にしています。
+All file paths in the examples below are relative to the project root directory.
 :::
 
-アプリの構造を理解するために、これらのファイルを見ていきましょう。
+Let's walk through these files to understand the app's structure.
 
 ## View the App Component
 
@@ -103,7 +103,7 @@ And its template in `app.component.html`:
 </ion-app>
 ```
 
-これにより、Ionic の`ion-app`と`ion-router-outlet`コンポーネントを使用してアプリケーションのルートが設定されます。ルーターアウトレットは、ページが表示される場所です。
+This sets up the root of your application, using Ionic's `ion-app` and `ion-router-outlet` components. The router outlet is where your pages will be displayed.
 
 ## View Routes
 
@@ -125,7 +125,7 @@ export const routes: Routes = [
 ];
 ```
 
-ルート URL（`/`）にアクセスすると、`HomePage`コンポーネントが読み込まれます。
+When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
 ## View the Home Page
 
@@ -172,15 +172,15 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。2 番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
-:::tip 詳細情報
-Ionic レイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
+:::tip[Learn More]
+For detailed information about Ionic layout components, refer to the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
 :::
 
-## Ionic コンポーネントを追加
+## Add an Ionic Component
 
-より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`ion-content`の最後に[Button](/docs/api/button.md)を追加します：
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.md) at the end of the `ion-content`:
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -235,7 +235,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar 
 })
 ```
 
-`ion-back-button`は、前のページへのナビゲーション、または履歴がない場合は`/`へのナビゲーションを自動的に処理します。
+The `ion-back-button` will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
 ## Navigate to the New Page
 
@@ -257,12 +257,12 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-Angular の Router サービスを使用してナビゲーションを実行することもできます。詳細については、[Angular Navigation ドキュメント](/docs/angular/navigation.md#navigating-to-different-routes)を参照してください。
+Navigating can also be performed using Angular's Router service. Refer to the [Angular Navigation documentation](/docs/angular/navigation.md#navigating-to-different-routes) for more information.
 :::
 
-## 新しいページにアイコンを追加
+## Add Icons to the New Page
 
-Ionic Angular には[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`ion-icon`コンポーネントの`name`プロパティを設定することで、任意のアイコンを使用できます。次のアイコンを`new.page.html`に追加します：
+Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `new.page.html`:
 
 ```html title="src/app/new/new.page.html"
 <ion-content>
@@ -299,13 +299,13 @@ export class NewPage implements OnInit {
 }
 ```
 
-または、`app.component.ts`でアイコンを登録して、アプリ全体で使用することもできます。
+Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
 
-詳細については、[Icon ドキュメント](/docs/api/icon.md)と[Ionicons ドキュメント](https://ionic.io/ionicons/)を参照してください。
+For more information, refer to the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
-## コンポーネントメソッドを呼び出す
+## Call Component Methods
 
-コンテンツ領域を下部にスクロールできるボタンを追加しましょう。
+Let's add a button that can scroll the content area to the bottom.
 
 Update the `ion-content` in your `new.page.html` to include a button and some items after the existing icons:
 
@@ -382,16 +382,16 @@ export class NewPage implements OnInit {
 }
 ```
 
-Ionic コンポーネントのメソッドを呼び出すには：
+To call methods on Ionic components:
 
-1. コンポーネントの`ViewChild`参照を作成します
-2. コンポーネントインスタンスでメソッドを直接呼び出します
+1. Create a `ViewChild` reference for the component
+2. Call the method directly on the component instance
 
-各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/docs/api/content.md#methods)セクションで見つけることができます。
+You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
 
-## デバイスで実行
+## Run on a Device
 
-Ionic のコンポーネントは、iOS、Android、PWA のどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
+Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
 
 ```shell
 ionic build
@@ -399,45 +399,43 @@ ionic cap add ios
 ionic cap add android
 ```
 
-ネイティブプロジェクトを IDE で開きます：
+Open the native projects in their IDEs:
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-詳細については、[Capacitor の Getting Started ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
+Refer to [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
 
-## さらに探索
+## Explore More
 
-このガイドでは、Ionic Angular アプリの作成、ナビゲーションの追加、ネイティブビルド用の Capacitor の導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
+This guide covered the basics of creating an Ionic Angular app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
 
 <DocsCards>
 
-<DocsCard header="最初のアプリを構築" href="your-first-app" icon="/icons/component-content-icon.png">
-  <p>Ionic Angularとネイティブデバイス機能を使用して実際のPhoto Galleryアプリを構築します。</p>
+<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
+  <p>Build a real Photo Gallery app with Ionic Angular and native device features.</p>
 </DocsCard>
 
-<DocsCard header="Angularドキュメント" href="https://angular.dev/overview" icon="/icons/logo-angular-icon.png">
-  <p>公式Angularドキュメントから、Angularのコアコンセプト、ツール、ベストプラクティスについて詳しく学びます。</p>
+<DocsCard header="Angular Documentation" href="https://angular.dev/overview" icon="/icons/logo-angular-icon.png">
+  <p>Learn more about Angular's core concepts, tools, and best practices from the official Angular documentation.</p>
 </DocsCard>
 
-<DocsCard header="ナビゲーション" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Angular Routerを使用してIonic Angularアプリでルーティングとナビゲーションを処理する方法を発見します。</p>
+<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>Discover how to handle routing and navigation in Ionic Angular apps using the Angular Router.</p>
 </DocsCard>
 
-<DocsCard header="コンポーネント" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>美しいアプリを構築するためのIonicの豊富なUIコンポーネントライブラリを探索します。</p>
+<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
 </DocsCard>
 
-<DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
-  <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
+<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
 </DocsCard>
 
-<DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
 </DocsCard>
 
 </DocsCards>

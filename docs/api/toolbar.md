@@ -10,7 +10,7 @@ import Slots from '@ionic-internal/component-api/v8/toolbar/slots.md';
 
 <head>
   <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
-  <meta name="description" content="Ion-toolbar コンポーネントは、アプリのメニューにあるツールバーボタンをカスタマイズすることができます。コンテンツの上下に固定ツールバーを追加したり、コンテンツと一緒にスクロールするフルスクリーンを使用することができます。" />
+  <meta name="description" content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,14 +18,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-ツールバーは、一般的にコンテンツの上または下に配置され、現在の画面のコンテンツとアクションを提供します。コンテンツ](./content)内に配置された場合、ツールバーはコンテンツと一緒にスクロールします。
+Toolbars are generally positioned above or below content and provide content and actions for the current screen. When placed within the [content](./content), toolbars will scroll with the content.
 
-ツールバーには、タイトル、ボタン、アイコン、戻るボタン、メニューボタン、検索バー、セグメント、プログレスバーなど、さまざまなコンポーネントを含めることができます。
+Toolbars can contain several different components including titles, buttons, icons, back buttons, menu buttons, searchbars, segments, progress bars, and more.
 
 
-## 基本的な使い方
+## Basic Usage
 
-ツールバーを正しく配置するために、[header](./header)または[footer](./footer)の内部に配置することをお勧めします。ツールバーをヘッダーに配置すると、コンテンツの上部に固定されて表示されます。フッターに配置された場合は、下側に固定されて表示されます。フルスクリーンのコンテンツは、ヘッダーやフッターにあるツールバーの後ろでスクロールします。 [title](./title) コンポーネントを使用すると、ツールバーの内側にテキストを表示することができます。
+It is recommended to put a toolbar inside of a [header](./header) or [footer](./footer) for proper positioning. When a toolbar is placed in a header it will appear fixed at the top of the content. When it is placed in a footer it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. A [title](./title) component can be used to display text inside of the toolbar.
 
 import Basic from '@site/static/usage/v8/toolbar/basic/index.md';
 
@@ -34,9 +34,9 @@ import Basic from '@site/static/usage/v8/toolbar/basic/index.md';
 
 ## Buttons in Toolbars
 
-ツールバーに配置するボタンは、[buttons](./buttons)コンポーネントの内部に配置する必要があります。ボタンコンポーネントは、名前付きの [スロット](#slots) を使ってツールバーの内側に配置することができます。スロットの `"primary"` と `"secondary"` は `ios` モードと `md` モードで異なる動作をします。
+Buttons placed in a toolbar should be placed inside of the [buttons](./buttons) component. The buttons component can be positioned inside of the toolbar using a named [slot](#slots). The `"primary"` and `"secondary"` slots behave differently in `ios` and `md` mode.
 
-buttons コンポーネントは、標準的な [ボタン](./button)、[戻るボタン](./back-button)、[メニューボタン](./menu-button)、またはそれらのいずれかをラップすることができます。ツールバーのボタンはデフォルトで透明ですが、ボタンの [`fill`](./button#fill) プロパティで変更することが可能です。この例でバックボタンとメニューボタンに含まれているプロパティは表示目的であり、適切な使用方法についてはそれぞれのドキュメントを参照してください。
+The buttons component can wrap a standard [button](./button), [back button](./back-button), [menu button](./menu-button), or several of any of them. A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on back button and menu button in this example are for display purposes; refer to their respective documentation for proper usage.
 
 import Buttons from '@site/static/usage/v8/toolbar/buttons/index.md';
 
@@ -45,32 +45,32 @@ import Buttons from '@site/static/usage/v8/toolbar/buttons/index.md';
 
 ## Searchbars in Toolbars
 
-[searchbar](./searchbar)は、ツールバーの中に配置することで、コンテンツを検索することができます。ツールバーの唯一の子コンポーネントである必要があり、幅と高さを完全に占有します。
+A [searchbar](./searchbar) can be placed inside of a toolbar to search through the content. It should be the only child component of the toolbar, and will take up the full width and height.
 
 import Searchbars from '@site/static/usage/v8/toolbar/searchbars/index.md';
 
 <Searchbars />
 
 
-## ツールバーのセグメント
+## Segments in Toolbars
 
-[セグメント](./segment)は、一般的にツールバーで、同じページ内の2つの異なるコンテンツビューを切り替えるために使用されます。ボタンなどの他のコンポーネントと一緒にツールバーに配置することができますが、タイトルと一緒に配置するべきではありません。
+[Segments](./segment) are generally used in toolbars to toggle between two different content views on the same page. They can be placed in a toolbar with other components, such as buttons, but should not be placed alongside a title.
 
 import Segments from '@site/static/usage/v8/toolbar/segments/index.md';
 
 <Segments />
 
 
-## ツールバーのプログレスバー
+## Progress Bars in Toolbars
 
-[プログレスバー](./progress-bar)は、アプリで進行中のプロセスを示すローディングインジケータとして使用されます。プログレスバーは、ツールバーの下部に配置されるため、ツールバーの中の他のコンポーネントと一緒に配置することができます。
+A [progress bar](./progress-bar) is used as a loading indicator to show an ongoing process in an app. Progress bars can be placed with any other components inside of a toolbar as they will align with the bottom of the toolbar.
 
 import ProgressBars from '@site/static/usage/v8/toolbar/progress-bars/index.md';
 
 <ProgressBars />
 
 
-## テーマ
+## Theming
 
 ### Colors
 
@@ -78,7 +78,7 @@ import Colors from '@site/static/usage/v8/toolbar/theming/colors/index.md';
 
 <Colors />
 
-## CSSカスタムプロパティ
+### CSS Custom Properties
 
 import CSSProps from '@site/static/usage/v8/toolbar/theming/css-properties/index.md';
 
@@ -87,22 +87,22 @@ import CSSProps from '@site/static/usage/v8/toolbar/theming/css-properties/index
 
 ## Borders
 
-`md` モードでは、`<ion-header>` は下部にボックスシャドウを、`<ion-footer>` は上部にボックスシャドウを表示します。 `ios` モードでは、`<ion-header>` の下部にボーダーが、`<ion-footer>` の上部にボーダーが表示されます。
+In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
 
 
-## プロパティ
+## Properties
 <Props />
 
-## イベント
+## Events
 <Events />
 
-## メソッド
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
 <CustomProps />
 
 ## Slots

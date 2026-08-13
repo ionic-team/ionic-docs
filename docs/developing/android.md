@@ -1,38 +1,38 @@
 ---
-title: Androidでの開発
-sidebar_label: Androidでの開発
+title: Android Development
+sidebar_label: Developing for Android
 ---
 
 <head>
-  <title>Androidアプリ開発ガイド: Build Ionic Apps in Android Studio</title>
+  <title>Android App Development Guide: Build Ionic Apps in Android Studio</title>
   <meta
     name="description"
-    content="この開発ガイドでは、AndroidエミュレーターとデバイスでIonicアプリを実行およびデバッグする方法を説明します。ビルドを開始するためにAndroid Studioをインストールする方法を学びます。"
+    content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info レガシー Android ガイドをお探しですか？
+:::info[Looking for the legacy Android guide?]
 
-Android 開発ガイドは、正式に[Capacitor の Android ドキュメント](https://capacitorjs.com/docs/android)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシー Android 開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android)で見つけることができます。
+The Developing for Android guide has officially migrated to the [Capacitor documentation for Android](https://capacitorjs.com/docs/android). If you need to access the legacy documentation, you can find it under the [legacy developing for Android guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android).
 
 :::
 
 <DocsCards>
   <DocsCard
-    header="Capacitorを使用したAndroid開発（推奨）"
+    header="Developing for Android with Capacitor (Recommended)"
     href="https://capacitorjs.com/docs/android"
     icon="/icons/capacitor-logo.svg"
   >
-    <p>Ionic FrameworkとCapacitorを使用してAndroidアプリの構築を開始するために知っておく必要がある基本を学びます。</p>
+    <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Capacitor.</p>
   </DocsCard>
   <DocsCard
-    header="Cordovaを使用したAndroid開発（レガシー）"
+    header="Developing for Android with Cordova (Legacy)"
     href="https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android"
     icon="/icons/native-cordova-bot.png"
   >
-    <p>Ionic FrameworkとCordovaを使用してAndroidアプリの構築を開始するために知っておく必要がある基本を学びます。</p>
+    <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Cordova.</p>
   </DocsCard>
 </DocsCards>

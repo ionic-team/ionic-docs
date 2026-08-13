@@ -1,71 +1,71 @@
 ---
-title: 開発者向けのヒント
+title: Development Tips
 ---
 
 <head>
-  <title>アプリ開発チップ: How to Resolve Permission Errors and Issues</title>
+  <title>App Development Tips: How to Resolve Permission Errors and Issues</title>
   <meta
     name="description"
     content="If errors occur, npm may need to be set up to operate without elevated permissions. Read our Ionic app Development Tips for more on resolving permission issues."
   />
 </head>
 
-## Permission Errors の解決
+## Resolving Permission Errors
 
-パッケージをグローバルにインストールすると、 `EACCES` パーミッションエラーが発生する可能性があります。このような場合は、管理者権限なしで動作するように npm を設定する必要があります。
+`EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
 
 :::note
-`sudo` と npm の併用は、さらなる問題を引き起こす可能性があるため、推奨されません。
+Using `sudo` with npm is **not recommended** because it can lead to further complications.
 :::
 
-このガイドには、パーミッションの問題を解決するための 2 つのオプションがあります。詳細なドキュメントと追加オプションについては、[npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) を参照してください。
+This guide offers two options for resolving permission issues. Refer to the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
 
 ### Option 1
 
-権限の問題を回避する最善の方法は、 node version manager を使用して NodeJS と npm を再インストールすることです。
+The best way to avoid permission issues is to reinstall NodeJS and npm using a node version manager.
 
-このガイドでは、 [nvm](https://github.com/nvm-sh/nvm) のインストールと使用方法について説明します。完全なドキュメントについては、 [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. See the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) を参照してください。Windows の追加オプションと手順については、npm のドキュメントを参照してください。
+This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and usage. Refer to the [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. Refer to the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) for additional options and instructions for Windows.
 
-1. nvm のインストール
+1. Install nvm.
 
    ```shell
    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
    ```
 
-1. 新しい端末は nvm を使うようになります。確認するには、新しいターミナルを開き、次のコマンドを実行します。何かが表示されれば、インストールは成功です。
+1. New terminals will now use nvm. To verify, open a new terminal and run the following. If something prints, the installation was successful.
 
    ```shell
    $ command -v nvm
    ```
 
-1. NodeJS の最新の LTS リリースをダウンロードしてインストールするには、次のコマンドを実行します:
+1. To download and install the latest LTS release of NodeJS, run:
 
    ```shell
    $ nvm install --lts
    ```
 
-1. 新しくインストールした NodeJS をデフォルト環境として設定します:
+1. Set the newly installed NodeJS as the default environment:
 
    ```shell
    $ nvm alias default lts/*
    ```
 
-1. 新しい端末は nvm コントロールの NodeJS を使うようになりました:
+1. New terminals will now use the nvm-controlled NodeJS. To verify:
 
    ```shell
    $ node -v  # will print the version installed above
    $ which npm  # will print a path somewhere within the ~/.nvm folder
    ```
 
-グローバルパッケージが `~/.nvm` にインストールされます。 `sudo` なしで `npm` を使用している限り、パーミッションエラーは発生しません。
+Global packages will now be installed in the `~/.nvm` directory, so permission errors should no longer occur as long as `npm` is used _without_ `sudo`.
 
 ### Option 2
 
 <small>
-  <em>Windowsでは利用できません</em>
+  <em>Does not apply to Windows</em>
 </small>
 
-npm のディレクトリの所有者を現在のユーザに変更します:
+Change the owner of npm's directories to the current user:
 
 ```shell
 $ sudo chown -R $(whoami) /usr/local/{lib/node_modules,bin,share}
@@ -73,36 +73,36 @@ $ sudo chown -R $(whoami) /usr/lib/node_modules
 $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 
-これらのグローバルディレクトリは `root` が所有しなくなったため、 `sudo` を使用せずにパッケージをグローバルにインストールできます。
+Since these global directories are no longer owned by `root`, packages can be installed globally _without_ `sudo`.
 
-## 依存モジュールの更新
+## Updating Dependencies
 
-[npm](https://www.npmjs.com/) dependency をアップデートするためには、`<package-name>` をアップデートしたいパッケージ名に変更して以下を実行します:
+To update an [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
 
 ```shell
 npm install <package-name>@<version|latest> --save
 ```
 
-例えば、`@ionic/angular` パッケージを `最新` リリースのものに更新するには、以下を実行してください:
+For example, to update the `@ionic/angular` package to the release tagged `latest`, run:
 
 ```shell
 npm install @ionic/angular@latest --save
 ```
 
-npm は最初に `package.lock.json` からパッケージのバージョンを読み込みにいきますので、パッケージを更新する際は CLI を利用することをおすすめします。
+It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
 
-## エディタ
+## Code Editors
 
-選択できるコードエディターはたくさんあります。ここに私たちのお気に入りのいくつかがあります：
+There are a lot of code editors to choose from. Here are some of our favorites:
 
 - [Visual Studio Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
 - [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
 
-## デバッガの利用
+## Using a Debugger
 
-`デバッガ` というキーワードはアプリケーションをデバッグするために利用されます。ほとんどのブラウザが`デバッガ`ステートメントに直面する時、 実行中の JavaScript の処理は停止され、ブラウザはデバッガをロードします。これはアプリケーションに"ブレークポイント"をセットするために使用されます。
+The `debugger` keyword can be used to debug an app. When most browsers encounters a `debugger` statement, running of JavaScript is stopped, and the browser will load its debugger. This can be used to set "breakpoints" in the app.
 
-例えば、ある関数が正しい値を返さない時は、デバッガを使用してコードをステップ実行し、変数を調べることができます。
+For example, if a function is not returning the correct value, the debugger can be used to step through the code and inspect variables.
 
 ```javascript
 function myBrokenFunction() {
@@ -111,42 +111,42 @@ function myBrokenFunction() {
 }
 ```
 
-アプリが起動すると、この機能で一時停止します。その後、開発者ツールを使用して、JavaScript を 1 行ずつ実行し、関数が正確にどこで中断するかを調べることができます。
+When an app runs, it will pause at this function. From there, the developer tools can be used to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
 
-## モードの変更
+## Changing Mode
 
-デフォルトでは、アプリケーションがブラウザで表示されると、Ionic は MD モードを適用します。しかし、Ionic コンポーネントはそれぞれのプラットフォームに応じて接続されるため、そのアプリケーションが iOS でどのように見えているか確認できると便利です。そのために、アプリケーションが起動している URL に `?ionic:mode=ios` を追加します。例えば、アプリが `8100` ポートで起動している場合は、URL はこうなります: `http://localhost:8100/?ionic:mode=ios`
+By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
 
 :::note
-しかし、どのプラットフォームが現在使用されているかをブラウザがどのように認識するか、ということは変わらないでしょう。プラットフォームはデバイスの検出とユーザーエージェントの検査によって決定されます。そのため、プラットフォームを変更するには、ユーザーエージェントを変更する必要があります。これを行うには、Chrome DevTools を開き、<kbd>Ctrl+Shift+i</kbd>(Mac では <kbd>Cmd+Option+I</kbd>) でデバイスのモードをオンに切り替えでください。デバイスモードの切り替えは、<kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac)で行います。
+This will not change which platform the browser detects. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
 :::
 
 ![Chrome DevTools showing the device mode with iPhone X selected.](/img/faq/tips/change-device-platform.png 'Chrome DevTools Device Mode')
 
-デバイスのドロップダウンからデバイスを選択すると viewport の大きさと同様に、ユーザーエージェントも変更されます。
+Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
 
-## iOS シミュレータを使用する
+## Using the iOS Simulator
 
-iOS シミュレータは実際のデバイスに届く前にアプリケーションのテストとデバッグを可能にします。
+The iOS simulator enables testing and debugging of an app before it reaches an actual device.
 
-シミュレータを利用可能にする前に、[Xcode](https://developer.apple.com/xcode/download/)、アップルの IDE をインストールする必要があります。
+Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed.
 
-[Ionic CLI](../cli.md) を用いて、シミュレータ上の現在のディレクトリでアプリケーションを実行可能にします:
+The [Ionic CLI](../cli.md) can then be used to run the app in the current directory on the simulator:
 
 ```shell
 ionic cordova emulate ios -lc
 ```
 
-`-lc` フラグを渡すことでライブリロードを有効にし、かつログコンソールををターミナルに出力することができます。
+Passing in the `-lc` flag will enable livereload and log console output to a terminal.
 
-また Xcode を利用することでエミュレータを起動し、アプリケーションをデバッグすることもできます。
+Xcode can also be used to launch the emulator and debug an app.
 
-Xcode を開き、`../path-to-app/platforms/ios/myApp.xcodeproj` を開きます。
+Open up Xcode and open `../path-to-app/platforms/ios/myApp.xcodeproj`.
 
-アプリケーションが読み込まれると、コンソール出力とデバイスのログが Xcode の出力ウィンドウに表示されます。
+After the app loads, console output and device logs will be printed inside of Xcode's output window.
 
-## Genymotion Android エミュレーターを使用する
+## Using the Genymotion Android Emulator
 
-Android SDK には標準のエミュレーターが付属していますが、速度が遅く、応答しない場合があります。
+While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times.
 
-[Genymotion](https://www.genymotion.com) はより高速な代替エミュレータであり、GPS やカメラなどのネイティブ機能へのアクセスを許可します。
+[Genymotion](https://www.genymotion.com) is an alternate emulator that is faster, and still allows access to native functionality like GPS and camera.
