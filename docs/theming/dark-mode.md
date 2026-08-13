@@ -64,7 +64,7 @@ import AlwaysDarkMode from '@site/static/usage/v10/theming/always-dark-mode/inde
 
 <AlwaysDarkMode />
 
-:::caution Important
+:::caution[Important]
 Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
@@ -117,7 +117,7 @@ import SystemDarkMode from '@site/static/usage/v10/theming/system-dark-mode/inde
 
 <SystemDarkMode />
 
-:::caution Important
+:::caution[Important]
 Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette, as these classes are added to each component and will take priority over globally defined variables. Instead, we can target the mode-specific classes on the `:root` element.
 :::
 
@@ -170,13 +170,13 @@ import ClassDarkMode from '@site/static/usage/v10/theming/class-dark-mode/index.
 
 <ClassDarkMode />
 
-:::caution Important
+:::caution[Important]
 The `.ion-palette-dark` class **must** be added to the `html` element in order to work with the imported dark palette.
 :::
 
 ## Adjusting System UI Components
 
-When developing a dark palette, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+When developing a dark palette, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. Refer to the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
 
 While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
 
@@ -194,14 +194,14 @@ color-scheme: light dark;
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![A default light-themed scrollbar in an application interface.](/img/theming/color-scheme-light.png 'Default scrollbar appearance without dark mode') | ![A dark-themed scrollbar in an application interface, demonstrating the effect of the 'color-scheme' property.](/img/theming/color-scheme-dark.png "Scrollbar appearance with dark mode 'color-scheme' applied") |
 
-For more information regarding `color-scheme`, please see the [Web.dev guide on color schemes](https://web.dev/color-scheme/).
+For more information regarding `color-scheme`, please refer to the [Web.dev guide on color schemes](https://web.dev/color-scheme/).
 
 :::note
-`color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).
+`color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, refer to [Keyboard Documentation](../developing/keyboard.md#dark-mode).
 :::
 
 :::note
-For developers looking to customize the theme color under the status bar in Safari on iOS 15 or the toolbar in Safari on macOS, see [`theme-color` Meta](./advanced.md#theme-color-meta).
+For developers looking to customize the theme color under the status bar in Safari on iOS 15 or the toolbar in Safari on macOS, refer to [`theme-color` Meta](./advanced.md#theme-color-meta).
 :::
 
 ## Ionic Dark Palette

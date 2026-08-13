@@ -1,5 +1,5 @@
 ---
-title: "ion-segment-content"
+title: 'ion-segment-content'
 ---
 
 import Props from '@ionic-internal/component-api/v9/segment-content/props.md';
@@ -11,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/segment-content/slots.md';
 
 <head>
   <title>ion-segment-content: Display control element for swipeable segments</title>
-  <meta name="description" content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments." />
+  <meta
+    name="description"
+    content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -19,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 Segment content is a wrapper element used to control the display of child elements when using swipeable segments. Segment content elements are children of a single
-[segment view](./segment-view.md) instance that is linked to a [segment](./segment.md). See our [swipeable segments](./segment.md#swipeable-segments) documentation
+[segment view](./segment-view.md) instance that is linked to a [segment](./segment.md). Refer to our [swipeable segments](./segment.md#swipeable-segments) documentation
 for more information on how to use segment contents.
 
 ## Usage
@@ -27,26 +30,32 @@ for more information on how to use segment contents.
 Each `ion-segment-content` needs a unique `id` attribute. This will be used to link the segment content to a segment button via the button's
 [contentId property](./segment-button.md#properties).
 
-<!-- Reuse swipeable segments playground -->
+{/* Reuse swipeable segments playground */}
 
 import Swipeable from '@site/static/usage/v9/segment/swipeable/index.md';
 
 <Swipeable />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

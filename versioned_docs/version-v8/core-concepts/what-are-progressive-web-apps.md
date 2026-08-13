@@ -11,12 +11,10 @@ title: Progressive Web Apps
   />
 </head>
 
-<!-- TOC goes here -->
-
 ### The web...but better
 
 A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users.
-These apps meet certain requirements (see below), are deployed to servers, accessible through URLs, and indexed by search engines.
+These apps meet certain requirements (described below), are deployed to servers, accessible through URLs, and indexed by search engines.
 
 This can work in conjunction with [Capacitor](https://capacitorjs.com) to provide a multiple deploy targets for all your users.
 You can deploy your app as a PWA as well as Native app and take advantage of both channels.
@@ -47,7 +45,7 @@ To be considered a Progressive Web App, your app must be:
 
 - Linkable - Easily share via URL and not require complex installation.
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
@@ -55,7 +53,7 @@ To be considered a Progressive Web App, your app must be:
   </a>
 </em>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 There is a lot here, but it boils down to a few points for Ionic apps.
 

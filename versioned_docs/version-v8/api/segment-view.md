@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 Segment view is a wrapper element that links a group of [segment contents](./segment-content.md) to a [segment](./segment.md) when using swipeable segments.
-See our [swipeable segments](./segment.md#swipeable-segments) documentation for more information on how to use segment views.
+Refer to our [swipeable segments](./segment.md#swipeable-segments) documentation for more information on how to use segment views.
 
 ## Properties
 

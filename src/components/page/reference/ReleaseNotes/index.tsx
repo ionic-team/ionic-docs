@@ -15,18 +15,14 @@ interface Release {
 
 export default function ReleaseNotes(props: { [key: string]: any }) {
   if (releases.length === 0) {
-    console.warn(`Could not load release notes data. Make sure that you have a valid GITHUB_TOKEN.
-
-Create a personal access token by following the below guide:
-https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-
-and then authorize it to work with SSO:
-https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on`);
+    console.warn(
+      `Could not load release notes data. Refer to https://github.com/ionic-team/ionic-docs/blob/main/CONTRIBUTING.md#github-token for setup instructions.`
+    );
 
     return [
-      <p>
+      <p key="empty-releases">
         Unable to load Releases. Please see all releases{' '}
-        <a href="https://github.com/ionic-team/ionic/releases" target="_blank">
+        <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
           on GitHub
         </a>
         .
@@ -38,7 +34,7 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
     <article>
       <p className={styles.intro}>
         A complete release history for Ionic Framework is available{' '}
-        <a href="https://github.com/ionic-team/ionic/releases" target="_blank">
+        <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
           on GitHub
         </a>
         . Documentation for recent releases can also be found below.
@@ -50,10 +46,13 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
       </p>
       <div className={styles['release-notes']}>
         {releases.map((release: Release, index) => (
-          <section className={clsx(styles['release-note'], styles[`release-note-${release.type}`])}>
+          <section
+            key={release.tag_name}
+            className={clsx(styles['release-note'], styles[`release-note-${release.type}`])}
+          >
             <div className={styles['release-info']}>
               <div className={styles['release-header']}>
-                <a href={`https://github.com/ionic-team/ionic/releases/v${release.version}`}>
+                <a href={`https://github.com/ionic-team/ionic-framework/releases/v${release.version}`}>
                   <h2>
                     <span className={styles['release-version']}>{release.version}</span>
                   </h2>
@@ -79,7 +78,7 @@ https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating
       </div>
       <blockquote>
         To see more releases, visit{' '}
-        <a href="https://github.com/ionic-team/ionic/releases/" target="_blank">
+        <a href="https://github.com/ionic-team/ionic-framework/releases/" target="_blank">
           GitHub
         </a>
         .

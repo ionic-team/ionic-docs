@@ -29,7 +29,7 @@ Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone)
 
 1. Ionic components need to be imported into every Angular component they are used in which can be time consuming to set up.
 
-:::info Code splitting
+:::info[Code splitting]
 Ionic ships standalone components from a single entry point (`@ionic/angular`). Bundlers such as Webpack and esbuild cannot split code from a single entry point across separate chunks, so the Ionic components you import are included in the main bundle rather than in the chunk for the route or component where they are used. Unused components are still tree-shaken out of the build.
 :::
 
@@ -365,7 +365,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 
 ## Modules
 
-:::warning Deprecation Notice
+:::warning[Deprecation Notice]
 The Modules approach, including `IonicModule`, is **deprecated** and will be removed in a future major release. Existing applications will continue to work during the deprecation period but should migrate using the [Standalone migration guide](#migrating-from-modules-to-standalone). New applications should use the [Standalone](#standalone) approach.
 :::
 

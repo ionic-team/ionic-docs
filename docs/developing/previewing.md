@@ -45,7 +45,7 @@ If the external link isn't listed on the terminal, then run `ionic serve --exter
 :::
 
 When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
-When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
+When you're ready to test on a real device, refer to the guides for [iOS](ios.md) and [Android](android.md).
 
 ## Simulating a Mobile Viewport
 
@@ -59,7 +59,7 @@ Open your application at the local or remote address that it is being served fro
 
 From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
 
-For additional features and information visit: https://developer.chrome.com/docs/devtools/device-mode/.
+For additional features and information, refer to the [Chrome DevTools device mode documentation](https://developer.chrome.com/docs/devtools/device-mode/).
 
 ### Safari
 
@@ -75,7 +75,7 @@ Open your application at the local or remote address that it is being served fro
 
 From here you can select different device types to emulate as well as change the orientation of the device.
 
-For additional features and information visit: https://developer.apple.com/safari/tools/.
+For additional features and information, refer to the [Safari developer tools documentation](https://developer.apple.com/safari/tools/).
 
 ### Firefox
 
@@ -85,4 +85,4 @@ Open your application at the local or remote address that it is being served fro
 
 From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
 
-For additional features and information visit: https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/.
+For additional features and information, refer to the [Firefox Responsive Design Mode documentation](https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/).

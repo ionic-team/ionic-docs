@@ -8,7 +8,7 @@ Thanks for the interest in contributing to Ionic Framework!
 
 ## Contributing Etiquette
 
-Please see the [Contributor Code of Conduct](coc.md) for information on the rules of conduct.
+Please refer to the [Contributor Code of Conduct](coc.md) for information on the rules of conduct.
 
 ## Creating an Issue
 
@@ -20,7 +20,7 @@ Please see the [Contributor Code of Conduct](coc.md) for information on the rule
 
 - Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
 
-- If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to see if there is a similar one reported. Include closed issues as it may have been closed with a solution.
+- If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to check if there is a similar one reported. Include closed issues as it may have been closed with a solution.
 
 - Next, [create a new issue](https://github.com/ionic-team/ionic/issues/new/choose) that thoroughly explains the problem. Please fill out the populated issue form before submitting the issue.
 
@@ -71,7 +71,7 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 #### Modifying Components
 
 1. Locate the component(s) to modify inside `/core/src/components/`.
-2. Take a look at the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
+2. Refer to the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
 3. Make your changes to the component. If the change is overly complex or out of the ordinary, add comments so we can understand the changes.
 4. [Preview your changes](#preview-changes) locally.
 5. [Modify the documentation](#modifying-documentation) if needed.
@@ -109,13 +109,13 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 
 1. Locate the test to modify inside the `test/` folder in the component's directory.
 2. If a test exists, modify the test by adding an example to reproduce the problem fixed or feature added.
-3. If a new test is needed, the easiest way is to copy the `basic/` directory from the component's `test/` directory, rename it, and edit the content in both the `index.html` and `e2e.ts` file (see [Screenshot Tests](#screenshot-tests) for more information on this file).
+3. If a new test is needed, the easiest way is to copy the `basic/` directory from the component's `test/` directory, rename it, and edit the content in both the `index.html` and `e2e.ts` file (refer to [Screenshot Tests](#screenshot-tests) for more information on this file).
 4. The `preview/` directory is used in the documentation as a demo. Only update this test if there is a bug in the test or if the API has a change that hasn't been updated in the test.
 
 ##### Screenshot Tests
 
 1. If the test exists in screenshot, there will be a file named `e2e.ts` in the directory of the test.
-2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. See [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
+2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. Refer to [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
 3. **Important:** each `test()` should have only one screenshot (`page.compareScreenshot()`) call **or** it should check the expect at the end of each test. If there is a mismatch it will fail the test which will prevent the rest of the test from running, i.e. if the first screenshot fails the remaining screenshot calls would not be called _unless_ they are in a separate test or all of the expects are called at the end.
 4. To run screenshot locally, use the following command: `npm run test.screenshot`.
    - To run screenshot for a specific test, pass the path to the test or a string to search for.
@@ -132,7 +132,7 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 ### Submit Pull Request
 
 1. [Create a new pull request](https://github.com/ionic-team/ionic/compare) with the `master` branch as the `base`. You may need to click on `compare across forks` to find your changes.
-2. See the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
+2. Refer to the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
 3. Please fill out the provided Pull Request template to the best of your ability and include any issues that are related.
 
 ## Commit Message Guidelines

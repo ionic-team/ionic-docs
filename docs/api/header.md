@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v10/header/basic/index.md';
 
 ## Translucent Header
 
-Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the header, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order for the content to scroll behind the header, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
 import Translucent from '@site/static/usage/v10/header/translucent/index.md';
 

@@ -30,6 +30,10 @@
   margin-top: 0 !important;
 }
 
+.tabPanel > *:last-child {
+  margin-bottom: 0;
+}
+
 .tabIcon {
   display: inline-flex;
   padding: 0 8px;

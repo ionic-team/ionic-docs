@@ -17,7 +17,7 @@ Afterwards, open a terminal and navigate to your Ionic project. Execute the foll
 ionic serve -c
 ```
 
-In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/pro/devapp/).
+In DevApp, the app should now appear. If it doesn't, or you have any issues throughout creating this app, refer to the [DevApp documentation](https://ionicframework.com/docs/pro/devapp/).
 
 Much better! Now we can add the camera functionality. By the way, you can find reference code for this in [the “part 1” folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part1) on GitHub.
 
@@ -153,4 +153,4 @@ git commit -m “added camera functionality”
 git push ionic master
 ```
 
-Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
+Next, we’ll cover how to transform the app into a photo gallery, as well as how to save the photos to your device!

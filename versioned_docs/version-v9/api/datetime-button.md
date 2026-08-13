@@ -1,6 +1,7 @@
 ---
-title: "ion-datetime-button"
+title: 'ion-datetime-button'
 ---
+
 import Props from '@ionic-internal/component-api/v9/datetime-button/props.md';
 import Events from '@ionic-internal/component-api/v9/datetime-button/events.md';
 import Methods from '@ionic-internal/component-api/v9/datetime-button/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/datetime-button/slots.md';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
-  <meta name="description" content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more." />
+  <meta
+    name="description"
+    content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -33,11 +37,11 @@ import Basic from '@site/static/usage/v9/datetime-button/basic/index.md';
 
 ## Localization
 
-The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
+The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. Refer to [Datetime Localization](./datetime#localization) for more details.
 
 ## Format Options
 
-You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. See [Datetime Format Options](./datetime#format-options) for more details.
+You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. Refer to [Datetime Format Options](./datetime#format-options) for more details.
 
 import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.md';
 
@@ -47,34 +51,26 @@ import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/
 
 `ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
 
-<!--
-## Customization
-
-TODO
-
-### Buttons
-
-TODO
-
-### Theming
-
-TODO
--->
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -33,7 +33,7 @@ A color can be applied to an Ionic component in order to change the default colo
 
 ## Layered Colors
 
-Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](advanced.md#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
+Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. Refer to [The Alpha Problem](advanced.md#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to explore each of the default colors Ionic provides and their variations.
 
 <LayeredColorsSelect />
 
@@ -58,11 +58,11 @@ When `secondary` is applied to a button, not only is the base color <CodeColor c
 Not sure how to get the variation colors from the base color? Try out our [Color Generator](color-generator.md) that calculates all of the variations and provides code to copy/paste into an app!
 :::
 
-See the [CSS Variables documentation](css-variables.md) for more information on CSS variables.
+Refer to the [CSS Variables documentation](css-variables.md) for more information on CSS variables.
 
 ## Adding Colors
 
-Colors can be added for use throughout an application by setting the `color` property on an Ionic component, or by styling with CSS. Read on to see how to manually add a new color, or use the [New Color Creator](#new-color-creator) below for a quick way to generate the code of a new color to be copy and pasted into an application.
+Colors can be added for use throughout an application by setting the `color` property on an Ionic component, or by styling with CSS. Read on to learn how to manually add a new color, or use the [New Color Creator](#new-color-creator) below for a quick way to generate the code of a new color to be copy and pasted into an application.
 
 To add a new color, first define the CSS variables for all of the variations of the color at the root. For example, to add a new color called `favorite`, we can define the following variables:
 
@@ -105,7 +105,7 @@ div {
 }
 ```
 
-See the [CSS Variables documentation](css-variables.md) for more information on setting and using CSS variables.
+Refer to the [CSS Variables documentation](css-variables.md) for more information on setting and using CSS variables.
 
 ## New Color Creator
 

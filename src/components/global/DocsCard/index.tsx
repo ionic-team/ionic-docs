@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +16,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'md' | 'lg';
 }
 
-function DocsCard(props: Props): JSX.Element {
+function DocsCard(props: Props): ReactNode {
   const isStatic = typeof props.href === 'undefined';
   const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
   const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;

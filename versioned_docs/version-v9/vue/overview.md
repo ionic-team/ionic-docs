@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Vue Version Support
 
-Ionic Vue v8 supports Vue 3.x. For detailed information on supported versions and our support policy, see the [Ionic Vue Support Policy](/docs/reference/support#ionic-vue).
+Ionic Vue v8 supports Vue 3.x. For detailed information on supported versions and our support policy, refer to the [Ionic Vue Support Policy](/docs/reference/support#ionic-vue).
 
 ## Vue Tooling
 
@@ -28,7 +28,7 @@ Ionic Vue projects use the same tooling as standard Vue CLI projects, so you can
 
 [Capacitor](https://capacitorjs.com) is the official cross-platform runtime for Ionic Vue, enabling your apps to run natively on iOS, Android, and the web with a single codebase.
 
-While you can use many [Cordova](https://cordova.apache.org/) plugins with Ionic Vue, Capacitor is the recommended and fully supported solution. The [Ionic CLI](../cli.md) does not provide official Cordova integration for Ionic Vue projects. For more information on using Cordova plugins with Capacitor, see the [Capacitor documentation](https://capacitorjs.com/docs/cordova).
+While you can use many [Cordova](https://cordova.apache.org/) plugins with Ionic Vue, Capacitor is the recommended and fully supported solution. The [Ionic CLI](../cli.md) does not provide official Cordova integration for Ionic Vue projects. For more information on using Cordova plugins with Capacitor, refer to the [Capacitor documentation](https://capacitorjs.com/docs/cordova).
 
 ## Installation
 

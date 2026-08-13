@@ -149,7 +149,7 @@ There’s a lot going on in the example above. These are the key points:
 
 - The `size` attribute can have a breakpoint added to it, `size-{breakpoint}`. This value sets the size for the specified breakpoint and above.
 
-For more information on customizing with grid, see the [Grid](../api/grid.md) documentation.
+For more information on customizing with grid, refer to the [Grid](../api/grid.md) documentation.
 
 ## Storage
 

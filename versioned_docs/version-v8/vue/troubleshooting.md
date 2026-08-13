@@ -20,7 +20,7 @@ Have an issue that you think should be covered here? <a href="https://github.com
 [Vue warn]: Failed to resolve component: ion-button
 ```
 
-If you see this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered, meaning you need to import them each time you want to use them.
+If you encounter this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered, meaning you need to import them each time you want to use them.
 
 Without importing the component, you will only get the underlying Web Component, and Vue-specific features such as `v-model` will not work.
 
@@ -58,7 +58,7 @@ module.exports = {
 
 If you are using VSCode and have the Vetur plugin installed, you are likely getting this warning because of Vetur, not ESLint. By default, Vetur loads the default Vue 3 linting rules and ignores any custom ESLint rules.
 
-To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. See the <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a> for more information.
+To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. Refer to the <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a> for more information.
 
 ## Method on component is not a function
 
@@ -74,7 +74,7 @@ ionContentRef.value.scrollToBottom();
 
 In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
 
-See the [Quickstart Guide](quickstart.md#calling-methods-on-components) for more information.
+Refer to the [Quickstart Guide](quickstart.md#calling-methods-on-components) for more information.
 
 ## Page transitions are not working
 
@@ -97,7 +97,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 </script>
 ```
 
-See the [IonPage documentation](navigation.md#ionpage) for more information.
+Refer to the [IonPage documentation](navigation.md#ionpage) for more information.
 
 ## Ionic events bound in JavaScript are not firing
 

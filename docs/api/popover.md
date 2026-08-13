@@ -129,7 +129,7 @@ If you need finer grained control over the positioning of your popover you can u
 
 When making dropdown menus, you may want to have the width of the popover match the width of the trigger element. Doing this without knowing the trigger width ahead of time is tricky. You can set the `size` property to `'cover'` and Ionic Framework will ensure that the width of the popover matches the width of your trigger element.
 
-If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. See the [controller demo](#controller-popovers) for an example of this pattern.
+If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. Refer to the [controller demo](#controller-popovers) for an example of this pattern.
 
 import Sizing from '@site/static/usage/v10/popover/customization/sizing/index.md';
 

@@ -61,7 +61,7 @@ Continuing to use the `ion-select` component as an example, the markup is update
 </ion-select>
 ```
 
-The above shows two parts: `placeholder` and `icon`. See the [select documentation](../api/select.md#css-shadow-parts) for all of its parts.
+The above shows two parts: `placeholder` and `icon`. Refer to the [select documentation](../api/select.md#css-shadow-parts) for all of its parts.
 
 With these parts exposed, the element can now be styled directly using [::part](#how-part-works).
 
@@ -103,7 +103,7 @@ There are some known limitations with [vendor prefixed pseudo-elements](#vendor-
 
 ## Ionic Framework Parts
 
-All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, see the [Component documentation](../components.md).
+All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, refer to the [Component documentation](../components.md).
 
 In order to have parts a component must meet the following criteria:
 
@@ -123,13 +123,7 @@ CSS Shadow Parts are supported in the recent versions of all of the major browse
 
 ### Vendor Prefixed Pseudo-Elements
 
-<p>
-  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
-    Vendor prefixed
-  </a>{' '}
-  pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar`
-  pseudo-elements:
-</p>
+Pseudo-elements that are <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">vendor prefixed</a> are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
 
 ```css
 /* Does NOT work */
@@ -138,7 +132,7 @@ my-component::part(scroll)::-webkit-scrollbar {
 }
 ```
 
-See <a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">this issue on GitHub</a> for more information.
+Refer to <a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">this issue on GitHub</a> for more information.
 
 ### Structural Pseudo-Classes
 

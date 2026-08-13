@@ -149,14 +149,14 @@ Font scaling preferences are configured on a per-device basis by the user. This 
 
 Font scaling on iOS can be configured in the Settings app.
 
-See [Apple Support](https://support.apple.com/en-us/102453) for more information.
+Refer to [Apple Support](https://support.apple.com/en-us/102453) for more information.
 
 ### Android
 
 Where users access the font scaling configuration varies across devices, but it is typically found in the "Accessibility" page in the Settings app.
 
 :::info
-The Chrome Web Browser on Android has some limitations with respecting system-level font scales. See [Chrome for Android](#chrome-for-android) for more information.
+The Chrome Web Browser on Android has some limitations with respecting system-level font scales. Refer to [Chrome for Android](#chrome-for-android) for more information.
 :::
 
 ## Troubleshooting
@@ -168,14 +168,14 @@ There are a number of reasons why Dynamic Font Scaling may not have any effect o
 1. Verify that your version of Ionic supports Dynamic Font Scaling. Dynamic Font Scaling was added starting in Ionic v7.5.
 2. Verify that the [typography.css](/docs/layout/global-stylesheets#typographycss) file has been imported. This file is required for Dynamic Font Scaling to work.
 3. Verify that your code does not override the root element's default font size. Manually setting a font size on the root element will prevent Dynamic Font Scaling from working as intended.
-4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. See [Integrating Custom Components](#integrating-custom-components) for more information.
-5. Verify "Accessibility Page Zoom" is enabled if using Chrome for Android. See [Chrome for Android](#chrome-for-android) for more information.
+4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. Refer to [Integrating Custom Components](#integrating-custom-components) for more information.
+5. Verify "Accessibility Page Zoom" is enabled if using Chrome for Android. Refer to [Chrome for Android](#chrome-for-android) for more information.
 
 ### Maximum and minimum font sizes are not being respected on Android
 
 The Android Web View scales any font sizes defined using the `px` unit by the system-level font scale preference. This means that actual font sizes may be larger or smaller than the font sizes defined in [min()](https://developer.mozilla.org/en-US/docs/Web/CSS/min), [max()](https://developer.mozilla.org/en-US/docs/Web/CSS/max), or [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
 
-See [how font scaling works on Android](#android) for more information.
+Refer to [how font scaling works on Android](#android) for more information.
 
 ### Font sizes are larger/smaller even with Dynamic Font Scaling disabled
 
@@ -190,5 +190,5 @@ Certain native iOS components such as the Action Sheet make use of private font 
 The root element's default font size is typically `16px`. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications) which has a default font size of `17px`. Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
 
 :::info
-iOS provides a "Callout" text style which has a default font size of `16px`. However, this font style is currently not exposed to web content. See [the supported text styles in WebKit](https://webkit.org/blog/3709/using-the-system-font-in-web-content/) for more information.
+iOS provides a "Callout" text style which has a default font size of `16px`. However, this font style is currently not exposed to web content. Refer to [the supported text styles in WebKit](https://webkit.org/blog/3709/using-the-system-font-in-web-content/) for more information.
 :::

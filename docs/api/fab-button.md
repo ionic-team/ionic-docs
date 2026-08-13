@@ -22,7 +22,7 @@ Floating Action Buttons (FABs) represent the primary action in an application. B
 
 As the name suggests, FABs generally float over the content in a fixed position. This is achieved by wrapping the fab button in a [fab](./fab) component. If the button is not wrapped with a fab, it will scroll with the content.
 
-For usage examples, see the [fab documentation](./fab).
+For usage examples, refer to the [fab documentation](./fab).
 
 ## Properties
 <Props />

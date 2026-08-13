@@ -1,6 +1,7 @@
 ---
-title: "ion-grid"
+title: 'ion-grid'
 ---
+
 import Props from '@ionic-internal/component-api/v9/grid/props.md';
 import Events from '@ionic-internal/component-api/v9/grid/events.md';
 import Methods from '@ionic-internal/component-api/v9/grid/methods.md';
@@ -10,20 +11,22 @@ import Slots from '@ionic-internal/component-api/v9/grid/slots.md';
 
 <head>
   <title>ion-grid: Display Grids for Mobile-First Custom App Layout</title>
-  <meta name="description" content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size." />
+  <meta
+    name="description"
+    content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
 
 ## Overview
 
 - Grids act as a container for all rows and columns. Grids take up the full width of their container,
-  but adding the `fixed` property will set the width based on the screen size, see [Fixed Grid](#fixed-grid) below.
+  but adding the `fixed` property will set the width based on the screen size, refer to [Fixed Grid](#fixed-grid) below.
 - Rows are horizontal groups of columns that line the columns up properly.
 - Content should be placed within columns, and only columns may be immediate children of rows.
 - The `size` property indicates the number of columns to use out of the default 12 per row.
@@ -31,15 +34,15 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 - Columns without a value for size will automatically have equal widths. For example, four columns will each automatically be 25% wide.
 - Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
 - There is padding between individual columns. However, the padding can be removed from the grid and
-  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
+  columns by adding the `ion-no-padding` class to the grid. Refer to the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
   (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
-- Grids can be customized via CSS variables. See [Customizing the Grid](#customizing-the-grid).
+- Grids can be customized via CSS variables. Refer to [Customizing the Grid](#customizing-the-grid).
 
 ## Default Breakpoints
 
-The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
+The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, refer to [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
 
 | Name | Value  | Width Property | Offset Property | Push Property | Pull Property | Description                          |
 | ---- | ------ | -------------- | --------------- | ------------- | ------------- | ------------------------------------ |
@@ -49,7 +52,6 @@ The default breakpoints for the grid and the corresponding properties are define
 | lg   | 992px  | `sizeLg`       | `offsetLg`      | `pushLg`      | `pullLg`      | Set columns when (min-width: 992px)  |
 | xl   | 1200px | `sizeXl`       | `offsetXl`      | `pushXl`      | `pullXl`      | Set columns when (min-width: 1200px) |
 
-
 ## Basic Usage
 
 By default, columns will take up equal width inside of a row for all devices and screen sizes.
@@ -58,10 +60,9 @@ import Basic from '@site/static/usage/v9/grid/basic/index.md';
 
 <Basic />
 
-
 ## Fixed Grid
 
-Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, see [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to see the grid width change.
+Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, refer to [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to observe how the grid width changes.
 
 | Name | Value  | Description                                       |
 | ---- | ------ | ------------------------------------------------- |
@@ -75,10 +76,9 @@ import Fixed from '@site/static/usage/v9/grid/fixed/index.md';
 
 <Fixed />
 
-
 ## Column Size
 
-Columns can be set to specific sizes to take up a certain number out of the total number of columns, or resize their width based on the content. The default number of columns is 12, but this can be customized. See the [Number of Columns](#number-of-columns) section below for more information.
+Columns can be set to specific sizes to take up a certain number out of the total number of columns, or resize their width based on the content. The default number of columns is 12, but this can be customized. Refer to the [Number of Columns](#number-of-columns) section below for more information.
 
 ### Content-based size
 
@@ -87,7 +87,6 @@ By setting the `size` to `"auto"` the column can size itself based on the natura
 import SizeAuto from '@site/static/usage/v9/grid/size-auto/index.md';
 
 <SizeAuto />
-
 
 ### Specified size
 
@@ -99,12 +98,11 @@ import Size from '@site/static/usage/v9/grid/size/index.md';
 
 ### Responsive size
 
-The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column widths change.
+The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen to observe how the column widths change.
 
 import SizeResponsive from '@site/static/usage/v9/grid/size-responsive/index.md';
 
 <SizeResponsive />
-
 
 ## Column Offset
 
@@ -120,12 +118,11 @@ import Offset from '@site/static/usage/v9/grid/offset/index.md';
 
 ### Responsive offset
 
-The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column offsets change.
+The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen to observe how the column offsets change.
 
 import OffsetResponsive from '@site/static/usage/v9/grid/offset-responsive/index.md';
 
 <OffsetResponsive />
-
 
 ## Column Push & Pull
 
@@ -141,7 +138,7 @@ import PushPull from '@site/static/usage/v9/grid/push-pull/index.md';
 
 ### Responsive push & pull
 
-The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column positions change.
+The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen to observe how the column positions change.
 
 import PushPullResponsive from '@site/static/usage/v9/grid/push-pull-responsive/index.md';
 
@@ -151,16 +148,15 @@ import PushPullResponsive from '@site/static/usage/v9/grid/push-pull-responsive/
 
 ### Vertical Alignment
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities#flex-container-properties).
+All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, refer to [css utilities](/layout/css-utilities#flex-container-properties).
 
 import VerticalAlignment from '@site/static/usage/v9/grid/vertical-alignment/index.md';
 
 <VerticalAlignment />
 
-
 ### Horizontal Alignment
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.md#flex-container-properties).
+All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, refer to [css utilities](/layout/css-utilities.md#flex-container-properties).
 
 import HorizontalAlignment from '@site/static/usage/v9/grid/horizontal-alignment/index.md';
 
@@ -172,7 +168,7 @@ Using our built-in CSS variables, it’s possible to customize the predefined gr
 
 ### Fixed Width
 
-The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to see the grid width change.
+The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to observe how the grid width changes.
 
 import Width from '@site/static/usage/v9/grid/customizing/width/index.md';
 
@@ -197,19 +193,25 @@ import Padding from '@site/static/usage/v9/grid/customizing/padding/index.md';
 <Padding />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

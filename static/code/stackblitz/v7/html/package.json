@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@ionic/core": "^7.0.0",
-    "ionicons": "8.0.13"
+    "ionicons": "8.1.0"
   },
   "devDependencies": {
     "typescript": "~5.9.0",
-    "vite": "^8.0.0",
+    "vite": "^7.0.0",
     "vite-plugin-static-copy": "^4.0.0"
   }
 }

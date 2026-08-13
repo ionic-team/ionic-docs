@@ -45,7 +45,7 @@ import Placement from '@site/static/usage/v10/buttons/placement/index.md';
 
 ## Types of Buttons
 
-A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; see their respective documentation for proper usage.
+A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; refer to their respective documentation for proper usage.
 
 import Types from '@site/static/usage/v10/buttons/types/index.md';
 
@@ -62,7 +62,7 @@ This feature is only available for iOS.
 
 :::
 
-<!-- Reuse the playground from the Title directory -->
+{/* Reuse the playground from the Title directory */}
 import CollapsibleLargeTitleButtons from '@site/static/usage/v10/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />

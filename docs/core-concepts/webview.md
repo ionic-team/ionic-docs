@@ -28,7 +28,7 @@ The Ionic Web View plugin is specialized for modern JavaScript apps. For both iO
 
 ### CORS
 
-Web Views enforce [CORS](../reference/glossary.md#cors), so it's important that external services properly handle cross-origin requests. See the [CORS FAQs](../troubleshooting/cors.md) for information on dealing with CORS in Ionic apps.
+Web Views enforce [CORS](../reference/glossary.md#cors), so it's important that external services properly handle cross-origin requests. Refer to the [CORS FAQs](../troubleshooting/cors.md) for information on dealing with CORS in Ionic apps.
 
 ### File Protocol
 

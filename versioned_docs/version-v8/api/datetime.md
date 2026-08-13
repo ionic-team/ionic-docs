@@ -42,7 +42,9 @@ import ShowAdjacentDays from '@site/static/usage/v8/datetime/show-adjacent-days/
 import MultipleDateSelection from '@site/static/usage/v8/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v8/datetime/styling/global-theming/index.md';
+import CalendarHeaderStyling from '@site/static/usage/v8/datetime/styling/calendar-header/index.md';
 import CalendarDaysStyling from '@site/static/usage/v8/datetime/styling/calendar-days/index.md';
+import DatetimeHeaderStyling from '@site/static/usage/v8/datetime/styling/datetime-header/index.md';
 import WheelStyling from '@site/static/usage/v8/datetime/styling/wheel-styling/index.md';
 
 <head>
@@ -151,7 +153,7 @@ The following example shows how to set the locale to Spanish (Spain).
 <CustomLocale />
 
 :::note
-The time label is not automatically localized. See [Time Label](#time-label) for more information.
+The time label is not automatically localized. Refer to [Time Label](#time-label) for more information.
 :::
 
 ### Hour Cycle
@@ -179,7 +181,7 @@ In the following example, we can use the `hourCycle` property to force `ion-date
 
 ### First Day of the Week
 
-For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
+For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (refer to [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
 
 <FirstDayOfWeek />
 
@@ -303,7 +305,7 @@ By default, `ionChange` is emitted with the new datetime value whenever a new da
 
 ### Showing Confirmation Buttons
 
-The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#confirm) and [`cancel`](#cancel) methods, respectively.
+The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#method-confirm) and [`cancel`](#method-cancel) methods, respectively.
 
 <ShowingConfirmationButtons />
 
@@ -354,6 +356,24 @@ Ionic's powerful theming system can be used to easily change your entire app to 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
 <GlobalTheming />
+
+### Datetime Header
+
+The datetime header manages the content for the `title` slot and the selected date.
+
+:::note
+The selected date will not render if `preferWheel` is set to `true`.
+:::
+
+<DatetimeHeaderStyling />
+
+### Calendar Header
+
+The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
+
+The header can be styled using CSS shadow parts.
+
+<CalendarHeaderStyling />
 
 ### Calendar Days
 
@@ -459,7 +479,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels
 
-The wheel picker in Datetime uses [Picker](./picker) internally. See [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
+The wheel picker in Datetime uses [Picker](./picker) internally. Refer to [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces
 

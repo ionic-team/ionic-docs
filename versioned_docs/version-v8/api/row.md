@@ -24,7 +24,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Rows are horizontal components of the [grid](./grid) system and contain varying numbers of
 [columns](./col). They ensure the columns are positioned properly.
 
-See the [grid](./grid) documentation for more information.
+Refer to the [grid](./grid) documentation for more information.
 
 ## Row Alignment
 

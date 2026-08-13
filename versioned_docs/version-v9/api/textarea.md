@@ -1,6 +1,7 @@
 ---
-title: "ion-textarea"
+title: 'ion-textarea'
 ---
+
 import Props from '@ionic-internal/component-api/v9/textarea/props.md';
 import Events from '@ionic-internal/component-api/v9/textarea/events.md';
 import Methods from '@ionic-internal/component-api/v9/textarea/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
-  <meta name="description" content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements." />
+  <meta
+    name="description"
+    content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -118,7 +122,7 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
@@ -155,19 +159,25 @@ interface TextareaCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
