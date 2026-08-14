@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         node_version: [20]
-        # Build processes work differently across operating systems, so the 
+        # Build processes work differently across operating systems, so the
         # checks run on each one to make sure anyone can contribute to the
         # docs.
         os: [windows-latest, macOS-latest]
