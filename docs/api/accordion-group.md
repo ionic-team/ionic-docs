@@ -14,8 +14,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アコーディオン・グループは、アコーディオンインスタンスのためのコンテナです。これは、アコーディオンの状態を管理し、キーボードナビゲーションを提供します。
 
-より詳細な情報や使用方法については、 [Accordion](./accordion) を参照ください。
-
+詳細については、[アコーディオン](./accordion)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -37,8 +36,6 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonAccordionGroupElement;
 }
 ```
-
-
 
 ## プロパティ
 <Props />

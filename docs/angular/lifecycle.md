@@ -15,26 +15,26 @@ sidebar_label: ライフサイクル
 
 ![Flowchart illustrating the Ionic page life cycle events and their sequence.](/img/guides/lifecycle/ioniclifecycle.png 'Ionic Lifecycle Diagram')
 
-## Angular の Life Cycle Events
+## Angular のライフサイクルイベント
 
-Ionic は Angular が提供する Life Cycle Events を取り入れています。最もよく使う 2 つの Angular イベントは次のとおりです。
+Ionic は Angular が提供するライフサイクルイベントを取り入れています。最もよく使う 2 つの Angular イベントは次のとおりです。
 
-| Event Name    | Description                                                                                                                                             |
+| イベント名    | 説明                                                                                                                                                    |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ngOnInit`    | コンポーネントの初期化中に発生します。このイベントを使用して、ローカルメンバーを初期化し、一度だけ実行する必要がある Service を呼び出すことができます。 |
 | `ngOnDestroy` | Angular がビューを破棄する直前に発生します。 observables の unsubscribe などのクリーンアップに役立ちます。                                              |
 
-Angular の Component Life Cycle イベントの詳細については、それらの [component lifecycle docs](https://angular.jp/guide/lifecycle-hooks) をご覧ください。
+Angular のコンポーネントライフサイクルイベントの詳細については、[コンポーネントライフサイクルのドキュメント](https://angular.jp/guide/lifecycle-hooks)をご覧ください。
 
 :::note
 `ion-nav` または `ion-router-outlet` を使用するコンポーネントは、 `OnPush` 変更検出方式を使用しないでください。そうすることで、 `ngOnInit` などのライフサイクル・フックが起動するのを防ぐことができます。また、非同期状態の変更は正しくレンダリングされない場合があります。
 :::
 
-## Ionic の Page Events
+## Ionic のページイベント
 
-Angular の Life Cycle Events に加えて、Ionic Angular には、使用可能ないくつかの追加イベントがあります:
+Angular のライフサイクルイベントに加えて、Ionic Angular には、使用可能ないくつかの追加イベントがあります:
 
-| Event Name         | Description                                                              |
+| イベント名         | 説明                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
 | `ionViewWillEnter` | コンポーネントが表示されるアニメーションがはじまる時に発火します。       |
 | `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが **終了した時に** 発火します。 |
@@ -49,7 +49,7 @@ Angular の Life Cycle Events に加えて、Ionic Angular には、使用可能
 
 ![Animated GIF showing Ionic page life cycle events in a console log as a page transition occurs.](/img/guides/lifecycle/ioniclifecycle.gif 'Ionic Lifecycle Animation')
 
-## Ionic が Page の Life をどのように処理するか
+## Ionic がページのライフサイクルを処理する仕組み
 
 Ionic は `<ion-router-outlet />` という router outlet を持っています。この outlet が Angular の `<router-outlet />` を継承し、さらに拡張して、モバイルデバイスのためのより良い体験を可能にしました。
 
@@ -91,13 +91,13 @@ export class AuthGuard implements CanActivate {
 
 ルートガードの使い方の詳細については、Angular の [router documentation](https://angular.jp/guide/router) を参照してください。
 
-## Life Cycle メソッドのガイダンス
+## ライフサイクルメソッドのガイダンス
 
-以下は、life cycle events ごとのユースケースに関するヒントです。
+以下は、ライフサイクルイベントごとのユースケースに関するヒントです。
 
-- `ngOnInit` - コンポーネントを初期化し、Service からアクセスごとに更新する必要がないデータをロードします。
-- `ionViewWillEnter` - `ionViewWillEnter` は View がナビゲートされる度に呼び出されるので（初期化されているかどうかにかかわらず）、Service からデータをロードするのに適したメソッドです。ただし、アニメーション中にデータがを取得すると、大量の DOM 操作が開始される可能性があります。これにより、ぎこちないアニメーションが発生する可能性があります。
-- `ionViewDidEnter` - `ionViewWillEnter` を使ってデータを取得していてパフォーマンスに問題がある時は、`ionViewDidEnter` を代わりに使うことができます。ただし、Page がユーザーに表示されるまではこのイベントは発火しません。そのため、ロードインジケータまたはスケルトン画面を使用することをお勧めします。これにより、遷移が完了した後にコンテンツが不自然に点滅することはありません。
-- `ionViewWillLeave` - observables の unsubscribing のように、クリーンアップで利用します。 `ngOnDestroy` はあなたが現在のページから遷移する時には発火しない可能性がありますので、画面が表示されていない時にアクティブにしたくない場合はここでクリーンアップの処理を行います。
-- `ionViewDidLeave` - このイベントが発生すると、新しいページへと完全に遷移したことがわかります。そのため、ビューが表示されているときに通常は行わない可能性があるロジックはすべてここに移動できます。
-- `ngOnDestroy` - `ionViewWillLeave` でクリーンアップしたくないページのクリーンアップロジックはここにおいてください。
+- `ngOnInit` - コンポーネントを初期化し、各訪問時に更新が不要なサービスからデータを読み込みます。
+- `ionViewWillEnter` - `ionViewWillEnter` はビューがナビゲートされるたびに（初期化されているかどうかに関係なく）呼ばれるため、サービスからデータをロードするのに適したメソッドです。ただし、アニメーション中にデータが返ってくると、多くの DOM 操作が開始され、アニメーションがぎこちなくなることがあります。
+- `ionViewDidEnter` - データをロードするときに `ionViewWillEnter` を使用してパフォーマンスに問題が生じる場合は、代わりに `ionViewDidEnter` でデータ呼び出しを行うことができます。ただし、このイベントはページがユーザーに表示されてから発火するため、コンテンツが遷移完了後に不自然にフラッシュしないよう、ローディングインジケーターやスケルトンスクリーンを使用することを検討してください。
+- `ionViewWillLeave` - Observable の購読解除のようなクリーンアップに使用できます。`ngOnDestroy` は現在のページからナビゲートしたときに発火しない可能性があるため、スクリーンが表示されていない間にアクティブにしたくない場合は、ここにクリーンアップコードを置いてください。
+- `ionViewDidLeave` - このイベントが発火すると、新しいページが完全に遷移したことがわかるので、通常ビューが表示されているときには行わないロジックをここで実行できます。
+- `ngOnDestroy` - `ionViewWillLeave` でクリーンアップしたくないページ用のクリーンアップロジック。

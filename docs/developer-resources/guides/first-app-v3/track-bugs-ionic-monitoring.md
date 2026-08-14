@@ -67,7 +67,7 @@ Sync the current version of the app by running the following:
 ionic monitoring syncmaps
 ```
 
-With our intentional error in place, let’s try it out to see what happens. Run your app locally:
+私たちが意図的なエラーを仕込んだので、何が起こるかを確認するために実際に試してみましょう。アプリをローカルで実行します：
 
 ```shell
 ionic serve
@@ -77,7 +77,7 @@ Tap on the Gallery tab, then the camera button. A runtime error should occur. In
 
 ![An event showing error 'takePhoto is not a function' with status 'New'.](/img/guides/first-app-v3/monitoring-event.png 'Ionic Monitoring Event Overview')
 
-Clicking on the event gives us lots of details surrounding what happened, such as a full stack trace. In this instance, we see that the error occurred three times on Mac OS X in the Chrome web browser.
+イベントをクリックすると、何が起こったかの詳細、例えばフルスタックトレースなどが表示されます。この例では、エラーは Mac OS X の Chrome ウェブブラウザで 3 回発生しました。
 
 ![Detailed view of an event log displaying a TypeError stack trace and error details such as device, browser, and operating system.](/img/guides/first-app-v3/monitoring-details.png 'Detailed Ionic Monitoring Event Log')
 

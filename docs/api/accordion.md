@@ -9,14 +9,13 @@ import CustomProps from '@ionic-internal/component-api/v8/accordion/custom-props
 import Slots from '@ionic-internal/component-api/v8/accordion/slots.md';
 
 <head>
-  <title>ion-accordion: Accordion Components: How to Build & Examples</title>
-  <meta name="description" content="Ion-accordionコンポーネントは、コンテンツに折りたたみ可能なセクションを設け、縦方向のスペースを減らし、情報を整理することができます。組み立て方とサンプルをご覧ください。" />
+  <title>ion-accordion: アコーディオンコンポーネント: 作り方と例</title>
+  <meta name="description" content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and explore examples." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 アコーディオンは、情報を整理してグループ化する方法を提供しながら、垂直方向のスペースを減らすために、コンテンツに折り畳み可能なセクションを提供します。すべての `ion-accordion` コンポーネントは `ion-accordion-group` コンポーネントの中にグループ化されている必要があります。
 
@@ -76,7 +75,7 @@ import DisableGroup from '@site/static/usage/v8/accordion/disable/group/index.md
 
 ## 読み込み可能なアコーディオン
 
-### 個別アコーディオン
+### アコーディオンを無効にする
 
 個々のアコーディオンは、`ion-accordion` の `readonly` プロパティで無効にできます。
 
@@ -98,7 +97,7 @@ import ReadonlyGroup from '@site/static/usage/v8/accordion/readonly/group/index.
 
 `header` slotは、アコーディオンを展開または折りたたむためのトグルとして使用されます。アクセシビリティとテーマ機能を利用するために、ここでは `ion-item` を使用することをお勧めします。
 
-`header` slotに `ion-item` を使用する場合、 `ion-item` の `button` プロパティは `true` に、 `detail` プロパティは `false` に設定されます。さらに、`ion-item` にはトグルアイコンも自動的に追加されます。このアイコンは、アコーディオンを展開したり折りたたんだりすると、自動的に回転するようになります。詳しくは、 [アイコンのカスタマイズ](#icons) を参照してください。
+`header`スロットで`ion-item`を使用する場合、`ion-item`の`button`プロパティは`true`に、`detail`プロパティは`false`に設定されます。さらに、`ion-item`にはトグルアイコンも自動的に追加されます。このアイコンはアコーディオンを展開または折りたたむ際に自動的に回転します。詳細については、[アイコンのカスタマイズ](#icons)を参照してください。
 
 ### コンテンツ
 
@@ -120,7 +119,7 @@ import ExpansionStyles from '@site/static/usage/v8/accordion/customization/expan
 
 アコーディオンの状態に応じてスタイルを設定することで、展開の動作をカスタマイズすることができます。 `ion-accordion` には4つのステートクラスが適用されています。これらのクラスを使ってスタイリングすることで、高度な状態遷移を作成することができます。
 
-| Class Name | Description                       |
+| クラス名   | 説明                              |
 | ---------- |-----------------------------------|
 | `.accordion-expanding` | アコーディオンがアクティブに展開しているときに適用されます。    |
 | `.accordion-expanded` | アコーディオンが完全に展開されたときに適用されます。        |
@@ -140,7 +139,7 @@ import AdvancedExpansionStyles from '@site/static/usage/v8/accordion/customizati
 
 <AdvancedExpansionStyles />
 
-### アイコン
+### アイコン {/* #icons */}
 
 `header` slot に `ion-item` を使用する場合、自動的に `ion-icon` が追加されます。使用するアイコンの種類は `toggleIcon` プロパティで制御でき、追加するスロットも `toggleIconSlot` プロパティで制御することができます。
 

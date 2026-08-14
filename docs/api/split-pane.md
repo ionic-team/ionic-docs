@@ -26,17 +26,16 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 ## 基本的な使い方
 
 :::note
-このデモでは `when` プロパティを `'xs'` に設定し、分割ペインが常に表示されるようにしています。小さなビューポートで分割ペインを折りたたみたい場合は、Ionicアプリケーションにこの設定は必要ありません。詳しくは、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
+このデモでは、`when`プロパティを`'xs'`に設定しているため、スプリットペインが常に表示されます。小さいビューポートでスプリットペインを折りたたむ場合、この設定は必要ありません。詳細については、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
 :::
 
 import Basic from '@site/static/usage/v8/split-pane/basic/index.md';
 
 <Basic />
 
-## ブレイキング・ポイントを決める
+## ブレイキング・ポイントを決める {/* #setting-breakpoints */}
 
 デフォルトでは、画面が992pxを超えると分割ペインが拡張表示されます。これをカスタマイズするには、 `when` プロパティにブレークポイントを渡します。`when` プロパティには、真偽値、有効なメディア・クエリー、またはIonicの事前定義サイズのいずれかを指定できます。
-
 
 ```html
 <!-- can be "xs", "sm", "md", "lg", or "xl" -->
@@ -45,7 +44,6 @@ import Basic from '@site/static/usage/v8/split-pane/basic/index.md';
 <!-- can be any valid media query https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
 <ion-split-pane when="(min-width: 40px)"></ion-split-pane>
 ```
-
 
  | Size | Value                 | Description                                                           |
  |------|-----------------------|-----------------------------------------------------------------------|
@@ -77,5 +75,5 @@ import CSSProperties from '@site/static/usage/v8/split-pane/theming/css-properti
 ## CSSカスタムプロパティ
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

@@ -12,11 +12,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+カードヘッダは、カードの子コンポーネントで、カードコンテンツの前に配置する必要があります。[カードタイトル](./card-title)と[カードサブタイトル](./card-subtitle)を含むことができます。
 
-カードヘッダは、カードの子コンポーネントで、カードコンテンツの前に配置する必要があります。カードタイトル](./card-title)と[カードサブタイトル](./card-subtitle)を含むことができます。
-
-詳しくは、[Card](./card)のドキュメントを参照してください。
-
+詳細は[Card](./card)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

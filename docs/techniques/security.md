@@ -57,9 +57,11 @@ const element = <a href={userInput}>Click Me!</a>;
 
 Vue は組み込みのサニタイズメソッドを提供していません。開発者は[sanitize-html](https://www.npmjs.com/package/sanitize-html)などのパッケージを使用することを推奨します。
 
-`v-html`などのディレクティブにバインドする際のセキュリティ推奨事項の詳細については、[Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML)を参照してください。
+`v-html`などのディレクティブにバインドする際のセキュリティ推奨事項については、[Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML)を参照してください。
 
-## `innerHTML`を介したカスタム HTML 解析の有効化
+{/* cspell:disable-next-line */}
+
+## `innerHTML`を介したカスタム HTML 解析の有効化 {/* #enabling-custom-html-parsing-via-innerhtml */}
 
 `ion-alert`、`ion-infinite-scroll-content`、`ion-loading`、`ion-refresher-content`、`ion-toast`は、特定のプロパティに対して文字列としてカスタム HTML を受け入れることができます。これらの文字列は`innerHTML`を使用して DOM に追加され、開発者が適切にサニタイズする必要があります。この動作はデフォルトで無効になっているため、影響を受けるコンポーネントに渡される値は常にプレーンテキストとして解釈されます。開発者は、[IonicConfig](../developing/config#ionicconfig)で`innerHTMLTemplatesEnabled: true`を設定することで、このカスタム HTML 動作を有効にできます。
 
@@ -84,7 +86,7 @@ Ionic Framework は、デフォルトで`true`に設定されている`sanitizer
 
 `innerHTMLTemplatesEnabled`が`false`に設定されている場合、`IonicSafeString`を使用しないでください。
 
-詳細については、[カスタム HTML 解析の有効化](#enabling-custom-html-parsing-via-innerhtml)を参照してください。
+詳細については、[Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml)を参照してください。
 :::
 
 #### 使用方法
@@ -215,7 +217,7 @@ Angular では、これはアプリケーションがブートストラップさ
 
 :::
 
-Stencil Web コンポーネントで CSP を使用する方法の詳細については、[Stencil documentation](https://stenciljs.com/docs/csp-nonce)を参照してください。
+Stencil web コンポーネントで CSP を使用する方法についての詳細は、[Stencil documentation](https://stenciljs.com/docs/csp-nonce)を参照してください。
 
 ### Angular
 
@@ -230,4 +232,4 @@ Angular 16 以降、Angular は nonce 値を設定するための 2 つのオプ
 
 :::
 
-Angular で CSP を使用する方法の詳細については、[Angular documentation](https://angular.io/guide/security#content-security-policy)を参照してください。
+Angular で CSP を使用する方法についての詳細は、[Angular documentation](https://angular.io/guide/security#content-security-policy)を参照してください。

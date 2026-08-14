@@ -80,7 +80,7 @@ The Overlay Components are still a valid way of displaying overlays and are in n
 
 ## Docs for Overlays in Ionic
 
-For full docs and to see usage examples for both the hook and component approach, visit the docs page for each of the overlays in Ionic:
+フックおよびコンポーネントの両方のアプローチの完全なドキュメントと使用例については、Ionic の各オーバーレイのドキュメントページをご覧ください。
 
 - [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
 - [Alert](https://ionicframework.com/docs/api/alert)

@@ -17,11 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+アイテムオプションコンポーネントは、スライドアイテムのためのボタンです。[アイテムオプション](./item-options)の中に配置する必要があります。`ionSwipe`イベントと `expandable` プロパティを組み合わせることで、アイテムの完全なスワイプアクションを作成することができます。
 
-アイテムオプションコンポーネントは、スライドアイテムのためのボタンです。アイテムオプション](./item-options)の中に配置する必要があります。ionSwipe`イベントと `expandable` プロパティを組み合わせることで、アイテムの完全なスワイプアクションを作成することができます。
-
-詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
-
+詳細については、[item sliding](./item-sliding)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

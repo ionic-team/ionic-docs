@@ -1,10 +1,9 @@
 :root:root {
   --docsearch-searchbox-background: var(--token-primary-bg-c);
-  --docsearch-searchbox-height: 2.25rem;
   --docsearch-searchbox-focus-background: var(--token-primary-bg-c);
 
-  --docsearch-key-gradient: var(--token-primary-bg-c);
-  --docsearch-key-shadow: none;
+  --docsearch-key-background: var(--token-primary-bg-c);
+  --docsearch-search-button-background: var(--token-primary-bg-c);
 }
 
 html[data-theme='light'] {
@@ -46,7 +45,12 @@ html[data-theme='dark'] {
   }
 
   .DocSearch-Button {
+    // DocSearch resets the button with `all: unset`. box-sizing needs to be set to inherit.
+    box-sizing: inherit;
     width: 100%;
+    // The border is drawn by the inset box-shadow below, so drop the one
+    // DocSearch applies or the two stack into a thicker edge.
+    border: 0;
     border-radius: 8px;
     box-shadow: var(--docsearch-searchbox-shadow);
 
@@ -66,17 +70,18 @@ html[data-theme='dark'] {
         padding-block-end: 0;
 
         width: auto;
+        // DocSearch sizes these keys at 24px with its own font; keep them
+        // sized to the surrounding text so the keys stay inside the field.
+        height: 18px;
 
         color: var(--c-indigo-50);
         border-radius: 0;
 
+        font-family: inherit;
+        font-size: inherit;
         font-weight: 400;
 
-        // Targets the `CMD/CTRL` symbol
-        &:first-child {
-          font-size: 1.4em;
-          margin-inline-end: 0.0625rem;
-        }
+        border: none;
       }
     }
 

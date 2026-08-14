@@ -1,5 +1,14 @@
-src/theme/DocItem
-src/theme/DocRoot
+# Ejected components keep upstream's formatting so they stay diffable against
+# @docusaurus/theme-classic. Refer to `src/theme/README.md`.
+# Wrapped components are our own code, so they follow the repo's formatting.
+src/theme/DocItem/Layout/index.tsx
+src/theme/EditMetaRow/index.tsx
+src/theme/Icon/Edit/index.tsx
+src/theme/Icon/Language/index.tsx
+src/theme/Layout/index.tsx
+src/theme/NavbarItem/LocaleDropdownNavbarItem/index.tsx
+src/theme/prism-include-languages.ts
+
 legacy-stencil-components
 scripts/bak
 
@@ -7,7 +16,16 @@ docs/api
 docs/native
 versioned_docs/version-v*/native
 docs/cli/commands
+# Each definition in these files is one line of prose inside a JSX <section>.
+# Prettier's mdx parser reflows those children and moves link text onto its own
+# line, which MDX then wraps in a paragraph, rendering invalid HTML such as
+# <a><p>Android SDK</p></a>. Formatting these files reintroduces that markup.
 docs/reference/glossary.md
+versioned_docs/version-v*/reference/glossary.md
+
+# Archived versions
+versioned_docs/version-v5
+versioned_docs/version-v6
 
 static/code/stackblitz
 

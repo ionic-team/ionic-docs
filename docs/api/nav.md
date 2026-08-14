@@ -22,10 +22,10 @@ Navは、任意のコンポーネントをロードし、スタックに新し�
 Router Outletとは異なり、Navは特定のルーターに縛られることはありません。つまり、Navコンポーネントをロードし、他のコンポーネントをスタックにプッシュしても、アプリ全体のルーターには影響しない。例えば、新しいコンポーネントを`ion-nav`にプッシュして、URLが更新されることを期待するべきではありません。これは、アプリのURLに関連付けずに、独自のサブナビゲーションが必要なモーダルがあるような使用例に適しています。
 
 :::note
-`ion-nav`はルーティングに使用するものではありません。 代わりに、[Angular](../angular/navigation)、[React](../react/navigation)、[Vue](../vue/navigation)、またはバニラJavaScriptプロジェクト用の[`ion-router`](./router)のルーティングガイドを参照してください。
-:::
+`ion-nav`はルーティングには使用されません。代わりに、[Angular](../angular/navigation)、[React](../react/navigation)、および[Vue](../vue/navigation)のルーティングガイド、または[`ion-router`](./router)のバニラJavaScriptプロジェクト用ガイドを参照してください。
 
-## NavLinkを利用する
+{/* cspell:disable-next-line */}
+## NavLinkを利用する {/* #using-navlink */}
 
 NavLinkは、Navと対話する際の簡素化されたAPIです。開発者はコンポーネントをカスタマイズしたり、コンポーネントのプロパティを渡したり、ルートアニメーションの方向を変更したり、ナビゲート時のカスタムアニメーションを定義したりすることができます。
 
@@ -58,8 +58,6 @@ interface NavCustomEvent extends CustomEvent {
   target: HTMLIonNavElement;
 }
 ```
-
-
 
 ## プロパティ
 <Props />

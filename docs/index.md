@@ -24,7 +24,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Ionic は、Web 技術（HTML、CSS、JavaScript）を使用して、高性能で高品質なモバイルアプリを構築するためのオープンソース UI ツールキットで、[Angular](angular/overview.md)、[React](react/overview.md)、[Vue](vue/overview.md)などの人気フレームワークとの統合を提供しています。
 
-[Ionic のインストール](intro/cli.md) や [First App Tutorial](intro/next.md#build-your-first-app) を参考に、主な概念を学ぶことができます。
+[Ionic のインストール](intro/cli.md)や[最初のアプリのチュートリアル](intro/next.md#build-your-first-app)を参考に、主な概念を学ぶことができます。
 
 <intro-end />
 
@@ -139,11 +139,13 @@ Ionic Framework はコアチームによって積極的に開発され、メン�
 
 Ionic の開発者は世界 200 か国以上に何百万人もいます。コミュニティへの参加方法をいくつか紹介します:
 
-<!-- prettier-ignore -->
-- <a href="https://forum.ionicframework.com/" target="_blank">フォーラム:</a> 質問をしたり、アイデアを共有したりするのに最適な場所です。
-- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> アップデートを投稿し、Ionicコミュニティからのコンテンツを共有しています。
-- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> バグの報告や新機能のリクエストは、こちらでイシューを作成してください。プルリクエストも歓迎します！
-- <a href="https://ionicframework.com/contributors" target="_blank">コンテンツ作成:</a> 技術ブログを書いたり、Ionicコミュニティにあなたのストーリーを共有したりしてください。
+{/* Keep the prettier-ignore below. Without it, Prettier reformats these list items and the page stops building. These links stay as HTML because target="_blank" opens them in a new tab, which a markdown link cannot do. */}
+
+{/* prettier-ignore */}
+- <a href="https://forum.ionicframework.com/" target="_blank">フォーラム:</a> 質問をしたりアイデアを共有するのに最適な場所です。
+- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Ionicコミュニティからの更新情報やコンテンツを共有する場所です。
+- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> バグを報告したり新機能をリクエストするには、ここでissueを作成してください。PRも歓迎です！
+- <a href="https://ionicframework.com/contributors" target="_blank">コンテンツ作成:</a> 技術ブログを書いたり、Ionicコミュニティとあなたのストーリーを共有してください。
 
 ## ライセンス
 

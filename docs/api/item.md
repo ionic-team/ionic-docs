@@ -22,17 +22,15 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アイテムは、テキスト、アイコン、アバター、画像、Input、その他のネイティブまたはカスタム要素を含むことができる要素です。アイテムは他のアイテムと一緒に[リスト](./list)の行としてのみ使用してください。アイテムはスワイプ、削除、並び替え、編集などができます。
 
-
 ## 基本的な使い方
 
-アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-nowrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
+アイテムはテキストを左揃えにし、テキストがアイテムより広い場合は折り返されます。この動作は、Ionic Frameworkが提供するCSSユーティリティを使用して変更することができます。以下の例では`.ion-text-nowrap`を使用しています。アイテム内のテキストを変換するために追加できる他のクラスについては、[CSSユーティリティのドキュメント](/docs/layout/css-utilities)を参照してください。
 
 import Basic from '@site/static/usage/v8/item/basic/index.md';
 
 <Basic />
 
-
-## コンテンツの種類
+## コンテンツの種類 {/* #content-types */}
 
 リスト内のアイテムは様々な形をとりますが、一般的にビジュアル、テキスト、メタデータ、アクション、コントロールの5つの異なるコンテンツタイプをサポートします。しかし、これらのコンテンツタイプをすべて同時に使うべきではありません。以下のガイドでは、異なるコンテンツタイプと、アプリケーションでの適切な利用方法を示します。
 
@@ -80,7 +78,7 @@ import Text from '@site/static/usage/v8/item/content-types/text/index.md';
 
 ### メタデータ
 
-メタデータは、ステータステキストやカウントのようなアイテムの追加コンテキストを提供します。Badge](./badge)や[Note](./note)のようなコンポーネントは、メタデータを表示する素晴らしい方法です。
+メタデータは、ステータステキストやカウントのようなアイテムの追加コンテキストを提供します。[バッジ](./badge)や[注記](./note)のようなコンポーネントは、メタデータを表示する素晴らしい方法です。
 
 <BestPracticeFigure
   text="Limit the amount of metadata you include to only the most relevant information."
@@ -106,7 +104,7 @@ import Metadata from '@site/static/usage/v8/item/content-types/metadata/index.md
 
 <Metadata />
 
-### アクション
+### アクション {/* #actions */}
 
 アクションは、アクティブにすると何かをするインタラクティブな要素です。アイテムは1行に複数のアクションを表示することができます。しかし、開発者は、各アクションのタップターゲットが十分に大きいことを確認する必要があります。
 
@@ -160,7 +158,6 @@ import Controls from '@site/static/usage/v8/item/content-types/controls/index.md
 
 <Controls />
 
-
 ## クリック可能なItems
 
 `href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
@@ -168,7 +165,6 @@ import Controls from '@site/static/usage/v8/item/content-types/controls/index.md
 import Clickable from '@site/static/usage/v8/item/clickable/index.md';
 
 <Clickable />
-
 
 ## Detail Arrows
 
@@ -178,21 +174,12 @@ import DetailArrows from '@site/static/usage/v8/item/detail-arrows/index.md';
 
 <DetailArrows />
 
-
-<!--
-
-TODO add this functionality back as a css variable
-
-This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:
-
-```css
---item-detail-push-show: true;
-```
-
-詳細については、[theming documentation](/docs/theming/css-variables)を参照してください。
-
--->
-
+{/* TODO add this functionality back as a css variable */}
+{/* This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable: */}
+{/* ```css */}
+{/* --item-detail-push-show: true; */}
+{/* ``` */}
+{/* Refer to the [theming documentation](/docs/theming/css-variables) for more information. */}
 
 ## Item Lines
 
@@ -230,7 +217,7 @@ import CSSParts from '@site/static/usage/v8/item/theming/css-shadow-parts/index.
 
 <CSSParts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v8/item/theming/css-properties/index.md';
 
@@ -243,7 +230,7 @@ import CSSProps from '@site/static/usage/v8/item/theming/css-properties/index.md
 1. アイテムは [Lists](./list) の中だけで使用してください。
 2. リスト内のアイテムは、一貫したフォーマットで表示されるべきです。例えば、アイテムに装飾的なアイコンを表示する場合、アイコンはアイテム間で同じように配置されるべきです。
 3. アイテムは決して[入れ子になったインタラクティヴ](https://dequeuniversity.com/rules/axe/4.4/nested-interactive)をレンダリングすべきではありません。入れ子になったインタラクティブ要素が使用されている場合、スクリーンリーダーは正しいインタラクティブ要素を選択することができません。例えば、`button="true"`を持つ`ion-item`の中にボタンを置くことは避けてください。
-4. コンテントタイプ](#content-types)を正しく使用してください。Itemコンポーネントは、[List](./list)内の行として設計されており、汎用コンテナとして使用すべきではありません。
+4. [コンテンツタイプ](#content-types)を正しく使用してください。Item コンポーネントは、[リスト](./list)内の行として設計されており、汎用コンテナとして使用すべきではありません。
 
 ## アクセシビリティ
 

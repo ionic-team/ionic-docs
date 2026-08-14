@@ -18,16 +18,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Segment content is a wrapper element used to control the display of child elements when using swipeable segments. Segment content elements are children of a single
-[segment view](./segment-view.md) instance that is linked to a [segment](./segment.md). See our [swipeable segments](./segment.md#swipeable-segments) documentation
-for more information on how to use segment contents.
+セグメントコンテンツは、スワイプ可能なセグメントを使用する際に子要素の表示を制御するためのラッパー要素です。セグメントコンテンツ要素は、[セグメント](./segment.md)にリンクされた単一の[セグメントビュー](./segment-view.md)インスタンスの子要素です。セグメントコンテンツの使用方法については、[スワイプ可能なセグメント](./segment.md#swipeable-segments)のドキュメントを参照してください。
 
 ## Usage
 
 Each `ion-segment-content` needs a unique `id` attribute. This will be used to link the segment content to a segment button via the button's
 [contentId property](./segment-button.md#properties).
 
-<!-- Reuse swipeable segments playground -->
+{/* Reuse swipeable segments playground */}
 
 import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
 
@@ -48,5 +46,5 @@ import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
 ## CSS Custom Properties
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

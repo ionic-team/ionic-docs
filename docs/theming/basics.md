@@ -6,7 +6,7 @@ sidebar_label: 基本的な考え方
 import ColorAccordion from '@components/page/theming/ColorAccordion';
 
 <head>
-  <title>テーマ | Ionic Apps: Color and Theming Basics Definition</title>
+  <title>テーマ | Ionic アプリの色とテーマ設定の基本</title>
   <meta
     name="description"
     content="アプリのテーマ設定の定義が簡素化されました。Ionic Frameworkは、変更や修正が非常に簡単な事前に用意されたスタイルと色で構築されています。"
@@ -19,7 +19,7 @@ Ionic Framework は、さまざまなプラットフォームの標準デザイ�
 
 Ionic には 9 つのデフォルトカラーがあり、多くのコンポーネントの色を変更するのに利用できます。各色は実際には `shade` や `tint` などの複数のプロパティの集まりで、Ionic 全体で使用されます。
 
-色を変更する際には、関連するすべてのプロパティを設定することが重要です。これは[Color Generator](color-generator.md)ツールで簡単に行えますが、必要であればこれらは手動で記述することもできます。Ionic の色については、[Colors](colors.md)を参照してください。
+色を変える際は、関連するすべてのプロパティを設定することが重要です。これは[Color Generator](color-generator.md)ツールで簡単に行えますが、必要に応じて手動で書き込むことも可能です。イオニア色の詳細については、[Colors](colors.md)を参照してください。
 
 <ColorAccordion />
 
@@ -27,7 +27,7 @@ Ionic には 9 つのデフォルトカラーがあり、多くのコンポー�
 
 Ionic コンポーネントは、アプリが動作しているプラットフォームに応じて、見た目や動作を調整します。私たちはこれを **Adaptive Styling** と呼んでいます。これにより、開発者は複数のプラットフォームで同じコードベースを使用しながら、特定のプラットフォームで「ネイティブ」な外観のアプリを構築することができます。
 
-Ionic は、2 つの **modes** をもっており、これらはプラットフォーム: `ios` と `md` に基づいてコンポーネントの外観がカスタマイズされます。各プラットフォームにはデフォルトモードがありますが、簡単に変更できます。プラットフォームに基づいてアプリケーションをカスタマイズする方法の詳細については、[Platform Styles](platform-styles.md) をご覧ください。
+Ionic には 2 つの**モード**があり、**プラットフォーム**に基づいて部品の外観をカスタマイズするために使われています:`ios`と`md`。各プラットフォームにはデフォルトモードがありますが、簡単に設定できます。プラットフォームに基づくアプリケーションのカスタマイズについての詳細は、[Platform Styles](platform-styles.md)を参照してください。
 
 ## CSS Variables
 
@@ -35,8 +35,8 @@ Ionic Framework のコンポーネントは、 <a href="https://developer.mozill
 
 ## CSS Shadow Parts
 
-CSS Shadow Parts が追加され、Ionic Framework Shadow コンポーネントの完全なカスタマイズが容易になりました。これまで、 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a> を使用するコンポーネントは、シャドウ・ツリー内の要素を直接スタイル設定できませんでした。Shadow Parts が追加されたため、Shadow コンポーネントの内部要素のすべてのプロパティーに CSS 変数を使用する必要がなくなりました。パーツを使用した Ionic Framework コンポーネントのカスタマイズの詳細については、[CSS Shadow Parts](css-shadow-parts.md)ガイドを参照してください。
+CSS シャドウパーツが追加され、Ionic Framework Shadow コンポーネントを完全にカスタマイズしやすくなっています。過去には、<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a>を使うコンポーネントは、シャドウツリー内に直接スタイリングを行うことができませんでした。シャドウパーツの追加により、シャドウコンポーネントの内側要素にすべてのプロパティに対して CSS 変数を必要としなくなりました。パーツを使った Ionic Framework コンポーネントのカスタマイズに関する詳細は、[CSS Shadow Parts](css-shadow-parts.md)ガイドを参照してください。
 
 ## Branding
 
-Ionic は、ブランディングや配色にあったテーマとなるアプリケーションの配色を提供します。デフォルトのテーマは明るい背景を使用しますが、背景色からテキストの色まですべてカスタマイズ可能です。ブランディングの詳細については、[Themes](themes.md) をご覧ください。
+Ionic は、アプリケーションをブランドやカラースキームに合わせてテーマ設定するために使用できるアプリケーションカラーを提供します。デフォルトのテーマは明るい背景を使用しますが、背景色から文字色まで、すべて完全にカスタマイズ可能です。ブランディングの詳細については、[テーマ](themes.md)を参照してください。

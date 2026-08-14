@@ -21,7 +21,7 @@ title: Debugging
 
 ## Live Reload
 
-Live Reload is useful for debugging native functionality (such as plugins) on device hardware. Rather than deploy a new native binary each time you make a code change, it reloads the browser (or WebView) when changes in the app are detected. [Learn more here](../cli/livereload.md).
+Live Reload は、デバイス上のネイティブ機能（プラグインなど）のデバッグに便利です。コードを変更するたびに新しいネイティブバイナリを展開する代わりに、アプリの変更が検出されるとブラウザ（または WebView）をリロードします。[Live Reload](../cli/livereload.md)の詳細を学んでください。
 
 ## iOS and Safari
 
@@ -33,7 +33,7 @@ Next, open Safari on a Mac then enable **Show Develop menu in menu bar** under S
 
 Run the iOS simulator or connect your iOS device to your Mac, then run the Ionic app that you want to debug.
 
-Within Safari, select **Develop** in the toolbar. In the dropdown menu options, you should see the name of your device and app. Hover over the app name and click on **localhost**. This will open a new window with the Safari Developer Tools - use them to inspect and debug the Ionic app running on your device.
+Safari 内で、ツールバーから**Develop**を選択します。ドロップダウンメニューにはデバイスとアプリの名前が表示されます。アプリ名にカーソルを合わせ、**localhost**をクリックします。これにより、Safari 開発者ツールを使用して、デバイス上で実行されている Ionic アプリを検査およびデバッグするための新しいウィンドウが開きます。
 
 ## Android and Chrome
 
@@ -96,5 +96,5 @@ In the root of your Ionic project, create a folder called `.vscode` and inside t
 Next, launch the debugging process, selecting your device and Ionic app. VS Code will attach to both the Android device and Ionic app and you can now debug your app, which includes setting breakpoints.
 
 :::note
-If you are unable to set breakpoints and get an error saying, **"Breakpoint ignored because generated code not found (source map problem?)"** it means that the paths to the transpiled javascript files are incorrect. Use the `.scripts` command in the Debug console to see the loaded scripts. Make sure the paths of the scripts are correct by experimenting with different values in the `sourceMapPathOverrides` key in your `launch.json` configuration file.
+ブレークポイントを設定できず、**「生成されたコードが見つからないためブレークポイントは無視されました（ソースマップの問題？）」**というエラーが表示される場合、それはトランスパイルされた JavaScript ファイルへのパスが正しくないことを意味します。デバッグコンソールで`.scripts`コマンドを使用して読み込まれたスクリプトを一覧表示してください。`launch.json`構成ファイルの`sourceMapPathOverrides`キーで異なる値を試して、スクリプトのパスが正しいことを確認してください。
 :::

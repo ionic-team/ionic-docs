@@ -17,12 +17,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 フローティングアクションボタン（FAB）は、アプリケーションの主要なアクションを表します。デフォルトでは、円形の形をしています。ボタンが押されると、関連するアクションがさらに開かれることもあります。
 
 その名が示すように、FABは一般的に固定された位置でコンテンツの上に浮かんでいます。これは、FABボタンを[fab](./fab)コンポーネントで包むことで実現されます。もしボタンがfabで包まれていない場合は、コンテンツと一緒にスクロールします。
 
-使用例については、[fab documentation](./fab)を参照してください。
+使用例については、[fab ドキュメント](./fab) を参照してください。
 
 ## プロパティ
 <Props />
@@ -39,5 +38,5 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 ## CSSカスタムプロパティ
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

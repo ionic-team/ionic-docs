@@ -12,11 +12,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 カードサブタイトルは、[カードヘッダ](./card-header)の内側に配置されるべき、cardの子コンポーネントです。
 
-詳しくは、[Card](./card)のドキュメントを参照してください。
-
+詳細は[Card](./card)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

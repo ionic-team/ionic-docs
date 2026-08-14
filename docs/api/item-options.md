@@ -15,11 +15,9 @@ import Slots from '@ionic-internal/component-api/v8/item-options/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 アイテムオプションコンポーネントは、スライドアイテムの[アイテムオプション](./item-option)ボタンのためのコンテナです。これらのボタンは、[startまたはend](#side-description)のいずれかに配置することができます。
 
-詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
-
+詳細については、[item sliding](./item-sliding)のドキュメントを参照してください。
 
 ## Side Description
 
@@ -27,9 +25,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 |---------|-----------------------------------------------------------------|-------------------------------------------------------------------|
 | `start` | To the `left` of the content in LTR, and to the `right` in RTL. | From `left` to `right` in LTR, and from `right` to `left` in RTL. |
 | `end`   | To the `right` of the content in LTR, and to the `left` in RTL. | From `right` to `left` in LTR, and from `left` to `right` in RTL. |
-
-
-
 
 ## プロパティ
 <Props />

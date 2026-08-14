@@ -18,7 +18,7 @@ Microsoft 製の無料でとてもパワフルなテキストエディタです�
 ## ターミナル
 
 :::note
-Ionic 開発の多くは、コマンドラインを利用する必要があります。コマンドラインに慣れていない場合は、[このブログ](https://ionicframework.com/blog/new-to-the-command-line/)で簡単な概要を確認してください。
+Ionic の開発の多くはコマンドラインに慣れていることが必要です。コマンドラインに慣れていない場合は、[コマンドライン初心者向け](https://ionicframework.com/blog/new-to-the-command-line/)のブログ記事で簡単な紹介を参照してください。
 :::
 
 一般的に、OS に最初からついているターミナルの使用をお勧めします。多くのサードパーティ端末は Ionic で正常に動作しますが、サポートされていない場合があります。
@@ -28,7 +28,7 @@ Ionic 開発の多くは、コマンドラインを利用する必要があり�
 
 Git Bash（<a href="https://git-scm.com" target="_blank">git-scm.com</a>）は TTY 対話機能をサポートしておらず、Ionic はサポートしていません。
 
-## Node と npm
+## Node と npm {/* #node-npm */}
 
 モダンな JavaScript プロジェクトのほとんどのツールは[Node.js](../reference/glossary.md#node)で作られています。[ダウンロードページ](https://nodejs.org/en/download/)には、すべてのプラットフォームのインストールパッケージが事前に用意されています。互換性を確保するために LTS バージョンを選択することをお勧めします。
 
@@ -42,7 +42,7 @@ $ npm --version
 ```
 
 :::note
-`npm` のグローバルパッケージをインストールする時、パーミッションエラーが起きがちです。 もし `EACCES` エラーがでたら、 [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) を確認ください。
+macOS でグローバルパッケージを`npm`を使ってインストールすると、権限エラーが一般的に発生します。`EACCES`エラーが発生した場合は、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## Git

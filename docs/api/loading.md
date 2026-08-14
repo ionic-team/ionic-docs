@@ -17,12 +17,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
 ユーザインタラクションをブロックしながらアクティビティを示すためのオーバーレイです。ローディング・インジケータはアプリのコンテンツの上に表示され、ユーザーの操作を再開するために消すことができます。オプションでbackdropが含まれており、`showBackdrop: false` で無効にすることができます。
 
 ## 基本的な使い方
 
-一度表示されると、ロードインジケータはデフォルトで無期限に表示されます。開発者は、コンポーネント上で `dismiss()` メソッドを呼び出すことで、作成後にローディングインジケータを手動で解除することができます。onDidDismiss` 関数を呼び出すと、ローディングインジケータが解除された後にアクションを実行することができます。
+一度表示されると、ロードインジケータはデフォルトで無期限に表示されます。開発者は、コンポーネント上で `dismiss()` メソッドを呼び出すことで、作成後にローディングインジケータを手動で解除することができます。`onDidDismiss` 関数を呼び出すと、ローディングインジケータが解除された後にアクションを実行することができます。
 
 また、ロードオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間が経過した後にロードインジケータを自動的に解除するよう設定することもできます。
 
@@ -38,11 +37,11 @@ import Controller from '@site/static/usage/v8/loading/controller/index.md';
 
 <Controller />
 
-## Customization
+## カスタマイズ
 
 ### スピナー
 
-使用するスピナーは `spinner` プロパティを使用してカスタマイズすることができます。オプションの完全なリストは [spinner property documentation](#spinner) を参照してください。
+使用するスピナーは `spinner` プロパティでカスタマイズできます。すべてのオプションについては、[`spinner` プロパティのドキュメント](#spinner)を参照してください。
 
 import Spinners from '@site/static/usage/v8/loading/spinners/index.md';
 
@@ -93,7 +92,6 @@ interface LoadingOptions {
   leaveAnimation?: AnimationBuilder;
 }
 ```
-
 
 ## プロパティ
 <Props />

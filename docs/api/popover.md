@@ -17,12 +17,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Popoverは、現在のページの上部に表示されるダイアログです。これは何にでも使用できますが、通常はナビゲーションバーに収まらないオーバーフローアクションに使用されます。
 
 `ion-popover` を使用するには、インラインで使用する方法と `popoverController` を使用する方法がります。それぞれの方法には異なる考慮点があるので、あなたのユースケースに最も適した方法を使用するようにしましょう。
 
-## インラインポップオーバー
+## インラインポップオーバー {/* #inline-popovers */}
 
 `ion-popover` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、ポップオーバーを表示するために必要なハンドラの数を減らすことができます。
 
@@ -64,16 +63,15 @@ import InlineTrigger from '@site/static/usage/v8/popover/presenting/inline-trigg
 
 `isOpen` は一方向のデータバインディングを使用しています。つまり、ポップオーバーが閉じられたときに自動的に `false` に設定されることはありません。開発者は `ionPopoverDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` にセットする必要があります。この理由は、`ion-popover` の内部がアプリケーションの状態と密に結合されるのを防ぐためである。一方通行のデータバインディングでは、ポップオーバーはリアクティブ変数が提供するブーリアン値だけを気にすればよいのです。双方向のデータバインディングでは、ポップオーバーはブール値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは非決定的な動作につながり、アプリケーションのデバッグを難しくします。
 
-
 import IsOpenTrigger from '@site/static/usage/v8/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
 
-## ポップオーバーコントローラ
+## ポップオーバーコントローラ {/* #controller-popovers */}
 
 Ionic Framework からインポートされた `popoverController` を使用することで、`ion-popover` をプログラム的に表示することも可能です。これにより、インラインポップオーバーのカスタマイズ以上に、ポップオーバーを表示するタイミングを完全に制御することができます。
 
-### どのような場合に使用するのか
+### いつ使うか
 
 ポップオーバーはインラインで記述することをお勧めします。ポップオーバーをインラインで書くことが現実的でない複雑なユースケースの場合にのみ `popoverController` を使用すべきです。コントローラを使用する場合、ポップオーバーは前もって作成されないので、 `trigger` や `trigger-action` などのプロパティはここでは適用されません。さらに、ネストされたポップオーバーはコントローラのアプローチと互換性がありません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに自動的にアプリケーションのルートに追加されるからです。
 
@@ -87,7 +85,6 @@ import ControllerExample from '@site/static/usage/v8/popover/presenting/controll
 
 <ControllerExample />
 
-
 ## スタイリング
 
 ポップオーバーはアプリケーションのルートで表示されるので、アプリケーション全体を覆うように表示されます。この動作はインラインポップオーバーとコントローラから表示されるポップオーバーの両方に適用されます。そのため、カスタムポップオーバースタイリングは特定のコンポーネントにスコープすることができません。代わりに、スタイルはグローバルに適用されなければなりません。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
@@ -99,7 +96,6 @@ import ControllerExample from '@site/static/usage/v8/popover/presenting/controll
 import Styling from '@site/static/usage/v8/popover/customization/styling/index.md';
 
 <Styling />
-
 
 ## 配置
 
@@ -129,7 +125,7 @@ import Positioning from '@site/static/usage/v8/popover/customization/positioning
 
 ドロップダウンメニューを作成するとき、ポップオーバーの幅をトリガー要素の幅と一致させたい場合があります。トリガーの幅を事前に知らずにこれを行うのは厄介です。 `size` プロパティを `'cover'` に設定すると、Ionic Framework はポップオーバーの幅をトリガー要素の幅に一致させるようにします。
 
-`popoverController` を使用する場合は、`event` オプションでイベントを指定する必要があり、Ionic Framework は `event.target` を参照要素に使用します。このパターンの例は [controller demo](#controller-popovers) を参照してください。
+`popoverController`を使用している場合、`event`オプションでイベントを指定する必要があり、Ionic Frameworkは`event.target`を参照要素として使用します。このパターンの例については、[controllerデモ](#controller-popovers)を参照してください。
 
 import Sizing from '@site/static/usage/v8/popover/customization/sizing/index.md';
 
@@ -148,7 +144,6 @@ import Sizing from '@site/static/usage/v8/popover/customization/sizing/index.md'
 import NestedPopover from '@site/static/usage/v8/popover/nested/index.md';
 
 <NestedPopover />
-
 
 ## Interfaces
 
@@ -181,7 +176,6 @@ interface PopoverOptions {
   arrow?: boolean;
 }
 ```
-
 
 ## Types
 
@@ -251,7 +245,7 @@ import Mount from '@site/static/usage/v8/popover/performance/mount/index.md';
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 <CustomProps />
 
 ## Slots

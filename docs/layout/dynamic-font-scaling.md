@@ -22,7 +22,7 @@ import DynamicFontScaling from '@site/static/usage/v8/layout/dynamic-font-scalin
 
 ダイナミックフォントスケーリング は、[typography.css](/docs/layout/global-stylesheets#typographycss) ファイルがインポートされている限り、デフォルトで有効になっています。このファイルをインポートすると `--ion-dynamic-font` 変数が定義され、ダイナミックフォントスケーリング が有効になります。推奨はされませんが、開発者はアプリケーションコード内でこの変数を `initial` に設定することで ダイナミックフォントスケーリング を無効にすることもできます。
 
-### カスタムコンポーネントへの統合
+### カスタムコンポーネントへの統合 {/* #integrating-custom-components */}
 
 開発者は、`px` 単位を使用している `font-size` 宣言を [rem 単位](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths) に変更することで、カスタムコンポーネントを ダイナミックフォントスケーリングに対応させることができます。`px` から `rem` へ変換する簡単な方法は、ピクセルのフォントサイズをブラウザのデフォルトフォントサイズ（通常は `16px`）で割ることです。例えば、コンポーネントのフォントサイズが `14px` の場合、`14px / 16px = 0.875rem` として `rem` に変換できます。また、フォントサイズを上書きしている Ionic コンポーネントがある場合も、`rem` 単位を使用するよう更新する必要があります。
 
@@ -67,7 +67,6 @@ html {
     <div class="child">Child element with 80px</div>
   </div>
 </div>
-```
 
 <div style={{ fontSize: '20px' }}>
   Parent element with 20px
@@ -76,6 +75,7 @@ html {
     <div style={{ fontSize: '2em' }}>Child element with 80px</div>
   </div>
 </div>
+```
 
 この複合効果により、ダイナミックフォントスケーリングで作業する際は、`em`単位の代わりに`rem`単位を使用することを強くお勧めします。`rem`単位は、要素のフォントサイズをルート要素（通常は`<html>`）のフォントサイズを基準に設定します。ルート要素のデフォルトフォントサイズは通常`16px`です。
 
@@ -141,7 +141,7 @@ Android の Chrome Web Browser は、Android Web View とは異なる動作を�
 
 その結果、ダイナミックフォントスケーリングを使用する場合は、iOS デバイスで`ios`モードを使用し、Android デバイスで`md`モードを使用することを強くお勧めします。
 
-## デバイスでのフォントサイズの変更
+## デバイスでのフォントサイズの変更 {/* #changing-the-font-size-on-a-device */}
 
 フォントスケーリングの設定は、ユーザーがデバイスごとに設定します。これにより、ユーザーはこの動作をサポートするすべてのアプリケーションでフォントをスケールできます。このガイドでは、各プラットフォームでフォントスケーリングを有効にする方法を示します。
 
@@ -149,14 +149,14 @@ Android の Chrome Web Browser は、Android Web View とは異なる動作を�
 
 iOS でのフォントスケーリングは、設定アプリで設定できます。
 
-詳細については、[Apple Support](https://support.apple.com/en-us/102453)を参照してください。
+詳細については[Apple サポート](https://support.apple.com/en-us/102453)を参照してください。
 
 ### Android
 
 ユーザーがフォントスケーリング設定にアクセスする場所はデバイスによって異なりますが、通常は設定アプリの「アクセシビリティ」ページにあります。
 
 :::info
-Android の Chrome Web Browser には、システムレベルのフォントスケールを尊重する際にいくつかの制限があります。詳細については、[Chrome for Android](#chrome-for-android)を参照してください。
+Android 上の Chrome ウェブブラウザには、システムレベルのフォントスケールを尊重する上でいくつかの制限があります。詳細は [Android の Chrome](#chrome-for-android) を参照してください。
 :::
 
 ## トラブルシューティング
@@ -165,17 +165,17 @@ Android の Chrome Web Browser には、システムレベルのフォントス�
 
 ダイナミックフォントスケーリングがアプリに影響を与えない理由はいくつかあります。以下のリストは網羅的ではありませんが、ダイナミックフォントスケーリングが機能しない理由をデバッグするために確認すべきいくつかのことを提供します。
 
-1. Ionic のバージョンがダイナミックフォントスケーリングをサポートしていることを確認してください。ダイナミックフォントスケーリングは、Ionic v7.5 から追加されました。
-2. [typography.css](/docs/layout/global-stylesheets#typographycss)ファイルがインポートされていることを確認してください。このファイルは、ダイナミックフォントスケーリングが機能するために必要です。
-3. コードがルート要素のデフォルトフォントサイズをオーバーライドしていないことを確認してください。ルート要素にフォントサイズを手動で設定すると、ダイナミックフォントスケーリングが意図したとおりに機能しなくなります。
-4. コードが Ionic コンポーネントのフォントサイズをオーバーライドしていないことを確認してください。`font-size`ルールを設定する Ionic コンポーネントは`rem`単位を使用します。ただし、アプリがそれを`px`を使用するようにオーバーライドしている場合、そのカスタムルールを`rem`を使用するように変換する必要があります。詳細については、[カスタムコンポーネントの統合](#integrating-custom-components)を参照してください。
-5. Chrome for Android を使用している場合は、「Accessibility Page Zoom」が有効になっていることを確認してください。詳細については、[Chrome for Android](#chrome-for-android)を参照してください。
+1. 使用している Ionic のバージョンが動的フォントスケーリングに対応しているか確認してください。動的フォントスケーリングは Ionic v7.5 以降で追加されました。
+2. [typography.css](/docs/layout/global-stylesheets#typographycss) ファイルがインポートされているか確認してください。このファイルは動的フォントスケーリングを有効にするために必要です。
+3. ルート要素のデフォルトフォントサイズをコードが上書きしていないか確認してください。ルート要素に手動でフォントサイズを設定すると、動的フォントスケーリングが意図した通りに機能しません。
+4. Ionic コンポーネントのフォントサイズをコードが上書きしていないか確認してください。Ionic コンポーネントが `font-size` ルールを設定している場合、`rem` 単位が使用されます。しかし、アプリがそれを `px` に上書きしている場合は、そのカスタムルールを `rem` に変換する必要があります。詳細は [カスタムコンポーネントの統合](#integrating-custom-components) を参照してください。
+5. Android 用 Chrome を使用している場合、「アクセシビリティページズーム」が有効になっていることを確認してください。詳細は [Android 用 Chrome](#chrome-for-android) を参照してください。
 
 ### Android で最大および最小フォントサイズが尊重されない
 
 Android Web View は、システムレベルのフォントスケール設定によって`px`単位で定義されたフォントサイズをスケールします。これは、実際のフォントサイズが[min()](https://developer.mozilla.org/en-US/docs/Web/CSS/min)、[max()](https://developer.mozilla.org/en-US/docs/Web/CSS/max)、または[clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)で定義されたフォントサイズより大きいか小さい可能性があることを意味します。
 
-詳細については、[Android でのフォントスケーリングの仕組み](#android)を参照してください。
+詳細については [Android でのフォントスケーリングの仕組み](#android) を参照してください。
 
 ### ダイナミックフォントスケーリングが無効でもフォントサイズが大きい/小さい
 
@@ -190,5 +190,5 @@ Action Sheet などの特定のネイティブ iOS コンポーネントは、Io
 ルート要素のデフォルトフォントサイズは通常`16px`です。ただし、iOS デバイスでのダイナミックフォントスケーリングは、デフォルトフォントサイズが`17px`の["Body"テキストスタイル](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications)を利用します。Ionic コンポーネント内のテキストはルート要素のフォントサイズを基準にスケールされるため、システムレベルのテキストスケールが変更されていなくても、ダイナミックフォントスケーリングを有効にすると一部のテキストが大きくなったり小さくなったりする場合があります。
 
 :::info
-iOS は、デフォルトフォントサイズが`16px`の"Callout"テキストスタイルを提供します。ただし、このフォントスタイルは現在、Web コンテンツに公開されていません。詳細については、[WebKit でサポートされているテキストスタイル](https://webkit.org/blog/3709/using-the-system-font-in-web-content/)を参照してください。
+iOS では「Callout」というテキストスタイルがあり、デフォルトフォントサイズは `16px` です。しかし、このフォントスタイルは現在ウェブコンテンツには公開されていません。詳細は [WebKit のサポートされているテキストスタイル](https://webkit.org/blog/3709/using-the-system-font-in-web-content/) を参照してください。
 :::

@@ -72,6 +72,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Build Your First App',
+          key: 'angular-your-first-app',
           items: [
             'angular/your-first-app',
             'angular/your-first-app/taking-photos',
@@ -114,6 +115,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Build Your First App',
+          key: 'react-your-first-app',
           items: [
             'react/your-first-app',
             'react/your-first-app/taking-photos',
@@ -164,6 +166,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Build Your First App',
+          key: 'vue-your-first-app',
           items: [
             'vue/your-first-app',
             'vue/your-first-app/taking-photos',
@@ -183,6 +186,7 @@ module.exports = {
         'vue/slides',
         'vue/utility-functions',
         'vue/platform',
+        'vue/testing',
         'vue/pwa',
         'vue/storage',
         'vue/troubleshooting',
@@ -197,7 +201,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '開発',
+      label: 'デプロイ',
       collapsed: false,
       items: ['deployment/app-store', 'deployment/play-store', 'deployment/progressive-web-app'],
     },

@@ -10,11 +10,9 @@ import Slots from '@ionic-internal/component-api/v8/refresher-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 リフレッシュコンテンツには、プルトゥリフレッシュ時に表示するテキスト、アイコン、スピナーが含まれます。Ionicは、プラットフォームに基づいて、プルアイコンとリフレッシュスピナーを表示します。ただし、デフォルトのアイコン、スピナー、テキストは、リフレッシュの状態に応じてカスタマイズできます。
 
-使用例については、[Refresher](/docs/api/refresher)ドキュメントを参照してください。
-
+使用例については、[Refresher](/docs/api/refresher)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

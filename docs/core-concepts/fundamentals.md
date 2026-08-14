@@ -15,9 +15,9 @@ Ionic アプリの開発に慣れていない人には、Ionic プロジェク�
 
 ## UI コンポーネント
 
-Ionic Framework は、アプリケーションの構成要素として機能する、再利用可能な UI コンポーネントのライブラリです。Ionic のコンポーネントは、HTML、CSS、JavaScript を利用した[Web 標準](../reference/glossary.md#web-standards)に基づいて構築されています。コンポーネントは事前に構築されていますが、高度にカスタマイズできるようになるように設計されており、アプリで各コンポーネントを独自に作成できるため、アプリごとにオリジナルの外観を持たせることができます。具体的には、Ionic コンポーネントは、アプリ全体で外観をグローバルに変更するように簡単にテーマを設定できます。外観のカスタマイズの詳細については、[Theming](../theming/basics.md)を参照してください。
+Ionic Framework は、アプリケーションの構成要素として機能する再利用可能な要素である UI コンポーネントのライブラリです。Ionic コンポーネントは、HTML、CSS、JavaScript を使用して[ウェブ標準](../reference/glossary.md#web-standards)で構築されています。コンポーネントは事前に作成されていますが、アプリがそれぞれのコンポーネントを独自のものにできるように最初から高度にカスタマイズ可能に設計されており、各アプリに独自の外観や操作感を持たせることができます。具体的には、Ionic コンポーネントは簡単にテーマ設定ができ、アプリ全体の外観をグローバルに変更することが可能です。外観のカスタマイズに関する詳細は、[Theming](../theming/basics.md)をご参照ください。
 
-## スタイルの適用
+## スタイルの適用 {/* #adaptive-styling */}
 
 スタイルの適用は、アプリ開発者が複数のプラットフォームで共通したベースとなるコードを使用できる Ionic Framework に組み込まれている機能です。すべての Ionic コンポーネントは、自動的にアプリケーションが実行されているプラットフォームに外観を合わせます。たとえば、iPhone や iPad などの Apple デバイスは、Apple 独自の<a href="https://www.apple.com/ios" target="_blank">iOS デザイン</a>を使用します。同様に、Android デバイスは、<a href="https://material.io/guidelines/" target="_blank">Material Design</a>と呼ばれる Google のデザインを使用します。
 
@@ -40,12 +40,12 @@ Web テクノロジで構築されたアプリ（Ionic アプリなど）の素�
 
 Ionic の最も一般的な使用例の 1 つは、 <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> と <a href="https://play.google.com/" target="_blank">Play Store</a> の両方からダウンロードできるアプリを作成することです。iOS と Android の両方のソフトウェア開発キット（SDK）は、完全なネイティブ SDK アクセスを可能にしながら、あらゆる Ionic アプリをレンダリングする [Web Views](webview.md) を提供します。
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 <a href="https://capacitorjs.com/" target="_blank">Capacitor</a> や <a href="https://cordova.apache.org/" target="_blank">Cordova</a> などのプロジェクトは、IonicアプリにネイティブSDKへのアクセスを与えるためによく使われています。つまり、開発者は一般的なWeb開発ツールを使ってアプリを素早く構築することができ、かつデバイスの加速度センサー、カメラ、GPSなどのネイティブ機能にアクセスすることができるのです。
 
 ## テーマ
 
-Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>を使って構築されており、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS プロパティ（変数）</a>が提供する柔軟性を活用できます。これにより、ウェブ標準に従いつつ、見栄えのするアプリを驚くほど簡単にデザインできます。私たちは、開発者がいくつかの素晴らしいデフォルトを持つことができるように色のセットを提供しますが、ブランド、企業、または希望のカラーパレットに一致するデザインを作成するためにそれらを上書きすることをお勧めします。アプリケーションの背景色からテキストの色まで、すべてカスタマイズ可能です。アプリのテーマ設定の詳細については、 [Theming](../theming/basics.md) を参照してください。
+Ionic Framework は<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>を使って構築されており、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS プロパティ（変数）</a>が提供する柔軟性を活用できます。これにより、ウェブ標準に従いつつ、見栄えのするアプリを驚くほど簡単にデザインできます。私たちは、開発者がいくつかの素晴らしいデフォルトを持つことができるように色のセットを提供しますが、ブランド、企業、または希望のカラーパレットに一致するデザインを作成するためにそれらを上書きすることをお勧めします。アプリケーションの背景色からテキストの色まで、すべてカスタマイズ可能です。アプリのテーマ設定の詳細については、[テーマ設定](../theming/basics.md)を参照してください。
 
 ## イベント
 

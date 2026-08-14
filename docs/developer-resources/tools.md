@@ -14,7 +14,7 @@ TypeScript での作業を素晴らしいものにする機能を調べてくだ
 
 ### [Glossary](../reference/glossary.md)
 
-Ionic で開発中に利用される一般的な用語の一覧。
+Ionic で開発する際によく出会う用語のリストです。
 
 ### [Starter Apps](https://ionicthemes.com)
 

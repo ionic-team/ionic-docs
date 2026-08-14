@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 特定のデータ型を必要とする入力では、代わりに `type` 属性を使用する必要があります。たとえば、email の入力では、 `inputmode.` を指定するのではなく、`type="email"`
 を使用する必要があります。これは、入力されるデータが常に email の形式になるためです。一方、input が email またはユーザー名を受け入れる場合は、入力されるデータが常に `type="email"` になるとは限らないため、 `inputmode=”email”` を使用するのが適切です。
 
-使用可能な値のリストについては、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>を参照してください。
+許可されている値の一覧については、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode ドキュメント</a>を参照してください。
 
 ### Usage
 
@@ -42,7 +42,7 @@ import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.md';
 
 `enterkeyhint` はグローバル属性であるため、通常の入力エレメントに加えて、`ion-input` や `ion-textarea` などの Ionic コンポーネントでも使用できます。
 
-使用可能な値のリストについては、 <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a> を参照してください。
+許可されている値の一覧については、<a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint 標準</a>を参照してください。
 
 ### Usage
 
@@ -51,16 +51,16 @@ import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
 <Enterkeyhint />
 
 :::note
-`enterkeyhint` 属性は Chrome 77+ and iOS Safari 13.4+ のデバイスでサポートされています
+`enterkeyhint` 属性は Chrome 77 以降および iOS Safari 13.4 以降のデバイスでサポートされています
 :::
 
-## ダークモード
+## ダークモード {/* #dark-mode */}
 
 デフォルトでは、キーボードテーマは OS によって決定されます。たとえば、iOS でダークモードが有効になっている場合、アプリケーションの CSS にダークテーマがない場合でも、アプリケーションのキーボードはダークテーマで表示されます。
 
 モバイル Web ブラウザや PWA でアプリを実行しているとき、キーボードを特定のテーマで表示させる方法はありません。
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+Capacitor や Cordova でアプリを実行する際、特定のテーマでキーボードを表示することが可能です。この設定に関する詳細は、<a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>を参照してください。
 
 ## アクセサリバーを非表示にする
 
@@ -68,9 +68,9 @@ When running an app in Capacitor or Cordova, it is possible to force the keyboar
 
 モバイル Web ブラウザや PWA でアプリを実行する場合、アクセサリバーを非表示にする方法はありません。
 
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+Capacitor や Cordova でアプリを実行する際、アクセサリーバーを非表示にすることが可能です。この設定に関する詳細は、<a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>を参照してください。
 
-## キーボードのライフサイクルイベント
+## キーボードのライフサイクルイベント {/* #keyboard-lifecycle-events */}
 
 スクリーンキーボードの存在を検出することは、そうでなければキーボードによって隠される入力の位置を調整するのに有用です。Capacitor と Cordova アプリでは、開発者は一般的にネイティブのキーボードプラグインを使ってキーボードライフサイクルイベントを Listen します。モバイルブラウザや PWA で動作するアプリでは、サポートされていれば Visual Viewport API を使用することができる。Ionic Framework はこれらの両方のアプローチをラップし、`window` に `ionKeyboardDidShow` と `ionKeyboardDidHide` イベントを発行します。 `ionKeyboardDidShow` のイベントペイロードには、キーボードの高さの近似値がピクセル単位で含まれています。
 
@@ -164,7 +164,6 @@ const { isOpen, keyboardHeight } = useKeyboard();
 watch(keyboardHeight, () => {
   console.log(`Is Keyboard Open: ${isOpen.value}, Keyboard Height: ${keyboardHeight.value}`);
 });
-
 
 ```
 </TabItem>

@@ -39,7 +39,7 @@ import Basic from '@site/static/usage/v8/input-otp/basic/index.md';
   - 標準のキーボードを表示するには `inputmode="text"` を設定します。
   - `pattern="[\p{L}\p{N}]"` を設定し、英数字の入力を許可する。
 
-パターンの検証やカスタマイズの詳細については、[パターン](#pattern)のセクションを参照してください。
+パターンのバリデーションとカスタマイズの詳細については、[Pattern](#pattern)のセクションを参照してください。
 
 import Type from '@site/static/usage/v8/input-otp/type/index.md';
 

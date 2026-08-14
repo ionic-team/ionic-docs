@@ -210,7 +210,7 @@ import Chain from '@site/static/usage/v8/animations/chain/index.md';
 
 <Chain />
 
-## ジェスチャーアニメーション
+## ジェスチャーアニメーション {/* #gesture-animations */}
 
 Ionic Animations は、[Ionic Gestures](gestures.md)とシームレスに統合することで、強力なジェスチャーベースのアニメーションを作成する機能を開発者に提供します。
 
@@ -248,7 +248,7 @@ CSS と Web Animations は、通常、コンポジタースレッドで処理さ
 
 `height`や`width`などのプロパティをアニメーション化すると、追加のレイアウトとペイントが発生し、ジャンクを引き起こし、アニメーションパフォーマンスを低下させる可能性があります。一方、`transform`や`opacity`などのプロパティをアニメーション化すると、ブラウザによって高度に最適化され、通常はジャンクをほとんど引き起こしません。
 
-どの CSS プロパティがレイアウトやペイントを引き起こすかについては、[CSS Triggers](https://csstriggers.com/)を参照してください。
+どの CSS プロパティがレイアウトやペイントを引き起こすかについての情報は、[CSS Triggers](https://csstriggers.com/)を参照してください。
 
 ## デバッグ
 
@@ -258,8 +258,8 @@ Chrome でアニメーションをデバッグするには、Chrome DevTools を
 
 ```javascript
 /**
- * .square要素のアニメーションは、
- * Chrome DevToolsで"my-animation-identifier"を表示する必要があります。
+ * The animation for the .square element should
+ * show "my-animation-identifier" in Chrome DevTools.
  */
 const animation = createAnimation('my-animation-identifier')
   .addElement(document.querySelector('.square'))
@@ -329,7 +329,7 @@ interface AnimationPlayOptions {
 | `elements: HTMLElement[]`      | アニメーションにアタッチされたすべての要素。             |
 | `parentAnimation?: Animation`  | 指定されたアニメーションオブジェクトの親アニメーション。 |
 
-### メソッド
+### メソッド {/* #methods */}
 
 | Name                                                                                                                 | 説明                                                                                                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

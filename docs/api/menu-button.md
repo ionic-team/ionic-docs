@@ -17,11 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Menu Buttonコンポーネントは、アイコンを含み、クリックされるとメニューを開く機能を自動的に追加します。
 
-詳しくは、[menu](./menu)のドキュメントをご覧ください。
-
+詳細については、[メニュー](./menu)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

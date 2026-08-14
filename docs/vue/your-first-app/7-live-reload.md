@@ -11,7 +11,7 @@ sidebar_label: ライブリロード
   />
 </head>
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+これまでのところ、どこでも動作するクロスプラットフォームアプリを開発するのがどれだけ簡単かを学びました。開発の経験はかなり迅速ですが、さらに速く進める方法があると言ったらどうでしょうか？
 
 We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.md) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
@@ -176,7 +176,7 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/tutorial-photo-gallery-vue).
+このアプリの[完全なソースコード](https://github.com/ionic-team/tutorial-photo-gallery-vue)は GitHub で見つけることができます。
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

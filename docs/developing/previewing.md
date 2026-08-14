@@ -44,8 +44,8 @@ If the external link isn't listed on the terminal, then run `ionic serve --exter
 
 :::
 
-When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
-When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
+ネイティブ機能を実装する際は、[Platform Detection](../core-concepts/cross-platform.md)を使用してください。
+実際のデバイスでテストする準備ができたら、[iOS](ios.md)および[Android](android.md)に関するガイドを参照してください。
 
 ## モバイルビューポートのシミュレーション
 
@@ -59,7 +59,7 @@ When you're ready to test on a real device, see here for [iOS](ios.md) and [Andr
 
 ここから、ドロップダウンから異なるデバイスタイプを選択し、デバイスの方向を変更し、ネットワーク速度をスロットルすることができます。
 
-その他の機能および情報については、https://developer.chrome.com/docs/devtools/device-mode/ を参照してください。
+追加の機能や情報については、[Chrome DevTools のデバイスモードに関するドキュメント](https://developer.chrome.com/docs/devtools/device-mode/)を参照してください。
 
 ### Safari
 
@@ -75,7 +75,7 @@ When you're ready to test on a real device, see here for [iOS](ios.md) and [Andr
 
 ここから、エミュレートするデバイスの種類を選択したり、デバイスの向きを変更したりすることができます。
 
-その他の機能および情報については、https://developer.apple.com/safari/tools/ を参照してください。
+追加の機能や情報については、[Safari 開発者ツールのドキュメント](https://developer.apple.com/safari/tools/)を参照してください。
 
 ### Firefox
 
@@ -85,4 +85,4 @@ When you're ready to test on a real device, see here for [iOS](ios.md) and [Andr
 
 ここから、ドロップダウンから異なるデバイスタイプを選択し、デバイスの方向を変更し、ネットワーク速度をスロットルすることができます。
 
-その他の機能および情報については、https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/ を参照してください。
+追加の機能や情報については、[Firefox Responsive Design Mode documentation](https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/)を参照してください。

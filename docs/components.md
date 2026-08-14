@@ -7,10 +7,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>UIコンポーネント | User Interface Application Building Components</title>
+  <title>UI コンポーネント | ユーザーインターフェイスを構築するコンポーネント</title>
   <meta
     name="description"
-    content="Ionic Framework comes stock with a number of high-level UI components, including cards, lists, and tabs to quickly and easily build your app's user interface."
+    content="Ionic Framework には、アプリのユーザーインターフェイスをすばやく簡単に構築できる、カード、リスト、タブなどの高レベルな UI コンポーネントが標準で用意されています。"
   />
   <style>{`
     :root {
@@ -49,7 +49,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>カードは重要なコンテンツを表示する優れた方法であり、画像、ボタン、テキストなどを含めることができます。</p>
+  カードは重要なコンテンツを表示するのに最適な方法であり、画像、ボタン、テキストなどを含めることができます。
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -91,10 +91,8 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
-  <p>
-    Itemは、テキスト、アイコン、アバター、画像、入力、およびその他のネイティブまたはカスタム要素を含むことができる要素です。
-    Itemは、スワイプ、削除、並び替え、編集などが可能です。
-  </p>
+  アイテムは、テキスト、アイコン、アバター、画像、入力、およびその他のネイティブまたはカスタム要素を含むことができる要素です。
+  アイテムはスワイプ、削除、並べ替え、編集などが可能です。
 </DocsCard>
 
 <DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
@@ -102,9 +100,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
-  <p>
-    アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚的なコンテンツを強化するように設計されています。
-  </p>
+  アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚コンテンツを強化するように設計されています。
 </DocsCard>
 
 <DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">

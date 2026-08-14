@@ -15,9 +15,7 @@ import Slots from '@ionic-internal/component-api/v8/header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 ヘッダーは、ページの上部に配置されるページのルートコンポーネントです。1つ以上の[ツールバー](./toolbar)のラッパーとして使用することが推奨されていますが、あらゆる要素をラップするために使用することができます。ツールバーがヘッダー内で使用される場合、コンテンツは正しいサイズになるように調整され、ヘッダーはデバイスセーフ領域を考慮します。
-
 
 ## 基本的な使い方
 
@@ -25,17 +23,15 @@ import Basic from '@site/static/usage/v8/header/basic/index.md';
 
 <Basic />
 
-
 ## 半透明のヘッダー
 
-ヘッダーは、`translucent`プロパティを設定することで、ネイティブのiOSアプリケーションに見られるような透明度に合わせることができます。ヘッダーの後ろにスクロールするコンテンツを見るには、コンテンツに `fullscreen` プロパティを設定する必要があります。この効果は、モードが `"ios"` で、デバイスが [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) をサポートしている場合にのみ適用されます。
+ヘッダーは、`translucent`プロパティを設定することで、ネイティブiOSアプリケーションで見られる透明度と一致させることができます。コンテンツをヘッダーの背後にスクロールさせるには、コンテンツに`fullscreen`プロパティを設定する必要があります。この効果は、モードが`"ios"`であり、デバイスが[backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility)をサポートしている場合にのみ適用されます。
 
 import Translucent from '@site/static/usage/v8/header/translucent/index.md';
 
 <Translucent />
 
-
-## 折りたたみのヘッダー
+## 折りたたみのヘッダー {/* #condensed-header */}
 
 Ionicでは、iOSネイティブアプリケーションで見られる、大きなツールバーのタイトルを表示し、スクロールすると小さなタイトルに折りたたむ機能を提供しています。これは、コンテンツの上に1つ、コンテンツの中に1つ、合計2つのヘッダーを追加し、コンテンツの中にあるヘッダーに `collapse` プロパティを `"condense"` に設定することで実現できます。この効果は、モードが "ios "のときのみ適用されます。
 
@@ -43,17 +39,15 @@ import Condense from '@site/static/usage/v8/header/condense/index.md';
 
 <Condense />
 
-
 ## フェードヘッダー
 
 多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、ヘッダーの `collapse` プロパティを `"fade"` に設定することで実現可能です。ページが最初に読み込まれたとき、ヘッダーの背景と境界線は非表示になります。コンテンツがスクロールされると、ヘッダーは再びフェードインします。この効果は、モードが「ios」のときだけ適用されます。
 
-この機能は、[Condensed Header](#condensed-header)と組み合わせることができます。collapse`プロパティに`"fade"`を設定した場合は、コンテンツの外側にあるヘッダーに適用されるはずです。
+この機能は、[折りたたみヘッダー](#condensed-header)と組み合わせることができます。`collapse`プロパティに`"fade"`を設定した場合は、コンテンツの外側にあるヘッダーに適用する必要があります。
 
 import Fade from '@site/static/usage/v8/header/fade/index.md';
 
 <Fade />
-
 
 ### 仮想スクロールの使用方法
 
@@ -63,7 +57,6 @@ import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-targe
 
 <CustomScrollTarget />
 
-
 ## Borders
 
 `"md"`モードでは、ヘッダーの下部に `box-shadow` が表示されます。 `"ios"`モードでは、ヘッダの下部に `border` が表示されます。これらは、ヘッダーに `.ion-no-border` クラスを追加することで削除することができます。
@@ -71,7 +64,6 @@ import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-targe
 import NoBorder from '@site/static/usage/v8/header/no-border/index.md';
 
 <NoBorder />
-
 
 ## プロパティ
 <Props />

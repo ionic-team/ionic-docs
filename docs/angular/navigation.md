@@ -6,20 +6,20 @@ sidebar_label: ナビゲーション/ルーティング
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
-  <title>Angular Navigation: How Routing & Redirects Work in Angular Apps</title>
+  <title>Angular ナビゲーション: Angular アプリのルーティングとリダイレクト</title>
   <meta
     name="description"
-    content="Our Angular Navigation guide covers how routing works in an app built with Ionic and Angular. Read to learn more about basic routing and redirects in Angular."
+    content="この Angular ナビゲーションガイドでは、Ionic と Angular で構築したアプリのルーティングの仕組み、基本的なルーティング、リダイレクトについて説明します。"
   />
 </head>
 
 このガイドでは、Ionic と Angular を使用して構築されたアプリでのルーティングのしくみについて説明します。
 
-Angular Router は、Angular アプリケーションで最も重要なライブラリの 1 つです。これがなければ、アプリはシングルビュー/シングルコンテキストアプリになるか、ブラウザのリロード時にナビゲーションのステートを維持できなくなります。Angular Router を使用すると、リンク可能でリッチなアニメーションを持つリッチなアプリを作成できます（もちろん、Ionic と組み合わせると！）。Angular Router の基本と、それを Ionic アプリケーション用に設定する方法を見てみましょう。
+Angular Router は、Angular アプリケーションにおいて最も重要なライブラリの一つです。これがなければ、アプリは単一ビュー/単一コンテキストのアプリになったり、ブラウザをリロードしたときにナビゲーション状態を維持できなくなります。Angular Router を使えば、リンク可能でリッチなアニメーションを持つアプリを作成することができます（もちろん Ionic と組み合わせた場合）。ここでは、Angular Router の基本と、Ionic アプリ向けにどのように設定できるかを順を追って見ていきましょう。
 
-## シンプルな Route
+## シンプルなルート
 
-ほとんどのアプリでは、some sort of route を持つことがしばしば必要になります。最も基本的な設定はこのようになります：
+ほとんどのアプリでは、何らかのルートが必要になります。最も基本的な設定は次のようになります。
 
 ```tsx
 
@@ -70,7 +70,7 @@ URL path と Component の組み合わせを確認する最も簡単な方法は
 
 `/route1/route2/route3` と `/route1/route2/route4` の両方を読み込んだとおき, どちらの場合もリダイレクトします。 `pathMatch: 'prefix'` によって、一部でも一致したら該当するからです。
 
-## routes へのナビゲーション
+## routes へのナビゲーション {/* #navigating-to-different-routes */}
 
 routes について説明してきましたが、それではどのようにしてそのルートにナビゲーションしたらいいのでしょうか。これには、 `routerLink` directive を利用します。先ほどの簡単な router 設定でこれを確認してみましょう:
 
@@ -120,17 +120,17 @@ export class LoginComponent {
 
 ### LocationStrategy.historyGo を使ったナビゲーション
 
-Angular Router には [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) メソッドがあり、アプリケーションの履歴を進んだり戻ったりすることができます。例を見てみましょう。
+Angular Router には、開発者がアプリケーションの履歴を前後に移動できる[LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo)メソッドがあります。例を見てみましょう。
 
 次のようなアプリケーションの履歴があるとします：
 
-`/ページA` --> `/ページB` --> `/ページC`。
+`/pageA` --> `/pageB` --> `/pageC`。
 
 もし `/pageC` で `LocationStrategy.historyGo(-2)` を呼び出すと、 `/pageA` に戻る。その後、 `LocationStrategy.historyGo(2)` を呼び出すと、 `/pageC` に戻る。
 
-`LocationStrategy.historyGo()` の主な特徴は、アプリケーションの履歴が線形であることを想定していることです。つまり、`LocationStrategy.historyGo()` は非線形のルーティングを使用するアプリケーションでは使用すべきではありません。詳しくは [リニアルーティング対非リニアルーティング](#linear-routing-versus-non-linear-routing) を参照してください。
+`LocationStrategy.historyGo()`の重要な特徴の一つは、アプリケーションの履歴が線形であることを期待する点です。つまり、`LocationStrategy.historyGo()`は非線形ルーティングを使用するアプリケーションでは使用すべきではありません。詳細は[線形ルーティングと非線形ルーティング](#linear-routing-versus-non-linear-routing)を参照してください。
 
-## Lazy loading routes
+## ルートの遅延読み込み {/* #lazy-loading-routes */}
 
 現在のルート設定では、すべての Component が、ルートとなる `app.module` と同じ `chunk` に含まれているので理想的ではありません。代わりに、ルータにはコンポーネントを独自の `chunk` に分離できるように設定されています。
 
@@ -263,9 +263,9 @@ We recommend keeping your application as simple as possible until you need to ad
 
 The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+タブの詳細については、[タブの操作](#working-with-tabs)を参照してください。
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+ネストされたルーターアウトレットの詳細については、[ネストされたルート](#nested-routes)を参照してください。
 
 ## Shared URLs versus Nested Routes
 
@@ -319,13 +319,13 @@ The above routes are nested because they are in the `children` array of the pare
 
 Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
 
-Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+ネストされたルートは、アウトレット A でコンテンツを表示しつつ、ネストされたアウトレット B 内にサブコンテンツを表示したい場合に使用するべきです。最も一般的な使用例はタブです。タブの Ionic スターターアプリケーションをロードすると、最初の`ion-router-outlet`が`ion-tab-bar`と`ion-tabs`コンポーネントをレンダリングします。`ion-tabs`コンポーネントは別の`ion-router-outlet`をレンダリングし、各タブの内容を表示する役割を持っています。
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
 ## Working with Tabs
 
-タブを使用すると、Angular Router にどのコンポーネントをロードする必要があるかを知るためのメカニズムを Ionic が提供しますが、タブコンポーネントでは複雑な作業が行われます。簡単な例を見てみましょう。
+タブを使用すると、Angular Router は Ionic にどのコンポーネントを読み込むべきかを知る仕組みを提供しますが、実際の重い作業はタブコンポーネントによって行われます。簡単な例を見てみましょう。
 
 ```ts
 const routes: Routes = [
@@ -378,7 +378,7 @@ Each tab in Ionic is treated as an individual navigation stack. This means if yo
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
 
-Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+Ionic は開発者がモバイルアプリを構築するのを支援することに重点を置いているため、Ionic のタブはネイティブモバイルのタブにできるだけ近づくように設計されています。その結果、Ionic のタブには他の UI ライブラリのタブ実装とは異なる挙動が見られる場合があります。これらの違いのいくつかについて詳しく知るには、続きを読んでください。
 
 ### Child Routes within Tabs
 
@@ -442,7 +442,7 @@ Since each tab is its own navigation stack, it is important to note that these n
 
 A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
 
-Let's take a look at a couple common mistakes that are made with tabs.
+タブでよくあるいくつかの間違いについて見ていきましょう。
 
 **A Settings Tab That Multiple Tabs Reference**
 

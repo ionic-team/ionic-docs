@@ -234,7 +234,7 @@ app.listen(3000, () => {
 
 #### Don't leak your keys!
 
-If you are trying to connect to a 3rd-party API, first check in its documentation that is safe to use it directly from the app (client-side) and that it won't leak any secret/private keys or credentials, as it's easy to see them in clear text in Javascript code. Many APIs don't support CORS on purpose, in order to force developers to use them in the server and protect important information or keys.
+サードパーティ API に接続しようとしている場合は、まずそのドキュメントで、アプリ（クライアント側）から直接使用しても安全で、秘密鍵や認証情報が漏れないことを確認してください。これらは JavaScript コードで平文で読まれる可能性があります。多くの API は、重要な情報やキーを保護するために、開発者がサーバー側で使用するように強制する目的で CORS をサポートしていません。
 
 #### 1. Native-only apps (iOS/Android)
 

@@ -15,7 +15,6 @@ import Slots from '@ionic-internal/component-api/v8/footer/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 フッターは、ページの下部に配置されるページのルートコンポーネントです。1つ以上の [ツールバー](./toolbar) のラッパーとして使用することが推奨されますが、あらゆる要素をラップするために使用することができます。ツールバーがフッターの中で使用される場合、コンテンツは正しいサイズに調整され、フッターはデバイスセーフエリアを考慮したものになります。
 
 ## 基本的な使い方
@@ -24,15 +23,13 @@ import Basic from '@site/static/usage/v8/footer/basic/index.md';
 
 <Basic />
 
-
 ## 半透明のフッター
 
-フッターは、`translucent`プロパティを設定することで、ネイティブのiOSアプリケーションに見られるような透明度に合わせることができます。フッターの後ろにスクロールするコンテンツを見るには、コンテンツに `fullscreen` プロパティを設定する必要があります。この効果は、モードが `"ios"` で、デバイスが [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) をサポートしている場合にのみ適用されます。
+フッターは、`translucent`プロパティを設定することで、ネイティブiOSアプリケーションで見られる透明度に合わせることができます。コンテンツがフッターの背後でスクロールするようにするには、コンテンツに`fullscreen`プロパティを設定する必要があります。この効果は、モードが`"ios"`であり、デバイスが[backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility)をサポートしている場合にのみ適用されます。
 
 import Translucent from '@site/static/usage/v8/footer/translucent/index.md';
 
 <Translucent />
-
 
 ## フェードフッター
 
@@ -41,7 +38,6 @@ import Translucent from '@site/static/usage/v8/footer/translucent/index.md';
 import Fade from '@site/static/usage/v8/footer/fade/index.md';
 
 <Fade />
-
 
 ### 仮想スクロールでの使用方法
 
@@ -58,7 +54,6 @@ import CustomScrollTarget from '@site/static/usage/v8/footer/custom-scroll-targe
 import NoBorder from '@site/static/usage/v8/footer/no-border/index.md';
 
 <NoBorder />
-
 
 ## プロパティ
 <Props />

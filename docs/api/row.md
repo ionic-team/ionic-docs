@@ -20,15 +20,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Rowは[Grid](./grid)システムの水平方向の構成要素で、さまざまな数の
 [columns](./col)を含む。列が適切に配置されるようにします。
 
-詳しくは[grid](./grid)のドキュメントを参照してください。
-
+詳細については、[グリッド](./grid)のドキュメントを参照してください。
 
 ## Row Alignment
 
 デフォルトでは、列は行の高さ全体を埋めるように伸縮し、必要に応じて折り返されます。行は [Flexコンテナ](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container) なので、この動作をカスタマイズするために、行に適用できるいくつかの [CSS クラス](/docs/layout/css-utilities#flex-container-properties) が用意されています。
-
-
-
 
 ## プロパティ
 <Props />

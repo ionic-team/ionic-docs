@@ -18,14 +18,13 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 
 iOS デバイスでアプリケーションを実行するには、プロビジョニングプロファイルが必要です。プロビジョニングプロファイルが作成されていない場合は、次の手順に従います:
 
-1. <strong>[Package ID](../reference/glossary.md#package-id) を設定する。</strong>
+1. **[Package ID](../reference/glossary.md#package-id) を設定します。**
 
    Capacitor の場合、`capacitor.config.json` ファイルを開き `appId` プロパティを修正します。
 
-   Cordova の場合、`config.xml` ファイルを開き、ルート要素 `<widget>` の `id` 属性を修正します。よりくわしい情報は [Cordova ドキュメント](https://cordova.apache.org/docs/en/latest/config_ref/#widget) をご参照ください。
+Cordova の場合、`config.xml`ファイルを開き、ルート要素`<widget>`の`id`属性を変更します。詳細については[Cordova のドキュメント](https://cordova.apache.org/docs/en/latest/config_ref/#widget)を参照してください。
 
-<!-- prettier-ignore -->
-2. <strong>プロジェクトを <b>Xcode</b> で開く。</strong>
+2. **プロジェクトを<b>Xcode</b>で開きます。**
 
    Capacitor の場合、以下を実行し Xcode でアプリケーションを開いてください:
 
@@ -33,17 +32,15 @@ iOS デバイスでアプリケーションを実行するには、プロビジ�
    $ ionic capacitor open ios
    ```
 
-   Cordova の場合、Xcode 開きます。**File** &raquo; **Open** からアプリケーションを見つけます。アプリケーション内の `platforms/ios` ディレクトリを開きます。
+   Cordova の場合、Xcode を開きます。**ファイル（File）** &raquo; **開く（Open）** からアプリケーションを見つけます。アプリケーション内の `platforms/ios` ディレクトリを開きます。
 
-<!-- prettier-ignore -->
-3. <strong><b>プロジェクト ナビゲーター</b>で、プロジェクトのルートを選択しエディタでプロジェクトを開きます。 **Identity** セクションで、設定された Package ID がバンドル識別子と一致することを確認します。</strong>
+3. **<b>プロジェクトナビゲータ</b>でプロジェクトのルートを選択してプロジェクトエディタを開きます。<b>識別情報（Identity）</b>セクションで、設定したパッケージ ID がバンドル識別子と一致していることを確認します。**
 
-   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png "Xcode Identity Section")
+![Xcodeで表示されるiOSアプリのIdentityセクションには、表示名、バンドル識別子、バージョン、ビルドのフィールドがあります。](/img/running/ios-xcode-identity-setup.png 'Xcodeの識別情報セクション')
 
-<!-- prettier-ignore -->
-4. <strong>同じプロジェクトエディタの <b>署名</b> セクションで、<b>Automatically manage signing</b> が 有効になっていることを確認します。</strong> 次に、Team から開発チームを選択します。開発チームがあれば、Xcode は プロビジョニングと署名を自動的に準備しようとします。
+4. **同じプロジェクトエディタの<b>署名（Signing）</b>セクションで、<b>署名を自動管理（Automatically manage signing）</b>が有効になっていることを確認します。** その後、開発チームを選択します。開発チームを設定すると、Xcode はプロビジョニングと署名を自動的に準備しようとします。
 
-   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png "Xcode Signing Section")
+![Xcodeで「署名を自動的に管理」を有効にし、開発チームが選択されている署名セクションを表示している。](/img/running/ios-xcode-signing-setup.png 'Xcodeの署名セクション')
 
 ## Xcode のビルドエラー 65
 

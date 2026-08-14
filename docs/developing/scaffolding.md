@@ -3,10 +3,10 @@ title: 基本
 ---
 
 <head>
-  <title>アプリ開発の基本 | Create Scaffolding for Ionic Web Apps</title>
+  <title>アプリ開発の基本 | Ionic Web アプリの土台を作成する</title>
   <meta
     name="description"
-    content="Once an app is created by the Ionic CLI, the next step is to start building out features and components. Learn how to create scaffolding for Ionic web apps."
+    content="Ionic CLI でアプリを作成したら、次は機能とコンポーネントを構築します。Ionic Web アプリの土台を作成する方法を説明します。"
   />
 </head>
 
@@ -92,4 +92,4 @@ Ionic CLI は、ベストプラクティスに近づけるために、基礎と�
 
 新しいページ用のファイルとディレクトリを作成した後、CLI は新しいページを含めるためにルーター設定も更新します。これにより、開発ライフサイクルを進めるために必要な手作業が軽減されます。
 
-詳細については、コマンドラインから `ionic g --help` を実行するか、`ionic generate` の [the documentation](../cli/commands/generate.md) を参照してください。
+詳細については、コマンドラインから`ionic g --help`を実行するか、[`ionic generate` documentation](../cli/commands/generate.md)を参照してください。

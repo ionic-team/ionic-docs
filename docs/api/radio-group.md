@@ -15,9 +15,7 @@ import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-ラジオ・グループは、[ラジオ](./radio)のグループのためのコンテナです。ラジオグループは、ユーザーがラジオボタンを1つだけ選択できるようにします。ラジオ・グループに属するラジオ・ボタンを1つチェックすると、同じグループ内で以前にチェックされたラジオ・ボタンのチェックは解除されます。ラジオ・グループの使用例については、[radio](./radio)のドキュメントを参照してください。
-
+ラジオグループは、[ラジオボタン](./radio)のグループのコンテナです。ユーザーは、セット内のラジオボタンを最大で1つだけ選択できます。ラジオグループに属する1つのラジオボタンをチェックすると、同じグループ内で以前にチェックされたラジオボタンはすべてチェック解除されます。ラジオグループの使用例については、[ラジオ](./radio)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -39,7 +37,6 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonRadioGroupElement;
 }
 ```
-
 
 ## プロパティ
 <Props />

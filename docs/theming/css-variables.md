@@ -16,7 +16,7 @@ Ionic のコンポーネントは、アプリケーションを簡単にカス�
 
 ### グローバル変数
 
-CSS 変数は、アプリケーションの `:root` セレクタでグローバルに設定できます。特定のモードにのみ適用することもできます。Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
+CSS 変数は、アプリケーション内で`:root` セレクターでグローバルに設定できます。また、特定のモードに対してのみ適用することもできます。Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
 
 Ionic CLI を使用して Angular、React、または Vue プロジェクトを開始すると Ionic のデフォルト変数を上書きすることができる `src/theme/variables.scss` が作成されます。
 
@@ -43,7 +43,7 @@ Ionic CLI を使用して Angular、React、または Vue プロジェクトを�
 
 ### コンポーネント変数
 
-特定のコンポーネントに CSS 変数を設定するには、そのセレクタの内側に変数を追加します。Ionic が提供するコンポーネントレベルの変数の詳細については、[Ionic Variables](#ionic-variables) を参照ください。
+特定のコンポーネントに CSS 変数を設定するには、そのセレクター内に変数を追加します。コンポーネントレベルの変数についての詳細は、[Ionic 変数](#ionic-variables)を参照してください。
 
 ```css
 /* Set the color on all ion-button elements */
@@ -87,12 +87,12 @@ const el = document.querySelector('.fancy-button');
 const color = el.style.getPropertyValue('--background');
 ```
 
-## Ionic 変数
+## Ionic 変数 {/* #ionic-variables */}
 
-### Component 変数
+### コンポーネント変数
 
-Ionic は、`--background` や `--color` のようなコンポーネントレベルの変数を提供します。コンポーネントが受け入れるカスタムプロパティについては、 [API reference](../api.md) の `CSS Custom Properties` セクションをご覧ください。たとえば、[Button Custom Properties](../api/button.md#css-custom-properties) をご覧ください。
+Ionic では、`--background` や `--color` など、コンポーネントレベルで存在する変数を提供しています。コンポーネントが受け入れるカスタムプロパティの一覧は、その `CSS Custom Properties` セクションの [API リファレンス](../api.md)を確認してください。例えば、[Button CSS カスタムプロパティ](../api/button.md#css-custom-properties) を参照してください。
 
 ### グローバル変数
 
-アプリケーション全体のテーマを簡単に変更できるように Ionic が提供するグローバル変数がいくつかあります。すべてのグローバル変数のリストは [Colors](colors.md), [Themes](/docs/theming/themes) and [Advanced Theming](advanced.md) をご覧ください。
+Ionic は、アプリケーション全体のテーマ設定を簡単にするために提供するいくつかのグローバル変数があります。詳細については、[Colors](colors.md)、[Themes](themes.md)、および [Advanced Theming](advanced.md)を参照してください。

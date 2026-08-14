@@ -3,7 +3,7 @@ title: グローバルスタイルシート
 ---
 
 <head>
-  <title>グローバルスタイルシート: Styled CSS Component Options for Ionic Apps</title>
+  <title>グローバルスタイルシート: Ionicアプリ向けCSSコンポーネントオプション</title>
   <meta
     name="description"
     content="Ionicコンポーネントのスタイルは自己完結していますが、すべての機能を利用するために含める必要があるグローバルスタイルシートとCSSオプションがいくつかあります。詳細を読んで学びましょう。"
@@ -38,33 +38,33 @@ typography はドキュメント全体の font-family を変更し、見出し�
 
 ブラウザがすべての要素をより一貫して、現代の標準に沿った形で表示するようにします。これは [Normalize.css](https://necolas.github.io/normalize.css/) をベースにしています。
 
-### オプション
+### オプション {/* #optional */}
 
 以下の CSS ファイルはオプションであり、アプリケーションで機能を使用しない場合は、コメントアウトまたは削除して問題ありません。
 
 #### padding.css
 
-任意の要素のパディングやマージンを変更するためのユーティリティクラスを追加します。使用法については [CSS Utilities](css-utilities.md#content-space) を参照してください。
+任意の要素のパディングまたはマージンを変更するユーティリティクラスを追加します。使用方法については [CSS ユーティリティ](css-utilities.md#content-space) を参照してください。
 
 #### float-elements.css
 
-ブレイクポイントとサイドに基づいて要素をフロートさせるユーティリティクラスを追加します。使用法については [CSS Utilities](css-utilities.md#element-placement) を参照してください。
+ブレークポイントと側面に基づいて要素をフロートさせるユーティリティクラスを追加します。使用方法については [CSS ユーティリティ](css-utilities.md#element-placement) を参照してください。
 
 #### text-alignment.css
 
-ブレークポイントに応じて、要素のテキストを整列させたり、空白を調整するためのユーティリティクラスを追加します。使い方は [CSS Utilities](css-utilities.md#text-alignment) を参照してください。
+要素のテキストを整列させたり、ブレークポイントに基づいてホワイトスペースを調整したりするユーティリティクラスを追加します。使用方法については[CSS ユーティリティ](css-utilities.md#text-alignment)を参照してください。
 
 #### text-transformation.css
 
-要素のテキストをブレイクポイントに応じて `大文字`, `小文字`, `大文字` に変換するユーティリティクラスを追加します。使用法については [CSS Utilities](css-utilities.md#text-transformation) を参照してください。
+ユーティリティクラスを追加して、要素のテキストをブレークポイントに基づいて`uppercase`、`lowercase`、または`capitalize`に変換します。使用方法については[CSS ユーティリティ](css-utilities.md#text-transformation)を参照してください。
 
 #### flex-utils.css
 
-フレックスコンテナやアイテムを整列させるためのユーティリティクラスを追加。使い方は [CSS Utilities](css-utilities.md#flex-properties) を参照してください。
+ユーティリティクラスを追加して、フレックスコンテナとアイテムを整列させます。使用方法については[CSS ユーティリティ](css-utilities.md#flex-properties)を参照してください。
 
 #### display.css
 
-ブレイクポイントに基づき、任意の要素を隠すためのユーティリティクラスを追加します。使用法については [CSS Utilities](css-utilities.md#element-display) を参照してください。
+ブレークポイントに基づいて要素を非表示にするユーティリティクラスを追加します。使用方法については[CSS ユーティリティ](css-utilities.md#element-display)を参照してください。
 
 ## 使用方法
 

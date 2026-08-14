@@ -15,11 +15,9 @@ import Slots from '@ionic-internal/component-api/v8/refresher/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 リフレッシャーは、コンテンツコンポーネントにプルトゥリフレッシュ機能を提供します。pull-to-refreshパターンは、ユーザがより多くのデータを取得するために、データのリストをプルダウンすることを可能にします。
 
 データは、リフレッシャーの出力イベント中に変更する必要があります。非同期処理が完了し、リフレッシュが終了したら、リフレッシュに対して `complete()` を呼び出す必要があります。
-
 
 ## 基本的な使い方
 
@@ -27,8 +25,7 @@ import Basic from '@site/static/usage/v8/refresher/basic/index.md';
 
 <Basic />
 
-
-## Pull プロパティ
+## Pull プロパティ {/* #pull-properties */}
 
 リフレッシャーには、引くジェスチャーをカスタマイズするためのプロパティがいくつかあります。 `pullFactor` プロパティを設定すると引っ張るスピードを、`pullMin` プロパティを設定するとユーザが引っ張る最小距離を、`pullMax` プロパティを設定するとリフレッシャーが `refreshing` 状態になる前にユーザが引っ張る最大距離を変更することができます。
 
@@ -38,8 +35,7 @@ import PullProperties from '@site/static/usage/v8/refresher/pull-properties/inde
 
 <PullProperties />
 
-
-## カスタムリフレッシャーコンテンツ
+## カスタムリフレッシャーコンテンツ {/* #custom-refresher-content */}
 
 デフォルトのアイコン、スピナー、テキストは、リフレッシャーの状態が `pulling` か `refreshing` かによって、[リフレッシャーコンテンツ](./refresher-content) 上でカスタマイズすることができます。
 
@@ -49,7 +45,6 @@ import CustomContent from '@site/static/usage/v8/refresher/custom-content/index.
 
 <CustomContent />
 
-
 ## Native Refreshers
 
 iOSとAndroidの両プラットフォームは、pull-to-refreshにネイティブのような流動的な感覚を与えるために、それぞれのデバイスが公開するプロパティを使用するリフレッシュ機能を提供します。
@@ -58,10 +53,9 @@ iOSとMaterial Designのネイティブリフレッシュ機能は、Ionicのデ
 
 ネイティブのリフレッシャーでは、マテリアルデザイン用の `circular` スピナーを使用しますが、iOS では `lines` スピナーを使用します。iOSでは、ティックマークはページが下に引っ張られるにつれて徐々に表示されます。
 
-[Pullプロパティ](#pull-properties)、`closeDuration`、`snapbackDuration`のような特定のリフレッシャープロパティは、ネイティブリフレッシャーの多くがスクロールベースであるため、互換性がありません。サポートされていないプロパティの詳細については、[Properties](#properties)を参照してください。
+[プルプロパティ](#pull-properties)、`closeDuration` および `snapbackDuration` などの特定のリフレッシャーのプロパティは、ネイティブリフレッシャーの多くがスクロールベースであるため、互換性がありません。サポートされていないプロパティの詳細については、[プロパティ](#properties)を参照してください。
 
-[リフレッシュコンテンツ](#custom-refresher-content)の `pullingIcon` を任意のアイコンまたはスピナーに設定することで、ネイティブリフレッシュモードを無効にすることができます。使用可能な値については、[Ionicons](https://ionic.io/ionicons) および [Spinner](./spinner) のドキュメントを参照してください。
-
+ネイティブのリフレッシャーは、[リフレッシャーコンテンツ](#custom-refresher-content)の`pullingIcon`を任意のアイコンまたはスピナーに設定することで無効にできます。許可されている値については、[Ionicons](https://ionic.io/ionicons)および[Spinner](./spinner)のドキュメントを参照してください。
 
 ## Usage with Virtual Scroll
 
@@ -92,7 +86,6 @@ Developers should apply the following CSS to the scrollable container. This CSS 
 import CustomScrollTarget from '@site/static/usage/v8/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
-
 
 ## 高度な使用法
 
@@ -154,7 +147,7 @@ interface RefresherPullEndCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 <Props />
 
 ## イベント

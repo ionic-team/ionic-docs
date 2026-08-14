@@ -12,10 +12,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
 
-詳しい説明は [Breadcrumbs](./breadcrumbs) を参照ください。
+詳細は[Breadcrumbs](./breadcrumbs)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -37,9 +36,6 @@ interface BreadcrumbCustomEvent extends CustomEvent {
   target: HTMLIonBreadcrumbElement;
 }
 ```
-
-
-
 
 ## プロパティ
 <Props />

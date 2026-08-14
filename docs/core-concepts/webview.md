@@ -28,9 +28,9 @@ Ionic Web View プラグインは、最新の JavaScript アプリケーショ�
 
 ### CORS
 
-Web View は[CORS](../reference/glossary.md#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。Ionic アプリで CORS を処理する方法については、[CORS FAQs](../troubleshooting/cors.md)を参照してください。
+Web ビューは[CORS](../reference/glossary.md#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。Ionic アプリで CORS に対処する方法については、[CORS FAQ](../troubleshooting/cors.md)を参照してください。
 
-### File プロトコル
+### File プロトコル {/* #file-protocol */}
 
 Cordova と Capacitor のアプリはローカルの HTTP サーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を回避するためには、ファイルアクセスするパスをローカルの HTTP サーバに書き換える必要があります。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
 

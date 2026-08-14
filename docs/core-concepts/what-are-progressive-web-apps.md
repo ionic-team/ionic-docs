@@ -1,22 +1,21 @@
 ---
 sidebar_label: PWAとは?
-title: Progressive Web Apps
+title: プログレッシブウェブアプリ
 ---
 
 <head>
-  <title>Progressive Web Applications: PWAとは - Ionic Documentation</title>
+  <title>プログレッシブウェブアプリ: PWAとは - Ionicドキュメント</title>
   <meta
     name="description"
     content="PWAとは何ですか？Progressive Web Applicationは、最新のWeb機能を使用してアプリのようなエクスペリエンスを提供します。コアコンセプトドキュメントを読んで詳しく学びましょう。"
   />
 </head>
 
-<!-- TOC goes here -->
+{/* TOC goes here */}
 
-### The web...それよりもいいもの
+### Web、そしてそれ以上のもの
 
-Progressive Web App (PWA) は、最新の Web 機能を使用して、ユーザーにアプリのようなエクスペリエンスを提供する Web アプリです。
-これらのアプリは、特定の要件（下記参照）を満たし、サーバーに展開され、URL からアクセスでき、検索エンジンにインデックスされます。
+プログレッシブウェブアプリ（PWA）は、最新のウェブ機能を使用してユーザーにアプリのような体験を提供するウェブアプリです。これらのアプリは特定の要件（以下に説明）を満たしており、サーバーにデプロイされ、URL を通じてアクセス可能で、検索エンジンによってインデックスされます。
 
 [Capacitor](https://capacitorjs.com)と連携して、すべてのユーザーに複数のデプロイ対象を提供することができます。
 アプリを PWA としてデプロイするだけでなく、ネイティブアプリとしてデプロイし、両方のチャネルを活用することができます。
@@ -47,7 +46,7 @@ Progressive Web App と見なされるには、アプリが以下の要件を満
 
 - リンク可能 - 複雑なインストールを必要とせず、URL で簡単に共有できます。
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
@@ -55,7 +54,7 @@ Progressive Web App と見なされるには、アプリが以下の要件を満
   </a>
 </em>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 たくさんありますが、Ionic アプリの場合はいくつかのポイントに集約されます。
 

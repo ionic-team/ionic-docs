@@ -118,7 +118,7 @@ import ClearOnEditPlayground from '@site/static/usage/v8/textarea/clear-on-edit/
 この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
 :::note
-ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントには`aria-hidden="true"`を設定すべきです。詳細については、[Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
+ほとんどの場合、これらのスロットに配置された[Icon](./icon.md)コンポーネントには`aria-hidden="true"`が必要です。詳細については、[Icon アクセシビリティドキュメント](https://ionicframework.com/docs/api/icon#accessibility)を参照してください。
 
 スロットコンテンツが操作対象である場合、[Button](./button.md)などのインタラクティブ要素でラップする必要があります。これにより、コンテンツにタブで移動できるようになります。
 :::

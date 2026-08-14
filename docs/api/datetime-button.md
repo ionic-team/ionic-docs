@@ -33,11 +33,11 @@ import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
 
 ## ローカライゼーション
 
-`ion-datetime-button` のローカライズされたテキストは、関連する `ion-datetime` インスタンスの `locale` プロパティによって決まります。詳しくは、[Datetime Localization](./datetime#localization) を参照してください。
+`ion-datetime-button`上のローカライズされたテキストは、関連する`ion-datetime`インスタンスの`locale`プロパティによって決まります。詳細は[日時ローカライゼーション](./datetime#localization)を参照してください。
 
 ## Format Options
 
-Datetimeインスタンスに`formatOptions`を指定することで、Datetime Buttonの日付と時刻の書式をカスタマイズすることができます。詳細は[Datetime Format Options](./datetime#format-options)を参照してください。
+Datetime ボタンの日時の形式は、関連する Datetime インスタンスで `formatOptions` を指定することでカスタマイズできます。詳細は [Datetime フォーマットオプション](./datetime#format-options) を参照してください。
 
 import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
 
@@ -47,19 +47,12 @@ import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/
 
 `ion-datetime-button` は、マウントされた `ion-datetime` インスタンスと関連付ける必要があります。そのため、[Inline Modals](./modal#inline-modals-recommended) と [Inline Popovers](./popover#inline-popovers) は `keepContentsMounted` プロパティを `true` に設定して使用しなければなりません。
 
-<!--
-## Customization
-
-TODO
-
-### Buttons
-
-TODO
-
-### テーマ
-
-TODO
--->
+{/* ## Customization */}
+{/* TODO */}
+{/* ### Buttons */}
+{/* TODO */}
+{/* ### Theming */}
+{/* TODO */}
 
 ## プロパティ
 <Props />

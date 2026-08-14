@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Welcome! This guide will walk you through the basics of Ionic Vue development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Vue before building your first real app.
 
-If you're looking for a high-level overview of what Ionic Vue is and how it fits into the Vue ecosystem, see the [Ionic Vue Overview](overview).
+Ionic Vue が何であり、Vue エコシステムにどのように適合するかの概要を知りたい場合は、[Ionic Vue 概要](overview)を参照してください。
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+Node.js と npm をまだ持っていない場合は、[Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
 
 ## Create a Project with the Ionic CLI
 
@@ -160,10 +160,10 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 <!-- ...styles... -->
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。2 番目のヘッダーには [折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles) が表示され、iOS デバイスではコンテンツの上部にあるときに表示され、スクロールすると最初のヘッダーに小さいタイトルが表示されるように縮小されます。
 
-:::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip[詳しくはこちら]
+Ionic レイアウトコンポーネントに関する詳細な情報については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、および [Content](/docs/api/content.md) のドキュメントを参照してください。
 :::
 
 ## Add an Ionic Component
@@ -259,7 +259,7 @@ Once that is done, update the button in `HomePage.vue`:
 ```
 
 :::info
-Navigating can also be performed programmatically using Vue Router, and routes can be lazy loaded for better performance. See the [Vue Navigation documentation](/docs/vue/navigation.md) for more information.
+ナビゲーションは、Vue Router を使用してプログラム的に実行することもでき、ルートはパフォーマンス向上のために遅延ロードできます。詳細は [Vue ナビゲーションのドキュメント](/docs/vue/navigation.md) を参照してください。
 :::
 
 ## Add Icons to the New Page
@@ -284,7 +284,7 @@ Then, include them inside of the `ion-content`:
 
 Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
-For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
+詳細は [アイコンのドキュメント](/docs/api/icon.md) と [Ionicons のドキュメント](https://ionic.io/ionicons/) を参照してください。
 
 ## Call Component Methods
 
@@ -358,7 +358,7 @@ ionic cap open ios
 ionic cap open android
 ```
 
-See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+詳細は [Capacitor のはじめにガイド](https://capacitorjs.com/docs/getting-started/with-ionic) を参照してください。
 
 ## Build with TypeScript or JavaScript
 

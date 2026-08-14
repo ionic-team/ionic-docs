@@ -46,13 +46,13 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 ブラウザは `manifest.json` に `theme` よりも `theme-color` メタが存在する場合、それを優先します。
 :::
 
-詳しくは、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a> をご覧ください。
+詳細については、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN のテーマカラードキュメント</a>を参照してください。
 
 ## グローバル変数
 
 テーマセクションのアプリケーション変数とステップ変数は、アプリケーションの色を変更するのに便利ですが、しばしば、複数のコンポーネントで使用される変数が必要になることがあります。以下の変数は、コンポーネント間で共有され、グローバルなパディング設定などを変更することができます。
 
-### アプリケーション変数
+### アプリケーション変数 {/* #application-variables */}
 
 | Name                        | 説明                                                                                          |
 | --------------------------- | --------------------------------------------------------------------------------------------- |
@@ -84,9 +84,9 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 
 ## 既知の変数の制限
 
-### The Alpha Problem
+### アルファ値の問題 {/* #the-alpha-problem */}
 
-16 進数カラーのアルファ使用については、まだ完全な<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">ブラウザサポート</a>はありません。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> 関数は、`R, G, B, A` (Red, Green, Blue, Alpha) のフォーマットのみ利用可能です。次のコードは、`rgba()`　に受け渡される正しい値と間違った値の例を示しています。
+16 進数カラーのアルファ使用については、まだ完全な<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">ブラウザサポート</a>はありません。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> 関数は、`R, G, B, A`（赤、緑、青、アルファ）のフォーマットのみ利用可能です。次のコードは、`rgba()` に受け渡される正しい値と間違った値の例を示しています。
 
 ```css
 /* These examples use the same color: blueviolet. */
@@ -106,7 +106,7 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 ```
 
 :::note
-See the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
+CSS 変数の取得方法や設定方法については、[CSS Variables](css-variables.md)のセクションを参照してください。
 :::
 
 Ionic はいくつかのコンポーネントで不透明度（アルファ）を ​​ 持つ色を使用します。これが機能するためには、それらのプロパティは RGB フォーマットで提供されなければなりません。末尾にバリエーションがあるプロパティのいずれかを変更する場合、 `-rgb` で終わる括弧なしのカンマ区切り形式でも提供されることが重要です。以下は、テキストと背景色を変更するための例です。
@@ -131,9 +131,9 @@ body {
 }
 ```
 
-### Variables in Media Queries
+### メディアクエリ内の変数 {/* #variables-in-media-queries */}
 
-[メディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) の CSS 変数は現在サポートされていませんが、この問題を解決する[custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) と [custom environment variables](https://drafts.csswg.org/css-env-1/)を追加するためのオープンドラフトがあります。ただし、現在のサポート状態では、次の機能は動作しません。
+[メディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries)内の CSS 変数は現在サポートされていませんが、この問題を解決する[カスタムメディアクエリ](https://drafts.csswg.org/mediaqueries-5/#custom-mq)と[カスタム環境変数](https://drafts.csswg.org/css-env-1/)を追加するための公開草案があります。ただし、現在のサポート状態では、次の機能は動作しません。
 
 ```css
 :root {
@@ -180,7 +180,7 @@ Sass コンパイラを実行した後、色は次の値になります：
 
 これを可能にする[色の変更提案](https://github.com/w3c/csswg-drafts/issues/3187)について議論しているドラフトとイシューがあります。
 
-## セーフエリアパディング
+## セーフエリアパディング {/* #safe-area-padding */}
 
 ディスプレイのセーフエリアは、デバイスのノッチ、ステータスバー、またはデバイスの UI の一部でありアプリの一部ではないその他の要素によって覆われていないセクションです。セーフエリアの寸法は、デバイスや向き（縦向きまたは横向き）によって異なります。
 

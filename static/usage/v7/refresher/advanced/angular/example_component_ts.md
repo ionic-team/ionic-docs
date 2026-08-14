@@ -86,7 +86,7 @@ export class ExampleComponent {
   handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       this.addItems(3, true);
-      (event.target as HTMLIonRefresherElement).complete();
+      event.target.complete();
     }, 2000);
   }
 }

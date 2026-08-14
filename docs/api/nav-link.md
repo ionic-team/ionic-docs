@@ -15,13 +15,11 @@ import Slots from '@ionic-internal/component-api/v8/nav-link/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 ナビゲーションリンクは指定されたコンポーネントに移動するために使用されます。コンポーネントは `forward`, `back` または `root` コンポーネントとして移動することができます。
 
 これは、ナビゲーションコントローラの `push()`, `pop()`, `setRoot()` メソッドを呼び出すための要素形式となります。
 
-詳しくは[nav](./nav#using-navlink)のドキュメントを参照ください。
-
+詳細については、[nav](./nav#using-navlink)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

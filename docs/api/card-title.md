@@ -17,11 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Card titleはcardの子コンポーネントで、[card header](./card-header)の内側に配置する必要があります。
 
-詳しくは、[Card](./card)のドキュメントを参照してください。
-
+詳細は[Card](./card)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

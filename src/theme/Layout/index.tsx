@@ -6,17 +6,20 @@
  * - Removed the navbar. It's been moved to the top of the docs page ({@link ../../DocRoot/Layout/index.tsx}).
  */
 
-import React, { type ReactNode } from 'react';
+import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
-import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
-import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
+import {
+  PageMetadata,
+  SkipToContentFallbackId,
+  ThemeClassNames,
+} from '@docusaurus/theme-common';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Footer from '@theme/Footer';
 import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
-import type { Props } from '@theme/Layout';
+import type {Props} from '@theme/Layout';
 import styles from '@docusaurus/theme-classic/src/theme/Layout/styles.module.css';
 
 export default function Layout(props: Props): ReactNode {
@@ -28,8 +31,6 @@ export default function Layout(props: Props): ReactNode {
     title,
     description,
   } = props;
-
-  useKeyboardNavigation();
 
   return (
     <LayoutProvider>
@@ -44,9 +45,15 @@ export default function Layout(props: Props): ReactNode {
 
       <div
         id={SkipToContentFallbackId}
-        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
-      >
-        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>
+        className={clsx(
+          ThemeClassNames.layout.main.container,
+          ThemeClassNames.wrapper.main,
+          styles.mainWrapper,
+          wrapperClassName,
+        )}>
+        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
+          {children}
+        </ErrorBoundary>
       </div>
 
       {!noFooter && <Footer />}

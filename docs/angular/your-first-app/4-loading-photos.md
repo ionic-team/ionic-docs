@@ -239,9 +239,9 @@ export class Tab2Page {
 ```
 
 :::note
-If you're seeing broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
+これらの手順を実行した後に画像リンクが壊れたり写真が表示されなかったりする場合は、ブラウザの開発者ツールを開き、[localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) と [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb) の両方を消去する必要があります。
 
-In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
+localStorage ではドメイン `http://localhost:8100` とキー `CapacitorStorage.photos` を探します。IndexedDB では「FileStorage」というストアを探します。写真には `/DATA/123456789012.jpeg` のようなキーが設定されています。
 :::
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+これで完了です！Web で動作する完全なフォトギャラリー機能を Ionic アプリに構築できました。次は、iOS と Android 向けのモバイルアプリに変換します。

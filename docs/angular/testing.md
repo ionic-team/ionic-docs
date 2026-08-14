@@ -109,7 +109,35 @@ describe('TabsPage', () => {
 
 コンポーネントクラスのテストを行う場合、コンポーネントオブジェクトは `component=fixture.componentInstance;` によって定義されたコンポーネントオブジェクトを使用してアクセスされます。これはコンポーネントクラスのインスタンスです。DOM テストを行う際には、`fixture.nativeElement` プロパティが使用されます。これはコンポーネントの実際の `HTMLElement`であり、テストで DOM を調べるために `HTMLElement.querySelector` などの標準の HTML API メソッドを使うことを可能にします。
 
-## Service
+### コンポーネントの待機
+
+Ionic コンポーネントをテストする際は、`@ionic/core`からエクスポートされる`componentOnReady`ヘルパーを使用し、直接`el.componentOnReady()`を呼び出さないでください。`el.componentOnReady()`メソッドは遅延読み込みされた要素にのみ存在し、カスタム要素ビルド（スタンドアロンプロジェクトで使用される）で直接呼び出すとエラーが発生します。ヘルパーは両方を処理します。要素自身の`componentOnReady()`プロミスが存在する場合はそれを待機します。存在しない場合は 1 フレームのアニメーションを待機し、コンポーネントの内部コンテンツがレンダリングされる機会を与えます。レンダリングされた DOM に対してアサーションを行う前またはアクセシビリティテストを実行する前に、コールバックが完了するのを待ってください。
+
+```tsx
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { componentOnReady } from '@ionic/core';
+import { HomePage } from './home.page';
+
+describe('HomePage', () => {
+  let fixture: ComponentFixture<HomePage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomePage],
+    }).compileComponents();
+    fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+  });
+
+  it('renders the submit button', async () => {
+    const button = fixture.nativeElement.querySelector('ion-button');
+    await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
+    expect(button.textContent).toContain('Submit');
+  });
+});
+```
+
+## Services
 
 Service は、多くの場合、計算やその他の操作を実行するユーティリティの service と、主に HTTP 操作やデータ操作を実行するデータの service の 2 つの大まかなカテゴリーのいずれかに分類されます。
 
@@ -180,7 +208,7 @@ describe('PayrolService', () => {
 
 #### HTTP データ Service のテスト
 
-HTTP 操作を実行するほとんどの service は、それらの操作を実行するために Angular の HttpClient service を使用します。そのようなテストには、Angular の `HttpClientTestingModule` を使うことが推奨されています。このモジュールの詳細なドキュメントは <a href="https://angular.jp/guide/http#testing-http-requests" target="_blank">Angular の HTTP リクエストをテストする</a> のガイドを参照してください。
+ほとんどの HTTP 操作を実行するサービスは、これらの操作を行うために Angular の HttpClient サービスを使用します。そのようなテストには、Angular の`HttpClientTestingModule`を使用することが推奨されています。このモジュールの詳細なドキュメントについては、Angular の<a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular の HTTP リクエストテスト</a>ガイドを参照してください。
 
 このようなテストの基本的な設定は次のようになります:
 
@@ -229,11 +257,11 @@ describe('IssTrackingDataService', () => {
 });
 ```
 
-### Pipe
+### Pipes
 
 pipe は、特別に定義されたインタフェースを持つ service のようなものです。このクラスには、入力値(およびその他のオプションの引数)を操作してページにレンダリングされる出力を作成するための public メソッド `transform` が含まれています。パイプをテストするには、パイプをインスタンス化し、transform メソッドを呼び出して結果を検証します。
 
-簡単な例として、`Person` オブジェクトを受け取り、名前をフォーマットする pipe を見てみましょう。簡単にするために、`Person` は `id`、`firstName`、`lastName`、`middleInitial` で構成されるとします。パイプの要件は、名・姓・ミドルネームのいずれかが存在しない場合に、名前を「性、名 M(ミドルネーム)。」として出力することです。このようなテストは次のようになります:
+簡単な例として、`Person`オブジェクトを受け取り名前をフォーマットするパイプを考えてみましょう。簡単のために、`Person`は`id`、`firstName`、`lastName`、および`middleInitial`で構成されているとします。このパイプの要件は、名前が存在しない場合でも「姓, 名 M.」の形式で名前を表示することです。例えば、このようなテストは以下のようになります:
 
 ```tsx
 import { NamePipe } from './name.pipe';

@@ -17,11 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 セレクトオプションは、セレクトの子要素となるコンポーネントです。定義された各オプションは、Selectダイアログに渡され表示されます。
 
 使用例については、[Select](./select)のドキュメントを参照してください。
-
 
 ## プロパティ
 <Props />
@@ -38,5 +36,5 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 ## CSSカスタムプロパティ
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />
