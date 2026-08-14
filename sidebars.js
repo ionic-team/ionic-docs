@@ -201,7 +201,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '開発',
+      label: 'デプロイ',
       collapsed: false,
       items: ['deployment/app-store', 'deployment/play-store', 'deployment/progressive-web-app'],
     },
