@@ -68,12 +68,14 @@ Note that later versions of Ionic do not support iOS 13; refer to the [mobile su
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
-|    v9     |          v18+          |    3.7+    |
+|    v9     |          v18+          |  5.4+[^5]  |
 |    v8     |          v17+          |    3.7+    |
 |    v7     |          v17+          |    3.7+    |
 |    v6     |          v17+          |    3.7+    |
 |    v5     |         v16.8+         |    3.7+    |
 |    v4     |         v16.8+         |    3.7+    |
+
+[^5]: Ionic React v9 requires TypeScript 5.4+. `useIonModal` and `useIonPopover` type `componentProps` against the component they are given, and their published type definitions use `NoInfer`, which TypeScript added in 5.4. This matches the minimum Ionic Angular v9 requires.
 
 #### Ionic Vue
 
