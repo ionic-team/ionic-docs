@@ -88,6 +88,29 @@ module.exports = function (context, options) {
           createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.mdx`, data.slots)
         );
+
+        /**
+         * Transitional: `scripts/i18n.sh` copies the `translation/jp` branch's `docs/` tree
+         * into `i18n/ja` on every build, and those copies still import the `.md` partials.
+         * Dropping these names fails `docusaurus build --locale ja`, which production runs
+         * but PR previews do not (`build:preview` passes `--locale en`).
+         *
+         * This cannot be keyed off the locale. `i18n.sh` only populates the current version,
+         * so a single ja pass renders translated current-version pages (importing `.md`)
+         * next to untranslated versioned pages that fall back to English (importing `.mdx`).
+         * Both names have to exist within the same pass.
+         *
+         * Remove once `translation/jp` imports the `.mdx` partials. These are written to
+         * `.docusaurus` rather than a docs content root, so they are never routed as pages
+         * and the duplicate basenames cannot collide.
+         */
+        promises.push(
+          createData(`${basePath}/props.md`, data.props),
+          createData(`${basePath}/events.md`, data.events),
+          createData(`${basePath}/methods.md`, data.methods),
+          createData(`${basePath}/parts.md`, data.parts),
+          createData(`${basePath}/slots.md`, data.slots)
+        );
       }
 
       await Promise.all(promises);
