@@ -2,12 +2,12 @@
 title: 'ion-accordion'
 ---
 
-import Props from '@ionic-internal/component-api/v7/accordion/props.md';
-import Events from '@ionic-internal/component-api/v7/accordion/events.md';
-import Methods from '@ionic-internal/component-api/v7/accordion/methods.md';
-import Parts from '@ionic-internal/component-api/v7/accordion/parts.md';
+import Props from '@ionic-internal/component-api/v7/accordion/props.mdx';
+import Events from '@ionic-internal/component-api/v7/accordion/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/accordion/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/accordion/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/accordion/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/accordion/slots.md';
+import Slots from '@ionic-internal/component-api/v7/accordion/slots.mdx';
 
 <head>
   <title>ion-accordion: Accordion Components: How to Build & Examples</title>

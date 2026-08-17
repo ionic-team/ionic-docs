@@ -2,12 +2,12 @@
 title: 'ion-toggle'
 ---
 
-import Props from '@ionic-internal/component-api/v7/toggle/props.md';
-import Events from '@ionic-internal/component-api/v7/toggle/events.md';
-import Methods from '@ionic-internal/component-api/v7/toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v7/toggle/parts.md';
+import Props from '@ionic-internal/component-api/v7/toggle/props.mdx';
+import Events from '@ionic-internal/component-api/v7/toggle/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/toggle/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/toggle/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/toggle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/toggle/slots.md';
+import Slots from '@ionic-internal/component-api/v7/toggle/slots.mdx';
 
 <head>
   <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>

@@ -2,12 +2,12 @@
 title: 'ion-select'
 ---
 
-import Props from '@ionic-internal/component-api/v7/select/props.md';
-import Events from '@ionic-internal/component-api/v7/select/events.md';
-import Methods from '@ionic-internal/component-api/v7/select/methods.md';
-import Parts from '@ionic-internal/component-api/v7/select/parts.md';
+import Props from '@ionic-internal/component-api/v7/select/props.mdx';
+import Events from '@ionic-internal/component-api/v7/select/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/select/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/select/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/select/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/select/slots.md';
+import Slots from '@ionic-internal/component-api/v7/select/slots.mdx';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>

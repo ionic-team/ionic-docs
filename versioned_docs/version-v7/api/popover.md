@@ -2,12 +2,12 @@
 title: 'ion-popover'
 ---
 
-import Props from '@ionic-internal/component-api/v7/popover/props.md';
-import Events from '@ionic-internal/component-api/v7/popover/events.md';
-import Methods from '@ionic-internal/component-api/v7/popover/methods.md';
-import Parts from '@ionic-internal/component-api/v7/popover/parts.md';
+import Props from '@ionic-internal/component-api/v7/popover/props.mdx';
+import Events from '@ionic-internal/component-api/v7/popover/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/popover/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/popover/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/popover/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/popover/slots.md';
+import Slots from '@ionic-internal/component-api/v7/popover/slots.mdx';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>

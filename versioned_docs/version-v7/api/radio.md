@@ -2,12 +2,12 @@
 title: 'ion-radio'
 ---
 
-import Props from '@ionic-internal/component-api/v7/radio/props.md';
-import Events from '@ionic-internal/component-api/v7/radio/events.md';
-import Methods from '@ionic-internal/component-api/v7/radio/methods.md';
-import Parts from '@ionic-internal/component-api/v7/radio/parts.md';
+import Props from '@ionic-internal/component-api/v7/radio/props.mdx';
+import Events from '@ionic-internal/component-api/v7/radio/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/radio/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/radio/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
+import Slots from '@ionic-internal/component-api/v7/radio/slots.mdx';
 
 <head>
   <title>ion-radio: Radio Component for iOS and Android</title>

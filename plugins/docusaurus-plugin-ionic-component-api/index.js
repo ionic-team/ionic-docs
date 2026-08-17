@@ -81,13 +81,39 @@ module.exports = function (context, options) {
          * directory within the plugin directory.
          */
         promises.push(
-          createData(`${basePath}/props.md`, data.props),
-          createData(`${basePath}/events.md`, data.events),
-          createData(`${basePath}/methods.md`, data.methods),
-          createData(`${basePath}/parts.md`, data.parts),
+          createData(`${basePath}/props.mdx`, data.props),
+          createData(`${basePath}/events.mdx`, data.events),
+          createData(`${basePath}/methods.mdx`, data.methods),
+          createData(`${basePath}/parts.mdx`, data.parts),
           createData(`${basePath}/custom-props.mdx`, data.customProps),
-          createData(`${basePath}/slots.md`, data.slots)
+          createData(`${basePath}/slots.mdx`, data.slots)
         );
+
+        /**
+         * Transitional: `scripts/i18n.sh` copies the `translation/jp` branch's `docs/` tree
+         * into `i18n/ja` on every build, and those copies still import the `.md` partials.
+         * Dropping these names fails `docusaurus build --locale ja`, which production runs
+         * but PR previews do not (`build:preview` passes `--locale en`).
+         *
+         * Only the ja pass needs these. `i18n.sh` populates just the current version, so a ja
+         * build renders translated current-version pages (importing `.md`) alongside
+         * untranslated versioned pages that fall back to English (importing `.mdx`). Both
+         * names must exist within that pass, which is why the extension itself cannot be
+         * switched per locale, only supplemented.
+         *
+         * Remove once `translation/jp` imports the `.mdx` partials. These are written to
+         * `.docusaurus` rather than a docs content root, so they are never routed as pages
+         * and the duplicate basenames cannot collide.
+         */
+        if (context.i18n.currentLocale === 'ja') {
+          promises.push(
+            createData(`${basePath}/props.md`, data.props),
+            createData(`${basePath}/events.md`, data.events),
+            createData(`${basePath}/methods.md`, data.methods),
+            createData(`${basePath}/parts.md`, data.parts),
+            createData(`${basePath}/slots.md`, data.slots)
+          );
+        }
       }
 
       await Promise.all(promises);

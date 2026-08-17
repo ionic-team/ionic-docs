@@ -2,12 +2,12 @@
 title: 'ion-fab'
 ---
 
-import Props from '@ionic-internal/component-api/v7/fab/props.md';
-import Events from '@ionic-internal/component-api/v7/fab/events.md';
-import Methods from '@ionic-internal/component-api/v7/fab/methods.md';
-import Parts from '@ionic-internal/component-api/v7/fab/parts.md';
+import Props from '@ionic-internal/component-api/v7/fab/props.mdx';
+import Events from '@ionic-internal/component-api/v7/fab/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/fab/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/fab/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/fab/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/fab/slots.md';
+import Slots from '@ionic-internal/component-api/v7/fab/slots.mdx';
 
 <head>
   <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>

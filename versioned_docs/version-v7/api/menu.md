@@ -2,12 +2,12 @@
 title: 'ion-menu'
 ---
 
-import Props from '@ionic-internal/component-api/v7/menu/props.md';
-import Events from '@ionic-internal/component-api/v7/menu/events.md';
-import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
-import Parts from '@ionic-internal/component-api/v7/menu/parts.md';
+import Props from '@ionic-internal/component-api/v7/menu/props.mdx';
+import Events from '@ionic-internal/component-api/v7/menu/events.mdx';
+import Methods from '@ionic-internal/component-api/v7/menu/methods.mdx';
+import Parts from '@ionic-internal/component-api/v7/menu/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v7/menu/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
+import Slots from '@ionic-internal/component-api/v7/menu/slots.mdx';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
