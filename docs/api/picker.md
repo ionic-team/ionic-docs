@@ -1,12 +1,12 @@
 ---
 title: "ion-picker"
 ---
-import Props from '@ionic-internal/component-api/v8/picker/props.md';
-import Events from '@ionic-internal/component-api/v8/picker/events.md';
-import Methods from '@ionic-internal/component-api/v8/picker/methods.md';
-import Parts from '@ionic-internal/component-api/v8/picker/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
+import Props from '@ionic-internal/component-api/v9/picker/props.md';
+import Events from '@ionic-internal/component-api/v9/picker/events.md';
+import Methods from '@ionic-internal/component-api/v9/picker/methods.md';
+import Parts from '@ionic-internal/component-api/v9/picker/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/picker/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/picker/slots.md';
 
 <head>
   <title>ion-picker: Display a list of options in columns</title>
@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Picker displays one or more columns with options for users to choose from.
 
-import Basic from '@site/static/usage/v8/picker/basic/index.md';
+import Basic from '@site/static/usage/v9/picker/basic/index.md';
 
 <Basic />
 
@@ -27,7 +27,7 @@ import Basic from '@site/static/usage/v8/picker/basic/index.md';
 
 Use the `prefix` and `suffix` slots to add additional content to the picker.
 
-import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
+import PrefixSuffix from '@site/static/usage/v9/picker/prefix-suffix/index.md';
 
 <PrefixSuffix />
 
@@ -37,7 +37,7 @@ import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
 
 The picker highlight and fade can be customized using CSS variables on `ion-picker`. Developers can customize the individual appearance of `ion-picker-column-options` by targeting them directly and using host level styling.
 
-import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/picker/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -45,7 +45,7 @@ import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.
 
 Pickers can be displayed inside of overlays, such as `ion-modal` to create a picker experience with confirmation or cancellation buttons.
 
-import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
+import ModalExample from '@site/static/usage/v9/picker/modal/index.md';
 
 <ModalExample />
 

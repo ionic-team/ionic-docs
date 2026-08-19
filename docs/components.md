@@ -85,7 +85,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Inputs" href="api/input" icon="/icons/component-input-icon.png">
-  <p>Inputs provides a way for users to enter data in your app.</p>
+  <p>Inputs provide a way for users to enter data in your app.</p>
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">

@@ -2,16 +2,16 @@
 title: "ion-router"
 ---
 
-import Props from '@ionic-internal/component-api/v8/router/props.md';
-import Events from '@ionic-internal/component-api/v8/router/events.md';
-import Methods from '@ionic-internal/component-api/v8/router/methods.md';
-import Parts from '@ionic-internal/component-api/v8/router/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/router/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/router/slots.md';
+import Props from '@ionic-internal/component-api/v9/router/props.md';
+import Events from '@ionic-internal/component-api/v9/router/events.md';
+import Methods from '@ionic-internal/component-api/v9/router/methods.md';
+import Parts from '@ionic-internal/component-api/v9/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/router/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta name="description" content="ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript." />
+  <meta name="description" content="ion-router is a URL coordinator for navigation outlets of ionic: ion-tabs and ion-router-outlet. Router components handle routing inside vanilla and Stencil JavaScript." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -28,17 +28,27 @@ The router is a component for handling routing inside vanilla and Stencil JavaSc
 Apps should have a single `ion-router` component in the codebase.
 This component controls all interactions with the browser history and it aggregates updates through an event system.
 
-`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav`, `ion-tabs`, and `ion-router-outlet`.
+`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-tabs` and `ion-router-outlet`.
 
-That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav`, `ion-tabs`, and `ion-router-outlet` what and when to "show" based on the browser's URL.
+That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-tabs` and `ion-router-outlet` what and when to "show" based on the browser's URL.
 
-In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
+To configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
 
 ## Basic Usage
 
-import BasicExample from '@site/static/usage/v8/router/basic/index.md';
+import BasicExample from '@site/static/usage/v9/router/basic/index.md';
 
 <BasicExample />
+
+## Using ion-nav within a Routed Page
+
+`ion-router` and [`ion-nav`](./nav.md) are separate systems. `ion-router` coordinates URL-based navigation through `ion-router-outlet`, while `ion-nav` manages a local stack that is independent of the URL. `ion-nav` does not integrate with `ion-router`: placing an `ion-nav` inside an `ion-router` does not turn it into a routed outlet, and pushing or popping views on an `ion-nav` never changes the URL. 
+
+The two can still be composed. A routed page rendered by `ion-router-outlet` can host its own `ion-nav` for local, URL-less navigation within that page. In the example below, navigating to `/details` updates the URL, but stepping through the `ion-nav` inside that page does not.
+
+import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/index.md';
+
+<NavWithinPageExample />
 
 ## Interfaces
 

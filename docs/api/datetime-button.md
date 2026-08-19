@@ -1,12 +1,12 @@
 ---
 title: "ion-datetime-button"
 ---
-import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/datetime-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/datetime-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
+import Props from '@ionic-internal/component-api/v9/datetime-button/props.md';
+import Events from '@ionic-internal/component-api/v9/datetime-button/events.md';
+import Methods from '@ionic-internal/component-api/v9/datetime-button/methods.md';
+import Parts from '@ionic-internal/component-api/v9/datetime-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/datetime-button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/datetime-button/slots.md';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
@@ -23,11 +23,11 @@ Datetime Button links with a [Datetime](./datetime) component to display the for
 
 Datetime Button should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
-When using Datetime Button with a JavaScript framework such as Angular, React, or Vue be sure to use the [keepContentsMounted property on ion-modal](./modal#keepcontentsmounted) or the [keepContentsMounted property on ion-popover](./popover#keepcontentsmounted). This allows the linked datetime instance to be mounted even if the overlay has not been presented yet.
+When using Datetime Button with a JavaScript framework such as Angular, React, or Vue be sure to use the [keepContentsMounted property on ion-modal](./modal#prop-keep-contents-mounted) or the [keepContentsMounted property on ion-popover](./popover#prop-keep-contents-mounted). This allows the linked datetime instance to be mounted even if the overlay has not been presented yet.
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v9/datetime-button/basic/index.md';
 
 <Basic />
 
@@ -39,7 +39,7 @@ The localized text on `ion-datetime-button` is determined by the `locale` proper
 
 You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. Refer to [Datetime Format Options](./datetime#format-options) for more details.
 
-import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
+import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.md';
 
 <FormatOptions />
 

@@ -2,12 +2,12 @@
 title: "ion-thumbnail"
 ---
 
-import Props from '@ionic-internal/component-api/v8/thumbnail/props.md';
-import Events from '@ionic-internal/component-api/v8/thumbnail/events.md';
-import Methods from '@ionic-internal/component-api/v8/thumbnail/methods.md';
-import Parts from '@ionic-internal/component-api/v8/thumbnail/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/thumbnail/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/thumbnail/slots.md';
+import Props from '@ionic-internal/component-api/v9/thumbnail/props.md';
+import Events from '@ionic-internal/component-api/v9/thumbnail/events.md';
+import Methods from '@ionic-internal/component-api/v9/thumbnail/methods.md';
+import Parts from '@ionic-internal/component-api/v9/thumbnail/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/thumbnail/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>
@@ -24,13 +24,13 @@ Thumbnails can be used by themselves or inside of any element. If placed inside 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/thumbnail/basic/index.md';
+import Basic from '@site/static/usage/v9/thumbnail/basic/index.md';
 
 <Basic />
 
 ## Item Thumbnails
 
-import Item from '@site/static/usage/v8/thumbnail/item/index.md';
+import Item from '@site/static/usage/v9/thumbnail/item/index.md';
 
 <Item />
 
@@ -38,7 +38,7 @@ import Item from '@site/static/usage/v8/thumbnail/item/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v8/thumbnail/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/thumbnail/theming/css-properties/index.md';
 
 <CSSProps />
 

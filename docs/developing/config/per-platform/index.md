@@ -20,7 +20,11 @@ Refer to the [Angular Platform Documentation](../angular/platform) for the types
 :::
 
 ```ts title="app.module.ts"
-import { isPlatform, IonicModule } from '@ionic/angular';
+/*
+ * IonicModule is deprecated and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
+import { isPlatform, IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -43,7 +47,7 @@ Refer to the [Angular Platform Documentation](../angular/platform) for the types
 :::
 
 ```ts title="main.ts"
-import { isPlatform, provideIonicAngular } from '@ionic/angular/standalone';
+import { isPlatform, provideIonicAngular } from '@ionic/angular';
 
 bootstrapApplication(AppComponent, {
   providers: [

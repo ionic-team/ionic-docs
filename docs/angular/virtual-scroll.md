@@ -19,7 +19,7 @@ This provides a collection of different utilities, but we'll focus on `Scrolling
 When we want to use the CDK Scroller, we'll need to import the module in our component. For example, in a tabs starter project, we can add our import to the `tabs1.module.ts` file.
 
 ```diff
-  import { IonicModule } from '@ionic/angular';
+  import { IonicModule } from '@ionic/angular/lazy';
   import { NgModule } from '@angular/core';
   import { CommonModule } from '@angular/common';
   import { FormsModule } from '@angular/forms';

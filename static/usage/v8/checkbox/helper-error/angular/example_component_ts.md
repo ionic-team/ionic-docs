@@ -5,7 +5,6 @@ import { IonCheckbox, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
-  standalone: true,
   imports: [IonCheckbox, IonButton, ReactiveFormsModule],
   templateUrl: './example.component.html',
   styleUrl: './example.component.css',

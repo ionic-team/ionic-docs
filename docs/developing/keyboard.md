@@ -27,7 +27,7 @@ For a list of accepted values, refer to the <a href="https://developer.mozilla.o
 
 ### Usage
 
-import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.md';
+import Inputmode from '@site/static/usage/v9/keyboard/inputmode/index.md';
 
 <Inputmode />
 
@@ -45,7 +45,7 @@ For a list of accepted values, refer to the <a href="https://html.spec.whatwg.or
 
 ### Usage
 
-import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
+import Enterkeyhint from '@site/static/usage/v9/keyboard/enterkeyhint/index.md';
 
 <Enterkeyhint />
 
@@ -103,7 +103,7 @@ window.addEventListener('ionKeyboardDidHide', () => {
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 ...
 
@@ -122,7 +122,7 @@ constructor(private platform: Platform) {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 ...
 
