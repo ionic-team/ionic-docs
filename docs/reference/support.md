@@ -22,7 +22,7 @@ The current status of each Ionic Framework version is:
 
 | Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
 | :-----: | :------------: | :----------: | :--------------: | :---------------: |
-|   V9    |   **Active**   | Aug 17, 2026 |       TBD        |        TBD        |
+|   V9    |   **Active**   | Aug 19, 2026 |       TBD        |        TBD        |
 |   V8    |  Maintenance   | Apr 17, 2024 |   Feb 17, 2027   |   Aug 17, 2027    |
 |   V7    | End of Support | Mar 29, 2023 |   Oct 17, 2024   |   Apr 17, 2025    |
 |   V6    | End of Support | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
