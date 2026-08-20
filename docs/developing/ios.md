@@ -5,7 +5,7 @@ skipIntros: true
 ---
 
 <head>
-  <title>iOSアプリ開発ガイド: Xcode Setup to Build and Run iOS Apps</title>
+  <title>iOSアプリ開発ガイド: XcodeでiOSアプリをビルド・実行するための設定</title>
   <meta
     name="description"
     content="IonicのiOS開発ガイドでは、iOSシミュレーターとデバイスでIonicアプリをビルドおよび実行する方法を説明します。iOSアプリは、XcodeがセットアップされたmacOSでのみ開発できます。"
@@ -15,7 +15,7 @@ skipIntros: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info レガシー iOS ガイドをお探しですか？
+:::info[旧 iOS ガイドをお探しですか？]
 
 iOS 開発ガイドは、正式に[Capacitor の iOS ドキュメント](https://capacitorjs.com/docs/ios)に移行されました。レガシードキュメントにアクセスする必要がある場合は、[レガシー iOS 開発ガイド](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios)で見つけることができます。
 

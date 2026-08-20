@@ -1,12 +1,12 @@
 ---
 title: "ion-accordion-group"
 ---
-import Props from '@ionic-internal/component-api/v8/accordion-group/props.md';
-import Events from '@ionic-internal/component-api/v8/accordion-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/accordion-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/accordion-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/accordion-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/accordion-group/slots.md';
+import Props from '@ionic-internal/component-api/v9/accordion-group/props.md';
+import Events from '@ionic-internal/component-api/v9/accordion-group/events.md';
+import Methods from '@ionic-internal/component-api/v9/accordion-group/methods.md';
+import Parts from '@ionic-internal/component-api/v9/accordion-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/accordion-group/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/accordion-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -14,8 +14,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アコーディオン・グループは、アコーディオンインスタンスのためのコンテナです。これは、アコーディオンの状態を管理し、キーボードナビゲーションを提供します。
 
-より詳細な情報や使用方法については、 [Accordion](./accordion) を参照ください。
-
+詳細については、[アコーディオン](./accordion)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -37,8 +36,6 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonAccordionGroupElement;
 }
 ```
-
-
 
 ## プロパティ
 <Props />

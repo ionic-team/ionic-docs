@@ -11,7 +11,7 @@ sidebar_label: ライブリロード
   />
 </head>
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+これまでのところ、どこでも動作するクロスプラットフォームアプリを開発するのがどれだけ簡単かを学びました。開発の経験はかなり迅速ですが、さらに速く進める方法があると言ったらどうでしょうか？
 
 We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.md) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
@@ -135,7 +135,7 @@ const showActionSheet = async (photo: UserPhoto) => {
 </script>
 ```
 
-Add a click handler to the `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Wrap each image in a `<button>` element with a click handler. When the app user taps on a photo in our gallery, we'll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```vue
 <template>
@@ -154,9 +154,11 @@ Add a click handler to the `<ion-img>` element. When the app user taps on a phot
 
       <ion-grid>
         <ion-row>
-          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-            <!-- CHANGE: Add a click event listener to each image -->
-            <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+          <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
+            <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
+            <button @click="showActionSheet(photo)">
+              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
+            </button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -169,6 +171,25 @@ Add a click handler to the `<ion-img>` element. When the app user taps on a phot
     </ion-content>
   </ion-page>
 </template>
+
+<style scoped>
+ion-col > button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
 ```
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` method for us automatically.
@@ -176,7 +197,7 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/tutorial-photo-gallery-vue).
+このアプリの[完全なソースコード](https://github.com/ionic-team/tutorial-photo-gallery-vue)は GitHub で見つけることができます。
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

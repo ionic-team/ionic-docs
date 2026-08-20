@@ -1,12 +1,12 @@
 ---
 title: "ion-range"
 ---
-import Props from '@ionic-internal/component-api/v8/range/props.md';
-import Events from '@ionic-internal/component-api/v8/range/events.md';
-import Methods from '@ionic-internal/component-api/v8/range/methods.md';
-import Parts from '@ionic-internal/component-api/v8/range/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/range/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/range/slots.md';
+import Props from '@ionic-internal/component-api/v9/range/props.md';
+import Events from '@ionic-internal/component-api/v9/range/events.md';
+import Methods from '@ionic-internal/component-api/v9/range/methods.md';
+import Parts from '@ionic-internal/component-api/v9/range/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/range/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/range/slots.md';
 
 <head>
   <title>ion-range: Range Slider Knob Controls with Labels</title>
@@ -34,7 +34,7 @@ Rangeスライダは、スライダノブを動かして、ユーザーが値の
 
 以下のデモでは、`labelPlacement` プロパティを使用して、範囲に対するラベルの位置を変更しています。ここでは `label` プロパティを使用しているが、`labelPlacement` は `label` スロットでも使用できます。
 
-import LabelsPlayground from '@site/static/usage/v8/range/labels/index.md';
+import LabelsPlayground from '@site/static/usage/v9/range/labels/index.md';
 
 <LabelsPlayground />
 
@@ -42,7 +42,7 @@ import LabelsPlayground from '@site/static/usage/v8/range/labels/index.md';
 
 プレーンテキストのラベルは `label` プロパティで渡すべきであるが、カスタムHTMLが必要な場合は、代わりに `label` スロットで渡すことができます。
 
-import LabelSlotPlayground from '@site/static/usage/v8/range/label-slot/index.md';
+import LabelSlotPlayground from '@site/static/usage/v9/range/label-slot/index.md';
 
 <LabelSlotPlayground />
 
@@ -50,7 +50,7 @@ import LabelSlotPlayground from '@site/static/usage/v8/range/label-slot/index.md
 
 もし表示するラベルが必要ない場合でも、開発者は`aria-label`を与えるべきです。
 
-import NoVisibleLabel from '@site/static/usage/v8/range/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v9/range/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
@@ -60,7 +60,7 @@ import NoVisibleLabel from '@site/static/usage/v8/range/no-visible-label/index.m
 
 ドキュメントの方向性が左から右に設定されている場合、`start`位置にスロットされたコンテンツは範囲の左に表示され、`end`位置にスロットされたコンテンツは範囲の右に表示されます。右から左(rtl)の方向性の場合、`start`位置にスロットされたコンテンツは範囲の右側に表示され、`end`位置にスロットされたコンテンツは範囲の左側に表示されます。
 
-import DecorationsPlayground from '@site/static/usage/v8/range/slots/index.md';
+import DecorationsPlayground from '@site/static/usage/v9/range/slots/index.md';
 
 <DecorationsPlayground />
 
@@ -68,7 +68,7 @@ import DecorationsPlayground from '@site/static/usage/v8/range/slots/index.md';
 
 Dual knobs はユーザーが下限と上限の値を選択するために使用できる2つのknobsコントロールを導入しています。選択されると、Range は選択された上下限の値を含む [RangeValue](#rangevalue) を持つ `ionChange` イベントを発信します。
 
-import DualKnobs from '@site/static/usage/v8/range/dual-knobs/index.md';
+import DualKnobs from '@site/static/usage/v9/range/dual-knobs/index.md';
 
 <DualKnobs />
 
@@ -78,7 +78,7 @@ import DualKnobs from '@site/static/usage/v8/range/dual-knobs/index.md';
 
 `pinFormatter` 関数を使用すると、開発者はユーザーに対してレンジの値のフォーマットをカスタマイズすることができます。
 
-import Pins from '@site/static/usage/v8/range/pins/index.md';
+import Pins from '@site/static/usage/v9/range/pins/index.md';
 
 <Pins />
 
@@ -88,7 +88,7 @@ TicksはRange 上で利用可能な各値のインジケータを表示します
 
 snapsを有効にし、knobをドラッグして放すと、Range knobは最も近い利用可能な値にスナップします。
 
-import SnappingTicks from '@site/static/usage/v8/range/snapping-ticks/index.md';
+import SnappingTicks from '@site/static/usage/v9/range/snapping-ticks/index.md';
 
 <SnappingTicks />
 
@@ -98,7 +98,7 @@ import SnappingTicks from '@site/static/usage/v8/range/snapping-ticks/index.md';
 
 `ionChange` イベントはRange knobの値の変更を監視します。
 
-import IonChangeEvent from '@site/static/usage/v8/range/ion-change-event/index.md';
+import IonChangeEvent from '@site/static/usage/v9/range/ion-change-event/index.md';
 
 <IonChangeEvent />
 
@@ -106,7 +106,7 @@ import IonChangeEvent from '@site/static/usage/v8/range/ion-change-event/index.m
 
 マウスドラッグ、タッチジェスチャー、キーボード操作のいずれであっても、Range knobのドラッグが開始されると `ionKnobMoveStart` イベントが発行されます。逆に、`ionKnobMoveEnd`はRange knobがリリースされたときに発生します。両イベントは `RangeValue` タイプで発生し、`dualKnobs` プロパティと組み合わせて動作します。
 
-import IonKnobMoveEvent from '@site/static/usage/v8/range/ion-knob-move-event/index.md';
+import IonKnobMoveEvent from '@site/static/usage/v9/range/ion-knob-move-event/index.md';
 
 <IonKnobMoveEvent />
 
@@ -116,7 +116,7 @@ import IonKnobMoveEvent from '@site/static/usage/v8/range/ion-knob-move-event/in
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
-import CSSProps from '@site/static/usage/v8/range/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/range/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -126,7 +126,7 @@ Rangeには [CSS Shadow Parts](#css-shadow-parts) があり、Rangeコンポー�
 
 When `dualKnobs` is enabled, additional Shadow Parts are exposed to allow each knob to be styled independently. These are available in two forms: **static identity parts** (`A` and `B`) and **dynamic position parts** (`lower` and `upper`). The A and B parts always refer to the same physical knobs, even if the knobs cross. In contrast, the lower and upper parts reflect the current value position and automatically swap if the knobs cross. This allows styling by consistent identity or by relative value within the range.
 
-import CSSParts from '@site/static/usage/v8/range/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/range/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 

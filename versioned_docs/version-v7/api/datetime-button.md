@@ -27,7 +27,7 @@ Datetime Button links with a [Datetime](./datetime) component to display the for
 
 Datetime Button should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
-When using Datetime Button with a JavaScript framework such as Angular, React, or Vue be sure to use the [keepContentsMounted property on ion-modal](./modal#keepcontentsmounted) or the [keepContentsMounted property on ion-popover](./popover#keepcontentsmounted). This allows the linked datetime instance to be mounted even if the overlay has not been presented yet.
+When using Datetime Button with a JavaScript framework such as Angular, React, or Vue be sure to use the [keepContentsMounted property on ion-modal](./modal#prop-keep-contents-mounted) or the [keepContentsMounted property on ion-popover](./popover#prop-keep-contents-mounted). This allows the linked datetime instance to be mounted even if the overlay has not been presented yet.
 
 ## Basic Usage
 
@@ -50,20 +50,6 @@ import FormatOptions from '@site/static/usage/v7/datetime-button/format-options/
 ## Usage with Modals and Popovers
 
 `ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
-
-<!--
-## Customization
-
-TODO
-
-### Buttons
-
-TODO
-
-### Theming
-
-TODO
--->
 
 ## Properties
 

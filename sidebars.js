@@ -10,7 +10,7 @@ module.exports = {
       type: 'category',
       label: 'アップグレードガイド',
       collapsed: false,
-      items: ['updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
+      items: ['updating/9-0', 'updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
     },
     {
       type: 'category',
@@ -72,6 +72,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Build Your First App',
+          key: 'angular-your-first-app',
           items: [
             'angular/your-first-app',
             'angular/your-first-app/taking-photos',
@@ -95,6 +96,7 @@ module.exports = {
         'angular/testing',
         'angular/storage',
         'angular/performance',
+        'angular/zoneless',
         'angular/pwa',
       ],
     },
@@ -114,6 +116,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Build Your First App',
+          key: 'react-your-first-app',
           items: [
             'react/your-first-app',
             'react/your-first-app/taking-photos',
@@ -130,6 +133,7 @@ module.exports = {
         'react/navigation',
         'react/virtual-scroll',
         'react/slides',
+        'react/utility-functions',
         'react/platform',
         'react/pwa',
         'react/overlays',
@@ -164,6 +168,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Build Your First App',
+          key: 'vue-your-first-app',
           items: [
             'vue/your-first-app',
             'vue/your-first-app/taking-photos',
@@ -183,6 +188,7 @@ module.exports = {
         'vue/slides',
         'vue/utility-functions',
         'vue/platform',
+        'vue/testing',
         'vue/pwa',
         'vue/storage',
         'vue/troubleshooting',
@@ -197,7 +203,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '開発',
+      label: 'デプロイ',
       collapsed: false,
       items: ['deployment/app-store', 'deployment/play-store', 'deployment/progressive-web-app'],
     },
@@ -326,14 +332,7 @@ module.exports = {
       type: 'category',
       label: '日付 & タイムピッカー',
       collapsed: false,
-      items: [
-        'api/datetime',
-        'api/datetime-button',
-        'api/picker',
-        'api/picker-column',
-        'api/picker-column-option',
-        'api/picker-legacy',
-      ],
+      items: ['api/datetime', 'api/datetime-button', 'api/picker', 'api/picker-column', 'api/picker-column-option'],
     },
     {
       type: 'category',

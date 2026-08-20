@@ -617,7 +617,7 @@ type UseIonRouterResult = {
    */
   goBack(animationBuilder?: AnimationBuilder): void;
   /**
-   * Determines if there are any additional routes in the the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
+   * Determines if there are any additional routes in the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
    */
   canGoBack(): boolean;
   /**
@@ -649,8 +649,8 @@ For more info on routing in React using the React Router implementation that Ion
 
 ## From the Community
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 [Ionic 4 and React: Navigation](https://alligator.io/ionic/ionic-4-react-navigation) - Paul Halliday
 
-<!-- cspell:enable -->
+{/* cspell:enable */}

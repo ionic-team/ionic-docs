@@ -1,12 +1,12 @@
 ---
 title: "ion-datetime-button"
 ---
-import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/datetime-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/datetime-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
+import Props from '@ionic-internal/component-api/v9/datetime-button/props.md';
+import Events from '@ionic-internal/component-api/v9/datetime-button/events.md';
+import Methods from '@ionic-internal/component-api/v9/datetime-button/methods.md';
+import Parts from '@ionic-internal/component-api/v9/datetime-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/datetime-button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/datetime-button/slots.md';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
@@ -23,43 +23,29 @@ Datetimeボタンは、[Datetime](./datetime) コンポーネントとリンク�
 
 Datetimeボタンは、スペースに制約がある場合に使用する必要があります。このコンポーネントは、現在の日付と時刻の値を表示するボタンを表示します。ボタンがタップされると、日付や時刻のピッカーがオーバーレイで表示されます。
 
-Angular、React、VueなどのJavaScriptフレームワークでDatetime Buttonを使用する場合は、 [ion-modalのkeepContentsMountedプロパティ](./modal#keepcontentsmounted) または [ion-popover](./popover#keepcontentsmounted) を使用していることを確認してください。これにより、オーバーレイがまだ表示されていない場合でも、リンクされたdatetimeインスタンスがマウントされるようになります。
+Angular、React、Vue などの JavaScript フレームワークで Datetime Button を使用する場合は、[ion-modal の keepContentsMounted プロパティ](./modal#prop-keep-contents-mounted)または [ion-popover の keepContentsMounted プロパティ](./popover#prop-keep-contents-mounted)を使用してください。これにより、オーバーレイがまだ表示されていない場合でも、関連付けられた datetime インスタンスがマウントされます。
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v9/datetime-button/basic/index.md';
 
 <Basic />
 
 ## ローカライゼーション
 
-`ion-datetime-button` のローカライズされたテキストは、関連する `ion-datetime` インスタンスの `locale` プロパティによって決まります。詳しくは、[Datetime Localization](./datetime#localization) を参照してください。
+`ion-datetime-button`上のローカライズされたテキストは、関連する`ion-datetime`インスタンスの`locale`プロパティによって決まります。詳細は[日時ローカライゼーション](./datetime#localization)を参照してください。
 
 ## Format Options
 
-Datetimeインスタンスに`formatOptions`を指定することで、Datetime Buttonの日付と時刻の書式をカスタマイズすることができます。詳細は[Datetime Format Options](./datetime#format-options)を参照してください。
+Datetime ボタンの日時の形式は、関連する Datetime インスタンスで `formatOptions` を指定することでカスタマイズできます。詳細は [Datetime フォーマットオプション](./datetime#format-options) を参照してください。
 
-import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
+import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.md';
 
 <FormatOptions />
 
 ## モーダルやポップオーバーと使う
 
 `ion-datetime-button` は、マウントされた `ion-datetime` インスタンスと関連付ける必要があります。そのため、[Inline Modals](./modal#inline-modals-recommended) と [Inline Popovers](./popover#inline-popovers) は `keepContentsMounted` プロパティを `true` に設定して使用しなければなりません。
-
-<!--
-## Customization
-
-TODO
-
-### Buttons
-
-TODO
-
-### テーマ
-
-TODO
--->
 
 ## プロパティ
 <Props />

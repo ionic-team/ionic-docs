@@ -36,4 +36,4 @@ const items = ref([
 
 In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using the `key` attribute, we pass the `item.id` for each object. This `id` is used to provide a stable identity for each loop element.
 
-For more information on how Vue manages state with `v-for` see https://v3.vuejs.org/guide/list.html#maintaining-state
+詳細については、[リストの状態を維持する Vue ガイド](https://v3.vuejs.org/guide/list.html#maintaining-state)を参照してください。

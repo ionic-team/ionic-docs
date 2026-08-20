@@ -2,12 +2,12 @@
 title: "ion-avatar"
 ---
 
-import Props from '@ionic-internal/component-api/v8/avatar/props.md';
-import Events from '@ionic-internal/component-api/v8/avatar/events.md';
-import Methods from '@ionic-internal/component-api/v8/avatar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/avatar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/avatar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/avatar/slots.md';
+import Props from '@ionic-internal/component-api/v9/avatar/props.md';
+import Events from '@ionic-internal/component-api/v9/avatar/events.md';
+import Methods from '@ionic-internal/component-api/v9/avatar/methods.md';
+import Parts from '@ionic-internal/component-api/v9/avatar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/avatar/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>
@@ -24,19 +24,19 @@ Avatarは、単独で使用することも、任意の要素の内部で使用�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/avatar/basic/index.md';
+import Basic from '@site/static/usage/v9/avatar/basic/index.md';
 
 <Basic />
 
 ## Chip Avatar
 
-import Chip from '@site/static/usage/v8/avatar/chip/index.md';
+import Chip from '@site/static/usage/v9/avatar/chip/index.md';
 
 <Chip />
 
 ## Item Avatar
 
-import Item from '@site/static/usage/v8/avatar/item/index.md';
+import Item from '@site/static/usage/v9/avatar/item/index.md';
 
 <Item />
 
@@ -44,7 +44,7 @@ import Item from '@site/static/usage/v8/avatar/item/index.md';
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v8/avatar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/avatar/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -2,7 +2,7 @@
 
 ### [Elite Ionic](https://www.joshmorony.com/elite/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Josh Morony
 
@@ -10,7 +10,7 @@ Elite Ionic is an online course for Ionic developers who want to move past the b
 
 ### [Ionic Academy](https://ionicacademy.com/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Simon Grimm
 
@@ -18,7 +18,7 @@ Learn Ionic with step-by-step video courses & quick wins from one of the Ionic c
 
 ### [Ionic Framework: Tips, Tricks & Techniques](https://www.packtpub.com/mobile/ionic-framework-tips-tricks-and-techniques-video)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Charles Muzonzini
 
@@ -26,7 +26,7 @@ In this course, you will master tips and best practices for Ionic 4 & Ionic 5 th
 
 ### [Building Desktop Apps with Ionic and Electron](https://pluralsight.pxf.io/VeMXO)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Michael Callaghan at Pluralsight
 
@@ -41,7 +41,7 @@ Windows and macOS users.
 
 ### [Building Progressive Web Apps with Ionic](https://pluralsight.pxf.io/Ly2EY)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Michael Callaghan at Pluralsight
 
@@ -58,50 +58,44 @@ Progressive Web Application anywhere you desire.
 
 ### [Ionic CLI](https://pluralsight.pxf.io/ionic-cli)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Michael Callaghan at Pluralsight
 
-Since its inception, the Ionic Framework has included a rudimentary command line interface. Though only a few
-years old, it has matured into a powerful tool that should be part of every developer’s toolbox. This course,
-Ionic CLI, will start at the top and explore the Ionic CLI. First, you'll see how to create projects and
-components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects
-with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have
-been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have
-the confidence to use the Ionic CLI as part of your everyday Ionic development.
+Ionic フレームワークは、その創設当初から基本的なコマンドラインインターフェースを備えていました。数年しか経っていませんが、すでに強力なツールへと成長しており、すべての開発者のツールボックスに含まれるべきです。このコース「Ionic CLI」では、Ionic CLI をトップから学習していきます。まず、プロジェクトやコンポーネントの作成方法を学びます。次に、アプリのビルドと提供方法を学びます。最後に、プロジェクトを他の人と共有する方法や、他のビルドツールとの統合方法を学びます。Ionic をこれから探索し始める方でも、ベータ以前の時代から使用している方でも、ここにはあなたに役立つ内容があります。コースの終わりまでには、日常の Ionic 開発の一部として Ionic CLI を自信を持って使用できるようになります。
 
 ### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Baljeet Singh at Udemy
 
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Pluralsight
 
 ### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Mathieu Chauvinc
 
 ### [Ionic 2 Master Course](https://www.udemy.com/ionic-2-tutorial/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Udemy
 
 ### [Introducing Ionic 2](https://www.udemy.com/introducing-ionic-2/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Udemy
 
 ### [Ionic 2 Solutions](https://www.packtpub.com/web-development/ionic-2-solutions-video)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 by Hoc Phan

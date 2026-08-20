@@ -1,12 +1,12 @@
 ---
 title: "ion-loading"
 ---
-import Props from '@ionic-internal/component-api/v8/loading/props.md';
-import Events from '@ionic-internal/component-api/v8/loading/events.md';
-import Methods from '@ionic-internal/component-api/v8/loading/methods.md';
-import Parts from '@ionic-internal/component-api/v8/loading/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/loading/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/loading/slots.md';
+import Props from '@ionic-internal/component-api/v9/loading/props.md';
+import Events from '@ionic-internal/component-api/v9/loading/events.md';
+import Methods from '@ionic-internal/component-api/v9/loading/methods.md';
+import Parts from '@ionic-internal/component-api/v9/loading/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/loading/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/loading/slots.md';
 
 <head>
   <title>ion-loading: Loading | Application Loading Indicator Overlay</title>
@@ -22,29 +22,29 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-一度表示されると、ロードインジケータはデフォルトで無期限に表示されます。開発者は、コンポーネント上で `dismiss()` メソッドを呼び出すことで、作成後にローディングインジケータを手動で解除することができます。onDidDismiss` 関数を呼び出すと、ローディングインジケータが解除された後にアクションを実行することができます。
+一度表示されると、ロードインジケータはデフォルトで無期限に表示されます。開発者は、コンポーネント上で `dismiss()` メソッドを呼び出すことで、作成後にローディングインジケータを手動で解除することができます。`onDidDismiss` 関数を呼び出すと、ローディングインジケータが解除された後にアクションを実行することができます。
 
 また、ロードオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間が経過した後にロードインジケータを自動的に解除するよう設定することもできます。
 
 ### インラインロード (推奨)
 
-import Inline from '@site/static/usage/v8/loading/inline/index.md';
+import Inline from '@site/static/usage/v9/loading/inline/index.md';
 
 <Inline />
 
 ### Controller
 
-import Controller from '@site/static/usage/v8/loading/controller/index.md';
+import Controller from '@site/static/usage/v9/loading/controller/index.md';
 
 <Controller />
 
-## Customization
+## カスタマイズ
 
 ### スピナー
 
-使用するスピナーは `spinner` プロパティを使用してカスタマイズすることができます。オプションの完全なリストは [spinner property documentation](#spinner) を参照してください。
+使用するスピナーは `spinner` プロパティでカスタマイズできます。すべてのオプションについては、[`spinner` プロパティのドキュメント](#prop-spinner)を参照してください。
 
-import Spinners from '@site/static/usage/v8/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v9/loading/spinners/index.md';
 
 <Spinners />
 
@@ -54,7 +54,7 @@ Loading は scoped encapsulation を使用しています。これは、実行�
 
 カスタムクラスを渡して、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。
 
-import Theming from '@site/static/usage/v8/loading/theming/index.md';
+import Theming from '@site/static/usage/v9/loading/theming/index.md';
 
 <Theming />
 

@@ -1,21 +1,20 @@
 ---
 title: "ion-breadcrumb"
 ---
-import Props from '@ionic-internal/component-api/v8/breadcrumb/props.md';
-import Events from '@ionic-internal/component-api/v8/breadcrumb/events.md';
-import Methods from '@ionic-internal/component-api/v8/breadcrumb/methods.md';
-import Parts from '@ionic-internal/component-api/v8/breadcrumb/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/breadcrumb/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/breadcrumb/slots.md';
+import Props from '@ionic-internal/component-api/v9/breadcrumb/props.md';
+import Events from '@ionic-internal/component-api/v9/breadcrumb/events.md';
+import Methods from '@ionic-internal/component-api/v9/breadcrumb/methods.md';
+import Parts from '@ionic-internal/component-api/v9/breadcrumb/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/breadcrumb/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/breadcrumb/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
 
-詳しい説明は [Breadcrumbs](./breadcrumbs) を参照ください。
+詳細は[Breadcrumbs](./breadcrumbs)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -37,9 +36,6 @@ interface BreadcrumbCustomEvent extends CustomEvent {
   target: HTMLIonBreadcrumbElement;
 }
 ```
-
-
-
 
 ## プロパティ
 <Props />

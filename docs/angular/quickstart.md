@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ようこそ！このガイドでは、Ionic Angular 開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionic コンポーネントの動作方法を学びます。最初の実際のアプリを構築する前に Ionic Angular に慣れるのに最適です。
 
-Ionic Angular とは何か、Angular エコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic Angular の概要](overview)を参照してください。
+Ionic Angular が何であるか、そして Angular エコシステムにどのように適合するかの概要について知りたい場合は、[Ionic Angular 概要](overview)を参照してください。
 
 ## 前提条件
 
@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-Node.js と npm がない場合は、[こちらから Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
+もし Node.js と npm を持っていない場合は、[Node.js をダウンロードしてください](https://nodejs.org/en/download)（npm を含みます）。
 
 ## Ionic CLI でプロジェクトを作成
 
@@ -83,7 +83,7 @@ The root of your app is defined in `app.component.ts`:
 
 ```ts title="src/app/app.component.ts"
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -133,7 +133,7 @@ The Home page component, defined in `home.page.ts`, imports the Ionic components
 
 ```ts title="src/app/home/home.page.ts"
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -172,10 +172,10 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。2 番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
+これにより、ヘッダーとスクロール可能なコンテンツエリアを持つページが作成されます。2 つ目のヘッダーは、コンテンツの先頭にあるときに iOS デバイスで表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、その後スクロールすると最初のヘッダーに小さいタイトルを表示するように縮小されます。
 
-:::tip 詳細情報
-Ionic レイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
+:::tip[詳細を学ぶ]
+Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、および[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
 ## Ionic コンポーネントを追加
@@ -193,7 +193,7 @@ Ionic レイアウトコンポーネントの詳細については、[Header](/d
 Then, import the `IonButton` component in `home.page.ts`:
 
 ```ts title="src/app/home/home.page.ts"
-import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   // ...existing config...
@@ -227,7 +227,7 @@ In `new.page.html`, you can add a [Back Button](/docs/api/back-button.md) to the
 And import `IonBackButton` and `IonButtons` in `new.page.ts`:
 
 ```ts title="src/app/new/new.page.ts"
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   // ...existing config...
@@ -257,7 +257,7 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-Angular の Router サービスを使用してナビゲーションを実行することもできます。詳細については、[Angular Navigation ドキュメント](/docs/angular/navigation.md#navigating-to-different-routes)を参照してください。
+ナビゲーションは、Angular の Router サービスを使用して行うこともできます。詳細については、[Angular ナビゲーションのドキュメント](/docs/angular/navigation.md#navigating-to-different-routes)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
@@ -277,7 +277,7 @@ You'll also need to import and register these icons in `new.page.ts`:
 
 ```ts title="src/app/new/new.page.ts"
 // ...existing imports...
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 または、`app.component.ts`でアイコンを登録して、アプリ全体で使用することもできます。
 
-詳細については、[Icon ドキュメント](/docs/api/icon.md)と[Ionicons ドキュメント](https://ionic.io/ionicons/)を参照してください。
+詳細については、[Icon のドキュメント](/docs/api/icon.md)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
 
 ## コンポーネントメソッドを呼び出す
 
@@ -346,7 +346,7 @@ import {
   IonLabel,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 
@@ -406,7 +406,7 @@ ionic cap open ios
 ionic cap open android
 ```
 
-詳細については、[Capacitor の Getting Started ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
+詳細については、[Capacitor の入門ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
 ## さらに探索
 

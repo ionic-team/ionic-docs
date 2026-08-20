@@ -19,7 +19,7 @@ Ionic アプリは、主に Ionic CLI（[command-line](../reference/glossary.md#
 
 ## Ionic CLI をインストール
 
-続行する前に、コンピュータに [Node.js](../reference/glossary.md#node) がインストールされているかを確認ください。[この説明で](environment.md)で Ionic をセットアップできる環境を説明しています。
+進める前に、あなたのコンピュータに[Node.js](../reference/glossary.md#node)がインストールされていることを確認してください。マシンを準備するには、[環境設定ガイド](environment.md)を参照してください。
 
 npm を使って Ionic CLI をインストールします:
 
@@ -36,8 +36,7 @@ $ npm install -g @ionic/cli
 ```
 
 :::note
-`-g` オプションは、 _グローバルにインストール_ することを意味しています。パッケージをグローバルにインストールすると `EACCES` パーミッションエラーが起きる可能性があります。
-管理権限なしで npm がグローバルで動作するように設定することを検討してください。詳細については [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) をご覧ください。
+`-g`オプションは*グローバルにインストール*することを意味します。パッケージをグローバルにインストールすると、`EACCES`権限エラーが発生することがあります。権限を昇格させずに npm をグローバルで操作する設定を検討してください。詳細については、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## アプリケーションの起動
@@ -50,7 +49,7 @@ ionic start
 
 ![Three thumbnail previews of Ionic app templates: blank, tabs, and side menu.](/img/installation/start-app-thumbnails.png 'Ionic App Starter Templates')
 
-Ionic アプリのはじめ方をもっと知りたい方は、[スタートガイド](../developing/starting.md)を参照してください。
+Ionic アプリの開始方法について詳しく知りたい場合は、[スタートガイド](../developing/starting.md)を参照してください。
 
 ## アプリケーションを実行する
 
@@ -61,4 +60,4 @@ $ cd myApp
 $ ionic serve
 ```
 
-アプリを実行する方法は他にもたくさんありますが、まずはこのワークフローから始めることをおすすめします。デバイスやエミュレーターでアプリを開発・テストするには、[アプリの実行ガイド](../developing/previewing.md) を参照してください。
+アプリを実行する方法はいくつかありますが、このワークフローから始めることをおすすめします。デバイスやエミュレーターでアプリを開発およびテストするには、[アプリ実行ガイド](../developing/previewing.md)を参照してください。

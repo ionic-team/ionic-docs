@@ -1,12 +1,12 @@
 ---
 title: "ion-reorder-group"
 ---
-import Props from '@ionic-internal/component-api/v8/reorder-group/props.md';
-import Events from '@ionic-internal/component-api/v8/reorder-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/reorder-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/reorder-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/reorder-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
+import Props from '@ionic-internal/component-api/v9/reorder-group/props.md';
+import Events from '@ionic-internal/component-api/v9/reorder-group/events.md';
+import Methods from '@ionic-internal/component-api/v9/reorder-group/methods.md';
+import Parts from '@ionic-internal/component-api/v9/reorder-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/reorder-group/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/reorder-group/slots.md';
 
 <head>
   <title>ion-reorder-group: Wrapper Component for Reorder Items</title>
@@ -15,11 +15,9 @@ import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 Reorder groupは、[reorder](./reorder)コンポーネントを使用するアイテムのコンテナです。ユーザーがアイテムをドラッグしてドロップすると、`ionReorderEnd`イベントが発行されます。このイベントのハンドラを実装し、`complete`メソッドを呼び出す必要があります。
 
-`ionReorderEnd`イベントの`detail`プロパティには、`from`と`to`のインデックスを含む、reorder操作に関するすべての関連情報が含まれています。reorderのコンテキストでは、アイテムはインデックス`from`からインデックス`to`に移動します。reorder groupの使用例については、[reorder](./reorder)ドキュメントを参照してください。
-
+`ionReorderEnd` イベントの `detail` プロパティには、`from` および `to` インデックスを含む、並べ替え操作に関するすべての関連情報が含まれています。並べ替えの文脈では、項目は `to` インデックスに `from` 移動します。並べ替えグループの使用例については、[reorder](./reorder) ドキュメントを参照してください。
 
 ## Interfaces
 
@@ -87,7 +85,6 @@ interface ItemReorderCustomEvent extends CustomEvent {
   target: HTMLIonReorderGroupElement;
 }
 ```
-
 
 ## プロパティ
 <Props />

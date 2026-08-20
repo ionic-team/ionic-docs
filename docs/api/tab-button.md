@@ -4,26 +4,20 @@ title: "ion-tab-button"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/tab-button/props.md';
-import Events from '@ionic-internal/component-api/v8/tab-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/tab-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tab-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tab-button/slots.md';
+import Props from '@ionic-internal/component-api/v9/tab-button/props.md';
+import Events from '@ionic-internal/component-api/v9/tab-button/events.md';
+import Methods from '@ionic-internal/component-api/v9/tab-button/methods.md';
+import Parts from '@ionic-internal/component-api/v9/tab-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/tab-button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/tab-button/slots.md';
 
-
- 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+タブボタンは、[タブバー](tab-bar.md)の内部に配置される UI コンポーネントです。タブボタンを使用すると、アイコンとラベルのレイアウトを指定し、[タブビュー](tab.md)に接続できます。
 
-tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポーネントです。tab buttonを使用すると、iconとlabelのレイアウトを指定し、[tab view](tab.md)に接続できます。
-
-タブの設定の詳細については、[tabs documentation](tabs.md)を参照してください。
-
-
-
+タブの設定の詳細については、[tabs ドキュメント](tabs.md)を参照してください。
 
 ## 使い方
 
@@ -58,9 +52,7 @@ tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポー�
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -108,9 +100,7 @@ tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポー�
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -149,9 +139,7 @@ export const TabButtonExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -194,7 +182,6 @@ import {
 import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
 </script>
 ```
-
 
 </TabItem>
 

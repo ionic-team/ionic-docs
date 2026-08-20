@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Vue バージョンサポート
 
-Ionic Vue v8 は Vue 3.x をサポートしています。サポートされているバージョンとサポートポリシーの詳細については、[Ionic Vue サポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
+Ionic Vue v9 は Vue 3.5 以降をサポートしています。サポートされているバージョンやサポートポリシーの詳細については、[Ionic Vue サポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
 
 ## Vue ツール
 
@@ -28,7 +28,7 @@ Ionic Vue プロジェクトは、標準の Vue CLI プロジェクトと同じ�
 
 [Capacitor](https://capacitorjs.com)は、Ionic Vue の公式クロスプラットフォームランタイムで、単一のコードベースで iOS、Android、Web 上でネイティブにアプリを実行できます。
 
-Ionic Vue で多くの[Cordova](https://cordova.apache.org/)プラグインを使用できますが、Capacitor が推奨され、完全にサポートされているソリューションです。[Ionic CLI](../cli.md)は、Ionic Vue プロジェクトの公式 Cordova 統合を提供していません。Capacitor で Cordova プラグインを使用する方法の詳細については、[Capacitor ドキュメント](https://capacitorjs.com/docs/cordova)を参照してください。
+多くの[Cordova](https://cordova.apache.org/)プラグインを Ionic Vue で使用できますが、推奨され完全にサポートされているのは Capacitor です。[Ionic CLI](../cli.md)は Ionic Vue プロジェクト向けに公式の Cordova 統合を提供していません。Capacitor で Cordova プラグインを使用する詳細については、[Capacitor のドキュメント](https://capacitorjs.com/docs/cordova)を参照してください。
 
 ## インストール
 
@@ -63,11 +63,9 @@ $ ionic serve █
 <DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
 </DocsCard>
-
+{/* prettier-ignore */}
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
 </DocsCard>
 
 </DocsCards>

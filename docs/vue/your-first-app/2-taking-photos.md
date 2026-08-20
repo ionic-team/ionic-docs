@@ -192,7 +192,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
+Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an `<img>` element and set its `src` property to the photo's path.
 
 ```vue
 <template>
@@ -212,9 +212,9 @@ Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid componen
       <!-- CHANGE: Add a grid component to display the photos -->
       <ion-grid>
         <ion-row>
-          <!-- CHANGE: Create a new column and image component for each photo -->
-          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-            <ion-img :src="photo.webviewPath"></ion-img>
+          <!-- CHANGE: Create a new column and image element for each photo -->
+          <ion-col size="6" :key="photo.filepath" v-for="(photo, index) in photos">
+            <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -243,7 +243,6 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonImg,
 } from '@ionic/vue';
 
 import { usePhotoGallery } from '@/composables/usePhotoGallery';

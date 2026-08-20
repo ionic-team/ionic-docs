@@ -3,10 +3,10 @@ title: サポートポリシー
 ---
 
 <head>
-  <title>App Development Support Policy - Ionic Framework API</title>
+  <title>アプリ開発サポートポリシー - IonicフレームワークAPI</title>
   <meta
     name="description"
-    content="Ionic Framework API is 100% open-source (MIT), and always will be. Read our support policy to see why users know Ionic is the right choice for app development."
+    content="Ionic Framework API is 100% open-source (MIT), and always will be. Read our support policy to learn why users know Ionic is the right choice for app development."
   />
 </head>
 
@@ -22,7 +22,8 @@ The current status of each Ionic Framework version is:
 
 | Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
 | :-----: | :------------: | :----------: | :--------------: | :---------------: |
-|   V8    |   **Active**   | Apr 17, 2024 |       TBD        |        TBD        |
+|   V9    |   **Active**   | Aug 19, 2026 |       TBD        |        TBD        |
+|   V8    |  Maintenance   | Apr 17, 2024 |   Feb 19, 2027   |   Aug 19, 2027    |
 |   V7    | End of Support | Mar 29, 2023 |   Oct 17, 2024   |   Apr 17, 2025    |
 |   V6    | End of Support | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
 |   V5    | End of Support | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
@@ -31,8 +32,8 @@ The current status of each Ionic Framework version is:
 |   V2    | End of Support | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
 |   V1    | End of Support | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
 
-- **Maintenance**: Only critical bug and security fixes. No major feature improvements.
-- **Extended Support**: For teams and organizations that require additional long term maintenance support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
+- **保守**: 重大なバグやセキュリティ修正のみ。大規模な機能改善は行いません。
+- **延長サポート**: 追加の長期メンテナンスサポートが必要なチームや組織向けに、Ionic は延長サポートオプションを提供しています。
 
 ## Compatibility Recommendations
 
@@ -44,6 +45,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
+|    v9     |           v18           |          v22.x          |  5.4+[^4]  |
 |    v8     |           v16           |        v20.x[^3]        |   4.9.3+   |
 |    v7     |           v14           |        v17.x[^2]        |    4.6+    |
 |    v6     |           v12           |        v15.x[^1]        |    4.0+    |
@@ -54,17 +56,19 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 [^1]: Angular 14.x supported starting in Ionic v6.1.9. Angular 15.x supported starting in Ionic v6.3.6.
 [^2]: Angular 17.x supported starting in Ionic v7.5.4.
 [^3]: Angular 18.x supported starting in Ionic v8.2.0.
+[^4]: `@ionic/angular` and `@ionic/react` require TypeScript 5.4+. Using Angular 21 requires TypeScript 5.9 or later, and Angular 22 requires TypeScript 6.0 or later, per Angular's own requirements.
 
 **Angular 13+ Support On Older Versions of iOS**
 
 Angular's support policy for iOS is the two most recent major versions. This means that changes to your Angular project may be necessary to use Ionic Angular v4-v6 on iOS 13. To support iOS 13, change the project `target` specified in `compilerOptions` in the tsconfig.json to `es5`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on app startup in iOS 13.
 
-Note that later versions of Ionic do not support iOS 13; see [mobile support table here](./browser-support#mobile-browsers).
+Ionic の後続バージョンは iOS 13 をサポートしていないことに注意してください。[モバイルサポート表](./browser-support.md#mobile-platforms)を参照してください。
 
 #### Ionic React
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
+|    v9     |          v18+          |  5.4+[^4]  |
 |    v8     |          v17+          |    3.7+    |
 |    v7     |          v17+          |    3.7+    |
 |    v6     |          v17+          |    3.7+    |
@@ -75,23 +79,38 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 | Framework | Required Vue Version | TypeScript |
 | :-------: | :------------------: | :--------: |
+|    v9     |        v3.5+         |    3.9+    |
 |    v8     |       v3.0.6+        |    3.9+    |
 |    v7     |       v3.0.6+        |    3.9+    |
 |    v6     |       v3.0.6+        |    3.9+    |
 |    v5     |        v3.0+         |    3.9+    |
 
+#### Ionic Vue Router
+
+| Framework | Required Vue Router Version |
+| :-------: | :-------------------------: |
+|    v9     |             v5+             |
+|    v8     |             v4+             |
+|    v7     |             v4+             |
+|    v6     |             v4+             |
+|    v5     |             v4+             |
+
 ### Native Bridges
 
-|  Framework   |               Cordova                |        Capacitor         |
-| :----------: | :----------------------------------: | :----------------------: |
-| V5 - Angular | cordova-android 8.X, cordova-ios 5.X |        Latest 2.X        |
-|  V5 - React  |            Not supported             |        Latest 2.x        |
-|   V5 - Vue   |            Not supported             |        Latest 2.X        |
-| V4 - Angular | cordova-android 8.X, cordova-ios 5.X |        Latest 2.X        |
-|  V4 - React  |            Not supported             |        Latest 2.x        |
-|      V3      | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
+|   Framework    |               Cordova                |        Capacitor         |
+| :------------: | :----------------------------------: | :----------------------: |
+|  V9: Angular   | cordova-android 8.X, cordova-ios 5.X |           7.X+           |
+|   V9: React    |            Not supported             |           7.x+           |
+|    V9: Vue     |            Not supported             |           7.X+           |
+| V5-V8: Angular | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
+|  V5-V8: React  |            Not supported             |           2.x+           |
+|   V5-V8: Vue   |            Not supported             |           2.X+           |
+|  V4: Angular   | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
+|   V4: React    |            Not supported             |           2.x+           |
+|       V3       | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
 
 - As iOS and Android (and related tools) are updated, you can expect more updates for Cordova and Capacitor, so it is recommended to stay on the latest version(s) of Cordova and Capacitor.
+- Starting with Ionic v9, Capacitor 7 is the minimum officially supported version. Earlier versions of Ionic ran on Capacitor 2 and later.
 
 ### Ionic Platform & Products
 
@@ -103,9 +122,9 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 |  V4 - React  |  `@ionic/react` 4.X   |               Use latest available                |
 |      V3      | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
 
-- Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](https://ionic.io/docs/premier-plugins/setup#install-tooling)
-- For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
-- If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
+- ネイティブ Premier プラグインのインストールには `@ionic-enterprise/cordova` が必要です。[Premier プラグインのツール設定](https://ionic.io/docs/premier-plugins/setup#install-tooling) を参照してください。
+- Capacitor プロジェクトの場合は、[Cordova プラグインの Capacitor インストールガイド](https://capacitorjs.com/docs/cordova/using-cordova-plugins) に従ってください
+- Ionic 3 プロジェクトで Enterprise プラグインを使用する必要がある場合は、[お問い合わせください](https://ionic.zendesk.com/hc)
 
 ### Ionic Platform & Products (Cont.)
 

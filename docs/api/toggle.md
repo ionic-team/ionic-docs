@@ -1,12 +1,12 @@
 ---
 title: "ion-toggle"
 ---
-import Props from '@ionic-internal/component-api/v8/toggle/props.md';
-import Events from '@ionic-internal/component-api/v8/toggle/events.md';
-import Methods from '@ionic-internal/component-api/v8/toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v8/toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toggle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/toggle/slots.md';
+import Props from '@ionic-internal/component-api/v9/toggle/props.md';
+import Events from '@ionic-internal/component-api/v9/toggle/events.md';
+import Methods from '@ionic-internal/component-api/v9/toggle/methods.md';
+import Parts from '@ionic-internal/component-api/v9/toggle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/toggle/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/toggle/slots.md';
 
 <head>
   <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>
@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/toggle/basic/index.md';
+import Basic from '@site/static/usage/v9/toggle/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v8/toggle/basic/index.md';
 
 トグルは、`enableOnOffLabels`プロパティを設定することで、オン/オフラベルを有効にすることができます。これはアクセシビリティ上重要なことで、チェックされたトグルとチェックされていないトグルの区別がつきやすくなります。
 
-import OnOff from '@site/static/usage/v8/toggle/on-off/index.md';
+import OnOff from '@site/static/usage/v9/toggle/on-off/index.md';
 
 <OnOff />
 
@@ -40,7 +40,7 @@ import OnOff from '@site/static/usage/v8/toggle/on-off/index.md';
 
 [アイテム](./item)と[リスト](./list)コンポーネントを使用すると、リストビューでトグルを使用することも可能です。
 
-import List from '@site/static/usage/v8/toggle/list/index.md';
+import List from '@site/static/usage/v9/toggle/list/index.md';
 
 <List />
 
@@ -49,7 +49,7 @@ import List from '@site/static/usage/v8/toggle/list/index.md';
 
 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
-import LabelPlacement from '@site/static/usage/v8/toggle/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/toggle/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -61,7 +61,7 @@ import LabelPlacement from '@site/static/usage/v8/toggle/label-placement/index.m
 スタックされたトグルは、`alignment`プロパティを使用して配置できます。ラベルとコントロールを水平方向に中央揃えする必要がある場合に便利です。
 :::
 
-import Alignment from '@site/static/usage/v8/toggle/alignment/index.md';
+import Alignment from '@site/static/usage/v9/toggle/alignment/index.md';
 
 <Alignment />
 
@@ -69,7 +69,7 @@ import Alignment from '@site/static/usage/v8/toggle/alignment/index.md';
 
 開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
-import Justify from '@site/static/usage/v8/toggle/justify/index.md';
+import Justify from '@site/static/usage/v9/toggle/justify/index.md';
 
 <Justify />
 
@@ -79,7 +79,7 @@ import Justify from '@site/static/usage/v8/toggle/justify/index.md';
 
 Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
-import HelperError from '@site/static/usage/v8/toggle/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/toggle/helper-error/index.md';
 
 <HelperError />
 
@@ -87,7 +87,7 @@ import HelperError from '@site/static/usage/v8/toggle/helper-error/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/toggle/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/toggle/theming/colors/index.md';
 
 <Colors />
 
@@ -95,7 +95,7 @@ import Colors from '@site/static/usage/v8/toggle/theming/colors/index.md';
 
 CSSカスタムプロパティは、標準CSSと組み合わせてトグルの異なる部分をターゲットにすることができます。トグルの `width` と `height` を直接変更してトラックのサイズを変更し、`--handle-width` と `--handle-height` カスタムプロパティを使用して、ハンドルサイズをカスタマイズすることができます。
 
-import CSSProps from '@site/static/usage/v8/toggle/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/toggle/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -103,7 +103,7 @@ import CSSProps from '@site/static/usage/v8/toggle/theming/css-properties/index.
 
 トグルをさらにカスタマイズするには、公開されている特定のシャドウ部分をターゲットにすることができます。これらの部分には、どのようなCSSプロパティでもスタイルを設定でき、CSSカスタムプロパティと組み合わせることも可能です。
 
-import CSSParts from '@site/static/usage/v8/toggle/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/toggle/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 

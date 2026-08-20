@@ -46,7 +46,25 @@ module.exports = {
     },
   },
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  /**
+   * Docusaurus Faster replaces the Webpack/Babel/Terser toolchain with
+   * Rspack/SWC/Lightning CSS, which cuts build times and memory usage on a
+   * site with this many versioned pages. It becomes the default in v4.
+   *
+   * `removeLegacyPostBuildHeadAttribute` is required by the `ssgWorkerThreads`
+   * part of `faster`, so it has to be enabled alongside it.
+   */
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    faster: true,
+  },
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
@@ -83,7 +101,7 @@ module.exports = {
           /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
-              label: 'v8',
+              label: 'v9',
             },
           },
         },
@@ -183,8 +201,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'updating/8-0',
-          label: 'Ionic v8.0.0 アップグレードガイド',
+          docId: 'updating/9-0',
+          label: 'Ionic v9.0.0 アップグレードガイド',
           position: 'left',
           className: 'cta',
         },
@@ -288,12 +306,7 @@ module.exports = {
           position: 'right',
           dropdownItemsBefore: [],
           dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/docs',
-              label: 'English',
-              target: '_self',
-              rel: null,
-            },
+            { href: 'https://ionicframework.com/docs', label: 'English', target: '_self', rel: null },
             {
               href: 'https://ionicframework.com/translate',
               label: 'Translate',
@@ -358,7 +371,7 @@ module.exports = {
         name: 'ionic-docs-ads',
         async loadContent() {
           const repoName = 'ionicframeworkcom';
-          const endpoint = prismic.getEndpoint(repoName);
+          const endpoint = prismic.getRepositoryEndpoint(repoName);
           const client = prismic.createClient(endpoint, {
             fetch,
           });
@@ -374,6 +387,12 @@ module.exports = {
       path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
       {
         versions: VERSIONS_JSON,
+      },
+    ],
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        injectButton: false,
       },
     ],
   ],

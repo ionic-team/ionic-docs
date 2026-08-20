@@ -2,12 +2,12 @@
 title: "ion-segment-view"
 ---
 
-import Props from '@ionic-internal/component-api/v8/segment-view/props.md';
-import Events from '@ionic-internal/component-api/v8/segment-view/events.md';
-import Methods from '@ionic-internal/component-api/v8/segment-view/methods.md';
-import Parts from '@ionic-internal/component-api/v8/segment-view/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/segment-view/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/segment-view/slots.md';
+import Props from '@ionic-internal/component-api/v9/segment-view/props.md';
+import Events from '@ionic-internal/component-api/v9/segment-view/events.md';
+import Methods from '@ionic-internal/component-api/v9/segment-view/methods.md';
+import Parts from '@ionic-internal/component-api/v9/segment-view/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/segment-view/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/segment-view/slots.md';
 
 <head>
   <title>ion-segment-view: Controller element for swipeable segments</title>
@@ -18,8 +18,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Segment view is a wrapper element that links a group of [segment contents](./segment-content.md) to a [segment](./segment.md) when using swipeable segments.
-See our [swipeable segments](./segment.md#swipeable-segments) documentation for more information on how to use segment views.
+セグメントビューは、スワイプ可能なセグメントを使用する際に、[セグメントコンテンツ](./segment-content.md)のグループを[セグメント](./segment.md)にリンクするラッパー要素です。
+セグメントビューの使用方法については、[スワイプ可能なセグメント](./segment.md#swipeable-segments)のドキュメントを参照してください。
 
 ## Properties
 <Props />
@@ -36,5 +36,5 @@ See our [swipeable segments](./segment.md#swipeable-segments) documentation for 
 ## CSS Custom Properties
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

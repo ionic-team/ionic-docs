@@ -1,12 +1,12 @@
 ---
 title: "ion-nav-link"
 ---
-import Props from '@ionic-internal/component-api/v8/nav-link/props.md';
-import Events from '@ionic-internal/component-api/v8/nav-link/events.md';
-import Methods from '@ionic-internal/component-api/v8/nav-link/methods.md';
-import Parts from '@ionic-internal/component-api/v8/nav-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/nav-link/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/nav-link/slots.md';
+import Props from '@ionic-internal/component-api/v9/nav-link/props.md';
+import Events from '@ionic-internal/component-api/v9/nav-link/events.md';
+import Methods from '@ionic-internal/component-api/v9/nav-link/methods.md';
+import Parts from '@ionic-internal/component-api/v9/nav-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/nav-link/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/nav-link/slots.md';
 
 <head>
   <title>ion-nav-link: Navigation Links to a Specified Component</title>
@@ -15,13 +15,11 @@ import Slots from '@ionic-internal/component-api/v8/nav-link/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 ナビゲーションリンクは指定されたコンポーネントに移動するために使用されます。コンポーネントは `forward`, `back` または `root` コンポーネントとして移動することができます。
 
 これは、ナビゲーションコントローラの `push()`, `pop()`, `setRoot()` メソッドを呼び出すための要素形式となります。
 
-詳しくは[nav](./nav#using-navlink)のドキュメントを参照ください。
-
+詳細については、[nav](./nav#using-navlink)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

@@ -1,12 +1,12 @@
 ---
 title: "ion-content"
 ---
-import Props from '@ionic-internal/component-api/v8/content/props.md';
-import Events from '@ionic-internal/component-api/v8/content/events.md';
-import Methods from '@ionic-internal/component-api/v8/content/methods.md';
-import Parts from '@ionic-internal/component-api/v8/content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/content/slots.md';
+import Props from '@ionic-internal/component-api/v9/content/props.md';
+import Events from '@ionic-internal/component-api/v9/content/events.md';
+import Methods from '@ionic-internal/component-api/v9/content/methods.md';
+import Parts from '@ionic-internal/component-api/v9/content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/content/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable Component for Ionic App Content</title>
@@ -27,7 +27,7 @@ Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utili
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/content/basic/index.md';
+import Basic from '@site/static/usage/v9/content/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/v8/content/basic/index.md';
 
 コンテンツは、ページ内の唯一のトップレベル・コンポーネントとすることも、[ヘッダー](./header)、[フッター](./footer)、またはその両方と一緒に使用することも可能です。ヘッダーやフッターと一緒に使用すると、残りの高さを埋めるようにサイズが調整されます。
 
-import HeaderFooter from '@site/static/usage/v8/content/header-footer/index.md';
+import HeaderFooter from '@site/static/usage/v9/content/header-footer/index.md';
 
 <HeaderFooter />
 
@@ -45,7 +45,7 @@ import HeaderFooter from '@site/static/usage/v8/content/header-footer/index.md';
 
 デフォルトでは、コンテンツは [ヘッダー](./header)と [フッター](./footer)の間のスペースを埋めますが、それらの背景にまわることはありません。例えば、ヘッダーとフッターのどちらかに `translucent` プロパティを設定した場合や、ツールバーに `opacity` を設定した場合など、特定のケースでは、コンテンツをヘッダーとフッターの後ろにスクロールさせることが望まれるかもしれない。これは、コンテンツの `fullscreen` プロパティを `true` に設定することで実現することができます。
 
-import Fullscreen from '@site/static/usage/v8/content/fullscreen/index.md';
+import Fullscreen from '@site/static/usage/v9/content/fullscreen/index.md';
 
 <Fullscreen />
 
@@ -56,7 +56,7 @@ import Fullscreen from '@site/static/usage/v8/content/fullscreen/index.md';
 
 The `fixedSlotPlacement` property is used to determine if content in the `fixed` slot is placed before or after the main content in the DOM. When set to `before`, fixed slot content will be placed before the main content and will therefore receive keyboard focus before the main content receives keyboard focus. This can be useful when the main content contains an infinitely-scrolling list, preventing a [FAB](./fab) or other fixed content from being reachable by pressing the tab key.
 
-import Fixed from '@site/static/usage/v8/content/fixed/index.md';
+import Fixed from '@site/static/usage/v9/content/fixed/index.md';
 
 <Fixed />
 
@@ -64,7 +64,7 @@ import Fixed from '@site/static/usage/v8/content/fixed/index.md';
 
 コンテンツには [メソッド](#methods) が用意されており、これを呼び出すことでコンテンツを下、上、または特定のポイントにスクロールさせることができます。これらのメソッドには `duration` を渡すことができ、瞬時に位置を変更するのではなく、スムーズに移行することができます。
 
-import ScrollMethods from '@site/static/usage/v8/content/scroll-methods/index.md';
+import ScrollMethods from '@site/static/usage/v9/content/scroll-methods/index.md';
 
 <ScrollMethods />
 
@@ -72,29 +72,28 @@ import ScrollMethods from '@site/static/usage/v8/content/scroll-methods/index.md
 
 スクロールイベントは、パフォーマンス上、コンテンツに対してデフォルトで無効化されています。しかし、`scrollEvents` を `true` に設定することで、有効にすることができます。これは、 スクロール [イベント](#events) を聞く前に必要です。
 
-import ScrollEvents from '@site/static/usage/v8/content/scroll-events/index.md';
+import ScrollEvents from '@site/static/usage/v9/content/scroll-events/index.md';
 
 <ScrollEvents />
 
-Scroll events are disabled by default for content due to performance. However, they can be enabled by setting `scrollEvents` to `true`. This is necessary before listening to any of the scroll [events](#events).
 
 ## テーマ
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/content/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/content/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v8/content/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/content/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v8/content/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/content/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -118,7 +117,7 @@ ion-content::part(scroll) {
 }
 ```
 
-import SafeArea from '@site/static/usage/v8/content/theming/safe-area/index.md';
+import SafeArea from '@site/static/usage/v9/content/theming/safe-area/index.md';
 
 <SafeArea />
 
@@ -162,7 +161,6 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-### ScrollCustomEvent
 
 ## プロパティ
 <Props />

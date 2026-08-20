@@ -1,0 +1,21 @@
+/**
+ * Styles for the Tooltip component. The library positions the floating element
+ * but gives it no appearance, so all of it lives here.
+ */
+
+.tooltip__root {
+  z-index: 9999;
+  max-width: min(350px, calc(100vw - 10px));
+  pointer-events: none;
+}
+
+.tooltip {
+  background-color: var(--c-carbon-90);
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: initial;
+  white-space: normal;
+  outline: 0;
+}

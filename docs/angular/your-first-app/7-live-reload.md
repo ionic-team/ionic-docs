@@ -11,7 +11,7 @@ sidebar_label: ライブリロード
   />
 </head>
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+ここまでで、どこでも動作するクロスプラットフォームアプリを簡単に開発できることがわかりました。開発の速度はかなり速いですが、もっと速くできる方法があると言ったらどう思いますか？
 
 We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.md) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
@@ -38,7 +38,7 @@ With Live Reload running and the app open on your device, let’s implement phot
 In `photo.service.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we use the Capacitor Preferences API to update the cached version of the `photos` array. Finally, we delete the actual photo file itself using the Filesystem API.
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -54,13 +54,13 @@ export class PhotoService {
 
   // CHANGE: Add `deletePhoto()` method
   public async deletePhoto(photo: UserPhoto, position: number) {
-    // Remove this photo from the Photos reference data array
-    this.photos.splice(position, 1);
+    // Remove this photo from the photos signal
+    this.photos.update((photos) => photos.filter((_, index) => index !== position));
 
     // Update photos array cache by overwriting the existing photo array
     Preferences.set({
       key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
+      value: JSON.stringify(this.photos()),
     });
 
     // Delete photo file from filesystem
@@ -82,24 +82,51 @@ export interface UserPhoto {
 Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```ts
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  // CHANGE: Add import
+  ActionSheetController,
+} from '@ionic/angular';
+import { addIcons } from 'ionicons';
+// CHANGE: Register the `trash` and `close` icons used by the action sheet
+import { camera, trash, close } from 'ionicons/icons';
 // Change: Add import
 import type { UserPhoto } from '../services/photo.service';
 import { PhotoService } from '../services/photo.service';
-// CHANGE: Add import
-import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  standalone: false,
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon],
 })
-export class Tab2Page {
-  // CHANGE: Update constructor
-  constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
+export class Tab2Page implements OnInit {
+  public photoService = inject(PhotoService);
+  // CHANGE: Inject the ActionSheetController
+  private actionSheetController = inject(ActionSheetController);
 
-  // ...existing code...
+  constructor() {
+    // CHANGE: Register the icons this page uses
+    addIcons({ camera, trash, close });
+  }
+
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+  }
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
 
   // CHANGE: Add `showActionSheet()` method
   public async showActionSheet(photo: UserPhoto, position: number) {
@@ -129,7 +156,7 @@ export class Tab2Page {
 }
 ```
 
-Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Open `tab2.page.html` and wrap each image in a `<button>` element with a click handler. When the app user taps on a photo in our gallery, we'll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
 <ion-header [translucent]="true">
@@ -147,10 +174,14 @@ Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. W
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <!-- CHANGE: Add a click event listener to each image -->
-        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
+      @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
+      <ion-col size="6">
+        <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
+        <button (click)="showActionSheet(photo, position)">
+          <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
+        </button>
       </ion-col>
+      }
     </ion-row>
   </ion-grid>
 
@@ -162,10 +193,31 @@ Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. W
 </ion-content>
 ```
 
+Add the following CSS to `tab2.page.scss` to style the gallery buttons and images:
+
+```css
+ion-col > button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+```
+
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+このアプリの[完全なソースコード](https://github.com/ionic-team/tutorial-photo-gallery-angular)は GitHub で確認できます。
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

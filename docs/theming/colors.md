@@ -31,9 +31,9 @@ Ionic には、多くのコンポーネントの配色を変更するために�
 <ion-button color="dark">Dark</ion-button>
 ```
 
-### 配色のレイヤードスタイル
+### 配色のレイヤードスタイル {/* #layered-colors */}
 
-それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionic が提供するデフォルトの配色とそのバリエーションを確認することができます。
+各色は以下のプロパティで構成されています：`base`、`contrast`、`shade`、および`tint`。`base`および`contrast`の色には、同じ色を<a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb 形式</a>で表した`rgb`プロパティも必要です。`rgb`プロパティが必要な理由については、[アルファ問題](advanced.md#the-alpha-problem)を参照してください。以下のドロップダウンから、Ionic が提供するデフォルトカラーとそのバリエーションを確認できます。
 
 <LayeredColorsSelect />
 
@@ -58,11 +58,11 @@ Ionic には、多くのコンポーネントの配色を変更するために�
 ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](color-generator.md) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
 :::
 
-CSS 変数についてもっと詳しく知りたい時は [CSS Variables documentation](css-variables.md) をご覧ください。
+CSS 変数の詳細については、[CSS 変数ドキュメント](css-variables.md)を参照してください。
 
 ### 配色の追加
 
-カラーは、Ionic コンポーネントの 「color」 プロパティを設定するか、CSS を使用してスタイル設定することで、アプリケーション全体で使用できるように追加できます。新しいカラーを手動で追加する方法については、この後の 「New Color Creator」 を参照してください。コピーしてアプリケーションに貼り付ける新しいカラーのコードを簡単に生成する方法については、次の 「New Color Creator」 を参照してください。
+カラーは、Ionic コンポーネントの`color`プロパティを設定するか、CSS でスタイリングすることで、アプリケーション全体で使用するために追加できます。新しいカラーを手動で追加する方法、または下記の[新しいカラー作成ツール](#new-color-creator)を使って、新しいカラーのコードを生成し、アプリケーションにコピー＆ペーストする簡単な方法について学んでください。
 
 新しいカラーを追加するには、最初にルートのカラーのすべてのバリエーションの CSS 変数を定義します。たとえば、`favorite`という新しいカラーを追加するには、次の変数を定義します:
 
@@ -105,9 +105,9 @@ div {
 }
 ```
 
-CSS 変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](css-variables.md) をご覧ください。
+CSS 変数の設定と使用の詳細については、[CSS 変数ドキュメント](css-variables.md)を参照してください。
 
-## 新しい色の作成
+## 新しい色の作成 {/* #new-color-creator */}
 
 名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色を Ionic プロジェクトで利用できます。
 

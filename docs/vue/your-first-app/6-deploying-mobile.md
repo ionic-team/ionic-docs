@@ -15,7 +15,7 @@ Since we added Capacitor to our project when it was first created, there’s onl
 
 ## Capacitor Setup
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor は Ionic の公式アプリランタイムであり、Web アプリを iOS や Android などのネイティブプラットフォームに簡単にデプロイできるようにします。過去に Cordova を使用したことがある場合は、Capacitor と Cordova の[違い](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova)について詳しく読むことを検討してください。
 
 If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of the Ionic project, fixing any errors that it reports:
 
@@ -58,7 +58,7 @@ First, run the Capacitor `open` command, which opens the native iOS project in X
 ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled "Privacy - Camera Usage." To set it, the `Info.plist` file must be modified ([more details here](https://capacitorjs.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+一部のネイティブプラグインを動作させるためには、ユーザーの許可を設定する必要があります。私たちのフォトギャラリーアプリでは、これには Camera プラグインが含まれます：iOS では、最初に`Camera.getPhoto()`が呼び出された後、自動的にモーダルダイアログが表示され、ユーザーにアプリがカメラを使用することを許可するように促します。この許可は「プライバシー - カメラの使用」とラベル付けされています。この設定を行うには、`Info.plist`ファイルを修正する必要があります（[iOS の設定に関する詳細](https://capacitorjs.com/docs/ios/configuration)）。アクセスするには、「Info」をクリックし、「カスタム iOS ターゲットプロパティ」を展開します。
 
 ![The Info.plist file in Xcode showing the NSCameraUsageDescription key added for camera access.](/img/guides/first-app-cap-ng/xcode-info-plist.png 'Xcode Info.plist Configuration')
 

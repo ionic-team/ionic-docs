@@ -1,6 +1,6 @@
 # 仮想スクロール
 
-:::warning Looking for `ion-virtual-scroll`?
+:::warning[`ion-virtual-scroll`をお探しですか？]
 
 `ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the `@angular/cdk` package detailed below.
 
@@ -19,7 +19,7 @@ This provides a collection of different utilities, but we'll focus on `Scrolling
 When we want to use the CDK Scroller, we'll need to import the module in our component. For example, in a tabs starter project, we can add our import to the `tabs1.module.ts` file.
 
 ```diff
-  import { IonicModule } from '@ionic/angular';
+  import { IonicModule } from '@ionic/angular/lazy';
   import { NgModule } from '@angular/core';
   import { CommonModule } from '@angular/common';
   import { FormsModule } from '@angular/forms';
@@ -130,4 +130,4 @@ For example:
 
 ## Further Reading
 
-This only covers a small portion of what the CDK Virtual Scroller is capable of. For more details, please see the [Angular CDK Virtual Scrolling docs](https://material.angular.io/cdk/scrolling/overview).
+これは CDK バーチャルスクローラが可能な機能のほんの一部に過ぎません。詳細については、[Angular CDK バーチャルスクロールのドキュメント](https://material.angular.io/cdk/scrolling/overview)を参照してください。

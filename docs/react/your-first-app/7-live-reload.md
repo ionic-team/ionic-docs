@@ -11,7 +11,7 @@ sidebar_label: ライブリロード
   />
 </head>
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+これまでに、どこでも動作するクロスプラットフォームアプリの開発がいかに簡単であるかを学びました。開発の体験はかなり迅速ですが、もしもっと速くできる方法があるとしたらどうでしょうか？
 
 We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.md) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
@@ -101,7 +101,6 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonImg,
   IonActionSheet,
 } from '@ionic/react';
 // CHANGE: Add import
@@ -131,9 +130,9 @@ const Tab2: React.FC = () => {
 
         <IonGrid>
           <IonRow>
-            {photos.map((photo) => (
-              <IonCol size="6" key={photo.filepath}>
-                <IonImg src={photo.webviewPath} />
+            {photos.map((photo, index) => (
+              <IonCol size="6" key={index}>
+                <img src={photo.webviewPath} alt={`Photo ${index + 1}`} loading="lazy" />
               </IonCol>
             ))}
           </IonRow>
@@ -179,19 +178,42 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Add a click handler to the `<IonImg>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+Wrap each image in a `<button>` element with a click handler. When the app user taps on a photo in our gallery, we'll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```tsx
 <IonGrid>
   <IonRow>
-    {photos.map((photo) => (
-      <IonCol size="6" key={photo.filepath}>
-        {/* CHANGE: Add a click event listener to each image. */}
-        <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
+    {photos.map((photo, index) => (
+      <IonCol size="6" key={index}>
+        {/* CHANGE: Wrap the image in a button element and add a click event listener. */}
+        <button onClick={() => setPhotoToDelete(photo)}>
+          <img src={photo.webviewPath} alt={`Photo ${index + 1}`} loading="lazy" />
+        </button>
       </IonCol>
     ))}
   </IonRow>
 </IonGrid>
+```
+
+Add the following CSS to `Tab2.css` to style the gallery buttons and images:
+
+```css
+ion-col button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 ```
 
 Remember that removing the photo from the `photos` array triggers the `setPhotos` method for us automatically.
@@ -199,7 +221,7 @@ Remember that removing the photo from the `photos` array triggers the `setPhotos
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/tutorial-photo-gallery-react).
+覚えておいてください、このアプリの[完全なソースコード](https://github.com/ionic-team/tutorial-photo-gallery-react) は GitHub で確認できます。
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

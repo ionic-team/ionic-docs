@@ -7,7 +7,7 @@
  * - Add a random internal ad to the bottom of the TOC.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type ReactNode } from 'react';
 import TOC from '@theme-original/TOC';
 import type { Props } from '@theme/TOC';
 
@@ -21,7 +21,7 @@ interface TOCProps extends Props {
   editUrl: string;
 }
 
-export default function TOCWrapper(props: TOCProps): JSX.Element {
+export default function TOCWrapper(props: TOCProps): ReactNode {
   const { prismicAds } = usePluginData('ionic-docs-ads') as any;
   const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
   const location = useLocation();

@@ -15,6 +15,7 @@ const commandToKebab = (str) =>
   const { commands } = cliJSON;
 
   commands.map(writePage);
+  console.log(`📟 CLI Commands Generated`);
 })();
 
 function writePage(page) {
@@ -31,6 +32,7 @@ function writePage(page) {
   writeFileSync(`docs/${path}`, data);
   writeFileSync(`versioned_docs/version-v6/${path}`, data);
   writeFileSync(`versioned_docs/version-v7/${path}`, data);
+  writeFileSync(`versioned_docs/version-v8/${path}`, data);
 }
 
 function renderFrontmatter({ name, groups }) {

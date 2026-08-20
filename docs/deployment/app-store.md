@@ -23,7 +23,7 @@ iOS App Store にアプリを提出するには、いくつかのことが必要
 - 有効なプロビジョニングプロファイル
 - アプリの開発および配布に関する証明書
 
-Apple Developer Program への登録は、[このガイド](https://developer.apple.com/programs/) に従ってください。
+開始するには、[Apple Developer Program の登録手順](https://developer.apple.com/programs/)に従ってください。
 
 ## リリースビルドの作成
 
@@ -73,7 +73,7 @@ iOS プラットフォームがまだ追加されていない場合は、必ず�
 ionic cordova platform add ios
 ```
 
-プラットフォームが追加されたら、ビルドコマンドを `--prod` フラグを付けて実行します。
+プラットフォームが追加されたら、`--prod`フラグを付けてビルドコマンドを実行します：
 
 ```shell
 ionic cordova build ios --prod

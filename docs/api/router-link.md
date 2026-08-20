@@ -2,12 +2,12 @@
 title: "ion-router-link"
 ---
 
-import Props from '@ionic-internal/component-api/v8/router-link/props.md';
-import Events from '@ionic-internal/component-api/v8/router-link/events.md';
-import Methods from '@ionic-internal/component-api/v8/router-link/methods.md';
-import Parts from '@ionic-internal/component-api/v8/router-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/router-link/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/router-link/slots.md';
+import Props from '@ionic-internal/component-api/v9/router-link/props.md';
+import Events from '@ionic-internal/component-api/v9/router-link/events.md';
+import Methods from '@ionic-internal/component-api/v9/router-link/methods.md';
+import Parts from '@ionic-internal/component-api/v9/router-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/router-link/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/router-link/slots.md';
 
 <head>
   <title>ion-router-link: Navigate To a Specified Link</title>
@@ -18,13 +18,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-router linkコンポーネントは、指定されたリンクに移動するために使用します。ブラウザのアンカータグと同様に、hrefで場所を、directionで遷移のアニメーションを指定することができます。
+ルーターリンクコンポーネントは、指定されたリンクに移動するために使用します。ブラウザのアンカータグと同様に、`href` で場所を、`direction` で遷移のアニメーションを指定できます。
 
 :::note
- Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+このコンポーネントは、Vanilla JavaScript と Stencil のプロジェクトでのみ使用してください。Angular プロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angular ルーターを使用してください。
 :::
 
-詳細については、[Router](./router)ドキュメントを参照してください。
+詳細については、[ルーター](./router)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />
@@ -41,5 +41,5 @@ router linkコンポーネントは、指定されたリンクに移動するた
 ## CSSカスタムプロパティ
 <CustomProps />
 
-## Slots
+## スロット
 <Slots />

@@ -1,12 +1,12 @@
 ---
 title: "ion-spinner"
 ---
-import Props from '@ionic-internal/component-api/v8/spinner/props.md';
-import Events from '@ionic-internal/component-api/v8/spinner/events.md';
-import Methods from '@ionic-internal/component-api/v8/spinner/methods.md';
-import Parts from '@ionic-internal/component-api/v8/spinner/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/spinner/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/spinner/slots.md';
+import Props from '@ionic-internal/component-api/v9/spinner/props.md';
+import Events from '@ionic-internal/component-api/v9/spinner/events.md';
+import Methods from '@ionic-internal/component-api/v9/spinner/methods.md';
+import Parts from '@ionic-internal/component-api/v9/spinner/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/spinner/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/spinner/slots.md';
 
 <head>
   <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
@@ -25,7 +25,7 @@ Spinnerコンポーネントには、さまざまなアニメーションつき�
 
 デフォルトのスピナーは、モードに基づいて決定されます。モードが `ios` の場合、スピナーは `"lines"` となり、モードが `md` の場合、スピナーは `"circular"` となります。 `name` プロパティが設定されている場合は、モード固有のスピナーの代わりに、そのスピナーが使用されます。
 
-import Basic from '@site/static/usage/v8/spinner/basic/index.md';
+import Basic from '@site/static/usage/v9/spinner/basic/index.md';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v8/spinner/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/spinner/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/spinner/theming/colors/index.md';
 
 <Colors />
 
@@ -41,13 +41,13 @@ import Colors from '@site/static/usage/v8/spinner/theming/colors/index.md';
 
 カスタムCSSを使用してスピナーのスタイルを設定できます。たとえば、幅と高さを設定してスピナーのサイズを変更できます。
 
-import Resizing from '@site/static/usage/v8/spinner/theming/resizing/index.md';
+import Resizing from '@site/static/usage/v9/spinner/theming/resizing/index.md';
 
 <Resizing />
 
 ### CSS カスタムプロパティ
 
-import CSSProps from '@site/static/usage/v8/spinner/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/spinner/theming/css-properties/index.md';
 
 <CSSProps />
 

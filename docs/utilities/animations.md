@@ -76,7 +76,7 @@ Angularを使用する開発者は、最新バージョンの`@ionic/angular`を
 
 ```tsx
 
-import { Animation, AnimationController } from '@ionic/angular';
+import { Animation, AnimationController } from '@ionic/angular/lazy';
 
 ...
 
@@ -95,7 +95,7 @@ Angularを使用する開発者は、最新バージョンの`@ionic/angular`を
 
 ```tsx
 
-import { Animation, AnimationController } from '@ionic/angular/standalone';
+import { Animation, AnimationController } from '@ionic/angular';
 
 ...
 
@@ -162,7 +162,7 @@ const animation = createAnimation()
 
 デフォルトでは、すべての Ionic Animations は`play`メソッドが呼び出されるまで一時停止しています。
 
-import Basic from '@site/static/usage/v8/animations/basic/index.md';
+import Basic from '@site/static/usage/v9/animations/basic/index.md';
 
 <Basic />
 
@@ -172,7 +172,7 @@ Ionic Animations では、キーフレームを使用してアニメーション
 
 キーフレームを記述する際、ハイフン付きの CSS プロパティはキャメルケースで記述する必要があります。たとえば、`border-radius`は`borderRadius`として記述する必要があります。これは`fromTo()`、`from()`、`to()`メソッドにも適用されます。
 
-import Keyframes from '@site/static/usage/v8/animations/keyframes/index.md';
+import Keyframes from '@site/static/usage/v9/animations/keyframes/index.md';
 
 <Keyframes />
 
@@ -186,7 +186,7 @@ import Keyframes from '@site/static/usage/v8/animations/keyframes/index.md';
 
 この例では、単一の親アニメーションによって制御される 3 つの子アニメーションを示しています。アニメーション`cardA`と`cardB`は親アニメーションの 2000ms の duration を継承しますが、アニメーション`cardC`は明示的に設定されているため、duration は 5000ms です。
 
-import Group from '@site/static/usage/v8/animations/group/index.md';
+import Group from '@site/static/usage/v9/animations/group/index.md';
 
 <Group />
 
@@ -198,7 +198,7 @@ Ionic Animations は、アニメーションが実行される前とアニメー
 
 フックの完全なリストについては、[Methods](#methods)を参照してください。
 
-import BeforeAndAfterHooks from '@site/static/usage/v8/animations/before-and-after-hooks/index.md';
+import BeforeAndAfterHooks from '@site/static/usage/v9/animations/before-and-after-hooks/index.md';
 
 <BeforeAndAfterHooks />
 
@@ -206,17 +206,17 @@ import BeforeAndAfterHooks from '@site/static/usage/v8/animations/before-and-aft
 
 アニメーションは連鎖させて、次々に実行できます。`play`メソッドは、アニメーションが完了したときに解決される Promise を返します。
 
-import Chain from '@site/static/usage/v8/animations/chain/index.md';
+import Chain from '@site/static/usage/v9/animations/chain/index.md';
 
 <Chain />
 
-## ジェスチャーアニメーション
+## ジェスチャーアニメーション {/* #gesture-animations */}
 
 Ionic Animations は、[Ionic Gestures](gestures.md)とシームレスに統合することで、強力なジェスチャーベースのアニメーションを作成する機能を開発者に提供します。
 
 以下の例では、カード要素をドラッグできるトラックを作成しています。`animation`オブジェクトはカード要素を左右に移動する処理を行い、`gesture`オブジェクトは`animation`オブジェクトに移動方向を指示します。
 
-import Gesture from '@site/static/usage/v8/animations/gesture/index.md';
+import Gesture from '@site/static/usage/v9/animations/gesture/index.md';
 
 <Gesture />
 
@@ -228,7 +228,7 @@ import Gesture from '@site/static/usage/v8/animations/gesture/index.md';
 
 Safari は現在、キーフレームアニメーションの動的更新をサポートしていません。Safari でこのようなサポートが必要な開発者は、[MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener)を使用できます。
 
-import PreferenceBased from '@site/static/usage/v8/animations/preference-based/index.md';
+import PreferenceBased from '@site/static/usage/v9/animations/preference-based/index.md';
 
 <PreferenceBased />
 
@@ -238,7 +238,7 @@ import PreferenceBased from '@site/static/usage/v8/animations/preference-based/i
 
 ### モーダル
 
-import ModalOverride from '@site/static/usage/v8/animations/modal-override/index.md';
+import ModalOverride from '@site/static/usage/v9/animations/modal-override/index.md';
 
 <ModalOverride />
 
@@ -248,7 +248,7 @@ CSS と Web Animations は、通常、コンポジタースレッドで処理さ
 
 `height`や`width`などのプロパティをアニメーション化すると、追加のレイアウトとペイントが発生し、ジャンクを引き起こし、アニメーションパフォーマンスを低下させる可能性があります。一方、`transform`や`opacity`などのプロパティをアニメーション化すると、ブラウザによって高度に最適化され、通常はジャンクをほとんど引き起こしません。
 
-どの CSS プロパティがレイアウトやペイントを引き起こすかについては、[CSS Triggers](https://csstriggers.com/)を参照してください。
+どの CSS プロパティがレイアウトやペイントを引き起こすかについての情報は、[CSS Triggers](https://csstriggers.com/)を参照してください。
 
 ## デバッグ
 
@@ -258,8 +258,8 @@ Chrome でアニメーションをデバッグするには、Chrome DevTools を
 
 ```javascript
 /**
- * .square要素のアニメーションは、
- * Chrome DevToolsで"my-animation-identifier"を表示する必要があります。
+ * The animation for the .square element should
+ * show "my-animation-identifier" in Chrome DevTools.
  */
 const animation = createAnimation('my-animation-identifier')
   .addElement(document.querySelector('.square'))
@@ -329,7 +329,7 @@ interface AnimationPlayOptions {
 | `elements: HTMLElement[]`      | アニメーションにアタッチされたすべての要素。             |
 | `parentAnimation?: Animation`  | 指定されたアニメーションオブジェクトの親アニメーション。 |
 
-### メソッド
+### メソッド {/* #methods */}
 
 | Name                                                                                                                 | 説明                                                                                                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Angular Version Support
 
-Ionic Angular v7 supports Angular versions 14 through 17. For detailed information on supported versions and our support policy, see the [Ionic Angular Support Policy](/docs/reference/support#ionic-angular).
+Ionic Angular v7 supports Angular versions 14 through 17. For detailed information on supported versions and our support policy, refer to the [Ionic Angular Support Policy](/docs/reference/support#ionic-angular).
 
 ## Angular Tooling
 

@@ -1,12 +1,12 @@
 ---
 title: "ion-card-title"
 ---
-import Props from '@ionic-internal/component-api/v8/card-title/props.md';
-import Events from '@ionic-internal/component-api/v8/card-title/events.md';
-import Methods from '@ionic-internal/component-api/v8/card-title/methods.md';
-import Parts from '@ionic-internal/component-api/v8/card-title/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/card-title/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/card-title/slots.md';
+import Props from '@ionic-internal/component-api/v9/card-title/props.md';
+import Events from '@ionic-internal/component-api/v9/card-title/events.md';
+import Methods from '@ionic-internal/component-api/v9/card-title/methods.md';
+import Parts from '@ionic-internal/component-api/v9/card-title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/card-title/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/card-title/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -17,11 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Card titleはcardの子コンポーネントで、[card header](./card-header)の内側に配置する必要があります。
 
-詳しくは、[Card](./card)のドキュメントを参照してください。
-
+詳細は[Card](./card)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

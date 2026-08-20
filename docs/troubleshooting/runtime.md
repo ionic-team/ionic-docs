@@ -138,9 +138,8 @@ This change will only affect applications that depend on zone.js `0.8.27` or
 newer. Older versions will not be affected by this change.
 
 :::note
-This flag is automatically included when creating an Ionic app via
+このフラグは、Ionic CLI を使用して Ionic アプリを作成する際に自動的に含まれます。
 :::
-the Ionic CLI.
 
 ## Cordova プラグインがブラウザ上で動作しない
 
@@ -208,11 +207,11 @@ class MyApp {
 }
 ```
 
-<!-- This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. -->
+{/* This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. */}
 
-## Accessing `this` in a function callback returns `undefined` {#accessing-this}
+## 関数のコールバックで`this`にアクセスすると`undefined`{/* #accessing-this */}が返されます
 
-Certain components, such as [counterFormatter on ion-input](../api/input#counterformatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
+Certain components, such as [counterFormatter on ion-input](../api/input#prop-counter-formatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
 
 The first way to bind `this` is to use the `bind()` method on a function instance. If you want to pass a callback called `counterFormatterFn`, then you would write `counterFormatterFn.bind(this)`.
 

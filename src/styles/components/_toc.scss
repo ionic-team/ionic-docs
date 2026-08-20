@@ -62,6 +62,7 @@ html[data-theme='dark'] {
     .theme-edit-this-page {
       --edit-this-page-c: var(--ifm-heading-color);
 
+      margin-block-start: 1.25rem;
       font-weight: 600;
       font-size: 0.875rem;
     }

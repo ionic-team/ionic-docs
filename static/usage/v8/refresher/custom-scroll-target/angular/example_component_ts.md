@@ -20,7 +20,7 @@ export class ExampleComponent {
   handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
       // Any calls to load data go here
-      (event.target as HTMLIonRefresherElement).complete();
+      event.target.complete();
     }, 2000);
   }
 }

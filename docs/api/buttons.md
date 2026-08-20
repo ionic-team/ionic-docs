@@ -1,12 +1,12 @@
 ---
 title: "ion-buttons"
 ---
-import Props from '@ionic-internal/component-api/v8/buttons/props.md';
-import Events from '@ionic-internal/component-api/v8/buttons/events.md';
-import Methods from '@ionic-internal/component-api/v8/buttons/methods.md';
-import Parts from '@ionic-internal/component-api/v8/buttons/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/buttons/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/buttons/slots.md';
+import Props from '@ionic-internal/component-api/v9/buttons/props.md';
+import Events from '@ionic-internal/component-api/v9/buttons/events.md';
+import Methods from '@ionic-internal/component-api/v9/buttons/methods.md';
+import Parts from '@ionic-internal/component-api/v9/buttons/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/buttons/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
@@ -17,15 +17,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
 Buttonsコンポーネントは、コンテナ要素です。 [ツールバー](./toolbar) の内部で使用し、標準の[ボタン](./button)、[メニューボタン](./menu-button)、[戻るボタン](./back-button)を含むいくつかのタイプのボタンを含めることができる。
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/buttons/basic/index.md';
+import Basic from '@site/static/usage/v9/buttons/basic/index.md';
 
 <Basic />
-
 
 ## Buttons Placement
 
@@ -38,23 +36,21 @@ import Basic from '@site/static/usage/v8/buttons/basic/index.md';
 | `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
 | `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 
-import Placement from '@site/static/usage/v8/buttons/placement/index.md';
+import Placement from '@site/static/usage/v9/buttons/placement/index.md';
 
 <Placement />
 
-
 ## Buttonsのタイプ
 
-ツールバーのボタンは、デフォルトでは透明ですが、ボタンの [`fill`](./button#fill) プロパティで変更することが可能です。この例で [バックボタン](./back-button) と [メニューボタン](./menu-button) に含まれるプロパティは表示目的であり、正しい使用方法はそれぞれのドキュメントをご覧ください。
+ツールバー内のボタンはデフォルトでクリアスタイルに設定されていますが、ボタンの[`fill`](./button#fill)プロパティを使用して変更することができます。この例で[戻るボタン](./back-button)および[メニューボタン](./menu-button)に含まれるプロパティは表示目的のためのものであり、正しい使用方法についてはそれぞれのドキュメントを参照してください。
 
-import Types from '@site/static/usage/v8/buttons/types/index.md';
+import Types from '@site/static/usage/v9/buttons/types/index.md';
 
 <Types />
 
+## 折りたたみ可能なボタン
 
-## Collapsible Buttons
-
-ボタンに `collapse` プロパティを設定すると、ヘッダーが折りたたまれたときにボタンが折りたたまれます。これは通常、[collapsible large titles](./title#collapsible-large-titles) と共に使用します。
+ボタンに `collapse` プロパティを設定すると、ヘッダーが折りたたまれたときにボタンが折りたたまれます。これは通常、[折りたたみ可能な大きなタイトル](./title#collapsible-large-titles)と共に使用します。
 
 :::info
 
@@ -62,11 +58,10 @@ import Types from '@site/static/usage/v8/buttons/types/index.md';
 
 :::
 
-<!-- Reuse the playground from the Title directory -->
-import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
+{/* Reuse the playground from the Title directory */}
+import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
-
 
 ## プロパティ
 <Props />

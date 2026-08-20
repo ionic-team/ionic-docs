@@ -7,10 +7,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>UIコンポーネント | User Interface Application Building Components</title>
+  <title>UI コンポーネント | ユーザーインターフェイスを構築するコンポーネント</title>
   <meta
     name="description"
-    content="Ionic Framework comes stock with a number of high-level UI components, including cards, lists, and tabs to quickly and easily build your app's user interface."
+    content="Ionic Framework には、アプリのユーザーインターフェイスをすばやく簡単に構築できる、カード、リスト、タブなどの高レベルな UI コンポーネントが標準で用意されています。"
   />
   <style>{`
     :root {
@@ -49,7 +49,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>カードは重要なコンテンツを表示する優れた方法であり、画像、ボタン、テキストなどを含めることができます。</p>
+  カードは重要なコンテンツを表示するのに最適な方法であり、画像、ボタン、テキストなどを含めることができます。
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -67,11 +67,9 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 <DocsCard header="Date & Time Pickers" href="api/datetime" img="/icons/feature-component-datetime-icon.png">
   <p>Date & Timeピッカーは、ユーザーが日付と時刻を簡単に選択できるインターフェースを提供するために使用されます。</p>
 </DocsCard>
-
+{/* prettier-ignore */}
 <DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
-  <p>
-    フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。
-  </p>
+  <p>フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。</p>
 </DocsCard>
 
 <DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
@@ -91,10 +89,8 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
-  <p>
-    Itemは、テキスト、アイコン、アバター、画像、入力、およびその他のネイティブまたはカスタム要素を含むことができる要素です。
-    Itemは、スワイプ、削除、並び替え、編集などが可能です。
-  </p>
+  アイテムは、テキスト、アイコン、アバター、画像、入力、およびその他のネイティブまたはカスタム要素を含むことができる要素です。
+  アイテムはスワイプ、削除、並べ替え、編集などが可能です。
 </DocsCard>
 
 <DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
@@ -102,21 +98,16 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
-  <p>
-    アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚的なコンテンツを強化するように設計されています。
-  </p>
+  アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚
+  コンテンツを強化するように設計されています。
 </DocsCard>
-
+{/* prettier-ignore */}
 <DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">
-  <p>
-    Menuは一般的なナビゲーションパターンです。それらは常時画面上に表示することも、必要に応じて表示することもできます。
-  </p>
+  <p>Menuは一般的なナビゲーションパターンです。それらは常時画面上に表示することも、必要に応じて表示することもできます。</p>
 </DocsCard>
-
+{/* prettier-ignore */}
 <DocsCard header="Modal" href="api/modal" icon="/icons/component-modal-icon.png">
-  <p>
-    Modalはは、一時的なUIを表示するために画面内および画面外にスライドするため、ログインページまたはサインアップページによく使用されます。
-  </p>
+  <p>Modalはは、一時的なUIを表示するために画面内および画面外にスライドするため、ログインページまたはサインアップページによく使用されます。</p>
 </DocsCard>
 
 <DocsCard header="Navigation" href="api/nav" icon="/icons/component-navigation-icon.png">
@@ -162,11 +153,9 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 <DocsCard header="Select" href="api/select" icon="/icons/component-select-icon.png">
   <p>SelectはネイティブのHTML選択に似ていますが、Sortと選択が少し改善されています。</p>
 </DocsCard>
-
+{/* prettier-ignore */}
 <DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
-  <p>
-    Tabsを使用すると、タブ付きナビゲーション、つまり現代のアプリケーションの標準的なナビゲーションパターンが有効になります。
-  </p>
+  <p>Tabsを使用すると、タブ付きナビゲーション、つまり現代のアプリケーションの標準的なナビゲーションパターンが有効になります。</p>
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">

@@ -16,11 +16,15 @@ import TabItem from '@theme/TabItem';
 :::note
 Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
 
-See the [Angular Platform Documentation](../angular/platform) for the types of platforms you can detect.
+検出可能なプラットフォームの種類については、[Angular プラットフォームドキュメント](../angular/platform)を参照してください。
 :::
 
 ```ts title="app.module.ts"
-import { isPlatform, IonicModule } from '@ionic/angular';
+/*
+ * IonicModule is deprecated and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
+import { isPlatform, IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -39,11 +43,11 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 :::note
 Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
 
-See the [Angular Platform Documentation](../angular/platform) for the types of platforms you can detect.
+検出可能なプラットフォームの種類については、[Angular プラットフォームドキュメント](../angular/platform)を参照してください。
 :::
 
 ```ts title="main.ts"
-import { isPlatform, provideIonicAngular } from '@ionic/angular/standalone';
+import { isPlatform, provideIonicAngular } from '@ionic/angular';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -59,7 +63,7 @@ bootstrapApplication(AppComponent, {
 <TabItem value="react">
 
 :::note
-See the [React Platform Documentation](../react/platform) for the types of platforms you can detect.
+検出可能なプラットフォームの種類については、[React プラットフォームドキュメント](../react/platform)を参照してください。
 :::
 
 ```tsx title="App.tsx"
@@ -74,7 +78,7 @@ setupIonicReact({
 <TabItem value="vue">
 
 :::note
-See the [Vue Platform Documentation](../vue/platform) for the types of platforms you can detect.
+検出可能なプラットフォームの種類については、[Vue プラットフォームドキュメント](../vue/platform)を参照してください。
 :::
 
 ```ts title="main.ts"

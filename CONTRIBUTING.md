@@ -19,6 +19,7 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 - [Reporting Issues](#reporting-issues)
 - [Pull Request Guidelines](#pull-request-guidelines)
 - [Deploying](#deploying)
+  - [Archiving a Version](#archiving-a-version)
 - [License](#license)
 
 ---
@@ -33,6 +34,42 @@ In order to run the documentation locally, install the dependencies and run the 
 npm install
 npm start
 ```
+
+#### GitHub Token
+
+The documentation build requires a GitHub Personal Access Token to fetch Ionic Framework release notes. The build will still work locally without it (release notes will be empty), but it's required for Vercel preview and production builds.
+
+**Local Development:**
+
+1. Create a [fine-grained Personal Access Token](https://github.com/settings/personal-access-tokens/new) with:
+
+   - **Repository access**: Public repositories (read-only)
+   - **Expiration**: 366 days (update annually)
+
+2. Add the token to your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
+
+   ```sh
+   export GITHUB_TOKEN=github_pat_...
+   ```
+
+3. Reload your shell or run `source ~/.zshrc` (or equivalent)
+
+**Vercel:**
+
+1. Create a [fine-grained Personal Access Token](https://github.com/settings/personal-access-tokens/new) with the same settings as above, but with:
+
+   - **Owner**: ionic-team organization (not your personal account)
+
+2. Add the token to Vercel project settings:
+
+   - Go to your project on Vercel
+   - Navigate to **Settings → Environment Variables**
+   - Add `GITHUB_TOKEN` with the token value
+   - Select Production and Preview environments
+
+3. Redeploy the project for the token to take effect
+
+Without the token, the build will fail with an error message indicating the token is missing.
 
 ### Linting Documentation
 
@@ -174,6 +211,33 @@ When submitting pull requests, please keep the scope of your change contained to
 ## Deploying
 
 The Ionic documentation's `main` branch is deployed automatically and separately from the [Ionic site](https://github.com/ionic-team/ionic-site) itself. The Ionic site then uses a proxy for paths under `/docs` to request the deployed documentation.
+
+### Archiving a Version
+
+Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. Two files control this:
+
+- [`versions.json`](./versions.json): lists the versions Docusaurus rebuilds on every deploy.
+- [`versionsArchived.json`](./versionsArchived.json): maps each archived version to the frozen deployment URL the version picker links to.
+
+The archived URL has to point at a build that _included_ the version, so you build it first, then move it to `versionsArchived.json`:
+
+1. **Build the version.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
+2. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
+3. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
+4. **Archive it.** Remove the version from `versions.json`, then add it to `versionsArchived.json` with `/docs/<version>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
+
+   ```json
+   {
+     "v6": "https://ionic-docs-<hash>-ionic1.vercel.app/docs/v6"
+   }
+   ```
+
+5. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building that version.
+
+Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
+
+> [!NOTE]
+> Ionic v3 and v4 use other build tools and are not managed here.
 
 ---
 

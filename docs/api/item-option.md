@@ -1,12 +1,12 @@
 ---
 title: "ion-item-option"
 ---
-import Props from '@ionic-internal/component-api/v8/item-option/props.md';
-import Events from '@ionic-internal/component-api/v8/item-option/events.md';
-import Methods from '@ionic-internal/component-api/v8/item-option/methods.md';
-import Parts from '@ionic-internal/component-api/v8/item-option/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/item-option/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/item-option/slots.md';
+import Props from '@ionic-internal/component-api/v9/item-option/props.md';
+import Events from '@ionic-internal/component-api/v9/item-option/events.md';
+import Methods from '@ionic-internal/component-api/v9/item-option/methods.md';
+import Parts from '@ionic-internal/component-api/v9/item-option/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/item-option/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/item-option/slots.md';
 
 <head>
   <title>ion-item-option: Option Button for Sliding Item in Ionic</title>
@@ -17,11 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+アイテムオプションコンポーネントは、スライドアイテムのためのボタンです。[アイテムオプション](./item-options)の中に配置する必要があります。`ionSwipe`イベントと `expandable` プロパティを組み合わせることで、アイテムの完全なスワイプアクションを作成することができます。
 
-アイテムオプションコンポーネントは、スライドアイテムのためのボタンです。アイテムオプション](./item-options)の中に配置する必要があります。ionSwipe`イベントと `expandable` プロパティを組み合わせることで、アイテムの完全なスワイプアクションを作成することができます。
-
-詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
-
+詳細については、[item sliding](./item-sliding)のドキュメントを参照してください。
 
 ## プロパティ
 <Props />

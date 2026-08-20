@@ -1,12 +1,12 @@
 ---
 title: "ion-title"
 ---
-import Props from '@ionic-internal/component-api/v8/title/props.md';
-import Events from '@ionic-internal/component-api/v8/title/events.md';
-import Methods from '@ionic-internal/component-api/v8/title/methods.md';
-import Parts from '@ionic-internal/component-api/v8/title/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/title/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/title/slots.md';
+import Props from '@ionic-internal/component-api/v9/title/props.md';
+import Events from '@ionic-internal/component-api/v9/title/events.md';
+import Methods from '@ionic-internal/component-api/v9/title/methods.md';
+import Parts from '@ionic-internal/component-api/v9/title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/title/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
@@ -17,16 +17,15 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Titleは、[ツールバー](./toolbar)のタイトルを設定するテキストコンポーネントです。ユーザーが現在いる画面やセクション、使用中のアプリを説明するために使用することができます。
 
 ## Basic
 
-import Basic from '@site/static/usage/v8/title/basic/index.md';
+import Basic from '@site/static/usage/v9/title/basic/index.md';
 
 <Basic />
 
-## 折りたたみ式ラージタイトル
+## 折りたたみ式ラージタイトル {/* #collapsible-large-titles */}
 
 大きなタイトルは、[content](./content)がスクロールコンテナの開始位置までスクロールされたときに表示されます。タイトルがヘッダーの後ろにスクロールされると、縮小されたタイトルがフェードインします。
 
@@ -36,7 +35,7 @@ This feature is only available for iOS.
 
 :::
 
-import CollapsibleLargeTitle from '@site/static/usage/v8/title/collapsible-large-title/basic/index.md';
+import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large-title/basic/index.md';
 
 <CollapsibleLargeTitle />
 
@@ -44,8 +43,7 @@ import CollapsibleLargeTitle from '@site/static/usage/v8/title/collapsible-large
 
 [buttons](./buttons.md)コンポーネントは、[`collapse`](./buttons.md#collapse)プロパティと共に使用すると、ツールバーが折りたたまれたときにヘッダーに追加表示することができます。
 
-
-import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
@@ -65,7 +63,7 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsibl
 
 折りたたみ式ラージタイトルは、コンテンツの他の部分との関係でシームレスに表示される必要があります。つまり、折りたたみ可能なラージタイトルを含むツールバーの背景色は、常にコンテンツの背景色と一致する必要があります。
 
-デフォルトでは、標準タイトルを含むツールバーは `opacity: 0` を使って非表示にされ、スクロールによってラージタイトルを折りたたむと徐々に表示されるようになります。その結果、標準タイトルの後ろに見える背景色は、実際にはコンテンツの背景色となります。
+デフォルトでは、標準のタイトルを含むツールバーは`opacity: 0`によって非表示にされ、大きなタイトルをスクロールで折りたたむと段階的に表示されます。その結果、標準タイトルの背後の背景色は実際にはコンテンツの背景色となります。
 
 標準タイトルのあるツールバーの背景色は、CSS変数に `--background` を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダーの色が変わるという効果が得られます。
 
@@ -73,7 +71,7 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsibl
 
 ## CSSカスタムプロパティ
 
-import CSSCustomProperties from '@site/static/usage/v8/title/theming/css-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v9/title/theming/css-properties/index.md';
 
 <CSSCustomProperties />
 

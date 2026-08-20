@@ -1,12 +1,12 @@
 ---
 title: "ion-popover"
 ---
-import Props from '@ionic-internal/component-api/v8/popover/props.md';
-import Events from '@ionic-internal/component-api/v8/popover/events.md';
-import Methods from '@ionic-internal/component-api/v8/popover/methods.md';
-import Parts from '@ionic-internal/component-api/v8/popover/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/popover/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/popover/slots.md';
+import Props from '@ionic-internal/component-api/v9/popover/props.md';
+import Events from '@ionic-internal/component-api/v9/popover/events.md';
+import Methods from '@ionic-internal/component-api/v9/popover/methods.md';
+import Parts from '@ionic-internal/component-api/v9/popover/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/popover/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
@@ -17,12 +17,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Popoverは、現在のページの上部に表示されるダイアログです。これは何にでも使用できますが、通常はナビゲーションバーに収まらないオーバーフローアクションに使用されます。
 
 `ion-popover` を使用するには、インラインで使用する方法と `popoverController` を使用する方法がります。それぞれの方法には異なる考慮点があるので、あなたのユースケースに最も適した方法を使用するようにしましょう。
 
-## インラインポップオーバー
+## インラインポップオーバー {/* #inline-popovers */}
 
 `ion-popover` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、ポップオーバーを表示するために必要なハンドラの数を減らすことができます。
 
@@ -54,7 +53,7 @@ Angular、React、Vue で `ion-popover` を使用する場合、渡されたコ�
  `popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
 :::
 
-import InlineTrigger from '@site/static/usage/v8/popover/presenting/inline-trigger/index.md';
+import InlineTrigger from '@site/static/usage/v9/popover/presenting/inline-trigger/index.md';
 
 <InlineTrigger />
 
@@ -64,16 +63,15 @@ import InlineTrigger from '@site/static/usage/v8/popover/presenting/inline-trigg
 
 `isOpen` は一方向のデータバインディングを使用しています。つまり、ポップオーバーが閉じられたときに自動的に `false` に設定されることはありません。開発者は `ionPopoverDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` にセットする必要があります。この理由は、`ion-popover` の内部がアプリケーションの状態と密に結合されるのを防ぐためである。一方通行のデータバインディングでは、ポップオーバーはリアクティブ変数が提供するブーリアン値だけを気にすればよいのです。双方向のデータバインディングでは、ポップオーバーはブール値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは非決定的な動作につながり、アプリケーションのデバッグを難しくします。
 
-
-import IsOpenTrigger from '@site/static/usage/v8/popover/presenting/inline-isopen/index.md';
+import IsOpenTrigger from '@site/static/usage/v9/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
 
-## ポップオーバーコントローラ
+## ポップオーバーコントローラ {/* #controller-popovers */}
 
 Ionic Framework からインポートされた `popoverController` を使用することで、`ion-popover` をプログラム的に表示することも可能です。これにより、インラインポップオーバーのカスタマイズ以上に、ポップオーバーを表示するタイミングを完全に制御することができます。
 
-### どのような場合に使用するのか
+### いつ使うか
 
 ポップオーバーはインラインで記述することをお勧めします。ポップオーバーをインラインで書くことが現実的でない複雑なユースケースの場合にのみ `popoverController` を使用すべきです。コントローラを使用する場合、ポップオーバーは前もって作成されないので、 `trigger` や `trigger-action` などのプロパティはここでは適用されません。さらに、ネストされたポップオーバーはコントローラのアプローチと互換性がありません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに自動的にアプリケーションのルートに追加されるからです。
 
@@ -83,10 +81,9 @@ Ionic Framework からインポートされた `popoverController` を使用す�
 
 ### 使い方
 
-import ControllerExample from '@site/static/usage/v8/popover/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v9/popover/presenting/controller/index.md';
 
 <ControllerExample />
-
 
 ## スタイリング
 
@@ -96,10 +93,9 @@ import ControllerExample from '@site/static/usage/v8/popover/presenting/controll
  If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
-import Styling from '@site/static/usage/v8/popover/customization/styling/index.md';
+import Styling from '@site/static/usage/v9/popover/customization/styling/index.md';
 
 <Styling />
-
 
 ## 配置
 
@@ -117,7 +113,7 @@ import Styling from '@site/static/usage/v8/popover/customization/styling/index.m
 
 ### Side and Alignment Demo
 
-import Positioning from '@site/static/usage/v8/popover/customization/positioning/index.md';
+import Positioning from '@site/static/usage/v9/popover/customization/positioning/index.md';
 
 <Positioning />
 
@@ -129,9 +125,9 @@ import Positioning from '@site/static/usage/v8/popover/customization/positioning
 
 ドロップダウンメニューを作成するとき、ポップオーバーの幅をトリガー要素の幅と一致させたい場合があります。トリガーの幅を事前に知らずにこれを行うのは厄介です。 `size` プロパティを `'cover'` に設定すると、Ionic Framework はポップオーバーの幅をトリガー要素の幅に一致させるようにします。
 
-`popoverController` を使用する場合は、`event` オプションでイベントを指定する必要があり、Ionic Framework は `event.target` を参照要素に使用します。このパターンの例は [controller demo](#controller-popovers) を参照してください。
+`popoverController`を使用している場合、`event`オプションでイベントを指定する必要があり、Ionic Frameworkは`event.target`を参照要素として使用します。このパターンの例については、[controllerデモ](#controller-popovers)を参照してください。
 
-import Sizing from '@site/static/usage/v8/popover/customization/sizing/index.md';
+import Sizing from '@site/static/usage/v9/popover/customization/sizing/index.md';
 
 <Sizing />
 
@@ -145,10 +141,9 @@ import Sizing from '@site/static/usage/v8/popover/customization/sizing/index.md'
  `popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
 :::
 
-import NestedPopover from '@site/static/usage/v8/popover/nested/index.md';
+import NestedPopover from '@site/static/usage/v9/popover/nested/index.md';
 
 <NestedPopover />
-
 
 ## Interfaces
 
@@ -181,7 +176,6 @@ interface PopoverOptions {
   arrow?: boolean;
 }
 ```
-
 
 ## Types
 
@@ -225,7 +219,7 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 インライン `ion-popover` のコンテンツは、閉じるとマウントされなくなります。このコンテンツのレンダリングにコストがかかる場合、開発者は `keepContentsMounted` プロパティを使用して、ポップオーバーがマウントされると同時にコンテンツをマウントすることができます。これにより、ポップオーバーが開いたときに内部コンテンツがすでにマウントされているため、アプリケーションの応答性を最適化することができます。
 
-import Mount from '@site/static/usage/v8/popover/performance/mount/index.md';
+import Mount from '@site/static/usage/v9/popover/performance/mount/index.md';
 
 <Mount />
 
@@ -251,7 +245,7 @@ import Mount from '@site/static/usage/v8/popover/performance/mount/index.md';
 ## CSS Shadow Parts
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 <CustomProps />
 
 ## Slots

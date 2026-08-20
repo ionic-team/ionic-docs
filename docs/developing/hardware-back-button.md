@@ -31,12 +31,12 @@ Ionic Framework は、サポートされている環境でユーザーがハー�
 
 以下の表は、環境によってハードウェアの戻るボタンのサポートがどのように異なるかを示しています。
 
-| Environment | Status                                                                                                                  |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Capacitor   | `@capacitor/app`パッケージがインストールされている場合のみサポートされます。                                            |
-| Cordova     | サポートされています                                                                                                    |
-| Browser     | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
-| PWA         | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
+| 環境      | 対応状況                                                                                                                |
+| --------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Capacitor | `@capacitor/app`パッケージがインストールされている場合のみサポートされます。                                            |
+| Cordova   | サポートされています                                                                                                    |
+| ブラウザ  | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
+| PWA       | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
 
 ### ブラウザまたは PWA でのハードウェアの戻るボタン
 
@@ -78,7 +78,7 @@ document.addEventListener('ionBackButton', (event) => {
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 ...
 
@@ -93,7 +93,7 @@ constructor(private platform: Platform) {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 ...
 
@@ -132,7 +132,7 @@ useBackButton(10, () => {
 
 この例では、ハードウェアバックボタンが押されたときに呼び出されるハンドラを登録しています。優先度を 10 に設定し、次のハンドラを呼び出すことをフレームワークに指定していません。その結果、優先順位が 10 未満のハンドラは呼び出されません。優先度が 10 より大きいハンドラが最初に呼び出されます。
 
-同じ優先順位値を持つハンドラが存在する場合は、最後に登録されたハンドラが呼び出されます。詳細は、 [Handlers with the Same Priorities](#handlers-with-the-same-priorities) を参照してください。
+同じ優先度のハンドラが存在する場合、最後に登録されたハンドラが呼び出されます。詳細については、[同じ優先度のハンドラ](#handlers-with-the-same-priorities)を参照してください。
 
 ## 複数ハンドラの呼び出し
 
@@ -170,7 +170,7 @@ document.addEventListener('ionBackButton', (event) => {
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 ...
 
@@ -191,7 +191,7 @@ constructor(private platform: Platform) {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 ...
 
@@ -248,7 +248,7 @@ useBackButton(10, (processNextHandler) => {
 
 この例は、次のハンドラを起動するように Ionic Framework に指示する方法を示しています。すべてのコールバックには、パラメータとして `processNextHandler` 関数が用意されています。これをコールすると、次のハンドラ (存在する場合) が起動されます。
 
-## 同じ優先順位のハンドラ
+## 同じ優先順位のハンドラ {/* #handlers-with-the-same-priorities */}
 
 内部的には、Ionic Framework はハードウェアのバックボタンハンドラを管理するためにプライオリティキューに似たものを使用します。優先順位の値が最大のハンドラが最初に呼び出されます。同じ優先順位のハンドラが複数存在する場合、このキューに追加された同じ優先順位の _last_ handler が、最初に呼び出されるハンドラになります。
 
@@ -311,7 +311,7 @@ document.addEventListener('ionBackButton', (event: BackButtonEvent) => {
 
 ```tsx
 import { Optional } from '@angular/core';
-import { IonRouterOutlet, Platform } from '@ionic/angular';
+import { IonRouterOutlet, Platform } from '@ionic/angular/lazy';
 import { App } from '@capacitor/app';
 
 ...
@@ -333,7 +333,7 @@ constructor(
 
 ```tsx
 import { Optional } from '@angular/core';
-import { IonRouterOutlet, Platform } from '@ionic/angular/standalone';
+import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 
 ...

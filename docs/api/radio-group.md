@@ -1,12 +1,12 @@
 ---
 title: "ion-radio-group"
 ---
-import Props from '@ionic-internal/component-api/v8/radio-group/props.md';
-import Events from '@ionic-internal/component-api/v8/radio-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/radio-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/radio-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/radio-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
+import Props from '@ionic-internal/component-api/v9/radio-group/props.md';
+import Events from '@ionic-internal/component-api/v9/radio-group/events.md';
+import Methods from '@ionic-internal/component-api/v9/radio-group/methods.md';
+import Parts from '@ionic-internal/component-api/v9/radio-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/radio-group/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/radio-group/slots.md';
 
 <head>
   <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
@@ -15,9 +15,7 @@ import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-ラジオ・グループは、[ラジオ](./radio)のグループのためのコンテナです。ラジオグループは、ユーザーがラジオボタンを1つだけ選択できるようにします。ラジオ・グループに属するラジオ・ボタンを1つチェックすると、同じグループ内で以前にチェックされたラジオ・ボタンのチェックは解除されます。ラジオ・グループの使用例については、[radio](./radio)のドキュメントを参照してください。
-
+ラジオグループは、[ラジオボタン](./radio)のグループのコンテナです。ユーザーは、セット内のラジオボタンを最大で1つだけ選択できます。ラジオグループに属する1つのラジオボタンをチェックすると、同じグループ内で以前にチェックされたラジオボタンはすべてチェック解除されます。ラジオグループの使用例については、[ラジオ](./radio)のドキュメントを参照してください。
 
 ## Interfaces
 
@@ -39,7 +37,6 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonRadioGroupElement;
 }
 ```
-
 
 ## プロパティ
 <Props />

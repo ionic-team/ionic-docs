@@ -1,4 +1,15 @@
-# ユーティリティ関数
+---
+title: ユーティリティ関数
+sidebar_label: ユーティリティ関数
+---
+
+<head>
+  <title>Ionic Vue Utility Functions</title>
+  <meta
+    name="description"
+    content="プログラムによるナビゲーション用の useIonRouter、ハードウェアの戻るボタンを処理する useBackButton、オンスクリーンキーボードの状態を扱う useKeyboard など、Ionic Vue のユーティリティ関数について説明します。"
+  />
+</head>
 
 Ionic Vue ships with several utility functions that you can use in your application to make certain tasks easier such as managing the on-screen keyboard and the hardware back button.
 
@@ -12,7 +23,7 @@ Ionic Vue ships with several utility functions that you can use in your applicat
 
 Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) from Vue.
 
-**Customizing Page Transitions**
+##### Customizing Page Transitions
 
 ```js
 import { IonPage, useIonRouter } from '@ionic/vue';
@@ -27,7 +38,7 @@ const back = () => {
 };
 ```
 
-**Hardware back button on Android**
+##### Back Navigation
 
 You may want to know if you are at the root page of the application when a user presses the hardware back button on Android.
 
@@ -71,7 +82,7 @@ useIonRouter(): UseIonRouterResult;
 
 - The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
 
-See the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
+詳細な使用例については、[Vue ナビゲーション ドキュメント](./navigation#navigating-using-useionrouter)を参照してください。
 
 ## Hardware Back Button
 
@@ -98,10 +109,10 @@ interface UseBackButtonResult {
 useBackButton(priority: number, handler: Handler): UseBackButtonResult;
 ```
 
-See the [Hardware Back Button Documentation](../developing/hardware-back-button) for more information and usage examples.
+詳細や使用例については、[ハードウェアバックボタンのドキュメント](../developing/hardware-back-button)を参照してください。
 
 :::note
-The `useBackButton` callback will only fire when your app is running in Capacitor or Cordova. See [Hardware Back Button in Capacitor and Cordova](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova) for more information.
+`useBackButton` コールバックは、アプリが Capacitor または Cordova で実行されているときにのみ発火します。詳細については、[Capacitor および Cordova におけるハードウェアバックボタン](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova)を参照してください。
 :::
 
 ## Keyboard
@@ -131,7 +142,7 @@ interface UseKeyboardResult {
 useKeyboard(): UseKeyboardResult;
 ```
 
-See the [Keyboard Documentation](../developing/keyboard) for more information and usage examples.
+詳細情報や使用例については、[キーボードのドキュメント](../developing/keyboard)を参照してください。
 
 ## Ionic Lifecycles
 
@@ -163,4 +174,4 @@ onIonViewWillLeave(() => {
 Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
 :::
 
-See the [Vue Lifecycle Documentation](./lifecycle) for more information and usage examples.
+詳細情報や使用例については、[Vue ライフサイクルのドキュメント](./lifecycle)を参照してください。

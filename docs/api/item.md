@@ -1,15 +1,17 @@
 ---
 title: "ion-item"
 ---
-import Props from '@ionic-internal/component-api/v8/item/props.md';
-import Events from '@ionic-internal/component-api/v8/item/events.md';
-import Methods from '@ionic-internal/component-api/v8/item/methods.md';
-import Parts from '@ionic-internal/component-api/v8/item/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/item/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/item/slots.md';
+import Props from '@ionic-internal/component-api/v9/item/props.md';
+import Events from '@ionic-internal/component-api/v9/item/events.md';
+import Methods from '@ionic-internal/component-api/v9/item/methods.md';
+import Parts from '@ionic-internal/component-api/v9/item/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/item/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/item/slots.md';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BestPracticeFigure from '@components/global/BestPracticeFigure';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
@@ -20,19 +22,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-アイテムは、テキスト、アイコン、アバター、画像、Input、その他のネイティブまたはカスタム要素を含むことができる要素です。アイテムは他のアイテムと一緒に[リスト](./list)の行としてのみ使用してください。アイテムはスワイプ、削除、並び替え、編集などができます。
 
+アイテムは、テキスト、アイコン、アバター、画像、Input、その他のネイティブまたはカスタム要素を含むことができる要素です。アイテムは他のアイテムと一緒に[リスト](./list)の行としてのみ使用してください。アイテムはスワイプ、削除、並び替え、編集などができます。
 
 ## 基本的な使い方
 
-アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-nowrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
+アイテムはテキストを左揃えにし、テキストがアイテムより広い場合は折り返されます。この動作は、Ionic Frameworkが提供するCSSユーティリティを使用して変更することができます。以下の例では`.ion-text-nowrap`を使用しています。アイテム内のテキストを変換するために追加できる他のクラスについては、[CSSユーティリティのドキュメント](/docs/layout/css-utilities)を参照してください。
 
-import Basic from '@site/static/usage/v8/item/basic/index.md';
+import Basic from '@site/static/usage/v9/item/basic/index.md';
 
 <Basic />
 
 
-## コンテンツの種類
+## コンテンツの種類 {/* #content-types */}
 
 リスト内のアイテムは様々な形をとりますが、一般的にビジュアル、テキスト、メタデータ、アクション、コントロールの5つの異なるコンテンツタイプをサポートします。しかし、これらのコンテンツタイプをすべて同時に使うべきではありません。以下のガイドでは、異なるコンテンツタイプと、アプリケーションでの適切な利用方法を示します。
 
@@ -52,7 +54,7 @@ import Basic from '@site/static/usage/v8/item/basic/index.md';
 
 下の例では、ビジュアルをサポートする2つのリストを作成しています。最初のリストはアイコンを使い、2番目のリストはアバターを使います。ビジュアルは装飾的なものなので、すべて `aria-hidden="true"` を指定しています。さらに、これらは `start` スロットで一貫して表示されます。
 
-import SupportingVisuals from '@site/static/usage/v8/item/content-types/supporting-visuals/index.md';
+import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporting-visuals/index.md';
 
 <SupportingVisuals />
 
@@ -74,13 +76,13 @@ import SupportingVisuals from '@site/static/usage/v8/item/content-types/supporti
 
 そのリストの下には、 [Note](./note) の下に長いテキストを含むtextareaを含む別のリストがあります。textareaは、長いテキストが他のフィールドではなく、textareaに関連付けられていることを明らかにするために、それ自身のリストに配置されました。
 
-import Text from '@site/static/usage/v8/item/content-types/text/index.md';
+import Text from '@site/static/usage/v9/item/content-types/text/index.md';
 
 <Text />
 
 ### メタデータ
 
-メタデータは、ステータステキストやカウントのようなアイテムの追加コンテキストを提供します。Badge](./badge)や[Note](./note)のようなコンポーネントは、メタデータを表示する素晴らしい方法です。
+メタデータは、ステータステキストやカウントのようなアイテムの追加コンテキストを提供します。[バッジ](./badge)や[注記](./note)のようなコンポーネントは、メタデータを表示する素晴らしい方法です。
 
 <BestPracticeFigure
   text="Limit the amount of metadata you include to only the most relevant information."
@@ -102,11 +104,11 @@ import Text from '@site/static/usage/v8/item/content-types/text/index.md';
 
 つ目のリストは、iOSのメールアプリを真似て受信トレイを表示しています。このリストでは、"開始"スロットに "未読メッセージ"インジケータ、"終了"スロットにタイムスタンプとカスタム詳細アイコンを含むカスタムメタデータを使用しています。"未読メッセージ"インジケータは、未読メッセージにユーザーの注意を引くために青くハイライトされ、タイムスタンプはより控えめです。
 
-import Metadata from '@site/static/usage/v8/item/content-types/metadata/index.md';
+import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md';
 
 <Metadata />
 
-### アクション
+### アクション {/* #actions */}
 
 アクションは、アクティブにすると何かをするインタラクティブな要素です。アイテムは1行に複数のアクションを表示することができます。しかし、開発者は、各アクションのタップターゲットが十分に大きいことを確認する必要があります。
 
@@ -122,7 +124,7 @@ import Metadata from '@site/static/usage/v8/item/content-types/metadata/index.md
 
 下の例では、連絡先のリストを作成しています。各項目は、その項目の完全な連絡先ページに移動するためのスタブボタンです。各項目には、ユーザーが項目をスワイプすることで表示できる追加アクションがあります。
 
-import Actions from '@site/static/usage/v8/item/content-types/actions/index.md';
+import Actions from '@site/static/usage/v9/item/content-types/actions/index.md';
 
 <Actions />
 
@@ -156,49 +158,135 @@ import Actions from '@site/static/usage/v8/item/content-types/actions/index.md';
 
 以下の例では、ToDoタスクのリストを作成しています。それぞれの項目にはチェックボックスと入力があります。チェックボックスはユーザーがタスクを完了としてマークできるようにし、入力はユーザーがタスクの名前を変更できるようにします。
 
-import Controls from '@site/static/usage/v8/item/content-types/controls/index.md';
+import Controls from '@site/static/usage/v9/item/content-types/controls/index.md';
 
 <Controls />
 
 
 ## クリック可能なItems
 
-`href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
+`href`、`button`、`routerLink` のいずれかのプロパティが設定されている場合、item は「clickable（クリック可能）」と見なされます。clickable な item には、操作可能であることを示す視覚的な違いがいくつかあります。例えば、`md` mode では操作時に ripple エフェクトが適用され、`ios` mode では操作時にハイライトされ、デフォルトで [detail arrow](#detail-arrows) が表示されます。
 
-import Clickable from '@site/static/usage/v8/item/clickable/index.md';
+import Clickable from '@site/static/usage/v9/item/clickable/index.md';
 
 <Clickable />
 
+
+## ルーティング
+
+Item は `routerLink` プロパティを使用したクライアントサイドナビゲーションをサポートします。`routerLink` を設定すると item はアンカーとしてレンダリングされ、タップしたときに指定したルートへ移動します。`routerDirection` プロパティは遷移アニメーションの方向を制御し、`routerAnimation` にはカスタムアニメーションビルダーを指定できます。
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+Angular では、`routerLink` は `@angular/router` が提供するディレクティブです。Ionic コンポーネントで使用する場合は、`routerDirection` と `routerAnimation` のサポートを有効にするため、`@ionic/angular` から `IonRouterLink` も import します。
+
+```html
+<ion-list>
+  <ion-item [routerLink]="['/home']">
+    <ion-label>Go to Home</ion-label>
+  </ion-item>
+  <ion-item [routerLink]="['/home']" routerDirection="back">
+    <ion-label>Go Back to Home</ion-label>
+  </ion-item>
+</ion-list>
+```
+
+```typescript
+import { Component } from '@angular/core';
+import { IonItem, IonLabel, IonList, IonRouterLink } from '@ionic/angular';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
+  imports: [IonItem, IonLabel, IonList, RouterLink, IonRouterLink],
+})
+export class ExampleComponent {}
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+JavaScript では、`ion-item` に `router-link` 属性を設定し、[ion-router](./router) を使用して移動します。
+
+```html
+<ion-list>
+  <ion-item router-link="/home">
+    <ion-label>Go to Home</ion-label>
+  </ion-item>
+  <ion-item router-link="/home" router-direction="back">
+    <ion-label>Go Back to Home</ion-label>
+  </ion-item>
+</ion-list>
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+React では、`IonItem` の `routerLink` prop により、Ionic の React Router 統合を介したクライアントサイドナビゲーションが実行されます。
+
+```tsx
+import { IonItem, IonLabel, IonList } from '@ionic/react';
+
+function Example() {
+  return (
+    <IonList>
+      <IonItem routerLink="/home">
+        <IonLabel>Go to Home</IonLabel>
+      </IonItem>
+      <IonItem routerLink="/home" routerDirection="back">
+        <IonLabel>Go Back to Home</IonLabel>
+      </IonItem>
+    </IonList>
+  );
+}
+export default Example;
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+Vue では、`ion-item` に `router-link` 属性を使用します。遷移を制御するために `router-direction` 属性と `router-animation` 属性も利用できます。
+
+```html
+<template>
+  <ion-list>
+    <ion-item router-link="/home">
+      <ion-label>Go to Home</ion-label>
+    </ion-item>
+    <ion-item router-link="/home" router-direction="back">
+      <ion-label>Go Back to Home</ion-label>
+    </ion-item>
+  </ion-list>
+</template>
+
+<script setup lang="ts">
+  import { IonItem, IonLabel, IonList } from '@ionic/vue';
+</script>
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Detail Arrows
 
 デフォルトでは、[clickableなitems](/#clickable-items) は、`ios` modeで右矢印アイコンを表示します。clickableな要素の右矢印アイコンを非表示にするには、 `detail` プロパティを `false` に設定します。自動的に表示されない項目に右矢印アイコンを表示するには、`detail`プロパティを `true` に設定します。
 
-import DetailArrows from '@site/static/usage/v8/item/detail-arrows/index.md';
+import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.md';
 
 <DetailArrows />
-
-
-<!--
-
-TODO add this functionality back as a css variable
-
-This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:
-
-```css
---item-detail-push-show: true;
-```
-
-詳細については、[theming documentation](/docs/theming/css-variables)を参照してください。
-
--->
-
 
 ## Item Lines
 
 アイテムはデフォルトで下部のボーダーを挿入して表示します。ボーダーは左側にパディングを持ち、 `"start"` スロットにスロットされたコンテンツの下に表示されることはありません。 `lines` プロパティを `"full"` または `"none"` に変更すると、それぞれ全幅のボーダーが表示され、ボーダーを表示しないようになります。
 
-import Lines from '@site/static/usage/v8/item/lines/index.md';
+import Lines from '@site/static/usage/v9/item/lines/index.md';
 
 <Lines />
 
@@ -206,13 +294,13 @@ import Lines from '@site/static/usage/v8/item/lines/index.md';
 
 Buttonsは、アイテムの外側にあるときよりも、アイテムの内側にあるときの方が小さくスタイルされます。ボタンのサイズをアイテムの外側のボタンと同じにするには、`size`属性に`"default"`を設定します。
 
-import Buttons from '@site/static/usage/v8/item/buttons/index.md';
+import Buttons from '@site/static/usage/v9/item/buttons/index.md';
 
 <Buttons />
 
 ## Item Inputs
 
-import Inputs from '@site/static/usage/v8/item/inputs/index.md';
+import Inputs from '@site/static/usage/v9/item/inputs/index.md';
 
 <Inputs />
 
@@ -220,19 +308,19 @@ import Inputs from '@site/static/usage/v8/item/inputs/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/item/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/item/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v8/item/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/item/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
-import CSSProps from '@site/static/usage/v8/item/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -243,7 +331,7 @@ import CSSProps from '@site/static/usage/v8/item/theming/css-properties/index.md
 1. アイテムは [Lists](./list) の中だけで使用してください。
 2. リスト内のアイテムは、一貫したフォーマットで表示されるべきです。例えば、アイテムに装飾的なアイコンを表示する場合、アイコンはアイテム間で同じように配置されるべきです。
 3. アイテムは決して[入れ子になったインタラクティヴ](https://dequeuniversity.com/rules/axe/4.4/nested-interactive)をレンダリングすべきではありません。入れ子になったインタラクティブ要素が使用されている場合、スクリーンリーダーは正しいインタラクティブ要素を選択することができません。例えば、`button="true"`を持つ`ion-item`の中にボタンを置くことは避けてください。
-4. コンテントタイプ](#content-types)を正しく使用してください。Itemコンポーネントは、[List](./list)内の行として設計されており、汎用コンテナとして使用すべきではありません。
+4. [コンテンツタイプ](#content-types)を正しく使用してください。Item コンポーネントは、[リスト](./list)内の行として設計されており、汎用コンテナとして使用すべきではありません。
 
 ## アクセシビリティ
 

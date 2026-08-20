@@ -1,12 +1,12 @@
 ---
 title: "ion-row"
 ---
-import Props from '@ionic-internal/component-api/v8/row/props.md';
-import Events from '@ionic-internal/component-api/v8/row/events.md';
-import Methods from '@ionic-internal/component-api/v8/row/methods.md';
-import Parts from '@ionic-internal/component-api/v8/row/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/row/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/row/slots.md';
+import Props from '@ionic-internal/component-api/v9/row/props.md';
+import Events from '@ionic-internal/component-api/v9/row/events.md';
+import Methods from '@ionic-internal/component-api/v9/row/methods.md';
+import Parts from '@ionic-internal/component-api/v9/row/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/row/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components of the Grid System</title>
@@ -20,15 +20,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Rowは[Grid](./grid)システムの水平方向の構成要素で、さまざまな数の
 [columns](./col)を含む。列が適切に配置されるようにします。
 
-詳しくは[grid](./grid)のドキュメントを参照してください。
-
+詳細については、[グリッド](./grid)のドキュメントを参照してください。
 
 ## Row Alignment
 
 デフォルトでは、列は行の高さ全体を埋めるように伸縮し、必要に応じて折り返されます。行は [Flexコンテナ](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container) なので、この動作をカスタマイズするために、行に適用できるいくつかの [CSS クラス](/docs/layout/css-utilities#flex-container-properties) が用意されています。
-
-
-
 
 ## プロパティ
 <Props />

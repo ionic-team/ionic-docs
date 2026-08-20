@@ -1,12 +1,12 @@
 ---
 title: "ion-nav"
 ---
-import Props from '@ionic-internal/component-api/v8/nav/props.md';
-import Events from '@ionic-internal/component-api/v8/nav/events.md';
-import Methods from '@ionic-internal/component-api/v8/nav/methods.md';
-import Parts from '@ionic-internal/component-api/v8/nav/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/nav/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/nav/slots.md';
+import Props from '@ionic-internal/component-api/v9/nav/props.md';
+import Events from '@ionic-internal/component-api/v9/nav/events.md';
+import Methods from '@ionic-internal/component-api/v9/nav/methods.md';
+import Parts from '@ionic-internal/component-api/v9/nav/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/nav/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/nav/slots.md';
 
 <head>
   <title>ion-nav: Nav View Component for Ionic Framework Apps</title>
@@ -22,14 +22,14 @@ Navは、任意のコンポーネントをロードし、スタックに新し�
 Router Outletとは異なり、Navは特定のルーターに縛られることはありません。つまり、Navコンポーネントをロードし、他のコンポーネントをスタックにプッシュしても、アプリ全体のルーターには影響しない。例えば、新しいコンポーネントを`ion-nav`にプッシュして、URLが更新されることを期待するべきではありません。これは、アプリのURLに関連付けずに、独自のサブナビゲーションが必要なモーダルがあるような使用例に適しています。
 
 :::note
-`ion-nav`はルーティングに使用するものではありません。 代わりに、[Angular](../angular/navigation)、[React](../react/navigation)、[Vue](../vue/navigation)、またはバニラJavaScriptプロジェクト用の[`ion-router`](./router)のルーティングガイドを参照してください。
-:::
+`ion-nav`はルーティングには使用されません。代わりに、[Angular](../angular/navigation)、[React](../react/navigation)、および[Vue](../vue/navigation)のルーティングガイド、または[`ion-router`](./router)のバニラJavaScriptプロジェクト用ガイドを参照してください。
 
-## NavLinkを利用する
+{/* cspell:disable-next-line */}
+## NavLinkを利用する {/* #using-navlink */}
 
 NavLinkは、Navと対話する際の簡素化されたAPIです。開発者はコンポーネントをカスタマイズしたり、コンポーネントのプロパティを渡したり、ルートアニメーションの方向を変更したり、ナビゲート時のカスタムアニメーションを定義したりすることができます。
 
-import NavLinkExample from '@site/static/usage/v8/nav/nav-link/index.md'; 
+import NavLinkExample from '@site/static/usage/v9/nav/nav-link/index.md';
 
 <NavLinkExample />
 
@@ -43,7 +43,7 @@ Modal can use Nav to offer a linear navigation that is independent of the URL.
 
 :::
 
-import ModalNavigationExample from '@site/static/usage/v8/nav/modal-navigation/index.md';
+import ModalNavigationExample from '@site/static/usage/v9/nav/modal-navigation/index.md';
 
 <ModalNavigationExample />
 
@@ -58,8 +58,6 @@ interface NavCustomEvent extends CustomEvent {
   target: HTMLIonNavElement;
 }
 ```
-
-
 
 ## プロパティ
 <Props />

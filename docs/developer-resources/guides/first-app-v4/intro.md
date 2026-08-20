@@ -8,18 +8,18 @@ It’s easy to get started. Note that all code referenced in this guide can be [
 
 ## Required Tools
 
-Download/install these right away to ensure an optimal Ionic development experience:
+最適な Ionic 開発環境を整えるため、次のツールを先にダウンロードしてインストールしてください。
 
-- [Git](https://git-scm.com/downloads) for version control.
-- <strong>SSH client</strong>, such as [PuTTy](https://putty.software/), for secure login to Appflow.
-- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-- <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-- <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we
-  recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>
-    Mac/Linux
-  </strong> users, virtually any terminal will work.
+- [Git](https://git-scm.com/downloads)：バージョン管理用。
+- <strong>SSHクライアント</strong>：[PuTTy](https://putty.software/)など、Appflowへの安全なログイン用。
+- <strong>Node.js</strong>：Ionicエコシステムとやり取りするため。[LTSバージョンをダウンロード](https://nodejs.org/en/)。
+- <strong>コードエディタ</strong>：コードを書くため! 私たちは[Visual Studio
+  Code](https://code.visualstudio.com/)のファンです。
+- <strong>コマンドラインターミナル（CLI）</strong>：ちなみに<strong>Windows</strong>
+  ユーザーは、最高のIonic体験のために、管理者モードで実行する組み込みコマンドライン（cmd）またはPowershell CLIを推奨します。
+  <strong>Mac/Linux</strong>ユーザーには、ほぼどのターミナルでも動作します。
 
-## Install Ionic and Cordova
+## Ionic と Cordova のインストール
 
 Run the following in the command line:
 
@@ -30,7 +30,7 @@ npm install -g @ionic/cli cordova
 :::note
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../../../developing/tips.md#resolving-permission-errors) for more information.
+npm を昇格権限なしでグローバルに操作できるよう設定することを検討してください。詳細は[権限エラーの解決](../../../developing/tips.md#resolving-permission-errors)を参照してください。
 :::
 
 ## Create an App
@@ -49,7 +49,7 @@ Next, change into the app folder:
 cd photo-gallery
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+以上です！さて、楽しい部分です - アプリを実行してみましょう。
 
 ## Run the App
 
@@ -67,7 +67,7 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 
 ![Animated GIF demonstrating the LiveReload feature in Ionic, showing real-time updates in the app after code changes.](/img/guides/first-app-v3/email-photogallery.gif 'Ionic LiveReload Feature Demonstration')
 
-Open the photo-gallery app folder in your favorite code editor of choice, then navigate to `/src/app/tab2/tab2.page.html`. We see:
+お気に入りのコードエディタで photo-gallery アプリのフォルダを開き、次に`/src/app/tab2/tab2.page.html`に移動します。それには以下が含まれます：
 
 ```html
 <ion-header>

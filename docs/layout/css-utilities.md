@@ -3,7 +3,7 @@ title: CSSユーティリティ
 ---
 
 <head>
-  <title>CSSユーティリティ: Classes for Text/Element Alignment or Modification</title>
+  <title>CSSユーティリティ: テキストや要素の配置・変更に使うクラス</title>
   <meta
     name="description"
     content="Ionic CSSユーティリティクラスは、テキストの修正/整列、要素の配置、またはパディングとマージンの調整のために任意の要素で使用できます。詳細を読んで学びましょう。"
@@ -123,7 +123,7 @@ Ionic Framework は、テキストの順番を入れ替えたり、要素の配�
 | `.ion-text-lg-{modifier}` | `min-width: 992px`のときに要素に修飾子を適用します。  |
 | `.ion-text-xl-{modifier}` | `min-width: 1200px`のときに要素に修飾子を適用します。 |
 
-## 要素の配置
+## 要素の配置 {/* #element-placement */}
 
 ### Float
 
@@ -186,7 +186,7 @@ Ionic Framework は、テキストの順番を入れ替えたり、要素の配�
 | `.ion-float-lg-{modifier}` | `min-width: 992px`のときに要素に修飾子を適用します。  |
 | `.ion-float-xl-{modifier}` | `min-width: 1200px`のときに要素に修飾子を適用します。 |
 
-## 要素の表示
+## 要素の表示 {/* #element-display */}
 
 ### Display
 
@@ -224,7 +224,7 @@ Ionic は`display`用に以下のユーティリティクラスを提供しま�
 
 ### 非推奨クラス
 
-:::warning 非推奨通知
+:::warning[廃止予定通知]
 
 以下のクラスは非推奨であり、次のメジャーリリースで削除されます。代わりに推奨される`.ion-display-*`クラスを使用してください。
 
@@ -238,13 +238,13 @@ Ionic は`display`用に以下のユーティリティクラスを提供しま�
 | `.ion-hide-lg-{dir}` | `min-width: 992px`（`up`）または`max-width: 992px`（`down`）のときに要素に修飾子を適用します。 <br/> **非推奨** — 代わりに`ion-display-lg-{modifier}`クラスを使用してください。   |
 | `.ion-hide-xl-{dir}` | `min-width: 1200px`（`up`）または`max-width: 1200px`（`down`）のときに要素に修飾子を適用します。 <br/> **非推奨** — 代わりに`ion-display-xl-{modifier}`クラスを使用してください。 |
 
-## コンテンツのスペース
+## コンテンツのスペース {/* #content-space */}
 
 ### Padding
 
 padding 属性は、要素の padding エリアを設定します。padding エリアは、要素のコンテンツとその境界線のスペースです。
 
-`padding` で適用されるデフォルトの数値は `16px` で、これは `--ion-padding`　変数で設定することができます。これらの値を変更する方法については [CSS Variables](../theming/css-variables.md) をご覧ください。
+適用される`padding`のデフォルトの量は`16px`であり、`--ion-padding`変数によって設定されます。これらの値を変更する方法については、[CSS 変数](../theming/css-variables.md)セクションを参照してください。
 
 ```html
 <ion-grid>
@@ -294,7 +294,7 @@ padding 属性は、要素の padding エリアを設定します。padding エ�
 
 Margin エリアは、隣り合う要素とのスペースを広げるために境界線の外に空のエリアをつくるためのものです。
 
-`margin`　はデフォルトで `16px` が設定されており、 `--ion-margin` 変数で設定されています。 これらの値を変更する方法については [CSS Variables](../theming/css-variables.md) をご覧ください。
+適用される`margin`のデフォルトの量は`16px`であり、`--ion-margin`変数によって設定されます。これらの値を変更する方法については、[CSS 変数](../theming/css-variables.md)セクションを参照してください。
 
 ```html
 <ion-grid>
@@ -340,9 +340,9 @@ Margin エリアは、隣り合う要素とのスペースを広げるために�
 | `.ion-margin-horizontal` | `margin: 0 16px`      | 左右にマージンを適用します。         |
 | `.ion-no-margin`         | `margin: 0`           | すべての側にマージンを適用しません。 |
 
-## Flex コンテナプロパティ
+## Flex コンテナプロパティ {/* #flex-container-properties */}
 
-Flexbox プロパティは、すべての flex アイテムのレイアウトを制御する**コンテナプロパティ**と、個々の flex アイテムを制御する**アイテムプロパティ**の 2 つのカテゴリに分けられます。アイテムレベルの配置については、[Flex Item Properties](#flex-item-properties)を参照してください。
+フレックスボックスのプロパティは、すべてのフレックスアイテムのレイアウトを制御する**コンテナプロパティ**と、個々のフレックスアイテムを制御する**アイテムプロパティ**の 2 つのカテゴリに分かれています。アイテムレベルの整列については、[フレックスアイテムプロパティ](#flex-item-properties)を参照してください。
 
 <img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
 
@@ -433,17 +433,17 @@ Ionic は`flex-wrap`用に以下のユーティリティクラスを提供しま
 
 以下の表は、デフォルトの動作を示しています。`{property}`は次のいずれかです：`justify-content`、`align-content`、`align-items`、`flex`、または`flex-wrap`。`{modifier}`は上記で説明されている対応する値です。
 
-| Class                           | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
-| `.ion-{property}-{modifier}`    | Applies the modifier to the element on all screen sizes.      |
-| `.ion-{property}-sm-{modifier}` | Applies the modifier to the element when `min-width: 576px`.  |
-| `.ion-{property}-md-{modifier}` | Applies the modifier to the element when `min-width: 768px`.  |
-| `.ion-{property}-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
-| `.ion-{property}-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
+| Class                           | 説明                                                  |
+| ------------------------------- | ----------------------------------------------------- |
+| `.ion-{property}-{modifier}`    | すべての画面サイズで要素に修飾子を適用します。        |
+| `.ion-{property}-sm-{modifier}` | `min-width: 576px`のときに要素に修飾子を適用します。  |
+| `.ion-{property}-md-{modifier}` | `min-width: 768px`のときに要素に修飾子を適用します。  |
+| `.ion-{property}-lg-{modifier}` | `min-width: 992px`のときに要素に修飾子を適用します。  |
+| `.ion-{property}-xl-{modifier}` | `min-width: 1200px`のときに要素に修飾子を適用します。 |
 
 ### 非推奨クラス
 
-:::warning 非推奨通知
+:::warning[非推奨のお知らせ]
 
 以下のクラスは非推奨であり、次のメジャーリリースで削除されます。代わりに推奨される`.ion-flex-*`クラスを使用してください。
 
@@ -455,7 +455,7 @@ Ionic は`flex-wrap`用に以下のユーティリティクラスを提供しま
 | `.ion-wrap`         | アイテムは複数行に折り返され、上から下へ配置されます。<br />**非推奨** — 代わりに`.ion-flex-wrap`を使用してください。         |
 | `.ion-wrap-reverse` | アイテムは複数行に折り返され、下から上へ配置されます。<br />**非推奨** — 代わりに`.ion-flex-wrap-reverse`を使用してください。 |
 
-## Flex アイテムプロパティ
+## Flex アイテムプロパティ {/* #flex-item-properties */}
 
 Flex アイテムプロパティは、個々の flex アイテムが flex コンテナ内でどのように動作するかを制御します。コンテナレベルの配置については、[Flex Container Properties](#flex-container-properties)も参照してください。
 
@@ -581,7 +581,7 @@ Ionic は`order`用に以下のユーティリティクラスを提供します�
 | ---------------- | ---------------------------- |
 | `.ion-no-border` | 要素にボーダーがありません。 |
 
-## Ionic のブレイクポイント
+## Ionic のブレイクポイント {/* #ionic-breakpoints */}
 
 Ionic は、画面サイズに基づいてアプリケーションのスタイルを変えるために、メディアクエリでブレークポイントを使用します。次のブレークポイント名は、上記のユーティリティークラスで使用され、幅が一致したときにクラスが適用されます。
 

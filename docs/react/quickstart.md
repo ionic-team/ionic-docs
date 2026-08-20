@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ようこそ！このガイドでは、Ionic React 開発の基本を説明します。開発環境のセットアップ、シンプルなプロジェクトの生成、プロジェクト構造の探索、Ionic コンポーネントの動作方法を学びます。最初の実際のアプリを構築する前に Ionic React に慣れるのに最適です。
 
-Ionic React とは何か、React エコシステムにどのように適合するかの高レベルの概要をお探しの場合は、[Ionic React の概要](overview)を参照してください。
+Ionic React が何であり、React のエコシステムにどのように適合するかの概要を知りたい場合は、[Ionic React の概要](overview) を参照してください。
 
 ## 前提条件
 
@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-Node.js と npm がない場合は、[こちらから Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
+Node.js と npm を持っていない場合は、[Node.js をダウンロード](https://nodejs.org/en/download)（npm も含まれています）してください。
 
 ## Ionic CLI でプロジェクトを作成
 
@@ -78,7 +78,7 @@ Your new app's directory will look like this:
 The root of your app is defined in `App.tsx`:
 
 ```tsx title="src/App.tsx"
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
@@ -91,12 +91,8 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
@@ -113,12 +109,8 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
-  <Route exact path="/home">
-    <Home />
-  </Route>
-  <Route exact path="/">
-    <Redirect to="/home" />
-  </Route>
+  <Route path="/home" element={<Home />} />
+  <Route path="/" element={<Navigate to="/home" replace />} />
 </IonRouterOutlet>
 ```
 
@@ -156,10 +148,10 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage`コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。2 番目のヘッダーは、コンテンツの上部にあるときに表示される[折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles)を示し、スクロールダウンすると最初のヘッダーの小さなタイトルを表示するために縮小されます。
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage` コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。二つ目のヘッダーは [折りたたみ可能な大きなタイトル](/docs/api/title.md#collapsible-large-titles) を表示し、iOS デバイスではコンテンツの上部にあるときに表示され、その後スクロールすると最初のヘッダーに小さいタイトルとして凝縮されます。
 
-:::tip 詳細情報
-Ionic レイアウトコンポーネントの詳細については、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、[Content](/docs/api/content.md)のドキュメントを参照してください。
+:::tip[詳細を見る]
+Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md)、および[Content](/docs/api/content.md)のドキュメントを参照してください。
 :::
 
 ## Ionic コンポーネントを追加
@@ -240,15 +232,9 @@ Then, add its route in `IonRouterOutlet`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
-  <Route exact path="/home">
-    <Home />
-  </Route>
-  <Route exact path="/new">
-    <New />
-  </Route>
-  <Route exact path="/">
-    <Redirect to="/home" />
-  </Route>
+  <Route path="/home" element={<Home />} />
+  <Route path="/new" element={<New />} />
+  <Route path="/" element={<Navigate to="/home" replace />} />
 </IonRouterOutlet>
 ```
 
@@ -259,7 +245,7 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
-React Router の`history`プロップを使用して、プログラム的にナビゲーションを実行することもできます。詳細については、[React Navigation ドキュメント](/docs/react/navigation.md#navigating-using-history)を参照してください。
+ナビゲーションは `useIonRouter` hook を使用してプログラムで行うこともできます。詳細は [React Navigation のドキュメント](/docs/react/navigation.md#useionrouter)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
@@ -282,7 +268,7 @@ import { heart, logoIonic } from 'ionicons/icons';
 
 インポートされた SVG 参照を渡していることに注意してください。文字列としてのアイコン名**ではありません**。
 
-詳細については、[Icon ドキュメント](/docs/api/icon.md)と[Ionicons ドキュメント](https://ionic.io/ionicons/)を参照してください。
+詳細については、[Icon のドキュメント](/docs/api/icon.md)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
 
 ## コンポーネントメソッドを呼び出す
 
@@ -354,7 +340,7 @@ ionic cap open ios
 ionic cap open android
 ```
 
-詳細については、[Capacitor の Getting Started ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
+さらに詳しくは、[Capacitor のはじめにガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
 ## さらに探索
 
@@ -381,11 +367,9 @@ ionic cap open android
 <DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
 </DocsCard>
-
+{/* prettier-ignore */}
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
 </DocsCard>
 
 </DocsCards>

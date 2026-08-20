@@ -25,7 +25,7 @@ Ionic の素晴らしいところは、1 つのコードベースで、使い慣
 ></iframe>
 
 :::note
-Ionic 4 と Cordova をカバーしたこのガイドの以前のバージョンを探していますか？[こちらを参照してください。](../developer-resources/guides/first-app-v4/intro.md)
+Ionic 4 および Cordova をカバーした前のバージョンのガイドをお探しですか？[Ionic 4 および Cordova ガイド](../developer-resources/guides/first-app-v4/intro.md)を参照してください。
 :::
 
 ## 構築するもの
@@ -44,11 +44,11 @@ Ionic 4 と Cordova をカバーしたこのガイドの以前のバージョン
 
 最適な Ionic 開発体験を確保するために、以下をすぐにダウンロードしてインストールしてください：
 
-- **Node.js** - Ionic エコシステムと対話するため。[LTS バージョンをこちらからダウンロード](https://nodejs.org/en/)。
-- **コードエディタ** - コードを書くため！[Visual Studio Code](https://code.visualstudio.com/)をお勧めします。
-- **コマンドラインインターフェース/ターミナル（CLI）**：
-  - **Windows**ユーザー：最適な Ionic 体験のために、管理者モードで実行される組み込みコマンドライン（cmd）または Powershell CLI をお勧めします。
-  - **Mac/Linux**ユーザー：事実上、どのターミナルでも動作します。
+- **Ionic エコシステムとやり取りするための Node.js**。[LTS 版をダウンロード](https://nodejs.org/en/)。
+- **コードを書くためのコードエディタ**！私たちは [Visual Studio Code](https://code.visualstudio.com/) のファンです。
+- **コマンドラインインターフェイス/ターミナル (CLI)**：
+  - **Windows** ユーザー：最高の Ionic 体験のために、組み込みのコマンドライン (cmd) または管理者モードで実行する Powershell CLI を推奨します。
+  - **Mac/Linux** ユーザー：ほぼすべてのターミナルで動作します。
 
 ## Ionic ツールのインストール
 
@@ -65,7 +65,7 @@ npm install -g @ionic/cli native-run cordova-res
 :::note
 `-g`オプションは*グローバルにインストール*を意味します。パッケージをグローバルにインストールすると、`EACCES`権限エラーが発生する可能性があります。
 
-昇格された権限なしで npm をグローバルに操作するように設定することを検討してください。詳細については、[権限エラーの解決](../developing/tips.md#resolving-permission-errors)を参照してください。
+npm を管理者権限なしでグローバルに操作できるように設定することを検討してください。詳細は [権限エラーの解決](../developing/tips.md#resolving-permission-errors) を参照してください。
 :::
 
 ## アプリの作成
@@ -78,7 +78,7 @@ ionic start photo-gallery tabs --type=angular
 
 :::note
 
-`NgModules` と `Standalone` のどちらかを選択するプロンプトが表示されたら、このチュートリアルは `NgModules` のアプローチに従っているので、`NgModules` を選択する。
+`NgModules` と `Standalone` のどちらかを選択するプロンプトが表示されたら、このチュートリアルではスタンドアロンコンポーネントのアプローチを採用しているため、`Standalone` を選択します。
 
 :::
 
@@ -109,20 +109,28 @@ npm install @ionic/pwa-elements
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 // CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// CHANGE: Call the element loader before the `bootstrapModule` call
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+
+// CHANGE: Call the element loader before the `bootstrapApplication` call
 defineCustomElements(window);
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.log(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideIonicAngular(),
+    provideRouter(routes, withPreloading(PreloadAllModules)),
+  ],
+}).catch((err) => console.error(err));
 ```
 
-これで完了です！それでは、楽しい部分 - アプリの動作を見てみましょう。
+それで終わりです！さあ、楽しい部分です - アプリを実行してみましょう。
 
 ## アプリを起動
 
@@ -140,7 +148,7 @@ ionic serve
 
 ![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/first-app-cap-ng/email-photogallery.gif 'Live Reload Feature in Ionic App')
 
-`/src/app/tab2/tab2.page.html`を開きます。次のようになっています：
+`/src/app/tab2/tab2.page.html`を開きます。それには以下が含まれています:
 
 ```html
 <ion-header [translucent]="true">
