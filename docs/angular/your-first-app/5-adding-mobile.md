@@ -160,13 +160,13 @@ public async loadSaved() {
   // If running on the web...
   if (!this.platform.is('hybrid')) {
     for (const photo of photos) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
 
@@ -278,12 +278,12 @@ export class PhotoService {
     // If running on the web...
     if (!this.platform.is('hybrid')) {
       for (const photo of photos) {
-        const readFile = await Filesystem.readFile({
+        const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
         });
         // Web platform only: Load the photo as base64 data
-        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+        photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
       }
     }
 
