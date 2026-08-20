@@ -2,16 +2,16 @@
 title: "ion-router"
 ---
 
-import Props from '@ionic-internal/component-api/v8/router/props.md';
-import Events from '@ionic-internal/component-api/v8/router/events.md';
-import Methods from '@ionic-internal/component-api/v8/router/methods.md';
-import Parts from '@ionic-internal/component-api/v8/router/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/router/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/router/slots.md';
+import Props from '@ionic-internal/component-api/v9/router/props.md';
+import Events from '@ionic-internal/component-api/v9/router/events.md';
+import Methods from '@ionic-internal/component-api/v9/router/methods.md';
+import Parts from '@ionic-internal/component-api/v9/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/router/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta name="description" content="ion-routerは、ionicのナビゲーションアウトレットであるion-navとion-tabsのためのURLコーディネータです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。" />
+  <meta name="description" content="ion-router は、Ionic のナビゲーションアウトレットである ion-tabs と ion-router-outlet のための URL コーディネーターです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -28,17 +28,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 アプリケーションはコードベースに単一の `ion-router` コンポーネントを持たなければなりません。
 このコンポーネントは、ブラウザの履歴とのすべての対話を制御し、イベント・システムを介して更新を集約します。
 
-`ion-router` は、`ion-nav` と `ion-tabs` 、 `ion-router-outlet` というIonicのナビゲーション機能のURL調整機能に過ぎません。
+`ion-router` は、`ion-tabs` と `ion-router-outlet` という Ionic のナビゲーションアウトレットのための URL コーディネーターです。
 
-つまり、 `ion-router` はDOMにアクセスすることはなく、コンポーネントを表示することも、何らかのライフサイクルイベントを発行することもなく、ブラウザのURLに基づいて、`ion-nav` と `ion-tabs` 、 `ion-router-outlet`  に何をいつ「show」すべきかを指示するだけです。
+つまり、`ion-router` は DOM にアクセスせず、コンポーネントを表示したり、ライフサイクルイベントを発行したりすることもありません。ブラウザの URL に基づいて、`ion-tabs` と `ion-router-outlet` に何をいつ「show」すべきかを指示するだけです。
 
-コンポーネント(ロード/選択)とURLの間の関係を設定するために、`ion-router` はJSX/HTMLを使ってルートのツリーを定義する宣言的な構文を利用します。
+コンポーネント（ロードまたは選択）と URL の関係を設定するために、`ion-router` は JSX/HTML でルートツリーを定義する宣言的な構文を使用します。
 
 ## 基本的な使い方
 
-import BasicExample from '@site/static/usage/v8/router/basic/index.md';
+import BasicExample from '@site/static/usage/v9/router/basic/index.md';
 
 <BasicExample />
+
+## Using ion-nav within a Routed Page
+
+`ion-router` and [`ion-nav`](./nav.md) are separate systems. `ion-router` coordinates URL-based navigation through `ion-router-outlet`, while `ion-nav` manages a local stack that is independent of the URL. `ion-nav` does not integrate with `ion-router`: placing an `ion-nav` inside an `ion-router` does not turn it into a routed outlet, and pushing or popping views on an `ion-nav` never changes the URL.
+
+The two can still be composed. A routed page rendered by `ion-router-outlet` can host its own `ion-nav` for local, URL-less navigation within that page. In the example below, navigating to `/details` updates the URL, but stepping through the `ion-nav` inside that page does not.
+
+import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/index.md';
+
+<NavWithinPageExample />
 
 ## Interfaces
 

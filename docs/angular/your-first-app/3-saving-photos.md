@@ -46,14 +46,14 @@ export interface UserPhoto {
 We can use this new method immediately in `addNewToGallery()`.
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   // CHANGE: Update the `addNewToGallery()` method
   public async addNewToGallery() {
@@ -68,8 +68,8 @@ export class PhotoService {
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
-    // CHANGE: Update argument to unshift array method
-    this.photos.unshift(savedImageFile);
+    // CHANGE: Add the saved photo to the front of the photos signal
+    this.photos.update((photos) => [savedImageFile, ...photos]);
   }
 
   private async savePicture(photo: Photo) {
@@ -150,7 +150,7 @@ export interface UserPhoto {
 `photo.service.ts` should now look like this:
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -159,7 +159,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   public async addNewToGallery() {
     // Take a photo
@@ -172,7 +172,7 @@ export class PhotoService {
     // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
-    this.photos.unshift(savedImageFile);
+    this.photos.update((photos) => [savedImageFile, ...photos]);
   }
 
   private async savePicture(photo: Photo) {

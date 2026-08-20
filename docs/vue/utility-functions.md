@@ -1,4 +1,15 @@
-# ユーティリティ関数
+---
+title: ユーティリティ関数
+sidebar_label: ユーティリティ関数
+---
+
+<head>
+  <title>Ionic Vue Utility Functions</title>
+  <meta
+    name="description"
+    content="プログラムによるナビゲーション用の useIonRouter、ハードウェアの戻るボタンを処理する useBackButton、オンスクリーンキーボードの状態を扱う useKeyboard など、Ionic Vue のユーティリティ関数について説明します。"
+  />
+</head>
 
 Ionic Vue ships with several utility functions that you can use in your application to make certain tasks easier such as managing the on-screen keyboard and the hardware back button.
 
@@ -12,7 +23,7 @@ Ionic Vue ships with several utility functions that you can use in your applicat
 
 Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) from Vue.
 
-**Customizing Page Transitions**
+##### Customizing Page Transitions
 
 ```js
 import { IonPage, useIonRouter } from '@ionic/vue';
@@ -27,7 +38,7 @@ const back = () => {
 };
 ```
 
-**Hardware back button on Android**
+##### Back Navigation
 
 You may want to know if you are at the root page of the application when a user presses the hardware back button on Android.
 

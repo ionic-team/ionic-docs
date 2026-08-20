@@ -47,7 +47,11 @@ window.Ionic = {
 **Not recommended**
 
 ```ts
-import { IonicModule } from '@ionic/angular';
+/*
+ * IonicModule is deprecated and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
+import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -84,7 +88,7 @@ class MyComponent {
 **Not recommended**
 
 ```ts
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 
 bootstrapApplication(AppComponent, {
   providers: [

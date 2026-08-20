@@ -1,12 +1,12 @@
 ---
 title: "ion-input-password-toggle"
 ---
-import Props from '@ionic-internal/component-api/v8/input-password-toggle/props.md';
-import Events from '@ionic-internal/component-api/v8/input-password-toggle/events.md';
-import Methods from '@ionic-internal/component-api/v8/input-password-toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input-password-toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input-password-toggle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input-password-toggle/slots.md';
+import Props from '@ionic-internal/component-api/v9/input-password-toggle/props.md';
+import Events from '@ionic-internal/component-api/v9/input-password-toggle/events.md';
+import Methods from '@ionic-internal/component-api/v9/input-password-toggle/methods.md';
+import Parts from '@ionic-internal/component-api/v9/input-password-toggle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/input-password-toggle/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/input-password-toggle/slots.md';
 
 <head>
   <title>ion-input-password-toggle: Toggle the visibility of a password in Input</title>
@@ -29,7 +29,7 @@ Using any other `type` will cause a warning to be logged.
 :::
 
 
-import Basic from '@site/static/usage/v8/input-password-toggle/basic/index.md';
+import Basic from '@site/static/usage/v9/input-password-toggle/basic/index.md';
 
 <Basic />
 

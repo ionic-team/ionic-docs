@@ -1,12 +1,12 @@
 ---
 title: "ion-toolbar"
 ---
-import Props from '@ionic-internal/component-api/v8/toolbar/props.md';
-import Events from '@ionic-internal/component-api/v8/toolbar/events.md';
-import Methods from '@ionic-internal/component-api/v8/toolbar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/toolbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toolbar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/toolbar/slots.md';
+import Props from '@ionic-internal/component-api/v9/toolbar/props.md';
+import Events from '@ionic-internal/component-api/v9/toolbar/events.md';
+import Methods from '@ionic-internal/component-api/v9/toolbar/methods.md';
+import Parts from '@ionic-internal/component-api/v9/toolbar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/toolbar/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/toolbar/slots.md';
 
 <head>
   <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
@@ -25,7 +25,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ツールバーを正しく配置するために、[header](./header)または[footer](./footer)の内部に配置することをお勧めします。ツールバーをヘッダーに配置すると、コンテンツの上部に固定されて表示されます。フッターに配置された場合は、下側に固定されて表示されます。フルスクリーンのコンテンツは、ヘッダーやフッターにあるツールバーの後ろでスクロールします。 [title](./title) コンポーネントを使用すると、ツールバーの内側にテキストを表示することができます。
 
-import Basic from '@site/static/usage/v8/toolbar/basic/index.md';
+import Basic from '@site/static/usage/v9/toolbar/basic/index.md';
 
 <Basic />
 
@@ -35,7 +35,7 @@ import Basic from '@site/static/usage/v8/toolbar/basic/index.md';
 
 buttons コンポーネントは、標準の[ボタン](./button)、[戻るボタン](./back-button)、[メニューボタン](./menu-button)、またはそのいずれかを複数ラップできます。ツールバー内のボタンはデフォルトでクリアスタイルに設定されていますが、これはボタンの[`fill`](./button#fill)プロパティを使用して変更できます。この例に含まれる戻るボタンとメニューボタンのプロパティは表示目的であり、適切な使用方法についてはそれぞれのドキュメントを参照してください。
 
-import Buttons from '@site/static/usage/v8/toolbar/buttons/index.md';
+import Buttons from '@site/static/usage/v9/toolbar/buttons/index.md';
 
 <Buttons />
 
@@ -43,7 +43,7 @@ import Buttons from '@site/static/usage/v8/toolbar/buttons/index.md';
 
 [searchbar](./searchbar)は、ツールバーの中に配置することで、コンテンツを検索することができます。ツールバーの唯一の子コンポーネントである必要があり、幅と高さを完全に占有します。
 
-import Searchbars from '@site/static/usage/v8/toolbar/searchbars/index.md';
+import Searchbars from '@site/static/usage/v9/toolbar/searchbars/index.md';
 
 <Searchbars />
 
@@ -51,7 +51,7 @@ import Searchbars from '@site/static/usage/v8/toolbar/searchbars/index.md';
 
 [セグメント](./segment)は、一般的にツールバーで、同じページ内の2つの異なるコンテンツビューを切り替えるために使用されます。ボタンなどの他のコンポーネントと一緒にツールバーに配置することができますが、タイトルと一緒に配置するべきではありません。
 
-import Segments from '@site/static/usage/v8/toolbar/segments/index.md';
+import Segments from '@site/static/usage/v9/toolbar/segments/index.md';
 
 <Segments />
 
@@ -59,7 +59,7 @@ import Segments from '@site/static/usage/v8/toolbar/segments/index.md';
 
 [プログレスバー](./progress-bar)は、アプリで進行中のプロセスを示すローディングインジケータとして使用されます。プログレスバーは、ツールバーの下部に配置されるため、ツールバーの中の他のコンポーネントと一緒に配置することができます。
 
-import ProgressBars from '@site/static/usage/v8/toolbar/progress-bars/index.md';
+import ProgressBars from '@site/static/usage/v9/toolbar/progress-bars/index.md';
 
 <ProgressBars />
 
@@ -67,13 +67,13 @@ import ProgressBars from '@site/static/usage/v8/toolbar/progress-bars/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/toolbar/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/toolbar/theming/colors/index.md';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v8/toolbar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/toolbar/theming/css-properties/index.md';
 
 <CSSProps />
 

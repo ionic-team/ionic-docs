@@ -1,0 +1,205 @@
+```html
+<ion-content color="light">
+  <div class="container">
+    <ion-list inset="true">
+      <ion-item button="true" detail="false" id="select-fruits">
+        <ion-label>Favorite Fruits</ion-label>
+        <div slot="end" id="selected-fruits">0 Items</div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-modal trigger="select-fruits">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button onclick="cancelChanges()">Cancel</ion-button>
+      </ion-buttons>
+      <ion-title>Favorite Fruits</ion-title>
+      <ion-buttons slot="end">
+        <ion-button onclick="confirmChanges()">Done</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content color="light" class="ion-padding">
+    <ion-list id="modal-list" inset="true"> </ion-list>
+  </ion-content>
+</ion-modal>
+
+<script>
+  const list = document.querySelector('ion-list#modal-list');
+  const modal = document.querySelector('ion-modal');
+  const searchbar = document.querySelector('ion-searchbar');
+  const selectedFruitsText = document.querySelector('#selected-fruits');
+  const fruits = [
+    { text: 'Apple', value: 'apple' },
+    { text: 'Apricot', value: 'apricot' },
+    { text: 'Banana', value: 'banana' },
+    { text: 'Blackberry', value: 'blackberry' },
+    { text: 'Blueberry', value: 'blueberry' },
+    { text: 'Cherry', value: 'cherry' },
+    { text: 'Cranberry', value: 'cranberry' },
+    { text: 'Grape', value: 'grape' },
+    { text: 'Grapefruit', value: 'grapefruit' },
+    { text: 'Guava', value: 'guava' },
+    { text: 'Jackfruit', value: 'jackfruit' },
+    { text: 'Lime', value: 'lime' },
+    { text: 'Mango', value: 'mango' },
+    { text: 'Nectarine', value: 'nectarine' },
+    { text: 'Orange', value: 'orange' },
+    { text: 'Papaya', value: 'papaya' },
+    { text: 'Passionfruit', value: 'passionfruit' },
+    { text: 'Peach', value: 'peach' },
+    { text: 'Pear', value: 'pear' },
+    { text: 'Plantain', value: 'plantain' },
+    { text: 'Plum', value: 'plum' },
+    { text: 'Pineapple', value: 'pineapple' },
+    { text: 'Pomegranate', value: 'pomegranate' },
+    { text: 'Raspberry', value: 'raspberry' },
+    { text: 'Strawberry', value: 'strawberry' },
+  ];
+
+  /**
+   * This is the confirmed
+   * list of selected fruits. It
+   * is only updated once the "Done"
+   * button is pressed in the modal.
+   */
+  var selectedFruits = [];
+
+  /**
+   * This is the working list of
+   * selected fruits. It tracks any
+   * uncommitted changes that the user
+   * makes in the modal. If the user pressed
+   * the "Cancel" button then this is
+   * reset to the value of the confirmed
+   * selected fruits.
+   */
+  var workingSelectedFruits = [];
+
+  /**
+   * Filter the list of fruits base
+   * on the search query. If no query
+   * is provided then the entire list
+   * will be returned.
+   */
+  function filterList(searchQuery = undefined) {
+    if (searchQuery === undefined) return fruits;
+
+    const normalizedQuery = searchQuery.toLowerCase();
+
+    return fruits.filter((fruit) => fruit.text.toLowerCase().includes(normalizedQuery));
+  }
+
+  /**
+   * Render a filtered list of fruits
+   * inside of the modal based on the
+   * search query.
+   */
+  function renderList(searchQuery = undefined) {
+    const data = filterList(searchQuery);
+    let template = '';
+
+    data.forEach((item, index) => {
+      const checked = workingSelectedFruits.includes(item.value);
+      template += `
+        <ion-item>
+          <ion-checkbox value="${item.value}" checked="${checked}">${item.text}</ion-checkbox>
+        </ion-item>
+      `;
+    });
+
+    list.innerHTML = template;
+  }
+
+  /**
+   * Formats the selected fruits in
+   * an easier to read way. If only
+   * 1 fruit is selected, then the
+   * fruit name will be rendered.
+   * Otherwise the number of fruits
+   * selected will be rendered.
+   */
+  function formatData(data) {
+    if (data.length === 1) {
+      const fruit = fruits.find((fruit) => fruit.value === data[0]);
+      return fruit.text;
+    }
+
+    return `${data.length} items`;
+  }
+
+  /**
+   * Reset any working changes
+   * and dismiss the modal.
+   */
+  function cancelChanges() {
+    workingSelectedFruits = [...selectedFruits];
+    modal.dismiss(undefined, 'cancel');
+  }
+
+  /**
+   * Return the selected
+   * fruits to the parent page.
+   */
+  function confirmChanges() {
+    selectedFruits = [...workingSelectedFruits];
+    modal.dismiss(selectedFruits);
+  }
+
+  // Listen for all ionChange events from the checkbox
+  modal.addEventListener('ionChange', (event) => {
+    if (event.target.tagName !== 'ION-CHECKBOX') {
+      return;
+    }
+
+    const { checked, value } = event.detail;
+
+    if (checked) {
+      workingSelectedFruits = [...workingSelectedFruits, value];
+    } else {
+      workingSelectedFruits = workingSelectedFruits.filter((fruit) => fruit !== value);
+    }
+  });
+
+  /**
+   * As users type into the searchbar
+   * we need to update the view with
+   * the filtered list.
+   */
+  searchbar.addEventListener('ionInput', (event) => {
+    renderList(event.target.value);
+  });
+
+  /**
+   * When the modal is about to dismiss
+   * update the parent page with the
+   * selected fruits.
+   */
+  modal.addEventListener('ionModalWillDismiss', (event) => {
+    const { data } = event.detail;
+
+    if (data === undefined) return;
+
+    const selectedText = formatData(data);
+
+    selectedFruitsText.innerText = selectedText;
+  });
+
+  /**
+   * When the modal has completed we need to
+   * reset the filtered state of the list.
+   */
+  modal.addEventListener('ionModalDidDismiss', (event) => {
+    searchbar.value = undefined;
+    renderList();
+  });
+
+  renderList();
+</script>
+```

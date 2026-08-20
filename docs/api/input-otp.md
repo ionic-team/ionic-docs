@@ -1,12 +1,12 @@
 ---
 title: "ion-input-otp"
 ---
-import Props from '@ionic-internal/component-api/v8/input-otp/props.md';
-import Events from '@ionic-internal/component-api/v8/input-otp/events.md';
-import Methods from '@ionic-internal/component-api/v8/input-otp/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input-otp/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input-otp/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input-otp/slots.md';
+import Props from '@ionic-internal/component-api/v9/input-otp/props.md';
+import Events from '@ionic-internal/component-api/v9/input-otp/events.md';
+import Methods from '@ionic-internal/component-api/v9/input-otp/methods.md';
+import Parts from '@ionic-internal/component-api/v9/input-otp/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/input-otp/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/input-otp/slots.md';
 
 <head>
   <title>ion-input-otp: ワンタイムパスワード入力コンポーネント</title>
@@ -23,7 +23,7 @@ Input OTP コンポーネントは、ワンタイムパスワード（OTP）入�
 
 このコンポーネントはデフォルトで4つの入力ボックスを提供します。入力ボックスの数は `length` プロパティを使用してカスタマイズすることができます。
 
-import Basic from '@site/static/usage/v8/input-otp/basic/index.md';
+import Basic from '@site/static/usage/v9/input-otp/basic/index.md';
 
 <Basic />
 
@@ -41,7 +41,7 @@ import Basic from '@site/static/usage/v8/input-otp/basic/index.md';
 
 パターンのバリデーションとカスタマイズの詳細については、[Pattern](#pattern)のセクションを参照してください。
 
-import Type from '@site/static/usage/v8/input-otp/type/index.md';
+import Type from '@site/static/usage/v9/input-otp/type/index.md';
 
 <Type />
 
@@ -49,7 +49,7 @@ import Type from '@site/static/usage/v8/input-otp/type/index.md';
 
 `shape` プロパティは、入力ボックスのボーダー半径をコントロールし、丸みを帯びたコーナーやシャープなコーナーを作成します。
 
-import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
+import Shape from '@site/static/usage/v9/input-otp/shape/index.md';
 
 <Shape />
 
@@ -57,7 +57,7 @@ import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
 
 `fill` プロパティは入力ボックスの背景のスタイルをコントロールし、縁取りまたは塗りつぶしの背景を提供します。
 
-import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
+import Fill from '@site/static/usage/v9/input-otp/fill/index.md';
 
 <Fill />
 
@@ -65,7 +65,7 @@ import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
 
 `size`プロパティは入力ボックスに異なるサイズのオプションを提供します。
 
-import Size from '@site/static/usage/v8/input-otp/size/index.md';
+import Size from '@site/static/usage/v9/input-otp/size/index.md';
 
 <Size />
 
@@ -78,7 +78,7 @@ import Size from '@site/static/usage/v8/input-otp/size/index.md';
 
 数字はセパレータが表示されるべきインデックスを表します。例えば、`"1,3"` は1番目と3番目の入力ボックスの後にセパレータを表示します。これは、入力ボックスを視覚的に区別してグループ化するために使用できますが、それでも値は1つです。
 
-import Separators from '@site/static/usage/v8/input-otp/separators/index.md';
+import Separators from '@site/static/usage/v9/input-otp/separators/index.md';
 
 <Separators />
 
@@ -92,7 +92,7 @@ import Separators from '@site/static/usage/v8/input-otp/separators/index.md';
 - `onvalid` スタイルはタッチされたときのみ表示されます (`ion-touched`)
 - `ion-valid` スタイルはフォーカスされたときのみ表示されます (`has-focus`)
 
-import States from '@site/static/usage/v8/input-otp/states/index.md';
+import States from '@site/static/usage/v9/input-otp/states/index.md';
 
 <States />
 
@@ -110,7 +110,7 @@ import States from '@site/static/usage/v8/input-otp/states/index.md';
 - 英数字キーボードを表示するには、文字を含むパターンには `type="text"` を使用します。
 :::
 
-import Pattern from '@site/static/usage/v8/input-otp/pattern/index.md';
+import Pattern from '@site/static/usage/v9/input-otp/pattern/index.md';
 
 <Pattern />
 
@@ -124,7 +124,7 @@ import Pattern from '@site/static/usage/v8/input-otp/pattern/index.md';
 The `color` property does *not* change the text color of the input OTP. For that, use the [`--color` CSS property](#css-custom-properties-1).
 :::
 
-import Colors from '@site/static/usage/v8/input-otp/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.md';
 
 <Colors />
 
@@ -132,7 +132,7 @@ import Colors from '@site/static/usage/v8/input-otp/theming/colors/index.md';
 
 Input OTPはスコープされたカプセル化を使用しています。これは、実行時に各スタイルに追加のクラスを追加することで、CSSを自動的にスコープすることを意味します。CSSでスコープされたセレクタをオーバーライドするには、[より高い特異性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。特定のスタイルが `fill` に基づいて適用されるため、`fill` のプロパティを個別にオーバーライドする必要があるかもしれません。
 
-import CSSProps from '@site/static/usage/v8/input-otp/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/input-otp/theming/css-properties/index.md';
 
 <CSSProps />
 

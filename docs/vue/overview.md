@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Vue バージョンサポート
 
-Ionic Vue v8 は Vue 3.x をサポートしています。サポートされているバージョンやサポートポリシーの詳細については、[Ionic Vue サポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
+Ionic Vue v9 は Vue 3.5 以降をサポートしています。サポートされているバージョンやサポートポリシーの詳細については、[Ionic Vue サポートポリシー](/docs/reference/support#ionic-vue)を参照してください。
 
 ## Vue ツール
 
@@ -65,9 +65,7 @@ $ ionic serve █
 </DocsCard>
 
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
 </DocsCard>
 
 </DocsCards>

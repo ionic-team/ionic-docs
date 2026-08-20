@@ -1,12 +1,12 @@
 ---
 title: "ion-picker-column-option"
 ---
-import Props from '@ionic-internal/component-api/v8/picker-column-option/props.md';
-import Events from '@ionic-internal/component-api/v8/picker-column-option/events.md';
-import Methods from '@ionic-internal/component-api/v8/picker-column-option/methods.md';
-import Parts from '@ionic-internal/component-api/v8/picker-column-option/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/picker-column-option/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/picker-column-option/slots.md';
+import Props from '@ionic-internal/component-api/v9/picker-column-option/props.md';
+import Events from '@ionic-internal/component-api/v9/picker-column-option/events.md';
+import Methods from '@ionic-internal/component-api/v9/picker-column-option/methods.md';
+import Parts from '@ionic-internal/component-api/v9/picker-column-option/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/picker-column-option/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/picker-column-option/slots.md';
 
 <head>
   <title>ion-picker-column-option: The individual options within a column in a picker.</title>

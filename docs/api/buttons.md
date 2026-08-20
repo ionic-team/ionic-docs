@@ -1,12 +1,12 @@
 ---
 title: "ion-buttons"
 ---
-import Props from '@ionic-internal/component-api/v8/buttons/props.md';
-import Events from '@ionic-internal/component-api/v8/buttons/events.md';
-import Methods from '@ionic-internal/component-api/v8/buttons/methods.md';
-import Parts from '@ionic-internal/component-api/v8/buttons/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/buttons/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/buttons/slots.md';
+import Props from '@ionic-internal/component-api/v9/buttons/props.md';
+import Events from '@ionic-internal/component-api/v9/buttons/events.md';
+import Methods from '@ionic-internal/component-api/v9/buttons/methods.md';
+import Parts from '@ionic-internal/component-api/v9/buttons/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/buttons/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
@@ -21,7 +21,7 @@ Buttonsコンポーネントは、コンテナ要素です。 [ツールバー](
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/buttons/basic/index.md';
+import Basic from '@site/static/usage/v9/buttons/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/v8/buttons/basic/index.md';
 | `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
 | `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 
-import Placement from '@site/static/usage/v8/buttons/placement/index.md';
+import Placement from '@site/static/usage/v9/buttons/placement/index.md';
 
 <Placement />
 
@@ -44,7 +44,7 @@ import Placement from '@site/static/usage/v8/buttons/placement/index.md';
 
 ツールバー内のボタンはデフォルトでクリアスタイルに設定されていますが、ボタンの[`fill`](./button#fill)プロパティを使用して変更することができます。この例で[戻るボタン](./back-button)および[メニューボタン](./menu-button)に含まれるプロパティは表示目的のためのものであり、正しい使用方法についてはそれぞれのドキュメントを参照してください。
 
-import Types from '@site/static/usage/v8/buttons/types/index.md';
+import Types from '@site/static/usage/v9/buttons/types/index.md';
 
 <Types />
 
@@ -59,7 +59,7 @@ import Types from '@site/static/usage/v8/buttons/types/index.md';
 :::
 
 {/* Reuse the playground from the Title directory */}
-import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 

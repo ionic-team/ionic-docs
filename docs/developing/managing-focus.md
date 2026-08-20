@@ -37,7 +37,7 @@ Ionic は、[Input](../api/input)、[Searchbar](../api/searchbar)、[Textarea](.
 
 以下の例は、ユーザーがボタンをクリックしたときに`setFocus` API を使用して入力にフォーカスを要求する方法を示しています。
 
-import Basic from '@site/static/usage/v8/input/set-focus/index.md';
+import Basic from '@site/static/usage/v9/input/set-focus/index.md';
 
 <Basic />
 
@@ -65,6 +65,7 @@ import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
+  imports: [IonInput],
   templateUrl: './example.component.html',
 })
 export class ExampleComponent {
@@ -171,6 +172,7 @@ import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
+  imports: [IonInput],
   templateUrl: './example.component.html',
 })
 export class ExampleComponent {

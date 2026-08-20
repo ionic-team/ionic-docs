@@ -1,12 +1,12 @@
 ---
 title: "ion-radio"
 ---
-import Props from '@ionic-internal/component-api/v8/radio/props.md';
-import Events from '@ionic-internal/component-api/v8/radio/events.md';
-import Methods from '@ionic-internal/component-api/v8/radio/methods.md';
-import Parts from '@ionic-internal/component-api/v8/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
+import Props from '@ionic-internal/component-api/v9/radio/props.md';
+import Events from '@ionic-internal/component-api/v9/radio/events.md';
+import Methods from '@ionic-internal/component-api/v9/radio/methods.md';
+import Parts from '@ionic-internal/component-api/v9/radio/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/radio/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/radio/slots.md';
 
 <head>
   <title>ion-radio: Radio Component for iOS and Android</title>
@@ -24,7 +24,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/radio/basic/index.md';
+import Basic from '@site/static/usage/v9/radio/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v8/radio/basic/index.md';
 
 開発者は `labelPlacement` プロパティを使用して、ラベルをコントロールに対してどのように配置するかを制御できます。 このプロパティはフレックスボックスの `flex-direction` プロパティを反映しています。
 
-import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/radio/label-placement/index.md';
 
 <LabelPlacement />
 
@@ -40,7 +40,7 @@ import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md
 
 ラベルの配置に関係なく、長いテキストはデフォルトで折り返されません。ラジオの幅が制約されている場合、オーバーフローしたテキストは省略記号で切り詰められます。ラジオテキストの周りのラッパーに`ion-text-wrap`クラスを追加するか、`::part()`セレクタを使用して`label`シャドウパーツをスタイリングすることで、テキストの折り返しを有効にできます。
 
-import LabelWrap from '@site/static/usage/v8/radio/label-wrap/index.md';
+import LabelWrap from '@site/static/usage/v9/radio/label-wrap/index.md';
 
 <LabelWrap />
 
@@ -48,7 +48,7 @@ import LabelWrap from '@site/static/usage/v8/radio/label-wrap/index.md';
 
 By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
-import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/index.md';
+import UsingComparewith from '@site/static/usage/v9/radio/using-comparewith/index.md';
 
 <UsingComparewith />
 
@@ -60,7 +60,7 @@ import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/inde
 スタックされたラジオは、`alignment`プロパティを使用して配置できます。ラベルとコントロールを水平方向に中央揃えする必要がある場合に便利です。
 :::
 
-import Alignment from '@site/static/usage/v8/radio/alignment/index.md';
+import Alignment from '@site/static/usage/v9/radio/alignment/index.md';
 
 <Alignment />
 
@@ -68,7 +68,7 @@ import Alignment from '@site/static/usage/v8/radio/alignment/index.md';
 
 開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。このプロパティはフレックスボックスの `justify-content` プロパティを反映しています。
 
-import Justify from '@site/static/usage/v8/radio/justify/index.md';
+import Justify from '@site/static/usage/v9/radio/justify/index.md';
 
 <Justify />
 
@@ -80,7 +80,7 @@ import Justify from '@site/static/usage/v8/radio/justify/index.md';
 
 デフォルトでは、一度選択されたラジオは選択を解除することができず、もう一度押すと選択されたままになります。この動作は、親ラジオグループの `allowEmptySelection` プロパティを使用することで変更することができ、ラジオを非選択にすることができます。
 
-import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md';
+import EmptySelection from '@site/static/usage/v9/radio/empty-selection/index.md';
 
 <EmptySelection />
 
@@ -90,7 +90,7 @@ import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md
 
 Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
-import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/radio/helper-error/index.md';
 
 <HelperError />
 
@@ -99,19 +99,19 @@ import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/radio/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/radio/theming/colors/index.md';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v8/radio/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/radio/theming/css-properties/index.md';
 
 <CSSProps />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v8/radio/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/radio/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 

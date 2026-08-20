@@ -65,7 +65,8 @@ npm install -g @ionic/cli native-run cordova-res
 :::note
 `-g`オプションは*グローバルにインストール*を意味します。パッケージをグローバルにインストールすると、`EACCES`権限エラーが発生する可能性があります。
 
-npm を管理者権限なしでグローバルに操作できるように設定することを検討してください。詳細は [権限エラーの解決](../developing/tips.md#resolving-permission-errors) を参照してください。 :::
+npm を管理者権限なしでグローバルに操作できるように設定することを検討してください。詳細は [権限エラーの解決](../developing/tips.md#resolving-permission-errors) を参照してください。
+:::
 
 ## アプリの作成
 
@@ -77,7 +78,7 @@ ionic start photo-gallery tabs --type=angular
 
 :::note
 
-`NgModules` と `Standalone` のどちらかを選択するプロンプトが表示されたら、このチュートリアルは `NgModules` のアプローチに従っているので、`NgModules` を選択する。
+`NgModules` と `Standalone` のどちらかを選択するプロンプトが表示されたら、このチュートリアルではスタンドアロンコンポーネントのアプローチを採用しているため、`Standalone` を選択します。
 
 :::
 
@@ -108,17 +109,25 @@ npm install @ionic/pwa-elements
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
 ```ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 // CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// CHANGE: Call the element loader before the `bootstrapModule` call
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+
+// CHANGE: Call the element loader before the `bootstrapApplication` call
 defineCustomElements(window);
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.log(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideIonicAngular(),
+    provideRouter(routes, withPreloading(PreloadAllModules)),
+  ],
+}).catch((err) => console.error(err));
 ```
 
 それで終わりです！さあ、楽しい部分です - アプリを実行してみましょう。

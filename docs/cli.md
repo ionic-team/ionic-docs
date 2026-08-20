@@ -37,8 +37,6 @@ $ ionic <command> <subcommand> --help
 コマンドの中には `ionic serve` のように、React と Angular のように、プロジェクトのタイプに応じたヘルプが表示されるものがあります。
 :::
 
-{/* TODO: image? */}
-
 ## 構成
 
 Ionic CLI は、[TypeScript](/docs/reference/glossary#typescript)と [Node.js](/docs/reference/glossary#node)で構築されています。Node 10.3+をサポートしていますが、最新の Node LTS が推奨です。開発状況は、オープンソースの <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub リポジトリ</a>で確認できます。

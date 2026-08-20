@@ -1,12 +1,12 @@
 ---
 title: "ion-tabs"
 ---
-import Props from '@ionic-internal/component-api/v8/tabs/props.md';
-import Events from '@ionic-internal/component-api/v8/tabs/events.md';
-import Methods from '@ionic-internal/component-api/v8/tabs/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tabs/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tabs/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tabs/slots.md';
+import Props from '@ionic-internal/component-api/v9/tabs/props.md';
+import Events from '@ionic-internal/component-api/v9/tabs/events.md';
+import Methods from '@ionic-internal/component-api/v9/tabs/methods.md';
+import Parts from '@ionic-internal/component-api/v9/tabs/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/tabs/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/tabs/slots.md';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
@@ -30,7 +30,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 タブは、URLを変更することなく、異なるコンテンツを表示するために使用することができます。これは、タブをナビゲーションのために使用するのではなく、異なるコンテンツを表示するために使用する場合に便利です。
 
-import Basic from '@site/static/usage/v8/tabs/basic/index.md';
+import Basic from '@site/static/usage/v9/tabs/basic/index.md';
 
 <Basic />
 
@@ -38,7 +38,7 @@ import Basic from '@site/static/usage/v8/tabs/basic/index.md';
 
 タブをIonicルーターで使用すると、タブベースのナビゲーションを実装できます。タブバーとアクティブタブはURLに基づいて自動的に解決されます。これはタブナビゲーションの最も一般的なパターンです。
 
-import Router from '@site/static/usage/v8/tabs/router/index.md';
+import Router from '@site/static/usage/v9/tabs/router/index.md';
 
 <Router />
 
@@ -52,7 +52,7 @@ Ionicでは、タブを使ったルーティングパターンのベストプラ
 
 タブは`select`メソッドを使用してプログラムで選択できます。これは、ボタンのクリックに応答したり、フォームを完了した後など、アプリケーションロジックからタブの変更をトリガーする必要がある場合に便利です。次の例では、ボタンを使用して`select`メソッドを呼び出し、別のタブにナビゲートする方法を示しています。
 
-import SelectMethod from '@site/static/usage/v8/tabs/select-method/index.md';
+import SelectMethod from '@site/static/usage/v9/tabs/select-method/index.md';
 
 <SelectMethod />
 

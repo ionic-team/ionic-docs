@@ -1,12 +1,12 @@
 ---
 title: "ion-button"
 ---
-import Props from '@ionic-internal/component-api/v8/button/props.md';
-import Events from '@ionic-internal/component-api/v8/button/events.md';
-import Methods from '@ionic-internal/component-api/v8/button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/button/slots.md';
+import Props from '@ionic-internal/component-api/v9/button/props.md';
+import Events from '@ionic-internal/component-api/v9/button/events.md';
+import Methods from '@ionic-internal/component-api/v9/button/methods.md';
+import Parts from '@ionic-internal/component-api/v9/button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/button/slots.md';
 
 <head>
   <title>ion-button: Style Buttons with Custom CSS Properties</title>
@@ -21,7 +21,7 @@ Buttonはクリック可能な要素を提供し、Form内や、標準の単機�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/button/basic/index.md';
+import Basic from '@site/static/usage/v9/button/basic/index.md';
 
 <Basic />
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v8/button/basic/index.md';
 
 このプロパティでは、ボタンの幅を指定することができます。デフォルトでは、ボタンは `display: inline-block` を持ちますが、このプロパティを設定すると、ボタンは `display: block` を持つ全角要素に変更されます。
 
-import Expand from '@site/static/usage/v8/button/expand/index.md';
+import Expand from '@site/static/usage/v9/button/expand/index.md';
 
 <Expand />
 
@@ -37,7 +37,7 @@ import Expand from '@site/static/usage/v8/button/expand/index.md';
 
 このプロパティは、ボタンの形状を指定することができます。デフォルトでは、ボタンは小さなボーダー半径を持つ長方形ですが、これを `"round"` に設定すると、ボタンは丸みを帯びた要素に変更されます。
 
-import Shape from '@site/static/usage/v8/button/shape/index.md';
+import Shape from '@site/static/usage/v9/button/shape/index.md';
 
 <Shape />
 
@@ -46,7 +46,7 @@ import Shape from '@site/static/usage/v8/button/shape/index.md';
 
 この属性は、Buttonのbackgroundとborder-colorを設定します。デフォルトでは、Buttonはtoolbar内にない限り、backgroundは塗りつぶされます。toolbar内にある場合は、backgroundは透明になります。
 
-import Fill from '@site/static/usage/v8/button/fill/index.md';
+import Fill from '@site/static/usage/v9/button/fill/index.md';
 
 <Fill />
 
@@ -54,13 +54,13 @@ import Fill from '@site/static/usage/v8/button/fill/index.md';
 
 この属性は、Buttonのサイズを指定します。この属性を設定すると、Buttonの高さとpaddingが変更されます
 
-import Size from '@site/static/usage/v8/button/size/index.md';
+import Size from '@site/static/usage/v9/button/size/index.md';
 
 <Size />
 
 ## Icons
 
-import Icons from '@site/static/usage/v8/button/icons/index.md';
+import Icons from '@site/static/usage/v9/button/icons/index.md';
 
 <Icons />
 
@@ -68,13 +68,13 @@ import Icons from '@site/static/usage/v8/button/icons/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/button/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/button/theming/colors/index.md';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v8/button/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/button/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -92,7 +92,7 @@ import CSSProps from '@site/static/usage/v8/button/theming/css-properties/index.
 max-width`スタイルは、デモのためだけに下のボタンに設定されています。テキストラッピングは動的なボタン幅で動作します。
 :::
 
-import TextWrapping from '@site/static/usage/v8/button/text-wrapping/index.md';
+import TextWrapping from '@site/static/usage/v9/button/text-wrapping/index.md';
 
 <TextWrapping />
 

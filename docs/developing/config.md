@@ -55,7 +55,7 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 場合によっては、アプリケーションロジック内で現在の Ionic モードにプログラム的にアクセスする必要があるかもしれません。これは、条件付き動作を適用したり、特定のアセットを取得したり、アクティブなスタイリングモードに基づいて他のアクションを実行したりするのに役立ちます。
 
-import IonicMode from '@site/static/usage/v8/config/mode/index.md';
+import IonicMode from '@site/static/usage/v9/config/mode/index.md';
 
 <IonicMode />
 
@@ -83,7 +83,7 @@ Ionic Angular は、Ionic Config にアクセスするための`Config`プロバ
 <TabItem value="angular">
 
 ```ts
-import { Config } from '@ionic/angular';
+import { Config } from '@ionic/angular/lazy';
 
 @Component(...)
 class AppComponent {
@@ -97,7 +97,7 @@ class AppComponent {
 <TabItem value="angular-standalone">
 
 ```ts
-import { Config } from '@ionic/angular/standalone';
+import { Config } from '@ionic/angular';
 
 @Component(...)
 class AppComponent {
@@ -130,7 +130,7 @@ class AppComponent {
 <TabItem value="angular">
 
 ```ts
-import { Config } from '@ionic/angular';
+import { Config } from '@ionic/angular/lazy';
 
 @Component(...)
 class AppComponent {
@@ -144,7 +144,7 @@ class AppComponent {
 <TabItem value="angular-standalone">
 
 ```ts
-import { Config } from '@ionic/angular/standalone';
+import { Config } from '@ionic/angular';
 
 @Component(...)
 class AppComponent {
@@ -180,7 +180,7 @@ class AppComponent {
 | `backButtonDefaultHref`     | `string`                                                                          | Overrides the default value for the `defaultHref` property in all `<ion-back-button>` components.                                                                                                                                                                                      |
 | `backButtonIcon`            | `string`                                                                          | Overrides the default icon in all `<ion-back-button>` components.                                                                                                                                                                                                                      |
 | `backButtonText`            | `string`                                                                          | Overrides the default text in all `<ion-back-button>` components.                                                                                                                                                                                                                      |
-| `innerHTMLTemplatesEnabled` | `boolean`                                                                         | Relevant Components: `ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, `ion-toast`. If `true`, content passed to the relevant components will be parsed as HTML instead of plaintext. Defaults to `false`.                                           |
+| `innerHTMLTemplatesEnabled` | `boolean`                                                                         | Relevant Components: `ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, `ion-select-option`, `ion-toast`. If `true`, content passed to the relevant components will be parsed as HTML instead of plaintext. Defaults to `false`.                      |
 | `hardwareBackButton`        | `boolean`                                                                         | If `true`, Ionic will respond to the hardware back button in an Android device.                                                                                                                                                                                                        |
 | `infiniteLoadingSpinner`    | `SpinnerTypes`                                                                    | Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.                                                                                                                                                                                                  |
 | `loadingEnter`              | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".                                                                                                                                                                                           |
@@ -193,8 +193,6 @@ class AppComponent {
 | `modalLeave`                | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-modal`, overriding the default "animation".                                                                                                                                                                                             |
 | `mode`                      | `Mode`                                                                            | The mode determines which platform styles to use for the whole application.                                                                                                                                                                                                            |
 | `navAnimation`              | `AnimationBuilder`                                                                | Overrides the default "animation" of all `ion-nav` and `ion-router-outlet` across the whole application.                                                                                                                                                                               |
-| `pickerEnter`               | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-picker`, overriding the default "animation".                                                                                                                                                                                            |
-| `pickerLeave`               | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-picker`, overriding the default "animation".                                                                                                                                                                                            |
 | `platform`                  | [`PlatformConfig`](/docs/angular/platform#customizing-platform-detection-methods) | Overrides the default platform detection methods.                                                                                                                                                                                                                                      |
 | `popoverEnter`              | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-popover`, overriding the default "animation".                                                                                                                                                                                           |
 | `popoverLeave`              | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-popover`, overriding the default "animation".                                                                                                                                                                                           |

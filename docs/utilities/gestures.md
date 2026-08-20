@@ -77,7 +77,7 @@ Angularを使用する開発者は、最新バージョンの`@ionic/angular`を
 開発者は、ジェスチャーを作成する際に`runInsideAngularZone`パラメータを`true`に設定するか、コールバックを`NgZone.run()`呼び出しでラップできます。
 
 ```tsx
-import { Gesture, GestureController } from '@ionic/angular';
+import { Gesture, GestureController } from '@ionic/angular/lazy';
 
 ...
 
@@ -101,7 +101,7 @@ Angularを使用する開発者は、最新バージョンの`@ionic/angular`を
 開発者は、ジェスチャーを作成する際に`runInsideAngularZone`パラメータを`true`に設定するか、コールバックを`NgZone.run()`呼び出しでラップできます。
 
 ```tsx
-import { Gesture, GestureController } from '@ionic/angular/standalone';
+import { Gesture, GestureController } from '@ionic/angular';
 
 ...
 
@@ -119,7 +119,7 @@ constructor(private gestureCtrl: GestureController) {
 </TabItem>
 <TabItem value="react">
 
-Reactを使用する開発者は、最新バージョンの`@ionic/react`をインストールする必要があります。完全なReactラッパーは近日公開予定です！
+React を使用する開発者は、最新バージョンの `@ionic/react` をインストールする必要があります。
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/react';
@@ -162,7 +162,7 @@ const gesture = createGesture({
 
 ## 基本的なジェスチャー
 
-import Basic from '@site/static/usage/v8/gestures/basic/index.md';
+import Basic from '@site/static/usage/v9/gestures/basic/index.md';
 
 この例では、アプリは`ion-content`要素でジェスチャーをリッスンします。ジェスチャーの移動が開始されると、`onStart`関数が呼び出され、`ion-card`にクラスが追加されて色付きのボックスシャドウが追加されます。ジェスチャーの移動が検出されると、`onMove`関数が呼び出され、アプリは`ion-card`内に現在のジェスチャー情報を出力します。最後に、ジェスチャーの移動が終了すると、`onEnd`関数が呼び出され、カスタムクラスが`ion-card`から削除されます。
 
@@ -170,7 +170,7 @@ import Basic from '@site/static/usage/v8/gestures/basic/index.md';
 
 ## ダブルクリックジェスチャー
 
-import DoubleClick from '@site/static/usage/v8/gestures/double-click/index.md';
+import DoubleClick from '@site/static/usage/v9/gestures/double-click/index.md';
 
 以下の例では、要素のダブルクリックを検出できるようにします。`threshold`を`0`に設定することで、ジェスチャーオブジェクトがクリックを検出できるようにします。さらに、連続して発生する 2 つのクリックのみがダブルクリックとしてカウントされるように、クリックの閾値を定義します。
 
