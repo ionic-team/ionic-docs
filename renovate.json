@@ -74,13 +74,13 @@
     {
       "matchPackagePatterns": ["@ionic/"],
       "minimumReleaseAge": "0 days",
-      "allowedVersions": "^7.0.0",
+      "allowedVersions": "^9.0.0",
       "groupName": "ionic",
       "matchFileNames": [
-        "static/code/stackblitz/v7/angular/package.json",
-        "static/code/stackblitz/v7/html/package.json",
-        "static/code/stackblitz/v7/react/package.json",
-        "static/code/stackblitz/v7/vue/package.json"
+        "static/code/stackblitz/v9/angular/package.json",
+        "static/code/stackblitz/v9/html/package.json",
+        "static/code/stackblitz/v9/react/package.json",
+        "static/code/stackblitz/v9/vue/package.json"
       ]
     }
   ],
@@ -94,6 +94,7 @@
     ".github/workflows/**"
   ],
   "ignorePaths": [
-    "static/code/stackblitz/v6/**"
+    "static/code/stackblitz/v6/**",
+    "static/code/stackblitz/v7/**"
   ]
 }
