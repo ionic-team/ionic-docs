@@ -117,11 +117,11 @@ export const usePhotoGallery = () => {
 
     // CHANGE: Display the photo by reading into base64 format
     for (const photo of photosInPreferences) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     photos.value = photosInPreferences;
@@ -207,11 +207,11 @@ export const usePhotoGallery = () => {
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
     for (const photo of photosInPreferences) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     photos.value = photosInPreferences;
@@ -305,11 +305,11 @@ export const usePhotoGallery = () => {
     const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
     for (const photo of photosInPreferences) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     photos.value = photosInPreferences;

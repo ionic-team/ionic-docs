@@ -105,13 +105,13 @@ export class PhotoService {
     // CHANGE: Display the photo by reading into base64 format
     for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     // CHANGE: Set the signal so the gallery view updates
@@ -196,13 +196,13 @@ export class PhotoService {
 
     for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     this.photos.set(photos);
