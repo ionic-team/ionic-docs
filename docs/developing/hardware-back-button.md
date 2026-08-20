@@ -78,7 +78,7 @@ document.addEventListener('ionBackButton', (event) => {
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 ...
 
@@ -93,7 +93,7 @@ constructor(private platform: Platform) {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 ...
 
@@ -170,7 +170,7 @@ document.addEventListener('ionBackButton', (event) => {
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 ...
 
@@ -191,7 +191,7 @@ constructor(private platform: Platform) {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 ...
 
@@ -311,7 +311,7 @@ document.addEventListener('ionBackButton', (event: BackButtonEvent) => {
 
 ```tsx
 import { Optional } from '@angular/core';
-import { IonRouterOutlet, Platform } from '@ionic/angular';
+import { IonRouterOutlet, Platform } from '@ionic/angular/lazy';
 import { App } from '@capacitor/app';
 
 ...
@@ -333,7 +333,7 @@ constructor(
 
 ```tsx
 import { Optional } from '@angular/core';
-import { IonRouterOutlet, Platform } from '@ionic/angular/standalone';
+import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 
 ...

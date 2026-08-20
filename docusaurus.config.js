@@ -101,7 +101,7 @@ module.exports = {
           /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
-              label: 'v8',
+              label: 'v9',
             },
           },
         },
@@ -201,8 +201,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'updating/8-0',
-          label: 'Ionic v8.0.0 アップグレードガイド',
+          docId: 'updating/9-0',
+          label: 'Ionic v9.0.0 アップグレードガイド',
           position: 'left',
           className: 'cta',
         },
@@ -306,12 +306,7 @@ module.exports = {
           position: 'right',
           dropdownItemsBefore: [],
           dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/docs',
-              label: 'English',
-              target: '_self',
-              rel: null,
-            },
+            { href: 'https://ionicframework.com/docs', label: 'English', target: '_self', rel: null },
             {
               href: 'https://ionicframework.com/translate',
               label: 'Translate',

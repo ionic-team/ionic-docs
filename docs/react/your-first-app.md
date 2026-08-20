@@ -234,7 +234,7 @@ export default Tab2;
 Next, open `src/App.tsx`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
 
 ```tsx
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -259,18 +259,10 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
-          </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
-          </Route>
-          <Route path="/tab3">
-            <Tab3 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
-          </Route>
+          <Route path="/tab1" element={<Tab1 />} />
+          <Route path="/tab2" element={<Tab2 />} />
+          <Route path="/tab3" element={<Tab3 />} />
+          <Route path="/" element={<Navigate to="/tab1" replace />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">

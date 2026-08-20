@@ -201,7 +201,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, switch to `Tab2.tsx` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
+Next, switch to `Tab2.tsx` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an `<img>` element and set its `src` property to the photo's path.
 
 ```tsx
 import { camera } from 'ionicons/icons';
@@ -218,7 +218,6 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonImg,
 } from '@ionic/react';
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 
@@ -243,10 +242,10 @@ const Tab2: React.FC = () => {
         {/* CHANGE: Add a grid component to display the photos */}
         <IonGrid>
           <IonRow>
-            {/* CHANGE: Create a new column and image component for each photo */}
-            {photos.map((photo) => (
-              <IonCol size="6" key={photo.filepath}>
-                <IonImg src={photo.webviewPath} />
+            {/* CHANGE: Create a new column and image element for each photo */}
+            {photos.map((photo, index) => (
+              <IonCol size="6" key={index}>
+                <img src={photo.webviewPath} alt={`Photo ${index + 1}`} loading="lazy" />
               </IonCol>
             ))}
           </IonRow>

@@ -22,7 +22,7 @@ Import the Ionic [Platform API](../platform.md) into `photo.service.ts`, which i
 Add `Platform` to the imports at the top of the file and a new property `platform` to the `PhotoService` class. We'll also need to update the constructor to set the user's platform.
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -34,17 +34,12 @@ import { Platform } from '@ionic/angular';
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   private PHOTO_STORAGE: string = 'photos';
 
-  // CHANGE: Add a property to track the app's running platform
-  private platform: Platform;
-
-  // CHANGE: Update constructor to set `platform`
-  constructor(platform: Platform) {
-    this.platform = platform;
-  }
+  // CHANGE: Inject the Platform API to track the app's running platform
+  private platform = inject(Platform);
 
   // ...existing code...
 }
@@ -96,7 +91,7 @@ private async savePicture(photo: Photo) {
 When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details on the File Protocol](../../core-concepts/webview.md#file-protocol)). To use this method, we'll need to import Capacitor into `photo.service.ts`.
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -159,12 +154,12 @@ Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can dire
 // CHANGE: Update `loadSaved()` method
 public async loadSaved() {
   const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+  const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
   // CHANGE: Add platform check
   // If running on the web...
   if (!this.platform.is('hybrid')) {
-    for (let photo of this.photos) {
+    for (const photo of photos) {
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data
@@ -174,6 +169,9 @@ public async loadSaved() {
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
+
+  // CHANGE: Set the signal so the gallery view updates
+  this.photos.set(photos);
 }
 ```
 
@@ -182,7 +180,7 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 `photos.service.ts` should now look like this:
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -194,15 +192,11 @@ import { Capacitor } from '@capacitor/core';
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   private PHOTO_STORAGE: string = 'photos';
 
-  private platform: Platform;
-
-  constructor(platform: Platform) {
-    this.platform = platform;
-  }
+  private platform = inject(Platform);
 
   public async addNewToGallery() {
     // Take a photo
@@ -214,11 +208,11 @@ export class PhotoService {
 
     const savedImageFile = await this.savePicture(capturedPhoto);
 
-    this.photos.unshift(savedImageFile);
+    this.photos.update((photos) => [savedImageFile, ...photos]);
 
     Preferences.set({
       key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
+      value: JSON.stringify(this.photos()),
     });
   }
 
@@ -279,11 +273,11 @@ export class PhotoService {
   public async loadSaved() {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
+    const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
     // If running on the web...
     if (!this.platform.is('hybrid')) {
-      for (let photo of this.photos) {
+      for (const photo of photos) {
         const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
@@ -292,6 +286,8 @@ export class PhotoService {
         photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
       }
     }
+
+    this.photos.set(photos);
   }
 }
 

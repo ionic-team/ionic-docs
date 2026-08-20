@@ -62,7 +62,7 @@ import '@ionic/vue/css/palettes/dark.always.css';
 
 次の例は、ダークモードのシステム設定に関係なく、常にダークパレットを表示します。
 
-import AlwaysDarkMode from '@site/static/usage/v8/theming/always-dark-mode/index.md';
+import AlwaysDarkMode from '@site/static/usage/v9/theming/always-dark-mode/index.md';
 
 <AlwaysDarkMode />
 
@@ -115,7 +115,7 @@ import '@ionic/vue/css/palettes/dark.system.css';
 システム設定の変更方法がわからない場合は、[Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) と [macOS](https://support.apple.com/en-us/HT208976) でダークモードを有効にする方法を参照してください。
 :::
 
-import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index.md';
+import SystemDarkMode from '@site/static/usage/v9/theming/system-dark-mode/index.md';
 
 <SystemDarkMode />
 
@@ -168,7 +168,7 @@ import '@ionic/vue/css/palettes/dark.class.css';
 Not sure how to change the system settings? Here's how to enable dark mode on [Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and on [macOS](https://support.apple.com/en-us/HT208976).
 :::
 
-import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.md';
+import ClassDarkMode from '@site/static/usage/v9/theming/class-dark-mode/index.md';
 
 <ClassDarkMode />
 

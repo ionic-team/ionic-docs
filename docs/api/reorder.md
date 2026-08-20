@@ -1,12 +1,12 @@
 ---
 title: "ion-reorder"
 ---
-import Props from '@ionic-internal/component-api/v8/reorder/props.md';
-import Events from '@ionic-internal/component-api/v8/reorder/events.md';
-import Methods from '@ionic-internal/component-api/v8/reorder/methods.md';
-import Parts from '@ionic-internal/component-api/v8/reorder/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/reorder/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/reorder/slots.md';
+import Props from '@ionic-internal/component-api/v9/reorder/props.md';
+import Events from '@ionic-internal/component-api/v9/reorder/events.md';
+import Methods from '@ionic-internal/component-api/v9/reorder/methods.md';
+import Parts from '@ionic-internal/component-api/v9/reorder/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/reorder/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/reorder/slots.md';
 
 <head>
   <title>ion-reorder: Drag and Drop Icon to Reorder Items</title>
@@ -27,7 +27,7 @@ Reorderは、アイテムをドラッグ＆ドロップするために使用さ�
 
 Reorderの最も基本的な例は、アイテムの中にスロットを入れることです。デフォルトでは、reorder groupのreorder機能は無効になっています。reorder groupの `disabled` プロパティを `false` に設定することで有効にすることができます。Reorderアイコンを使ってアイテムをドラッグ＆ドロップし、並び替えることができます。
 
-import Basic from '@site/static/usage/v8/reorder/basic/index.md';
+import Basic from '@site/static/usage/v9/reorder/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/v8/reorder/basic/index.md';
 
 場合によっては、並べ替えの機能を切り替えるオプションが欲しいかもしれない。これは、関数や変数に基づいて `disabled` プロパティをリアクティブにすることで実現できます。
 
-import TogglingDisabled from '@site/static/usage/v8/reorder/toggling-disabled/index.md';
+import TogglingDisabled from '@site/static/usage/v9/reorder/toggling-disabled/index.md';
 
 <TogglingDisabled />
 
@@ -45,7 +45,7 @@ import TogglingDisabled from '@site/static/usage/v8/reorder/toggling-disabled/in
 
 Reorderコンポーネントは、iOSでは3行、Material Designでは2行のReorderアイコンを使用しています。これは、利用可能なIoniconのいずれかを使って、Reorderの中に[Icon](https://ionic.io/ionicons)コンポーネントを追加することでカスタマイズできます。
 
-import CustomIcon from '@site/static/usage/v8/reorder/custom-icon/index.md';
+import CustomIcon from '@site/static/usage/v9/reorder/custom-icon/index.md';
 
 <CustomIcon />
 
@@ -54,7 +54,7 @@ import CustomIcon from '@site/static/usage/v8/reorder/custom-icon/index.md';
 
 並び替えは、項目を囲むラッパーとして使うこともできます。下の項目のどこかをクリックし、ドラッグすると、リストの順番を入れ替えることができます。
 
-import Wrapper from '@site/static/usage/v8/reorder/wrapper/index.md';
+import Wrapper from '@site/static/usage/v9/reorder/wrapper/index.md';
 
 <Wrapper />
 
@@ -69,7 +69,7 @@ import Wrapper from '@site/static/usage/v8/reorder/wrapper/index.md';
 
 どのようなアプローチを取るにせよ、ループの中でアイテムを提供する場合は、アイテムを並べ替えるための安定したIDを提供する必要があります。つまり、Angularでは `trackBy` を使用し、ReactとVueでは `key` を使用します。
 
-import UpdatingData from '@site/static/usage/v8/reorder/updating-data/index.md';
+import UpdatingData from '@site/static/usage/v9/reorder/updating-data/index.md';
 
 <UpdatingData />
 
@@ -81,7 +81,7 @@ The `ionReorderStart` event is emitted when the user begins a reorder gesture. T
 
 The `ionReorderEnd` event is emitted when the user completes the reorder gesture. This occurs when the user releases the item they are dragging, for example by lifting their finger on a touch screen or releasing the mouse button. The event includes the `from` and `to` indices of the item, as well as the `complete` method that should be called to finalize the reorder operation. The `from` index will always be the position of the item when the gesture started, while the `to` index will be its final position. This event will fire even if no items have changed position, in which case the `from` and `to` indices will be the same.
 
-import ReorderStartEndEvents from '@site/static/usage/v8/reorder/reorder-start-end-events/index.md';
+import ReorderStartEndEvents from '@site/static/usage/v9/reorder/reorder-start-end-events/index.md';
 
 <ReorderStartEndEvents />
 
@@ -93,7 +93,7 @@ The `ionReorderMove` event is emitted continuously during the reorder gesture as
 Do not call the `complete` method during the `ionReorderMove` event as it can break the gesture.
 :::
 
-import ReorderMoveEvent from '@site/static/usage/v8/reorder/reorder-move-event/index.md';
+import ReorderMoveEvent from '@site/static/usage/v9/reorder/reorder-move-event/index.md';
 
 <ReorderMoveEvent />
 
@@ -101,7 +101,7 @@ import ReorderMoveEvent from '@site/static/usage/v8/reorder/reorder-move-event/i
 
 Reorderを正しく動作させるには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを指定する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
 
-import CustomScrollTarget from '@site/static/usage/v8/reorder/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v9/reorder/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 

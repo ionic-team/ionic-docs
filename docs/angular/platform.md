@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="angular">
 
 ```tsx
-import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular/lazy';
 
 @Component({...})
 export class MyPage {
@@ -42,7 +42,7 @@ export class MyPage {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 
 @Component({...})
 export class MyPage {
@@ -95,8 +95,22 @@ export class MyPage {
 
 The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](../developing/config). Each function takes `window` as a parameter and returns a boolean.
 
-```tsx
-import { IonicModule } from '@ionic/angular';
+<Tabs
+  groupId="framework"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+  ]}
+>
+<TabItem value="angular">
+
+```tsx title="app.module.ts"
+/*
+ * IonicModule is deprecated and will be removed in a future major version.
+ * Refer to the "Angular (Standalone)" tab to use `provideIonicAngular()` instead.
+ */
+import { IonicModule } from '@ionic/angular/lazy';
 
 @NgModule({
   ...
@@ -118,6 +132,33 @@ import { IonicModule } from '@ionic/angular';
   ...
 })
 ```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```ts title="main.ts"
+import { provideIonicAngular } from '@ionic/angular';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...,
+    provideIonicAngular({
+      platform: {
+        /** The default `desktop` function returns false for devices with a touchscreen.
+        * This is not always wanted, so this function tests the User Agent instead.
+        **/
+        'desktop': (win) => {
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
+          return !isMobile;
+        }
+      },
+    })
+  ]
+})
+```
+
+</TabItem>
+</Tabs>
 
 ```ts
 type PlatformConfig = {

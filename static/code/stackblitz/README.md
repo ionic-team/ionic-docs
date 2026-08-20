@@ -4,7 +4,7 @@ This directory contains the source files for generating the individual framework
 
 ## Structure
 
-The files are organized by Ionic version (`v6`, `v7`, `v8`) and framework (`angular`, `html`, `react`, `vue`):
+The files are organized by Ionic version (`v6`, `v7`, `v8`, `v9`) and framework (`angular`, `html`, `react`, `vue`):
 
 ```
 stackblitz/
@@ -19,6 +19,11 @@ stackblitz/
 │   ├── react/
 │   └── vue/
 └── v8/
+│   ├── angular/
+│   ├── html/
+│   ├── react/
+│   └── vue/
+└── v9/
     ├── angular/
     ├── html/
     ├── react/

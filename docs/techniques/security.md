@@ -58,12 +58,10 @@ const element = <a href={userInput}>Click Me!</a>;
 Vue は組み込みのサニタイズメソッドを提供していません。開発者は[sanitize-html](https://www.npmjs.com/package/sanitize-html)などのパッケージを使用することを推奨します。
 
 `v-html`などのディレクティブにバインドする際のセキュリティ推奨事項については、[Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML)を参照してください。
-
 {/* cspell:disable-next-line */}
-
 ## `innerHTML`を介したカスタム HTML 解析の有効化 {/* #enabling-custom-html-parsing-via-innerhtml */}
 
-`ion-alert`、`ion-infinite-scroll-content`、`ion-loading`、`ion-refresher-content`、`ion-toast`は、特定のプロパティに対して文字列としてカスタム HTML を受け入れることができます。これらの文字列は`innerHTML`を使用して DOM に追加され、開発者が適切にサニタイズする必要があります。この動作はデフォルトで無効になっているため、影響を受けるコンポーネントに渡される値は常にプレーンテキストとして解釈されます。開発者は、[IonicConfig](../developing/config#ionicconfig)で`innerHTMLTemplatesEnabled: true`を設定することで、このカスタム HTML 動作を有効にできます。
+`ion-alert`、`ion-infinite-scroll-content`、`ion-loading`、`ion-refresher-content`、`ion-select-option`、`ion-toast` は、特定のプロパティに対して文字列としてカスタム HTML を受け入れることができます。これらの文字列は `innerHTML` を使用して DOM に追加され、開発者が適切にサニタイズする必要があります。この動作はデフォルトで無効になっているため、影響を受けるコンポーネントに渡される値は常にプレーンテキストとして解釈されます。開発者は、[IonicConfig](../developing/config.md#ionicconfig)で `innerHTMLTemplatesEnabled: true` を設定することで、このカスタム HTML 動作を有効にできます。
 
 ## 組み込みサニタイザーからの除外
 
@@ -105,7 +103,7 @@ Ionic Framework は、デフォルトで`true`に設定されている`sanitizer
 <TabItem value="angular">
 
 ```tsx
-import { IonicSafeString, ToastController } from '@ionic/angular';
+import { IonicSafeString, ToastController } from '@ionic/angular/lazy';
 
 ...
 
@@ -124,7 +122,7 @@ async presentToast() {
 <TabItem value="angular-standalone">
 
 ```tsx
-import { IonicSafeString, ToastController } from '@ionic/angular/standalone';
+import { IonicSafeString, ToastController } from '@ionic/angular';
 
 ...
 

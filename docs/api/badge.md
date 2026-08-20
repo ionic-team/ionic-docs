@@ -1,12 +1,12 @@
 ---
 title: "ion-badge"
 ---
-import Props from '@ionic-internal/component-api/v8/badge/props.md';
-import Events from '@ionic-internal/component-api/v8/badge/events.md';
-import Methods from '@ionic-internal/component-api/v8/badge/methods.md';
-import Parts from '@ionic-internal/component-api/v8/badge/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/badge/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/badge/slots.md';
+import Props from '@ionic-internal/component-api/v9/badge/props.md';
+import Events from '@ionic-internal/component-api/v9/badge/events.md';
+import Methods from '@ionic-internal/component-api/v9/badge/methods.md';
+import Parts from '@ionic-internal/component-api/v9/badge/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/badge/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/badge/slots.md';
 
 <head>
   <title>ion-badge: iOS & Android App Notification Badge Icons</title>
@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v8/badge/basic/index.md';
+import Basic from '@site/static/usage/v9/badge/basic/index.md';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v8/badge/basic/index.md';
 空のバッジは`md`モードでのみ利用可能です。
 :::
 
-import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
 
 <InsideTabBar />
 
@@ -41,13 +41,13 @@ import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/badge/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/badge/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Properties
 
-import CSSProps from '@site/static/usage/v8/badge/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/badge/theming/css-properties/index.md';
 
 <CSSProps />
 

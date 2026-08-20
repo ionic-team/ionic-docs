@@ -19,7 +19,7 @@ Overlays can be created programmatically using their respective controllers:
 
 ```typescript
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
 import { MyModalComponent } from './my-modal.component';
 
 @Component({
@@ -61,7 +61,7 @@ To use a custom injector, pass it to the `create()` method:
 
 ```typescript
 import { Component, Injector } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
 import { MyModalComponent } from './my-modal.component';
 import { MyRouteService } from './my-route.service';
 
@@ -104,7 +104,7 @@ You can also create a custom injector with specific providers:
 
 ```typescript
 import { Component, Injector } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
 import { MyModalComponent } from './my-modal.component';
 import { MyService } from './my.service';
 
@@ -140,7 +140,7 @@ A common use case is providing the Angular CDK `Dir` directive to overlays for b
 ```typescript
 import { Component, Injector } from '@angular/core';
 import { Dir } from '@angular/cdk/bidi';
-import { ModalController } from '@ionic/angular/standalone';
+import { ModalController } from '@ionic/angular';
 import { MyModalComponent } from './my-modal.component';
 
 @Component({
@@ -166,7 +166,7 @@ The `PopoverController` supports the same `injector` option:
 
 ```typescript
 import { Component, Injector } from '@angular/core';
-import { PopoverController } from '@ionic/angular/standalone';
+import { PopoverController } from '@ionic/angular';
 import { MyPopoverComponent } from './my-popover.component';
 
 @Component({
@@ -194,10 +194,10 @@ Ionic Angular exports its own `ModalOptions` and `PopoverOptions` types that ext
 - `ModalOptions` - Extends core `ModalOptions` with the `injector` property
 - `PopoverOptions` - Extends core `PopoverOptions` with the `injector` property
 
-These types are exported from `@ionic/angular` and `@ionic/angular/standalone`:
+These types are exported from `@ionic/angular` and `@ionic/angular/lazy`:
 
 ```typescript
-import type { ModalOptions, PopoverOptions } from '@ionic/angular/standalone';
+import type { ModalOptions, PopoverOptions } from '@ionic/angular';
 ```
 
 ## Docs for Overlays in Ionic

@@ -69,9 +69,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
-  <p>
-    フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。
-  </p>
+  <p>フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。</p>
 </DocsCard>
 
 <DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
@@ -100,19 +98,16 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
-  アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚コンテンツを強化するように設計されています。
+  アバター、アイコン、画像、サムネイルを含むメディアコンポーネントのコレクションで、視覚
+  コンテンツを強化するように設計されています。
 </DocsCard>
 
 <DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">
-  <p>
-    Menuは一般的なナビゲーションパターンです。それらは常時画面上に表示することも、必要に応じて表示することもできます。
-  </p>
+  <p>Menuは一般的なナビゲーションパターンです。それらは常時画面上に表示することも、必要に応じて表示することもできます。</p>
 </DocsCard>
 
 <DocsCard header="Modal" href="api/modal" icon="/icons/component-modal-icon.png">
-  <p>
-    Modalはは、一時的なUIを表示するために画面内および画面外にスライドするため、ログインページまたはサインアップページによく使用されます。
-  </p>
+  <p>Modalはは、一時的なUIを表示するために画面内および画面外にスライドするため、ログインページまたはサインアップページによく使用されます。</p>
 </DocsCard>
 
 <DocsCard header="Navigation" href="api/nav" icon="/icons/component-navigation-icon.png">
@@ -160,9 +155,7 @@ Ionic アプリは、コンポーネントと呼ばれる高レベルのビル�
 </DocsCard>
 
 <DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
-  <p>
-    Tabsを使用すると、タブ付きナビゲーション、つまり現代のアプリケーションの標準的なナビゲーションパターンが有効になります。
-  </p>
+  <p>Tabsを使用すると、タブ付きナビゲーション、つまり現代のアプリケーションの標準的なナビゲーションパターンが有効になります。</p>
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">

@@ -78,7 +78,7 @@ Your new app's directory will look like this:
 The root of your app is defined in `App.tsx`:
 
 ```tsx title="src/App.tsx"
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
@@ -91,12 +91,8 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
@@ -113,12 +109,8 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
-  <Route exact path="/home">
-    <Home />
-  </Route>
-  <Route exact path="/">
-    <Redirect to="/home" />
-  </Route>
+  <Route path="/home" element={<Home />} />
+  <Route path="/" element={<Navigate to="/home" replace />} />
 </IonRouterOutlet>
 ```
 
@@ -240,15 +232,9 @@ Then, add its route in `IonRouterOutlet`:
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
-  <Route exact path="/home">
-    <Home />
-  </Route>
-  <Route exact path="/new">
-    <New />
-  </Route>
-  <Route exact path="/">
-    <Redirect to="/home" />
-  </Route>
+  <Route path="/home" element={<Home />} />
+  <Route path="/new" element={<New />} />
+  <Route path="/" element={<Navigate to="/home" replace />} />
 </IonRouterOutlet>
 ```
 
@@ -259,7 +245,7 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
-ナビゲーションは React Router の`history`プロパティを使用してプログラムで行うこともできます。詳細は[React Navigation のドキュメント](/docs/react/navigation.md#navigating-using-history)を参照してください。
+ナビゲーションは `useIonRouter` hook を使用してプログラムで行うこともできます。詳細は [React Navigation のドキュメント](/docs/react/navigation.md#useionrouter)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
@@ -383,9 +369,7 @@ ionic cap open android
 </DocsCard>
 
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+  <p>Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。</p>
 </DocsCard>
 
 </DocsCards>

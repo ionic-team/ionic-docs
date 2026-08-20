@@ -5,7 +5,6 @@ import { IonToggle } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-example',
-  standalone: true,
   imports: [IonToggle, ReactiveFormsModule],
   templateUrl: './example.component.html',
   styleUrl: './example.component.css',

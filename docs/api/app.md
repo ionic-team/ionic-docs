@@ -1,12 +1,12 @@
 ---
 title: "ion-app"
 ---
-import Props from '@ionic-internal/component-api/v8/app/props.md';
-import Events from '@ionic-internal/component-api/v8/app/events.md';
-import Methods from '@ionic-internal/component-api/v8/app/methods.md';
-import Parts from '@ionic-internal/component-api/v8/app/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/app/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/app/slots.md';
+import Props from '@ionic-internal/component-api/v9/app/props.md';
+import Events from '@ionic-internal/component-api/v9/app/events.md';
+import Methods from '@ionic-internal/component-api/v9/app/methods.md';
+import Parts from '@ionic-internal/component-api/v9/app/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/app/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/app/slots.md';
 
 <head>
   <title>ion-app: Container Element for an Ionic Application</title>
@@ -30,7 +30,7 @@ AppはIonicアプリケーションのコンテナ要素です。1つのプロ�
 
 Ionicは、`ion-focusable`クラスを持つコンポーネント用のフォーカスユーティリティを提供します。これらのユーティリティは、<kbd>Tab</kbd>などの特定のキーボードキーが押されたときに、コンポーネントのフォーカスを自動的に管理します。コンポーネントは、`ion-app`の`setFocus`メソッドを使用して、ユーザーのアクションに応じてプログラムでフォーカスを設定することもできます。
 
-import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
+import SetFocus from '@site/static/usage/v9/app/set-focus/index.md';
 
 <SetFocus />
 

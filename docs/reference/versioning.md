@@ -1,7 +1,5 @@
 # Versioning
 
-{/* TOC goes here */}
-
 Ionic フレームワークは <a href="https://semver.org/" target="_blank">セマンティックバージョニング (SemVer)</a> の規約に従っています： <code>major.minor.patch</code>。互換性のない API 変更は <code>メジャー</code> バージョンを増加させ、後方互換性のある機能追加は <code>マイナー</code> バージョンを増加させ、後方互換性のあるバグ修正は <code>パッチ</code> バージョンを増加させます。
 
 ## リリーススケジュール
@@ -20,4 +18,5 @@ API に破壊的な変更が導入された場合にメジャーリリースが�
 
 ## Changelog
 
-Ionic に関するすべての注目すべき変更の一覧については、<a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>を参照してください。ここには、各リリースごとのすべてのバグ修正と新機能の順序付きリストが含まれています。
+Ionic に関するすべての注目すべき変更の一覧については、<a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>を参照してください。ここには、各リリースごとの
+すべてのバグ修正と新機能の順序付きリストが含まれています。

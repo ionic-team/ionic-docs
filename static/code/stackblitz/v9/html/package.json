@@ -1,0 +1,20 @@
+{
+  "name": "html-starter",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview"
+  },
+  "dependencies": {
+    "@ionic/core": "9.0.0",
+    "ionicons": "8.1.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.0",
+    "vite": "^7.0.0",
+    "vite-plugin-static-copy": "^4.0.0"
+  }
+}

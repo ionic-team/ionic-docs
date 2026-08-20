@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Angular バージョンサポート
 
-Ionic Angular v8 は Angular バージョン 16 以上をサポートしています。サポートされているバージョンおよびサポートポリシーの詳細については、[Ionic Angular サポートポリシー](/docs/reference/support#ionic-angular)をご参照ください。
+Ionic Angular v9 は Angular バージョン 18 から 22 をサポートしています。サポートされているバージョンおよびサポートポリシーの詳細については、[Ionic Angular サポートポリシー](/docs/reference/support#ionic-angular)を参照してください。
 
 ## Angular Tooling
 
