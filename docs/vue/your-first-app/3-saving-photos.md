@@ -96,7 +96,7 @@ We'll use the Capacitor [Filesystem API](../../native/filesystem.md) to save the
 
 Then, pass the data to the Filesystem's `writeFile` method. Recall that we display photos by setting the image's source path (`src`) to the `webviewPath` property. So, set the `webviewPath` and return the new `Photo` object.
 
-For now, create a new helper method, `convertBlobToBase64()`, to implement the necessary logic for running on the web.
+Create a new helper method, `base64FromPath()`, to implement the necessary logic for running on the web:
 
 ```ts
 import { ref } from 'vue';
@@ -110,10 +110,7 @@ export const usePhotoGallery = () => {
 
   // CHANGE: Update the `savePicture()` method
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    const base64Data = (await convertBlobToBase64(blob)) as string;
+    const base64Data = await base64FromPath(photo.webPath!);
 
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -129,13 +126,19 @@ export const usePhotoGallery = () => {
     };
   };
 
-  // CHANGE: Add `convertBlobToBase64()` method
-  const convertBlobToBase64 = (blob: Blob) => {
+  // CHANGE: Add `base64FromPath()` method
+  const base64FromPath = async (path: string): Promise<string> => {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
@@ -180,10 +183,7 @@ export const usePhotoGallery = () => {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    const base64Data = (await convertBlobToBase64(blob)) as string;
+    const base64Data = await base64FromPath(photo.webPath!);
 
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -199,12 +199,18 @@ export const usePhotoGallery = () => {
     };
   };
 
-  const convertBlobToBase64 = (blob: Blob) => {
+  const base64FromPath = async (path: string): Promise<string> => {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
