@@ -221,10 +221,25 @@ Archived versions are served from a frozen Vercel deployment instead of being re
 
 The archived URL has to point at a build that _included_ the version, so you build it first, then move it to `versionsArchived.json`:
 
-1. **Build the version.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
-2. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
-3. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
-4. **Archive it.** Remove the version from `versions.json`, then add it to `versionsArchived.json` with `/docs/<version>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
+1. **Add the version to the `vercel.json` redirects.** The frozen deployment serves its own copy of [`vercel.json`](./vercel.json), so a version scoped redirect has to be in place _before_ the build in the next step, or it will be missing from the archive for good. Add the version to each `:version(...)` group that applies to it. The `angular`, `react`, `vue` and `javascript` landing pages all need this, since no version ships an index page for them:
+
+   ```json
+   {
+     "source": "/docs/:version(v6|v7|v8|v<version>)/angular",
+     "destination": "/docs/:version/angular/overview"
+   },
+   {
+     "source": "/docs/:version(v8|v<version>)/javascript",
+     "destination": "/docs/:version/javascript/overview"
+   }
+   ```
+
+   The `javascript` group only goes back to v8, since v6 and v7 have no `javascript/` section.
+
+2. **Build the version.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
+3. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
+4. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
+5. **Archive it.** Remove the version from `versions.json`, then add it to `versionsArchived.json` with `/docs/<version>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
 
    ```json
    {
@@ -232,7 +247,28 @@ The archived URL has to point at a build that _included_ the version, so you bui
    }
    ```
 
-5. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building that version.
+6. **Update `.prettierignore`.** Add the archived version folders to the archived versions group to keep Prettier from formatting generated files:
+
+   ```
+   static/usage/v<version>
+   versioned_docs/version-v<version>
+   ```
+
+7. **Update `cspell.json`.** Add the archived version to the `ignorePaths` array so the spell checker skips generated files:
+
+   ```json
+   "versioned_docs/version-v<version>"
+   ```
+
+8. **Update `renovate.json`.** Add the version's StackBlitz examples to `ignorePaths` so Renovate stops opening dependency PRs against frozen examples:
+
+   ```json
+   "ignorePaths": ["static/code/stackblitz/v<version>/**"]
+   ```
+
+   Then remove that version's `@ionic/` `allowedVersions` rule from `packageRules`, since it no longer has anything to match.
+
+9. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building that version.
 
 Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
 
