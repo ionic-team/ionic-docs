@@ -2,12 +2,12 @@
 title: 'ion-input'
 ---
 
-import Props from '@ionic-internal/component-api/v8/input/props.md';
-import Events from '@ionic-internal/component-api/v8/input/events.md';
-import Methods from '@ionic-internal/component-api/v8/input/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input/parts.md';
+import Props from '@ionic-internal/component-api/v8/input/props.mdx';
+import Events from '@ionic-internal/component-api/v8/input/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/input/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/input/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/input/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input/slots.md';
+import Slots from '@ionic-internal/component-api/v8/input/slots.mdx';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>

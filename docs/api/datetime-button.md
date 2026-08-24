@@ -1,12 +1,12 @@
 ---
 title: "ion-datetime-button"
 ---
-import Props from '@ionic-internal/component-api/v9/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v9/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v9/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v9/datetime-button/parts.md';
+import Props from '@ionic-internal/component-api/v9/datetime-button/props.mdx';
+import Events from '@ionic-internal/component-api/v9/datetime-button/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/datetime-button/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/datetime-button/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/datetime-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/datetime-button/slots.md';
+import Slots from '@ionic-internal/component-api/v9/datetime-button/slots.mdx';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>

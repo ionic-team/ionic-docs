@@ -1,12 +1,12 @@
 ---
 title: "ion-tabs"
 ---
-import Props from '@ionic-internal/component-api/v9/tabs/props.md';
-import Events from '@ionic-internal/component-api/v9/tabs/events.md';
-import Methods from '@ionic-internal/component-api/v9/tabs/methods.md';
-import Parts from '@ionic-internal/component-api/v9/tabs/parts.md';
+import Props from '@ionic-internal/component-api/v9/tabs/props.mdx';
+import Events from '@ionic-internal/component-api/v9/tabs/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/tabs/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/tabs/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/tabs/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/tabs/slots.md';
+import Slots from '@ionic-internal/component-api/v9/tabs/slots.mdx';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>

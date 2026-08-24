@@ -5,12 +5,12 @@ title: 'ion-toast'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/toast/props.md';
-import Events from '@ionic-internal/component-api/v8/toast/events.md';
-import Methods from '@ionic-internal/component-api/v8/toast/methods.md';
-import Parts from '@ionic-internal/component-api/v8/toast/parts.md';
+import Props from '@ionic-internal/component-api/v8/toast/props.mdx';
+import Events from '@ionic-internal/component-api/v8/toast/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/toast/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/toast/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/toast/slots.md';
+import Slots from '@ionic-internal/component-api/v8/toast/slots.mdx';
 
 <head>
   <title>ion-toast: A Dismissible App Notification Alert Component</title>

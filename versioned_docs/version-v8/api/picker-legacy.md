@@ -2,12 +2,12 @@
 title: 'ion-picker-legacy'
 ---
 
-import Props from '@ionic-internal/component-api/v8/picker-legacy/props.md';
-import Events from '@ionic-internal/component-api/v8/picker-legacy/events.md';
-import Methods from '@ionic-internal/component-api/v8/picker-legacy/methods.md';
-import Parts from '@ionic-internal/component-api/v8/picker-legacy/parts.md';
+import Props from '@ionic-internal/component-api/v8/picker-legacy/props.mdx';
+import Events from '@ionic-internal/component-api/v8/picker-legacy/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/picker-legacy/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/picker-legacy/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/picker-legacy/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/picker-legacy/slots.md';
+import Slots from '@ionic-internal/component-api/v8/picker-legacy/slots.mdx';
 
 <head>
   <title>ion-picker-legacy: A Dialog That Displays Buttons and Columns</title>

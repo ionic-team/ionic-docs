@@ -2,12 +2,12 @@
 title: 'ion-fab-button'
 ---
 
-import Props from '@ionic-internal/component-api/v8/fab-button/props.md';
-import Events from '@ionic-internal/component-api/v8/fab-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/fab-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/fab-button/parts.md';
+import Props from '@ionic-internal/component-api/v8/fab-button/props.mdx';
+import Events from '@ionic-internal/component-api/v8/fab-button/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/fab-button/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/fab-button/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/fab-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/fab-button/slots.md';
+import Slots from '@ionic-internal/component-api/v8/fab-button/slots.mdx';
 
 <head>
   <title>ion-fab-button: Ionic FAB Button Icon for Primary Action</title>

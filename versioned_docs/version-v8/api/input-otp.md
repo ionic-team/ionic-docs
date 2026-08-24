@@ -2,12 +2,12 @@
 title: 'ion-input-otp'
 ---
 
-import Props from '@ionic-internal/component-api/v8/input-otp/props.md';
-import Events from '@ionic-internal/component-api/v8/input-otp/events.md';
-import Methods from '@ionic-internal/component-api/v8/input-otp/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input-otp/parts.md';
+import Props from '@ionic-internal/component-api/v8/input-otp/props.mdx';
+import Events from '@ionic-internal/component-api/v8/input-otp/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/input-otp/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/input-otp/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/input-otp/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input-otp/slots.md';
+import Slots from '@ionic-internal/component-api/v8/input-otp/slots.mdx';
 
 <head>
   <title>ion-input-otp: One-Time Password Input Component</title>

@@ -1,12 +1,12 @@
 ---
 title: "ion-searchbar"
 ---
-import Props from '@ionic-internal/component-api/v9/searchbar/props.md';
-import Events from '@ionic-internal/component-api/v9/searchbar/events.md';
-import Methods from '@ionic-internal/component-api/v9/searchbar/methods.md';
-import Parts from '@ionic-internal/component-api/v9/searchbar/parts.md';
+import Props from '@ionic-internal/component-api/v9/searchbar/props.mdx';
+import Events from '@ionic-internal/component-api/v9/searchbar/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/searchbar/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/searchbar/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/searchbar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/searchbar/slots.md';
+import Slots from '@ionic-internal/component-api/v9/searchbar/slots.mdx';
 
 <head>
   <title>ion-searchbar: Search Bar for Searching a Collection</title>

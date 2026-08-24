@@ -5,12 +5,12 @@ title: 'ion-tab-bar'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/tab-bar/props.md';
-import Events from '@ionic-internal/component-api/v8/tab-bar/events.md';
-import Methods from '@ionic-internal/component-api/v8/tab-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tab-bar/parts.md';
+import Props from '@ionic-internal/component-api/v8/tab-bar/props.mdx';
+import Events from '@ionic-internal/component-api/v8/tab-bar/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/tab-bar/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/tab-bar/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/tab-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.md';
+import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.mdx';
 
 <head>
   <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>

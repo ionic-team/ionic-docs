@@ -2,12 +2,12 @@
 title: 'ion-segment-button'
 ---
 
-import Props from '@ionic-internal/component-api/v8/segment-button/props.md';
-import Events from '@ionic-internal/component-api/v8/segment-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/segment-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/segment-button/parts.md';
+import Props from '@ionic-internal/component-api/v8/segment-button/props.mdx';
+import Events from '@ionic-internal/component-api/v8/segment-button/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/segment-button/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/segment-button/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/segment-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/segment-button/slots.md';
+import Slots from '@ionic-internal/component-api/v8/segment-button/slots.mdx';
 
 <head>
   <title>ion-segment-button | Segment Button Icon and Segment Value</title>

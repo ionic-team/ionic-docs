@@ -1,12 +1,12 @@
 ---
 title: "ion-footer"
 ---
-import Props from '@ionic-internal/component-api/v9/footer/props.md';
-import Events from '@ionic-internal/component-api/v9/footer/events.md';
-import Methods from '@ionic-internal/component-api/v9/footer/methods.md';
-import Parts from '@ionic-internal/component-api/v9/footer/parts.md';
+import Props from '@ionic-internal/component-api/v9/footer/props.mdx';
+import Events from '@ionic-internal/component-api/v9/footer/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/footer/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/footer/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/footer/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/footer/slots.md';
+import Slots from '@ionic-internal/component-api/v9/footer/slots.mdx';
 
 <head>
   <title>ion-footer: Page Footer | Ionic App Footer Root Component</title>

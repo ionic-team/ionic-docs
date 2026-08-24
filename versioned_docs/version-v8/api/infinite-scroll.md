@@ -2,12 +2,12 @@
 title: 'ion-infinite-scroll'
 ---
 
-import Props from '@ionic-internal/component-api/v8/infinite-scroll/props.md';
-import Events from '@ionic-internal/component-api/v8/infinite-scroll/events.md';
-import Methods from '@ionic-internal/component-api/v8/infinite-scroll/methods.md';
-import Parts from '@ionic-internal/component-api/v8/infinite-scroll/parts.md';
+import Props from '@ionic-internal/component-api/v8/infinite-scroll/props.mdx';
+import Events from '@ionic-internal/component-api/v8/infinite-scroll/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/infinite-scroll/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/infinite-scroll/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/infinite-scroll/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/infinite-scroll/slots.md';
+import Slots from '@ionic-internal/component-api/v8/infinite-scroll/slots.mdx';
 
 <head>
   <title>ion-infinite-scroll: Infinite Scroller Action Component</title>

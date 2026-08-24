@@ -2,12 +2,12 @@
 title: 'ion-datetime'
 ---
 
-import Props from '@ionic-internal/component-api/v8/datetime/props.md';
-import Events from '@ionic-internal/component-api/v8/datetime/events.md';
-import Methods from '@ionic-internal/component-api/v8/datetime/methods.md';
-import Parts from '@ionic-internal/component-api/v8/datetime/parts.md';
+import Props from '@ionic-internal/component-api/v8/datetime/props.mdx';
+import Events from '@ionic-internal/component-api/v8/datetime/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/datetime/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/datetime/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/datetime/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/datetime/slots.md';
+import Slots from '@ionic-internal/component-api/v8/datetime/slots.mdx';
 
 import Basic from '@site/static/usage/v8/datetime/basic/index.md';
 

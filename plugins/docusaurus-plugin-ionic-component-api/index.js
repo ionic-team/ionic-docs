@@ -81,11 +81,37 @@ module.exports = function (context, options) {
          * directory within the plugin directory.
          */
         promises.push(
+          createData(`${basePath}/props.mdx`, data.props),
+          createData(`${basePath}/events.mdx`, data.events),
+          createData(`${basePath}/methods.mdx`, data.methods),
+          createData(`${basePath}/parts.mdx`, data.parts),
+          createData(`${basePath}/custom-props.mdx`, data.customProps),
+          createData(`${basePath}/slots.mdx`, data.slots)
+        );
+
+        /**
+         * TODO(FW-6456): Remove once all branches import the `.mdx` names instead of `.md`.
+         * Transitional: the `.md` names are still imported by pages this repo does not
+         * control on every branch at once.
+         *
+         * - `scripts/i18n.sh` copies the `translation/jp` branch's `docs/` tree into
+         *   `i18n/ja` on every build, and those copies still import `.md`.
+         * - Major branches keep their own api pages. Until each is rewritten, a sync that
+         *   brings this plugin over would otherwise leave them importing names it no longer
+         *   emits.
+         *
+         * Emitted unconditionally on purpose. Guarding on locale only holds on a branch whose
+         * pages have already been rewritten, so it reintroduces exactly the coupling this
+         * avoids. These land in `.docusaurus`, not a docs content root, so they are never
+         * routed as pages and the duplicate basenames cannot collide.
+         *
+         * Remove once `translation/jp` and every live branch import the `.mdx` names.
+         */
+        promises.push(
           createData(`${basePath}/props.md`, data.props),
           createData(`${basePath}/events.md`, data.events),
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.md`, data.slots)
         );
       }

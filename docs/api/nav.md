@@ -1,12 +1,12 @@
 ---
 title: "ion-nav"
 ---
-import Props from '@ionic-internal/component-api/v9/nav/props.md';
-import Events from '@ionic-internal/component-api/v9/nav/events.md';
-import Methods from '@ionic-internal/component-api/v9/nav/methods.md';
-import Parts from '@ionic-internal/component-api/v9/nav/parts.md';
+import Props from '@ionic-internal/component-api/v9/nav/props.mdx';
+import Events from '@ionic-internal/component-api/v9/nav/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/nav/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/nav/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/nav/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/nav/slots.md';
+import Slots from '@ionic-internal/component-api/v9/nav/slots.mdx';
 
 <head>
   <title>ion-nav: Nav View Component for Ionic Framework Apps</title>
