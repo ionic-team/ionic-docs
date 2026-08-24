@@ -61,7 +61,23 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 Next, in `tab2.page.ts`, import the `PhotoService` class and add a method to call its `addNewToGallery` method.
 
 ```ts
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+// CHANGE: Import the Ionic standalone components used on this page
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+} from '@ionic/angular';
+// CHANGE: Register the camera icon used by the FAB
+import { addIcons } from 'ionicons';
+import { camera } from 'ionicons/icons';
 // CHANGE: Import the PhotoService
 import { PhotoService } from '../services/photo.service';
 
@@ -69,18 +85,28 @@ import { PhotoService } from '../services/photo.service';
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  standalone: false,
+  // CHANGE: Add the standalone component imports
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonFab, IonFabButton, IonIcon],
 })
 export class Tab2Page {
-  // CHANGE: Update constructor to include `photoService`
-  constructor(public photoService: PhotoService) {}
+  // CHANGE: Inject the PhotoService
+  public photoService = inject(PhotoService);
 
-  // CHANGE: Add `addNewToGallery()` method
+  constructor() {
+    // CHANGE: Register the icons this page uses
+    addIcons({ camera });
+  }
+
+  // CHANGE: Add `addPhotoToGallery()` method
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
   }
 }
 ```
+
+:::note
+In a standalone app there is no global icon registry, so each icon you reference by name (like `camera`) must be registered with `addIcons`. Import the specific Ionic components a page uses from `@ionic/angular` and list them in the component's `imports` array.
+:::
 
 Then, open `tab2.page.html` and call the `addPhotoToGallery()` method when the FAB is tapped/clicked:
 
@@ -131,12 +157,12 @@ export interface UserPhoto {
 }
 ```
 
-Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera.
+Above the `addNewToGallery()` method, define a [signal](https://angular.dev/guide/signals) that holds an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. A signal is used so that the gallery view updates automatically when photos change - important in a zoneless app, where mutating a plain array would not trigger a re-render.
 
 ```ts
 export class PhotoService {
-  // CHANGE: Add the `photos` array
-  public photos: UserPhoto[] = [];
+  // CHANGE: Add the `photos` signal
+  public photos = signal<UserPhoto[]>([]);
 
   public async addNewToGallery() {
     // ...existing code...
@@ -144,7 +170,7 @@ export class PhotoService {
 }
 ```
 
-Over in the `addNewToGallery` method, add the newly captured photo to the beginning of the `photos` array.
+Over in the `addNewToGallery` method, add the newly captured photo to the beginning of the `photos` signal. Reading and updating a signal is done by calling it: `this.photos()` returns the current value, and `this.photos.update()` sets a new one.
 
 ```ts
 // CHANGE: Update `addNewToGallery()` method
@@ -156,25 +182,28 @@ public async addNewToGallery() {
     quality: 100
   });
 
-  // CHANGE: Add the new photo to the photos array
-  this.photos.unshift({
-    filepath: "soon...",
-    webviewPath: capturedPhoto.webPath!
-  });
+  // CHANGE: Add the new photo to the front of the photos signal
+  this.photos.update((photos) => [
+    {
+      filepath: 'soon...',
+      webviewPath: capturedPhoto.webPath!,
+    },
+    ...photos,
+  ]);
 }
 ```
 
 `photo.service.ts` should now look like this:
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  public photos: UserPhoto[] = [];
+  public photos = signal<UserPhoto[]>([]);
 
   public async addNewToGallery() {
     // Take a photo
@@ -184,10 +213,13 @@ export class PhotoService {
       quality: 100,
     });
 
-    this.photos.unshift({
-      filepath: 'soon...',
-      webviewPath: capturedPhoto.webPath!,
-    });
+    this.photos.update((photos) => [
+      {
+        filepath: 'soon...',
+        webviewPath: capturedPhoto.webPath!,
+      },
+      ...photos,
+    ]);
   }
 }
 
@@ -197,7 +229,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, switch to `tab2.page.html` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `PhotoService`'s `photos` array. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
+Next, switch to `tab2.page.html` to display the images. We'll add a [Grid component](../../api/grid.md) so the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `PhotoService`'s `photos` signal with the built-in [`@for`](https://angular.dev/guide/templates/control-flow#for-block-repeaters) block - calling `photoService.photos()` reads the signal's current value. For each item, add an `<img>` element and set its `src` property to the photo's path.
 
 ```html
 <ion-header [translucent]="true">
@@ -216,10 +248,12 @@ Next, switch to `tab2.page.html` to display the images. We'll add a [Grid compon
   <!-- CHANGE: Add a grid component to display the photos. -->
   <ion-grid>
     <ion-row>
-      <!-- CHANGE: Create a new column and image component for each photo -->
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <ion-img [src]="photo.webviewPath"></ion-img>
+      <!-- CHANGE: Create a new column and image element for each photo -->
+      @for (photo of photoService.photos(); track photo.filepath; let position = $index) {
+      <ion-col size="6">
+        <img [src]="photo.webviewPath" [attr.alt]="'Photo ' + (position + 1)" loading="lazy" />
       </ion-col>
+      }
     </ion-row>
   </ion-grid>
 

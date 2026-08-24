@@ -211,7 +211,7 @@ ${properties
     }
 
     return `
-### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {#${propertyHeadingId(prop.name)}}
+### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {/* #${propertyHeadingId(prop.name)} */}
 
 | | |
 | --- | --- |
@@ -273,7 +273,7 @@ function renderMethods({ methods }) {
 ${methods
   .map(
     (method) => `
-### ${method.name} {#${methodHeadingId(method.name)}}
+### ${method.name} {/* #${methodHeadingId(method.name)} */}
 
 | | |
 | --- | --- |

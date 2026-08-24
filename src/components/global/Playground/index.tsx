@@ -119,8 +119,13 @@ interface UsageTargetOptions {
  * @param description Optional description of the generated playground example. Specify to customize the StackBlitz description.
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param mode Restricts the playground to a single specified mode. Acceptable values are: `ios` or `md`.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
  * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
+ * @param includeIonContent Whether to include the `ion-app` and `ion-content` elements in the generated StackBlitz example.
+ * @param version The major version of Ionic to use in the generated StackBlitz example.
+ * @param defaultFramework The framework to select by default when no user preference is stored.
+ * @returns The generated StackBlitz example.
  */
 export default function Playground({
   code,
@@ -133,6 +138,7 @@ export default function Playground({
   showConsole,
   includeIonContent = true,
   version,
+  defaultFramework,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -153,6 +159,11 @@ export default function Playground({
    * This will also load assets for StackBlitz from the specified version directory.
    */
   version: string;
+  /**
+   * The framework to select by default when no user preference is stored.
+   * If not specified, defaults to Angular when available, then the first available framework.
+   */
+  defaultFramework?: UsageTarget;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -206,6 +217,13 @@ export default function Playground({
   };
 
   const getDefaultUsageTarget = () => {
+    /**
+     * If a default framework was specified and code exists for it, use that.
+     */
+    if (defaultFramework && code[defaultFramework] !== undefined) {
+      return defaultFramework;
+    }
+
     /**
      * If there is a saved target from previously clicking the
      * framework buttons, and there is code for it, use that.
@@ -430,10 +448,15 @@ export default function Playground({
 
         /**
          * Load the stored mode and/or usage target, if present
-         * from previously being toggled.
+         * from previously being toggled. Skip the usage target
+         * reset when defaultFramework is set, since the initial
+         * value is already correct and user tab clicks should
+         * be preserved.
          */
         setIonicMode(getDefaultMode());
-        setUsageTarget(getDefaultUsageTarget());
+        if (!defaultFramework) {
+          setUsageTarget(getDefaultUsageTarget());
+        }
 
         /**
          * If the iframes weren't already loaded, load them now.

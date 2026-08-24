@@ -85,21 +85,18 @@ While `core.css` is required, `normalize.css`, `structure.css`, and `typography.
 Update `src/app/app.config.ts` to include `provideIonicAngular`:
 
 ```typescript title="src/app/app.config.ts"
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideIonicAngular } from '@ionic/angular/standalone';
+import { provideIonicAngular } from '@ionic/angular';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
-    provideIonicAngular({}),
-  ],
+  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes), provideIonicAngular({})],
 };
 ```
+
+This reflects the Angular 21 and 22 scaffold, which is zoneless by default. If your existing app is on Angular 18 through 20, it still has `provideZoneChangeDetection({ eventCoalescing: true })`; keep that provider and add `provideIonicAngular({})` alongside it. Refer to [Zoneless Change Detection](/docs/angular/zoneless.md) for details.
 
 ## Using Individual Components
 
@@ -115,7 +112,7 @@ Then, import the components in `src/app/app.ts`:
 
 ```ts title="src/app/app.ts"
 import { Component } from '@angular/core';
-import { IonButton, IonDatetime } from '@ionic/angular/standalone';
+import { IonButton, IonDatetime } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -210,7 +207,7 @@ Then, update `src/app/app.ts` to include the component imports:
 
 ```ts title="src/app/app.ts"
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -253,7 +250,7 @@ Then, create `src/app/home/home.ts` with the following:
 
 ```ts title="src/app/home/home.ts"
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',

@@ -13,6 +13,7 @@ legacy-stencil-components
 scripts/bak
 
 docs/api
+versioned_docs/version-v*/api
 docs/native
 versioned_docs/version-v*/native
 docs/cli/commands

@@ -21,6 +21,7 @@
     "prestart": "npm run generate-markdown",
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md,mdx}\" --cache",
     "start": "docusaurus start",
+    "test": "vitest run",
     "swizzle": "docusaurus swizzle",
     "spellcheck": "cspell --no-progress --gitignore \"**/*.{md,mdx}\""
   },
@@ -69,7 +70,8 @@
     "cspell": "^10.0.1",
     "hygen": "^6.2.11",
     "prettier": "^2.8.8",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.7"
   },
   "prettier": "@ionic/prettier-config"
 }

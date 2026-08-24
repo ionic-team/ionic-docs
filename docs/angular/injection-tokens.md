@@ -34,7 +34,7 @@ To use the `IonModalToken`, inject it into your component's constructor:
 
 ```tsx
 import { Component, inject } from '@angular/core';
-import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal',
@@ -66,7 +66,7 @@ You can use the injected modal reference to listen to modal lifecycle events:
 
 ```tsx
 import { Component, inject, OnInit } from '@angular/core';
-import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal',
@@ -108,7 +108,7 @@ The injected modal reference provides access to all modal properties and methods
 
 ```tsx
 import { Component, inject, OnInit } from '@angular/core';
-import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal',
@@ -149,7 +149,7 @@ When opening a modal that uses the injection token, you can pass the component d
 
 ```tsx
 import { Component, inject } from '@angular/core';
-import { IonContent, IonButton, ModalController } from '@ionic/angular/standalone';
+import { IonContent, IonButton, ModalController } from '@ionic/angular';
 import { ModalComponent } from './modal.component';
 
 @Component({

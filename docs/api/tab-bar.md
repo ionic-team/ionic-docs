@@ -4,12 +4,12 @@ title: "ion-tab-bar"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/tab-bar/props.md';
-import Events from '@ionic-internal/component-api/v8/tab-bar/events.md';
-import Methods from '@ionic-internal/component-api/v8/tab-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tab-bar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tab-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.md';
+import Props from '@ionic-internal/component-api/v9/tab-bar/props.md';
+import Events from '@ionic-internal/component-api/v9/tab-bar/events.md';
+import Methods from '@ionic-internal/component-api/v9/tab-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v9/tab-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v9/tab-bar/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>
@@ -148,7 +148,7 @@ Badges can be added inside a tab button, often used to indicate notifications or
 Empty badges are only available for `md` mode.
 :::
 
-import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
 
 <InsideTabBar />
 
