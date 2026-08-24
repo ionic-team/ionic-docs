@@ -90,7 +90,7 @@ We'll use the Capacitor [Filesystem API](../../native/filesystem.md) to save the
 
 Then, pass the data to the Filesystem's `writeFile` method. Recall that we display photos by setting the image's source path (`src`) to the `webviewPath` property. So, set the `webviewPath` and return the new `Photo` object.
 
-For now, create a new helper method, `convertBlobToBase64()`, to implement the necessary logic for running on the web.
+Create a new helper method, `base64FromPath()`, to implement the necessary logic for running on the web:
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -107,10 +107,7 @@ export class PhotoService {
 
   // CHANGE: Update the `savePicture()` method
   private async savePicture(photo: Photo) {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    const base64Data = (await this.convertBlobToBase64(blob)) as string;
+    const base64Data = await this.base64FromPath(photo.webPath!);
 
     // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
@@ -128,13 +125,19 @@ export class PhotoService {
     };
   }
 
-  // CHANGE: Add the `convertBlobToBase64` method
-  private convertBlobToBase64(blob: Blob) {
+  // CHANGE: Add the `base64FromPath()` method
+  private async base64FromPath(path: string): Promise<string> {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
@@ -176,10 +179,7 @@ export class PhotoService {
   }
 
   private async savePicture(photo: Photo) {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    const base64Data = (await this.convertBlobToBase64(blob)) as string;
+    const base64Data = await this.base64FromPath(photo.webPath!);
 
     // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
@@ -197,12 +197,18 @@ export class PhotoService {
     };
   }
 
-  private convertBlobToBase64(blob: Blob) {
+  private async base64FromPath(path: string): Promise<string> {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
