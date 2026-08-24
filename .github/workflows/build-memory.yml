@@ -37,15 +37,23 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: ⚙️ Use Node.js 20
+      # Must match the major Vercel builds on, or the measurement is taken on a
+      # different engine than production. `engines.node` in package.json is
+      # ">=20.0.0", which overrides the Project Settings version and resolves to
+      # the latest 24.x per Vercel's mapping table:
+      # https://vercel.com/docs/functions/runtimes/node-js/node-js-versions
+      - name: ⚙️ Use Node.js 24
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 20
+          node-version: 24
 
       - name: 🕸️ Install Dependencies
         run: npm ci --legacy-peer-deps
 
       - name: 🏗️ Build All Locales
+        # Named so the report step can read whether the build actually
+        # finished, since it runs even when this one fails.
+        id: build
         env:
           # `npm run build` resolves to build:${VERCEL_ENV:-preview}, and
           # build:preview is English only. Without this the job would measure
@@ -61,9 +69,23 @@ jobs:
         run: /usr/bin/time -v -o build-memory.log npm run build
         shell: bash
 
+      # Kept even when the build fails. GNU time writes its report before the
+      # command's exit status is known, so a build killed for running out of
+      # memory still leaves its peak in the log, which is the case where the
+      # number matters most.
+      - name: 📤 Upload Measurement Log
+        if: always() && steps.build.outcome != 'skipped'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: build-memory-log
+          path: build-memory.log
+          if-no-files-found: warn
+
       - name: 📊 Report Against Machine Capacity
+        if: always() && steps.build.outcome != 'skipped'
         env:
           MACHINE: ${{ inputs.machine }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
         run: |
           set -euo pipefail
 
@@ -86,16 +108,28 @@ jobs:
           # of GB of a tier boundary.
           THRESHOLD_PCT=75
 
-          # Smallest fixed tier this build fits on under the threshold. Falls
-          # back to Turbo, the largest, when nothing fits.
-          RECOMMENDED=$(awk -v peak="$PEAK_GB" -v t="$THRESHOLD_PCT" 'BEGIN {
-            split("Standard:8 Enhanced:16 Turbo:60", tiers, " ")
-            for (i = 1; i <= 3; i++) {
-              split(tiers[i], tier, ":")
+          # The fixed Vercel machines and their memory in GB, smallest first.
+          # Both the recommendation and the capacity lookup below read this, so
+          # a tier is only ever corrected or added in one place.
+          TIERS="Standard:8 Enhanced:16 Turbo:60"
+
+          # Smallest tier this build fits on under the threshold. Empty when
+          # none of them do.
+          RECOMMENDED=$(awk -v tiers="$TIERS" -v peak="$PEAK_GB" -v t="$THRESHOLD_PCT" 'BEGIN {
+            count = split(tiers, list, " ")
+            for (i = 1; i <= count; i++) {
+              split(list[i], tier, ":")
               if (peak / tier[2] * 100 <= t) { print tier[1]; exit }
             }
-            print "Turbo"
           }')
+
+          # A build that was cut short still leaves a peak in the log, but that
+          # figure is where it stopped, not what it needed. Report it and say so
+          # rather than letting it look like a pass.
+          if [ "$BUILD_OUTCOME" != "success" ]; then
+            echo "::warning title=Build did not finish::The build exited without completing. Peak memory reached ${PEAK_GB} GB before it stopped. If it was killed for running out of memory, that figure is the machine's ceiling rather than what the build actually needs."
+            exit 0
+          fi
 
           # Elastic has no fixed capacity to check against. It sizes each build
           # from recent successful builds, so when earlier builds were killed
@@ -103,19 +137,26 @@ jobs:
           # than the build requires. Report the size, but make no pass or fail
           # claim.
           if [ "$MACHINE" = "Elastic" ]; then
-            echo "::warning title=Check the machine Elastic will assign::Elastic sizes each build from recent successful builds, so there is no fixed capacity to check against. Confirm what it will assign under Project Settings > Build and Deployment > Build Machine, where it names the machine your next deployment will use. Otherwise switch to ${RECOMMENDED}, which this ${PEAK_GB} GB build fits on."
+            if [ -n "$RECOMMENDED" ]; then
+              ADVICE="Otherwise switch to ${RECOMMENDED}, which this ${PEAK_GB} GB build fits on."
+            else
+              ADVICE="This ${PEAK_GB} GB build does not fit any fixed machine, so it needs attention whichever one Elastic picks."
+            fi
+            echo "::warning title=Check the machine Elastic will assign::Elastic sizes each build from recent successful builds, so there is no fixed capacity to check against. Confirm what it will assign under Project Settings > Build and Deployment > Build Machine, where it names the machine your next deployment will use. ${ADVICE}"
             exit 0
           fi
 
-          case "$MACHINE" in
-            Standard) CAPACITY=8  ;;
-            Enhanced) CAPACITY=16 ;;
-            Turbo)    CAPACITY=60 ;;
-            *)
-              echo "::error::Unknown machine type: $MACHINE"
-              exit 1
-              ;;
-          esac
+          CAPACITY=$(awk -v tiers="$TIERS" -v m="$MACHINE" 'BEGIN {
+            count = split(tiers, list, " ")
+            for (i = 1; i <= count; i++) {
+              split(list[i], tier, ":")
+              if (tier[1] == m) { print tier[2]; exit }
+            }
+          }')
+          if [ -z "$CAPACITY" ]; then
+            echo "::error::No capacity recorded for machine type ${MACHINE}. Add it to TIERS above."
+            exit 1
+          fi
 
           if awk -v cap="$CAPACITY" -v peak="$PEAK_GB" -v t="$THRESHOLD_PCT" 'BEGIN {
             exit (peak / cap * 100 > t) ? 1 : 0
@@ -124,6 +165,10 @@ jobs:
             exit 0
           fi
 
-          echo "::error title=Move to ${RECOMMENDED} before releasing::Build peaks at ${PEAK_GB} GB, too close to the ${CAPACITY} GB ceiling of the ${MACHINE} machine. Vercel needs part of that memory for its own processes, so the build cannot use all of it."
+          if [ -n "$RECOMMENDED" ]; then
+            echo "::error title=Move to ${RECOMMENDED} before releasing::Build peaks at ${PEAK_GB} GB, too close to the ${CAPACITY} GB ceiling of the ${MACHINE} machine. Vercel needs part of that memory for its own processes, so the build cannot use all of it."
+          else
+            echo "::error title=No machine is large enough::Build peaks at ${PEAK_GB} GB, too close to the ceiling of every machine available, including the largest. The build itself has to get smaller."
+          fi
           exit 1
         shell: bash
