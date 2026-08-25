@@ -20,13 +20,13 @@ Item groups are containers that organize similar [items](./item) together. They 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/item-group/basic/index.md';
+import Basic from '@site/static/usage/v9/item-group/basic/index.mdx';
 
 <Basic />
 
 ## Sliding Items
 
-import SlidingItems from '@site/static/usage/v9/item-group/sliding-items/index.md';
+import SlidingItems from '@site/static/usage/v9/item-group/sliding-items/index.mdx';
 
 <SlidingItems />
 

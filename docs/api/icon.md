@@ -16,7 +16,7 @@ For Ionicons documentation, refer to <a href="https://ionic.io/ionicons">ionic.i
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/icon/basic/index.md';
+import Basic from '@site/static/usage/v9/icon/basic/index.mdx';
 
 <Basic />
 
@@ -24,7 +24,7 @@ import Basic from '@site/static/usage/v9/icon/basic/index.md';
 
 Font-based icons from libraries such as Font Awesome, Bootstrap Icons, Remix Icons, and Phosphor Icons can be displayed by slotting them into Icon.
 
-import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
+import FontIcons from '@site/static/usage/v9/icon/font-icons/index.mdx';
 
 <FontIcons />
 
@@ -32,7 +32,7 @@ import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
 
 Custom SVGs can be displayed with Icon in two ways: by loading an external SVG file using the `src` property or by slotting SVG content directly into the component.
 
-import CustomSVGs from '@site/static/usage/v9/icon/custom-svgs/index.md';
+import CustomSVGs from '@site/static/usage/v9/icon/custom-svgs/index.mdx';
 
 <CustomSVGs />
 

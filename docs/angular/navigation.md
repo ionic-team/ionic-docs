@@ -201,7 +201,7 @@ To get started with standalone components [visit Angular's official docs](https:
 
 ## Live Example
 
-import NavigationPlayground from '@site/static/usage/v9/navigation/index.md';
+import NavigationPlayground from '@site/static/usage/v9/navigation/index.mdx';
 
 <NavigationPlayground defaultFramework="angular" />
 

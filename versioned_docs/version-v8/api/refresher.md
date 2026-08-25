@@ -25,7 +25,7 @@ Data should be modified during the refresher's output events. Once the async ope
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/refresher/basic/index.md';
+import Basic from '@site/static/usage/v8/refresher/basic/index.mdx';
 
 <Basic />
 
@@ -35,7 +35,7 @@ The refresher has several properties for customizing the pull gesture. Set the `
 
 These properties do not apply when the [native refresher](#native-refreshers) is enabled.
 
-import PullProperties from '@site/static/usage/v8/refresher/pull-properties/index.md';
+import PullProperties from '@site/static/usage/v8/refresher/pull-properties/index.mdx';
 
 <PullProperties />
 
@@ -45,7 +45,7 @@ The default icon, spinner, and text can be customized on the [refresher content]
 
 Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
 
-import CustomContent from '@site/static/usage/v8/refresher/custom-content/index.md';
+import CustomContent from '@site/static/usage/v8/refresher/custom-content/index.mdx';
 
 <CustomContent />
 
@@ -87,7 +87,7 @@ Developers should apply the following CSS to the scrollable container. This CSS 
 }
 ```
 
-import CustomScrollTarget from '@site/static/usage/v8/refresher/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v8/refresher/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
 
@@ -95,7 +95,7 @@ import CustomScrollTarget from '@site/static/usage/v8/refresher/custom-scroll-ta
 
 While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
 
-import Advanced from '@site/static/usage/v8/refresher/advanced/index.md';
+import Advanced from '@site/static/usage/v8/refresher/advanced/index.mdx';
 
 <Advanced />
 
@@ -107,7 +107,7 @@ The `ionPullStart` event is emitted when the user begins a pull gesture. This ev
 
 The `ionPullEnd` event is emitted when the refresher returns to an inactive state, with a reason property of `'complete'` or `'cancel'` indicating whether the refresh operation completed successfully or was canceled.
 
-import PullStartEndEvents from '@site/static/usage/v8/refresher/pull-start-end-events/index.md';
+import PullStartEndEvents from '@site/static/usage/v8/refresher/pull-start-end-events/index.mdx';
 
 <PullStartEndEvents />
 

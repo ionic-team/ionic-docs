@@ -16,7 +16,7 @@ For a list of all available icons, refer to <a href="https://ionic.io/ionicons">
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/icon/basic/index.md';
+import Basic from '@site/static/usage/v8/icon/basic/index.mdx';
 
 <Basic />
 

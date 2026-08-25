@@ -24,7 +24,7 @@ The menu element should be a sibling to the root content element. There can be a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/menu/basic/index.md';
+import Basic from '@site/static/usage/v9/menu/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v9/menu/basic/index.md';
 
 The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
 
-import MenuToggle from '@site/static/usage/v9/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v9/menu/toggle/index.mdx';
 
 <MenuToggle />
 
@@ -42,7 +42,7 @@ import MenuToggle from '@site/static/usage/v9/menu/toggle/index.md';
 
 The `type` property can be used to customize how menus display in your application.
 
-import MenuType from '@site/static/usage/v9/menu/type/index.md';
+import MenuType from '@site/static/usage/v9/menu/type/index.mdx';
 
 <MenuType />
 
@@ -53,7 +53,7 @@ Menus are displayed on the `"start"` side by default. In apps that use left-to-r
 
 If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. Refer to the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
 
-import Sides from '@site/static/usage/v9/menu/sides/index.md';
+import Sides from '@site/static/usage/v9/menu/sides/index.mdx';
 
 <Sides />
 
@@ -62,7 +62,7 @@ import Sides from '@site/static/usage/v9/menu/sides/index.md';
 
 When multiple menus exist on the same side, we need refer to them by ID instead of side. Otherwise, the wrong menu may be activated.
 
-import Multiple from '@site/static/usage/v9/menu/multiple/index.md';
+import Multiple from '@site/static/usage/v9/menu/multiple/index.mdx';
 
 <Multiple />
 
@@ -71,7 +71,7 @@ import Multiple from '@site/static/usage/v9/menu/multiple/index.md';
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/v9/menu/theming/index.md';
+import Theming from '@site/static/usage/v9/menu/theming/index.mdx';
 
 <Theming />
 
