@@ -2,12 +2,12 @@
 title: 'ion-thumbnail'
 ---
 
-import Props from '@ionic-internal/component-api/v8/thumbnail/props.md';
-import Events from '@ionic-internal/component-api/v8/thumbnail/events.md';
-import Methods from '@ionic-internal/component-api/v8/thumbnail/methods.md';
-import Parts from '@ionic-internal/component-api/v8/thumbnail/parts.md';
+import Props from '@ionic-internal/component-api/v8/thumbnail/props.mdx';
+import Events from '@ionic-internal/component-api/v8/thumbnail/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/thumbnail/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/thumbnail/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/thumbnail/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/thumbnail/slots.md';
+import Slots from '@ionic-internal/component-api/v8/thumbnail/slots.mdx';
 
 <head>
   <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>

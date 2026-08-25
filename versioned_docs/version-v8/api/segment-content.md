@@ -2,12 +2,12 @@
 title: 'ion-segment-content'
 ---
 
-import Props from '@ionic-internal/component-api/v8/segment-content/props.md';
-import Events from '@ionic-internal/component-api/v8/segment-content/events.md';
-import Methods from '@ionic-internal/component-api/v8/segment-content/methods.md';
-import Parts from '@ionic-internal/component-api/v8/segment-content/parts.md';
+import Props from '@ionic-internal/component-api/v8/segment-content/props.mdx';
+import Events from '@ionic-internal/component-api/v8/segment-content/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/segment-content/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/segment-content/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/segment-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/segment-content/slots.md';
+import Slots from '@ionic-internal/component-api/v8/segment-content/slots.mdx';
 
 <head>
   <title>ion-segment-content: Display control element for swipeable segments</title>

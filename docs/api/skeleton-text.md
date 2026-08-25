@@ -1,12 +1,12 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Props from '@ionic-internal/component-api/v9/skeleton-text/props.md';
-import Events from '@ionic-internal/component-api/v9/skeleton-text/events.md';
-import Methods from '@ionic-internal/component-api/v9/skeleton-text/methods.md';
-import Parts from '@ionic-internal/component-api/v9/skeleton-text/parts.md';
+import Props from '@ionic-internal/component-api/v9/skeleton-text/props.mdx';
+import Events from '@ionic-internal/component-api/v9/skeleton-text/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/skeleton-text/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/skeleton-text/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/skeleton-text/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/skeleton-text/slots.md';
+import Slots from '@ionic-internal/component-api/v9/skeleton-text/slots.mdx';
 
 <head>
   <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>

@@ -1,12 +1,12 @@
 ---
 title: "ion-chip"
 ---
-import Props from '@ionic-internal/component-api/v9/chip/props.md';
-import Events from '@ionic-internal/component-api/v9/chip/events.md';
-import Methods from '@ionic-internal/component-api/v9/chip/methods.md';
-import Parts from '@ionic-internal/component-api/v9/chip/parts.md';
+import Props from '@ionic-internal/component-api/v9/chip/props.mdx';
+import Events from '@ionic-internal/component-api/v9/chip/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/chip/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/chip/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/chip/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/chip/slots.md';
+import Slots from '@ionic-internal/component-api/v9/chip/slots.mdx';
 
 <head>
   <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>

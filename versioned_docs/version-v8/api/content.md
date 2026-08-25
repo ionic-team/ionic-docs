@@ -2,12 +2,12 @@
 title: 'ion-content'
 ---
 
-import Props from '@ionic-internal/component-api/v8/content/props.md';
-import Events from '@ionic-internal/component-api/v8/content/events.md';
-import Methods from '@ionic-internal/component-api/v8/content/methods.md';
-import Parts from '@ionic-internal/component-api/v8/content/parts.md';
+import Props from '@ionic-internal/component-api/v8/content/props.mdx';
+import Events from '@ionic-internal/component-api/v8/content/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/content/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/content/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/content/slots.md';
+import Slots from '@ionic-internal/component-api/v8/content/slots.mdx';
 
 <head>
   <title>ion-content: Scrollable Component for Ionic App Content</title>

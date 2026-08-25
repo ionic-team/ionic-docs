@@ -2,12 +2,12 @@
 title: 'ion-item'
 ---
 
-import Props from '@ionic-internal/component-api/v8/item/props.md';
-import Events from '@ionic-internal/component-api/v8/item/events.md';
-import Methods from '@ionic-internal/component-api/v8/item/methods.md';
-import Parts from '@ionic-internal/component-api/v8/item/parts.md';
+import Props from '@ionic-internal/component-api/v8/item/props.mdx';
+import Events from '@ionic-internal/component-api/v8/item/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/item/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/item/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/item/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/item/slots.md';
+import Slots from '@ionic-internal/component-api/v8/item/slots.mdx';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BestPracticeFigure from '@components/global/BestPracticeFigure';

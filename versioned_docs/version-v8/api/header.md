@@ -2,12 +2,12 @@
 title: 'ion-header'
 ---
 
-import Props from '@ionic-internal/component-api/v8/header/props.md';
-import Events from '@ionic-internal/component-api/v8/header/events.md';
-import Methods from '@ionic-internal/component-api/v8/header/methods.md';
-import Parts from '@ionic-internal/component-api/v8/header/parts.md';
+import Props from '@ionic-internal/component-api/v8/header/props.mdx';
+import Events from '@ionic-internal/component-api/v8/header/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/header/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/header/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/header/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/header/slots.md';
+import Slots from '@ionic-internal/component-api/v8/header/slots.mdx';
 
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>

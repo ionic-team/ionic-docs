@@ -2,12 +2,12 @@
 title: 'ion-breadcrumbs'
 ---
 
-import Props from '@ionic-internal/component-api/v8/breadcrumbs/props.md';
-import Events from '@ionic-internal/component-api/v8/breadcrumbs/events.md';
-import Methods from '@ionic-internal/component-api/v8/breadcrumbs/methods.md';
-import Parts from '@ionic-internal/component-api/v8/breadcrumbs/parts.md';
+import Props from '@ionic-internal/component-api/v8/breadcrumbs/props.mdx';
+import Events from '@ionic-internal/component-api/v8/breadcrumbs/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/breadcrumbs/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/breadcrumbs/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/breadcrumbs/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/breadcrumbs/slots.md';
+import Slots from '@ionic-internal/component-api/v8/breadcrumbs/slots.mdx';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

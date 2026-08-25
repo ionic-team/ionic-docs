@@ -1,12 +1,12 @@
 ---
 title: "ion-reorder"
 ---
-import Props from '@ionic-internal/component-api/v9/reorder/props.md';
-import Events from '@ionic-internal/component-api/v9/reorder/events.md';
-import Methods from '@ionic-internal/component-api/v9/reorder/methods.md';
-import Parts from '@ionic-internal/component-api/v9/reorder/parts.md';
+import Props from '@ionic-internal/component-api/v9/reorder/props.mdx';
+import Events from '@ionic-internal/component-api/v9/reorder/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/reorder/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/reorder/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/reorder/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/reorder/slots.md';
+import Slots from '@ionic-internal/component-api/v9/reorder/slots.mdx';
 
 <head>
   <title>ion-reorder: Drag and Drop Icon to Reorder Items</title>

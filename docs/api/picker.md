@@ -1,12 +1,12 @@
 ---
 title: "ion-picker"
 ---
-import Props from '@ionic-internal/component-api/v9/picker/props.md';
-import Events from '@ionic-internal/component-api/v9/picker/events.md';
-import Methods from '@ionic-internal/component-api/v9/picker/methods.md';
-import Parts from '@ionic-internal/component-api/v9/picker/parts.md';
+import Props from '@ionic-internal/component-api/v9/picker/props.mdx';
+import Events from '@ionic-internal/component-api/v9/picker/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/picker/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/picker/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/picker/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/picker/slots.md';
+import Slots from '@ionic-internal/component-api/v9/picker/slots.mdx';
 
 <head>
   <title>ion-picker: Display a list of options in columns</title>

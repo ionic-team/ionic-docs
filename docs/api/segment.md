@@ -1,12 +1,12 @@
 ---
 title: "ion-segment"
 ---
-import Props from '@ionic-internal/component-api/v9/segment/props.md';
-import Events from '@ionic-internal/component-api/v9/segment/events.md';
-import Methods from '@ionic-internal/component-api/v9/segment/methods.md';
-import Parts from '@ionic-internal/component-api/v9/segment/parts.md';
+import Props from '@ionic-internal/component-api/v9/segment/props.mdx';
+import Events from '@ionic-internal/component-api/v9/segment/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/segment/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/segment/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/segment/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/segment/slots.md';
+import Slots from '@ionic-internal/component-api/v9/segment/slots.mdx';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>

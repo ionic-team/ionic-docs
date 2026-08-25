@@ -1,12 +1,12 @@
 ---
 title: "ion-spinner"
 ---
-import Props from '@ionic-internal/component-api/v9/spinner/props.md';
-import Events from '@ionic-internal/component-api/v9/spinner/events.md';
-import Methods from '@ionic-internal/component-api/v9/spinner/methods.md';
-import Parts from '@ionic-internal/component-api/v9/spinner/parts.md';
+import Props from '@ionic-internal/component-api/v9/spinner/props.mdx';
+import Events from '@ionic-internal/component-api/v9/spinner/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/spinner/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/spinner/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/spinner/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/spinner/slots.md';
+import Slots from '@ionic-internal/component-api/v9/spinner/slots.mdx';
 
 <head>
   <title>ion-spinner: Animated Spinner Icon Components and Properties</title>

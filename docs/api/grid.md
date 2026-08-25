@@ -1,12 +1,12 @@
 ---
 title: "ion-grid"
 ---
-import Props from '@ionic-internal/component-api/v9/grid/props.md';
-import Events from '@ionic-internal/component-api/v9/grid/events.md';
-import Methods from '@ionic-internal/component-api/v9/grid/methods.md';
-import Parts from '@ionic-internal/component-api/v9/grid/parts.md';
+import Props from '@ionic-internal/component-api/v9/grid/props.mdx';
+import Events from '@ionic-internal/component-api/v9/grid/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/grid/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/grid/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/grid/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/grid/slots.md';
+import Slots from '@ionic-internal/component-api/v9/grid/slots.mdx';
 
 <head>
   <title>ion-grid: Display Grids for Mobile-First Custom App Layout</title>

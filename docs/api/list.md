@@ -1,12 +1,12 @@
 ---
 title: "ion-list"
 ---
-import Props from '@ionic-internal/component-api/v9/list/props.md';
-import Events from '@ionic-internal/component-api/v9/list/events.md';
-import Methods from '@ionic-internal/component-api/v9/list/methods.md';
-import Parts from '@ionic-internal/component-api/v9/list/parts.md';
+import Props from '@ionic-internal/component-api/v9/list/props.mdx';
+import Events from '@ionic-internal/component-api/v9/list/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/list/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/list/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/list/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/list/slots.md';
+import Slots from '@ionic-internal/component-api/v9/list/slots.mdx';
 
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>

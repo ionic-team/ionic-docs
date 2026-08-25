@@ -2,12 +2,12 @@
 title: 'ion-note'
 ---
 
-import Props from '@ionic-internal/component-api/v8/note/props.md';
-import Events from '@ionic-internal/component-api/v8/note/events.md';
-import Methods from '@ionic-internal/component-api/v8/note/methods.md';
-import Parts from '@ionic-internal/component-api/v8/note/parts.md';
+import Props from '@ionic-internal/component-api/v8/note/props.mdx';
+import Events from '@ionic-internal/component-api/v8/note/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/note/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/note/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/note/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/note/slots.md';
+import Slots from '@ionic-internal/component-api/v8/note/slots.mdx';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>
