@@ -216,7 +216,7 @@ The Ionic documentation's `main` branch is deployed automatically and separately
 
 Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. Two files control this:
 
-- [`versions.json`](./versions.json): lists the versions Docusaurus rebuilds on every deploy.
+- [`versions.json`](./versions.json): lists the older versions Docusaurus rebuilds on every deploy. It does not include the current version, which is built from `docs/` and takes its label from `versions.current` in `docusaurus.config.js`.
 - [`versionsArchived.json`](./versionsArchived.json): maps each archived version to the frozen deployment URL the version picker links to.
 
 The archived URL has to point at a build that _included_ the version, so you build it first, then move it to `versionsArchived.json`:
