@@ -214,27 +214,27 @@ The Ionic documentation's `main` branch is deployed automatically and separately
 
 ### Archiving a Version
 
-Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. Two files control this:
+Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. That deployment is a full snapshot of the site, so it serves every version that was in the build. Two files control this:
 
 - [`versions.json`](./versions.json): lists the older versions Docusaurus rebuilds on every deploy. It does not include the current version, which is built from `docs/` and takes its label from `versions.current` in `docusaurus.config.js`.
 - [`versionsArchived.json`](./versionsArchived.json): maps each archived version to the frozen deployment URL the version picker links to.
 
 The archived URL has to point at a build that _included_ the version, so you build it first, then move it to `versionsArchived.json`:
 
-1. **Add the version to the `vercel.json` redirects.** The frozen deployment serves its own copy of [`vercel.json`](./vercel.json), so a version scoped redirect has to be in place _before_ the build in the next step, or it will be missing from the archive for good. Add the version to each `:version(...)` group that applies to it. The `angular`, `react`, `vue` and `javascript` landing pages all need this, since no version ships an index page for them:
+1. **Check the `vercel.json` redirects.** Any `:version(...)` group missing a version at build time stays broken on that host for good. Add the version that most recently stopped being current, since it is the one most likely to be missing. The `angular`, `react`, `vue` and `javascript` landing pages each need a group, as no version ships an index page for them:
 
    ```json
    {
-     "source": "/docs/:version(v6|v7|v8|v<version>)/angular",
+     "source": "/docs/:version(v6|v7|v<version>)/angular",
      "destination": "/docs/:version/angular/overview"
    },
    {
-     "source": "/docs/:version(v8|v<version>)/javascript",
+     "source": "/docs/:version(v<version>)/javascript",
      "destination": "/docs/:version/javascript/overview"
    }
    ```
 
-   The `javascript` group only goes back to v8, since v6 and v7 have no `javascript/` section.
+   The `javascript` group only covers versions that have a `javascript/` section.
 
 2. **Build the version.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
 3. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
