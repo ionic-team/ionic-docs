@@ -21,7 +21,7 @@ Titleは、[ツールバー](./toolbar)のタイトルを設定するテキス�
 
 ## Basic
 
-import Basic from '@site/static/usage/v9/title/basic/index.md';
+import Basic from '@site/static/usage/v9/title/basic/index.mdx';
 
 <Basic />
 
@@ -35,7 +35,7 @@ This feature is only available for iOS.
 
 :::
 
-import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large-title/basic/index.md';
+import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large-title/basic/index.mdx';
 
 <CollapsibleLargeTitle />
 
@@ -43,7 +43,7 @@ import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large
 
 [buttons](./buttons.md)コンポーネントは、[`collapse`](./buttons.md#collapse)プロパティと共に使用すると、ツールバーが折りたたまれたときにヘッダーに追加表示することができます。
 
-import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.mdx';
 
 <CollapsibleLargeTitleButtons />
 
@@ -71,7 +71,7 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsibl
 
 ## CSSカスタムプロパティ
 
-import CSSCustomProperties from '@site/static/usage/v9/title/theming/css-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v9/title/theming/css-properties/index.mdx';
 
 <CSSCustomProperties />
 

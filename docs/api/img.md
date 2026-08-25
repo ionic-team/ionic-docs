@@ -26,7 +26,7 @@ Img は、タグがビューポートに表示されているときに画像をL
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/img/basic/index.md';
+import Basic from '@site/static/usage/v9/img/basic/index.mdx';
 
 <Basic />
 

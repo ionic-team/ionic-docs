@@ -24,13 +24,13 @@ Thumbnailsは、単独で使用することも、任意の要素の内部で使�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/thumbnail/basic/index.md';
+import Basic from '@site/static/usage/v9/thumbnail/basic/index.mdx';
 
 <Basic />
 
 ## Item Thumbnails
 
-import Item from '@site/static/usage/v9/thumbnail/item/index.md';
+import Item from '@site/static/usage/v9/thumbnail/item/index.mdx';
 
 <Item />
 
@@ -38,7 +38,7 @@ import Item from '@site/static/usage/v9/thumbnail/item/index.md';
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/thumbnail/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/thumbnail/theming/css-properties/index.mdx';
 
 <CSSProps />
 

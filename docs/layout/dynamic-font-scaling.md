@@ -12,7 +12,7 @@ Android の Chrome でテストしている場合は、["Accessibility Page Zoom
 
 [デバイスでのフォントサイズの変更](#changing-the-font-size-on-a-device)ガイドに従って、好みのフォントサイズを設定し、以下のデモのテキストが設定に応じて拡大または縮小するのを確認してください。
 
-import DynamicFontScaling from '@site/static/usage/v9/layout/dynamic-font-scaling/index.md';
+import DynamicFontScaling from '@site/static/usage/v9/layout/dynamic-font-scaling/index.mdx';
 
 <DynamicFontScaling />
 

@@ -20,13 +20,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/item-group/basic/index.md';
+import Basic from '@site/static/usage/v9/item-group/basic/index.mdx';
 
 <Basic />
 
 ## Sliding Items
 
-import SlidingItems from '@site/static/usage/v9/item-group/sliding-items/index.md';
+import SlidingItems from '@site/static/usage/v9/item-group/sliding-items/index.mdx';
 
 <SlidingItems />
 

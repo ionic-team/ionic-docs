@@ -68,7 +68,7 @@ import '@ionic/vue/css/palettes/high-contrast.always.css'; // Light palette
 
 以下の例は、ユーザーのハイコントラストまたはダークモードの設定に関係なく、常にハイコントラストライトパレットを表示します。
 
-import AlwaysHighContrastMode from '@site/static/usage/v9/theming/always-high-contrast-mode/index.md';
+import AlwaysHighContrastMode from '@site/static/usage/v9/theming/always-high-contrast-mode/index.mdx';
 
 <AlwaysHighContrastMode />
 
@@ -123,7 +123,7 @@ import '@ionic/vue/css/palettes/high-contrast-dark.system.css';
 システム設定の変更方法がわからないですか？[Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025)と[macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac)でハイコントラストモードを有効にする方法はこちらです。
 :::
 
-import SystemHighContrastMode from '@site/static/usage/v9/theming/system-high-contrast-mode/index.md';
+import SystemHighContrastMode from '@site/static/usage/v9/theming/system-high-contrast-mode/index.mdx';
 
 <SystemHighContrastMode />
 
@@ -181,7 +181,7 @@ import '@ionic/vue/css/palettes/high-contrast-dark.class.css';
 システム設定の変更方法がわからないですか？[Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025)と[macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac)でハイコントラストモードを有効にする方法はこちらです。
 :::
 
-import ClassHighContrastMode from '@site/static/usage/v9/theming/class-high-contrast-mode/index.md';
+import ClassHighContrastMode from '@site/static/usage/v9/theming/class-high-contrast-mode/index.mdx';
 
 <ClassHighContrastMode />
 

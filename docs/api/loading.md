@@ -28,13 +28,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ### インラインロード (推奨)
 
-import Inline from '@site/static/usage/v9/loading/inline/index.md';
+import Inline from '@site/static/usage/v9/loading/inline/index.mdx';
 
 <Inline />
 
 ### Controller
 
-import Controller from '@site/static/usage/v9/loading/controller/index.md';
+import Controller from '@site/static/usage/v9/loading/controller/index.mdx';
 
 <Controller />
 
@@ -44,7 +44,7 @@ import Controller from '@site/static/usage/v9/loading/controller/index.md';
 
 使用するスピナーは `spinner` プロパティでカスタマイズできます。すべてのオプションについては、[`spinner` プロパティのドキュメント](#prop-spinner)を参照してください。
 
-import Spinners from '@site/static/usage/v9/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v9/loading/spinners/index.mdx';
 
 <Spinners />
 
@@ -54,7 +54,7 @@ Loading は scoped encapsulation を使用しています。これは、実行�
 
 カスタムクラスを渡して、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。
 
-import Theming from '@site/static/usage/v9/loading/theming/index.md';
+import Theming from '@site/static/usage/v9/loading/theming/index.mdx';
 
 <Theming />
 

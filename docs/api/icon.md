@@ -16,7 +16,7 @@ Ionicons のドキュメントについては、<a href="https://ionic.io/ionico
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/icon/basic/index.md';
+import Basic from '@site/static/usage/v9/icon/basic/index.mdx';
 
 <Basic />
 
@@ -24,7 +24,7 @@ import Basic from '@site/static/usage/v9/icon/basic/index.md';
 
 Font Awesome、Bootstrap Icons、Remix Icons、Phosphor Icons などのフォントベースのアイコンは、Icon の slot に配置して表示できます。
 
-import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
+import FontIcons from '@site/static/usage/v9/icon/font-icons/index.mdx';
 
 <FontIcons />
 
@@ -32,7 +32,7 @@ import FontIcons from '@site/static/usage/v9/icon/font-icons/index.md';
 
 Icon でカスタム SVG を表示する方法は 2 つあります。`src` プロパティを使用して外部 SVG ファイルを読み込むか、SVG コンテンツをコンポーネントの slot に直接配置します。
 
-import CustomSVGs from '@site/static/usage/v9/icon/custom-svgs/index.md';
+import CustomSVGs from '@site/static/usage/v9/icon/custom-svgs/index.mdx';
 
 <CustomSVGs />
 

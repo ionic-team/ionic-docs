@@ -21,7 +21,7 @@ Back Buttonは、クリックされるとアプリの履歴に戻るようにナ
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/back-button/basic/index.md';
+import Basic from '@site/static/usage/v9/back-button/basic/index.mdx';
 
 <Basic />
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v9/back-button/basic/index.md';
 
 デフォルトでは、戻るボタンは`ios`では`"chevron-back"`アイコン付きで`"Back"`のテキストを表示し、`md`では`"arrow-back-sharp"`アイコンを表示します。これは、各戻るボタンコンポーネントごとに`icon`または`text`プロパティを設定することでカスタマイズ可能です。あるいは、グローバル設定で`backButtonIcon`または`backButtonText`プロパティを使用してグローバルに設定することもできます。詳細は[Configドキュメント](../developing/config)を参照してください。
 
-import Custom from '@site/static/usage/v9/back-button/custom/index.md';
+import Custom from '@site/static/usage/v9/back-button/custom/index.mdx';
 
 <Custom />
 

@@ -36,7 +36,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import BasicExample from '@site/static/usage/v9/router/basic/index.md';
+import BasicExample from '@site/static/usage/v9/router/basic/index.mdx';
 
 <BasicExample />
 
@@ -46,7 +46,7 @@ import BasicExample from '@site/static/usage/v9/router/basic/index.md';
 
 The two can still be composed. A routed page rendered by `ion-router-outlet` can host its own `ion-nav` for local, URL-less navigation within that page. In the example below, navigating to `/details` updates the URL, but stepping through the `ion-nav` inside that page does not.
 
-import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/index.md';
+import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/index.mdx';
 
 <NavWithinPageExample />
 

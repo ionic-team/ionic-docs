@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 `ion-alert` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、アラートを表示するために必要なハンドラの数を減らすことができます。
 
-import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.md';
+import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.mdx';
 
 <Trigger />
 
@@ -36,7 +36,7 @@ import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.md';
 
 `isOpen` は一方通行のデータバインディングを使用しているため、アラートが解除されたときに自動的に `false` に設定されることはありません。開発者は `ionAlertDidDismiss` または `didDismiss` イベントを待ち、`isOpen` を `false` に設定する必要があります。この理由は、`ion-alert` の内部がアプリケーションの状態と密接に結合するのを防ぐためである。一方通行のデータバインディングでは、アラートはリアクティブ変数が提供するブーリアン値だけを気にすればよい。双方向のデータバインディングでは、アラートはブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にする可能性があります。
 
-import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.md';
+import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.mdx';
 
 <IsOpen />
 
@@ -44,7 +44,7 @@ import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.md';
 
 `alertController`は、アラートを表示するタイミングや解除するタイミングをより細かく制御する必要がある場合に使用することができます。
 
-import Controller from '@site/static/usage/v9/alert/presenting/controller/index.md';
+import Controller from '@site/static/usage/v9/alert/presenting/controller/index.mdx';
 
 <Controller />
 
@@ -54,7 +54,7 @@ import Controller from '@site/static/usage/v9/alert/presenting/controller/index.
 
 オプションで、`cancel`のような `role` プロパティをボタンに追加することができます。もし `cancel` ロールがボタンのいずれかに設定されている場合、バックドロップをタップしてアラートが解除されると、キャンセルロールを持つボタンから handler が起動されます。
 
-import Buttons from '@site/static/usage/v9/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v9/alert/buttons/index.mdx';
 
 <Buttons />
 
@@ -65,13 +65,13 @@ Alertには、複数の異なるInputを含めることもでき、そのデー�
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/v9/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v9/alert/inputs/text-inputs/index.mdx';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/v9/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v9/alert/inputs/radios/index.mdx';
 
 <Radios />
 
@@ -101,7 +101,7 @@ Alertはscopedによるカプセル化を使用しており、実行時に各ス
 }
 ```
 
-import Customization from '@site/static/usage/v9/alert/customization/index.md';
+import Customization from '@site/static/usage/v9/alert/customization/index.mdx';
 
 <Customization />
 

@@ -27,7 +27,7 @@ Angular、React、Vue などの JavaScript フレームワークで Datetime But
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v9/datetime-button/basic/index.mdx';
 
 <Basic />
 
@@ -39,7 +39,7 @@ import Basic from '@site/static/usage/v9/datetime-button/basic/index.md';
 
 Datetime ボタンの日時の形式は、関連する Datetime インスタンスで `formatOptions` を指定することでカスタマイズできます。詳細は [Datetime フォーマットオプション](./datetime#format-options) を参照してください。
 
-import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.md';
+import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.mdx';
 
 <FormatOptions />
 

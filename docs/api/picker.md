@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ピッカーは、ユーザーが選択できるオプションを持つ1つまたは複数の列を表示します。
 
-import Basic from '@site/static/usage/v9/picker/basic/index.md';
+import Basic from '@site/static/usage/v9/picker/basic/index.mdx';
 
 <Basic />
 
@@ -27,7 +27,7 @@ import Basic from '@site/static/usage/v9/picker/basic/index.md';
 
 `prefix` スロットと `suffix` スロットを使用して、ピッカーに追加コンテンツを追加します。
 
-import PrefixSuffix from '@site/static/usage/v9/picker/prefix-suffix/index.md';
+import PrefixSuffix from '@site/static/usage/v9/picker/prefix-suffix/index.mdx';
 
 <PrefixSuffix />
 
@@ -37,7 +37,7 @@ import PrefixSuffix from '@site/static/usage/v9/picker/prefix-suffix/index.md';
 
 ピッカーのハイライトとフェードは `ion-picker` の CSS 変数を使ってカスタマイズできる。開発者は、`ion-picker-column-options` を直接ターゲットにして、ホストレベルのスタイリングを使用することで、個々の外観をカスタマイズすることができます。
 
-import CSSProps from '@site/static/usage/v9/picker/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/picker/theming/css-properties/index.mdx';
 
 <CSSProps />
 
@@ -45,7 +45,7 @@ import CSSProps from '@site/static/usage/v9/picker/theming/css-properties/index.
 
 ピッカーは`ion-modal`のようなオーバーレイの中に表示することができ、確認ボタンやキャンセルボタンを使ってピッカー体験を作り出すことができる。
 
-import ModalExample from '@site/static/usage/v9/picker/modal/index.md';
+import ModalExample from '@site/static/usage/v9/picker/modal/index.mdx';
 
 <ModalExample />
 

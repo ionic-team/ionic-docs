@@ -25,7 +25,7 @@ ripple effectコンポーネントは、[Material Design ink ripple interaction 
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/ripple-effect/basic/index.md';
+import Basic from '@site/static/usage/v9/ripple-effect/basic/index.mdx';
 
 <Basic />
 
@@ -34,7 +34,7 @@ import Basic from '@site/static/usage/v9/ripple-effect/basic/index.md';
 
 リップル効果には2つのタイプがある： `"bounded"` と `"unbounded"` です。デフォルトのタイプである `"bounded"` は、クリック位置から外側に波及効果を広げます。常に要素の中心から始まり、円形に広がる波及効果を追加するには、タイプを `"unbounded"` に設定します。
 
-import Type from '@site/static/usage/v9/ripple-effect/type/index.md';
+import Type from '@site/static/usage/v9/ripple-effect/type/index.mdx';
 
 <Type />
 
@@ -43,7 +43,7 @@ import Type from '@site/static/usage/v9/ripple-effect/type/index.md';
 
 リップルはCSSで別の色にカスタマイズできます。デフォルトでは、波紋の色はテキストの色を継承するように設定されています。これはCSSの `color` を親または波紋エフェクト自体に設定することで変更できます。
 
-import Customizing from '@site/static/usage/v9/ripple-effect/customizing/index.md';
+import Customizing from '@site/static/usage/v9/ripple-effect/customizing/index.mdx';
 
 <Customizing />
 

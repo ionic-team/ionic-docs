@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 `ion-toast`は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、トーストを表示するために配線する必要があるハンドラの数を減らすことができます。
 
-import InlineToastTriggerExample from '@site/static/usage/v9/toast/inline/basic/index.md';
+import InlineToastTriggerExample from '@site/static/usage/v9/toast/inline/basic/index.mdx';
 
 <InlineToastTriggerExample />
 
@@ -36,13 +36,13 @@ import InlineToastTriggerExample from '@site/static/usage/v9/toast/inline/basic/
 
 `isOpen` は一方通行のデータバインディングを使用しているため、トーストが破棄されたときに自動的に `false` に設定されることはありません。開発者は `ionToastDidDismiss` または `didDismiss` イベントをリスニングして `isOpen` を `false` に設定する必要があります。この理由は、`ion-toast` の内部がアプリケーションの状態と密接に結合するのを防ぐためである。一方通行のデータバインディングでは、トーストはリアクティブ変数が提供するブーリアン値だけを気にすればよい。一方通行のデータバインディングでは、トーストはブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
 
-import InlineToastIsOpenExample from '@site/static/usage/v9/toast/inline/is-open/index.md';
+import InlineToastIsOpenExample from '@site/static/usage/v9/toast/inline/is-open/index.mdx';
 
 <InlineToastIsOpenExample />
 
 ## Controller Toasts
 
-import ControllerExample from '@site/static/usage/v9/toast/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v9/toast/presenting/controller/index.mdx';
 
 <ControllerExample />
 
@@ -56,7 +56,7 @@ import ControllerExample from '@site/static/usage/v9/toast/presenting/controller
 
 次の例では、`buttons` プロパティを使用して、クリックすると自動的にトーストを解散させるボタンを追加する方法と、解散イベントの `role` を収集する方法を示しています。
 
-import ButtonsPlayground from '@site/static/usage/v9/toast/buttons/index.md';
+import ButtonsPlayground from '@site/static/usage/v9/toast/buttons/index.mdx';
 
 <ButtonsPlayground />
 
@@ -68,7 +68,7 @@ import ButtonsPlayground from '@site/static/usage/v9/toast/buttons/index.md';
 
 トーストがヘッダー、フッター、[FAB](./fab.md)のようなナビゲーション要素と一緒に表示される場合、デフォルトではトーストはこれらの要素と重なるかもしれません。これは `positionAnchor` プロパティを使って修正することができます。`position="top"`を使用するとトーストは選択した要素に対して相対的な位置になり、`position="bottom"`を使用するとその下に、`position="bottom"`を使用するとその上に表示されます。`position="middle"`を使用する場合、`positionAnchor`プロパティは無視されます。
 
-import PositionAnchor from '@site/static/usage/v9/toast/position-anchor/index.md';
+import PositionAnchor from '@site/static/usage/v9/toast/position-anchor/index.mdx';
 
 <PositionAnchor />
 
@@ -76,7 +76,7 @@ import PositionAnchor from '@site/static/usage/v9/toast/position-anchor/index.md
 
 `swipeGesture`プロパティを使用することで、トーストをスワイプして消すことができます。この機能は位置を認識します。つまり、ユーザがスワイプする方向は `position` プロパティの値に基づいて変化します。さらに、ユーザーがスワイプする距離は `positionAnchor` プロパティによって影響を受ける可能性があります。
 
-import SwipeGesture from '@site/static/usage/v9/toast/swipe-gesture/index.md';
+import SwipeGesture from '@site/static/usage/v9/toast/swipe-gesture/index.mdx';
 
 <SwipeGesture />
 
@@ -84,7 +84,7 @@ import SwipeGesture from '@site/static/usage/v9/toast/swipe-gesture/index.md';
 
 トースト内のボタンコンテナは、`layout`プロパティを使用して、メッセージと同じ行に表示するか、別々の行に積み重ねて表示することができます。スタックレイアウトは、長いテキスト値を持つボタンで使用する必要があります。さらに、スタックトーストレイアウトのボタンは `side` の値として `start` または `end` のどちらかを使用できますが、両方を使用することはできません。
 
-import StackedPlayground from '@site/static/usage/v9/toast/layout/index.md';
+import StackedPlayground from '@site/static/usage/v9/toast/layout/index.mdx';
 
 <StackedPlayground />
 
@@ -92,13 +92,13 @@ import StackedPlayground from '@site/static/usage/v9/toast/layout/index.md';
 
 トースト内のコンテンツの横にアイコンを追加することができます。一般的に、トーストのアイコンはスタイルやコンテキストを追加するために使用されるべきで、ユーザーの注意を引いたり、トーストの優先順位を上げたりするために使用すべきではありません。より優先順位の高いメッセージをユーザーに伝えたい場合や、応答を保証したい場合は、代わりに [Alert](alert.md) を使用することをお勧めします。
 
-import IconPlayground from '@site/static/usage/v9/toast/icon/index.md';
+import IconPlayground from '@site/static/usage/v9/toast/icon/index.mdx';
 
 <IconPlayground />
 
 ## テーマ
 
-import ThemingPlayground from '@site/static/usage/v9/toast/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v9/toast/theming/index.mdx';
 
 <ThemingPlayground />
 

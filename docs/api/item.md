@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アイテムはテキストを左揃えにし、テキストがアイテムより広い場合は折り返されます。この動作は、Ionic Frameworkが提供するCSSユーティリティを使用して変更することができます。以下の例では`.ion-text-nowrap`を使用しています。アイテム内のテキストを変換するために追加できる他のクラスについては、[CSSユーティリティのドキュメント](/docs/layout/css-utilities)を参照してください。
 
-import Basic from '@site/static/usage/v9/item/basic/index.md';
+import Basic from '@site/static/usage/v9/item/basic/index.mdx';
 
 <Basic />
 
@@ -54,7 +54,7 @@ import Basic from '@site/static/usage/v9/item/basic/index.md';
 
 下の例では、ビジュアルをサポートする2つのリストを作成しています。最初のリストはアイコンを使い、2番目のリストはアバターを使います。ビジュアルは装飾的なものなので、すべて `aria-hidden="true"` を指定しています。さらに、これらは `start` スロットで一貫して表示されます。
 
-import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporting-visuals/index.md';
+import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporting-visuals/index.mdx';
 
 <SupportingVisuals />
 
@@ -76,7 +76,7 @@ import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporti
 
 そのリストの下には、 [Note](./note) の下に長いテキストを含むtextareaを含む別のリストがあります。textareaは、長いテキストが他のフィールドではなく、textareaに関連付けられていることを明らかにするために、それ自身のリストに配置されました。
 
-import Text from '@site/static/usage/v9/item/content-types/text/index.md';
+import Text from '@site/static/usage/v9/item/content-types/text/index.mdx';
 
 <Text />
 
@@ -104,7 +104,7 @@ import Text from '@site/static/usage/v9/item/content-types/text/index.md';
 
 つ目のリストは、iOSのメールアプリを真似て受信トレイを表示しています。このリストでは、"開始"スロットに "未読メッセージ"インジケータ、"終了"スロットにタイムスタンプとカスタム詳細アイコンを含むカスタムメタデータを使用しています。"未読メッセージ"インジケータは、未読メッセージにユーザーの注意を引くために青くハイライトされ、タイムスタンプはより控えめです。
 
-import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md';
+import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.mdx';
 
 <Metadata />
 
@@ -124,7 +124,7 @@ import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md
 
 下の例では、連絡先のリストを作成しています。各項目は、その項目の完全な連絡先ページに移動するためのスタブボタンです。各項目には、ユーザーが項目をスワイプすることで表示できる追加アクションがあります。
 
-import Actions from '@site/static/usage/v9/item/content-types/actions/index.md';
+import Actions from '@site/static/usage/v9/item/content-types/actions/index.mdx';
 
 <Actions />
 
@@ -158,7 +158,7 @@ import Actions from '@site/static/usage/v9/item/content-types/actions/index.md';
 
 以下の例では、ToDoタスクのリストを作成しています。それぞれの項目にはチェックボックスと入力があります。チェックボックスはユーザーがタスクを完了としてマークできるようにし、入力はユーザーがタスクの名前を変更できるようにします。
 
-import Controls from '@site/static/usage/v9/item/content-types/controls/index.md';
+import Controls from '@site/static/usage/v9/item/content-types/controls/index.mdx';
 
 <Controls />
 
@@ -167,7 +167,7 @@ import Controls from '@site/static/usage/v9/item/content-types/controls/index.md
 
 `href`、`button`、`routerLink` のいずれかのプロパティが設定されている場合、item は「clickable（クリック可能）」と見なされます。clickable な item には、操作可能であることを示す視覚的な違いがいくつかあります。例えば、`md` mode では操作時に ripple エフェクトが適用され、`ios` mode では操作時にハイライトされ、デフォルトで [detail arrow](#detail-arrows) が表示されます。
 
-import Clickable from '@site/static/usage/v9/item/clickable/index.md';
+import Clickable from '@site/static/usage/v9/item/clickable/index.mdx';
 
 <Clickable />
 
@@ -278,7 +278,7 @@ Vue では、`ion-item` に `router-link` 属性を使用します。遷移を�
 
 デフォルトでは、[clickableなitems](/#clickable-items) は、`ios` modeで右矢印アイコンを表示します。clickableな要素の右矢印アイコンを非表示にするには、 `detail` プロパティを `false` に設定します。自動的に表示されない項目に右矢印アイコンを表示するには、`detail`プロパティを `true` に設定します。
 
-import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.md';
+import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.mdx';
 
 <DetailArrows />
 
@@ -286,7 +286,7 @@ import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.md';
 
 アイテムはデフォルトで下部のボーダーを挿入して表示します。ボーダーは左側にパディングを持ち、 `"start"` スロットにスロットされたコンテンツの下に表示されることはありません。 `lines` プロパティを `"full"` または `"none"` に変更すると、それぞれ全幅のボーダーが表示され、ボーダーを表示しないようになります。
 
-import Lines from '@site/static/usage/v9/item/lines/index.md';
+import Lines from '@site/static/usage/v9/item/lines/index.mdx';
 
 <Lines />
 
@@ -294,13 +294,13 @@ import Lines from '@site/static/usage/v9/item/lines/index.md';
 
 Buttonsは、アイテムの外側にあるときよりも、アイテムの内側にあるときの方が小さくスタイルされます。ボタンのサイズをアイテムの外側のボタンと同じにするには、`size`属性に`"default"`を設定します。
 
-import Buttons from '@site/static/usage/v9/item/buttons/index.md';
+import Buttons from '@site/static/usage/v9/item/buttons/index.mdx';
 
 <Buttons />
 
 ## Item Inputs
 
-import Inputs from '@site/static/usage/v9/item/inputs/index.md';
+import Inputs from '@site/static/usage/v9/item/inputs/index.mdx';
 
 <Inputs />
 
@@ -308,19 +308,19 @@ import Inputs from '@site/static/usage/v9/item/inputs/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/item/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/item/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v9/item/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/item/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 
 ## CSSカスタムプロパティ {/* #css-custom-properties */}
 
-import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.mdx';
 
 <CSSProps />
 

@@ -21,13 +21,13 @@ Chipは連絡先などを複数の小さなエンティティで表示します�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/chip/basic/index.md';
+import Basic from '@site/static/usage/v9/chip/basic/index.mdx';
 
 <Basic />
 
 ## Slotting Components and Icons
 
-import SlotExample from '@site/static/usage/v9/chip/slots/index.md';
+import SlotExample from '@site/static/usage/v9/chip/slots/index.mdx';
 
 <SlotExample />
 
@@ -35,13 +35,13 @@ import SlotExample from '@site/static/usage/v9/chip/slots/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/chip/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/chip/theming/colors/index.mdx';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.mdx';
 
 <CSSProps />
 

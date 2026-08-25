@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/item-divider/basic/index.md';
+import Basic from '@site/static/usage/v9/item-divider/basic/index.mdx';
 
 <Basic />
 
@@ -32,14 +32,14 @@ import Basic from '@site/static/usage/v9/item-divider/basic/index.md';
 
 ### 配色
 
-import Colors from '@site/static/usage/v9/item-divider/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/item-divider/theming/colors/index.mdx';
 
 <Colors />
 
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/item-divider/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/item-divider/theming/css-properties/index.mdx';
 
 <CSSProps />
 

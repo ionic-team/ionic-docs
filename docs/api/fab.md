@@ -21,7 +21,7 @@ Fabは、1つ以上の[fabボタン](./fab-button)を含むコンテナ要素で
 
 ## 基本的な使い方
 
-import BasicUsage from '@site/static/usage/v9/fab/basic/index.md';
+import BasicUsage from '@site/static/usage/v9/fab/basic/index.mdx';
 
 <BasicUsage />
 
@@ -29,7 +29,7 @@ import BasicUsage from '@site/static/usage/v9/fab/basic/index.md';
 
 [fabリスト](./fab-list)コンポーネントの`side`プロパティは、メインfabボタンと相対的に表示される場所を制御します。一つのfabは、`side`の値が全て異なる限り、複数のfabリストを持つことができます。
 
-import ListSide from '@site/static/usage/v9/fab/list-side/index.md';
+import ListSide from '@site/static/usage/v9/fab/list-side/index.mdx';
 
 <ListSide />
 
@@ -37,7 +37,7 @@ import ListSide from '@site/static/usage/v9/fab/list-side/index.md';
 
 fabを固定位置に配置するためには、外側の [content](./content) コンポーネントの `fixed` スロットに割り当てる必要があります。vertical`とhorizontal`のプロップを使用して、ビューポートでのfabの配置を制御します。edge`プロップは、アプリのヘッダーやフッターにfabボタンが重なるようにします。
 
-import Positioning from '@site/static/usage/v9/fab/positioning/index.md';
+import Positioning from '@site/static/usage/v9/fab/positioning/index.mdx';
 
 <Positioning />
 
@@ -63,7 +63,7 @@ ion-fab {
 
 `ion-header` (`vertical` が `"top"` に設定されたファブの場合) または `ion-footer` (`vertical` が `"bottom"` に設定されたファブの場合) がある場合、ファブはヘッダまたはフッタからの相対位置に配置されるため、CSS の調整は必要ありません。
 
-import SafeArea from '@site/static/usage/v9/fab/safe-area/index.md';
+import SafeArea from '@site/static/usage/v9/fab/safe-area/index.mdx';
 
 <SafeArea />
 
@@ -73,7 +73,7 @@ import SafeArea from '@site/static/usage/v9/fab/safe-area/index.md';
 
 [Content](./content)の `fixedSlotPlacement` プロパティを `before` に設定することで、FABはDOM内のメインコンテンツの前に配置されます。これにより、他のインタラクティブ要素がフォーカスを受ける前にFABがキーボードフォーカスを受けるようになり、ユーザがFABにアクセスしやすくなります。
 
-import BeforeContent from '@site/static/usage/v9/fab/before-content/index.md';
+import BeforeContent from '@site/static/usage/v9/fab/before-content/index.mdx';
 
 <BeforeContent />
 
@@ -81,7 +81,7 @@ import BeforeContent from '@site/static/usage/v9/fab/before-content/index.md';
 
 メインファブボタンの `size` プロパティを `"small"` に設定すると、ミニサイズで描画されます。なお、このプロパティは内側のファブボタンで使用した場合は効果がありません。
 
-import ButtonSizing from '@site/static/usage/v9/fab/button-sizing/index.md';
+import ButtonSizing from '@site/static/usage/v9/fab/button-sizing/index.mdx';
 
 <ButtonSizing />
 
@@ -89,19 +89,19 @@ import ButtonSizing from '@site/static/usage/v9/fab/button-sizing/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/fab/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/fab/theming/colors/index.mdx';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSCustomProperties from '@site/static/usage/v9/fab/theming/css-custom-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v9/fab/theming/css-custom-properties/index.mdx';
 
 <CSSCustomProperties />
 
 ### CSS Shadow Parts
 
-import CSSShadowParts from '@site/static/usage/v9/fab/theming/css-shadow-parts/index.md';
+import CSSShadowParts from '@site/static/usage/v9/fab/theming/css-shadow-parts/index.mdx';
 
 <CSSShadowParts />
 
