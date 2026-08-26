@@ -162,7 +162,7 @@ A shim is a piece of code that normalizes an APIs across browsers. A shim can ha
 
 ### Transpiler {/* #transpiler */}
 
-Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in Ionic Framework is converting [ES2015/ES6](#es2015-es6)( [TypeScript](#typescript)) to [ES5](#es5) (traditional JavaScript).
+Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in Ionic Framework is converting [ES2015/ES6](#es2015-es6) ([TypeScript](#typescript)) to [ES5](#es5) (traditional JavaScript).
 
 ### TypeScript {/* #typescript */}
 
