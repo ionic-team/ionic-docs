@@ -58,7 +58,7 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
 
 ## Overview
 
-Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we [created a video](https://youtu.be/p3AN3igqiRc) to walk you through the basics.
 
 ### One codebase, running everywhere
 
@@ -97,11 +97,11 @@ Ionic is built with simplicity in mind, so that creating apps is enjoyable, easy
 
 ## Framework Compatibility
 
-While past releases of Ionic were tightly coupled to Angular, version 4.x of the framework was re-engineered to work as a standalone <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Component</a> library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
+While past releases of Ionic were tightly coupled to Angular, version 4.x of the framework was re-engineered to work as a standalone [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) library, with integrations for the latest JavaScript frameworks, like Angular. Ionic can be used in most frontend frameworks with success, including React and Vue, though some frameworks need a shim for full Web Component support.
 
 ### JavaScript
 
-One of the main goals with moving Ionic to <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components</a> was to remove any hard requirement on a single framework to host the components. This made it possible for the core components to work standalone in a web page with just a script tag. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
+One of the main goals with moving Ionic to [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) was to remove any hard requirement on a single framework to host the components. This made it possible for the core components to work standalone in a web page with just a script tag. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
 
 ### Angular
 
@@ -125,11 +125,11 @@ The official [Ionic CLI](cli.md), or Command Line Interface, is a tool that quic
 
 ## Appflow
 
-To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called <a href="https://ionic.io/appflow" target="_blank">Appflow</a>, which is <strong>separate from the open source Framework.</strong>
+To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called [Appflow](https://ionic.io/appflow), which is <strong>separate from the open source Framework.</strong>
 
 Appflow helps developers and teams compile native app builds and deploy live code updates to Ionic apps from a centralized dashboard. Optional paid upgrades are available for more advanced capabilities like publishing directly to app stores, workflow automation, single sign-on (SSO) and access to connected services and integrations.
 
-Appflow requires an <a href="https://dashboard.ionicframework.com/signup" target="_blank">Ionic Account</a> and comes with a free “Hobby” plan for those interested in playing around with some of its features.
+Appflow requires an [Ionic Account](https://dashboard.ionicframework.com/signup) and comes with a free “Hobby” plan for those interested in playing around with some of its features.
 
 ## Ecosystem
 
@@ -142,13 +142,13 @@ There are millions of Ionic developers in over 200 countries worldwide. Here are
 {/* Keep the prettier-ignore below. Without it, Prettier reformats these list items and the page stops building. These links stay as HTML because target="_blank" opens them in a new tab, which a markdown link cannot do. */}
 
 {/* prettier-ignore */}
-- <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-- <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
+- [Forum:](https://forum.ionicframework.com/) A great place for asking questions and sharing ideas.
+- [Twitter:](https://twitter.com/ionicframework) Where we post updates and share content from the Ionic community.
+- [GitHub:](https://github.com/ionic-team/ionic) For reporting bugs or requesting new features, create an issue here. PRs welcome!
+- [Content authoring:](https://ionicframework.com/contributors) Write a technical blog or share your story with the Ionic community.
 
 ## License
 
-The Ionic UI Toolkit is a free and open source project, released under the permissible <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
+The Ionic UI Toolkit is a free and open source project, released under the permissible [MIT license](https://opensource.org/licenses/MIT). This means it can be used in personal or commercial projects for free. MIT is the same license used by such popular projects as jQuery and Ruby on Rails.
 
-This documentation content (found in the <a href="https://github.com/ionic-team/ionic-docs" target="_blank">ionic-docs</a> repo) is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2 license</a>.
+This documentation content (found in the [ionic-docs](https://github.com/ionic-team/ionic-docs) repo) is licensed under the [Apache 2 license](https://www.apache.org/licenses/LICENSE-2.0).

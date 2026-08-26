@@ -176,7 +176,7 @@ The `.ion-palette-dark` class **must** be added to the `html` element in order t
 
 ## Adjusting System UI Components
 
-When developing a dark palette, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. Refer to the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+When developing a dark palette, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. Refer to the [browser compatibility for color-scheme](https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme) for details on cross browser support.
 
 While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
 

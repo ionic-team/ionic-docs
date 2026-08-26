@@ -10,9 +10,9 @@ title: 'ion-icon'
   />
 </head>
 
-Icon is a universal container for displaying icons. While <a href="https://ionic.io/ionicons">Ionicons</a> is included by default with all Ionic Framework applications, the component can display Ionicons, custom SVGs, font-based icon libraries, and other icon systems. It provides consistent styling and sizing regardless of where an icon comes from.
+Icon is a universal container for displaying icons. While [Ionicons](https://ionic.io/ionicons) is included by default with all Ionic Framework applications, the component can display Ionicons, custom SVGs, font-based icon libraries, and other icon systems. It provides consistent styling and sizing regardless of where an icon comes from.
 
-For Ionicons documentation, refer to <a href="https://ionic.io/ionicons">ionic.io/ionicons</a>.
+For Ionicons documentation, refer to [ionic.io/ionicons](https://ionic.io/ionicons).
 
 ## Basic Usage
 
