@@ -20,6 +20,7 @@
     "versioned_docs/**/native",
     "versioned_docs/version-v5",
     "versioned_docs/version-v6",
+    "versioned_docs/version-v7",
     "node_modules"
   ],
   "flagWords": [

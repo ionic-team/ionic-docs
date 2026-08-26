@@ -214,25 +214,92 @@ The Ionic documentation's `main` branch is deployed automatically and separately
 
 ### Archiving a Version
 
-Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. Two files control this:
+Archived versions are served from a frozen Vercel deployment instead of being rebuilt on every `main` deploy, which keeps build times and memory usage low. That deployment is a full snapshot of the site, so it serves every version that was in the build. Two files control this:
 
-- [`versions.json`](./versions.json): lists the versions Docusaurus rebuilds on every deploy.
+- [`versions.json`](./versions.json): lists the older versions Docusaurus rebuilds on every deploy. It does not include the current version, which is built from `docs/` and takes its label from `versions.current` in `docusaurus.config.js`.
 - [`versionsArchived.json`](./versionsArchived.json): maps each archived version to the frozen deployment URL the version picker links to.
 
-The archived URL has to point at a build that _included_ the version, so you build it first, then move it to `versionsArchived.json`:
+The docs keep the current version plus one older version rebuildable, so each major release archives one version and involves two different version numbers. The steps below refer to them as:
 
-1. **Build the version.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
-2. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
-3. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
-4. **Archive it.** Remove the version from `versions.json`, then add it to `versionsArchived.json` with `/docs/<version>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
+- `<archiving>`: the version being frozen and removed from `versions.json`.
+- `<last-current>`: the version that just stopped being current and moved into `versions.json`. It is not being archived, but step 1 has to account for it.
+
+For example, when `v9` becomes current: `v8` is `<last-current>` and `v7` is `<archiving>`.
+
+The archived URL has to point at a build that _included_ `<archiving>`, so you build it first, then move it to `versionsArchived.json`:
+
+1. **Check the `vercel.json` redirects.** The frozen deployment bakes in whatever `vercel.json` looked like at build time, and it serves every version in that build. Any `:version(...)` group missing a version therefore stays broken on that host for good. Make sure the groups already list `<last-current>`, which is the one most likely to be missing since it only just moved into `versions.json`. The `angular`, `react`, `vue` and `javascript` landing pages each need a group, as no version ships an index page for them:
 
    ```json
    {
-     "v6": "https://ionic-docs-<hash>-ionic1.vercel.app/docs/v6"
+     "source": "/docs/:version(v6|v7|<last-current>)/angular",
+     "destination": "/docs/:version/angular/overview"
+   },
+   {
+     "source": "/docs/:version(<last-current>)/javascript",
+     "destination": "/docs/:version/javascript/overview"
    }
    ```
 
-5. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building that version.
+   The groups accumulate, so existing entries stay in place whether or not that version is archived and you are only ever adding to them. The `javascript` group only covers versions that have a `javascript/` section.
+
+Everything from here on refers to `<archiving>`:
+
+2. **Build `<archiving>`.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
+3. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
+4. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
+5. **Archive it.** Remove `<archiving>` from `versions.json`, then add it to `versionsArchived.json` with `/docs/<archiving>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
+
+   _`versions.json`_
+
+   ```diff
+    [
+   -  "v8",
+   -  "<archiving>"
+   +  "v8"
+    ]
+   ```
+
+   _`versionsArchived.json`_
+
+   ```json
+   {
+     "<archiving>": "https://ionic-docs-<hash>-ionic1.vercel.app/docs/<archiving>",
+     "v6": "https://ionic-docs-lq0if04rc-ionic1.vercel.app/docs/v6",
+     "v5": "https://ionic-docs-5utg8ms4c-ionic1.vercel.app/docs/v5"
+   }
+   ```
+
+6. **Update `.prettierignore`.** Add the archived version folders to the archived versions group to keep Prettier from formatting generated files:
+
+   ```
+   static/usage/<archiving>
+   versioned_docs/version-<archiving>
+   ```
+
+7. **Update `cspell.json`.** Add the archived version to the `ignorePaths` array so the spell checker skips generated files:
+
+   ```diff
+   "ignorePaths": [
+     ...
+     "versioned_docs/version-v5",
+     "versioned_docs/version-v6",
+   + "versioned_docs/version-<archiving>"
+   ]
+   ```
+
+8. **Update `renovate.json`.** Add the archived version's StackBlitz examples to `ignorePaths` so Renovate stops opening dependency PRs against frozen examples:
+
+   ```diff
+   "ignorePaths": [
+     "static/code/stackblitz/v6/**",
+   + "static/code/stackblitz/<archiving>/**"
+   ]
+   ```
+
+   Then remove that version's `@ionic/` `allowedVersions` rule from `packageRules`, since it no longer has anything to match.
+
+9. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building `<archiving>`.
 
 Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
 
