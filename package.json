@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "prebuild": "npm run generate-markdown && scripts/i18n.sh && if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
@@ -23,7 +23,7 @@
     "start": "docusaurus start",
     "test": "vitest run",
     "swizzle": "docusaurus swizzle",
-    "spellcheck": "cspell --no-progress \"**/*.{md,mdx}\""
+    "spellcheck": "cspell --no-progress --gitignore \"**/*.{md,mdx}\""
   },
   "browserslist": {
     "production": [
@@ -40,40 +40,37 @@
   "dependencies": {
     "@docusaurus/core": "^3.10.2",
     "@docusaurus/faster": "^3.10.2",
-    "@docusaurus/mdx-loader": "^3.10.2",
-    "@docusaurus/plugin-client-redirects": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
     "@floating-ui/react": "^0.27.20",
-    "@ionic-internal/ionic-ds": "^7.0.0",
-    "@mdx-js/react": "^3.0.0",
-    "@prismicio/client": "^7.21.8",
+    "@ionic-internal/ionic-ds": "^8.0.0",
+    "@mdx-js/react": "^3.1.1",
+    "@prismicio/client": "^7.22.0",
     "@prismicio/react": "^3.4.1",
-    "@stackblitz/sdk": "^1.6.0",
-    "clsx": "^1.1.1",
+    "@stackblitz/sdk": "^1.11.1",
+    "clsx": "^2.1.1",
     "crowdin": "^3.5.0",
-    "docusaurus-plugin-copy-page-button": "^0.8.2",
+    "docusaurus-plugin-copy-page-button": "^0.8.4",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.6",
-    "fs-extra": "^9.1.0",
-    "modern-normalize": "^1.1.0",
-    "prism-react-renderer": "^2.1.0",
+    "fs-extra": "^11.4.0",
+    "modern-normalize": "^3.0.1",
+    "prism-react-renderer": "^2.4.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
-    "sass": "^1.44.0",
-    "semver": "^7.3.5"
+    "sass": "^1.102.0",
+    "semver": "^7.8.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/tsconfig": "^3.10.2",
     "@ionic/prettier-config": "^3.0.0",
     "@types/react": "^19.2.18",
-    "cspell": "^6.31.3",
-    "html-loader": "^3.1.0",
+    "cspell": "^10.0.1",
     "hygen": "^6.2.11",
     "prettier": "^2.8.8",
-    "typescript": "^5.2.2",
+    "typescript": "^5.9.3",
     "vitest": "^4.1.7"
   },
   "prettier": "@ionic/prettier-config"
