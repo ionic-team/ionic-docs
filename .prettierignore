@@ -17,10 +17,6 @@ versioned_docs/version-v*/api
 docs/native
 versioned_docs/version-v*/native
 docs/cli/commands
-# The v7 glossary uses raw <a> elements for its external links. Prettier's mdx
-# parser moves that link text onto its own line, which MDX then wraps in a
-# paragraph, rendering invalid HTML such as <a><p>Android SDK</p></a>.
-versioned_docs/version-v7/reference/glossary.md
 
 # Archived versions
 versioned_docs/version-v5
