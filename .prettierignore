@@ -27,6 +27,9 @@ versioned_docs/version-v*/reference/glossary.md
 # Archived versions
 versioned_docs/version-v5
 versioned_docs/version-v6
+versioned_docs/version-v7
+static/usage/v6
+static/usage/v7
 
 static/code/stackblitz
 
