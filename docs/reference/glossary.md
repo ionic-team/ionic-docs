@@ -66,7 +66,7 @@ You may be familiar with variables from Sass. [CSS Variables](https://developers
 
 ### Decorators {/* #decorators */}
 
-Decorators are expressions that return a function. They allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a<strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a <strong> parameter </strong>, you are wrapping the argument that gets passed in for that parameter. The decorator will add functionality when an argument is passed to the method, and then return the original argument.
+Decorators are expressions that return a function. They allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that parameter. The decorator will add functionality when an argument is passed to the method, and then return the original argument.
 
 ### ES5 {/* #es5 */}
 
