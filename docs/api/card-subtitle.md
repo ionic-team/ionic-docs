@@ -1,6 +1,7 @@
 ---
-title: "ion-card-subtitle"
+title: 'ion-card-subtitle'
 ---
+
 import Props from '@ionic-internal/component-api/v9/card-subtitle/props.mdx';
 import Events from '@ionic-internal/component-api/v9/card-subtitle/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/card-subtitle/methods.mdx';
@@ -12,26 +13,30 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Card subtitle is a child component of card that should be placed inside of a [card header](./card-header).
 
 Refer to the [Card](./card) documentation for more information.
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

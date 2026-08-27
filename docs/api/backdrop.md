@@ -1,6 +1,7 @@
 ---
-title: "ion-backdrop"
+title: 'ion-backdrop'
 ---
+
 import Props from '@ionic-internal/component-api/v9/backdrop/props.mdx';
 import Events from '@ionic-internal/component-api/v9/backdrop/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/backdrop/methods.mdx';
@@ -24,7 +25,7 @@ import Basic from '@site/static/usage/v9/backdrop/basic/index.md';
 
 ## Styling
 
-The backdrop can be customized by assigning CSS properties directly to the backdrop element. Common properties include `background-color`, `background` and `opacity`. 
+The backdrop can be customized by assigning CSS properties directly to the backdrop element. Common properties include `background-color`, `background` and `opacity`.
 
 Content can be displayed above the backdrop by setting a `z-index` on the content, higher than the backdrop (defaults to `2`).
 
@@ -33,19 +34,25 @@ import Styling from '@site/static/usage/v9/backdrop/styling/index.md';
 <Styling />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

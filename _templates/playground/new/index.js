@@ -55,7 +55,7 @@ module.exports = {
               name: 'version',
               message: 'Select the Ionic Framework version for the playground',
               initial: '9',
-              choices: ['6', '7', '8', '9'],
+              choices: ['8', '9'],
             },
             {
               type: 'toggle',

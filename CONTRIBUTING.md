@@ -299,7 +299,14 @@ Everything from here on refers to `<archiving>`:
 
    Then remove that version's `@ionic/` `allowedVersions` rule from `packageRules`, since it no longer has anything to match.
 
-9. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building `<archiving>`.
+9. **Update the playground generator.** Remove `<archiving>` from the version choices in [`_templates/playground/new/index.js`](./_templates/playground/new/index.js) so `npm run playground:new` stops offering a version that is no longer built. The choices are bare numbers, without the `v`:
+
+   ```diff
+   -              choices: ['<archiving>', '8', '9'],
+   +              choices: ['8', '9'],
+   ```
+
+10. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building `<archiving>`.
 
 Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
 
