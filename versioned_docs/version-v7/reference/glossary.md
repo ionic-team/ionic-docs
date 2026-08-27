@@ -170,7 +170,7 @@ Transpilation is the process of converting code from one language to another lan
 
 ### Unit Tests {/* #unit-tests */}
 
-Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing frameworks include Jasmine, Mocha, QUnit, and many others.
+Unit Tests and unit testing are a way to test small pieces of code to check if they behave as expected. Unit testing frameworks include Jasmine, Mocha, QUnit, and many others.
 
 ### Webpack {/* #webpack */}
 
