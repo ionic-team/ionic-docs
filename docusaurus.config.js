@@ -162,6 +162,7 @@ module.exports = {
     ],
     colorMode: {
       defaultMode: 'light',
+      respectPrefersColorScheme: true,
     },
     navbar: {
       hideOnScroll: true,
