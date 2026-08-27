@@ -299,7 +299,25 @@ Everything from here on refers to `<archiving>`:
 
    Then remove that version's `@ionic/` `allowedVersions` rule from `packageRules`, since it no longer has anything to match.
 
-9. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building `<archiving>`.
+9. **Update the generation scripts.** Remove `<archiving>` from the write lists in [`scripts/native.mjs`](./scripts/native.mjs) and [`scripts/cli.mjs`](./scripts/cli.mjs), so every build stops regenerating content for a version served from a frozen deployment. The remaining targets are `docs/` (the current version) and the one older version still in `versions.json`.
+
+   _`scripts/native.mjs`_
+
+   ```diff
+    writeFileSync(`docs/native/${fileName}`, apiContent);
+   -  writeFileSync(`versioned_docs/version-<archiving>/native/${fileName}`, apiContent);
+    writeFileSync(`versioned_docs/version-v8/native/${fileName}`, apiContent);
+   ```
+
+   _`scripts/cli.mjs`_
+
+   ```diff
+    writeFileSync(`docs/${path}`, data);
+   -  writeFileSync(`versioned_docs/version-<archiving>/${path}`, data);
+    writeFileSync(`versioned_docs/version-v8/${path}`, data);
+   ```
+
+10. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building `<archiving>`.
 
 Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
 
