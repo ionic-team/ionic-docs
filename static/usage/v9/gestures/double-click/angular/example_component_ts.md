@@ -17,7 +17,7 @@ export class ExampleComponent {
 
   constructor(
     private el: ElementRef,
-    private gestureCtrl: GestureController,
+    private gestureCtrl: GestureController
   ) {}
 
   ngAfterViewInit() {

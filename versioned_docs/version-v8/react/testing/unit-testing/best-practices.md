@@ -41,7 +41,7 @@ test('example', async () => {
   render(
     <IonApp>
       <Example />
-    </IonApp>,
+    </IonApp>
   );
 
   await user.click(screen.getByRole('button', { name: /click me!/i }));
@@ -65,7 +65,7 @@ test('renders the submit button', async () => {
   const { container } = render(
     <IonApp>
       <Example />
-    </IonApp>,
+    </IonApp>
   );
 
   const button = container.querySelector('ion-button')!;

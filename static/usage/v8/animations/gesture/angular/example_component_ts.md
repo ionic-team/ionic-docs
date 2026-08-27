@@ -26,7 +26,7 @@ export class ExampleComponent {
 
   constructor(
     private animationCtrl: AnimationController,
-    private gestureCtrl: GestureController,
+    private gestureCtrl: GestureController
   ) {}
 
   private onMove(event: GestureDetail) {

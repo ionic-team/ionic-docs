@@ -73,7 +73,7 @@ import { MyRouteService } from './my-route.service';
 export class FeatureComponent {
   constructor(
     private modalController: ModalController,
-    private injector: Injector,
+    private injector: Injector
   ) {}
 
   async openModal() {
@@ -118,7 +118,7 @@ import { MyService } from './my.service';
 export class FeatureComponent {
   constructor(
     private modalController: ModalController,
-    private injector: Injector,
+    private injector: Injector
   ) {}
 
   async openModal() {
@@ -156,7 +156,7 @@ import { MyModalComponent } from './my-modal.component';
 export class FeatureComponent {
   constructor(
     private modalController: ModalController,
-    private injector: Injector,
+    private injector: Injector
   ) {}
 
   async openModal() {
@@ -185,7 +185,7 @@ import { MyPopoverComponent } from './my-popover.component';
 export class FeatureComponent {
   constructor(
     private popoverController: PopoverController,
-    private injector: Injector,
+    private injector: Injector
   ) {}
 
   async openPopover(event: Event) {

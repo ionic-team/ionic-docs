@@ -99,7 +99,7 @@ export class Tab2Page {
   // CHANGE: Update constructor
   constructor(
     public photoService: PhotoService,
-    public actionSheetController: ActionSheetController,
+    public actionSheetController: ActionSheetController
   ) {}
 
   // ...existing code...

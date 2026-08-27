@@ -18,7 +18,7 @@ export class ExampleComponent {
   constructor(
     private el: ElementRef,
     private gestureCtrl: GestureController,
-    private cdRef: ChangeDetectorRef,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit() {

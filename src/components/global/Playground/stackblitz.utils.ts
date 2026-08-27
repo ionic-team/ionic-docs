@@ -133,7 +133,7 @@ const injectFrameworkIonicConfig = (
   source: string,
   pattern: RegExp,
   ionicConfig: string,
-  rebuild: (mergedConfig: string) => string,
+  rebuild: (mergedConfig: string) => string
 ) =>
   source.replace(pattern, (...args: unknown[]) => {
     const existing = args[1] as string | undefined;
@@ -162,7 +162,7 @@ const maskHtmlComments = (html: string) => {
     restore: (text: string) =>
       text.replace(
         new RegExp(`${HTML_COMMENT_PLACEHOLDER}(\\d+)__`, 'g'),
-        (_, index: string) => commentPlaceholders[Number(index)],
+        (_, index: string) => commentPlaceholders[Number(index)]
       ),
   };
 };
@@ -185,7 +185,7 @@ const extractHtmlIonicConfig = (code: string, ionicConfig: string) => {
       }
       existingConfig = config;
       return '';
-    },
+    }
   );
 
   cleanedCode = cleanedCode
@@ -216,7 +216,7 @@ ${leadingComment ? `${leadingComment}\n` : ''}    window.Ionic = {
     };
   </script>
 </head>
-`,
+`
   );
 };
 
@@ -266,7 +266,7 @@ const openHtmlEditor = async (code: string, options: EditorOptions) => {
       'html/tsconfig.json',
       'html/vite.config.ts',
     ],
-    options.version,
+    options.version
   );
 
   const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[3]), options?.dependencies);
@@ -308,7 +308,7 @@ const openAngularEditor = async (code: string, options: EditorOptions) => {
       'angular/global.css',
       'angular/variables.css',
     ],
-    options.version,
+    options.version
   );
 
   const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[0]), options?.dependencies);
@@ -347,13 +347,13 @@ const openAngularEditor = async (code: string, options: EditorOptions) => {
           files[main],
           /IonicModule\.forRoot\(\s*(\{[\s\S]*?\})?\s*\)/s,
           ionicConfig,
-          (c) => `IonicModule.forRoot(${c})`,
+          (c) => `IonicModule.forRoot(${c})`
         )
       : injectFrameworkIonicConfig(
           files[main],
           /provideIonicAngular\(\s*(\{[\s\S]*?\})?\s*\)/s,
           ionicConfig,
-          (c) => `provideIonicAngular(${c})`,
+          (c) => `provideIonicAngular(${c})`
         );
 
   openStackBlitzProject(files, options);
@@ -374,7 +374,7 @@ const openReactEditor = async (code: string, options: EditorOptions) => {
       'react/browserslistrc',
       'react/eslintrc.js',
     ],
-    options.version,
+    options.version
   );
 
   const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[4]), options?.dependencies);
@@ -402,7 +402,7 @@ const openReactEditor = async (code: string, options: EditorOptions) => {
     files[appTsx],
     /setupIonicReact\(\s*(\{[\s\S]*?\})?\s*\)/s,
     getFormattedIonicConfig(options),
-    (c) => `setupIonicReact(${c})`,
+    (c) => `setupIonicReact(${c})`
   );
 
   openStackBlitzProject(files, options);
@@ -422,7 +422,7 @@ const openVueEditor = async (code: string, options: EditorOptions) => {
       'vue/tsconfig.json',
       'vue/tsconfig.node.json',
     ],
-    options.version,
+    options.version
   );
 
   const package_json = mergeEditorDependencies(JSON.parse(defaultFiles[0]), options?.dependencies);
@@ -449,7 +449,7 @@ const openVueEditor = async (code: string, options: EditorOptions) => {
     files[mainTs],
     /\.use\(IonicVue(?:,\s*(\{[\s\S]*?\}))?\)/s,
     getFormattedIonicConfig(options),
-    (c) => `.use(IonicVue, ${c})`,
+    (c) => `.use(IonicVue, ${c})`
   );
 
   /**

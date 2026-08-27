@@ -47,7 +47,7 @@ function TabsComponent(props: Props): ReactNode {
       `Docusaurus error: Bad <Tabs> child <${
         // @ts-expect-error: guarding against unexpected cases
         typeof child.type === 'string' ? child.type : child.type.name
-      }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`,
+      }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`
     );
   });
   const values =
@@ -64,7 +64,7 @@ function TabsComponent(props: Props): ReactNode {
     throw new Error(
       `Docusaurus error: Duplicate values "${dup
         .map((a) => a.value)
-        .join(', ')}" found in <Tabs>. Every value needs to be unique.`,
+        .join(', ')}" found in <Tabs>. Every value needs to be unique.`
     );
   }
   // When defaultValueProp is null, don't show a default tab
@@ -76,7 +76,7 @@ function TabsComponent(props: Props): ReactNode {
     throw new Error(
       `Docusaurus error: The <Tabs> has a defaultValue "${defaultValue}" but none of its children has the corresponding value. Available values are: ${values
         .map((a) => a.value)
-        .join(', ')}. If you intend to show no default tab, use defaultValue={null} instead.`,
+        .join(', ')}. If you intend to show no default tab, use defaultValue={null} instead.`
     );
   }
 
@@ -144,7 +144,7 @@ function TabsComponent(props: Props): ReactNode {
             {
               'tabs--block': block,
             },
-            className,
+            className
           )}
           onScroll={() => {
             setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
@@ -235,7 +235,7 @@ function TabsComponent(props: Props): ReactNode {
             cloneElement(tabItem, {
               key: i,
               className: `${tabItem.props.className} ${!isTabSelected(tabItem.props.value) ? 'hidden' : ''}`,
-            }),
+            })
           )}
         </div>
       )}

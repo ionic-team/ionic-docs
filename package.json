@@ -65,7 +65,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/tsconfig": "^3.10.2",
-    "@ionic/prettier-config": "^4.0.0",
+    "@ionic/prettier-config": "^3.1.0",
     "@types/react": "^19.2.18",
     "cspell": "^10.0.1",
     "hygen": "^6.2.11",
