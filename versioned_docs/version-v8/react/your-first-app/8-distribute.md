@@ -66,6 +66,8 @@ Assuming the app is configured correctly to listen to the channel you deployed t
 
 To dive into more details on the steps to deploy a live update, as well as additional information such as disabling deploy for development, check out the [Deploy a Live Update](https://ionic.io/docs/appflow/quickstart/deploy) section inside the Appflow docs.
 
+Appflow is Ionic's official live-update path for this tutorial. Teams that need a community live-update plugin can also use [Capgo](https://github.com/Cap-go/capacitor-updater) (`@capgo/capacitor-updater`).
+
 ## Build a Native Binary
 
 Next up is a native binary for your app build and deploy process. This is done via the [Ionic Package](https://ionic.io/docs/appflow/package/intro) service. First things first, you will need to create a [Package build](https://ionic.io/docs/appflow/package/builds). This can be done by clicking the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right from the `Build > Builds` tab. Then you will select the proper commit for your build and fill in all of the several required fields and any optional fields that you want to specify. After filling in all of the information and the build begins, you can check out it's progress and review the logs if you encounter any errors.
