@@ -25,7 +25,7 @@ Checkboxes allow the selection of multiple options from a set of options. They a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/checkbox/basic/index.md';
+import Basic from '@site/static/usage/v9/checkbox/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v9/checkbox/basic/index.md';
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
-import LabelPlacement from '@site/static/usage/v9/checkbox/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/checkbox/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -45,7 +45,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Alignment from '@site/static/usage/v9/checkbox/alignment/index.md';
+import Alignment from '@site/static/usage/v9/checkbox/alignment/index.mdx';
 
 <Alignment />
 
@@ -53,7 +53,7 @@ import Alignment from '@site/static/usage/v9/checkbox/alignment/index.md';
 
 Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
-import Justify from '@site/static/usage/v9/checkbox/justify/index.md';
+import Justify from '@site/static/usage/v9/checkbox/justify/index.mdx';
 
 <Justify />
 
@@ -63,7 +63,7 @@ import Justify from '@site/static/usage/v9/checkbox/justify/index.md';
 
 ## Indeterminate Checkboxes
 
-import Indeterminate from '@site/static/usage/v9/checkbox/indeterminate/index.md';
+import Indeterminate from '@site/static/usage/v9/checkbox/indeterminate/index.mdx';
 
 <Indeterminate />
 
@@ -71,7 +71,7 @@ import Indeterminate from '@site/static/usage/v9/checkbox/indeterminate/index.md
 
 Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
 
-import LabelLink from '@site/static/usage/v9/checkbox/label-link/index.md';
+import LabelLink from '@site/static/usage/v9/checkbox/label-link/index.mdx';
 
 <LabelLink />
 
@@ -81,7 +81,7 @@ Helper and error text can be used inside of a checkbox with the `helperText` and
 
 In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
-import HelperError from '@site/static/usage/v9/checkbox/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/checkbox/helper-error/index.mdx';
 
 <HelperError />
 
@@ -89,7 +89,7 @@ import HelperError from '@site/static/usage/v9/checkbox/helper-error/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v9/checkbox/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/checkbox/theming/css-properties/index.mdx';
 
 <CSSProps />
 

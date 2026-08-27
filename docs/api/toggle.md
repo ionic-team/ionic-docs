@@ -25,7 +25,7 @@ Toggles are switches that change the state of a single option. They can be switc
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/toggle/basic/index.md';
+import Basic from '@site/static/usage/v9/toggle/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v9/toggle/basic/index.md';
 
 Toggles can enable on/off labels by setting the `enableOnOffLabels` property. This is important for accessibility as it makes it easier to differentiate between a checked and unchecked toggle.
 
-import OnOff from '@site/static/usage/v9/toggle/on-off/index.md';
+import OnOff from '@site/static/usage/v9/toggle/on-off/index.mdx';
 
 <OnOff />
 
@@ -41,7 +41,7 @@ import OnOff from '@site/static/usage/v9/toggle/on-off/index.md';
 
 Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
 
-import List from '@site/static/usage/v9/toggle/list/index.md';
+import List from '@site/static/usage/v9/toggle/list/index.mdx';
 
 <List />
 
@@ -49,7 +49,7 @@ import List from '@site/static/usage/v9/toggle/list/index.md';
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import LabelPlacement from '@site/static/usage/v9/toggle/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/toggle/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -61,7 +61,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked toggles can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Alignment from '@site/static/usage/v9/toggle/alignment/index.md';
+import Alignment from '@site/static/usage/v9/toggle/alignment/index.mdx';
 
 <Alignment />
 
@@ -69,7 +69,7 @@ import Alignment from '@site/static/usage/v9/toggle/alignment/index.md';
 
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
-import Justify from '@site/static/usage/v9/toggle/justify/index.md';
+import Justify from '@site/static/usage/v9/toggle/justify/index.mdx';
 
 <Justify />
 
@@ -79,7 +79,7 @@ Helper and error text can be used inside of a toggle with the `helperText` and `
 
 In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
-import HelperError from '@site/static/usage/v9/toggle/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/toggle/helper-error/index.mdx';
 
 <HelperError />
 
@@ -87,7 +87,7 @@ import HelperError from '@site/static/usage/v9/toggle/helper-error/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/toggle/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/toggle/theming/colors/index.mdx';
 
 <Colors />
 
@@ -95,7 +95,7 @@ import Colors from '@site/static/usage/v9/toggle/theming/colors/index.md';
 
 CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
 
-import CSSProps from '@site/static/usage/v9/toggle/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/toggle/theming/css-properties/index.mdx';
 
 <CSSProps />
 
@@ -103,7 +103,7 @@ import CSSProps from '@site/static/usage/v9/toggle/theming/css-properties/index.
 
 We can further customize toggle by targeting specific shadow parts that are exposed. Any CSS property on these parts can be styled and they can also be combined with CSS custom properties.
 
-import CSSParts from '@site/static/usage/v9/toggle/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/toggle/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 

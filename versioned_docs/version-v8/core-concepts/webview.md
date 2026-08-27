@@ -14,13 +14,13 @@ Web Views power web apps on native devices.
 
 The Web View is automatically provided for apps integrated with [Capacitor](../reference/glossary.md#capacitor).
 
-For [Cordova](../reference/glossary.md#cordova), Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a>. The plugin is provided by default when using the Ionic CLI.
+For [Cordova](../reference/glossary.md#cordova), Ionic maintains a [Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview). The plugin is provided by default when using the Ionic CLI.
 
 ## What is a Web View?
 
 Ionic apps are built using [web technologies](../reference/glossary.md#web-standards) and are rendered using Web Views, which are a full screen and full-powered web browser.
 
-Modern Web Views offer many built-in <a href="https://whatwebcando.today" target="_blank">HTML5 APIs</a> for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
+Modern Web Views offer many built-in [HTML5 APIs](https://whatwebcando.today) for hardware functionality such as cameras, sensors, GPS, speakers, and Bluetooth, but sometimes it may also be necessary to access platform-specific hardware APIs. In Ionic apps, hardware APIs can be accessed through a bridge layer, typically by using native plugins which expose JavaScript APIs.
 
 ![Diagram illustrating the architecture of a Web View in Ionic apps, showing the bridge between native app components and web components.](/img/building/webview-architecture.png 'Web View Architecture Diagram')
 
@@ -46,5 +46,5 @@ For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cord
 
 ### Implementations
 
-- **iOS**: <a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank">WKWebView</a>
-- **Android**: <a href="https://developer.android.com/reference/android/webkit/WebView" target="_blank">WebView for Android</a>
+- **iOS**: [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)
+- **Android**: [WebView for Android](https://developer.android.com/reference/android/webkit/WebView)

@@ -31,7 +31,7 @@ When using Datetime Button with a JavaScript framework such as Angular, React, o
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v9/datetime-button/basic/index.mdx';
 
 <Basic />
 
@@ -43,7 +43,7 @@ The localized text on `ion-datetime-button` is determined by the `locale` proper
 
 You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. Refer to [Datetime Format Options](./datetime#format-options) for more details.
 
-import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.md';
+import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/index.mdx';
 
 <FormatOptions />
 

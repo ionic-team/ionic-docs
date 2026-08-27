@@ -31,7 +31,7 @@ InputPasswordToggle must be used with an [Input](./input) that has its [`type`](
 Using any other `type` will cause a warning to be logged.
 :::
 
-import Basic from '@site/static/usage/v9/input-password-toggle/basic/index.md';
+import Basic from '@site/static/usage/v9/input-password-toggle/basic/index.mdx';
 
 <Basic />
 

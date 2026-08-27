@@ -1,47 +1,57 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
+  "extends": [
+    "config:recommended", 
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "description": "Renovate may only open or update PRs on weekdays, 6-10am ET.",
+  "timezone": "America/New_York",
+  "minimumReleaseAge": "3 days",
+  "schedule": ["* 6-10 * * 1-5"],
+  "semanticCommits": "enabled",
+  "rebaseWhen": "never",
+  "includePaths": [
+    "static/code/stackblitz/**/*/package.json", 
+    ".github/workflows/**"
+  ],
+  "ignorePaths": [
+    "static/code/stackblitz/v6/**", 
+    "static/code/stackblitz/v7/**"
+  ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["@ionic/"],
+      "matchPackageNames": ["@ionic/**"],
       "minimumReleaseAge": "0 days",
-      "groupName": "ionic",
-      "schedule": ["every weekday before 11am"]
+      "groupName": "ionic"
     },
     {
-      "matchPackagePatterns": ["@angular/",  "@angular-devkit/"],
+      "description": "Angular majors land on a fixed cadence, so this group is restricted to the 1st of each month, 6-10am ET.",
+      "matchPackageNames": ["@angular/**", "@angular-devkit/**"],
       "groupName": "angular",
-      "schedule": ["on the first day of the month"]
-    },
-    {
-      "matchPackageNames": ["react-router", "react-router-dom"],
-      "groupName": "react-router",
-      "allowedVersions": "^5.0.0"
+      "schedule": ["* 6-10 1 * *"]
     },
     {
       "matchPackageNames": ["react", "react-dom"],
       "groupName": "react"
     },
     {
+      "matchPackageNames": ["react-router", "react-router-dom"],
+      "groupName": "react-router"
+    },
+    {
       "matchPackageNames": ["vite", "vite-plugin-static-copy"],
       "groupName": "vite-html",
-      "matchFileNames": [
-        "static/code/stackblitz/**/html/package.json"
-      ]
+      "matchFileNames": ["static/code/stackblitz/**/html/package.json"]
     },
     {
       "matchPackageNames": ["vite", "@vitejs/plugin-react"],
       "groupName": "vite-react",
-      "matchFileNames": [
-        "static/code/stackblitz/**/react/package.json"
-      ]
+      "matchFileNames": ["static/code/stackblitz/**/react/package.json"]
     },
     {
       "matchPackageNames": ["vite", "@vitejs/plugin-vue"],
       "groupName": "vite-vue",
-      "matchFileNames": [
-        "static/code/stackblitz/**/vue/package.json"
-      ]
+      "matchFileNames": ["static/code/stackblitz/**/vue/package.json"]
     },
     {
       "matchPackageNames": ["vite"],
@@ -55,12 +65,46 @@
     {
       "matchPackageNames": ["@vitejs/plugin-react"],
       "allowedVersions": "^5.0.0",
-      "matchFileNames": [
-        "static/code/stackblitz/**/react/package.json"
-      ]
+      "matchFileNames": ["static/code/stackblitz/**/react/package.json"]
     },
     {
-      "matchPackagePatterns": ["@ionic/"],
+      "description": "Ionic 8 supports React Router 5.",
+      "matchPackageNames": ["react-router", "react-router-dom"],
+      "allowedVersions": "^5.0.0",
+      "matchFileNames": ["static/code/stackblitz/v8/react/package.json"]
+    },
+    {
+      "description": "Ionic 9 supports React Router 6.",
+      "matchPackageNames": ["react-router", "react-router-dom"],
+      "allowedVersions": "^6.0.0",
+      "matchFileNames": ["static/code/stackblitz/v9/react/package.json"]
+    },
+    {
+      "description": "Ionic 8 supports Angular v16 through v20.x.",
+      "matchPackageNames": ["@angular/**", "@angular-devkit/**"],
+      "allowedVersions": "<21.0.0",
+      "matchFileNames": ["static/code/stackblitz/v8/angular/package.json"]
+    },
+    {
+      "description": "Ionic 9 supports Angular v18 through v22.x.",
+      "matchPackageNames": ["@angular/**", "@angular-devkit/**"],
+      "allowedVersions": "<23.0.0",
+      "matchFileNames": ["static/code/stackblitz/v9/angular/package.json"]
+    },
+    {
+      "description": "Angular 20 requires typescript >=5.8 <6.0.",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<6.0.0",
+      "matchFileNames": ["static/code/stackblitz/v8/angular/package.json"]
+    },
+    {
+      "description": "Angular 22 requires typescript >=6.0 <6.1.",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7.0.0",
+      "matchFileNames": ["static/code/stackblitz/v9/angular/package.json"]
+    },
+    {
+      "matchPackageNames": ["@ionic/**"],
       "minimumReleaseAge": "0 days",
       "allowedVersions": "^8.0.0",
       "groupName": "ionic",
@@ -72,7 +116,7 @@
       ]
     },
     {
-      "matchPackagePatterns": ["@ionic/"],
+      "matchPackageNames": ["@ionic/**"],
       "minimumReleaseAge": "0 days",
       "allowedVersions": "^9.0.0",
       "groupName": "ionic",
@@ -83,18 +127,5 @@
         "static/code/stackblitz/v9/vue/package.json"
       ]
     }
-  ],
-  "dependencyDashboard": true,
-  "minimumReleaseAge": "3 days",
-  "rebaseWhen": "never",
-  "schedule": ["every weekday before 11am"],
-  "semanticCommits": "enabled",
-  "includePaths": [
-    "static/code/stackblitz/**/*/package.json",
-    ".github/workflows/**"
-  ],
-  "ignorePaths": [
-    "static/code/stackblitz/v6/**",
-    "static/code/stackblitz/v7/**"
   ]
 }

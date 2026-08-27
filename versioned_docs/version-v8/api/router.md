@@ -36,7 +36,7 @@ To configure this relationship between components (to load/select) and URLs, `io
 
 ## Basic Usage
 
-import BasicExample from '@site/static/usage/v8/router/basic/index.md';
+import BasicExample from '@site/static/usage/v8/router/basic/index.mdx';
 
 <BasicExample />
 

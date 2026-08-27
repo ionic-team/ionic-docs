@@ -29,7 +29,7 @@ The textarea component accepts the [native textarea attributes](https://develope
 
 ## Basic Usage
 
-import BasicPlayground from '@site/static/usage/v9/textarea/basic/index.md';
+import BasicPlayground from '@site/static/usage/v9/textarea/basic/index.mdx';
 
 <BasicPlayground />
 
@@ -45,7 +45,7 @@ Labels should be used to describe the textarea. They can be used visually, and t
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import LabelPlacement from '@site/static/usage/v9/textarea/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/textarea/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -55,7 +55,7 @@ While plaintext labels should be passed in via the `label` property, if custom H
 
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
-import LabelSlot from '@site/static/usage/v9/textarea/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v9/textarea/label-slot/index.mdx';
 
 <LabelSlot />
 
@@ -63,7 +63,7 @@ import LabelSlot from '@site/static/usage/v9/textarea/label-slot/index.md';
 
 If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
 
-import NoVisibleLabel from '@site/static/usage/v9/textarea/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v9/textarea/no-visible-label/index.mdx';
 
 <NoVisibleLabel />
 
@@ -77,7 +77,7 @@ Filled textareas can be used on iOS by setting the textarea's `mode` to `md`.
 Textareas that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
 :::
 
-import Fill from '@site/static/usage/v9/textarea/fill/index.md';
+import Fill from '@site/static/usage/v9/textarea/fill/index.mdx';
 
 <Fill />
 
@@ -87,7 +87,7 @@ Helper and error text can be used inside of a textarea with the `helperText` and
 
 In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
-import HelperError from '@site/static/usage/v9/textarea/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/textarea/helper-error/index.mdx';
 
 <HelperError />
 
@@ -95,7 +95,7 @@ import HelperError from '@site/static/usage/v9/textarea/helper-error/index.md';
 
 The textarea counter is text that displays under a textarea to notify the user of how many characters have been entered out of the total that the textarea will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
-import Counter from '@site/static/usage/v9/textarea/counter/index.md';
+import Counter from '@site/static/usage/v9/textarea/counter/index.mdx';
 
 <Counter />
 
@@ -103,7 +103,7 @@ import Counter from '@site/static/usage/v9/textarea/counter/index.md';
 
 When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
 
-import AutogrowPlayground from '@site/static/usage/v9/textarea/autogrow/index.md';
+import AutogrowPlayground from '@site/static/usage/v9/textarea/autogrow/index.mdx';
 
 <AutogrowPlayground />
 
@@ -111,7 +111,7 @@ import AutogrowPlayground from '@site/static/usage/v9/textarea/autogrow/index.md
 
 Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
 
-import ClearOnEditPlayground from '@site/static/usage/v9/textarea/clear-on-edit/index.md';
+import ClearOnEditPlayground from '@site/static/usage/v9/textarea/clear-on-edit/index.mdx';
 
 <ClearOnEditPlayground />
 
@@ -127,13 +127,13 @@ In most cases, [Icon](./icon.md) components placed in these slots should have `a
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v9/textarea/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v9/textarea/start-end-slots/index.mdx';
 
 <StartEndSlots />
 
 ## Theming
 
-import ThemingPlayground from '@site/static/usage/v9/textarea/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v9/textarea/theming/index.mdx';
 
 <ThemingPlayground />
 

@@ -25,13 +25,13 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/chip/basic/index.md';
+import Basic from '@site/static/usage/v9/chip/basic/index.mdx';
 
 <Basic />
 
 ## Slotting Components and Icons
 
-import SlotExample from '@site/static/usage/v9/chip/slots/index.md';
+import SlotExample from '@site/static/usage/v9/chip/slots/index.mdx';
 
 <SlotExample />
 
@@ -39,13 +39,13 @@ import SlotExample from '@site/static/usage/v9/chip/slots/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/chip/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/chip/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.mdx';
 
 <CSSProps />
 

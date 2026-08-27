@@ -19,7 +19,7 @@ Backdrops are full screen components that overlay other components. They are use
 
 The backdrop prevents clicking or tapping on the content behind it. It is transparent by default, so the below demo includes CSS to make it visible.
 
-import Basic from '@site/static/usage/v9/backdrop/basic/index.md';
+import Basic from '@site/static/usage/v9/backdrop/basic/index.mdx';
 
 <Basic />
 
@@ -29,7 +29,7 @@ The backdrop can be customized by assigning CSS properties directly to the backd
 
 Content can be displayed above the backdrop by setting a `z-index` on the content, higher than the backdrop (defaults to `2`).
 
-import Styling from '@site/static/usage/v9/backdrop/styling/index.md';
+import Styling from '@site/static/usage/v9/backdrop/styling/index.mdx';
 
 <Styling />
 

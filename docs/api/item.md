@@ -32,7 +32,7 @@ Items are elements that can contain text, icons, avatars, images, inputs, and an
 
 Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
 
-import Basic from '@site/static/usage/v9/item/basic/index.md';
+import Basic from '@site/static/usage/v9/item/basic/index.mdx';
 
 <Basic />
 
@@ -66,7 +66,7 @@ If a visual is required to interact with the item, such as an icon button, then 
 
 In the example below, we are creating two lists with supporting visuals. The first list uses icons, and the second list uses avatars. The visuals are decorative, so they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
 
-import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporting-visuals/index.md';
+import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporting-visuals/index.mdx';
 
 <SupportingVisuals />
 
@@ -104,7 +104,7 @@ The "Allow Notifications" label on the toggle has additional text underneath it 
 
 Below that list is another list containing a textarea with a [Note](./note) containing long text underneath. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
 
-import Text from '@site/static/usage/v9/item/content-types/text/index.md';
+import Text from '@site/static/usage/v9/item/content-types/text/index.mdx';
 
 <Text />
 
@@ -152,7 +152,7 @@ In the example below, we are creating two lists with different kinds of metadata
 
 The second list mimics the iOS Mail app to show an inbox. This list makes use of custom metadata including an "unread message" indicator in the "start" slot as well as a timestamp and custom detail icon in the "end" slot. The "unread message" indicator is highlighted in blue to draw the user's attention to the unread messages, while the timestamp is more subtle.
 
-import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md';
+import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.mdx';
 
 <Metadata />
 
@@ -160,7 +160,7 @@ import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md
 
 Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
-Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
+Developers should avoid creating [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive) which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
 
 <BestPracticeFigure
   text={
@@ -193,7 +193,7 @@ Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/
 
 In the example below, we are creating a list of contacts. Each item is a stubbed button intended to bring you to the full contact page for that item. There are additional actions associated with each item that users can reveal by swiping on the item.
 
-import Actions from '@site/static/usage/v9/item/content-types/actions/index.md';
+import Actions from '@site/static/usage/v9/item/content-types/actions/index.mdx';
 
 <Actions />
 
@@ -274,7 +274,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
 
 In the example below, we are creating a list of to-do tasks. Each item has a checkbox and an input. The checkbox lets the user mark a task as complete, and the input lets the user change the name of the task.
 
-import Controls from '@site/static/usage/v9/item/content-types/controls/index.md';
+import Controls from '@site/static/usage/v9/item/content-types/controls/index.mdx';
 
 <Controls />
 
@@ -282,7 +282,7 @@ import Controls from '@site/static/usage/v9/item/content-types/controls/index.md
 
 An item is considered "clickable" if it has an `href`, `button`, or `routerLink` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
 
-import Clickable from '@site/static/usage/v9/item/clickable/index.md';
+import Clickable from '@site/static/usage/v9/item/clickable/index.mdx';
 
 <Clickable />
 
@@ -392,7 +392,7 @@ In Vue, use the `router-link` attribute on `ion-item`. The `router-direction` an
 
 By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
 
-import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.md';
+import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.mdx';
 
 <DetailArrows />
 
@@ -400,7 +400,7 @@ import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.md';
 
 Items show an inset bottom border by default. The border has padding on the left and does not appear under any content that is slotted in the `"start"` slot. The `lines` property can be modified to `"full"` or `"none"` which will show a full width border or no border, respectively.
 
-import Lines from '@site/static/usage/v9/item/lines/index.md';
+import Lines from '@site/static/usage/v9/item/lines/index.mdx';
 
 <Lines />
 
@@ -408,13 +408,13 @@ import Lines from '@site/static/usage/v9/item/lines/index.md';
 
 Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
 
-import Buttons from '@site/static/usage/v9/item/buttons/index.md';
+import Buttons from '@site/static/usage/v9/item/buttons/index.mdx';
 
 <Buttons />
 
 ## Item Inputs
 
-import Inputs from '@site/static/usage/v9/item/inputs/index.md';
+import Inputs from '@site/static/usage/v9/item/inputs/index.mdx';
 
 <Inputs />
 
@@ -422,19 +422,19 @@ import Inputs from '@site/static/usage/v9/item/inputs/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/item/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/item/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v9/item/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/item/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.mdx';
 
 <CSSProps />
 

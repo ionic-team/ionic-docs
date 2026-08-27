@@ -23,7 +23,7 @@ Footer is a root component of a page that aligns itself to the bottom of the pag
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/footer/basic/index.md';
+import Basic from '@site/static/usage/v9/footer/basic/index.mdx';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v9/footer/basic/index.md';
 
 Footers can match the transparency found in native iOS applications by setting the `translucent` property. In order for the content to scroll behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
-import Translucent from '@site/static/usage/v9/footer/translucent/index.md';
+import Translucent from '@site/static/usage/v9/footer/translucent/index.mdx';
 
 <Translucent />
 
@@ -39,7 +39,7 @@ import Translucent from '@site/static/usage/v9/footer/translucent/index.md';
 
 Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the footer to `"fade"`. When the content is scrolled to the end, the background and border on the footer will fade away. This effect will only apply when the mode is `"ios"`.
 
-import Fade from '@site/static/usage/v9/footer/fade/index.md';
+import Fade from '@site/static/usage/v9/footer/fade/index.mdx';
 
 <Fade />
 
@@ -47,7 +47,7 @@ import Fade from '@site/static/usage/v9/footer/fade/index.md';
 
 A fade footer requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
-import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
 
@@ -55,7 +55,7 @@ import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-targe
 
 In `"md"` mode, the footer will have a `box-shadow` on the top. In `"ios"` mode, it will receive a `border` on the top. These can be removed by adding the `.ion-no-border` class to the footer.
 
-import NoBorder from '@site/static/usage/v9/footer/no-border/index.md';
+import NoBorder from '@site/static/usage/v9/footer/no-border/index.mdx';
 
 <NoBorder />
 

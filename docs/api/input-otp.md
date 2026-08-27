@@ -27,7 +27,7 @@ The Input OTP component is a specialized input component designed for entering o
 
 The component provides 4 input boxes by default, which is a common length for many verification codes. The number of input boxes can be customized using the `length` property.
 
-import Basic from '@site/static/usage/v9/input-otp/basic/index.md';
+import Basic from '@site/static/usage/v9/input-otp/basic/index.mdx';
 
 <Basic />
 
@@ -46,7 +46,7 @@ The `type` property automatically sets both the `inputmode` and `pattern` attrib
 
 Refer to the [Pattern](#pattern) section for more details on pattern validation and customization.
 
-import Type from '@site/static/usage/v9/input-otp/type/index.md';
+import Type from '@site/static/usage/v9/input-otp/type/index.mdx';
 
 <Type />
 
@@ -54,7 +54,7 @@ import Type from '@site/static/usage/v9/input-otp/type/index.md';
 
 The `shape` property controls the border radius of the input boxes, creating rounded or sharp corners.
 
-import Shape from '@site/static/usage/v9/input-otp/shape/index.md';
+import Shape from '@site/static/usage/v9/input-otp/shape/index.mdx';
 
 <Shape />
 
@@ -62,7 +62,7 @@ import Shape from '@site/static/usage/v9/input-otp/shape/index.md';
 
 The `fill` property controls the background style of the input boxes, offering bordered or filled backgrounds.
 
-import Fill from '@site/static/usage/v9/input-otp/fill/index.md';
+import Fill from '@site/static/usage/v9/input-otp/fill/index.mdx';
 
 <Fill />
 
@@ -70,7 +70,7 @@ import Fill from '@site/static/usage/v9/input-otp/fill/index.md';
 
 The `size` property provides different size options for the input boxes.
 
-import Size from '@site/static/usage/v9/input-otp/size/index.md';
+import Size from '@site/static/usage/v9/input-otp/size/index.mdx';
 
 <Size />
 
@@ -84,7 +84,7 @@ The `separators` property adds visual dividers between one or more of the input 
 
 The numbers represent the index after which a separator should appear. For example, `"1,3"` displays a separator after the first and third input box. This can be used to create visually distinct groupings of input boxes, but it will still have one value.
 
-import Separators from '@site/static/usage/v9/input-otp/separators/index.md';
+import Separators from '@site/static/usage/v9/input-otp/separators/index.mdx';
 
 <Separators />
 
@@ -99,7 +99,7 @@ The component supports various states for automatic styling of input boxes:
 - `ion-invalid` styles only display when touched (`ion-touched`)
 - `ion-valid` styles only display when focused (`has-focus`)
 
-import States from '@site/static/usage/v9/input-otp/states/index.md';
+import States from '@site/static/usage/v9/input-otp/states/index.mdx';
 
 <States />
 
@@ -119,7 +119,7 @@ When using a custom `pattern`, remember that the `type` property controls which 
 - Use `type="text"` for patterns that include letters to show the alphanumeric keyboard
   :::
 
-import Pattern from '@site/static/usage/v9/input-otp/pattern/index.md';
+import Pattern from '@site/static/usage/v9/input-otp/pattern/index.mdx';
 
 <Pattern />
 
@@ -133,7 +133,7 @@ The `color` property changes the color palette for input boxes. For `outline` fi
 The `color` property does _not_ change the text color of the input OTP. For that, use the [`--color` CSS property](#css-custom-properties-1).
 :::
 
-import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.mdx';
 
 <Colors />
 
@@ -141,7 +141,7 @@ import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.md';
 
 Input OTP uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input-otp` for customization will not work; therefore we recommend adding a class and customizing it that way. Due to certain styles being applied based on the `fill`, you may need to override properties on the fills separately.
 
-import CSSProps from '@site/static/usage/v9/input-otp/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/input-otp/theming/css-properties/index.mdx';
 
 <CSSProps />
 

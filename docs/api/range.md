@@ -37,7 +37,7 @@ Labels should be used to describe the range. They can be used visually, and they
 
 The below demo shows how to use the `labelPlacement` property to change the position of the label relative to the range. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
-import LabelsPlayground from '@site/static/usage/v9/range/labels/index.md';
+import LabelsPlayground from '@site/static/usage/v9/range/labels/index.mdx';
 
 <LabelsPlayground />
 
@@ -45,7 +45,7 @@ import LabelsPlayground from '@site/static/usage/v9/range/labels/index.md';
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
-import LabelSlotPlayground from '@site/static/usage/v9/range/label-slot/index.md';
+import LabelSlotPlayground from '@site/static/usage/v9/range/label-slot/index.mdx';
 
 <LabelSlotPlayground />
 
@@ -53,7 +53,7 @@ import LabelSlotPlayground from '@site/static/usage/v9/range/label-slot/index.md
 
 If no visible label is needed, developers should still supply an `aria-label` so the range is accessible to screen readers.
 
-import NoVisibleLabel from '@site/static/usage/v9/range/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v9/range/no-visible-label/index.mdx';
 
 <NoVisibleLabel />
 
@@ -63,7 +63,7 @@ Decorative elements can be passed into the `start` or `end` slots of the range. 
 
 If the directionality of the document is set to left to right, the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, the contents slotted to the `start` position will display to the right of the range, where as contents slotted to the `end` position will display to the left of the range.
 
-import DecorationsPlayground from '@site/static/usage/v9/range/slots/index.md';
+import DecorationsPlayground from '@site/static/usage/v9/range/slots/index.mdx';
 
 <DecorationsPlayground />
 
@@ -71,7 +71,7 @@ import DecorationsPlayground from '@site/static/usage/v9/range/slots/index.md';
 
 Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
 
-import DualKnobs from '@site/static/usage/v9/range/dual-knobs/index.md';
+import DualKnobs from '@site/static/usage/v9/range/dual-knobs/index.mdx';
 
 <DualKnobs />
 
@@ -81,7 +81,7 @@ The `pin` attribute will display the value of the Range above the knob when drag
 
 With the `pinFormatter` function, developers can customize the formatting of the range value to the user.
 
-import Pins from '@site/static/usage/v9/range/pins/index.md';
+import Pins from '@site/static/usage/v9/range/pins/index.mdx';
 
 <Pins />
 
@@ -91,7 +91,7 @@ Ticks show indications for each available value on the Range. In order to use ti
 
 With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released.
 
-import SnappingTicks from '@site/static/usage/v9/range/snapping-ticks/index.md';
+import SnappingTicks from '@site/static/usage/v9/range/snapping-ticks/index.mdx';
 
 <SnappingTicks />
 
@@ -101,7 +101,7 @@ import SnappingTicks from '@site/static/usage/v9/range/snapping-ticks/index.md';
 
 The `ionChange` event emits as the Range knob value changes.
 
-import IonChangeEvent from '@site/static/usage/v9/range/ion-change-event/index.md';
+import IonChangeEvent from '@site/static/usage/v9/range/ion-change-event/index.mdx';
 
 <IonChangeEvent />
 
@@ -109,7 +109,7 @@ import IonChangeEvent from '@site/static/usage/v9/range/ion-change-event/index.m
 
 The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
 
-import IonKnobMoveEvent from '@site/static/usage/v9/range/ion-knob-move-event/index.md';
+import IonKnobMoveEvent from '@site/static/usage/v9/range/ion-knob-move-event/index.mdx';
 
 <IonKnobMoveEvent />
 
@@ -119,7 +119,7 @@ import IonKnobMoveEvent from '@site/static/usage/v9/range/ion-knob-move-event/in
 
 Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
 
-import CSSProps from '@site/static/usage/v9/range/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/range/theming/css-properties/index.mdx';
 
 <CSSProps />
 
@@ -129,7 +129,7 @@ Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customiza
 
 When `dualKnobs` is enabled, additional Shadow Parts are exposed to allow each knob to be styled independently. These are available in two forms: **static identity parts** (`A` and `B`) and **dynamic position parts** (`lower` and `upper`). The A and B parts always refer to the same physical knobs, even if the knobs cross. In contrast, the lower and upper parts reflect the current value position and automatically swap if the knobs cross. This allows styling by consistent identity or by relative value within the range.
 
-import CSSParts from '@site/static/usage/v9/range/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v9/range/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 
