@@ -29,7 +29,9 @@ If the device's screen width is below a certain size, the split pane will collap
 ## Basic Usage
 
 :::note
+
 This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. Refer to [Setting Breakpoints](#setting-breakpoints) for more information.
+
 :::
 
 import Basic from '@site/static/usage/v9/split-pane/basic/index.mdx';

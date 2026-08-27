@@ -17,7 +17,9 @@ CSS Shadow Parts allow developers to style CSS properties on an element inside o
 Ionic Framework is a distributed set of [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). Web Components follow the [Shadow DOM specification](https://w3c.github.io/webcomponents/spec/shadow/) in order to encapsulate styles and markup.
 
 :::note
+
 Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its [component documentation](../components.md). An example of a Shadow DOM component is the [button component](../api/button.md).
+
 :::
 
 Shadow DOM is useful for preventing styles from leaking out of components and unintentionally applying to other elements. For example, we assign a `.button` class to our `ion-button` component. Without Shadow DOM encapsulation, if a user were to set the class `.button` on one of their own elements, it would inherit the Ionic Framework button styles. Since `ion-button` is a Shadow component, this is not a problem.
@@ -98,7 +100,9 @@ ion-item::part(native):hover {
 ```
 
 :::note
+
 There are some known limitations with [vendor prefixed pseudo-elements](#vendor-prefixed-pseudo-elements) and [structural pseudo-classes](#structural-pseudo-classes).
+
 :::
 
 ## Ionic Framework Parts
@@ -112,7 +116,9 @@ In order to have parts a component must meet the following criteria:
 - The children elements are not structural. In certain components, including `ion-title`, the child element is a structural element used to position the inner elements. We do not recommend customizing structural elements as this can have unexpected results.
 
 :::note
+
 We welcome recommendations for additional parts. Please create a [new GitHub issue](https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+) with as much information as possible when requesting a part.
+
 :::
 
 ## Known Limitations

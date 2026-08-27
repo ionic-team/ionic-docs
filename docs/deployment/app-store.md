@@ -84,7 +84,9 @@ This will generate the minified code for the web portion of an app and copy it o
 From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 
 :::tip
+
 You can also have a release build generated automatically by using the `--release` flag.
+
 :::
 
 </TabItem>
@@ -119,5 +121,7 @@ An app can be updated by either submitting a new version to Apple, or by using a
 With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
 
 :::note
+
 In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
+
 :::

@@ -88,7 +88,9 @@ import ReorderStartEndEvents from '@site/static/usage/v9/reorder/reorder-start-e
 The `ionReorderMove` event is emitted continuously during the reorder gesture as the user drags an item. The event includes the `from` and `to` indices of the item. Unlike `ionReorderEnd`, the `from` index in this event represents the last known position of the item (which updates as the item moves), while the `to` index represents its current position. If the item has not changed position since the last event, the `from` and `to` indices will be the same. This event is useful for tracking position changes during the drag operation. For example, the ranking or numbering of items can be updated in real-time as they are being dragged to maintain a logical ascending order.
 
 :::warning
+
 Do not call the `complete` method during the `ionReorderMove` event as it can break the gesture.
+
 :::
 
 import ReorderMoveEvent from '@site/static/usage/v9/reorder/reorder-move-event/index.mdx';

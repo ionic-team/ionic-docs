@@ -11,15 +11,19 @@ title: Migrating From ion-slides to Swiper.js
 </head>
 
 :::warning[Looking for `ion-slides`?]
+
 `ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+
 :::
 
 We recommend [Swiper.js](http://swiperjs.com/) if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
 
 :::note
+
 Swiper's Vue component is set to be removed in a future release of Swiper, with [Swiper Element](https://swiperjs.com/element) as the replacement. However, this guide shows how to migrate to the Vue component because it provides the most stable experience at the time of writing.
 
 Using Swiper's Vue component is **not** required to use Swiper.js with Ionic Framework.
+
 :::
 
 ## Getting Started
@@ -56,7 +60,9 @@ import '@ionic/vue/css/ionic-swiper.css';
 ```
 
 :::note
+
 Importing `@ionic/vue/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+
 :::
 
 ### Updating Selectors
@@ -212,7 +218,9 @@ const modules = [Autoplay, Keyboard, Pagination, Scrollbar, Zoom];
 ```
 
 :::note
+
 Refer to [Swiper's Vue usage documentation](https://swiperjs.com/vue#usage) for a full list of modules.
+
 :::
 
 ## The IonicSlides Module
@@ -253,7 +261,9 @@ const modules = [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides];
 ```
 
 :::note
+
 The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+
 :::
 
 ## Properties
@@ -294,7 +304,9 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
 
 :::note
+
 All properties available in Swiper Vue can be found in the [Swiper Vue props documentation](https://swiperjs.com/vue#swiper-props).
+
 :::
 
 ## Events
@@ -347,7 +359,9 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `init`                       |
 
 :::note
+
 All events available in Swiper Vue can be found in the [Swiper Vue events documentation](https://swiperjs.com/vue#swiper-events).
+
 :::
 
 ## Methods
@@ -472,7 +486,9 @@ const modules = [EffectFade, IonicSlides];
 ```
 
 :::note
+
 For more information on effects in Swiper, please refer to the [Swiper Vue effects documentation](https://swiperjs.com/vue#effects).
+
 :::
 
 ## Wrap Up

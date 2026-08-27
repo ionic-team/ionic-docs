@@ -109,7 +109,9 @@ import Customization from '@site/static/usage/v9/alert/customization/index.mdx';
 <Customization />
 
 :::note
+
 If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+
 :::
 
 ## Accessibility

@@ -28,9 +28,11 @@ npm install -g @ionic/cli cordova
 ```
 
 :::note
+
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
 Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../../../developing/tips.md#resolving-permission-errors) for more information.
+
 :::
 
 ## Create an App

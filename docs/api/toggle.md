@@ -58,7 +58,9 @@ import LabelPlacement from '@site/static/usage/v9/toggle/label-placement/index.m
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
 :::note
+
 Stacked toggles can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+
 :::
 
 import Alignment from '@site/static/usage/v9/toggle/alignment/index.mdx';

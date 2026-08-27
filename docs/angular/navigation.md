@@ -168,7 +168,9 @@ import { LoginComponent } from './login.component';
 ```
 
 :::note
+
 We're excluding some additional content and only including the necessary parts.
+
 :::
 
 Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
@@ -194,7 +196,9 @@ export class AppRoutingModule {}
 ```
 
 :::tip
+
 If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to also import the `IonRouterLink` directive for Ionic components or the `IonRouterLinkWithHref` directive for `<a>` elements. An example of this is available in the [Ionic Angular Build Options docs](./build-options.md#migrating-from-modules-to-standalone).
+
 :::
 
 To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).

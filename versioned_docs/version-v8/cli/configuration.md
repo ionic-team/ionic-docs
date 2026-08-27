@@ -124,9 +124,11 @@ module.exports = function (ctx) {
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](../reference/glossary.md#monorepo).
 
 :::note
+
 These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
 
 If you're using Angular, please refer to [the Angular monorepo guide](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+
 :::
 
 ### Setup Steps
@@ -207,7 +209,9 @@ $ ionic start "My New App" --no-deps
 If an app was created in a way other than `ionic start`, for example by using a prebuilt template, use `ionic init` to register the existing app with the multi-app project.
 
 :::note
+
 Make sure the app doesn't have an existing `ionic.config.json`.
+
 :::
 
 ```shell

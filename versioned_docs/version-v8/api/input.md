@@ -86,7 +86,9 @@ Material Design offers filled styles for an input. The `fill` property on the in
 Filled inputs can be used on iOS by setting the input's `mode` to `md`.
 
 :::warning
+
 Inputs that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+
 :::
 
 import Fill from '@site/static/usage/v8/input/fill/index.mdx';
@@ -156,9 +158,11 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
 :::note
+
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+
 :::
 
 import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.mdx';
@@ -172,7 +176,9 @@ import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.mdx
 Setting the `color` property changes the color palette for each input. On `ios` mode, this property changes the caret color. On `md` mode, this property changes the caret color and the highlight/underline color.
 
 :::note
+
 The `color` property does _not_ change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
+
 :::
 
 import Colors from '@site/static/usage/v8/input/theming/colors/index.mdx';

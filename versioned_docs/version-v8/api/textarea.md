@@ -74,7 +74,9 @@ Material Design offers filled styles for a textarea. The `fill` property on the 
 Filled textareas can be used on iOS by setting the textarea's `mode` to `md`.
 
 :::warning
+
 Textareas that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+
 :::
 
 import Fill from '@site/static/usage/v8/textarea/fill/index.mdx';
@@ -122,9 +124,11 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
 :::note
+
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+
 :::
 
 import StartEndSlots from '@site/static/usage/v8/textarea/start-end-slots/index.mdx';

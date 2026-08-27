@@ -113,11 +113,13 @@ The `pattern` property enables custom validation using regular expressions. It a
 The component will prevent users from entering any characters that don't match the specified pattern. Developers can override these defaults by providing their own pattern string to match specific input requirements.
 
 :::tip
+
 When using a custom `pattern`, remember that the `type` property controls which keyboard appears on mobile devices:
 
 - Use `type="number"` for numeric-only patterns to show the numeric keyboard
 - Use `type="text"` for patterns that include letters to show the alphanumeric keyboard
-  :::
+
+:::
 
 import Pattern from '@site/static/usage/v9/input-otp/pattern/index.mdx';
 
@@ -130,7 +132,9 @@ import Pattern from '@site/static/usage/v9/input-otp/pattern/index.mdx';
 The `color` property changes the color palette for input boxes. For `outline` fills, this property changes the caret color, highlight color and border color. For `solid` fills, this property changes the caret color and highlight color.
 
 :::note
+
 The `color` property does _not_ change the text color of the input OTP. For that, use the [`--color` CSS property](#css-custom-properties-1).
+
 :::
 
 import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.mdx';

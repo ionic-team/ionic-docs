@@ -42,7 +42,9 @@ Refer to the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployme
 ## Making your React app a PWA with Create React App
 
 :::note
+
 As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. Refer to [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
+
 :::
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
@@ -72,11 +74,15 @@ serviceWorkerRegistration.register();
 Once this package has been added, run `ionic build` and the `build` directory will be ready to deploy as a PWA.
 
 :::note
+
 By default, react apps package comes with the Ionic logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+
 :::
 
 :::note
+
 Features like Service Workers and many JavaScript APIs (such as geolocation) require the app to be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+
 :::
 
 ### Service Worker configuration
@@ -100,7 +106,9 @@ npm install -g firebase-tools
 ```
 
 :::note
+
 If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+
 :::
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
@@ -114,7 +122,9 @@ Create a new Firebase project or select an existing one.
 **"What do you want to use as your public directory?"** Enter "dist".
 
 :::note
+
 Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
+
 :::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
