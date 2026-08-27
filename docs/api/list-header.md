@@ -1,6 +1,7 @@
 ---
-title: "ion-list-header"
+title: 'ion-list-header'
 ---
+
 import Props from '@ionic-internal/component-api/v9/list-header/props.mdx';
 import Events from '@ionic-internal/component-api/v9/list-header/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/list-header/methods.mdx';
@@ -12,7 +13,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 List headers are block elements that are used to describe the contents of a [list](./list). Unlike [item dividers](./item-divider), list headers should only be used once at the top of a list of [items](./item).
 
 ## Basic Usage
@@ -21,7 +21,6 @@ import Basic from '@site/static/usage/v9/list-header/basic/index.mdx';
 
 <Basic />
 
-
 ## Buttons in List Headers
 
 A [button](./button) placed in a list header can be useful for showing part of a list and redirecting to the full list with the button.
@@ -29,7 +28,6 @@ A [button](./button) placed in a list header can be useful for showing part of a
 import Buttons from '@site/static/usage/v9/list-header/buttons/index.mdx';
 
 <Buttons />
-
 
 ## List Header Lines
 
@@ -53,22 +51,26 @@ import CSSProps from '@site/static/usage/v9/list-header/theming/css-properties/i
 
 <CSSProps />
 
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

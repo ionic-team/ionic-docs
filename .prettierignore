@@ -12,11 +12,11 @@ src/theme/prism-include-languages.ts
 legacy-stencil-components
 scripts/bak
 
-docs/api
-versioned_docs/version-v*/api
+# Auto-generated files
 docs/native
 versioned_docs/version-v*/native
 docs/cli/commands
+versioned_docs/version-v*/cli/commands
 
 # Archived versions
 versioned_docs/version-v5

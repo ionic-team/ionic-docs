@@ -1,6 +1,7 @@
 ---
-title: "ion-chip"
+title: 'ion-chip'
 ---
+
 import Props from '@ionic-internal/component-api/v9/chip/props.mdx';
 import Events from '@ionic-internal/component-api/v9/chip/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/chip/methods.mdx';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/chip/slots.mdx';
 
 <head>
   <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>
-  <meta name="description" content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons." />
+  <meta
+    name="description"
+    content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -46,19 +50,25 @@ import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.md
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

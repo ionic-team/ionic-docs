@@ -1,6 +1,7 @@
 ---
-title: "ion-refresher"
+title: 'ion-refresher'
 ---
+
 import Props from '@ionic-internal/component-api/v9/refresher/props.mdx';
 import Events from '@ionic-internal/component-api/v9/refresher/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/refresher/methods.mdx';
@@ -10,23 +11,23 @@ import Slots from '@ionic-internal/component-api/v9/refresher/slots.mdx';
 
 <head>
   <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>
-  <meta name="description" content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data." />
+  <meta
+    name="description"
+    content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 Refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
 
 Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
-
 
 ## Basic Usage
 
 import Basic from '@site/static/usage/v9/refresher/basic/index.mdx';
 
 <Basic />
-
 
 ## Pull Properties
 
@@ -38,7 +39,6 @@ import PullProperties from '@site/static/usage/v9/refresher/pull-properties/inde
 
 <PullProperties />
 
-
 ## Custom Refresher Content
 
 The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
@@ -48,7 +48,6 @@ Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
 import CustomContent from '@site/static/usage/v9/refresher/custom-content/index.mdx';
 
 <CustomContent />
-
 
 ## Native Refreshers
 
@@ -61,7 +60,6 @@ The native refresher uses a `circular` spinner for Material Design, while iOS us
 Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. Refer to [Properties](#properties) for more information on unsupported properties.
 
 The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. Refer to the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
-
 
 ## Usage with Virtual Scroll
 
@@ -77,7 +75,7 @@ Developers should apply the following CSS to the scrollable container. This CSS 
   width: 1px;
   height: 1px;
 
-  content: "";
+  content: '';
 }
 
 .ion-content-scroll-host::before {
@@ -92,7 +90,6 @@ Developers should apply the following CSS to the scrollable container. This CSS 
 import CustomScrollTarget from '@site/static/usage/v9/refresher/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
-
 
 ## Advanced Usage
 
@@ -155,19 +152,25 @@ interface RefresherPullEndCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

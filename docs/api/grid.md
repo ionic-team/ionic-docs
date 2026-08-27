@@ -1,6 +1,7 @@
 ---
-title: "ion-grid"
+title: 'ion-grid'
 ---
+
 import Props from '@ionic-internal/component-api/v9/grid/props.mdx';
 import Events from '@ionic-internal/component-api/v9/grid/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/grid/methods.mdx';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/grid/slots.mdx';
 
 <head>
   <title>ion-grid: Display Grids for Mobile-First Custom App Layout</title>
-  <meta name="description" content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size." />
+  <meta
+    name="description"
+    content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
 
@@ -49,7 +52,6 @@ The default breakpoints for the grid and the corresponding properties are define
 | lg   | 992px  | `sizeLg`       | `offsetLg`      | `pushLg`      | `pullLg`      | Set columns when (min-width: 992px)  |
 | xl   | 1200px | `sizeXl`       | `offsetXl`      | `pushXl`      | `pullXl`      | Set columns when (min-width: 1200px) |
 
-
 ## Basic Usage
 
 By default, columns will take up equal width inside of a row for all devices and screen sizes.
@@ -57,7 +59,6 @@ By default, columns will take up equal width inside of a row for all devices and
 import Basic from '@site/static/usage/v9/grid/basic/index.mdx';
 
 <Basic />
-
 
 ## Fixed Grid
 
@@ -75,7 +76,6 @@ import Fixed from '@site/static/usage/v9/grid/fixed/index.mdx';
 
 <Fixed />
 
-
 ## Column Size
 
 Columns can be set to specific sizes to take up a certain number out of the total number of columns, or resize their width based on the content. The default number of columns is 12, but this can be customized. Refer to the [Number of Columns](#number-of-columns) section below for more information.
@@ -87,7 +87,6 @@ By setting the `size` to `"auto"` the column can size itself based on the natura
 import SizeAuto from '@site/static/usage/v9/grid/size-auto/index.mdx';
 
 <SizeAuto />
-
 
 ### Specified size
 
@@ -104,7 +103,6 @@ The `size` property will change the column width for all [breakpoints](#default-
 import SizeResponsive from '@site/static/usage/v9/grid/size-responsive/index.mdx';
 
 <SizeResponsive />
-
 
 ## Column Offset
 
@@ -125,7 +123,6 @@ The `offset` property will change the column's left margin for all [breakpoints]
 import OffsetResponsive from '@site/static/usage/v9/grid/offset-responsive/index.mdx';
 
 <OffsetResponsive />
-
 
 ## Column Push & Pull
 
@@ -156,7 +153,6 @@ All columns can be vertically aligned inside of a row by adding different classe
 import VerticalAlignment from '@site/static/usage/v9/grid/vertical-alignment/index.mdx';
 
 <VerticalAlignment />
-
 
 ### Horizontal Alignment
 
@@ -197,19 +193,25 @@ import Padding from '@site/static/usage/v9/grid/customizing/padding/index.mdx';
 <Padding />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

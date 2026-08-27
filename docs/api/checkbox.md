@@ -1,5 +1,5 @@
 ---
-title: "ion-checkbox"
+title: 'ion-checkbox'
 ---
 
 import Props from '@ionic-internal/component-api/v9/checkbox/props.mdx';
@@ -11,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/checkbox/slots.mdx';
 
 <head>
   <title>ion-checkbox: Ionic App Checkbox to Select Multiple Options</title>
-  <meta name="description" content="ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps." />
+  <meta
+    name="description"
+    content="ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
 
@@ -54,7 +56,6 @@ Developers can use the `justify` property to control how the label and control a
 import Justify from '@site/static/usage/v9/checkbox/justify/index.mdx';
 
 <Justify />
-
 
 :::note
 `ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
@@ -115,19 +116,25 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

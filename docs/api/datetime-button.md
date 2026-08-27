@@ -1,6 +1,7 @@
 ---
-title: "ion-datetime-button"
+title: 'ion-datetime-button'
 ---
+
 import Props from '@ionic-internal/component-api/v9/datetime-button/props.mdx';
 import Events from '@ionic-internal/component-api/v9/datetime-button/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/datetime-button/methods.mdx';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/datetime-button/slots.mdx';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
-  <meta name="description" content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more." />
+  <meta
+    name="description"
+    content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -48,19 +52,25 @@ import FormatOptions from '@site/static/usage/v9/datetime-button/format-options/
 `ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

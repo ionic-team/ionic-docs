@@ -1,6 +1,7 @@
 ---
-title: "ion-range"
+title: 'ion-range'
 ---
+
 import Props from '@ionic-internal/component-api/v9/range/props.mdx';
 import Events from '@ionic-internal/component-api/v9/range/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/range/methods.mdx';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/range/slots.mdx';
 
 <head>
   <title>ion-range: Range Slider Knob Controls with Labels</title>
-  <meta name="description" content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side." />
+  <meta
+    name="description"
+    content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
 
@@ -172,24 +175,29 @@ interface RangeCustomEvent extends CustomEvent {
 ### RangeValue
 
 ```typescript
-type RangeValue = number | { lower: number, upper: number };
+type RangeValue = number | { lower: number; upper: number };
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
