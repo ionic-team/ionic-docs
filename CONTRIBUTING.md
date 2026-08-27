@@ -245,7 +245,7 @@ The archived URL has to point at a build that _included_ `<archiving>`, so you b
 
 Everything from here on refers to `<archiving>`:
 
-2. **Build `<archiving>`.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`. Commit, push and let Vercel deploy.
+2. **Build `<archiving>`.** Make sure it is in `versions.json`. If you are refreshing an already-archived version, move it out of `versionsArchived.json` and back into `versions.json`, and add it back to the generation scripts in step 9. Commit, push and let Vercel deploy.
 3. **Promote the deployment.** In the Vercel dashboard, open that deployment and **Promote to Production** so it does not get cleaned up. Wait for the build to finish before pushing again, or it may get canceled.
 4. **Copy its URL.** Use the deployment's unique `ionic-docs-<hash>-ionic1.vercel.app` URL, not the branch or production alias.
 5. **Archive it.** Remove `<archiving>` from `versions.json`, then add it to `versionsArchived.json` with `/docs/<archiving>` appended and no trailing slash (a trailing slash causes a brief 404 flash):
@@ -319,7 +319,7 @@ Everything from here on refers to `<archiving>`:
 
 10. **Open a PR.** Once merged, the version picker links to the archive and `main` stops building `<archiving>`.
 
-Removed versions keep their `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`.
+Removed versions keep their authored `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`. Their `native/` and `cli/commands/` pages are generated rather than committed, so a rebuild also needs the version back in the write lists from step 9. Without it those sections build empty.
 
 > [!NOTE]
 > Ionic v3 and v4 use other build tools and are not managed here.
