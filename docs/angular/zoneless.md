@@ -83,7 +83,7 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
   selector: 'app-list',
   template: `@for (item of items; track item) {
     <ion-item>{{ item }}</ion-item>
-}`,
+  }`,
 })
 export class ListPage {
   private cdr = inject(ChangeDetectorRef);
