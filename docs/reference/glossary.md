@@ -14,7 +14,7 @@ title: Glossary
 
 ### Accessibility {/* #a11y */}
 
-[Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility) (a11y) is the practice of enabling as many people as possible to use the content, even if people have limited abilities. This include people with disabilities, those using mobile devices, and those with slow network connections. Content should be developed to be as accessible as technology allows.
+[Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility) (a11y) is the practice of enabling as many people as possible to use the content, even if people have limited abilities. This includes people with disabilities, those using mobile devices, and those with slow network connections. Content should be developed to be as accessible as technology allows.
 
 ### Android SDK {/* #android-sdk */}
 
