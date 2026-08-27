@@ -135,8 +135,8 @@ module.exports = function (context, options) {
            * Lets a `.md` import resolve to a `.mdx` file. The Japanese site is
            * built from this branch's tree combined with prose pulled from
            * `translation/jp`, so a rename here breaks those imports until that
-           * branch catches up, and vice versa. This makes the two independent
-           * of merge order.
+           * branch catches up. This has to merge first, and the translation
+           * branch can then follow at any interval.
            *
            * Applies to every `.md` import in the repo, so a stale `.mdx` next
            * to a `.md` will shadow it.
