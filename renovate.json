@@ -54,7 +54,6 @@
       "matchFileNames": ["static/code/stackblitz/**/vue/package.json"]
     },
     {
-      "description": "The examples pin Vite 7. Raise this when they move to Vite 8.",
       "matchPackageNames": ["vite"],
       "allowedVersions": "^7.0.0",
       "matchFileNames": [
@@ -64,7 +63,6 @@
       ]
     },
     {
-      "description": "The examples pin @vitejs/plugin-react 5. Raise this when they move to 6.",
       "matchPackageNames": ["@vitejs/plugin-react"],
       "allowedVersions": "^5.0.0",
       "matchFileNames": ["static/code/stackblitz/**/react/package.json"]
