@@ -25,7 +25,7 @@ The expression assigned to the `ionInfinite` event is called when the user reach
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/infinite-scroll/basic/index.md';
+import Basic from '@site/static/usage/v8/infinite-scroll/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v8/infinite-scroll/basic/index.md';
 
 The `ion-infinite-scroll-content` is responsible for the visual display of the infinite scroll interaction. By default this component changes its look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. Both the spinner and loading text can be customized by setting properties on the `ion-infinite-scroll-content` component.
 
-import InfiniteScrollContent from '@site/static/usage/v8/infinite-scroll/infinite-scroll-content/index.md';
+import InfiniteScrollContent from '@site/static/usage/v8/infinite-scroll/infinite-scroll-content/index.mdx';
 
 <InfiniteScrollContent />
 
@@ -41,7 +41,7 @@ import InfiniteScrollContent from '@site/static/usage/v8/infinite-scroll/infinit
 
 Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
 
-import CustomContent from '@site/static/usage/v8/infinite-scroll/custom-infinite-scroll-content/index.md';
+import CustomContent from '@site/static/usage/v8/infinite-scroll/custom-infinite-scroll-content/index.mdx';
 
 <CustomContent />
 

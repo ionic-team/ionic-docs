@@ -29,7 +29,7 @@ The reorder is the anchor used to drag and drop the items. Once the reorder is c
 
 The most basic example of a reorder is slotting it inside of an item. By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property on the reorder group to `false`. The reorder icon can then be used to drag and drop the items and reorder them.
 
-import Basic from '@site/static/usage/v8/reorder/basic/index.md';
+import Basic from '@site/static/usage/v8/reorder/basic/index.mdx';
 
 <Basic />
 
@@ -37,7 +37,7 @@ import Basic from '@site/static/usage/v8/reorder/basic/index.md';
 
 In some cases, it may be desired to have the option to toggle the reorder functionality. This can be done by making the `disabled` property reactive, based on a function or variable.
 
-import TogglingDisabled from '@site/static/usage/v8/reorder/toggling-disabled/index.md';
+import TogglingDisabled from '@site/static/usage/v8/reorder/toggling-disabled/index.mdx';
 
 <TogglingDisabled />
 
@@ -45,7 +45,7 @@ import TogglingDisabled from '@site/static/usage/v8/reorder/toggling-disabled/in
 
 The reorder component uses a reorder icon with three lines on iOS and two lines on Material Design. This can be customized by adding an [Icon](https://ionic.io/ionicons) component inside of the reorder with any of the available Ionicons.
 
-import CustomIcon from '@site/static/usage/v8/reorder/custom-icon/index.md';
+import CustomIcon from '@site/static/usage/v8/reorder/custom-icon/index.mdx';
 
 <CustomIcon />
 
@@ -53,7 +53,7 @@ import CustomIcon from '@site/static/usage/v8/reorder/custom-icon/index.md';
 
 Reorder can also be used as a wrapper around an item, making the item itself the anchor. Click anywhere on an item below and drag it to reorder the list.
 
-import Wrapper from '@site/static/usage/v8/reorder/wrapper/index.md';
+import Wrapper from '@site/static/usage/v8/reorder/wrapper/index.mdx';
 
 <Wrapper />
 
@@ -67,7 +67,7 @@ In some cases, it may be necessary for an app to reorder both the array and the 
 
 Regardless of the approach taken, a stable identity should be provided to reorder items if provided in a loop. This means using `track` for Angular, and `key` for React and Vue.
 
-import UpdatingData from '@site/static/usage/v8/reorder/updating-data/index.md';
+import UpdatingData from '@site/static/usage/v8/reorder/updating-data/index.mdx';
 
 <UpdatingData />
 
@@ -79,7 +79,7 @@ The `ionReorderStart` event is emitted when the user begins a reorder gesture. T
 
 The `ionReorderEnd` event is emitted when the user completes the reorder gesture. This occurs when the user releases the item they are dragging, for example by lifting their finger on a touch screen or releasing the mouse button. The event includes the `from` and `to` indices of the item, as well as the `complete` method that should be called to finalize the reorder operation. The `from` index will always be the position of the item when the gesture started, while the `to` index will be its final position. This event will fire even if no items have changed position, in which case the `from` and `to` indices will be the same.
 
-import ReorderStartEndEvents from '@site/static/usage/v8/reorder/reorder-start-end-events/index.md';
+import ReorderStartEndEvents from '@site/static/usage/v8/reorder/reorder-start-end-events/index.mdx';
 
 <ReorderStartEndEvents />
 
@@ -91,7 +91,7 @@ The `ionReorderMove` event is emitted continuously during the reorder gesture as
 Do not call the `complete` method during the `ionReorderMove` event as it can break the gesture.
 :::
 
-import ReorderMoveEvent from '@site/static/usage/v8/reorder/reorder-move-event/index.md';
+import ReorderMoveEvent from '@site/static/usage/v8/reorder/reorder-move-event/index.mdx';
 
 <ReorderMoveEvent />
 
@@ -99,7 +99,7 @@ import ReorderMoveEvent from '@site/static/usage/v8/reorder/reorder-move-event/i
 
 Reorder requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
-import CustomScrollTarget from '@site/static/usage/v8/reorder/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v8/reorder/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
 

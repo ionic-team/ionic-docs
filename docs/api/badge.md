@@ -1,6 +1,7 @@
 ---
-title: "ion-badge"
+title: 'ion-badge'
 ---
+
 import Props from '@ionic-internal/component-api/v9/badge/props.mdx';
 import Events from '@ionic-internal/component-api/v9/badge/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/badge/methods.mdx';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/badge/slots.mdx';
 
 <head>
   <title>ion-badge: iOS & Android App Notification Badge Icons</title>
-  <meta name="description" content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are." />
+  <meta
+    name="description"
+    content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -21,7 +25,7 @@ Badges are inline block elements that usually appear near another element. Typic
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/badge/basic/index.md';
+import Basic from '@site/static/usage/v9/badge/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +37,7 @@ Badges can be added inside a tab button, often used to indicate notifications or
 Empty badges are only available for `md` mode.
 :::
 
-import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.mdx';
 
 <InsideTabBar />
 
@@ -41,30 +45,36 @@ import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/badge/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/badge/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Properties
 
-import CSSProps from '@site/static/usage/v9/badge/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/badge/theming/css-properties/index.mdx';
 
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

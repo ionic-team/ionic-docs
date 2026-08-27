@@ -127,6 +127,21 @@ module.exports = function (context, options) {
           alias: {
             '@ionic-internal/component-api': `${context.siteDir}/.docusaurus/docusaurus-plugin-ionic-component-api/default`,
           },
+          /**
+           * TODO(FW-6456): Remove once every branch imports the `.mdx` names.
+           *
+           * Lets a `.md` import resolve to a `.mdx` file. The Japanese site is
+           * built from this branch's tree combined with prose pulled from
+           * `translation/jp`, so a rename here breaks those imports until that
+           * branch catches up. This has to merge first, and the translation
+           * branch can then follow at any interval.
+           *
+           * Applies to every `.md` import in the repo, so a stale `.mdx` next
+           * to a `.md` will shadow it.
+           */
+          extensionAlias: {
+            '.md': ['.mdx', '.md'],
+          },
         },
       };
     },

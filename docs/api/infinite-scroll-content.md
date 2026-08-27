@@ -1,5 +1,5 @@
 ---
-title: "ion-infinite-scroll-content"
+title: 'ion-infinite-scroll-content'
 ---
 
 import Props from '@ionic-internal/component-api/v9/infinite-scroll-content/props.mdx';
@@ -16,19 +16,25 @@ The `ion-infinite-scroll-content` component is the default child used by the `io
 For more information as well as usage, refer to the [Infinite Scroll Documentation](./infinite-scroll.md#infinite-scroll-content).
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

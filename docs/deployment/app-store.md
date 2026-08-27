@@ -114,7 +114,7 @@ If the upload is successful the app should be listed under 'Activities' on [iTun
 ## Updating an app
 
 As an app grows, it will need to be updated with new features and fixes.
-An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
+An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's [live update feature](https://ionic.io/docs/appflow/deploy/intro).
 
 With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
 

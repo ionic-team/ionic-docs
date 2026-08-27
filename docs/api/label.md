@@ -1,6 +1,7 @@
 ---
-title: "ion-label"
+title: 'ion-label'
 ---
+
 import Props from '@ionic-internal/component-api/v9/label/props.mdx';
 import Events from '@ionic-internal/component-api/v9/label/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/label/methods.mdx';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/label/slots.mdx';
 
 <head>
   <title>ion-label: Item Label Color and Properties for Applications</title>
-  <meta name="description" content="Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label." />
+  <meta
+    name="description"
+    content="Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -23,13 +27,13 @@ The position of the label inside of an item can be inline, fixed, stacked, or fl
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/label/basic/index.md';
+import Basic from '@site/static/usage/v9/label/basic/index.mdx';
 
 <Basic />
 
 ## Item Labels
 
-import Item from '@site/static/usage/v9/label/item/index.md';
+import Item from '@site/static/usage/v9/label/item/index.mdx';
 
 <Item />
 
@@ -37,25 +41,30 @@ import Item from '@site/static/usage/v9/label/item/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/label/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/label/theming/colors/index.mdx';
 
 <Colors />
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

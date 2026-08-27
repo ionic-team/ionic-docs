@@ -12,17 +12,11 @@ src/theme/prism-include-languages.ts
 legacy-stencil-components
 scripts/bak
 
-docs/api
-versioned_docs/version-v*/api
+# Auto-generated files
 docs/native
 versioned_docs/version-v*/native
 docs/cli/commands
-# Each definition in these files is one line of prose inside a JSX <section>.
-# Prettier's mdx parser reflows those children and moves link text onto its own
-# line, which MDX then wraps in a paragraph, rendering invalid HTML such as
-# <a><p>Android SDK</p></a>. Formatting these files reintroduces that markup.
-docs/reference/glossary.md
-versioned_docs/version-v*/reference/glossary.md
+versioned_docs/version-v*/cli/commands
 
 # Archived versions
 versioned_docs/version-v5

@@ -25,7 +25,7 @@ Skeleton Text is a component for rendering placeholder content. The element will
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/skeleton-text/basic/index.md';
+import Basic from '@site/static/usage/v8/skeleton-text/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v8/skeleton-text/basic/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v8/skeleton-text/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/skeleton-text/theming/css-properties/index.mdx';
 
 <CSSProps />
 

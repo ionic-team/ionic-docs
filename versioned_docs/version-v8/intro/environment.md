@@ -22,10 +22,10 @@ Much of Ionic development requires familiarity with the command line. If you're 
 
 In general, we recommend using the built-in terminals. Many third-party terminals work well with Ionic, but may not be supported.
 
-- For Windows, **Command Prompt** and **PowerShell** are supported. <a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a> is known to work with Ionic, but may not be supported.
+- For Windows, **Command Prompt** and **PowerShell** are supported. [WSL](https://docs.microsoft.com/en-us/windows/wsl/faq) is known to work with Ionic, but may not be supported.
 - For macOS, the built-in **Terminal** app is supported.
 
-Git Bash (from <a href="https://git-scm.com" target="_blank">git-scm.com</a>) does not support TTY interactivity and is **not supported** by Ionic.
+Git Bash (from [git-scm.com](https://git-scm.com)) does not support TTY interactivity and is **not supported** by Ionic.
 
 ## Node & npm
 

@@ -23,7 +23,7 @@ Header is a root component of a page that aligns itself to the top of the page. 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/header/basic/index.md';
+import Basic from '@site/static/usage/v8/header/basic/index.mdx';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v8/header/basic/index.md';
 
 Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order for the content to scroll behind the header, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
-import Translucent from '@site/static/usage/v8/header/translucent/index.md';
+import Translucent from '@site/static/usage/v8/header/translucent/index.mdx';
 
 <Translucent />
 
@@ -39,7 +39,7 @@ import Translucent from '@site/static/usage/v8/header/translucent/index.md';
 
 Ionic provides the functionality found in native iOS applications to show a large toolbar title and then collapse it to a small title when scrolling. This can be done by adding two headers, one above the content and one inside of the content, and then setting the `collapse` property to `"condense"` on the header inside of the content. This effect will only apply when the mode is "ios".
 
-import Condense from '@site/static/usage/v8/header/condense/index.md';
+import Condense from '@site/static/usage/v8/header/condense/index.mdx';
 
 <Condense />
 
@@ -49,7 +49,7 @@ Many native iOS applications have a fade effect on the toolbar. This can be achi
 
 This functionality can be combined with a [Condensed Header](#condensed-header) as well. The `collapse` property with a value set to `"fade"` should be on the header outside of the content.
 
-import Fade from '@site/static/usage/v8/header/fade/index.md';
+import Fade from '@site/static/usage/v8/header/fade/index.mdx';
 
 <Fade />
 
@@ -57,7 +57,7 @@ import Fade from '@site/static/usage/v8/header/fade/index.md';
 
 A fade header requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
-import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
 
@@ -65,7 +65,7 @@ import CustomScrollTarget from '@site/static/usage/v8/header/custom-scroll-targe
 
 In `"md"` mode, the header will have a `box-shadow` on the bottom. In `"ios"` mode, it will receive a `border` on the bottom. These can be removed by adding the `.ion-no-border` class to the header.
 
-import NoBorder from '@site/static/usage/v8/header/no-border/index.md';
+import NoBorder from '@site/static/usage/v8/header/no-border/index.mdx';
 
 <NoBorder />
 

@@ -1,6 +1,7 @@
 ---
-title: "ion-title"
+title: 'ion-title'
 ---
+
 import Props from '@ionic-internal/component-api/v9/title/props.mdx';
 import Events from '@ionic-internal/component-api/v9/title/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/title/methods.mdx';
@@ -10,19 +11,21 @@ import Slots from '@ionic-internal/component-api/v9/title/slots.mdx';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
-  <meta name="description" content="ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps." />
+  <meta
+    name="description"
+    content="ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Title is a text component that sets the title for a [toolbar](./toolbar). It can be used to describe the screen or section a user is currently on or the app being used.
 
 ## Basic
 
-import Basic from '@site/static/usage/v9/title/basic/index.md';
+import Basic from '@site/static/usage/v9/title/basic/index.mdx';
 
 <Basic />
 
@@ -36,7 +39,7 @@ This feature is only available for iOS.
 
 :::
 
-import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large-title/basic/index.md';
+import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large-title/basic/index.mdx';
 
 <CollapsibleLargeTitle />
 
@@ -44,8 +47,7 @@ import CollapsibleLargeTitle from '@site/static/usage/v9/title/collapsible-large
 
 The [buttons](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
 
-
-import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.mdx';
 
 <CollapsibleLargeTitleButtons />
 
@@ -73,24 +75,30 @@ When styling the text color of the large title, you should target the large titl
 
 ### CSS Custom Properties
 
-import CSSCustomProperties from '@site/static/usage/v9/title/theming/css-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v9/title/theming/css-properties/index.mdx';
 
 <CSSCustomProperties />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
