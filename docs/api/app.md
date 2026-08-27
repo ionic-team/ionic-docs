@@ -30,7 +30,7 @@ AppはIonicアプリケーションのコンテナ要素です。1つのプロ�
 
 Ionicは、`ion-focusable`クラスを持つコンポーネント用のフォーカスユーティリティを提供します。これらのユーティリティは、<kbd>Tab</kbd>などの特定のキーボードキーが押されたときに、コンポーネントのフォーカスを自動的に管理します。コンポーネントは、`ion-app`の`setFocus`メソッドを使用して、ユーザーのアクションに応じてプログラムでフォーカスを設定することもできます。
 
-import SetFocus from '@site/static/usage/v9/app/set-focus/index.md';
+import SetFocus from '@site/static/usage/v9/app/set-focus/index.mdx';
 
 <SetFocus />
 

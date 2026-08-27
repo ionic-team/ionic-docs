@@ -55,7 +55,7 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 場合によっては、アプリケーションロジック内で現在の Ionic モードにプログラム的にアクセスする必要があるかもしれません。これは、条件付き動作を適用したり、特定のアセットを取得したり、アクティブなスタイリングモードに基づいて他のアクションを実行したりするのに役立ちます。
 
-import IonicMode from '@site/static/usage/v9/config/mode/index.md';
+import IonicMode from '@site/static/usage/v9/config/mode/index.mdx';
 
 <IonicMode />
 

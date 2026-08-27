@@ -18,7 +18,7 @@ Backdropは、他のコンポーネントをオーバーレイするためフル
 
 Backdropは、その後ろのコンテンツをクリックしたりタップしたりするのを防ぎます。デフォルトでは透明なので、下のデモではCSSで見えるようにしています。
 
-import Basic from '@site/static/usage/v9/backdrop/basic/index.md';
+import Basic from '@site/static/usage/v9/backdrop/basic/index.mdx';
 
 <Basic />
 
@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v9/backdrop/basic/index.md';
 
 コンテンツに `z-index` を設定し、背景よりも高い位置に表示させることができます（デフォルトは `2` です）。
 
-import Styling from '@site/static/usage/v9/backdrop/styling/index.md';
+import Styling from '@site/static/usage/v9/backdrop/styling/index.mdx';
 
 <Styling />
 

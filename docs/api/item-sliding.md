@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 スライドアイテムのオプションは、デフォルトではアイテムの `"end"` 側に配置されます。つまり、LTRでは右から左へ、RTLでは左から右へスワイプすると、オプションが表示されます。反対側に配置し、反対方向にスワイプしたときに表示されるようにするには、 [item options](./item-options) 要素の side 属性を `"start"` に設定します。アイテムオプションは最大2つまで同時に使用することができ、スワイプの方向によって2つの異なるオプションを表示させることができます。
 
-import Basic from '@site/static/usage/v9/item-sliding/basic/index.md';
+import Basic from '@site/static/usage/v9/item-sliding/basic/index.mdx';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v9/item-sliding/basic/index.md';
 
 [アイテムオプション](./item-option) でアイコンをテキストと一緒に配置すると、デフォルトでテキストの上にアイコンを表示します。アイコンのスロットは、利用可能な [アイテムオプションスロット](./item-option#slots) に変更することで位置を変更することが可能です。
 
-import Icons from '@site/static/usage/v9/item-sliding/icons/index.md';
+import Icons from '@site/static/usage/v9/item-sliding/icons/index.mdx';
 
 <Icons />
 
@@ -41,7 +41,7 @@ import Icons from '@site/static/usage/v9/item-sliding/icons/index.md';
 
 オプションは、スワイプがあるポイントを超えると、親となる `ion-item` の幅いっぱいに展開されます。これは、[item options](./item-options) の `ionSwipe` イベントと組み合わせることで、アイテムが完全にスワイプされたときにメソッドを呼び出すことができます。
 
-import Expandable from '@site/static/usage/v9/item-sliding/expandable/index.md';
+import Expandable from '@site/static/usage/v9/item-sliding/expandable/index.mdx';
 
 <Expandable />
 

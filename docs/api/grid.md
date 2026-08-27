@@ -54,7 +54,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 デフォルトでは、すべてのデバイスと画面サイズにおいて、列は行の中で同じ幅を占めます。
 
-import Basic from '@site/static/usage/v9/grid/basic/index.md';
+import Basic from '@site/static/usage/v9/grid/basic/index.mdx';
 
 <Basic />
 
@@ -71,7 +71,7 @@ import Basic from '@site/static/usage/v9/grid/basic/index.md';
 | lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
 | xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
 
-import Fixed from '@site/static/usage/v9/grid/fixed/index.md';
+import Fixed from '@site/static/usage/v9/grid/fixed/index.mdx';
 
 <Fixed />
 
@@ -84,7 +84,7 @@ import Fixed from '@site/static/usage/v9/grid/fixed/index.md';
 
 `size`を`"auto"`に設定することで、カラムはコンテンツの自然な幅に基づいたサイズを設定することができます。これは、カラムを特定のピクセル数のような絶対的な幅に設定するときに必要です。自動幅のカラムの隣にあるカラムは、行を埋めるようにリサイズされます。
 
-import SizeAuto from '@site/static/usage/v9/grid/size-auto/index.md';
+import SizeAuto from '@site/static/usage/v9/grid/size-auto/index.mdx';
 
 <SizeAuto />
 
@@ -93,7 +93,7 @@ import SizeAuto from '@site/static/usage/v9/grid/size-auto/index.md';
 
 カラムの `size` を設定すると、他のカラムは自動的にそのカラムの周りにリサイズされます。すべてのカラムにサイズが指定され、それがカラムの総数に満たない場合、カラムの後に空白ができます。
 
-import Size from '@site/static/usage/v9/grid/size/index.md';
+import Size from '@site/static/usage/v9/grid/size/index.mdx';
 
 <Size />
 
@@ -101,7 +101,7 @@ import Size from '@site/static/usage/v9/grid/size/index.md';
 
 `size`プロパティは、すべての[ブレークポイント](#default-breakpoints)でカラム幅を変更します。カラムはまた、ブレークポイント名が「size」の末尾に付加された複数のサイズプロパティを提供します。これらのプロパティを使用して、画面サイズに応じてカラムの幅を変更することができます。以下の例を StackBlitz で開き、画面のサイズを変更してカラム幅の変化を確認してください。
 
-import SizeResponsive from '@site/static/usage/v9/grid/size-responsive/index.md';
+import SizeResponsive from '@site/static/usage/v9/grid/size-responsive/index.mdx';
 
 <SizeResponsive />
 
@@ -114,7 +114,7 @@ import SizeResponsive from '@site/static/usage/v9/grid/size-responsive/index.md'
 
 カラムは、`offset`プロパティを用いて右に移動させることができます。このプロパティは、カラムの左マージンを指定したカラムの数だけ増やします。また、その右側にカラムが存在する場合は、そのカラムを移動させます。
 
-import Offset from '@site/static/usage/v9/grid/offset/index.md';
+import Offset from '@site/static/usage/v9/grid/offset/index.mdx';
 
 <Offset />
 
@@ -122,7 +122,7 @@ import Offset from '@site/static/usage/v9/grid/offset/index.md';
 
 `offset`プロパティは、すべての[ブレークポイント](#default-breakpoints)で列の左マージンを変更します。列には、ブレークポイント名を"offset"の末尾に付けた複数のオフセットプロパティもあります。これらのプロパティは、画面サイズに応じて列のオフセットを変更するために使用できます。以下の例を StackBlitz で開き、画面サイズを変更して列のオフセットがどのように変化するかを確認してください。
 
-import OffsetResponsive from '@site/static/usage/v9/grid/offset-responsive/index.md';
+import OffsetResponsive from '@site/static/usage/v9/grid/offset-responsive/index.mdx';
 
 <OffsetResponsive />
 
@@ -135,7 +135,7 @@ import OffsetResponsive from '@site/static/usage/v9/grid/offset-responsive/index
 
 `push`と`pull`のプロパティを追加することで、カラムの並び替えを行うことができます。これらのプロパティは、指定された列数だけ列の `left` と `right` を調整し、列の並び替えを簡単に行うことができます。この場合、他のカラムが配置されている場所にカラムを移動させると、カラムが重なることになります。
 
-import PushPull from '@site/static/usage/v9/grid/push-pull/index.md';
+import PushPull from '@site/static/usage/v9/grid/push-pull/index.mdx';
 
 <PushPull />
 
@@ -143,7 +143,7 @@ import PushPull from '@site/static/usage/v9/grid/push-pull/index.md';
 
 `push`および`pull`プロパティは、すべての[ブレークポイント](#default-breakpoints)で列の位置を変更します。列には、ブレークポイント名を"push" / "pull"の末尾に付けた複数の`push`および`pull`プロパティもあります。これらのプロパティは、画面サイズに応じて列の位置を変更するために使用できます。以下の例を StackBlitz で開き、画面サイズを変更して列の位置がどのように変化するかを確認してください。
 
-import PushPullResponsive from '@site/static/usage/v9/grid/push-pull-responsive/index.md';
+import PushPullResponsive from '@site/static/usage/v9/grid/push-pull-responsive/index.mdx';
 
 <PushPullResponsive />
 
@@ -153,7 +153,7 @@ import PushPullResponsive from '@site/static/usage/v9/grid/push-pull-responsive/
 
 すべての列は、行に異なるクラスを追加することで垂直に整列させることができます。使用可能なクラスのリストは[CSS ユーティリティ](/layout/css-utilities#flex-container-properties)を参照してください。
 
-import VerticalAlignment from '@site/static/usage/v9/grid/vertical-alignment/index.md';
+import VerticalAlignment from '@site/static/usage/v9/grid/vertical-alignment/index.mdx';
 
 <VerticalAlignment />
 
@@ -162,7 +162,7 @@ import VerticalAlignment from '@site/static/usage/v9/grid/vertical-alignment/ind
 
 すべての列は、行に異なるクラスを追加することで水平方向に整列させることができます。使用可能なクラスのリストは[CSS ユーティリティ](/layout/css-utilities.md#flex-container-properties)を参照してください。
 
-import HorizontalAlignment from '@site/static/usage/v9/grid/horizontal-alignment/index.md';
+import HorizontalAlignment from '@site/static/usage/v9/grid/horizontal-alignment/index.mdx';
 
 <HorizontalAlignment />
 
@@ -174,7 +174,7 @@ import HorizontalAlignment from '@site/static/usage/v9/grid/horizontal-alignment
 
 固定グリッドの幅は、すべてのブレークポイントに対して`--ion-grid-width` CSS 変数で設定できます。個別のブレークポイントを上書きするには、`--ion-grid-width-{breakpoint}` CSS 変数を使用してください。各ブレークポイントのデフォルト値は、[固定グリッド](#fixed-grid)セクションに記載されています。以下の例を StackBlitz で開き、画面サイズを変更してグリッド幅がどのように変化するかを確認してください。
 
-import Width from '@site/static/usage/v9/grid/customizing/width/index.md';
+import Width from '@site/static/usage/v9/grid/customizing/width/index.mdx';
 
 <Width />
 
@@ -182,7 +182,7 @@ import Width from '@site/static/usage/v9/grid/customizing/width/index.md';
 
 グリッドのカラム数は `--ion-grid-columns` という CSS 変数で変更することができます。デフォルトでは 12 列ですが、これを任意の正の整数に変更し、各列の幅を計算するために使用することができます。
 
-import ColumnNumber from '@site/static/usage/v9/grid/customizing/column-number/index.md';
+import ColumnNumber from '@site/static/usage/v9/grid/customizing/column-number/index.mdx';
 
 <ColumnNumber />
 
@@ -192,7 +192,7 @@ import ColumnNumber from '@site/static/usage/v9/grid/customizing/column-number/i
 
 列の padding は、CSS 変数 `--ion-grid-column-padding` ですべてのブレイクポイントに対して設定できます。個々のブレイクポイントを上書きするには、 `--ion-grid-column-padding-{breakpoint}` CSS 変数を使用します。
 
-import Padding from '@site/static/usage/v9/grid/customizing/padding/index.md';
+import Padding from '@site/static/usage/v9/grid/customizing/padding/index.mdx';
 
 <Padding />
 

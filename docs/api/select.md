@@ -38,7 +38,7 @@ selectは、子要素 `<ion-select-option>` とともに使用する必要があ
 
 ラベルはデフォルトではコンテンツの幅を占めます。開発者は `labelPlacement` プロパティを使用して、コントロールに対するラベルの配置を制御することができます。ここでは `label` プロパティを使用しているが、`labelPlacement` は `label` スロットと一緒に使用することもできます。
 
-import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -46,7 +46,7 @@ import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.m
 
 プレーンテキストのラベルは `label` プロパティで渡すべきですが、カスタムHTMLが必要な場合は、代わりに `label` スロットで渡すことができます。
 
-import LabelSlot from '@site/static/usage/v9/select/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v9/select/label-slot/index.mdx';
 
 <LabelSlot />
 
@@ -54,7 +54,7 @@ import LabelSlot from '@site/static/usage/v9/select/label-slot/index.md';
 
 表示するラベルが必要ない場合でも、開発者は`aria-label`を指定する必要があります
 
-import NoVisibleLabel from '@site/static/usage/v9/select/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v9/select/no-visible-label/index.mdx';
 
 <NoVisibleLabel />
 
@@ -64,7 +64,7 @@ import NoVisibleLabel from '@site/static/usage/v9/select/no-visible-label/index.
 
 単一選択時のキーボード操作については、以下の[キーボード操作](#single-selection-1)のセクションで説明しています。
 
-import SingleSelectionExample from '@site/static/usage/v9/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v9/select/basic/single-selection/index.mdx';
 
 <SingleSelectionExample />
 
@@ -80,7 +80,7 @@ select に `multiple` 属性を追加することで、ユーザは複数のオ�
 
 複数選択時のキーボード操作については、以下の[キーボード操作](#multiple-selection-1)のセクションで説明しています。
 
-import MultipleSelectionExample from '@site/static/usage/v9/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v9/select/basic/multiple-selection/index.mdx';
 
 <MultipleSelectionExample />
 
@@ -90,26 +90,26 @@ import MultipleSelectionExample from '@site/static/usage/v9/select/basic/multipl
 
 ### Alert
 
-import AlertExample from '@site/static/usage/v9/select/basic/single-selection/index.md';
+import AlertExample from '@site/static/usage/v9/select/basic/single-selection/index.mdx';
 
 <AlertExample />
 
 
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/v9/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v9/select/interfaces/action-sheet/index.mdx';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/v9/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v9/select/interfaces/popover/index.mdx';
 
 <PopoverExample />
 
 ### Modal
 
-import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.md';
+import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.mdx';
 
 <ModalExample />
 
@@ -117,7 +117,7 @@ import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.md
 
 Selectとのユーザーインタラクションを処理する主な方法は、`ionChange`、`ionDismiss`、および`ionCancel`イベントです。これらおよびSelectが発火する他のイベントの詳細については、[Events](#events)を参照してください。
 
-import RespondingToInteractionExample from '@site/static/usage/v9/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v9/select/basic/responding-to-interaction/index.mdx';
 
 <RespondingToInteractionExample />
 
@@ -129,13 +129,13 @@ Selectの値にオブジェクトを使用する場合、Selectの値のidentity
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/v9/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v9/select/objects-as-values/using-comparewith/index.mdx';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/select/objects-as-values/multiple-selection/index.mdx';
 
 <ObjectValuesAndMultipleSelectionExample />
 
@@ -143,7 +143,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/selec
 
 開発者は `justify` プロパティを使って、ラベルとコントロールの行の詰め方をコントロールすることができる。
 
-import JustifyExample from '@site/static/usage/v9/select/justify/index.md';
+import JustifyExample from '@site/static/usage/v9/select/justify/index.mdx';
 
 <JustifyExample />
 
@@ -157,7 +157,7 @@ iOSでは、Selectの `mode` を `md` に設定することで、Filled Selects�
 コンポーネント間のスタイリングの競合のため、`fill`を使用するセレクトは`ion-item`内で使用すべきではありません。
 :::
 
-import FillExample from '@site/static/usage/v9/select/fill/index.md';
+import FillExample from '@site/static/usage/v9/select/fill/index.mdx';
 
 <FillExample />
 
@@ -170,7 +170,7 @@ import FillExample from '@site/static/usage/v9/select/fill/index.md';
 `modal`インターフェースには、ヘッダーに単一の`Close`ボタンがあります。このボタンは、モーダルを閉じることのみを担当します。
 このボタンをクリックした後、または代替方法でモーダルが閉じられた場合でも、行われた選択は保持されます。
 
-import ButtonTextExample from '@site/static/usage/v9/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v9/select/customization/button-text/index.mdx';
 
 <ButtonTextExample />
 
@@ -182,7 +182,7 @@ selectはalert、action sheet、popover、modalの各インターフェイスを
 
 注意: `alert` インターフェイスでは、`interfaceOptions` は `inputs` や `buttons` を上書きしません。
 
-import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/interface-options/index.mdx';
 
 <InterfaceOptionsExample />
 
@@ -196,7 +196,7 @@ import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/
 スロットコンテンツが操作対象である場合、[Button](./button.md)などのインタラクティブ要素でラップする必要があります。これにより、コンテンツにタブで移動できるようになります。
 :::
 
-import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.mdx';
 
 <StartEndSlots />
 
@@ -212,7 +212,7 @@ select option のリッチコンテンツはデフォルトで無効です。[�
 
 option を選択すると、閉じた状態のフィールドには option のテキストコンテンツだけがプレーンテキストとして表示されます。HTML マークアップは取り除かれ、`start`、`end` slot と `description` 属性は選択後の表示には含まれません。
 
-import RichContentOptions from '@site/static/usage/v9/select/rich-content-options/index.md';
+import RichContentOptions from '@site/static/usage/v9/select/rich-content-options/index.mdx';
 
 <RichContentOptions />
 
@@ -226,7 +226,7 @@ Selectコンポーネントには2つのユニットがあり、それぞれ別�
 
 また、必要な[ブラウザサポート](https://caniuse.com/#feat=mdn-css_selectors_part)によっては、CSSのシャドウパーツを使用してセレクトのスタイルを設定することもできます。 `part` を使用することで、要素上の任意の CSS プロパティを対象とすることができることに注意してください。
 
-import StylingSelectExample from '@site/static/usage/v9/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v9/select/customization/styling-select/index.mdx';
 
 <StylingSelectExample />
 
@@ -246,7 +246,7 @@ import StylingSelectExample from '@site/static/usage/v9/select/customization/sty
 
 選択テキストの隣に表示されるアイコンは、`toggleIcon` プロパティと `expandedIcon` プロパティを使用して、任意の [Ionicon](https://ionic.io/ionicons) に設定することができます。
 
-import CustomToggleIconsExample from '@site/static/usage/v9/select/customization/custom-toggle-icons/index.md';
+import CustomToggleIconsExample from '@site/static/usage/v9/select/customization/custom-toggle-icons/index.mdx';
 
 <CustomToggleIconsExample />
 
@@ -256,7 +256,7 @@ import CustomToggleIconsExample from '@site/static/usage/v9/select/customization
 
 以下の例では[custom `toggleIcon`](#custom-toggle-icons)を使って、`ios`モードでのトグルアイコンの反転動作をより分かりやすく説明しています。
 
-import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/icon-flip-behavior/index.md';
+import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/icon-flip-behavior/index.mdx';
 
 <IconFlipBehaviorExample />
 
@@ -264,7 +264,7 @@ import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/
 
 Typeaheadまたはオートコンプリート機能は、既存のIonicコンポーネントを使用して構築できます。利用可能なスクリーンスペースを最大限に活用するために、`ion-modal`を使用することをお勧めします。
 
-import TypeaheadExample from '@site/static/usage/v9/select/typeahead/index.md';
+import TypeaheadExample from '@site/static/usage/v9/select/typeahead/index.mdx';
 
 <TypeaheadExample />
 
@@ -274,7 +274,7 @@ import TypeaheadExample from '@site/static/usage/v9/select/typeahead/index.md';
 
 Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
-import HelperError from '@site/static/usage/v9/select/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/select/helper-error/index.mdx';
 
 <HelperError />
 

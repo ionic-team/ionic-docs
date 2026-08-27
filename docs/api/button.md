@@ -21,7 +21,7 @@ Buttonはクリック可能な要素を提供し、Form内や、標準の単機�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/button/basic/index.md';
+import Basic from '@site/static/usage/v9/button/basic/index.mdx';
 
 <Basic />
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v9/button/basic/index.md';
 
 このプロパティでは、ボタンの幅を指定することができます。デフォルトでは、ボタンは `display: inline-block` を持ちますが、このプロパティを設定すると、ボタンは `display: block` を持つ全角要素に変更されます。
 
-import Expand from '@site/static/usage/v9/button/expand/index.md';
+import Expand from '@site/static/usage/v9/button/expand/index.mdx';
 
 <Expand />
 
@@ -37,7 +37,7 @@ import Expand from '@site/static/usage/v9/button/expand/index.md';
 
 このプロパティは、ボタンの形状を指定することができます。デフォルトでは、ボタンは小さなボーダー半径を持つ長方形ですが、これを `"round"` に設定すると、ボタンは丸みを帯びた要素に変更されます。
 
-import Shape from '@site/static/usage/v9/button/shape/index.md';
+import Shape from '@site/static/usage/v9/button/shape/index.mdx';
 
 <Shape />
 
@@ -46,7 +46,7 @@ import Shape from '@site/static/usage/v9/button/shape/index.md';
 
 この属性は、Buttonのbackgroundとborder-colorを設定します。デフォルトでは、Buttonはtoolbar内にない限り、backgroundは塗りつぶされます。toolbar内にある場合は、backgroundは透明になります。
 
-import Fill from '@site/static/usage/v9/button/fill/index.md';
+import Fill from '@site/static/usage/v9/button/fill/index.mdx';
 
 <Fill />
 
@@ -54,13 +54,13 @@ import Fill from '@site/static/usage/v9/button/fill/index.md';
 
 この属性は、Buttonのサイズを指定します。この属性を設定すると、Buttonの高さとpaddingが変更されます
 
-import Size from '@site/static/usage/v9/button/size/index.md';
+import Size from '@site/static/usage/v9/button/size/index.mdx';
 
 <Size />
 
 ## Icons
 
-import Icons from '@site/static/usage/v9/button/icons/index.md';
+import Icons from '@site/static/usage/v9/button/icons/index.mdx';
 
 <Icons />
 
@@ -68,13 +68,13 @@ import Icons from '@site/static/usage/v9/button/icons/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/button/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/button/theming/colors/index.mdx';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/button/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/button/theming/css-properties/index.mdx';
 
 <CSSProps />
 
@@ -92,7 +92,7 @@ import CSSProps from '@site/static/usage/v9/button/theming/css-properties/index.
 max-width`スタイルは、デモのためだけに下のボタンに設定されています。テキストラッピングは動的なボタン幅で動作します。
 :::
 
-import TextWrapping from '@site/static/usage/v9/button/text-wrapping/index.md';
+import TextWrapping from '@site/static/usage/v9/button/text-wrapping/index.mdx';
 
 <TextWrapping />
 

@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/list/basic/index.md';
+import Basic from '@site/static/usage/v9/list/basic/index.mdx';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/v9/list/basic/index.md';
 
 リストに `inset` プロパティを追加すると、リストの周囲にマージンが適用されます。また、`ios`モードでは、リストに角丸が追加されます。
 
-import Inset from '@site/static/usage/v9/list/inset/index.md';
+import Inset from '@site/static/usage/v9/list/inset/index.mdx';
 
 <Inset />
 
@@ -41,7 +41,7 @@ import Inset from '@site/static/usage/v9/list/inset/index.md';
 
 リストに `lines` プロパティを追加すると、リスト内のすべてのアイテムの下側のボーダーを調整することができます。 `"full"`に設定すると全幅のボーダーが表示され、`"inset"`に設定すると左paddingで調整されたボーダーが表示され、`none"`に設定するとボーダーが表示されません。リスト内のアイテムに `lines` プロパティが設定されている場合は、リスト上のプロパティよりもそちらが優先されます。
 
-import Lines from '@site/static/usage/v9/list/lines/index.md';
+import Lines from '@site/static/usage/v9/list/lines/index.mdx';
 
 <Lines />
 

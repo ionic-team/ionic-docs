@@ -21,7 +21,7 @@ input コンポーネントは、HTML input 要素のラッパーで、カスタ
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/input/basic/index.md';
+import Basic from '@site/static/usage/v9/input/basic/index.mdx';
 
 <Basic />
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v9/input/basic/index.md';
 
 input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、`keyup`、`keydown`、`keypress`などの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
 
-import Types from '@site/static/usage/v9/input/types/index.md';
+import Types from '@site/static/usage/v9/input/types/index.mdx';
 
 <Types />
 
@@ -45,7 +45,7 @@ import Types from '@site/static/usage/v9/input/types/index.md';
 
 ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
-import LabelPlacement from '@site/static/usage/v9/input/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/input/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -55,7 +55,7 @@ import LabelPlacement from '@site/static/usage/v9/input/label-placement/index.md
 
 この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
-import LabelSlot from '@site/static/usage/v9/input/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v9/input/label-slot/index.mdx';
 
 <LabelSlot />
 
@@ -63,7 +63,7 @@ import LabelSlot from '@site/static/usage/v9/input/label-slot/index.md';
 
 表示するラベルが必要ない場合でも、開発者は `aria-label` を指定する必要があります。
 
-import NoVisibleLabel from '@site/static/usage/v9/input/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v9/input/no-visible-label/index.mdx';
 
 <NoVisibleLabel />
 
@@ -71,7 +71,7 @@ import NoVisibleLabel from '@site/static/usage/v9/input/no-visible-label/index.m
 
 Inputsには、入力の操作方法に応じて、Inputをクリアするための2つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、Inputに `value` があるときにクリアボタンを表示します。2つ目の方法は `clearOnEdit` プロパティで、入力が編集削除された後、再度入力されるとクリアされます。 `type` が `"password"` に設定されているInputは、デフォルトで `clearOnEdit` が有効になっています。
 
-import Clear from '@site/static/usage/v9/input/clear/index.md';
+import Clear from '@site/static/usage/v9/input/clear/index.mdx';
 
 <Clear />
 
@@ -85,7 +85,7 @@ Filled inputs をiOSで使うためには、inputの `mode` を `md` に設定�
 コンポーネント間のスタイリングの競合のため、`fill`を使用する入力は`ion-item`内で使用すべきではありません。
 :::
 
-import Fill from '@site/static/usage/v9/input/fill/index.md';
+import Fill from '@site/static/usage/v9/input/fill/index.mdx';
 
 <Fill />
 
@@ -95,7 +95,7 @@ import Fill from '@site/static/usage/v9/input/fill/index.md';
 
 Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
-import HelperError from '@site/static/usage/v9/input/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/input/helper-error/index.mdx';
 
 <HelperError />
 
@@ -105,13 +105,13 @@ Input Counterは、Inputの下に表示されるテキストで、入力可能�
 
 `ion-item`の`counter`と`counterFormatter`プロパティは[Ionic 7で非推奨](/docs/api/input#using-the-modern-syntax)となり、代わりに`ion-input`で直接使用すべきです。
 
-import Counter from '@site/static/usage/v9/input/counter/index.md';
+import Counter from '@site/static/usage/v9/input/counter/index.mdx';
 
 <Counter />
 
 カウンター付きのInputは、Inputとカウンターの間にボーダーを追加するため、アイテムの下に追加のボーダーを追加する`ion-item`内に配置すべきではありません。`ion-padding-start`クラスを追加して、カウンターInputとアイテム内Inputを揃えることができます。
 
-import CounterAlignment from '@site/static/usage/v9/input/counter-alignment/index.md';
+import CounterAlignment from '@site/static/usage/v9/input/counter-alignment/index.mdx';
 
 <CounterAlignment />
 
@@ -121,7 +121,7 @@ import CounterAlignment from '@site/static/usage/v9/input/counter-alignment/inde
 
 ステート変数に値を格納する場合、ステート変数と `ion-input` コンポーネントの値の両方を更新することを推奨します。これにより、状態変数と `ion-input` コンポーネントの値が確実に同期されます。
 
-import FilteringData from '@site/static/usage/v9/input/filtering/index.md';
+import FilteringData from '@site/static/usage/v9/input/filtering/index.mdx';
 
 <FilteringData />
 
@@ -135,7 +135,7 @@ Maskitoを使い始めるには、ライブラリをインストールしてく�
 npm install @maskito/core @maskito/{angular,react,vue}
 ```
 
-import Masking from '@site/static/usage/v9/input/mask/index.md';
+import Masking from '@site/static/usage/v9/input/mask/index.mdx';
 
 <Masking />
 
@@ -157,7 +157,7 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
 :::
 
-import StartEndSlots from '@site/static/usage/v9/input/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v9/input/start-end-slots/index.mdx';
 
 <StartEndSlots />
 
@@ -171,7 +171,7 @@ import StartEndSlots from '@site/static/usage/v9/input/start-end-slots/index.md'
 The `color` property does *not* change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
 :::
 
-import Colors from '@site/static/usage/v9/input/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/input/theming/colors/index.mdx';
 
 <Colors />
 
@@ -179,7 +179,7 @@ import Colors from '@site/static/usage/v9/input/theming/colors/index.md';
 
 Inputはscoped encapsulationを採用しており、実行時に各スタイルに追加のクラスを付加することで、CSSを自動的にスコープ化します。CSSでscopedセレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
 
-import CSSProps from '@site/static/usage/v9/input/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/input/theming/css-properties/index.mdx';
 
 <CSSProps />
 

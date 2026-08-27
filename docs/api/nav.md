@@ -29,7 +29,7 @@ Router Outletとは異なり、Navは特定のルーターに縛られること�
 
 NavLinkは、Navと対話する際の簡素化されたAPIです。開発者はコンポーネントをカスタマイズしたり、コンポーネントのプロパティを渡したり、ルートアニメーションの方向を変更したり、ナビゲート時のカスタムアニメーションを定義したりすることができます。
 
-import NavLinkExample from '@site/static/usage/v9/nav/nav-link/index.md';
+import NavLinkExample from '@site/static/usage/v9/nav/nav-link/index.mdx';
 
 <NavLinkExample />
 
@@ -43,7 +43,7 @@ Modal can use Nav to offer a linear navigation that is independent of the URL.
 
 :::
 
-import ModalNavigationExample from '@site/static/usage/v9/nav/modal-navigation/index.md';
+import ModalNavigationExample from '@site/static/usage/v9/nav/modal-navigation/index.mdx';
 
 <ModalNavigationExample />
 

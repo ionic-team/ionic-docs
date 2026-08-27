@@ -148,7 +148,7 @@ import { call, person, settings } from 'ionicons/icons';
 空のバッジは`md`モードでのみ利用可能です。
 :::
 
-import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.mdx';
 
 <InsideTabBar />
 

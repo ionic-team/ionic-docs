@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/refresher/basic/index.md';
+import Basic from '@site/static/usage/v9/refresher/basic/index.mdx';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v9/refresher/basic/index.md';
 
 これらのプロパティは、[native refresher](#native-refreshers)が有効な場合には適用されません。
 
-import PullProperties from '@site/static/usage/v9/refresher/pull-properties/index.md';
+import PullProperties from '@site/static/usage/v9/refresher/pull-properties/index.mdx';
 
 <PullProperties />
 
@@ -41,7 +41,7 @@ import PullProperties from '@site/static/usage/v9/refresher/pull-properties/inde
 
 `pullingIcon`を設定すると、[native refresher](#native-refreshers)が無効になります。
 
-import CustomContent from '@site/static/usage/v9/refresher/custom-content/index.md';
+import CustomContent from '@site/static/usage/v9/refresher/custom-content/index.mdx';
 
 <CustomContent />
 
@@ -83,7 +83,7 @@ Developers should apply the following CSS to the scrollable container. This CSS 
 }
 ```
 
-import CustomScrollTarget from '@site/static/usage/v9/refresher/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v9/refresher/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
 
@@ -91,7 +91,7 @@ import CustomScrollTarget from '@site/static/usage/v9/refresher/custom-scroll-ta
 
 リフレッシャーはどのようなタイプのコンテンツでも使用できますが、ネイティブアプリでよくある使用例は、更新時に更新されるデータのリストを表示することです。以下の例では、アプリはデータのリストを生成し、更新が完了したときにリストの先頭にデータを追加します。実際のアプリでは、ネットワークまたはデータベース呼び出しによってリクエストを送信した後に、データを受信して更新します。
 
-import Advanced from '@site/static/usage/v9/refresher/advanced/index.md';
+import Advanced from '@site/static/usage/v9/refresher/advanced/index.mdx';
 
 <Advanced />
 
@@ -103,7 +103,7 @@ The `ionPullStart` event is emitted when the user begins a pull gesture. This ev
 
 The `ionPullEnd` event is emitted when the refresher returns to an inactive state, with a reason property of `'complete'` or `'cancel'` indicating whether the refresh operation completed successfully or was canceled.
 
-import PullStartEndEvents from '@site/static/usage/v9/refresher/pull-start-end-events/index.md';
+import PullStartEndEvents from '@site/static/usage/v9/refresher/pull-start-end-events/index.mdx';
 
 <PullStartEndEvents />
 

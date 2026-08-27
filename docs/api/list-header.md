@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/list-header/basic/index.md';
+import Basic from '@site/static/usage/v9/list-header/basic/index.mdx';
 
 <Basic />
 
@@ -26,7 +26,7 @@ import Basic from '@site/static/usage/v9/list-header/basic/index.md';
 
 リストのヘッダーに [button](./button) を配置すると、リストの一部を表示し、ボタンで全リストにリダイレクトするのに便利です。
 
-import Buttons from '@site/static/usage/v9/list-header/buttons/index.md';
+import Buttons from '@site/static/usage/v9/list-header/buttons/index.mdx';
 
 <Buttons />
 
@@ -35,7 +35,7 @@ import Buttons from '@site/static/usage/v9/list-header/buttons/index.md';
 
 リストヘッダーは、デフォルトでは下部のボーダーが表示されません。 `lines` プロパティを `"full"` または `"inset"` に変更すると、それぞれ全幅のボーダーまたは左paddingを伴う挿入ボーダーが表示されます。
 
-import Lines from '@site/static/usage/v9/list-header/lines/index.md';
+import Lines from '@site/static/usage/v9/list-header/lines/index.mdx';
 
 <Lines />
 
@@ -43,13 +43,13 @@ import Lines from '@site/static/usage/v9/list-header/lines/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/list-header/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/list-header/theming/colors/index.mdx';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/list-header/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/list-header/theming/css-properties/index.mdx';
 
 <CSSProps />
 

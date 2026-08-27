@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/footer/basic/index.md';
+import Basic from '@site/static/usage/v9/footer/basic/index.mdx';
 
 <Basic />
 
@@ -27,7 +27,7 @@ import Basic from '@site/static/usage/v9/footer/basic/index.md';
 
 フッターは、`translucent`プロパティを設定することで、ネイティブiOSアプリケーションで見られる透明度に合わせることができます。コンテンツがフッターの背後でスクロールするようにするには、コンテンツに`fullscreen`プロパティを設定する必要があります。この効果は、モードが`"ios"`であり、デバイスが[backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility)をサポートしている場合にのみ適用されます。
 
-import Translucent from '@site/static/usage/v9/footer/translucent/index.md';
+import Translucent from '@site/static/usage/v9/footer/translucent/index.mdx';
 
 <Translucent />
 
@@ -35,7 +35,7 @@ import Translucent from '@site/static/usage/v9/footer/translucent/index.md';
 
 多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、フッターの `collapse` プロパティを `"fade"` に設定することで実現できます。コンテンツが最後までスクロールされると、フッターの背景とボーダーはフェードアウトします。この効果は、モードが `"ios"` のときだけ適用されます。
 
-import Fade from '@site/static/usage/v9/footer/fade/index.md';
+import Fade from '@site/static/usage/v9/footer/fade/index.mdx';
 
 <Fade />
 
@@ -43,7 +43,7 @@ import Fade from '@site/static/usage/v9/footer/fade/index.md';
 
 フェードフッターを正しく動作させるためには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを提供する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
 
-import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
 
@@ -51,7 +51,7 @@ import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-targe
 
 `"md"`モードでは、フッターは上部に `box-shadow` が表示されます。`"ios"`モードでは、上部に `border` が表示されます。これらは、フッターに `.ion-no-border` クラスを追加することで削除することができます。
 
-import NoBorder from '@site/static/usage/v9/footer/no-border/index.md';
+import NoBorder from '@site/static/usage/v9/footer/no-border/index.mdx';
 
 <NoBorder />
 

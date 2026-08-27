@@ -25,7 +25,7 @@ Spinnerコンポーネントには、さまざまなアニメーションつき�
 
 デフォルトのスピナーは、モードに基づいて決定されます。モードが `ios` の場合、スピナーは `"lines"` となり、モードが `md` の場合、スピナーは `"circular"` となります。 `name` プロパティが設定されている場合は、モード固有のスピナーの代わりに、そのスピナーが使用されます。
 
-import Basic from '@site/static/usage/v9/spinner/basic/index.md';
+import Basic from '@site/static/usage/v9/spinner/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v9/spinner/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/spinner/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/spinner/theming/colors/index.mdx';
 
 <Colors />
 
@@ -41,13 +41,13 @@ import Colors from '@site/static/usage/v9/spinner/theming/colors/index.md';
 
 カスタムCSSを使用してスピナーのスタイルを設定できます。たとえば、幅と高さを設定してスピナーのサイズを変更できます。
 
-import Resizing from '@site/static/usage/v9/spinner/theming/resizing/index.md';
+import Resizing from '@site/static/usage/v9/spinner/theming/resizing/index.mdx';
 
 <Resizing />
 
 ### CSS カスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/spinner/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/spinner/theming/css-properties/index.mdx';
 
 <CSSProps />
 

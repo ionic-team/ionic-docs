@@ -27,28 +27,28 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/card/basic/index.md';
+import Basic from '@site/static/usage/v9/card/basic/index.mdx';
 
 <Basic />
 
 
 ## Media Cards
 
-import Media from '@site/static/usage/v9/card/media/index.md';
+import Media from '@site/static/usage/v9/card/media/index.mdx';
 
 <Media />
 
 
 ## Card Buttons
 
-import Buttons from '@site/static/usage/v9/card/buttons/index.md';
+import Buttons from '@site/static/usage/v9/card/buttons/index.mdx';
 
 <Buttons />
 
 
 ## List Card
 
-import List from '@site/static/usage/v9/card/list/index.md';
+import List from '@site/static/usage/v9/card/list/index.mdx';
 
 <List />
 
@@ -57,13 +57,13 @@ import List from '@site/static/usage/v9/card/list/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/card/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/card/theming/colors/index.mdx';
 
 <Colors />
 
 ## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/v9/card/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/card/theming/css-properties/index.mdx';
 
 <CSSProps />
 

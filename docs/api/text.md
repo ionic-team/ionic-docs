@@ -21,7 +21,7 @@ textコンポーネントは、任意の要素のテキストカラーのスタ�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/v9/text/basic/index.md';
+import Basic from '@site/static/usage/v9/text/basic/index.mdx';
 
 <Basic />
 

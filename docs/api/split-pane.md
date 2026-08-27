@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 このデモでは、`when`プロパティを`'xs'`に設定しているため、スプリットペインが常に表示されます。小さいビューポートでスプリットペインを折りたたむ場合、この設定は必要ありません。詳細については、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
 :::
 
-import Basic from '@site/static/usage/v9/split-pane/basic/index.md';
+import Basic from '@site/static/usage/v9/split-pane/basic/index.mdx';
 
 <Basic />
 
@@ -56,7 +56,7 @@ import Basic from '@site/static/usage/v9/split-pane/basic/index.md';
 
 ## CSSカスタムプロパティ
 
-import CSSProperties from '@site/static/usage/v9/split-pane/theming/css-properties/index.md';
+import CSSProperties from '@site/static/usage/v9/split-pane/theming/css-properties/index.mdx';
 
 <CSSProperties />
 
