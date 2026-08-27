@@ -21,7 +21,7 @@ Badges are inline block elements that usually appear near another element. Typic
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/badge/basic/index.md';
+import Basic from '@site/static/usage/v9/badge/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ Badges can be added inside a tab button, often used to indicate notifications or
 Empty badges are only available for `md` mode.
 :::
 
-import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.mdx';
 
 <InsideTabBar />
 
@@ -41,13 +41,13 @@ import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/badge/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/badge/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Properties
 
-import CSSProps from '@site/static/usage/v9/badge/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/badge/theming/css-properties/index.mdx';
 
 <CSSProps />
 

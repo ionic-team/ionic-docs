@@ -23,13 +23,13 @@ The position of the label inside of an item can be inline, fixed, stacked, or fl
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/label/basic/index.md';
+import Basic from '@site/static/usage/v9/label/basic/index.mdx';
 
 <Basic />
 
 ## Item Labels
 
-import Item from '@site/static/usage/v9/label/item/index.md';
+import Item from '@site/static/usage/v9/label/item/index.mdx';
 
 <Item />
 
@@ -37,7 +37,7 @@ import Item from '@site/static/usage/v9/label/item/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/label/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/label/theming/colors/index.mdx';
 
 <Colors />
 

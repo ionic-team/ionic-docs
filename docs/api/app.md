@@ -30,7 +30,7 @@ Using `ion-app` enables the following behaviors:
 
 Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
 
-import SetFocus from '@site/static/usage/v9/app/set-focus/index.md';
+import SetFocus from '@site/static/usage/v9/app/set-focus/index.mdx';
 
 <SetFocus />
 

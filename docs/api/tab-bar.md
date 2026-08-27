@@ -148,7 +148,7 @@ Badges can be added inside a tab button, often used to indicate notifications or
 Empty badges are only available for `md` mode.
 :::
 
-import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.mdx';
 
 <InsideTabBar />
 

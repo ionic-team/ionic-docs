@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Picker displays one or more columns with options for users to choose from.
 
-import Basic from '@site/static/usage/v8/picker/basic/index.md';
+import Basic from '@site/static/usage/v8/picker/basic/index.mdx';
 
 <Basic />
 
@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v8/picker/basic/index.md';
 
 Use the `prefix` and `suffix` slots to add additional content to the picker.
 
-import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
+import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.mdx';
 
 <PrefixSuffix />
 
@@ -38,7 +38,7 @@ import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
 
 The picker highlight and fade can be customized using CSS variables on `ion-picker`. Developers can customize the individual appearance of `ion-picker-column-options` by targeting them directly and using host level styling.
 
-import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.mdx';
 
 <CSSProps />
 
@@ -46,7 +46,7 @@ import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.
 
 Pickers can be displayed inside of overlays, such as `ion-modal` to create a picker experience with confirmation or cancellation buttons.
 
-import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
+import ModalExample from '@site/static/usage/v8/picker/modal/index.mdx';
 
 <ModalExample />
 

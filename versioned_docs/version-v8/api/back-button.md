@@ -25,7 +25,7 @@ The back button navigates back in the app's history when clicked. It is only dis
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/back-button/basic/index.md';
+import Basic from '@site/static/usage/v8/back-button/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v8/back-button/basic/index.md';
 
 By default, the back button will display the text `"Back"` with a `"chevron-back"` icon on `ios`, and an `"arrow-back-sharp"` icon on `md`. This can be customized per back button component by setting the `icon` or `text` properties. Alternatively, it can be set globally using the `backButtonIcon` or `backButtonText` properties in the global config. Refer to the [Config docs](../developing/config) for more information.
 
-import Custom from '@site/static/usage/v8/back-button/custom/index.md';
+import Custom from '@site/static/usage/v8/back-button/custom/index.mdx';
 
 <Custom />
 

@@ -21,13 +21,13 @@ Notes are text elements generally used as subtitles that provide more informatio
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/note/basic/index.md';
+import Basic from '@site/static/usage/v9/note/basic/index.mdx';
 
 <Basic />
 
 ## Item Notes
 
-import Item from '@site/static/usage/v9/note/item/index.md';
+import Item from '@site/static/usage/v9/note/item/index.mdx';
 
 <Item />
 
@@ -35,13 +35,13 @@ import Item from '@site/static/usage/v9/note/item/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/note/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/note/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v9/note/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/note/theming/css-properties/index.mdx';
 
 <CSSProps />
 

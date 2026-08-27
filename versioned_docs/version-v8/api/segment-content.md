@@ -32,7 +32,7 @@ Each `ion-segment-content` needs a unique `id` attribute. This will be used to l
 
 {/* Reuse swipeable segments playground */}
 
-import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
+import Swipeable from '@site/static/usage/v8/segment/swipeable/index.mdx';
 
 <Swipeable />
 

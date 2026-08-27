@@ -28,13 +28,13 @@ Alternatively, developers can configure the loading indicator to dismiss automat
 
 ### Inline (Recommended)
 
-import Inline from '@site/static/usage/v9/loading/inline/index.md';
+import Inline from '@site/static/usage/v9/loading/inline/index.mdx';
 
 <Inline />
 
 ### Controller
 
-import Controller from '@site/static/usage/v9/loading/controller/index.md';
+import Controller from '@site/static/usage/v9/loading/controller/index.mdx';
 
 <Controller />
 
@@ -44,7 +44,7 @@ import Controller from '@site/static/usage/v9/loading/controller/index.md';
 
 The spinner that is used can be customized using the `spinner` property. Refer to the [spinner property documentation](#prop-spinner) for a full list of options.
 
-import Spinners from '@site/static/usage/v9/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v9/loading/spinners/index.mdx';
 
 <Spinners />
 
@@ -54,7 +54,7 @@ Loading uses scoped encapsulation, which means it will automatically scope its C
 
 We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-import Theming from '@site/static/usage/v9/loading/theming/index.md';
+import Theming from '@site/static/usage/v9/loading/theming/index.mdx';
 
 <Theming />
 

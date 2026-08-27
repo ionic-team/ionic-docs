@@ -27,7 +27,7 @@ For a list of accepted values, refer to the [inputmode Documentation](https://de
 
 ### Usage
 
-import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.md';
+import Inputmode from '@site/static/usage/v8/keyboard/inputmode/index.mdx';
 
 <Inputmode />
 
@@ -45,7 +45,7 @@ For a list of accepted values, refer to the [enterkeyhint Standard](https://html
 
 ### Usage
 
-import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
+import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.mdx';
 
 <Enterkeyhint />
 

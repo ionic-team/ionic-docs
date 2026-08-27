@@ -1,5 +1,5 @@
 ---
-to: "<%= `static/usage/v${version}/${name}/${path}/index.md` %>"
+to: "<%= `static/usage/v${version}/${name}/${path}/index.mdx` %>"
 ---
 import Playground from '@site/src/components/global/Playground';
 
