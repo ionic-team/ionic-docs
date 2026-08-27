@@ -13,7 +13,7 @@ sidebar_label: Progressive Web Apps
 
 ## Making your Angular app a PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
 The `@angular/pwa` package will automatically add a service worker and an app manifest to the app.
 To add this package to the app, run:

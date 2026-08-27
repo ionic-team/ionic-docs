@@ -10,11 +10,11 @@ title: CSS Shadow Parts
   />
 </head>
 
-CSS Shadow Parts allow developers to style CSS properties on an element inside of a shadow tree. This is extremely useful in customizing Ionic Framework <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a> components.
+CSS Shadow Parts allow developers to style CSS properties on an element inside of a shadow tree. This is extremely useful in customizing Ionic Framework [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) components.
 
 ## Why Shadow Parts?
 
-Ionic Framework is a distributed set of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>. Web Components follow the <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM specification</a> in order to encapsulate styles and markup.
+Ionic Framework is a distributed set of [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). Web Components follow the [Shadow DOM specification](https://w3c.github.io/webcomponents/spec/shadow/) in order to encapsulate styles and markup.
 
 :::note
 Ionic Framework components are **not all** Shadow DOM components. If the component is a Shadow DOM component, there will be a badge in the top right of its [component documentation](../components.md). An example of a Shadow DOM component is the [button component](../api/button.md).
@@ -67,7 +67,7 @@ With these parts exposed, the element can now be styled directly using [::part](
 
 ### How ::part works
 
-The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> pseudo-element allows developers to select elements inside of a shadow tree that have been exposed via a part attribute.
+The [`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) pseudo-element allows developers to select elements inside of a shadow tree that have been exposed via a part attribute.
 
 Since we know that `ion-select` exposes a `placeholder` part for styling the text when there is no value selected, we can customize it in the following way:
 
@@ -80,7 +80,7 @@ ion-select::part(placeholder) {
 
 Styling using `::part` allows any CSS property that is accepted by that element to be changed.
 
-In addition to being able to target the part, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank" rel="noopener noreferrer">pseudo-elements</a> can be styled without them being explicitly exposed:
+In addition to being able to target the part, [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) can be styled without them being explicitly exposed:
 
 ```css
 ion-select::part(placeholder)::first-letter {
@@ -89,7 +89,7 @@ ion-select::part(placeholder)::first-letter {
 }
 ```
 
-Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">pseudo-classes</a>, as well:
+Parts work with most [pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), as well:
 
 ```css
 ion-item::part(native):hover {
@@ -112,18 +112,18 @@ In order to have parts a component must meet the following criteria:
 - The children elements are not structural. In certain components, including `ion-title`, the child element is a structural element used to position the inner elements. We do not recommend customizing structural elements as this can have unexpected results.
 
 :::note
-We welcome recommendations for additional parts. Please create a <a href="https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+" target="_blank" rel="noopener noreferrer">new GitHub issue</a> with as much information as possible when requesting a part.
+We welcome recommendations for additional parts. Please create a [new GitHub issue](https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+) with as much information as possible when requesting a part.
 :::
 
 ## Known Limitations
 
 ### Browser Support
 
-CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the <a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">browser support</a> meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](../theming/css-variables.md) for styling.
+CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](../theming/css-variables.md) for styling.
 
 ### Vendor Prefixed Pseudo-Elements
 
-Pseudo-elements that are <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">vendor prefixed</a> are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
+Pseudo-elements that are [vendor prefixed](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
 
 ```css
 /* Does NOT work */
@@ -132,11 +132,11 @@ my-component::part(scroll)::-webkit-scrollbar {
 }
 ```
 
-Refer to <a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">this issue on GitHub</a> for more information.
+Refer to [this issue on GitHub](https://github.com/w3c/csswg-drafts/issues/4530) for more information.
 
 ### Structural Pseudo-Classes
 
-Most pseudo-classes are supported with parts, however, <a href="https://www.w3.org/TR/selectors-4/#structural-pseudos" target="_blank" rel="noopener noreferrer">structural pseudo-classes</a> are not. An example of structural pseudo-classes that do not work is below.
+Most pseudo-classes are supported with parts, however, [structural pseudo-classes](https://www.w3.org/TR/selectors-4/#structural-pseudos) are not. An example of structural pseudo-classes that do not work is below.
 
 ```css
 /* Does NOT work */
