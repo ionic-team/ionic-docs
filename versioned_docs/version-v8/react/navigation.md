@@ -245,10 +245,9 @@ The second route defined in the Dashboard Page has a URL parameter defined (the 
 **UserDetailPage.tsx**
 
 ```tsx
-interface UserDetailPageProps
-  extends RouteComponentProps<{
-    id: string;
-  }> {}
+interface UserDetailPageProps extends RouteComponentProps<{
+  id: string;
+}> {}
 
 const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
   return (
@@ -609,7 +608,7 @@ type UseIonRouterResult = {
     routerDirection?: RouterDirection,
     routeAction?: RouteAction,
     routerOptions?: RouterOptions,
-    animationBuilder?: AnimationBuilder
+    animationBuilder?: AnimationBuilder,
   ): void;
   /**
    * Navigates backwards in history, using the IonRouter to determine history

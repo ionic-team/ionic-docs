@@ -16,7 +16,7 @@ export class ExampleComponent {
     const selectedValue = event.detail.value;
 
     console.log(
-      `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
+      `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(', ')}`,
     );
   };
 }

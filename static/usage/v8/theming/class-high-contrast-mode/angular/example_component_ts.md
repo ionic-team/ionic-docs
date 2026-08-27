@@ -71,7 +71,7 @@ export class ExampleComponent implements OnInit {
     // Listen for changes to the media queries
     prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkPalette(mediaQuery.matches));
     prefersHighContrast.addEventListener('change', (mediaQuery) =>
-      this.initializeHighContrastPalette(mediaQuery.matches)
+      this.initializeHighContrastPalette(mediaQuery.matches),
     );
   }
 

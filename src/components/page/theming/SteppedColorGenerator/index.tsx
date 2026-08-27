@@ -18,7 +18,7 @@ export default function ColorGenerator(props) {
 
   const [textSteppedColors, setTextSteppedColors] = useState(generateSteppedColors(textColor, backgroundColor));
   const [backgroundSteppedColors, setBackgroundSteppedColors] = useState(
-    generateSteppedColors(backgroundColor, textColor)
+    generateSteppedColors(backgroundColor, textColor),
   );
 
   useEffect(() => {

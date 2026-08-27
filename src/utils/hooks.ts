@@ -51,7 +51,7 @@ export const useScript = (src: string) => {
         }
       };
     },
-    [src] // Only re-run effect if script src changes
+    [src], // Only re-run effect if script src changes
   );
   return status;
 };

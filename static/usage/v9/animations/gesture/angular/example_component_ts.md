@@ -24,7 +24,10 @@ export class ExampleComponent {
    */
   private readonly MAX_TRANSLATE = 344 - 100 - 32;
 
-  constructor(private animationCtrl: AnimationController, private gestureCtrl: GestureController) {}
+  constructor(
+    private animationCtrl: AnimationController,
+    private gestureCtrl: GestureController,
+  ) {}
 
   private onMove(event: GestureDetail) {
     if (!this.started) {

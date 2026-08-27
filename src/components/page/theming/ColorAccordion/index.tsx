@@ -20,7 +20,7 @@ export default function ColorAccordion({ ...props }) {
       shadeColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-shade`),
       tintColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-tint`),
     }),
-    []
+    [],
   );
 
   return (

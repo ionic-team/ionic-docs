@@ -72,7 +72,7 @@ function AppTypeahead(props: TypeaheadProps) {
       setFilteredItems(
         props.items.filter((item) => {
           return item.text.toLowerCase().includes(normalizedQuery);
-        })
+        }),
       );
     }
   };

@@ -81,7 +81,9 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-list',
-  template: `@for (item of items; track item) { <ion-item>{{ item }}</ion-item> }`,
+  template: `@for (item of items; track item) {
+    <ion-item>{{ item }}</ion-item>
+}`,
 })
 export class ListPage {
   private cdr = inject(ChangeDetectorRef);
@@ -113,7 +115,7 @@ Content projected into an inline `ion-modal` or `ion-popover` follows the same r
       <ng-template>
         <ion-list>
           @for (item of items(); track item) {
-          <ion-item>{{ item }}</ion-item>
+            <ion-item>{{ item }}</ion-item>
           }
         </ion-list>
       </ng-template>

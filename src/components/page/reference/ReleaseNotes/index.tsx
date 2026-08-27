@@ -16,7 +16,7 @@ interface Release {
 export default function ReleaseNotes(props: { [key: string]: any }) {
   if (releases.length === 0) {
     console.warn(
-      `Could not load release notes data. Refer to https://github.com/ionic-team/ionic-docs/blob/main/CONTRIBUTING.md#github-token for setup instructions.`
+      `Could not load release notes data. Refer to https://github.com/ionic-team/ionic-docs/blob/main/CONTRIBUTING.md#github-token for setup instructions.`,
     );
 
     return [

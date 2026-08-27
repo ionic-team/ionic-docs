@@ -63,7 +63,7 @@ module.exports = function (context, options) {
         currentVersion.path || currentVersion.label,
         npmTag,
         context.i18n.currentLocale,
-        true
+        true,
       );
 
       return data;
@@ -84,7 +84,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/methods.mdx`, data.methods),
           createData(`${basePath}/parts.mdx`, data.parts),
           createData(`${basePath}/custom-props.mdx`, data.customProps),
-          createData(`${basePath}/slots.mdx`, data.slots)
+          createData(`${basePath}/slots.mdx`, data.slots),
         );
 
         /**
@@ -110,7 +110,7 @@ module.exports = function (context, options) {
           createData(`${basePath}/events.md`, data.events),
           createData(`${basePath}/methods.md`, data.methods),
           createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/slots.md`, data.slots)
+          createData(`${basePath}/slots.md`, data.slots),
         );
       }
 
@@ -321,7 +321,7 @@ ${methods
 | **Description** | ${formatMultiline(method.docs)} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 ${method.parameters.length !== 0 ? renderParameters(method.parameters) : ''}
-`
+`,
   )
   .join('\n')}
 

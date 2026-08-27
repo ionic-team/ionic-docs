@@ -37,7 +37,7 @@ test('button presents a modal when clicked', async () => {
   render(
     <IonApp>
       <Example />
-    </IonApp>
+    </IonApp>,
   );
   // Simulate a click on the button
   fireEvent.click(screen.getByText('Open'));
@@ -99,7 +99,7 @@ test('should present ModalContent when button is clicked', async () => {
   render(
     <IonApp>
       <Example />
-    </IonApp>
+    </IonApp>,
   );
   // Simulate a click on the button
   fireEvent.click(screen.getByText('Open'));

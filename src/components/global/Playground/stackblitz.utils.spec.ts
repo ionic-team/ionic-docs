@@ -61,7 +61,7 @@ describe('stackblitz.utils', () => {
 
     it('returns only the mode config when the existing config is malformed', () => {
       expect(mergeFormattedIonicConfig('not an object', getFormattedIonicConfig({ mode: 'md' }))).toBe(
-        '{\n  mode: "md"\n}'
+        '{\n  mode: "md"\n}',
       );
     });
 
@@ -270,7 +270,7 @@ describe('stackblitz.utils', () => {
     },
   };
 </script>`,
-        { includeIonContent: true, version: '9', mode: 'md' }
+        { includeIonContent: true, version: '9', mode: 'md' },
       );
 
       const openProjectMock = (sdk as any).openProject as ReturnType<typeof vi.fn>;
@@ -383,7 +383,7 @@ bootstrapApplication(AppComponent, {
   ],
 });`,
         },
-        'v6'
+        'v6',
       );
 
       await openAngularEditor('<p>hi</p>', { version: '6', mode: 'md' });

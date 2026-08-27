@@ -15,7 +15,11 @@ export class ExampleComponent {
 
   isCardActive = false;
 
-  constructor(private el: ElementRef, private gestureCtrl: GestureController, private cdRef: ChangeDetectorRef) {}
+  constructor(
+    private el: ElementRef,
+    private gestureCtrl: GestureController,
+    private cdRef: ChangeDetectorRef,
+  ) {}
 
   ngAfterViewInit() {
     const gesture = this.gestureCtrl.create({

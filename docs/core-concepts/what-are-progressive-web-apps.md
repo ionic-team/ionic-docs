@@ -47,7 +47,7 @@ To be considered a Progressive Web App, your app must be:
 
 {/* cspell:disable */}
 
-<em>[Addy Osmani: Progressive web apps](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/)</em>
+_[Addy Osmani: Progressive web apps](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/)_
 
 {/* cspell:enable */}
 

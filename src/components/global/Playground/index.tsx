@@ -30,7 +30,7 @@ const ControlButton = forwardRef(
       label: string;
       disabled?: boolean;
     },
-    ref: RefObject<HTMLButtonElement>
+    ref: RefObject<HTMLButtonElement>,
   ) => {
     const controlButton = (
       <button
@@ -53,7 +53,7 @@ const ControlButton = forwardRef(
       );
     }
     return controlButton;
-  }
+  },
 );
 
 const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
@@ -290,7 +290,7 @@ export default function Playground({
       window.dispatchEvent(
         new CustomEvent(MODE_UPDATED_EVENT, {
           detail: mode,
-        })
+        }),
       );
     }
   };
@@ -318,7 +318,7 @@ export default function Playground({
       window.dispatchEvent(
         new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
           detail: target,
-        })
+        }),
       );
     }
   };
@@ -465,7 +465,7 @@ export default function Playground({
           setRenderIframes(true);
         }
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
     io.observe(hostRef.current!);
@@ -566,7 +566,7 @@ export default function Playground({
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => {
           const codeBlock = hostRef.current!.querySelector<HTMLElement>(
-            `#${getCodeSnippetId(usageTarget, fileName)} code`
+            `#${getCodeSnippetId(usageTarget, fileName)} code`,
           );
           let code = codeBlock.outerText;
 

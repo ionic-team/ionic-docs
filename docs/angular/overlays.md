@@ -71,7 +71,10 @@ import { MyRouteService } from './my-route.service';
   providers: [MyRouteService], // Service provided at route level
 })
 export class FeatureComponent {
-  constructor(private modalController: ModalController, private injector: Injector) {}
+  constructor(
+    private modalController: ModalController,
+    private injector: Injector,
+  ) {}
 
   async openModal() {
     const modal = await this.modalController.create({
@@ -113,7 +116,10 @@ import { MyService } from './my.service';
   templateUrl: './feature.component.html',
 })
 export class FeatureComponent {
-  constructor(private modalController: ModalController, private injector: Injector) {}
+  constructor(
+    private modalController: ModalController,
+    private injector: Injector,
+  ) {}
 
   async openModal() {
     const myService = new MyService();
@@ -148,7 +154,10 @@ import { MyModalComponent } from './my-modal.component';
   templateUrl: './feature.component.html',
 })
 export class FeatureComponent {
-  constructor(private modalController: ModalController, private injector: Injector) {}
+  constructor(
+    private modalController: ModalController,
+    private injector: Injector,
+  ) {}
 
   async openModal() {
     const modal = await this.modalController.create({
@@ -174,7 +183,10 @@ import { MyPopoverComponent } from './my-popover.component';
   templateUrl: './feature.component.html',
 })
 export class FeatureComponent {
-  constructor(private popoverController: PopoverController, private injector: Injector) {}
+  constructor(
+    private popoverController: PopoverController,
+    private injector: Injector,
+  ) {}
 
   async openPopover(event: Event) {
     const popover = await this.popoverController.create({
