@@ -3,7 +3,9 @@
 # Wrapped components are our own code, so they follow the repo's formatting.
 src/theme/DocItem/Layout/index.tsx
 src/theme/EditMetaRow/index.tsx
+src/theme/Icon/DarkMode/index.tsx
 src/theme/Icon/Edit/index.tsx
+src/theme/Icon/LightMode/index.tsx
 src/theme/Icon/Language/index.tsx
 src/theme/Layout/index.tsx
 src/theme/NavbarItem/LocaleDropdownNavbarItem/index.tsx
