@@ -2,12 +2,12 @@
 title: 'ion-tabs'
 ---
 
-import Props from '@ionic-internal/component-api/v9/tabs/props.md';
-import Events from '@ionic-internal/component-api/v9/tabs/events.md';
-import Methods from '@ionic-internal/component-api/v9/tabs/methods.md';
-import Parts from '@ionic-internal/component-api/v9/tabs/parts.md';
+import Props from '@ionic-internal/component-api/v9/tabs/props.mdx';
+import Events from '@ionic-internal/component-api/v9/tabs/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/tabs/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/tabs/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/tabs/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/tabs/slots.md';
+import Slots from '@ionic-internal/component-api/v9/tabs/slots.mdx';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
@@ -34,7 +34,7 @@ The `ion-tab-bar` needs a slot defined in order to be projected to the right pla
 
 Tabs can be used to display different content without the need to change the URL. This is useful when the tabs are not used for navigation, but rather to display different content.
 
-import Basic from '@site/static/usage/v9/tabs/basic/index.md';
+import Basic from '@site/static/usage/v9/tabs/basic/index.mdx';
 
 <Basic />
 
@@ -42,7 +42,7 @@ import Basic from '@site/static/usage/v9/tabs/basic/index.md';
 
 Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the URL. This is the most common pattern for tabs navigation.
 
-import Router from '@site/static/usage/v9/tabs/router/index.md';
+import Router from '@site/static/usage/v9/tabs/router/index.mdx';
 
 <Router />
 
@@ -56,7 +56,7 @@ Ionic has guides on best practices for routing patterns with tabs. Check out the
 
 Tabs can be selected programmatically using the `select` method. This is useful when tab changes need to be triggered from application logic, such as in response to a button click or after completing a form. The following example demonstrates using a button to call the `select` method to navigate to a different tab.
 
-import SelectMethod from '@site/static/usage/v9/tabs/select-method/index.md';
+import SelectMethod from '@site/static/usage/v9/tabs/select-method/index.mdx';
 
 <SelectMethod />
 

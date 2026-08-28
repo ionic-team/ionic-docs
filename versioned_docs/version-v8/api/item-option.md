@@ -2,12 +2,12 @@
 title: 'ion-item-option'
 ---
 
-import Props from '@ionic-internal/component-api/v8/item-option/props.md';
-import Events from '@ionic-internal/component-api/v8/item-option/events.md';
-import Methods from '@ionic-internal/component-api/v8/item-option/methods.md';
-import Parts from '@ionic-internal/component-api/v8/item-option/parts.md';
+import Props from '@ionic-internal/component-api/v8/item-option/props.mdx';
+import Events from '@ionic-internal/component-api/v8/item-option/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/item-option/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/item-option/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/item-option/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/item-option/slots.md';
+import Slots from '@ionic-internal/component-api/v8/item-option/slots.mdx';
 
 <head>
   <title>ion-item-option: Option Button for Sliding Item in Ionic</title>

@@ -2,12 +2,12 @@
 title: 'ion-loading'
 ---
 
-import Props from '@ionic-internal/component-api/v9/loading/props.md';
-import Events from '@ionic-internal/component-api/v9/loading/events.md';
-import Methods from '@ionic-internal/component-api/v9/loading/methods.md';
-import Parts from '@ionic-internal/component-api/v9/loading/parts.md';
+import Props from '@ionic-internal/component-api/v9/loading/props.mdx';
+import Events from '@ionic-internal/component-api/v9/loading/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/loading/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/loading/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/loading/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/loading/slots.md';
+import Slots from '@ionic-internal/component-api/v9/loading/slots.mdx';
 
 <head>
   <title>ion-loading: Loading | Application Loading Indicator Overlay</title>
@@ -31,13 +31,13 @@ Alternatively, developers can configure the loading indicator to dismiss automat
 
 ### Inline (Recommended)
 
-import Inline from '@site/static/usage/v9/loading/inline/index.md';
+import Inline from '@site/static/usage/v9/loading/inline/index.mdx';
 
 <Inline />
 
 ### Controller
 
-import Controller from '@site/static/usage/v9/loading/controller/index.md';
+import Controller from '@site/static/usage/v9/loading/controller/index.mdx';
 
 <Controller />
 
@@ -47,7 +47,7 @@ import Controller from '@site/static/usage/v9/loading/controller/index.md';
 
 The spinner that is used can be customized using the `spinner` property. Refer to the [spinner property documentation](#prop-spinner) for a full list of options.
 
-import Spinners from '@site/static/usage/v9/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v9/loading/spinners/index.mdx';
 
 <Spinners />
 
@@ -57,12 +57,14 @@ Loading uses scoped encapsulation, which means it will automatically scope its C
 
 We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-import Theming from '@site/static/usage/v9/loading/theming/index.md';
+import Theming from '@site/static/usage/v9/loading/theming/index.mdx';
 
 <Theming />
 
 :::note
+
 `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
+
 :::
 
 ## Accessibility

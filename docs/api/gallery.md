@@ -1,13 +1,13 @@
 ---
-title: "ion-gallery"
+title: 'ion-gallery'
 ---
 
-import Props from '@ionic-internal/component-api/v10/gallery/props.md';
-import Events from '@ionic-internal/component-api/v10/gallery/events.md';
-import Methods from '@ionic-internal/component-api/v10/gallery/methods.md';
-import Parts from '@ionic-internal/component-api/v10/gallery/parts.md';
+import Props from '@ionic-internal/component-api/v10/gallery/props.mdx';
+import Events from '@ionic-internal/component-api/v10/gallery/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/gallery/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/gallery/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/gallery/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/gallery/slots.md';
+import Slots from '@ionic-internal/component-api/v10/gallery/slots.mdx';
 
 <head>
   <title>ion-gallery: Responsive Uniform and Masonry Gallery Layouts</title>
@@ -27,7 +27,7 @@ Each [Gallery Item](./gallery-item.md) is a single cell of the grid and can cont
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v10/gallery/basic/index.md';
+import Basic from '@site/static/usage/v10/gallery/basic/index.mdx';
 
 <Basic />
 
@@ -35,7 +35,7 @@ import Basic from '@site/static/usage/v10/gallery/basic/index.md';
 
 Uniform is the default layout. It creates a consistent grid where items appear at the same visual size with a `1 / 1` aspect ratio. This layout is ideal when visual alignment is more important than preserving each item's natural height.
 
-import Uniform from '@site/static/usage/v10/gallery/uniform/index.md';
+import Uniform from '@site/static/usage/v10/gallery/uniform/index.mdx';
 
 <Uniform />
 
@@ -47,7 +47,7 @@ Masonry preserves each item's natural height and stacks items vertically within 
 
 Sequential is the default masonry ordering mode. Items are placed in DOM order, filling columns from left to right.
 
-import MasonrySequential from '@site/static/usage/v10/gallery/masonry-sequential/index.md';
+import MasonrySequential from '@site/static/usage/v10/gallery/masonry-sequential/index.mdx';
 
 <MasonrySequential />
 
@@ -55,7 +55,7 @@ import MasonrySequential from '@site/static/usage/v10/gallery/masonry-sequential
 
 Best fit places each item in the column with the most available space, helping balance column heights.
 
-import MasonryBestFit from '@site/static/usage/v10/gallery/masonry-best-fit/index.md';
+import MasonryBestFit from '@site/static/usage/v10/gallery/masonry-best-fit/index.mdx';
 
 <MasonryBestFit />
 
@@ -76,9 +76,10 @@ figure img {
   aspect-ratio: inherit;
 }
 ```
+
 :::
 
-import Images from '@site/static/usage/v10/gallery/images/index.md';
+import Images from '@site/static/usage/v10/gallery/images/index.mdx';
 
 <Images />
 
@@ -89,15 +90,15 @@ Columns can be configured with the `columns` property using either a single numb
 If no value is provided, or if an invalid value is used, the Gallery falls back to its default responsive column behavior. The default column counts by breakpoint are:
 
 | Breakpoint | Min Width | Default Columns |
-| --- | --- | ---|
-| `xs` | `0` | `2` |
-| `sm` | `576px` | `3` |
-| `md` | `768px` | `4` |
-| `lg` | `992px` | `6` |
-| `xl` | `1200px` | `8` |
-| `xxl` | `1400px` | `10` |
+| ---------- | --------- | --------------- |
+| `xs`       | `0`       | `2`             |
+| `sm`       | `576px`   | `3`             |
+| `md`       | `768px`   | `4`             |
+| `lg`       | `992px`   | `6`             |
+| `xl`       | `1200px`  | `8`             |
+| `xxl`      | `1400px`  | `10`            |
 
-import Columns from '@site/static/usage/v10/gallery/columns/index.md';
+import Columns from '@site/static/usage/v10/gallery/columns/index.mdx';
 
 <Columns />
 
@@ -116,7 +117,7 @@ If no value is provided, or if an invalid value is used, the Gallery falls back 
 Use the `gap` property to space items apart rather than CSS margins. Margins set on item content are reset so they cannot disrupt the layout calculations, so they will not produce the spacing you expect. Use `gap` for the space _between_ items, and `padding` on your content to inset it _within_ an item.
 :::
 
-import Gap from '@site/static/usage/v10/gallery/gap/index.md';
+import Gap from '@site/static/usage/v10/gallery/gap/index.mdx';
 
 <Gap />
 
@@ -150,19 +151,25 @@ type GalleryGap = GalleryBreakpoints | string | number;
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

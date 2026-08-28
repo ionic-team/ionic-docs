@@ -10,7 +10,9 @@ The Standalone approach uses modern Angular APIs and is the recommended way to b
 ## Standalone
 
 :::info
+
 Ionic UI components as Angular standalone components is supported starting in Ionic v7.5.
+
 :::
 
 ### Overview
@@ -30,13 +32,17 @@ Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone)
 1. Ionic components need to be imported into every Angular component they are used in which can be time consuming to set up.
 
 :::info[Code splitting]
+
 Ionic ships standalone components from a single entry point (`@ionic/angular`). Bundlers such as Webpack and esbuild cannot split code from a single entry point across separate chunks, so the Ionic components you import are included in the main bundle rather than in the chunk for the route or component where they are used. Unused components are still tree-shaken out of the build.
+
 :::
 
 ### Usage with Standalone-based Applications
 
 :::warning
+
 All Ionic imports should be imported from the `@ionic/angular` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular/lazy` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+
 :::
 
 **Bootstrapping and Configuration**
@@ -203,7 +209,9 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 ### Usage with NgModule-based Applications
 
 :::warning
+
 All Ionic imports should be imported from the `@ionic/angular` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular/lazy` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+
 :::
 
 **Bootstrapping and Configuration**
@@ -366,7 +374,9 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 ## Modules
 
 :::warning[Deprecation Notice]
+
 The Modules approach, including `IonicModule`, is **deprecated** and will be removed in a future major release. Existing applications will continue to work during the deprecation period but should migrate using the [Standalone migration guide](#migrating-from-modules-to-standalone). New applications should use the [Standalone](#standalone) approach.
+
 :::
 
 ### Overview
@@ -405,9 +415,11 @@ export class AppModule {}
 ## Migrating from Modules to Standalone
 
 :::tip
+
 Try our automated utility for migrating to standalone!
 
 Refer to the [standalone migration codemods](https://github.com/ionic-team/ionic-angular-standalone-codemods) for instructions on how to get started. All issues related to the migration utility should be filed on the linked repo.
+
 :::
 
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.

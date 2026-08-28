@@ -1,13 +1,13 @@
 ---
-title: "ion-gallery-item"
+title: 'ion-gallery-item'
 ---
 
-import Props from '@ionic-internal/component-api/v10/gallery-item/props.md';
-import Events from '@ionic-internal/component-api/v10/gallery-item/events.md';
-import Methods from '@ionic-internal/component-api/v10/gallery-item/methods.md';
-import Parts from '@ionic-internal/component-api/v10/gallery-item/parts.md';
+import Props from '@ionic-internal/component-api/v10/gallery-item/props.mdx';
+import Events from '@ionic-internal/component-api/v10/gallery-item/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/gallery-item/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/gallery-item/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/gallery-item/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/gallery-item/slots.md';
+import Slots from '@ionic-internal/component-api/v10/gallery-item/slots.mdx';
 
 <head>
   <title>ion-gallery-item: Gallery Cell for Text, Images, and Cards</title>
@@ -28,19 +28,25 @@ Gallery Items must be placed inside a Gallery, which arranges them and applies l
 Refer to the [Gallery](./gallery.md) documentation for more information.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

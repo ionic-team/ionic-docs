@@ -2,12 +2,12 @@
 title: 'ion-router'
 ---
 
-import Props from '@ionic-internal/component-api/v8/router/props.md';
-import Events from '@ionic-internal/component-api/v8/router/events.md';
-import Methods from '@ionic-internal/component-api/v8/router/methods.md';
-import Parts from '@ionic-internal/component-api/v8/router/parts.md';
+import Props from '@ionic-internal/component-api/v8/router/props.mdx';
+import Events from '@ionic-internal/component-api/v8/router/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/router/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/router/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/router/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/router/slots.md';
+import Slots from '@ionic-internal/component-api/v8/router/slots.mdx';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
@@ -22,7 +22,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
 
 :::note
+
 Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
+
 :::
 
 Apps should have a single `ion-router` component in the codebase.
@@ -36,7 +38,7 @@ To configure this relationship between components (to load/select) and URLs, `io
 
 ## Basic Usage
 
-import BasicExample from '@site/static/usage/v8/router/basic/index.md';
+import BasicExample from '@site/static/usage/v8/router/basic/index.mdx';
 
 <BasicExample />
 

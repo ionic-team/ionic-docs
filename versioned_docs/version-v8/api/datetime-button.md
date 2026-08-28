@@ -2,12 +2,12 @@
 title: 'ion-datetime-button'
 ---
 
-import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/datetime-button/parts.md';
+import Props from '@ionic-internal/component-api/v8/datetime-button/props.mdx';
+import Events from '@ionic-internal/component-api/v8/datetime-button/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/datetime-button/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/datetime-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
+import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.mdx';
 
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
@@ -31,7 +31,7 @@ When using Datetime Button with a JavaScript framework such as Angular, React, o
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v8/datetime-button/basic/index.mdx';
 
 <Basic />
 
@@ -43,7 +43,7 @@ The localized text on `ion-datetime-button` is determined by the `locale` proper
 
 You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. Refer to [Datetime Format Options](./datetime#format-options) for more details.
 
-import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
+import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.mdx';
 
 <FormatOptions />
 

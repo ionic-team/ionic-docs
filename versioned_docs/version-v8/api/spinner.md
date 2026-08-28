@@ -2,12 +2,12 @@
 title: 'ion-spinner'
 ---
 
-import Props from '@ionic-internal/component-api/v8/spinner/props.md';
-import Events from '@ionic-internal/component-api/v8/spinner/events.md';
-import Methods from '@ionic-internal/component-api/v8/spinner/methods.md';
-import Parts from '@ionic-internal/component-api/v8/spinner/parts.md';
+import Props from '@ionic-internal/component-api/v8/spinner/props.mdx';
+import Events from '@ionic-internal/component-api/v8/spinner/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/spinner/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/spinner/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/spinner/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/spinner/slots.md';
+import Slots from '@ionic-internal/component-api/v8/spinner/slots.mdx';
 
 <head>
   <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
@@ -27,7 +27,7 @@ The Spinner component provides a variety of animated SVG spinners. Spinners are 
 
 The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"circular"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
 
-import Basic from '@site/static/usage/v8/spinner/basic/index.md';
+import Basic from '@site/static/usage/v8/spinner/basic/index.mdx';
 
 <Basic />
 
@@ -35,7 +35,7 @@ import Basic from '@site/static/usage/v8/spinner/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/spinner/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/spinner/theming/colors/index.mdx';
 
 <Colors />
 
@@ -43,13 +43,13 @@ import Colors from '@site/static/usage/v8/spinner/theming/colors/index.md';
 
 You may use custom CSS to style the spinner. For example, you can resize the spinner by setting the width and height.
 
-import Resizing from '@site/static/usage/v8/spinner/theming/resizing/index.md';
+import Resizing from '@site/static/usage/v8/spinner/theming/resizing/index.mdx';
 
 <Resizing />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v8/spinner/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/spinner/theming/css-properties/index.mdx';
 
 <CSSProps />
 

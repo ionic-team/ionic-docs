@@ -1,17 +1,20 @@
 ---
-title: "ion-segment-content"
+title: 'ion-segment-content'
 ---
 
-import Props from '@ionic-internal/component-api/v10/segment-content/props.md';
-import Events from '@ionic-internal/component-api/v10/segment-content/events.md';
-import Methods from '@ionic-internal/component-api/v10/segment-content/methods.md';
-import Parts from '@ionic-internal/component-api/v10/segment-content/parts.md';
+import Props from '@ionic-internal/component-api/v10/segment-content/props.mdx';
+import Events from '@ionic-internal/component-api/v10/segment-content/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/segment-content/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/segment-content/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/segment-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/segment-content/slots.md';
+import Slots from '@ionic-internal/component-api/v10/segment-content/slots.mdx';
 
 <head>
   <title>ion-segment-content: Display control element for swipeable segments</title>
-  <meta name="description" content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments." />
+  <meta
+    name="description"
+    content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -29,24 +32,30 @@ Each `ion-segment-content` needs a unique `id` attribute. This will be used to l
 
 {/* Reuse swipeable segments playground */}
 
-import Swipeable from '@site/static/usage/v10/segment/swipeable/index.md';
+import Swipeable from '@site/static/usage/v10/segment/swipeable/index.mdx';
 
 <Swipeable />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

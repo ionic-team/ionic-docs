@@ -2,12 +2,12 @@
 title: 'ion-label'
 ---
 
-import Props from '@ionic-internal/component-api/v8/label/props.md';
-import Events from '@ionic-internal/component-api/v8/label/events.md';
-import Methods from '@ionic-internal/component-api/v8/label/methods.md';
-import Parts from '@ionic-internal/component-api/v8/label/parts.md';
+import Props from '@ionic-internal/component-api/v8/label/props.mdx';
+import Events from '@ionic-internal/component-api/v8/label/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/label/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/label/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/label/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/label/slots.md';
+import Slots from '@ionic-internal/component-api/v8/label/slots.mdx';
 
 <head>
   <title>ion-label: Item Label Color and Properties for Applications</title>
@@ -27,13 +27,13 @@ The position of the label inside of an item can be inline, fixed, stacked, or fl
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/label/basic/index.md';
+import Basic from '@site/static/usage/v8/label/basic/index.mdx';
 
 <Basic />
 
 ## Item Labels
 
-import Item from '@site/static/usage/v8/label/item/index.md';
+import Item from '@site/static/usage/v8/label/item/index.mdx';
 
 <Item />
 
@@ -41,7 +41,7 @@ import Item from '@site/static/usage/v8/label/item/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/label/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/label/theming/colors/index.mdx';
 
 <Colors />
 

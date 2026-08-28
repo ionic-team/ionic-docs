@@ -44,7 +44,7 @@ const ModalExample = ({ dismiss }: { dismiss: (data?: string | null | undefined 
 
 function Example() {
   const [present, dismiss] = useIonModal(ModalExample, {
-    dismiss: (data: string, role: string) => dismiss(data, role),
+    dismiss: (data?: string | number | null, role?: string) => dismiss(data, role),
   });
   const [message, setMessage] = useState('This modal example uses the modalController to present and dismiss modals.');
 

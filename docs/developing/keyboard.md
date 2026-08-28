@@ -23,16 +23,18 @@ Since `inputmode` is a global attribute, it can be used on Ionic components such
 
 Inputs that _require_ a certain data type should use the `type` attribute instead. For example, inputs that require an email should use `type="email"` rather than specifying an `inputmode.` This is because the data that will be entered is always going to be in the form of an email. On the other hand, if the input accepts an email or a username, using `inputmode=”email”` is appropriate because the data being entered is not always going to be an email address.
 
-For a list of accepted values, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
+For a list of accepted values, refer to the [inputmode Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
 
 ### Usage
 
-import Inputmode from '@site/static/usage/v10/keyboard/inputmode/index.md';
+import Inputmode from '@site/static/usage/v10/keyboard/inputmode/index.mdx';
 
 <Inputmode />
 
 :::note
+
 The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+
 :::
 
 ## enterkeyhint
@@ -41,16 +43,18 @@ The `enterkeyhint` attribute allows developers to specify what type of action la
 
 Since `enterkeyhint` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
 
-For a list of accepted values, refer to the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
+For a list of accepted values, refer to the [enterkeyhint Standard](https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute).
 
 ### Usage
 
-import Enterkeyhint from '@site/static/usage/v10/keyboard/enterkeyhint/index.md';
+import Enterkeyhint from '@site/static/usage/v10/keyboard/enterkeyhint/index.mdx';
 
 <Enterkeyhint />
 
 :::note
+
 The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+
 :::
 
 ## Dark Mode
@@ -59,7 +63,7 @@ By default the keyboard theme is determined by the OS. For example, if dark mode
 
 When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, refer to the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, refer to the [Capacitor Keyboard Documentation](https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-).
 
 ## Hiding the Accessory Bar
 
@@ -67,11 +71,11 @@ When running any kind of web based application, iOS will show an accessory bar a
 
 When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
 
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, refer to the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, refer to the [Capacitor Keyboard Documentation](https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-).
 
 ## Keyboard Lifecycle Events
 
-Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
+Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the [Visual Viewport API](https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API) where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
 
 ### Usage
 
@@ -171,5 +175,7 @@ watch(keyboardHeight, () => {
 ````
 
 :::note
+
 For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+
 :::

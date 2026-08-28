@@ -1,16 +1,20 @@
 ---
-title: "ion-note"
+title: 'ion-note'
 ---
-import Props from '@ionic-internal/component-api/v10/note/props.md';
-import Events from '@ionic-internal/component-api/v10/note/events.md';
-import Methods from '@ionic-internal/component-api/v10/note/methods.md';
-import Parts from '@ionic-internal/component-api/v10/note/parts.md';
+
+import Props from '@ionic-internal/component-api/v10/note/props.mdx';
+import Events from '@ionic-internal/component-api/v10/note/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/note/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/note/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/note/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/note/slots.md';
+import Slots from '@ionic-internal/component-api/v10/note/slots.mdx';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>
-  <meta name="description" content="ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps." />
+  <meta
+    name="description"
+    content="ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -21,13 +25,13 @@ Notes are text elements generally used as subtitles that provide more informatio
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v10/note/basic/index.md';
+import Basic from '@site/static/usage/v10/note/basic/index.mdx';
 
 <Basic />
 
 ## Item Notes
 
-import Item from '@site/static/usage/v10/note/item/index.md';
+import Item from '@site/static/usage/v10/note/item/index.mdx';
 
 <Item />
 
@@ -35,31 +39,36 @@ import Item from '@site/static/usage/v10/note/item/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v10/note/theming/colors/index.md';
+import Colors from '@site/static/usage/v10/note/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v10/note/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v10/note/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

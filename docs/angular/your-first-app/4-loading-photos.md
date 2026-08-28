@@ -105,13 +105,13 @@ export class PhotoService {
     // CHANGE: Display the photo by reading into base64 format
     for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     // CHANGE: Set the signal so the gallery view updates
@@ -157,10 +157,7 @@ export class PhotoService {
   }
 
   private async savePicture(photo: Photo) {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    const base64Data = (await this.convertBlobToBase64(blob)) as string;
+    const base64Data = await this.base64FromPath(photo.webPath!);
 
     // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
@@ -178,12 +175,18 @@ export class PhotoService {
     };
   }
 
-  private convertBlobToBase64(blob: Blob) {
+  private async base64FromPath(path: string): Promise<string> {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
@@ -196,13 +199,13 @@ export class PhotoService {
 
     for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
 
     this.photos.set(photos);
@@ -262,9 +265,11 @@ export class Tab2Page implements OnInit {
 ```
 
 :::note
+
 If you encounter broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
 
 In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
+
 :::
 
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!

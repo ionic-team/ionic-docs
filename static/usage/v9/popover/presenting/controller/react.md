@@ -5,9 +5,7 @@ import { IonButton, IonContent, useIonPopover } from '@ionic/react';
 const Popover = () => <IonContent className="ion-padding">Hello World!</IonContent>;
 
 function Example() {
-  const [present, dismiss] = useIonPopover(Popover, {
-    onDismiss: (data: any, role: string) => dismiss(data, role),
-  });
+  const [present] = useIonPopover(Popover);
 
   return (
     <IonButton

@@ -2,12 +2,12 @@
 title: 'ion-split-pane'
 ---
 
-import Props from '@ionic-internal/component-api/v9/split-pane/props.md';
-import Events from '@ionic-internal/component-api/v9/split-pane/events.md';
-import Methods from '@ionic-internal/component-api/v9/split-pane/methods.md';
-import Parts from '@ionic-internal/component-api/v9/split-pane/parts.md';
+import Props from '@ionic-internal/component-api/v9/split-pane/props.mdx';
+import Events from '@ionic-internal/component-api/v9/split-pane/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/split-pane/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/split-pane/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/split-pane/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/split-pane/slots.md';
+import Slots from '@ionic-internal/component-api/v9/split-pane/slots.mdx';
 
 <head>
   <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
@@ -29,10 +29,12 @@ If the device's screen width is below a certain size, the split pane will collap
 ## Basic Usage
 
 :::note
+
 This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. Refer to [Setting Breakpoints](#setting-breakpoints) for more information.
+
 :::
 
-import Basic from '@site/static/usage/v9/split-pane/basic/index.md';
+import Basic from '@site/static/usage/v9/split-pane/basic/index.mdx';
 
 <Basic />
 
@@ -60,7 +62,7 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 
 ### CSS Custom Properties
 
-import CSSProperties from '@site/static/usage/v9/split-pane/theming/css-properties/index.md';
+import CSSProperties from '@site/static/usage/v9/split-pane/theming/css-properties/index.mdx';
 
 <CSSProperties />
 

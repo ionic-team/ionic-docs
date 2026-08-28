@@ -68,7 +68,7 @@ The high contrast dark palette can be applied by importing `high-contrast-dark.a
 
 The following example will always display the high contrast light palette, regardless of the user's preference for high contrast or dark mode.
 
-import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-contrast-mode/index.md';
+import AlwaysHighContrastMode from '@site/static/usage/v8/theming/always-high-contrast-mode/index.mdx';
 
 <AlwaysHighContrastMode />
 
@@ -120,16 +120,20 @@ This approach activates the high contrast palette when the [CSS media query for 
 The following example uses the system settings to decide when to show high contrast mode.
 
 :::info
+
 Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
+
 :::
 
-import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.md';
+import SystemHighContrastMode from '@site/static/usage/v8/theming/system-high-contrast-mode/index.mdx';
 
 <SystemHighContrastMode />
 
 :::caution
+
 The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.md#corecss), and the
 high contrast dark palette must be imported after `dark.system.css`. Otherwise, the standard contrast palette will take priority.
+
 :::
 
 ### CSS Class
@@ -178,21 +182,27 @@ This approach activates the high contrast palette when the `.ion-palette-high-co
 The following example combines site settings, system settings, and the toggle to decide when to show high contrast mode. The site's palette takes precedence over system settings. If your system settings differ from the site's palette when the demo loads, it will use the site's palette.
 
 :::info
+
 Not sure how to change the system settings? Here's how to enable high contrast mode on [Windows 11](https://support.microsoft.com/en-us/windows/turn-high-contrast-mode-on-or-off-in-windows-909e9d89-a0f9-a3a9-b993-7a6dcee85025) and on [macOS](https://support.apple.com/guide/mac-help/change-display-settings-for-accessibility-unac089/mac).
+
 :::
 
-import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.md';
+import ClassHighContrastMode from '@site/static/usage/v8/theming/class-high-contrast-mode/index.mdx';
 
 <ClassHighContrastMode />
 
 :::caution
+
 The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.md#corecss),
 and the high contrast dark palette must be imported after `dark.class.css`. Otherwise, the standard contrast palette will take
 priority.
+
 :::
 
 :::caution
+
 The `.ion-palette-high-contrast` class **must** be added to the `html` element in order to work with the imported high contrast palette.
+
 :::
 
 ## Customizing Ionic High Contrast Theme

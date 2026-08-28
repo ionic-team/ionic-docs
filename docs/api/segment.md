@@ -1,53 +1,52 @@
 ---
-title: "ion-segment"
+title: 'ion-segment'
 ---
-import Props from '@ionic-internal/component-api/v10/segment/props.md';
-import Events from '@ionic-internal/component-api/v10/segment/events.md';
-import Methods from '@ionic-internal/component-api/v10/segment/methods.md';
-import Parts from '@ionic-internal/component-api/v10/segment/parts.md';
+
+import Props from '@ionic-internal/component-api/v10/segment/props.mdx';
+import Events from '@ionic-internal/component-api/v10/segment/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/segment/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/segment/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/segment/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/segment/slots.md';
+import Slots from '@ionic-internal/component-api/v10/segment/slots.mdx';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
-  <meta name="description" content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage." />
+  <meta
+    name="description"
+    content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.
 
 Their functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.
-
 
 ## Basic Usage
 
 Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
 
-import Basic from '@site/static/usage/v10/segment/basic/index.md';
+import Basic from '@site/static/usage/v10/segment/basic/index.mdx';
 
 <Basic />
-
 
 ## Scrollable Segments
 
 Segments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.
 
-import Scrollable from '@site/static/usage/v10/segment/scrollable/index.md';
+import Scrollable from '@site/static/usage/v10/segment/scrollable/index.mdx';
 
 <Scrollable />
-
 
 ## Segments in Toolbars
 
 {/* Reuse the playground from the Toolbar directory */}
-import Toolbar from '@site/static/usage/v10/toolbar/segments/index.md';
+import Toolbar from '@site/static/usage/v10/toolbar/segments/index.mdx';
 
 <Toolbar />
-
 
 ## Swipeable Segments
 
@@ -56,12 +55,14 @@ when the segment is active. With this approach, each segment's content can be sw
 to reflect the currently visible content.
 
 :::warning
+
 If no initial `value` is assigned to the `ion-segment` when using swipeable segments, the segment will default to the value of the first segment button.
 
 Segment buttons cannot be disabled when used with swipeable segments.
+
 :::
 
-import Swipeable from '@site/static/usage/v10/segment/swipeable/index.md';
+import Swipeable from '@site/static/usage/v10/segment/swipeable/index.mdx';
 
 <Swipeable />
 
@@ -69,16 +70,15 @@ import Swipeable from '@site/static/usage/v10/segment/swipeable/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v10/segment/theming/colors/index.md';
+import Colors from '@site/static/usage/v10/segment/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v10/segment/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v10/segment/theming/css-properties/index.mdx';
 
 <CSSProps />
-
 
 ## Accessibility
 
@@ -115,21 +115,26 @@ interface SegmentCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

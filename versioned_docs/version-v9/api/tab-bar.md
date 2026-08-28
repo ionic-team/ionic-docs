@@ -1,30 +1,30 @@
 ---
-title: "ion-tab-bar"
+title: 'ion-tab-bar'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v9/tab-bar/props.md';
-import Events from '@ionic-internal/component-api/v9/tab-bar/events.md';
-import Methods from '@ionic-internal/component-api/v9/tab-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v9/tab-bar/parts.md';
+import Props from '@ionic-internal/component-api/v9/tab-bar/props.mdx';
+import Events from '@ionic-internal/component-api/v9/tab-bar/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/tab-bar/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/tab-bar/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/tab-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/tab-bar/slots.md';
+import Slots from '@ionic-internal/component-api/v9/tab-bar/slots.mdx';
 
 <head>
   <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>
-  <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
+  <meta
+    name="description"
+    content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
-
-
-
 
 ## Usage
 
@@ -51,7 +51,6 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 </TabItem>
 
-
 <TabItem value="javascript">
 
 ```html
@@ -77,7 +76,6 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -106,9 +104,7 @@ export const TabBarExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -131,8 +127,8 @@ export const TabBarExample: React.FC = () => (
 </template>
 
 <script setup lang="ts">
-import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
-import { call, person, settings } from 'ionicons/icons';
+  import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
+  import { call, person, settings } from 'ionicons/icons';
 </script>
 ```
 
@@ -145,27 +141,35 @@ import { call, person, settings } from 'ionicons/icons';
 Badges can be added inside a tab button, often used to indicate notifications or highlight additional items associated with the element.
 
 :::info
+
 Empty badges are only available for `md` mode.
+
 :::
 
-import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.md';
+import InsideTabBar from '@site/static/usage/v9/badge/inside-tab-bar/index.mdx';
 
 <InsideTabBar />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -2,12 +2,12 @@
 title: 'ion-chip'
 ---
 
-import Props from '@ionic-internal/component-api/v8/chip/props.md';
-import Events from '@ionic-internal/component-api/v8/chip/events.md';
-import Methods from '@ionic-internal/component-api/v8/chip/methods.md';
-import Parts from '@ionic-internal/component-api/v8/chip/parts.md';
+import Props from '@ionic-internal/component-api/v8/chip/props.mdx';
+import Events from '@ionic-internal/component-api/v8/chip/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/chip/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/chip/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/chip/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/chip/slots.md';
+import Slots from '@ionic-internal/component-api/v8/chip/slots.mdx';
 
 <head>
   <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>
@@ -25,13 +25,13 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/chip/basic/index.md';
+import Basic from '@site/static/usage/v8/chip/basic/index.mdx';
 
 <Basic />
 
 ## Slotting Components and Icons
 
-import SlotExample from '@site/static/usage/v8/chip/slots/index.md';
+import SlotExample from '@site/static/usage/v8/chip/slots/index.mdx';
 
 <SlotExample />
 
@@ -39,13 +39,13 @@ import SlotExample from '@site/static/usage/v8/chip/slots/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/chip/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/chip/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v8/chip/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/chip/theming/css-properties/index.mdx';
 
 <CSSProps />
 

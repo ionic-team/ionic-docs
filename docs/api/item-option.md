@@ -1,42 +1,50 @@
 ---
-title: "ion-item-option"
+title: 'ion-item-option'
 ---
-import Props from '@ionic-internal/component-api/v10/item-option/props.md';
-import Events from '@ionic-internal/component-api/v10/item-option/events.md';
-import Methods from '@ionic-internal/component-api/v10/item-option/methods.md';
-import Parts from '@ionic-internal/component-api/v10/item-option/parts.md';
+
+import Props from '@ionic-internal/component-api/v10/item-option/props.mdx';
+import Events from '@ionic-internal/component-api/v10/item-option/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/item-option/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/item-option/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/item-option/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/item-option/slots.md';
+import Slots from '@ionic-internal/component-api/v10/item-option/slots.mdx';
 
 <head>
   <title>ion-item-option: Option Button for Sliding Item in Ionic</title>
-  <meta name="description" content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties." />
+  <meta
+    name="description"
+    content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 The item option component is an button for a sliding item. It must be placed inside of [item options](./item-options). The `ionSwipe` event and the `expandable` property can be combined to create a full swipe action for the item.
 
 Refer to the [item sliding](./item-sliding) documentation for more information.
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

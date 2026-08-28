@@ -1,13 +1,13 @@
 ---
-title: "ion-infinite-scroll-content"
+title: 'ion-infinite-scroll-content'
 ---
 
-import Props from '@ionic-internal/component-api/v10/infinite-scroll-content/props.md';
-import Events from '@ionic-internal/component-api/v10/infinite-scroll-content/events.md';
-import Methods from '@ionic-internal/component-api/v10/infinite-scroll-content/methods.md';
-import Parts from '@ionic-internal/component-api/v10/infinite-scroll-content/parts.md';
+import Props from '@ionic-internal/component-api/v10/infinite-scroll-content/props.mdx';
+import Events from '@ionic-internal/component-api/v10/infinite-scroll-content/events.mdx';
+import Methods from '@ionic-internal/component-api/v10/infinite-scroll-content/methods.mdx';
+import Parts from '@ionic-internal/component-api/v10/infinite-scroll-content/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v10/infinite-scroll-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v10/infinite-scroll-content/slots.md';
+import Slots from '@ionic-internal/component-api/v10/infinite-scroll-content/slots.mdx';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -16,19 +16,25 @@ The `ion-infinite-scroll-content` component is the default child used by the `io
 For more information as well as usage, refer to the [Infinite Scroll Documentation](./infinite-scroll.md#infinite-scroll-content).
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

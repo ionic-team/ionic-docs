@@ -2,12 +2,12 @@
 title: 'ion-buttons'
 ---
 
-import Props from '@ionic-internal/component-api/v9/buttons/props.md';
-import Events from '@ionic-internal/component-api/v9/buttons/events.md';
-import Methods from '@ionic-internal/component-api/v9/buttons/methods.md';
-import Parts from '@ionic-internal/component-api/v9/buttons/parts.md';
+import Props from '@ionic-internal/component-api/v9/buttons/props.mdx';
+import Events from '@ionic-internal/component-api/v9/buttons/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/buttons/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/buttons/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/buttons/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/buttons/slots.md';
+import Slots from '@ionic-internal/component-api/v9/buttons/slots.mdx';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
@@ -25,7 +25,7 @@ The Buttons component is a container element. It should be used inside of a [too
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/buttons/basic/index.md';
+import Basic from '@site/static/usage/v9/buttons/basic/index.mdx';
 
 <Basic />
 
@@ -40,7 +40,7 @@ Buttons can be positioned inside of the toolbar using a named slot. The below ch
 | `secondary` | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode. |
 | `primary`   | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.     |
 
-import Placement from '@site/static/usage/v9/buttons/placement/index.md';
+import Placement from '@site/static/usage/v9/buttons/placement/index.mdx';
 
 <Placement />
 
@@ -48,7 +48,7 @@ import Placement from '@site/static/usage/v9/buttons/placement/index.md';
 
 A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; refer to their respective documentation for proper usage.
 
-import Types from '@site/static/usage/v9/buttons/types/index.md';
+import Types from '@site/static/usage/v9/buttons/types/index.mdx';
 
 <Types />
 
@@ -63,7 +63,7 @@ This feature is only available for iOS.
 :::
 
 {/* Reuse the playground from the Title directory */}
-import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v9/title/collapsible-large-title/buttons/index.mdx';
 
 <CollapsibleLargeTitleButtons />
 
