@@ -72,7 +72,9 @@ Your new app's directory will look like this:
 ```
 
 :::info
+
 All file paths in the examples below are relative to the project root directory.
+
 :::
 
 Let's walk through these files to understand the app's structure.
@@ -175,7 +177,9 @@ And the template, in the `home.page.html` file, uses those components:
 This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip[Learn More]
+
 For detailed information about Ionic layout components, refer to the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+
 :::
 
 ## Add an Ionic Component
@@ -257,7 +261,9 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
+
 Navigating can also be performed using Angular's Router service. Refer to the [Angular Navigation documentation](/docs/angular/navigation.md#navigating-to-different-routes) for more information.
+
 :::
 
 ## Add Icons to the New Page

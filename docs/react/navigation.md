@@ -420,7 +420,9 @@ export default Tabs;
 If you have worked with Ionic Framework before, this should feel familiar. We create an `IonTabs` component and provide an `IonTabBar`. The `IonTabBar` provides `IonTabButton` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `IonRouterOutlet` to give `IonTabs` an outlet to render the different tab views in. Note how the `Route` paths are relative (e.g., `"tab1"` instead of `"/tabs/tab1"`) since the parent route already matches `/tabs/*`.
 
 :::tip
+
 `IonTabs` renders an `IonPage` for you, so you do not need to add `IonPage` manually here.
+
 :::
 
 ### How Tabs in Ionic Work
@@ -501,7 +503,7 @@ The example below shows how the Spotify app reuses the same album component to s
 
 ## Live Example
 
-import NavigationPlayground from '@site/static/usage/v10/navigation/index.md';
+import NavigationPlayground from '@site/static/usage/v10/navigation/index.mdx';
 
 <NavigationPlayground defaultFramework="react" />
 

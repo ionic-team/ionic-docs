@@ -25,7 +25,9 @@ Here’s the finished app running on all 3 platforms:
 ></iframe>
 
 :::note
+
 Looking for the previous version of this guide that covered Ionic 4 and Cordova? Refer to the [Ionic 4 and Cordova guide](../developer-resources/guides/first-app-v4/intro.md).
+
 :::
 
 ## What We'll Build
@@ -55,7 +57,9 @@ Download and install these right away to ensure an optimal Ionic development exp
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
 :::note
+
 To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+
 :::
 
 ```shell
@@ -63,9 +67,11 @@ npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
+
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
 Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+
 :::
 
 ## Create an App

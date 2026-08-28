@@ -19,10 +19,12 @@ CSS-based theming enables apps to customize the colors quickly by loading a CSS 
 
 The `theme-color` value for a meta tag indicates a color that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
 
-The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
+The `content` value for the `theme-color` meta must contain a valid [CSS Color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) and cannot contain CSS Variables.
 
 :::note
+
 The `theme-color` meta controls the interface theme when running in a web browser or as a PWA and has no effect when an app is deployed using Capacitor or Cordova. If you are looking to customize the area under the status bar, we recommend using the [Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar).
+
 :::
 
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
@@ -43,10 +45,12 @@ Safari on iOS 15 and macOS will automatically determine an appropriate theme col
 There is a small subset of colors that browsers will not use as they interfere with the browser interface. For example, setting `content="red"` will not work in Safari on macOS because that color interferes with the red close button in the toolbar. If you run into this situation, try altering your color selection slightly.
 
 :::note
+
 Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if both are present.
+
 :::
 
-For more information, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a>.
+For more information, refer to the [MDN theme-color documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color).
 
 ## Global Variables
 
@@ -86,7 +90,7 @@ While the application and stepped variables in the themes section are useful for
 
 ### The Alpha Problem
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+There is not yet full [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility) for alpha use of a hex color. The [`rgba()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()>) function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
 
 ```css
 /* These examples use the same color: blueviolet. */
@@ -106,7 +110,9 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 ```
 
 :::note
+
 Refer to the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
+
 :::
 
 Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.

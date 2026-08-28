@@ -2,12 +2,12 @@
 title: 'ion-router-link'
 ---
 
-import Props from '@ionic-internal/component-api/v9/router-link/props.md';
-import Events from '@ionic-internal/component-api/v9/router-link/events.md';
-import Methods from '@ionic-internal/component-api/v9/router-link/methods.md';
-import Parts from '@ionic-internal/component-api/v9/router-link/parts.md';
+import Props from '@ionic-internal/component-api/v9/router-link/props.mdx';
+import Events from '@ionic-internal/component-api/v9/router-link/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/router-link/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/router-link/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/router-link/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/router-link/slots.md';
+import Slots from '@ionic-internal/component-api/v9/router-link/slots.mdx';
 
 <head>
   <title>ion-router-link: Navigate To a Specified Link</title>
@@ -24,7 +24,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
 
 :::note
+
 Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router.
+
 :::
 
 Refer to the [Router](./router) documentation for more information.

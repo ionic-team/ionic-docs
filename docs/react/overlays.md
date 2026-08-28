@@ -23,7 +23,9 @@ const [showAlert, hideAlert] = useIonAlert();
 ```
 
 :::note
+
 Overlays often dismiss themselves when the user is done interacting with them, so you might not need to use dismiss/hide method.
+
 :::
 
 To display the overlay, you use the present method, which we destructured to the name `showAlert`. The method takes in a set of parameters that vary depending on each overlay, but generally, they can either take in a simple set of common parameters or an object to specify additional options.
@@ -49,10 +51,20 @@ showAlert({
 Overlay hooks that display additional custom components as part of their markup, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), take in a couple of additional parameters when initializing their hooks. The first parameter is the component you want your overlay to display, and the second is an object of additional props you want to pass into the component when it gets constructed:
 
 ```tsx
-const [present, dismiss] = useIonModal(({ name }) => <div>Hello {name}.</div>, {
+const [present, dismiss] = useIonModal(({ name }: { name: string }) => <div>Hello {name}.</div>, {
   name: 'Dave',
 });
 ```
+
+That second argument, `componentProps`, is type checked against the props the component declares, so passing a prop the component does not accept, or omitting one it requires, is a compile error. The component must declare its props type; the hook does not infer it from `componentProps`. That can be an annotation on the parameter, as above, or on the component itself:
+
+```tsx
+const Greeting: React.FC<{ name: string }> = ({ name }) => <div>Hello {name}.</div>;
+
+const [present, dismiss] = useIonModal(Greeting, { name: 'Dave' });
+```
+
+Passing a JSX element instead of a component binds the props to the element, and `componentProps` is not type checked.
 
 ## Overlay Components
 
@@ -75,7 +87,9 @@ For overlays that display custom components, such as [modals](https://ionicframe
 ```
 
 :::note
+
 The Overlay Components are still a valid way of displaying overlays and are in no way a deprecated method. Use whichever method best fits your application.
+
 :::
 
 ## Docs for Overlays in Ionic

@@ -1,19 +1,23 @@
 ---
-title: "ion-alert"
+title: 'ion-alert'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v9/alert/props.md';
-import Events from '@ionic-internal/component-api/v9/alert/events.md';
-import Methods from '@ionic-internal/component-api/v9/alert/methods.md';
-import Parts from '@ionic-internal/component-api/v9/alert/parts.md';
+import Props from '@ionic-internal/component-api/v9/alert/props.mdx';
+import Events from '@ionic-internal/component-api/v9/alert/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/alert/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/alert/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/alert/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/alert/slots.md';
+import Slots from '@ionic-internal/component-api/v9/alert/slots.mdx';
 
 <head>
   <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed." />
+  <meta
+    name="description"
+    content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -26,7 +30,7 @@ An Alert is a dialog that presents users with information or collects informatio
 
 `ion-alert` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Alert.
 
-import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.md';
+import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.mdx';
 
 <Trigger />
 
@@ -36,7 +40,7 @@ The `isOpen` property on `ion-alert` allows developers to control the presentati
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Alert is dismissed. Developers should listen for the `ionAlertDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-alert` from being tightly coupled with the state of the application. With a one way data binding, the Alert only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Alert needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
-import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.md';
+import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.mdx';
 
 <IsOpen />
 
@@ -44,7 +48,7 @@ import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.md';
 
 The `alertController` can be used in situations where more control is needed over when the Alert is presented and dismissed.
 
-import Controller from '@site/static/usage/v9/alert/presenting/controller/index.md';
+import Controller from '@site/static/usage/v9/alert/presenting/controller/index.mdx';
 
 <Controller />
 
@@ -54,10 +58,9 @@ In the array of `buttons`, each button includes properties for its `text`, and o
 
 Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
 
-import Buttons from '@site/static/usage/v9/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v9/alert/buttons/index.mdx';
 
 <Buttons />
-
 
 ## Inputs
 
@@ -65,13 +68,13 @@ Alerts can also include several different inputs whose data can be passed back t
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/v9/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v9/alert/inputs/text-inputs/index.mdx';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/v9/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v9/alert/inputs/radios/index.mdx';
 
 <Radios />
 
@@ -101,12 +104,14 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-import Customization from '@site/static/usage/v9/alert/customization/index.md';
+import Customization from '@site/static/usage/v9/alert/customization/index.mdx';
 
 <Customization />
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+
 :::
 
 ## Accessibility
@@ -180,7 +185,6 @@ const alert = await alertController.create({
 </TabItem>
 
 </Tabs>
-
 
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
@@ -281,7 +285,6 @@ interface AlertButton {
 }
 ```
 
-
 ### AlertInput
 
 ```typescript
@@ -305,7 +308,6 @@ interface AlertInput {
   tabindex?: number;
 }
 ```
-
 
 ### AlertOptions
 
@@ -332,19 +334,25 @@ interface AlertOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

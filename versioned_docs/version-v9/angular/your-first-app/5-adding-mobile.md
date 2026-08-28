@@ -65,10 +65,7 @@ private async savePicture(photo: Photo) {
     });
     base64Data = file.data;
   } else {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    base64Data = await this.convertBlobToBase64(blob) as string;
+    base64Data = await this.base64FromPath(photo.webPath!);
   }
 
   // Write the file to the data directory
@@ -116,10 +113,7 @@ private async savePicture(photo: Photo) {
     });
     base64Data = file.data;
   } else {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    base64Data = await this.convertBlobToBase64(blob) as string;
+    base64Data = await this.base64FromPath(photo.webPath!);
   }
 
   // Write the file to the data directory
@@ -160,13 +154,13 @@ public async loadSaved() {
   // If running on the web...
   if (!this.platform.is('hybrid')) {
     for (const photo of photos) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
 
@@ -228,11 +222,7 @@ export class PhotoService {
 
       base64Data = file.data;
     } else {
-      // Fetch the photo, read as a blob, then convert to base64 format
-      const response = await fetch(photo.webPath!);
-      const blob = await response.blob();
-
-      base64Data = (await this.convertBlobToBase64(blob)) as string;
+      base64Data = await this.base64FromPath(photo.webPath!);
     }
 
     // Write the file to the data directory
@@ -259,12 +249,18 @@ export class PhotoService {
     }
   }
 
-  private convertBlobToBase64(blob: Blob) {
+  private async base64FromPath(path: string): Promise<string> {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
@@ -278,12 +274,12 @@ export class PhotoService {
     // If running on the web...
     if (!this.platform.is('hybrid')) {
       for (const photo of photos) {
-        const readFile = await Filesystem.readFile({
+        const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
         });
         // Web platform only: Load the photo as base64 data
-        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+        photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
       }
     }
 

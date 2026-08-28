@@ -16,12 +16,14 @@ title: Migrating From IonSlides to Swiper.js
 
 :::
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for React set up in your Ionic Framework application. It will also go over any migration information you may need to move from `IonSlides` to the official Swiper React integration.
+We recommend [Swiper.js](http://swiperjs.com/) if you need a modern touch slider component. This guide will go over how to get Swiper for React set up in your Ionic Framework application. It will also go over any migration information you may need to move from `IonSlides` to the official Swiper React integration.
 
 :::note
-Swiper's React component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the React component because it provides the most stable experience at the time of writing. Notably, React does not have strong support for Web Components yet.
+
+Swiper's React component is set to be removed in a future release of Swiper, with [Swiper Element](https://swiperjs.com/element) as the replacement. However, this guide shows how to migrate to the React component because it provides the most stable experience at the time of writing. Notably, React does not have strong support for Web Components yet.
 
 Using Swiper's React component is **not** required to use Swiper.js with Ionic Framework.
+
 :::
 
 ## Getting Started
@@ -39,7 +41,9 @@ npm install swiper@latest
 ```
 
 :::note
+
 Developers using Create React App must use `react-scripts` v5.0.0+ with the latest version of Swiper.
+
 :::
 
 ## Swiping with Style
@@ -65,7 +69,9 @@ export default Home;
 ```
 
 :::note
+
 Importing `@ionic/react/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `IonSlides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+
 :::
 
 ### Updating Selectors
@@ -257,7 +263,9 @@ export default Home;
 ```
 
 :::note
-Refer to <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener noreferrer">Swiper's React usage documentation</a> for a full list of modules.
+
+Refer to [Swiper's React usage documentation](https://swiperjs.com/react#usage) for a full list of modules.
+
 :::
 
 ## The IonicSlides Module
@@ -306,7 +314,9 @@ export default Home;
 ```
 
 :::note
+
 The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+
 :::
 
 ## Properties
@@ -356,7 +366,9 @@ Below is a full list of property changes when going from `IonSlides` to Swiper R
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
 
 :::note
-All properties available in Swiper React can be found in the <a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">Swiper React props documentation</a>.
+
+All properties available in Swiper React can be found in the [Swiper React props documentation](https://swiperjs.com/react#swiper-props).
+
 :::
 
 ## Events
@@ -413,7 +425,9 @@ Below is a full list of event name changes when going from `IonSlides` to Swiper
 | `onIonSlidesDidLoad`        | `onInit`                       |
 
 :::note
-All events available in Swiper can be found in the <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API events documentation</a>.
+
+All events available in Swiper can be found in the [Swiper API events documentation](https://swiperjs.com/swiper-api#events).
+
 :::
 
 ## Methods
@@ -545,12 +559,14 @@ export default Home;
 ```
 
 :::note
-For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/react#effects" target="_blank" rel="noopener noreferrer">Swiper React effects documentation</a>.
+
+For more information on effects in Swiper, please refer to the [Swiper React effects documentation](https://swiperjs.com/react#effects).
+
 :::
 
 ## Wrap Up
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/react" target="_blank" rel="noopener noreferrer">Swiper React Introduction</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
+Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the [Swiper React Introduction](https://swiperjs.com/react) and then referencing [the Swiper API docs](https://swiperjs.com/swiper-api).
 
 ## FAQ
 
@@ -564,8 +580,8 @@ If you are running into issues with the migration, please create a post on the [
 
 ### Where do I file bug reports?
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to check if your issue can be resolved by the community.
+Before opening an issue, please consider creating a post on the [Swiper Discussion Board](https://github.com/nolimits4web/swiper/discussions) or the [Ionic Forum](https://forum.ionicframework.com) to check if your issue can be resolved by the community.
 
-If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
+If you are running into problems with the Swiper library, new bugs should be filed on the [Swiper issue tracker](https://github.com/nolimits4web/swiper/issues).
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework issue tracker</a>.
+If you are running into problems with the `IonicSlides` module, new bugs should be filed on the [Ionic Framework issue tracker](https://github.com/ionic-team/ionic-framework/issues).

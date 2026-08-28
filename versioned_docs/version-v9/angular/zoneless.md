@@ -27,7 +27,9 @@ You do not need to change these. Angular schedules change detection for them in 
 - Navigation, route transitions, and tab switching.
 
 :::note[Angular 22]
+
 Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. For the migration path, refer to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/docs/updating/9-0.md#onpush-change-detection-on-angular-22).
+
 :::
 
 ## What needs a notification
@@ -81,7 +83,9 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-list',
-  template: `@for (item of items; track item) { <ion-item>{{ item }}</ion-item> }`,
+  template: `@for (item of items; track item) {
+    <ion-item>{{ item }}</ion-item>
+  }`,
 })
 export class ListPage {
   private cdr = inject(ChangeDetectorRef);
@@ -113,7 +117,7 @@ Content projected into an inline `ion-modal` or `ion-popover` follows the same r
       <ng-template>
         <ion-list>
           @for (item of items(); track item) {
-          <ion-item>{{ item }}</ion-item>
+            <ion-item>{{ item }}</ion-item>
           }
         </ion-list>
       </ng-template>

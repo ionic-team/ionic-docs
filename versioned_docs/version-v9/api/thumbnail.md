@@ -1,17 +1,20 @@
 ---
-title: "ion-thumbnail"
+title: 'ion-thumbnail'
 ---
 
-import Props from '@ionic-internal/component-api/v9/thumbnail/props.md';
-import Events from '@ionic-internal/component-api/v9/thumbnail/events.md';
-import Methods from '@ionic-internal/component-api/v9/thumbnail/methods.md';
-import Parts from '@ionic-internal/component-api/v9/thumbnail/parts.md';
+import Props from '@ionic-internal/component-api/v9/thumbnail/props.mdx';
+import Events from '@ionic-internal/component-api/v9/thumbnail/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/thumbnail/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/thumbnail/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/thumbnail/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/thumbnail/slots.md';
+import Slots from '@ionic-internal/component-api/v9/thumbnail/slots.mdx';
 
 <head>
   <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>
-  <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
+  <meta
+    name="description"
+    content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -24,13 +27,13 @@ Thumbnails can be used by themselves or inside of any element. If placed inside 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/thumbnail/basic/index.md';
+import Basic from '@site/static/usage/v9/thumbnail/basic/index.mdx';
 
 <Basic />
 
 ## Item Thumbnails
 
-import Item from '@site/static/usage/v9/thumbnail/item/index.md';
+import Item from '@site/static/usage/v9/thumbnail/item/index.mdx';
 
 <Item />
 
@@ -38,24 +41,30 @@ import Item from '@site/static/usage/v9/thumbnail/item/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v9/thumbnail/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/thumbnail/theming/css-properties/index.mdx';
 
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

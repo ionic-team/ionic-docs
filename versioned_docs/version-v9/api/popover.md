@@ -2,12 +2,12 @@
 title: 'ion-popover'
 ---
 
-import Props from '@ionic-internal/component-api/v9/popover/props.md';
-import Events from '@ionic-internal/component-api/v9/popover/events.md';
-import Methods from '@ionic-internal/component-api/v9/popover/methods.md';
-import Parts from '@ionic-internal/component-api/v9/popover/parts.md';
+import Props from '@ionic-internal/component-api/v9/popover/props.mdx';
+import Events from '@ionic-internal/component-api/v9/popover/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/popover/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/popover/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/popover/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/popover/slots.md';
+import Slots from '@ionic-internal/component-api/v9/popover/slots.mdx';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
@@ -54,10 +54,12 @@ Since the component you passed in needs to be created when the popover is presen
 A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
 
 :::note
+
 Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+
 :::
 
-import InlineTrigger from '@site/static/usage/v9/popover/presenting/inline-trigger/index.md';
+import InlineTrigger from '@site/static/usage/v9/popover/presenting/inline-trigger/index.mdx';
 
 <InlineTrigger />
 
@@ -67,7 +69,7 @@ Inline popovers can also be opened by setting the `isOpen` property to `true`. T
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
-import IsOpenTrigger from '@site/static/usage/v9/popover/presenting/inline-isopen/index.md';
+import IsOpenTrigger from '@site/static/usage/v9/popover/presenting/inline-isopen/index.mdx';
 
 <IsOpenTrigger />
 
@@ -85,7 +87,7 @@ Instead of a controller, React has a hook called `useIonPopover` which behaves i
 
 ### Usage
 
-import ControllerExample from '@site/static/usage/v9/popover/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v9/popover/presenting/controller/index.mdx';
 
 <ControllerExample />
 
@@ -94,10 +96,12 @@ import ControllerExample from '@site/static/usage/v9/popover/presenting/controll
 Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
+
 If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+
 :::
 
-import Styling from '@site/static/usage/v9/popover/customization/styling/index.md';
+import Styling from '@site/static/usage/v9/popover/customization/styling/index.mdx';
 
 <Styling />
 
@@ -117,7 +121,7 @@ The `alignment` property allows you to line up an edge of your popover with a co
 
 ### Side and Alignment Demo
 
-import Positioning from '@site/static/usage/v9/popover/customization/positioning/index.md';
+import Positioning from '@site/static/usage/v9/popover/customization/positioning/index.mdx';
 
 <Positioning />
 
@@ -131,7 +135,7 @@ When making dropdown menus, you may want to have the width of the popover match 
 
 If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. Refer to the [controller demo](#controller-popovers) for an example of this pattern.
 
-import Sizing from '@site/static/usage/v9/popover/customization/sizing/index.md';
+import Sizing from '@site/static/usage/v9/popover/customization/sizing/index.mdx';
 
 <Sizing />
 
@@ -142,10 +146,12 @@ When using `ion-popover` inline, you can nested popovers to create nested dropdo
 You can use the `dismissOnSelect` property to automatically close the popover when the popover content has been clicked. This behavior does not apply when clicking a trigger element for another popover.
 
 :::note
+
 Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
+
 :::
 
-import NestedPopover from '@site/static/usage/v9/popover/nested/index.md';
+import NestedPopover from '@site/static/usage/v9/popover/nested/index.mdx';
 
 <NestedPopover />
 
@@ -223,7 +229,7 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 The content of an inline `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
 
-import Mount from '@site/static/usage/v9/popover/performance/mount/index.md';
+import Mount from '@site/static/usage/v9/popover/performance/mount/index.mdx';
 
 <Mount />
 

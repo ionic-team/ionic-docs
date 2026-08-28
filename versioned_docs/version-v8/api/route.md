@@ -5,12 +5,12 @@ title: 'ion-route'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/route/props.md';
-import Events from '@ionic-internal/component-api/v8/route/events.md';
-import Methods from '@ionic-internal/component-api/v8/route/methods.md';
-import Parts from '@ionic-internal/component-api/v8/route/parts.md';
+import Props from '@ionic-internal/component-api/v8/route/props.mdx';
+import Events from '@ionic-internal/component-api/v8/route/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/route/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/route/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/route/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/route/slots.md';
+import Slots from '@ionic-internal/component-api/v8/route/slots.mdx';
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
@@ -25,7 +25,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The route component takes a component and renders it when the Browser URL matches the url property.
 
 :::note
+
 Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+
 :::
 
 ## Navigation Hooks

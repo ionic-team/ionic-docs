@@ -2,12 +2,12 @@
 title: 'ion-radio-group'
 ---
 
-import Props from '@ionic-internal/component-api/v9/radio-group/props.md';
-import Events from '@ionic-internal/component-api/v9/radio-group/events.md';
-import Methods from '@ionic-internal/component-api/v9/radio-group/methods.md';
-import Parts from '@ionic-internal/component-api/v9/radio-group/parts.md';
+import Props from '@ionic-internal/component-api/v9/radio-group/props.mdx';
+import Events from '@ionic-internal/component-api/v9/radio-group/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/radio-group/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/radio-group/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/radio-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/radio-group/slots.md';
+import Slots from '@ionic-internal/component-api/v9/radio-group/slots.mdx';
 
 <head>
   <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>

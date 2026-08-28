@@ -106,11 +106,11 @@ export function usePhotoGallery() {
 
       // CHANGE: Display the photo by reading into base64 format
       for (const photo of photosInPreferences) {
-        const readFile = await Filesystem.readFile({
+        const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
         });
-        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+        photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
       }
 
       setPhotos(photosInPreferences);
@@ -143,11 +143,11 @@ export function usePhotoGallery() {
       const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
       for (const photo of photosInPreferences) {
-        const readFile = await Filesystem.readFile({
+        const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
         });
-        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+        photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
       }
 
       setPhotos(photosInPreferences);
@@ -175,10 +175,7 @@ export function usePhotoGallery() {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    const base64Data = (await convertBlobToBase64(blob)) as string;
+    const base64Data = await base64FromPath(photo.webPath!);
 
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -194,12 +191,18 @@ export function usePhotoGallery() {
     };
   };
 
-  const convertBlobToBase64 = (blob: Blob) => {
+  const base64FromPath = async (path: string): Promise<string> => {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });
@@ -218,9 +221,11 @@ export interface UserPhoto {
 ```
 
 :::note
+
 If you encounter broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
 
 In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
+
 :::
 
 That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!

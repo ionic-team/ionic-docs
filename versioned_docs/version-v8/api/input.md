@@ -2,12 +2,12 @@
 title: 'ion-input'
 ---
 
-import Props from '@ionic-internal/component-api/v8/input/props.md';
-import Events from '@ionic-internal/component-api/v8/input/events.md';
-import Methods from '@ionic-internal/component-api/v8/input/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input/parts.md';
+import Props from '@ionic-internal/component-api/v8/input/props.mdx';
+import Events from '@ionic-internal/component-api/v8/input/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/input/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/input/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/input/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input/slots.md';
+import Slots from '@ionic-internal/component-api/v8/input/slots.mdx';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
@@ -25,7 +25,7 @@ The input component is a wrapper to the HTML input element with custom styling a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/input/basic/index.md';
+import Basic from '@site/static/usage/v8/input/basic/index.mdx';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v8/input/basic/index.md';
 
 The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including `keyup`, `keydown`, `keypress`, and more. The default `type` is `"text"`.
 
-import Types from '@site/static/usage/v8/input/types/index.md';
+import Types from '@site/static/usage/v8/input/types/index.mdx';
 
 <Types />
 
@@ -49,7 +49,7 @@ Labels should be used to describe the input. They can be used visually, and they
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import LabelPlacement from '@site/static/usage/v8/input/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v8/input/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -59,7 +59,7 @@ While plaintext labels should be passed in via the `label` property, if custom H
 
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
-import LabelSlot from '@site/static/usage/v8/input/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v8/input/label-slot/index.mdx';
 
 <LabelSlot />
 
@@ -67,7 +67,7 @@ import LabelSlot from '@site/static/usage/v8/input/label-slot/index.md';
 
 If no visible label is needed, developers should still supply an `aria-label` so the input is accessible to screen readers.
 
-import NoVisibleLabel from '@site/static/usage/v8/input/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v8/input/no-visible-label/index.mdx';
 
 <NoVisibleLabel />
 
@@ -75,7 +75,7 @@ import NoVisibleLabel from '@site/static/usage/v8/input/no-visible-label/index.m
 
 Inputs offer two options for clearing the input based on how you interact with it. The first way is by adding the `clearInput` property which will show a clear button when the input has a `value`. The second way is the `clearOnEdit` property which will clear the input after it has been blurred and then typed in again. Inputs with a `type` set to `"password"` will have `clearOnEdit` enabled by default.
 
-import Clear from '@site/static/usage/v8/input/clear/index.md';
+import Clear from '@site/static/usage/v8/input/clear/index.mdx';
 
 <Clear />
 
@@ -86,10 +86,12 @@ Material Design offers filled styles for an input. The `fill` property on the in
 Filled inputs can be used on iOS by setting the input's `mode` to `md`.
 
 :::warning
+
 Inputs that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+
 :::
 
-import Fill from '@site/static/usage/v8/input/fill/index.md';
+import Fill from '@site/static/usage/v8/input/fill/index.mdx';
 
 <Fill />
 
@@ -99,7 +101,7 @@ Helper and error text can be used inside of an input with the `helperText` and `
 
 In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
-import HelperError from '@site/static/usage/v8/input/helper-error/index.md';
+import HelperError from '@site/static/usage/v8/input/helper-error/index.mdx';
 
 <HelperError />
 
@@ -109,13 +111,13 @@ The input counter is text that displays under an input to notify the user of how
 
 The `counter` and `counterFormatter` properties on `ion-item` were [deprecated in Ionic 7](/docs/api/input#using-the-modern-syntax) and should be used directly on `ion-input` instead.
 
-import Counter from '@site/static/usage/v8/input/counter/index.md';
+import Counter from '@site/static/usage/v8/input/counter/index.mdx';
 
 <Counter />
 
 Inputs with a counter add a border between the input and the counter, therefore they should not be placed inside of an `ion-item` which adds an additional border under the item. The `ion-padding-start` class can be added to align the counter inputs with inputs inside of items.
 
-import CounterAlignment from '@site/static/usage/v8/input/counter-alignment/index.md';
+import CounterAlignment from '@site/static/usage/v8/input/counter-alignment/index.mdx';
 
 <CounterAlignment />
 
@@ -125,7 +127,7 @@ Developers can use the `ionInput` event to update the input value in response to
 
 When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
 
-import FilteringData from '@site/static/usage/v8/input/filtering/index.md';
+import FilteringData from '@site/static/usage/v8/input/filtering/index.mdx';
 
 <FilteringData />
 
@@ -139,7 +141,7 @@ To get started with Maskito, install the library:
 npm install @maskito/core @maskito/{angular,react,vue}
 ```
 
-import Masking from '@site/static/usage/v8/input/mask/index.md';
+import Masking from '@site/static/usage/v8/input/mask/index.mdx';
 
 <Masking />
 
@@ -156,12 +158,14 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
 :::note
+
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+
 :::
 
-import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.mdx';
 
 <StartEndSlots />
 
@@ -172,10 +176,12 @@ import StartEndSlots from '@site/static/usage/v8/input/start-end-slots/index.md'
 Setting the `color` property changes the color palette for each input. On `ios` mode, this property changes the caret color. On `md` mode, this property changes the caret color and the highlight/underline color.
 
 :::note
+
 The `color` property does _not_ change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
+
 :::
 
-import Colors from '@site/static/usage/v8/input/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/input/theming/colors/index.mdx';
 
 <Colors />
 
@@ -183,7 +189,7 @@ import Colors from '@site/static/usage/v8/input/theming/colors/index.md';
 
 Input uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input` for customization will not work; therefore we recommend adding a class and customizing it that way.
 
-import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/input/theming/css-properties/index.mdx';
 
 <CSSProps />
 

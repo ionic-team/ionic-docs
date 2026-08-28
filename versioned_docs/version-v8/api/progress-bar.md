@@ -2,12 +2,12 @@
 title: 'ion-progress-bar'
 ---
 
-import Props from '@ionic-internal/component-api/v8/progress-bar/props.md';
-import Events from '@ionic-internal/component-api/v8/progress-bar/events.md';
-import Methods from '@ionic-internal/component-api/v8/progress-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/progress-bar/parts.md';
+import Props from '@ionic-internal/component-api/v8/progress-bar/props.mdx';
+import Events from '@ionic-internal/component-api/v8/progress-bar/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/progress-bar/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/progress-bar/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/progress-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/progress-bar/slots.md';
+import Slots from '@ionic-internal/component-api/v8/progress-bar/slots.mdx';
 
 <head>
   <title>ion-progress-bar: App Progress Bar for Loading Indicator</title>
@@ -27,7 +27,7 @@ Progress bars inform users about the status of ongoing processes, such as loadin
 
 Determinate is the default type. It should be used when the percentage of an operation is known. The progress is represented by setting the `value` property. This can be used to show the progress increasing from 0 to 100% of the track.
 
-import Determinate from '@site/static/usage/v8/progress-bar/determinate/index.md';
+import Determinate from '@site/static/usage/v8/progress-bar/determinate/index.mdx';
 
 <Determinate />
 
@@ -35,7 +35,7 @@ import Determinate from '@site/static/usage/v8/progress-bar/determinate/index.md
 
 If the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.
 
-import Buffer from '@site/static/usage/v8/progress-bar/buffer/index.md';
+import Buffer from '@site/static/usage/v8/progress-bar/buffer/index.mdx';
 
 <Buffer />
 
@@ -43,14 +43,14 @@ import Buffer from '@site/static/usage/v8/progress-bar/buffer/index.md';
 
 The indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.
 
-import Indeterminate from '@site/static/usage/v8/progress-bar/indeterminate/index.md';
+import Indeterminate from '@site/static/usage/v8/progress-bar/indeterminate/index.mdx';
 
 <Indeterminate />
 
 ## Progress Bars in Toolbars
 
 {/* Reuse the playground from the Toolbar directory */}
-import Toolbar from '@site/static/usage/v8/toolbar/progress-bars/index.md';
+import Toolbar from '@site/static/usage/v8/toolbar/progress-bars/index.mdx';
 
 <Toolbar />
 
@@ -58,19 +58,19 @@ import Toolbar from '@site/static/usage/v8/toolbar/progress-bars/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v8/progress-bar/theming/colors/index.md';
+import Colors from '@site/static/usage/v8/progress-bar/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v8/progress-bar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v8/progress-bar/theming/css-properties/index.mdx';
 
 <CSSProps />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/v8/progress-bar/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v8/progress-bar/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 

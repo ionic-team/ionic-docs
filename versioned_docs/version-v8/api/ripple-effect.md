@@ -2,12 +2,12 @@
 title: 'ion-ripple-effect'
 ---
 
-import Props from '@ionic-internal/component-api/v8/ripple-effect/props.md';
-import Events from '@ionic-internal/component-api/v8/ripple-effect/events.md';
-import Methods from '@ionic-internal/component-api/v8/ripple-effect/methods.md';
-import Parts from '@ionic-internal/component-api/v8/ripple-effect/parts.md';
+import Props from '@ionic-internal/component-api/v8/ripple-effect/props.mdx';
+import Events from '@ionic-internal/component-api/v8/ripple-effect/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/ripple-effect/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/ripple-effect/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/ripple-effect/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/ripple-effect/slots.md';
+import Slots from '@ionic-internal/component-api/v8/ripple-effect/slots.mdx';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -27,7 +27,7 @@ It's important to set [relative positioning](https://developer.mozilla.org/en-US
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/ripple-effect/basic/index.md';
+import Basic from '@site/static/usage/v8/ripple-effect/basic/index.mdx';
 
 <Basic />
 
@@ -35,7 +35,7 @@ import Basic from '@site/static/usage/v8/ripple-effect/basic/index.md';
 
 There are two types of ripple effects: `"bounded"` and `"unbounded"`. The default type, `"bounded"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, set the type to `"unbounded"`.
 
-import Type from '@site/static/usage/v8/ripple-effect/type/index.md';
+import Type from '@site/static/usage/v8/ripple-effect/type/index.mdx';
 
 <Type />
 
@@ -43,7 +43,7 @@ import Type from '@site/static/usage/v8/ripple-effect/type/index.md';
 
 The ripple can be customized to a different color through CSS. By default the ripple color is set to inherit the text color, which is generally the body color. This can be changed by setting the CSS `color` on the parent or the ripple effect itself.
 
-import Customizing from '@site/static/usage/v8/ripple-effect/customizing/index.md';
+import Customizing from '@site/static/usage/v8/ripple-effect/customizing/index.mdx';
 
 <Customizing />
 

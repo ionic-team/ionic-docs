@@ -5,14 +5,16 @@ Dynamic Font Scaling is a feature that allows users to choose the size of the te
 ## Try It Out
 
 :::tip
+
 Be sure to try this on an Android, iOS, or iPadOS device.
 
 If you are testing on Chrome for Android, make sure ["Accessibility Page Zoom"](#chrome-for-android) is enabled.
+
 :::
 
 Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-device) guide to set your preferred font size, and watch the text in the demo below grow or shrink according to your preferences.
 
-import DynamicFontScaling from '@site/static/usage/v8/layout/dynamic-font-scaling/index.md';
+import DynamicFontScaling from '@site/static/usage/v8/layout/dynamic-font-scaling/index.mdx';
 
 <DynamicFontScaling />
 
@@ -156,7 +158,9 @@ Refer to [Apple Support](https://support.apple.com/en-us/102453) for more inform
 Where users access the font scaling configuration varies across devices, but it is typically found in the "Accessibility" page in the Settings app.
 
 :::info
+
 The Chrome Web Browser on Android has some limitations with respecting system-level font scales. Refer to [Chrome for Android](#chrome-for-android) for more information.
+
 :::
 
 ## Troubleshooting
@@ -190,5 +194,7 @@ Certain native iOS components such as the Action Sheet make use of private font 
 The root element's default font size is typically `16px`. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications) which has a default font size of `17px`. Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
 
 :::info
+
 iOS provides a "Callout" text style which has a default font size of `16px`. However, this font style is currently not exposed to web content. Refer to [the supported text styles in WebKit](https://webkit.org/blog/3709/using-the-system-font-in-web-content/) for more information.
+
 :::

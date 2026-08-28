@@ -22,7 +22,7 @@ The current status of each Ionic Framework version is:
 
 | Version |     Status      |   Released   | Maintenance Ends | Ext. Support Ends |
 | :-----: | :-------------: | :----------: | :--------------: | :---------------: |
-|   V8    | **Maintenance** | Apr 17, 2024 |       TBD        |        TBD        |
+|   V8    | **Maintenance** | Apr 17, 2024 |   Feb 19, 2027   |   Aug 19, 2027    |
 |   V7    | End of Support  | Mar 29, 2023 |   Oct 17, 2024   |   Apr 17, 2025    |
 |   V6    | End of Support  | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
 |   V5    | End of Support  | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
@@ -52,7 +52,9 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 |    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
 
 [^1]: Angular 14.x supported starting in Ionic v6.1.9. Angular 15.x supported starting in Ionic v6.3.6.
+
 [^2]: Angular 17.x supported starting in Ionic v7.5.4.
+
 [^3]: Angular 18.x supported starting in Ionic v8.2.0.
 
 **Angular 13+ Support On Older Versions of iOS**

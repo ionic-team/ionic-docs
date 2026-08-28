@@ -15,7 +15,9 @@ title: Development Tips
 `EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
 
 :::note
+
 Using `sudo` with npm is **not recommended** because it can lead to further complications.
+
 :::
 
 This guide offers two options for resolving permission issues. Refer to the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
@@ -61,9 +63,7 @@ Global packages will now be installed in the `~/.nvm` directory, so permission e
 
 ### Option 2
 
-<small>
-  <em>Does not apply to Windows</em>
-</small>
+<small>_Does not apply to Windows_</small>
 
 Change the owner of npm's directories to the current user:
 
@@ -118,7 +118,9 @@ When an app runs, it will pause at this function. From there, the developer tool
 By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
 
 :::note
+
 This will not change which platform the browser detects. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
+
 :::
 
 ![Chrome DevTools showing the device mode with iPhone X selected.](/img/faq/tips/change-device-platform.png 'Chrome DevTools Device Mode')

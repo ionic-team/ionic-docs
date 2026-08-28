@@ -46,15 +46,12 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
   // CHANGE: Add platform check
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
-    const readFile = await Filesystem.readFile({
+    const file = await Filesystem.readFile({
       path: photo.path!,
     });
-    base64Data = readFile.data;
+    base64Data = typeof file.data === 'string' ? file.data : await file.data.text();
   } else {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
-    base64Data = (await convertBlobToBase64(blob)) as string;
+    base64Data = await base64FromPath(photo.webPath!);
   }
 
   const savedFile = await Filesystem.writeFile({
@@ -93,11 +90,11 @@ const loadSaved = async () => {
   // If running on the web...
   if (!isPlatform('hybrid')) {
     for (const photo of photosInPreferences) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
-      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
 
@@ -131,11 +128,11 @@ export function usePhotoGallery() {
       // If running on the web...
       if (!isPlatform('hybrid')) {
         for (const photo of photosInPreferences) {
-          const readFile = await Filesystem.readFile({
+          const file = await Filesystem.readFile({
             path: photo.filepath,
             directory: Directory.Data,
           });
-          photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
+          photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
         }
       }
 
@@ -167,15 +164,12 @@ export function usePhotoGallery() {
     let base64Data: string | Blob;
     // "hybrid" will detect mobile - iOS or Android
     if (isPlatform('hybrid')) {
-      const readFile = await Filesystem.readFile({
+      const file = await Filesystem.readFile({
         path: photo.path!,
       });
-      base64Data = readFile.data;
+      base64Data = typeof file.data === 'string' ? file.data : await file.data.text();
     } else {
-      // Fetch the photo, read as a blob, then convert to base64 format
-      const response = await fetch(photo.webPath!);
-      const blob = await response.blob();
-      base64Data = (await convertBlobToBase64(blob)) as string;
+      base64Data = await base64FromPath(photo.webPath!);
     }
 
     const savedFile = await Filesystem.writeFile({
@@ -200,12 +194,18 @@ export function usePhotoGallery() {
     }
   };
 
-  const convertBlobToBase64 = (blob: Blob) => {
+  const base64FromPath = async (path: string): Promise<string> => {
+    const response = await fetch(path);
+    const blob = await response.blob();
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onerror = reject;
       reader.onload = () => {
-        resolve(reader.result);
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject('method did not return a string');
+        }
       };
       reader.readAsDataURL(blob);
     });

@@ -154,7 +154,7 @@ Wrap each image in a `<button>` element with a click handler. When the app user 
 
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
+          <ion-col size="6" v-for="(photo, index) in photos" :key="index">
             <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
             <button @click="showActionSheet(photo)">
               <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
@@ -197,7 +197,9 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
+
 Remember, you can find the [complete source code for this app](https://github.com/ionic-team/tutorial-photo-gallery-vue) on GitHub.
+
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

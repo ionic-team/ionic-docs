@@ -2,12 +2,12 @@
 title: 'ion-tab'
 ---
 
-import Props from '@ionic-internal/component-api/v9/tab/props.md';
-import Events from '@ionic-internal/component-api/v9/tab/events.md';
-import Methods from '@ionic-internal/component-api/v9/tab/methods.md';
-import Parts from '@ionic-internal/component-api/v9/tab/parts.md';
+import Props from '@ionic-internal/component-api/v9/tab/props.mdx';
+import Events from '@ionic-internal/component-api/v9/tab/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/tab/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/tab/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/tab/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/tab/slots.md';
+import Slots from '@ionic-internal/component-api/v9/tab/slots.mdx';
 
 <head>
   <title>ion-tab: Ionic Framework Application Component</title>
@@ -24,9 +24,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
 
 :::note
+
 Angular, React, and Vue can only use this component when the `ion-tabs` component is configured for [basic usage](./tabs.md#basic-usage). When setting up tabs with routing, the `ion-tab` component cannot be used.
 
 In JavaScript, this component can be used with the `ion-tabs` component configured for either [basic usage](./tabs.md#basic-usage) or [usage with router](./tabs.md#usage-with-router).
+
 :::
 
 Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.

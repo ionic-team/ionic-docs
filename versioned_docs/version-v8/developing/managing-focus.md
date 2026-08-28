@@ -37,7 +37,7 @@ There are platform restrictions you should be aware of when using the `setFocus`
 
 The example below demonstrates how to use the `setFocus` API to request focus on an input when the user clicks a button.
 
-import Basic from '@site/static/usage/v8/input/set-focus/index.md';
+import Basic from '@site/static/usage/v8/input/set-focus/index.mdx';
 
 <Basic />
 
@@ -262,7 +262,9 @@ The following table explains what each content type represents:
 | `banner`  | The header of the view.       | [Header](../api/header)   | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
 
 :::important
+
 Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title) on each view. Since multiple [Title](../api/title) components can be used in a single view, Ionic does not automatically assign these attributes.
+
 :::
 
 ### Specifying Priority

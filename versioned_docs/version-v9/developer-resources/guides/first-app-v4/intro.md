@@ -11,13 +11,11 @@ It’s easy to get started. Note that all code referenced in this guide can be [
 Download/install these right away to ensure an optimal Ionic development experience:
 
 - [Git](https://git-scm.com/downloads) for version control.
-- <strong>SSH client</strong>, such as [PuTTy](https://putty.software/), for secure login to Appflow.
-- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version](https://nodejs.org/en/).
-- <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-- <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we
-  recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>
-    Mac/Linux
-  </strong> users, virtually any terminal will work.
+- **SSH client**, such as [PuTTy](https://putty.software/), for secure login to Appflow.
+- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version](https://nodejs.org/en/).
+- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+- **Command-line terminal (CLI)**: FYI **Windows** users, for the best Ionic experience, we
+  recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic and Cordova
 
@@ -28,9 +26,11 @@ npm install -g @ionic/cli cordova
 ```
 
 :::note
+
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
 Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../../../developing/tips.md#resolving-permission-errors) for more information.
+
 :::
 
 ## Create an App
