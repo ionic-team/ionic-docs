@@ -63,9 +63,7 @@ Global packages will now be installed in the `~/.nvm` directory, so permission e
 
 ### Option 2
 
-<small>
-  <em>Does not apply to Windows</em>
-</small>
+<small>_Does not apply to Windows_</small>
 
 Change the owner of npm's directories to the current user:
 

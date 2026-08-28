@@ -125,7 +125,7 @@ The official [Ionic CLI](cli.md), or Command Line Interface, is a tool that quic
 
 ## Appflow
 
-To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called [Appflow](https://ionic.io/appflow), which is <strong>separate from the open source Framework.</strong>
+To help build, deploy, and manage Ionic apps throughout their lifecycle, we offer a commercial service for production apps called [Appflow](https://ionic.io/appflow), which is **separate from the open source Framework.**
 
 Appflow helps developers and teams compile native app builds and deploy live code updates to Ionic apps from a centralized dashboard. Optional paid upgrades are available for more advanced capabilities like publishing directly to app stores, workflow automation, single sign-on (SSO) and access to connected services and integrations.
 

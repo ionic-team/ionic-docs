@@ -247,10 +247,9 @@ The second route defined in the Dashboard Page has a URL parameter defined (the 
 **UserDetailPage.tsx**
 
 ```tsx
-interface UserDetailPageProps
-  extends RouteComponentProps<{
-    id: string;
-  }> {}
+interface UserDetailPageProps extends RouteComponentProps<{
+  id: string;
+}> {}
 
 const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
   return (

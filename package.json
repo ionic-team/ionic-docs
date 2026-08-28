@@ -65,13 +65,12 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/tsconfig": "^3.10.2",
-    "@ionic/prettier-config": "^3.0.0",
+    "@ionic/prettier-config": "^4.0.0",
     "@types/react": "^19.2.18",
     "cspell": "^10.0.1",
     "hygen": "^6.2.11",
-    "prettier": "^2.8.8",
+    "prettier": "^3.9.6",
     "typescript": "^5.9.3",
     "vitest": "^4.1.7"
-  },
-  "prettier": "@ionic/prettier-config"
+  }
 }

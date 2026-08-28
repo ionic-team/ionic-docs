@@ -44,7 +44,7 @@ Bundling is the process of taking an app's dependencies (code you've written plu
 
 ### CLI {/* #cli */}
 
-A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to [Ionic's CLI](https://ionicframework.com/docs/cli). Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing [Ionic commercial services](https://ionic.io/appflow).
+A CLI, or **C**ommand-**L**ine **I**nterface, is a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to [Ionic's CLI](https://ionicframework.com/docs/cli). Ionic's CLI can be used for a number of things, such as creating production builds of an app, running the development server, and accessing [Ionic commercial services](https://ionic.io/appflow).
 
 {/* cspell:enable */}
 
@@ -66,7 +66,7 @@ You may be familiar with variables from Sass. [CSS Variables](https://developers
 
 ### Decorators {/* #decorators */}
 
-Decorators are expressions that return a function. They allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that parameter. The decorator will add functionality when an argument is passed to the method, and then return the original argument.
+Decorators are expressions that return a function. They allow you to take an existing function, and extend its behavior. With TypeScript, you can also decorate _classes_ and _parameters_. When you decorate a **class**, you are wrapping and extending the behavior of its constructor. In other words, the decorator will add some functionality when the constructor is called, and will then return the original constructor. When you decorate a **parameter**, you are wrapping the argument that gets passed in for that parameter. The decorator will add functionality when an argument is passed to the method, and then return the original argument.
 
 ### ES5 {/* #es5 */}
 
@@ -114,7 +114,7 @@ Modules in JavaScript are small, independent, and reusable pieces or code that a
 
 ### Monorepo {/* #monorepo */}
 
-A <strong>monorepo</strong> is a single git repository with multiple projects. Advantages include simpler organization, shared tooling and dependencies, and better collaboration with teammates.
+A **monorepo** is a single git repository with multiple projects. Advantages include simpler organization, shared tooling and dependencies, and better collaboration with teammates.
 
 ### Live Reload {/* #livereload */}
 
@@ -134,7 +134,7 @@ An observable is an object that emits events (or notifications). An observer is 
 
 ### Package ID {/* #package-id */}
 
-Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string formatted in [reverse-DNS notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation).
+Referred to by Apple as **Bundle ID** and by Android as **Application ID**, the **Package ID** is used for identifying apps published to the App Store/Play Store. It is a string formatted in [reverse-DNS notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation).
 
 ### Polyfill {/* #polyfill */}
 
@@ -162,7 +162,7 @@ A shim is a piece of code that normalizes an APIs across browsers. A shim can ha
 
 ### Transpiler {/* #transpiler */}
 
-Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of <em>transpilation</em> in Ionic Framework is converting [ES2015/ES6](#es2015-es6) ([TypeScript](#typescript)) to [ES5](#es5) (traditional JavaScript).
+Transpilation is the process of converting code from one language to another language prior to execution. Typically, a transpiler will convert a high-level language to another high-level language. The most common type of _transpilation_ in Ionic Framework is converting [ES2015/ES6](#es2015-es6) ([TypeScript](#typescript)) to [ES5](#es5) (traditional JavaScript).
 
 ### TypeScript {/* #typescript */}
 

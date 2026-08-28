@@ -38,7 +38,7 @@ For apps that are built with Angular and `@ionic/angular`, we recommend using th
 
 An amazing feature of apps built with web technologies (such as Ionic apps!) is that it can run on virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work on many platforms because it is based on web standards and common APIs that are shared across these platforms.
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide [Web Views](webview.md) which render any Ionic app, while still allowing for <i>full</i> Native SDK access.
+One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide [Web Views](webview.md) which render any Ionic app, while still allowing for _full_ Native SDK access.
 
 Projects such as [Capacitor](https://capacitorjs.com/) and [Cordova](https://cordova.apache.org/) are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more.
 

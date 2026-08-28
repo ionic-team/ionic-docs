@@ -97,7 +97,10 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class Tab2Page {
   // CHANGE: Update constructor
-  constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
+  constructor(
+    public photoService: PhotoService,
+    public actionSheetController: ActionSheetController
+  ) {}
 
   // ...existing code...
 

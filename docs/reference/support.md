@@ -54,8 +54,11 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 |    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
 
 [^1]: Angular 14.x supported starting in Ionic v6.1.9. Angular 15.x supported starting in Ionic v6.3.6.
+
 [^2]: Angular 17.x supported starting in Ionic v7.5.4.
+
 [^3]: Angular 18.x supported starting in Ionic v8.2.0.
+
 [^4]: `@ionic/angular` and `@ionic/react` require TypeScript 5.4+. Using Angular 21 requires TypeScript 5.9 or later, and Angular 22 requires TypeScript 6.0 or later, per Angular's own requirements.
 
 **Angular 13+ Support On Older Versions of iOS**
