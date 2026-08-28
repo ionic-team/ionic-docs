@@ -61,7 +61,7 @@ function Example() {
                 <code>push</code>
               </IonRadio>
             </IonItem>
-          </IonRadioGroup>{' '}
+          </IonRadioGroup>
           <br />
           <IonMenuToggle>
             <IonButton>Click to open the menu</IonButton>
