@@ -32,7 +32,9 @@ import Inputmode from '@site/static/usage/v9/keyboard/inputmode/index.mdx';
 <Inputmode />
 
 :::note
+
 The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+
 :::
 
 ## enterkeyhint
@@ -50,7 +52,9 @@ import Enterkeyhint from '@site/static/usage/v9/keyboard/enterkeyhint/index.mdx'
 <Enterkeyhint />
 
 :::note
+
 The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+
 :::
 
 ## Dark Mode
@@ -171,5 +175,7 @@ watch(keyboardHeight, () => {
 ````
 
 :::note
+
 For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+
 :::

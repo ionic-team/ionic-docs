@@ -26,7 +26,9 @@ In pursuit of [adaptive styling](../core-concepts/fundamentals.md#adaptive-styli
 | Ionic v4  |          4.4+          | 10.0+ |
 
 :::note
+
 Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+
 :::
 
 ### A Note on Android Support

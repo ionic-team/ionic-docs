@@ -68,7 +68,9 @@ To learn more about the security recommendations for binding to directives such 
 For developers who wish to add complex HTML to components such as `ion-toast`, they will need to eject from the sanitizer that is built into Ionic Framework. Developers can either disable the sanitizer across their entire app or bypass it on a case-by-case basis.
 
 :::note
+
 Bypassing sanitization functionality can make your application vulnerable to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Please exercise extreme caution when disabling the sanitizer.
+
 :::
 
 ### Disabling the sanitizer via config
@@ -80,11 +82,13 @@ Ionic Framework provides an application config option called `sanitizerEnabled` 
 Developers can also choose to eject from the sanitizer in certain scenarios. Ionic Framework provides the `IonicSafeString` class that allows developers to do just that.
 
 :::note
+
 In order to bypass the sanitizer and use unsanitized custom HTML in the relevant Ionic components, `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config.
 
 `IonicSafeString` should not be used if `innerHTMLTemplatesEnabled` is set to `false`.
 
 Refer to [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerhtml) for more information.
+
 :::
 
 #### Usage

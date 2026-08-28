@@ -68,7 +68,9 @@ Your new app's directory will look like this:
 ```
 
 :::info
+
 All file paths in the examples below are relative to the project root directory.
+
 :::
 
 Let's walk through these files to understand the app's structure.
@@ -151,7 +153,9 @@ export default Home;
 This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip[Learn More]
+
 For detailed information about Ionic layout components, refer to the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+
 :::
 
 ## Add an Ionic Component
@@ -217,7 +221,9 @@ export default New;
 This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
 :::warning
+
 When creating your own pages, always use `IonPage` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
+
 :::
 
 ## Navigate to the New Page
@@ -245,7 +251,9 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
+
 Navigating can also be performed programmatically using the `useIonRouter` hook. See the [React Navigation documentation](/docs/react/navigation.md#useionrouter) for more information.
+
 :::
 
 ## Add Icons to the New Page

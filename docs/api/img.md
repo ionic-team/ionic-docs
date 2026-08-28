@@ -22,7 +22,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 :::warning[Deprecated]
+
 `ion-img` is deprecated and will be removed in Ionic 10. Use a native `<img>` tag with [loading="lazy"](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading) instead. Refer to the [migration guide](../updating/9-0.md#img) for details on replacing events and styling.
+
 :::
 
 Img is a tag that will lazily load an image whenever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browsers, but falls back to a `setTimeout` when it is not supported.

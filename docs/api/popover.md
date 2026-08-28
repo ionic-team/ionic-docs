@@ -54,7 +54,9 @@ Since the component you passed in needs to be created when the popover is presen
 A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
 
 :::note
+
 Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+
 :::
 
 import InlineTrigger from '@site/static/usage/v9/popover/presenting/inline-trigger/index.mdx';
@@ -94,7 +96,9 @@ import ControllerExample from '@site/static/usage/v9/popover/presenting/controll
 Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
+
 If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+
 :::
 
 import Styling from '@site/static/usage/v9/popover/customization/styling/index.mdx';
@@ -142,7 +146,9 @@ When using `ion-popover` inline, you can nested popovers to create nested dropdo
 You can use the `dismissOnSelect` property to automatically close the popover when the popover content has been clicked. This behavior does not apply when clicking a trigger element for another popover.
 
 :::note
+
 Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
+
 :::
 
 import NestedPopover from '@site/static/usage/v9/popover/nested/index.mdx';

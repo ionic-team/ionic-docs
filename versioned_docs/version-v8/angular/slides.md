@@ -14,7 +14,9 @@ import TabItem from '@theme/TabItem';
 </head>
 
 :::warning[Looking for `ion-slides`?]
+
 `ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+
 :::
 
 We recommend [Swiper.js](http://swiperjs.com/) if you need a modern touch slider component. Swiper 9 introduced [Swiper Element](https://swiperjs.com/element) as a replacement for its Angular component, so this guide will go over how to get Swiper Element set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to Swiper Element.
@@ -191,7 +193,9 @@ export class HomePage {
 ```
 
 :::note
+
 If you are using the Core version of Swiper and have installed additional modules, ensure that `IonicSlides` is the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+
 :::
 
 ## Properties
@@ -227,7 +231,9 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager   | Use the `pagination` property instead.                                                                                                  |
 
 :::note
+
 All properties available in Swiper Element can be found in the [Swiper API parameters documentation](https://swiperjs.com/swiper-api#parameters).
+
 :::
 
 ## Events
@@ -276,7 +282,9 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `swiperinit`                       |
 
 :::note
+
 All events available in Swiper Element can be found in the [Swiper API events documentation](https://swiperjs.com/swiper-api#events) and should be lowercased and prefixed with the word `swiper`.
+
 :::
 
 ## Methods
@@ -328,7 +336,9 @@ Below is a full list of method changes when going from `ion-slides` to Swiper El
 | `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 :::note
+
 All methods and properties available on the Swiper instance can be found in the [Swiper API methods and properties documentation](https://swiperjs.com/swiper-api#methods-and-properties).
+
 :::
 
 ## Effects
@@ -340,7 +350,9 @@ Effects such as Cube or Fade can be used in Swiper Element with no additional im
 ```
 
 :::note
+
 For more information on effects in Swiper, please refer to the [Swiper API fade effect documentation](https://swiperjs.com/swiper-api#fade-effect).
+
 :::
 
 ## Wrap Up

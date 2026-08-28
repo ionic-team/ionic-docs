@@ -16,7 +16,9 @@ import TabItem from '@theme/TabItem';
 The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous view exists in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
 
 :::note
+
 The hardware back button refers to the physical back button on an Android device and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices.
+
 :::
 
 ## Overview
@@ -47,7 +49,9 @@ Chrome has support for Close Watcher starting in [Chrome 120](https://developer.
 For complete hardware back button support, we recommend using Capacitor or Cordova.
 
 :::note
+
 The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA if Close Watcher is unsupported or `experimentalCloseWatcher` is `false`.
+
 :::
 
 ## Basic Usage

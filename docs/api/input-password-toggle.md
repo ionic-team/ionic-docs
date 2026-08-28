@@ -26,9 +26,11 @@ The InputPasswordToggle component is a companion component to [Input](./input). 
 ## Basic Usage
 
 :::info
+
 InputPasswordToggle must be used with an [Input](./input) that has its [`type`](./input/#type) property set to either `'text'` or `'password'`.
 
 Using any other `type` will cause a warning to be logged.
+
 :::
 
 import Basic from '@site/static/usage/v9/input-password-toggle/basic/index.mdx';

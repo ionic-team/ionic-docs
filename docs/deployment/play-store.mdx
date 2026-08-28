@@ -91,7 +91,9 @@ To opt into app signing, you'll need to upload the app signing key used to sign 
 ![The opt-in options for Play App Signing in the Google Play Console.](https://blog.ionicframework.com/wp-content/uploads/2021/12/existingapps-optin.png 'Google Play Console Opt-in to Play App Signing')
 
 :::tip
+
 With smaller app sizes, improved performance, and enhanced security, the AAB binary format is a win for app developers and users alike. If you have an existing Android app using the APK format, consider migrating to AAB to take advantage of all the great features it provides.
+
 :::
 
 </TabItem>
@@ -106,7 +108,9 @@ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg R
 Once that command has been ran and its prompts have been answered a file called `my-release-key.keystore` will be created in the current directory.
 
 :::warning
+
 Save this file and keep it somewhere safe. If it is lost the Google Play Store will not accept updates for this app!
+
 :::
 
 To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
@@ -135,7 +139,9 @@ Now that a release AAB/APK has been generated, a Play Store listing can be writt
 To start, visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
 
 :::note
+
 Making a developer account with Google Play costs $25 USD.
+
 :::
 
 Once a developer account has been created, go ahead and click the `Create an Application`
@@ -153,14 +159,18 @@ As an app evolves, it will need to be updated with new features and fixes. An ap
 <TabItem value="capacitor" label="Capacitor" default>
 
 :::note
+
 In order for the Google Play Store to accept updated AAB/APK, the `android/app/build.gradle` file will need to be edited to increment the `versionCode` value, then rebuild the app for release following the instructions above.
+
 :::
 
 </TabItem>
 <TabItem value="cordova" label="Cordova">
 
 :::note
+
 In order for the Google Play Store to accept updated AAB/APK, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
+
 :::
 
 </TabItem>

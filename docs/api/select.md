@@ -156,7 +156,9 @@ Material Design offers filled styles for a select. The `fill` property on the se
 Filled selects can be used on iOS by setting the select's `mode` to `md`.
 
 :::warning
+
 Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+
 :::
 
 import FillExample from '@site/static/usage/v9/select/fill/index.mdx';
@@ -194,9 +196,11 @@ import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
 
 :::note
+
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+
 :::
 
 import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.mdx';
@@ -206,7 +210,9 @@ import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md
 ## Rich Content Options
 
 :::important
+
 Rich content in select options is disabled by default. Set [`innerHTMLTemplatesEnabled`](/docs/developing/config.md#ionicconfig) to `true` in your [global Ionic config](/docs/developing/config.md#global-config). Markup inside options is treated as plain text when it is disabled. Refer to [Security](/docs/techniques/security.md) for sanitization guidance when enabling custom HTML.
+
 :::
 
 In addition to single text labels, [Select Options](./select-option.md) can include HTML rich content in the select interface. Elements added inside of an option without a named slot will go into the default slot. The `start` and `end` slots will place elements on either side of the default slot. The `description` attribute can be used for additional supporting text displayed under the label.
