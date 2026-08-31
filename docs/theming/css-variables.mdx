@@ -1,0 +1,98 @@
+---
+title: CSS変数
+---
+
+<head>
+  <title>CSS変数 | 変数とコンポーネント用のCSSカスタムプロパティ</title>
+  <meta
+    name="description"
+    content="Ionicコンポーネントは、カスタムアプリプロパティを簡単にするためにCSS変数で構築されています。1か所に値を保存し、複数の場所から参照できます。"
+  />
+</head>
+
+Ionic のコンポーネントは、アプリケーションを簡単にカスタマイズできるように<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS 変数</a>を使用して構築されています。CSS 変数を使用すると、1 か所に保存している値を、他の複数の場所から参照できます。また、実行時に動的に CSS を変更することを可能にします（以前は CSS プリプロセッサが必要でした）。CSS 変数を使用すると、ブランディングやテーマに合わせて Ionic コンポーネントをオーバーライドすることが、これまでになく簡単になります。
+
+## 変数の設定
+
+### グローバル変数
+
+CSS 変数は、アプリケーション内で`:root` セレクターでグローバルに設定できます。また、特定のモードに対してのみ適用することもできます。Ionic が提供するグローバル変数の詳細については、[Ionic 変数](#ionic-variables)を参照してください。
+
+Ionic CLI を使用して Angular、React、または Vue プロジェクトを開始すると Ionic のデフォルト変数を上書きすることができる `src/theme/variables.scss` が作成されます。
+
+```css
+/* Set variables for all modes */
+:root {
+  /* Set the background of the entire app */
+  --ion-background-color: #ff3700;
+
+  /* Set the font family of the entire app */
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;
+}
+
+/* Set text color of the entire app for iOS only */
+:root.ios {
+  --ion-text-color: #000;
+}
+
+/* Set text color of the entire app for Material Design only */
+:root.md {
+  --ion-text-color: #222;
+}
+```
+
+### コンポーネント変数
+
+特定のコンポーネントに CSS 変数を設定するには、そのセレクター内に変数を追加します。コンポーネントレベルの変数についての詳細は、[Ionic 変数](#ionic-variables)を参照してください。
+
+```css
+/* Set the color on all ion-button elements */
+ion-button {
+  --color: #222;
+}
+
+/* Set the background on an ion-button with the .fancy-button class */
+.fancy-button {
+  --background: #00ff00;
+}
+```
+
+### JavaScript で変数を設定
+
+CSS 変数は[setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty) を使って JavaScript で変更することもできます:
+
+```js
+const el = document.querySelector('.fancy-button');
+el.style.setProperty('--background', '#36454f');
+```
+
+## 変数を利用する
+
+### CSS での使い方
+
+[CSS の var() 関数](https://developer.mozilla.org/en-US/docs/Web/CSS/var) を使うと、失敗した時の設定とともに CSS 変数を取得することができます。 例えば、以下の例では `--background` プロパティに `--charcoal` 変数を利用しますが、もし値を取得できなければ代わりに `#36454f` が適用されます。
+
+```css
+.fancy-button {
+  --background: var(--charcoal, #36454f);
+}
+```
+
+### JavaScript での使い方
+
+CSS 変数の値は、[getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue) を使用して JavaScript で読み取ることができます:
+
+```js
+const el = document.querySelector('.fancy-button');
+const color = el.style.getPropertyValue('--background');
+```
+
+## Ionic 変数 {/* #ionic-variables */}
+
+### コンポーネント変数
+
+Ionic では、`--background` や `--color` など、コンポーネントレベルで存在する変数を提供しています。コンポーネントが受け入れるカスタムプロパティの一覧は、その `CSS Custom Properties` セクションの [API リファレンス](../api.mdx)を確認してください。例えば、[Button CSS カスタムプロパティ](../api/button.mdx#css-custom-properties) を参照してください。
+
+### グローバル変数
+
+Ionic は、アプリケーション全体のテーマ設定を簡単にするために提供するいくつかのグローバル変数があります。詳細については、[Colors](colors.mdx)、[Themes](themes.mdx)、および [Advanced Theming](advanced.mdx)を参照してください。

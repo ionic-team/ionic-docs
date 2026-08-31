@@ -20,8 +20,8 @@ docs/cli/commands
 # Prettier's mdx parser reflows those children and moves link text onto its own
 # line, which MDX then wraps in a paragraph, rendering invalid HTML such as
 # <a><p>Android SDK</p></a>. Formatting these files reintroduces that markup.
-docs/reference/glossary.md
-versioned_docs/version-v*/reference/glossary.md
+docs/reference/glossary.mdx
+versioned_docs/version-v*/reference/glossary.md*
 
 # Archived versions
 versioned_docs/version-v5

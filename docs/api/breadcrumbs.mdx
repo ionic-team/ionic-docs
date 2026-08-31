@@ -1,0 +1,104 @@
+---
+title: "ion-breadcrumbs"
+---
+import Props from '@ionic-internal/component-api/v9/breadcrumbs/props.mdx';
+import Events from '@ionic-internal/component-api/v9/breadcrumbs/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/breadcrumbs/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/breadcrumbs/parts.mdx';
+import CustomProps from '@ionic-internal/component-api/v9/breadcrumbs/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/breadcrumbs/slots.mdx';
+
+
+
+import EncapsulationPill from '@components/page/api/EncapsulationPill';
+
+<EncapsulationPill type="shadow" />
+
+Breadcrumbsは、ユーザーがアプリやサイトのどこにいるのかを示すために使用されるナビゲーションアイテムです。大規模なサイトや、階層的に配置されたページを持つアプリで使用する必要があります。Breadcrumbsは、表示可能な最大数に応じて折りたたむことができ、折りたたんだインジケータをクリックすると、詳細情報を示すポップオーバーが表示され、折りたたんだBreadcrumbを展開することができます。
+
+## 基本的な使い方
+
+import Basic from '@site/static/usage/v9/breadcrumbs/basic/index.mdx';
+
+<Basic />
+
+## Using Icons
+
+### アイテムでのアイコン
+
+import IconsOnItems from '@site/static/usage/v9/breadcrumbs/icons/icons-on-items/index.mdx';
+
+<IconsOnItems />
+
+### Custom Separators
+
+import CustomSeparators from '@site/static/usage/v9/breadcrumbs/icons/custom-separators/index.mdx';
+
+<CustomSeparators />
+
+## Collapsing Items
+
+### Max Items
+
+`maxItems` の値よりも多くのアイテムがある場合、breadcrumbsは折りたたまれます。デフォルトでは、最初と最後のアイテムのみが表示されます。
+
+import MaxItems from '@site/static/usage/v9/breadcrumbs/collapsing-items/max-items/index.mdx';
+
+<MaxItems />
+
+### Items Before or After Collapse
+
+アイテムが折りたたまれた後、表示するアイテムの数は `itemsBeforeCollapse` と `itemsAfterCollapse` プロパティで制御することができます。
+
+import ItemsBeforeAfter from '@site/static/usage/v9/breadcrumbs/collapsing-items/items-before-after/index.mdx';
+
+<ItemsBeforeAfter />
+
+### Collapsed Indicator Click -- Expand Breadcrumbs
+
+インジケータをクリックすると、`ionCollapsedClick` イベントが発生します。これは、例えば、breadcrumbsを展開するために使うことができます。
+
+import ExpandOnClick from '@site/static/usage/v9/breadcrumbs/collapsing-items/expand-on-click/index.mdx';
+
+<ExpandOnClick />
+
+### Collapsed Indicator Click -- Present Popover
+
+また、`ionCollapsedClick` イベントは、隠されたパンくずを表示するオーバーレイ（この場合は `ion-popover` ）を提示するために使用することができます。
+
+import PopoverOnClick from '@site/static/usage/v9/breadcrumbs/collapsing-items/popover-on-click/index.mdx';
+
+<PopoverOnClick />
+
+## テーマ
+
+### Colors
+
+import Colors from '@site/static/usage/v9/breadcrumbs/theming/colors/index.mdx';
+
+<Colors />
+
+## CSSカスタムプロパティ
+
+import CSSProps from '@site/static/usage/v9/breadcrumbs/theming/css-properties/index.mdx';
+
+<CSSProps />
+
+
+## プロパティ
+<Props />
+
+## イベント
+<Events />
+
+## メソッド
+<Methods />
+
+## CSS Shadow Parts
+<Parts />
+
+## CSSカスタムプロパティ
+<CustomProps />
+
+## Slots
+<Slots />
