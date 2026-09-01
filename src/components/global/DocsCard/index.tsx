@@ -53,11 +53,10 @@ function DocsCard(props: Props): ReactNode {
     </>
   );
 
-  const className = clsx({
+  const className = clsx(props.className, {
     'Card-with-image': typeof props.img !== 'undefined',
     'Card-without-image': typeof props.img === 'undefined',
     'Card-size-lg': props.size === 'lg',
-    [props.className]: props.className,
   });
 
   if (isStatic) {
