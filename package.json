@@ -22,6 +22,7 @@
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md,mdx}\" --cache",
     "start": "docusaurus start",
     "test": "vitest run",
+    "typecheck": "tsc --noEmit",
     "swizzle": "docusaurus swizzle",
     "spellcheck": "cspell --no-progress --gitignore \"**/*.{md,mdx}\""
   },
@@ -65,6 +66,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/tsconfig": "^3.10.2",
+    "@docusaurus/types": "^3.10.2",
     "@ionic/prettier-config": "^4.0.0",
     "@types/react": "^19.2.18",
     "cspell": "^10.0.1",

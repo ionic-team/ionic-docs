@@ -11,7 +11,7 @@
     "@ionic/vue": "9.0.1",
     "@ionic/vue-router": "9.0.1",
     "vue": "^3.2.25",
-    "vue-router": "5.2.0"
+    "vue-router": "5.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
