@@ -1,12 +1,13 @@
 ---
-title: "ion-picker-column"
+title: 'ion-picker-column'
 ---
-import Props from '@ionic-internal/component-api/v9/picker-column/props.md';
-import Events from '@ionic-internal/component-api/v9/picker-column/events.md';
-import Methods from '@ionic-internal/component-api/v9/picker-column/methods.md';
-import Parts from '@ionic-internal/component-api/v9/picker-column/parts.md';
+
+import Props from '@ionic-internal/component-api/v9/picker-column/props.mdx';
+import Events from '@ionic-internal/component-api/v9/picker-column/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/picker-column/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/picker-column/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/picker-column/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/picker-column/slots.md';
+import Slots from '@ionic-internal/component-api/v9/picker-column/slots.mdx';
 
 <head>
   <title>ion-picker-column: Individual columns within a picker</title>
@@ -20,19 +21,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 An individual column within a picker. Visit the [`ion-picker`](./picker.md) documentation for more details.
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

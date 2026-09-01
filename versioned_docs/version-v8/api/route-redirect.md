@@ -2,12 +2,12 @@
 title: 'ion-route-redirect'
 ---
 
-import Props from '@ionic-internal/component-api/v8/route-redirect/props.md';
-import Events from '@ionic-internal/component-api/v8/route-redirect/events.md';
-import Methods from '@ionic-internal/component-api/v8/route-redirect/methods.md';
-import Parts from '@ionic-internal/component-api/v8/route-redirect/parts.md';
+import Props from '@ionic-internal/component-api/v8/route-redirect/props.mdx';
+import Events from '@ionic-internal/component-api/v8/route-redirect/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/route-redirect/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/route-redirect/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/route-redirect/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/route-redirect/slots.md';
+import Slots from '@ionic-internal/component-api/v8/route-redirect/slots.mdx';
 
 <head>
   <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
@@ -22,7 +22,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 A route redirect can only be used with an `ion-router` as a direct child of it.
 
 :::note
+
 Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+
 :::
 
 The route redirect has two configurable properties:

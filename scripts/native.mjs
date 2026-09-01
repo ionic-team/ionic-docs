@@ -1,5 +1,4 @@
 import { writeFileSync } from 'fs';
-import fetch from 'node-fetch';
 
 const tag = 'latest';
 
@@ -37,8 +36,6 @@ async function buildPluginApiDocs(pluginId) {
   const fileName = `${pluginId}.md`;
 
   writeFileSync(`docs/native/${fileName}`, apiContent);
-  writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
-  writeFileSync(`versioned_docs/version-v7/native/${fileName}`, apiContent);
   writeFileSync(`versioned_docs/version-v8/native/${fileName}`, apiContent);
 }
 

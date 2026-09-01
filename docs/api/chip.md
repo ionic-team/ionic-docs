@@ -1,16 +1,20 @@
 ---
-title: "ion-chip"
+title: 'ion-chip'
 ---
-import Props from '@ionic-internal/component-api/v9/chip/props.md';
-import Events from '@ionic-internal/component-api/v9/chip/events.md';
-import Methods from '@ionic-internal/component-api/v9/chip/methods.md';
-import Parts from '@ionic-internal/component-api/v9/chip/parts.md';
+
+import Props from '@ionic-internal/component-api/v9/chip/props.mdx';
+import Events from '@ionic-internal/component-api/v9/chip/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/chip/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/chip/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/chip/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/chip/slots.md';
+import Slots from '@ionic-internal/component-api/v9/chip/slots.mdx';
 
 <head>
   <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>
-  <meta name="description" content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons." />
+  <meta
+    name="description"
+    content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -21,13 +25,13 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v9/chip/basic/index.md';
+import Basic from '@site/static/usage/v9/chip/basic/index.mdx';
 
 <Basic />
 
 ## Slotting Components and Icons
 
-import SlotExample from '@site/static/usage/v9/chip/slots/index.md';
+import SlotExample from '@site/static/usage/v9/chip/slots/index.mdx';
 
 <SlotExample />
 
@@ -35,30 +39,36 @@ import SlotExample from '@site/static/usage/v9/chip/slots/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/v9/chip/theming/colors/index.md';
+import Colors from '@site/static/usage/v9/chip/theming/colors/index.mdx';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v9/chip/theming/css-properties/index.mdx';
 
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

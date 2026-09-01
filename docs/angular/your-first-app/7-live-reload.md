@@ -217,7 +217,9 @@ button img {
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
+
 Remember, you can find the [complete source code for this app](https://github.com/ionic-team/tutorial-photo-gallery-angular) on GitHub.
+
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

@@ -68,11 +68,15 @@ Your new app's directory will look like this:
 ```
 
 :::warning[Delete files]
+
 The `counter.js` and `style.css` files can be deleted. We will not be using them.
+
 :::
 
 :::info
+
 All file paths in the examples below are relative to the project root directory.
+
 :::
 
 Let's configure the project, initialize Ionic, and add components to create our app.
@@ -227,7 +231,9 @@ customElements.define('home-page', HomePage);
 This creates a custom element called `home-page` that contains the layout for your Home page. The page uses Ionic's layout components to create a header with a toolbar and scrollable content area.
 
 :::tip[Learn More]
+
 For detailed information about Ionic layout components, refer to the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+
 :::
 
 Next, add a `<script>` tag before the `main.js` import in `index.html` to import the Home page:
@@ -325,7 +331,9 @@ To navigate to the new page, update the button in `HomePage.js` to be inside of 
 When the button is clicked, Ionic's router will automatically navigate to the `/new` route and display the `new-page` component.
 
 :::info
+
 Navigating can also be performed programmatically using `document.querySelector('ion-router').push('/new')`. Refer to the [Ionic Router documentation](/docs/api/router.md) for more information.
+
 :::
 
 ## Add Icons to the New Page

@@ -1,29 +1,24 @@
 ---
-title: "ion-tab-button"
+title: 'ion-tab-button'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v9/tab-button/props.md';
-import Events from '@ionic-internal/component-api/v9/tab-button/events.md';
-import Methods from '@ionic-internal/component-api/v9/tab-button/methods.md';
-import Parts from '@ionic-internal/component-api/v9/tab-button/parts.md';
+import Props from '@ionic-internal/component-api/v9/tab-button/props.mdx';
+import Events from '@ionic-internal/component-api/v9/tab-button/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/tab-button/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/tab-button/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/tab-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/tab-button/slots.md';
-
-
+import Slots from '@ionic-internal/component-api/v9/tab-button/slots.mdx';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 A tab button is a UI component that is placed inside of a [tab bar](tab-bar.md). The tab button can specify the layout of the icon and label and connect to a [tab view](tab.md).
 
 Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
-
-
-
 
 ## Usage
 
@@ -58,9 +53,7 @@ Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -108,9 +101,7 @@ Refer to the [tabs documentation](tabs.md) for more details on configuring tabs.
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -149,9 +140,7 @@ export const TabButtonExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -184,36 +173,35 @@ export const TabButtonExample: React.FC = () => (
 </template>
 
 <script setup lang="ts">
-import {
-  IonIcon,
-  IonLabel,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
-} from '@ionic/vue';
-import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
+  import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
+  import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
 </script>
 ```
-
 
 </TabItem>
 
 </Tabs>
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

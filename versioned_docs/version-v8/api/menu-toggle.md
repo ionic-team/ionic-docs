@@ -2,12 +2,12 @@
 title: 'ion-menu-toggle'
 ---
 
-import Props from '@ionic-internal/component-api/v8/menu-toggle/props.md';
-import Events from '@ionic-internal/component-api/v8/menu-toggle/events.md';
-import Methods from '@ionic-internal/component-api/v8/menu-toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v8/menu-toggle/parts.md';
+import Props from '@ionic-internal/component-api/v8/menu-toggle/props.mdx';
+import Events from '@ionic-internal/component-api/v8/menu-toggle/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/menu-toggle/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/menu-toggle/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/menu-toggle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/menu-toggle/slots.md';
+import Slots from '@ionic-internal/component-api/v8/menu-toggle/slots.mdx';
 
 <head>
   <title>ion-menu-toggle: MenuToggle Component to Open/Close Menus</title>

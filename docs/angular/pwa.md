@@ -13,7 +13,7 @@ sidebar_label: Progressive Web Apps
 
 ## Making your Angular app a PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
 The `@angular/pwa` package will automatically add a service worker and an app manifest to the app.
 To add this package to the app, run:
@@ -25,11 +25,15 @@ ng add @angular/pwa
 Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
 
 :::note
+
 By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+
 :::
 
 :::note
+
 Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+
 :::
 
 ## Service Worker configuration
@@ -77,7 +81,9 @@ npm install -g firebase-tools
 ```
 
 :::note
+
 If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+
 :::
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
@@ -91,7 +97,9 @@ Create a new Firebase project or select an existing one.
 **"What do you want to use as your public directory?"** Enter "www".
 
 :::note
+
 Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
+
 :::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".

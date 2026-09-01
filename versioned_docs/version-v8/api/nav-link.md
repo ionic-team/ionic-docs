@@ -2,12 +2,12 @@
 title: 'ion-nav-link'
 ---
 
-import Props from '@ionic-internal/component-api/v8/nav-link/props.md';
-import Events from '@ionic-internal/component-api/v8/nav-link/events.md';
-import Methods from '@ionic-internal/component-api/v8/nav-link/methods.md';
-import Parts from '@ionic-internal/component-api/v8/nav-link/parts.md';
+import Props from '@ionic-internal/component-api/v8/nav-link/props.mdx';
+import Events from '@ionic-internal/component-api/v8/nav-link/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/nav-link/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/nav-link/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/nav-link/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/nav-link/slots.md';
+import Slots from '@ionic-internal/component-api/v8/nav-link/slots.mdx';
 
 <head>
   <title>ion-nav-link: Navigation Links to a Specified Component</title>

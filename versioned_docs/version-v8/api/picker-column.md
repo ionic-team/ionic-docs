@@ -2,12 +2,12 @@
 title: 'ion-picker-column'
 ---
 
-import Props from '@ionic-internal/component-api/v8/picker-column/props.md';
-import Events from '@ionic-internal/component-api/v8/picker-column/events.md';
-import Methods from '@ionic-internal/component-api/v8/picker-column/methods.md';
-import Parts from '@ionic-internal/component-api/v8/picker-column/parts.md';
+import Props from '@ionic-internal/component-api/v8/picker-column/props.mdx';
+import Events from '@ionic-internal/component-api/v8/picker-column/events.mdx';
+import Methods from '@ionic-internal/component-api/v8/picker-column/methods.mdx';
+import Parts from '@ionic-internal/component-api/v8/picker-column/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v8/picker-column/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/picker-column/slots.md';
+import Slots from '@ionic-internal/component-api/v8/picker-column/slots.mdx';
 
 <head>
   <title>ion-picker-column: Individual columns within a picker</title>

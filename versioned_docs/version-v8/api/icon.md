@@ -10,13 +10,13 @@ title: 'ion-icon'
   />
 </head>
 
-Icon is a simple component made available through the <a href="https://ionic.io/ionicons">Ionicons</a> library, which comes pre-packaged by default with all Ionic Framework applications. It can be used to display any icon from the Ionicons set, or a custom SVG. It also has support for styling such as size and color.
+Icon is a simple component made available through the [Ionicons](https://ionic.io/ionicons) library, which comes pre-packaged by default with all Ionic Framework applications. It can be used to display any icon from the Ionicons set, or a custom SVG. It also has support for styling such as size and color.
 
-For a list of all available icons, refer to <a href="https://ionic.io/ionicons">ionic.io/ionicons</a>. For more information including styling and custom SVG usage, refer to <a href="https://ionic.io/ionicons/usage">the Usage page</a>.
+For a list of all available icons, refer to [ionic.io/ionicons](https://ionic.io/ionicons). For more information including styling and custom SVG usage, refer to [the Usage page](https://ionic.io/ionicons/usage).
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/v8/icon/basic/index.md';
+import Basic from '@site/static/usage/v8/icon/basic/index.mdx';
 
 <Basic />
 

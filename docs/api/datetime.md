@@ -1,54 +1,58 @@
 ---
-title: "ion-datetime"
+title: 'ion-datetime'
 ---
-import Props from '@ionic-internal/component-api/v9/datetime/props.md';
-import Events from '@ionic-internal/component-api/v9/datetime/events.md';
-import Methods from '@ionic-internal/component-api/v9/datetime/methods.md';
-import Parts from '@ionic-internal/component-api/v9/datetime/parts.md';
+
+import Props from '@ionic-internal/component-api/v9/datetime/props.mdx';
+import Events from '@ionic-internal/component-api/v9/datetime/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/datetime/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/datetime/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/datetime/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/datetime/slots.md';
+import Slots from '@ionic-internal/component-api/v9/datetime/slots.mdx';
 
-import Basic from '@site/static/usage/v9/datetime/basic/index.md';
+import Basic from '@site/static/usage/v9/datetime/basic/index.mdx';
 
-import MaxMin from '@site/static/usage/v9/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/v9/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/v9/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v9/datetime/date-constraints/max-min/index.mdx';
+import Values from '@site/static/usage/v9/datetime/date-constraints/values/index.mdx';
+import Advanced from '@site/static/usage/v9/datetime/date-constraints/advanced/index.mdx';
 
-import FormatOptions from '@site/static/usage/v9/datetime/format-options/index.md';
+import FormatOptions from '@site/static/usage/v9/datetime/format-options/index.mdx';
 
-import CustomLocale from '@site/static/usage/v9/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/v9/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/v9/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/v9/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/v9/datetime/localization/time-label/index.md';
+import CustomLocale from '@site/static/usage/v9/datetime/localization/custom-locale/index.mdx';
+import HourCycle from '@site/static/usage/v9/datetime/localization/hour-cycle/index.mdx';
+import FirstDayOfWeek from '@site/static/usage/v9/datetime/localization/first-day-of-week/index.mdx';
+import LocaleExtensionTags from '@site/static/usage/v9/datetime/localization/locale-extension-tags/index.mdx';
+import TimeLabel from '@site/static/usage/v9/datetime/localization/time-label/index.mdx';
 
-import MonthAndYear from '@site/static/usage/v9/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/v9/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/v9/datetime/presentation/date/index.md';
+import MonthAndYear from '@site/static/usage/v9/datetime/presentation/month-and-year/index.mdx';
+import Time from '@site/static/usage/v9/datetime/presentation/time/index.mdx';
+import Date from '@site/static/usage/v9/datetime/presentation/date/index.mdx';
 
-import ShowingDefaultTitle from '@site/static/usage/v9/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/v9/datetime/title/customizing-title/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v9/datetime/title/showing-default-title/index.mdx';
+import CustomizingTitle from '@site/static/usage/v9/datetime/title/customizing-title/index.mdx';
 
-import ShowingConfirmationButtons from '@site/static/usage/v9/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/v9/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/v9/datetime/buttons/customizing-button-texts/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v9/datetime/buttons/showing-confirmation-buttons/index.mdx';
+import CustomizingButtons from '@site/static/usage/v9/datetime/buttons/customizing-buttons/index.mdx';
+import CustomizingButtonTexts from '@site/static/usage/v9/datetime/buttons/customizing-button-texts/index.mdx';
 
-import HighlightedDatesArray from '@site/static/usage/v9/datetime/highlightedDates/array/index.md';
-import HighlightedDatesCallback from '@site/static/usage/v9/datetime/highlightedDates/callback/index.md';
+import HighlightedDatesArray from '@site/static/usage/v9/datetime/highlightedDates/array/index.mdx';
+import HighlightedDatesCallback from '@site/static/usage/v9/datetime/highlightedDates/callback/index.mdx';
 
-import ShowAdjacentDays from '@site/static/usage/v9/datetime/show-adjacent-days/index.md';
+import ShowAdjacentDays from '@site/static/usage/v9/datetime/show-adjacent-days/index.mdx';
 
-import MultipleDateSelection from '@site/static/usage/v9/datetime/multiple/index.md';
+import MultipleDateSelection from '@site/static/usage/v9/datetime/multiple/index.mdx';
 
-import GlobalTheming from '@site/static/usage/v9/datetime/styling/global-theming/index.md';
-import CalendarHeaderStyling from '@site/static/usage/v9/datetime/styling/calendar-header/index.md';
-import CalendarDaysStyling from '@site/static/usage/v9/datetime/styling/calendar-days/index.md';
-import DatetimeHeaderStyling from '@site/static/usage/v9/datetime/styling/datetime-header/index.md';
-import WheelStyling from '@site/static/usage/v9/datetime/styling/wheel-styling/index.md';
+import GlobalTheming from '@site/static/usage/v9/datetime/styling/global-theming/index.mdx';
+import CalendarHeaderStyling from '@site/static/usage/v9/datetime/styling/calendar-header/index.mdx';
+import CalendarDaysStyling from '@site/static/usage/v9/datetime/styling/calendar-days/index.mdx';
+import DatetimeHeaderStyling from '@site/static/usage/v9/datetime/styling/datetime-header/index.mdx';
+import WheelStyling from '@site/static/usage/v9/datetime/styling/wheel-styling/index.mdx';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
-  <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
+  <meta
+    name="description"
+    content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -77,15 +81,15 @@ and parse within JSON objects and databases.
 
 Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
-| Description          | Format                   | Datetime Value Example          |
-| -------------------- | ------------------------ | ------------------------------  |
-| Year                 | `YYYY`                   | `1994`                          |
-| Year and Month       | `YYYY-MM`                | `1994-12`                       |
-| Complete Date        | `YYYY-MM-DD`             | `1994-12-15`                    |
-| Date and Time        | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`              |
-| UTC Timezone         | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`          |
-| Timezone Offset      | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00`     |
-| Hour and Minute      | `HH:mm`                  | `13:47`                         |
+| Description     | Format                   | Datetime Value Example      |
+| --------------- | ------------------------ | --------------------------- |
+| Year            | `YYYY`                   | `1994`                      |
+| Year and Month  | `YYYY-MM`                | `1994-12`                   |
+| Complete Date   | `YYYY-MM-DD`             | `1994-12-15`                |
+| Date and Time   | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`          |
+| UTC Timezone    | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`      |
+| Timezone Offset | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00` |
+| Hour and Minute | `HH:mm`                  | `13:47`                     |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing
@@ -94,7 +98,9 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
 :::note
+
 While seconds, milliseconds, and time zone can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second, millisecond, and time zone selection. Any second, millisecond, or time zone values provided will be ignored.
+
 :::
 
 ## Basic Usage
@@ -149,7 +155,9 @@ The following example shows how to set the locale to Spanish (Spain).
 <CustomLocale />
 
 :::note
+
 The time label is not automatically localized. Refer to [Time Label](#time-label) for more information.
+
 :::
 
 ### Hour Cycle
@@ -158,17 +166,18 @@ The time label is not automatically localized. Refer to [Time Label](#time-label
 
 There are 4 primary hour cycle types:
 
-| Hour cycle type | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `'h12'`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
-| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
-| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
-| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
+| Hour cycle type | Description                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------- |
+| `'h12'`         | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00.     |
+| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am.  |
+| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00.     |
 
 :::note
-  Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
-:::
 
+Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
+
+:::
 
 There may be scenarios where you need to have more control over which hour cycle is used. This is where the `hourCycle` property can help.
 
@@ -197,7 +206,9 @@ For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you c
 <LocaleExtensionTags />
 
 :::note
-Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)  for `Intl.Locale` before using it in your app.
+
+Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility) for `Intl.Locale` before using it in your app.
+
 :::
 
 ## Presentation
@@ -248,7 +259,7 @@ Certain `presentation` options have both grid and wheel styles that developers c
 
 The example below shows the wheel picker with `presentation="date-time"`.
 
-import Wheel from '@site/static/usage/v9/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v9/datetime/presentation/wheel/index.mdx';
 
 <Wheel />
 
@@ -259,7 +270,9 @@ If the `showAdjacentDays` property is set to `true`, days from the previous and 
 The calendar view always displays 6 rows when `showAdjacentDays` is enabled, so days from the previous or next month will be shown as needed to fill the grid. For example, even if a month starts on the first day of the week and ends within the fifth row, days from the next month will appear at the end to complete the sixth row.
 
 :::note
+
 This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+
 :::
 
 <ShowAdjacentDays />
@@ -269,7 +282,9 @@ This property is only supported when using `presentation="date"` and `preferWhee
 If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
 
 :::note
+
 This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+
 :::
 
 <MultipleDateSelection />
@@ -329,7 +344,9 @@ When specifying colors, any valid CSS color format can be used. This includes he
 To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
 
 :::note
+
 This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+
 :::
 
 ### Using Array
@@ -359,7 +376,9 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 The datetime header manages the content for the `title` slot and the selected date.
 
 :::note
+
 The selected date will not render if `preferWheel` is set to `true`.
+
 :::
 
 <DatetimeHeaderStyling />
@@ -377,7 +396,9 @@ The header can be styled using CSS shadow parts.
 The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
 
 :::note
+
 The example below selects the day 2 days ago, unless that day is in the previous month, then it selects a day 2 days in the future. This is done for demo purposes in order to show how to apply custom styling to all days, the current day, and the selected day.
+
 :::
 
 <CalendarDaysStyling />
@@ -434,7 +455,6 @@ console.log(formattedString); // Jun 4, 2021
 ```
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
-
 
 ## Advanced Datetime Validation and Manipulation
 
@@ -501,19 +521,25 @@ interface DatetimeCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

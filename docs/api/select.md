@@ -1,22 +1,25 @@
 ---
-title: "ion-select"
+title: 'ion-select'
 ---
-import Props from '@ionic-internal/component-api/v9/select/props.md';
-import Events from '@ionic-internal/component-api/v9/select/events.md';
-import Methods from '@ionic-internal/component-api/v9/select/methods.md';
-import Parts from '@ionic-internal/component-api/v9/select/parts.md';
+
+import Props from '@ionic-internal/component-api/v9/select/props.mdx';
+import Events from '@ionic-internal/component-api/v9/select/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/select/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/select/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/select/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v9/select/slots.md';
+import Slots from '@ionic-internal/component-api/v9/select/slots.mdx';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
-  <meta name="description" content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list." />
+  <meta
+    name="description"
+    content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Selects are form controls to select an option, or options, from a set of options. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
 
@@ -38,7 +41,7 @@ Select has several options for supplying a label for the component:
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
-import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.mdx';
 
 <LabelPlacement />
 
@@ -46,7 +49,7 @@ import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.m
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
-import LabelSlot from '@site/static/usage/v9/select/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v9/select/label-slot/index.mdx';
 
 <LabelSlot />
 
@@ -54,7 +57,7 @@ import LabelSlot from '@site/static/usage/v9/select/label-slot/index.md';
 
 If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
 
-import NoVisibleLabel from '@site/static/usage/v9/select/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v9/select/no-visible-label/index.mdx';
 
 <NoVisibleLabel />
 
@@ -64,7 +67,7 @@ By default, the select allows the user to select only one option. The alert inte
 
 Keyboard interactions for single selection are described in the [Keyboard Interactions](#single-selection-1) section below.
 
-import SingleSelectionExample from '@site/static/usage/v9/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v9/select/basic/single-selection/index.mdx';
 
 <SingleSelectionExample />
 
@@ -80,7 +83,7 @@ The `action-sheet` interface is not supported with multiple selection.
 
 Keyboard interactions for multiple selection are described in the [Keyboard Interactions](#multiple-selection-1) section below.
 
-import MultipleSelectionExample from '@site/static/usage/v9/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v9/select/basic/multiple-selection/index.mdx';
 
 <MultipleSelectionExample />
 
@@ -90,26 +93,25 @@ By default, select uses [ion-alert](alert.md) to open up the overlay of options 
 
 ### Alert
 
-import AlertExample from '@site/static/usage/v9/select/basic/single-selection/index.md';
+import AlertExample from '@site/static/usage/v9/select/basic/single-selection/index.mdx';
 
 <AlertExample />
 
-
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/v9/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v9/select/interfaces/action-sheet/index.mdx';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/v9/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v9/select/interfaces/popover/index.mdx';
 
 <PopoverExample />
 
 ### Modal
 
-import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.md';
+import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.mdx';
 
 <ModalExample />
 
@@ -117,7 +119,7 @@ import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.md
 
 The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. Refer to [Events](#events) for more details on these and other events that select fires.
 
-import RespondingToInteractionExample from '@site/static/usage/v9/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v9/select/basic/responding-to-interaction/index.mdx';
 
 <RespondingToInteractionExample />
 
@@ -129,13 +131,13 @@ By default, the select uses strict equality (`===`) to determine if an option is
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/v9/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v9/select/objects-as-values/using-comparewith/index.mdx';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/select/objects-as-values/multiple-selection/index.mdx';
 
 <ObjectValuesAndMultipleSelectionExample />
 
@@ -143,7 +145,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/selec
 
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
-import JustifyExample from '@site/static/usage/v9/select/justify/index.md';
+import JustifyExample from '@site/static/usage/v9/select/justify/index.mdx';
 
 <JustifyExample />
 
@@ -154,10 +156,12 @@ Material Design offers filled styles for a select. The `fill` property on the se
 Filled selects can be used on iOS by setting the select's `mode` to `md`.
 
 :::warning
+
 Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+
 :::
 
-import FillExample from '@site/static/usage/v9/select/fill/index.md';
+import FillExample from '@site/static/usage/v9/select/fill/index.mdx';
 
 <FillExample />
 
@@ -170,7 +174,7 @@ The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking
 The `modal` interface has a single `Close` button in the header. This button is only responsible for dismissing the modal. Any selections made will persist
 after clicking this button or if the modal is dismissed using an alternative method.
 
-import ButtonTextExample from '@site/static/usage/v9/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v9/select/customization/button-text/index.mdx';
 
 <ButtonTextExample />
 
@@ -183,7 +187,7 @@ for the properties that each interface accepts.
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
-import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/interface-options/index.mdx';
 
 <InterfaceOptionsExample />
 
@@ -192,19 +196,23 @@ import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
 
 :::note
+
 In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
 If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+
 :::
 
-import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md';
+import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.mdx';
 
 <StartEndSlots />
 
 ## Rich Content Options
 
 :::important
+
 Rich content in select options is disabled by default. Set [`innerHTMLTemplatesEnabled`](/docs/developing/config.md#ionicconfig) to `true` in your [global Ionic config](/docs/developing/config.md#global-config). Markup inside options is treated as plain text when it is disabled. Refer to [Security](/docs/techniques/security.md) for sanitization guidance when enabling custom HTML.
+
 :::
 
 In addition to single text labels, [Select Options](./select-option.md) can include HTML rich content in the select interface. Elements added inside of an option without a named slot will go into the default slot. The `start` and `end` slots will place elements on either side of the default slot. The `description` attribute can be used for additional supporting text displayed under the label.
@@ -213,7 +221,7 @@ This is separate from [Start and End Slots](#start-and-end-slots) on `ion-select
 
 When an option is selected, the closed field shows the option's text content as plain text only. HTML markup is stripped, and the `start` and `end` slots and the `description` attribute are not included in the selected display.
 
-import RichContentOptions from '@site/static/usage/v9/select/rich-content-options/index.md';
+import RichContentOptions from '@site/static/usage/v9/select/rich-content-options/index.mdx';
 
 <RichContentOptions />
 
@@ -227,7 +235,7 @@ As mentioned, the `ion-select` element consists only of the value(s), or placeho
 
 Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
 
-import StylingSelectExample from '@site/static/usage/v9/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v9/select/customization/styling-select/index.mdx';
 
 <StylingSelectExample />
 
@@ -247,7 +255,7 @@ However, the Select Option does set a class for easier styling and allows for th
 
 The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
 
-import CustomToggleIconsExample from '@site/static/usage/v9/select/customization/custom-toggle-icons/index.md';
+import CustomToggleIconsExample from '@site/static/usage/v9/select/customization/custom-toggle-icons/index.mdx';
 
 <CustomToggleIconsExample />
 
@@ -257,7 +265,7 @@ By default, when the select is open, the toggle icon will automatically rotate o
 
 The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
 
-import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/icon-flip-behavior/index.md';
+import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/icon-flip-behavior/index.mdx';
 
 <IconFlipBehaviorExample />
 
@@ -265,7 +273,7 @@ import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/
 
 Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
 
-import TypeaheadExample from '@site/static/usage/v9/select/typeahead/index.md';
+import TypeaheadExample from '@site/static/usage/v9/select/typeahead/index.mdx';
 
 <TypeaheadExample />
 
@@ -275,7 +283,7 @@ Helper and error text can be used inside of a select with the `helperText` and `
 
 In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
-import HelperError from '@site/static/usage/v9/select/helper-error/index.md';
+import HelperError from '@site/static/usage/v9/select/helper-error/index.mdx';
 
 <HelperError />
 
@@ -307,14 +315,15 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 Ionic's keyboard interactions follow the implementation patterns of the web instead of the native iOS select for a consistent experience across all platforms.
 
 These keyboard interactions apply to all `ion-select` elements when the following conditions are met:
+
 - The select is closed.
 - The select is focused.
 - The select is not disabled.
 
-| Key                | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
-| <kbd>Space</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
+| Key              | Description                                                                                                                      |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Enter</kbd> | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
+| <kbd>Space</kbd> | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
 
 #### Single Selection
 
@@ -322,16 +331,16 @@ Single selection keyboard interaction follows the [ARIA implementation patterns 
 
 These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and focused.
 
-| Key                   | Description                                                  |
-| --------------------- | ------------------------------------------------------------ |
-| <kbd>ArrowDown</kbd>  | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowLeft</kbd>  | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
-| <kbd>ArrowRight</kbd> | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowUp</kbd>    | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
+| Key                   | Description                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>ArrowDown</kbd>  | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.                                                                                                                                                                                                                     |
+| <kbd>ArrowLeft</kbd>  | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.                                                                                                                                                                                                              |
+| <kbd>ArrowRight</kbd> | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.                                                                                                                                                                                                                     |
+| <kbd>ArrowUp</kbd>    | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.                                                                                                                                                                                                              |
 | <kbd>Enter</kbd>      | If an option is focused, it will select the option. Overlays **without** an 'OK' button will commit the value immediately, dismiss the overlay and return focus to the `ion-select` element.<br /><br/>If the 'OK' button is focused, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>     | Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss. |
-| <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option. |
+| <kbd>Escape</kbd>     | Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element.                                                                                                                                                                                                                              |
+| <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss.                                                                   |
+| <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.                                                                       |
 
 #### Multiple Selection
 
@@ -339,27 +348,33 @@ Multiple selection keyboard interaction follows the [ARIA implementation pattern
 
 These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and multiple selection is enabled.
 
-| Key                | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>  | Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>   | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately. |
-| <kbd>Tab</kbd>     | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
+| Key               | Description                                                                                                                                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Enter</kbd>  | When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element.                                                                      |
+| <kbd>Escape</kbd> | Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element.                                                                                            |
+| <kbd>Space</kbd>  | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately.                 |
+| <kbd>Tab</kbd>    | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

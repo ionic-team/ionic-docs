@@ -32,14 +32,16 @@ $ ionic <command> <subcommand> --help
 ```
 
 :::note
+
 Be sure to run `ionic <command> --help` in your project directory.
 
 For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+
 :::
 
 ## Architecture
 
-The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source [GitHub repository](https://github.com/ionic-team/ionic-cli).
 
 ## Troubleshooting
 

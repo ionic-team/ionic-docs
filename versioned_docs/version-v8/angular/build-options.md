@@ -10,7 +10,9 @@ While the Standalone approach is newer and makes use of more modern Angular APIs
 ## Standalone
 
 :::info
+
 Ionic UI components as Angular standalone components is supported starting in Ionic v7.5.
+
 :::
 
 ### Overview
@@ -32,7 +34,9 @@ Refer to the [Standalone Migration Guide](#migrating-from-modules-to-standalone)
 ### Usage with Standalone-based Applications
 
 :::warning
+
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+
 :::
 
 **Bootstrapping and Configuration**
@@ -199,7 +203,9 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 ### Usage with NgModule-based Applications
 
 :::warning
+
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+
 :::
 
 **Bootstrapping and Configuration**
@@ -397,9 +403,11 @@ export class AppModule {}
 ## Migrating from Modules to Standalone
 
 :::tip
+
 Try our automated utility for migrating to standalone!
 
 See https://github.com/ionic-team/ionic-angular-standalone-codemods for instructions on how to get started. All issues related to the migration utility should be filed on the linked repo.
+
 :::
 
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.
