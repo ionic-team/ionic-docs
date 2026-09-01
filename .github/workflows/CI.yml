@@ -29,6 +29,8 @@ jobs:
       run: npm run lint
     - name: Test
       run: npm run test
+    - name: 🧩 Typecheck
+      run: npm run typecheck
     - name: 🔤 Spell Check
       run: npm run spellcheck
     - uses: ./.github/workflows/actions/check-translations

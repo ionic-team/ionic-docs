@@ -1,4 +1,37 @@
 {
   "extends": "@docusaurus/tsconfig",
-  "exclude": ["static/code/stackblitz/"],
+  "compilerOptions": {
+    /*
+     * `@docusaurus/tsconfig` sets `baseUrl` alongside a `@site/*` path mapping, but
+     * `extends` resolves `baseUrl` relative to the file that declares it, so the
+     * mapping points inside `node_modules/@docusaurus/tsconfig`. Redeclaring it here
+     * anchors it to the project root.
+     *
+     * TypeScript 6 deprecates `baseUrl` and 7 removes it. Dropping it here will not
+     * unblock those versions on its own, because the inherited one from
+     * `@docusaurus/tsconfig` triggers the same error, so this goes when upstream
+     * drops it. A `paths` mapping is not a substitute: the inherited `baseUrl`
+     * still wins.
+     */
+    "baseUrl": ".",
+    /*
+     * Real ambient declarations for `@theme/*` and `@docusaurus/*`. Without them the
+     * catch-all `declare module` fallbacks in `index.d.ts` win and every swizzled
+     * component is typed as `any`.
+     */
+    "types": ["@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
+    /*
+     * Lets `release-notes.d.json.ts` describe the generated `release-notes.json`.
+     * Ambient `declare module` cannot do this, as it does not apply to relative
+     * imports.
+     */
+    "allowArbitraryExtensions": true
+  },
+  /*
+   * `src` holds every TypeScript file in the project, and `index.d.ts` declares the
+   * `*.module.scss` imports those files rely on. Listing them explicitly also restores
+   * TypeScript's default excludes, notably `node_modules`, which the previous
+   * `exclude`-only config silently overrode.
+   */
+  "include": ["src", "index.d.ts"]
 }
