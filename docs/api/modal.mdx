@@ -198,6 +198,32 @@ ion-modal.stack-modal {
 }
 ```
 
+### Sizing to Content
+
+A modal fills the height of its container by default. Setting the `--height` CSS variable to `auto`, `fit-content`, `min-content`, or `max-content` sizes the modal to the height of what it renders instead.
+
+:::warning
+
+The height must be set on the modal through the `--height` CSS variable. Setting `height` on the `content` [CSS Shadow Part](#css-shadow-parts) will still resize the modal, but any [Content](./content) inside of it will collapse to a height of `0`, leaving only the header visible.
+
+```css
+/* Do not do this */
+ion-modal::part(content) {
+  height: fit-content;
+}
+
+/* Do this instead */
+ion-modal {
+  --height: fit-content;
+}
+```
+
+:::
+
+import SizingToContentExample from '@site/static/usage/v9/modal/styling/sizing-to-content/index.mdx';
+
+<SizingToContentExample />
+
 ## Animations
 
 The enter and leave animations can be customized by using our animation builder and assigning animations to `enterAnimation` and `leaveAnimation`.
@@ -216,7 +242,7 @@ import CustomDialogs from '@site/static/usage/v9/modal/custom-dialogs/index.mdx'
 
 A few things to keep in mind when creating custom dialogs:
 
-- `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
+- `ion-content` can be used in a custom dialog, including one that is sized to its contents. The dialog's height must come from the `--height` CSS variable rather than from the dialog's children. See [Sizing to Content](#sizing-to-content).
 - Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
 
 ## Event Handling
