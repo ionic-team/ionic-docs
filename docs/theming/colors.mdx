@@ -1,0 +1,114 @@
+---
+title: 配色
+---
+
+import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';
+import NewColorGenerator from '@components/page/theming/NewColorGenerator';
+import CodeColor from '@components/page/theming/CodeColor';
+
+<head>
+  <title>Ionic CSS Colorコンポーネント: デフォルトアプリの色をスタイル設定または変更</title>
+  <meta
+    name="description"
+    content="Ionicには、多くのコンポーネントの色を変更するために使用できる9つのデフォルトカラーがあります。Ionic CSS colorプロパティを活用してアプリをスタイル設定する方法を学びます。"
+  />
+</head>
+
+Ionic には、多くのコンポーネントの配色を変更するために使用できる 9 つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic 全体で利用されます。
+
+デフォルトの配色を変更するために、 `color` 属性を使って任意の色を Ionic のコンポーネントに適用できます。以下の buttons はテキストと背景が `color` 属性に基づいて変更されていることに注目してください。button に `color` 属性がない時は、デフォルト値として `primary` の配色が適用されます。
+
+```html
+<ion-button>Default</ion-button>
+<ion-button color="primary">Primary</ion-button>
+<ion-button color="secondary">Secondary</ion-button>
+<ion-button color="tertiary">Tertiary</ion-button>
+<ion-button color="success">Success</ion-button>
+<ion-button color="warning">Warning</ion-button>
+<ion-button color="danger">Danger</ion-button>
+<ion-button color="light">Light</ion-button>
+<ion-button color="medium">Medium</ion-button>
+<ion-button color="dark">Dark</ion-button>
+```
+
+### 配色のレイヤードスタイル {/* #layered-colors */}
+
+各色は以下のプロパティで構成されています：`base`、`contrast`、`shade`、および`tint`。`base`および`contrast`の色には、同じ色を<a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb 形式</a>で表した`rgb`プロパティも必要です。`rgb`プロパティが必要な理由については、[アルファ問題](advanced.mdx#the-alpha-problem)を参照してください。以下のドロップダウンから、Ionic が提供するデフォルトカラーとそのバリエーションを確認できます。
+
+<LayeredColorsSelect />
+
+## 色の変更
+
+配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下の CSS プロパティが必要です。
+
+```css
+:root {
+  --ion-color-secondary: #006600;
+  --ion-color-secondary-rgb: 0, 102, 0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+```
+
+`secondary` をボタンに適用した時、利用されるのはベースカラー <CodeColor color="#006600">#006600</CodeColor> だけではありません。`contrast color` <CodeColor color="#ffffff">#ffffff</CodeColor> はテキストに適用され、それに加えて `shade` <CodeColor color="#005a00">#005a00</CodeColor> と `tint` <CodeColor color="#1a751a">#1a751a</CodeColor> はボタンのステータスが変更された時に利用されます。
+
+:::note
+ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](color-generator.mdx) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
+:::
+
+CSS 変数の詳細については、[CSS 変数ドキュメント](css-variables.mdx)を参照してください。
+
+### 配色の追加
+
+カラーは、Ionic コンポーネントの`color`プロパティを設定するか、CSS でスタイリングすることで、アプリケーション全体で使用するために追加できます。新しいカラーを手動で追加する方法、または下記の[新しいカラー作成ツール](#new-color-creator)を使って、新しいカラーのコードを生成し、アプリケーションにコピー＆ペーストする簡単な方法について学んでください。
+
+新しいカラーを追加するには、最初にルートのカラーのすべてのバリエーションの CSS 変数を定義します。たとえば、`favorite`という新しいカラーを追加するには、次の変数を定義します:
+
+```css
+:root {
+  --ion-color-favorite: #69bb7b;
+  --ion-color-favorite-rgb: 105, 187, 123;
+  --ion-color-favorite-contrast: #ffffff;
+  --ion-color-favorite-contrast-rgb: 255, 255, 255;
+  --ion-color-favorite-shade: #5ca56c;
+  --ion-color-favorite-tint: #78c288;
+}
+```
+
+次に、これらの CSS 変数を使用する新しいクラスを作成します。クラスは、`.ion-color-{COLOR}` の形式で記述する**必要があります**。 `{COLOR}` は追加するカラーの名前です:
+
+```css
+.ion-color-favorite {
+  --ion-color-base: var(--ion-color-favorite);
+  --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+  --ion-color-contrast: var(--ion-color-favorite-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+  --ion-color-shade: var(--ion-color-favorite-shade);
+  --ion-color-tint: var(--ion-color-favorite-tint);
+}
+```
+
+クラスを追加すると、color プロパティーをサポートする任意の Ionic コンポーネントでカラーを使用できるようになります。Ionic ボタンに`favorite`の色を使用する例を以下に示します。
+
+```html
+<ion-button color="favorite">Favorite</ion-button>
+```
+
+ルートで定義された CSS 変数は、CSS を使用して任意のエレメントのスタイル設定にも使用できます:
+
+```css
+div {
+  background: var(--ion-color-favorite);
+  color: var(--ion-color-favorite-contrast);
+}
+```
+
+CSS 変数の設定と使用の詳細については、[CSS 変数ドキュメント](css-variables.mdx)を参照してください。
+
+## 新しい色の作成 {/* #new-color-creator */}
+
+名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色を Ionic プロジェクトで利用できます。
+
+<NewColorGenerator />

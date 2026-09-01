@@ -1,0 +1,71 @@
+---
+title: "ion-spinner"
+---
+import Props from '@ionic-internal/component-api/v9/spinner/props.mdx';
+import Events from '@ionic-internal/component-api/v9/spinner/events.mdx';
+import Methods from '@ionic-internal/component-api/v9/spinner/methods.mdx';
+import Parts from '@ionic-internal/component-api/v9/spinner/parts.mdx';
+import CustomProps from '@ionic-internal/component-api/v9/spinner/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v9/spinner/slots.mdx';
+
+<head>
+  <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
+  <meta name="description" content="ion-spinner コンポーネントは、アニメーションするさまざまな SVG スピナーを提供します。これらのアイコンは、アプリがロード中であることや、別の処理を実行していることを示し、待機させることができます。" />
+</head>
+
+import EncapsulationPill from '@components/page/api/EncapsulationPill';
+
+<EncapsulationPill type="shadow" />
+
+
+Spinnerコンポーネントには、さまざまなアニメーションつきのSVG Spinnerが用意されています。Spinnerは、アプリがコンテンツを読み込んだり、ユーザーが待つ必要のある別のプロセスを実行していることを視覚的に示すものです。
+
+
+## 基本的な使い方
+
+デフォルトのスピナーは、モードに基づいて決定されます。モードが `ios` の場合、スピナーは `"lines"` となり、モードが `md` の場合、スピナーは `"circular"` となります。 `name` プロパティが設定されている場合は、モード固有のスピナーの代わりに、そのスピナーが使用されます。
+
+import Basic from '@site/static/usage/v9/spinner/basic/index.mdx';
+
+<Basic />
+
+## テーマ
+
+### Colors
+
+import Colors from '@site/static/usage/v9/spinner/theming/colors/index.mdx';
+
+<Colors />
+
+### Styling
+
+カスタムCSSを使用してスピナーのスタイルを設定できます。たとえば、幅と高さを設定してスピナーのサイズを変更できます。
+
+import Resizing from '@site/static/usage/v9/spinner/theming/resizing/index.mdx';
+
+<Resizing />
+
+### CSS カスタムプロパティ
+
+import CSSProps from '@site/static/usage/v9/spinner/theming/css-properties/index.mdx';
+
+<CSSProps />
+
+
+## プロパティ
+<Props />
+
+## イベント
+<Events />
+
+## メソッド
+<Methods />
+
+## CSS Shadow Parts
+<Parts />
+
+## CSSカスタムプロパティ
+<CustomProps />
+
+## Slots
+<Slots />
