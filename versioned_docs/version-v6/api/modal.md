@@ -139,7 +139,9 @@ import SheetHandleBehaviorExample from '@site/static/usage/v6/modal/sheet/handle
 
 ## Theming
 
-Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
+[Controller modals](#controller-modals) are appended to the root of your application, outside of the component that presented them. Component-scoped styles will not reach these modals, so their styles must be applied globally, from a stylesheet that is not scoped to a component.
+
+[Inline modals](#inline-modals-recommended) stay where they are declared in your template, so component-scoped styles do apply to them.
 
 ### Styling
 
