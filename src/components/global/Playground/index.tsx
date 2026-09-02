@@ -77,6 +77,28 @@ const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disable
 type MdxContent = () => {};
 
 /**
+ * Reads the source of a rendered Docusaurus code block back out of the DOM.
+ *
+ * Each highlighted line is rendered as an element with the `token-line` class.
+ * Prism splits the source on newlines, so the breaks between lines are not part
+ * of the token text and have to be added back when joining.
+ */
+function getCodeBlockText(codeBlock: HTMLElement) {
+  const lines = codeBlock.querySelectorAll('.token-line');
+
+  // Not a highlighted code block, so there are no lines to join.
+  if (lines.length === 0) {
+    return codeBlock.textContent;
+  }
+
+  // Prism gives blank lines a synthetic '\n' token. Docusaurus currently blanks
+  // those out before rendering, but strip them in case that changes.
+  return Array.from(lines)
+    .map((line) => line.textContent.replace(/\n/g, ''))
+    .join('\n');
+}
+
+/**
  * The advanced configuration of options when creating a
  * playground example with multiple files for a single usage target
  * or if needing to modify the generated StackBlitz example code.
@@ -559,8 +581,7 @@ export default function Playground({
       version,
     };
 
-    // using outerText will preserve line breaks for formatting in StackBlitz editor
-    const codeBlock = codeRef.current.querySelector('code').outerText;
+    const codeBlock = getCodeBlockText(codeRef.current.querySelector('code'));
 
     if (hasUsageTargetOptions) {
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
@@ -568,24 +589,8 @@ export default function Playground({
           const codeBlock = hostRef.current!.querySelector<HTMLElement>(
             `#${getCodeSnippetId(usageTarget, fileName)} code`
           );
-          let code = codeBlock.outerText;
-
-          if (code.trim().length === 0) {
-            /**
-             * Safari has an issue where accessing the `outerText` on a non-visible
-             * DOM element results in a string with only whitespace. To work around this,
-             * we create a clone of the element, not attached to the DOM, and parse
-             * the outerText from that.
-             *
-             * Only in Safari does this persist whitespace & line breaks, so we
-             * explicitly check for when the code is empty to use this workaround.
-             */
-            const el = document.createElement('div');
-            el.innerHTML = codeBlock.innerHTML;
-            code = el.outerText;
-          }
           return {
-            [fileName]: code,
+            [fileName]: getCodeBlockText(codeBlock),
           };
         })
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
