@@ -33,7 +33,7 @@ async function buildPluginApiDocs(pluginId) {
   const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
-  const fileName = `${pluginId}.md`;
+  const fileName = `${pluginId}.mdx`;
 
   writeFileSync(`docs/native/${fileName}`, apiContent);
   writeFileSync(`versioned_docs/version-v8/native/${fileName}`, apiContent);
