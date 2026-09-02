@@ -39,6 +39,7 @@
     ]
   },
   "dependencies": {
+    "@crowdin/cli": "^5.0.1",
     "@docusaurus/core": "^3.10.2",
     "@docusaurus/faster": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
@@ -49,7 +50,6 @@
     "@prismicio/react": "^3.4.1",
     "@stackblitz/sdk": "^1.11.1",
     "clsx": "^2.1.1",
-    "crowdin": "^3.5.0",
     "docusaurus-plugin-copy-page-button": "^0.8.4",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.6",
