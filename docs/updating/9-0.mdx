@@ -142,11 +142,9 @@ Run `ng update` when upgrading to Angular 22; it migrates your existing componen
 + }
 ```
 
-`ng update` only migrates the components that exist when you run it. From then on `ng generate component` produces `OnPush` components, as does `ng new` for a new app, so a component added later between your application root and `ion-router-outlet` can stop change detection before it reaches your pages. Refer to [Change detection on Angular 22](/docs/angular/zoneless.mdx#change-detection-on-angular-22) for which components in an Ionic app have to stay eager.
-
 :::note
 
-Ionic's own Angular components declare their strategy explicitly, so an Angular version bump can't change it. The `ion-router-outlet` and `ion-tabs` components stay eager so they do not block change detection on its way to your routed pages, and the rest are `OnPush`. Angular 18 through 21 keep the eager default and require no change.
+Ionic's own Angular components already declare `OnPush`, so they are unaffected. Angular 18 through 21 keep the eager default and require no change.
 
 :::
 
