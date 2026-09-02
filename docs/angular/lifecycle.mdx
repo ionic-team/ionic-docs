@@ -28,7 +28,11 @@ For more info on the Angular Component Life Cycle events, visit their [component
 
 :::note
 
-Components that use `ion-nav` or `ion-router-outlet` should not use the `OnPush` change detection strategy. Doing so will prevent lifecycle hooks such as `ngOnInit` from firing. Additionally, asynchronous state changes may not render properly.
+If your pages keep state in plain fields rather than signals, the component hosting `ion-router-outlet` or `ion-tabs` needs eager change detection, as does every component between it and your application root. A change detection pass starts at the application root and skips a clean `OnPush` view along with everything below it, so an `OnPush` component above the outlet stops updates from reaching the routed pages under it. The pages themselves can use `OnPush`, as long as their state is a signal or they call `markForCheck()`.
+
+On **Angular 18 through 21** this only affects you if you set `OnPush` on those components yourself, because a component that does not declare a strategy is eager.
+
+**Angular 22** makes `OnPush` the default for components that do not declare one, so refer to [Change detection on Angular 22](/docs/angular/zoneless.mdx#change-detection-on-angular-22) for what your app shell has to declare.
 
 :::
 

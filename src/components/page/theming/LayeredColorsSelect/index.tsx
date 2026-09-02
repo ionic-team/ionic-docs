@@ -9,53 +9,66 @@ import InputWrapper from '../InputWrapper';
 import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 
+/** One row of the table: a CSS custom property and its resolved value. */
+type ColorVariation = {
+  property: string;
+  name: string;
+  description: string;
+  value: string;
+  /** Set when the value is a red, green, blue triplet rather than a color. */
+  rgb?: boolean;
+};
+
 export default function LayeredColorsSelect({ ...props }) {
   const { colorMode } = useColorMode();
 
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
 
-  const [variations, setVariations] = useState([]);
+  const [variations, setVariations] = useState<ColorVariation[]>([]);
 
   useEffect(() => {
+    // The effect runs after mount, so the ref is set.
+    const computed = getComputedStyle(el.current!);
+
     setVariations([
       {
         property: `--ion-color-${color}`,
         name: 'Base',
         description: 'The main color that all variations are derived from',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}`),
+        value: computed.getPropertyValue(`--ion-color-${color}`),
       },
       {
         property: `--ion-color-${color}-rgb`,
         name: 'Base (rgb)',
         rgb: true,
         description: 'The base color in red, green, blue format',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-rgb`),
+        value: computed.getPropertyValue(`--ion-color-${color}-rgb`),
       },
       {
         property: `--ion-color-${color}-contrast`,
         name: 'Contrast',
         description: 'The opposite of the base color, should be visible against the base color',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-contrast`),
+        value: computed.getPropertyValue(`--ion-color-${color}-contrast`),
       },
       {
         property: `--ion-color-${color}-contrast-rgb`,
         name: 'Contrast (rgb)',
         rgb: true,
         description: 'The contrast color in red, green, blue format',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-contrast-rgb`),
+        value: computed.getPropertyValue(`--ion-color-${color}-contrast-rgb`),
       },
       {
         property: `--ion-color-${color}-shade`,
         name: 'Shade',
         description: 'A slightly darker version of the base color',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-shade`),
+        value: computed.getPropertyValue(`--ion-color-${color}-shade`),
       },
       {
         property: `--ion-color-${color}-tint`,
         name: 'Tint',
         description: 'A slightly lighter version of the base color',
-        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-tint`),
+        value: computed.getPropertyValue(`--ion-color-${color}-tint`),
       },
     ]);
   }, [color]);

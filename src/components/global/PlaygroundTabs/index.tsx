@@ -20,6 +20,7 @@ import { duplicates } from '@docusaurus/theme-common';
 import { useScrollPositionBlocker } from '@docusaurus/theme-common/internal';
 import type { Props } from '@theme/Tabs';
 import type { TabItemProps } from './TabItem';
+import type { PlaygroundTabValue } from './playgroundTabs.types';
 
 import clsx from 'clsx';
 
@@ -37,20 +38,21 @@ function TabsComponent(props: Props): ReactNode {
   const [leftNavVisible, setLeftNavVisible] = useState(false);
   const [rightNavVisible, setRightNavVisible] = useState(false);
   const tabsNavEl = createRef<HTMLUListElement>();
-  const children = React.Children.map(props.children, (child) => {
-    if (isValidElement(child) && isTabItem(child)) {
-      return child;
-    }
-    // child.type.name will give non-sensical values in prod because of
-    // minification, but we assume it won't throw in prod.
-    throw new Error(
-      `Docusaurus error: Bad <Tabs> child <${
-        // @ts-expect-error: guarding against unexpected cases
-        typeof child.type === 'string' ? child.type : child.type.name
-      }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`
-    );
-  });
-  const values =
+  const children =
+    React.Children.map(props.children, (child) => {
+      if (isValidElement(child) && isTabItem(child)) {
+        return child;
+      }
+      // child.type.name will give non-sensical values in prod because of
+      // minification, but we assume it won't throw in prod.
+      throw new Error(
+        `Docusaurus error: Bad <Tabs> child <${
+          // @ts-expect-error: guarding against unexpected cases
+          typeof child.type === 'string' ? child.type : child.type.name
+        }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`
+      );
+    }) ?? [];
+  const values: readonly PlaygroundTabValue[] =
     valuesProp ??
     // Only pick keys that we recognize. MDX would inject some keys by default
     children.map(({ props: { value, label, icon, attributes } }) => ({
@@ -117,8 +119,8 @@ function TabsComponent(props: Props): ReactNode {
   };
 
   useEffect(() => {
-    setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
-    setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
+    setLeftNavVisible((tabsNavEl.current?.scrollLeft ?? 0) > 40);
+    setRightNavVisible((tabsNavEl.current?.scrollWidth ?? 0) > (tabsNavEl.current?.offsetWidth ?? 0));
   }, [groupId]);
 
   /**
@@ -147,8 +149,8 @@ function TabsComponent(props: Props): ReactNode {
             className
           )}
           onScroll={() => {
-            setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
-            setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
+            setLeftNavVisible((tabsNavEl.current?.scrollLeft ?? 0) > 40);
+            setRightNavVisible((tabsNavEl.current?.scrollWidth ?? 0) > (tabsNavEl.current?.offsetWidth ?? 0));
           }}
         >
           {leftNavVisible && (
@@ -156,8 +158,10 @@ function TabsComponent(props: Props): ReactNode {
               <button
                 className={clsx('tabs__nav-button', styles.tabNavButton)}
                 onClick={() => {
-                  tabsNavEl.current.scrollTo({
-                    left: tabsNavEl.current.scrollLeft - 150,
+                  const nav = tabsNavEl.current;
+                  if (!nav) return;
+                  nav.scrollTo({
+                    left: nav.scrollLeft - 150,
                     behavior: 'smooth',
                   });
                 }}
@@ -183,7 +187,9 @@ function TabsComponent(props: Props): ReactNode {
                 tabIndex={isSelected ? 0 : -1}
                 aria-selected={isSelected}
                 key={value}
-                ref={(tabControl) => tabRefs.push(tabControl)}
+                ref={(tabControl) => {
+                  tabRefs.push(tabControl);
+                }}
                 onKeyDown={handleKeydown}
                 onFocus={handleTabChange}
                 onClick={handleTabChange}
@@ -203,8 +209,10 @@ function TabsComponent(props: Props): ReactNode {
               <button
                 className={clsx('tabs__nav-button', styles.tabNavButton)}
                 onClick={() => {
-                  tabsNavEl.current.scrollTo({
-                    left: tabsNavEl.current.scrollLeft + 150,
+                  const nav = tabsNavEl.current;
+                  if (!nav) return;
+                  nav.scrollTo({
+                    left: nav.scrollLeft + 150,
                     behavior: 'smooth',
                   });
                 }}
