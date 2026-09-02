@@ -1,5 +1,4 @@
 import React from 'react';
-import { Component, Element, Listen, State, h } from '@stencil/core';
 import { useEffect, useState } from 'react';
 import CodeColor from '../CodeColor';
 

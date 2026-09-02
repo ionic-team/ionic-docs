@@ -26,6 +26,7 @@ import styles from '@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.mo
 
 // CUSTOM CODE
 import DocDemo from '@components/global/DocDemo';
+import type {DocsFrontMatter} from './frontMatter.interface';
 // CUSTOM CODE END
 
 /**
@@ -37,7 +38,7 @@ function useDocTOC() {
 
   const hidden = frontMatter.hide_table_of_contents;
   // CUSTOM CODE
-  const demoUrl = frontMatter.demoUrl;
+  const demoUrl = (frontMatter as DocsFrontMatter).demoUrl;
   const canRender = !hidden && toc.length > 0 && !demoUrl;
   // CUSTOM CODE END
 
@@ -57,8 +58,7 @@ function useDocTOC() {
 // CUSTOM CODE
 function useDocDemo() {
   const {frontMatter} = useDoc();
-  const demoUrl = frontMatter.demoUrl;
-  const demoSourceUrl = frontMatter.demoSourceUrl;
+  const {demoUrl, demoSourceUrl} = frontMatter as DocsFrontMatter;
   return {
     demoUrl,
     demoSourceUrl,
