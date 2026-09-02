@@ -28,7 +28,7 @@ You do not need to change these. Angular schedules change detection for them in 
 
 :::note[Angular 22]
 
-Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. For the migration path, refer to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/docs/updating/9-0.mdx#onpush-change-detection-on-angular-22).
+Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. Refer to [Change detection on Angular 22](#change-detection-on-angular-22) for what this means for your app shell, and to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/docs/updating/9-0.mdx#onpush-change-detection-on-angular-22) for the migration steps.
 
 :::
 
@@ -152,6 +152,25 @@ export class AppComponent {
   }
 }
 ```
+
+## Change detection on Angular 22
+
+On Angular 22 a component that does not declare a strategy is `OnPush`. If your pages keep state in plain fields rather than signals, every component from your application root down to the one hosting `ion-router-outlet` or `ion-tabs` (your app shell) must stay eager. A tick starts at the application root and skips a clean `OnPush` view and everything below it, so an `OnPush` ancestor strands the page even when the page itself is eager:
+
+```ts
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  template: '<ion-router-outlet></ion-router-outlet>',
+})
+export class AppComponent {}
+```
+
+If other components sit between your application root and `ion-router-outlet`, each of them needs the same declaration. Pages that set state through signals, or that call `markForCheck()`, are unaffected: both mark the ancestor chain, so a tick reaches them whatever the shell declares. Converting your pages that way is the alternative to keeping the shell eager.
+
+Hosting an `ion-nav` is fine either way, because its pages are attached as root views and are checked independently of the component hosting them.
 
 ## Staying on Zone.js
 
