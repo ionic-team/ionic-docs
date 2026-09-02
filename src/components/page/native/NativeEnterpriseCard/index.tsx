@@ -1,10 +1,10 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
-import React from 'react';
+import React, { type ComponentProps } from 'react';
 
 import styles from './index.module.scss';
 
-export default function NativeEnterpriseCard(props) {
+export default function NativeEnterpriseCard(props: ComponentProps<'a'>) {
   return (
     <a
       className={clsx(props.className, styles.nativeEnterprise)}
