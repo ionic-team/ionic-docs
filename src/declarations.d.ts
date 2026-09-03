@@ -7,7 +7,6 @@
  * - `device-preview`: defined in src/components/global/Playground/device-preview.js
  *   and registered via `defineCustomElement()`. Used by the Playground to render
  *   examples inside an iOS/MD device frame.
- * - `ion-icon`: registered by Ionic Framework, which the docs site loads globally.
  * - `docs-card` / `docs-cards`: no JavaScript definition anywhere in this repo. They
  *   are unregistered tags used purely as styling hooks by DocsCard and DocsCards.
  */
@@ -17,11 +16,20 @@ import 'react';
 
 declare module 'react' {
   namespace JSX {
+    /**
+     * What a custom element accepts here. `class` rather than `className`, because
+     * these are plain elements and React passes the attribute straight through.
+     */
+    interface CustomElementProps {
+      class?: string;
+      children?: ReactNode;
+    }
+
     interface IntrinsicElements {
-      'device-preview': any;
-      'ion-icon': any;
-      'docs-card': any;
-      'docs-cards': any;
+      /** `mode` is the element's only observed attribute. */
+      'device-preview': CustomElementProps & { mode?: 'ios' | 'md' };
+      'docs-card': CustomElementProps;
+      'docs-cards': CustomElementProps;
     }
   }
 }

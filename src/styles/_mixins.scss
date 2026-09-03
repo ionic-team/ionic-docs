@@ -1,0 +1,19 @@
+/// Draws an SVG as a pseudo-element, tinted with the current text color.
+///
+/// The icon is a mask rather than a background image, so it inherits `color`
+/// from whatever it sits inside and needs no light and dark variants.
+///
+/// `$url` has to be passed by the caller rather than resolved here, because the
+/// two places this is used resolve relative paths differently. Sass inlines the
+/// partials under `components/` into `custom.scss`, so their paths are relative
+/// to `src/styles/`, while a `.module.scss` is compiled where it sits and its
+/// paths are relative to its own directory.
+@mixin icon-mask($url, $size: 12px) {
+  content: '';
+  width: $size;
+  height: $size;
+  background-color: currentColor;
+  mask-image: url($url);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}

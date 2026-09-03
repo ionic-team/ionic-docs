@@ -131,13 +131,6 @@ docs-card[disabled]::after {
     font-weight: 600;
   }
 
-  .Card-ionicon {
-    width: 48px;
-    height: 48px;
-    float: left;
-    margin-right: 1em;
-  }
-
   .Card-content > *:first-child {
     margin-top: 0;
   }
@@ -178,7 +171,6 @@ docs-card[disabled]::after {
   }
 
   .Card-size-lg .Card-icon,
-  .Card-size-lg .Card-ionicon,
   .Card-size-lg .Card-iconset__container {
     width: 80px;
     height: 80px;
