@@ -175,11 +175,3 @@ docs-demo {
 .docs-demo-source > ion-icon {
   margin-right: 5px;
 }
-/* 
-@media (max-width: 1160px) {
-  .docs-demo-device,
-  .docs-demo-mode-toggle,
-  .docs-demo-source {
-    display: none;
-  }
-} */
