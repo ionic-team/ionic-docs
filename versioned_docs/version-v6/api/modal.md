@@ -137,30 +137,30 @@ import SheetHandleBehaviorExample from '@site/static/usage/v6/modal/sheet/handle
 
 <SheetHandleBehaviorExample />
 
-## Styling
+## Theming
 
-Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
+[Controller modals](#controller-modals) are appended to the root of your application, outside of the component that presented them. Component-scoped styles will not reach these modals, so their styles must be applied globally, from a stylesheet that is not scoped to a component.
 
-:::note
-If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
-:::
+[Inline modals](#inline-modals-recommended) stay where they are declared in your template, so component-scoped styles do apply to them.
 
-:::note
+### Styling
+
+import ThemeExample from '@site/static/usage/v6/modal/styling/theming/index.md';
+
+<ThemeExample />
+
+### Stacked Modals
+
 `ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
-:::
 
-```
+```css
 ion-modal.stack-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
 }
 ```
 
-import ThemeExample from '@site/static/usage/v6/modal/styling/theming/index.md';
-
-<ThemeExample />
-
-### Animations
+## Animations
 
 The enter and leave animations can be customized by using our animation builder and assigning animations to `enterAnimation` and `leaveAnimation`.
 

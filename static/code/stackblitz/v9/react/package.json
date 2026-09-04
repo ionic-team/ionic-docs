@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ionic/react": "9.0.1",
-    "@ionic/react-router": "9.0.1",
+    "@ionic/react": "9.0.1-dev.11788212611.154b1596",
+    "@ionic/react-router": "9.0.1-dev.11788212611.154b1596",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
