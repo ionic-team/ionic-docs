@@ -47,7 +47,7 @@
     },
     { "source": "/docs/ja/v9/:match*", "destination": "/docs/ja/:match*" },
     {
-      "source": "/docs/(v5|next)?/developer-resources/:path*",
+      "source": "/docs/(v[0-9]+|next)?/developer-resources/:path*",
       "destination": "https://ionic.io/resources"
     },
     { "source": "/docs/next/:match*", "destination": "/docs/:match*" },

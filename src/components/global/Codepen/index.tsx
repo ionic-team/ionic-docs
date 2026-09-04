@@ -11,8 +11,7 @@ function CodePen(props: {
   preview?: boolean;
   penTitle?: string;
 }): ReactNode {
-  const status = useScript('https://static.codepen.io/assets/embed/ei.js');
-  // console.log('test',status, props)
+  useScript('https://static.codepen.io/assets/embed/ei.js');
   return (
     <div
       className="codepen"

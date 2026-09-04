@@ -171,12 +171,3 @@ docs-demo {
   font-size: 13px;
   justify-content: center;
 }
-
-/* 
-@media (max-width: 1160px) {
-  .docs-demo-device,
-  .docs-demo-mode-toggle,
-  .docs-demo-source {
-    display: none;
-  }
-} */
