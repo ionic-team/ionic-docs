@@ -350,15 +350,9 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Gallery',
+      label: 'Grids',
       collapsed: false,
-      items: ['api/gallery', 'api/gallery-item'],
-    },
-    {
-      type: 'category',
-      label: 'Grid',
-      collapsed: false,
-      items: ['api/grid', 'api/col', 'api/row'],
+      items: ['api/grid', 'api/col', 'api/row', 'api/gallery', 'api/gallery-item'],
     },
     {
       type: 'category',
