@@ -65,7 +65,6 @@
       text-decoration: none;
     }
 
-    // The same arrow the navbar CTA uses.
     .wizard-button::after {
       @include mixins.icon-mask('../../../../../static/icons/arrow-forward-outline.svg');
       margin-inline-start: 4px;
