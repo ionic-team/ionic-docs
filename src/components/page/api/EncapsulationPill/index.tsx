@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link';
 
 import styles from './styles.module.scss';
 
-export default function EncapsulationPill({ type, ...props }) {
+export default function EncapsulationPill({ type, ...props }: { type: string; className?: string }) {
   const toUrl = useBaseUrl(`reference/glossary#${type}`);
 
   return (
