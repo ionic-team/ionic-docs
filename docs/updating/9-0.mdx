@@ -548,18 +548,18 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 
 ### Input
 
-#### `autocorrect` プロパティの型が Boolean に変更 {#input-autocorrect-property-type-changed-to-boolean}
+#### `autocorrect` プロパティの型が Boolean に変更 {/* #input-autocorrect-property-type-changed-to-boolean */}
 
 `ion-input` の `autocorrect` プロパティは、`'on' | 'off'` ではなく `boolean`（デフォルト `false`）になりました。属性は文字列 `"false"` 以外の任意の値で `true` に強制されるため、`autocorrect="off"` はオートコレクトを有効にします。
 
 - オートコレクトを無効のままにする（デフォルト）には、属性を削除してください。
 - 有効にするにはプロパティバインディングを使用してください: `[autocorrect]="true"`（Angular）、`autocorrect={true}`（React）、または `:autocorrect="true"`（Vue）。
 
-#### フローティングラベルの動作 {#input-floating-label-behavior}
+#### フローティングラベルの動作 {/* #input-floating-label-behavior */}
 
 フローティングラベルは、入力にスロット付きコンテンツが含まれていても自動ではフロートしなくなりました。ラベルは、入力にフォーカスがあるとき、または値があるときにのみフロートします。
 
-#### 内部 DOM 構造の変更 {#input-internal-dom-structure-changes}
+#### 内部 DOM 構造の変更 {/* #input-internal-dom-structure-changes */}
 
 内部 DOM 構造は、スロット付きコンテンツ付きのフローティングラベルをサポートするために再編成されました。
 
@@ -676,7 +676,7 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 
 ### Searchbar
 
-#### `autocorrect` プロパティの型が Boolean に変更 {#searchbar-autocorrect-property-type-changed-to-boolean}
+#### `autocorrect` プロパティの型が Boolean に変更 {/* #searchbar-autocorrect-property-type-changed-to-boolean */}
 
 `ion-searchbar` の `autocorrect` プロパティは、`'on' | 'off'` ではなく `boolean`（デフォルト `false`）になりました。属性は文字列 `"false"` 以外の任意の値で `true` に強制されるため、`autocorrect="off"` はオートコレクトを有効にします。
 
@@ -697,11 +697,11 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 
 以前は、`selected` ロールはセレクトの現在値に一致するオプションにだけ割り当てられていました。dismiss ロールはタップしたボタンを反映するため、これは次の 1 ケースでのみ表面化していました。すでに選択済みのオプションを再選択すると、アクションシートは `ionActionSheetDidDismiss` で `role: "selected"` として閉じました。他のオプションをタップすると値が変わり、`role: ""` で閉じました。ロールが割り当てられなくなったため、どちらのケースも `role: undefined` で閉じます。値が選ばれたことを検出するためにこのロールを調べていたアプリ（たとえば、基になるアクションシートの `onDidDismiss` 結果から `role` を読む場合）は、代わりに `ion-select` の `ionChange` イベントをリッスンしてください。選択が変わると選択値が発行されます。
 
-#### フローティングラベルの動作 {#select-floating-label-behavior}
+#### フローティングラベルの動作 {/* #select-floating-label-behavior */}
 
 フローティングラベルは、セレクトにスロット付きコンテンツが含まれていても自動ではフロートしなくなりました。ラベルは、セレクトにフォーカスがあるとき、または値があるときにのみフロートします。さらに、フローティングラベル使用時は、セレクトにフォーカスがあるときだけプレースホルダーが表示されます。
 
-#### 内部 DOM 構造の変更 {#select-internal-dom-structure-changes}
+#### 内部 DOM 構造の変更 {/* #select-internal-dom-structure-changes */}
 
 内部 DOM 構造は、スロット付きコンテンツ付きのフローティングラベルをサポートするために再編成されました。これにより、公開されているいくつかの shadow part の構造と位置が変わります。
 
@@ -735,11 +735,11 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 
 ### Textarea
 
-#### フローティングラベルの動作 {#textarea-floating-label-behavior}
+#### フローティングラベルの動作 {/* #textarea-floating-label-behavior */}
 
 フローティングラベルは、テキストエリアにスロット付きコンテンツが含まれていても自動ではフロートしなくなりました。ラベルは、テキストエリアにフォーカスがあるとき、または値があるときにのみフロートします。
 
-#### 内部 DOM 構造の変更 {#textarea-internal-dom-structure-changes}
+#### 内部 DOM 構造の変更 {/* #textarea-internal-dom-structure-changes */}
 
 内部 DOM 構造は、スロット付きコンテンツ付きのフローティングラベルをサポートするために再編成されました。
 
