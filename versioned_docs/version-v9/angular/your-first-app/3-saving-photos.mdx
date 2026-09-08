@@ -86,7 +86,7 @@ export interface UserPhoto {
 }
 ```
 
-We'll use the Capacitor [Filesystem API](../../native/filesystem.md) to save the photo. First, convert the photo to base64 format.
+We'll use the Capacitor [Filesystem API](../../native/filesystem.mdx) to save the photo. First, convert the photo to base64 format.
 
 Then, pass the data to the Filesystem's `writeFile` method. Recall that we display photos by setting the image's source path (`src`) to the `webviewPath` property. So, set the `webviewPath` and return the new `Photo` object.
 

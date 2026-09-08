@@ -25,7 +25,8 @@
      * Ambient `declare module` cannot do this, as it does not apply to relative
      * imports.
      */
-    "allowArbitraryExtensions": true
+    "allowArbitraryExtensions": true,
+    "strict": true
   },
   /*
    * `src` holds every TypeScript file in the project, and `index.d.ts` declares the
