@@ -11,7 +11,7 @@ title: Progressive Web Apps
   />
 </head>
 
-<!-- TOC goes here -->
+{/* TOC goes here */}
 
 ### The web...but better
 
@@ -47,7 +47,7 @@ To be considered a Progressive Web App, your app must be:
 
 - Linkable - Easily share via URL and not require complex installation.
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
@@ -55,7 +55,7 @@ To be considered a Progressive Web App, your app must be:
   </a>
 </em>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 There is a lot here, but it boils down to a few points for Ionic apps.
 
