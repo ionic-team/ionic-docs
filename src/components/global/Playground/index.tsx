@@ -1,10 +1,19 @@
-import React, { RefObject, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  ForwardedRef,
+  type ReactElement,
+  type ReactNode,
+  forwardRef,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { useColorMode } from '@docusaurus/theme-common';
-import { ConsoleItem, Mode, UsageTarget } from './playground.types';
+import { CodeSnippets, ConsoleItem, Mode, UsageTarget } from './playground.types';
 
 import Tooltip from '../Tooltip';
 import PlaygroundTabs from '../PlaygroundTabs';
@@ -30,7 +39,7 @@ const ControlButton = forwardRef(
       label: string;
       disabled?: boolean;
     },
-    ref: RefObject<HTMLButtonElement>
+    ref: ForwardedRef<HTMLButtonElement>
   ) => {
     const controlButton = (
       <button
@@ -56,7 +65,17 @@ const ControlButton = forwardRef(
   }
 );
 
-const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
+const CodeBlockButton = ({
+  language,
+  usageTarget,
+  setAndSaveUsageTarget,
+  disabled,
+}: {
+  language: keyof typeof UsageTarget;
+  usageTarget: UsageTarget;
+  setAndSaveUsageTarget: (target: UsageTarget, tab: HTMLElement | null) => void;
+  disabled: boolean;
+}) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const langValue = UsageTarget[language];
 
@@ -74,7 +93,7 @@ const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disable
   );
 };
 
-type MdxContent = () => {};
+type MdxContent = () => ReactNode;
 
 /**
  * Reads the source of a rendered Docusaurus code block back out of the DOM.
@@ -210,7 +229,7 @@ export default function Playground({
   const isBrowser = useIsBrowser();
 
   const hostRef = useRef<HTMLDivElement | null>(null);
-  const codeRef = useRef(null);
+  const codeRef = useRef<HTMLDivElement>(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
   const consoleBodyRef = useRef<HTMLDivElement | null>(null);
@@ -228,7 +247,7 @@ export default function Playground({
      * the mode button, use that.
      */
     if (isBrowser) {
-      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+      const storedMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null;
       if (storedMode) return storedMode;
     }
 
@@ -251,7 +270,7 @@ export default function Playground({
      * framework buttons, and there is code for it, use that.
      */
     if (isBrowser) {
-      const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+      const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY) as UsageTarget | null;
       if (storedTarget && code[storedTarget] !== undefined) {
         return storedTarget;
       }
@@ -269,7 +288,7 @@ export default function Playground({
      * If there is no Angular code available, fall back to the
      * first available framework.
      */
-    return Object.keys(code)[0];
+    return Object.keys(code)[0] as UsageTarget;
   };
 
   /**
@@ -279,7 +298,7 @@ export default function Playground({
   const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
   const [ionicMode, setIonicMode] = useState(getDefaultMode());
-  const [codeSnippets, setCodeSnippets] = useState({});
+  const [codeSnippets, setCodeSnippets] = useState<CodeSnippets>({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(colorMode === 'dark');
@@ -317,7 +336,7 @@ export default function Playground({
     }
   };
 
-  const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
+  const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement | null) => {
     setUsageTarget(target);
 
     if (isBrowser) {
@@ -331,7 +350,9 @@ export default function Playground({
        * Note that we don't need this when changing the mode because
        * the two mode iframes are always the same height.
        */
-      blockElementScrollPositionUntilNextRender(tab);
+      if (tab) {
+        blockElementScrollPositionUntilNextRender(tab);
+      }
 
       /**
        * Tell other playgrounds on the page that the framework
@@ -362,7 +383,7 @@ export default function Playground({
        * We need to check for the iOS frame reference before posting the message.
        */
       if (frameiOS.current) {
-        frameiOS.current.contentWindow.postMessage(message);
+        frameiOS.current.contentWindow?.postMessage(message);
       }
       /**
        * When changing the versioned docs, the frame reference can be undefined
@@ -371,12 +392,12 @@ export default function Playground({
        * We need to check for the MD frame reference before posting the message.
        */
       if (frameMD.current) {
-        frameMD.current.contentWindow.postMessage(message);
+        frameMD.current.contentWindow?.postMessage(message);
       }
     }
   };
 
-  const handleFrameRef = (ref: HTMLIFrameElement, frameMode: 'ios' | 'md') => {
+  const handleFrameRef = (ref: HTMLIFrameElement | null, frameMode: 'ios' | 'md') => {
     if (frameMode === 'ios') {
       frameiOS.current = ref;
     } else {
@@ -427,16 +448,18 @@ export default function Playground({
   useEffect(() => {
     if (showConsole) {
       if (frameiOS.current) {
-        frameiOS.current.contentWindow.addEventListener('console', (event: CustomEvent) => {
+        frameiOS.current.contentWindow?.addEventListener('console', (event) => {
           setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, event.detail]);
-          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
+          const consoleBody = consoleBodyRef.current;
+          consoleBody?.scrollTo(0, consoleBody.scrollHeight);
         });
       }
 
       if (frameMD.current) {
-        frameMD.current.contentWindow.addEventListener('console', (event: CustomEvent) => {
+        frameMD.current.contentWindow?.addEventListener('console', (event) => {
           setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, event.detail]);
-          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
+          const consoleBody = consoleBodyRef.current;
+          consoleBody?.scrollTo(0, consoleBody.scrollHeight);
         });
       }
     }
@@ -493,14 +516,14 @@ export default function Playground({
     io.observe(hostRef.current!);
   });
 
-  const handleModeUpdated = (e: CustomEvent) => {
+  const handleModeUpdated = (e: WindowEventMap['playground-event-updated']) => {
     const mode = e.detail;
     if (Object.values(Mode).includes(mode)) {
       setIonicMode(mode); // don't use setAndSave to avoid infinite loop
     }
   };
 
-  const handleUsageTargetUpdated = (e: CustomEvent) => {
+  const handleUsageTargetUpdated = (e: WindowEventMap['playground-usage-target-updated']) => {
     const usageTarget = e.detail;
     if (Object.values(UsageTarget).includes(usageTarget)) {
       setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
@@ -549,8 +572,8 @@ export default function Playground({
     if (hasUsageTargetOptions) {
       return;
     }
-    const copyButton = codeRef.current.querySelector('button');
-    copyButton.click();
+    const copyButton = codeRef.current?.querySelector('button');
+    copyButton?.click();
   }
 
   const hasUsageTargetOptions = (code[usageTarget] as UsageTargetOptions)?.files !== undefined;
@@ -559,10 +582,10 @@ export default function Playground({
    */
   async function resetDemo() {
     if (frameiOS.current) {
-      frameiOS.current.contentWindow.location.reload();
+      frameiOS.current.contentWindow?.location.reload();
     }
     if (frameMD.current) {
-      frameMD.current.contentWindow.location.reload();
+      frameMD.current.contentWindow?.location.reload();
     }
 
     setiOSConsoleItems([]);
@@ -572,7 +595,7 @@ export default function Playground({
     setResetCount((oldCount) => oldCount + 1);
   }
 
-  function openEditor(event) {
+  function openEditor() {
     const editorOptions: EditorOptions = {
       title,
       description,
@@ -581,16 +604,16 @@ export default function Playground({
       version,
     };
 
-    const codeBlock = getCodeBlockText(codeRef.current.querySelector('code'));
+    const codeBlock = getCodeBlockText(codeRef.current!.querySelector('code')!);
 
     if (hasUsageTargetOptions) {
-      editorOptions.files = Object.keys(codeSnippets[usageTarget])
+      editorOptions.files = Object.keys((codeSnippets[usageTarget] ?? {}) as Record<string, ReactElement>)
         .map((fileName) => {
           const codeBlock = hostRef.current!.querySelector<HTMLElement>(
             `#${getCodeSnippetId(usageTarget, fileName)} code`
           );
           return {
-            [fileName]: getCodeBlockText(codeBlock),
+            [fileName]: getCodeBlockText(codeBlock!),
           };
         })
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
@@ -614,8 +637,8 @@ export default function Playground({
   }
 
   useEffect(() => {
-    const codeSnips = {};
-    Object.keys(code).forEach((key) => {
+    const codeSnips: CodeSnippets = {};
+    (Object.keys(code) as UsageTarget[]).forEach((key) => {
       if (typeof code[key] === 'function') {
         /**
          * Instantiates the React component from the MDX content for
@@ -628,7 +651,7 @@ export default function Playground({
          * Instantiates the list of React components from the MDX content for
          * multi-file playground examples.
          */
-        const fileSnippets = {};
+        const fileSnippets: Record<string, ReactElement> = {};
         for (const fileName of Object.keys(code[key].files)) {
           const DynamicFileComponent = code[key].files[fileName];
           fileSnippets[`${fileName}`] = <DynamicFileComponent />;
@@ -665,15 +688,22 @@ export default function Playground({
 
   function renderCodeSnippets() {
     if (code[usageTarget]) {
+      /**
+       * `hasUsageTargetOptions` is what decides which shape this holds, and it is
+       * computed from the props rather than the value, so the narrowing has to be
+       * asserted.
+       */
+      const snippets = codeSnippets[usageTarget];
       if (!hasUsageTargetOptions) {
-        return codeSnippets[usageTarget];
+        return snippets as ReactElement | undefined;
       }
-      if (codeSnippets[usageTarget] == null) {
+      if (snippets == null) {
         return null;
       }
+      const fileSnippets = snippets as Record<string, ReactElement>;
       return (
         <PlaygroundTabs groupId={usageTarget} className="playground__tabs">
-          {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
+          {Object.keys(fileSnippets).map((fileName) => (
             <TabItem
               className="playground__tab-item"
               value={fileName}
@@ -681,7 +711,7 @@ export default function Playground({
               key={fileName}
               icon={getFileIcon(fileName)}
             >
-              <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
+              <div id={getCodeSnippetId(usageTarget, fileName)}>{fileSnippets[fileName]}</div>
             </TabItem>
           ))}
         </PlaygroundTabs>
@@ -725,7 +755,7 @@ export default function Playground({
     );
   }
 
-  const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
+  const sortedUsageTargets = useMemo(() => (Object.keys(UsageTarget) as (keyof typeof UsageTarget)[]).sort(), []);
 
   return (
     <div className="playground" ref={hostRef}>
@@ -873,7 +903,7 @@ export default function Playground({
                       <div
                         key="ios-iframe"
                         className={!isIOS ? 'frame-hidden' : 'frame-visible'}
-                        aria-hidden={!isIOS ? 'true' : null}
+                        aria-hidden={!isIOS ? 'true' : undefined}
                       >
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
@@ -882,7 +912,7 @@ export default function Playground({
                       <div
                         key="md-iframe"
                         className={!isMD ? 'frame-hidden' : 'frame-visible'}
-                        aria-hidden={!isMD ? 'true' : null}
+                        aria-hidden={!isMD ? 'true' : undefined}
                       >
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
@@ -896,7 +926,7 @@ export default function Playground({
                         className={!isIOS ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
-                        aria-hidden={!isIOS ? 'true' : null}
+                        aria-hidden={!isIOS ? 'true' : undefined}
                       ></iframe>,
                       <iframe
                         key="md-iframe"
@@ -904,7 +934,7 @@ export default function Playground({
                         className={!isMD ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'md')}
                         src={sourceMD}
-                        aria-hidden={!isMD ? 'true' : null}
+                        aria-hidden={!isMD ? 'true' : undefined}
                       ></iframe>,
                     ]}
               </div>,
@@ -919,7 +949,7 @@ export default function Playground({
   );
 }
 
-const FRAME_SIZES = {
+const FRAME_SIZES: Record<string, string> = {
   xsmall: '100px',
   small: '200px',
   medium: '400px',
@@ -927,12 +957,12 @@ const FRAME_SIZES = {
   xlarge: '800px',
 };
 
-const waitForFrame = (frame: HTMLIFrameElement) => {
+const waitForFrame = (frame: HTMLIFrameElement | null) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
   return new Promise<void>((resolve) => {
     if (frame) {
-      frame.contentWindow.addEventListener('demoReady', () => {
+      frame.contentWindow?.addEventListener('demoReady', () => {
         resolve();
       });
     }
@@ -946,10 +976,10 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
  * refreshed, so we don't want to return too early and catch the
  * pre-reset version of the window.
  */
-const waitForNextFrameLoadEvent = (frame: HTMLIFrameElement) => {
+const waitForNextFrameLoadEvent = (frame: HTMLIFrameElement | null) => {
   return new Promise<void>((resolve) => {
     const handleLoad = () => {
-      frame.removeEventListener('load', handleLoad);
+      frame?.removeEventListener('load', handleLoad);
       resolve();
     };
 
@@ -959,7 +989,7 @@ const waitForNextFrameLoadEvent = (frame: HTMLIFrameElement) => {
   });
 };
 
-const isFrameReady = (frame: HTMLIFrameElement) => {
+const isFrameReady = (frame: HTMLIFrameElement | null) => {
   if (!frame) {
     return false;
   }

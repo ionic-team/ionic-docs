@@ -58,7 +58,7 @@ const DocDemo = (props) => {
 
   const sourceLink = (
     <a href={props.source} className="docs-demo-source" target="_blank" title="Demo Source">
-      {/* <ion-icon name="open" /> */} View Source
+      View Source
     </a>
   );
 

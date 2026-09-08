@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { type ComponentProps, useEffect, useState } from 'react';
 import CodeColor from '../CodeColor';
 
 import ColorDot from '../ColorDot';
@@ -11,7 +11,7 @@ import { generateSteppedColors } from '../_utils/index';
 import clsx from 'clsx';
 import styles from './index.module.scss';
 
-export default function ColorGenerator(props) {
+export default function ColorGenerator(props: ComponentProps<'div'> & { useTextAndBackgroundStepColors?: boolean }) {
   const [backgroundColor, setBackgroundColor] = useState('#ffffff');
   const [textColor, setTextColor] = useState('#000000');
 
