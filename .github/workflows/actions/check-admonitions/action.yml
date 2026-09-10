@@ -58,6 +58,11 @@ runs:
           .split('\n')
           .filter(compiled);
 
+        if (!files.length) {
+          console.log('No MDX files changed.');
+          process.exit(0);
+        }
+
         const findings = [];
         for (const file of files) {
           const source = readFileSync(file, 'utf8');
