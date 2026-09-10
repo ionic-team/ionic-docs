@@ -20,3 +20,27 @@ A patch release will be published when bug fixes were included, but the API has 
 
 For a list of all notable changes to Ionic please refer to the [changelog](https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md). This contains an ordered
 list of all bug fixes and new features under each release.
+
+## CI Check Test
+
+Temporary. This branch exists only to prove the Check Admonitions action fires.
+
+:::note Legacy Title
+Should be reported: MDX v1 syntax, renders as literal text.
+:::
+
+:::tip[Bracketed Title]
+Should not be reported: correct syntax.
+:::
+
+:::warning
+Should not be reported: no title.
+:::
+
+```md
+:::danger Inside A Fence
+Should not be reported: an example in a code block.
+:::
+```
+
+Inline too: `:::info Inside Code`
