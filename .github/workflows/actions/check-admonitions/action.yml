@@ -25,7 +25,7 @@ runs:
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
         CHANGED_FILES: ${{ runner.temp }}/changed-files.txt
       run: |
-        git fetch --no-tags --depth=1 origin "$BASE_SHA"
+        git fetch --quiet --no-tags --depth=1 origin "$BASE_SHA"
         git diff --name-only --diff-filter=ACMR "$BASE_SHA" HEAD > "$CHANGED_FILES"
         node <<'JS'
         const { readFileSync } = require('fs');
@@ -80,10 +80,13 @@ runs:
           process.exit(0);
         }
 
-        console.error(`Found ${findings.length} admonition title(s) using MDX v1 syntax.`);
-        console.error('Wrap the title in brackets, for example `:::note[My Title]`.\n');
+        // `::error` puts each one on the offending line in the Files changed
+        // tab and prints it in red in the log, so the failure is not something
+        // to go hunting for. The message leads with the fix because the found
+        // text starts with `:::`, which reads badly right after the delimiter.
         for (const { file, line, text } of findings) {
-          console.error(`  ${file}:${line}  ${text}`);
+          const fix = 'Wrap the title in brackets, for example :::note[My Title]';
+          console.log(`::error file=${file},line=${line},title=MDX v1 admonition title::${fix}%0A%0AFound: ${text}`);
         }
         process.exit(1);
         JS
