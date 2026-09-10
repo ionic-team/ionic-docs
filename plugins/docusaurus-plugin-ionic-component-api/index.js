@@ -97,21 +97,6 @@ module.exports = function (context, options) {
           createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.mdx`, data.slots)
         );
-
-        /**
-         * TODO(FW-6456): Remove once every page on this branch imports the `.mdx` names.
-         *
-         * Transitional: this branch's `docs/` pages and its `versioned_docs` copies still
-         * import the `.md` names. Those are rewritten separately, so the old names have to
-         * keep being emitted until they are.
-         */
-        promises.push(
-          createData(`${basePath}/props.md`, data.props),
-          createData(`${basePath}/events.md`, data.events),
-          createData(`${basePath}/methods.md`, data.methods),
-          createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/slots.md`, data.slots)
-        );
       }
 
       await Promise.all(promises);
@@ -126,17 +111,6 @@ module.exports = function (context, options) {
         resolve: {
           alias: {
             '@ionic-internal/component-api': `${context.siteDir}/.docusaurus/docusaurus-plugin-ionic-component-api/default`,
-          },
-          /**
-           * TODO(FW-6456): Remove once every page on this branch imports the `.mdx` names.
-           *
-           * Lets a `.md` import resolve to a `.mdx` file, so pages can be moved over in
-           * batches rather than all at once. Matches the entry on `main`.
-           *
-           * Applies to every `.md` import, so a stale `.mdx` next to a `.md` will shadow it.
-           */
-          extensionAlias: {
-            '.md': ['.mdx', '.md'],
           },
         },
       };
@@ -248,7 +222,7 @@ ${properties
     }
 
     return `
-### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {#${propertyHeadingId(prop.name)}}
+### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {/* #${propertyHeadingId(prop.name)} */}
 
 | | |
 | --- | --- |
@@ -310,7 +284,7 @@ function renderMethods({ methods }) {
 ${methods
   .map(
     (method) => `
-### ${method.name} {#${methodHeadingId(method.name)}}
+### ${method.name} {/* #${methodHeadingId(method.name)} */}
 
 | | |
 | --- | --- |
