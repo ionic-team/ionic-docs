@@ -1,0 +1,84 @@
+name: 'Check Admonitions'
+description: 'Fails on admonition titles using the MDX v1 syntax'
+runs:
+  using: 'composite'
+  steps:
+    # `:::note My Title` was MDX v1 syntax that Docusaurus rewrote for us.
+    # With `future.v4.mdx1CompatDisabledByDefault` that shim is off, and
+    # the block `:::note My Title` stops being a directive: it renders as
+    # literal `:::note` text on the page, with no warning and a successful
+    # build.
+    #
+    # The other MDX v1 forms, HTML comments and `{#heading-ids}`, fail the
+    # build on their own, so this only covers the one that fails silently.
+    #
+    # Only the files the pull request touches are checked, so an existing
+    # page is never anyone else's problem to fix.
+    #
+    # The event payload has no file list, so the changed files come from a
+    # diff. The checkout is shallow and the base commit is fetched here
+    # rather than through `fetch-depth` on the checkout, which would pull
+    # the full history for every step in the job just to serve this one.
+    - name: 🔎 Check Admonitions
+      shell: bash
+      env:
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        CHANGED_FILES: ${{ runner.temp }}/changed-files.txt
+      run: |
+        git fetch --no-tags --depth=1 origin "$BASE_SHA"
+        git diff --name-only --diff-filter=ACMR "$BASE_SHA" HEAD > "$CHANGED_FILES"
+        node <<'JS'
+        const { readFileSync } = require('fs');
+
+        // Files Docusaurus compiles as MDX. Under `static/usage` that is
+        // only the `index` files; the rest are raw code samples.
+        const compiled = (f) =>
+          !f.endsWith('README.md') &&
+          ((/^(docs|versioned_docs|src\/pages)\//.test(f) && /\.mdx?$/.test(f)) ||
+            (f.startsWith('static/usage/') && f.endsWith('.mdx')));
+
+        // Defaults from `@docusaurus/mdx-loader/lib/remark/admonitions`.
+        const keywords =
+          'secondary|info|success|danger|note|tip|warning|important|caution';
+        const legacyTitle = new RegExp(
+          `^[ \\t]*:::(?:${keywords})[ \\t]+(?!\\[)\\S[^\\n]*`,
+          'gm'
+        );
+
+        // A `:::note` in a code sample is an example, not a directive.
+        // Blank out code samples with spaces, same length so line numbers
+        // still match.
+        const blank = (m) => m.replace(/[^\n]/g, ' ');
+        const mask = (t) =>
+          t
+            .replace(/^([ \t]*)(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\2[ \t]*$/gm, blank)
+            .replace(/(`+)(?:(?!\1)[\s\S])+?\1/g, blank);
+
+        const files = readFileSync(process.env.CHANGED_FILES, 'utf8')
+          .split('\n')
+          .filter(compiled);
+
+        const findings = [];
+        for (const file of files) {
+          const source = readFileSync(file, 'utf8');
+          for (const m of mask(source).matchAll(legacyTitle)) {
+            findings.push({
+              file,
+              line: source.slice(0, m.index).split('\n').length,
+              text: source.slice(m.index, m.index + m[0].length).trim(),
+            });
+          }
+        }
+
+        if (!findings.length) {
+          console.log(`No MDX v1 admonition titles in ${files.length} changed file(s).`);
+          process.exit(0);
+        }
+
+        console.error(`Found ${findings.length} admonition title(s) using MDX v1 syntax.`);
+        console.error('Wrap the title in brackets, for example `:::note[My Title]`.\n');
+        for (const { file, line, text } of findings) {
+          console.error(`  ${file}:${line}  ${text}`);
+        }
+        process.exit(1);
+        JS
