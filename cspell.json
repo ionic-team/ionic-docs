@@ -21,6 +21,8 @@
     "versioned_docs/version-v5",
     "versioned_docs/version-v6",
     "versioned_docs/version-v7",
+    "src/translate",
+    "scripts/build-translate",
     "node_modules"
   ],
   "flagWords": [

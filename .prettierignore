@@ -33,3 +33,6 @@ static/code/stackblitz
 .github
 build
 node_modules
+
+# Source material for the Japanese translation tooling, not documentation.
+src/translate

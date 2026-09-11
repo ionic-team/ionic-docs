@@ -1,6 +1,7 @@
 ---
 title: 'ion-grid'
 ---
+
 import Props from '@ionic-internal/component-api/v9/grid/props.mdx';
 import Events from '@ionic-internal/component-api/v9/grid/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/grid/methods.mdx';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/grid/slots.mdx';
 
 <head>
   <title>ion-grid: Display Grids for Mobile-First Custom App Layout</title>
-  <meta name="description" content="Ion-Gridは、12カラムのレイアウトと画面サイズに応じて異なるブレークポイントを持つカスタムアプリケーションの表示レイアウトを構築するためのモバイルファーストのフレックスボックスシステムです。" />
+  <meta
+    name="description"
+    content="Ion-Gridは、12カラムのレイアウトと画面サイズに応じて異なるブレークポイントを持つカスタムアプリケーションの表示レイアウトを構築するためのモバイルファーストのフレックスボックスシステムです。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 グリッドは、カスタムレイアウトを構築するための強力なモバイルファーストのフレックスボックスシステムです。グリッド、[row(s)](row.mdx)、 [column(s)](col.mdx) の 3 つのユニットで構成されています。カラムは行を埋めるように展開され、追加のカラムに合うようにサイズを変更します。これは、画面サイズに応じて異なるブレークポイントを持つ 12 列のレイアウトをベースにしています。カラムの数は、CSS を使ってカスタマイズすることができます。
 
@@ -49,7 +52,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 | lg   | 992px  | `sizeLg`       | `offsetLg`      | `pushLg`      | `pullLg`      | Set columns when (min-width: 992px)  |
 | xl   | 1200px | `sizeXl`       | `offsetXl`      | `pushXl`      | `pullXl`      | Set columns when (min-width: 1200px) |
 
-
 ## 基本的な使い方
 
 デフォルトでは、すべてのデバイスと画面サイズにおいて、列は行の中で同じ幅を占めます。
@@ -57,7 +59,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 import Basic from '@site/static/usage/v9/grid/basic/index.mdx';
 
 <Basic />
-
 
 ## グリッドの固定 {/* #fixed-grid */}
 
@@ -75,7 +76,6 @@ import Fixed from '@site/static/usage/v9/grid/fixed/index.mdx';
 
 <Fixed />
 
-
 ## カラムのサイズ
 
 カラムは特定のサイズに設定して、全カラム数のうち特定の数を占めるようにすることや、コンテンツに応じて幅を変更することができます。デフォルトのカラム数は 12 ですが、カスタマイズすることも可能です。詳細については、以下の[カラム数](#number-of-columns)のセクションを参照してください。
@@ -87,7 +87,6 @@ import Fixed from '@site/static/usage/v9/grid/fixed/index.mdx';
 import SizeAuto from '@site/static/usage/v9/grid/size-auto/index.mdx';
 
 <SizeAuto />
-
 
 ### 指定されたサイズ
 
@@ -104,7 +103,6 @@ import Size from '@site/static/usage/v9/grid/size/index.mdx';
 import SizeResponsive from '@site/static/usage/v9/grid/size-responsive/index.mdx';
 
 <SizeResponsive />
-
 
 ## 列のオフセット
 
@@ -125,7 +123,6 @@ import Offset from '@site/static/usage/v9/grid/offset/index.mdx';
 import OffsetResponsive from '@site/static/usage/v9/grid/offset-responsive/index.mdx';
 
 <OffsetResponsive />
-
 
 ## コラム プッシュ＆プル
 
@@ -156,7 +153,6 @@ import PushPullResponsive from '@site/static/usage/v9/grid/push-pull-responsive/
 import VerticalAlignment from '@site/static/usage/v9/grid/vertical-alignment/index.mdx';
 
 <VerticalAlignment />
-
 
 ### 水平アライメント
 
@@ -197,19 +193,25 @@ import Padding from '@site/static/usage/v9/grid/customizing/padding/index.mdx';
 <Padding />
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

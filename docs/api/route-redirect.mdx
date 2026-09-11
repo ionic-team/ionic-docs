@@ -1,5 +1,5 @@
 ---
-title: "ion-route-redirect"
+title: 'ion-route-redirect'
 ---
 
 import Props from '@ionic-internal/component-api/v9/route-redirect/props.mdx';
@@ -11,25 +11,26 @@ import Slots from '@ionic-internal/component-api/v9/route-redirect/slots.mdx';
 
 <head>
   <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
-  <meta name="description" content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 ルートリダイレクトは `ion-router` を直接の子としてのみ使うことができます。
 
 :::note
- Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.mdx) と Angularルータを使用してください。
+Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.mdx) と Angularルータを使用してください。
 :::
 
-
 ルートリダイレクトには、2つの設定可能なプロパティがあります。
+
 - `from`
 - `to`
 
 これは、ある URL から別の URL へとリダイレクトします。定義された `ion-route-redirect` ルールがマッチすると、ルータは `from` プロパティで指定されたパスから `to` プロパティで指定されたパスへリダイレクトします。リダイレクトを行うには、`from` のパスがナビゲートされる URL と完全に一致する必要があります。
-
 
 ## 複数ルートのリダイレクト
 
@@ -47,9 +48,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 ```
 
 ユーザーが `/admin` に移動した場合、ルーターは `/login` にリダイレクトし、そこで停止します。複数のリダイレクトを評価することはありません。
-
-
-
 
 ## 使い方
 
@@ -96,19 +94,25 @@ routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
