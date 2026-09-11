@@ -18,12 +18,14 @@ In order to know if an external origin supports CORS, the server has to send som
 
 An **origin** is the combination of the **protocol**, **domain**, and **port** from which your Ionic app or the external resource is served. For example, apps running in Capacitor have `capacitor://localhost` (iOS) or `http://localhost` (Android) as their origin.
 
-When the origin where your app is served (e.g. `http://localhost:8100` with `ionic serve`) and the origin of the resource being requested (e.g. `https://api.example.com`) don't match, the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">Same Origin Policy</a> takes effect and CORS is required for the request to be made.
+When the origin where your app is served (e.g. `http://localhost:8100` with `ionic serve`) and the origin of the resource being requested (e.g. `https://api.example.com`) don't match, the browser's [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) takes effect and CORS is required for the request to be made.
 
 CORS errors are common in web apps when a cross-origin request is made but the server doesn't return the required headers in the response (is not CORS-enabled):
 
 :::note
+
 XMLHttpRequest cannot load https://api.example.com. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:8100' is therefore not allowed access.
+
 :::
 
 ## How does CORS work
@@ -190,9 +192,9 @@ Port numbers can be higher if you are serving multiple apps at the same time.
 
 Allowing any origin with `Access-Control-Allow-Origin: *` is guaranteed to work in all scenarios but may have security implications — like some CSRF attacks — depending on how the server controls access to resources and use sessions and cookies.
 
-For more information on how to enable CORS in different web and app servers, please check <a href="https://enable-cors.org" target="_blank" rel="noopener">enable-cors.org</a>
+For more information on how to enable CORS in different web and app servers, please check [enable-cors.org](https://enable-cors.org)
 
-CORS can be easily enabled in Express/Connect apps with the <a href="https://github.com/expressjs/cors" target="_blank" rel="noopener">cors</a> middleware:
+CORS can be easily enabled in Express/Connect apps with the [cors](https://github.com/expressjs/cors) middleware:
 
 ```javascript
 const express = require('express');
@@ -284,7 +286,7 @@ Send the requests through an HTTP/HTTPS proxy that bypasses them to the external
 
 Also, keep in mind that the browser or webview will not receive the original HTTPS certificates but the one being sent from the proxy if it's provided. URLs may need to be rewritten in your code in order to use the proxy.
 
-Check <a href="https://github.com/Rob--W/cors-anywhere/" target="_blank" rel="noopener">cors-anywhere</a> for a Node.js CORS proxy that can be deployed in your own server. Using free hosted CORS proxies in production is not recommended.
+Check [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) for a Node.js CORS proxy that can be deployed in your own server. Using free hosted CORS proxies in production is not recommended.
 
 ### C. Disabling CORS or browser web security
 
@@ -296,9 +298,5 @@ If you are developing a PWA or testing in the browser, using the `--disable-web-
 
 ##### Sources
 
-- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">
-    CORS Errors in Ionic Apps
-  </a>
-- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">
-    MDN
-  </a>
+- [CORS Errors in Ionic Apps](https://fdezromero.com/cors-errors-in-ionic-apps)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)

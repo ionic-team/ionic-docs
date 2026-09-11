@@ -158,7 +158,7 @@ import Metadata from '@site/static/usage/v8/item/content-types/metadata/index.md
 
 Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
-Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
+Developers should avoid creating [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive) which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
 
 <BestPracticeFigure
   text={

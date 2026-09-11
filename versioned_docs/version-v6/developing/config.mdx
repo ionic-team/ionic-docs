@@ -14,17 +14,17 @@ import GlobalExample from './config/global/index.mdx';
 
 <GlobalExample />
 
-## コンポーネント単位のコンフィグ
+## Per-Component Config
 
-Ionic Config はリアクティブではありません。コンポーネントがレンダリングされた後にコンフィグの値を更新すると、以前の値が適用されます。リアクティブな値が必要な場合は、config を更新するのではなく、コンポーネントのプロパティを使用することが推奨されます。
+Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
 import PerComponentExample from './config/per-component/index.mdx';
 
 <PerComponentExample />
 
-## プラットフォームごとの設定 Per-Platform Config
+## Per-Platform Config
 
-Ionic Config は、プラットフォームごとに設定することもできます。例えば、遅い可能性のあるデバイス上のブラウザでアプリを実行している場合、アニメーションを無効にすることができる。開発者は、プラットフォーム・ユーティリティーを利用してこれを実現することができます。
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
 In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
 
@@ -101,9 +101,9 @@ class AppComponent {
 
 ## Interfaces
 
-### Config オプション
+### IonicConfig
 
-以下は Ionic が使用する設定オプションのリストです。
+Below are the config options that Ionic uses.
 
 | Config                      | Type                                                                              | Description                                                                                                                                                                                                                                                                                |
 | --------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

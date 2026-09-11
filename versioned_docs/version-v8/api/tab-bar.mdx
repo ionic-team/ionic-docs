@@ -141,7 +141,9 @@ export const TabBarExample: React.FC = () => (
 Badges can be added inside a tab button, often used to indicate notifications or highlight additional items associated with the element.
 
 :::info
+
 Empty badges are only available for `md` mode.
+
 :::
 
 import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.mdx';

@@ -1,34 +1,53 @@
 ---
-title: "ion-route"
+title: 'ion-route'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<<<<<<<< HEAD:versioned_docs/version-v6/api/route.mdx
+import Props from '@ionic-internal/component-api/v6/route/props.mdx';
+import Events from '@ionic-internal/component-api/v6/route/events.mdx';
+import Methods from '@ionic-internal/component-api/v6/route/methods.mdx';
+import Parts from '@ionic-internal/component-api/v6/route/parts.mdx';
+import CustomProps from '@ionic-internal/component-api/v6/route/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v6/route/slots.mdx';
+========
 import Props from '@ionic-internal/component-api/v9/route/props.mdx';
 import Events from '@ionic-internal/component-api/v9/route/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/route/methods.mdx';
 import Parts from '@ionic-internal/component-api/v9/route/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/route/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v9/route/slots.mdx';
+>>>>>>>> origin/main:docs/api/route.mdx
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-routeコンポーネントは、コンポーネントを受け取り、Browser URLがURLプロパティに一致したときにレンダリングします。Ionic AppsのAPIルートコンポーネントの詳細はこちら。" />
+  <meta
+    name="description"
+    content="The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-ルートコンポーネントはコンポーネントを受け取り、ブラウザの URL が url プロパティと一致したときに、そのコンポーネントをレンダリングします。
+The route component takes a component and renders it when the Browser URL matches the url property.
 
 :::note
- Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.mdx) と Angularルータを使用してください。
+<<<<<<<< HEAD:versioned_docs/version-v6/api/route.mdx
+Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.mdx) and the Angular router.
 :::
 
+========
 
-## ナビゲーションフック
+Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.mdx) and the Angular router.
 
-ナビゲーションフックは、タスクを実行したり、ナビゲーションガードとして動作させるために使用することができます。フックは、各 `ion-route` の `beforeEnter` と `beforeLeave` プロパティに関数を提供することで使用します。`true` を返すとナビゲーションを進めることができ、`false` を返すとナビゲーションがキャンセルされる。NavigationHookOptions` 型のオブジェクトを返すと、ナビゲーションを別のページにリダイレクトすることができます。
+:::
+
+>>>>>>>> origin/main:docs/api/route.mdx
+## Navigation Hooks
+
+Navigation hooks can be used to perform tasks or act as navigation guards. Hooks are used by providing functions to the `beforeEnter` and `beforeLeave` properties on each `ion-route`. Returning `true` allows navigation to proceed, while returning `false` causes it to be cancelled. Returning an object of type `NavigationHookOptions` allows you to redirect navigation to another page.
 
 ## Interfaces
 
@@ -41,10 +60,7 @@ interface NavigationHookOptions {
 }
 ```
 
-
-
-
-## 使い方
+## Usage
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -68,23 +84,23 @@ newMessagePage.beforeLeave = hasUnsavedDataGuard;
 
 const isLoggedInGuard = async () => {
   const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-  
+
   if (isLoggedIn) {
     return true;
   } else {
     return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
   }
-}
+};
 
 const hasUnsavedDataGuard = async () => {
   const hasUnsavedData = await checkData(); // Replace this with actual validation
-  
+
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
   } else {
     return true;
   }
-}
+};
 
 const confirmDiscardChanges = async () => {
   const alert = document.createElement('ion-alert');
@@ -98,22 +114,20 @@ const confirmDiscardChanges = async () => {
     {
       text: 'Discard',
       role: 'destructive',
-    }
+    },
   ];
-  
+
   document.body.appendChild(alert);
-  
+
   await alert.present();
-  
+
   const { role } = await alert.onDidDismiss();
-  
-  return (role === 'Cancel') ? false : true;
-}
+
+  return role === 'Cancel' ? false : true;
+};
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -123,7 +137,7 @@ import { alertController } from '@ionic/core';
 
 @Component({
   tag: 'router-example',
-  styleUrl: 'router-example.css'
+  styleUrl: 'router-example.css',
 })
 export class RouterExample {
   render() {
@@ -134,29 +148,29 @@ export class RouterExample {
         <ion-route url="/new-message" component="page-new-message" beforeLeave={hasUnsavedDataGuard}></ion-route>
         <ion-route url="/login" component="page-login"></ion-route>
       </ion-router>
-    )
+    );
   }
 }
 
 const isLoggedInGuard = async () => {
   const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-  
+
   if (isLoggedIn) {
     return true;
   } else {
     return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
   }
-}
+};
 
 const hasUnsavedDataGuard = async () => {
   const hasUnsavedData = await checkData(); // Replace this with actual validation
-  
+
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
   } else {
     return true;
   }
-}
+};
 
 const confirmDiscardChanges = async () => {
   const alert = await alertController.create({
@@ -170,21 +184,19 @@ const confirmDiscardChanges = async () => {
       {
         text: 'Discard',
         role: 'destructive',
-      }
-    ]
+      },
+    ],
   });
-  
+
   await alert.present();
-  
+
   const { role } = await alert.onDidDismiss();
-  
-  return (role === 'Cancel') ? false : true;
-}
+
+  return role === 'Cancel' ? false : true;
+};
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -203,24 +215,24 @@ const confirmDiscardChanges = async () => {
 
   const isLoggedInGuard = async () => {
     const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-    
+
     if (isLoggedIn) {
       return true;
     } else {
       return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
     }
-  }
-  
+  };
+
   const hasUnsavedDataGuard = async () => {
     const hasUnsavedData = await checkData(); // Replace this with actual validation
-    
+
     if (hasUnsavedData) {
       return await confirmDiscardChanges();
     } else {
       return true;
     }
-  }
-  
+  };
+
   const confirmDiscardChanges = async () => {
     const alert = await alertController.create({
       header: 'Discard Unsaved Changes?',
@@ -233,16 +245,16 @@ const confirmDiscardChanges = async () => {
         {
           text: 'Discard',
           role: 'destructive',
-        }
-      ]
+        },
+      ],
     });
-    
+
     await alert.present();
-    
+
     const { role } = await alert.onDidDismiss();
-    
-    return (role === 'Cancel') ? false : true;
-  }
+
+    return role === 'Cancel' ? false : true;
+  };
 </script>
 ```
 
@@ -250,20 +262,26 @@ const confirmDiscardChanges = async () => {
 
 </Tabs>
 
-## プロパティ
+## Properties
+
 <Props />
 
-## イベント
+## Events
+
 <Events />
 
-## メソッド
+## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

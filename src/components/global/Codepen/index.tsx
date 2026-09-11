@@ -2,9 +2,16 @@ import React, { type ReactNode } from 'react';
 
 import { useScript } from '@site/src/utils/hooks';
 
-function CodePen(props): ReactNode {
-  const status = useScript('https://static.codepen.io/assets/embed/ei.js');
-  // console.log('test',status, props)
+function CodePen(props: {
+  height?: number | string;
+  theme?: string;
+  defaultTab?: string;
+  user?: string;
+  slug?: string;
+  preview?: boolean;
+  penTitle?: string;
+}): ReactNode {
+  useScript('https://static.codepen.io/assets/embed/ei.js');
   return (
     <div
       className="codepen"

@@ -14,10 +14,12 @@ import TabItem from '@theme/TabItem';
 </head>
 
 :::warning[Looking for `ion-slides`?]
+
 `ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+
 :::
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. Swiper 9 introduced <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as a replacement for its Angular component, so this guide will go over how to get Swiper Element set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to Swiper Element.
+We recommend [Swiper.js](http://swiperjs.com/) if you need a modern touch slider component. Swiper 9 introduced [Swiper Element](https://swiperjs.com/element) as a replacement for its Angular component, so this guide will go over how to get Swiper Element set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to Swiper Element.
 
 ## Getting Started
 
@@ -71,7 +73,7 @@ From there, we just have to replace `ion-slides` elements with `swiper-container
 
 By default, make sure you import the `register` function from `swiper/element/bundle`. This uses the bundled version of Swiper, which automatically includes all modules and stylesheets needed to run Swiper's various features.
 
-If you would like to use the Core version instead, which does not include additional modules automatically, refer to <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">Swiper's core version and modules documentation</a>. The rest of this migration guide will assume you are using the bundled version.
+If you would like to use the Core version instead, which does not include additional modules automatically, refer to [Swiper's core version and modules documentation](https://swiperjs.com/element#core-version-and-modules). The rest of this migration guide will assume you are using the bundled version.
 
 ## Swiping with Style
 
@@ -93,7 +95,7 @@ If you were using the CSS custom properties found on `ion-slides`, below is a li
 | `--scroll-bar-background`          | `--swiper-scrollbar-bg-color`               |
 | `--scroll-bar-background-active`   | `--swiper-scrollbar-drag-bg-color`          |
 
-For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. Refer to <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">Swiper's guide on injecting styles</a> for instructions.
+For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. Refer to [Swiper's guide on injecting styles](https://swiperjs.com/element#injecting-styles) for instructions.
 
 ### Additional `ion-slides` Styles
 
@@ -191,7 +193,9 @@ export class HomePage {
 ```
 
 :::note
+
 If you are using the Core version of Swiper and have installed additional modules, ensure that `IonicSlides` is the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+
 :::
 
 ## Properties
@@ -227,7 +231,9 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager   | Use the `pagination` property instead.                                                                                                  |
 
 :::note
-All properties available in Swiper Element can be found in the <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">Swiper API parameters documentation</a>.
+
+All properties available in Swiper Element can be found in the [Swiper API parameters documentation](https://swiperjs.com/swiper-api#parameters).
+
 :::
 
 ## Events
@@ -276,7 +282,9 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `swiperinit`                       |
 
 :::note
-All events available in Swiper Element can be found in the <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">Swiper API events documentation</a> and should be lowercased and prefixed with the word `swiper`.
+
+All events available in Swiper Element can be found in the [Swiper API events documentation](https://swiperjs.com/swiper-api#events) and should be lowercased and prefixed with the word `swiper`.
+
 :::
 
 ## Methods
@@ -328,7 +336,9 @@ Below is a full list of method changes when going from `ion-slides` to Swiper El
 | `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 :::note
-All methods and properties available on the Swiper instance can be found in the <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">Swiper API methods and properties documentation</a>.
+
+All methods and properties available on the Swiper instance can be found in the [Swiper API methods and properties documentation](https://swiperjs.com/swiper-api#methods-and-properties).
+
 :::
 
 ## Effects
@@ -340,12 +350,14 @@ Effects such as Cube or Fade can be used in Swiper Element with no additional im
 ```
 
 :::note
-For more information on effects in Swiper, please refer to the <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">Swiper API fade effect documentation</a>.
+
+For more information on effects in Swiper, please refer to the [Swiper API fade effect documentation](https://swiperjs.com/swiper-api#fade-effect).
+
 :::
 
 ## Wrap Up
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element documentation</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
+Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the [Swiper Element documentation](https://swiperjs.com/element) and then referencing [the Swiper API docs](https://swiperjs.com/swiper-api).
 
 ## FAQ
 
@@ -359,8 +371,8 @@ If you are running into issues with the migration, please create a post on the [
 
 ### Where do I file bug reports?
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to check if your issue can be resolved by the community.
+Before opening an issue, please consider creating a post on the [Swiper Discussion Board](https://github.com/nolimits4web/swiper/discussions) or the [Ionic Forum](https://forum.ionicframework.com) to check if your issue can be resolved by the community.
 
-If you are running into problems with the Swiper library, new bugs should be filed on the <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">Swiper issue tracker</a>.
+If you are running into problems with the Swiper library, new bugs should be filed on the [Swiper issue tracker](https://github.com/nolimits4web/swiper/issues).
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">Ionic Framework issue tracker</a>.
+If you are running into problems with the `IonicSlides` module, new bugs should be filed on the [Ionic Framework issue tracker](https://github.com/ionic-team/ionic-framework/issues).

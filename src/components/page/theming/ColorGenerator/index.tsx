@@ -1,16 +1,17 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, type ComponentProps, useEffect, useRef, useState } from 'react';
 
 import styles from './styles.module.scss';
 
 import { generateColor } from '../_utils/index';
+import type { GeneratedColorVariable } from '../_utils/color-variables';
 
 import clsx from 'clsx';
 
 import ColorDot from '../ColorDot';
 import ColorInput from '../ColorInput';
 
-const ColorGenerator = (props) => {
-  const [colors, setColors] = useState({
+const ColorGenerator = (props: ComponentProps<'section'>) => {
+  const [colors, setColors] = useState<Record<string, GeneratedColorVariable>>({
     primary: generateColor('#0054e9'),
     secondary: generateColor('#0163aa'),
     tertiary: generateColor('#6030ff'),
@@ -22,7 +23,7 @@ const ColorGenerator = (props) => {
     dark: generateColor('#2f2f2f'),
   });
 
-  const [activeColor, setActiveColor] = useState(null);
+  const [activeColor, setActiveColor] = useState<string | null>(null);
 
   const [cssText, setCssText] = useState('');
 
@@ -34,7 +35,7 @@ const ColorGenerator = (props) => {
   }, [cssText]);
 
   useEffect(() => {
-    setCssText(codeRef.current.textContent);
+    setCssText(codeRef.current?.textContent ?? '');
   }, [colors]);
 
   return (
@@ -116,7 +117,7 @@ const ColorGenerator = (props) => {
   );
 };
 
-const Caret = (props) => (
+const Caret = (props: ComponentProps<'svg'>) => (
   <svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g
       id="Welcome"

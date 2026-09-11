@@ -1,5 +1,4 @@
 import pkg from 'fs-extra';
-import fetch from 'node-fetch';
 import { resolve, dirname } from 'path';
 import { compare } from 'semver';
 import { URL, fileURLToPath } from 'url';

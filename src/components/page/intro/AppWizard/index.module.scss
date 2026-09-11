@@ -1,3 +1,5 @@
+@use '../../../../styles/mixins';
+
 .appWizard {
   display: flex;
   align-items: center;
@@ -63,9 +65,9 @@
       text-decoration: none;
     }
 
-    .wizard-button ion-icon {
-      font-size: 16px;
-      margin-left: 4px;
+    .wizard-button::after {
+      @include mixins.icon-mask('../../../../../static/icons/arrow-forward-outline.svg');
+      margin-inline-start: 4px;
     }
   }
 }

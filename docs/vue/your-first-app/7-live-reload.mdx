@@ -1,6 +1,6 @@
 ---
 title: Rapid App Development with Live Reload
-sidebar_label: ライブリロード
+sidebar_label: Live Reload
 ---
 
 <head>
@@ -11,7 +11,7 @@ sidebar_label: ライブリロード
   />
 </head>
 
-これまでのところ、どこでも動作するクロスプラットフォームアプリを開発するのがどれだけ簡単かを学びました。開発の経験はかなり迅速ですが、さらに速く進める方法があると言ったらどうでしょうか？
+So far, we’ve learned how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
 We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.mdx) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
 
@@ -154,7 +154,7 @@ Wrap each image in a `<button>` element with a click handler. When the app user 
 
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
+          <ion-col size="6" v-for="(photo, index) in photos" :key="index">
             <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
             <button @click="showActionSheet(photo)">
               <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
@@ -197,7 +197,9 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
 
 :::note
-このアプリの[完全なソースコード](https://github.com/ionic-team/tutorial-photo-gallery-vue)は GitHub で見つけることができます。
+
+Remember, you can find the [complete source code for this app](https://github.com/ionic-team/tutorial-photo-gallery-vue) on GitHub.
+
 :::
 
 In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

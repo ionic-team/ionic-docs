@@ -55,9 +55,11 @@ when the segment is active. With this approach, each segment's content can be sw
 to reflect the currently visible content.
 
 :::warning
+
 If no initial `value` is assigned to the `ion-segment` when using swipeable segments, the segment will default to the value of the first segment button.
 
 Segment buttons cannot be disabled when used with swipeable segments.
+
 :::
 
 import Swipeable from '@site/static/usage/v8/segment/swipeable/index.mdx';

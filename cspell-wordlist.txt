@@ -14,7 +14,7 @@ Vetur
 Wistia
 WCAG
 CDK
-browserslistrc
+
 actionsheet
 fabs
 datetime
@@ -26,7 +26,7 @@ searchbars
 sidemenu
 textarea
 textareas
-ionicframework
+
 appstore
 authed
 autogrow
