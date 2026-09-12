@@ -13,7 +13,7 @@ import Slots from '@ionic-internal/component-api/v6/virtual-scroll/slots.mdx';
   <title>ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps</title>
   <meta
     name="description"
-    content="ion-virtual-scroll, supported in Angular, displays a virtual, infinite list. Records are passed to the virtual scroll containing the data to create templates."
+    content="ion-virtual-scrollは、仮想的な無限リストを表示します。テンプレートを作成するためのデータを含むレコードが仮想スクロールに渡されます。"
   />
 </head>
 
@@ -30,23 +30,23 @@ consist of items, headers, and footers. For performance reasons, not every recor
 in the list is rendered at once; instead a small subset of records (enough to fill the viewport)
 are rendered and reused as the user scrolls.
 
-This guide will go over the recommended virtual scrolling packages for each framework integration as well as documentation for the deprecated `ion-virtual-scroll` component for Ionic Angular. We recommend using the framework-specific solutions listed below, but the `ion-virtual-scroll` documentation is available below for developers who are still using that component.
+このガイドでは、各フレームワークの統合に推奨される仮想スクロールパッケージと、Ionic Angular の非推奨コンポーネントである `ion-virtual-scroll` のドキュメントについて説明します。フレームワーク固有のソリューションの利用をお勧めしますが、まだそのコンポーネントを使用している開発者のために `ion-virtual-scroll` のドキュメントを以下に掲載します。
 
 ## Angular
 
-For virtual scrolling options in Ionic Angular, please see [Angular Virtual Scroll Guide](../angular/virtual-scroll.mdx).
+Ionic Angular の仮想スクロールのオプションについては、[Angular 仮想スクロールガイド](../angular/virtual-scroll.mdx)を参照してください。
 
 ## React
 
-For virtual scrolling options in Ionic React, please see [React Virtual Scroll Guide](../react/virtual-scroll.mdx).
+Ionic React での仮想スクロールのオプションについては、[React 仮想スクロールガイド](../react/virtual-scroll.mdx)を参照してください。
 
 ## Vue
 
-For virtual scrolling options in Ionic Vue, please see [Vue Virtual Scroll Guide](../vue/virtual-scroll.mdx).
+Ionic Vue での仮想スクロールのオプションについては、[Vue 仮想スクロールガイド](../vue/virtual-scroll.mdx)を参照してください。
 
 ---
 
-The following documentation applies to the `ion-virtual-scroll` component.
+以下のドキュメントは `ion-virtual-scroll` コンポーネントに適用されます。
 
 ## Approximate Widths and Heights
 
@@ -137,7 +137,7 @@ kill its performance is to perform any DOM operations within section header
 and footer functions. These functions are called for every record in the
 dataset, so please make sure they're performant.
 
-## Usage
+## 使い方
 
 ```html
 <ion-content>
@@ -155,7 +155,7 @@ dataset, so please make sure they're performant.
 </ion-content>
 ```
 
-```tsx
+```typescript
 export class VirtualScrollPageComponent {
   items: any[] = [];
 
@@ -265,15 +265,15 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 </ion-virtual-scroll>
 ```
 
-## Properties
+## プロパティ
 
 <Props />
 
-## Events
+## イベント
 
 <Events />
 
-## Methods
+## メソッド
 
 <Methods />
 
@@ -281,7 +281,7 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS カスタムプロパティ
 
 <CustomProps />
 

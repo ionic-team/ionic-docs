@@ -1,5 +1,5 @@
 ---
-title: Migration Guide
+title: マイグレーションガイド
 sidebar_label: Migration
 ---
 
