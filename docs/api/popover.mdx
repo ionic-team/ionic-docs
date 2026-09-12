@@ -1,6 +1,7 @@
 ---
-title: "ion-popover"
+title: 'ion-popover'
 ---
+
 import Props from '@ionic-internal/component-api/v9/popover/props.mdx';
 import Events from '@ionic-internal/component-api/v9/popover/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/popover/methods.mdx';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/popover/slots.mdx';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
-  <meta name="description" content="ion-popoverは、現在のページの上に表示されるダイアログです。iOSとAndroidデバイス用のpopover UIコンポーネントとCSSカスタムプロパティについて説明します。" />
+  <meta
+    name="description"
+    content="ion-popoverは、現在のページの上に表示されるダイアログです。iOSとAndroidデバイス用のpopover UIコンポーネントとCSSカスタムプロパティについて説明します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -50,7 +54,7 @@ Angular、React、Vue で `ion-popover` を使用する場合、渡されたコ�
 インラインの `ion-popover` のトリガーは、インタラクションされたときにポップオーバーを開く要素です。インタラクションの動作は `trigger-action` プロパティを設定することでカスタマイズすることができます。なお、`trigger-action="context-menu"` はシステムのデフォルトのコンテキストメニューを開かせないようにします。
 
 :::note
- `popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
+`popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
 :::
 
 import InlineTrigger from '@site/static/usage/v9/popover/presenting/inline-trigger/index.mdx';
@@ -90,7 +94,7 @@ import ControllerExample from '@site/static/usage/v9/popover/presenting/controll
 ポップオーバーはアプリケーションのルートで表示されるので、アプリケーション全体を覆うように表示されます。この動作はインラインポップオーバーとコントローラから表示されるポップオーバーの両方に適用されます。そのため、カスタムポップオーバースタイリングは特定のコンポーネントにスコープすることができません。代わりに、スタイルはグローバルに適用されなければなりません。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 import Styling from '@site/static/usage/v9/popover/customization/styling/index.mdx';
@@ -138,7 +142,7 @@ import Sizing from '@site/static/usage/v9/popover/customization/sizing/index.mdx
 `dismissOnSelect` プロパティを使用すると、ポップオーバーのコンテンツがクリックされたときに自動的にポップオーバーを閉じることができます。この動作は、他のポップオーバーのトリガー要素をクリックしたときには適用されません。
 
 :::note
- `popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
+`popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
 :::
 
 import NestedPopover from '@site/static/usage/v9/popover/nested/index.mdx';
@@ -234,19 +238,25 @@ import Mount from '@site/static/usage/v9/popover/performance/mount/index.mdx';
 - 内部コンポーネントの JavaScript Framework ライフサイクルフックは、ポップオーバーが表示されたときではなく、ポップオーバーがマウントされたときにすぐに実行されます。
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ {/* #css-custom-properties */}
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

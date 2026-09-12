@@ -92,7 +92,9 @@ There are many cases where a button's text content may overflow the container. I
 The button text does not automatically wrap to the next line when the text is too long to fit. In order to make the text wrap, the `ion-text-wrap` class can be added, which will set the `white-space` property to `"normal"`. This will become the default in a future major release.
 
 :::info
+
 The `max-width` style is set on the button below for demo purposes only. Text wrapping will work with a dynamic button width.
+
 :::
 
 import TextWrapping from '@site/static/usage/v8/button/text-wrapping/index.mdx';

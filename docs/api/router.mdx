@@ -1,5 +1,5 @@
 ---
-title: "ion-router"
+title: 'ion-router'
 ---
 
 import Props from '@ionic-internal/component-api/v9/router/props.mdx';
@@ -11,19 +11,19 @@ import Slots from '@ionic-internal/component-api/v9/router/slots.mdx';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta name="description" content="ion-router は、Ionic のナビゲーションアウトレットである ion-tabs と ion-router-outlet のための URL コーディネーターです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。" />
+  <meta
+    name="description"
+    content="ion-router は、Ionic のナビゲーションアウトレットである ion-tabs と ion-router-outlet のための URL コーディネーターです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
-
 
 ルーターは、vanilla と Stencil での JavaScriptプロジェクト内でルーティングを処理するためのコンポーネントです。
 
 :::note
 注意: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。フレームワーク固有のルーティングソリューションについては、[Angular](../angular/navigation)、[React](../react/navigation)、[Vue](../vue/navigation)のルーティングガイドを参照してください。
 :::
-
 
 アプリケーションはコードベースに単一の `ion-router` コンポーネントを持たなければなりません。
 このコンポーネントは、ブラウザの履歴とのすべての対話を制御し、イベント・システムを介して更新を集約します。
@@ -73,8 +73,6 @@ interface RouterCustomEvent extends CustomEvent {
 }
 ```
 
-
-
 ## 使い方
 
 ```html
@@ -101,24 +99,28 @@ interface RouterCustomEvent extends CustomEvent {
   <ion-route url="/signup" component="page-signup"></ion-route>
   <ion-route url="/support" component="page-support"></ion-route>
 </ion-router>
-
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

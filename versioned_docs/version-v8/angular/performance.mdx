@@ -69,5 +69,7 @@ For more information, refer to the [Angular NgForOf change propagation documenta
 {/* cspell:enable */}
 
 :::note
+
 Do you have a guide you'd like to share? Click the _Edit this page_ button below.
+
 :::

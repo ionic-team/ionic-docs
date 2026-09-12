@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
@@ -39,6 +37,7 @@ module.exports = function (context, options) {
         const names = components.map((component) => component.tag.slice(4));
         // matches all relative markdown links to a component, e.g. (../button)
         COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
+
         components.forEach((comp) => {
           const compTag = comp.tag.slice(4);
           const outDir = getDirectoryPath(compTag, version, isCurrentVersion);

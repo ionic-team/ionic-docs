@@ -13,7 +13,7 @@ sidebar_label: Progressive Web Apps
 
 ## Making your React app a PWA with Vite
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
+The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
 
 To get started, install the `vite-plugin-pwa` package:
 
@@ -45,7 +45,7 @@ PWA をデプロイする方法については、[Vite PWA「デプロイ」ガ�
 Ionic CLI v7 以降、Ionic React のスターターアプリは Create React App の代わりに Vite と共に提供されます。Vite の手順については、[Vite で React アプリを PWA 化する方法](#making-your-react-app-a-pwa-with-vite)を参照してください。
 :::
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
+The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
 
 あなたのアプリの`index.ts`では、`serviceWorker.unregister()`関数への呼び出しがあります。CRA が提供するベースにはサービスワーカーがオプトイン機能として含まれているため、有効にする必要があります。有効にするには、`serviceWorker.register()`を呼び出してください。
 

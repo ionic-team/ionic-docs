@@ -1,6 +1,7 @@
 ---
-title: "ion-segment"
+title: 'ion-segment'
 ---
+
 import Props from '@ionic-internal/component-api/v9/segment/props.mdx';
 import Events from '@ionic-internal/component-api/v9/segment/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/segment/methods.mdx';
@@ -10,18 +11,19 @@ import Slots from '@ionic-internal/component-api/v9/segment/slots.mdx';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
-  <meta name="description" content="ion-segmentは、関連するボタンのグループを表示します（セグメントコントロールとも呼ばれます）。使用方法の詳細については、Segment API ドキュメンテーションを参照してください。" />
+  <meta
+    name="description"
+    content="ion-segmentは、関連するボタンのグループを表示します（セグメントコントロールとも呼ばれます）。使用方法の詳細については、Segment API ドキュメンテーションを参照してください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Segmentsは、関連するボタンのグループを水平方向の行に表示することができ、segmented controlsとも呼ばれます。これらは、toolbarまたはメインコンテンツの内部に表示できます。
 
 これらの機能は、1つを選択すると他のすべてが選択解除されるTabsと似ています。Segmentsは、コンテンツ内の異なるビューを切り替える場合に便利です。クリックしてページ間の遷移をコントロールする場合は、Segmentsの代わりにTabsを使用してください。
-
 
 ## 基本的な使い方
 
@@ -31,7 +33,6 @@ import Basic from '@site/static/usage/v9/segment/basic/index.mdx';
 
 <Basic />
 
-
 ## Scrollable Segments
 
 デフォルトでは、セグメントはスクロールできません。各セグメントボタンの幅は固定で、セグメントボタンの数を画面幅で割って幅を決定します。これにより、各セグメントボタンがスクロールすることなく画面に表示されることが保証されます。そのため、ラベルが長いセグメントボタンは、一部が切れてしまうことがあります。これを避けるために、短いラベルを使用するか、`scrollable` プロパティを `true` に設定してスクロール可能なセグメントに変更することをお勧めします。これはセグメントを水平方向にスクロールさせますが、各セグメントボタンの幅を変更することができます。
@@ -40,14 +41,12 @@ import Scrollable from '@site/static/usage/v9/segment/scrollable/index.mdx';
 
 <Scrollable />
 
-
 ## Segments in Toolbars
 
 {/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v9/toolbar/segments/index.mdx';
 
 <Toolbar />
-
 
 ## スワイプ可能なセグメント
 
@@ -77,7 +76,6 @@ import Colors from '@site/static/usage/v9/segment/theming/colors/index.mdx';
 import CSSProps from '@site/static/usage/v9/segment/theming/css-properties/index.mdx';
 
 <CSSProps />
-
 
 ## アクセシビリティ
 
@@ -114,21 +112,26 @@ interface SegmentCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

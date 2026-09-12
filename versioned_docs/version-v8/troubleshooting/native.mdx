@@ -24,7 +24,7 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
 
    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. Refer to [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
-2. **Open the project in <b>Xcode</b>.**
+2. **Open the project in **Xcode**.**
 
    For Capacitor, run the following to open the app in Xcode:
 
@@ -34,11 +34,11 @@ Running an app on an iOS device requires a provisioning profile. If a provisioni
 
    For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
 
-3. **In <b>Project navigator</b>, select the project root to open the project editor. Under the <b>Identity</b> section, verify that the Package ID that was set matches the Bundle Identifier.**
+3. **In **Project navigator**, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.**
 
    ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
 
-4. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+4. **In the same project editor, under the **Signing** section, ensure **Automatically manage signing** is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
    ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
 

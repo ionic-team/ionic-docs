@@ -12,7 +12,7 @@ title: Troubleshooting
 
 This guide covers some of the more common issues you may run into when developing with Ionic Vue.
 
-Have an issue that you think should be covered here? <a href="https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=" target="_blank" rel="noopener">Let us know!</a>
+Have an issue that you think should be covered here? [Let us know!](https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=)
 
 ## Failed to resolve component
 
@@ -44,7 +44,7 @@ Prefer to register your components globally once? We have you covered. Our [Opti
 `slot` attributes are deprecated  vue/no-deprecated-slot-attribute
 ```
 
-The slots that are used in Ionic Vue are <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots" target="_blank" rel="noopener">Web Component slots</a>, which are different than the slots used in Vue 2. Unfortunately, the APIs for both are very similar, and your linter is likely getting the two confused.
+The slots that are used in Ionic Vue are [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots), which are different than the slots used in Vue 2. Unfortunately, the APIs for both are very similar, and your linter is likely getting the two confused.
 
 All Ionic Vue starters ship with this rule turned off, but you can do it yourself by adding the following to your `.eslintrc.js` file:
 
@@ -58,7 +58,7 @@ module.exports = {
 
 If you are using VSCode and have the Vetur plugin installed, you are likely getting this warning because of Vetur, not ESLint. By default, Vetur loads the default Vue 3 linting rules and ignores any custom ESLint rules.
 
-To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. Refer to the <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a> for more information.
+To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. Refer to the [Vetur Linting Guide](https://vuejs.github.io/vetur/guide/linting-error.html#linting) for more information.
 
 ## Method on component is not a function
 

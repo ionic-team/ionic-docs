@@ -37,7 +37,9 @@ export default withIonLifeCycle(HomePage);
 ```
 
 :::note
+
 `withIonLifeCycle` is imported from `@ionic/react`
+
 :::
 
 You can then create the appropriate lifecycle method on your class component, and the HOC calls that method when the event happens. Below is the entire component with each of the lifecycle methods implemented:
@@ -130,7 +132,9 @@ export default HomePage;
 ```
 
 :::note
+
 Functional components don't need to be wrapped with the `withIonLifeCycle` HOC as class components do.
+
 :::
 
 Developers can also optionally pass reactive dependencies to each lifecycle hook. These are then passed to the underlying [React useEffect hook](https://react.dev/reference/react/useEffect#useeffect):

@@ -28,27 +28,27 @@ ionic start photo-gallery tabs
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
 
-<strong>“Would you like to integrate your new app with Cordova to target native iOS and Android?”</strong>
+**“Would you like to integrate your new app with Cordova to target native iOS and Android?”**
 
 Type “y” and press Enter. Project setup may take a few moments.
 
-<strong>“Install the free Appflow SDK and connect your app?”</strong>
+**“Install the free Appflow SDK and connect your app?”**
 
 Type “y” and press Enter. [Appflow](https://ionicframework.com/pro) is a powerful set of services and features built on top of the flagship Ionic Framework. This includes updating your app instantly (skipping the app store review process!), packaging apps in the cloud, and error monitoring.
 
-<strong>Log into your Ionic Account</strong>
+**Log into your Ionic Account**
 
 Sign in now to easily access awesome features like Live Deploys later in this tutorial.
 
-<strong>What would you like to do?</strong>
+**What would you like to do?**
 
 Choose “Create a new app on Appflow.”
 
-<strong>Which git host would you like to use?</strong>
+**Which git host would you like to use?**
 
 Choose “Appflow.”
 
-<strong>“How would you like to connect to Appflow?”</strong>
+**“How would you like to connect to Appflow?”**
 
 - Choose “Automatically setup a new SSH key pair for Appflow” if you haven’t used SSH before.
 - Choose “Use an existing SSH key pair” if you’ve used SSH before.

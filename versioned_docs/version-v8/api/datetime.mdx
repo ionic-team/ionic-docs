@@ -98,7 +98,9 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
 :::note
+
 While seconds, milliseconds, and time zone can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second, millisecond, and time zone selection. Any second, millisecond, or time zone values provided will be ignored.
+
 :::
 
 ## Basic Usage
@@ -153,7 +155,9 @@ The following example shows how to set the locale to Spanish (Spain).
 <CustomLocale />
 
 :::note
+
 The time label is not automatically localized. Refer to [Time Label](#time-label) for more information.
+
 :::
 
 ### Hour Cycle
@@ -170,7 +174,9 @@ There are 4 primary hour cycle types:
 | `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00.     |
 
 :::note
+
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
+
 :::
 
 There may be scenarios where you need to have more control over which hour cycle is used. This is where the `hourCycle` property can help.
@@ -200,7 +206,9 @@ For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you c
 <LocaleExtensionTags />
 
 :::note
+
 Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility) for `Intl.Locale` before using it in your app.
+
 :::
 
 ## Presentation
@@ -262,7 +270,9 @@ If the `showAdjacentDays` property is set to `true`, days from the previous and 
 The calendar view always displays 6 rows when `showAdjacentDays` is enabled, so days from the previous or next month will be shown as needed to fill the grid. For example, even if a month starts on the first day of the week and ends within the fifth row, days from the next month will appear at the end to complete the sixth row.
 
 :::note
+
 This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+
 :::
 
 <ShowAdjacentDays />
@@ -272,7 +282,9 @@ This property is only supported when using `presentation="date"` and `preferWhee
 If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
 
 :::note
+
 This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+
 :::
 
 <MultipleDateSelection />
@@ -332,7 +344,9 @@ When specifying colors, any valid CSS color format can be used. This includes he
 To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
 
 :::note
+
 This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+
 :::
 
 ### Using Array
@@ -362,7 +376,9 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 The datetime header manages the content for the `title` slot and the selected date.
 
 :::note
+
 The selected date will not render if `preferWheel` is set to `true`.
+
 :::
 
 <DatetimeHeaderStyling />
@@ -380,7 +396,9 @@ The header can be styled using CSS shadow parts.
 The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
 
 :::note
+
 The example below selects the day 2 days ago, unless that day is in the previous month, then it selects a day 2 days in the future. This is done for demo purposes in order to show how to apply custom styling to all days, the current day, and the selected day.
+
 :::
 
 <CalendarDaysStyling />
