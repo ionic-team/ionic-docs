@@ -28,6 +28,10 @@ title: 用語集
 
 [Autoprefixer](https://github.com/postcss/autoprefixer)は、手書きのSass/CSSコードにベンダー固有のプレフィックスを追加するツールです。これにより、あなたが書いた標準化されたCSSルールがすべての対応ブラウザで適用されることが保証されます。たとえば、さまざまなブラウザで使用されるすべてのフレックスボックスの構文を覚える代わりに、Autoprefixerを使えば単に<code>display: flex;</code>と書くだけで、自動的に正しいCSSが挿入されます。
 
+### Babel {/* #babel */}
+
+[Babel](https://babeljs.io) is a [transpiler](#transpiler) that converts modern JavaScript into a backwards-compatible version, so that syntax such as [ES2015/ES6](#es2015-es6) runs in browsers that only support [ES5](#es5). It is commonly paired with a build tool so the conversion happens automatically as part of [bundling](#bundling).
+
 ### バンドリング {/* #bundling */}
 
 バンドリングとは、アプリの依存関係（あなたが書いたコードやインストールしたnpmモジュール）を一つのファイルにコンパイル/トランスパイルするプロセスです。
