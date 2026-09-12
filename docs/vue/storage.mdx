@@ -1,6 +1,6 @@
 ---
-title: Data Storage
-sidebar_label: Storage
+title: データストレージ
+sidebar_label: ストレージ
 ---
 
 <head>

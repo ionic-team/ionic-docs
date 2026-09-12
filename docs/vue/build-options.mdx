@@ -26,7 +26,7 @@ The one downside to this approach is that it may be tedious to re-import your Io
 
 Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
 
-Let's walk through how local component registration works:
+ローカルコンポーネント登録の仕組みについて見ていきましょう：
 
 ```vue
 <template>
@@ -47,7 +47,7 @@ In the example above, we are using the `IonPage` and `IonContent` components. To
 
 Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `SubComponent` unless we register them there as well.
 
-For more information, refer to the [Local Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#local-registration).
+詳しくは、[ローカル登録 Vue ドキュメント](https://v3.vuejs.org/guide/component-registration.html#local-registration)を参照してください。
 
 ### Global Component Registration
 
@@ -55,7 +55,7 @@ The other option for registering components is to use global registration. Globa
 
 While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
 
-Let's walk through how global component registration works:
+グローバルコンポーネント登録の仕組みについて見ていきましょう：
 
 **main.ts**
 
@@ -86,7 +86,7 @@ import SubComponent from '@/components/SubComponent.vue';
 
 In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
 
-For more information, refer to the [Global Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#global-registration).
+詳しくは、[グローバル登録 Vue ドキュメント](https://v3.vuejs.org/guide/component-registration.html#global-registration)を参照してください。
 
 ## Build Optimization
 
