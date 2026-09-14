@@ -6,9 +6,45 @@ name: Validate Docs
 
 on: [pull_request]
 
+env:
+  NODE_VERSION: 24
+
 jobs:
-  test:
-    name: Test on ${{ matrix.os }}
+  # The result does not vary by operating system, so this runs once.
+  admonitions:
+    name: Check Admonitions
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        # The check diffs against the pull request base, so it needs history.
+        fetch-depth: 0
+    - uses: ./.github/workflows/actions/check-admonitions
+
+  # These produce the same verdict on any operating system, so they run once.
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: ⚙️ Use Node.js
+      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: npm
+    - name: 🕸️ Install Dependencies
+      run: npm ci
+    - name: Test
+      run: npm run test
+    - name: 🧩 Typecheck
+      run: npm run typecheck
+    - name: 🔤 Spell Check
+      run: npm run spellcheck
+
+  cross-platform:
+    name: Cross-platform on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -22,23 +58,33 @@ jobs:
     - name: ⚙️ Use Node.js
       uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
-        node-version: 24
+        node-version: ${{ env.NODE_VERSION }}
+        cache: npm
     - name: 🕸️ Install Dependencies
       run: npm ci
+    # Prettier rewrites line endings, so this is the check most likely to
+    # differ between operating systems.
     - name: 🖌️ Lint
       run: npm run lint
-    - name: Test
-      run: npm run test
-    - name: 🧩 Typecheck
-      run: npm run typecheck
-    - name: 🔤 Spell Check
-      run: npm run spellcheck
-    - uses: ./.github/workflows/actions/check-admonitions
     - uses: ./.github/workflows/actions/check-translations
-    # Lint and spell check changes should be pushed
-    # to the branch before the branch is merge eligible.
+    # Lint changes should be pushed to the branch before the branch is merge
+    # eligible.
     #
     # The translation keys check should not produce any changes.
     - name: 🔍 Check Diff
       run: git diff --exit-code
       shell: bash
+
+  # One stable name for branch protection, so the matrix can change freely.
+  verify:
+    # The required check on main and the feature branches. Renaming this
+    # blocks merges until the protection rules are updated to match.
+    name: Verify
+    if: ${{ always() }}
+    needs: [admonitions, checks, cross-platform]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check job status
+      if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+      run: exit 1
