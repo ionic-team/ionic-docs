@@ -47,7 +47,9 @@ ionic cap sync
 ## iOS Deployment
 
 :::important
+
 To build an iOS app, you’ll need a Mac computer.
+
 :::
 
 Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Before running this app on an iOS device, there's a couple of steps to complete.

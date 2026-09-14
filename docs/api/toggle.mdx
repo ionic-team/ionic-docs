@@ -1,6 +1,7 @@
 ---
-title: "ion-toggle"
+title: 'ion-toggle'
 ---
+
 import Props from '@ionic-internal/component-api/v9/toggle/props.mdx';
 import Events from '@ionic-internal/component-api/v9/toggle/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/toggle/methods.mdx';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/toggle/slots.mdx';
 
 <head>
   <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>
-  <meta name="description" content="Toggleは、1つのオプションの状態を変更します。ion-toggleを使用して、アプリケーションのオン/オフを切り替えることができるカスタマイズ可能なトグルボタンを作成します。" />
+  <meta
+    name="description"
+    content="Toggleは、1つのオプションの状態を変更します。ion-toggleを使用して、アプリケーションのオン/オフを切り替えることができるカスタマイズ可能なトグルボタンを作成します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 トグルは、1つのオプションの状態を変更するスイッチです。押したり、スワイプしたりすることで、オン・オフを切り替えることができます。トグルは、`checked`プロパティを設定することで、プログラムによってチェックすることも可能です。
 
@@ -26,7 +29,6 @@ import Basic from '@site/static/usage/v9/toggle/basic/index.mdx';
 
 <Basic />
 
-
 ## On / Off Labels
 
 トグルは、`enableOnOffLabels`プロパティを設定することで、オン/オフラベルを有効にすることができます。これはアクセシビリティ上重要なことで、チェックされたトグルとチェックされていないトグルの区別がつきやすくなります。
@@ -35,7 +37,6 @@ import OnOff from '@site/static/usage/v9/toggle/on-off/index.mdx';
 
 <OnOff />
 
-
 ## Toggles in a List
 
 [アイテム](./item)と[リスト](./list)コンポーネントを使用すると、リストビューでトグルを使用することも可能です。
@@ -43,7 +44,6 @@ import OnOff from '@site/static/usage/v9/toggle/on-off/index.mdx';
 import List from '@site/static/usage/v9/toggle/list/index.mdx';
 
 <List />
-
 
 ## Label Placement
 
@@ -129,21 +129,26 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-alert"
+title: 'ion-alert'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,7 +14,10 @@ import Slots from '@ionic-internal/component-api/v9/alert/slots.mdx';
 
 <head>
   <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alertダイアログは、Inputを使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。" />
+  <meta
+    name="description"
+    content="ion-alertダイアログは、Inputを使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -57,7 +61,6 @@ import Controller from '@site/static/usage/v9/alert/presenting/controller/index.
 import Buttons from '@site/static/usage/v9/alert/buttons/index.mdx';
 
 <Buttons />
-
 
 ## Inputs
 
@@ -181,7 +184,6 @@ const alert = await alertController.create({
 
 </Tabs>
 
-
 すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することで、手動で上書きすることができます。
 
 #### Alert Buttons の概要
@@ -281,7 +283,6 @@ interface AlertButton {
 }
 ```
 
-
 ### AlertInput
 
 ```typescript
@@ -305,7 +306,6 @@ interface AlertInput {
   tabindex?: number;
 }
 ```
-
 
 ### AlertOptions
 
@@ -332,19 +332,25 @@ interface AlertOptions {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

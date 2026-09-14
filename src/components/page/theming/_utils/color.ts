@@ -164,10 +164,10 @@ export class Color {
   constructor(value: string | RGB | HSL) {
     if (typeof value === 'string' && /rgb\(/.test(value)) {
       const matches = /rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.exec(value) ?? [];
-      value = { r: parseInt(matches[0], 10), g: parseInt(matches[1], 10), b: parseInt(matches[2], 10) };
+      value = { r: parseInt(matches[0]!, 10), g: parseInt(matches[1]!, 10), b: parseInt(matches[2]!, 10) };
     } else if (typeof value === 'string' && /hsl\(/.test(value)) {
       const matches = /hsl\((\d{1,3}), ?(\d{1,3}%), ?(\d{1,3}%)\)/.exec(value) ?? [];
-      value = { h: parseInt(matches[0], 10), s: parseInt(matches[1], 10), l: parseInt(matches[2], 10) };
+      value = { h: parseInt(matches[0]!, 10), s: parseInt(matches[1]!, 10), l: parseInt(matches[2]!, 10) };
     }
 
     if (typeof value === 'string') {

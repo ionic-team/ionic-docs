@@ -1,5 +1,5 @@
 import { Color, RGB } from './color';
-import { COLOR_NAMES, ColorVariable } from './color-variables';
+import { COLOR_NAMES, ColorVariable, GeneratedColorVariable } from './color-variables';
 
 export const generateSteppedColors = (background = '#ffffff', text = '#000000') => {
   const color = new Color(background);
@@ -8,7 +8,7 @@ export const generateSteppedColors = (background = '#ffffff', text = '#000000') 
   return colors.map((_, i) => color.mix(text, ((i + 1) * 5) / 100).hex);
 };
 
-export const generateColor = (value: string): ColorVariable => {
+export const generateColor = (value: string): GeneratedColorVariable => {
   const color = new Color(value);
   const contrast = color.contrast();
   const tint = color.tint();

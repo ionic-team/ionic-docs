@@ -58,7 +58,9 @@ When entering data into a modal, it is often desirable to have a way of preventi
 There are two different ways of using the `canDismiss` property: setting a boolean value or setting a callback function.
 
 :::note
+
 Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
+
 :::
 
 ### Setting a boolean value
@@ -112,7 +114,9 @@ The `presentingElement` property accepts a reference to the element that should 
 The `canDismiss` property can be used to control whether or not the card modal can be swiped to close.
 
 :::note
+
 The card display style is only available on iOS.
+
 :::
 
 import CardExample from '@site/static/usage/v8/modal/card/basic/index.mdx';
@@ -122,7 +126,9 @@ import CardExample from '@site/static/usage/v8/modal/card/basic/index.mdx';
 ## Sheet Modal
 
 :::info
+
 [Content](./content) should be used inside of the sheet modal if you want your modal content to be scrollable.
+
 :::
 
 Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
@@ -174,11 +180,15 @@ import SheetScrollingContentExample from '@site/static/usage/v8/modal/sheet/expa
 Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
+
 If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+
 :::
 
 :::note
+
 `ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
+
 :::
 
 ```

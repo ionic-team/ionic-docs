@@ -1,13 +1,15 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { type HTMLAttributes } from 'react';
+import Link from '@docusaurus/Link';
 
 import styles from './styles.module.css';
 
-export default function DocsButton({ href, round = false, ...props }) {
-  // const isInternal = /^\/docs/.test(href);
-
-  props.className = clsx({
-    [props.className]: Boolean(props.className),
+export default function DocsButton({
+  href,
+  round = false,
+  ...props
+}: HTMLAttributes<HTMLElement> & { href?: string; round?: boolean }) {
+  props.className = clsx(props.className, {
     [styles.docsButton]: true,
     'docs-button': true,
     [styles.docsButtonRound]: round,
@@ -15,9 +17,9 @@ export default function DocsButton({ href, round = false, ...props }) {
   });
 
   return href ? (
-    <a href={href} className="docsButton" {...props}>
+    <Link to={href} className="docsButton" {...props}>
       {props.children}
-    </a>
+    </Link>
   ) : (
     <button className="docsButton" {...props}>
       {props.children}

@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { type ComponentProps } from 'react';
 
 import styles from './index.module.scss';
 
-export default function AppWizard(props) {
+export default function AppWizard(props: ComponentProps<'div'>) {
   return (
     <div {...props} className={clsx(props.className, 'app-wizard', styles.appWizard)}>
       <div className="heading-group">
@@ -16,7 +16,7 @@ export default function AppWizard(props) {
       </div>
       <div>
         <a href="https://ionicframework.com/start" className="wizard-button">
-          ウィザードを開く <ion-icon name="arrow-forward-outline" />
+          ウィザードを開く
         </a>
       </div>
     </div>

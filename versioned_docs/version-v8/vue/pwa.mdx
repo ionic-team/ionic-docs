@@ -13,7 +13,7 @@ sidebar_label: Progressive Web Apps
 
 ## Making your Vue app a PWA with Vite
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
+The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
 
 To get started, install the `vite-plugin-pwa` package:
 
@@ -42,10 +42,12 @@ Refer to the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployme
 ## Making your Vue app a PWA with Vue CLI
 
 :::note
+
 As of Ionic CLI v7, Ionic Vue starter apps ship with Vite instead of Vue CLI. Refer to [Making your Vue app a PWA with Vite](#making-your-vue-app-a-pwa-with-vite) for Vite instructions.
+
 :::
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
+The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
 
 For existing projects, you can run the `vue add` command to install the PWA plugin for Vue.
 
@@ -54,7 +56,9 @@ vue add pwa
 ```
 
 :::note
+
 If you have changes already in place, be sure to commit them in Git.
+
 :::
 
 Once this is completed, Vue's CLI will have created a new `registerServiceWorker.ts` file and imported it into our `main.ts`.
@@ -165,7 +169,9 @@ npm install -g firebase-tools
 ```
 
 :::note
+
 If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+
 :::
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
@@ -179,7 +185,9 @@ Create a new Firebase project or select an existing one.
 **"What do you want to use as your public directory?"** Enter "dist".
 
 :::note
+
 Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
+
 :::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".

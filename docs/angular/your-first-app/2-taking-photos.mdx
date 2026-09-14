@@ -105,7 +105,9 @@ export class Tab2Page {
 ```
 
 :::note
+
 In a standalone app there is no global icon registry, so each icon you reference by name (like `camera`) must be registered with `addIcons`. Import the specific Ionic components a page uses from `@ionic/angular` and list them in the component's `imports` array.
+
 :::
 
 Then, open `tab2.page.html` and call the `addPhotoToGallery()` method when the FAB is tapped/clicked:

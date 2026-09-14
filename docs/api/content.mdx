@@ -1,6 +1,7 @@
 ---
-title: "ion-content"
+title: 'ion-content'
 ---
+
 import Props from '@ionic-internal/component-api/v9/content/props.mdx';
 import Events from '@ionic-internal/component-api/v9/content/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/content/methods.mdx';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/content/slots.mdx';
 
 <head>
   <title>ion-content: Scrollable Component for Ionic App Content</title>
-  <meta name="description" content="ion-contentは、スクロール可能な領域を制御する便利なメソッドを備えた、使いやすいコンテンツ領域を提供します。このIonicアプリ用CSSコンポーネントの詳細については、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-contentは、スクロール可能な領域を制御する便利なメソッドを備えた、使いやすいコンテンツ領域を提供します。このIonicアプリ用CSSコンポーネントの詳細については、こちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Contentコンポーネントは、スクロール可能領域を制御するいくつかの便利なメソッドを備えた、
 使いやすいコンテンツ領域を提供します。
@@ -24,13 +27,11 @@ Contentコンポーネントは、スクロール可能領域を制御するい�
 
 Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utilities](/docs/layout/css-utilities) で提供されるグローバルスタイルを使用するか、CSSおよび使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
 
-
 ## 基本的な使い方
 
 import Basic from '@site/static/usage/v9/content/basic/index.mdx';
 
 <Basic />
-
 
 ## Header & Footer
 
@@ -40,7 +41,6 @@ import HeaderFooter from '@site/static/usage/v9/content/header-footer/index.mdx'
 
 <HeaderFooter />
 
-
 ## Fullscreen Content
 
 デフォルトでは、コンテンツは [ヘッダー](./header)と [フッター](./footer)の間のスペースを埋めますが、それらの背景にまわることはありません。例えば、ヘッダーとフッターのどちらかに `translucent` プロパティを設定した場合や、ツールバーに `opacity` を設定した場合など、特定のケースでは、コンテンツをヘッダーとフッターの後ろにスクロールさせることが望まれるかもしれない。これは、コンテンツの `fullscreen` プロパティを `true` に設定することで実現することができます。
@@ -48,7 +48,6 @@ import HeaderFooter from '@site/static/usage/v9/content/header-footer/index.mdx'
 import Fullscreen from '@site/static/usage/v9/content/fullscreen/index.mdx';
 
 <Fullscreen />
-
 
 ## コンテンツの固定
 
@@ -75,7 +74,6 @@ import ScrollMethods from '@site/static/usage/v9/content/scroll-methods/index.md
 import ScrollEvents from '@site/static/usage/v9/content/scroll-events/index.mdx';
 
 <ScrollEvents />
-
 
 ## テーマ
 
@@ -161,21 +159,26 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,9 +1,9 @@
-import React, { type ReactNode } from 'react';
+import React, { type ComponentProps, type ReactNode } from 'react';
 
 import sidebars from '@site/sidebars';
 import clsx from 'clsx';
 
-function APIList({ sidebar, ...props }): ReactNode {
+function APIList({ sidebar, ...props }: ComponentProps<'div'> & { sidebar?: unknown }): ReactNode {
   return (
     <div {...props} className={clsx(props.className, 'api-list')}>
       {sidebars.api.map((section) => {

@@ -1,6 +1,7 @@
 ---
-title: "ion-reorder"
+title: 'ion-reorder'
 ---
+
 import Props from '@ionic-internal/component-api/v9/reorder/props.mdx';
 import Events from '@ionic-internal/component-api/v9/reorder/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/reorder/methods.mdx';
@@ -10,18 +11,19 @@ import Slots from '@ionic-internal/component-api/v9/reorder/slots.mdx';
 
 <head>
   <title>ion-reorder: Drag and Drop Icon to Reorder Items</title>
-  <meta name="description" content="ion-reorderは、ion-reorder-groupの中のアイテムをドラッグ＆ドロップするために使用されるアンカーです。カスタム並び替えアイコンとアイテムの詳細については、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-reorderは、ion-reorder-groupの中のアイテムをドラッグ＆ドロップするために使用されるアンカーです。カスタム並び替えアイコンとアイテムの詳細については、こちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Reorderは、アイテムのグループ内での順序を変更するためにアイテムをドラッグできるようにするコンポーネントです。視覚的なドラッグ＆ドロップのインターフェイスを提供するために、[reorder group](./reorder-group)内で使用されなければなりません。
 
 Reorderは、アイテムをドラッグ＆ドロップするために使用されるアンカーです。Reorderが完了すると、reorder groupから`ionReorderEnd`イベントが発行され、`complete`メソッドを呼び出す必要があります。
-
 
 ## 基本的な使い方
 
@@ -31,7 +33,6 @@ import Basic from '@site/static/usage/v9/reorder/basic/index.mdx';
 
 <Basic />
 
-
 ## 並べ替えの切り替え
 
 場合によっては、並べ替えの機能を切り替えるオプションが欲しいかもしれない。これは、関数や変数に基づいて `disabled` プロパティをリアクティブにすることで実現できます。
@@ -39,7 +40,6 @@ import Basic from '@site/static/usage/v9/reorder/basic/index.mdx';
 import TogglingDisabled from '@site/static/usage/v9/reorder/toggling-disabled/index.mdx';
 
 <TogglingDisabled />
-
 
 ## Custom Reorder Icon
 
@@ -49,7 +49,6 @@ import CustomIcon from '@site/static/usage/v9/reorder/custom-icon/index.mdx';
 
 <CustomIcon />
 
-
 ## Reorder Wrapper
 
 並び替えは、項目を囲むラッパーとして使うこともできます。下の項目のどこかをクリックし、ドラッグすると、リストの順番を入れ替えることができます。
@@ -57,7 +56,6 @@ import CustomIcon from '@site/static/usage/v9/reorder/custom-icon/index.mdx';
 import Wrapper from '@site/static/usage/v9/reorder/wrapper/index.mdx';
 
 <Wrapper />
-
 
 ## データの更新
 
@@ -105,21 +103,26 @@ import CustomScrollTarget from '@site/static/usage/v9/reorder/custom-scroll-targ
 
 <CustomScrollTarget />
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -10,7 +10,7 @@ title: Testing
   />
 </head>
 
-When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application. This is the same setup that is used by the Angular CLI. Refer to the <a href="https://angular.io/guide/testing" target="_blank">Angular Testing Guide</a> for detailed information on testing Angular applications.
+When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application. This is the same setup that is used by the Angular CLI. Refer to the [Angular Testing Guide](https://angular.io/guide/testing) for detailed information on testing Angular applications.
 
 ## Testing Principles
 
@@ -76,7 +76,7 @@ The outer `describe` call states that the `Calculation` service is being tested,
 
 ### Pages and Components
 
-Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidelines.
+Pages are just Angular components. Thus, pages and components are both tested using [Angular's Component Testing](https://angular.io/guide/testing#component-test-basics) guidelines.
 
 Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
 
@@ -208,7 +208,7 @@ describe('PayrolService', () => {
 
 #### Testing HTTP Data Services
 
-Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please refer to Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
+Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please refer to Angular's [Angular's Testing HTTP requests](https://angular.io/guide/http#testing-http-requests) guide.
 
 This basic setup for such a test looks like this:
 

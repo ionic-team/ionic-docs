@@ -60,7 +60,9 @@ import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/inde
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
 :::note
+
 Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+
 :::
 
 import Alignment from '@site/static/usage/v8/radio/alignment/index.mdx';
@@ -76,7 +78,9 @@ import Justify from '@site/static/usage/v8/radio/justify/index.mdx';
 <Justify />
 
 :::note
+
 `ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+
 :::
 
 ## Deselecting Radios

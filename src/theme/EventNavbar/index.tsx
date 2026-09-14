@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import styles from './styles.module.css';
 
 const limitDatetime = '2022-07-09 14:00:00';
 
-function EventNavbar(): JSX.Element {
+function EventNavbar(): ReactNode {
   return (
     new Date().getTime() < new Date(limitDatetime).getTime() && (
       <section className={styles.eventNavbar}>

@@ -19,7 +19,7 @@ CSS ベースのテーマ設定では、CSS ファイルをロードするか、
 
 メタタグの `theme-color` は、ブラウザがページや周囲のインターフェイスの表示をカスタマイズするために使用する色を示します。この種類の meta タグはメディアクエリも受け付けることができ、開発者はライトモードとダークモードの両方でテーマカラーを設定することができます。
 
-メタタグ `theme-color` の `content` 値には、有効な <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> を含める必要があり、CSS Variables を含めることはできません。
+メタタグ `theme-color` の `content` 値には、有効な [CSS Color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) を含める必要があり、CSS Variables を含めることはできません。
 
 :::note
 `Theme-color`メタは、Web ブラウザまたは PWA として実行するときにインターフェースのテーマを制御し、アプリが Capacitor または Cordova を使用してデプロイされるときには影響しません。ステータスバーの下の領域をカスタマイズしたい場合は、[Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar)を使用することをお勧めします。
@@ -46,7 +46,7 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 ブラウザは `manifest.json` に `theme` よりも `theme-color` メタが存在する場合、それを優先します。
 :::
 
-詳細については、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN のテーマカラードキュメント</a>を参照してください。
+詳細については、[MDN のテーマカラードキュメント](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color)を参照してください。
 
 ## グローバル変数
 
@@ -86,7 +86,7 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 
 ### アルファ値の問題 {/* #the-alpha-problem */}
 
-16 進数カラーのアルファ使用については、まだ完全な<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">ブラウザサポート</a>はありません。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> 関数は、`R, G, B, A`（赤、緑、青、アルファ）のフォーマットのみ利用可能です。次のコードは、`rgba()` に受け渡される正しい値と間違った値の例を示しています。
+16 進数カラーのアルファ使用については、まだ完全な[ブラウザサポート](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility)はありません。[`rgba()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()>) 関数は、`R, G, B, A`（赤、緑、青、アルファ）のフォーマットのみ利用可能です。次のコードは、`rgba()` に受け渡される正しい値と間違った値の例を示しています。
 
 ```css
 /* These examples use the same color: blueviolet. */

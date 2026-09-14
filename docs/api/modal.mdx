@@ -1,6 +1,7 @@
 ---
-title: "ion-modal"
+title: 'ion-modal'
 ---
+
 import Props from '@ionic-internal/component-api/v9/modal/props.mdx';
 import Events from '@ionic-internal/component-api/v9/modal/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/modal/methods.mdx';
@@ -10,16 +11,17 @@ import Slots from '@ionic-internal/component-api/v9/modal/slots.mdx';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
-  <meta name="description" content="ion-modal は、モバイルアプリケーションのコンテンツの上に表示されるダイアログで、インタラクションを再開する前に解除する必要があります。カスタムモーダルコンポーネントについて詳しくはこちら" />
+  <meta
+    name="description"
+    content="ion-modal は、モバイルアプリケーションのコンテンツの上に表示されるダイアログで、インタラクションを再開する前に解除する必要があります。カスタムモーダルコンポーネントについて詳しくはこちら"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 Modalは、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Selectコンポーネントとして役立ちます。
-
 
 ## インラインモーダル(推奨)
 
@@ -56,7 +58,7 @@ import ControllerExample from '@site/static/usage/v9/modal/controller/index.mdx'
 canDismiss`プロパティの使用方法には、boolean値の設定とコールバック関数の設定の2種類があります。
 
 :::note
- Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
+Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
 :::
 
 ### boolean値の設定
@@ -175,7 +177,6 @@ import SheetScrollingContentExample from '@site/static/usage/v9/modal/sheet/expa
 IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下のAngularセクションの [Style Placement](#style-placement) をお読みください。
 :::
 
-
 :::note
 `ion-modal` は、積み重ねられたモーダルは同じサイズであるという前提で動作します。その結果、後続の各モーダルはボックスシャドウを持たず、背景の不透明度は `0` になります。これは、モーダルが追加されるたびに影や背景が濃くなるのを避けるためです。これは、CSS 変数 `--box-shadow` と `--backdrop-opacity` を設定することで変更することができます。
 :::
@@ -209,8 +210,8 @@ import CustomDialogs from '@site/static/usage/v9/modal/custom-dialogs/index.mdx'
 
 カスタムダイアログを作成する際に注意すべき点がいくつかあります。
 
-* `ion-content` は、フルページモダル、カード、シートで使用することを意図しています。カスタムダイアログのサイズが動的であったり、不明であったりする場合は、 `ion-content` を使用するべきではありません。
-* カスタムダイアログを作成することは、デフォルトのモーダルエクスペリエンスから逃れる方法を提供します。そのため、カスタムダイアログは、カードやシートのモーダルでは使用しないでください。
+- `ion-content` は、フルページモダル、カード、シートで使用することを意図しています。カスタムダイアログのサイズが動的であったり、不明であったりする場合は、 `ion-content` を使用するべきではありません。
+- カスタムダイアログを作成することは、デフォルトのモーダルエクスペリエンスから逃れる方法を提供します。そのため、カスタムダイアログは、カードやシートのモーダルでは使用しないでください。
 
 ## Event Handling
 
@@ -263,6 +264,7 @@ interface ModalOptions {
   handle?: boolean;
 }
 ```
+
 ### ModalCustomEvent
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
@@ -348,10 +350,9 @@ interface ModalDragEventDetail {
 
 ### Keyboard Interactions
 
-| Key             | Description         |
-| --------------- | ------------------- |
-| <kbd>Esc</kbd>  | Dismisses the modal |
-
+| Key            | Description         |
+| -------------- | ------------------- |
+| <kbd>Esc</kbd> | Dismisses the modal |
 
 ### ラベル
 
@@ -398,19 +399,25 @@ import Mount from '@site/static/usage/v9/modal/performance/mount/index.mdx';
 - インナー コンポーネントの JavaScript Framework ライフサイクル フックはすべて、モーダルが表示されたときではなく、モーダルがマウントされたときに実行されます。
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

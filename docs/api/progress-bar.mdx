@@ -1,6 +1,7 @@
 ---
-title: "ion-progress-bar"
+title: 'ion-progress-bar'
 ---
+
 import Props from '@ionic-internal/component-api/v9/progress-bar/props.mdx';
 import Events from '@ionic-internal/component-api/v9/progress-bar/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/progress-bar/methods.mdx';
@@ -10,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v9/progress-bar/slots.mdx';
 
 <head>
   <title>ion-progress-bar: App Progress Bar for Loading Indicator</title>
-  <meta name="description" content="ion-progress-barは、水平方向の読み込みインジケーターで、フォームの送信や更新の保存など、進行中のアプリ処理のステータスをユーザーに知らせます。" />
+  <meta
+    name="description"
+    content="ion-progress-barは、水平方向の読み込みインジケーターで、フォームの送信や更新の保存など、進行中のアプリ処理のステータスをユーザーに知らせます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 プログレスバーは、アプリのロード、フォームの送信、更新の保存など、進行中の処理の状態をユーザーに知らせるものです。プログレスバーには2つのタイプがあります。プログレスバーには、`determinate`と`indeterminate`の2種類があります。
 
@@ -36,7 +39,6 @@ import Buffer from '@site/static/usage/v9/progress-bar/buffer/index.mdx';
 
 <Buffer />
 
-
 ## Indeterminate
 
 Indeterminateタイプは、処理にかかる時間が不明な場合に使用します。プログレスバーは `value` と連動しておらず、処理が完了するまでトラックに沿ってスライドしつづけます。
@@ -45,14 +47,12 @@ import Indeterminate from '@site/static/usage/v9/progress-bar/indeterminate/inde
 
 <Indeterminate />
 
-
 ## Progress Bars in Toolbars
 
 {/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v9/toolbar/progress-bars/index.mdx';
 
 <Toolbar />
-
 
 ## テーマ
 
@@ -62,13 +62,11 @@ import Colors from '@site/static/usage/v9/progress-bar/theming/colors/index.mdx'
 
 <Colors />
 
-
 ## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v9/progress-bar/theming/css-properties/index.mdx';
 
 <CSSProps />
-
 
 ### CSS Shadow Parts
 
@@ -76,21 +74,26 @@ import CSSParts from '@site/static/usage/v9/progress-bar/theming/css-shadow-part
 
 <CSSParts />
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

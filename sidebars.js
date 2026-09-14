@@ -8,6 +8,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Upgrade Guides',
+      collapsed: false,
+      items: ['updating/9-0', 'updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
+    },
+    {
+      type: 'category',
       label: 'アップグレードガイド',
       collapsed: false,
       items: ['updating/9-0', 'updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],

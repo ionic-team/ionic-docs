@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 
 import './best-practice-figure.css';
 
@@ -54,6 +54,14 @@ export default function BestPracticeFigure({
   doImage,
   doNotImage,
   cautionImage,
+}: {
+  text: ReactNode;
+  doText: ReactNode;
+  doNotText?: ReactNode;
+  cautionText?: ReactNode;
+  doImage: ReactNode;
+  doNotImage?: ReactNode;
+  cautionImage?: ReactNode;
 }) {
   return (
     <div className="best-practice__container">

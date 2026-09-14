@@ -22,7 +22,9 @@ $ ionic capacitor run android -l --external
 ```
 
 :::note
+
 Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+
 :::
 
 ### Cordova
@@ -50,7 +52,9 @@ ionic cordova run ios -l --external
 ```
 
 :::note
+
 Remember, with the `--external` option, others on your Wi-Fi network will be able to access your app.
+
 :::
 
 ## Tips

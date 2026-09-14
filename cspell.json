@@ -10,8 +10,7 @@
   "ignoreRegExpList": [
     "/(```+)[\\s\\S]+?\\1/g",
     "`([^`]*)`",
-    "/:[a-zA-Z0-9-_\\+]+:/g",
-    "/\\]\\([^)]*\\)/g"
+    "/:[a-zA-Z0-9-_\\+]+:/g"
   ],
   "ignorePaths": [
     "docs/cli",
@@ -21,8 +20,10 @@
     "versioned_docs/**/native",
     "versioned_docs/version-v5",
     "versioned_docs/version-v6",
-    "node_modules",
-    "src/translate"
+    "versioned_docs/version-v7",
+    "src/translate",
+    "scripts/build-translate",
+    "node_modules"
   ],
   "flagWords": [
     "hte"

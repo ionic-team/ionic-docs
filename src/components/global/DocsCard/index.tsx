@@ -11,7 +11,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   icon?: string;
   hoverIcon?: string;
   iconset?: string;
-  ionicon?: string;
   img?: string;
   size?: 'md' | 'lg';
 }
@@ -32,7 +31,6 @@ function DocsCard(props: Props): ReactNode {
             {hoverIcon && <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover" />}
           </div>
         )}
-        {props.ionicon && <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>}
         {props.iconset && (
           <div className="Card-icon-row">
             {props.iconset.split(',').map((icon, index, array) => (
@@ -53,11 +51,10 @@ function DocsCard(props: Props): ReactNode {
     </>
   );
 
-  const className = clsx({
+  const className = clsx(props.className, {
     'Card-with-image': typeof props.img !== 'undefined',
     'Card-without-image': typeof props.img === 'undefined',
     'Card-size-lg': props.size === 'lg',
-    [props.className]: props.className,
   });
 
   if (isStatic) {

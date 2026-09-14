@@ -10,11 +10,11 @@ title: CSS Shadow Parts
   />
 </head>
 
-CSS Shadow Parts は、開発者がシャドウツリー内の要素に CSS プロパティをスタイル設定することを可能にします。これは、Ionic Framework <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a>コンポーネントをカスタマイズする際に非常に便利です。
+CSS Shadow Parts は、開発者がシャドウツリー内の要素に CSS プロパティをスタイル設定することを可能にします。これは、Ionic Framework [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)コンポーネントをカスタマイズする際に非常に便利です。
 
 ## なぜ Shadow Parts?
 
-Ionic Framework は、<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>の分散型セットです。Web Components は、スタイルとマークアップをカプセル化するために<a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM の仕様</a>に従っています。
+Ionic Framework は、[Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)の分散型セットです。Web Components は、スタイルとマークアップをカプセル化するために[Shadow DOM の仕様](https://w3c.github.io/webcomponents/spec/shadow/)に従っています。
 
 :::note
 Ionic Framework のコンポーネントは、すべてが Shadow DOM コンポーネントというわけ**ではありません**。Shadow DOM コンポーネントの場合、その[コンポーネントのドキュメント](../components.mdx)の右上にバッジが表示されます。Shadow DOM コンポーネントの例としては、[ボタンコンポーネント](../api/button.mdx)があります。
@@ -68,7 +68,7 @@ Shadow Parts は、開発者がシャドウツリーの外側から、シャド�
 ### ::part の動作方法 {/* #how-part-works */}
 
 {/* prettier-ignore */}
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank" rel="noopener noreferrer">`::part()`</a> 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。
+[`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) 擬似要素により、開発者はPart属性で公開されているシャドウツリー内の要素を選択することができます。
 
 `ion-select` は、値が選択されていないときにテキストをスタイル付けするための `placeholder` Part を公開していることが分かっているので、次のようにカスタマイズすることができます。
 
@@ -81,7 +81,7 @@ ion-select::part(placeholder) {
 
 `part` を使ったスタイリングでは、その要素で受け付けられる任意の CSS プロパティを変更することができます。
 
-part をターゲットにできることに加え、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank" rel="noopener noreferrer">擬似要素</a>を明示的に露出させずにスタイル付けすることができます。
+part をターゲットにできることに加え、[擬似要素](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)を明示的に露出させずにスタイル付けすることができます。
 
 ```css
 ion-select::part(placeholder)::first-letter {
@@ -90,7 +90,7 @@ ion-select::part(placeholder)::first-letter {
 }
 ```
 
-Parts は、ほとんどの<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">擬似クラス</a>でも動作します。
+Parts は、ほとんどの[擬似クラス](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)でも動作します。
 
 ```css
 ion-item::part(native):hover {
@@ -113,20 +113,18 @@ Ionic Framework のコンポーネントのすべての公開部分は、その 
 - 子要素は構造的なものではありません。`ion-title` を含む特定のコンポーネントでは、子要素は内部要素を配置するために使用される構造的な要素です。構造的な要素をカスタマイズすることは、予期しない結果をもたらす可能性があるため、お勧めしません。
 
 :::note
-追加 parts の推奨を歓迎します。parts をリクエストする際は、<a href="https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+" target="_blank" rel="noopener noreferrer">new GitHub issue</a> にできるだけ多くの情報を添えて作成してください。
+追加 parts の推奨を歓迎します。parts をリクエストする際は、[new GitHub issue](https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+) にできるだけ多くの情報を添えて作成してください。
 :::
 
 ## 既知の制限
 
 ### ブラウザサポート
 
-CSS Shadow Parts は最近のすべてのメジャーブラウザでサポートされています。ただし、一部の古いバージョンでは shadow parts がサポートされていません。アプリに parts を実装する前に、<a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">ブラウザのサポート</a>が要件を満たしていることを確認してください。旧バージョンのブラウザのサポートが必要な場合は、引き続き [CSS Variables](../theming/css-variables.mdx) を使用してスタイリングすることをお勧めします。
+CSS Shadow Parts は最近のすべてのメジャーブラウザでサポートされています。ただし、一部の古いバージョンでは shadow parts がサポートされていません。アプリに parts を実装する前に、[ブラウザのサポート](https://caniuse.com/#feat=mdn-css_selectors_part)が要件を満たしていることを確認してください。旧バージョンのブラウザのサポートが必要な場合は、引き続き [CSS Variables](../theming/css-variables.mdx) を使用してスタイリングすることをお勧めします。
 
 ### ベンダープレフィックス擬似要素 {/* #vendor-prefixed-pseudo-elements */}
 
-<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
-  ベンダープレフィックス付き
-</a>
+[ベンダープレフィックス付き](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)
 の疑似要素は、現時点ではサポートされていません。例としては、`::-webkit-scrollbar`のいずれかの疑似要素が挙げられます。
 
 ```css
@@ -136,11 +134,11 @@ my-component::part(scroll)::-webkit-scrollbar {
 }
 ```
 
-詳細については、<a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">GitHub のこの issue</a>を参照してください。
+詳細については、[GitHub のこの issue](https://github.com/w3c/csswg-drafts/issues/4530)を参照してください。
 
 ### 構造的な擬似クラス {/* #structural-pseudo-classes */}
 
-ほとんどの擬似クラスは Parts でサポートされていますが、<a href="https://www.w3.org/TR/selectors-4/#structural-pseudos" target="_blank" rel="noopener noreferrer">構造的な擬似クラス</a>はサポートされていません。動作しない構造的擬似クラスの例を以下に示します。
+ほとんどの擬似クラスは Parts でサポートされていますが、[構造的な擬似クラス](https://www.w3.org/TR/selectors-4/#structural-pseudos)はサポートされていません。動作しない構造的擬似クラスの例を以下に示します。
 
 ```css
 /* Does NOT work */

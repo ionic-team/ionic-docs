@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ComponentProps } from 'react';
 import clsx from 'clsx';
 import InputWrapper from '../InputWrapper';
 
@@ -6,7 +6,11 @@ import { useColorMode } from '@docusaurus/theme-common';
 
 import styles from './index.module.scss';
 
-export default function ColorInput({ color, setColor, ...props }) {
+export default function ColorInput({
+  color,
+  setColor,
+  ...props
+}: ComponentProps<'div'> & { color: string; setColor: (color: string) => void }) {
   const { colorMode } = useColorMode();
 
   return (

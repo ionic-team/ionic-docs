@@ -62,7 +62,9 @@ import Theming from '@site/static/usage/v8/loading/theming/index.mdx';
 <Theming />
 
 :::note
+
 `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
+
 :::
 
 ## Accessibility

@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
 
 export default function ColorAccordion({ ...props }) {
-  const [colors, setColors] = useState([]);
+  const [colors, setColors] = useState<string[]>([]);
 
   const [activeColor, setActiveColor] = useState('');
 
@@ -14,14 +14,19 @@ export default function ColorAccordion({ ...props }) {
     setColors(['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'dark', 'medium', 'light']);
   }, []);
 
-  const getColors = useCallback(
-    (color) => ({
-      baseColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}`),
-      shadeColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-shade`),
-      tintColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-tint`),
-    }),
-    []
-  );
+  const getColors = useCallback((color: string) => {
+    /**
+     * `colors` is empty until the effect below fills it, so the list has already
+     * rendered by the time this runs and the ref is set.
+     */
+    const computed = getComputedStyle(el.current!);
+
+    return {
+      baseColor: computed.getPropertyValue(`--ion-color-${color}`),
+      shadeColor: computed.getPropertyValue(`--ion-color-${color}-shade`),
+      tintColor: computed.getPropertyValue(`--ion-color-${color}-tint`),
+    };
+  }, []);
 
   return (
     <ul

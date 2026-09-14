@@ -1,6 +1,7 @@
 ---
-title: "ion-input"
+title: 'ion-input'
 ---
+
 import Props from '@ionic-internal/component-api/v9/input/props.mdx';
 import Events from '@ionic-internal/component-api/v9/input/events.mdx';
 import Methods from '@ionic-internal/component-api/v9/input/methods.mdx';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v9/input/slots.mdx';
 
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
-  <meta name="description" content="ion-inputは、HTMLのinput要素のラッパーで、カスタムな値型のスタイルと機能を備えています。デスクトップでも動作し、モバイルではキーボードと統合されます。" />
+  <meta
+    name="description"
+    content="ion-inputは、HTMLのinput要素のラッパーで、カスタムな値型のスタイルと機能を備えています。デスクトップでも動作し、モバイルではキーボードと統合されます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -168,7 +172,7 @@ import StartEndSlots from '@site/static/usage/v9/input/start-end-slots/index.mdx
 `color`プロパティを設定すると、各Inputのカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
 
 :::note
-The `color` property does *not* change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
+The `color` property does _not_ change the text color of the input. For that, use the [`--color` CSS property](#css-custom-properties-1).
 :::
 
 import Colors from '@site/static/usage/v9/input/theming/colors/index.mdx';
@@ -205,19 +209,25 @@ interface InputCustomEvent extends CustomEvent {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

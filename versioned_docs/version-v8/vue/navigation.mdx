@@ -163,7 +163,9 @@ ionRouter.navigate('/page2', 'forward', 'replace', customAnimation);
 The example above has the app navigate to `/page2` with a custom animation that uses the forward direction. In addition, the `replace` value ensures that the app replaces the current history entry when navigating.
 
 :::note
+
 `useIonRouter` uses the Vue `inject()` function and should only be used inside of your `setup()` function.
+
 :::
 
 Refer to the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
