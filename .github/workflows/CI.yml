@@ -33,6 +33,7 @@ jobs:
       run: npm run typecheck
     - name: 🔤 Spell Check
       run: npm run spellcheck
+    - uses: ./.github/workflows/actions/check-admonitions
     - uses: ./.github/workflows/actions/check-translations
     # Lint and spell check changes should be pushed
     # to the branch before the branch is merge eligible.

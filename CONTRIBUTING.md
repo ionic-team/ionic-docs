@@ -99,17 +99,17 @@ npm run spellcheck
 - A **directory** or anything matching a **regular expression**, update the following file: `cspell.json`
   - For example, we don't want to flag anything inside of code ticks (<code>`</code>) or code blocks (<code>```</code>), so there are regular expressions added to ignore anything inside of these.
 - An **entire line**, add the following comment above it:
-  ```markdown
-  <!-- cspell:disable-next-line -->
+  ```mdx
+  {/* cspell:disable-next-line */}
   ```
 - **Multiple lines**, add comments above and below the lines to be ignored:
 
-  ```markdown
-  <!-- cspell:disable -->
+  ```mdx
+  {/* cspell:disable */}
 
   <p>Everything inside of these comments will be ignored by the spell checkr. Proofread your own words carefully.</p>
 
-  <!-- cspell:enable -->
+  {/* cspell:enable */}
   ```
 
 > [!IMPORTANT]

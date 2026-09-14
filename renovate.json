@@ -11,6 +11,7 @@
   "semanticCommits": "enabled",
   "rebaseWhen": "never",
   "includePaths": [
+    "package.json",
     "static/code/stackblitz/**/*/package.json", 
     ".github/workflows/**"
   ],
@@ -22,21 +23,25 @@
     {
       "matchPackageNames": ["@ionic/**"],
       "minimumReleaseAge": "0 days",
-      "groupName": "ionic"
+      "groupName": "ionic",
+      "matchFileNames": ["static/code/stackblitz/**"]
     },
     {
       "description": "Angular majors land on a fixed cadence, so this group is restricted to the 1st of each month, 6-10am ET.",
       "matchPackageNames": ["@angular/**", "@angular-devkit/**"],
       "groupName": "angular",
-      "schedule": ["* 6-10 1 * *"]
+      "schedule": ["* 6-10 1 * *"],
+      "matchFileNames": ["static/code/stackblitz/**"]
     },
     {
       "matchPackageNames": ["react", "react-dom"],
-      "groupName": "react"
+      "groupName": "react",
+      "matchFileNames": ["static/code/stackblitz/**"]
     },
     {
       "matchPackageNames": ["react-router", "react-router-dom"],
-      "groupName": "react-router"
+      "groupName": "react-router",
+      "matchFileNames": ["static/code/stackblitz/**"]
     },
     {
       "matchPackageNames": ["vite", "vite-plugin-static-copy"],
@@ -126,6 +131,24 @@
         "static/code/stackblitz/v9/react/package.json",
         "static/code/stackblitz/v9/vue/package.json"
       ]
+    },
+    {
+      "matchPackageNames": ["@docusaurus/**"],
+      "groupName": "docusaurus",
+      "matchFileNames": ["package.json"]
+    },
+    {
+      "description": "Docusaurus 3 supports react 19.",
+      "matchPackageNames": ["react", "react-dom"],
+      "allowedVersions": "<20.0.0",
+      "groupName": "react-root",
+      "matchFileNames": ["package.json"]
+    },
+    {
+      "description": "Docusaurus 3 requires typescript v5.",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<6.0.0",
+      "matchFileNames": ["package.json"]
     }
   ]
 }

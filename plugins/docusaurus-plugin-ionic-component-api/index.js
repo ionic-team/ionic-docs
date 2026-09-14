@@ -86,32 +86,6 @@ module.exports = function (context, options) {
           createData(`${basePath}/custom-props.mdx`, data.customProps),
           createData(`${basePath}/slots.mdx`, data.slots)
         );
-
-        /**
-         * TODO(FW-6456): Remove once all branches import the `.mdx` names instead of `.md`.
-         * Transitional: the `.md` names are still imported by pages this repo does not
-         * control on every branch at once.
-         *
-         * - `scripts/i18n.sh` copies the `translation/jp` branch's `docs/` tree into
-         *   `i18n/ja` on every build, and those copies still import `.md`.
-         * - Major branches keep their own api pages. Until each is rewritten, a sync that
-         *   brings this plugin over would otherwise leave them importing names it no longer
-         *   emits.
-         *
-         * Emitted unconditionally on purpose. Guarding on locale only holds on a branch whose
-         * pages have already been rewritten, so it reintroduces exactly the coupling this
-         * avoids. These land in `.docusaurus`, not a docs content root, so they are never
-         * routed as pages and the duplicate basenames cannot collide.
-         *
-         * Remove once `translation/jp` and every live branch import the `.mdx` names.
-         */
-        promises.push(
-          createData(`${basePath}/props.md`, data.props),
-          createData(`${basePath}/events.md`, data.events),
-          createData(`${basePath}/methods.md`, data.methods),
-          createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/slots.md`, data.slots)
-        );
       }
 
       await Promise.all(promises);
@@ -126,21 +100,6 @@ module.exports = function (context, options) {
         resolve: {
           alias: {
             '@ionic-internal/component-api': `${context.siteDir}/.docusaurus/docusaurus-plugin-ionic-component-api/default`,
-          },
-          /**
-           * TODO(FW-6456): Remove once every branch imports the `.mdx` names.
-           *
-           * Lets a `.md` import resolve to a `.mdx` file. The Japanese site is
-           * built from this branch's tree combined with prose pulled from
-           * `translation/jp`, so a rename here breaks those imports until that
-           * branch catches up. This has to merge first, and the translation
-           * branch can then follow at any interval.
-           *
-           * Applies to every `.md` import in the repo, so a stale `.mdx` next
-           * to a `.md` will shadow it.
-           */
-          extensionAlias: {
-            '.md': ['.mdx', '.md'],
           },
         },
       };

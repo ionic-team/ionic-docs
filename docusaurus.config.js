@@ -46,18 +46,27 @@ module.exports = {
     },
   },
   onBrokenLinks: 'warn',
-  /**
-   * Docusaurus Faster replaces the Webpack/Babel/Terser toolchain with
-   * Rspack/SWC/Lightning CSS, which cuts build times and memory usage on a
-   * site with this many versioned pages. It becomes the default in v4.
-   *
-   * `removeLegacyPostBuildHeadAttribute` is required by the `ssgWorkerThreads`
-   * part of `faster`, so it has to be enabled alongside it.
-   */
   future: {
     v4: {
+      /**
+       * Turns off the MDX v1 shims for comments, admonition titles and
+       * heading ids. Every page uses the native syntax, so the shims are
+       * no-ops, and disabling them means a page that reintroduces the old
+       * syntax fails the build now rather than on the upgrade. It becomes
+       * the default in v4.
+       */
+      mdx1CompatDisabledByDefault: true,
+      /**
+       * Required by the `ssgWorkerThreads` part of `faster`, so it has to
+       * be enabled alongside it. It becomes the default in v4.
+       */
       removeLegacyPostBuildHeadAttribute: true,
     },
+    /**
+     * Replaces the Webpack/Babel/Terser toolchain with Rspack/SWC/Lightning
+     * CSS, which cuts build times and memory usage on a site with this many
+     * versioned pages. It becomes the default in v4.
+     */
     faster: true,
   },
   markdown: {

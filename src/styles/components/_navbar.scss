@@ -1,3 +1,5 @@
+@use '../mixins';
+
 html[data-theme='light'] {
   --navbar-link-c: var(--c-indigo-80);
 
@@ -107,12 +109,7 @@ html[data-theme='dark'] {
         }
 
         &::after {
-          content: '';
-          width: 12px;
-          height: 12px;
-          mask-size: 100% 100%;
-          background-color: currentColor;
-          mask-image: url("../../static/icons/arrow-forward-outline.svg");
+          @include mixins.icon-mask('../../static/icons/arrow-forward-outline.svg');
           margin-inline-start: 0.125rem;
         }
 
