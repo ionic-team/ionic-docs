@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import React from 'react';
 import releases from './release-notes.json';
@@ -42,7 +43,7 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
 
       <p>
         See versioning for information about our{' '}
-        <a href="/docs/reference/versioning">policy and commitment to stability</a>.
+        <Link to="/reference/versioning">policy and commitment to stability</Link>.
       </p>
       <div className={styles['release-notes']}>
         {releases.map((release: Release, index) => (
