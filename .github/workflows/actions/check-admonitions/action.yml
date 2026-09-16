@@ -14,6 +14,9 @@ runs:
     #
     # Only the files the pull request touches are checked, so an existing
     # page is never anyone else's problem to fix.
+    #
+    # The caller has to check out with `fetch-depth: 0`, which a composite
+    # action cannot require for itself.
     - name: 🔎 Check Admonitions
       shell: bash
       env:
