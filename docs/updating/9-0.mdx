@@ -61,7 +61,7 @@ npm install @ionic/angular@latest @ionic/angular-server@latest @ionic/angular-to
 
 Ionic 9 は zoneless 変更検出をサポートします。Angular 21 では zoneless がデフォルトになったため、Angular 21 以降の新しい Ionic 9 アプリは最初から Zone.js なしで動作し、変更検出用のプロバイダーは不要です。
 
-Zone.js がない場合、非同期コールバック（オーバーレイ結果の await、`setTimeout`、RxJS の購読、`Platform` イベント）からコンポーネントの状態を更新しても、Angular は自動では再描画しません。そのような場合は、signal または `ChangeDetectorRef.markForCheck()` で Angular に通知する必要があります。Ionic アプリで使うパターンについては、[Zoneless 変更検出](/docs/angular/zoneless.mdx)を参照してください。
+Zone.js がない場合、非同期コールバック（オーバーレイ結果の await、`setTimeout`、RxJS の購読、`Platform` イベント）からコンポーネントの状態を更新しても、Angular は自動では再描画しません。そのような場合は、signal または `ChangeDetectorRef.markForCheck()` で Angular に通知する必要があります。Ionic アプリで使うパターンについては、[Zoneless 変更検出](/angular/zoneless.mdx)を参照してください。
 
 :::note
 Angular 18 から 20 では、Zone.js が引き続き Angular のデフォルトのため、これらのバージョンでは影響はなく、対応は不要です。Angular 18 から 20 で zoneless を採用するには、`provideZonelessChangeDetection()`（Angular 18 と 19 では `provideExperimentalZonelessChangeDetection()`）を追加し、`angular.json` の `polyfills` 配列から `zone.js` を削除してください。
@@ -152,7 +152,7 @@ Ionic 9 では、スタンドアロンコンポーネントがデフォルトの
 
 #### IonicModule の非推奨化
 
-`IonicModule` は Ionic 9 で非推奨となり、将来のメジャーバージョンで削除されます。引き続き完全に機能するため、直ちに対応する必要はありません。準備ができたら、スタンドアロンと NgModule ベースの両方のアプリで使える `provideIonicAngular()` へ移行してください。[Modules から Standalone への移行](/docs/angular/build-options.mdx#migrating-from-modules-to-standalone)を参照してください。
+`IonicModule` は Ionic 9 で非推奨となり、将来のメジャーバージョンで削除されます。引き続き完全に機能するため、直ちに対応する必要はありません。準備ができたら、スタンドアロンと NgModule ベースの両方のアプリで使える `provideIonicAngular()` へ移行してください。[Modules から Standalone への移行](/angular/build-options.mdx#migrating-from-modules-to-standalone)を参照してください。
 
 #### CSS のインポート
 

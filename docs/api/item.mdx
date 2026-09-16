@@ -30,7 +30,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-アイテムはテキストを左揃えにし、テキストがアイテムより広い場合は折り返されます。この動作は、Ionic Frameworkが提供するCSSユーティリティを使用して変更することができます。以下の例では`.ion-text-nowrap`を使用しています。アイテム内のテキストを変換するために追加できる他のクラスについては、[CSSユーティリティのドキュメント](/docs/layout/css-utilities)を参照してください。
+アイテムはテキストを左揃えにし、テキストがアイテムより広い場合は折り返されます。この動作は、Ionic Frameworkが提供するCSSユーティリティを使用して変更することができます。以下の例では`.ion-text-nowrap`を使用しています。アイテム内のテキストを変換するために追加できる他のクラスについては、[CSSユーティリティのドキュメント](/layout/css-utilities.mdx)を参照してください。
 
 import Basic from '@site/static/usage/v9/item/basic/index.mdx';
 
@@ -253,7 +253,7 @@ import Actions from '@site/static/usage/v9/item/content-types/actions/index.mdx'
   text={
     <>
       Items should typically have no more than two controls. If you need more controls, consider adding the additional
-      controls in a <a href="useBaseUrl('api/modal')">Modal</a> that is accessible from the item.
+      controls in a <a href={useBaseUrl('api/modal')}>Modal</a> that is accessible from the item.
     </>
   }
   doText="Move additional controls to a submenu accessible from the item."

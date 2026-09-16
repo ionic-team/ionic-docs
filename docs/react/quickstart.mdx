@@ -148,15 +148,15 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage` コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。二つ目のヘッダーは [折りたたみ可能な大きなタイトル](/docs/api/title.mdx#collapsible-large-titles) を表示し、iOS デバイスではコンテンツの上部にあるときに表示され、その後スクロールすると最初のヘッダーに小さいタイトルとして凝縮されます。
+これにより、ヘッダーとスクロール可能なコンテンツ領域を持つページが作成されます。`IonPage` コンポーネントは基本的なページ構造を提供し、すべてのページで使用する必要があります。二つ目のヘッダーは [折りたたみ可能な大きなタイトル](/api/title.mdx#collapsible-large-titles) を表示し、iOS デバイスではコンテンツの上部にあるときに表示され、その後スクロールすると最初のヘッダーに小さいタイトルとして凝縮されます。
 
 :::tip[詳細を見る]
-Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/docs/api/header.mdx)、[Toolbar](/docs/api/toolbar.mdx)、[Title](/docs/api/title.mdx)、および[Content](/docs/api/content.mdx)のドキュメントを参照してください。
+Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/api/header.mdx)、[Toolbar](/api/toolbar.mdx)、[Title](/api/title.mdx)、および[Content](/api/content.mdx)のドキュメントを参照してください。
 :::
 
 ## Ionic コンポーネントを追加
 
-より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`Home.tsx`の`IonContent`の最後に[Button](/docs/api/button.mdx)をインポートして追加します：
+より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`Home.tsx`の`IonContent`の最後に[Button](/api/button.mdx)をインポートして追加します：
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -214,7 +214,7 @@ const New: React.FC = () => {
 export default New;
 ```
 
-これにより、[Toolbar](/docs/api/toolbar.mdx)に[Back Button](/docs/api/back-button.mdx)を持つページが作成されます。戻るボタンは、前のページへのナビゲーション、または履歴がない場合は`/`へのナビゲーションを自動的に処理します。
+これにより、[Toolbar](/api/toolbar.mdx)に[Back Button](/api/back-button.mdx)を持つページが作成されます。戻るボタンは、前のページへのナビゲーション、または履歴がない場合は`/`へのナビゲーションを自動的に処理します。
 
 :::warning
 独自のページを作成する際は、常に`IonPage`をルートコンポーネントとして使用してください。これは、ページ間の適切な遷移、Ionic コンポーネントが依存する基本 CSS スタイリング、アプリ全体での一貫したレイアウト動作に不可欠です。
@@ -245,7 +245,7 @@ Once that is done, update the button in `Home.tsx`:
 ```
 
 :::info
-ナビゲーションは `useIonRouter` hook を使用してプログラムで行うこともできます。詳細は [React Navigation のドキュメント](/docs/react/navigation.mdx#useionrouter)を参照してください。
+ナビゲーションは `useIonRouter` hook を使用してプログラムで行うこともできます。詳細は [React Navigation のドキュメント](/react/utility-functions.mdx#useionrouter)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
@@ -268,7 +268,7 @@ import { heart, logoIonic } from 'ionicons/icons';
 
 インポートされた SVG 参照を渡していることに注意してください。文字列としてのアイコン名**ではありません**。
 
-詳細については、[Icon のドキュメント](/docs/api/icon.mdx)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
+詳細については、[Icon のドキュメント](/api/icon.mdx)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
 
 ## コンポーネントメソッドを呼び出す
 
@@ -321,7 +321,7 @@ To call methods on Ionic components:
 
 このパターンは、React refs がコンポーネントインスタンスを`.current`プロパティに保存するために必要です。
 
-各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/docs/api/content.mdx#methods)セクションで見つけることができます。
+各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/api/content.mdx#methods)セクションで見つけることができます。
 
 ## デバイスで実行
 
@@ -360,11 +360,11 @@ ionic cap open android
   <p>React Routerを使用してIonic Reactアプリでルーティングとナビゲーションを処理する方法を発見します。</p>
 </DocsCard>
 
-<DocsCard header="コンポーネント" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="コンポーネント" href="/components" icon="/icons/guide-components-icon.png">
   <p>美しいアプリを構築するためのIonicの豊富なUIコンポーネントライブラリを探索します。</p>
 </DocsCard>
 
-<DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="テーマ設定" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
 </DocsCard>
 {/* prettier-ignore */}
