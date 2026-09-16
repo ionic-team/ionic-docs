@@ -22,7 +22,7 @@ import DynamicFontScaling from '@site/static/usage/v9/layout/dynamic-font-scalin
 
 ### Enabling in an Application
 
-Dynamic Font Scaling is enabled by default as long as the [typography.css](/docs/layout/global-stylesheets#typographycss) file is imported. Importing this file will define the `--ion-dynamic-font` variable which will activate Dynamic Font Scaling. While not recommended, developers can opt-out of Dynamic Font Scaling by setting this variable to `initial` in their application code.
+Dynamic Font Scaling is enabled by default as long as the [typography.css](/layout/global-stylesheets.mdx#typographycss) file is imported. Importing this file will define the `--ion-dynamic-font` variable which will activate Dynamic Font Scaling. While not recommended, developers can opt-out of Dynamic Font Scaling by setting this variable to `initial` in their application code.
 
 ### Integrating Custom Components
 
@@ -170,7 +170,7 @@ The Chrome Web Browser on Android has some limitations with respecting system-le
 There are a number of reasons why Dynamic Font Scaling may not have any effect on an app. The following list, while not exhaustive, provides some things to check to debug why Dynamic Font Scaling is not working.
 
 1. Verify that your version of Ionic supports Dynamic Font Scaling. Dynamic Font Scaling was added starting in Ionic v7.5.
-2. Verify that the [typography.css](/docs/layout/global-stylesheets#typographycss) file has been imported. This file is required for Dynamic Font Scaling to work.
+2. Verify that the [typography.css](/layout/global-stylesheets.mdx#typographycss) file has been imported. This file is required for Dynamic Font Scaling to work.
 3. Verify that your code does not override the root element's default font size. Manually setting a font size on the root element will prevent Dynamic Font Scaling from working as intended.
 4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. Refer to [Integrating Custom Components](#integrating-custom-components) for more information.
 5. Verify "Accessibility Page Zoom" is enabled if using Chrome for Android. Refer to [Chrome for Android](#chrome-for-android) for more information.

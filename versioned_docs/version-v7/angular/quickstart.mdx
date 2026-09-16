@@ -172,15 +172,15 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.mdx#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/api/title.mdx#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip[Learn More]
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.mdx), [Toolbar](/docs/api/toolbar.mdx), [Title](/docs/api/title.mdx), and [Content](/docs/api/content.mdx) documentation.
+For detailed information about Ionic layout components, see the [Header](/api/header.mdx), [Toolbar](/api/toolbar.mdx), [Title](/api/title.mdx), and [Content](/api/content.mdx) documentation.
 :::
 
 ## Add an Ionic Component
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.mdx) at the end of the `ion-content`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](/api/button.mdx) at the end of the `ion-content`:
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -211,7 +211,7 @@ ionic generate page new
 
 A route will be automatically added to `app.routes.ts`.
 
-In `new.page.html`, you can add a [Back Button](/docs/api/back-button.mdx) to the [Toolbar](/docs/api/toolbar.mdx):
+In `new.page.html`, you can add a [Back Button](/api/back-button.mdx) to the [Toolbar](/api/toolbar.mdx):
 
 ```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
@@ -257,7 +257,7 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-Navigating can also be performed using Angular's Router service. See the [Angular Navigation documentation](/docs/angular/navigation.mdx#navigating-to-different-routes) for more information.
+Navigating can also be performed using Angular's Router service. See the [Angular Navigation documentation](/angular/navigation.mdx#navigating-to-different-routes) for more information.
 :::
 
 ## Add Icons to the New Page
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
 
-For more information, see the [Icon documentation](/docs/api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, see the [Icon documentation](/api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods
 
@@ -387,7 +387,7 @@ To call methods on Ionic components:
 1. Create a `ViewChild` reference for the component
 2. Call the method directly on the component instance
 
-You can find available methods for each component in the [Methods](/docs/api/content.mdx#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](/api/content.mdx#methods) section of their API documentation.
 
 ## Run on a Device
 
@@ -426,11 +426,11 @@ This guide covered the basics of creating an Ionic Angular app, adding navigatio
   <p>Discover how to handle routing and navigation in Ionic Angular apps using the Angular Router.</p>
 </DocsCard>
 
-<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="Components" href="/components" icon="/icons/guide-components-icon.png">
   <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
 </DocsCard>
 
-<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="Theming" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
 </DocsCard>
 
