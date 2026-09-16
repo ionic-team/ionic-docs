@@ -10,6 +10,21 @@ module.exports = function (context, options) {
       const currentVersion = docsPluginOptions.versions.current;
 
       /**
+       * The API data is authored as full site URLs, so its links carry the
+       * baseUrl, for example `[theming](/docs/theming/basics)`. Docusaurus
+       * prepends the baseUrl of the locale being built, and the Japanese one
+       * is `/docs/ja/`, so the prefix doubles and the link 404s. Dropping it
+       * here lets Docusaurus add the right one for whichever locale is
+       * building.
+       *
+       * This has to come from the default locale. `context.baseUrl` and
+       * `context.siteConfig.baseUrl` are both overridden to the locale's own
+       * baseUrl, so neither one is the prefix the source actually wrote.
+       */
+      const { baseUrl } = context.i18n.localeConfigs[context.i18n.defaultLocale];
+      const dropBaseUrl = (json) => json.replaceAll(`](${baseUrl}`, '](/');
+
+      /**
        * Generates the markdown files for all components in a given version.
        * @param {*} version The version, e.g.: v6
        * @param {*} npmTag The npm tag, e.g.: 6 or next
@@ -19,20 +34,19 @@ module.exports = function (context, options) {
       const generateMarkdownForVersion = async (version, npmTag, lang, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
         const components = await (async () => {
-          if (isCurrentVersion) {
-            const { components } = require(process.cwd() + `/scripts/data/translated-api.json`);
-            return components;
-          } else {
-            const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-            const { components } = await response.json();
-            return components;
-          }
+          const data = isCurrentVersion
+            ? require(process.cwd() + `/scripts/data/translated-api.json`)
+            : await (await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`)).json();
+          // The API data's links carry the `/docs` baseUrl, which doubles once this
+          // content is built as a locale of the main site. Drop it and let Docusaurus
+          // add the right one.
+          return JSON.parse(dropBaseUrl(JSON.stringify(data))).components;
         })();
         // const response =
         //   isCurrentVersion && lang === 'ja'
         //     ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
         //     : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
-        // const { components } = await response.json();
+        // const { components } = JSON.parse(dropBaseUrl(await response.text()));
 
         const names = components.map((component) => component.tag.slice(4));
         // matches all relative markdown links to a component, e.g. (../button)
@@ -214,7 +228,7 @@ ${properties
 
     let docs = prop.docs;
     if (isVirtual) {
-      docs = `${docs}\n\nThis is a [virtual property](/docs/core-concepts/fundamentals#virtual-properties) that is set once during initialization and will not update if you change its value after the initial render.`;
+      docs = `${docs}\n\nThis is a [virtual property](/core-concepts/fundamentals#virtual-properties) that is set once during initialization and will not update if you change its value after the initial render.`;
     }
     if (isDeprecated) {
       docs = `${docs}\n\n**_Deprecated_** — ${prop.deprecation}`;

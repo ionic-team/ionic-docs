@@ -14,7 +14,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-This guide covers how to add Ionic React to an existing React project. If you're looking to start a new project from scratch, check out the [Ionic React Quickstart](/docs/react/quickstart.mdx) guide. For an overview of how Ionic React works with React, including version support and tooling, check out the [Ionic React Overview](/docs/react/overview.mdx).
+This guide covers how to add Ionic React to an existing React project. If you're looking to start a new project from scratch, check out the [Ionic React Quickstart](/react/quickstart.mdx) guide. For an overview of how Ionic React works with React, including version support and tooling, check out the [Ionic React Overview](/react/overview.mdx).
 
 :::tip
 
@@ -64,7 +64,7 @@ setupIonicReact();
 
 :::info
 
-While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, refer to [Global Stylesheets](/docs/layout/global-stylesheets.mdx).
+While `core.css` is required, `normalize.css`, `structure.css`, and `typography.css` are recommended but not required. They normalize cross-browser differences, ensure proper scrolling behavior, and provide consistent typography and form styling. Without them, you may need to handle these concerns yourself. For more details, refer to [Global Stylesheets](/layout/global-stylesheets.mdx).
 
 :::
 
@@ -98,7 +98,7 @@ const App: React.FC = () => (
 export default App;
 ```
 
-Visit the [components](/docs/components.mdx) page for all of the available Ionic components.
+Visit the [components](/components.mdx) page for all of the available Ionic components.
 
 :::tip
 
@@ -132,7 +132,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 ```
 
-These stylesheets set up the overall page structure and provide [CSS utilities](/docs/layout/css-utilities.mdx) for faster development. Some stylesheets are optional. For details on which stylesheets are required, check out [Global Stylesheets](/docs/layout/global-stylesheets.mdx).
+These stylesheets set up the overall page structure and provide [CSS utilities](/layout/css-utilities.mdx) for faster development. Some stylesheets are optional. For details on which stylesheets are required, check out [Global Stylesheets](/layout/global-stylesheets.mdx).
 
 #### 2. Set up Theming
 
@@ -169,7 +169,7 @@ setupIonicReact();
 // ...existing app function and export...
 ```
 
-The `variables.css` file can be used to create custom Ionic Framework themes. The `dark.system.css` import enables [dark mode support](/docs/theming/dark-mode.mdx) for your Ionic app when the system is set to prefer a dark appearance. You can customize the theming behavior by uncommenting different dark palette imports or adding custom CSS variables to `theme/variables.css`.
+The `variables.css` file can be used to create custom Ionic Framework themes. The `dark.system.css` import enables [dark mode support](/theming/dark-mode.mdx) for your Ionic app when the system is set to prefer a dark appearance. You can customize the theming behavior by uncommenting different dark palette imports or adding custom CSS variables to `theme/variables.css`.
 
 #### 3. Update the App Component
 
@@ -355,11 +355,11 @@ Now that you have Ionic React integrated into your project, check out:
   <p>Discover how to handle routing and navigation in Ionic React apps using the React Router.</p>
 </DocsCard>
 
-<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="Components" href="/components" icon="/icons/guide-components-icon.png">
   <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
 </DocsCard>
 
-<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="Theming" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
 </DocsCard>
 

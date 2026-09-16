@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import React from 'react';
 import releases from './release-notes.json';
@@ -22,10 +23,7 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
     return [
       <p key="empty-releases">
         Unable to load Releases. Please see all releases{' '}
-        <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
-          on GitHub
-        </a>
-        .
+        <Link to="https://github.com/ionic-team/ionic-framework/releases">on GitHub</Link>.
       </p>,
     ];
   }
@@ -34,15 +32,13 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
     <article>
       <p className={styles.intro}>
         A complete release history for Ionic Framework is available{' '}
-        <a href="https://github.com/ionic-team/ionic-framework/releases" target="_blank">
-          on GitHub
-        </a>
-        . Documentation for recent releases can also be found below.
+        <Link to="https://github.com/ionic-team/ionic-framework/releases">on GitHub</Link>. Documentation for recent
+        releases can also be found below.
       </p>
 
       <p>
         See versioning for information about our{' '}
-        <a href="/docs/reference/versioning">policy and commitment to stability</a>.
+        <Link to="/reference/versioning">policy and commitment to stability</Link>.
       </p>
       <div className={styles['release-notes']}>
         {releases.map((release: Release, index) => (
@@ -52,11 +48,11 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
           >
             <div className={styles['release-info']}>
               <div className={styles['release-header']}>
-                <a href={`https://github.com/ionic-team/ionic-framework/releases/v${release.version}`}>
+                <Link to={`https://github.com/ionic-team/ionic-framework/releases/v${release.version}`}>
                   <h2>
                     <span className={styles['release-version']}>{release.version}</span>
                   </h2>
-                </a>
+                </Link>
                 <span className={styles['release-badge']}>{release.type}</span>
                 {index === 0 ? (
                   <span className={clsx(styles['release-badge'], styles['release-badge-latest'])}>
@@ -77,11 +73,7 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
         ))}
       </div>
       <blockquote>
-        To see more releases, visit{' '}
-        <a href="https://github.com/ionic-team/ionic-framework/releases/" target="_blank">
-          GitHub
-        </a>
-        .
+        To see more releases, visit <Link to="https://github.com/ionic-team/ionic-framework/releases/">GitHub</Link>.
       </blockquote>
     </article>
   );
