@@ -51,7 +51,7 @@
         {
           "type": "link",
           "label": "Responsive Grid",
-          "href": "/api/grid"
+          "href": "/v8/api/grid"
         },
         "layout/global-stylesheets",
         "layout/css-utilities",
