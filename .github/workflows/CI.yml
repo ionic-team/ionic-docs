@@ -6,6 +6,11 @@ name: Validate Docs
 
 on: [pull_request]
 
+# A new push supersedes the run before it.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   NODE_VERSION: 24
 
