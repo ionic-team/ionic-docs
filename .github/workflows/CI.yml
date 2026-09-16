@@ -10,7 +10,8 @@ env:
   NODE_VERSION: 24
 
 jobs:
-  # The result does not vary by operating system, so this runs once.
+  # Needs no dependencies, so it reports in seconds rather than queueing behind
+  # npm ci and lint.
   admonitions:
     name: Check Admonitions
     runs-on: ubuntu-latest
@@ -49,9 +50,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # Build processes work differently across operating systems, so the
-        # checks run on each one to make sure anyone can contribute to the
-        # docs.
+        # Prettier rewrites line endings, so Lint is the one check whose
+        # verdict depends on the operating system.
         os: [windows-latest, macOS-latest]
 
     steps:
@@ -63,8 +63,6 @@ jobs:
         cache: npm
     - name: 🕸️ Install Dependencies
       run: npm ci
-    # Prettier rewrites line endings, so this is the check most likely to
-    # differ between operating systems.
     - name: 🖌️ Lint
       run: npm run lint
     # Lint changes should be pushed to the branch before the branch is merge
@@ -73,10 +71,10 @@ jobs:
       run: git diff --exit-code
       shell: bash
 
-  # One stable name for branch protection, so the matrix can change freely.
   verify:
-    # The required check on main and the feature branches. Renaming this
-    # blocks merges until the protection rules are updated to match.
+    # The one required check on main and the feature branches, so the jobs
+    # above can change without touching the protection rules. Renaming this
+    # blocks merges until those rules are updated to match.
     name: Verify
     if: ${{ always() }}
     needs: [admonitions, checks, cross-platform]
