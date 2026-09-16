@@ -1,6 +1,6 @@
 # Environment Setup
 
-To get started with Ionic Framework, the only requirement is a [Node & npm](#node-npm) environment.
+To get started with Ionic Framework, the only requirement is a [Node & npm](#node--npm) environment.
 
 Of course, a code editor is also required. [Visual Studio Code](https://code.visualstudio.com/) is recommended. Visual Studio Code is a free, batteries-included text editor made by Microsoft.
 

@@ -144,7 +144,7 @@ The browser automatically sends the appropriate headers for CORS in every reques
 
 ### A. Enabling CORS in a server you control
 
-The correct and easiest solution is to enable CORS by returning the [right response headers](#server-headers-response-) from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
+The correct and easiest solution is to enable CORS by returning the [right response headers](#server-headers-response) from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
 
 Ionic apps may be run from different origins, but only one origin can be specified in the `Access-Control-Allow-Origin` header. Therefore we recommend checking the value of the `Origin` header from the request and reflecting it in the `Access-Control-Allow-Origin` header in the response.
 
@@ -238,7 +238,7 @@ If you are trying to connect to a 3rd-party API, first check in its documentatio
 
 #### 1. Native-only apps (iOS/Android)
 
-Use the [HTTP plugin from Ionic Native](../native/http.md) to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
+Use the [HTTP plugin from Ionic Native](https://ionic-docs-5utg8ms4c-ionic1.vercel.app/docs/v5/native/http) to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
 
 ##### Usage in Ionic Angular 4
 

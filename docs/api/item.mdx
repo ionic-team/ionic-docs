@@ -30,7 +30,7 @@ Items are elements that can contain text, icons, avatars, images, inputs, and an
 
 ## Basic Usage
 
-Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
+Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/layout/css-utilities.mdx) for more classes that can be added to an item to transform the text.
 
 import Basic from '@site/static/usage/v10/item/basic/index.mdx';
 
@@ -253,7 +253,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   text={
     <>
       Items should typically have no more than two controls. If you need more controls, consider adding the additional
-      controls in a <a href="useBaseUrl('api/modal')">Modal</a> that is accessible from the item.
+      controls in a <a href={useBaseUrl('api/modal')}>Modal</a> that is accessible from the item.
     </>
   }
   doText="Move additional controls to a submenu accessible from the item."

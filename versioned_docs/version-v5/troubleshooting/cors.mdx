@@ -135,7 +135,7 @@ The browser automatically sends the appropriate headers for CORS in every reques
 
 ### A. Enabling CORS in a server you control
 
-The correct and easiest solution is to enable CORS by returning the [right response headers](#server-headers-response-) from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
+The correct and easiest solution is to enable CORS by returning the [right response headers](#server-headers-response) from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
 
 Ionic apps may be run from different origins, but only one origin can be specified in the `Access-Control-Allow-Origin` header. Therefore we recommend checking the value of the `Origin` header from the request and reflecting it in the `Access-Control-Allow-Origin` header in the response.
 

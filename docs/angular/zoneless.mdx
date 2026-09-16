@@ -28,7 +28,7 @@ You do not need to change these. Angular schedules change detection for them in 
 
 :::note[Angular 22]
 
-Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. Refer to [Change detection on Angular 22](#change-detection-on-angular-22) for what this means for your app shell, and to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/docs/updating/9-0.mdx#onpush-change-detection-on-angular-22) for the migration steps.
+Angular 22 also makes `OnPush` the default change detection strategy. Under `OnPush`, synchronous state set as a plain field (including in the lifecycle hooks above) no longer re-renders on its own, even though Ionic notifies Angular. Signals still update the view. Refer to [Change detection on Angular 22](#change-detection-on-angular-22) for what this means for your app shell, and to the [OnPush Change Detection section of the Ionic 9 upgrade guide](/updating/9-0.mdx#onpush-change-detection-on-angular-22) for the migration steps.
 
 :::
 
@@ -174,4 +174,4 @@ Hosting an `ion-nav` is fine either way, because its pages are attached as root 
 
 ## Staying on Zone.js
 
-If you are not ready to adopt zoneless change detection, you can opt back into Zone.js with `provideZoneChangeDetection()`. Refer to the [Keeping Zone.js section of the Ionic 9 upgrade guide](/docs/updating/9-0.mdx#keeping-zonejs) for the exact configuration.
+If you are not ready to adopt zoneless change detection, you can opt back into Zone.js with `provideZoneChangeDetection()`. Refer to the [Keeping Zone.js section of the Ionic 9 upgrade guide](/updating/9-0.mdx#keeping-zonejs) for the exact configuration.

@@ -67,7 +67,7 @@ npm install @ionic/angular@latest @ionic/angular-server@latest @ionic/angular-to
 
 Ionic 9 supports zoneless change detection. Angular 21 made zoneless the default, so a new Ionic 9 app on Angular 21 or later runs without Zone.js out of the box and no change-detection provider is required.
 
-Without Zone.js, Angular does not automatically re-render when you update component state from an asynchronous callback (awaiting an overlay result, `setTimeout`, RxJS subscriptions, `Platform` events). In those cases you must notify Angular with a signal or `ChangeDetectorRef.markForCheck()`. Refer to [Zoneless Change Detection](/docs/angular/zoneless.mdx) for the patterns Ionic apps use.
+Without Zone.js, Angular does not automatically re-render when you update component state from an asynchronous callback (awaiting an overlay result, `setTimeout`, RxJS subscriptions, `Platform` events). In those cases you must notify Angular with a signal or `ChangeDetectorRef.markForCheck()`. Refer to [Zoneless Change Detection](/angular/zoneless.mdx) for the patterns Ionic apps use.
 
 :::note
 
@@ -162,7 +162,7 @@ Ionic 9 makes standalone components the default import path. Change lazy-loaded 
 
 #### IonicModule Deprecation
 
-`IonicModule` is deprecated in Ionic 9 and will be removed in a future major version. It remains fully functional, so no immediate action is required. When you are ready, migrate to `provideIonicAngular()`, which works in both standalone and NgModule-based apps. Refer to [Migrating from Modules to Standalone](/docs/angular/build-options.mdx#migrating-from-modules-to-standalone).
+`IonicModule` is deprecated in Ionic 9 and will be removed in a future major version. It remains fully functional, so no immediate action is required. When you are ready, migrate to `provideIonicAngular()`, which works in both standalone and NgModule-based apps. Refer to [Migrating from Modules to Standalone](/angular/build-options.mdx#migrating-from-modules-to-standalone).
 
 #### CSS Imports
 

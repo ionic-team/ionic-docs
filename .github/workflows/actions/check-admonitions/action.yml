@@ -15,17 +15,14 @@ runs:
     # Only the files the pull request touches are checked, so an existing
     # page is never anyone else's problem to fix.
     #
-    # The event payload has no file list, so the changed files come from a
-    # diff. The checkout is shallow and the base commit is fetched here
-    # rather than through `fetch-depth` on the checkout, which would pull
-    # the full history for every step in the job just to serve this one.
+    # The caller has to check out with `fetch-depth: 0`, which a composite
+    # action cannot require for itself.
     - name: 🔎 Check Admonitions
       shell: bash
       env:
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
         CHANGED_FILES: ${{ runner.temp }}/changed-files.txt
       run: |
-        git fetch --quiet --no-tags --depth=1 origin "$BASE_SHA"
         git diff --name-only --diff-filter=ACMR "$BASE_SHA" HEAD > "$CHANGED_FILES"
         node <<'JS'
         const { readFileSync } = require('fs');

@@ -92,7 +92,7 @@
         {
           "type": "link",
           "label": "Responsive Grid",
-          "href": "/docs/api/grid"
+          "href": "/v6/api/grid"
         },
         {
           "type": "doc",
