@@ -42,6 +42,7 @@ jobs:
       run: npm run typecheck
     - name: 🔤 Spell Check
       run: npm run spellcheck
+    - uses: ./.github/workflows/actions/check-translations
 
   cross-platform:
     name: Cross-platform on ${{ matrix.os }}
@@ -66,11 +67,8 @@ jobs:
     # differ between operating systems.
     - name: 🖌️ Lint
       run: npm run lint
-    - uses: ./.github/workflows/actions/check-translations
     # Lint changes should be pushed to the branch before the branch is merge
     # eligible.
-    #
-    # The translation keys check should not produce any changes.
     - name: 🔍 Check Diff
       run: git diff --exit-code
       shell: bash
