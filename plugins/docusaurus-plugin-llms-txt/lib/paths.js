@@ -2,25 +2,9 @@
 
 const path = require('path');
 
-const withTrailingSlash = (baseUrl) => (baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`);
+const { stripBaseUrl, toMarkdownPath, withTrailingSlash } = require('./markdown-path');
 
-function stripBaseUrl(permalink, baseUrl) {
-  const base = withTrailingSlash(baseUrl);
-  const withoutBase = permalink.startsWith(base) ? permalink.slice(base.length) : permalink;
-  return withoutBase.replace(/^\/+/, '').replace(/\/+$/, '');
-}
-
-/** The twin's path below the site's baseUrl, for example `api/button.md`. */
-function toMarkdownPath(permalink, baseUrl) {
-  const relative = stripBaseUrl(permalink, baseUrl);
-  const lastSegment = relative.slice(relative.lastIndexOf('/') + 1);
-
-  if (!relative) {
-    return 'index.md';
-  }
-  return lastSegment.includes('.') ? relative.replace(/\.[^/.]+$/, '.md') : `${relative}.md`;
-}
-
+/** The absolute URL of a page's markdown twin. */
 function toMarkdownUrl(permalink, { siteUrl, baseUrl }) {
   return `${siteUrl.replace(/\/+$/, '')}${withTrailingSlash(baseUrl)}${toMarkdownPath(permalink, baseUrl)}`;
 }
