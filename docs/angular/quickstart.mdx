@@ -172,15 +172,15 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-これにより、ヘッダーとスクロール可能なコンテンツエリアを持つページが作成されます。2 つ目のヘッダーは、コンテンツの先頭にあるときに iOS デバイスで表示される[折りたたみ可能な大きなタイトル](/docs/api/title.mdx#collapsible-large-titles)を示し、その後スクロールすると最初のヘッダーに小さいタイトルを表示するように縮小されます。
+これにより、ヘッダーとスクロール可能なコンテンツエリアを持つページが作成されます。2 つ目のヘッダーは、コンテンツの先頭にあるときに iOS デバイスで表示される[折りたたみ可能な大きなタイトル](/api/title.mdx#collapsible-large-titles)を示し、その後スクロールすると最初のヘッダーに小さいタイトルを表示するように縮小されます。
 
 :::tip[詳細を学ぶ]
-Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/docs/api/header.mdx)、[Toolbar](/docs/api/toolbar.mdx)、[Title](/docs/api/title.mdx)、および[Content](/docs/api/content.mdx)のドキュメントを参照してください。
+Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/api/header.mdx)、[Toolbar](/api/toolbar.mdx)、[Title](/api/title.mdx)、および[Content](/api/content.mdx)のドキュメントを参照してください。
 :::
 
 ## Ionic コンポーネントを追加
 
-より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`ion-content`の最後に[Button](/docs/api/button.mdx)を追加します：
+より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`ion-content`の最後に[Button](/api/button.mdx)を追加します：
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -211,7 +211,7 @@ ionic generate page new
 
 A route will be automatically added to `app.routes.ts`.
 
-In `new.page.html`, you can add a [Back Button](/docs/api/back-button.mdx) to the [Toolbar](/docs/api/toolbar.mdx):
+In `new.page.html`, you can add a [Back Button](/api/back-button.mdx) to the [Toolbar](/api/toolbar.mdx):
 
 ```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
@@ -257,7 +257,7 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-ナビゲーションは、Angular の Router サービスを使用して行うこともできます。詳細については、[Angular ナビゲーションのドキュメント](/docs/angular/navigation.mdx#navigating-to-different-routes)を参照してください。
+ナビゲーションは、Angular の Router サービスを使用して行うこともできます。詳細については、[Angular ナビゲーションのドキュメント](/angular/navigation.mdx#navigating-to-different-routes)を参照してください。
 :::
 
 ## 新しいページにアイコンを追加
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 または、`app.component.ts`でアイコンを登録して、アプリ全体で使用することもできます。
 
-詳細については、[Icon のドキュメント](/docs/api/icon.mdx)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
+詳細については、[Icon のドキュメント](/api/icon.mdx)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
 
 ## コンポーネントメソッドを呼び出す
 
@@ -387,7 +387,7 @@ Ionic コンポーネントのメソッドを呼び出すには：
 1. コンポーネントの`ViewChild`参照を作成します
 2. コンポーネントインスタンスでメソッドを直接呼び出します
 
-各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/docs/api/content.mdx#methods)セクションで見つけることができます。
+各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/api/content.mdx#methods)セクションで見つけることができます。
 
 ## デバイスで実行
 
@@ -426,11 +426,11 @@ ionic cap open android
   <p>Angular Routerを使用してIonic Angularアプリでルーティングとナビゲーションを処理する方法を発見します。</p>
 </DocsCard>
 
-<DocsCard header="コンポーネント" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="コンポーネント" href="/components" icon="/icons/guide-components-icon.png">
   <p>美しいアプリを構築するためのIonicの豊富なUIコンポーネントライブラリを探索します。</p>
 </DocsCard>
 
-<DocsCard header="テーマ設定" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="テーマ設定" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>Ionicの強力なテーマ設定システムを使用してアプリの外観と操作性をカスタマイズする方法を学びます。</p>
 </DocsCard>
 

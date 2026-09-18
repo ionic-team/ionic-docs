@@ -205,7 +205,7 @@ import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md
 ## リッチコンテンツオプション
 
 :::important
-select option のリッチコンテンツはデフォルトで無効です。[グローバル Ionic config](/docs/developing/config.mdx#global-config) で [`innerHTMLTemplatesEnabled`](/docs/developing/config.mdx#ionicconfig) を `true` に設定してください。無効な場合、option 内のマークアップはプレーンテキストとして扱われます。カスタム HTML を有効にする際のサニタイズについては、[セキュリティ](/docs/techniques/security.mdx)を参照してください。
+select option のリッチコンテンツはデフォルトで無効です。[グローバル Ionic config](/developing/config.mdx#global-config) で [`innerHTMLTemplatesEnabled`](/developing/config.mdx#ionicconfig) を `true` に設定してください。無効な場合、option 内のマークアップはプレーンテキストとして扱われます。カスタム HTML を有効にする際のサニタイズについては、[セキュリティ](/techniques/security.mdx)を参照してください。
 :::
 
 単一のテキストラベルに加えて、[Select Option](./select-option.mdx) では select インターフェースに HTML リッチコンテンツを含めることができます。名前付き slot を指定せずに option 内へ追加した要素は、デフォルト slot に配置されます。`start` と `end` slot は、デフォルト slot の両側に要素を配置します。`description` 属性を使用すると、ラベルの下に補足テキストを表示できます。

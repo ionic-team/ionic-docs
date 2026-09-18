@@ -310,9 +310,9 @@ npm install @ionic/core@6
 
 3. CSS 変数 `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, `--placeholder-color` のすべての使用を削除します。 `ion-datetime` のパディングをカスタマイズするには、 `padding` CSS プロパティのいずれかを使用することができます。
 
-4. `open`メソッドの使用をすべて削除してください。日時をオーバーレイで表示するには、`ion-modal`または`ion-popover`コンポーネントの内部に配置してください。詳細については、[ion-datetime 使用例](../api/datetime#usage)を参照してください。
+4. `open`メソッドの使用をすべて削除してください。日時をオーバーレイで表示するには、`ion-modal`または`ion-popover`コンポーネントの内部に配置してください。詳細については、[ion-datetime 使用例](/api/datetime.mdx#basic-usage)を参照してください。
 
-5. `displayFormat`または`displayTimezone`プロパティの使用をすべて削除してください。`ionChange`イベントのペイロードで提供される UTC 文字列を解析するには、[date-fns](https://date-fns.org/)の使用を推奨します。例については、[ion-datetime 日付解析ドキュメント](../api/datetime#parsing-dates)を参照してください。
+5. `displayFormat`または`displayTimezone`プロパティの使用をすべて削除してください。`ionChange`イベントのペイロードで提供される UTC 文字列を解析するには、[date-fns](https://date-fns.org/)の使用を推奨します。例については、[ion-datetime 日付解析ドキュメント](/api/datetime.mdx#parsing-date-values)を参照してください。
 
 :::note
 詳細なマイグレーション例については、[Datetime マイグレーションサンプルアプリケーション](https://github.com/ionic-team/datetime-migration-samples)を参照してください。
