@@ -13,6 +13,7 @@ import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import {useWindowSize} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
@@ -25,7 +26,9 @@ import type {Props} from '@theme/DocItem/Layout';
 import styles from '@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.module.css';
 
 // CUSTOM CODE
+import Head from '@docusaurus/Head';
 import DocDemo from '@components/global/DocDemo';
+import {useMarkdownTwin} from '@site/src/utils/markdown-twin';
 import type {DocsFrontMatter} from './frontMatter.interface';
 // CUSTOM CODE END
 
@@ -69,12 +72,20 @@ function useDocDemo() {
 export default function DocItemLayout({children, ...props}: Props): ReactNode {
   const docTOC = useDocTOC();
   const {metadata} = useDoc();
+  const {siteConfig} = useDocusaurusContext();
   // CUSTOM CODE
   const {demoUrl, demoSourceUrl} = useDocDemo();
+  // Advertise the markdown twin, as the llms.txt spec recommends.
+  const twinPath = useMarkdownTwin()(metadata.permalink);
   // CUSTOM CODE END
   return (
     <>
       {/* ------- CUSTOM CODE -------- */}
+      {twinPath && (
+        <Head>
+          <link rel="alternate" type="text/markdown" href={siteConfig.url + twinPath} />
+        </Head>
+      )}
       {/* Moved to be on top of the inner content. */}
       {/* The banner is rendered per version based on the versions config on docusaurus.config.js */}
       <DocVersionBanner />

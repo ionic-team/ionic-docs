@@ -404,8 +404,13 @@ module.exports = {
       'docusaurus-plugin-copy-page-button',
       {
         injectButton: false,
+        // docusaurus-plugin-llms-txt writes the markdown twins instead, reusing
+        // this package's converter after repairing the HTML it is given.
+        // Turning both on would have the two race for the same files.
+        generateMarkdownRoutes: false,
       },
     ],
+    path.resolve(__dirname, 'plugins', 'docusaurus-plugin-llms-txt'),
   ],
   customFields: {},
   themes: [],
