@@ -16,9 +16,9 @@ For a **complete list of breaking changes** from Ionic 7 to Ionic 8, please refe
 
 :::
 
-## Getting Started
+## Getting Started {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 8 supports Angular 16+. Update to the latest version of Angular by following the [Angular Update Guide](https://update.angular.io/).
 
@@ -38,7 +38,7 @@ npm install @ionic/angular@latest @ionic/angular-server@latest @ionic/angular-to
 
 3. Update any `IonBackButtonDelegate` imports from `@ionic/angular` to import `IonBackButton` from `@ionic/angular` instead.
 
-### React
+### React {/* #react */}
 
 1. Ionic 8 supports React 17+. Update to the latest version of React:
 
@@ -52,7 +52,7 @@ npm install react@17 react-dom@17
 npm install @ionic/react@8 @ionic/react-router@8
 ```
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 8 supports Vue 3.0.6+. Update to the latest version of Vue:
 
@@ -66,7 +66,7 @@ npm install vue@^3.0.6 vue-router@^3.0.6
 npm install @ionic/vue@8 @ionic/vue-router@8
 ```
 
-### Core
+### Core {/* #core */}
 
 1. Update to the latest version of Ionic 8:
 
@@ -74,11 +74,11 @@ npm install @ionic/vue@8 @ionic/vue-router@8
 npm install @ionic/core@8
 ```
 
-## Recommended Changes
+## Recommended Changes {/* #recommended-changes */}
 
 The following changes are not required to update to Ionic 8 as your application will continue to work. However, we recommend making the following changes to ensure you can use the new features in Ionic 8.
 
-### Light Palette
+### Light Palette {/* #light-palette */}
 
 Previous versions defined a set of default color variables for the light palette in `theme/variables.scss`:
 
@@ -100,7 +100,7 @@ Developers who are customizing this color palette can continue to keep the custo
 
 You can read more about the new color palette in the [Ionic v8 announcement](https://ionic.io/blog/announcing-the-ionic-8-beta).
 
-### Dark Palette
+### Dark Palette {/* #dark-palette */}
 
 In previous versions, it was recommended to define the dark palette in the following way:
 
@@ -134,7 +134,7 @@ While migrating to include the new dark palette files is unlikely to cause break
 
 For more information on the new dark palette files, refer to the [Dark Mode documentation](../theming/dark-mode).
 
-### Step Color Tokens
+### Step Color Tokens {/* #step-color-tokens */}
 
 To better support the high contrast palette in Ionic 8, separate step colors tokens have been introduced for text and background color. Previously both text and background color were controlled by a single set of `--ion-color-step-[number]` tokens.
 
@@ -170,7 +170,7 @@ button { color: var(--ion-text-color-step-600); /* 1000 - 400 = 600 */ }
 
 The [stepped color generator](../theming/themes#stepped-color-generator) has been updated to generate text and background color stepped variables.
 
-### Dynamic Font
+### Dynamic Font {/* #dynamic-font */}
 
 The `core.css` file has been updated to enable dynamic font scaling by default.
 
@@ -182,7 +182,7 @@ Developers who want to disable dynamic font scaling can set `--ion-dynamic-font:
 
 For more information on the dynamic font, refer to the [Dynamic Font Scaling documentation](../layout/dynamic-font-scaling).
 
-### (Angular Only) `angular.json` CSS import order
+### (Angular Only) `angular.json` CSS import order {/* #angular-only-angularjson-css-import-order */}
 
 The `angular.json` file currently imports `src/theme/variables.scss` before importing `src/global.scss`. This may cause the incorrect styles to be applied when customizing the new [Dark Palette](#dark-palette) changes.
 
@@ -200,9 +200,9 @@ We recommend importing the `src/global.scss` file first instead:
   "styles": ["src/global.scss", "src/theme/variables.scss"],
 ```
 
-## Required Changes
+## Required Changes {/* #required-changes */}
 
-### Browser Support
+### Browser Support {/* #browser-support */}
 
 The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
 
@@ -217,51 +217,51 @@ Safari >=15
 iOS >=15
 ```
 
-### Checkbox
+### Checkbox {/* #checkbox */}
 
 1. Migrate any remaining instances of Checkbox to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/checkbox#migrating-from-legacy-checkbox-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Input
+### Input {/* #input */}
 
 1. Remove any usages of the `size` property. CSS should be used to specify the visible width of the input instead.
 2. Remove any usages of the `accept` property.
 3. Migrate any remaining instances of Input to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/input#migrating-from-legacy-input-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Item
+### Item {/* #item */}
 
 1. Remove any usages of the `counter` or `counterFormatter` properties. Use the properties of the same names on `ion-input` and `ion-textarea` instead.
 2. Remove any usages of the `helper` or `error` slots. Use the `helperText` and `errorText` properties on `ion-input` and `ion-textarea` instead.
 3. Remove any usages of the `fill` or `shape` properties. Use the properties of the same names on `ion-input`, `ion-textarea`, and `ion-select` instead.
 
-### Nav
+### Nav {/* #nav */}
 
 1. Update any usages of `getLength` to `await` the call before accessing the returned value as this method now returns `Promise<number>` instead of `number`.
 
-### Picker
+### Picker {/* #picker */}
 
 1. Ionic 8 now ships with an inline `ion-picker` component. Developers who wish to continue using the legacy picker should update any `ion-picker` usages to `ion-picker-legacy`. The `pickerController` import remains unchanged. Note that the `ion-picker-legacy` component will be removed in an upcoming major release of Ionic. Refer to the [Picker documentation](../api/picker) for usage information.
 
-### Toast
+### Toast {/* #toast */}
 
 1. Remove any usages of the `cssClass` property from `ToastButton`. The `button` CSS Shadow Part should be used instead.
 
-### Radio
+### Radio {/* #radio */}
 
 1. Migrate any remaining instances of Radio to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/radio#migrating-from-legacy-radio-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Select
+### Select {/* #select */}
 
 1. Migrate any remaining instances of Select to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/select#migrating-from-legacy-select-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Textarea
+### Textarea {/* #textarea */}
 
 1. Migrate any remaining instances of Textarea to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/textarea#migrating-from-legacy-textarea-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Toggle
+### Toggle {/* #toggle */}
 
 1. Migrate any remaining instances of Toggle to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/toggle#migrating-from-legacy-toggle-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-## Need Help Upgrading?
+## Need Help Upgrading? {/* #need-help-upgrading */}
 
 Be sure to review the [Ionic 8 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-8x). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that require user action are listed on this page.
 

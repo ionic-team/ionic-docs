@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.
 
-## Inline Alerts (Recommended)
+## Inline Alerts (Recommended) {/* #inline-alerts-recommended */}
 
 `ion-alert` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Alert.
 
@@ -34,7 +34,7 @@ import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.mdx';
 
 <Trigger />
 
-### Using `isOpen`
+### Using `isOpen` {/* #using-isopen */}
 
 The `isOpen` property on `ion-alert` allows developers to control the presentation state of the Alert from their application state. This means when `isOpen` is set to `true` the Alert will be presented, and when `isOpen` is set to `false` the Alert will be dismissed.
 
@@ -44,7 +44,7 @@ import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.mdx';
 
 <IsOpen />
 
-## Controller Alerts
+## Controller Alerts {/* #controller-alerts */}
 
 The `alertController` can be used in situations where more control is needed over when the Alert is presented and dismissed.
 
@@ -52,7 +52,7 @@ import Controller from '@site/static/usage/v9/alert/presenting/controller/index.
 
 <Controller />
 
-## Buttons
+## Buttons {/* #buttons */}
 
 In the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.
 
@@ -62,23 +62,23 @@ import Buttons from '@site/static/usage/v9/alert/buttons/index.mdx';
 
 <Buttons />
 
-## Inputs
+## Inputs {/* #inputs */}
 
 Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of "text" inputs can be mixed, such as `url`, `email`, `text`, `textarea` etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.
 
-### Text Inputs Example
+### Text Inputs Example {/* #text-inputs-example */}
 
 import TextInputs from '@site/static/usage/v9/alert/inputs/text-inputs/index.mdx';
 
 <TextInputs />
 
-### Radio Example
+### Radio Example {/* #radio-example */}
 
 import Radios from '@site/static/usage/v9/alert/inputs/radios/index.mdx';
 
 <Radios />
 
-## Customization
+## Customization {/* #customization */}
 
 Alert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
 
@@ -114,17 +114,17 @@ If you are building an Ionic Angular app, the styles need to be added to a globa
 
 :::
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Screen Readers
+### Screen Readers {/* #screen-readers */}
 
 Alerts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the alert is being used in an app.
 
-#### Role
+#### Role {/* #role */}
 
 Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
 
-#### Alert Description
+#### Alert Description {/* #alert-description */}
 
 If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
 
@@ -188,7 +188,7 @@ const alert = await alertController.create({
 
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
-#### Alert Buttons Description
+#### Alert Buttons Description {/* #alert-buttons-description */}
 
 Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
@@ -268,9 +268,9 @@ const alert = await alertController.create({
 
 </Tabs>
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### AlertButton
+### AlertButton {/* #alertbutton */}
 
 ```typescript
 type AlertButtonOverlayHandler = boolean | void | { [key: string]: any };
@@ -285,7 +285,7 @@ interface AlertButton {
 }
 ```
 
-### AlertInput
+### AlertInput {/* #alertinput */}
 
 ```typescript
 interface AlertInput {
@@ -309,7 +309,7 @@ interface AlertInput {
 }
 ```
 
-### AlertOptions
+### AlertOptions {/* #alertoptions */}
 
 ```typescript
 interface AlertOptions {
@@ -333,26 +333,26 @@ interface AlertOptions {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

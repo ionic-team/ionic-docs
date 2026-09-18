@@ -36,13 +36,13 @@ That means the `ion-router` never touches the DOM, it does NOT show the componen
 
 To configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import BasicExample from '@site/static/usage/v9/router/basic/index.mdx';
 
 <BasicExample />
 
-## Using ion-nav within a Routed Page
+## Using ion-nav within a Routed Page {/* #using-ion-nav-within-a-routed-page */}
 
 `ion-router` and [`ion-nav`](./nav.mdx) are separate systems. `ion-router` coordinates URL-based navigation through `ion-router-outlet`, while `ion-nav` manages a local stack that is independent of the URL. `ion-nav` does not integrate with `ion-router`: placing an `ion-nav` inside an `ion-router` does not turn it into a routed outlet, and pushing or popping views on an `ion-nav` never changes the URL.
 
@@ -52,9 +52,9 @@ import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/i
 
 <NavWithinPageExample />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### RouterEventDetail
+### RouterEventDetail {/* #routereventdetail */}
 
 ```typescript
 interface RouterEventDetail {
@@ -64,7 +64,7 @@ interface RouterEventDetail {
 }
 ```
 
-### RouterCustomEvent
+### RouterCustomEvent {/* #routercustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -75,7 +75,7 @@ interface RouterCustomEvent extends CustomEvent {
 }
 ```
 
-## Usage
+## Usage {/* #usage */}
 
 ```html
 <ion-router>
@@ -103,26 +103,26 @@ interface RouterCustomEvent extends CustomEvent {
 </ion-router>
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

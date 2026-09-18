@@ -6,7 +6,7 @@ sidebar_label: Overlays
 
 For Ionic React, there are two techniques you can use to display overlay components like modals, alerts, action sheets, etc. In this guide, we will go over both of them.
 
-## Overlay Hooks
+## Overlay Hooks {/* #overlay-hooks */}
 
 Starting in Ionic React 5.6, we introduced new React hooks you can use to control displaying and dismissing overlays. These hooks provide a programmatic way of controlling the overlays, as well as a way to use overlays outside of your Ionic Page without the need of a state management system.
 
@@ -66,7 +66,7 @@ const [present, dismiss] = useIonModal(Greeting, { name: 'Dave' });
 
 Passing a JSX element instead of a component binds the props to the element, and `componentProps` is not type checked.
 
-## Overlay Components
+## Overlay Components {/* #overlay-components */}
 
 Overlays can also be displayed by using components from `@ionic/react`. The components take a `isOpen` prop that you provide to control if the overlay is currently being displayed or not. When `isOpen` switches from true to false (and vise versa), Ionic will open/close the overlay with the appropriate animation. You can also supply any other additional config options as props to the overlay:
 
@@ -92,7 +92,7 @@ The Overlay Components are still a valid way of displaying overlays and are in n
 
 :::
 
-## Docs for Overlays in Ionic
+## Docs for Overlays in Ionic {/* #docs-for-overlays-in-ionic */}
 
 For full docs and usage examples for both the hook and component approach, visit the docs page for each of the overlays in Ionic:
 

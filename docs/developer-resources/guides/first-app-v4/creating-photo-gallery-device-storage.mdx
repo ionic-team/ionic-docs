@@ -4,7 +4,7 @@ import DocsButton from '@components/page/native/DocsButton';
 
 Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
-## Creating a Dedicated Photo Service
+## Creating a Dedicated Photo Service {/* #creating-a-dedicated-photo-service */}
 
 From a terminal window, navigate to your Ionic project and run:
 
@@ -103,7 +103,7 @@ Last, update the Fab button to call the PhotoService’s `takePicture` method:
 
 Excellent! We now have a basic photo gallery working.
 
-## Saving photos to the device
+## Saving photos to the device {/* #saving-photos-to-the-device */}
 
 Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
 

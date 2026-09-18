@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The Input OTP component is a specialized input component designed for entering one-time passwords (OTP). It provides a user-friendly interface for entering verification codes with support for multiple input boxes and automatic focus management.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 The component provides 4 input boxes by default, which is a common length for many verification codes. The number of input boxes can be customized using the `length` property.
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v9/input-otp/basic/index.mdx';
 
 <Basic />
 
-## Type
+## Type {/* #type */}
 
 The `type` property determines the input format, supporting either numeric or alphanumeric verification codes. It accepts two values: `number` and `text`. It uses `type="number"` by default for entering numeric verification codes. When `type="text"` is specified, it accepts alphanumeric input. This flexibility allows handling different OTP formats, whether numeric-only codes (like SMS verification codes) or alphanumeric codes (like backup codes or recovery keys).
 
@@ -50,7 +50,7 @@ import Type from '@site/static/usage/v9/input-otp/type/index.mdx';
 
 <Type />
 
-## Shape
+## Shape {/* #shape */}
 
 The `shape` property controls the border radius of the input boxes, creating rounded or sharp corners.
 
@@ -58,7 +58,7 @@ import Shape from '@site/static/usage/v9/input-otp/shape/index.mdx';
 
 <Shape />
 
-## Fill
+## Fill {/* #fill */}
 
 The `fill` property controls the background style of the input boxes, offering bordered or filled backgrounds.
 
@@ -66,7 +66,7 @@ import Fill from '@site/static/usage/v9/input-otp/fill/index.mdx';
 
 <Fill />
 
-## Size
+## Size {/* #size */}
 
 The `size` property provides different size options for the input boxes.
 
@@ -74,7 +74,7 @@ import Size from '@site/static/usage/v9/input-otp/size/index.mdx';
 
 <Size />
 
-## Separators
+## Separators {/* #separators */}
 
 The `separators` property adds visual dividers between one or more of the input boxes. Separators can be defined in three ways:
 
@@ -88,7 +88,7 @@ import Separators from '@site/static/usage/v9/input-otp/separators/index.mdx';
 
 <Separators />
 
-## States
+## States {/* #states */}
 
 The component supports various states for automatic styling of input boxes:
 
@@ -103,7 +103,7 @@ import States from '@site/static/usage/v9/input-otp/states/index.mdx';
 
 <States />
 
-## Pattern
+## Pattern {/* #pattern */}
 
 The `pattern` property enables custom validation using regular expressions. It accepts a [string regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) or [unicode regular expression](https://www.regular-expressions.info/unicode.html) to validate allowed characters. The `pattern` must match the entire value, not just a subset. Default patterns:
 
@@ -125,9 +125,9 @@ import Pattern from '@site/static/usage/v9/input-otp/pattern/index.mdx';
 
 <Pattern />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 The `color` property changes the color palette for input boxes. For `outline` fills, this property changes the caret color, highlight color and border color. For `solid` fills, this property changes the caret color and highlight color.
 
@@ -141,7 +141,7 @@ import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 Input OTP uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input-otp` for customization will not work; therefore we recommend adding a class and customizing it that way. Due to certain styles being applied based on the `fill`, you may need to override properties on the fills separately.
 
@@ -149,9 +149,9 @@ import CSSProps from '@site/static/usage/v9/input-otp/theming/css-properties/ind
 
 <CSSProps />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 The keyboard navigation for Input OTP follows the [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)'s recommendations for composite widgets. It is treated as a composite widget because it contains multiple focusable elements (input boxes) that function as a single control.
 
@@ -167,26 +167,26 @@ These keyboard interactions apply to all `ion-input-otp` elements when the compo
 | <kbd>Backspace</kbd>                                               | In an empty box: moves focus back one box and clears its value. <br/> In a box with a value: clears that value. <br/> With values in boxes to the right: shifts them all one position to the left. In RTL mode, with values in boxes to the left: shifts them all one position to the right.                                                                                      |
 | <kbd>Ctrl</kbd> + <kbd>V</kbd> <br/> <kbd>Cmd</kbd> + <kbd>V</kbd> | Pastes content starting from the first box, regardless of which box is currently focused. All existing values are cleared before pasting. For example, if you have "1234" in all boxes and paste "56", the result will be "56" in the first two boxes with the remaining boxes empty. If the pasted content is longer than the available boxes, the extra characters are ignored. |
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

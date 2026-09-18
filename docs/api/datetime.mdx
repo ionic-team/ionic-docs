@@ -61,7 +61,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Datetimes present a calendar interface and time wheel, making it easy for users to select dates and times. Datetimes are similar to the native `input` elements of `datetime-local`, however, Ionic Framework's Datetime component makes it easy to display the date and time in the preferred format, and manage the datetime values.
 
-## Overview
+## Overview {/* #overview */}
 
 Historically, handling datetime values within JavaScript, or even within HTML
 inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
@@ -72,7 +72,7 @@ parse various datetime strings differently, especially per locale.
 Fortunately, Ionic Framework's datetime input has been designed so developers can avoid
 the common pitfalls, allowing developers to easily manipulate datetime values and give the user a simple datetime picker for a great user experience.
 
-### ISO 8601 Datetime Format: `YYYY-MM-DDTHH:mmZ`
+### ISO 8601 Datetime Format: `YYYY-MM-DDTHH:mmZ` {/* #iso-8601-datetime-format-yyyy-mm-ddthhmmz */}
 
 Ionic Framework uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)
 for its value. The value is simply a string, rather than using JavaScript's
@@ -103,21 +103,21 @@ While seconds, milliseconds, and time zone can be specified using the ISO 8601 d
 
 :::
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 <Basic />
 
-## Usage with Datetime Button
+## Usage with Datetime Button {/* #usage-with-datetime-button */}
 
 If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
-## Setting Values Asynchronously
+## Setting Values Asynchronously {/* #setting-values-asynchronously */}
 
 If its `value` is updated programmatically after a datetime has already been created, the datetime will automatically jump to the new date. However, it is recommended to avoid updating the `value` in this way when users are able to interact with the datetime, as this could be disorienting for those currently trying to select a date. For example, if a datetime's `value` is loaded by an asynchronous process, it is recommended to hide the datetime with CSS until the value has finished updating.
 
-## Date Constraints
+## Date Constraints {/* #date-constraints */}
 
-### Max and Min Dates
+### Max and Min Dates {/* #max-and-min-dates */}
 
 To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user.
 
@@ -125,7 +125,7 @@ The following example restricts date selection to March 2022 through May 2022 on
 
 <MaxMin />
 
-### Selecting Specific Values
+### Selecting Specific Values {/* #selecting-specific-values */}
 
 While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that users can select.
 
@@ -133,7 +133,7 @@ The following example allows minutes to be selected in increments of 15. It also
 
 <Values />
 
-### Advanced Date Constraints
+### Advanced Date Constraints {/* #advanced-date-constraints */}
 
 With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string.
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
@@ -142,11 +142,11 @@ The following example shows how to disable all weekend dates. For more advanced 
 
 <Advanced />
 
-## Localization
+## Localization {/* #localization */}
 
 Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat) Web API which allows us to automatically localize the month and day names according to the language and region set on the user's device.
 
-### Custom Locale
+### Custom Locale {/* #custom-locale */}
 
 For instances where you need a specific locale, you can use the `locale` property to set it. The locale controls both the language and the date and time formats that are displayed.
 
@@ -160,7 +160,7 @@ The time label is not automatically localized. Refer to [Time Label](#time-label
 
 :::
 
-### Hour Cycle
+### Hour Cycle {/* #hour-cycle */}
 
 `ion-datetime` will use the hour cycle that is specified by the `locale` property by default. For example, if `locale` is set to `en-US`, then `ion-datetime` will use a 12 hour cycle.
 
@@ -185,19 +185,19 @@ In the following example, we can use the `hourCycle` property to force `ion-date
 
 <HourCycle />
 
-### First Day of the Week
+### First Day of the Week {/* #first-day-of-the-week */}
 
 For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (refer to [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
 
 <FirstDayOfWeek />
 
-### Time Label
+### Time Label {/* #time-label */}
 
 The time label is not automatically localized. Fortunately, Ionic makes it easy to provide custom localizations with the `time-label` slot.
 
 <TimeLabel />
 
-### Locale Extension Tags
+### Locale Extension Tags {/* #locale-extension-tags */}
 
 `ion-datetime` also supports [locale extension tags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) as part of the `Intl.Locale` API. These tags let you encode information about the locale in the locale string itself. Developers may prefer to use the extension tag approach if they are using the [Intl.Locale API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) in their apps.
 
@@ -211,13 +211,13 @@ Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org
 
 :::
 
-## Presentation
+## Presentation {/* #presentation */}
 
 By default, `ion-datetime` allows users to select both date and time. In addition, users have access to selecting the specific month, year, hour, and minute.
 
 Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in. For example, setting `date-time` will have the calendar picker appear before the time picker. Setting `time-date` will have the calendar picker appear after the time picker.
 
-### Month and Year Selection
+### Month and Year Selection {/* #month-and-year-selection */}
 
 Month and year selection is available by passing `month-year`, `month`, or `year` to the `presentation` property.
 
@@ -225,7 +225,7 @@ This example shows a datetime with the `month-year` configuration.
 
 <MonthAndYear />
 
-### Time Selection
+### Time Selection {/* #time-selection */}
 
 Time selection is available by passing `date-time`, `time-date`, or `time` to the `presentation` property.
 
@@ -233,7 +233,7 @@ This example shows a datetime with the `time` configuration.
 
 <Time />
 
-### Date Selection
+### Date Selection {/* #date-selection */}
 
 Date selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
 
@@ -241,7 +241,7 @@ This example shows a datetime with the `date` configuration.
 
 <Date />
 
-### Wheel Style Pickers
+### Wheel Style Pickers {/* #wheel-style-pickers */}
 
 By default, Ionic will prefer to show a grid style layout when using `presentation`. However, it is possible to show a wheel style using the `preferWheel` property. When `preferWheel` is `true`, Ionic will prefer to show the wheel style layout when possible.
 
@@ -263,7 +263,7 @@ import Wheel from '@site/static/usage/v9/datetime/presentation/wheel/index.mdx';
 
 <Wheel />
 
-## Show Adjacent Days
+## Show Adjacent Days {/* #show-adjacent-days */}
 
 If the `showAdjacentDays` property is set to `true`, days from the previous and next month will be displayed in the calendar view to fill any empty spaces at the beginning or end of the month. When a user clicks on an enabled adjacent day, the calendar will smoothly animate to show that month's view.
 
@@ -277,7 +277,7 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 <ShowAdjacentDays />
 
-## Multiple Date Selection
+## Multiple Date Selection {/* #multiple-date-selection */}
 
 If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
 
@@ -289,19 +289,19 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 <MultipleDateSelection />
 
-## Titles
+## Titles {/* #titles */}
 
 By default, `ion-datetime` does not show any header or title associated with the component. Developers can use the `showDefaultTitle` property to show the default title/header configuration. They can also use the `title` slot to customize what is rendered in the header.
 
-### Showing the Default Title
+### Showing the Default Title {/* #showing-the-default-title */}
 
 <ShowingDefaultTitle />
 
-### Customizing the Title
+### Customizing the Title {/* #customizing-the-title */}
 
 <CustomizingTitle />
 
-## Format Options
+## Format Options {/* #format-options */}
 
 You can customize the format of the date in the header text and the time in the time button of a Datetime component by providing `formatOptions`. The `date` and `time` in the `formatOptions` property should each be an [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) object. If `formatOptions` is not provided, default formats will be used for dates and times.
 
@@ -311,23 +311,23 @@ Be careful with the options you provide, as they may not match the selected pres
 
 <FormatOptions />
 
-## Buttons
+## Buttons {/* #buttons */}
 
 By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
 
-### Showing Confirmation Buttons
+### Showing Confirmation Buttons {/* #showing-confirmation-buttons */}
 
 The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#method-confirm) and [`cancel`](#method-cancel) methods, respectively.
 
 <ShowingConfirmationButtons />
 
-### Customizing Button Texts
+### Customizing Button Texts {/* #customizing-button-texts */}
 
 For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `doneText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
 
 <CustomizingButtonTexts />
 
-### Customizing Button Elements
+### Customizing Button Elements {/* #customizing-button-elements */}
 
 Developers can provide their own buttons for advanced custom behavior.
 
@@ -335,7 +335,7 @@ Developers can provide their own buttons for advanced custom behavior.
 
 <CustomizingButtons />
 
-## Highlighting Specific Dates
+## Highlighting Specific Dates {/* #highlighting-specific-dates */}
 
 Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
 
@@ -349,21 +349,21 @@ This property is only supported when `preferWheel="false"`, and using a `present
 
 :::
 
-### Using Array
+### Using Array {/* #using-array */}
 
 An array is better when the highlights apply to fixed dates, such as due dates.
 
 <HighlightedDatesArray />
 
-### Using Callback
+### Using Callback {/* #using-callback */}
 
 A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
 
 <HighlightedDatesCallback />
 
-## Styling
+## Styling {/* #styling */}
 
-### Global Theming
+### Global Theming {/* #global-theming */}
 
 Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
@@ -371,7 +371,7 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 
 <GlobalTheming />
 
-### Datetime Header
+### Datetime Header {/* #datetime-header */}
 
 The datetime header manages the content for the `title` slot and the selected date.
 
@@ -383,7 +383,7 @@ The selected date will not render if `preferWheel` is set to `true`.
 
 <DatetimeHeaderStyling />
 
-### Calendar Header
+### Calendar Header {/* #calendar-header */}
 
 The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
 
@@ -391,7 +391,7 @@ The header can be styled using CSS shadow parts.
 
 <CalendarHeaderStyling />
 
-### Calendar Days
+### Calendar Days {/* #calendar-days */}
 
 The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
 
@@ -403,13 +403,13 @@ The example below selects the day 2 days ago, unless that day is in the previous
 
 <CalendarDaysStyling />
 
-### Wheel Pickers
+### Wheel Pickers {/* #wheel-pickers */}
 
 The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
 
 <WheelStyling />
 
-## Time Zones
+## Time Zones {/* #time-zones */}
 
 Ionic's `ion-datetime` follows the [datetime-local](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) behavior of not manipulating or setting the time zone inside of a datetime control. In other words, a time value of "07:00" will not be adjusted according to different time zones.
 
@@ -433,7 +433,7 @@ const zonedTime = utcToZonedTime(date, userTimeZone);
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
 ```
 
-### Parsing Date Values
+### Parsing Date Values {/* #parsing-date-values */}
 
 The `ionChange` event will emit the date value as an ISO-8601 string in the event payload. It is the developer's responsibility to format it based on their application needs. We recommend using [date-fns](https://date-fns.org) to format the date value.
 
@@ -456,7 +456,7 @@ console.log(formattedString); // Jun 4, 2021
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
 
-## Advanced Datetime Validation and Manipulation
+## Advanced Datetime Validation and Manipulation {/* #advanced-datetime-validation-and-manipulation */}
 
 The datetime picker provides the simplicity of selecting an exact format, and
 persists the datetime values as a string using the standardized [ISO 8601
@@ -468,9 +468,9 @@ subtracting 30 minutes, etc.), or even formatting data to a specific locale,
 then we highly recommend using [date-fns](https://date-fns.org) to work with
 dates in JavaScript.
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 `ion-datetime` has full keyboard support for navigating between focusable elements inside of the component. The following table details what each key does:
 
@@ -480,7 +480,7 @@ dates in JavaScript.
 | <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element. |
 | <kbd>Space</kbd> or <kbd>Enter</kbd> | Clicks the focusable element.                  |
 
-#### Date Grid
+#### Date Grid {/* #date-grid */}
 
 | Key                                    | Description                                       |
 | -------------------------------------- | ------------------------------------------------- |
@@ -495,13 +495,13 @@ dates in JavaScript.
 | <kbd>Shift</kbd> + <kbd>PageUp</kbd>   | Changes the grid of dates to the previous year.   |
 | <kbd>Shift</kbd> + <kbd>PageDown</kbd> | Changes the grid of dates to the next year.       |
 
-#### Time, Month, and Year Wheels
+#### Time, Month, and Year Wheels {/* #time-month-and-year-wheels */}
 
 The wheel picker in Datetime uses [Picker](./picker) internally. Refer to [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### DatetimeChangeEventDetail
+### DatetimeChangeEventDetail {/* #datetimechangeeventdetail */}
 
 ```typescript
 interface DatetimeChangeEventDetail {
@@ -509,7 +509,7 @@ interface DatetimeChangeEventDetail {
 }
 ```
 
-### DatetimeCustomEvent
+### DatetimeCustomEvent {/* #datetimecustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -520,26 +520,26 @@ interface DatetimeCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

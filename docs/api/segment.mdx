@@ -25,7 +25,7 @@ Segments display a group of related buttons, sometimes known as segmented contro
 
 Their functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v9/segment/basic/index.mdx';
 
 <Basic />
 
-## Scrollable Segments
+## Scrollable Segments {/* #scrollable-segments */}
 
 Segments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.
 
@@ -41,14 +41,14 @@ import Scrollable from '@site/static/usage/v9/segment/scrollable/index.mdx';
 
 <Scrollable />
 
-## Segments in Toolbars
+## Segments in Toolbars {/* #segments-in-toolbars */}
 
 {/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v9/toolbar/segments/index.mdx';
 
 <Toolbar />
 
-## Swipeable Segments
+## Swipeable Segments {/* #swipeable-segments */}
 
 Each [segment button](./segment-button.mdx) can be associated with a [segment content](./segment-content.mdx) element that will be displayed
 when the segment is active. With this approach, each segment's content can be swiped or scrolled between and the segment will be updated
@@ -66,23 +66,23 @@ import Swipeable from '@site/static/usage/v9/segment/swipeable/index.mdx';
 
 <Swipeable />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/segment/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v9/segment/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 The component has full keyboard support for navigating between and selecting `ion-segment-button` elements. By default, keyboard navigation will only focus `ion-segment-button` elements, but you can use the `selectOnFocus` property to ensure that they get selected on focus as well. The following table details what each key does:
 
@@ -94,9 +94,9 @@ The component has full keyboard support for navigating between and selecting `io
 | <kbd>End</kbd>                       | Focuses the last focusable element.            |
 | <kbd>Space</kbd> or <kbd>Enter</kbd> | Selects the element that is currently focused. |
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### SegmentChangeEventDetail
+### SegmentChangeEventDetail {/* #segmentchangeeventdetail */}
 
 ```typescript
 interface SegmentChangeEventDetail {
@@ -104,7 +104,7 @@ interface SegmentChangeEventDetail {
 }
 ```
 
-### SegmentCustomEvent
+### SegmentCustomEvent {/* #segmentcustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -115,26 +115,26 @@ interface SegmentCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />
