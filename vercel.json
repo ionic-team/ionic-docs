@@ -111,5 +111,11 @@
   "rewrites": [
     { "source": "/docs", "destination": "/" },
     { "source": "/docs/:match*", "destination": "/:match*" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).md",
+      "headers": [{ "key": "Content-Disposition", "value": "inline" }]
+    }
   ]
 }
