@@ -22,7 +22,7 @@ This guide uses JavaScript examples. If you're using TypeScript, the setup proce
 
 :::
 
-## Setup
+## Setup {/* #setup */}
 
 :::info
 
@@ -32,13 +32,13 @@ This guide follows the structure of a Vue app created with `create-vue` (which u
 
 Follow these steps to add Ionic Vue to your existing Vue project:
 
-#### 1. Install the Packages
+#### 1. Install the Packages {/* #1-install-the-packages */}
 
 ```bash
 npm install @ionic/vue @ionic/vue-router vue-router
 ```
 
-#### 2. Configure Ionic Vue
+#### 2. Configure Ionic Vue {/* #2-configure-ionic-vue */}
 
 Update `src/main.js` to include `IonicVue` and import the required Ionic Framework stylesheets:
 
@@ -65,7 +65,7 @@ While `core.css` is required, `normalize.css`, `structure.css`, and `typography.
 
 :::
 
-## Using Individual Components
+## Using Individual Components {/* #using-individual-components */}
 
 After completing the setup above, you can start using Ionic components in your existing Vue app. Here's an example of how to use them:
 
@@ -84,11 +84,11 @@ import { IonButton, IonDatetime } from '@ionic/vue';
 
 Visit the [components](/components.mdx) page for all of the available Ionic components.
 
-## Using Ionic Pages
+## Using Ionic Pages {/* #using-ionic-pages */}
 
 If you want to use Ionic pages with full navigation and page transitions, follow these additional setup steps.
 
-#### 1. Add Additional Ionic Framework Stylesheets
+#### 1. Add Additional Ionic Framework Stylesheets {/* #1-add-additional-ionic-framework-stylesheets */}
 
 Update the imported stylesheets in `src/main.js`:
 
@@ -112,7 +112,7 @@ import '@ionic/vue/css/display.css';
 
 These stylesheets set up the overall page structure and provide [CSS utilities](/layout/css-utilities.mdx) for faster development. Some stylesheets are optional. For details on which stylesheets are required, check out [Global Stylesheets](/layout/global-stylesheets.mdx).
 
-#### 2. Set up Theming
+#### 2. Set up Theming {/* #2-set-up-theming */}
 
 Create a `src/theme/variables.css` file with the following content:
 
@@ -164,7 +164,7 @@ createApp(App).use(IonicVue).mount('#app');
 
 The `variables.css` file can be used to create custom Ionic Framework themes. The `dark.system.css` import enables [dark mode support](/theming/dark-mode.mdx) for your Ionic app when the system is set to prefer a dark appearance. You can customize the theming behavior by uncommenting different dark palette imports or adding custom CSS variables to `theme/variables.css`.
 
-#### 3. Update the App Component
+#### 3. Update the App Component {/* #3-update-the-app-component */}
 
 Update `src/App.vue` to the following:
 
@@ -180,7 +180,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
-#### 4. Create a Home Page
+#### 4. Create a Home Page {/* #4-create-a-home-page */}
 
 Create a new file at `src/views/HomePage.vue` with the following:
 
@@ -248,7 +248,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 </style>
 ```
 
-#### 5. Set up Routing
+#### 5. Set up Routing {/* #5-set-up-routing */}
 
 Add a file at `src/router/index.js` defining the routes:
 
@@ -324,7 +324,7 @@ router.isReady().then(() => {
 
 You're all set! Your Ionic Vue app is now configured with full Ionic page support. Run `npm run dev` to start your development server and view your app.
 
-## Next Steps
+## Next Steps {/* #next-steps */}
 
 Now that you have Ionic Vue integrated into your project, check out:
 

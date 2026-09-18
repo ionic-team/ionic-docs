@@ -37,7 +37,7 @@ Back in `about.html`, add the following:
 
 Save the file and watch - a camera button appears! Tap on it and notice that it doesn’t do anything. Let’s fix that next.
 
-## Add the Camera Dependencies via the CLI
+## Add the Camera Dependencies via the CLI {/* #add-the-camera-dependencies-via-the-cli */}
 
 In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
 
@@ -70,7 +70,7 @@ The next step is only required for iOS users. As of iOS 10, developers must prov
 </edit-config>
 ```
 
-## Add Camera plugin to Angular App Module
+## Add Camera plugin to Angular App Module {/* #add-camera-plugin-to-angular-app-module */}
 
 There’s one more step we need to do since this is an Angular project: register the Camera in the App Module (`src/app/app.module.ts`). First, import the Camera module:
 
@@ -91,7 +91,7 @@ providers: [
 
 It can now be used on any of our App pages.
 
-## Add the Camera to the About page
+## Add the Camera to the About page {/* #add-the-camera-to-the-about-page */}
 
 Our camera button doesn’t do anything yet. Over in `about.html`, add a click handler to the button:
 

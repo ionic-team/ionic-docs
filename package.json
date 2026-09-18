@@ -43,6 +43,7 @@
     "@docusaurus/core": "^3.10.2",
     "@docusaurus/faster": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/utils": "^3.10.2",
     "@floating-ui/react": "^0.27.20",
     "@ionic-internal/ionic-ds": "^8.0.0",
     "@mdx-js/react": "^3.1.1",

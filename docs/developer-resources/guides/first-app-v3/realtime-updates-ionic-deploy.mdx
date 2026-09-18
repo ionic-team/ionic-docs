@@ -68,7 +68,7 @@ git push ionic master
 
 Next, create a local, native build of the app.
 
-## Android Builds
+## Android Builds {/* #android-builds */}
 
 Follow the [Android Setup instructions](../../../developing/android.mdx), which includes installing Java 8 and Android Studio on your machine. Then, in your Terminal run:
 
@@ -78,7 +78,7 @@ ionic cordova build android --prod
 
 This will generate a unsigned debug build (meaning the app can run on any Android device).
 
-## iOS Builds
+## iOS Builds {/* #ios-builds */}
 
 iOS is [a bit trickier to set up](../../../developing/ios.mdx) than Android and requires a Mac computer. Ensure XCode is updated to the latest version and set up a development team. Then, in your Terminal, run:
 
@@ -88,7 +88,7 @@ ionic cordova build ios --prod
 
 Then, continue to follow the [app store deployment instructions](../../../deployment/app-store.mdx) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
 
-## Add the Native App to Your Local Device
+## Add the Native App to Your Local Device {/* #add-the-native-app-to-your-local-device */}
 
 Now comes the fun part: testing out the native app on your device! For iOS, the easiest way (that works for both PC and Mac) involves using iTunes. Connect your iOS device, locate your IPA file, then drag and drop the IPA file from the file system onto your device in iTunes. The app will install immediately and be ready for use:
 
@@ -146,7 +146,7 @@ In the upper right hand corner, click the Play button. Select your connected dev
 </div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-## Deploying Changes
+## Deploying Changes {/* #deploying-changes */}
 
 With Appflow Deploy, any JavaScript, HTML, or CSS changes can be pushed automatically to app users. Open the Photo Gallery app in your favorite code editor, then update the title of the Gallery page:
 
@@ -184,7 +184,7 @@ On the Deploy Builds page, click the “Assign to Channel” button on the previ
 
 This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
 
-## Stuck on creating local native builds?
+## Stuck on creating local native builds? {/* #stuck-on-creating-local-native-builds */}
 
 Building native app binaries for Android and iOS can be painful. The tooling isn’t great, new OS versions often result in challenging upgrades, and creating consistent builds across your dev team can be frustrating. Fortunately, Appflow’s Package feature makes this easy: simply upload your iOS certificate and Android keystore files, then we take care of the rest!
 

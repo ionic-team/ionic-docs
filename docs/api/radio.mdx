@@ -25,13 +25,13 @@ Radios should be used inside of a [radio group](./radio-group). Pressing a radio
 
 When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/radio/basic/index.mdx';
 
 <Basic />
 
-## Label Placement
+## Label Placement {/* #label-placement */}
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
@@ -39,7 +39,7 @@ import LabelPlacement from '@site/static/usage/v9/radio/label-placement/index.md
 
 <LabelPlacement />
 
-## Label Wrapping
+## Label Wrapping {/* #label-wrapping */}
 
 Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. You can enable text wrapping by adding the `ion-text-wrap` class to a wrapper around the radio text or styling the `label` shadow part using the `::part()` selector.
 
@@ -47,7 +47,7 @@ import LabelWrap from '@site/static/usage/v9/radio/label-wrap/index.mdx';
 
 <LabelWrap />
 
-## Object Value References
+## Object Value References {/* #object-value-references */}
 
 By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
@@ -55,7 +55,7 @@ import UsingComparewith from '@site/static/usage/v9/radio/using-comparewith/inde
 
 <UsingComparewith />
 
-## Alignment
+## Alignment {/* #alignment */}
 
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
@@ -69,7 +69,7 @@ import Alignment from '@site/static/usage/v9/radio/alignment/index.mdx';
 
 <Alignment />
 
-## Justification
+## Justification {/* #justification */}
 
 Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
@@ -83,7 +83,7 @@ import Justify from '@site/static/usage/v9/radio/justify/index.mdx';
 
 :::
 
-## Deselecting Radios
+## Deselecting Radios {/* #deselecting-radios */}
 
 By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
 
@@ -91,7 +91,7 @@ import EmptySelection from '@site/static/usage/v9/radio/empty-selection/index.md
 
 <EmptySelection />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 Helper and error text can be used inside of a radio group with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-radio-group`. This ensures errors are not shown before the user has a chance to enter data.
 
@@ -101,46 +101,46 @@ import HelperError from '@site/static/usage/v9/radio/helper-error/index.mdx';
 
 <HelperError />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/radio/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v9/radio/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 import CSSParts from '@site/static/usage/v9/radio/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />
