@@ -12,7 +12,6 @@
     "`([^`]*)`",
     "/:[a-zA-Z0-9-_\\+]+:/g",
     // Pinned heading ids, as in `## Using isOpen {/* #using-isopen */}`.
-    // The id echoes the heading text, which is still checked.
     "/\\{\\/\\*\\s*#[a-z0-9-]+\\s*\\*\\/\\}/g"
   ],
   "ignorePaths": [
