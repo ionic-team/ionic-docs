@@ -13,3 +13,35 @@ For a **complete list of breaking changes** from Ionic 9 to Ionic 10, please ref
 :::
 
 ## Getting Started
+
+### Angular
+
+#### Boolean Inputs
+
+Boolean inputs can now be set by attribute presence, so the shorthand Angular developers expect from native HTML works on Ionic components:
+
+```html
+<!-- Both set `button` to `true` -->
+<ion-item button></ion-item>
+<ion-item [button]="true"></ion-item>
+```
+
+Allowing this turns on type checking for these inputs, which Angular did not do before. A binding that passes something outside `boolean | string | null | undefined` now fails to compile. The common case is a truthiness binding on a number:
+
+```
+error TS2322: Type 'number' is not assignable to type 'string | boolean | null | undefined'.
+```
+
+Coerce the expression to a boolean:
+
+```diff
+- <ion-item [button]="items.length"></ion-item>
++ <ion-item [button]="items.length > 0"></ion-item>
+```
+
+`null` and `undefined` are passed through rather than coerced to `false`. This is deliberate, and it differs from Angular's own `booleanAttribute`, which turns both into `false`. Ionic components frequently treat "not set" as a third state distinct from `false`:
+
+- `ion-item` falls back to the theme default for the detail arrow when `detail` is `undefined`, and hides the arrow when `detail` is `false`.
+- A sheet `ion-modal` shows the drag handle unless `handle` is exactly `false`.
+
+Both values reach inputs routinely, from the `async` pipe before its first emission and from form control values, so coercing them would silently change which of those branches runs.
