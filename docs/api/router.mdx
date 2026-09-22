@@ -34,13 +34,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 コンポーネント（ロードまたは選択）と URL の関係を設定するために、`ion-router` は JSX/HTML でルートツリーを定義する宣言的な構文を使用します。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import BasicExample from '@site/static/usage/v9/router/basic/index.mdx';
 
 <BasicExample />
 
-## Using ion-nav within a Routed Page
+## Using ion-nav within a Routed Page {/* #using-ion-nav-within-a-routed-page */}
 
 `ion-router` and [`ion-nav`](./nav.mdx) are separate systems. `ion-router` coordinates URL-based navigation through `ion-router-outlet`, while `ion-nav` manages a local stack that is independent of the URL. `ion-nav` does not integrate with `ion-router`: placing an `ion-nav` inside an `ion-router` does not turn it into a routed outlet, and pushing or popping views on an `ion-nav` never changes the URL.
 
@@ -50,9 +50,9 @@ import NavWithinPageExample from '@site/static/usage/v9/router/nav-within-page/i
 
 <NavWithinPageExample />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### RouterEventDetail
+### RouterEventDetail {/* #routereventdetail */}
 
 ```typescript
 interface RouterEventDetail {
@@ -62,7 +62,7 @@ interface RouterEventDetail {
 }
 ```
 
-### RouterCustomEvent
+### RouterCustomEvent {/* #routercustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -73,7 +73,7 @@ interface RouterCustomEvent extends CustomEvent {
 }
 ```
 
-## 使い方
+## 使い方 {/* #usage */}
 
 ```html
 <ion-router>
@@ -101,26 +101,26 @@ interface RouterCustomEvent extends CustomEvent {
 </ion-router>
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

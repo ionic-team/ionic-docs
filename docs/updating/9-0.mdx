@@ -12,7 +12,7 @@ title: Updating to v9
 Ionic 8 から Ionic 9 への**破壊的変更の完全なリスト**については、Ionic Framework リポジトリの[破壊的変更ドキュメント](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-9x)を参照してください。
 :::
 
-## 自動移行
+## 自動移行 {/* #automated-migration */}
 
 以下の変更を手作業で進める前に、Ionic の移行ツールを実行できます。このツールはアプリをスキャンし、安全に移行できる破壊的変更を自動適用したうえで、手作業が必要な残りの更新チェックリストを出力します。各項目には影響を受けるファイル、行番号、このガイドの対応セクションへのリンクが含まれます。ツールは `package.json` からフレームワークとバージョンを読み取るため、アプリに関連する移行だけを適用します。
 
@@ -39,9 +39,9 @@ npx @ionic/migrate
 
 このツールは一度きりの実行です。`@ionic/*` のバージョンをバンプすると、再実行時には新しいメジャーを検出して何もしないため、メジャーアップグレードごとに一度だけ実行し、コミット前に diff を確認してください。
 
-## はじめに
+## はじめに {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 9 は Angular 18 から 22 までをサポートします。Angular 16 と 17 はサポート対象外です。[Angular 更新ガイド](https://update.angular.io/)に従って、サポート対象の Angular バージョンへ更新してください。
 
@@ -57,7 +57,7 @@ Ionic Angular Server と Ionic Angular Toolkit を使用している場合は、
 npm install @ionic/angular@latest @ionic/angular-server@latest @ionic/angular-toolkit@latest
 ```
 
-#### Zoneless 変更検出
+#### Zoneless 変更検出 {/* #zoneless-change-detection */}
 
 Ionic 9 は zoneless 変更検出をサポートします。Angular 21 では zoneless がデフォルトになったため、Angular 21 以降の新しい Ionic 9 アプリは最初から Zone.js なしで動作し、変更検出用のプロバイダーは不要です。
 
@@ -67,7 +67,7 @@ Zone.js がない場合、非同期コールバック（オーバーレイ結果
 Angular 18 から 20 では、Zone.js が引き続き Angular のデフォルトのため、これらのバージョンでは影響はなく、対応は不要です。Angular 18 から 20 で zoneless を採用するには、`provideZonelessChangeDetection()`（Angular 18 と 19 では `provideExperimentalZonelessChangeDetection()`）を追加し、`angular.json` の `polyfills` 配列から `zone.js` を削除してください。
 :::
 
-##### Zone.js を維持する
+##### Zone.js を維持する {/* #keeping-zonejs */}
 
 Angular 21 以降でも Zone.js を使い続けたい場合は、`provideZoneChangeDetection()` でオプトインしてください。
 
@@ -113,7 +113,7 @@ platformBrowserDynamic()
 import 'zone.js';
 ```
 
-#### Angular 22 での OnPush 変更検出
+#### Angular 22 での OnPush 変更検出 {/* #onpush-change-detection-on-angular-22 */}
 
 Angular 22 では、変更検出戦略を宣言していないコンポーネントのデフォルトが `OnPush` に変わります。上記の zoneless デフォルトと組み合わさると、Ionic ライフサイクルフック（`ionViewWillEnter` など）からプレーンなフィールドとして変更したコンポーネント状態は、それだけでは再描画されなくなります。
 
@@ -138,23 +138,23 @@ Angular 22 へアップグレードするときは `ng update` を実行して�
 Ionic 自身の Angular コンポーネントはすでに `OnPush` を宣言しているため、影響はありません。Angular 18 から 21 は eager デフォルトのままで、変更は不要です。
 :::
 
-#### TypeScript
+#### TypeScript {/* #typescript */}
 
 Ionic 9 は TypeScript 5.4 以降をサポートし、Angular 18 の最小要件と一致します。Angular 21 は TypeScript 5.9 以降、Angular 22 は TypeScript 6.0 以降が必要です。
 
-#### Node.js
+#### Node.js {/* #nodejs */}
 
 Angular 22 は Node.js の最小バージョンを `^22.22.3 || ^24.15.0 || ^26.0.0` に引き上げます。Angular 18 から 21 には影響ありません。
 
-#### コンポーネントのインポート
+#### コンポーネントのインポート {/* #component-imports */}
 
 Ionic 9 では、スタンドアロンコンポーネントがデフォルトのインポートパスになります。遅延読み込みコンポーネントのインポートを `@ionic/angular` から `@ionic/angular/lazy` へ変更してください。スタンドアロンコンポーネントのインポートは `@ionic/angular/standalone` から `@ionic/angular` へ変更してください。
 
-#### IonicModule の非推奨化
+#### IonicModule の非推奨化 {/* #ionicmodule-deprecation */}
 
 `IonicModule` は Ionic 9 で非推奨となり、将来のメジャーバージョンで削除されます。引き続き完全に機能するため、直ちに対応する必要はありません。準備ができたら、スタンドアロンと NgModule ベースの両方のアプリで使える `provideIonicAngular()` へ移行してください。[Modules から Standalone への移行](/angular/build-options.mdx#migrating-from-modules-to-standalone)を参照してください。
 
-#### CSS のインポート
+#### CSS のインポート {/* #css-imports */}
 
 `@ionic/angular` の CSS インポートから `~` プレフィックスを削除してください。Angular の現行ビルドパイプラインは、webpack-loader のプレフィックスをサポートしなくなりました:
 
@@ -163,11 +163,11 @@ Ionic 9 では、スタンドアロンコンポーネントがデフォルトの
 + @import '@ionic/angular/css/core.css';
 ```
 
-#### モジュール解決
+#### モジュール解決 {/* #module-resolution */}
 
 アプリが TypeScript の `moduleResolution: "node"`（クラシック）を使用している場合、`@ionic/angular/lazy` のようなサブパスからのインポートが解決に失敗することがあります。`tsconfig.json` で `moduleResolution` を `"bundler"` に設定してください。Angular 17 以降で `ng new` により作成されたアプリは、すでにこれを使用しています。
 
-### React
+### React {/* #react */}
 
 1. Ionic 9 は React 18+ をサポートします。React を最新バージョンに更新してください:
 
@@ -185,7 +185,7 @@ npm install @ionic/react@latest @ionic/react-router@latest
 
 `@ionic/react` パッケージは TypeScript 5.4 以降が必要です。型定義は TypeScript 5.4 で追加された `NoInfer` を使用します。
 
-#### 型付きオーバーレイフックの props
+#### 型付きオーバーレイフックの props {/* #typed-overlay-hook-props */}
 
 `useIonModal` と `useIonPopover` フックは、渡されたコンポーネントに対して `componentProps` を型付けするようになり、`any` を受け付けなくなりました。コンポーネントと一致しない props を渡すとコンパイルエラーになり、コンポーネントが必須 props を宣言している場合は `componentProps` が必須になります:
 
@@ -217,7 +217,7 @@ props の型は `componentProps` からではなく、コンポーネントか�
 
 コンポーネントではなく JSX 要素を渡す場合の動作は従来どおりです。props は要素にバインドされ、`componentProps` は型チェックされません。
 
-### React Router
+### React Router {/* #react-router */}
 
 1. Ionic 9 は React Router 6 をサポートします。React Router のバージョン 6 に更新してください:
 
@@ -233,7 +233,7 @@ npm uninstall @types/react-router @types/react-router-dom
 
 Ionic React は React Router v6 を必須とし、v5 とは API が異なります。以下が必要な主な変更です。
 
-#### ルート定義の変更
+#### ルート定義の変更 {/* #route-definition-changes */}
 
 `component` と `render` props は、JSX を受け取る `element` prop に置き換えられました:
 
@@ -251,7 +251,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <Route path="/" element={<Home />} />
 ```
 
-#### Redirect の変更
+#### Redirect の変更 {/* #redirect-changes */}
 
 `<Redirect>` コンポーネントは `<Navigate>` に置き換えられました:
 
@@ -263,7 +263,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <Navigate to="/home" replace />
 ```
 
-#### ネストしたルートのパス
+#### ネストしたルートのパス {/* #nested-route-paths */}
 
 ネストしたルートや子の `IonRouterOutlet` コンポーネントを含むルートには、サブパスにマッチするよう `/*` サフィックスが必要です:
 
@@ -272,7 +272,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <Route path="/tabs/*" element={<Tabs />} />
 ```
 
-#### ルートパラメータへのアクセス
+#### ルートパラメータへのアクセス {/* #accessing-route-parameters */}
 
 ルートパラメータは props ではなく、`useParams` フック経由で取得します:
 
@@ -286,7 +286,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 +   const { id } = useParams<{ id: string }>();
 ```
 
-#### RouteComponentProps の削除
+#### RouteComponentProps の削除 {/* #routecomponentprops-removed */}
 
 `RouteComponentProps` 型と、その `history`、`location`、`match` props は React Router v6 では利用できません。代わりに同等のフックを使用してください:
 
@@ -315,7 +315,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 +   console.log(location.pathname);
 ```
 
-#### exact Prop の削除
+#### exact Prop の削除 {/* #exact-prop-removed */}
 
 `exact` prop は不要になりました。React Router v6 のルートはデフォルトで正確にマッチします。サブパスにマッチさせるには、パスに `/*` サフィックスを付けてください:
 
@@ -324,7 +324,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <Route path="/home" />
 ```
 
-#### render Prop の削除
+#### render Prop の削除 {/* #render-prop-removed */}
 
 `render` prop は `element` prop に置き換えられました:
 
@@ -333,7 +333,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <Route path="/foo" element={<Foo />} />
 ```
 
-#### プログラムによるナビゲーション
+#### プログラムによるナビゲーション {/* #programmatic-navigation */}
 
 `useHistory` フックは `useNavigate` に置き換えられました:
 
@@ -356,7 +356,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + router.goBack();
 ```
 
-#### カスタム history Prop の削除
+#### カスタム history Prop の削除 {/* #custom-history-prop-removed */}
 
 `history` prop は `IonReactRouter`、`IonReactHashRouter`、`IonReactMemoryRouter` から削除されました。React Router v6 のルーターはカスタム `history` オブジェクトを受け付けません。
 
@@ -376,7 +376,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <IonReactMemoryRouter initialEntries={['/start']}>
 ```
 
-#### IonRedirect の削除
+#### IonRedirect の削除 {/* #ionredirect-removed */}
 
 `IonRedirect` コンポーネントは削除されました。代わりに React Router の `<Navigate>` コンポーネントを使用してください:
 
@@ -387,7 +387,7 @@ Ionic React は React Router v6 を必須とし、v5 とは API が異なりま�
 + <Route path="/old" element={<Navigate to="/new" replace />} />
 ```
 
-#### パスの正規表現制約の削除
+#### パスの正規表現制約の削除 {/* #path-regex-constraints-removed */}
 
 React Router v6 はパスパラメータ内の正規表現制約（例: `/:tab(sessions)`）をサポートしなくなりました。代わりにリテラルパスを使用してください:
 
@@ -398,7 +398,7 @@ React Router v6 はパスパラメータ内の正規表現制約（例: `/:tab(s
 + <Route path="/sessions/:id" element={<SessionDetail />} />
 ```
 
-#### IonRoute API の変更
+#### IonRoute API の変更 {/* #ionroute-api-changes */}
 
 `IonRoute` コンポーネントは、React Router の `<Route>` と同じ API 変更に従います。`render` prop は `element` に置き換えられ、`exact` prop は削除されました:
 
@@ -409,7 +409,7 @@ React Router v6 はパスパラメータ内の正規表現制約（例: `/:tab(s
 
 React Router v5 から v6 への移行の詳細は、[React Router v6 アップグレードガイド](https://reactrouter.com/6.28.0/upgrading/v5)を参照してください。
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 9 は Vue 3.5+ をサポートします。Vue を最新バージョンに更新してください:
 
@@ -423,7 +423,7 @@ npm install vue@latest
 npm install @ionic/vue@latest @ionic/vue-router@latest
 ```
 
-### Vue Router
+### Vue Router {/* #vue-router */}
 
 1. Ionic 9 は Vue Router 5 をサポートします。Vue Router を最新バージョンに更新してください:
 
@@ -435,7 +435,7 @@ npm install vue-router@5
 
 Vue Router v5 は移行用リリースであり、Vue Router v4 利用者向けのランタイム破壊的変更はないため、ルート、ナビゲーションガード、`IonRouterOutlet` についてアプリコードの変更は不要です。
 
-#### ナビゲーションガード内の `next()` に対する非推奨警告
+#### ナビゲーションガード内の `next()` に対する非推奨警告 {/* #deprecation-warning-for-next-in-navigation-guards */}
 
 Vue Router v5 は、`beforeRouteLeave`、`beforeRouteEnter`、`beforeRouteUpdate`、または `router.beforeEach` 内で `next()` を呼び出すと非推奨警告を出力します。コールバック形式は引き続き動作しますが、Vue Router v6 で削除されます。戻り値パターンへ移行してください:
 
@@ -462,7 +462,7 @@ Vue Router v5 は、`beforeRouteLeave`、`beforeRouteEnter`、`beforeRouteUpdate
 
 Vue Router v4 から v5 への移行の詳細は、[Vue Router v4 から v5 への移行ガイド](https://router.vuejs.org/guide/migration/v4-to-v5.html)を参照してください。
 
-### Core
+### Core {/* #core */}
 
 1. Ionic 9 の最新バージョンにアップデートしてください:
 
@@ -470,7 +470,7 @@ Vue Router v4 から v5 への移行の詳細は、[Vue Router v4 から v5 へ�
 npm install @ionic/core@latest
 ```
 
-#### パッケージの exports
+#### パッケージの exports {/* #package-exports */}
 
 `@ionic/core` の `package.json` は `exports` フィールドを宣言するようになりました。これにより、Node ESM で `@ionic/core/components` や `@ionic/core/loader` のようなサブパスが `ERR_UNSUPPORTED_DIR_IMPORT` で失敗する問題が修正されます。厳密な ESM リゾルバは、パッケージが以前依存していたネストした `package.json` ファイルを読み取らず、`exports` フィールドがそれらを置き換えます。これは Angular 21 のデフォルト Vitest ビルダーや生の Node などのツールチェーンに影響します。
 
@@ -487,9 +487,9 @@ npm install @ionic/core@latest
 
 `moduleResolution: "node"`（クラシック）および webpack 4 のアプリは、引き続きレガシーフィールド経由で解決されるため、変更は不要です。
 
-## 必須の変更
+## 必須の変更 {/* #required-changes */}
 
-### ブラウザサポート
+### ブラウザサポート {/* #browser-support */}
 
 Ionic がサポートするブラウザの一覧が変わりました。サポート対象のブラウザへアプリをデプロイしていることを確認するため、[ブラウザサポートガイド](../reference/browser-support)を確認してください。
 
@@ -504,13 +504,13 @@ Safari >=16
 iOS >=16
 ```
 
-### Capacitor
+### Capacitor {/* #capacitor */}
 
 Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティブプラットフォーム検出は Capacitor 2 の `isNative` フラグへフォールバックしなくなり、`isCapacitorNative` は Capacitor 3 で追加された `Capacitor.isNativePlatform()` のみに依存します。
 
 アプリがまだ Capacitor 2 の場合、ネイティブプラットフォーム上で動作していると検出されなくなるため、`isPlatform('capacitor')`、`isPlatform('hybrid')`、`getPlatforms()` は native ではなく `web` を報告します。[Capacitor の更新ガイド](https://capacitorjs.com/docs/updating/7-0)に従って、Capacitor 7 以降へアップグレードしてください。
 
-### Img
+### Img {/* #img */}
 
 `ion-img` は非推奨となり、Ionic 10 で削除されます。このコンポーネントは、ブラウザがネイティブの遅延読み込みをサポートする前に画像を遅延読み込みするために作成されました。現行のブラウザはネイティブ `<img>` 要素の [`loading="lazy"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading) 属性をサポートするため、このコンポーネントは不要です。
 
@@ -521,7 +521,7 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 + <img src="/assets/image.png" alt="Description" loading="lazy" decoding="async" />
 ```
 
-#### イベント
+#### イベント {/* #events */}
 
 ネイティブの `<img>` 要素は Ionic のカスタムイベントを発行しません。代わりに標準の DOM イベントを使用してください:
 
@@ -533,7 +533,7 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 
 ¹ ネイティブの `load` と `error` はバブリングしませんが、Ionic のイベントはバブリングしていました。イベント委譲（親に 1 つのリスナー）を使っていた場合は、代わりに各 `<img>` でリッスンするか、キャプチャフェーズを使ってください: `parent.addEventListener('load', handler, true)`。
 
-#### スタイル
+#### スタイル {/* #styling */}
 
 `ion-img` は内側の画像をスタイルするための `image` CSS shadow part を公開していました。ネイティブの `<img>` では、代わりに要素を直接スタイルしてください:
 
@@ -546,7 +546,7 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 + }
 ```
 
-### Input
+### Input {/* #input */}
 
 #### `autocorrect` プロパティの型が Boolean に変更 {/* #input-autocorrect-property-type-changed-to-boolean */}
 
@@ -594,7 +594,7 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 +ion-input .input-end [slot="end"] { }
 ```
 
-### レガシーピッカー
+### レガシーピッカー {/* #legacy-picker */}
 
 `ion-picker-legacy` と `ion-picker-legacy-column` コンポーネントは削除されました。
 
@@ -602,9 +602,9 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 - `pickerController` の使用をすべて削除してください。React を使用している場合は、`useIonPicker` フックの使用も削除してください。これらのコントローラベース API は削除されました。代わりに [Picker](../api/picker.mdx) コンポーネントを使用してください。
 - `PickerOptions`、`PickerButton`、`PickerColumn`、`PickerColumnOption` 型エクスポートの使用をすべて削除してください。これらの型はレガシーピッカーに関連しており、削除されました。
 
-### Modal
+### Modal {/* #modal */}
 
-#### `handleBehavior` のデフォルト変更
+#### `handleBehavior` のデフォルト変更 {/* #handlebehavior-default-changed */}
 
 `ion-modal` の `handleBehavior` プロパティのデフォルトは、`"none"` ではなく `"cycle"` になりました。ハンドルを表示するシートモーダルでは、ハンドルがフォーカス可能になり、アクティブ化（クリック、キーボード、またはスクリーンリーダー）するとシートが利用可能なブレークポイントを循環します。これはネイティブ iOS のシート動作と一致し、支援技術ユーザー向けにシートモーダルをデフォルトで操作可能に保ちます。
 
@@ -614,9 +614,9 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 <ion-modal handle-behavior="none"></ion-modal>
 ```
 
-### Nav
+### Nav {/* #nav */}
 
-#### ルーター統合の削除
+#### ルーター統合の削除 {/* #router-integration-removed */}
 
 `ion-nav` は `ion-router` と統合しなくなりました。現在はスタンドアロンの命令型スタックナビゲーションコンポーネントであり、自身の API（`root`、`push`、`pop`、`setRoot` など）と `ion-nav-link` のみで駆動されます。
 
@@ -642,11 +642,11 @@ Ionic 9 は Capacitor 7 以降を公式にサポートします。ネイティ�
 
 `ion-nav` は、ローカルで URL なしのスタックナビゲーションのために、ルーティングされたページ内にネストしたままでも使えます。`root` と `ion-nav-link` 経由で自身のスタックを管理し、push/pop しても URL は変わりません。完全な動作例は、[ルーティングされたページ内での ion-nav の使用](../api/router.mdx#using-ion-nav-within-a-routed-page)を参照してください。
 
-### Router Outlet
+### Router Outlet {/* #router-outlet */}
 
 `ion-router-outlet` は、アウトレットごとにスワイプで戻るジェスチャを制御する `swipeGesture` プロパティを公開するようになりました。このプロパティのデフォルトは `"ios"` モードで `true`、`"md"` モードで `false` です。
 
-#### `swipeBackEnabled` 設定の動作変更
+#### `swipeBackEnabled` 設定の動作変更 {/* #swipebackenabled-config-behavior-change */}
 
 React と Vue では、`swipeBackEnabled` 設定オプションはアウトレットのマウント時に一度だけ読み取られるようになりました。実行時にこの設定値を動的に切り替えるアプリは、代わりに `swipeGesture` プロパティへ移行してください。
 
@@ -664,7 +664,7 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 + <ion-router-outlet :swipe-gesture="someCondition" />
 ```
 
-#### スワイプで戻るの無効化
+#### スワイプで戻るの無効化 {/* #disabling-swipe-to-go-back */}
 
 特定のアウトレットでジェスチャを無効にするには、`swipeGesture` を `false` に設定してください:
 
@@ -674,7 +674,7 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 
 `swipeBackEnabled` 設定オプションは初期デフォルトとして引き続き尊重されるため、起動時に一度だけ設定するアプリでは変更不要です。
 
-### Searchbar
+### Searchbar {/* #searchbar */}
 
 #### `autocorrect` プロパティの型が Boolean に変更 {/* #searchbar-autocorrect-property-type-changed-to-boolean */}
 
@@ -683,15 +683,15 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 - オートコレクトを無効のままにする（デフォルト）には、属性を削除してください。
 - 有効にするにはプロパティバインディングを使用してください: `[autocorrect]="true"`（Angular）、`autocorrect={true}`（React）、または `:autocorrect="true"`（Vue）。
 
-### Select
+### Select {/* #select */}
 
-#### `ionChange` は値が変わったときのみ発火
+#### `ionChange` は値が変わったときのみ発火 {/* #ionchange-only-fires-when-the-value-changes */}
 
 `ion-select` の `ionChange` イベントは、選択値が実際に変わったときのみ発火するようになりました。以前は、`alert` と `action-sheet` インターフェースは、ユーザーがすでに選択されていたオプションを選んだ場合でも、オーバーレイが確定されるたびに `ionChange` を発行していました。これにより、`alert` と `action-sheet` インターフェースは、既存の `popover` と `modal` インターフェースの動作、および文書化された `ionChange` の契約と揃います。
 
 値変更なしの確定のたびに `ionChange` が発火することに依存していたアプリ（たとえば、値変更なしのオーバーレイ閉じを検出するため）は、代わりに `ionDismiss` をリッスンするか、基になるアラートまたはアクションシートの `didDismiss` イベントを使用してください。
 
-#### Action Sheet インターフェースの `selected` ロール削除
+#### Action Sheet インターフェースの `selected` ロール削除 {/* #action-sheet-interface-selected-role-removed */}
 
 `interface="action-sheet"` を使用する場合、`ion-select` は現在選択されているオプションのアクションシートボタンに `selected` ロールを割り当てなくなりました。これにより、`action-sheet` インターフェースは、このロールを割り当てない `alert`、`popover`、`modal` インターフェースと揃います。選択オプションのスタイルは変わりません。
 
@@ -733,7 +733,7 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 
 新しい構造ラッパーを対象にするには、新しい `part="start"`、`part="control"`、`part="end"` を使用してください。
 
-### Textarea
+### Textarea {/* #textarea */}
 
 #### フローティングラベルの動作 {/* #textarea-floating-label-behavior */}
 
@@ -772,7 +772,7 @@ React と Vue では、`swipeBackEnabled` 設定オプションはアウトレ�
 +ion-textarea .textarea-end [slot="end"] { }
 ```
 
-#### 最小高さの変更
+#### 最小高さの変更 {/* #minimum-height-change */}
 
 Material Design（`md` モード）のテキストエリアの最小高さは、現在 `72px` です。デフォルトの行数では、これにより `fill` プロパティや `labelPlacement` に関係なくテキストエリアの高さが同じになります。以前の最小高さは次のとおりでした:
 
@@ -795,7 +795,7 @@ ion-textarea.custom {
 }
 ```
 
-## アップグレードのヘルプが必要ですか？
+## アップグレードのヘルプが必要ですか？ {/* #need-help-upgrading */}
 
 破壊的変更の完全なリストについては、必ず [Ionic 9 破壊的変更ガイド](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-9x)を確認してください。このアップグレードガイドは、開発者による対応が必要な変更のみを扱います。
 

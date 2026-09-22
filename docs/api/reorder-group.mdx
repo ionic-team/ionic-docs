@@ -23,9 +23,9 @@ Reorder groupは、[reorder](./reorder)コンポーネントを使用するア�
 
 `ionReorderEnd` イベントの `detail` プロパティには、`from` および `to` インデックスを含む、並べ替え操作に関するすべての関連情報が含まれています。並べ替えの文脈では、項目は `to` インデックスに `from` 移動します。並べ替えグループの使用例については、[reorder](./reorder) ドキュメントを参照してください。
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ReorderMoveEventDetail
+### ReorderMoveEventDetail {/* #reordermoveeventdetail */}
 
 ```typescript
 interface ReorderMoveEventDetail {
@@ -34,7 +34,7 @@ interface ReorderMoveEventDetail {
 }
 ```
 
-### ReorderEndEventDetail
+### ReorderEndEventDetail {/* #reorderendeventdetail */}
 
 ```typescript
 interface ReorderEndEventDetail {
@@ -44,7 +44,7 @@ interface ReorderEndEventDetail {
 }
 ```
 
-### ReorderMoveCustomEvent
+### ReorderMoveCustomEvent {/* #reordermovecustomevent */}
 
 必須ではありませんが、このコンポーネントから発行されるIonicイベントでより強く型付けを行うために、`CustomEvent`インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -55,7 +55,7 @@ interface ReorderMoveCustomEvent extends CustomEvent {
 }
 ```
 
-### ReorderEndCustomEvent
+### ReorderEndCustomEvent {/* #reorderendcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行されるIonicイベントでより強く型付けを行うために、`CustomEvent`インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -66,7 +66,7 @@ interface ReorderEndCustomEvent extends CustomEvent {
 }
 ```
 
-### ItemReorderEventDetail (deprecated)
+### ItemReorderEventDetail (deprecated) {/* #itemreordereventdetail-deprecated */}
 
 **_Deprecated_** — Use the `ionReorderEnd` event with `ReorderEndEventDetail` instead.
 
@@ -78,7 +78,7 @@ interface ItemReorderEventDetail {
 }
 ```
 
-### ItemReorderCustomEvent (deprecated)
+### ItemReorderCustomEvent (deprecated) {/* #itemreordercustomevent-deprecated */}
 
 **_Deprecated_** — Use the `ionReorderEnd` event with `ReorderEndCustomEvent` instead.
 
@@ -89,26 +89,26 @@ interface ItemReorderCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

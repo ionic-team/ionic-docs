@@ -19,11 +19,11 @@ title: Debugging
   allowFullScreen
 ></iframe>
 
-## Live Reload
+## Live Reload {/* #live-reload */}
 
 Live Reload は、デバイス上のネイティブ機能（プラグインなど）のデバッグに便利です。コードを変更するたびに新しいネイティブバイナリを展開する代わりに、アプリの変更が検出されるとブラウザ（または WebView）をリロードします。[Live Reload](../cli/livereload.mdx)の詳細を学んでください。
 
-## iOS and Safari
+## iOS and Safari {/* #ios-and-safari */}
 
 Safari can be used to debug an Ionic app on a connected iOS device or iOS simulator.
 
@@ -35,7 +35,7 @@ Run the iOS simulator or connect your iOS device to your Mac, then run the Ionic
 
 Safari 内で、ツールバーから**Develop**を選択します。ドロップダウンメニューにはデバイスとアプリの名前が表示されます。アプリ名にカーソルを合わせ、**localhost**をクリックします。これにより、Safari 開発者ツールを使用して、デバイス上で実行されている Ionic アプリを検査およびデバッグするための新しいウィンドウが開きます。
 
-## Android and Chrome
+## Android and Chrome {/* #android-and-chrome */}
 
 Use Google Chrome's DevTools to debug an app when it is running in the browser using the `ionic serve` command, deployed to an emulator, or on a physical device.
 
@@ -53,7 +53,7 @@ With your app running on the device, head back to Chrome and click on **inspect*
 The app preview may not automatically appear when you open Chrome Developer Tools due to a minor bug. To make it appear, click on the **Elements** tab then click on any DOM element then toggle off and on any CSS rule and the app preview window will appear.
 :::
 
-## Debugging with Visual Studio locally in Chrome (both Android & iOS)
+## Debugging with Visual Studio locally in Chrome (both Android & iOS) {/* #debugging-with-visual-studio-locally-in-chrome-both-android--ios */}
 
 [Visual Studio Code](https://code.visualstudio.com/) can also be used to debug an Ionic app running in the Chrome web browser.
 
@@ -65,7 +65,7 @@ Make sure that the port used in the url property of your `launch.json` file matc
 
 In the debug target dropdown menu, select **Launch against Chrome**, then click run. This will open a new instance of the Chrome browser and VS code will attach to it. You can set breakpoints and use the other debugging tools within VS Code while your app is running in Chrome.
 
-## Debugging with Visual Studio Code in Android
+## Debugging with Visual Studio Code in Android {/* #debugging-with-visual-studio-code-in-android */}
 
 [Visual Studio Code](https://code.visualstudio.com/) has a dedicated plugin for debugging apps that run in an Android WebView.
 

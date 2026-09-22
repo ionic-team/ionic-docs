@@ -11,7 +11,7 @@ title: プログレッシブウェブアプリ
   />
 </head>
 
-### Web、そしてそれ以上のもの
+### Web、そしてそれ以上のもの {/* #the-webbut-better */}
 
 プログレッシブウェブアプリ（PWA）は、最新のウェブ機能を使用してユーザーにアプリのような体験を提供するウェブアプリです。
 これらのアプリは特定の要件（以下に説明）を満たしており、サーバーにデプロイされ、URL を通じてアクセス可能で、検索エンジンによってインデックスされます。
@@ -21,7 +21,7 @@ title: プログレッシブウェブアプリ
 
 Ionic では、アプリストアへのリリースだけでなく、PWA としてモバイル Web にデプロイすることも可能です。
 
-### 要求されるもの
+### 要求されるもの {/* #what-is-required */}
 
 Progressive Web App と見なされるには、アプリが以下の要件を満たしている必要があります。
 
@@ -53,14 +53,14 @@ _[Addy Osmani: Progressive web apps](https://addyosmani.com/blog/getting-started
 
 たくさんありますが、Ionic アプリの場合はいくつかのポイントに集約されます。
 
-#### オフライン対応
+#### オフライン対応 {/* #offline-support */}
 
 アプリはオフラインで動作する必要があります。適切な「オフライン」メッセージの表示や、表示用にアプリデータをキャッシュすることなどです。
 
-#### [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+#### [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) {/* #web-app-manifest */}
 
 App Manifest ファイルには、アプリに必要なリソースを記述する必要があります。これには、アプリの表示名、アイコン、スプラッシュ画面などが含まれます。index.html Manifest ファイルにリンクすると、ブラウザがそれを検出し、リソースを読み込むようになります。
 
-#### [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+#### [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) {/* #service-worker */}
 
 Service Worker については、オフライン サポートの項でも触れましたが、本当は独自のセクションが必要です。Service Worker は、アプリのリソースをキャッシュするためのプログラム的な方法を提供します。JavaScript ファイルであれ、HTTP リクエストの JSON データであれ、です。プログラム的な API により、開発者はキャッシュをどのように処理するかを決定でき、他の選択肢よりもはるかに柔軟なエクスペリエンスを提供します。

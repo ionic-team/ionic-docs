@@ -10,13 +10,13 @@ title: 設定
   />
 </head>
 
-## ファイル
+## ファイル {/* #files */}
 
 設定された値は JSON ファイルに格納されます。Ionic CLI は、通常`~/.ionic/config.json`にグローバル設定ファイルを設定します。通常はプロジェクトのルートディレクトリに `ionic.config.json` という名前で保存されます。
 
 CLI は、プロジェクトの設定ファイルおよびグローバル CLI 設定ファイルから設定値を設定・表示するコマンドを提供します。`ionic config --help` を実行するか、[`ionic config get`](/cli/commands/config-get.mdx) および [`ionic config set`](/cli/commands/config-set.mdx) の使用方法に関するドキュメントを参照してください。
 
-### プロジェクト設定ファイル
+### プロジェクト設定ファイル {/* #project-configuration-file */}
 
 各 Ionic プロジェクトには、通常はプロジェクトのルートディレクトリに、プロジェクト設定ファイルがあります。以下は注釈付きの `ionic.config.json` です。
 
@@ -55,7 +55,7 @@ CLI は、次の環境変数を検索します:
 - `IONIC_HTTP_PROXY`: すべての CLI リクエストをプロキシする URL を設定します。詳細は [プロキシの使用](using-a-proxy.mdx) を参照してください。
 - `IONIC_TOKEN`: [Appflow](https://ionic.io/appflow) に自動で認証します。
 
-## Flags
+## Flags {/* #flags */}
 
 CLI flags は、CLI コマンドの動作を変更するグローバルオプションです。
 
@@ -65,7 +65,7 @@ CLI flags は、CLI コマンドの動作を変更するグローバルオプシ
 - `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
 - `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
-## Hooks
+## Hooks {/* #hooks */}
 
 CLI は、ビルドの前後など、特定のイベント中にスクリプトを実行できます。CLI にフックするには、次の [npm スクリプト](https://docs.npmjs.com/misc/scripts)を `package.json` ファイルで使用できます。
 
@@ -115,7 +115,7 @@ module.exports = function (ctx) {
 };
 ```
 
-## Multi-app Projects
+## Multi-app Projects {/* #multi-app-projects */}
 
 <small>_Available in CLI 6.2.0+_</small>
 
@@ -127,7 +127,7 @@ Ionic CLI は multi-app 構成セットアップをサポートしており、�
 Angular を使用している場合は、例について [Angular モノレポガイド](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) を参照してください。
 :::
 
-### セットアップステップ
+### セットアップステップ {/* #setup-steps */}
 
 1. ディレクトリを作成し、モノレポを初期化します（詳細は[プロジェクト構造](#project-structure)を参照してください）。
 1. モノレポを Ionic マルチアプリプロジェクトとして初期化します。これによりマルチアプリ`ionic.config.json`ファイルが作成されます。詳細は[設定ファイル](#config-file)を参照してください。
@@ -189,7 +189,7 @@ When a multi-app project is detected, the Ionic CLI will operate under the conte
 
 Apps can be registered in a multi-app project either by using `ionic start` to create new apps or `ionic init` to initialize existing apps.
 
-#### Using `ionic start`
+#### Using `ionic start` {/* #using-ionic-start */}
 
 If a multi-app project is detected during `ionic start`, the CLI will add the app configuration to the root `ionic.config.json` file instead of creating a project-specific one.
 
@@ -200,7 +200,7 @@ $ cd apps/
 $ ionic start "My New App" --no-deps
 ```
 
-#### Using `ionic init`
+#### Using `ionic init` {/* #using-ionic-init */}
 
 If an app was created in a way other than `ionic start`, for example by using a prebuilt template, use `ionic init` to register the existing app with the multi-app project.
 
@@ -213,15 +213,15 @@ $ cd apps/existing-app/
 $ ionic init
 ```
 
-## 詳細設定
+## 詳細設定 {/* #advanced-configuration */}
 
-### Build の上書き
+### Build の上書き {/* #overriding-the-build */}
 
 Normally, the CLI runs a hard-coded set of commands based on the project type. For example, the standard web asset build for Angular projects is `ng run app:build`. The web asset build can be overridden and `ionic build` can continue to be used by utilizing the `ionic:build` [npm script](https://docs.npmjs.com/misc/scripts). Similarly, the dev server can be overridden by using the `ionic:serve` npm script.
 
 Pay close attention to the flags supplied to the script by the Ionic CLI. Irregularities may occur if options are not respected, especially for livereload on devices.
 
-### コマンドオプション
+### コマンドオプション {/* #command-options */}
 
 Command options can be expressed with environment variables. They are normally set with `--opt=value` syntax. The naming of these environment variables follows a pattern: start with `IONIC_CMDOPTS_`, add the command name (replacing any spaces with underscores), add the option name (replacing any hyphens with underscores), and then uppercase everything. Boolean flags (command-line options that don't take a value) can be set to `1` or `0`. Strip the `--no-` prefix in boolean flags, if it exists (`--no-open` in ionic serve can be expressed with `IONIC_CMDOPTS_SERVE_OPEN=0`, for example).
 
@@ -236,6 +236,6 @@ $ export IONIC_CMDOPTS_CORDOVA_RUN_HOST=0.0.0.0
 
 If these variables are set in the environment, `ionic cordova build ios` will use new defaults for its options.
 
-### 遠隔計測について
+### 遠隔計測について {/* #telemetry */}
 
 CLI から Ionic に使用状況データが送信されるため、操作性が向上します。この機能を無効にするには、`ionic config set -g telemetry false`を実行してください。

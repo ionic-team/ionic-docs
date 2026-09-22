@@ -61,7 +61,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Datetime はカレンダーとタイムホイールのインターフェイスを表示し、ユーザーが簡単に日付と時刻を選択できるようにします。Datetime はネイティブの `datetime-local` の `input` 要素と似ていますが、Ionic Framework の Datetime コンポーネントを使用すると、好みのフォーマットで日付と時刻を表示したり、datetime の値を管理することが簡単にできます。
 
-## 概要
+## 概要 {/* #overview */}
 
 これまで、JavaScript や HTML の入力で datetime の値を扱うことは、常に困難でした。
 入力でさえも、常に課題でした。
@@ -72,7 +72,7 @@ Datetime はカレンダーとタイムホイールのインターフェイス�
 Ionic Framework の datetime は、開発者が一般的な落とし穴を回避できるように設計されており、
 開発者は簡単に datetime 値を操作し、ユーザーにシンプルな datetime ピッカーを提供し、素晴らしいユーザーエクスペリエンスを提供することができます。
 
-### ISO 8601 日時形式: `YYYY-MM-DDTHH:mmZ`
+### ISO 8601 日時形式: `YYYY-MM-DDTHH:mmZ` {/* #iso-8601-datetime-format-yyyy-mm-ddthhmmz */}
 
 Ionic Framework では、[ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を値として使用します。
 この値は、JavaScript の `Date` オブジェクトを使用するのではなく、単純に文字列として使用されます。
@@ -100,21 +100,21 @@ JSON オブジェクトやデータベース内でのシリアライズやパー
 秒、ミリ秒、タイムゾーンは ISO 8601 datetime フォーマットで指定できますが、 `ion-datetime` は秒、ミリ秒、タイムゾーンを選択するためのインターフェイスを提供しません。秒、ミリ秒、タイムゾーンの値を指定しても無視されます。
 :::
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 <Basic />
 
-## 日付ボタンと使う
+## 日付ボタンと使う {/* #usage-with-datetime-button */}
 
 モーダルやポップオーバーなどのオーバーレイで日付時刻を表示する必要がある場合は、 [ion-datetime-button](./datetime-button) を使用することをお勧めします。スペースに制約がある場合は、 `ion-datetime-button` を使用する必要があります。このコンポーネントは、現在の日付と時刻の値を表示するボタンを表示します。ボタンがタップされると、日付と時刻のピッカーがオーバーレイで表示されます。
 
-## 非同期に値を設定する
+## 非同期に値を設定する {/* #setting-values-asynchronously */}
 
 すでに datetime が作成された後にプログラムで`value`が更新されると、datetime は自動的に新しい日付にジャンプします。しかし、ユーザーが datetime を操作しているときに、この方法で`value`を更新することは避けることをお勧めします。例えば、datetime の`value`が非同期処理で読み込まれる場合、値の更新が終わるまで CSS で datetime を非表示にすることをお勧めします。
 
-## 日付コンテナ
+## 日付コンテナ {/* #date-constraints */}
 
-### 日付の最小値と最大値
+### 日付の最小値と最大値 {/* #max-and-min-dates */}
 
 日付の最小値と最大値をカスタマイズするには、 `min` と `max` コンポーネントプロパティを使用します。上の表にあるのと同じ ISO 8601 フォーマットに従って、各コンポーネントはユーザーが選択できる日付を制限することができます。
 
@@ -122,7 +122,7 @@ JSON オブジェクトやデータベース内でのシリアライズやパー
 
 <MaxMin />
 
-### 特定の値を選択する
+### 特定の値を選択する {/* #selecting-specific-values */}
 
 `min` と `max` プロパティでは、日付の選択をある範囲に制限することができますが、 `monthValues`, `dayValues`, `yearValues`, `hourValues`, `minuteValues` プロパティでは、ユーザーが選択できる特定の日や時刻を選択することが可能です。
 
@@ -130,7 +130,7 @@ JSON オブジェクトやデータベース内でのシリアライズやパー
 
 <Values />
 
-### 高度な日付制限
+### 高度な日付制限 {/* #advanced-date-constraints */}
 
 `isDateEnabled` プロパティを使用すると、開発者は `ion-datetime` をカスタマイズして、ISO 8601 の日付文字列を使用し、特定の日、日付の範囲、週末、または任意のカスタムルールを無効にできます。
 `isDateEnabled` プロパティは、日付が有効かどうかを示すブール値を返す関数を受け付けます。この関数は、表示されている各日付と、その前月および翌月の日付に対して呼び出されます。カスタム実装では、画面のカクつきを避けるためにパフォーマンスを最適化する必要があります。
@@ -143,7 +143,7 @@ JSON オブジェクトやデータベース内でのシリアライズやパー
 
 Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat) Web API を利用して、ユーザーの端末に設定されている言語や地域に応じて、月名と曜日名を自動的にローカライズすることが可能です。
 
-### カスタムロケール
+### カスタムロケール {/* #custom-locale */}
 
 特定のロケールが必要な場合、 `locale` プロパティを使用して設定することができます。ロケールは、表示される言語と日付・時刻のフォーマットの両方を制御します。
 
@@ -155,7 +155,7 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 時間ラベルは自動的にローカライズされません。詳細は [時間ラベル](#time-label) を参照してください。
 :::
 
-### 時間サイクル
+### 時間サイクル {/* #hour-cycle */}
 
 `ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は 12 時間のサイクルを使用します。
 
@@ -178,7 +178,7 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 
 <HourCycle />
 
-### 週初めの日
+### 週初めの日 {/* #first-day-of-the-week */}
 
 `ion-datetime` の場合、デフォルトの週の最初の日は日曜日です。2022 年時点では、Ionic がデバイスのロケールに基づいて週の最初の日を自動的に判定するブラウザ API はありませんが、これに関する作業は進行中です（[TC39 GitHub](https://github.com/tc39/ecma402/issues/6) を参照）。
 
@@ -190,7 +190,7 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 
 <TimeLabel />
 
-### ロケールエクステンションタグ
+### ロケールエクステンションタグ {/* #locale-extension-tags */}
 
 `ion-datetime` は、`Intl.Locale` API の一部として[ロケール拡張タグ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale)もサポートしています。これらのタグを使用すると、ロケールに関する情報をロケール文字列自体にエンコードすることができます。開発者は、アプリの中で [`Intl.Locale` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) を使っている場合、拡張タグのアプローチを使うことを好むかもしれません。
 
@@ -202,13 +202,13 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 アプリで使用する前に、`Intl.Locale` の[ブラウザー互換性表](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)を必ず確認してください。
 :::
 
-## プレゼンテーション
+## プレゼンテーション {/* #presentation */}
 
 デフォルトでは、 `ion-datetime` は日付と時刻の両方を選択することができる。さらに、ユーザは特定の月、年、時間、分を選択することができます。
 
 ユースケースによっては、日付だけを選択したり、時間だけを選択したりすることもできます。 `presentation` プロパティでは、表示するピッカーとその順番を指定することができます。例えば、 `date-time` を設定すると、カレンダーピッカーがタイムピッカーよりも先に表示されます。 `time-date` を設定すると、カレンダーピッカーは time ピッカーの後に表示されます。
 
-### 月と年の選択
+### 月と年の選択 {/* #month-and-year-selection */}
 
 月と年の選択は、 `presentation` プロパティに `month-year` , `month` , または `year` を渡すことで行うことができます。
 
@@ -216,7 +216,7 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 
 <MonthAndYear />
 
-### 時刻の選択
+### 時刻の選択 {/* #time-selection */}
 
 時刻の選択は、 `presentation` プロパティに `date-time`, `time-date`, `time` を渡すことで行うことができます。
 
@@ -224,7 +224,7 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 
 <Time />
 
-### 日付の選択
+### 日付の選択 {/* #date-selection */}
 
 時刻の選択は、 `presentation` プロパティに `date-time`, `time-date`, または `date` を渡すことで行うことで有効になります。
 
@@ -232,7 +232,7 @@ Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-
 
 <Date />
 
-### ピッカーのホイールスタイル
+### ピッカーのホイールスタイル {/* #wheel-style-pickers */}
 
 デフォルトでは、Ionic は `presentation` を使用する場合、グリッドスタイルのレイアウトを優先して表示します。しかし、`preferWheel` プロパティを使用すると、ホイールスタイルを表示することができます。`preferWheel`が`true` の場合、Ionic は可能な限りホイールスタイルのレイアウトを優先して表示します。
 
@@ -254,7 +254,7 @@ import Wheel from '@site/static/usage/v9/datetime/presentation/wheel/index.mdx';
 
 <Wheel />
 
-## 隣接する日を表示する
+## 隣接する日を表示する {/* #show-adjacent-days */}
 
 `showAdjacentDays` プロパティが `true` に設定されている場合、カレンダービューに前月と翌月の日が表示され、月の初めや終わりの空白を埋めることができます。ユーザーが有効な隣接日をクリックすると、カレンダーはその月のビューを表示するようにスムーズにアニメーションします。
 
@@ -266,7 +266,7 @@ import Wheel from '@site/static/usage/v9/datetime/presentation/wheel/index.mdx';
 
 <ShowAdjacentDays />
 
-## 複数の日付の選択
+## 複数の日付の選択 {/* #multiple-date-selection */}
 
 `multiple`プロパティが`true`に設定されている場合、カレンダーピッカーから複数の日付を選択することができます。選択した日付をクリックすると選択が解除されます。
 
@@ -276,15 +276,15 @@ import Wheel from '@site/static/usage/v9/datetime/presentation/wheel/index.mdx';
 
 <MultipleDateSelection />
 
-## タイトル
+## タイトル {/* #titles */}
 
 デフォルトでは、`ion-datetime`は、コンポーネントに関連するヘッダーやタイトルを表示しません。開発者は `showDefaultTitle` プロパティを使用して、デフォルトのタイトル/ヘッダー構成を表示することができます。また、 `title` スロットを使用して、ヘッダーに表示される内容をカスタマイズすることもできます。
 
-### デフォルトタイトルを表示
+### デフォルトタイトルを表示 {/* #showing-the-default-title */}
 
 <ShowingDefaultTitle />
 
-### タイトルをカスタマイズ
+### タイトルをカスタマイズ {/* #customizing-the-title */}
 
 <CustomizingTitle />
 
@@ -298,23 +298,23 @@ Datetime はタイムゾーンを [操作したり設定したりしません](#
 
 <FormatOptions />
 
-## ボタン
+## ボタン {/* #buttons */}
 
 デフォルトでは、新しい日付が選択されると、新しい datetime の値で `ionChange` が発行されます。 `ionChange` を発行する前にユーザの確認を必要とする場合は、 `showDefaultButtons` プロパティを `true` に設定するか、 `buttons` スロットでカスタム確認ボタンを渡すことができます。カスタムボタンを渡す場合、 `ionChange` を発生させるために、確認ボタンは `ion-datetime` の `confirm` メソッドを呼び出す必要があります。
 
-### 確認ボタンの表示
+### 確認ボタンの表示 {/* #showing-confirmation-buttons */}
 
 デフォルトの「完了」と「キャンセル」ボタンは、それぞれ既に [`confirm`](#method-confirm) と [`cancel`](#method-cancel) メソッドを呼び出すように事前設定されています。
 
 <ShowingConfirmationButtons />
 
-### ボタンテキストのカスタマイズ
+### ボタンテキストのカスタマイズ {/* #customizing-button-texts */}
 
 単純なユースケースの場合、開発者は `doneText` と `cancelText` プロパティを使用して、確認とキャンセルの値にカスタムボタンテキストを指定することができます。この方法は、ボタンのテキストを変更するだけで、カスタムビヘイビアを必要としない場合に推奨します。
 
 <CustomizingButtonTexts />
 
-### ボタン要素のカスタマイズ
+### ボタン要素のカスタマイズ {/* #customizing-button-elements */}
 
 開発者は、高度なカスタム動作のための独自のボタンを提供することができる。
 
@@ -322,7 +322,7 @@ Datetime はタイムゾーンを [操作したり設定したりしません](#
 
 <CustomizingButtons />
 
-## 特定の日付をハイライトする
+## 特定の日付をハイライトする {/* #highlighting-specific-dates */}
 
 `highlightedDates`プロパティを使用すると、開発者は特定の日付をカスタムテキストや背景色でスタイル設定することができます。このプロパティは、日付とその色の配列として定義するか、ISO 文字列を受け取って使用する色を返すコールバックとして定義することができます。
 
@@ -334,21 +334,21 @@ Datetime はタイムゾーンを [操作したり設定したりしません](#
 このプロパティは、`preferWheel="false"` かつ `presentation` が `"date"`、`"date-time"`、`"time-date"` のいずれかの場合にのみサポートされます。
 :::
 
-### 配列を利用
+### 配列を利用 {/* #using-array */}
 
 ハイライトが期日などの固定された日付に適用される場合は、配列の方が適しています。
 
 <HighlightedDatesArray />
 
-### Callback を利用
+### Callback を利用 {/* #using-callback */}
 
 誕生日や定期的なミーティングなど、ハイライトされた日付が繰り返される場合は、コールバックを使用した方がよいでしょう。
 
 <HighlightedDatesCallback />
 
-## スタイリング
+## スタイリング {/* #styling */}
 
-### グローバルテーマ
+### グローバルテーマ {/* #global-theming */}
 
 Ionic の強力なテーマシステムを使用すると、特定のテーマに合わせてアプリ全体を簡単に変更することができます。この例では、[Color Creator](../theming/colors#new-color-creator) と [Stepped Color Generator](../theming/themes#stepped-color-generator) を使用して、 `ion-datetime` で使用できるローズ色のパレットを作成しました。
 
@@ -356,7 +356,7 @@ Ionic の強力なテーマシステムを使用すると、特定のテーマ�
 
 <GlobalTheming />
 
-### Datetime Header
+### Datetime Header {/* #datetime-header */}
 
 The datetime header manages the content for the `title` slot and the selected date.
 
@@ -366,7 +366,7 @@ The datetime header manages the content for the `title` slot and the selected da
 
 <DatetimeHeaderStyling />
 
-### カレンダーヘッダー
+### カレンダーヘッダー {/* #calendar-header */}
 
 The calendar header manages the date navigation controls (month/year picker and prev/next buttons) and the days of the week when using a grid style layout.
 
@@ -374,7 +374,7 @@ The header can be styled using CSS shadow parts.
 
 <CalendarHeaderStyling />
 
-### Calendar Days
+### Calendar Days {/* #calendar-days */}
 
 The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
 
@@ -384,7 +384,7 @@ The example below selects the day 2 days ago, unless that day is in the previous
 
 <CalendarDaysStyling />
 
-### Wheel Pickers
+### Wheel Pickers {/* #wheel-pickers */}
 
 `ion-datetime`で使用するホイールは、シャドウパーツと CSS 変数を組み合わせてスタイルを設定することができます。これは、ホイールスタイルの datetime のカラムにも、グリッドスタイルの datetime の月/年のピッカーにも適用されます。
 
@@ -414,7 +414,7 @@ const zonedTime = utcToZonedTime(date, userTimeZone);
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
 ```
 
-### 日付の値のパース
+### 日付の値のパース {/* #parsing-date-values */}
 
 `ionChange` イベントは、イベントのペイロードに ISO-8601 形式の文字列として日付の値を出力します。アプリケーションのニーズに応じてこれをフォーマットするのは、開発者の責任です。日付の値をフォーマットするには、[date-fns](https://date-fns.org) を使用することを推奨します。
 
@@ -437,7 +437,7 @@ console.log(formattedString); // Jun 4, 2021
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
 
-## 高度な日時の検証および操作
+## 高度な日時の検証および操作 {/* #advanced-datetime-validation-and-manipulation */}
 
 datetime ピッカーは、正確なフォーマットを選択するシンプルさを提供し、
 標準化された [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を使用して、
@@ -449,9 +449,9 @@ datetime 値を文字列として持続させることができます。
 あるいは、特定のロケールにデータをフォーマットする必要があるなら、
 JavaScript で日付を扱うために [date-fns](https://date-fns.org) を使うことを強くお勧めします。
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### キーボードインタラクション
+### キーボードインタラクション {/* #keyboard-interactions */}
 
 `ion-datetime` は、コンポーネント内のフォーカス可能な要素間を移動するためのフルキーボードサポートを備えています。次の表は、それぞれのキーが何をするのかの詳細です。
 
@@ -461,7 +461,7 @@ JavaScript で日付を扱うために [date-fns](https://date-fns.org) を使�
 | <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element. |
 | <kbd>Space</kbd> or <kbd>Enter</kbd> | Clicks the focusable element.                  |
 
-#### 日付の表示
+#### 日付の表示 {/* #date-grid */}
 
 | Key                                    | Description                                       |
 | -------------------------------------- | ------------------------------------------------- |
@@ -476,13 +476,13 @@ JavaScript で日付を扱うために [date-fns](https://date-fns.org) を使�
 | <kbd>Shift</kbd> + <kbd>PageUp</kbd>   | Changes the grid of dates to the previous year.   |
 | <kbd>Shift</kbd> + <kbd>PageDown</kbd> | Changes the grid of dates to the next year.       |
 
-#### 時刻、月、年のホイール
+#### 時刻、月、年のホイール {/* #time-month-and-year-wheels */}
 
 Datetime のホイールピッカーは内部で [Picker](./picker) を使用しています。ホイールピッカーのアクセシビリティ機能の詳細は [Picker アクセシビリティ](./picker#accessibility) を参照してください。
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### DatetimeChangeEventDetail
+### DatetimeChangeEventDetail {/* #datetimechangeeventdetail */}
 
 ```typescript
 interface DatetimeChangeEventDetail {
@@ -490,7 +490,7 @@ interface DatetimeChangeEventDetail {
 }
 ```
 
-### DatetimeCustomEvent
+### DatetimeCustomEvent {/* #datetimecustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -501,26 +501,26 @@ interface DatetimeCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS カスタムプロパティ
+## CSS カスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

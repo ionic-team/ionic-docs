@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Ionic Angular が何であるか、そして Angular エコシステムにどのように適合するかの概要について知りたい場合は、[Ionic Angular 概要](overview)を参照してください。
 
-## 前提条件
+## 前提条件 {/* #prerequisites */}
 
 始める前に、マシンに Node.js と npm がインストールされていることを確認してください。
 次を実行して確認できます：
@@ -30,7 +30,7 @@ npm -v
 
 もし Node.js と npm を持っていない場合は、[Node.js をダウンロードしてください](https://nodejs.org/en/download)（npm を含みます）。
 
-## Ionic CLI でプロジェクトを作成
+## Ionic CLI でプロジェクトを作成 {/* #create-a-project-with-the-ionic-cli */}
 
 まず、最新の[Ionic CLI](../cli)をインストールします：
 
@@ -53,7 +53,7 @@ ionic serve
 
 ![Screenshot of the Ionic Angular Home page](/img/guides/quickstart/home-page.png 'Ionic Angular Home Component')
 
-## Explore the Project Structure
+## Explore the Project Structure {/* #explore-the-project-structure */}
 
 Your new app's directory will look like this:
 
@@ -77,7 +77,7 @@ Your new app's directory will look like this:
 
 アプリの構造を理解するために、これらのファイルを見ていきましょう。
 
-## View the App Component
+## View the App Component {/* #view-the-app-component */}
 
 The root of your app is defined in `app.component.ts`:
 
@@ -105,7 +105,7 @@ And its template in `app.component.html`:
 
 これにより、Ionic の`ion-app`と`ion-router-outlet`コンポーネントを使用してアプリケーションのルートが設定されます。ルーターアウトレットは、ページが表示される場所です。
 
-## View Routes
+## View Routes {/* #view-routes */}
 
 Routes are defined in `app.routes.ts`:
 
@@ -127,7 +127,7 @@ export const routes: Routes = [
 
 ルート URL（`/`）にアクセスすると、`HomePage`コンポーネントが読み込まれます。
 
-## View the Home Page
+## View the Home Page {/* #view-the-home-page */}
 
 The Home page component, defined in `home.page.ts`, imports the Ionic components it uses:
 
@@ -178,7 +178,7 @@ And the template, in the `home.page.html` file, uses those components:
 Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/api/header.mdx)、[Toolbar](/api/toolbar.mdx)、[Title](/api/title.mdx)、および[Content](/api/content.mdx)のドキュメントを参照してください。
 :::
 
-## Ionic コンポーネントを追加
+## Ionic コンポーネントを追加 {/* #add-an-ionic-component */}
 
 より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`ion-content`の最後に[Button](/api/button.mdx)を追加します：
 
@@ -201,7 +201,7 @@ import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/a
 })
 ```
 
-## Add a New Page
+## Add a New Page {/* #add-a-new-page */}
 
 To add a new page, generate it with the CLI:
 
@@ -237,7 +237,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar 
 
 `ion-back-button`は、前のページへのナビゲーション、または履歴がない場合は`/`へのナビゲーションを自動的に処理します。
 
-## Navigate to the New Page
+## Navigate to the New Page {/* #navigate-to-the-new-page */}
 
 To navigate to the new page, update the button in `home.page.html`:
 
@@ -260,7 +260,7 @@ import { RouterLink } from '@angular/router';
 ナビゲーションは、Angular の Router サービスを使用して行うこともできます。詳細については、[Angular ナビゲーションのドキュメント](/angular/navigation.mdx#navigating-to-different-routes)を参照してください。
 :::
 
-## 新しいページにアイコンを追加
+## 新しいページにアイコンを追加 {/* #add-icons-to-the-new-page */}
 
 Ionic Angular には[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`ion-icon`コンポーネントの`name`プロパティを設定することで、任意のアイコンを使用できます。次のアイコンを`new.page.html`に追加します：
 
@@ -303,7 +303,7 @@ export class NewPage implements OnInit {
 
 詳細については、[Icon のドキュメント](/api/icon.mdx)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
 
-## コンポーネントメソッドを呼び出す
+## コンポーネントメソッドを呼び出す {/* #call-component-methods */}
 
 コンテンツ領域を下部にスクロールできるボタンを追加しましょう。
 
@@ -389,7 +389,7 @@ Ionic コンポーネントのメソッドを呼び出すには：
 
 各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/api/content.mdx#methods)セクションで見つけることができます。
 
-## デバイスで実行
+## デバイスで実行 {/* #run-on-a-device */}
 
 Ionic のコンポーネントは、iOS、Android、PWA のどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
 
@@ -408,7 +408,7 @@ ionic cap open android
 
 詳細については、[Capacitor の入門ガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
-## さらに探索
+## さらに探索 {/* #explore-more */}
 
 このガイドでは、Ionic Angular アプリの作成、ナビゲーションの追加、ネイティブビルド用の Capacitor の導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
 

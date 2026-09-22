@@ -21,13 +21,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 フッターは、ページの下部に配置されるページのルートコンポーネントです。1つ以上の [ツールバー](./toolbar) のラッパーとして使用することが推奨されますが、あらゆる要素をラップするために使用することができます。ツールバーがフッターの中で使用される場合、コンテンツは正しいサイズに調整され、フッターはデバイスセーフエリアを考慮したものになります。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/footer/basic/index.mdx';
 
 <Basic />
 
-## 半透明のフッター
+## 半透明のフッター {/* #translucent-footer */}
 
 フッターは、`translucent`プロパティを設定することで、ネイティブiOSアプリケーションで見られる透明度に合わせることができます。コンテンツがフッターの背後でスクロールするようにするには、コンテンツに`fullscreen`プロパティを設定する必要があります。この効果は、モードが`"ios"`であり、デバイスが[backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility)をサポートしている場合にのみ適用されます。
 
@@ -35,7 +35,7 @@ import Translucent from '@site/static/usage/v9/footer/translucent/index.mdx';
 
 <Translucent />
 
-## フェードフッター
+## フェードフッター {/* #fade-footer */}
 
 多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、フッターの `collapse` プロパティを `"fade"` に設定することで実現できます。コンテンツが最後までスクロールされると、フッターの背景とボーダーはフェードアウトします。この効果は、モードが `"ios"` のときだけ適用されます。
 
@@ -43,7 +43,7 @@ import Fade from '@site/static/usage/v9/footer/fade/index.mdx';
 
 <Fade />
 
-### 仮想スクロールでの使用方法
+### 仮想スクロールでの使用方法 {/* #usage-with-virtual-scroll */}
 
 フェードフッターを正しく動作させるためには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを提供する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
 
@@ -51,7 +51,7 @@ import CustomScrollTarget from '@site/static/usage/v9/footer/custom-scroll-targe
 
 <CustomScrollTarget />
 
-## ボーダー
+## ボーダー {/* #borders */}
 
 `"md"`モードでは、フッターは上部に `box-shadow` が表示されます。`"ios"`モードでは、上部に `border` が表示されます。これらは、フッターに `.ion-no-border` クラスを追加することで削除することができます。
 
@@ -59,26 +59,26 @@ import NoBorder from '@site/static/usage/v9/footer/no-border/index.mdx';
 
 <NoBorder />
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

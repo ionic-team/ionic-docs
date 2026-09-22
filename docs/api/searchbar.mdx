@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 検索バーは、コレクションを検索するために使用できるテキストフィールドを表します。ツールバーやメインコンテンツの中に表示することができます。検索バーは、検索リストへの入力の代わりに使用する必要があります。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/searchbar/basic/index.mdx';
 
 <Basic />
 
-## 検索アイコン
+## 検索アイコン {/* #search-icon */}
 
 検索バーのInputフィールドの左に表示される検索アイコンです。任意の [Ionicon](https://ionic.io/ionicons/) にカスタマイズすることが可能です。
 
@@ -37,7 +37,7 @@ import SearchIcon from '@site/static/usage/v9/searchbar/search-icon/index.mdx';
 
 <SearchIcon />
 
-## クリアボタン
+## クリアボタン {/* #clear-button */}
 
 検索バーに値があるとき、または検索バーのテキストフィールドに入力があったときに、クリアボタンが表示されます。クリアボタンをクリックすると、テキストフィールドは消去され、入力はフォーカスされたままになります。デフォルトでは、クリアボタンは検索バーをフォーカスしたときに表示されるように設定されていますが、常に表示する、または全く表示しないように設定することができます。また、クリアボタン内のアイコンは、任意の[Ionicon](https://ionic.io/ionicons/)にカスタマイズすることができます。
 
@@ -45,7 +45,7 @@ import ClearButton from '@site/static/usage/v9/searchbar/clear-button/index.mdx'
 
 <ClearButton />
 
-## キャンセルボタン
+## キャンセルボタン {/* #cancel-button */}
 
 キャンセルボタンを有効にすると、クリックすると入力がクリアされ、フォーカスが失われます。デフォルトでは、キャンセルボタンは表示されないように設定されていますが、常に表示するように設定したり、検索バーにフォーカスが当たったときのみ表示するように設定したりすることができます。キャンセルボタンは `ios` モードではテキストとして、`md` モードではアイコンとして表示されます。テキストとアイコンはそれぞれ別のプロパティでカスタマイズでき、アイコンは任意の[Ionicon](https://ionic.io/ionicons/)を使用することができます。
 
@@ -53,7 +53,7 @@ import CancelButton from '@site/static/usage/v9/searchbar/cancel-button/index.md
 
 <CancelButton />
 
-## ツールバーの中に配置した検索バー
+## ツールバーの中に配置した検索バー {/* #searchbars-in-toolbars */}
 
 検索バーは、ツールバーの中に配置されたときにネイティブに見えるようにスタイルされています。iOSでは、検索バーは、ページタイトルを含むツールバーの下にある、独自のツールバーに配置されるべきです。Material Designでは、検索バーは、独自のツールバーに永続的に表示されるか、ページタイトルを含むツールバーの上に展開されるかのいずれかです。
 
@@ -62,7 +62,7 @@ import Toolbar from '@site/static/usage/v9/toolbar/searchbars/index.mdx';
 
 <Toolbar />
 
-## Debounce
+## Debounce {/* #debounce */}
 
 検索バーにDebounceを設定して、`ionInput`イベントのトリガーを遅延させることができます。これは、入力に文字が入力されるたびにデータを要求するのではなく、要求を出すのを待つために使うことができるので、データを問い合わせるときに便利です。
 
@@ -70,15 +70,15 @@ import Debounce from '@site/static/usage/v9/searchbar/debounce/index.mdx';
 
 <Debounce />
 
-## テーマ
+## テーマ {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/searchbar/theming/colors/index.mdx';
 
 <Colors />
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 検索バーは、スコープをつけてカプセル化されています。これは、実行時に各スタイルに追加のクラスを付加することで、CSSを自動的にスコープ化することを意味します。CSSでscopedセレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
 
@@ -86,19 +86,19 @@ import CSSProps from '@site/static/usage/v9/searchbar/theming/css-properties/ind
 
 <CSSProps />
 
-## キーボード表示
+## キーボード表示 {/* #keyboard-display */}
 
-### Android
+### Android {/* #android */}
 
 デフォルトでは、Inputをタップするとキーボードが表示され、サブミットボタンに虫眼鏡のアイコンが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、アイコンが虫眼鏡からcarriage returnに変更されます。
 
-### iOS
+### iOS {/* #ios */}
 
 デフォルトでは、Inputをタップするとキーボードが表示され、グレーのSubmitボタンに「return」のテキストが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、テキストが "return" から "go" に変わり、ボタンの色もグレーから青に変わります。また、`ion-searchbar` を `form` 要素でラップして、 `action` プロパティを設定することもできます。これにより、キーボードが表示され、"search "という青いSubmitボタンが表示されるようになります。
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### SearchbarChangeEventDetail
+### SearchbarChangeEventDetail {/* #searchbarchangeeventdetail */}
 
 ```typescript
 interface SearchbarChangeEventDetail {
@@ -106,7 +106,7 @@ interface SearchbarChangeEventDetail {
 }
 ```
 
-### SearchbarCustomEvent
+### SearchbarCustomEvent {/* #searchbarcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -117,26 +117,26 @@ interface SearchbarCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

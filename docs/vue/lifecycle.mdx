@@ -6,7 +6,7 @@ sidebar_label: ライフサイクル
 
 このガイドでは、Ionic Framework のライフサイクルイベントを Ionic Vue アプリケーションで使用する方法について説明します。
 
-## Ionic Framework のライフサイクルメソッド
+## Ionic Framework のライフサイクルメソッド {/* #ionic-framework-lifecycle-methods */}
 
 Ionic Framework はアプリで使えるいくつかのライフサイクルメソッドを提供します:
 
@@ -43,7 +43,7 @@ const ionViewWillLeave = () => {
 </script>
 ```
 
-### Composition API Hooks
+### Composition API Hooks {/* #composition-api-hooks */}
 
 These lifecycles can also be expressed using Vue 3's Composition API:
 
@@ -73,7 +73,7 @@ onIonViewWillLeave(() => {
 Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
 :::
 
-## Ionic Framework がページのライフを処理する仕組み
+## Ionic Framework がページのライフを処理する仕組み {/* #how-ionic-framework-handles-the-life-of-a-page */}
 
 Ionic Framework には `<ion-router-outlet>` と呼ばれるルータアウトレットがあります。このアウトレットは、Vue Router の `<router-view>` を拡張し、モバイルデバイスのエクスペリエンスを向上させるためのいくつかの追加機能を提供します。
 
@@ -88,7 +88,7 @@ Ionic Framework には `<ion-router-outlet>` と呼ばれるルータアウト�
 
 Vue のすべてのライフサイクルメソッド(`mounted` や `beforeUnmount`など)も使用可能です。ただし、Ionic Vue はページのライフタイムを管理するため、特定のイベントは予期したときに起動しない場合があります。たとえば、mounted はページが最初に表示されたときに起動しますが、ページから離れると、Ionic Framework によってページが DOM 内に保持され、その後ページにアクセスしても再度 `mounted` が呼び出されることはありません。このシナリオは、Ionic Framework のライフサイクル・メソッドが存在する主な理由であり、ネイティブ・フレームワークのイベントが起動しない可能性がある場合でも、ビューの開始時と終了時にロジックを呼び出す方法を提供します。
 
-## 各ライフサイクルメソッドのガイダンス
+## 各ライフサイクルメソッドのガイダンス {/* #guidance-for-each-lifecycle-method */}
 
 以下は、ライフサイクルイベントごとのユースケースに関するヒントです。
 

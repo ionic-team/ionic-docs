@@ -27,13 +27,13 @@ Contentコンポーネントは、スクロール可能領域を制御するい�
 
 Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utilities](/layout/css-utilities.mdx) で提供されるグローバルスタイルを使用するか、CSSおよび使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/content/basic/index.mdx';
 
 <Basic />
 
-## Header & Footer
+## Header & Footer {/* #header--footer */}
 
 コンテンツは、ページ内の唯一のトップレベル・コンポーネントとすることも、[ヘッダー](./header)、[フッター](./footer)、またはその両方と一緒に使用することも可能です。ヘッダーやフッターと一緒に使用すると、残りの高さを埋めるようにサイズが調整されます。
 
@@ -41,7 +41,7 @@ import HeaderFooter from '@site/static/usage/v9/content/header-footer/index.mdx'
 
 <HeaderFooter />
 
-## Fullscreen Content
+## Fullscreen Content {/* #fullscreen-content */}
 
 デフォルトでは、コンテンツは [ヘッダー](./header)と [フッター](./footer)の間のスペースを埋めますが、それらの背景にまわることはありません。例えば、ヘッダーとフッターのどちらかに `translucent` プロパティを設定した場合や、ツールバーに `opacity` を設定した場合など、特定のケースでは、コンテンツをヘッダーとフッターの後ろにスクロールさせることが望まれるかもしれない。これは、コンテンツの `fullscreen` プロパティを `true` に設定することで実現することができます。
 
@@ -49,7 +49,7 @@ import Fullscreen from '@site/static/usage/v9/content/fullscreen/index.mdx';
 
 <Fullscreen />
 
-## コンテンツの固定
+## コンテンツの固定 {/* #fixed-content */}
 
 スクロール可能な領域の外側に要素を配置するには、`fixed`スロットに割り当てます。そうすることで、その要素はコンテンツの左上に[絶対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning)されます。要素の位置を変えるには、CSSの[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position)プロパティを使ってスタイルを設定することができます。
 
@@ -59,7 +59,7 @@ import Fixed from '@site/static/usage/v9/content/fixed/index.mdx';
 
 <Fixed />
 
-## スクロールメソッド
+## スクロールメソッド {/* #scroll-methods */}
 
 コンテンツには [メソッド](#methods) が用意されており、これを呼び出すことでコンテンツを下、上、または特定のポイントにスクロールさせることができます。これらのメソッドには `duration` を渡すことができ、瞬時に位置を変更するのではなく、スムーズに移行することができます。
 
@@ -67,7 +67,7 @@ import ScrollMethods from '@site/static/usage/v9/content/scroll-methods/index.md
 
 <ScrollMethods />
 
-## Scroll Events
+## Scroll Events {/* #scroll-events */}
 
 スクロールイベントは、パフォーマンス上、コンテンツに対してデフォルトで無効化されています。しかし、`scrollEvents` を `true` に設定することで、有効にすることができます。これは、 スクロール [イベント](#events) を聞く前に必要です。
 
@@ -75,27 +75,27 @@ import ScrollEvents from '@site/static/usage/v9/content/scroll-events/index.mdx'
 
 <ScrollEvents />
 
-## テーマ
+## テーマ {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/content/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 import CSSParts from '@site/static/usage/v9/content/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v9/content/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-### Safe Area Padding
+### Safe Area Padding {/* #safe-area-padding */}
 
 The content component will not automatically apply padding to any of its sides to account for the [safe area](/theming/advanced.mdx#safe-area-padding). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.mdx#application-variables).
 
@@ -119,9 +119,9 @@ import SafeArea from '@site/static/usage/v9/content/theming/safe-area/index.mdx'
 
 <SafeArea />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ScrollBaseDetail
+### ScrollBaseDetail {/* #scrollbasedetail */}
 
 ```typescript
 interface ScrollBaseDetail {
@@ -129,7 +129,7 @@ interface ScrollBaseDetail {
 }
 ```
 
-### ScrollDetail
+### ScrollDetail {/* #scrolldetail */}
 
 ```typescript
 interface ScrollDetail extends GestureDetail, ScrollBaseDetail {
@@ -138,7 +138,7 @@ interface ScrollDetail extends GestureDetail, ScrollBaseDetail {
 }
 ```
 
-### ScrollBaseCustomEvent
+### ScrollBaseCustomEvent {/* #scrollbasecustomevent */}
 
 必須ではありませんが、`ionScrollStart` と `ionScrollEnd` イベントをより強く型付けするために、`CustomEvent` インターフェースの代わりにこのインターフェースを利用することが可能です。
 
@@ -149,7 +149,7 @@ interface ScrollBaseCustomEvent extends CustomEvent {
 }
 ```
 
-### ScrollCustomEvent
+### ScrollCustomEvent {/* #scrollcustomevent */}
 
 必須ではありませんが、`ionScroll` イベントをより強く型付けするために、`CustomEvent` インターフェースの代わりにこのインターフェースを利用することが可能です。
 
@@ -159,26 +159,26 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

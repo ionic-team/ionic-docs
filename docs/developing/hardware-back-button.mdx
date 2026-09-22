@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 ハードウェアの 「戻る」 ボタンとは Android デバイスの物理的な 「戻る」 ボタンのことであり、ブラウザの 「戻る」 ボタンや `ion-back-button` ボタンと混同しないでください。このガイドの情報は、Android デバイスにのみ適用されます。
 :::
 
-## 概要
+## 概要 {/* #overview */}
 
 Ionic Framework は、サポートされている環境でユーザーがハードウェアの戻るボタンを押すと、`ionBackButton`イベントを発行します。
 
@@ -27,7 +27,7 @@ Ionic Framework は、サポートされている環境でユーザーがハー�
 
 複数のハンドラを起動したい場合があります。各ハンドラのコールバックは、フレームワークに次のハンドラを呼び出すように指示するために使用できるパラメーターとして関数を渡します。
 
-## サポート
+## サポート {/* #support */}
 
 以下の表は、環境によってハードウェアの戻るボタンのサポートがどのように異なるかを示しています。
 
@@ -38,7 +38,7 @@ Ionic Framework は、サポートされている環境でユーザーがハー�
 | ブラウザ  | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
 | PWA       | `experimentalCloseWatcher`が`true`で、プラットフォームが Close Watcher API をサポートしている場合のみサポートされます。 |
 
-### ブラウザまたは PWA でのハードウェアの戻るボタン
+### ブラウザまたは PWA でのハードウェアの戻るボタン {/* #hardware-back-button-in-a-browser-or-a-pwa */}
 
 Ionic は、[IonicConfig で`experimentalCloseWatcher: true`を設定](./config.mdx)することで、ブラウザまたは PWA でハードウェアの戻るボタンを処理する実験的なサポートを提供します。この機能が有効になっている場合、Ionic は[Close Watcher API](https://github.com/WICG/close-watcher)を使用して、すべての閉じるリクエストを`ionBackButton`イベントを通じて渡します。これには、ナビゲーションのためにハードウェアの戻るボタンを押すことや、モーダルを閉じるために Escape キーを押すことが含まれます。
 
@@ -50,7 +50,7 @@ Chrome は[Chrome 120](https://developer.chrome.com/blog/new-in-chrome-120)か�
 The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA if Close Watcher is unsupported or `experimentalCloseWatcher` is `false`.
 :::
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 ````mdx-code-block
 <Tabs
@@ -134,7 +134,7 @@ useBackButton(10, () => {
 
 同じ優先度のハンドラが存在する場合、最後に登録されたハンドラが呼び出されます。詳細については、[同じ優先度のハンドラ](#handlers-with-the-same-priorities)を参照してください。
 
-## 複数ハンドラの呼び出し
+## 複数ハンドラの呼び出し {/* #calling-multiple-handlers */}
 
 各ハードウェアバックボタンコールバックには、 `processNextHandler` パラメータがあります。この関数を呼び出すと、ハードウェアバックボタンハンドラの呼び出しを続行できます。
 
@@ -272,7 +272,7 @@ document.addEventListener('ionBackButton', (event) => {
 
 上の例では、ハンドラ A と B の両方の優先度は 10 です。ハンドラ B は最後に登録されているため、Ionic Framework はハンドラ A を呼び出す前にハンドラ B を呼び出します。
 
-## アプリの終了
+## アプリの終了 {/* #exiting-the-app */}
 
 場合によっては、ハードウェアの戻るボタンを押したときにアプリケーションを終了することをお勧めします。これは、Capacitor/Cordova が提供するメソッドと組み合わせた `ionBackButton` イベントを使用することで実現できます。
 
@@ -392,7 +392,7 @@ useBackButton(-1, () => {
 
 アプリケーションを終了する前に、ユーザーがルート・ページにあるかどうかを確認することをお勧めします。開発者は、Ionic Angular の `IonRouterOutlet` で`canGoBack` 、 Ionic React および Ionic Vue の `IonRouter` で `canGoBack` メソッドを使用できます。
 
-## 内部フレームワークハンドラ
+## 内部フレームワークハンドラ {/* #internal-framework-handlers */}
 
 次の表は、Ionic Framework が使用するすべての内部ハードウェアバックボタンイベントハンドラの一覧です。 `Propagates` 列は、その特定のハンドラが Ionic Framework に次の戻るボタンハンドラを呼び出すように指示するかどうかを示します。
 

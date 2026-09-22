@@ -19,18 +19,18 @@ Ionic アプリケーション内でデータを保存するには、さまざ�
 
 以下に一般的なユースケースと解決策を示します：
 
-## ローカルアプリケーション設定とデータ
+## ローカルアプリケーション設定とデータ {/* #local-application-settings-and-data */}
 
 多くのアプリケーションでは、設定やその他の軽量なキー/値データをローカルに保存する必要があります。[Capacitor Preferences](https://capacitorjs.com/docs/apis/preferences) プラグインは、こうしたシナリオを扱うために特別に設計されています。
 
-## リレーショナルデータストレージ（モバイル専用）
+## リレーショナルデータストレージ（モバイル専用） {/* #relational-data-storage-mobile-only */}
 
 一部のアプリケーション、特にオフラインファースト手法を採用しているものは、大量の複雑なリレーショナルデータをローカルに保存する必要がある場合があります。このようなシナリオでは、SQLite プラグインを使用できます。最も一般的な SQLite プラグインの提供元は以下の通りです：
 
 - [Cordova SQLite Storage](https://github.com/storesafe/cordova-sqlite-storage) (a [convenience wrapper](https://danielsogl.gitbook.io/awesome-cordova-plugins/sqlite) also exists for this plugin to aid in implementation)
 - [Capacitor Community SQLite Plugin](https://github.com/capacitor-community/sqlite)
 
-## 非リレーショナル型大容量データストレージ（モバイルおよび Web）
+## 非リレーショナル型大容量データストレージ（モバイルおよび Web） {/* #non-relational-high-volume-data-storage-mobile-and-web */}
 
 大量のデータを保存し、かつ Web とモバイルの両方で動作する必要があるアプリケーションの場合、Web では[indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)を、モバイルでは前述の SQLite プラグインのいずれかを使用するキー/値ペアデータストレージサービスを作成することが一つの解決策となります。
 
@@ -40,7 +40,7 @@ Ionic アプリケーション内でデータを保存するには、さまざ�
 - [Mobile Service](https://github.com/ionic-enterprise/tutorials-and-demos-ng/blob/main/demos/sqlcipher-kv-pair/src/app/core/mobile-kv-store.ts)
 - [Web Service](https://github.com/ionic-enterprise/tutorials-and-demos-ng/blob/main/demos/sqlcipher-kv-pair/src/app/core/web-kv-store.ts)
 
-## その他の選択肢
+## その他の選択肢 {/* #other-options */}
 
 Capacitor アプリケーション内で良好に動作し、ローカルストレージとクラウドベースストレージの両方を提供するその他のストレージオプションも存在し、アプリケーションとの統合が容易な場合があります。
 

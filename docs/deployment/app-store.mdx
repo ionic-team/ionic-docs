@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## 要件
+## 要件 {/* #requirements */}
 
 iOS App Store にアプリを提出するには、いくつかのことが必要です。
 
@@ -25,7 +25,7 @@ iOS App Store にアプリを提出するには、いくつかのことが必要
 
 開始するには、[Apple Developer Program の登録手順](https://developer.apple.com/programs/)に従ってください。
 
-## リリースビルドの作成
+## リリースビルドの作成 {/* #generating-a-release-build */}
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
@@ -90,7 +90,7 @@ ionic cordova build ios --prod
 </TabItem>
 </Tabs>
 
-## 署名証明書の生成
+## 署名証明書の生成 {/* #generating-signing-certs */}
 
 iOS 用の証明書の生成は少し複雑なので、証明書とは何か、どのように生成するかについては、[Apple の公式ドキュメント](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) を必ず確認してください。
 
@@ -100,7 +100,7 @@ iOS 用の証明書の生成は少し複雑なので、証明書とは何か、�
 
 ディストリビューション証明書は、アプリをストアに配布するためのものです。アプリがディストリビューション証明書で署名されると、どのデバイスにもインストールできるようになります。
 
-## XCode でのアプリへの署名
+## XCode でのアプリへの署名 {/* #signing-the-app-in-xcode */}
 
 正しい証明書を生成した後、Xcode に自動的に証明書を管理させるか、手動で管理するかのオプションがあります。Xcode が自動的に証明書を管理するようにすることをお勧めします。これは、選択されたビルドタイプに基づいて、正しい Development と Distribution の証明書が使用されることを確認するためです。
 
@@ -111,7 +111,7 @@ Xcode Organizer は、現在のアプリのビルドを含むリストを表示�
 
 アップロードに成功すると、アプリは[iTunes Connect](https://itunesconnect.apple.com)の「アクティビティ」に表示されるか、[App Store Connect](https://appstoreconnect.apple.com/)の「Apps」に表示されます。ここから、アプリを TestFlight に公開したり、Apple に送信して App Store の承認を得ることができます。
 
-## アプリのアップデート
+## アプリのアップデート {/* #updating-an-app */}
 
 アプリが成長するにつれ、新機能や修正を加えて更新する必要があります。
 アプリのアップデートは、Apple に新バージョンを提出するか、Appflow のような[live update 機能](https://ionic.io/docs/appflow/deploy/intro)を使用することで可能です。

@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 トーストは、最近のアプリケーションでよく使われる小さな通知です。操作に関するフィードバックを提供したり、システムメッセージを表示したりするために使用されます。トーストは、アプリケーションのコンテンツの上に表示され、アプリケーションによって解除されると、アプリケーションとの対話を再開することができます。
 
-## インラインToasts (推奨)
+## インラインToasts (推奨) {/* #inline-toasts-recommended */}
 
 `ion-toast`は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、トーストを表示するために配線する必要があるハンドラの数を減らすことができます。
 
@@ -34,7 +34,7 @@ import InlineToastTriggerExample from '@site/static/usage/v9/toast/inline/basic/
 
 <InlineToastTriggerExample />
 
-### Using `isOpen​`
+### Using `isOpen​` {/* #using-isopen */}
 
 `ion-toast` の `isOpen` プロパティは、開発者がアプリケーションの状態からトーストの表示状態を制御できるようにするものです。つまり、`isOpen` を `true` に設定するとトーストが表示され、`isOpen` を `false` に設定するとトーストは破棄されます。
 
@@ -44,13 +44,13 @@ import InlineToastIsOpenExample from '@site/static/usage/v9/toast/inline/is-open
 
 <InlineToastIsOpenExample />
 
-## Controller Toasts
+## Controller Toasts {/* #controller-toasts */}
 
 import ControllerExample from '@site/static/usage/v9/toast/presenting/controller/index.mdx';
 
 <ControllerExample />
 
-## Dismissing
+## Dismissing {/* #dismissing */}
 
 トーストは静かな通知であり、ユーザーの邪魔をしないように意図されています。そのため、トーストを解除するためにユーザーの操作を必要とするべきではありません。
 
@@ -64,11 +64,11 @@ import ButtonsPlayground from '@site/static/usage/v9/toast/buttons/index.mdx';
 
 <ButtonsPlayground />
 
-## ポジショニング
+## ポジショニング {/* #positioning */}
 
 トーストは、ビューポートの上部、下部、中部に配置することができます。位置は作成時に渡すことができます。指定できる値は `top`, `bottom`, `middle` です。位置が指定されない場合、トーストはビューポートの一番下に表示されます。
 
-### 相対的な位置
+### 相対的な位置 {/* #relative-positioning */}
 
 トーストがヘッダー、フッター、[FAB](./fab.mdx)のようなナビゲーション要素と一緒に表示される場合、デフォルトではトーストはこれらの要素と重なるかもしれません。これは `positionAnchor` プロパティを使って修正することができます。`position="top"`を使用するとトーストは選択した要素に対して相対的な位置になり、`position="bottom"`を使用するとその下に、`position="bottom"`を使用するとその上に表示されます。`position="middle"`を使用する場合、`positionAnchor`プロパティは無視されます。
 
@@ -76,7 +76,7 @@ import PositionAnchor from '@site/static/usage/v9/toast/position-anchor/index.md
 
 <PositionAnchor />
 
-## Swipe to Dismiss
+## Swipe to Dismiss {/* #swipe-to-dismiss */}
 
 `swipeGesture`プロパティを使用することで、トーストをスワイプして消すことができます。この機能は位置を認識します。つまり、ユーザがスワイプする方向は `position` プロパティの値に基づいて変化します。さらに、ユーザーがスワイプする距離は `positionAnchor` プロパティによって影響を受ける可能性があります。
 
@@ -84,7 +84,7 @@ import SwipeGesture from '@site/static/usage/v9/toast/swipe-gesture/index.mdx';
 
 <SwipeGesture />
 
-## レイアウト
+## レイアウト {/* #layout */}
 
 トースト内のボタンコンテナは、`layout`プロパティを使用して、メッセージと同じ行に表示するか、別々の行に積み重ねて表示することができます。スタックレイアウトは、長いテキスト値を持つボタンで使用する必要があります。さらに、スタックトーストレイアウトのボタンは `side` の値として `start` または `end` のどちらかを使用できますが、両方を使用することはできません。
 
@@ -92,7 +92,7 @@ import StackedPlayground from '@site/static/usage/v9/toast/layout/index.mdx';
 
 <StackedPlayground />
 
-## Icons
+## Icons {/* #icons */}
 
 トースト内のコンテンツの横にアイコンを追加することができます。一般的に、トーストのアイコンはスタイルやコンテキストを追加するために使用されるべきで、ユーザーの注意を引いたり、トーストの優先順位を上げたりするために使用すべきではありません。より優先順位の高いメッセージをユーザーに伝えたい場合や、応答を保証したい場合は、代わりに [Alert](alert.mdx) を使用することをお勧めします。
 
@@ -100,23 +100,23 @@ import IconPlayground from '@site/static/usage/v9/toast/icon/index.mdx';
 
 <IconPlayground />
 
-## テーマ
+## テーマ {/* #theming */}
 
 import ThemingPlayground from '@site/static/usage/v9/toast/theming/index.mdx';
 
 <ThemingPlayground />
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### フォーカスの管理
+### フォーカスの管理 {/* #focus-management */}
 
 トーストはさりげない通知であり、ユーザーを中断させるものではありません。トーストを解除するためにユーザが操作する必要はありません。そのため、トーストが表示されたときにフォーカスが自動的にトーストに移動することはありません。
 
-### スクリーンリーダー
+### スクリーンリーダー {/* #screen-readers */}
 
 トーストは、スクリーンリーダーから[accessible](../reference/glossary#a11y)であるためにariaプロパティを設定しますが、これらのプロパティは、十分な説明がない場合や、トーストがアプリでどのように使用されているかに合っていない場合は、上書きすることができます。
 
-#### 役割
+#### 役割 {/* #role */}
 
 `ion-toast`は、内側の `.toast-content` 要素に `role="status"` と `aria-live="polite"` を設定している。これにより、スクリーンリーダーはトーストメッセージとヘッダーのみをアナウンスします。ボタンとアイコンは、トーストが表示されてもアナウンスされません。
 
@@ -124,7 +124,7 @@ import ThemingPlayground from '@site/static/usage/v9/toast/theming/index.mdx';
 
 トーストはさりげなく通知することを意図しているので、`aria-live`を`"assertive"`に設定すべきではありません。開発者が重要なメッセージでユーザーを中断させる必要がある場合は、[alert](./alert)を使用することをお勧めします。
 
-#### トーストボタンの説明
+#### トーストボタンの説明 {/* #toast-buttons-description */}
 
 テキストを含むボタンは、スクリーンリーダーによって読み取られます。ボタンがアイコンのみを含んでいる場合、または既存のテキスト以外の説明が必要な場合は、ボタンの `htmlAttributes` プロパティに `aria-label` を渡すことで、ボタンにラベルを割り当てる必要があります。
 
@@ -204,7 +204,7 @@ const toast = await toastController.create({
 
 </Tabs>
 
-### Tips
+### Tips {/* #tips */}
 
 これは完全なリストではありませんが、トーストを使用する際に従うべきガイドラインを以下に示します。
 
@@ -216,9 +216,9 @@ const toast = await toastController.create({
 
 - Avoid showing a toast with buttons from inside another overlay such as a [modal](./modal). Modals and other overlays implement [focus trapping](./modal#focus-trapping) that will prevent screen readers from moving focus to the toast to complete the actions. This may be confusing for users since the toast will still be announced by screen readers. This is true even if alternative ways of completing the actions associated with each button are implemented. Consider creating a [live region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) within the focus-trapped modal instead of using a toast.
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ToastButton
+### ToastButton {/* #toastbutton */}
 
 ```typescript
 interface ToastButton {
@@ -231,7 +231,7 @@ interface ToastButton {
 }
 ```
 
-### ToastOptions
+### ToastOptions {/* #toastoptions */}
 
 ```typescript
 interface ToastOptions {
@@ -256,26 +256,26 @@ interface ToastOptions {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

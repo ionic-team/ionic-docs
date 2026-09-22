@@ -15,7 +15,7 @@ import CodeColor from '@components/page/theming/CodeColor';
 
 CSS ベースのテーマ設定では、CSS ファイルをロードするか、いくつかの CSS プロパティ値を変更することで、アプリの配色をすばやくカスタマイズできます。
 
-## `theme-color` Meta
+## `theme-color` Meta {/* #theme-color-meta */}
 
 メタタグの `theme-color` は、ブラウザがページや周囲のインターフェイスの表示をカスタマイズするために使用する色を示します。この種類の meta タグはメディアクエリも受け付けることができ、開発者はライトモードとダークモードの両方でテーマカラーを設定することができます。
 
@@ -48,7 +48,7 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 
 詳細については、[MDN のテーマカラードキュメント](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color)を参照してください。
 
-## グローバル変数
+## グローバル変数 {/* #global-variables */}
 
 テーマセクションのアプリケーション変数とステップ変数は、アプリケーションの色を変更するのに便利ですが、しばしば、複数のコンポーネントで使用される変数が必要になることがあります。以下の変数は、コンポーネント間で共有され、グローバルなパディング設定などを変更することができます。
 
@@ -66,7 +66,7 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 | `--ion-padding`             | [Padding 属性](../layout/css-utilities.mdx#padding)のパディングを調整                         |
 | `--ion-placeholder-opacity` | input、textarea、searchbar、select コンポーネントで使用されるプレースホルダーの不透明度を調整 |
 
-### グリッド変数
+### グリッド変数 {/* #grid-variables */}
 
 | Name                           | 説明                                        |
 | ------------------------------ | ------------------------------------------- |
@@ -82,7 +82,7 @@ iOS 15 と macOS の Safari は自動的に適切なテーマカラーを決定�
 | `--ion-grid-column-padding-lg` | lg ブレークポイントのグリッド列のパディング |
 | `--ion-grid-column-padding-xl` | xl ブレークポイントのグリッド列のパディング |
 
-## 既知の変数の制限
+## 既知の変数の制限 {/* #known-limitations-with-variables */}
 
 ### アルファ値の問題 {/* #the-alpha-problem */}
 
@@ -145,7 +145,7 @@ body {
 }
 ```
 
-### CSS カラー変数の変更
+### CSS カラー変数の変更 {/* #modifying-css-color-variables */}
 
 Sass の組み込み関数を使用して簡単に色を変更することは可能ですが、現在のところ CSS 変数で設定された色を変更するのはそれほど簡単ではありません。これは、CSS で [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) チャネルまたは HSL チャネルを分割してそれぞれの値を変更することで実現できますが、複雑で機能が不足しています。
 

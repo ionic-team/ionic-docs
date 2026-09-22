@@ -11,7 +11,7 @@ sidebar_label: Progressive Web Apps
   />
 </head>
 
-## Making your Angular app a PWA
+## Making your Angular app a PWA {/* #making-your-angular-app-a-pwa */}
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
@@ -32,7 +32,7 @@ By default, the `@angular/pwa` package comes with the Angular logo for the app i
 Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
 :::
 
-## Service Worker configuration
+## Service Worker configuration {/* #service-worker-configuration */}
 
 After `@angular/pwa` has been added, a new `ngsw-config.json` file will be created at the root of the project. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
 
@@ -62,9 +62,9 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 
 ここには 2 つのセクションがあります。1 つはアプリ固有のリソース（JS、CSS、HTML）用、もう 1 つはアプリが必要に応じて読み込むアセット用です。アプリによっては、これらのオプションをカスタマイズできます。より詳細なガイドについては、[Angular チームによる公式ガイド](https://angular.io/guide/service-worker-config)をお読みください。
 
-## Deploying
+## Deploying {/* #deploying */}
 
-### Firebase
+### Firebase {/* #firebase */}
 
 Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 

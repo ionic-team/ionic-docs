@@ -24,7 +24,7 @@ import Basic from '@site/static/usage/v9/picker/basic/index.mdx';
 
 <Basic />
 
-## Prefix と Suffix コンテンツ
+## Prefix と Suffix コンテンツ {/* #prefix--suffix-content */}
 
 `prefix` スロットと `suffix` スロットを使用して、ピッカーに追加コンテンツを追加します。
 
@@ -32,9 +32,9 @@ import PrefixSuffix from '@site/static/usage/v9/picker/prefix-suffix/index.mdx';
 
 <PrefixSuffix />
 
-## テーマ
+## テーマ {/* #theming */}
 
-### CSS変数
+### CSS変数 {/* #css-variables */}
 
 ピッカーのハイライトとフェードは `ion-picker` の CSS 変数を使ってカスタマイズできる。開発者は、`ion-picker-column-options` を直接ターゲットにして、ホストレベルのスタイリングを使用することで、個々の外観をカスタマイズすることができます。
 
@@ -42,7 +42,7 @@ import CSSProps from '@site/static/usage/v9/picker/theming/css-properties/index.
 
 <CSSProps />
 
-## Picker を Modal で使う
+## Picker を Modal で使う {/* #picker-in-modal */}
 
 ピッカーは`ion-modal`のようなオーバーレイの中に表示することができ、確認ボタンやキャンセルボタンを使ってピッカー体験を作り出すことができる。
 
@@ -50,9 +50,9 @@ import ModalExample from '@site/static/usage/v9/picker/modal/index.mdx';
 
 <ModalExample />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Screen Readers
+### Screen Readers {/* #screen-readers */}
 
 Pickerは、各[Picker Column](./picker-column)に[`slider` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role)を実装することで、スクリーンリーダーを使用したナビゲーションをサポートします。以下のジェスチャーを使用してPickerをナビゲートできます。
 
@@ -68,7 +68,7 @@ Pickerは、各[Picker Column](./picker-column)に[`slider` role](https://develo
 The Swipe Up and Swipe Down gestures rely on the correct key events being synthesized as noted on the [`slider` documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role). [Chromium-based browsers do not synthesize keyboard events correctly](https://issues.chromium.org/issues/40816094), but the "Double Tap and Slide Up/Down" gesture can be used as an alternative until this has been implemented in Chromium-based browsers.
 :::
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 Each [Picker Column](./picker-column) can be navigated using the keyboard when focused.
 
@@ -81,26 +81,26 @@ Each [Picker Column](./picker-column) can be navigated using the keyboard when f
 | <kbd>Home</kbd>      | Scroll to the first option.          |
 | <kbd>End</kbd>       | Scroll to the last option.           |
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 スライドアイテムには、ドラッグしてオプションボタンを表示させることができるアイテムが含まれています。子要素として [item](./item) コンポーネントが必要です。表示させるオプションはすべて [item options](./item-options) 要素に記述する必要があります。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 スライドアイテムのオプションは、デフォルトではアイテムの `"end"` 側に配置されます。つまり、LTRでは右から左へ、RTLでは左から右へスワイプすると、オプションが表示されます。反対側に配置し、反対方向にスワイプしたときに表示されるようにするには、 [item options](./item-options) 要素の side 属性を `"start"` に設定します。アイテムオプションは最大2つまで同時に使用することができ、スワイプの方向によって2つの異なるオプションを表示させることができます。
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v9/item-sliding/basic/index.mdx';
 
 <Basic />
 
-## Icon Options
+## Icon Options {/* #icon-options */}
 
 [アイテムオプション](./item-option) でアイコンをテキストと一緒に配置すると、デフォルトでテキストの上にアイコンを表示します。アイコンのスロットは、利用可能な [アイテムオプションスロット](./item-option#slots) に変更することで位置を変更することが可能です。
 
@@ -37,7 +37,7 @@ import Icons from '@site/static/usage/v9/item-sliding/icons/index.mdx';
 
 <Icons />
 
-## 拡張可能なオプション
+## 拡張可能なオプション {/* #expandable-options */}
 
 オプションは、スワイプがあるポイントを超えると、親となる `ion-item` の幅いっぱいに展開されます。これは、[item options](./item-options) の `ionSwipe` イベントと組み合わせることで、アイテムが完全にスワイプされたときにメソッドを呼び出すことができます。
 
@@ -45,9 +45,9 @@ import Expandable from '@site/static/usage/v9/item-sliding/expandable/index.mdx'
 
 <Expandable />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ItemSlidingCustomEvent
+### ItemSlidingCustomEvent {/* #itemslidingcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -57,26 +57,26 @@ interface ItemSlidingCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

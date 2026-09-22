@@ -11,7 +11,7 @@ sidebar_label: Progressive Web Apps
   />
 </head>
 
-## Making your Vue app a PWA with Vite
+## Making your Vue app a PWA with Vite {/* #making-your-vue-app-a-pwa-with-vite */}
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
 
@@ -39,7 +39,7 @@ Vite PWA プラグインの設定に関する詳細は、[Vite PWA「はじめ�
 
 PWA のデプロイ方法に関しては、[Vite PWA「デプロイ」ガイド](https://vite-pwa-org.netlify.app/deployment/)を参照してください。
 
-## Making your Vue app a PWA with Vue CLI
+## Making your Vue app a PWA with Vue CLI {/* #making-your-vue-app-a-pwa-with-vue-cli */}
 
 :::note
 Ionic CLI v7 以降、Ionic Vue スターターアプリは Vue CLI ではなく Vite で提供されます。Vite の指示については、[Vite での Vue アプリの PWA 化](#making-your-vue-app-a-pwa-with-vite)を参照してください。
@@ -107,7 +107,7 @@ if (process.env.NODE_ENV === 'production') {
 
 これを設定してデフォルトの動作を変更したい場合は、GitHub にある [PWA プラグインのドキュメント](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration)を参照してください。
 
-### マニフェスト
+### マニフェスト {/* #manifest */}
 
 Service Worker に加えて、Vue PWA プラグインはアプリケーションの manifest ファイルも作成します。デフォルトでは、CLI は次のエントリーを含む manifest を生成します。
 
@@ -148,11 +148,11 @@ Service Worker に加えて、Vue PWA プラグインはアプリケーション
 
 `public/img/icons` 内のアイコンは、必ずご使用のブランドに合わせて更新してください。テーマの色や名前をカスタマイズしたい場合は、GitHub にある [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) のドキュメントを必ず読んでください。
 
-### Deploying
+### Deploying {/* #deploying */}
 
 Firebase, Vercel, Netlify,さらには Azure Static Web Apps など、さまざまなホストを使用することができる。いずれの場合も、同様のセットアッププロセスを完了する必要があります。このガイドでは、ホストの例として Firebase を使用します。このガイドに加えて、 [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) のドキュメントには、さまざまなプロバイダーにデプロイするためのガイドも含まれています。
 
-#### Firebase
+#### Firebase {/* #firebase */}
 
 Firebase ホスティングは Progressive Web Apps に多くの利点を提供しており、CDN による高速応答、デフォルトで有効になっている HTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
 

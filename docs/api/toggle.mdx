@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 トグルは、1つのオプションの状態を変更するスイッチです。押したり、スワイプしたりすることで、オン・オフを切り替えることができます。トグルは、`checked`プロパティを設定することで、プログラムによってチェックすることも可能です。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/toggle/basic/index.mdx';
 
 <Basic />
 
-## On / Off Labels
+## On / Off Labels {/* #on--off-labels */}
 
 トグルは、`enableOnOffLabels`プロパティを設定することで、オン/オフラベルを有効にすることができます。これはアクセシビリティ上重要なことで、チェックされたトグルとチェックされていないトグルの区別がつきやすくなります。
 
@@ -37,7 +37,7 @@ import OnOff from '@site/static/usage/v9/toggle/on-off/index.mdx';
 
 <OnOff />
 
-## Toggles in a List
+## Toggles in a List {/* #toggles-in-a-list */}
 
 [アイテム](./item)と[リスト](./list)コンポーネントを使用すると、リストビューでトグルを使用することも可能です。
 
@@ -45,7 +45,7 @@ import List from '@site/static/usage/v9/toggle/list/index.mdx';
 
 <List />
 
-## Label Placement
+## Label Placement {/* #label-placement */}
 
 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
@@ -53,7 +53,7 @@ import LabelPlacement from '@site/static/usage/v9/toggle/label-placement/index.m
 
 <LabelPlacement />
 
-## Alignment
+## Alignment {/* #alignment */}
 
 開発者は`alignment`プロパティを使用して、ラベルとコントロールがクロス軸上でどのように配置されるかを制御できます。このプロパティは、flexboxの`align-items`プロパティを反映しています。
 
@@ -65,7 +65,7 @@ import Alignment from '@site/static/usage/v9/toggle/alignment/index.mdx';
 
 <Alignment />
 
-## Justification
+## Justification {/* #justification */}
 
 開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
@@ -73,7 +73,7 @@ import Justify from '@site/static/usage/v9/toggle/justify/index.mdx';
 
 <Justify />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使用してトグル内で使用できます。エラーテキストは、`ion-invalid`と`ion-touched`クラスが`ion-toggle`に追加されていない限り表示されません。これにより、ユーザーがデータを入力する前にエラーが表示されることはありません。
 
@@ -83,15 +83,15 @@ import HelperError from '@site/static/usage/v9/toggle/helper-error/index.mdx';
 
 <HelperError />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/toggle/theming/colors/index.mdx';
 
 <Colors />
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 CSSカスタムプロパティは、標準CSSと組み合わせてトグルの異なる部分をターゲットにすることができます。トグルの `width` と `height` を直接変更してトラックのサイズを変更し、`--handle-width` と `--handle-height` カスタムプロパティを使用して、ハンドルサイズをカスタマイズすることができます。
 
@@ -99,7 +99,7 @@ import CSSProps from '@site/static/usage/v9/toggle/theming/css-properties/index.
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 トグルをさらにカスタマイズするには、公開されている特定のシャドウ部分をターゲットにすることができます。これらの部分には、どのようなCSSプロパティでもスタイルを設定でき、CSSカスタムプロパティと組み合わせることも可能です。
 
@@ -107,9 +107,9 @@ import CSSParts from '@site/static/usage/v9/toggle/theming/css-shadow-parts/inde
 
 <CSSParts />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ToggleChangeEventDetail
+### ToggleChangeEventDetail {/* #togglechangeeventdetail */}
 
 ```typescript
 interface ToggleChangeEventDetail<T = any> {
@@ -118,7 +118,7 @@ interface ToggleChangeEventDetail<T = any> {
 }
 ```
 
-### ToggleCustomEvent
+### ToggleCustomEvent {/* #togglecustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -129,26 +129,26 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

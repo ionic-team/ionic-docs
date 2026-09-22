@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アラートは、ユーザーに情報を提示したり、Inputを使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
 
-## インラインアラート(推奨)
+## インラインアラート(推奨) {/* #inline-alerts-recommended */}
 
 `ion-alert` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、アラートを表示するために必要なハンドラの数を減らすことができます。
 
@@ -34,7 +34,7 @@ import Trigger from '@site/static/usage/v9/alert/presenting/trigger/index.mdx';
 
 <Trigger />
 
-### `isOpen` を使う
+### `isOpen` を使う {/* #using-isopen */}
 
 `ion-alert` の `isOpen` プロパティは、開発者がアプリケーションの状態からアラートの表示状態を制御することを可能にします。つまり、`isOpen` を `true` に設定するとアラートが表示され、`isOpen` を `false` に設定するとアラートは解除されます。
 
@@ -44,7 +44,7 @@ import IsOpen from '@site/static/usage/v9/alert/presenting/isOpen/index.mdx';
 
 <IsOpen />
 
-## Controller Alerts
+## Controller Alerts {/* #controller-alerts */}
 
 `alertController`は、アラートを表示するタイミングや解除するタイミングをより細かく制御する必要がある場合に使用することができます。
 
@@ -52,7 +52,7 @@ import Controller from '@site/static/usage/v9/alert/presenting/controller/index.
 
 <Controller />
 
-## Buttons
+## Buttons {/* #buttons */}
 
 `buttons` の配列には、各buttonの `text` のプロパティと、オプションで `handler` を利用することができます。 `handler` が `false` を返した場合、buttonがクリックされてもAlertは自動的に解除されません。すべての `buttons` は、左から右にボタン配列に追加された順序で表示されます。 Note: 一番右のボタン(配列の最後の1つ)がメインボタンです。
 
@@ -62,23 +62,23 @@ import Buttons from '@site/static/usage/v9/alert/buttons/index.mdx';
 
 <Buttons />
 
-## Inputs
+## Inputs {/* #inputs */}
 
 Alertには、複数の異なるInputを含めることもでき、そのデータをアプリで受け取ることができます。 Inputはユーザーに情報の入力を促す簡単な方法として使用できます。Radios, checkboxes と text inputs textarea はすべて利用できますが、これらを混ぜて利用することはできません。例えば、Alertはすべてbutton Inputであったり、すべてcheckboxでのInputを持つことはできますが、同一のAlertにradioとcheckbox Inputを混ぜることはできません。ただし、"text" Inputでは、 `url`, `email`, `text` などの複数のtypeを混ぜて利用することはできます。アラートのガイドラインに収まらない複雑なForm UIが必要な場合は、代わりにModal内でFormを構築することをお勧めします。
 
-### Text Inputs Example
+### Text Inputs Example {/* #text-inputs-example */}
 
 import TextInputs from '@site/static/usage/v9/alert/inputs/text-inputs/index.mdx';
 
 <TextInputs />
 
-### Radio Example
+### Radio Example {/* #radio-example */}
 
 import Radios from '@site/static/usage/v9/alert/inputs/radios/index.mdx';
 
 <Radios />
 
-## カスタマイズ
+## カスタマイズ {/* #customization */}
 
 Alertはscopedによるカプセル化を使用しており、実行時に各スタイルにクラスを追加することで自動的にCSSをスコープします。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
@@ -112,17 +112,17 @@ import Customization from '@site/static/usage/v9/alert/customization/index.mdx';
 IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。
 :::
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### Screen Readers
+### Screen Readers {/* #screen-readers */}
 
 アラートは、スクリーンリーダーにとって[アクセシブル](../reference/glossary#a11y)であるために、ariaプロパティを設定しますが、これらのプロパティは、十分な説明がない場合、またはアラートがアプリでどのように使用されているかと一致しない場合は、オーバーライドすることができます。
 
-#### Role
+#### Role {/* #role */}
 
 Ionicは自動的にアラートの`role`を、入力やボタンがある場合は[`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role)に、何もない場合は[`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role)に設定します。
 
-#### Alert の概要
+#### Alert の概要 {/* #alert-description */}
 
 アラートに `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header` が定義されていない場合、`subHeader` 要素がフォールバックとして使用されます。同様に、 `aria-describedby` 属性が定義されている場合は、自動的に `message` 要素の ID が設定されます。
 
@@ -186,7 +186,7 @@ const alert = await alertController.create({
 
 すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することで、手動で上書きすることができます。
 
-#### Alert Buttons の概要
+#### Alert Buttons の概要 {/* #alert-buttons-description */}
 
 テキストを含むボタンはスクリーンリーダーによって読み取られます。既存のテキスト以外の説明が必要な場合は、ボタンの`htmlAttributes`プロパティに`aria-label`を渡して、ボタンにラベルを設定できます。
 
@@ -266,9 +266,9 @@ const alert = await alertController.create({
 
 </Tabs>
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### AlertButton
+### AlertButton {/* #alertbutton */}
 
 ```typescript
 type AlertButtonOverlayHandler = boolean | void | { [key: string]: any };
@@ -283,7 +283,7 @@ interface AlertButton {
 }
 ```
 
-### AlertInput
+### AlertInput {/* #alertinput */}
 
 ```typescript
 interface AlertInput {
@@ -307,7 +307,7 @@ interface AlertInput {
 }
 ```
 
-### AlertOptions
+### AlertOptions {/* #alertoptions */}
 
 ```typescript
 interface AlertOptions {
@@ -331,26 +331,26 @@ interface AlertOptions {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

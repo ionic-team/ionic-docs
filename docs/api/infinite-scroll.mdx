@@ -23,13 +23,13 @@ Infinite Scrollコンポーネントは、ユーザーがページの下部ま�
 
 ユーザが定義された距離に達したときに、`ionInfinite` イベントに割り当てられた関数が呼び出されます。この関数がすべてのタスクを完了したら、無限スクロールインスタンスに対して `complete()` メソッドを呼び出す必要があります。
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/infinite-scroll/basic/index.mdx';
 
 <Basic />
 
-## 無限スクロールのコンテンツ
+## 無限スクロールのコンテンツ {/* #loading-text-and-spinner */}
 
 `ion-infinite-scroll`コンポーネントは、無限スクロールのロジックを持っています。コンテンツを表示するには、子コンポーネントが必要です。Ionicは、デフォルトでその `ion-infinite-scroll-content` コンポーネントを使用します。このコンポーネントは、無限スクロールを表示し、無限スクロールの状態に応じて外観を変更します。ユーザが使用しているプラットフォームに応じて最適なスピナーが表示されます。ただし、`ion-infinite-scroll-content` コンポーネントのプロパティを設定することにより、デフォルトのスピナーを変更したり、テキストを追加することができます。
 
@@ -37,7 +37,7 @@ import InfiniteScrollContent from '@site/static/usage/v9/infinite-scroll/infinit
 
 <InfiniteScrollContent />
 
-## Custom Content
+## Custom Content {/* #custom-content */}
 
 `ion-infinite-scroll` と `ion-infinite-scroll-content` コンポーネントを分離することで、開発者は必要に応じて独自のコンテンツコンポーネントを作成できます。このコンテンツには、SVG要素から固有のCSSアニメーションを持つ要素まで、あらゆるものを含めることができます。
 
@@ -45,7 +45,7 @@ import CustomContent from '@site/static/usage/v9/infinite-scroll/custom-infinite
 
 <CustomContent />
 
-## Virtual Scrollの使い方
+## Virtual Scrollの使い方 {/* #usage-with-virtual-scroll */}
 
 無限スクロールにはスクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
@@ -66,7 +66,7 @@ import CustomContent from '@site/static/usage/v9/infinite-scroll/custom-infinite
 
 :::
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
 開発者は、ユーザーがスクロールすると追加されたり削除されたりするスクロール可能なリストアイテムに `role="feed"` 属性を割り当てる必要があります。
 
@@ -90,9 +90,9 @@ import CustomContent from '@site/static/usage/v9/infinite-scroll/custom-infinite
 
 その他の情報については、[ARIA: feed role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) のドキュメントを参照してください。
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### InfiniteScrollCustomEvent
+### InfiniteScrollCustomEvent {/* #infinitescrollcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -102,26 +102,26 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

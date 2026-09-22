@@ -16,9 +16,9 @@ import DocsCards from '@components/global/DocsCards';
 
 Vue gives you several tools to fine tune your application. This guide covers the build options that are most relevant to Ionic Framework.
 
-## Component Registration Strategies
+## Component Registration Strategies {/* #component-registration-strategies */}
 
-### Local Component Registration (Recommended)
+### Local Component Registration (Recommended) {/* #local-component-registration-recommended */}
 
 By default, Ionic Framework components are registered locally. With local registration, these components are imported and provided to each Vue component you want to use them in. This is the recommended approach as it allows lazy loading and treeshaking to work properly with Ionic Framework components.
 
@@ -49,7 +49,7 @@ Note that since we are registering these components locally, neither `IonPage` n
 
 詳しくは、[ローカル登録 Vue ドキュメント](https://v3.vuejs.org/guide/component-registration.html#local-registration)を参照してください。
 
-### Global Component Registration
+### Global Component Registration {/* #global-component-registration */}
 
 The other option for registering components is to use global registration. Global registration involves importing the components you want to use in `main.ts` and calling the `component` method on your Vue app instance.
 
@@ -88,9 +88,9 @@ In the example above, we are using the `IonPage` and `IonContent` components. To
 
 詳しくは、[グローバル登録 Vue ドキュメント](https://v3.vuejs.org/guide/component-registration.html#global-registration)を参照してください。
 
-## Build Optimization
+## Build Optimization {/* #build-optimization */}
 
-### Prefetching Application JavaScript
+### Prefetching Application JavaScript {/* #prefetching-application-javascript */}
 
 By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utilizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
 

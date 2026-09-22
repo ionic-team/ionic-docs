@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Input OTP コンポーネントは、ワンタイムパスワード（OTP）入力用に設計された入力コンポーネントです。複数の入力ボックスと自動フォーカス管理をサポートし、 検証コードを入力するためのユーザーフレンドリーなインターフェイスを提供します。
 
-## 基本的な使用法
+## 基本的な使用法 {/* #basic-usage */}
 
 このコンポーネントはデフォルトで4つの入力ボックスを提供します。入力ボックスの数は `length` プロパティを使用してカスタマイズすることができます。
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v9/input-otp/basic/index.mdx';
 
 <Basic />
 
-## Type
+## Type {/* #type */}
 
 `type` プロパティは入力形式を決定し、数字または英数字の検証コードをサポートします。プロパティには2つの値を指定できる： `number`と `text` です。デフォルトでは `type="number"` を使用し、数字認証コードを入力を受け付けます。 `type="text"` を指定すると、英数字の入力を受け付ける。この柔軟性により、数字のみのコード（SMS 認証コードのような）や英数字のコード（バックアップコードやリカバリキーのような）など、さまざまな OTP フォーマットを扱うことができます
 
@@ -50,7 +50,7 @@ import Type from '@site/static/usage/v9/input-otp/type/index.mdx';
 
 <Type />
 
-## Shape
+## Shape {/* #shape */}
 
 `shape` プロパティは、入力ボックスのボーダー半径をコントロールし、丸みを帯びたコーナーやシャープなコーナーを作成します。
 
@@ -58,7 +58,7 @@ import Shape from '@site/static/usage/v9/input-otp/shape/index.mdx';
 
 <Shape />
 
-## Fill
+## Fill {/* #fill */}
 
 `fill` プロパティは入力ボックスの背景のスタイルをコントロールし、縁取りまたは塗りつぶしの背景を提供します。
 
@@ -66,7 +66,7 @@ import Fill from '@site/static/usage/v9/input-otp/fill/index.mdx';
 
 <Fill />
 
-## Size
+## Size {/* #size */}
 
 `size`プロパティは入力ボックスに異なるサイズのオプションを提供します。
 
@@ -74,7 +74,7 @@ import Size from '@site/static/usage/v9/input-otp/size/index.mdx';
 
 <Size />
 
-## Separators
+## Separators {/* #separators */}
 
 `separators` プロパティは1つ以上の入力ボックスの間に視覚的な仕切りを追加します。セパレータは3つの方法で定義できます：
 
@@ -88,7 +88,7 @@ import Separators from '@site/static/usage/v9/input-otp/separators/index.mdx';
 
 <Separators />
 
-## States
+## States {/* #states */}
 
 このコンポーネントは、入力ボックスの自動スタイリングのためのさまざまな状態をサポートしています：
 
@@ -103,7 +103,7 @@ import States from '@site/static/usage/v9/input-otp/states/index.mdx';
 
 <States />
 
-## Pattern
+## Pattern {/* #pattern */}
 
 `pattern` プロパティは正規表現を使ったカスタムバリデーションを可能にします。 [文字列の正規表現](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet)または[unicodeの正規表現](https://www.regular-expressions.info/unicode.html)を使用して、許可される文字を検証することができます。 `pattern`はサブセットだけでなく、値全体にマッチする必要があります。デフォルトのパターン
 
@@ -123,9 +123,9 @@ import Pattern from '@site/static/usage/v9/input-otp/pattern/index.mdx';
 
 <Pattern />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 `color`プロパティは入力ボックスのカラーパレットを変更します。アウトライン塗りつぶしの場合、このプロパティはキャレットカラー、ハイライトカラー、ボーダーカラーを変更します。 `solid` 塗りつぶしの場合、このプロパティはキャレットカラーとハイライトカラーを変更します。
 
@@ -137,7 +137,7 @@ import Colors from '@site/static/usage/v9/input-otp/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 Input OTPはスコープされたカプセル化を使用しています。これは、実行時に各スタイルに追加のクラスを追加することで、CSSを自動的にスコープすることを意味します。CSSでスコープされたセレクタをオーバーライドするには、[より高い特異性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。特定のスタイルが `fill` に基づいて適用されるため、`fill` のプロパティを個別にオーバーライドする必要があるかもしれません。
 
@@ -145,9 +145,9 @@ import CSSProps from '@site/static/usage/v9/input-otp/theming/css-properties/ind
 
 <CSSProps />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 Input OTPのキーボードナビゲーションは、[ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) の複合ウィジェットに関する推奨に従っています。これは、1つのコントロールとして機能する複数のフォーカス可能な要素（入力ボックス）を含むため、複合ウィジェットとして扱われます。
 
@@ -163,26 +163,26 @@ Input OTPのキーボードナビゲーションは、[ARIA Authoring Practices 
 | <kbd>Backspace</kbd>                                               | In an empty box: moves focus back one box and clears its value. <br/> In a box with a value: clears that value. <br/> With values in boxes to the right: shifts them all one position to the left. In RTL mode, with values in boxes to the left: shifts them all one position to the right.                                                                                      |
 | <kbd>Ctrl</kbd> + <kbd>V</kbd> <br/> <kbd>Cmd</kbd> + <kbd>V</kbd> | Pastes content starting from the first box, regardless of which box is currently focused. All existing values are cleared before pasting. For example, if you have "1234" in all boxes and paste "56", the result will be "56" in the first two boxes with the remaining boxes empty. If the pasted content is longer than the available boxes, the extra characters are ignored. |
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

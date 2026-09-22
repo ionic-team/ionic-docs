@@ -14,13 +14,13 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## 概要
+## 概要 {/* #overview */}
 
 Ionic Gestures は、開発者がプラットフォームに依存しない方法でアプリケーションのカスタムジェスチャーとインタラクションを構築できるユーティリティです。開発者は、React や Angular などの特定のフレームワークを使用する必要はなく、Ionic アプリを構築する必要もありません！開発者が Ionic Framework v5.0 以降にアクセスできる限り、Ionic Gestures のすべてにアクセスできます。
 
 複雑なジェスチャーの構築には時間がかかる場合があります。カスタムジェスチャーを提供する他のライブラリは、しばしば過度に重く、マウスやタッチイベントをキャプチャして伝播させないため、他の要素がスクロール可能またはクリック可能でなくなる可能性があります。
 
-## Installation
+## Installation {/* #installation */}
 
 ````mdx-code-block
 <Tabs
@@ -160,7 +160,7 @@ const gesture = createGesture({
 </Tabs>
 ````
 
-## 基本的なジェスチャー
+## 基本的なジェスチャー {/* #basic-gestures */}
 
 import Basic from '@site/static/usage/v9/gestures/basic/index.mdx';
 
@@ -168,7 +168,7 @@ import Basic from '@site/static/usage/v9/gestures/basic/index.mdx';
 
 <Basic />
 
-## ダブルクリックジェスチャー
+## ダブルクリックジェスチャー {/* #double-click-gesture */}
 
 import DoubleClick from '@site/static/usage/v9/gestures/double-click/index.mdx';
 
@@ -176,19 +176,19 @@ import DoubleClick from '@site/static/usage/v9/gestures/double-click/index.mdx';
 
 <DoubleClick />
 
-## ジェスチャーアニメーション
+## ジェスチャーアニメーション {/* #gesture-animations */}
 
 ジェスチャーアニメーションの実装ガイドについては、[Ionic Animations を使用したジェスチャーアニメーション](animations.mdx#gesture-animations)を参照してください。
 
-## 型
+## 型 {/* #types */}
 
 | Name              | 値                                           |
 | ----------------- | -------------------------------------------- |
 | `GestureCallback` | `(detail: GestureDetail) => boolean \| void` |
 
-## インターフェース
+## インターフェース {/* #interfaces */}
 
-### GestureConfig
+### GestureConfig {/* #gestureconfig */}
 
 | Property        | 型                                         | デフォルト  | 説明                                                                                                                                                                                                                                                                                                                                         |
 | --------------- | ------------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -208,7 +208,7 @@ import DoubleClick from '@site/static/usage/v9/gestures/double-click/index.mdx';
 | onEnd           | `GestureCallback \| undefined`             | `undefined` | ジェスチャーが終了したときに発火するコールバック。通常、ポインターが解放されたときです。                                                                                                                                                                                                                                                     |
 | notCaptured     | `GestureCallback \| undefined`             | `undefined` | ジェスチャーがキャプチャされなかったときに発火するコールバック。通常、優先度の高い競合するジェスチャーがある場合に発生します。                                                                                                                                                                                                               |
 
-### GestureDetail
+### GestureDetail {/* #gesturedetail */}
 
 | Property       | 型                 | 説明                                                                                                                                                          |
 | -------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -226,12 +226,12 @@ import DoubleClick from '@site/static/usage/v9/gestures/double-click/index.mdx';
 | event          | `UIEvent`          | ブラウザによってディスパッチされたネイティブイベント。詳細については、[UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)を参照してください。 |
 | data           | `any \| undefined` | ユーザーによって指定された任意のデータ。これは任意のコールバックで設定および読み取ることができます。                                                          |
 
-## メソッド
+## メソッド {/* #methods */}
 
-#### `enable(enable: boolean = true) => void`
+#### `enable(enable: boolean = true) => void` {/* #enableenable-boolean--true--void */}
 
 ジェスチャーを有効または無効にします。
 
-#### `destroy() => void`
+#### `destroy() => void` {/* #destroy--void */}
 
 ジェスチャーインスタンスを破棄し、ターゲット要素でのリッスンを停止します。

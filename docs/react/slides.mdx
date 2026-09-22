@@ -24,7 +24,7 @@ Swiper's React component is set to be removed in a future release of Swiper, wit
 Using Swiper's React component is **not** required to use Swiper.js with Ionic Framework.
 :::
 
-## Getting Started
+## Getting Started {/* #getting-started */}
 
 First, update to the latest version of Ionic:
 
@@ -42,7 +42,7 @@ npm install swiper@latest
 Developers using Create React App must use `react-scripts` v5.0.0+ with the latest version of Swiper.
 :::
 
-## Swiping with Style
+## Swiping with Style {/* #swiping-with-style */}
 
 Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `IonSlides`.
 
@@ -68,7 +68,7 @@ export default Home;
 Importing `@ionic/react/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `IonSlides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
 :::
 
-### Updating Selectors
+### Updating Selectors {/* #updating-selectors */}
 
 Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper React:
 
@@ -77,7 +77,7 @@ Previously, we were able to target `ion-slides` and `ion-slide` to apply any cus
 | `ion-slides`        | `.swiper`       |
 | `ion-slide`         | `.swiper-slide` |
 
-### Pre-processors (optional)
+### Pre-processors (optional) {/* #pre-processors-optional */}
 
 For developers using SCSS or Less styles, Swiper also provides imports for those files.
 
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-## Using Components
+## Using Components {/* #using-components */}
 
 Swiper exports two components: `Swiper` and `SwiperSlide`. The `Swiper` component is the equivalent of `IonSlides`, and `SwiperSlide` is the equivalent of `IonSlide`.
 
@@ -147,7 +147,7 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-## Using Modules
+## Using Modules {/* #using-modules */}
 
 By default, Swiper for React does not import any additional modules. To use modules such as Navigation or Pagination, you need to import them first.
 
@@ -260,7 +260,7 @@ export default Home;
 モジュールの完全なリストについては、[Swiper の React 使用ドキュメント](https://swiperjs.com/react#usage)を参照してください。
 :::
 
-## The IonicSlides Module
+## The IonicSlides Module {/* #the-ionicslides-module */}
 
 With `IonSlides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
@@ -309,7 +309,7 @@ export default Home;
 The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 :::
 
-## Properties
+## Properties {/* #properties */}
 
 Swiper options are provided as props directly on the `<Swiper>` component rather than via the `options` object in `IonSlides`.
 
@@ -359,7 +359,7 @@ Below is a full list of property changes when going from `IonSlides` to Swiper R
 Swiper React で使用可能なすべてのプロパティは、[Swiper React の props ドキュメント](https://swiperjs.com/react#swiper-props)で確認できます。
 :::
 
-## Events
+## Events {/* #events */}
 
 Since the `Swiper` component is not provided by Ionic Framework, event names will not have an `onIonSlide` prefix to them.
 
@@ -416,7 +416,7 @@ Below is a full list of event name changes when going from `IonSlides` to Swiper
 Swiper で使用可能なすべてのイベントは、[Swiper API のイベントドキュメント](https://swiperjs.com/swiper-api#events)で確認できます。
 :::
 
-## Methods
+## Methods {/* #methods */}
 
 Most methods have been removed in favor of accessing the `Swiper` props directly.
 
@@ -459,7 +459,7 @@ Below is a full list of method changes when going from `IonSlides` to Swiper Rea
 | `startAutoplay()`    | Use the `autoplay` property instead.                                                 |
 | `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
-## Effects
+## Effects {/* #effects */}
 
 If you are using effects such as Cube or Fade, you can install them just like we did with the other modules. In this example, we will use the fade effect. To start, we will import `EffectFade` from `swiper` and provide it in the `modules` array:
 
@@ -548,21 +548,21 @@ export default Home;
 Swiper のエフェクトに関する詳細については、[Swiper React のエフェクトドキュメント](https://swiperjs.com/react#effects)を参照してください。
 :::
 
-## Wrap Up
+## Wrap Up {/* #wrap-up */}
 
 Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the [Swiper React Introduction](https://swiperjs.com/react) and then referencing [the Swiper API docs](https://swiperjs.com/swiper-api).
 
-## FAQ
+## FAQ {/* #faq */}
 
-### Where can I find an example of this migration?
+### Where can I find an example of this migration? {/* #where-can-i-find-an-example-of-this-migration */}
 
 You can find a sample app with `ion-slides` and the equivalent Swiper usage at https://github.com/ionic-team/slides-migration-samples.
 
-### Where can I get help with this migration?
+### Where can I get help with this migration? {/* #where-can-i-get-help-with-this-migration */}
 
 If you are running into issues with the migration, please create a post on the [Ionic Forum](https://forum.ionicframework.com/).
 
-### Where do I file bug reports?
+### Where do I file bug reports? {/* #where-do-i-file-bug-reports */}
 
 問題を提出する前に、まず[Swiper Discussion Board](https://github.com/nolimits4web/swiper/discussions)または[Ionic Forum](https://forum.ionicframework.com)に投稿して、コミュニティで問題が解決できるか確認することを検討してください。
 

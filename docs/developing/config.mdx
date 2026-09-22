@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 Ionic Config は、アプリ全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリモード、タブボタンのレイアウト、アニメーションなどを設定できます。
 
-## グローバル設定
+## グローバル設定 {/* #global-config */}
 
 利用可能な設定キーは、[`IonicConfig`](#ionicconfig)インターフェースで見つけることができます。
 
@@ -17,7 +17,7 @@ import GlobalExample from '@site/docs/developing/config/global/index.mdx';
 
 <GlobalExample />
 
-## コンポーネントごとの設定
+## コンポーネントごとの設定 {/* #per-component-config */}
 
 Ionic Config はリアクティブではありません。コンポーネントがレンダリングされた後に設定の値を更新しても、以前の値のままになります。リアクティブな値が必要な場合は、設定を更新する代わりに、コンポーネントのプロパティを使用することをお勧めします。
 
@@ -25,7 +25,7 @@ import PerComponentExample from '@site/docs/developing/config/per-component/inde
 
 <PerComponentExample />
 
-## プラットフォームごとの設定
+## プラットフォームごとの設定 {/* #per-platform-config */}
 
 Ionic Config は、プラットフォームごとに設定することもできます。たとえば、これにより、潜在的に遅いデバイスのブラウザでアプリが実行されている場合にアニメーションを無効にできます。開発者は、Platform ユーティリティを活用してこれを実現できます。
 
@@ -35,7 +35,7 @@ import PerPlatformExample from '@site/docs/developing/config/per-platform/index.
 
 <PerPlatformExample />
 
-### フォールバック
+### フォールバック {/* #fallbacks */}
 
 次の例では、プラットフォームに基づいて完全に異なる設定を設定でき、プラットフォームが一致しない場合はデフォルト設定にフォールバックします：
 
@@ -43,7 +43,7 @@ import PerPlatformFallbackExample from '@site/docs/developing/config/per-platfor
 
 <PerPlatformFallbackExample />
 
-### オーバーライド
+### オーバーライド {/* #overrides */}
 
 この最後の例では、異なるプラットフォーム要件に基づいて設定オブジェクトを累積できます。
 
@@ -51,7 +51,7 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 <PerPlatformOverridesExample />
 
-## モードへのアクセス
+## モードへのアクセス {/* #accessing-the-mode */}
 
 場合によっては、アプリケーションロジック内で現在の Ionic モードにプログラム的にアクセスする必要があるかもしれません。これは、条件付き動作を適用したり、特定のアセットを取得したり、アクティブなスタイリングモードに基づいて他のアクションを実行したりするのに役立ちます。
 
@@ -59,18 +59,18 @@ import IonicMode from '@site/static/usage/v9/config/mode/index.mdx';
 
 <IonicMode />
 
-## 設定の読み取り（Angular）
+## 設定の読み取り（Angular） {/* #reading-the-config-angular */}
 
 Ionic Angular は、Ionic Config にアクセスするための`Config`プロバイダーを提供します。
 
-### get
+### get {/* #get */}
 
 |                |                                                                             |
 | -------------- | --------------------------------------------------------------------------- |
 | **説明**       | 設定値を`any`として返します。設定が定義されていない場合は`null`を返します。 |
 | **シグネチャ** | `get(key: string, fallback?: any) => any`                                   |
 
-#### 例
+#### 例 {/* #examples */}
 
 <Tabs
   groupId="framework"
@@ -110,14 +110,14 @@ class AppComponent {
 </TabItem>
 </Tabs>
 
-### getBoolean
+### getBoolean {/* #getboolean */}
 
 |                |                                                                                  |
 | -------------- | -------------------------------------------------------------------------------- |
 | **説明**       | 設定値を`boolean`として返します。設定が定義されていない場合は`false`を返します。 |
 | **シグネチャ** | `getBoolean(key: string, fallback?: boolean) => boolean`                         |
 
-#### 例
+#### 例 {/* #examples-1 */}
 
 <Tabs
   groupId="framework"
@@ -157,16 +157,16 @@ class AppComponent {
 </TabItem>
 </Tabs>
 
-### getNumber
+### getNumber {/* #getnumber */}
 
 |                |                                                                             |
 | -------------- | --------------------------------------------------------------------------- |
 | **説明**       | 設定値を`number`として返します。設定が定義されていない場合は`0`を返します。 |
 | **シグネチャ** | `getNumber(key: string, fallback?: number) => number`                       |
 
-## インターフェース
+## インターフェース {/* #interfaces */}
 
-### IonicConfig
+### IonicConfig {/* #ionicconfig */}
 
 以下は、Ionic が使用する設定オプションです。
 

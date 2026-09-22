@@ -16,7 +16,7 @@ Web View は、ネイティブデバイス上の Web アプリを強化します
 
 [Cordova](../reference/glossary.mdx#cordova)については、Ionic が[Web View のプラグイン](https://github.com/ionic-team/cordova-plugin-ionic-webview)を管理しています。このプラグインは、Ionic CLI を使用する際にデフォルトで提供されます。
 
-## Web View とは
+## Web View とは {/* #what-is-a-web-view */}
 
 Ionic アプリは[Web 技術](../reference/glossary.mdx#web-standards)をつかって構築され、フルスクリーンでの表示、Web ブラウザのすべての機能が使える Web View を使ってレンダリングされます。
 
@@ -26,7 +26,7 @@ Ionic アプリは[Web 技術](../reference/glossary.mdx#web-standards)をつか
 
 Ionic Web View プラグインは、最新の JavaScript アプリケーションに特化しています。iOS と Android の両方で、アプリファイルは常に `http://` プロトコルを使ってデバイス上で動作する最適化された HTTP サーバーにホストされます。
 
-### CORS
+### CORS {/* #cors */}
 
 Web ビューは[CORS](../reference/glossary.mdx#cors)を強制するため、外部サービスがクロスオリジンリクエストを適切に処理することが重要です。Ionic アプリで CORS に対処する方法については、[CORS FAQ](../troubleshooting/cors.mdx)を参照してください。
 
@@ -44,7 +44,7 @@ Capacitor.convertFileSrc(filePath);
 
 Cordova アプリの場合、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)は、File URI を変換するためのユーティリティ関数を提供します：`window.Ionic.WebView.convertFileSrc()`。対応する Ionic Native プラグインもあります：[`@awesome-cordova-plugins/ionic-webview`](https://danielsogl.gitbook.io/awesome-cordova-plugins/ionic-webview)。
 
-### 実装
+### 実装 {/* #implementations */}
 
 - **iOS**: [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)
 - **Android**: [WebView for Android](https://developer.android.com/reference/android/webkit/WebView)

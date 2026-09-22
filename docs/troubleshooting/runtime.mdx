@@ -10,7 +10,7 @@ title: ランタイムの問題
   />
 </head>
 
-## 真っ白なアプリケーション
+## 真っ白なアプリケーション {/* #blank-app */}
 
 :::note
 私のアプリケーションにはエラーはありません。なぜ真っ白な画面が表示されるのでしょうか？
@@ -40,7 +40,7 @@ title: ランタイムの問題
 
 これにより、古いブラウザに必要なポリフィルが自動的に追加されます。
 
-## ディレクティブが動作しない
+## ディレクティブが動作しない {/* #directive-not-working */}
 
 :::note
 なぜ私のカスタムコンポーネント/ディレクティブは動作しないのでしょうか？
@@ -81,7 +81,7 @@ class MyDir {
 class MyPage { }
 ```
 
-## クリックの遅延
+## クリックの遅延 {/* #click-delays */}
 
 :::note
 なぜ私のクリックイベントは遅延するのでしょうか？
@@ -101,7 +101,7 @@ class MyPage { }
 <div tappable (click)="doClick()">I am clickable!</div>
 ```
 
-## Angular Change Detection
+## Angular Change Detection {/* #angular-change-detection */}
 
 :::note
 Why does Angular change detection run very frequently when my components are initializing?
@@ -141,7 +141,7 @@ newer. Older versions will not be affected by this change.
 このフラグは、Ionic CLI を使用して Ionic アプリを作成する際に自動的に含まれます。
 :::
 
-## Cordova プラグインがブラウザ上で動作しない
+## Cordova プラグインがブラウザ上で動作しない {/* #cordova-plugins-not-working-in-the-browser */}
 
 あなたの開発中のある時点で、Cordova プラグインを呼び出そうとしますが、
 警告:
@@ -165,7 +165,7 @@ EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 
 もしこれが発生した場合は、そのプラグインを実機かシミュレーターでテストしてみてください。
 
-## provider の複数のインスタンス
+## provider の複数のインスタンス {/* #multiple-instances-of-a-provider */}
 
 あなたは provider をすべてのコンポーネントで利用可能にしたいので、すべてのコンポーネントに provider を注入した場合、
 provider の複数のインスタンスが生成されます。
@@ -209,7 +209,7 @@ class MyApp {
 
 {/* This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. */}
 
-## 関数のコールバックで`this`にアクセスすると`undefined`{/* #accessing-this */}が返されます
+## 関数のコールバックで`this`にアクセスすると`undefined`が返されます {/* #accessing-this */}
 
 Certain components, such as [counterFormatter on ion-input](../api/input#prop-counter-formatter) and [pinFormatter on ion-range](/api/range.mdx#prop-pin-formatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
 

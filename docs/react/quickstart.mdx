@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Ionic React が何であり、React のエコシステムにどのように適合するかの概要を知りたい場合は、[Ionic React の概要](overview) を参照してください。
 
-## 前提条件
+## 前提条件 {/* #prerequisites */}
 
 始める前に、マシンに Node.js と npm がインストールされていることを確認してください。
 次を実行して確認できます：
@@ -30,7 +30,7 @@ npm -v
 
 Node.js と npm を持っていない場合は、[Node.js をダウンロード](https://nodejs.org/en/download)（npm も含まれています）してください。
 
-## Ionic CLI でプロジェクトを作成
+## Ionic CLI でプロジェクトを作成 {/* #create-a-project-with-the-ionic-cli */}
 
 まず、最新の[Ionic CLI](../cli)をインストールします：
 
@@ -51,7 +51,7 @@ ionic serve
 
 ![Screenshot of the Ionic React Home page](/img/guides/quickstart/home-page.png 'Ionic React Home Component')
 
-## Explore the Project Structure
+## Explore the Project Structure {/* #explore-the-project-structure */}
 
 Your new app's directory will look like this:
 
@@ -73,7 +73,7 @@ Your new app's directory will look like this:
 
 アプリの構造を理解するために、これらのファイルを見ていきましょう。
 
-## View the App Component
+## View the App Component {/* #view-the-app-component */}
 
 The root of your app is defined in `App.tsx`:
 
@@ -103,7 +103,7 @@ export default App;
 
 これにより、Ionic の`IonApp`と`IonReactRouter`コンポーネントを使用してアプリケーションのルートが設定されます。`IonRouterOutlet`は、ページが表示される場所です。
 
-## View Routes
+## View Routes {/* #view-routes */}
 
 Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
@@ -116,7 +116,7 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 
 ルート URL（`/`）にアクセスすると、`Home`コンポーネントが読み込まれます。
 
-## View the Home Page
+## View the Home Page {/* #view-the-home-page */}
 
 The Home page component, defined in `Home.tsx`, imports the Ionic components and defines the page template:
 
@@ -154,7 +154,7 @@ export default Home;
 Ionic のレイアウトコンポーネントに関する詳細情報は、[Header](/api/header.mdx)、[Toolbar](/api/toolbar.mdx)、[Title](/api/title.mdx)、および[Content](/api/content.mdx)のドキュメントを参照してください。
 :::
 
-## Ionic コンポーネントを追加
+## Ionic コンポーネントを追加 {/* #add-an-ionic-component */}
 
 より多くの Ionic UI コンポーネントで Home ページを強化できます。たとえば、`Home.tsx`の`IonContent`の最後に[Button](/api/button.mdx)をインポートして追加します：
 
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-## Add a New Page
+## Add a New Page {/* #add-a-new-page */}
 
 Create a new page at `New.tsx`:
 
@@ -220,7 +220,7 @@ export default New;
 独自のページを作成する際は、常に`IonPage`をルートコンポーネントとして使用してください。これは、ページ間の適切な遷移、Ionic コンポーネントが依存する基本 CSS スタイリング、アプリ全体での一貫したレイアウト動作に不可欠です。
 :::
 
-## Navigate to the New Page
+## Navigate to the New Page {/* #navigate-to-the-new-page */}
 
 To navigate to the new page, create a route for it by first importing it at the top of `App.tsx` after the `Home` import:
 
@@ -248,7 +248,7 @@ Once that is done, update the button in `Home.tsx`:
 ナビゲーションは `useIonRouter` hook を使用してプログラムで行うこともできます。詳細は [React Navigation のドキュメント](/react/utility-functions.mdx#useionrouter)を参照してください。
 :::
 
-## 新しいページにアイコンを追加
+## 新しいページにアイコンを追加 {/* #add-icons-to-the-new-page */}
 
 Ionic React には[Ionicons](https://ionic.io/ionicons/)がプリインストールされています。`IonIcon`コンポーネントの`icon`プロパティを設定することで、任意のアイコンを使用できます。
 
@@ -270,7 +270,7 @@ import { heart, logoIonic } from 'ionicons/icons';
 
 詳細については、[Icon のドキュメント](/api/icon.mdx)および[Ionicons のドキュメント](https://ionic.io/ionicons/)を参照してください。
 
-## コンポーネントメソッドを呼び出す
+## コンポーネントメソッドを呼び出す {/* #call-component-methods */}
 
 コンテンツ領域を下部にスクロールできるボタンを追加しましょう。
 
@@ -323,7 +323,7 @@ To call methods on Ionic components:
 
 各コンポーネントの利用可能なメソッドは、API ドキュメントの[Methods](/api/content.mdx#methods)セクションで見つけることができます。
 
-## デバイスで実行
+## デバイスで実行 {/* #run-on-a-device */}
 
 Ionic のコンポーネントは、iOS、Android、PWA のどこでも動作します。モバイルにデプロイするには、[Capacitor](https://capacitorjs.com)を使用します：
 
@@ -342,7 +342,7 @@ ionic cap open android
 
 さらに詳しくは、[Capacitor のはじめにガイド](https://capacitorjs.com/docs/getting-started/with-ionic)を参照してください。
 
-## さらに探索
+## さらに探索 {/* #explore-more */}
 
 このガイドでは、Ionic React アプリの作成、ナビゲーションの追加、ネイティブビルド用の Capacitor の導入の基本をカバーしました。さらに深く掘り下げるには、以下を確認してください：
 

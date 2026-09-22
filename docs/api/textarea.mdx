@@ -27,13 +27,13 @@ textareaコンポーネントは、複数行のテキスト入力に使用され
 
 textareaコンポーネントはIonicのプロパティに加えて [ネイティブのtextareaの属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) に対応します。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import BasicPlayground from '@site/static/usage/v9/textarea/basic/index.mdx';
 
 <BasicPlayground />
 
-## Labels
+## Labels {/* #labels */}
 
 ラベルは、textareaを説明するために使用すべきです。視覚的に使用でき、ユーザーがtextareaにフォーカスしたときにスクリーンリーダーによって読み上げられます。これにより、ユーザーがtextareaの意図を理解しやすくなります。Textareaには、ラベルを割り当てるいくつかの方法があります：
 
@@ -41,7 +41,7 @@ import BasicPlayground from '@site/static/usage/v9/textarea/basic/index.mdx';
 - `label` スロット: カスタムHTMLラベルに使用（実験的）
 - `aria-label`: スクリーンリーダーにラベルを提供するために使用されますが、表示されるラベルは追加されません
 
-### Label Placement
+### Label Placement {/* #label-placement */}
 
 ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
@@ -49,7 +49,7 @@ import LabelPlacement from '@site/static/usage/v9/textarea/label-placement/index
 
 <LabelPlacement />
 
-### Label Slot (実験的)
+### Label Slot (実験的) {/* #label-slot-experimental */}
 
 プレーンテキストのラベルは `label` プロパティを通して渡されるべきですが、カスタム HTML が必要な場合は、代わりに `label` スロットを通して渡すことができます。
 
@@ -59,7 +59,7 @@ import LabelSlot from '@site/static/usage/v9/textarea/label-slot/index.mdx';
 
 <LabelSlot />
 
-### No Visible Label
+### No Visible Label {/* #no-visible-label */}
 
 ラベルの表示が必要ない場合でも、開発者は`aria-label`を指定して、textareaがスクリーンリーダーにアクセスできるようにすべきです。
 
@@ -67,7 +67,7 @@ import NoVisibleLabel from '@site/static/usage/v9/textarea/no-visible-label/inde
 
 <NoVisibleLabel />
 
-## Filled Textareas
+## Filled Textareas {/* #filled-textareas */}
 
 Material Designでは、テキストエリアの塗りつぶしスタイルが用意されています。アイテムの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
@@ -81,7 +81,7 @@ import Fill from '@site/static/usage/v9/textarea/fill/index.mdx';
 
 <Fill />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 ヘルパーテキストとエラーテキストは、`helperText` と `errorText` プロパティを使って textarea 内で使用することができます。エラーテキストは、`ion-invalid` と `ion-touched` クラスが `ion-textarea` に追加されていない限り表示されません。これにより、ユーザがデータを入力する前にエラーが表示されることはありません。
 
@@ -91,7 +91,7 @@ import HelperError from '@site/static/usage/v9/textarea/helper-error/index.mdx';
 
 <HelperError />
 
-## Textarea Counter
+## Textarea Counter {/* #textarea-counter */}
 
 textareaカウンターは、textareaの下に表示されるテキストで、textareaが受け付ける合計文字数のうち、何文字が入力されたかをユーザーに通知します。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
@@ -99,7 +99,7 @@ import Counter from '@site/static/usage/v9/textarea/counter/index.mdx';
 
 <Counter />
 
-## Autogrow
+## Autogrow {/* #autogrow */}
 
 `autoGrow`プロパティが`true`に設定されている場合、テキストエリアはその内容に基づいて拡大・縮小します。
 
@@ -107,7 +107,7 @@ import AutogrowPlayground from '@site/static/usage/v9/textarea/autogrow/index.md
 
 <AutogrowPlayground />
 
-## Clear on Edit
+## Clear on Edit {/* #clear-on-edit */}
 
 `clearOnEdit`プロパティを`true`に設定すると、テキストエリアが編集削除された後、再度入力されるとクリアされます。
 
@@ -115,7 +115,7 @@ import ClearOnEditPlayground from '@site/static/usage/v9/textarea/clear-on-edit/
 
 <ClearOnEditPlayground />
 
-## Start and End Slots (experimental)
+## Start and End Slots (experimental) {/* #start-and-end-slots-experimental */}
 
 `start`と`end`スロットは、textareaの両側にアイコン、ボタン、またはプレフィックス/サフィックステキストを配置するために使用できます。
 
@@ -131,15 +131,15 @@ import StartEndSlots from '@site/static/usage/v9/textarea/start-end-slots/index.
 
 <StartEndSlots />
 
-## Theming
+## Theming {/* #theming */}
 
 import ThemingPlayground from '@site/static/usage/v9/textarea/theming/index.mdx';
 
 <ThemingPlayground />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### TextareaChangeEventDetail
+### TextareaChangeEventDetail {/* #textareachangeeventdetail */}
 
 ```typescript
 interface TextareaChangeEventDetail {
@@ -147,7 +147,7 @@ interface TextareaChangeEventDetail {
 }
 ```
 
-### TextareaCustomEvent
+### TextareaCustomEvent {/* #textareacustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -158,26 +158,26 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -15,13 +15,13 @@ sidebar_label: Distribute
 
 Below we will run through an overview of the steps.
 
-## Connect Your Repo
+## Connect Your Repo {/* #connect-your-repo */}
 
 Appflow works directly with Git version control and uses your existing code base as the source of truth for Deploy and Package builds. You will first need to integrate with your hosting service, such as GitHub or Bitbucket, or you can push your code directly to Appflow. Once this is completed, Appflow will have access to your code.
 
 For more on connecting your code repository to Appflow, checkout the [Connect your Repo](https://ionic.io/docs/appflow/quickstart/connect) section inside the Appflow docs.
 
-## Install the Appflow SDK
+## Install the Appflow SDK {/* #install-the-appflow-sdk */}
 
 The Appflow SDK (also known as Ionic Deploy plugin) will allow you to take advantage of arguably two of the best Appflow features: deploying live updates to your app and bypassing the app stores. Ionic Appflow's Live Update feature is shipped with Appflow SDK and features the capabilities of detecting and syncing the updates for your app that you have pushed to your identified channels within the dashboard.
 
@@ -36,7 +36,7 @@ ionic deploy add  \
 
 For prerequisite and additional instructions on installing the Appflow SDK, visit the [Install the Appflow SDK](https://ionic.io/docs/appflow/quickstart/installation) section inside the Appflow docs.
 
-## Push a Commit
+## Push a Commit {/* #push-a-commit */}
 
 In order for Appflow to access the latest and greatest changes to your code, you will need to push a commit via the version control integration of your choosing. For those that use GitHub or Bitbucket, this would look as follows:
 
@@ -48,7 +48,7 @@ git push origin main # push the changes from the main branch to your git host
 
 プッシュが行われると、コミットは Appflow ダッシュボードの`Commits`タブに表示されます。詳細については、Appflow ドキュメントの[コミットのプッシュ](https://ionic.io/docs/appflow/quickstart/push)セクションを参照してください。
 
-## Deploy a Live Update
+## Deploy a Live Update {/* #deploy-a-live-update */}
 
 With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
 
@@ -66,7 +66,7 @@ ionic cap run [ios | android] [options]
 
 To dive into more details on the steps to deploy a live update, as well as additional information such as disabling deploy for development, check out the [Deploy a Live Update](https://ionic.io/docs/appflow/quickstart/deploy) section inside the Appflow docs.
 
-## Build a Native Binary
+## Build a Native Binary {/* #build-a-native-binary */}
 
 Next up is a native binary for your app build and deploy process. This is done via the [Ionic Package](https://ionic.io/docs/appflow/package/intro) service. First things first, you will need to create a [Package build](https://ionic.io/docs/appflow/package/builds). This can be done by clicking the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right from the `Build > Builds` tab. Then you will select the proper commit for your build and fill in all of the several required fields and any optional fields that you want to specify. After filling in all of the information and the build begins, you can check out it's progress and review the logs if you encounter any errors.
 
@@ -74,19 +74,19 @@ Given a successful Package build, an iOS binary (`.ipa` or IPA) or/and an Androi
 
 Further information regarding building native binaries can be found inside of the [Build a Native Binary](https://ionic.io/docs/appflow/quickstart/package) section inside the Appflow docs.
 
-## Create an Automation
+## Create an Automation {/* #create-an-automation */}
 
 [Automations](https://ionic.io/docs/appflow/automation/intro) enable you and your team to utilize the full CI/CD powers of Appflow. You can create automations that trigger [Package builds](https://ionic.io/docs/appflow/package/builds) and [Deploy builds](https://ionic.io/docs/appflow/deploy/builds) every time your team commits new code to a given branch. The automations can also be configured to use different environments and native configurations for building different versions of your app for development, staging, QA and production.
 
 詳細については、Appflow ドキュメント内の[自動化の作成](https://ionic.io/docs/appflow/quickstart/automation)セクションを参照してください。そのセクションでは、単一の自動化の作成について説明しています。ただし、異なるブランチやワークフロー用に複数の自動化を作成し、ニーズに合わせてカスタマイズすることも可能です。重要な注意点として、自動化を作成する機能は[ベーシックプラン](https://ionic.io/pricing)以上のユーザーが利用できる機能です。
 
-## Create an Environment
+## Create an Environment {/* #create-an-environment */}
 
 [Package builds](https://ionic.io/docs/appflow/package/builds) and [Deploy builds](https://ionic.io/docs/appflow/deploy/builds) can be further customized via [Environments](https://ionic.io/docs/appflow/automation/environments). This powerful feature allows you to create different configurations based on the environment variables passed in at build time. When combined with the [Automation](https://ionic.io/docs/appflow/automation/intro) feature, development teams can easily configure development, staging, and production build configurations, allowing them to embrace DevOps best practices and ship better quality updates faster than ever.
 
 Creating an Environment is available for those on our [Basic plans](https://ionic.io/pricing) and above. More information on this can be found in the [Create an Environment](https://ionic.io/docs/appflow/quickstart/environment) section within the Appflow docs.
 
-## Create a Native Configuration
+## Create a Native Configuration {/* #create-a-native-configuration */}
 
 [Native Configurations](https://ionic.io/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you do not need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](https://ionic.io/docs/appflow/package/intro) or [Automation](https://ionic.io/docs/appflow/automation/intro).
 
@@ -98,7 +98,7 @@ Native configs can be used to:
 
 For access to the ability to create a Native Configuration, you will need to be on our [Basic plans](https://ionic.io/pricing) and above. Additional details of this feature can be found in the [Create a Native Configuration](https://ionic.io/docs/appflow/quickstart/native-config) section within the Appflow docs.
 
-## What’s Next?
+## What’s Next? {/* #whats-next */}
 
 Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to your users' devices!
 

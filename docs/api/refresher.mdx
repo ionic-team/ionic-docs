@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 データは、リフレッシャーの出力イベント中に変更する必要があります。非同期処理が完了し、リフレッシュが終了したら、リフレッシュに対して `complete()` を呼び出す必要があります。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/refresher/basic/index.mdx';
 
@@ -49,7 +49,7 @@ import CustomContent from '@site/static/usage/v9/refresher/custom-content/index.
 
 <CustomContent />
 
-## Native Refreshers
+## Native Refreshers {/* #native-refreshers */}
 
 iOSとAndroidの両プラットフォームは、pull-to-refreshにネイティブのような流動的な感覚を与えるために、それぞれのデバイスが公開するプロパティを使用するリフレッシュ機能を提供します。
 
@@ -61,7 +61,7 @@ iOSとMaterial Designのネイティブリフレッシュ機能は、Ionicのデ
 
 ネイティブのリフレッシャーは、[リフレッシャーコンテンツ](#custom-refresher-content)の`pullingIcon`を任意のアイコンまたはスピナーに設定することで無効にできます。許可されている値については、[Ionicons](https://ionic.io/ionicons)および[Spinner](./spinner)のドキュメントを参照してください。
 
-## Usage with Virtual Scroll
+## Usage with Virtual Scroll {/* #usage-with-virtual-scroll */}
 
 Refresher が機能するためには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
@@ -91,7 +91,7 @@ import CustomScrollTarget from '@site/static/usage/v9/refresher/custom-scroll-ta
 
 <CustomScrollTarget />
 
-## 高度な使用法
+## 高度な使用法 {/* #advanced-usage */}
 
 リフレッシャーはどのようなタイプのコンテンツでも使用できますが、ネイティブアプリでよくある使用例は、更新時に更新されるデータのリストを表示することです。以下の例では、アプリはデータのリストを生成し、更新が完了したときにリストの先頭にデータを追加します。実際のアプリでは、ネットワークまたはデータベース呼び出しによってリクエストを送信した後に、データを受信して更新します。
 
@@ -99,9 +99,9 @@ import Advanced from '@site/static/usage/v9/refresher/advanced/index.mdx';
 
 <Advanced />
 
-## Event Handling
+## Event Handling {/* #event-handling */}
 
-### Using `ionPullStart` and `ionPullEnd`
+### Using `ionPullStart` and `ionPullEnd` {/* #using-ionpullstart-and-ionpullend */}
 
 The `ionPullStart` event is emitted when the user begins a pull gesture. This event fires when the user starts to pull the refresher down.
 
@@ -111,9 +111,9 @@ import PullStartEndEvents from '@site/static/usage/v9/refresher/pull-start-end-e
 
 <PullStartEndEvents />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### RefresherEventDetail
+### RefresherEventDetail {/* #refreshereventdetail */}
 
 ```typescript
 interface RefresherEventDetail {
@@ -121,7 +121,7 @@ interface RefresherEventDetail {
 }
 ```
 
-### RefresherPullEndEventDetail
+### RefresherPullEndEventDetail {/* #refresherpullendeventdetail */}
 
 ```typescript
 interface RefresherPullEndEventDetail {
@@ -129,7 +129,7 @@ interface RefresherPullEndEventDetail {
 }
 ```
 
-### RefresherCustomEvent
+### RefresherCustomEvent {/* #refreshercustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -140,7 +140,7 @@ interface RefresherCustomEvent extends CustomEvent {
 }
 ```
 
-### RefresherPullEndCustomEvent
+### RefresherPullEndCustomEvent {/* #refresherpullendcustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with the `ionPullEnd` event.
 
@@ -155,22 +155,22 @@ interface RefresherPullEndCustomEvent extends CustomEvent {
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />
