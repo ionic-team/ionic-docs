@@ -1,4 +1,5 @@
 import { writeFileSync } from 'fs';
+import { writeMarkdownHeadingId } from '@docusaurus/utils';
 import * as utils from './utils.mjs';
 import cliJSON from './data/cli.json' with { type: 'json' };
 import cliOverrides from './data/meta-override.json' with { type: 'json' };
@@ -28,8 +29,9 @@ function writePage(page) {
   ].join('');
 
   const path = `cli/commands/${commandToKebab(page.name)}.mdx`;
-  writeFileSync(`docs/${path}`, data);
-  writeFileSync(`versioned_docs/version-v8/${path}`, data);
+  const content = writeMarkdownHeadingId(data, { syntax: 'mdx-comment' });
+  writeFileSync(`docs/${path}`, content);
+  writeFileSync(`versioned_docs/version-v8/${path}`, content);
 }
 
 function renderFrontmatter({ name, groups }) {

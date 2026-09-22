@@ -15,15 +15,15 @@ import TabItem from '@theme/TabItem';
 
 Ionic offers palettes with increased contrast for users with low vision. These palettes work by amplifying the contrast between foreground content, such as text, and background content, such as UI components. Ionic provides both light and dark variants for achieving high contrast.
 
-## Overview
+## Overview {/* #overview */}
 
 The default palette in Ionic provides [Ionic colors](./colors.mdx) that meet [Level AA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) as defined by Web Content Accessibility Guidelines (WCAG) when used with the appropriate contrast color. The [Ionic colors](./colors.mdx) in the high contrast palette have been updated to meet [Level AAA color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html) when used with the appropriate contrast color. Notably, improvements have been made to the contrast of UI components, including border, text, and background colors. However, it's important to note that within the high contrast palette, priority is given to text legibility. This means that if adjusting the contrast of a UI component against the page background would significantly compromise the contrast between the component's text and its background, the contrast of the UI component background will remain unchanged.
 
-## Enabling High Contrast Theme
+## Enabling High Contrast Theme {/* #enabling-high-contrast-theme */}
 
 There are three provided ways to enable the high contrast palette in an app: **always**, based on **system** settings, or by using a CSS **class**.
 
-### Always
+### Always {/* #always */}
 
 The high contrast palette can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast palette regardless of the system settings for contrast preference.
 
@@ -72,7 +72,7 @@ import AlwaysHighContrastMode from '@site/static/usage/v9/theming/always-high-co
 
 <AlwaysHighContrastMode />
 
-### System
+### System {/* #system */}
 
 The system approach to enabling high contrast mode involves checking the system settings for the user's preferred contrast. This is the default when starting a new Ionic Framework app. Importing the following stylesheets in the appropriate file will automatically retrieve the user's preference from the system settings and apply the high contrast palette when high contrast is preferred.
 
@@ -136,7 +136,7 @@ high contrast dark palette must be imported after `dark.system.css`. Otherwise, 
 
 :::
 
-### CSS Class
+### CSS Class {/* #css-class */}
 
 While the previous approaches are excellent for enabling the high contrast palette through file imports alone, there are scenarios where you may need more control over where it is applied. In cases where you need to apply the high contrast palette conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a high contrast palette class file. This file applies the high contrast palette when a specific class is added to an app. Importing the following stylesheets into the appropriate file will provide the necessary styles for using the high contrast palette with the class:
 
@@ -205,7 +205,7 @@ The `.ion-palette-high-contrast` class **must** be added to the `html` element i
 
 :::
 
-## Customizing Ionic High Contrast Theme
+## Customizing Ionic High Contrast Theme {/* #customizing-ionic-high-contrast-theme */}
 
 Ionic has a recommended high contrast palette that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the high contrast palette file with the corresponding name.
 

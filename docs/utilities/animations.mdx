@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## Overview
+## Overview {/* #overview */}
 
 Ionic Animations is a tool that enables developers to create complex animations in a platform-agnostic manner, without requiring a specific framework or an Ionic app.
 
@@ -22,7 +22,7 @@ Creating efficient animations can be challenging, as developers are limited by t
 
 Ionic Animations, on the other hand, uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API), which offloads all the computation and running of animations to the browser. This approach allows the browser to optimize the animations and ensure their smooth execution. In cases where Web Animations are not supported, Ionic Animations will fall back to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), which should have a negligible difference in performance.
 
-## Installation
+## Installation {/* #installation */}
 
 ````mdx-code-block
 <Tabs
@@ -156,7 +156,7 @@ const animation = createAnimation()
 </Tabs>
 ````
 
-## Basic Animations
+## Basic Animations {/* #basic-animations */}
 
 In the example below, an animation that changes the opacity on the `ion-card` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
@@ -166,7 +166,7 @@ import Basic from '@site/static/usage/v9/animations/basic/index.mdx';
 
 <Basic />
 
-## Keyframe Animations
+## Keyframe Animations {/* #keyframe-animations */}
 
 Ionic Animations allows you to control the intermediate steps in an animation using keyframes. Any valid CSS property can be used here, and you can even use CSS Variables as values.
 
@@ -180,7 +180,7 @@ In the example above, the card element will transition from its initial width, t
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
 
-## Grouped Animations
+## Grouped Animations {/* #grouped-animations */}
 
 Multiple elements can be animated at the same time and controlled via a single parent animation object. Child animations inherit properties such as duration, easing, and iterations unless otherwise specified. A parent animation's `onFinish` callback will not be called until all child animations have completed.
 
@@ -190,7 +190,7 @@ import Group from '@site/static/usage/v9/animations/group/index.mdx';
 
 <Group />
 
-## Before and After Hooks
+## Before and After Hooks {/* #before-and-after-hooks */}
 
 Ionic Animations provides hooks that let you alter an element before an animation runs and after an animation completes. These hooks can be used to perform DOM reads and writes as well as add or remove classes and inline styles.
 
@@ -202,7 +202,7 @@ import BeforeAndAfterHooks from '@site/static/usage/v9/animations/before-and-aft
 
 <BeforeAndAfterHooks />
 
-## Chained Animations
+## Chained Animations {/* #chained-animations */}
 
 Animations can be chained to run one after the other. The `play` method returns a Promise that resolves when the animation has completed.
 
@@ -210,7 +210,7 @@ import Chain from '@site/static/usage/v9/animations/chain/index.mdx';
 
 <Chain />
 
-## Gesture Animations
+## Gesture Animations {/* #gesture-animations */}
 
 Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](gestures.mdx).
 
@@ -220,7 +220,7 @@ import Gesture from '@site/static/usage/v9/animations/gesture/index.mdx';
 
 <Gesture />
 
-## Preference-Based Animations
+## Preference-Based Animations {/* #preference-based-animations */}
 
 Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables.
 
@@ -232,17 +232,17 @@ import PreferenceBased from '@site/static/usage/v9/animations/preference-based/i
 
 <PreferenceBased />
 
-## Overriding Ionic Component Animations
+## Overriding Ionic Component Animations {/* #overriding-ionic-component-animations */}
 
 Certain Ionic components allow developers to provide custom animations. All animations are provided as either properties on the component or are set via a global config.
 
-### Modals
+### Modals {/* #modals */}
 
 import ModalOverride from '@site/static/usage/v9/animations/modal-override/index.mdx';
 
 <ModalOverride />
 
-## Performance Considerations
+## Performance Considerations {/* #performance-considerations */}
 
 CSS and Web Animations are usually handled on the compositor thread. This is different than the main thread where layout, painting, styling, and your JavaScript is executed. It is recommended that you prefer using properties that can be handled on the compositor thread for optimal animation performance.
 
@@ -250,7 +250,7 @@ Animating properties such as `height` and `width` cause additional layouts and p
 
 For information on which CSS properties cause layouts or paints to occur, refer to [CSS Triggers](https://csstriggers.com/).
 
-## Debugging
+## Debugging {/* #debugging */}
 
 For debugging animations in Chrome, there is a great blog post about inspecting animations using the Chrome DevTools: https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations.
 
@@ -267,25 +267,25 @@ const animation = createAnimation('my-animation-identifier')
   .fromTo('opacity', '1', '0');
 ```
 
-## API
+## API {/* #api */}
 
 This section provides a list of all the methods and properties available on the `Animation` class.
 
-### Interfaces
+### Interfaces {/* #interfaces */}
 
-#### AnimationDirection
+#### AnimationDirection {/* #animationdirection */}
 
 ```tsx
 type AnimationDirection = 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
 ```
 
-#### AnimationFill
+#### AnimationFill {/* #animationfill */}
 
 ```tsx
 type AnimationFill = 'auto' | 'none' | 'forwards' | 'backwards' | 'both';
 ```
 
-#### AnimationBuilder
+#### AnimationBuilder {/* #animationbuilder */}
 
 ```tsx
 type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
@@ -297,7 +297,7 @@ type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
 
 :::
 
-#### AnimationCallbackOptions
+#### AnimationCallbackOptions {/* #animationcallbackoptions */}
 
 ```tsx
 interface AnimationCallbackOptions {
@@ -308,7 +308,7 @@ interface AnimationCallbackOptions {
 }
 ```
 
-#### AnimationPlayOptions
+#### AnimationPlayOptions {/* #animationplayoptions */}
 
 ```tsx
 interface AnimationPlayOptions {
@@ -321,7 +321,7 @@ interface AnimationPlayOptions {
 }
 ```
 
-### Properties
+### Properties {/* #properties */}
 
 | Name                           | Description                                       |
 | ------------------------------ | ------------------------------------------------- |
@@ -329,7 +329,7 @@ interface AnimationPlayOptions {
 | `elements: HTMLElement[]`      | All elements attached to an animation.            |
 | `parentAnimation?: Animation`  | The parent animation of a given animation object. |
 
-### Methods
+### Methods {/* #methods */}
 
 | Name                                                                                                                 | Description                                                                                                                                                                                  |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

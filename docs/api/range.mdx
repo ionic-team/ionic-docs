@@ -25,7 +25,7 @@ The Range slider lets users select from a range of values by moving the slider k
 
 By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
 
-## Labels
+## Labels {/* #labels */}
 
 Labels should be used to describe the range. They can be used visually, and they will also be read out by screen readers when the user is focused on the range. This makes it easy for the user to understand the intent of the range. Range has several ways to assign a label:
 
@@ -33,7 +33,7 @@ Labels should be used to describe the range. They can be used visually, and they
 - `label` slot: used for custom HTML labels
 - `aria-label`: used to provide a label for screen readers but adds no visible label
 
-### Label Placement
+### Label Placement {/* #label-placement */}
 
 The below demo shows how to use the `labelPlacement` property to change the position of the label relative to the range. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
@@ -41,7 +41,7 @@ import LabelsPlayground from '@site/static/usage/v9/range/labels/index.mdx';
 
 <LabelsPlayground />
 
-### Label Slot
+### Label Slot {/* #label-slot */}
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
@@ -49,7 +49,7 @@ import LabelSlotPlayground from '@site/static/usage/v9/range/label-slot/index.md
 
 <LabelSlotPlayground />
 
-### No Visible Label
+### No Visible Label {/* #no-visible-label */}
 
 If no visible label is needed, developers should still supply an `aria-label` so the range is accessible to screen readers.
 
@@ -57,7 +57,7 @@ import NoVisibleLabel from '@site/static/usage/v9/range/no-visible-label/index.m
 
 <NoVisibleLabel />
 
-## Decorations
+## Decorations {/* #decorations */}
 
 Decorative elements can be passed into the `start` or `end` slots of the range. This is useful for adding icons such as low volume or high volume icons. Since these elements are decorative, they should not be announced by assistive technology such as screen readers.
 
@@ -67,7 +67,7 @@ import DecorationsPlayground from '@site/static/usage/v9/range/slots/index.mdx';
 
 <DecorationsPlayground />
 
-## Dual Knobs
+## Dual Knobs {/* #dual-knobs */}
 
 Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
 
@@ -75,7 +75,7 @@ import DualKnobs from '@site/static/usage/v9/range/dual-knobs/index.mdx';
 
 <DualKnobs />
 
-## Pins
+## Pins {/* #pins */}
 
 The `pin` attribute will display the value of the Range above the knob when dragged. This allows users to select a specific value within the Range.
 
@@ -85,7 +85,7 @@ import Pins from '@site/static/usage/v9/range/pins/index.mdx';
 
 <Pins />
 
-## Snapping & Ticks
+## Snapping & Ticks {/* #snapping--ticks */}
 
 Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`.
 
@@ -95,9 +95,9 @@ import SnappingTicks from '@site/static/usage/v9/range/snapping-ticks/index.mdx'
 
 <SnappingTicks />
 
-## Event Handling
+## Event Handling {/* #event-handling */}
 
-### Using `ionChange`
+### Using `ionChange` {/* #using-ionchange */}
 
 The `ionChange` event emits as the Range knob value changes.
 
@@ -105,7 +105,7 @@ import IonChangeEvent from '@site/static/usage/v9/range/ion-change-event/index.m
 
 <IonChangeEvent />
 
-### Using `ionKnobMoveStart` and `ionKnobMoveEnd`
+### Using `ionKnobMoveStart` and `ionKnobMoveEnd` {/* #using-ionknobmovestart-and-ionknobmoveend */}
 
 The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
 
@@ -113,9 +113,9 @@ import IonKnobMoveEvent from '@site/static/usage/v9/range/ion-knob-move-event/in
 
 <IonKnobMoveEvent />
 
-## Theming
+## Theming {/* #theming */}
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
 
@@ -123,7 +123,7 @@ import CSSProps from '@site/static/usage/v9/range/theming/css-properties/index.m
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
 
@@ -133,9 +133,9 @@ import CSSParts from '@site/static/usage/v9/range/theming/css-shadow-parts/index
 
 <CSSParts />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### RangeChangeEventDetail
+### RangeChangeEventDetail {/* #rangechangeeventdetail */}
 
 ```typescript
 interface RangeChangeEventDetail {
@@ -143,7 +143,7 @@ interface RangeChangeEventDetail {
 }
 ```
 
-### RangeKnobMoveStartEventDetail
+### RangeKnobMoveStartEventDetail {/* #rangeknobmovestarteventdetail */}
 
 ```typescript
 interface RangeKnobMoveStartEventDetail {
@@ -151,7 +151,7 @@ interface RangeKnobMoveStartEventDetail {
 }
 ```
 
-### RangeKnobMoveEndEventDetail
+### RangeKnobMoveEndEventDetail {/* #rangeknobmoveendeventdetail */}
 
 ```typescript
 interface RangeKnobMoveEndEventDetail {
@@ -159,7 +159,7 @@ interface RangeKnobMoveEndEventDetail {
 }
 ```
 
-### RangeCustomEvent
+### RangeCustomEvent {/* #rangecustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -170,34 +170,34 @@ interface RangeCustomEvent extends CustomEvent {
 }
 ```
 
-## Types
+## Types {/* #types */}
 
-### RangeValue
+### RangeValue {/* #rangevalue */}
 
 ```typescript
 type RangeValue = number | { lower: number; upper: number };
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

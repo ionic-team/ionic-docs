@@ -28,7 +28,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [List](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/layout/css-utilities.mdx) for more classes that can be added to an item to transform the text.
 
@@ -36,11 +36,11 @@ import Basic from '@site/static/usage/v9/item/basic/index.mdx';
 
 <Basic />
 
-## Content Types
+## Content Types {/* #content-types */}
 
 While items in a list take many forms, they typically support 5 different content types: supporting visuals, text, metadata, actions, and controls. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
 
-### Supporting Visuals
+### Supporting Visuals {/* #supporting-visuals */}
 
 Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the item, it is typically hidden from screen readers using `aria-hidden="true"`.
 
@@ -70,7 +70,7 @@ import SupportingVisuals from '@site/static/usage/v9/item/content-types/supporti
 
 <SupportingVisuals />
 
-### Text
+### Text {/* #text */}
 
 The text content type includes form control labels or other visible text. This text serves to indicate the intent of the item. Try to keep the text short and to the point.
 
@@ -108,7 +108,7 @@ import Text from '@site/static/usage/v9/item/content-types/text/index.mdx';
 
 <Text />
 
-### Metadata
+### Metadata {/* #metadata */}
 
 Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
 
@@ -156,7 +156,7 @@ import Metadata from '@site/static/usage/v9/item/content-types/metadata/index.md
 
 <Metadata />
 
-### Actions
+### Actions {/* #actions */}
 
 Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
@@ -197,7 +197,7 @@ import Actions from '@site/static/usage/v9/item/content-types/actions/index.mdx'
 
 <Actions />
 
-### Controls
+### Controls {/* #controls */}
 
 Controls are form components such as checkboxes, inputs, radios, and more. Each item in a list should have at most two controls due to screen space constraints.
 
@@ -278,7 +278,7 @@ import Controls from '@site/static/usage/v9/item/content-types/controls/index.md
 
 <Controls />
 
-## Clickable Items
+## Clickable Items {/* #clickable-items */}
 
 An item is considered "clickable" if it has an `href`, `button`, or `routerLink` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
 
@@ -286,7 +286,7 @@ import Clickable from '@site/static/usage/v9/item/clickable/index.mdx';
 
 <Clickable />
 
-## Routing
+## Routing {/* #routing */}
 
 Items support client-side navigation using the `routerLink` property. Setting `routerLink` renders the item as an anchor and navigates to the specified route when tapped. The `routerDirection` property controls the transition animation direction, and `routerAnimation` accepts a custom animation builder.
 
@@ -388,7 +388,7 @@ In Vue, use the `router-link` attribute on `ion-item`. The `router-direction` an
 
 </Tabs>
 
-## Detail Arrows
+## Detail Arrows {/* #detail-arrows */}
 
 By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
 
@@ -396,7 +396,7 @@ import DetailArrows from '@site/static/usage/v9/item/detail-arrows/index.mdx';
 
 <DetailArrows />
 
-## Item Lines
+## Item Lines {/* #item-lines */}
 
 Items show an inset bottom border by default. The border has padding on the left and does not appear under any content that is slotted in the `"start"` slot. The `lines` property can be modified to `"full"` or `"none"` which will show a full width border or no border, respectively.
 
@@ -404,7 +404,7 @@ import Lines from '@site/static/usage/v9/item/lines/index.mdx';
 
 <Lines />
 
-## Buttons in Items
+## Buttons in Items {/* #buttons-in-items */}
 
 Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
 
@@ -412,33 +412,33 @@ import Buttons from '@site/static/usage/v9/item/buttons/index.mdx';
 
 <Buttons />
 
-## Item Inputs
+## Item Inputs {/* #item-inputs */}
 
 import Inputs from '@site/static/usage/v9/item/inputs/index.mdx';
 
 <Inputs />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/item/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 import CSSParts from '@site/static/usage/v9/item/theming/css-shadow-parts/index.mdx';
 
 <CSSParts />
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v9/item/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-## Guidelines
+## Guidelines {/* #guidelines */}
 
 The following guidelines will help ensure your list items are easy to understand and use.
 
@@ -447,9 +447,9 @@ The following guidelines will help ensure your list items are easy to understand
 3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
 4. Use [content types](#content-types) correctly. The Item component is designed to be a row in a [List](./list) and should not be used as a general purpose container.
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 An `<ion-item>` has the following keyboard interactions when any of these conditions are met:
 
@@ -462,7 +462,7 @@ An `<ion-item>` has the following keyboard interactions when any of these condit
 | <kbd>Tab</kbd>                    | Moves focus to the next focusable element.     |
 | <kbd>Shift</kbd> + <kbd>Tab</kbd> | Moves focus to the previous focusable element. |
 
-#### Button
+#### Button {/* #button */}
 
 When an `<ion-item>` renders a native `<button>` element, the keyboard interactions follow the same pattern as the [button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role#keyboard_interactions):
 
@@ -471,7 +471,7 @@ When an `<ion-item>` renders a native `<button>` element, the keyboard interacti
 | <kbd>Enter</kbd> | Activates the item, triggering its `click` event. If the item is within a form and has `type` set to `"submit"`, it submits the form. |
 | <kbd>Space</kbd> | Activates the item, triggering its `click` event. Does not submit the form, even if the item `type` is `"submit"`.                    |
 
-#### Anchor
+#### Anchor {/* #anchor */}
 
 When an `<ion-item>` renders a native `<a>` element, the keyboard interactions follow the same pattern as the [link role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/link_role):
 
@@ -479,26 +479,26 @@ When an `<ion-item>` renders a native `<a>` element, the keyboard interactions f
 | ---------------- | ---------------------------------------------------------------------------------------- |
 | <kbd>Enter</kbd> | Activates the item, navigating to the linked page or moving focus to the in-page target. |
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

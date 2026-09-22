@@ -15,7 +15,7 @@ Angular 21 made [zoneless change detection](https://angular.dev/guide/zoneless) 
 
 With Zone.js, Angular automatically re-renders after almost any asynchronous task. Without it, Angular only re-renders when you explicitly tell it the view is out of date. Most of your app keeps working unchanged, but a few patterns that relied on Zone.js need a small adjustment.
 
-## What keeps working automatically
+## What keeps working automatically {/* #what-keeps-working-automatically */}
 
 You do not need to change these. Angular schedules change detection for them in a zoneless app:
 
@@ -32,7 +32,7 @@ Angular 22 also makes `OnPush` the default change detection strategy. Under `OnP
 
 :::
 
-## What needs a notification
+## What needs a notification {/* #what-needs-a-notification */}
 
 When you update component state from an asynchronous callback that Angular did not wrap, nothing schedules a re-render. The state changes, but the view does not update. This applies to any Angular code, not only Ionic, and the common sources in an Ionic app are:
 
@@ -43,7 +43,7 @@ When you update component state from an asynchronous callback that Angular did n
 
 You can notify Angular in two ways: write to a [signal](https://angular.dev/guide/signals) that the template reads, or inject `ChangeDetectorRef` and call `markForCheck()` after the update. We recommend signals because they work the same with or without Zone.js.
 
-### Signals (recommended)
+### Signals (recommended) {/* #signals-recommended */}
 
 Writing a signal that a template reads schedules change detection automatically, so there is nothing extra to remember after the update.
 
@@ -74,7 +74,7 @@ export class HomePage {
 }
 ```
 
-### `ChangeDetectorRef.markForCheck()`
+### `ChangeDetectorRef.markForCheck()` {/* #changedetectorrefmarkforcheck */}
 
 If you are not using signals for a particular piece of state, inject `ChangeDetectorRef` and call `markForCheck()` after the asynchronous update. It is a no-op-or-better under Zone.js, so it is safe to leave in place if you later re-enable zones.
 
@@ -101,11 +101,11 @@ export class ListPage {
 }
 ```
 
-## Common Ionic patterns
+## Common Ionic patterns {/* #common-ionic-patterns */}
 
 These apply the two approaches above to patterns you are likely to hit in an Ionic app.
 
-### Inline overlays with dynamic content
+### Inline overlays with dynamic content {/* #inline-overlays-with-dynamic-content */}
 
 Content projected into an inline `ion-modal` or `ion-popover` follows the same rule. If you populate it asynchronously, update a signal or call `markForCheck()`:
 
@@ -136,7 +136,7 @@ export class InlinePage {
 
 Inline overlays also expose their events as outputs (for example `ionModalDidDismiss`), which you can convert to a signal with [`toSignal`](https://angular.dev/api/core/rxjs-interop/toSignal) if you prefer a reactive style.
 
-### Platform events
+### Platform events {/* #platform-events */}
 
 `Platform` exposes its events as RxJS subjects. Update a signal inside the subscription so the view reflects the change:
 
@@ -153,7 +153,7 @@ export class AppComponent {
 }
 ```
 
-## Change detection on Angular 22
+## Change detection on Angular 22 {/* #change-detection-on-angular-22 */}
 
 On Angular 22 a component that does not declare a strategy is `OnPush`. If your pages keep state in plain fields rather than signals, every component from your application root down to the one hosting `ion-router-outlet` or `ion-tabs` (your app shell) must stay eager. A tick starts at the application root and skips a clean `OnPush` view and everything below it, so an `OnPush` ancestor strands the page even when the page itself is eager:
 
@@ -172,6 +172,6 @@ If other components sit between your application root and `ion-router-outlet`, e
 
 Hosting an `ion-nav` is fine either way, because its pages are attached as root views and are checked independently of the component hosting them.
 
-## Staying on Zone.js
+## Staying on Zone.js {/* #staying-on-zonejs */}
 
 If you are not ready to adopt zoneless change detection, you can opt back into Zone.js with `provideZoneChangeDetection()`. Refer to the [Keeping Zone.js section of the Ionic 9 upgrade guide](/updating/9-0.mdx#keeping-zonejs) for the exact configuration.

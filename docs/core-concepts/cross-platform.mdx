@@ -6,15 +6,15 @@ title: Cross Platform
 
 Ionic is built from the ground up to make development easy, no matter what platform you are building for. Ionic apps are truly cross-platform: able to run as an Android, iOS, Electron, and Progressive Web App (PWA), all from a single codebase. There are some points to keep in mind when optimizing an app to work across these platforms.
 
-## Hardware APIs
+## Hardware APIs {/* #hardware-apis */}
 
 In a native application, it's common to make API calls to communicate with the device, such as opening the camera or accessing geolocation. These API calls won’t work when called in a web environment because there’s no native bridge. There are a few ways Ionic handles this.
 
-### Ionic Native
+### Ionic Native {/* #ionic-native */}
 
 [Ionic Native](../native.mdx) has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will print a warning if it is not a native environment and there are no Cordova plugins available. The app won’t break and it will continue to work, although without the native functionality.
 
-### Platform Detection
+### Platform Detection {/* #platform-detection */}
 
 In an app’s logic, whenever it is needed to make a native API call, it is recommended to always check the status of the native environment first. For example:
 
@@ -31,15 +31,15 @@ this.platform.ready().then(() => {
 
 This bit of code can be incredibly helpful when targeting environments where access to the native APIs is uncertain.
 
-### Browser Fallbacks
+### Browser Fallbacks {/* #browser-fallbacks */}
 
 Many native APIs that people use (for example, the File API), are not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform the app is running on.
 
-## Responsive UI
+## Responsive UI {/* #responsive-ui */}
 
 When planning to deploy an app that may be used across a variety of devices, it is important to ensure the app works smoothly on larger screen sizes.
 
-### Layout
+### Layout {/* #layout */}
 
 Many people rarely notice the layout of an app, but it can have a massive impact on experience and usability. Consider this common UI pattern:
 
@@ -151,11 +151,11 @@ There’s a lot going on in the example above. These are the key points:
 
 For more information on customizing with grid, refer to the [Grid](../api/grid.mdx) documentation.
 
-## Storage
+## Storage {/* #storage */}
 
 Most apps at some point will need to store some sort of data locally. Whether it’s storing some JSON from an XHR request, or saving an auth token, there are many different storage options available. On top of this, if the app is running in a native environment, it is possible to create a full SQLite database and store data there. All of these different storage mechanisms have their own advantages and disadvantages, but Ionic developers should not have to worry about that.
 
-### Ionic Storage
+### Ionic Storage {/* #ionic-storage */}
 
 In this case, [Ionic’s Storage library](https://github.com/ionic-team/ionic-storage) is a perfect candidate for the multi-environment use case. Built on top of the well tested LocalForage library, Ionic’s storage class provides an adaptable storage mechanism that will pick the best storage solution for the current run time.
 
