@@ -15,15 +15,15 @@ import TabItem from '@theme/TabItem';
 
 Ionic は、視力の低いユーザー向けにコントラストを向上させたパレットを提供します。これらのパレットは、テキストなどの前景コンテンツと UI コンポーネントなどの背景コンテンツ間のコントラストを増幅することで機能します。Ionic は、ハイコントラストを実現するためにライトとダークの両方のバリアントを提供します。
 
-## 概要
+## 概要 {/* #overview */}
 
 Ionic のデフォルトパレットは、適切なコントラストカラーと組み合わせて使用すると、Web Content Accessibility Guidelines（WCAG）で定義されている[Level AA 色コントラスト](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)を満たす[Ionic colors](./colors.mdx)を提供します。ハイコントラストパレットの[Ionic colors](./colors.mdx)は、適切なコントラストカラーと組み合わせて使用すると、[Level AAA 色コントラスト](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)を満たすように更新されています。特に、ボーダー、テキスト、背景色を含む UI コンポーネントのコントラストが改善されています。ただし、ハイコントラストパレット内では、テキストの可読性が優先されることに注意することが重要です。これは、ページの背景に対する UI コンポーネントのコントラストを調整すると、コンポーネントのテキストとその背景間のコントラストが大幅に損なわれる場合、UI コンポーネントの背景のコントラストは変更されないままになることを意味します。
 
-## ハイコントラストテーマを有効にする
+## ハイコントラストテーマを有効にする {/* #enabling-high-contrast-theme */}
 
 アプリでハイコントラストパレットを有効にする方法は 3 つあります：**always**、**system**設定に基づく方法、または CSS**class**を使用する方法です。
 
-### Always
+### Always {/* #always */}
 
 ハイコントラストパレットは、適切なファイルに以下のスタイルシートをインポートすることで有効にできます。このアプローチは、コントラスト設定のシステム設定に関係なく、ハイコントラストパレットを有効にします。
 
@@ -72,7 +72,7 @@ import AlwaysHighContrastMode from '@site/static/usage/v9/theming/always-high-co
 
 <AlwaysHighContrastMode />
 
-### System
+### System {/* #system */}
 
 ハイコントラストモードを有効にするシステムアプローチでは、ユーザーの好みのコントラストをシステム設定で確認します。これは、新しい Ionic Framework アプリを起動するときのデフォルトです。適切なファイルに以下のスタイルシートをインポートすると、システム設定からユーザーの好みを自動的に取得し、ハイコントラストが優先される場合にハイコントラストパレットを適用します。
 
@@ -132,7 +132,7 @@ import SystemHighContrastMode from '@site/static/usage/v9/theming/system-high-co
 ハイコントラストダークパレットは`dark.system.css`の後にインポートする必要があります。そうしないと、標準のコントラストパレットが優先されます。
 :::
 
-### CSS Class
+### CSS Class {/* #css-class */}
 
 以前のアプローチは、ファイルのインポートだけでハイコントラストパレットを有効にするのに優れていますが、適用場所をより制御する必要があるシナリオもあります。トグルなどを通じてハイコントラストパレットを条件付きで適用する必要がある場合、またはシステム設定に基づいて機能を拡張したい場合、ハイコントラストパレットクラスファイルを提供します。このファイルは、特定のクラスがアプリに追加されたときにハイコントラストパレットを適用します。適切なファイルに以下のスタイルシートをインポートすると、クラスでハイコントラストパレットを使用するために必要なスタイルが提供されます：
 
@@ -195,7 +195,7 @@ import ClassHighContrastMode from '@site/static/usage/v9/theming/class-high-cont
 インポートされたハイコントラストパレットを機能させるには、`.ion-palette-high-contrast`クラスを`html`要素に追加する**必要があります**。
 :::
 
-## Ionic ハイコントラストテーマのカスタマイズ
+## Ionic ハイコントラストテーマのカスタマイズ {/* #customizing-ionic-high-contrast-theme */}
 
 Ionic には、3 つの異なる方法で有効にできる推奨のハイコントラストパレットがあります：[always](#always)、[system](#system)設定に基づく方法、または[CSS class](#css-class)を使用する方法です。これらの各方法には、対応する名前のハイコントラストパレットファイルをインポートすることが含まれます。
 

@@ -18,7 +18,7 @@ Welcome! This guide will walk you through the basics of Ionic JavaScript develop
 
 Ionic JavaScript が何であるか、そしてウェブ開発エコシステムにどのように適合するかの高レベルな概要を知りたい場合は、[Ionic JavaScript 概要](overview)を参照してください。
 
-## Prerequisites
+## Prerequisites {/* #prerequisites */}
 
 Before you begin, make sure you have Node.js and npm installed on your machine.
 You can check by running:
@@ -30,7 +30,7 @@ npm -v
 
 Node.js と npm を持っていない場合は、[Node.js をダウンロード](https://nodejs.org/en/download)してください（npm が含まれています）。
 
-## Create a Project with Vite
+## Create a Project with Vite {/* #create-a-project-with-vite */}
 
 First, create a new Vite project with vanilla JavaScript:
 
@@ -55,7 +55,7 @@ npm run dev
 
 Open your browser and visit the URL shown in the console.
 
-## Explore the Project Structure
+## Explore the Project Structure {/* #explore-the-project-structure */}
 
 Your new app's directory will look like this:
 
@@ -77,7 +77,7 @@ All file paths in the examples below are relative to the project root directory.
 
 Let's configure the project, initialize Ionic, and add components to create our app.
 
-## Configure Vite
+## Configure Vite {/* #configure-vite */}
 
 Install the `vite-plugin-static-copy` package:
 
@@ -118,7 +118,7 @@ export default defineConfig({
 
 This copies the necessary Ionic files that Capacitor will need to work with lazy loaded Ionic components.
 
-## Initialize Ionic
+## Initialize Ionic {/* #initialize-ionic */}
 
 Replace the contents of `main.js` with the following:
 
@@ -150,7 +150,7 @@ import '@ionic/core/css/display.css';
 
 This initializes Ionic based on the environment and then imports all of the available CSS files.
 
-## Add the App Component
+## Add the App Component {/* #add-the-app-component */}
 
 Update your `index.html` to configure the metadata and use Ionic components:
 
@@ -182,7 +182,7 @@ Update your `index.html` to configure the metadata and use Ionic components:
 
 This sets up the root of your application, using Ionic's `ion-app`, `ion-router`, and `ion-router-outlet` components. The key change is replacing the default `<div id="app">` with Ionic's routing and layout components. The router outlet is where your pages will be displayed.
 
-## View Routes
+## View Routes {/* #view-routes */}
 
 Routes are defined in the `index.html` using `ion-route` components inside the `ion-router`:
 
@@ -195,7 +195,7 @@ Routes are defined in the `index.html` using `ion-route` components inside the `
 
 When you visit the root URL (`/`), the `home-page` component will be loaded. When you visit the `/new` URL, the `new-page` component will be loaded. We will define these components next.
 
-## Add the Home Page
+## Add the Home Page {/* #add-the-home-page */}
 
 Create a new directory called `pages` inside the `src` folder, then add a file called `HomePage.js` in that directory with the following content:
 
@@ -244,7 +244,7 @@ At this point your browser should be displaying the Home page.
 
 ![Screenshot of the Ionic Core Home page](/img/guides/quickstart/unstyled-home-page.png 'Ionic Core Home Component')
 
-## Add an Ionic Component
+## Add an Ionic Component {/* #add-an-ionic-component */}
 
 You can enhance your Home page with more Ionic UI components. For example, add a [Button](/api/button.mdx) to navigate to another page. Update the `HomePage` component in `HomePage.js`:
 
@@ -275,7 +275,7 @@ class HomePage extends HTMLElement {
 customElements.define('home-page', HomePage);
 ```
 
-## Add a New Page
+## Add a New Page {/* #add-a-new-page */}
 
 Add a new file named `NewPage.js` to `src/pages` with the following content:
 
@@ -312,7 +312,7 @@ Next, update the `<script>` tag which imports the Home page in the `index.html` 
 </script>
 ```
 
-## Navigate to the New Page
+## Navigate to the New Page {/* #navigate-to-the-new-page */}
 
 To navigate to the new page, update the button in `HomePage.js` to be inside of an `ion-router-link`:
 
@@ -328,7 +328,7 @@ When the button is clicked, Ionic's router will automatically navigate to the `/
 ナビゲーションは、`document.querySelector('ion-router').push('/new')` を使用してプログラムで行うこともできます。詳細は [Ionic Router ドキュメント](/api/router.mdx) を参照してください。
 :::
 
-## Add Icons to the New Page
+## Add Icons to the New Page {/* #add-icons-to-the-new-page */}
 
 Ionic JavaScript comes with [Ionicons](https://ionic.io/ionicons/) support. To use icons, you need to import them, register them with `addIcons`, and then use them with the `ion-icon` component.
 
@@ -375,7 +375,7 @@ customElements.define('new-page', NewPage);
 
 詳細については、[Icon ドキュメント](/api/icon.mdx) および [Ionicons ドキュメント](https://ionic.io/ionicons/) を参照してください。
 
-## Call Component Methods
+## Call Component Methods {/* #call-component-methods */}
 
 Let's add a button that can scroll the content area to the bottom. Update `NewPage.js` to include scrollable content and a scroll button:
 
@@ -444,7 +444,7 @@ To call methods on Ionic components:
 
 You can find available methods for each component in the [Methods](/api/content.mdx#methods) section of their API documentation.
 
-## Run on a Device
+## Run on a Device {/* #run-on-a-device */}
 
 Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
 
@@ -467,11 +467,11 @@ npx cap open android
 
 さらに詳しくは、[Capacitor のはじめにガイド](https://capacitorjs.com/docs/getting-started/with-ionic) を参照してください。
 
-## Framework Integrations
+## Framework Integrations {/* #framework-integrations */}
 
 Ionic Core also works with other frameworks and libraries that support custom elements, such as [Alpine.js](https://alpinejs.dev/), [Lit](https://lit.dev/), and [Svelte](https://svelte.dev/). However, when using Ionic Core with these libraries, you won't have the built-in form and routing capabilities that are tightly coupled with Ionic's official Angular, React, and Vue framework integrations, and will need to use their respective routing and form solutions instead.
 
-## Explore More
+## Explore More {/* #explore-more */}
 
 This guide covered the basics of creating an Ionic JavaScript app with Vite, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
 

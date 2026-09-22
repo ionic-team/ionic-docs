@@ -10,7 +10,7 @@ title: ネイティブエラー
   />
 </head>
 
-## コードの署名エラー
+## コードの署名エラー {/* #code-signing-errors */}
 
 ```shell
 Code Signing Error: Failed to create provisioning profile. The app ID "com.csform.ionic.yellow" cannot be registered to your development team. Change your bundle identifier to a unique string to try again. Code Signing Error: No profiles for 'com.csform.ionic.yellow' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.csform.ionic.yellow'. Code Signing Error: Code signing is required for product type 'Application' in SDK 'iOS 11.1'
@@ -42,7 +42,7 @@ Cordova の場合、`config.xml`ファイルを開き、ルート要素`<widget>
 
 ![Xcodeで「署名を自動的に管理」を有効にし、開発チームが選択されている署名セクションを表示している。](/img/running/ios-xcode-signing-setup.png 'Xcodeの署名セクション')
 
-## Xcode のビルドエラー 65
+## Xcode のビルドエラー 65 {/* #xcode-build-error-65 */}
 
 ```shell
 Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/ionitron/projects/my-project/platforms/ios/cordova/build-debug.xcconfig,-workspace,SC project.xcworkspace,-scheme,SC project,-configuration,Debug,-sdk,iphonesimulator,-destination,platform=iOS Simulator,name=iPhone X,build,CONFIGURATION_BUILD_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/emulator,SHARED_PRECOMPS_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/sharedpch
@@ -63,7 +63,7 @@ ionic cordova build ios --prod
 
 Once these commands have been ran a fresh build can be done.
 
-## Google Play Services のバージョンが衝突
+## Google Play Services のバージョンが衝突 {/* #clashing-google-play-services-versions */}
 
 ```shell
 Error: more than one library with package name com.google.android.gms

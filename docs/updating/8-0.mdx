@@ -12,9 +12,9 @@ title: Updating to v8
 Ionic 7 から Ionic 8 への**破壊的変更の完全なリスト**については、Ionic Framework リポジトリの[破壊的変更ドキュメント](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-8x)を参照してください。
 :::
 
-## はじめに
+## はじめに {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 8 は Angular 16 以上をサポートしています。[Angular 更新ガイド](https://update.angular.io/)に従って、Angular を最新バージョンにアップデートしてください。
 
@@ -34,7 +34,7 @@ npm install @ionic/angular@latest @ionic/angular-server@latest @ionic/angular-to
 
 3. `@ionic/angular` からの `IonBackButtonDelegate` のインポートをすべて更新し、代わりに `@ionic/angular` から `IonBackButton` をインポートしてください。
 
-### React
+### React {/* #react */}
 
 1. Ionic 8 は React 17+ をサポートしています。React を最新バージョンに更新してください:
 
@@ -48,7 +48,7 @@ npm install react@17 react-dom@17
 npm install @ionic/react@8 @ionic/react-router@8
 ```
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 8 supports Vue 3.0.6+. Update to the latest version of Vue:
 
@@ -62,7 +62,7 @@ npm install vue@^3.0.6 vue-router@^3.0.6
 npm install @ionic/vue@8 @ionic/vue-router@8
 ```
 
-### Core
+### Core {/* #core */}
 
 1. Ionic 8 を最新バージョンに更新してください:
 
@@ -70,11 +70,11 @@ npm install @ionic/vue@8 @ionic/vue-router@8
 npm install @ionic/core@8
 ```
 
-## 推奨される変更
+## 推奨される変更 {/* #recommended-changes */}
 
 次の変更は、アプリケーションの動作に影響しないため、Ionic 8 に更新する際に必須ではありません。しかし、Ionic 8 の新機能を使用できるようにするために、以下の変更を行うことを推奨します。
 
-### Light Palette
+### Light Palette {/* #light-palette */}
 
 以前のバージョンでは、`theme/variables.scss` にライトパレット用のデフォルトカラー変数のセットが定義されていました:
 
@@ -96,7 +96,7 @@ Ionic Framework バージョン 8 では、`core.css` がインポートされ�
 
 新しいカラーパレットについては、[Ionic v8 公開](https://ionic.io/blog/announcing-the-ionic-8-beta) で詳しく読むことができます。
 
-### Dark Palette
+### Dark Palette {/* #dark-palette */}
 
 In previous versions, it was recommended to define the dark palette in the following way:
 
@@ -130,7 +130,7 @@ Ionic Framework バージョン 8 では、ダークパレットがインポー�
 
 新しいダークパレットファイルに関する詳細は、[ダークモードのドキュメント](../theming/dark-mode)を参照してください。
 
-### ステップカラートークン
+### ステップカラートークン {/* #step-color-tokens */}
 
 Ionic 8 のハイコントラストパレットをより適切にサポートするため、テキスト色と背景色に個別のステップカラートークンが導入されました。以前は、テキスト色と背景色の両方が単一の `--ion-color-step-[number]` トークン群で制御されていました。
 
@@ -166,7 +166,7 @@ button { color: var(--ion-text-color-step-600); /* 1000 - 400 = 600 */ }
 
 The [stepped color generator](../theming/themes#stepped-color-generator) has been updated to generate text and background color stepped variables.
 
-### ダイナミックフォント
+### ダイナミックフォント {/* #dynamic-font */}
 
 `core.css`ファイルは、デフォルトで動的フォントスケーリングを有効にするように更新されました。
 
@@ -178,7 +178,7 @@ The [stepped color generator](../theming/themes#stepped-color-generator) has bee
 
 動的フォントに関する詳細は、[動的フォントのスケーリングに関するドキュメント](../layout/dynamic-font-scaling)を参照してください。
 
-### (Angular のみ) `angular.json` CSS のインポート順
+### (Angular のみ) `angular.json` CSS のインポート順 {/* #angular-only-angularjson-css-import-order */}
 
 現在、`angular.json`ファイルは`src/global.scss`をインポートする前に`src/theme/variables.scss`をインポートしています。これにより、新しい[Dark Palette](#dark-palette)の変更をカスタマイズする際に、誤ったスタイルが適用される可能性があります。
 
@@ -196,9 +196,9 @@ The [stepped color generator](../theming/themes#stepped-color-generator) has bee
   "styles": ["src/global.scss", "src/theme/variables.scss"],
 ```
 
-## 必要な変更
+## 必要な変更 {/* #required-changes */}
 
-### ブラウザサポート
+### ブラウザサポート {/* #browser-support */}
 
 Ionic がサポートするブラウザのリストが変更されました。アプリをサポートされているブラウザにデプロイしていることを確認するために、[ブラウザサポートガイド](../reference/browser-support)を確認してください。
 
@@ -213,51 +213,51 @@ Safari >=15
 iOS >=15
 ```
 
-### Checkbox
+### Checkbox {/* #checkbox */}
 
 1. Migrate any remaining instances of Checkbox to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/checkbox#migrating-from-legacy-checkbox-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Input
+### Input {/* #input */}
 
 1. Remove any usages of the `size` property. CSS should be used to specify the visible width of the input instead.
 2. Remove any usages of the `accept` property.
 3. Migrate any remaining instances of Input to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/input#migrating-from-legacy-input-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Item
+### Item {/* #item */}
 
 1. `counter` または `counterFormatter` プロパティの使用をすべて削除します。代わりに `ion-input` と `ion-textarea` の同名プロパティを使用してください。
 2. `helper` または `error` スロットの使用をすべて削除します。代わりに `ion-input` と `ion-textarea` の `helperText` と `errorText` プロパティを使用してください。
 3. `fill` または `shape` プロパティの使用をすべて削除します。代わりに `ion-input`、`ion-textarea`、`ion-select` の同名プロパティを使用してください。
 
-### Nav
+### Nav {/* #nav */}
 
 1. `getLength` の使用を更新し、返される値にアクセスする前に `await` を呼び出してください。このメソッドは `number` ではなく `Promise<number>` を返すようになりました。
 
-### Picker
+### Picker {/* #picker */}
 
 1. Ionic 8 ではインライン `ion-picker` コンポーネントが同梱されるようになりました。従来のピッカーを引き続き使用したい開発者は、`ion-picker` の使用を `ion-picker-legacy` に更新してください。`pickerController` のインポートは変更されません。なお、`ion-picker-legacy` コンポーネントは今後の Ionic のメジャーリリースで削除される予定です。使用方法については [ピッカーのドキュメント](../api/picker) を参照してください。
 
-### Toast
+### Toast {/* #toast */}
 
 1. `ToastButton` から `cssClass` プロパティの使用をすべて削除してください。代わりに `button` CSS シャドウパーツを使用してください。
 
-### Radio
+### Radio {/* #radio */}
 
 1. Migrate any remaining instances of Radio to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/radio#migrating-from-legacy-radio-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Select
+### Select {/* #select */}
 
 1. Migrate any remaining instances of Select to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/select#migrating-from-legacy-select-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Textarea
+### Textarea {/* #textarea */}
 
 1. Migrate any remaining instances of Textarea to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/textarea#migrating-from-legacy-textarea-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-### Toggle
+### Toggle {/* #toggle */}
 
 1. Migrate any remaining instances of Toggle to use the [modern form control syntax](https://ionic-docs-mt82qcyb0-ionic1.vercel.app/docs/v7/api/toggle#migrating-from-legacy-toggle-syntax). Additionally, remove any usages of the `legacy` property as the legacy form control syntax has been removed.
 
-## アップグレードに関してヘルプが必要ですか?
+## アップグレードに関してヘルプが必要ですか? {/* #need-help-upgrading */}
 
 必ず[Ionic 8 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-8x)を確認してください。デフォルトのプロパティや CSS 変数の値にいくつか変更があり、開発者は注意が必要な場合があります。このページには、ユーザーによる対応が必要な破壊的変更のみが記載されています。
 

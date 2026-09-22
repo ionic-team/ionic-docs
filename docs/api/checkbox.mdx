@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Checkboxを使用すると、一連のオプションから複数のオプションを選択できます。選択すると、チェックマークが付いた状態(checked)で表示されます。checkboxをクリックすると、 `checked` プロパティーが切り替わります。`checked` プロパティを設定して、プログラムで `checked` を切り替えることもできます。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/checkbox/basic/index.mdx';
 
 <Basic />
 
-## Label Placement
+## Label Placement {/* #label-placement */}
 
 開発者は `labelPlacement` プロパティを使用して、ラベルをコントロールに対してどのように配置するかを制御できます。このプロパティはフレックスボックスの `flex-direction` プロパティを反映しています。
 
@@ -37,7 +37,7 @@ import LabelPlacement from '@site/static/usage/v9/checkbox/label-placement/index
 
 <LabelPlacement />
 
-## Alignment
+## Alignment {/* #alignment */}
 
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
@@ -49,7 +49,7 @@ import Alignment from '@site/static/usage/v9/checkbox/alignment/index.mdx';
 
 <Alignment />
 
-## Justification
+## Justification {/* #justification */}
 
 開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。このプロパティはフレックスボックスの `justify-content` プロパティを反映しています。
 
@@ -61,13 +61,13 @@ import Justify from '@site/static/usage/v9/checkbox/justify/index.mdx';
 `ion-item`は、 `justify` がどのように機能するかを強調するためにデモで使用されているだけです。 `justify` が正しく機能するために必須ではありません。
 :::
 
-## Indeterminate Checkboxes
+## Indeterminate Checkboxes {/* #indeterminate-checkboxes */}
 
 import Indeterminate from '@site/static/usage/v9/checkbox/indeterminate/index.mdx';
 
 <Indeterminate />
 
-## Links inside of Labels
+## Links inside of Labels {/* #links-inside-of-labels */}
 
 Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
 
@@ -75,7 +75,7 @@ import LabelLink from '@site/static/usage/v9/checkbox/label-link/index.mdx';
 
 <LabelLink />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 Helper and error text can be used inside of a checkbox with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-checkbox`. This ensures errors are not shown before the user has a chance to enter data.
 
@@ -85,17 +85,17 @@ import HelperError from '@site/static/usage/v9/checkbox/helper-error/index.mdx';
 
 <HelperError />
 
-## Theming
+## Theming {/* #theming */}
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v9/checkbox/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### CheckboxChangeEventDetail
+### CheckboxChangeEventDetail {/* #checkboxchangeeventdetail */}
 
 ```typescript
 interface CheckboxChangeEventDetail<T = any> {
@@ -104,7 +104,7 @@ interface CheckboxChangeEventDetail<T = any> {
 }
 ```
 
-### CheckboxCustomEvent
+### CheckboxCustomEvent {/* #checkboxcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -115,26 +115,26 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -24,11 +24,7 @@ Ionic の素晴らしいところは、1 つのコードベースで、使い慣
   allowFullScreen
 ></iframe>
 
-:::note
-Ionic 4 および Cordova をカバーした前のバージョンのガイドをお探しですか？[Ionic 4 および Cordova ガイド](../developer-resources/guides/first-app-v4/intro.mdx)を参照してください。
-:::
-
-## 構築するもの
+## 構築するもの {/* #what-well-build */}
 
 デバイスのカメラで写真を撮影し、グリッドに表示し、デバイスに永続的に保存する機能を提供する Photo Gallery アプリを作成します。
 
@@ -40,7 +36,7 @@ Ionic 4 および Cordova をカバーした前のバージョンのガイドを
 
 このガイドで参照されている[完全なアプリコード](https://github.com/ionic-team/tutorial-photo-gallery-angular)を GitHub で見つけてください。
 
-## 必要なツールのダウンロード
+## 必要なツールのダウンロード {/* #download-required-tools */}
 
 最適な Ionic 開発体験を確保するために、以下をすぐにダウンロードしてインストールしてください：
 
@@ -50,7 +46,7 @@ Ionic 4 および Cordova をカバーした前のバージョンのガイドを
   - **Windows** ユーザー：最高の Ionic 体験のために、組み込みのコマンドライン (cmd) または管理者モードで実行する Powershell CLI を推奨します。
   - **Mac/Linux** ユーザー：ほぼすべてのターミナルで動作します。
 
-## Ionic ツールのインストール
+## Ionic ツールのインストール {/* #install-ionic-tooling */}
 
 コマンドラインターミナルで以下を実行して、Ionic CLI（`ionic`）、デバイスやシミュレーター/エミュレーターでネイティブバイナリを実行するために使用される`native-run`、ネイティブアプリのアイコンとスプラッシュスクリーンを生成するために使用される`cordova-res`をインストールします：
 
@@ -68,7 +64,7 @@ npm install -g @ionic/cli native-run cordova-res
 npm を管理者権限なしでグローバルに操作できるように設定することを検討してください。詳細は [権限エラーの解決](../developing/tips.mdx#resolving-permission-errors) を参照してください。
 :::
 
-## アプリの作成
+## アプリの作成 {/* #create-an-app */}
 
 次に、"Tabs" というアプリテンプレートを使用して Ionic Angular アプリを生成し、Native 機能を使うために Capacitor を追加します。
 
@@ -96,7 +92,7 @@ cd photo-gallery
 npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
-### PWA Elements
+### PWA Elements {/* #pwa-elements */}
 
 [Camera API](/native/camera.mdx)を含む一部の Capacitor プラグインは、Ionic の[PWA Elements ライブラリ](https://github.com/ionic-team/pwa-elements)を介して Web ベースの機能と UI を提供します。
 
@@ -132,7 +128,7 @@ bootstrapApplication(AppComponent, {
 
 それで終わりです！さあ、楽しい部分です - アプリを実行してみましょう。
 
-## アプリを起動
+## アプリを起動 {/* #run-the-app */}
 
 次のコマンドを実行してください:
 
@@ -142,7 +138,7 @@ ionic serve
 
 そして、完成です！Ionic アプリが Web ブラウザで実行されています。アプリの大部分はブラウザ内で直接ビルドおよびテストできるため、開発とテストの速度が大幅に向上します。
 
-## Photo Gallery
+## Photo Gallery {/* #photo-gallery */}
 
 3 つのタブがあります。「Tab2」タブをクリックしてください。これは空白のキャンバス、つまり Photo Gallery に変換するのに最適な場所です。Ionic CLI には Live Reload 機能があるため、変更を加えて保存すると、アプリがすぐに更新されます！
 

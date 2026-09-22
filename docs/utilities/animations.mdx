@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## 概要
+## 概要 {/* #overview */}
 
 Ionic Animations は、特定のフレームワークや Ionic アプリを必要とせず、プラットフォームに依存しない方法で複雑なアニメーションを作成できるツールです。
 
@@ -22,7 +22,7 @@ Ionic Animations は、特定のフレームワークや Ionic アプリを必�
 
 一方、Ionic Animations は[Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)を使用しており、アニメーションの計算と実行をすべてブラウザにオフロードします。このアプローチにより、ブラウザはアニメーションを最適化し、スムーズな実行を保証できます。Web Animations がサポートされていない場合、Ionic Animations は[CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)にフォールバックしますが、パフォーマンスの差は無視できる程度です。
 
-## Installation
+## Installation {/* #installation */}
 
 ````mdx-code-block
 <Tabs
@@ -156,7 +156,7 @@ const animation = createAnimation()
 </Tabs>
 ````
 
-## 基本的なアニメーション
+## 基本的なアニメーション {/* #basic-animations */}
 
 以下の例では、`ion-card`要素の不透明度を変更し、X 軸に沿って左から右に移動するアニメーションが作成されています。このアニメーションは無限に実行され、各反復は 1500ms 続きます。
 
@@ -166,7 +166,7 @@ import Basic from '@site/static/usage/v9/animations/basic/index.mdx';
 
 <Basic />
 
-## キーフレームアニメーション
+## キーフレームアニメーション {/* #keyframe-animations */}
 
 Ionic Animations では、キーフレームを使用してアニメーションの中間ステップを制御できます。ここでは任意の有効な CSS プロパティを使用でき、値として CSS 変数も使用できます。
 
@@ -180,7 +180,7 @@ import Keyframes from '@site/static/usage/v9/animations/keyframes/index.mdx';
 
 各キーフレームオブジェクトには`offset`プロパティが含まれています。`offset`は、キーフレームステップを定義する 0 から 1 の間の値です。オフセット値は昇順でなければならず、繰り返すことはできません。
 
-## グループ化されたアニメーション
+## グループ化されたアニメーション {/* #grouped-animations */}
 
 複数の要素を同時にアニメーション化し、単一の親アニメーションオブジェクトで制御できます。子アニメーションは、特に指定がない限り、duration、easing、iterations などのプロパティを継承します。親アニメーションの`onFinish`コールバックは、すべての子アニメーションが完了するまで呼び出されません。
 
@@ -190,7 +190,7 @@ import Group from '@site/static/usage/v9/animations/group/index.mdx';
 
 <Group />
 
-## Before/After フック
+## Before/After フック {/* #before-and-after-hooks */}
 
 Ionic Animations は、アニメーションが実行される前とアニメーションが完了した後に要素を変更できるフックを提供します。これらのフックは、DOM の読み取りと書き込み、クラスやインラインスタイルの追加や削除に使用できます。
 
@@ -202,7 +202,7 @@ import BeforeAndAfterHooks from '@site/static/usage/v9/animations/before-and-aft
 
 <BeforeAndAfterHooks />
 
-## チェーンされたアニメーション
+## チェーンされたアニメーション {/* #chained-animations */}
 
 アニメーションは連鎖させて、次々に実行できます。`play`メソッドは、アニメーションが完了したときに解決される Promise を返します。
 
@@ -220,7 +220,7 @@ import Gesture from '@site/static/usage/v9/animations/gesture/index.mdx';
 
 <Gesture />
 
-## ユーザー設定ベースのアニメーション
+## ユーザー設定ベースのアニメーション {/* #preference-based-animations */}
 
 開発者は、CSS 変数を使用して、`prefers-reduced-motion`や`prefers-color-scheme`などのユーザー設定に合わせてアニメーションを調整することもできます。
 
@@ -232,17 +232,17 @@ import PreferenceBased from '@site/static/usage/v9/animations/preference-based/i
 
 <PreferenceBased />
 
-## Ionic コンポーネントアニメーションのオーバーライド
+## Ionic コンポーネントアニメーションのオーバーライド {/* #overriding-ionic-component-animations */}
 
 特定の Ionic コンポーネントでは、開発者がカスタムアニメーションを提供できます。すべてのアニメーションは、コンポーネントのプロパティとして提供されるか、グローバル設定を介して設定されます。
 
-### モーダル
+### モーダル {/* #modals */}
 
 import ModalOverride from '@site/static/usage/v9/animations/modal-override/index.mdx';
 
 <ModalOverride />
 
-## パフォーマンスの考慮事項
+## パフォーマンスの考慮事項 {/* #performance-considerations */}
 
 CSS と Web Animations は、通常、コンポジタースレッドで処理されます。これは、レイアウト、ペイント、スタイリング、JavaScript が実行されるメインスレッドとは異なります。最適なアニメーションパフォーマンスを得るには、コンポジタースレッドで処理できるプロパティを使用することをお勧めします。
 
@@ -250,7 +250,7 @@ CSS と Web Animations は、通常、コンポジタースレッドで処理さ
 
 どの CSS プロパティがレイアウトやペイントを引き起こすかについての情報は、[CSS Triggers](https://csstriggers.com/)を参照してください。
 
-## デバッグ
+## デバッグ {/* #debugging */}
 
 Chrome でアニメーションをデバッグするには、Chrome DevTools を使用してアニメーションを検査する優れたブログ投稿があります：https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations。
 
@@ -267,25 +267,25 @@ const animation = createAnimation('my-animation-identifier')
   .fromTo('opacity', '1', '0');
 ```
 
-## API
+## API {/* #api */}
 
 このセクションでは、`Animation`クラスで利用可能なすべてのメソッドとプロパティのリストを提供します。
 
-### インターフェース
+### インターフェース {/* #interfaces */}
 
-#### AnimationDirection
+#### AnimationDirection {/* #animationdirection */}
 
 ```tsx
 type AnimationDirection = 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
 ```
 
-#### AnimationFill
+#### AnimationFill {/* #animationfill */}
 
 ```tsx
 type AnimationFill = 'auto' | 'none' | 'forwards' | 'backwards' | 'both';
 ```
 
-#### AnimationBuilder
+#### AnimationBuilder {/* #animationbuilder */}
 
 ```tsx
 type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
@@ -297,7 +297,7 @@ type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
 
 :::
 
-#### AnimationCallbackOptions
+#### AnimationCallbackOptions {/* #animationcallbackoptions */}
 
 ```tsx
 interface AnimationCallbackOptions {
@@ -308,7 +308,7 @@ interface AnimationCallbackOptions {
 }
 ```
 
-#### AnimationPlayOptions
+#### AnimationPlayOptions {/* #animationplayoptions */}
 
 ```tsx
 interface AnimationPlayOptions {
@@ -321,7 +321,7 @@ interface AnimationPlayOptions {
 }
 ```
 
-### プロパティ
+### プロパティ {/* #properties */}
 
 | Name                           | 説明                                                     |
 | ------------------------------ | -------------------------------------------------------- |

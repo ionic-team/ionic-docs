@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 If you are using Capacitor, you can additionally refer to the Capacitor documentation for [Deploying to Google Play](https://capacitorjs.com/docs/android/deploying-to-google-play).
 
-## Generating a release build of an app
+## Generating a release build of an app {/* #generating-a-release-build-of-an-app */}
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
@@ -48,7 +48,7 @@ An Ionic app will have preset default values in this file but this can be change
 </TabItem>
 </Tabs>
 
-## Signing an APK
+## Signing an APK {/* #signing-an-apk */}
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
@@ -60,11 +60,11 @@ To create an AAB binary locally using Android Studio:
 
 For complete details, [view the Android documentation](https://developer.android.com/studio/publish/app-signing).
 
-### Google Play Signing
+### Google Play Signing {/* #google-play-signing */}
 
 If you haven't made the switch to Android app bundles yet, you will need to opt into Play App Signing in the Google Play Console to be able to publish them.
 
-#### New Apps
+#### New Apps {/* #new-apps */}
 
 まず、Google Play コンソールで新しいアプリを作成します。アプリの署名を有効にするには、Production、オープンテスト、クローズドテスト、または内部テストのいずれかのページにある新しいリリース画面に移動する必要があります。
 「新しいリリースを作成」ボタンを選択します（どのリリースタイプでも構いません。今は実際に新しいリリースを作成する必要はありません）：
@@ -81,7 +81,7 @@ Next, select the **Export and upload a key from Java Keystore** option. This is 
 
 画面の指示に従ってキーストアを生成し、同じキーストアファイルを Appflow ダッシュボードでもアプリの署名に使用できます。キーストアファイルの生成に関してサポートが必要な場合は、[Android 証明書のドキュメント](https://ionic.io/docs/appflow/package/credentials#android-certificates)を参照してください。生成された ZIP ファイルがアップロードされたら、準備完了です！キーストアファイルで署名された AAB バイナリをビルドし、それを Google Play にアップロードします。
 
-#### Existing Apps
+#### Existing Apps {/* #existing-apps */}
 
 As of now, existing apps aren't required to use the AAB format, but you can still enroll them using Play App signing.
 
@@ -127,7 +127,7 @@ This generates a final release binary called HelloWorld.apk that can be accepted
 </TabItem>
 </Tabs>
 
-## Submitting an app to the Google Play Store
+## Submitting an app to the Google Play Store {/* #submitting-an-app-to-the-google-play-store */}
 
 Now that a release AAB/APK has been generated, a Play Store listing can be written and the AAB/APK can be uploaded.
 
@@ -144,7 +144,7 @@ Once a developer account has been created, go ahead and click the `Create an App
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release AAB/APK that was generated and publish the app.
 
-## Updating an app
+## Updating an app {/* #updating-an-app */}
 
 アプリが進化するにつれて、新しい機能や修正を加えて更新する必要があります。アプリは、新しいバージョンを Google Play ストアに提出するか、Appflow の Live Update 機能のようなライブ更新サービスを使用することで更新できます。ライブ更新を使用すると、Play ストアに変更を提出することなく、Appflow ダッシュボードから直接ユーザーに変更を配信できます。[ライブ更新](https://ionic.io/docs/appflow/deploy/intro)の詳細についてはこちらをご覧ください。
 

@@ -30,7 +30,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 `ion-tab-bar` は、`ion-tabs` コンポーネントの適切な場所に投影するために、スロットを定義する必要があります。
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 タブは、URLを変更することなく、異なるコンテンツを表示するために使用することができます。これは、タブをナビゲーションのために使用するのではなく、異なるコンテンツを表示するために使用する場合に便利です。
 
@@ -38,7 +38,7 @@ import Basic from '@site/static/usage/v9/tabs/basic/index.mdx';
 
 <Basic />
 
-## ルーターとの併用
+## ルーターとの併用 {/* #usage-with-router */}
 
 タブをIonicルーターで使用すると、タブベースのナビゲーションを実装できます。タブバーとアクティブタブはURLに基づいて自動的に解決されます。これはタブナビゲーションの最も一般的なパターンです。
 
@@ -52,7 +52,7 @@ Ionicでは、タブを使ったルーティングパターンのベストプラ
 
 :::
 
-## Programmatically Selecting Tabs
+## Programmatically Selecting Tabs {/* #programmatically-selecting-tabs */}
 
 タブは`select`メソッドを使用してプログラムで選択できます。これは、ボタンのクリックに応答したり、フォームを完了した後など、アプリケーションロジックからタブの変更をトリガーする必要がある場合に便利です。次の例では、ボタンを使用して`select`メソッドを呼び出し、別のタブにナビゲートする方法を示しています。
 
@@ -60,9 +60,9 @@ import SelectMethod from '@site/static/usage/v9/tabs/select-method/index.mdx';
 
 <SelectMethod />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### TabsCustomEvent
+### TabsCustomEvent {/* #tabscustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -73,26 +73,26 @@ interface TabsCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

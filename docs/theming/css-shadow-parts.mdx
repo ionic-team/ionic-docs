@@ -12,7 +12,7 @@ title: CSS Shadow Parts
 
 CSS Shadow Parts は、開発者がシャドウツリー内の要素に CSS プロパティをスタイル設定することを可能にします。これは、Ionic Framework [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)コンポーネントをカスタマイズする際に非常に便利です。
 
-## なぜ Shadow Parts?
+## なぜ Shadow Parts? {/* #why-shadow-parts */}
 
 Ionic Framework は、[Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)の分散型セットです。Web Components は、スタイルとマークアップをカプセル化するために[Shadow DOM の仕様](https://w3c.github.io/webcomponents/spec/shadow/)に従っています。
 
@@ -102,7 +102,7 @@ ion-item::part(native):hover {
 [ベンダープレフィックス擬似要素](#vendor-prefixed-pseudo-elements) と [構造擬似クラス](#structural-pseudo-classes) には、いくつかの既知の制限があります。
 :::
 
-## Ionic Framework の Parts
+## Ionic Framework の Parts {/* #ionic-framework-parts */}
 
 Ionic Framework のコンポーネントのすべての公開部分は、その API ページの CSS Shadow Parts 見出しの下で確認できます。すべてのコンポーネントとその API ページを確認するには、[コンポーネントのドキュメント](../components.mdx)を参照してください。
 
@@ -116,9 +116,9 @@ Ionic Framework のコンポーネントのすべての公開部分は、その 
 追加 parts の推奨を歓迎します。parts をリクエストする際は、[new GitHub issue](https://github.com/ionic-team/ionic-framework/issues/new?assignees=&labels=&template=feature_request.md&title=feat%3A+) にできるだけ多くの情報を添えて作成してください。
 :::
 
-## 既知の制限
+## 既知の制限 {/* #known-limitations */}
 
-### ブラウザサポート
+### ブラウザサポート {/* #browser-support */}
 
 CSS Shadow Parts は最近のすべてのメジャーブラウザでサポートされています。ただし、一部の古いバージョンでは shadow parts がサポートされていません。アプリに parts を実装する前に、[ブラウザのサポート](https://caniuse.com/#feat=mdn-css_selectors_part)が要件を満たしていることを確認してください。旧バージョンのブラウザのサポートが必要な場合は、引き続き [CSS Variables](../theming/css-variables.mdx) を使用してスタイリングすることをお勧めします。
 
@@ -152,7 +152,7 @@ my-component::part(container):last-child {
 }
 ```
 
-### Parts の連結
+### Parts の連結 {/* #chaining-parts */}
 
 擬似要素 `::part()` は追加の `::part()` にマッチすることができません。
 

@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 input コンポーネントは、HTML input 要素のラッパーで、カスタムスタイルと追加機能を備えています。HTML入力と同じプロパティのほとんどを受け入れ、モバイルデバイスのキーボードと統合します。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/input/basic/index.mdx';
 
 <Basic />
 
-## Types
+## Types {/* #types */}
 
 input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、`keyup`、`keydown`、`keypress`などの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
 
@@ -37,7 +37,7 @@ import Types from '@site/static/usage/v9/input/types/index.mdx';
 
 <Types />
 
-## Labels
+## Labels {/* #labels */}
 
 ラベルは、入力を説明するために使用されるべきです。これらは視覚的に使用することができ、また、ユーザーが入力に集中しているときには、スクリーンリーダーによって読み上げられます。これにより、ユーザーは入力の意図を理解しやすくなる。Inputにはラベルを割り当てる方法がいくつかあります：
 
@@ -45,7 +45,7 @@ import Types from '@site/static/usage/v9/input/types/index.mdx';
 - `label`スロット: カスタム HTML ラベルに使用する（実験的）。
 - `aria-label`: スクリーンリーダー用のラベルとして使用されるが、ラベルは表示されない。
 
-### Label Placement
+### Label Placement {/* #label-placement */}
 
 ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
@@ -53,7 +53,7 @@ import LabelPlacement from '@site/static/usage/v9/input/label-placement/index.md
 
 <LabelPlacement />
 
-### Label Slot （実験的）
+### Label Slot （実験的） {/* #label-slot-experimental */}
 
 プレーンテキストのラベルは `label` プロパティを通して渡されるべきですが、カスタム HTML が必要な場合は、代わりに `label` スロットを通して渡すことができます。
 
@@ -63,7 +63,7 @@ import LabelSlot from '@site/static/usage/v9/input/label-slot/index.mdx';
 
 <LabelSlot />
 
-### No Visible Label
+### No Visible Label {/* #no-visible-label */}
 
 表示するラベルが必要ない場合でも、開発者は `aria-label` を指定する必要があります。
 
@@ -71,7 +71,7 @@ import NoVisibleLabel from '@site/static/usage/v9/input/no-visible-label/index.m
 
 <NoVisibleLabel />
 
-## Clear Options
+## Clear Options {/* #clear-options */}
 
 Inputsには、入力の操作方法に応じて、Inputをクリアするための2つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、Inputに `value` があるときにクリアボタンを表示します。2つ目の方法は `clearOnEdit` プロパティで、入力が編集削除された後、再度入力されるとクリアされます。 `type` が `"password"` に設定されているInputは、デフォルトで `clearOnEdit` が有効になっています。
 
@@ -79,7 +79,7 @@ import Clear from '@site/static/usage/v9/input/clear/index.mdx';
 
 <Clear />
 
-## Filled Inputs
+## Filled Inputs {/* #filled-inputs */}
 
 Material Design では、Inputに塗りつぶしのスタイルが用意されています。Inputの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
@@ -93,7 +93,7 @@ import Fill from '@site/static/usage/v9/input/fill/index.mdx';
 
 <Fill />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 ヘルパーテキストとエラーテキストは、`helperText` と `errorText` プロパティを使用して入力の内部で使用することができます。エラーテキストは、 `ion-invalid` クラスと `ion-touched` クラスが `ion-input` に追加されていない限り表示されない。これにより、ユーザがデータを入力する前にエラーが表示されることはありません。
 
@@ -103,7 +103,7 @@ import HelperError from '@site/static/usage/v9/input/helper-error/index.mdx';
 
 <HelperError />
 
-## Input Counter
+## Input Counter {/* #input-counter */}
 
 Input Counterは、Inputの下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
@@ -119,7 +119,7 @@ import CounterAlignment from '@site/static/usage/v9/input/counter-alignment/inde
 
 <CounterAlignment />
 
-## Filtering User Input
+## Filtering User Input {/* #filtering-user-input */}
 
 開発者は `ionInput` イベントを使用して、キー入力などのユーザー入力に応答して入力値を更新することができます。これは、無効な文字や不要な文字をフィルタリングするのに便利です。
 
@@ -129,7 +129,7 @@ import FilteringData from '@site/static/usage/v9/input/filtering/index.mdx';
 
 <FilteringData />
 
-## 入力マスキング
+## 入力マスキング {/* #input-masking */}
 
 入力マスキングは、有効な入力値をサポートするように入力を制約する式です。Ionicでは、入力マスキングに[Maskito](https://maskito.dev)を使うことを推奨しています。Maskitoは、入力フィールドをマスクするための軽量で依存関係のないライブラリです。電話番号、クレジットカード、日付など、幅広いマスクをサポートしています。
 
@@ -149,7 +149,7 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 
 :::
 
-## Start and End Slots (experimental)
+## Start and End Slots (experimental) {/* #start-and-end-slots-experimental */}
 
 `start`スロットと `end`スロットはInputの両側にアイコン、ボタン、接頭辞/接尾辞テキストを配置するために使用することができます。
 
@@ -165,9 +165,9 @@ import StartEndSlots from '@site/static/usage/v9/input/start-end-slots/index.mdx
 
 <StartEndSlots />
 
-## テーマ
+## テーマ {/* #theming */}
 
-### 配色
+### 配色 {/* #colors */}
 
 `color`プロパティを設定すると、各Inputのカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
 
@@ -179,7 +179,7 @@ import Colors from '@site/static/usage/v9/input/theming/colors/index.mdx';
 
 <Colors />
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 Inputはscoped encapsulationを採用しており、実行時に各スタイルに追加のクラスを付加することで、CSSを自動的にスコープ化します。CSSでscopedセレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
 
@@ -187,9 +187,9 @@ import CSSProps from '@site/static/usage/v9/input/theming/css-properties/index.m
 
 <CSSProps />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### InputChangeEventDetail
+### InputChangeEventDetail {/* #inputchangeeventdetail */}
 
 ```typescript
 interface InputChangeEventDetail {
@@ -197,7 +197,7 @@ interface InputChangeEventDetail {
 }
 ```
 
-### InputCustomEvent
+### InputCustomEvent {/* #inputcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -208,26 +208,26 @@ interface InputCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

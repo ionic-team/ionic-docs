@@ -48,6 +48,22 @@ jobs:
       run: npm run typecheck
     - name: 🔤 Spell Check
       run: npm run spellcheck
+    # Docusaurus derives a heading's anchor from its text, so renaming a
+    # heading moves the anchor and breaks every inbound link. An explicit id
+    # survives the rename, and lets a translation keep the English anchor
+    # after the heading text is translated.
+    #
+    # Nothing in Docusaurus enforces this: a page whose headings are all
+    # unpinned builds clean. So run its own generator and fail if it had
+    # anything to add.
+    - name: 🔗 Heading IDs
+      run: |
+        npm run heading-ids
+        if ! git diff --quiet -- docs; then
+          echo "::error::Headings are missing explicit ids. Run \`npm run heading-ids\` and commit the result."
+          git diff -- docs
+          exit 1
+        fi
     - uses: ./.github/workflows/actions/check-translations
 
   cross-platform:

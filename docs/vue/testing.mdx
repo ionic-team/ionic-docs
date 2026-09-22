@@ -12,9 +12,9 @@ title: テスト
 
 このドキュメントは、`@ionic/vue`で作成されたアプリケーションをテストする方法の概要を提供します。Ionic CLI で生成されたアプリケーションは、[Vitest](https://vitest.dev)および[Vue Test Utils](https://test-utils.vuejs.org)によるユニットテストのセットアップがされており、[Cypress](https://www.cypress.io)によるエンドツーエンドテストにも対応しています。
 
-## ユニットテスト
+## ユニットテスト {/* #unit-testing */}
 
-### コンポーネントの待機
+### コンポーネントの待機 {/* #waiting-for-components */}
 
 Ionic コンポーネントの DOM に対してアサーションを行う前にレンダリングを待つ必要がある場合は、`@ionic/core`からエクスポートされる`componentOnReady`ヘルパーを使用してください。`el.componentOnReady()`を直接呼び出さないでください。`@ionic/vue`は Stencil のカスタム要素ビルドを使用しており、このメソッドは要素上には存在しません。このヘルパーは代わりに 1 フレーム待機し、コンポーネントの内部コンテンツがレンダリングされる機会を与えます。
 

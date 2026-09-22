@@ -25,13 +25,13 @@ ripple effectコンポーネントは、[Material Design ink ripple interaction 
 
 親要素に [relative position](https://developer.mozilla.org/en-US/docs/Web/CSS/position) を設定することが重要です。波紋エフェクトはabsolute positionであり、相対位置決めされた最も近い親要素をカバーするからです。また、親要素には `ion-activatable` クラスを設定します。これは、波及効果にその要素がクリック可能であることを伝えるものです。波紋がコンテナからはみ出す場合は、親要素に `overflow: hidden` を追加することを推奨します。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/ripple-effect/basic/index.mdx';
 
 <Basic />
 
-## タイプ
+## タイプ {/* #type */}
 
 リップル効果には2つのタイプがある： `"bounded"` と `"unbounded"` です。デフォルトのタイプである `"bounded"` は、クリック位置から外側に波及効果を広げます。常に要素の中心から始まり、円形に広がる波及効果を追加するには、タイプを `"unbounded"` に設定します。
 
@@ -39,7 +39,7 @@ import Type from '@site/static/usage/v9/ripple-effect/type/index.mdx';
 
 <Type />
 
-## カスタマイズ
+## カスタマイズ {/* #customizing */}
 
 リップルはCSSで別の色にカスタマイズできます。デフォルトでは、波紋の色はテキストの色を継承するように設定されています。これはCSSの `color` を親または波紋エフェクト自体に設定することで変更できます。
 
@@ -47,26 +47,26 @@ import Customizing from '@site/static/usage/v9/ripple-effect/customizing/index.m
 
 <Customizing />
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

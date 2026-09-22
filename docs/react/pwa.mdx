@@ -11,7 +11,7 @@ sidebar_label: Progressive Web Apps
   />
 </head>
 
-## Making your React app a PWA with Vite
+## Making your React app a PWA with Vite {/* #making-your-react-app-a-pwa-with-vite */}
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
 
@@ -39,7 +39,7 @@ Vite PWA プラグインの設定方法についての詳細は、[Vite PWA「�
 
 PWA をデプロイする方法については、[Vite PWA「デプロイ」ガイド](https://vite-pwa-org.netlify.app/deployment/)を参照してください。
 
-## Making your React app a PWA with Create React App
+## Making your React app a PWA with Create React App {/* #making-your-react-app-a-pwa-with-create-react-app */}
 
 :::note
 Ionic CLI v7 以降、Ionic React のスターターアプリは Create React App の代わりに Vite と共に提供されます。Vite の手順については、[Vite で React アプリを PWA 化する方法](#making-your-react-app-a-pwa-with-vite)を参照してください。
@@ -79,15 +79,15 @@ serviceWorkerRegistration.register();
 Service Workers や多くの JavaScript API（ジオロケーションなど）のような機能は、アプリがセキュアなコンテキストでホストされていることを必要とします。ホスティングサービスを通じてアプリをデプロイする場合、Service Workers を最大限に活用するためには HTTPS が必要であることに注意してください。
 :::
 
-### Service Worker の設定
+### Service Worker の設定 {/* #service-worker-configuration */}
 
 デフォルトでは、CRA/React Scripts は [Workbox の Webpack プラグイン](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいた事前設定済みの Service Worker セットアップを備えています。これはキャッシュ優先の戦略を利用しており、ネットワークがより新しいバージョンのアプリを返したとしても、アプリはキャッシュから読み込まれます。
 
 CRA/React Scripts の性質上、この設定は React Scripts 内部にあり、React Scripts からイジェクトしない限りカスタマイズできません。現在、Ionic CLI はイジェクトされた React アプリをサポートしていないため、この操作を行う場合は、Ionic CLI の代わりに npm/yarn スクリプトを使用する必要があります。
 
-### Deploying
+### Deploying {/* #deploying */}
 
-#### Firebase
+#### Firebase {/* #firebase */}
 
 Firebase ホスティングは、CDN による高速な応答時間、デフォルトで有効な HTTPS、[HTTP2 プッシュ](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなど、プログレッシブ Web アプリに多くの利点を提供します。
 

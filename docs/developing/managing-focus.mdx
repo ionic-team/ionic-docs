@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## 手動フォーカス管理
+## 手動フォーカス管理 {/* #manual-focus-management */}
 
 Ionic は、[Input](../api/input)、[Searchbar](../api/searchbar)、[Textarea](../api/textarea)などのコンポーネントに`setFocus` API を提供し、開発者が要素に手動でフォーカスを設定できるようにします。この API は`autofocus`属性の代わりに使用し、以下のタイミングで呼び出す必要があります：
 
@@ -22,18 +22,18 @@ Ionic は、[Input](../api/input)、[Searchbar](../api/searchbar)、[Textarea](.
 - アプリケーションが読み込まれたときのバニラ JavaScript アプリケーションの`appload`イベント。
 - ユーザーのジェスチャーやインタラクションの結果。
 
-### なぜ autofocus を使わないのか？
+### なぜ autofocus を使わないのか？ {/* #why-not-autofocus */}
 
 `autofocus`属性は、ページが読み込まれたときに要素にフォーカスを設定できる標準の HTML 属性です。この属性は、通常、ページの最初の入力要素にフォーカスを設定するために使用されます。ただし、`autofocus`属性は、ページ間をナビゲートする際にルーティングアプリケーションで問題を引き起こす可能性があります。これは、`autofocus`属性がページが読み込まれたときに要素にフォーカスを設定しますが、ページが再訪問されたときに要素にフォーカスを設定しないためです。`autofocus`属性の詳細については、[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus)を参照してください。
 
-### プラットフォームの制限
+### プラットフォームの制限 {/* #platform-restrictions */}
 
 `setFocus` API を使用する際に注意すべきプラットフォームの制限があります：
 
 1. Android では、要素にフォーカスを設定する前にユーザーのインタラクションが必要です。これは、ユーザーが画面をタップするだけでも可能です。
 2. Mobile Safari（iOS）では、インタラクティブ要素はユーザーのジェスチャーの結果としてのみフォーカスできます。たとえば、ボタンクリックの結果として`setFocus`を呼び出すなどです。
 
-### 基本的な使用方法
+### 基本的な使用方法 {/* #basic-usage */}
 
 以下の例は、ユーザーがボタンをクリックしたときに`setFocus` API を使用して入力にフォーカスを要求する方法を示しています。
 
@@ -41,7 +41,7 @@ import Basic from '@site/static/usage/v9/input/set-focus/index.mdx';
 
 <Basic />
 
-### ルーティング
+### ルーティング {/* #routing */}
 
 開発者は、`ionViewDidEnter`ライフサイクルイベントを使用して、ページが入力されたときに要素にフォーカスを設定できます。
 
@@ -129,7 +129,7 @@ export default Home;
 </Tabs>
 ````
 
-### オーバーレイ
+### オーバーレイ {/* #overlays */}
 
 開発者は、`didPresent`ライフサイクルイベントを使用して、オーバーレイが表示されたときに要素にフォーカスを設定できます。
 
@@ -241,19 +241,19 @@ export default Home;
 </Tabs>
 ````
 
-## アシスティブテクノロジーのフォーカス管理
+## アシスティブテクノロジーのフォーカス管理 {/* #assistive-technology-focus-management */}
 
 デフォルトでは、シングルページアプリケーションには、ブラウザまたは WebView でアクティブなビューが変更されたことをスクリーンリーダーに通知する組み込みの方法がありません。これは、アシスティブテクノロジーに依存するユーザーが、ナビゲーションイベントが発生したかどうかを常に知ることができないことを意味します。
 
 [focusManagerPriority 設定](./config#ionicconfig)を有効にした開発者は、ページ遷移中にフォーカス管理を Ionic に委任できます。有効にすると、Ionic は設定オプションで指定された正しい要素にフォーカスを移動します。これにより、スクリーンリーダーにナビゲーションイベントが発生したことが通知されます。
 
-### 型
+### 型 {/* #types */}
 
 ```typescript
 type FocusManagerPriority = 'content' | 'heading' | 'banner';
 ```
 
-### コンテンツタイプ
+### コンテンツタイプ {/* #content-types */}
 
 次の表は、各コンテンツタイプが何を表すかを説明しています：
 
@@ -267,7 +267,7 @@ type FocusManagerPriority = 'content' | 'heading' | 'banner';
 開発者は、各ビューの主要な[Title](../api/title)に`role="heading"`と`aria-level="1"`を割り当てる必要があります。単一のビューで複数の[Title](../api/title)コンポーネントを使用できるため、Ionic はこれらの属性を自動的に割り当てません。
 :::
 
-### 優先順位の指定
+### 優先順位の指定 {/* #specifying-priority */}
 
 設定は優先順位の降順で指定する必要があります。次の例では、Ionic は常に最初に見出しにフォーカスします。ビューに見出しがない場合にのみ、Ionic は次のフォーカス優先順位である banner に進みます：
 
@@ -275,7 +275,7 @@ type FocusManagerPriority = 'content' | 'heading' | 'banner';
 focusManagerPriority: ['heading', 'banner'];
 ```
 
-### 実装に関する注意事項
+### 実装に関する注意事項 {/* #implementation-notes */}
 
 - フォーカス優先順位を指定する場合、ブラウザはそのフォーカス優先順位内でフォーカスを移動する場合があります。たとえば、`'content'`フォーカス優先順位を指定すると、Ionic はコンテンツにフォーカスを移動します。ただし、ブラウザはその後、そのコンテンツ内の最初のフォーカス可能な要素（ボタンなど）にフォーカスを移動する場合があります。
 - ビューでフォーカス優先順位が見つからない場合、Ionic は代わりにビュー自体にフォーカスを移動して、フォーカスが一般的に正しい場所に移動するようにします。その後、ブラウザはビュー内でフォーカスを調整する場合があります。

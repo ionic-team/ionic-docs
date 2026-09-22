@@ -27,7 +27,7 @@ selectは、子要素 `<ion-select-option>` とともに使用する必要があ
 
 `value` が `<ion-select>` にセットされている場合、オプションはその値に基づいて選択済みになります。
 
-## Labels
+## Labels {/* #labels */}
 
 ラベルは、Selectを説明するために使用します。これらは視覚的に使用することができ、また、ユーザーがSelectにフォーカスしているときには、スクリーンリーダーによって読み上げられます。これにより、ユーザーはSelectの意図を理解しやすくなります。セレクトには、ラベルを割り当てるいくつかの方法があります：
 
@@ -37,7 +37,7 @@ selectは、子要素 `<ion-select-option>` とともに使用する必要があ
 - `label`スロット：カスタム HTML ラベルに使用する。
 - `aria-label`：スクリーンリーダー用のラベルとして使用されるが、ラベルは表示されない。
 
-### Label Placement
+### Label Placement {/* #label-placement */}
 
 ラベルはデフォルトではコンテンツの幅を占めます。開発者は `labelPlacement` プロパティを使用して、コントロールに対するラベルの配置を制御することができます。ここでは `label` プロパティを使用しているが、`labelPlacement` は `label` スロットと一緒に使用することもできます。
 
@@ -45,7 +45,7 @@ import LabelPlacement from '@site/static/usage/v9/select/label-placement/index.m
 
 <LabelPlacement />
 
-### Label Slot
+### Label Slot {/* #label-slot */}
 
 プレーンテキストのラベルは `label` プロパティで渡すべきですが、カスタムHTMLが必要な場合は、代わりに `label` スロットで渡すことができます。
 
@@ -53,7 +53,7 @@ import LabelSlot from '@site/static/usage/v9/select/label-slot/index.mdx';
 
 <LabelSlot />
 
-### No Visible Label
+### No Visible Label {/* #no-visible-label */}
 
 表示するラベルが必要ない場合でも、開発者は`aria-label`を指定する必要があります
 
@@ -61,7 +61,7 @@ import NoVisibleLabel from '@site/static/usage/v9/select/no-visible-label/index.
 
 <NoVisibleLabel />
 
-## Single Selection
+## Single Selection {/* #single-selection */}
 
 デフォルトでは、selectを使用すると、ユーザは1つのOptionだけを選択できます。Alertのインターフェースでは、Optionのリストがradio button形式で表示されます。action sheetインタフェースは、1つの値選択でのみ使用できます。selectコンポーネントの値は、選択したオプションの値の値を受け取ります。
 
@@ -71,7 +71,7 @@ import SingleSelectionExample from '@site/static/usage/v9/select/basic/single-se
 
 <SingleSelectionExample />
 
-## 複数選択
+## 複数選択 {/* #multiple-selection */}
 
 select に `multiple` 属性を追加することで、ユーザは複数のオプションを選択することができます。複数のオプションを選択できる場合、アラート、ポップオーバー、またはモーダルオーバーレイは、チェックボックススタイルのオプションリストをユーザに提示します。select コンポーネントの値は、選択されたすべてのオプション値の配列を受け取ります。
 
@@ -91,31 +91,31 @@ import MultipleSelectionExample from '@site/static/usage/v9/select/basic/multipl
 
 デフォルトでは、selectは [ion-alert](alert.mdx) を使用してアラートのオプションのオーバーレイを開きます。インターフェイスは、`interface` プロパティに `action-sheet`、`popover`、`modal` を渡すことで、[ion-action-sheet](action-sheet.mdx)、[ion-popover](popover.mdx)、[ion-modal](modal.mdx) を使用するように変更することができます。それぞれのインターフェースの制限事項については、他のセクションを参照してください。
 
-### Alert
+### Alert {/* #alert */}
 
 import AlertExample from '@site/static/usage/v9/select/basic/single-selection/index.mdx';
 
 <AlertExample />
 
-### Action Sheet
+### Action Sheet {/* #action-sheet */}
 
 import ActionSheetExample from '@site/static/usage/v9/select/interfaces/action-sheet/index.mdx';
 
 <ActionSheetExample />
 
-### Popover
+### Popover {/* #popover */}
 
 import PopoverExample from '@site/static/usage/v9/select/interfaces/popover/index.mdx';
 
 <PopoverExample />
 
-### Modal
+### Modal {/* #modal */}
 
 import ModalExample from '@site/static/usage/v9/select/interfaces/modal/index.mdx';
 
 <ModalExample />
 
-## Responding to Interaction
+## Responding to Interaction {/* #responding-to-interaction */}
 
 Selectとのユーザーインタラクションを処理する主な方法は、`ionChange`、`ionDismiss`、および`ionCancel`イベントです。これらおよびSelectが発火する他のイベントの詳細については、[Events](#events)を参照してください。
 
@@ -123,25 +123,25 @@ import RespondingToInteractionExample from '@site/static/usage/v9/select/basic/r
 
 <RespondingToInteractionExample />
 
-## オブジェクト値の参照
+## オブジェクト値の参照 {/* #object-value-references */}
 
 Selectの値にオブジェクトを使用する場合、Selectの値のidentityはそのままで、サーバやデータベースから取得したオブジェクトのidentityが変わってしまうことがあります。例えば、希望するオブジェクト値を持つ既存のレコードがSelectに読み込まれたが、新しく取得されたselectオプションのIDが異なる場合、このようなことが起こりえます。その結果、Selectは、元のSelectがそのまま残っているにもかかわらず、全く値がないように見えることになります。
 
 デフォルトでは、Select はオプションが選択されているかどうかを決定するために厳密な等式 (`===`) を使用します。これは、プロパティ名または関数を `compareWith` プロパティに指定することでオーバーライドできます。
 
-### Using compareWith
+### Using compareWith {/* #using-comparewith */}
 
 import UsingCompareWithExample from '@site/static/usage/v9/select/objects-as-values/using-comparewith/index.mdx';
 
 <UsingCompareWithExample />
 
-### Object Values and Multiple Selection
+### Object Values and Multiple Selection {/* #object-values-and-multiple-selection */}
 
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v9/select/objects-as-values/multiple-selection/index.mdx';
 
 <ObjectValuesAndMultipleSelectionExample />
 
-## Justification
+## Justification {/* #justification */}
 
 開発者は `justify` プロパティを使って、ラベルとコントロールの行の詰め方をコントロールすることができる。
 
@@ -149,7 +149,7 @@ import JustifyExample from '@site/static/usage/v9/select/justify/index.mdx';
 
 <JustifyExample />
 
-## Filled Selects
+## Filled Selects {/* #filled-selects */}
 
 Material DesignはセレクトにFilledスタイルを提供します。select の `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定できます。
 
@@ -163,7 +163,7 @@ import FillExample from '@site/static/usage/v9/select/fill/index.mdx';
 
 <FillExample />
 
-## Select Buttons
+## Select Buttons {/* #select-buttons */}
 
 アラートは `Cancel` と `OK` の2つのボタンをサポートしている。それぞれのボタンのテキストは `cancelText` と `okText` プロパティを使ってカスタマイズすることができます。
 
@@ -176,7 +176,7 @@ import ButtonTextExample from '@site/static/usage/v9/select/customization/button
 
 <ButtonTextExample />
 
-## インターフェイスオプション
+## インターフェイスオプション {/* #interface-options */}
 
 selectはalert、action sheet、popover、modalの各インターフェイスを使用するので、`interfaceOptions`プロパティを通してこれらのコンポーネントにオプションを渡すことができます。これを使用して、カスタムヘッダー、サブヘッダー、CSS クラスなどを渡すことができます。
 
@@ -188,7 +188,7 @@ import InterfaceOptionsExample from '@site/static/usage/v9/select/customization/
 
 <InterfaceOptionsExample />
 
-## Start and End Slots
+## Start and End Slots {/* #start-and-end-slots */}
 
 `start`と`end`スロットは、セレクトの両側にアイコン、ボタン、またはプレフィックス/サフィックステキストを配置するために使用できます。スロットコンテンツがクリックされた場合、セレクトは開きません。
 
@@ -202,7 +202,7 @@ import StartEndSlots from '@site/static/usage/v9/select/start-end-slots/index.md
 
 <StartEndSlots />
 
-## リッチコンテンツオプション
+## リッチコンテンツオプション {/* #rich-content-options */}
 
 :::important
 select option のリッチコンテンツはデフォルトで無効です。[グローバル Ionic config](/developing/config.mdx#global-config) で [`innerHTMLTemplatesEnabled`](/developing/config.mdx#ionicconfig) を `true` に設定してください。無効な場合、option 内のマークアップはプレーンテキストとして扱われます。カスタム HTML を有効にする際のサニタイズについては、[セキュリティ](/techniques/security.mdx)を参照してください。
@@ -218,11 +218,11 @@ import RichContentOptions from '@site/static/usage/v9/select/rich-content-option
 
 <RichContentOptions />
 
-## カスタマイズ
+## カスタマイズ {/* #customization */}
 
 Selectコンポーネントには2つのユニットがあり、それぞれ別々にスタイルを設定する必要があります。 `ion-select`要素は、ビュー上で選択された値、ない場合はプレースホルダ、ドロップダウンのアイコンによって表現されます。インターフェイスは上記の[インターフェイス](#interfaces)セクションで定義されており、`ion-select`をクリックしたときに開くダイアログです。インターフェイスには `ion-select-option` 要素を追加することで定義されるすべてのオプションが含まれています。以下のセクションでは、これらのスタイリングの違いについて説明します。
 
-### Select要素のスタイリング
+### Select要素のスタイリング {/* #styling-select-element */}
 
 前述の通り、`ion-select`要素は値、プレースホルダ、ビューに表示されるアイコンのみで構成されています。これをカスタマイズするには、CSSと[CSSカスタムプロパティ](#css-custom-properties)を組み合わせてスタイルを設定します。
 
@@ -232,7 +232,7 @@ import StylingSelectExample from '@site/static/usage/v9/select/customization/sty
 
 <StylingSelectExample />
 
-### セレクトインターフェースのスタイリング
+### セレクトインターフェースのスタイリング {/* #styling-select-interface */}
 
 インターフェイス・ダイアログのカスタマイズは、そのインターフェイスのドキュメントのスタイリングセクション（CSS Shadow Parts、CSS カスタムプロパティ、スロット）に
 従って行ってください。
@@ -252,7 +252,7 @@ import CustomToggleIconsExample from '@site/static/usage/v9/select/customization
 
 <CustomToggleIconsExample />
 
-### アイコンの反転動作
+### アイコンの反転動作 {/* #icon-flip-behavior */}
 
 デフォルトでは、セレクトを開いているとき、トグルアイコンは `md` モードでは自動的に回転し、`ios` モードでは静止します。この動作はCSSを使ってカスタマイズすることができます。
 
@@ -262,7 +262,7 @@ import IconFlipBehaviorExample from '@site/static/usage/v9/select/customization/
 
 <IconFlipBehaviorExample />
 
-## Typeahead Component
+## Typeahead Component {/* #typeahead-component */}
 
 Typeaheadまたはオートコンプリート機能は、既存のIonicコンポーネントを使用して構築できます。利用可能なスクリーンスペースを最大限に活用するために、`ion-modal`を使用することをお勧めします。
 
@@ -270,7 +270,7 @@ import TypeaheadExample from '@site/static/usage/v9/select/typeahead/index.mdx';
 
 <TypeaheadExample />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使用してセレクト内で使用できます。エラーテキストは、`ion-invalid`と`ion-touched`クラスが`ion-select`に追加されていない限り表示されません。これにより、ユーザーがデータを入力する前にエラーが表示されることはありません。
 
@@ -280,9 +280,9 @@ import HelperError from '@site/static/usage/v9/select/helper-error/index.mdx';
 
 <HelperError />
 
-## インターフェイス
+## インターフェイス {/* #interfaces-1 */}
 
-### SelectChangeEventDetail
+### SelectChangeEventDetail {/* #selectchangeeventdetail */}
 
 ```typescript
 interface SelectChangeEventDetail<T = any> {
@@ -290,7 +290,7 @@ interface SelectChangeEventDetail<T = any> {
 }
 ```
 
-### SelectCustomEvent
+### SelectCustomEvent {/* #selectcustomevent */}
 
 必須ではありませんが、このインターフェイスを `CustomEvent` インターフェイスの代わりに使用することで、このコンポーネントから発行される Ionic イベントをより強力に片付けすることができます。
 
@@ -301,9 +301,9 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### キーボード操作
+### キーボード操作 {/* #keyboard-interactions */}
 
 Ionic のキーボード操作は、すべてのプラットフォームで一貫した体験を提供するため、iOS ネイティブの選択要素ではなく Web の実装パターンに従います。
 
@@ -348,7 +348,7 @@ Ionic のキーボード操作は、すべてのプラットフォームで一�
 | <kbd>Space</kbd>  | 現在フォーカスしているオプションを選択または選択解除します。他の選択済みオプションは解除しません。「OK」ボタンがないオーバーレイでは、値をすぐに確定します。                     |
 | <kbd>Tab</kbd>    | オーバーレイ上の次のフォーカス可能な要素（キャンセルボタン、「OK」ボタン、いずれかのオプション）へ移動します。次の要素がオプションリストの場合は、各オプションを順に移動します。 |
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
@@ -356,11 +356,11 @@ Ionic のキーボード操作は、すべてのプラットフォームで一�
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
@@ -368,6 +368,6 @@ Ionic のキーボード操作は、すべてのプラットフォームで一�
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

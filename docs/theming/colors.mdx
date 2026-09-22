@@ -31,13 +31,13 @@ Ionic には、多くのコンポーネントの配色を変更するために�
 <ion-button color="dark">Dark</ion-button>
 ```
 
-### 配色のレイヤードスタイル {/* #layered-colors */}
+## 配色のレイヤードスタイル {/* #layered-colors */}
 
 各色は以下のプロパティで構成されています：`base`、`contrast`、`shade`、および`tint`。`base`および`contrast`の色には、同じ色を[rgb 形式](https://developer.mozilla.org/en-US/docs/Glossary/RGB)で表した`rgb`プロパティも必要です。`rgb`プロパティが必要な理由については、[アルファ問題](advanced.mdx#the-alpha-problem)を参照してください。以下のドロップダウンから、Ionic が提供するデフォルトカラーとそのバリエーションを確認できます。
 
 <LayeredColorsSelect />
 
-## 色の変更
+## 色の変更 {/* #modifying-colors */}
 
 配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下の CSS プロパティが必要です。
 
@@ -60,7 +60,7 @@ Ionic には、多くのコンポーネントの配色を変更するために�
 
 CSS 変数の詳細については、[CSS 変数ドキュメント](css-variables.mdx)を参照してください。
 
-### 配色の追加
+## 配色の追加 {/* #adding-colors */}
 
 カラーは、Ionic コンポーネントの`color`プロパティを設定するか、CSS でスタイリングすることで、アプリケーション全体で使用するために追加できます。新しいカラーを手動で追加する方法、または下記の[新しいカラー作成ツール](#new-color-creator)を使って、新しいカラーのコードを生成し、アプリケーションにコピー＆ペーストする簡単な方法について学んでください。
 

@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Back Buttonは、クリックされるとアプリの履歴に戻るようにナビゲートします。このボタンは、ナビゲーションスタックに履歴があるときのみ表示されます。ただし、 [`defaultHref`](#default-back-history) が設定されている場合は除きます。戻るボタンはモードに応じて異なるテキストとアイコンを表示しますが、これはカスタマイズすることができます。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/back-button/basic/index.mdx';
 
 <Basic />
 
-## カスタムのBack Button
+## カスタムのBack Button {/* #custom-back-button */}
 
 デフォルトでは、戻るボタンは`ios`では`"chevron-back"`アイコン付きで`"Back"`のテキストを表示し、`md`では`"arrow-back-sharp"`アイコンを表示します。これは、各戻るボタンコンポーネントごとに`icon`または`text`プロパティを設定することでカスタマイズ可能です。あるいは、グローバル設定で`backButtonIcon`または`backButtonText`プロパティを使用してグローバルに設定することもできます。詳細は[Configドキュメント](../developing/config)を参照してください。
 
@@ -41,26 +41,26 @@ import Custom from '@site/static/usage/v9/back-button/custom/index.mdx';
 
 時折、アプリが履歴がないときに戻るボタンを表示し、ナビゲートする必要がある場合があります。この場合、戻るボタンの `defaultHref` をパスに設定することで実現できます。 `defaultHref` を使用するには、アプリにパスが設定されたルーターが含まれている必要があります。
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -12,9 +12,9 @@ This guide assumes that you have already updated your app to the latest version 
 Ionic 5 から Ionic 6 への**非互換変更の完全なリスト**については、Ionic Framework リポジトリの[非互換変更ドキュメント](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING_ARCHIVE/v6.md)を参照してください。
 :::
 
-## はじめ方
+## はじめ方 {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 6 は Angular 12+ をサポートしています。 [Angular Update Guide](https://update.angular.io/) に沿って、最新バージョンの Angular に更新します。.
 2. Ionic6 の最新バージョンに更新します。
@@ -32,7 +32,7 @@ npm install @ionic/angular@6 @ionic/angular-server@6
 3. `Config.set()`の使用をすべて削除してください。代わりに、`IonicModule.forRoot()`で設定を行います。詳細な例については、[Angular 設定ドキュメント](../developing/config)を参照してください。
 4. 以前`@ionic/angular`からエクスポートされた`setupConfig`関数の使用をすべて削除してください。代わりに`IonicModule.forRoot()`で設定を行います。
 
-### React
+### React {/* #react */}
 
 1. Ionic 6 は React 17+ をサポートしています。React の最新バージョンに更新します:
 
@@ -101,7 +101,7 @@ import { menuController } from '@ionic/core';
 import { menuController } from '@ionic/core/components';
 ```
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 6 は Vue 3.0.6+ をサポートしています。Vue の最新バージョンに更新ください。
 
@@ -292,7 +292,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-### Core
+### Core {/* #core */}
 
 1. Ionic 6 の最新バージョンにアップデートください。
 
@@ -300,9 +300,9 @@ const routes: Array<RouteRecordRaw> = [
 npm install @ionic/core@6
 ```
 
-## コアのアップデート
+## コアのアップデート {/* #updating-your-code */}
 
-### Datetime
+### Datetime {/* #datetime */}
 
 1. `placeholder`、`pickerOptions`、`pickerFormat`、`monthNames`、`monthShortNames`、`dayNames`、および`dayShortNames`プロパティの使用をすべて削除してください。`ion-datetime`は、デバイスで設定された言語と地域に従って、コンポーネント内に表示される月名、曜日名、および時刻を自動的にフォーマットします。詳細については、[ion-datetime ローカリゼーションドキュメント](../api/datetime#localization)を参照してください。
 
@@ -318,15 +318,15 @@ npm install @ionic/core@6
 詳細なマイグレーション例については、[Datetime マイグレーションサンプルアプリケーション](https://github.com/ionic-team/datetime-migration-samples)を参照してください。
 :::
 
-### Icon
+### Icon {/* #icon */}
 
 Ionic 6 には、Ionicons 6 が同梱されるようになりました。[Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) をご確認の上、必要な変更を行なってください。
 
-### Input
+### Input {/* #input */}
 
 `placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
-### Modal
+### Modal {/* #modal */}
 
 `ion-modal` は Shadow DOM を使用するようになりました。 `ion-modal` の内部をターゲットとするスタイルは、[ion-modal CSS Variables](../api/modal#css-custom-properties) または [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts) を使用して更新してください。
 
@@ -354,7 +354,7 @@ ion-modal::part(backdrop) {
 }
 ```
 
-### Popover
+### Popover {/* #popover */}
 
 `ion-popover` は Shadow DOM を使用するようになりました。 `ion-popover` の内部をターゲットとするスタイルは、[ion-popover CSS Variables](../api/popover#css-custom-properties) または [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts) を使用するように更新してください。
 
@@ -390,19 +390,19 @@ ion-popover::part(content) {
 }
 ```
 
-### Radio
+### Radio {/* #radio */}
 
 `RadioChangeEventDetail` インターフェースのすべての使用法を削除します。
 
-### Select
+### Select {/* #select */}
 
 `placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
-### Textarea
+### Textarea {/* #textarea */}
 
 `placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
-### ブラウザサポート
+### ブラウザサポート {/* #browser-support */}
 
 Ionic がサポートしているブラウザのリストが変更されました。 [ブラウザサポートガイド](../reference/browser-support) を確認し、サポートされているブラウザにアプリをデプロイするようにしましょう。
 
@@ -461,7 +461,7 @@ Create React App (CRA) を使用している開発者にとっては、現在の
 
 2. `package.json` ファイルに `browserslist/test` フィールドがある場合、それが `current node` に設定されていることを確認してください。
 
-## アップグレートへの助けが必要？
+## アップグレートへの助けが必要？ {/* #need-help-upgrading */}
 
 必ず[Ionic 6 変更点ガイド](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING_ARCHIVE/v6.md)を確認してください。開発者が知っておく必要のある、デフォルトプロパティおよび CSS 変数値の複数の変更があります。このページには、ユーザーの操作が必要な破壊的変更のみが記載されています。
 

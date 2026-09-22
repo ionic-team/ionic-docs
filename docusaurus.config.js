@@ -44,7 +44,16 @@ module.exports = {
       en: { label: '日本語' },
     },
   },
-  onBrokenLinks: 'warn',
+  /**
+   * A broken link or anchor fails the build instead of warning, so a stale
+   * cross-reference cannot reach production unnoticed.
+   *
+   * `build:preview` passes `--locale en`, so a pull request preview only
+   * ever checks English. A regression in a translated locale surfaces in
+   * the production build, which builds every locale.
+   */
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
   future: {
     v4: {
       /**

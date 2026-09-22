@@ -23,27 +23,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ユーザインタラクションをブロックしながらアクティビティを示すためのオーバーレイです。ローディング・インジケータはアプリのコンテンツの上に表示され、ユーザーの操作を再開するために消すことができます。オプションでbackdropが含まれており、`showBackdrop: false` で無効にすることができます。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 一度表示されると、ロードインジケータはデフォルトで無期限に表示されます。開発者は、コンポーネント上で `dismiss()` メソッドを呼び出すことで、作成後にローディングインジケータを手動で解除することができます。`onDidDismiss` 関数を呼び出すと、ローディングインジケータが解除された後にアクションを実行することができます。
 
 また、ロードオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間が経過した後にロードインジケータを自動的に解除するよう設定することもできます。
 
-### インラインロード (推奨)
+### インラインロード (推奨) {/* #inline-recommended */}
 
 import Inline from '@site/static/usage/v9/loading/inline/index.mdx';
 
 <Inline />
 
-### Controller
+### Controller {/* #controller */}
 
 import Controller from '@site/static/usage/v9/loading/controller/index.mdx';
 
 <Controller />
 
-## カスタマイズ
+## カスタマイズ {/* #customization */}
 
-### スピナー
+### スピナー {/* #spinners */}
 
 使用するスピナーは `spinner` プロパティでカスタマイズできます。すべてのオプションについては、[`spinner` プロパティのドキュメント](#prop-spinner)を参照してください。
 
@@ -51,7 +51,7 @@ import Spinners from '@site/static/usage/v9/loading/spinners/index.mdx';
 
 <Spinners />
 
-### テーマ
+### テーマ {/* #theming */}
 
 Loading は scoped encapsulation を使用しています。これは、実行時に各スタイルに追加のクラスを付加することで、自動的に CSS をスコープ化することを意味します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
@@ -65,7 +65,7 @@ import Theming from '@site/static/usage/v9/loading/theming/index.mdx';
 `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
 Ionicは自動的にLoadingの`role`を[`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)に設定します。
 
@@ -73,9 +73,9 @@ Loadingに`message`プロパティが定義されている場合、`aria-labelle
 
 すべてのARIA属性は、Loadingの`htmlAttributes`プロパティにカスタム値を定義することによって、手動で上書きすることができます。
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### LoadingOptions
+### LoadingOptions {/* #loadingoptions */}
 
 ```typescript
 interface LoadingOptions {
@@ -97,26 +97,26 @@ interface LoadingOptions {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

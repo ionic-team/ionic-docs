@@ -15,9 +15,9 @@ import DocsCards from '@components/global/DocsCards';
 
 Ionic Framework は、アプリを構成するために使用できるいくつかの異なるレイアウトを提供します。シングルページレイアウトから、スプリットペインビューやモーダルまで、さまざまなレイアウトがあります。
 
-## Header と Footer のレイアウト
+## Header と Footer のレイアウト {/* #header-and-footer-layout */}
 
-### Header
+### Header {/* #header */}
 
 最もシンプルなレイアウトは、[header](../api/header.mdx) と [content](../api/content.mdx) で構成されています。アプリのほとんどのページは、一般的にこの 2 つを備えていますが、コンテンツを使用するためにヘッダーは必要ではありません。
 
@@ -25,7 +25,7 @@ import Header from '@site/static/usage/v9/header/basic/index.mdx';
 
 <Header />
 
-### Footer
+### Footer {/* #footer */}
 
 ヘッダーのツールバーがコンテンツの上に表示されるのに対して、フッターはコンテンツの下に表示されます。ヘッダーとフッターは、同じページで併用することも可能です。
 
@@ -33,7 +33,7 @@ import Footer from '@site/static/usage/v9/footer/basic/index.mdx';
 
 <Footer />
 
-## タブレイアウト
+## タブレイアウト {/* #tabs-layout */}
 
 水平な [タブ](../api/tabs.mdx) からなるレイアウトを使用すると、ユーザーはコンテンツビューをすばやく切り替えることができます。各タブには、[router outlet](../api/router-outlet.mdx) や [nav](../api/nav.mdx) を使用して、静的コンテンツやナビゲーション・スタックを含めることができます。
 
@@ -41,7 +41,7 @@ import Tabs from '@site/static/usage/v9/tabs/router/index.mdx';
 
 <Tabs />
 
-## メニューレイアウト
+## メニューレイアウト {/* #menu-layout */}
 
 モバイルアプリの標準的なレイアウトには、ボタンをクリックするか、横からスワイプして開くことで サイドメニュー [menu](../api/menu.mdx) を切り替えられる機能が含まれています。サイドメニューは一般的にナビゲーションのために使用されますが、任意のコンテンツを含むことができます。
 
@@ -49,7 +49,7 @@ import Menu from '@site/static/usage/v9/menu/basic/index.mdx';
 
 <Menu />
 
-## 分割ペインレイアウト
+## 分割ペインレイアウト {/* #split-pane-layout */}
 
 [split pane](../api/split-pane.mdx) レイアウトは、前述のレイアウトを組み合わせることができるため、より複雑な構造を持っています。これは、ビューポートが指定されたブレークポイントより上にある場合に、複数のビューを表示することができます。デバイスの画面サイズが一定以下の場合、分割ペインビューは非表示になります。
 

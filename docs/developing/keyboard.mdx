@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 開発者がモバイルアプリや PWA を開発する際に直面する一般的な障害は、画面上のキーボードの存在を考慮してカスタマイズすることです。このガイドでは、アプリケーションでオンスクリーンキーボードを管理するためのさまざまなツールの概要を説明します。
 
-## inputmode
+## inputmode {/* #inputmode */}
 
 開発者は、 `inputmode` 属性を使用して、入力に入力できるデータのタイプを指定できます。これにより、ユーザーの入力内容に関連するボタンを含むキーボードがブラウザに表示されます。例えば、 `inputmode="email"` を指定すると、 `@` キーを含むキーボードが表示され、その他の email 入力の最適化も行われます。
 
@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 許可されている値の一覧については、[inputmode ドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode)を参照してください。
 
-### Usage
+### Usage {/* #usage */}
 
 import Inputmode from '@site/static/usage/v9/keyboard/inputmode/index.mdx';
 
@@ -36,7 +36,7 @@ import Inputmode from '@site/static/usage/v9/keyboard/inputmode/index.mdx';
 `inputmode` 属性は Chrome 66+ と iOS Safari 12.2+のデバイスでサポートされています: https://caniuse.com/#search=inputmode
 :::
 
-## enterkeyhint
+## enterkeyhint {/* #enterkeyhint */}
 
 `enterkeyhint` 属性を使用すると、開発者は "Enter" キーに表示するアクション・ラベルまたはアイコンのタイプを指定できます。 `enterkeyhint` を使用すると、ユーザが "Enter" キーをタップしたときに何が起こるかを知ることができます。ここで指定する値は、ユーザーが何をしているかによって異なります。たとえば、ユーザーが検索ボックスに入力している場合、開発者は input が `enterkeyhint="search"` であることを確認する必要があります。
 
@@ -44,7 +44,7 @@ import Inputmode from '@site/static/usage/v9/keyboard/inputmode/index.mdx';
 
 許可されている値の一覧については、[enterkeyhint 標準](https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute)を参照してください。
 
-### Usage
+### Usage {/* #usage-1 */}
 
 import Enterkeyhint from '@site/static/usage/v9/keyboard/enterkeyhint/index.mdx';
 
@@ -62,7 +62,7 @@ import Enterkeyhint from '@site/static/usage/v9/keyboard/enterkeyhint/index.mdx'
 
 Capacitor や Cordova でアプリを実行する際、特定のテーマでキーボードを表示することが可能です。この設定に関する詳細は、[Capacitor Keyboard Documentation](https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-)を参照してください。
 
-## アクセサリバーを非表示にする
+## アクセサリバーを非表示にする {/* #hiding-the-accessory-bar */}
 
 ウェブベースのアプリケーションを実行すると、iOS はキーボードの上にアクセサリバーを表示する。これにより、ユーザーは次または前の入力に移動したり、キーボードを閉じることができます。
 
@@ -74,7 +74,7 @@ Capacitor や Cordova でアプリを実行する際、アクセサリーバー�
 
 スクリーンキーボードの存在を検出することは、そうでなければキーボードによって隠される入力の位置を調整するのに有用です。Capacitor と Cordova アプリでは、開発者は一般的にネイティブのキーボードプラグインを使ってキーボードライフサイクルイベントを Listen します。モバイルブラウザや PWA で動作するアプリでは、サポートされていれば Visual Viewport API を使用することができる。Ionic Framework はこれらの両方のアプローチをラップし、`window` に `ionKeyboardDidShow` と `ionKeyboardDidHide` イベントを発行します。 `ionKeyboardDidShow` のイベントペイロードには、キーボードの高さの近似値がピクセル単位で含まれています。
 
-### Usage
+### Usage {/* #usage-2 */}
 
 ````mdx-code-block
 <Tabs

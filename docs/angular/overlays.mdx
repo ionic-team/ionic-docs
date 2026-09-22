@@ -13,7 +13,7 @@ sidebar_label: Overlays
 
 Ionic provides overlay components such as modals and popovers that display content on top of your application. In Angular, these overlays can be created using controllers like `ModalController` and `PopoverController`.
 
-## Creating Overlays
+## Creating Overlays {/* #creating-overlays */}
 
 Overlays can be created programmatically using their respective controllers:
 
@@ -41,13 +41,13 @@ export class HomeComponent {
 }
 ```
 
-## Custom Injectors
+## Custom Injectors {/* #custom-injectors */}
 
 By default, overlay components use the root injector for dependency injection. This means that services or tokens provided at the route level or within a specific component tree are not accessible inside the overlay.
 
 The `injector` option allows you to pass a custom Angular `Injector` when creating a modal or popover. This enables overlay components to access services and tokens that are not available in the root injector.
 
-### Use Cases
+### Use Cases {/* #use-cases */}
 
 Custom injectors are useful when you need to:
 
@@ -55,7 +55,7 @@ Custom injectors are useful when you need to:
 - Use Angular CDK's `Dir` directive for bidirectional text support
 - Access any providers that are not registered at the root level
 
-### Usage
+### Usage {/* #usage */}
 
 To use a custom injector, pass it to the `create()` method:
 
@@ -101,7 +101,7 @@ export class MyModalComponent {
 }
 ```
 
-### Creating a Custom Injector
+### Creating a Custom Injector {/* #creating-a-custom-injector */}
 
 You can also create a custom injector with specific providers:
 
@@ -139,7 +139,7 @@ export class FeatureComponent {
 }
 ```
 
-### Using with Angular CDK Directionality
+### Using with Angular CDK Directionality {/* #using-with-angular-cdk-directionality */}
 
 A common use case is providing the Angular CDK `Dir` directive to overlays for bidirectional text support:
 
@@ -169,7 +169,7 @@ export class FeatureComponent {
 }
 ```
 
-### Popover Controller
+### Popover Controller {/* #popover-controller */}
 
 The `PopoverController` supports the same `injector` option:
 
@@ -199,7 +199,7 @@ export class FeatureComponent {
 }
 ```
 
-## Angular Options Types
+## Angular Options Types {/* #angular-options-types */}
 
 Ionic Angular exports its own `ModalOptions` and `PopoverOptions` types that extend the core options with Angular-specific properties like `injector`:
 
@@ -212,7 +212,7 @@ These types are exported from `@ionic/angular` and `@ionic/angular/lazy`:
 import type { ModalOptions, PopoverOptions } from '@ionic/angular';
 ```
 
-## Docs for Overlays in Ionic
+## Docs for Overlays in Ionic {/* #docs-for-overlays-in-ionic */}
 
 完全なドキュメントと使用例については、Ionic の各オーバーレイのドキュメントページを参照してください:
 

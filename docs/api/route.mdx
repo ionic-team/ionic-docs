@@ -28,11 +28,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.mdx) と Angularルータを使用してください。
 :::
 
-## ナビゲーションフック
+## ナビゲーションフック {/* #navigation-hooks */}
 
 ナビゲーションフックは、タスクを実行したり、ナビゲーションガードとして動作させるために使用することができます。フックは、各 `ion-route` の `beforeEnter` と `beforeLeave` プロパティに関数を提供することで使用します。`true` を返すとナビゲーションを進めることができ、`false` を返すとナビゲーションがキャンセルされる。NavigationHookOptions` 型のオブジェクトを返すと、ナビゲーションを別のページにリダイレクトすることができます。
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
 ```typescript
 interface NavigationHookOptions {
@@ -43,7 +43,7 @@ interface NavigationHookOptions {
 }
 ```
 
-## 使い方
+## 使い方 {/* #usage */}
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -245,26 +245,26 @@ const confirmDiscardChanges = async () => {
 
 </Tabs>
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

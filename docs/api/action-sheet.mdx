@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Action Sheetは複数の選択肢を表示するダイアログです。アプリのコンテンツ上に表示され、ユーザが手動で破棄しないとアプリの利用を再開することはできません。`ios` modeでは、破壊的な選択肢は明示されます（コンテンツの削除などは赤字などでわかりやすく表示されます）。Action Sheetを破棄するには、背景をタップする、デスクトップのパソコンの場合はエスケープキーを押すなど、複数の選択肢があります。
 
-## インラインアクションシート (推奨)
+## インラインアクションシート (推奨) {/* #inline-action-sheets-recommended */}
 
 `ion-action-sheet` は、テンプレートに直接コンポーネントを記述することで使用することができます。これにより、アクションシートを表示するために配線する必要があるハンドラの数を減らすことができます。
 
@@ -34,7 +34,7 @@ import Trigger from '@site/static/usage/v9/action-sheet/inline/trigger/index.mdx
 
 <Trigger />
 
-### `isOpen` を使う
+### `isOpen` を使う {/* #using-isopen */}
 
 `ion-action-sheet` の `isOpen` プロパティは、開発者がアプリケーションの状態からアクションシートの表示状態を制御することを可能にします。つまり、`isOpen`が`true`に設定されるとアクションシートが表示され、`isOpen`が`false`に設定されるとアクションシートは解除されます。
 
@@ -44,7 +44,7 @@ import IsOpen from '@site/static/usage/v9/action-sheet/inline/isOpen/index.mdx';
 
 <IsOpen />
 
-## Controller アクションシート
+## Controller アクションシート {/* #controller-action-sheets */}
 
 アクションシートの表示・非表示をより細かく制御したい場合は、`actionSheetController`を使用することができます。
 
@@ -52,13 +52,13 @@ import Controller from '@site/static/usage/v9/action-sheet/controller/index.mdx'
 
 <Controller />
 
-## Buttons
+## Buttons {/* #buttons */}
 
 Buttonの `role` プロパティは、 `destructive` か `cancel` のどちらかを利用できます。 roleプロパティがない場合は、プラットフォームに応じたデフォルトの外観となります。`cancel` role を持つButtonは、配列 `buttons` のどこに配置してもアクションシートの最下部に表示されます。 Note: `destructive` roleをつけるButtonは、一番上のButtonとして配置することをおすすめします。また、背景をタップしてアクションシートを破棄した場合、cancel role に設定されているhandlerが実行されます。
 
 Buttonは `ActionSheetButton` の `data` プロパティを介してデータを渡すこともできます。これは `onDidDismiss` メソッドの戻り値にある `data` フィールドにデータを入力します。
 
-## Collecting Role Information on Dismiss
+## Collecting Role Information on Dismiss {/* #collecting-role-information-on-dismiss */}
 
 `didDismiss` イベントが発生すると、イベント詳細の `data` と `role` フィールドを使用して、アクションシートがどのように却下されたかについての情報を収集することができます。
 
@@ -66,11 +66,11 @@ import RoleInfo from '@site/static/usage/v9/action-sheet/role-info-on-dismiss/in
 
 <RoleInfo />
 
-## テーマ
+## テーマ {/* #theming */}
 
 アクションシートはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
-### スタイリング
+### スタイリング {/* #styling */}
 
 私たちは、 `create` メソッドで `cssClass` にカスタムクラスを渡し、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。このプロパティは、スペースで区切られた複数のクラスを受け付けることもできます。
 
@@ -90,7 +90,7 @@ import Styling from '@site/static/usage/v9/action-sheet/theming/styling/index.md
 
 <Styling />
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 [CSSカスタムプロパティ](#css-custom-properties-1) は、個々の要素を対象とすることなく、アクションシートのスタイルに使用することができます。
 
@@ -98,17 +98,17 @@ import CssCustomProperties from '@site/static/usage/v9/action-sheet/theming/css-
 
 <CssCustomProperties />
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### Screen Readers
+### Screen Readers {/* #screen-readers */}
 
 アクションシートは、スクリーンリーダーにとって [アクセシブル](../reference/glossary#a11y) であるためにariaプロパティを設定しますが、これらのプロパティは、十分な説明になっていなかったり、アクションシートがアプリでどのように使用されているかに合っていなかったりする場合、オーバーライドすることができます。
 
-#### Role
+#### Role {/* #role */}
 
 アクションシートには `role` として [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) が設定されます。ARIA仕様に合わせるためには、`aria-label`属性か`aria-labelledby`属性のどちらかを設定しなければなりません。
 
-#### Action Sheet の概要
+#### Action Sheet の概要 {/* #action-sheet-description */}
 
 Ionicは自動的にヘッダー要素を指すように `aria-labelledby` を設定するので、すべてのアクションシートには `header` プロパティを定義することを強く推奨します。しかし、`header`を含めない場合は、`htmlAttributes`プロパティを使って、説明的な`aria-label`を指定するか、カスタムの`aria-labelledby`値を設定することもできます。
 
@@ -164,7 +164,7 @@ const actionSheet = await actionSheetController.create({
 
 </Tabs>
 
-#### Action Sheet Buttons の概要
+#### Action Sheet Buttons の概要 {/* #action-sheet-buttons-description */}
 
 テキストを含むボタンはスクリーンリーダーによって読み取られる。ボタンがアイコンのみを含んでいる場合や、既存のテキスト以外の説明が必要な場合は、ボタンの `htmlAttributes` プロパティに `aria-label` を渡して、ラベルをボタンに割り当てる必要があります。
 
@@ -244,9 +244,9 @@ const actionSheet = await actionSheetController.create({
 
 </Tabs>
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ActionSheetButton
+### ActionSheetButton {/* #actionsheetbutton */}
 
 ```typescript
 interface ActionSheetButton<T = any> {
@@ -261,7 +261,7 @@ interface ActionSheetButton<T = any> {
 }
 ```
 
-### ActionSheetOptions
+### ActionSheetOptions {/* #actionsheetoptions */}
 
 ```typescript
 interface ActionSheetOptions {
@@ -282,26 +282,26 @@ interface ActionSheetOptions {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -25,7 +25,7 @@ Segmentsは、関連するボタンのグループを水平方向の行に表示
 
 これらの機能は、1つを選択すると他のすべてが選択解除されるTabsと似ています。Segmentsは、コンテンツ内の異なるビューを切り替える場合に便利です。クリックしてページ間の遷移をコントロールする場合は、Segmentsの代わりにTabsを使用してください。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 セグメントは[セグメントボタン](./segment-button)からなり、各ボタンには`value`プロパティが設定されています。セグメントの `value` プロパティをボタンの値と一致させることで、そのボタンを選択することができます。また、セグメントを無効にすることで、ユーザがセグメントと対話できないようにすることができます。
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v9/segment/basic/index.mdx';
 
 <Basic />
 
-## Scrollable Segments
+## Scrollable Segments {/* #scrollable-segments */}
 
 デフォルトでは、セグメントはスクロールできません。各セグメントボタンの幅は固定で、セグメントボタンの数を画面幅で割って幅を決定します。これにより、各セグメントボタンがスクロールすることなく画面に表示されることが保証されます。そのため、ラベルが長いセグメントボタンは、一部が切れてしまうことがあります。これを避けるために、短いラベルを使用するか、`scrollable` プロパティを `true` に設定してスクロール可能なセグメントに変更することをお勧めします。これはセグメントを水平方向にスクロールさせますが、各セグメントボタンの幅を変更することができます。
 
@@ -41,14 +41,14 @@ import Scrollable from '@site/static/usage/v9/segment/scrollable/index.mdx';
 
 <Scrollable />
 
-## Segments in Toolbars
+## Segments in Toolbars {/* #segments-in-toolbars */}
 
 {/* Reuse the playground from the Toolbar directory */}
 import Toolbar from '@site/static/usage/v9/toolbar/segments/index.mdx';
 
 <Toolbar />
 
-## スワイプ可能なセグメント
+## スワイプ可能なセグメント {/* #swipeable-segments */}
 
 それぞれの [セグメントボタン](./segment-button.mdx) は、セグメントがアクティブになったときに表示される [セグメントコンテンツ](./segment-content.mdx) 要素と関連付けることができます。
 要素に関連付けることができます。この方法では、各セグメントをスワイプまたはスクロールすることで、セグメントの内容が更新されます。
@@ -63,23 +63,23 @@ import Swipeable from '@site/static/usage/v9/segment/swipeable/index.mdx';
 
 <Swipeable />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/segment/theming/colors/index.mdx';
 
 <Colors />
 
-## CSSカスタムプロパティ
+### CSSカスタムプロパティ {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v9/segment/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### キーボードインタラクション
+### キーボードインタラクション {/* #keyboard-interactions */}
 
 このコンポーネントは、`ion-segment-button`要素間のナビゲーションと選択について、フルキーボードサポートを備えています。デフォルトでは、キーボードナビゲーションは `ion-segment-button` 要素にのみフォーカスしますが、`selectOnFocus` プロパティを使用すると、フォーカスされた要素も確実に選択されるようになります。次の表は、それぞれのキーが何をするのかの詳細です。
 
@@ -91,9 +91,9 @@ import CSSProps from '@site/static/usage/v9/segment/theming/css-properties/index
 | <kbd>End</kbd>                       | Focuses the last focusable element.            |
 | <kbd>Space</kbd> or <kbd>Enter</kbd> | Selects the element that is currently focused. |
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### SegmentChangeEventDetail
+### SegmentChangeEventDetail {/* #segmentchangeeventdetail */}
 
 ```typescript
 interface SegmentChangeEventDetail {
@@ -101,7 +101,7 @@ interface SegmentChangeEventDetail {
 }
 ```
 
-### SegmentCustomEvent
+### SegmentCustomEvent {/* #segmentcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -112,26 +112,26 @@ interface SegmentCustomEvent extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Modalは、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Selectコンポーネントとして役立ちます。
 
-## インラインモーダル(推奨)
+## インラインモーダル(推奨) {/* #inline-modals-recommended */}
 
 テンプレートに直接コンポーネントを記述することで、 `ion-modal` を使用することができます。これにより、モーダルを表示するために必要なハンドラの数を減らすことができます。
 
@@ -33,7 +33,7 @@ import InlineModalTriggerExample from '@site/static/usage/v9/modal/inline/basic/
 
 <InlineModalTriggerExample />
 
-### `isOpen` の使用
+### `isOpen` の使用 {/* #using-isopen */}
 
 `ion-modal` の `isOpen` プロパティを使用すると、開発者がアプリケーションの状態からモーダルの表示状態を制御することができます。つまり、 `isOpen` を `true` に設定するとモーダルが表示され、 `isOpen` を `false` に設定するとモーダルが解除されます。
 
@@ -43,7 +43,7 @@ import InlineModalIsOpenExample from '@site/static/usage/v9/modal/inline/is-open
 
 <InlineModalIsOpenExample />
 
-## モーダルコントローラ
+## モーダルコントローラ {/* #controller-modals */}
 
 `ModalController` を使用すると、開発者はプログラムによって `ion-modal` を表示させることができます。開発者は、モーダルの表示と非表示を完全に制御することができます。
 
@@ -51,7 +51,7 @@ import ControllerExample from '@site/static/usage/v9/modal/controller/index.mdx'
 
 <ControllerExample />
 
-## モーダルの終了を防止する
+## モーダルの終了を防止する {/* #preventing-a-modal-from-dismissing */}
 
 モーダルにデータを入力しているとき、誤ってデータが失われないようにする方法があると便利です。 `ion-modal` の `canDismiss` プロパティは、モーダルをいつ終了させるかを開発者がコントロールできるようにします。
 
@@ -61,7 +61,7 @@ canDismiss`プロパティの使用方法には、boolean値の設定とコー�
 Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
 :::
 
-### boolean値の設定
+### boolean値の設定 {/* #setting-a-boolean-value */}
 
 開発者は `canDismiss` にboolean値を設定することができます。 `canDismiss` が `true` の場合、ユーザーがモーダルを閉じようとすると、モーダルは閉じます。 `canDismiss` が `false` の場合、ユーザーがモーダルを閉じようとしても、モーダルは閉じません。
 
@@ -71,7 +71,7 @@ import CanDismissBooleanExample from '@site/static/usage/v9/modal/can-dismiss/bo
 
 <CanDismissBooleanExample />
 
-### コールバック関数を設定する
+### コールバック関数を設定する {/* #setting-a-callback-function */}
 
 開発者は `canDismiss` を関数として設定することができます。この関数は、 `true` か `false` のどちらかに解決する `Promise` を返さなければなりません。もし、約束が `true` に解決されたら、モーダルは解除されます。もし、プロミスが `false` に解決された場合、モーダルは解除されません。
 
@@ -83,7 +83,7 @@ import CanDismissFunctionExample from '@site/static/usage/v9/modal/can-dismiss/f
 
 <CanDismissFunctionExample />
 
-### スワイプで閉じないようにする
+### スワイプで閉じないようにする {/* #prevent-swipe-to-close */}
 
 開発者は、ユーザがスワイプしてカードやシートのモーダルを閉じないようにしたい場合があります。これは `canDismiss` にコールバック関数を設定し、`role` が `gesture` でないかチェックすることで実現できます。
 
@@ -91,7 +91,7 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v9/modal/ca
 
 <CanDismissPreventSwipeToCloseExample />
 
-### 子コンポーネントでのdismiss動作の変更
+### 子コンポーネントでのdismiss動作の変更 {/* #modifying-dismiss-behavior-in-child-components */}
 
 あるシナリオでは、開発者は提示されたモーダルの状態に基づいて `canDismiss` コールバックの動作をカスタマイズする必要があるかもしれません。このカスタマイズは、たとえば、モーダル内のフォームが無効な場合にモーダルが却下されないようにしたい場合に特に便利です。
 
@@ -103,7 +103,7 @@ import CanDismissChildStateExample from '@site/static/usage/v9/modal/can-dismiss
 
 <CanDismissChildStateExample />
 
-## Card Modal
+## Card Modal {/* #card-modal */}
 
 開発者は、アプリのメインコンテンツの上にカードが積み重なったようにモーダルが表示されるカードモーダルエフェクトを作成できます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティを設定する必要があります。
 
@@ -119,7 +119,7 @@ import CardExample from '@site/static/usage/v9/modal/card/basic/index.mdx';
 
 <CardExample />
 
-## Sheet Modal
+## Sheet Modal {/* #sheet-modal */}
 
 :::info
 
@@ -139,13 +139,13 @@ import SheetExample from '@site/static/usage/v9/modal/sheet/basic/index.mdx';
 
 <SheetExample />
 
-### 背景コンテンツとのインタラクション
+### 背景コンテンツとのインタラクション {/* #interacting-with-background-content */}
 
 import SheetBackgroundContentExample from '@site/static/usage/v9/modal/sheet/background-content/index.mdx';
 
 <SheetBackgroundContentExample />
 
-### 任意の高さのシート
+### 任意の高さのシート {/* #custom-sheet-height */}
 
 開発者は、`breakpoints`配列の最後のブレークポイントを変更する代わりに、`--height` CSS変数を使用してシートモーダルの高さを変更すべきです。その理由は、`breakpoints`配列の最後のブレークポイントを`1`未満の値に変更すると、モーダルの一部がビューポート外でアクセスできなくなるためです。
 
@@ -155,7 +155,7 @@ import SheetAutoHeightExample from '@site/static/usage/v9/modal/sheet/auto-heigh
 
 <SheetAutoHeightExample />
 
-### ハンドルの動作
+### ハンドルの動作 {/* #handle-behavior */}
 
 シートモーダルでは、ブレークポイント間でシートをドラッグするために使用されるハンドルインジケータをオプションでレンダリングすることができます。 `handleBehavior` プロパティは、ハンドルがユーザーによってアクティブにされたときの振る舞いを設定するために使用されます。
 
@@ -163,7 +163,7 @@ import SheetHandleBehaviorExample from '@site/static/usage/v9/modal/sheet/handle
 
 <SheetHandleBehaviorExample />
 
-### Scrolling content at all breakpoints
+### Scrolling content at all breakpoints {/* #scrolling-content-at-all-breakpoints */}
 
 シートモーダルは、すべてのブレークポイントでコンテンツのスクロールを許可するように設定でき、ビューポートより大きいコンテンツを表示するのに理想的です。`expandToScroll`プロパティを`false`に設定すると、コンテンツはすべてのブレークポイントでスクロール可能なままです。それ以外の場合、デフォルトでは、シートモーダルが完全に展開されている場合にのみスクロールが有効になります。
 
@@ -171,13 +171,13 @@ import SheetScrollingContentExample from '@site/static/usage/v9/modal/sheet/expa
 
 <SheetScrollingContentExample />
 
-## Theming
+## Theming {/* #theming */}
 
 [Controller modals](#controller-modals) are appended to the root of your application, outside of the component that presented them. Component-scoped styles will not reach these modals, so their styles must be applied globally, from a stylesheet that is not scoped to a component.
 
 [Inline modals](#inline-modals-recommended) stay where they are declared in your template, so component-scoped styles do apply to them.
 
-### Styling
+### Styling {/* #styling */}
 
 Modals expose [CSS Custom Properties](#css-custom-properties) and [CSS Shadow Parts](#css-shadow-parts) for customizing their appearance.
 
@@ -185,7 +185,7 @@ import ThemeExample from '@site/static/usage/v9/modal/styling/theming/index.mdx'
 
 <ThemeExample />
 
-### Stacked Modals
+### Stacked Modals {/* #stacked-modals */}
 
 `ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
 
@@ -196,7 +196,7 @@ ion-modal.stack-modal {
 }
 ```
 
-### Sizing to Content
+### Sizing to Content {/* #sizing-to-content */}
 
 A modal fills the height of its container by default. Setting the `--height` CSS variable to `auto`, `fit-content`, `min-content`, or `max-content` sizes the modal to the height of what it renders instead.
 
@@ -222,7 +222,7 @@ import SizingToContentExample from '@site/static/usage/v9/modal/styling/sizing-t
 
 <SizingToContentExample />
 
-## Animations
+## Animations {/* #animations */}
 
 アニメーションビルダーを使用し、`enterAnimation` と `leaveAnimation` にアニメーションを割り当てることで、表示時、非表示時のアニメーションをカスタマイズすることができます。
 
@@ -230,7 +230,7 @@ import AnimationsExample from '@site/static/usage/v9/modal/styling/animations/in
 
 <AnimationsExample />
 
-## Custom Dialogs
+## Custom Dialogs {/* #custom-dialogs */}
 
 `ion-modal`は、フルページビュー、カード、シートに使用されることが多いですが、カスタムダイアログに使用することも可能です。これは、[ion-alert](./alert)や[ion-loading](./loading)などのコンポーネントが提供するものより複雑なインターフェースを必要とする開発者に便利です。
 
@@ -243,9 +243,9 @@ import CustomDialogs from '@site/static/usage/v9/modal/custom-dialogs/index.mdx'
 - `ion-content` can be used in a custom dialog, including one that is sized to its contents. The dialog's height must come from the `--height` CSS variable rather than from the dialog's children. See [Sizing to Content](#sizing-to-content).
 - Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
 
-## Event Handling
+## Event Handling {/* #event-handling */}
 
-### Using `ionDragStart` and `ionDragEnd`
+### Using `ionDragStart` and `ionDragEnd` {/* #using-iondragstart-and-iondragend */}
 
 The `ionDragStart` event is emitted as soon as the user begins a dragging gesture on the modal. This event fires at the moment the user initiates contact with the handle or modal surface, before any actual displacement occurs. It is particularly useful for preparing the interface for a transition, such as hiding certain interactive elements (like headers or buttons) to ensure a smooth dragging experience.
 
@@ -255,7 +255,7 @@ import DragStartEndEvents from '@site/static/usage/v9/modal/drag-start-end-event
 
 <DragStartEndEvents />
 
-### Using `ionDragMove`
+### Using `ionDragMove` {/* #using-iondragmove */}
 
 The `ionDragMove` event is emitted continuously while the user is actively dragging the modal. This event provides a [`ModalDragEventDetail`](#modaldrageventdetail) object containing real-time data, essential for creating highly responsive UI updates that react instantly to the user's touch. For example, the `progress` value can be used to dynamically darken a header's opacity as the modal is dragged upward.
 
@@ -263,9 +263,9 @@ import DragMoveEvent from '@site/static/usage/v9/modal/drag-move-event/index.mdx
 
 <DragMoveEvent />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ModalOptions
+### ModalOptions {/* #modaloptions */}
 
 下記は `modalController` を使用する際に利用できるすべてのオプションです。これらのオプションは、 `modalController.create()` を呼び出す際に指定します。
 
@@ -295,7 +295,7 @@ interface ModalOptions {
 }
 ```
 
-### ModalCustomEvent
+### ModalCustomEvent {/* #modalcustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -305,7 +305,7 @@ interface ModalCustomEvent extends CustomEvent {
 }
 ```
 
-### ModalDragEventDetail
+### ModalDragEventDetail {/* #modaldrageventdetail */}
 
 When using the `ionDragMove` and `ionDragEnd` events, the event detail contains the following properties:
 
@@ -376,19 +376,19 @@ interface ModalDragEventDetail {
 }
 ```
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 | Key            | Description         |
 | -------------- | ------------------- |
 | <kbd>Esc</kbd> | Dismisses the modal |
 
-### ラベル
+### ラベル {/* #labels */}
 
 モーダルには [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) という役割があります。そのため、開発者はモーダルに適切なラベル付けを行う必要があります。モーダルが `ion-title` を使用している場合、 `ion-modal` で [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) を設定すると、内部のテキストをモーダル自体のラベルに使用することができます。モーダルに追加の説明テキストが含まれている場合、このテキストは [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) を使ってモーダルと関連付けることができます。
 
-### スクリーンリーダー
+### スクリーンリーダー {/* #screen-readers */}
 
 モーダルには `aria-modal` 属性が適用されています。この属性は、支援技術によるナビゲーションをモーダル要素のコンテンツに制限させることがあります。その結果、次や前の項目に移動するジェスチャを使用しても、モーダルの外側の要素にフォーカスが当たらない場合があります。これは、`backdropBreakpoint` プロパティを使用して、シート モーダルでバックドロップを無効にした場合にも当てはまります。
 
@@ -396,21 +396,21 @@ interface ModalDragEventDetail {
 
 詳細については、https://w3c.github.io/aria/#aria-modal を参照してください。
 
-### フォーカスのトラッピング
+### フォーカスのトラッピング {/* #focus-trapping */}
 
 モーダルが表示されると、フォーカスは表示されたモーダルの内側に閉じ込められます。ユーザーは、モーダル内の他のインタラクティブ要素にフォーカスを合わせることができますが、モーダルが表示されている間は、モーダルの外側のインタラクティブ要素にフォーカスを合わせることができません。複数のスタック モーダルを表示するアプリケーションでは、最後に表示されたモーダルにフォーカスが移動します。
 
 `backdropBreakpoint` プロパティによって背景が無効にされたシート モーダルは、フォーカスのトラッピングの対象にはなりません。
 
-### シートモーダル
+### シートモーダル {/* #sheet-modals */}
 
 シートモーダルでは、`backdropBreakpoint` プロパティが使用されているとき、ユーザがモーダルの後ろのコンテンツとインタラクトできるようにします。バックドロップは、指定された `backdropBreakpoint` までは無効になり、それ以降は有効になります。
 
 バックドロップが無効になると、ユーザーはポインタやキーボードを使用して、シートモーダルの外側の要素を操作することができるようになります。入力支援は、`aria-modal` の使用により、デフォルトではシートモーダルの外側にフォーカスを当てないかもしれません。オートフォーカスなどの機能は、ユーザーに警告することなく、支援技術が 2つのインタラクティブなコンテキスト間をジャンプする原因となるため、ここでは避けることをお勧めします。
 
-## パフォーマンス
+## パフォーマンス {/* #performance */}
 
-### インナー コンテンツのマウント
+### インナー コンテンツのマウント {/* #mounting-inner-contents */}
 
 インラインの `ion-modal` のコンテンツは、閉じられるとアンマウントされます。このコンテンツがレンダリングに時間がかかる場合、開発者は `keepContentsMounted` プロパティを使用して、モーダルがマウントされると同時にコンテンツをマウントすることができます。これにより、モーダルが開かれたときにインナー コンテンツがすでにマウントされているので、アプリケーションの応答性を最適化することができます。
 
@@ -428,26 +428,26 @@ import Mount from '@site/static/usage/v9/modal/performance/mount/index.mdx';
 
 - インナー コンポーネントの JavaScript Framework ライフサイクル フックはすべて、モーダルが表示されたときではなく、モーダルがマウントされたときに実行されます。
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

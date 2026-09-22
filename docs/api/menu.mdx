@@ -25,13 +25,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 メニュー要素はルートコンテンツ要素の兄弟要素でなければなりません。コンテンツにはいくつでもメニューを付けることができる。これらのメニューはテンプレートから制御するか、`MenuController`を使用してプログラムで制御することができます。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/menu/basic/index.mdx';
 
 <Basic />
 
-## Menu Toggle
+## Menu Toggle {/* #menu-toggle */}
 
 [menu toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
 
@@ -39,7 +39,7 @@ import MenuToggle from '@site/static/usage/v9/menu/toggle/index.mdx';
 
 <MenuToggle />
 
-## Menu Types
+## Menu Types {/* #menu-types */}
 
 `type`プロパティは、アプリケーションでのメニューの表示方法をカスタマイズするために使用することができます。
 
@@ -47,7 +47,7 @@ import MenuType from '@site/static/usage/v9/menu/type/index.mdx';
 
 <MenuType />
 
-## Menu Sides
+## Menu Sides {/* #menu-sides */}
 
 メニューはデフォルトでは`"start"`側に表示されます。左から右へ移動するアプリでは左側に、右から左へ移動するアプリでは右側に表示されます。メニューは`"start"`の反対側である`"end"`側に表示させることもできます。
 
@@ -65,17 +65,17 @@ import Multiple from '@site/static/usage/v9/menu/multiple/index.mdx';
 
 <Multiple />
 
-## テーマ
+## テーマ {/* #theming */}
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 import Theming from '@site/static/usage/v9/menu/theming/index.mdx';
 
 <Theming />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### MenuCustomEvent
+### MenuCustomEvent {/* #menucustomevent */}
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
@@ -86,26 +86,26 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

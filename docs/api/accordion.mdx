@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アコーディオンは、情報を整理してグループ化する方法を提供しながら、垂直方向のスペースを減らすために、コンテンツに折り畳み可能なセクションを提供します。すべての `ion-accordion` コンポーネントは `ion-accordion-group` コンポーネントの中にグループ化されている必要があります。
 
-## 基本的な使い方
+## 基本的な使い方 {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/accordion/basic/index.mdx';
 
 <Basic />
 
-## アコーディオンをトグルする方法
+## アコーディオンをトグルする方法 {/* #toggle-accordions */}
 
 どのアコーディオンを開くかは、`ion-accordion-group` の `value` プロパティを設定することで制御できます。このプロパティを設定することで、開発者はプログラムによって特定のアコーディオンを展開したり折りたたんだりすることができます。
 
@@ -37,7 +37,7 @@ import Toggle from '@site/static/usage/v9/accordion/toggle/index.mdx';
 
 <Toggle />
 
-## アコーディオンの状態変化を監視
+## アコーディオンの状態変化を監視 {/* #listen-for-accordion-state-changes */}
 
 :::caution
 [Input](./input) や [Textarea](./textarea) などの他のコンポーネントが発する `ionChange` イベントのほとんどはバブル化されます。その結果、アコーディオンの中で関連コンポーネントが使用されている場合、これらのイベントはバブルアップし、アコーディオングループの `ionChange` リスナーを発火させます。
@@ -51,7 +51,7 @@ import ListenChanges from '@site/static/usage/v9/accordion/listen-changes/index.
 
 <ListenChanges />
 
-## 複数のアコーディオン
+## 複数のアコーディオン {/* #multiple-accordions */}
 
 開発者は `multiple` プロパティを使用して、複数のアコーディオンを一度に開くことができるようにすることができます。
 
@@ -59,9 +59,9 @@ import Multiple from '@site/static/usage/v9/accordion/multiple/index.mdx';
 
 <Multiple />
 
-## アコーディオンの無効化
+## アコーディオンの無効化 {/* #disabling-accordions */}
 
-### アコーディオンを無効にする
+### アコーディオンを無効にする {/* #individual-accordion */}
 
 個々のアコーディオンは、`ion-accordion` の `disabled` プロパティで無効にできます。
 
@@ -69,7 +69,7 @@ import DisableIndividual from '@site/static/usage/v9/accordion/disable/individua
 
 <DisableIndividual />
 
-### アコーディオングループ
+### アコーディオングループ {/* #accordion-group */}
 
 アコーディオングループは、`ion-accordion-group` の `disabled` プロパティで無効にすることができます。
 
@@ -77,9 +77,9 @@ import DisableGroup from '@site/static/usage/v9/accordion/disable/group/index.md
 
 <DisableGroup />
 
-## 読み込み可能なアコーディオン
+## 読み込み可能なアコーディオン {/* #readonly-accordions */}
 
-### アコーディオンを無効にする
+### アコーディオンを無効にする {/* #individual-accordion-1 */}
 
 個々のアコーディオンは、`ion-accordion` の `readonly` プロパティで無効にできます。
 
@@ -87,7 +87,7 @@ import ReadonlyIndividual from '@site/static/usage/v9/accordion/readonly/individ
 
 <ReadonlyIndividual />
 
-### アコーディオングループ
+### アコーディオングループ {/* #accordion-group-1 */}
 
 アコーディオングループは、`ion-accordion-group` の `readonly` プロパティで無効にできます。
 
@@ -95,21 +95,21 @@ import ReadonlyGroup from '@site/static/usage/v9/accordion/readonly/group/index.
 
 <ReadonlyGroup />
 
-## 構造
+## 構造 {/* #anatomy */}
 
-## ヘッダー
+### ヘッダー {/* #header */}
 
 `header` slotは、アコーディオンを展開または折りたたむためのトグルとして使用されます。アクセシビリティとテーマ機能を利用するために、ここでは `ion-item` を使用することをお勧めします。
 
 `header`スロットで`ion-item`を使用する場合、`ion-item`の`button`プロパティは`true`に、`detail`プロパティは`false`に設定されます。さらに、`ion-item`にはトグルアイコンも自動的に追加されます。このアイコンはアコーディオンを展開または折りたたむ際に自動的に回転します。詳細については、[アイコンのカスタマイズ](#icons)を参照してください。
 
-### コンテンツ
+### コンテンツ {/* #content */}
 
 `content` slotは、アコーディオンの状態に応じて表示/非表示される部分として使用されます。1ページに1つだけ `ion-content` インスタンスを追加する必要があるため、ここには他の `ion-content` インスタンスを除いて何でも置くことができます。
 
-## カスタマイズ
+## カスタマイズ {/* #customization */}
 
-### 拡張スタイル
+### 拡張スタイル {/* #expansion-styles */}
 
 組み込みの拡張スタイルには、`compact` と `inset` の 2 種類があります。この拡張スタイルは `ion-accordion-group` の `expand` プロパティによって設定されます。
 
@@ -119,7 +119,7 @@ import ExpansionStyles from '@site/static/usage/v9/accordion/customization/expan
 
 <ExpansionStyles />
 
-### 高度な拡張スタイル
+### 高度な拡張スタイル {/* #advanced-expansion-styles */}
 
 アコーディオンの状態に応じてスタイルを設定することで、展開の動作をカスタマイズすることができます。 `ion-accordion` には4つのステートクラスが適用されています。これらのクラスを使ってスタイリングすることで、高度な状態遷移を作成することができます。
 
@@ -155,7 +155,7 @@ import Icons from '@site/static/usage/v9/accordion/customization/icons/index.mdx
 
 <Icons />
 
-### テーマ
+### テーマ {/* #theming */}
 
 `ion-accordion` はヘッダーとコンテンツ要素を囲むシェルとして機能するので、アコーディオンを簡単に好きなようにテーマ化することができます。ヘッダーのテーマは、スロットの `ion-item` をターゲットにすることで行うことができます。 `ion-item` を使用しているので、 [ion-item CSS Variables](./item#css-custom-properties) と [ion-item Shadow Parts](./item#css-shadow-parts) にもすべてアクセスすることができます。コンテンツのテイムも、`content` slotにある要素をターゲットにすることで簡単に実現できます。
 
@@ -163,9 +163,9 @@ import Theming from '@site/static/usage/v9/accordion/customization/theming/index
 
 <Theming />
 
-## アクセシビリティ
+## アクセシビリティ {/* #accessibility */}
 
-### アニメーション
+### アニメーション {/* #animations */}
 
 デフォルトでは、アコーディオン・アイテムを展開したり折りたたんだりする際にアニメーションが有効になります。アニメーションは `prefers-reduced-motion` メディアクエリがサポートされ、`reduce` に設定されると自動的に無効化されます。対応していないブラウザでは、Ionic Frameworkアプリで `animated` を設定することで、アニメーションを無効にすることができます。
 
@@ -173,7 +173,7 @@ import AccessibilityAnimations from '@site/static/usage/v9/accordion/accessibili
 
 <AccessibilityAnimations />
 
-### キーボードインタラクション
+### キーボードインタラクション {/* #keyboard-interactions */}
 
 `ion-accordion-group` の中で使用する場合、`ion-accordion` はキーボードによる操作を完全にサポートしています。次の表は、それぞれのキーが何をするのかの詳細です。
 
@@ -187,9 +187,9 @@ import AccessibilityAnimations from '@site/static/usage/v9/accordion/accessibili
 | <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header.                                                                                                     |
 | <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header.                                                                                                      |
 
-## パフォーマンス
+## パフォーマンス {/* #performance */}
 
-### アニメーション
+### アニメーション {/* #animations-1 */}
 
 アコーディオンアニメーションは、アニメーションを開始するときに `content` slotの高さを知ることによって動作します。アコーディオンは、この高さがアニメーションの間、一貫して保たれることを期待します。そのため、開発者はアニメーション中にコンテンツの高さを変更するような操作を行わないようにしなければなりません。
 
@@ -201,26 +201,26 @@ import AccessibilityAnimations from '@site/static/usage/v9/accordion/accessibili
 
 3. これらの解決方法を選択できない場合、開発者は [ion-accordion-group](./accordion-group) の `animated` プロパティを使用してアニメーションを完全に無効にすることを検討することができます。
 
-## プロパティ
+## プロパティ {/* #properties */}
 
 <Props />
 
-## イベント
+## イベント {/* #events */}
 
 <Events />
 
-## メソッド
+## メソッド {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSSカスタムプロパティ {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />
