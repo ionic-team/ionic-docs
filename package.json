@@ -15,6 +15,7 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "generate-markdown": "node scripts/native.mjs && node scripts/cli.mjs && node scripts/release-notes.mjs",
+    "heading-ids": "docusaurus write-heading-ids . \"docs/**/*.mdx\" \"!docs/native/**\" \"!docs/cli/commands/**\" --syntax mdx-comment",
     "lint": "npm run prettier -- --write",
     "serve": "docusaurus serve",
     "playground:new": "hygen playground new",
