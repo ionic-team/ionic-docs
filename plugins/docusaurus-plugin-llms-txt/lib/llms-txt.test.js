@@ -90,10 +90,13 @@ describe('getReferencedDocIds', () => {
   it('leaves out a page that is present but reachable from no sidebar', () => {
     const withOrphan = {
       ...sidebars,
-      docs: [...sidebars.docs, { type: 'html', value: '<p>intro/first-app lives here but is not linked</p>' }],
+      docs: [
+        ...sidebars.docs,
+        { type: 'html', value: '<p>guides/unlinked is mentioned here but no sidebar points at it</p>' },
+      ],
     };
 
-    expect(getReferencedDocIds(withOrphan).has('intro/first-app')).toBe(false);
+    expect(getReferencedDocIds(withOrphan).has('guides/unlinked')).toBe(false);
   });
 
   it('handles missing sidebars without throwing', () => {
