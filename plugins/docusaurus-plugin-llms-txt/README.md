@@ -8,6 +8,10 @@ The plugin also writes a markdown twin of every docs page, which is what the ind
 
 Authored docs stay `.mdx`, and nothing here changes that. Everything this plugin emits is plain `.md`, because it is written for agents rather than for the site: an agent fetching `/docs/api/button.md` gets markdown it can read straight off, with no JSX, no imports and no components to resolve. The `.md` files are build output only, so none of them are checked in and none of them should be edited by hand.
 
+## Serving the twins
+
+Vercel's default `Content-Disposition` on a `.md` response carries a `filename`, and some clients take that as a save hint, so an agent asking for `/docs/api/button.md` downloads the file instead of reading the body it just fetched. The `headers` block in `vercel.json` sets a bare `Content-Disposition: inline` for anything ending in `.md`, which drops the filename and leaves the markdown in the response. Nothing in the plugin depends on that header, so it is easy to lose in a `vercel.json` cleanup without anything failing.
+
 ## Why the twins are written here
 
 The conversion comes from `docusaurus-plugin-copy-page-button`, which is already a dependency. Its own `generateMarkdownRoutes` option writes the same files, and is deliberately left off in `docusaurus.config.js`, because plugin `postBuild` hooks run concurrently under `Promise.all` and having both write the same paths would be a race. The converter is reused here instead, with the HTML repaired on the way through.
