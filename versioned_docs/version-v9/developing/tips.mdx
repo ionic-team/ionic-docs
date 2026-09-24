@@ -10,7 +10,7 @@ title: Development Tips
   />
 </head>
 
-## Resolving Permission Errors
+## Resolving Permission Errors {/* #resolving-permission-errors */}
 
 `EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
 
@@ -22,7 +22,7 @@ Using `sudo` with npm is **not recommended** because it can lead to further comp
 
 This guide offers two options for resolving permission issues. Refer to the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
 
-### Option 1
+### Option 1 {/* #option-1 */}
 
 The best way to avoid permission issues is to reinstall NodeJS and npm using a node version manager.
 
@@ -61,7 +61,7 @@ This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and u
 
 Global packages will now be installed in the `~/.nvm` directory, so permission errors should no longer occur as long as `npm` is used _without_ `sudo`.
 
-### Option 2
+### Option 2 {/* #option-2 */}
 
 <small>_Does not apply to Windows_</small>
 
@@ -75,7 +75,7 @@ $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 
 Since these global directories are no longer owned by `root`, packages can be installed globally _without_ `sudo`.
 
-## Updating Dependencies
+## Updating Dependencies {/* #updating-dependencies */}
 
 To update an [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
 
@@ -91,14 +91,14 @@ npm install @ionic/angular@latest --save
 
 It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
 
-## Code Editors
+## Code Editors {/* #code-editors */}
 
 There are a lot of code editors to choose from. Here are some of our favorites:
 
 - [Visual Studio Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
 - [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
 
-## Using a Debugger
+## Using a Debugger {/* #using-a-debugger */}
 
 The `debugger` keyword can be used to debug an app. When most browsers encounters a `debugger` statement, running of JavaScript is stopped, and the browser will load its debugger. This can be used to set "breakpoints" in the app.
 
@@ -113,7 +113,7 @@ function myBrokenFunction() {
 
 When an app runs, it will pause at this function. From there, the developer tools can be used to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
 
-## Changing Mode
+## Changing Mode {/* #changing-mode */}
 
 By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
 
@@ -127,7 +127,7 @@ This will not change which platform the browser detects. The platform is determi
 
 Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
 
-## Using the iOS Simulator
+## Using the iOS Simulator {/* #using-the-ios-simulator */}
 
 The iOS simulator enables testing and debugging of an app before it reaches an actual device.
 
@@ -147,7 +147,7 @@ Open up Xcode and open `../path-to-app/platforms/ios/myApp.xcodeproj`.
 
 After the app loads, console output and device logs will be printed inside of Xcode's output window.
 
-## Using the Genymotion Android Emulator
+## Using the Genymotion Android Emulator {/* #using-the-genymotion-android-emulator */}
 
 While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times.
 

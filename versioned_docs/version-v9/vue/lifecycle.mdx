@@ -6,7 +6,7 @@ sidebar_label: Lifecycle
 
 This guide discusses how to use the Ionic Framework Lifecycle events in an Ionic Vue application.
 
-## Ionic Framework Lifecycle Methods
+## Ionic Framework Lifecycle Methods {/* #ionic-framework-lifecycle-methods */}
 
 Ionic Framework provides a few lifecycle methods that you can use in your apps:
 
@@ -43,7 +43,7 @@ const ionViewWillLeave = () => {
 </script>
 ```
 
-### Composition API Hooks
+### Composition API Hooks {/* #composition-api-hooks */}
 
 These lifecycles can also be expressed using Vue 3's Composition API:
 
@@ -75,7 +75,7 @@ Pages in your app need to be using the `IonPage` component in order for lifecycl
 
 :::
 
-## How Ionic Framework Handles the Life of a Page
+## How Ionic Framework Handles the Life of a Page {/* #how-ionic-framework-handles-the-life-of-a-page */}
 
 Ionic Framework has its router outlet, called `<ion-router-outlet>`. This outlet extends Vue Router's `<router-view>` with some additional functionality to enable better experiences for mobile devices.
 
@@ -90,7 +90,7 @@ Because of this special handling, certain Vue Router components such as `<keep-a
 
 All the lifecycle methods in Vue (`mounted`, `beforeUnmount`, etc..) are available for you to use as well. However, since Ionic Vue manages the lifetime of a page, certain events might not fire when you expect them to. For instance, `mounted` fires the first time a page is displayed, but if you navigate away from the page Ionic Framework might keep the page around in the DOM, and a subsequent visit to the page might not call `mounted` again. This scenario is the main reason the Ionic Framework lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
 
-## Guidance for Each Lifecycle Method
+## Guidance for Each Lifecycle Method {/* #guidance-for-each-lifecycle-method */}
 
 Below are some tips on use cases for each of the life cycle events.
 

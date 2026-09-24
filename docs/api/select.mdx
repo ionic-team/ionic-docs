@@ -27,7 +27,7 @@ A select should be used with child `<ion-select-option>` elements. If the child 
 
 If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
 
-## Labels
+## Labels {/* #labels */}
 
 Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
 
@@ -37,7 +37,7 @@ Select has several options for supplying a label for the component:
 - `label` slot: used for custom HTML labels
 - `aria-label`: used to provide a label for screen readers but adds no visible label
 
-### Label Placement
+### Label Placement {/* #label-placement */}
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
@@ -45,7 +45,7 @@ import LabelPlacement from '@site/static/usage/v10/select/label-placement/index.
 
 <LabelPlacement />
 
-### Label Slot
+### Label Slot {/* #label-slot */}
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
@@ -53,7 +53,7 @@ import LabelSlot from '@site/static/usage/v10/select/label-slot/index.mdx';
 
 <LabelSlot />
 
-### No Visible Label
+### No Visible Label {/* #no-visible-label */}
 
 If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
 
@@ -61,7 +61,7 @@ import NoVisibleLabel from '@site/static/usage/v10/select/no-visible-label/index
 
 <NoVisibleLabel />
 
-## Single Selection
+## Single Selection {/* #single-selection */}
 
 By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
 
@@ -71,7 +71,7 @@ import SingleSelectionExample from '@site/static/usage/v10/select/basic/single-s
 
 <SingleSelectionExample />
 
-## Multiple Selection
+## Multiple Selection {/* #multiple-selection */}
 
 By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert, popover, or modal overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
 
@@ -87,35 +87,35 @@ import MultipleSelectionExample from '@site/static/usage/v10/select/basic/multip
 
 <MultipleSelectionExample />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
 By default, select uses [ion-alert](alert.mdx) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.mdx), [ion-popover](popover.mdx), or [ion-modal](modal.mdx) by passing `action-sheet`, `popover`, or `modal`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
 
-### Alert
+### Alert {/* #alert */}
 
 import AlertExample from '@site/static/usage/v10/select/basic/single-selection/index.mdx';
 
 <AlertExample />
 
-### Action Sheet
+### Action Sheet {/* #action-sheet */}
 
 import ActionSheetExample from '@site/static/usage/v10/select/interfaces/action-sheet/index.mdx';
 
 <ActionSheetExample />
 
-### Popover
+### Popover {/* #popover */}
 
 import PopoverExample from '@site/static/usage/v10/select/interfaces/popover/index.mdx';
 
 <PopoverExample />
 
-### Modal
+### Modal {/* #modal */}
 
 import ModalExample from '@site/static/usage/v10/select/interfaces/modal/index.mdx';
 
 <ModalExample />
 
-## Responding to Interaction
+## Responding to Interaction {/* #responding-to-interaction */}
 
 The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. Refer to [Events](#events) for more details on these and other events that select fires.
 
@@ -123,25 +123,25 @@ import RespondingToInteractionExample from '@site/static/usage/v10/select/basic/
 
 <RespondingToInteractionExample />
 
-## Object Value References
+## Object Value References {/* #object-value-references */}
 
 When using objects for select values, it is possible for the identities of these objects to change if they are coming from a server or database, while the selected value's identity remains the same. For example, this can occur when an existing record with the desired object value is loaded into the select, but the newly retrieved select options now have different identities. This will result in the select appearing to have no value at all, even though the original selection in still intact.
 
 By default, the select uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
-### Using compareWith
+### Using compareWith {/* #using-comparewith */}
 
 import UsingCompareWithExample from '@site/static/usage/v10/select/objects-as-values/using-comparewith/index.mdx';
 
 <UsingCompareWithExample />
 
-### Object Values and Multiple Selection
+### Object Values and Multiple Selection {/* #object-values-and-multiple-selection */}
 
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v10/select/objects-as-values/multiple-selection/index.mdx';
 
 <ObjectValuesAndMultipleSelectionExample />
 
-## Justification
+## Justification {/* #justification */}
 
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
@@ -149,7 +149,7 @@ import JustifyExample from '@site/static/usage/v10/select/justify/index.mdx';
 
 <JustifyExample />
 
-## Filled Selects
+## Filled Selects {/* #filled-selects */}
 
 Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
 
@@ -165,7 +165,7 @@ import FillExample from '@site/static/usage/v10/select/fill/index.mdx';
 
 <FillExample />
 
-## Select Buttons
+## Select Buttons {/* #select-buttons */}
 
 The alert supports two buttons: `Cancel` and `OK`. Each button's text can be customized using the `cancelText` and `okText` properties.
 
@@ -178,7 +178,7 @@ import ButtonTextExample from '@site/static/usage/v10/select/customization/butto
 
 <ButtonTextExample />
 
-## Interface Options
+## Interface Options {/* #interface-options */}
 
 Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
 
@@ -191,7 +191,7 @@ import InterfaceOptionsExample from '@site/static/usage/v10/select/customization
 
 <InterfaceOptionsExample />
 
-## Start and End Slots
+## Start and End Slots {/* #start-and-end-slots */}
 
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
 
@@ -207,7 +207,7 @@ import StartEndSlots from '@site/static/usage/v10/select/start-end-slots/index.m
 
 <StartEndSlots />
 
-## Rich Content Options
+## Rich Content Options {/* #rich-content-options */}
 
 :::important
 
@@ -225,11 +225,11 @@ import RichContentOptions from '@site/static/usage/v10/select/rich-content-optio
 
 <RichContentOptions />
 
-## Customization
+## Customization {/* #customization */}
 
 There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
 
-### Styling Select Element
+### Styling Select Element {/* #styling-select-element */}
 
 As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties).
 
@@ -239,7 +239,7 @@ import StylingSelectExample from '@site/static/usage/v10/select/customization/st
 
 <StylingSelectExample />
 
-### Styling Select Interface
+### Styling Select Interface {/* #styling-select-interface */}
 
 Customizing the interface dialog should be done by following the styling sections (CSS shadow parts, CSS custom properties, and slots) in
 that interface's documentation:
@@ -251,7 +251,7 @@ that interface's documentation:
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, refer to the [Select Options documentation](select-option.mdx) for usage examples of customizing options.
 
-### Custom Toggle Icons
+### Custom Toggle Icons {/* #custom-toggle-icons */}
 
 The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
 
@@ -259,7 +259,7 @@ import CustomToggleIconsExample from '@site/static/usage/v10/select/customizatio
 
 <CustomToggleIconsExample />
 
-### Icon Flip Behavior
+### Icon Flip Behavior {/* #icon-flip-behavior */}
 
 By default, when the select is open, the toggle icon will automatically rotate on `md` mode and remain static on `ios` mode. This behavior can be customized using CSS.
 
@@ -269,7 +269,7 @@ import IconFlipBehaviorExample from '@site/static/usage/v10/select/customization
 
 <IconFlipBehaviorExample />
 
-## Typeahead Component
+## Typeahead Component {/* #typeahead-component */}
 
 Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
 
@@ -277,7 +277,7 @@ import TypeaheadExample from '@site/static/usage/v10/select/typeahead/index.mdx'
 
 <TypeaheadExample />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 Helper and error text can be used inside of a select with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-select`. This ensures errors are not shown before the user has a chance to enter data.
 
@@ -287,9 +287,9 @@ import HelperError from '@site/static/usage/v10/select/helper-error/index.mdx';
 
 <HelperError />
 
-## Interfaces
+## Interfaces {/* #interfaces-1 */}
 
-### SelectChangeEventDetail
+### SelectChangeEventDetail {/* #selectchangeeventdetail */}
 
 ```typescript
 interface SelectChangeEventDetail<T = any> {
@@ -297,7 +297,7 @@ interface SelectChangeEventDetail<T = any> {
 }
 ```
 
-### SelectCustomEvent
+### SelectCustomEvent {/* #selectcustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -308,9 +308,9 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 Ionic's keyboard interactions follow the implementation patterns of the web instead of the native iOS select for a consistent experience across all platforms.
 
@@ -325,7 +325,7 @@ These keyboard interactions apply to all `ion-select` elements when the followin
 | <kbd>Enter</kbd> | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
 | <kbd>Space</kbd> | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
 
-#### Single Selection
+#### Single Selection {/* #single-selection-1 */}
 
 Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
 
@@ -342,7 +342,7 @@ These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popov
 | <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss.                                                                   |
 | <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.                                                                       |
 
-#### Multiple Selection
+#### Multiple Selection {/* #multiple-selection-1 */}
 
 Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
 
@@ -355,26 +355,26 @@ These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal`
 | <kbd>Space</kbd>  | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately.                 |
 | <kbd>Tab</kbd>    | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

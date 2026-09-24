@@ -2,7 +2,7 @@
 
 Dynamic Font Scaling is a feature that allows users to choose the size of the text displayed on the screen. This helps users who need larger text for better readability, and it also accommodates users who can read smaller text.
 
-## Try It Out
+## Try It Out {/* #try-it-out */}
 
 :::tip
 
@@ -18,19 +18,19 @@ import DynamicFontScaling from '@site/static/usage/v10/layout/dynamic-font-scali
 
 <DynamicFontScaling />
 
-## Using Dynamic Font Scaling
+## Using Dynamic Font Scaling {/* #using-dynamic-font-scaling */}
 
-### Enabling in an Application
+### Enabling in an Application {/* #enabling-in-an-application */}
 
 Dynamic Font Scaling is enabled by default as long as the [typography.css](/layout/global-stylesheets.mdx#typographycss) file is imported. Importing this file will define the `--ion-dynamic-font` variable which will activate Dynamic Font Scaling. While not recommended, developers can opt-out of Dynamic Font Scaling by setting this variable to `initial` in their application code.
 
-### Integrating Custom Components
+### Integrating Custom Components {/* #integrating-custom-components */}
 
 Developers can configure their custom components to take advantage of Dynamic Font Scaling by converting any `font-size` declarations that use `px` units to use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths) instead. An easy way to convert from `px` to `rem` is to divide the pixel font size by the default browser font size, which is typically `16px`. For example, if a component has a font size of `14px`, then this could be converted to `rem` by doing `14px / 16px = 0.875rem`. Also note that any Ionic components that have had their font sizes overridden should also be updated to use `rem` units.
 
 One thing to keep in mind is that the dimensions of your components may need to change to accommodate the larger font sizes. For example, `width` and `height` properties may need to change to `min-width` and `min-height`, respectively. Developers should audit their applications for any CSS properties that use [length values](https://developer.mozilla.org/en-US/docs/Web/CSS/length) and make any applicable conversions from `px` to `rem`. We also recommend having long text wrap to the next line instead of truncating to keep large text readable.
 
-### Custom Font Family
+### Custom Font Family {/* #custom-font-family */}
 
 We recommend using the default fonts in Ionic as they are designed to look good at any size and ensure consistency with other mobile apps. However, developers can use a custom font family with Dynamic Font Scaling via CSS:
 
@@ -41,7 +41,7 @@ html {
 }
 ```
 
-### `em` units versus `rem` units
+### `em` units versus `rem` units {/* #em-units-versus-rem-units */}
 
 Developers have two options for relative font sizes: [`em` and `rem`](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#ems_and_rems).
 
@@ -93,11 +93,11 @@ In the following example, the computed font size of `.child` is `32px` because t
 }
 ```
 
-## How Dynamic Font Scaling works in Ionic
+## How Dynamic Font Scaling works in Ionic {/* #how-dynamic-font-scaling-works-in-ionic */}
 
 Ionic components that define font sizes and participate in Dynamic Font Scaling typically use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). This sizes the text in each component relative to the font size of the root element, which is usually the `html` element. This means that as the root element's font size changes, the text in all Ionic components scale in a consistent manner. This avoids the need to manually override each component's font size. Some elements inside of these components, such as icons, use `em` units instead so the elements are sized relative to the text, though the text itself is sized using `rem` units.
 
-### iOS
+### iOS {/* #ios */}
 
 Dynamic Font Scaling in Ionic builds on top of an iOS feature called [Dynamic Type](https://developer.apple.com/documentation/uikit/uifont/scaling_fonts_automatically#overview). To do this, Ionic sets the [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) of the root element to an Apple-defined text style. For consistency, Ionic uses the [body](https://developer.apple.com/documentation/uikit/uifont/textstyle/1616682-body) text style.
 
@@ -109,7 +109,7 @@ Ionic follows [Apple's Human Interface Guidelines for Typography](https://develo
 2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
 3. Text in components such as `ion-tab-bar` and `ion-picker` do not participate in Dynamic Font Scaling according to Apple's Human Interface Guidelines.
 
-### Android Web View
+### Android Web View {/* #android-web-view */}
 
 The Android Web View's font scaling mechanism is always enabled in web content and will automatically scale font sizes defined using the `px` unit. This means that any maximum or minimum font sizes specified using `px` will still be scaled even if the final font size does not align with the maximum or minimum font sizes specified.
 
@@ -127,7 +127,7 @@ This is larger than our defined maximum of `14px`, so one might assume that the 
 
 As a result, this means that the maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
 
-### Chrome for Android
+### Chrome for Android {/* #chrome-for-android */}
 
 The Chrome Web Browser on Android behaves differently than the Android Web View. By default, Chrome for Android does not respect the system-level font scale setting. However, the Chromium team is working on a new feature to allow for this. When enabled, this feature will change the `zoom` level of the `html` element which will cause the layout to increase in size in addition to the text.
 
@@ -135,7 +135,7 @@ Developers can test this behavior by enabling the experimental "Accessibility Pa
 
 See https://bugs.chromium.org/p/chromium/issues/detail?id=645717 for more information.
 
-### Using Modes on Different Platforms
+### Using Modes on Different Platforms {/* #using-modes-on-different-platforms */}
 
 Each platform has slightly different font scaling behaviors, and the `ios` and `md` modes have been implemented to take advantage of the scaling behaviors on their respective platforms.
 
@@ -143,17 +143,17 @@ For example, `ios` mode makes use of maximum and minimum font sizes to follow [A
 
 As a result, we strongly recommend using `ios` mode on iOS devices and `md` mode on Android devices when using Dynamic Font Scaling.
 
-## Changing the Font Size on a Device
+## Changing the Font Size on a Device {/* #changing-the-font-size-on-a-device */}
 
 Font scaling preferences are configured on a per-device basis by the user. This allows the user to scale the font for all applications that support this behavior. This guide shows how to enable font scaling for each platform.
 
-### iOS
+### iOS {/* #ios-1 */}
 
 Font scaling on iOS can be configured in the Settings app.
 
 Refer to [Apple Support](https://support.apple.com/en-us/102453) for more information.
 
-### Android
+### Android {/* #android */}
 
 Where users access the font scaling configuration varies across devices, but it is typically found in the "Accessibility" page in the Settings app.
 
@@ -163,9 +163,9 @@ The Chrome Web Browser on Android has some limitations with respecting system-le
 
 :::
 
-## Troubleshooting
+## Troubleshooting {/* #troubleshooting */}
 
-### Dynamic Font Scaling is not working
+### Dynamic Font Scaling is not working {/* #dynamic-font-scaling-is-not-working */}
 
 There are a number of reasons why Dynamic Font Scaling may not have any effect on an app. The following list, while not exhaustive, provides some things to check to debug why Dynamic Font Scaling is not working.
 
@@ -175,21 +175,21 @@ There are a number of reasons why Dynamic Font Scaling may not have any effect o
 4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. Refer to [Integrating Custom Components](#integrating-custom-components) for more information.
 5. Verify "Accessibility Page Zoom" is enabled if using Chrome for Android. Refer to [Chrome for Android](#chrome-for-android) for more information.
 
-### Maximum and minimum font sizes are not being respected on Android
+### Maximum and minimum font sizes are not being respected on Android {/* #maximum-and-minimum-font-sizes-are-not-being-respected-on-android */}
 
 The Android Web View scales any font sizes defined using the `px` unit by the system-level font scale preference. This means that actual font sizes may be larger or smaller than the font sizes defined in [min()](https://developer.mozilla.org/en-US/docs/Web/CSS/min), [max()](https://developer.mozilla.org/en-US/docs/Web/CSS/max), or [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
 
 Refer to [how font scaling works on Android](#android) for more information.
 
-### Font sizes are larger/smaller even with Dynamic Font Scaling disabled
+### Font sizes are larger/smaller even with Dynamic Font Scaling disabled {/* #font-sizes-are-largersmaller-even-with-dynamic-font-scaling-disabled */}
 
 Ionic components define font sizes using [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths) even when Dynamic Font Scaling is disabled. This sizes the text in each component relative to the font size of the root element, which is usually the `html` element. As a result, if the font size of `html` changes, the computed font size of all Ionic components will change too.
 
-### Scaled Ionic iOS component font sizes do not exactly match native iOS equivalents
+### Scaled Ionic iOS component font sizes do not exactly match native iOS equivalents {/* #scaled-ionic-ios-component-font-sizes-do-not-exactly-match-native-ios-equivalents */}
 
 Certain native iOS components such as the Action Sheet make use of private font scales that Ionic does not have access to. While we try to stay as close as possible to the native behavior, text in some components may render slightly larger or smaller than their native counterparts.
 
-### The text size in my Ionic app on iOS changed when enabling Dynamic Font Scaling
+### The text size in my Ionic app on iOS changed when enabling Dynamic Font Scaling {/* #the-text-size-in-my-ionic-app-on-ios-changed-when-enabling-dynamic-font-scaling */}
 
 The root element's default font size is typically `16px`. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications) which has a default font size of `17px`. Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
 

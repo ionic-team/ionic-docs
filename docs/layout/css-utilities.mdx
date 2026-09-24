@@ -18,9 +18,9 @@ If your app was not started using an available Ionic Framework starter, the styl
 
 :::
 
-## Text Modification
+## Text Modification {/* #text-modification */}
 
-### Text Align
+### Text Align {/* #text-align */}
 
 ```html
 <ion-grid>
@@ -78,7 +78,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 | `.ion-text-wrap`    | `white-space: normal` | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
 | `.ion-text-nowrap`  | `white-space: nowrap` | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
 
-### Text Transform
+### Text Transform {/* #text-transform */}
 
 ```html
 <ion-grid>
@@ -111,7 +111,7 @@ If your app was not started using an available Ionic Framework starter, the styl
 | `.ion-text-lowercase`  | `text-transform: lowercase`  | Forces all characters to be converted to lowercase.                |
 | `.ion-text-capitalize` | `text-transform: capitalize` | Forces the first letter of each word to be converted to uppercase. |
 
-### Responsive Text Classes
+### Responsive Text Classes {/* #responsive-text-classes */}
 
 All of the text classes listed above have additional classes to modify the text based on the screen size. Instead of `text-` in each class, use `text-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
 
@@ -125,9 +125,9 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `.ion-text-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
 | `.ion-text-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
 
-## Element Placement
+## Element Placement {/* #element-placement */}
 
-### Float
+### Float {/* #float */}
 
 The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
 
@@ -174,7 +174,7 @@ The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property
 | `.ion-float-start` | `float: left` / `float: right` | The same as `float-left` if direction is left-to-right and `float-right` if direction is right-to-left. |
 | `.ion-float-end`   | `float: left` / `float: right` | The same as `float-right` if direction is left-to-right and `float-left` if direction is right-to-left. |
 
-### Responsive Float Classes
+### Responsive Float Classes {/* #responsive-float-classes */}
 
 All of the float classes listed above have additional classes to modify the float based on the screen size. Instead of `float-` in each class, use `float-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
 
@@ -188,9 +188,9 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `.ion-float-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
 | `.ion-float-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
 
-## Element Display
+## Element Display {/* #element-display */}
 
-### Display
+### Display {/* #display */}
 
 The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex. It can also be used to completely hide an element from the layout.
 
@@ -210,7 +210,7 @@ Ionic provides the following utility classes for `display`:
 | `.ion-display-table-cell`   | `display: table-cell`   | The element behaves like an HTML `<td>` element.                                                                                       |
 | `.ion-display-table-row`    | `display: table-row`    | The element behaves like an HTML `<tr>` element.                                                                                       |
 
-### Responsive Display Classes
+### Responsive Display Classes {/* #responsive-display-classes */}
 
 All of the display classes listed above have additional classes to modify the display based on the screen size. Instead of `display-` in each class, use `display-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
 
@@ -224,7 +224,7 @@ The table below shows the default behavior, where `{modifier}` is any of the fol
 | `.ion-display-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
 | `.ion-display-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
 
-### Deprecated Classes
+### Deprecated Classes {/* #deprecated-classes */}
 
 :::warning[Deprecation Notice]
 
@@ -240,9 +240,9 @@ The following classes are deprecated and will be removed in the next major relea
 | `.ion-hide-lg-{dir}` | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`). <br/> **Deprecated** — Use the `ion-display-lg-{modifier}` classes instead.   |
 | `.ion-hide-xl-{dir}` | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`). <br/> **Deprecated** — Use the `ion-display-xl-{modifier}` classes instead. |
 
-## Content Space
+## Content Space {/* #content-space */}
 
-### Padding
+### Padding {/* #padding */}
 
 The padding class sets the padding area of an element. The padding area is the space between the content of the element and its border.
 
@@ -292,7 +292,7 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 | `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
 | `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
 
-### Margin
+### Margin {/* #margin */}
 
 The margin area extends the border area with an empty area used to separate the element from its neighbors.
 
@@ -342,13 +342,13 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 | `.ion-margin-horizontal` | `margin: 0 16px`      | Applies margin to the left and right. |
 | `.ion-no-margin`         | `margin: 0`           | Applies no margin to all sides.       |
 
-## Flex Container Properties
+## Flex Container Properties {/* #flex-container-properties */}
 
 Flexbox properties are divided into two categories: **container properties** that control the layout of all flex items, and **item properties** that control individual flex items. Refer to [Flex Item Properties](#flex-item-properties) for item-level alignment.
 
 <img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
 
-### Align Items
+### Align Items {/* #align-items */}
 
 The [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) CSS property sets the [align-self](#align-self) value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
 
@@ -364,7 +364,7 @@ Ionic provides the following utility classes for `align-items`:
 | `.ion-align-items-baseline` | `align-items: baseline`   | Items are aligned so that their baselines align.     |
 | `.ion-align-items-stretch`  | `align-items: stretch`    | Items are stretched to fill the container.           |
 
-### Align Content
+### Align Content {/* #align-content */}
 
 The [align-content](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) CSS property sets the distribution of space between and around content items along a flexbox's cross axis, or a grid or block-level element's block axis.
 
@@ -383,7 +383,7 @@ Ionic provides the following utility classes for `align-content`:
 | `.ion-align-content-between` | `align-content: space-between` | Lines are evenly distributed on the cross axis.            |
 | `.ion-align-content-around`  | `align-content: space-around`  | Lines are evenly distributed with equal space around them. |
 
-### Justify Content
+### Justify Content {/* #justify-content */}
 
 The [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) CSS property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multi-column containers.
 
@@ -400,7 +400,7 @@ Ionic provides the following utility classes for `justify-content`:
 | `.ion-justify-content-between` | `justify-content: space-between` | Items are evenly distributed on the main axis.                              |
 | `.ion-justify-content-evenly`  | `justify-content: space-evenly`  | Items are distributed so that the spacing between any two items is equal.   |
 
-### Flex Direction
+### Flex Direction {/* #flex-direction */}
 
 The [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
 
@@ -415,7 +415,7 @@ Ionic provides the following utility classes for `flex-direction`:
 | `.ion-flex-column`         | `flex-direction: column`         | Items are placed vertically.                                      |
 | `.ion-flex-column-reverse` | `flex-direction: column-reverse` | Items are placed vertically in reverse order.                     |
 
-### Flex Wrap
+### Flex Wrap {/* #flex-wrap */}
 
 The [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap) CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
 
@@ -429,7 +429,7 @@ Ionic provides the following utility classes for `flex-wrap`:
 | `.ion-flex-wrap`         | `flex-wrap: wrap`         | Items will wrap onto multiple lines, from top to bottom. |
 | `.ion-flex-wrap-reverse` | `flex-wrap: wrap-reverse` | Items will wrap onto multiple lines, from bottom to top. |
 
-### Responsive Flex Container Classes
+### Responsive Flex Container Classes {/* #responsive-flex-container-classes */}
 
 All of the flex container classes listed above have additional classes to modify the properties based on the screen size. Instead of the base class name, use `{property}-{breakpoint}-{modifier}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
 
@@ -443,7 +443,7 @@ The table below shows the default behavior, where `{property}` is one of the fol
 | `.ion-{property}-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
 | `.ion-{property}-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
 
-### Deprecated Classes
+### Deprecated Classes {/* #deprecated-classes-1 */}
 
 :::warning[Deprecation Notice]
 
@@ -457,11 +457,11 @@ The following classes are deprecated and will be removed in the next major relea
 | `.ion-wrap`         | Items will wrap onto multiple lines, from top to bottom.<br />**Deprecated** — Use `.ion-flex-wrap` instead.         |
 | `.ion-wrap-reverse` | Items will wrap onto multiple lines, from bottom to top.<br />**Deprecated** — Use `.ion-flex-wrap-reverse` instead. |
 
-## Flex Item Properties
+## Flex Item Properties {/* #flex-item-properties */}
 
 Flex item properties control how individual flex items behave within their flex container. See also: [Flex Container Properties](#flex-container-properties) for container-level alignment.
 
-### Align Self
+### Align Self {/* #align-self */}
 
 The [align-self](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) CSS property overrides a grid or flex item's align-items value. In grid, it aligns the item inside the grid area. In flexbox, it aligns the item on the cross axis.
 
@@ -480,7 +480,7 @@ Ionic provides the following utility classes for `align-self`:
 | `.ion-align-self-stretch`  | `align-self: stretch`    | Item is stretched to fill the container.                               |
 | `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.      |
 
-### Flex
+### Flex {/* #flex */}
 
 The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) CSS property is a shorthand property for `flex-grow`, `flex-shrink` and `flex-basis`. It sets how a flex item will grow or shrink to fit the space available in its flex container.
 
@@ -495,7 +495,7 @@ Ionic provides the following utility classes for `flex`:
 | `.ion-flex-initial` | `flex: initial` | Item shrinks to its minimum content size but does not grow. |
 | `.ion-flex-none`    | `flex: none`    | Item does not grow or shrink.                               |
 
-### Flex Grow
+### Flex Grow {/* #flex-grow */}
 
 The [flex-grow](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow) CSS property sets the flex grow factor, which specifies how much of the flex container's positive free space, if any, should be assigned to the flex item's main size.
 
@@ -508,7 +508,7 @@ Ionic provides the following utility classes for `flex-grow`:
 | `.ion-flex-grow-0` | `flex-grow: 0` | Item does not grow beyond its content size.        |
 | `.ion-flex-grow-1` | `flex-grow: 1` | Item grows to fill available space proportionally. |
 
-### Flex Shrink
+### Flex Shrink {/* #flex-shrink */}
 
 The [flex-shrink](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink) CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, the flex items can shrink to fit according to their `flex-shrink` value. Each flex line's negative free space is distributed between the line's flex items that have a `flex-shrink` value greater than `0`.
 
@@ -521,7 +521,7 @@ Ionic provides the following utility classes for `flex-shrink`:
 | `.ion-flex-shrink-0` | `flex-shrink: 0` | Item does not shrink below its content size.             |
 | `.ion-flex-shrink-1` | `flex-shrink: 1` | Item shrinks proportionally when container is too small. |
 
-### Order
+### Order {/* #order */}
 
 The [order](https://developer.mozilla.org/en-US/docs/Web/CSS/order) CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
 
@@ -547,7 +547,7 @@ Ionic provides the following utility classes for `order`:
 | `.ion-order-12`    | `order: 12` | Item appears after items with order 11.   |
 | `.ion-order-last`  | `order: 13` | Item appears last in the flex container.  |
 
-### Responsive Flex Item Classes
+### Responsive Flex Item Classes {/* #responsive-flex-item-classes */}
 
 All of the flex item classes listed above have additional classes to modify the properties based on the screen size. Instead of the base class name, use `{property}-{breakpoint}-{modifier}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
 
@@ -561,7 +561,7 @@ The table below shows the default behavior, where `{property}` is one of the fol
 | `.ion-{property}-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
 | `.ion-{property}-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
 
-## Border Display
+## Border Display {/* #border-display */}
 
 The `.ion-no-border` utility class can be used to remove borders from Ionic components. This class can be applied to the `ion-header` and `ion-footer` components.
 
@@ -583,7 +583,7 @@ The `.ion-no-border` utility class can be used to remove borders from Ionic comp
 | ---------------- | -------------------------------- |
 | `.ion-no-border` | The element will have no border. |
 
-## Ionic Breakpoints
+## Ionic Breakpoints {/* #ionic-breakpoints */}
 
 Ionic uses breakpoints in media queries in order to style an application differently based on the screen size. The following breakpoint names are used in the utility classes listed above, where the class will apply when the width is met.
 

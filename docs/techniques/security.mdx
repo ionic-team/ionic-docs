@@ -13,7 +13,7 @@ title: Security
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Sanitizing User Input
+## Sanitizing User Input {/* #sanitizing-user-input */}
 
 For components such as `ion-alert` developers can allow for custom or user-provided content. This content can be plain text or HTML and should be considered untrusted. As with any untrusted input, it is important to sanitize it before doing anything else with it. In particular, using things like `innerHTML` without sanitization provides an attack vector for bad actors to input malicious content and potentially launch a [Cross Site Scripting attack (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting).
 
@@ -21,7 +21,7 @@ Ionic comes built in with a basic sanitization implementation for the components
 
 For developers who are not using a framework, or for developers whose framework does not provide the sanitization methods they need, we recommend using [sanitize-html](https://www.npmjs.com/package/sanitize-html). This package provides a simple HTML sanitizer that allows the developer to specify the exact tags and attributes that they want to allow in their application.
 
-### Angular
+### Angular {/* #angular */}
 
 Angular comes built in with the `DomSanitizer` class. This helps prevent XSS issues by ensuring that values are safe to be used in the DOM. By default, Angular will mark any values it deems unsafe. For example, the following link would be marked as unsafe by Angular because it would attempt to execute some JavaScript.
 
@@ -35,7 +35,7 @@ public myUrl: string = 'javascript:alert("oh no!")';
 
 To learn more about the built-in protections that Angular provides, refer to the [Angular Security Guide](https://angular.io/guide/security).
 
-### React
+### React {/* #react */}
 
 React DOM escapes values embedded in JSX before rendering them by converting them to strings. For example, the following would be safe as `name` is converted to a string before being rendered:
 
@@ -53,17 +53,17 @@ const element = <a href={userInput}>Click Me!</a>;
 
 If the developer needs to achieve more comprehensive sanitization, they can use the [sanitize-html](https://www.npmjs.com/package/sanitize-html) package.
 
-### Vue
+### Vue {/* #vue */}
 
 Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](https://www.npmjs.com/package/sanitize-html).
 
 To learn more about the security recommendations for binding to directives such as `v-html`, refer to the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
 
-## Enabling Custom HTML Parsing via `innerHTML`
+## Enabling Custom HTML Parsing via `innerHTML` {/* #enabling-custom-html-parsing-via-innerhtml */}
 
 `ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, `ion-select-option`, and `ion-toast` can accept custom HTML as strings for certain properties. These strings are added to the DOM using `innerHTML` and must be properly sanitized by the developer. This behavior is disabled by default which means values passed to the affected components will always be interpreted as plaintext. Developers can enable this custom HTML behavior by setting `innerHTMLTemplatesEnabled: true` in the [IonicConfig](../developing/config.mdx#ionicconfig).
 
-## Ejecting from the built-in sanitizer
+## Ejecting from the built-in sanitizer {/* #ejecting-from-the-built-in-sanitizer */}
 
 For developers who wish to add complex HTML to components such as `ion-toast`, they will need to eject from the sanitizer that is built into Ionic Framework. Developers can either disable the sanitizer across their entire app or bypass it on a case-by-case basis.
 
@@ -73,11 +73,11 @@ Bypassing sanitization functionality can make your application vulnerable to [XS
 
 :::
 
-### Disabling the sanitizer via config
+### Disabling the sanitizer via config {/* #disabling-the-sanitizer-via-config */}
 
 Ionic Framework provides an application config option called `sanitizerEnabled` that is set to `true` by default. Set this value to `false` to globally disable Ionic Framework's built in sanitizer. Please note that this does not disable any sanitizing functionality provided by other frameworks such as Angular.
 
-### Bypassing the sanitizer on a case-by-case basis
+### Bypassing the sanitizer on a case-by-case basis {/* #bypassing-the-sanitizer-on-a-case-by-case-basis */}
 
 Developers can also choose to eject from the sanitizer in certain scenarios. Ionic Framework provides the `IonicSafeString` class that allows developers to do just that.
 
@@ -91,7 +91,7 @@ Refer to [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerh
 
 :::
 
-#### Usage
+#### Usage {/* #usage */}
 
 ````mdx-code-block
 <Tabs
@@ -186,13 +186,13 @@ export const ToastExample: React.FC = () => {
 </Tabs>
 ````
 
-## Content Security Policies (CSP)
+## Content Security Policies (CSP) {/* #content-security-policies-csp */}
 
 A [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a security mechanism that helps protect web applications against certain types of attacks, such as cross-site scripting (XSS) and data injection. It is implemented through an HTTP header that instructs the browser on which sources of content, such as scripts, stylesheets, and images, are allowed to be loaded and executed on a web page.
 
 The main purpose of a CSP is to mitigate the risks associated with code injection attacks. By defining a policy, web developers can specify from which domains or sources the browser should allow the loading and execution of various types of content. This effectively limits the potential damage that can be caused by malicious scripts or unauthorized content.
 
-### Enabling CSPs
+### Enabling CSPs {/* #enabling-csps */}
 
 Developers can assign a CSP to their application by setting a meta tag with the policy details and the expected nonce value on script and style tags.
 
@@ -203,7 +203,7 @@ Developers can assign a CSP to their application by setting a meta tag with the 
 />
 ```
 
-### Ionic and CSP
+### Ionic and CSP {/* #ionic-and-csp */}
 
 Ionic Framework provides a function to help developers set the nonce value used when constructing the web component stylesheets. This function should be called before any Ionic components are loaded. This is required to pass the nonce value to the web components so that they can be used in a CSP environment.
 
@@ -221,7 +221,7 @@ In Angular this can be called in the `main.ts` file, before the application is b
 
 For more information on how to use CSPs with Stencil web components, refer to the [Stencil documentation](https://stenciljs.com/docs/csp-nonce).
 
-### Angular
+### Angular {/* #angular-1 */}
 
 Starting in Angular 16, Angular provides two options for setting the nonce value.
 

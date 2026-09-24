@@ -25,13 +25,13 @@ The Gallery arranges images, cards, and other content in a responsive grid. It s
 
 Each [Gallery Item](./gallery-item.mdx) is a single cell of the grid and can contain plain text or any element, such as an `img`, a `figure` with a caption, or a [Card](./card.mdx).
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v10/gallery/basic/index.mdx';
 
 <Basic />
 
-## Uniform
+## Uniform {/* #uniform */}
 
 Uniform is the default layout. It creates a consistent grid where items appear at the same visual size with a `1 / 1` aspect ratio. This layout is ideal when visual alignment is more important than preserving each item's natural height.
 
@@ -39,11 +39,11 @@ import Uniform from '@site/static/usage/v10/gallery/uniform/index.mdx';
 
 <Uniform />
 
-## Masonry
+## Masonry {/* #masonry */}
 
 Masonry preserves each item's natural height and stacks items vertically within each column, creating a staggered layout with minimal gaps. Masonry supports two ordering modes: sequential and best fit.
 
-### Sequential
+### Sequential {/* #sequential */}
 
 Sequential is the default masonry ordering mode. Items are placed in DOM order, filling columns from left to right.
 
@@ -51,7 +51,7 @@ import MasonrySequential from '@site/static/usage/v10/gallery/masonry-sequential
 
 <MasonrySequential />
 
-### Best Fit
+### Best Fit {/* #best-fit */}
 
 Best fit places each item in the column with the most available space, helping balance column heights.
 
@@ -59,7 +59,7 @@ import MasonryBestFit from '@site/static/usage/v10/gallery/masonry-best-fit/inde
 
 <MasonryBestFit />
 
-### Images
+### Images {/* #images */}
 
 An `img` placed directly inside a Gallery Item is given default styles to ensure consistent rendering. These styles make images fill their cell while preserving their aspect ratio and keeping them centered.
 
@@ -83,7 +83,7 @@ import Images from '@site/static/usage/v10/gallery/images/index.mdx';
 
 <Images />
 
-## Columns
+## Columns {/* #columns */}
 
 Columns can be configured with the `columns` property using either a single number for a fixed column count, or a breakpoint map to change columns across screen sizes.
 
@@ -102,7 +102,7 @@ import Columns from '@site/static/usage/v10/gallery/columns/index.mdx';
 
 <Columns />
 
-## Gap
+## Gap {/* #gap */}
 
 Gap can be configured with the `gap` property using either a single value for a fixed gap, or a breakpoint map to change gap across screen sizes.
 
@@ -121,9 +121,9 @@ import Gap from '@site/static/usage/v10/gallery/gap/index.mdx';
 
 <Gap />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### GalleryBreakpoints
+### GalleryBreakpoints {/* #gallerybreakpoints */}
 
 ```typescript
 interface GalleryBreakpoints<T = string | number> {
@@ -136,40 +136,40 @@ interface GalleryBreakpoints<T = string | number> {
 }
 ```
 
-## Types
+## Types {/* #types */}
 
-### GalleryColumns
+### GalleryColumns {/* #gallerycolumns */}
 
 ```typescript
 type GalleryColumns = GalleryBreakpoints | string | number;
 ```
 
-### GalleryGap
+### GalleryGap {/* #gallerygap */}
 
 ```typescript
 type GalleryGap = GalleryBreakpoints | string | number;
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

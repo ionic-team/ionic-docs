@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
-## Global Config
+## Global Config {/* #global-config */}
 
 The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
 
@@ -17,7 +17,7 @@ import GlobalExample from '@site/docs/developing/config/global/index.mdx';
 
 <GlobalExample />
 
-## Per-Component Config
+## Per-Component Config {/* #per-component-config */}
 
 Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
@@ -25,7 +25,7 @@ import PerComponentExample from '@site/docs/developing/config/per-component/inde
 
 <PerComponentExample />
 
-## Per-Platform Config
+## Per-Platform Config {/* #per-platform-config */}
 
 Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
@@ -35,7 +35,7 @@ import PerPlatformExample from '@site/docs/developing/config/per-platform/index.
 
 <PerPlatformExample />
 
-### Fallbacks
+### Fallbacks {/* #fallbacks */}
 
 The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
@@ -43,7 +43,7 @@ import PerPlatformFallbackExample from '@site/docs/developing/config/per-platfor
 
 <PerPlatformFallbackExample />
 
-### Overrides
+### Overrides {/* #overrides */}
 
 This final example allows you to accumulate a config object based upon different platform requirements.
 
@@ -51,7 +51,7 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 <PerPlatformOverridesExample />
 
-## Accessing the Mode
+## Accessing the Mode {/* #accessing-the-mode */}
 
 In some cases, you may need to access the current Ionic mode programmatically within your application logic. This can be useful for applying conditional behavior, fetching specific assets, or performing other actions based on the active styling mode.
 
@@ -59,18 +59,18 @@ import IonicMode from '@site/static/usage/v10/config/mode/index.mdx';
 
 <IonicMode />
 
-## Reading the Config (Angular)
+## Reading the Config (Angular) {/* #reading-the-config-angular */}
 
 Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 
-### get
+### get {/* #get */}
 
 |                 |                                                                                  |
 | --------------- | -------------------------------------------------------------------------------- |
 | **Description** | Returns a config value as an `any`. Returns `null` if the config is not defined. |
 | **Signature**   | `get(key: string, fallback?: any) => any`                                        |
 
-#### Examples
+#### Examples {/* #examples */}
 
 <Tabs
   groupId="framework"
@@ -110,14 +110,14 @@ class AppComponent {
 </TabItem>
 </Tabs>
 
-### getBoolean
+### getBoolean {/* #getboolean */}
 
 |                 |                                                                                      |
 | --------------- | ------------------------------------------------------------------------------------ |
 | **Description** | Returns a config value as a `boolean`. Returns `false` if the config is not defined. |
 | **Signature**   | `getBoolean(key: string, fallback?: boolean) => boolean`                             |
 
-#### Examples
+#### Examples {/* #examples-1 */}
 
 <Tabs
   groupId="framework"
@@ -157,16 +157,16 @@ class AppComponent {
 </TabItem>
 </Tabs>
 
-### getNumber
+### getNumber {/* #getnumber */}
 
 |                 |                                                                                 |
 | --------------- | ------------------------------------------------------------------------------- |
 | **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
 | **Signature**   | `getNumber(key: string, fallback?: number) => number`                           |
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### IonicConfig
+### IonicConfig {/* #ionicconfig */}
 
 Below are the config options that Ionic uses.
 

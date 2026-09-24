@@ -13,17 +13,17 @@ sidebar_label: Utility Functions
 
 Ionic React provides utility functions for common tasks like programmatic navigation and controlling page transitions.
 
-## Router
+## Router {/* #router */}
 
-### Functions
+### Functions {/* #functions */}
 
-#### useIonRouter
+#### useIonRouter {/* #useionrouter */}
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](#useionrouterresult)
 
 Returns the Ionic router instance, which provides methods for programmatic navigation with control over page transitions. Use this hook instead of React Router's `useNavigate` when you need to customize the transition animation or use Ionic-aware back navigation.
 
-##### Customizing Page Transitions
+##### Customizing Page Transitions {/* #customizing-page-transitions */}
 
 ```tsx
 import { useIonRouter } from '@ionic/react';
@@ -44,7 +44,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-##### Back Navigation
+##### Back Navigation {/* #back-navigation */}
 
 The `goBack()` method navigates within the current Ionic navigation stack, unlike React Router's `navigate(-1)` which follows the browser's linear history.
 
@@ -64,7 +64,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-##### canGoBack
+##### canGoBack {/* #cangoback */}
 
 Use `canGoBack()` to check whether there are additional routes in the Ionic router's history. This is useful when deciding whether to show a back button or handle the hardware back button on Android.
 
@@ -81,7 +81,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-##### navigateRoot
+##### navigateRoot {/* #navigateroot */}
 
 Use `navigateRoot()` to navigate to a new root pathname, clearing the navigation history and unmounting all previous views. After navigation, `canGoBack()` will return `false`. This is useful for navigating to a new root after login or logout.
 
@@ -101,9 +101,9 @@ const MyComponent: React.FC = () => {
 
 Review the [React Navigation Documentation](./navigation.mdx) for more navigation examples.
 
-### Interfaces
+### Interfaces {/* #interfaces */}
 
-#### UseIonRouterResult
+#### UseIonRouterResult {/* #useionrouterresult */}
 
 ```typescript
 import { AnimationBuilder, RouterDirection, RouteAction, RouterOptions, RouteInfo } from '@ionic/react';

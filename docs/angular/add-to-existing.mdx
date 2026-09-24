@@ -22,7 +22,7 @@ This guide uses `.css` file extensions for stylesheets. If you created your Angu
 
 :::
 
-## Setup
+## Setup {/* #setup */}
 
 :::info
 
@@ -32,7 +32,7 @@ This guide follows the structure of an Angular app created with the Angular CLI.
 
 You can add Ionic Angular to your existing Angular project using the Angular CLI's `ng add` feature or by installing it manually.
 
-### Using ng add
+### Using ng add {/* #using-ng-add */}
 
 The easiest way to add Ionic Angular is to use the Angular CLI's `ng add` feature:
 
@@ -42,17 +42,17 @@ ng add @ionic/angular
 
 This will install the `@ionic/angular` package and automatically configure the necessary imports and styles.
 
-### Manual Installation
+### Manual Installation {/* #manual-installation */}
 
 If you prefer to install Ionic Angular manually, you can follow these steps:
 
-#### 1. Install the Package
+#### 1. Install the Package {/* #1-install-the-package */}
 
 ```bash
 npm install @ionic/angular
 ```
 
-#### 2. Add Ionic Framework Stylesheets
+#### 2. Add Ionic Framework Stylesheets {/* #2-add-ionic-framework-stylesheets */}
 
 Replace the existing `styles` array in `angular.json` with the following:
 
@@ -80,7 +80,7 @@ While `core.css` is required, `normalize.css`, `structure.css`, and `typography.
 
 :::
 
-#### 3. Configure Ionic Angular
+#### 3. Configure Ionic Angular {/* #3-configure-ionic-angular */}
 
 Update `src/app/app.config.ts` to include `provideIonicAngular`:
 
@@ -98,7 +98,7 @@ export const appConfig: ApplicationConfig = {
 
 This reflects the Angular 21 and 22 scaffold, which is zoneless by default. If your existing app is on Angular 18 through 20, it still has `provideZoneChangeDetection({ eventCoalescing: true })`; keep that provider and add `provideIonicAngular({})` alongside it. Refer to [Zoneless Change Detection](/angular/zoneless.mdx) for details.
 
-## Using Individual Components
+## Using Individual Components {/* #using-individual-components */}
 
 After completing the setup above, you can start using Ionic components in your existing Angular app. Here's an example of how to use them:
 
@@ -125,11 +125,11 @@ export class App {}
 
 Visit the [components](/components.mdx) page for all of the available Ionic components.
 
-## Using Ionic Pages
+## Using Ionic Pages {/* #using-ionic-pages */}
 
 If you want to use Ionic pages with full navigation and page transitions, follow these additional setup steps.
 
-#### 1. Add Additional Ionic Framework Stylesheets
+#### 1. Add Additional Ionic Framework Stylesheets {/* #1-add-additional-ionic-framework-stylesheets */}
 
 Replace the existing `styles` array in `angular.json` with the following:
 
@@ -174,7 +174,7 @@ Replace the existing `styles` array in `angular.json` with the following:
 
 These stylesheets set up the overall page structure and provide [CSS utilities](/layout/css-utilities.mdx) for faster development. Some stylesheets are optional. For details on which stylesheets are required, check out [Global Stylesheets](/layout/global-stylesheets.mdx).
 
-#### 2. Set up Theming
+#### 2. Set up Theming {/* #2-set-up-theming */}
 
 Create a `src/theme/variables.css` file with the following content:
 
@@ -193,7 +193,7 @@ Create a `src/theme/variables.css` file with the following content:
 
 This file enables [dark mode support](/theming/dark-mode.mdx) for your Ionic app when the system is set to prefer a dark appearance. You can customize the theming behavior by uncommenting different dark palette imports or adding custom CSS variables.
 
-#### 3. Update the App Component
+#### 3. Update the App Component {/* #3-update-the-app-component */}
 
 Update `src/app/app.html` to the following:
 
@@ -218,7 +218,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular';
 export class App {}
 ```
 
-#### 4. Create a Home Page
+#### 4. Create a Home Page {/* #4-create-a-home-page */}
 
 Start by adding a template at `src/app/home/home.html`:
 
@@ -293,7 +293,7 @@ Finally, add a `src/app/home/home.css` file:
 }
 ```
 
-#### 5. Set up Routing
+#### 5. Set up Routing {/* #5-set-up-routing */}
 
 Update `src/app/app.routes.ts` to add a `home` route:
 
@@ -316,7 +316,7 @@ export const routes: Routes = [
 
 You're all set! Your Ionic Angular app is now configured with full Ionic page support. Run `ng serve` to start your development server and view your app.
 
-## Next Steps
+## Next Steps {/* #next-steps */}
 
 Now that you have Ionic Angular integrated into your project, check out:
 

@@ -13,7 +13,7 @@ strip_number_prefixes: false
 
 Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
 
-## Import Platform API
+## Import Platform API {/* #import-platform-api */}
 
 Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
 
@@ -33,7 +33,7 @@ import { isPlatform } from '@ionic/vue';
 // ...existing code...
 ```
 
-## Platform-specific Logic
+## Platform-specific Logic {/* #platform-specific-logic */}
 
 First, we’ll update the photo saving functionality to support mobile. In the `savePicture()` method, check which platform the app is running on. If it’s “hybrid” (Capacitor, the native runtime), then read the photo file into base64 format using the `Filesystem.readFile()` method. Otherwise, use the same logic as before when running the app on the web.
 

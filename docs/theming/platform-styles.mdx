@@ -12,7 +12,7 @@ title: Platform Styles
 
 Ionic provides platform specific styles based on the device the application is running on. Styling the components to match the device guidelines allows the application to be written once but look and feel native to the user depending on where it is accessed.
 
-## Ionic Modes
+## Ionic Modes {/* #ionic-modes */}
 
 Ionic uses **modes** to customize the look of components. Each **platform** has a default **mode**, but this can be overridden through the global [config](../developing/config.mdx). The following chart displays the default **mode** that is added to each **platform**:
 
@@ -30,7 +30,7 @@ For example, an app being viewed on an Android platform will use the `md` (Mater
 
 _Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../developing/config.mdx) of an app._
 
-## Overriding Mode Styles
+## Overriding Mode Styles {/* #overriding-mode-styles */}
 
 Each Ionic component can be styled based on the mode. The `html` element has both a `class` and `mode` attribute with a value equal to the current mode. These can be used to override styles for any component. For example, to style an `ion-badge` to have `uppercase` text only in `ios` mode:
 
