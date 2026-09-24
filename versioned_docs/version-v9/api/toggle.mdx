@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/toggle/basic/index.mdx';
 
 <Basic />
 
-## On / Off Labels
+## On / Off Labels {/* #on--off-labels */}
 
 Toggles can enable on/off labels by setting the `enableOnOffLabels` property. This is important for accessibility as it makes it easier to differentiate between a checked and unchecked toggle.
 
@@ -37,7 +37,7 @@ import OnOff from '@site/static/usage/v9/toggle/on-off/index.mdx';
 
 <OnOff />
 
-## Toggles in a List
+## Toggles in a List {/* #toggles-in-a-list */}
 
 Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
 
@@ -45,7 +45,7 @@ import List from '@site/static/usage/v9/toggle/list/index.mdx';
 
 <List />
 
-## Label Placement
+## Label Placement {/* #label-placement */}
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
@@ -53,7 +53,7 @@ import LabelPlacement from '@site/static/usage/v9/toggle/label-placement/index.m
 
 <LabelPlacement />
 
-## Alignment
+## Alignment {/* #alignment */}
 
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
@@ -67,7 +67,7 @@ import Alignment from '@site/static/usage/v9/toggle/alignment/index.mdx';
 
 <Alignment />
 
-## Justification
+## Justification {/* #justification */}
 
 Developers can use the `justify` property to control how the label and control are packed on a line.
 
@@ -75,7 +75,7 @@ import Justify from '@site/static/usage/v9/toggle/justify/index.mdx';
 
 <Justify />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 Helper and error text can be used inside of a toggle with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-toggle`. This ensures errors are not shown before the user has a chance to enter data.
 
@@ -85,15 +85,15 @@ import HelperError from '@site/static/usage/v9/toggle/helper-error/index.mdx';
 
 <HelperError />
 
-## Theming
+## Theming {/* #theming */}
 
-### Colors
+### Colors {/* #colors */}
 
 import Colors from '@site/static/usage/v9/toggle/theming/colors/index.mdx';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
 
@@ -101,7 +101,7 @@ import CSSProps from '@site/static/usage/v9/toggle/theming/css-properties/index.
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS Shadow Parts {/* #css-shadow-parts */}
 
 We can further customize toggle by targeting specific shadow parts that are exposed. Any CSS property on these parts can be styled and they can also be combined with CSS custom properties.
 
@@ -109,9 +109,9 @@ import CSSParts from '@site/static/usage/v9/toggle/theming/css-shadow-parts/inde
 
 <CSSParts />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ToggleChangeEventDetail
+### ToggleChangeEventDetail {/* #togglechangeeventdetail */}
 
 ```typescript
 interface ToggleChangeEventDetail<T = any> {
@@ -120,7 +120,7 @@ interface ToggleChangeEventDetail<T = any> {
 }
 ```
 
-### ToggleCustomEvent
+### ToggleCustomEvent {/* #togglecustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -131,26 +131,26 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts-1 */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

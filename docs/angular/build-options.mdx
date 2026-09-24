@@ -7,7 +7,7 @@ Developers have two options for using Ionic components: Standalone or Modules. T
 
 The Standalone approach uses modern Angular APIs and is the recommended way to build Ionic applications. The Modules approach, including `IonicModule`, is **deprecated** and will be removed in a future major release. New projects should use the Standalone approach. Existing apps will continue to work but should plan to migrate. Refer to [Migrating from Modules to Standalone](#migrating-from-modules-to-standalone) for migration guidance.
 
-## Standalone
+## Standalone {/* #standalone */}
 
 :::info
 
@@ -15,7 +15,7 @@ Ionic UI components as Angular standalone components is supported starting in Io
 
 :::
 
-### Overview
+### Overview {/* #overview */}
 
 Developers can use Ionic components as standalone components to take advantage of treeshaking and newer Angular features. This option involves importing specific Ionic components in the Angular components you want to use them in. Developers can use Ionic standalone components even if their Angular application is NgModule-based.
 
@@ -37,7 +37,7 @@ Ionic ships standalone components from a single entry point (`@ionic/angular`). 
 
 :::
 
-### Usage with Standalone-based Applications
+### Usage with Standalone-based Applications {/* #usage-with-standalone-based-applications */}
 
 :::warning
 
@@ -206,7 +206,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 </TabItem>
 </Tabs>
 
-### Usage with NgModule-based Applications
+### Usage with NgModule-based Applications {/* #usage-with-ngmodule-based-applications */}
 
 :::warning
 
@@ -371,7 +371,7 @@ Ionic Angular's standalone components use ES Modules. As a result, developers us
 </TabItem>
 </Tabs>
 
-## Modules
+## Modules {/* #modules */}
 
 :::warning[Deprecation Notice]
 
@@ -379,7 +379,7 @@ The Modules approach, including `IonicModule`, is **deprecated** and will be rem
 
 :::
 
-### Overview
+### Overview {/* #overview-1 */}
 
 Developers can also use the Modules approach by importing `IonicModule` and calling `IonicModule.forRoot()` in the `imports` array in `app.module.ts`. This registers a version of Ionic where Ionic components will be lazily loaded at runtime.
 
@@ -392,7 +392,7 @@ Developers can also use the Modules approach by importing `IonicModule` and call
 1. Lazily loading Ionic components means that the compiler does not know which components are needed at build time. This means your final application bundle may be much larger than it needs to be.
 2. Developers are unable to use newer Angular features such as [ESBuild](https://angular.io/guide/esbuild).
 
-### Usage
+### Usage {/* #usage */}
 
 In the example below, we are using `IonicModule` to create a lazily loaded version of Ionic. We can then reference any Ionic component without needing to explicitly import it.
 
@@ -412,7 +412,7 @@ import { AppComponent } from './app.component';
 export class AppModule {}
 ```
 
-## Migrating from Modules to Standalone
+## Migrating from Modules to Standalone {/* #migrating-from-modules-to-standalone */}
 
 :::tip
 
@@ -428,7 +428,7 @@ Migrating to Ionic standalone components must be done all at the same time and c
 
 Developers are encouraged to try the [automated migration utility](https://github.com/ionic-team/ionic-angular-standalone-codemods), though they can also follow the steps below if they would like to manually migrate their applications.
 
-### Standalone-based Applications
+### Standalone-based Applications {/* #standalone-based-applications */}
 
 Follow these steps if your Angular application is already using the standalone architecture, and you want to use Ionic UI components as standalone components too.
 
@@ -551,7 +551,7 @@ export class TestComponent {}
 }
 ```
 
-### NgModule-based Applications
+### NgModule-based Applications {/* #ngmodule-based-applications */}
 
 Follow these steps if your Angular application is still using the NgModule architecture, but you want to adopt Ionic UI components as standalone components now.
 

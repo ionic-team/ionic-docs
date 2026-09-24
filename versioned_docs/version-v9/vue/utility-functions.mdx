@@ -13,17 +13,17 @@ sidebar_label: Utility Functions
 
 Ionic Vue ships with several utility functions that you can use in your application to make certain tasks easier such as managing the on-screen keyboard and the hardware back button.
 
-## Router
+## Router {/* #router */}
 
-### Functions
+### Functions {/* #functions */}
 
-#### useIonRouter
+#### useIonRouter {/* #useionrouter */}
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](#useionrouterresult)
 
 Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) from Vue.
 
-##### Customizing Page Transitions
+##### Customizing Page Transitions {/* #customizing-page-transitions */}
 
 ```js
 import { IonPage, useIonRouter } from '@ionic/vue';
@@ -38,7 +38,7 @@ const back = () => {
 };
 ```
 
-##### Back Navigation
+##### Back Navigation {/* #back-navigation */}
 
 You may want to know if you are at the root page of the application when a user presses the hardware back button on Android.
 
@@ -53,9 +53,9 @@ if (ionRouter.canGoBack()) {
 
 For additional APIs with Vue routing, please refer to the [Vue Router documentation](https://router.vuejs.org/api/index.html).
 
-### Interfaces
+### Interfaces {/* #interfaces */}
 
-#### UseIonRouterResult
+#### UseIonRouterResult {/* #useionrouterresult */}
 
 ```ts
 import { AnimationBuilder } from '@ionic/vue';
@@ -84,7 +84,7 @@ useIonRouter(): UseIonRouterResult;
 
 Refer to the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
 
-## Hardware Back Button
+## Hardware Back Button {/* #hardware-back-button */}
 
 The `useBackButton` function can be used to register a callback function to fire whenever the hardware back button on Android is pressed. Additionally it accepts a priority parameter, allowing developers to customize which handler fires first if multiple handlers are registered.
 
@@ -98,7 +98,7 @@ useBackButton(10, () => {
 });
 ```
 
-### Interfaces
+### Interfaces {/* #interfaces-1 */}
 
 ```ts
 type Handler = (processNextHandler: () => void) => Promise<any> | void | null;
@@ -117,7 +117,7 @@ The `useBackButton` callback will only fire when your app is running in Capacito
 
 :::
 
-## Keyboard
+## Keyboard {/* #keyboard */}
 
 The `useKeyboard` function returns an object that contains the state of the on-screen keyboard. This object provides information such as whether or not the on-screen keyboard is presented and what the height of the keyboard is in pixels. This information is provided in a Vue `ref` so it will be reactive in your application.
 
@@ -132,7 +132,7 @@ watch(keyboardHeight, () => {
 });
 ```
 
-### Interfaces
+### Interfaces {/* #interfaces-2 */}
 
 ```ts
 interface UseKeyboardResult {
@@ -146,7 +146,7 @@ useKeyboard(): UseKeyboardResult;
 
 Refer to the [Keyboard Documentation](../developing/keyboard) for more information and usage examples.
 
-## Ionic Lifecycles
+## Ionic Lifecycles {/* #ionic-lifecycles */}
 
 Ionic Vue provides several lifecycle hooks for the `setup()` function to tap into the Ionic Framework page lifecycle.
 

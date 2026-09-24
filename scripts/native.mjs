@@ -1,4 +1,5 @@
 import { writeFileSync } from 'fs';
+import { writeMarkdownHeadingId } from '@docusaurus/utils';
 
 const tag = 'latest';
 
@@ -32,7 +33,9 @@ const pluginApis = [
 async function buildPluginApiDocs(pluginId) {
   const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
-  const apiContent = createApiPage(pluginId, readme, pkgJson);
+  const apiContent = writeMarkdownHeadingId(createApiPage(pluginId, readme, pkgJson), {
+    syntax: 'mdx-comment',
+  });
   const fileName = `${pluginId}.mdx`;
 
   writeFileSync(`docs/native/${fileName}`, apiContent);

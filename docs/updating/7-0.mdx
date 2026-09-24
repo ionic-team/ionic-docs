@@ -16,9 +16,9 @@ For a **complete list of breaking changes** from Ionic 6 to Ionic 7, please refe
 
 :::
 
-## Getting Started
+## Getting Started {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 7 supports Angular 14+. Update to the latest version of Angular by following the [Angular Update Guide](https://update.angular.io/).
 2. If your project is using rxjs, Ionic 7 requires a minimum rxjs version of 7.5.0:
@@ -41,7 +41,7 @@ npm install @ionic/angular@7 @ionic/angular-server@7 @ionic/angular-toolkit@9
 
 > Note: `@ionic/angular-toolkit@9` requires a minimum of Angular 15. If you are still on Angular 14, then you can skip updating to `@ionic/angular-toolkit@9`.
 
-### React
+### React {/* #react */}
 
 1. Ionic 7 supports React 17+. Update to the latest version of React:
 
@@ -55,7 +55,7 @@ npm install react@latest react-dom@latest
 npm install @ionic/react@7 @ionic/react-router@7
 ```
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 7 supports Vue 3.0.6+. Update to the latest version of Vue:
 
@@ -69,7 +69,7 @@ npm install vue@latest vue-router@latest
 npm install @ionic/vue@7 @ionic/vue-router@7
 ```
 
-### Core
+### Core {/* #core */}
 
 1. Update to the latest version of Ionic 7:
 
@@ -77,9 +77,9 @@ npm install @ionic/vue@7 @ionic/vue-router@7
 npm install @ionic/core@7
 ```
 
-## Updating Your Code
+## Updating Your Code {/* #updating-your-code */}
 
-### Browser Support
+### Browser Support {/* #browser-support */}
 
 The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
 
@@ -94,41 +94,41 @@ Safari >=14
 iOS >=14
 ```
 
-### Types
+### Types {/* #types */}
 
 1. `ActionSheetAttributes`, `AlertAttributes`, `AlertTextareaAttributes`, `AlertInputAttributes`, `LoadingAttributes`, `ModalAttributes`, `PickerAttributes`, `PopoverAttributes`, and `ToastAttributes` have been removed. Developers should use `{ [key: string]: any }` instead.
 
-### Checkbox
+### Checkbox {/* #checkbox */}
 
 1. Rename any usages of the `--background` and `--background-checked` CSS Variables to `--checkbox-background` and `--checkbox-background-checked`, respectively.
 
-### Datetime
+### Datetime {/* #datetime */}
 
 1. Remove any code that sets the `value` property to the empty string (`''`).
 2. Remove any code that accesses the time zone information on the `value` property. Datetime does not manage time zones, so any time zone information provided is ignored.
 
-### Input
+### Input {/* #input */}
 
 1. Update any code that accesses the `detail` payload for the `ionInput` event from `event.detail` to `event.detail.value` as the detail payload is now an object containing a value and an event.
 
-### Modal
+### Modal {/* #modal */}
 
 1. Remove any usage of the `swipeToClose` property. Card modals are swipeable by default, so you can remove `swipeToClose` if you want your card modal to remain swipeable. Use the [canDismiss](https://ionicframework.com/docs/api/modal#preventing-a-modal-from-dismissing) property if you want to prevent a modal from dismissing.
 2. Remove any code that sets the `canDismiss` property to `undefined`. The `canDismiss` property now defaults to `true`, so this code is no longer needed.
 
-### Picker
+### Picker {/* #picker */}
 
 1. Remove any code that accesses `refresh` on `ion-picker-column`. Developers should use the `columns` property on `ion-picker` to refresh the view instead.
 
-### Searchbar
+### Searchbar {/* #searchbar */}
 
 1. Update any code that accesses the `detail` payload for the `ionInput` event from `event.detail` to `event.detail.value` as the detail payload is now an object containing a value and an event.
 
-### Segment
+### Segment {/* #segment */}
 
 1. Remove any code that sets the `value` property to `null`. Developers should use either `''` or `undefined` instead.
 
-### Slides
+### Slides {/* #slides */}
 
 1. Remove `ion-slides`, `ion-slide`, and any associated types. These components have been removed in favor of using Swiper.js directly. The guides below contain more information about this migration:
 
@@ -136,15 +136,15 @@ iOS >=14
 [React Migration Guide](https://ionicframework.com/docs/react/slides)<br />
 [Vue Migration Guide](https://ionicframework.com/docs/vue/slides)
 
-### Textarea
+### Textarea {/* #textarea */}
 
 1. Update any code that accesses the `detail` payload for the `ionInput` event from `event.detail` to `event.detail.value` as the detail payload is now an object containing a value and an event.
 
-### Toggle
+### Toggle {/* #toggle */}
 
 1. Rename any usages of the `--background` and `--background-checked` CSS Variables to `--track-background` and `--track-background-checked`, respectively.
 
-### Virtual Scroll
+### Virtual Scroll {/* #virtual-scroll */}
 
 1. Remove `ion-virtual-scroll` and any associated types. This component has been removed in favor of using virtual scroll solutions provided by JavaScript Frameworks. The guides below contain more information about this migration:
 
@@ -152,7 +152,7 @@ iOS >=14
 [React Migration Guide](https://ionicframework.com/docs/react/virtual-scroll)<br />
 [Vue Migration Guide](https://ionicframework.com/docs/vue/virtual-scroll)
 
-## Need Help Upgrading?
+## Need Help Upgrading? {/* #need-help-upgrading */}
 
 Be sure to review the [Ionic 7 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-7x). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that require user action are listed on this page.
 

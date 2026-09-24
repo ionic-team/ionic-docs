@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Title is a text component that sets the title for a [toolbar](./toolbar). It can be used to describe the screen or section a user is currently on or the app being used.
 
-## Basic
+## Basic {/* #basic */}
 
 import Basic from '@site/static/usage/v10/title/basic/index.mdx';
 
 <Basic />
 
-## Collapsible Large Titles
+## Collapsible Large Titles {/* #collapsible-large-titles */}
 
 The large title will display when the [content](./content) is scrolled to the start of the scroll container. When the title is scrolled behind the header, the condensed title will fade in.
 
@@ -43,7 +43,7 @@ import CollapsibleLargeTitle from '@site/static/usage/v10/title/collapsible-larg
 
 <CollapsibleLargeTitle />
 
-### Collapsible Buttons
+### Collapsible Buttons {/* #collapsible-buttons */}
 
 The [buttons](./buttons.mdx) component can be used with the [`collapse`](./buttons.mdx#prop-collapse) property to additionally display in the header as the toolbar is collapsed.
 
@@ -51,9 +51,9 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v10/title/collapsib
 
 <CollapsibleLargeTitleButtons />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Headings
+### Headings {/* #headings */}
 
 When creating headings, we typically recommend using [semantic heading elements (h1-h6)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements). However, there may be instances where you need to update Title to be treated as a particular heading by assistive technologies. For example, if you have a Title at the top of a view, you may want this to be considered a level 1 heading.
 
@@ -63,7 +63,7 @@ For example, if we wanted to make a Title behave like an `h1` element, we would 
 
 Since multiple Title elements can be used on a view in conjunction with semantic heading elements, Ionic does not automatically set the Title's `role` or `aria-level`. It is the responsibility of the developer to handle this.
 
-## Theming
+## Theming {/* #theming */}
 
 The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the toolbar containing the collapsible large title should always match the background color of the content.
 
@@ -73,32 +73,32 @@ You can change the background color of the toolbar with the standard title by se
 
 When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 import CSSCustomProperties from '@site/static/usage/v10/title/theming/css-properties/index.mdx';
 
 <CSSCustomProperties />
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

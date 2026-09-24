@@ -16,7 +16,7 @@ For a **complete list of breaking changes** from Ionic 8 to Ionic 9, please refe
 
 :::
 
-## Automated Migration
+## Automated Migration {/* #automated-migration */}
 
 Before manually working through the changes below, you can run the Ionic migration tool. It scans your app, automatically applies the breaking changes that can be safely migrated, and prints a checklist of the remaining updates that require manual work. Each item includes the affected file, line number, and a link to the corresponding section of this guide. Because the tool reads your framework and version from `package.json`, it only applies migrations that are relevant to your app.
 
@@ -45,9 +45,9 @@ Run `npx @ionic/migrate --help` for the full list.
 
 The tool is single-shot. Once it bumps your `@ionic/*` version, a re-run detects the new major and does nothing, so run it once per major upgrade and review the diff before committing.
 
-## Getting Started
+## Getting Started {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 9 supports Angular 18 through 22. Angular 16 and 17 are no longer supported. Update to a supported version of Angular by following the [Angular Update Guide](https://update.angular.io/).
 
@@ -63,7 +63,7 @@ If you are using Ionic Angular Server and Ionic Angular Toolkit, be sure to upda
 npm install @ionic/angular@latest @ionic/angular-server@latest @ionic/angular-toolkit@latest
 ```
 
-#### Zoneless Change Detection
+#### Zoneless Change Detection {/* #zoneless-change-detection */}
 
 Ionic 9 supports zoneless change detection. Angular 21 made zoneless the default, so a new Ionic 9 app on Angular 21 or later runs without Zone.js out of the box and no change-detection provider is required.
 
@@ -75,7 +75,7 @@ On Angular 18 through 20, Zone.js remains Angular's default, so those versions a
 
 :::
 
-##### Keeping Zone.js
+##### Keeping Zone.js {/* #keeping-zonejs */}
 
 If you prefer to keep using Zone.js on Angular 21 or later, opt back in with `provideZoneChangeDetection()`.
 
@@ -121,7 +121,7 @@ If your project uses a polyfills file instead (for example, Ionic starters set `
 import 'zone.js';
 ```
 
-#### OnPush Change Detection on Angular 22
+#### OnPush Change Detection on Angular 22 {/* #onpush-change-detection-on-angular-22 */}
 
 Angular 22 changes the default change detection strategy to `OnPush` for components that don't declare one. Combined with the zoneless default above, component state you mutate as a plain field from an Ionic lifecycle hook (`ionViewWillEnter`, and so on) no longer re-renders on its own.
 
@@ -148,23 +148,23 @@ Ionic's own Angular components already declare `OnPush`, so they are unaffected.
 
 :::
 
-#### TypeScript
+#### TypeScript {/* #typescript */}
 
 Ionic 9 supports TypeScript 5.4 or later, matching the minimum for Angular 18. Angular 21 requires TypeScript 5.9 or later, and Angular 22 requires TypeScript 6.0 or later.
 
-#### Node.js
+#### Node.js {/* #nodejs */}
 
 Angular 22 raises the minimum Node.js version to `^22.22.3 || ^24.15.0 || ^26.0.0`. Angular 18 through 21 are unaffected.
 
-#### Component Imports
+#### Component Imports {/* #component-imports */}
 
 Ionic 9 makes standalone components the default import path. Change lazy-loaded component imports from `@ionic/angular` to `@ionic/angular/lazy`. Change standalone component imports from `@ionic/angular/standalone` to `@ionic/angular`.
 
-#### IonicModule Deprecation
+#### IonicModule Deprecation {/* #ionicmodule-deprecation */}
 
 `IonicModule` is deprecated in Ionic 9 and will be removed in a future major version. It remains fully functional, so no immediate action is required. When you are ready, migrate to `provideIonicAngular()`, which works in both standalone and NgModule-based apps. Refer to [Migrating from Modules to Standalone](/angular/build-options.mdx#migrating-from-modules-to-standalone).
 
-#### CSS Imports
+#### CSS Imports {/* #css-imports */}
 
 Remove the `~` prefix from `@ionic/angular` CSS imports. Angular's current build pipeline no longer supports the webpack-loader prefix:
 
@@ -173,11 +173,11 @@ Remove the `~` prefix from `@ionic/angular` CSS imports. Angular's current build
 + @import '@ionic/angular/css/core.css';
 ```
 
-#### Module Resolution
+#### Module Resolution {/* #module-resolution */}
 
 If your app uses TypeScript `moduleResolution: "node"` (classic), imports from subpaths such as `@ionic/angular/lazy` can fail to resolve. Set `moduleResolution` to `"bundler"` in your `tsconfig.json`. Apps created with `ng new` on Angular 17 or later already use this.
 
-### React
+### React {/* #react */}
 
 1. Ionic 9 supports React 18+. Update to the latest version of React:
 
@@ -195,7 +195,7 @@ npm install @ionic/react@latest @ionic/react-router@latest
 
 The `@ionic/react` package requires TypeScript 5.4 or later. Its type definitions use `NoInfer`, which TypeScript added in 5.4.
 
-#### Typed Overlay Hook Props
+#### Typed Overlay Hook Props {/* #typed-overlay-hook-props */}
 
 The `useIonModal` and `useIonPopover` hooks now type `componentProps` against the component they are given, instead of accepting `any`. Passing props that do not match the component is a compile error, and `componentProps` is required when the component declares required props:
 
@@ -227,7 +227,7 @@ Running the [migration tool](#automated-migration) with `npx @ionic/migrate --ex
 
 Passing a JSX element rather than a component behaves as before: props are bound to the element and `componentProps` is not type checked.
 
-### React Router
+### React Router {/* #react-router */}
 
 1. Ionic 9 supports React Router 6. Update to version 6 of React Router:
 
@@ -243,7 +243,7 @@ npm uninstall @types/react-router @types/react-router-dom
 
 Ionic React now requires React Router v6, which has a different API from v5. Below are the key changes you'll need to make.
 
-#### Route Definition Changes
+#### Route Definition Changes {/* #route-definition-changes */}
 
 The `component` and `render` props have been replaced with the `element` prop, which accepts JSX:
 
@@ -261,7 +261,7 @@ Routes can no longer render content via nested children. All route content must 
 + <Route path="/" element={<Home />} />
 ```
 
-#### Redirect Changes
+#### Redirect Changes {/* #redirect-changes */}
 
 The `<Redirect>` component has been replaced with `<Navigate>`:
 
@@ -273,7 +273,7 @@ The `<Redirect>` component has been replaced with `<Navigate>`:
 + <Navigate to="/home" replace />
 ```
 
-#### Nested Route Paths
+#### Nested Route Paths {/* #nested-route-paths */}
 
 Routes that contain nested routes or child `IonRouterOutlet` components need a `/*` suffix to match sub-paths:
 
@@ -282,7 +282,7 @@ Routes that contain nested routes or child `IonRouterOutlet` components need a `
 + <Route path="/tabs/*" element={<Tabs />} />
 ```
 
-#### Accessing Route Parameters
+#### Accessing Route Parameters {/* #accessing-route-parameters */}
 
 Route parameters are now accessed via the `useParams` hook instead of props:
 
@@ -296,7 +296,7 @@ Route parameters are now accessed via the `useParams` hook instead of props:
 +   const { id } = useParams<{ id: string }>();
 ```
 
-#### RouteComponentProps Removed
+#### RouteComponentProps Removed {/* #routecomponentprops-removed */}
 
 The `RouteComponentProps` type and its `history`, `location`, and `match` props are no longer available in React Router v6. Use the equivalent hooks instead:
 
@@ -325,7 +325,7 @@ The `RouteComponentProps` type and its `history`, `location`, and `match` props 
 +   console.log(location.pathname);
 ```
 
-#### Exact Prop Removed
+#### Exact Prop Removed {/* #exact-prop-removed */}
 
 The `exact` prop is no longer needed. React Router v6 routes match exactly by default. To match sub-paths, use a `/*` suffix on the path:
 
@@ -334,7 +334,7 @@ The `exact` prop is no longer needed. React Router v6 routes match exactly by de
 + <Route path="/home" />
 ```
 
-#### Render Prop Removed
+#### Render Prop Removed {/* #render-prop-removed */}
 
 The `render` prop has been replaced with the `element` prop:
 
@@ -343,7 +343,7 @@ The `render` prop has been replaced with the `element` prop:
 + <Route path="/foo" element={<Foo />} />
 ```
 
-#### Programmatic Navigation
+#### Programmatic Navigation {/* #programmatic-navigation */}
 
 The `useHistory` hook has been replaced with `useNavigate`:
 
@@ -366,7 +366,7 @@ The `useHistory` hook has been replaced with `useNavigate`:
 + router.goBack();
 ```
 
-#### Custom History Prop Removed
+#### Custom History Prop Removed {/* #custom-history-prop-removed */}
 
 The `history` prop has been removed from `IonReactRouter`, `IonReactHashRouter`, and `IonReactMemoryRouter`. React Router v6 routers no longer accept custom `history` objects.
 
@@ -386,7 +386,7 @@ For `IonReactMemoryRouter` (commonly used in tests), use `initialEntries` instea
 + <IonReactMemoryRouter initialEntries={['/start']}>
 ```
 
-#### IonRedirect Removed
+#### IonRedirect Removed {/* #ionredirect-removed */}
 
 The `IonRedirect` component has been removed. Use React Router's `<Navigate>` component instead:
 
@@ -397,7 +397,7 @@ The `IonRedirect` component has been removed. Use React Router's `<Navigate>` co
 + <Route path="/old" element={<Navigate to="/new" replace />} />
 ```
 
-#### Path Regex Constraints Removed
+#### Path Regex Constraints Removed {/* #path-regex-constraints-removed */}
 
 React Router v6 no longer supports regex constraints in path parameters (e.g., `/:tab(sessions)`). Use literal paths instead:
 
@@ -408,7 +408,7 @@ React Router v6 no longer supports regex constraints in path parameters (e.g., `
 + <Route path="/sessions/:id" element={<SessionDetail />} />
 ```
 
-#### IonRoute API Changes
+#### IonRoute API Changes {/* #ionroute-api-changes */}
 
 The `IonRoute` component follows the same API changes as React Router's `<Route>`. The `render` prop has been replaced with `element`, and the `exact` prop has been removed:
 
@@ -419,7 +419,7 @@ The `IonRoute` component follows the same API changes as React Router's `<Route>
 
 For more information on migrating from React Router v5 to v6, refer to the [React Router v6 Upgrade Guide](https://reactrouter.com/6.28.0/upgrading/v5).
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 9 supports Vue 3.5+. Update to the latest version of Vue:
 
@@ -433,7 +433,7 @@ npm install vue@latest
 npm install @ionic/vue@latest @ionic/vue-router@latest
 ```
 
-### Vue Router
+### Vue Router {/* #vue-router */}
 
 1. Ionic 9 supports Vue Router 5. Update to the latest version of Vue Router:
 
@@ -445,7 +445,7 @@ npm install vue-router@5
 
 Vue Router v5 is a transition release that ships no runtime breaking changes for Vue Router v4 consumers, so no application code changes are required for routes, navigation guards, or `IonRouterOutlet`.
 
-#### Deprecation Warning for `next()` in Navigation Guards
+#### Deprecation Warning for `next()` in Navigation Guards {/* #deprecation-warning-for-next-in-navigation-guards */}
 
 Vue Router v5 prints a deprecation warning when `next()` is called inside `beforeRouteLeave`, `beforeRouteEnter`, `beforeRouteUpdate`, or `router.beforeEach`. The callback form still works, but Vue Router v6 will remove it. Migrate to the return-value pattern:
 
@@ -472,7 +472,7 @@ Vue Router v5 prints a deprecation warning when `next()` is called inside `befor
 
 For more information on migrating from Vue Router v4 to v5, refer to the [Vue Router v4-to-v5 migration guide](https://router.vuejs.org/guide/migration/v4-to-v5.html).
 
-### Core
+### Core {/* #core */}
 
 1. Update to the latest version of Ionic 9:
 
@@ -480,7 +480,7 @@ For more information on migrating from Vue Router v4 to v5, refer to the [Vue Ro
 npm install @ionic/core@latest
 ```
 
-#### Package Exports
+#### Package Exports {/* #package-exports */}
 
 `@ionic/core`'s `package.json` now declares an `exports` field. This fixes subpaths like `@ionic/core/components` and `@ionic/core/loader` failing under Node ESM with `ERR_UNSUPPORTED_DIR_IMPORT`. The strict ESM resolver doesn't read the nested `package.json` files the package previously relied on, and the `exports` field replaces them. This affects toolchains such as Angular 21's default Vitest builder and raw Node.
 
@@ -497,9 +497,9 @@ The `exports` field defines the supported public entry points, and imports of pa
 
 Apps on `moduleResolution: "node"` (classic) and webpack 4 keep resolving through the legacy fields and need no changes.
 
-## Required Changes
+## Required Changes {/* #required-changes */}
 
-### Browser Support
+### Browser Support {/* #browser-support */}
 
 The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
 
@@ -514,13 +514,13 @@ Safari >=16
 iOS >=16
 ```
 
-### Capacitor
+### Capacitor {/* #capacitor */}
 
 Ionic 9 officially supports Capacitor 7 and later. Native platform detection no longer falls back to the Capacitor 2 `isNative` flag; `isCapacitorNative` now relies solely on `Capacitor.isNativePlatform()`, which was added in Capacitor 3.
 
 If your app is still on Capacitor 2, it will no longer be detected as running on a native platform, so `isPlatform('capacitor')`, `isPlatform('hybrid')`, and `getPlatforms()` will report `web` instead of native. Upgrade to Capacitor 7 or later by following the [Capacitor updating guides](https://capacitorjs.com/docs/updating/7-0).
 
-### Img
+### Img {/* #img */}
 
 `ion-img` is deprecated and will be removed in Ionic 10. The component was created to lazy-load images before browsers supported lazy loading natively. Modern browsers now support the [`loading="lazy"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading) attribute on the native `<img>` element, so the component is no longer needed.
 
@@ -531,7 +531,7 @@ Replace `ion-img` with a native `<img>` tag. Add `loading="lazy"` for lazy loadi
 + <img src="/assets/image.png" alt="Description" loading="lazy" decoding="async" />
 ```
 
-#### Events
+#### Events {/* #events */}
 
 The native `<img>` element does not emit Ionic's custom events. Use the standard DOM events instead:
 
@@ -543,7 +543,7 @@ The native `<img>` element does not emit Ionic's custom events. Use the standard
 
 ¹ Native `load` and `error` do not bubble, while the Ionic events did. If you used event delegation (one listener on a parent), listen on each `<img>` instead, or use the capture phase: `parent.addEventListener('load', handler, true)`.
 
-#### Styling
+#### Styling {/* #styling */}
 
 `ion-img` exposed an `image` CSS shadow part for styling the inner image. With a native `<img>`, style the element directly instead:
 
@@ -556,7 +556,7 @@ The native `<img>` element does not emit Ionic's custom events. Use the standard
 + }
 ```
 
-### Input
+### Input {/* #input */}
 
 #### `autocorrect` Property Type Changed to Boolean {/* #input-autocorrect-property-type-changed-to-boolean */}
 
@@ -604,7 +604,7 @@ Update your selectors to account for these structural changes:
 +ion-input .input-end [slot="end"] { }
 ```
 
-### Legacy Picker
+### Legacy Picker {/* #legacy-picker */}
 
 The `ion-picker-legacy` and `ion-picker-legacy-column` components have been removed.
 
@@ -612,9 +612,9 @@ The `ion-picker-legacy` and `ion-picker-legacy-column` components have been remo
 - Remove any usages of `pickerController`. If using React, remove any usages of the `useIonPicker` hook. These controller-based APIs have been removed. Use the [Picker](../api/picker.mdx) component instead.
 - Remove any usages of the `PickerOptions`, `PickerButton`, `PickerColumn`, and `PickerColumnOption` type exports. These types were associated with the legacy picker and have been removed.
 
-### Modal
+### Modal {/* #modal */}
 
-#### `handleBehavior` Default Changed
+#### `handleBehavior` Default Changed {/* #handlebehavior-default-changed */}
 
 The `handleBehavior` property on `ion-modal` now defaults to `"cycle"` instead of `"none"`. For sheet modals that display a handle, this means the handle is now focusable and activating it (by click, keyboard, or screen reader) cycles the sheet through its available breakpoints. This matches the native iOS sheet behavior and keeps sheet modals operable for assistive technology users by default.
 
@@ -624,9 +624,9 @@ Sheet modals that relied on the handle being inert should set `handleBehavior="n
 <ion-modal handle-behavior="none"></ion-modal>
 ```
 
-### Nav
+### Nav {/* #nav */}
 
-#### Router Integration Removed
+#### Router Integration Removed {/* #router-integration-removed */}
 
 `ion-nav` no longer integrates with `ion-router`. It is now a standalone imperative stack navigation component, driven only through its own API (`root`, `push`, `pop`, `setRoot`, and so on) and `ion-nav-link`.
 
@@ -652,11 +652,11 @@ If you relied on `ion-nav` to update the URL, use `ion-router-outlet` for URL-ba
 
 An `ion-nav` can still be nested inside a routed page for local, URL-less stack navigation. It manages its own stack via `root` and `ion-nav-link`, and the URL never changes as you push and pop. For a complete, working example, refer to [Using ion-nav within a Routed Page](../api/router.mdx#using-ion-nav-within-a-routed-page).
 
-### Router Outlet
+### Router Outlet {/* #router-outlet */}
 
 `ion-router-outlet` now exposes a `swipeGesture` property that controls the swipe-to-go-back gesture per outlet. This property defaults to `true` in `"ios"` mode and `false` in `"md"` mode.
 
-#### `swipeBackEnabled` Config Behavior Change
+#### `swipeBackEnabled` Config Behavior Change {/* #swipebackenabled-config-behavior-change */}
 
 In React and Vue, the `swipeBackEnabled` config option is now read once when the outlet mounts. Apps that dynamically toggle this config value at runtime should migrate to the `swipeGesture` property instead.
 
@@ -674,7 +674,7 @@ In React and Vue, the `swipeBackEnabled` config option is now read once when the
 + <ion-router-outlet :swipe-gesture="someCondition" />
 ```
 
-#### Disabling Swipe-to-Go-Back
+#### Disabling Swipe-to-Go-Back {/* #disabling-swipe-to-go-back */}
 
 To disable the gesture on a specific outlet, set `swipeGesture` to `false`:
 
@@ -684,7 +684,7 @@ To disable the gesture on a specific outlet, set `swipeGesture` to `false`:
 
 The `swipeBackEnabled` config option is still respected as the initial default and does not need to change for apps that set it once at startup.
 
-### Searchbar
+### Searchbar {/* #searchbar */}
 
 #### `autocorrect` Property Type Changed to Boolean {/* #searchbar-autocorrect-property-type-changed-to-boolean */}
 
@@ -693,15 +693,15 @@ The `autocorrect` property on `ion-searchbar` is now a `boolean` (default `false
 - Remove the attribute to keep autocorrect disabled (the default).
 - Use a property binding to enable it: `[autocorrect]="true"` (Angular), `autocorrect={true}` (React), or `:autocorrect="true"` (Vue).
 
-### Select
+### Select {/* #select */}
 
-#### `ionChange` Only Fires When the Value Changes
+#### `ionChange` Only Fires When the Value Changes {/* #ionchange-only-fires-when-the-value-changes */}
 
 The `ionChange` event on `ion-select` now only fires when the selected value actually changes. Previously, the `alert` and `action-sheet` interfaces emitted `ionChange` every time the overlay was confirmed, even when the user chose the option that was already selected. This aligns the `alert` and `action-sheet` interfaces with the existing behavior of the `popover` and `modal` interfaces, and with the documented contract of `ionChange`.
 
 Apps that relied on `ionChange` firing on every confirmation (for example, to detect overlay dismissal without a value change) should listen for `ionDismiss` instead, or use the `didDismiss` event on the underlying alert or action sheet.
 
-#### Action Sheet Interface `selected` Role Removed
+#### Action Sheet Interface `selected` Role Removed {/* #action-sheet-interface-selected-role-removed */}
 
 When using `interface="action-sheet"`, `ion-select` no longer assigns the `selected` role to the action sheet button for the currently selected option. This aligns the `action-sheet` interface with the `alert`, `popover`, and `modal` interfaces, none of which assign this role. This does not change the selected option's styling.
 
@@ -743,7 +743,7 @@ If you target `part="label"`, `part="container"`, or `part="icon"`, the part nam
 
 Use the new `part="start"`, `part="control"`, and `part="end"` parts to target the new structural wrappers.
 
-### Textarea
+### Textarea {/* #textarea */}
 
 #### Floating Label Behavior {/* #textarea-floating-label-behavior */}
 
@@ -782,7 +782,7 @@ Update your selectors to account for these structural changes:
 +ion-textarea .textarea-end [slot="end"] { }
 ```
 
-#### Minimum Height Change
+#### Minimum Height Change {/* #minimum-height-change */}
 
 The minimum height of textarea in Material Design (`md` mode) is now `72px`. At the default number of rows this makes textareas the same height regardless of the `fill` property or `labelPlacement`. Previously the minimum height was:
 
@@ -805,7 +805,7 @@ ion-textarea.custom {
 }
 ```
 
-## Need Help Upgrading?
+## Need Help Upgrading? {/* #need-help-upgrading */}
 
 Be sure to look at the [Ionic 9 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md#version-9x) for the complete list of breaking changes. This upgrade guide only covers changes that require action from developers.
 

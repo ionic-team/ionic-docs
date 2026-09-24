@@ -30,7 +30,7 @@ Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They donâ€
 
 The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 Tabs can be used to display different content without the need to change the URL. This is useful when the tabs are not used for navigation, but rather to display different content.
 
@@ -38,7 +38,7 @@ import Basic from '@site/static/usage/v10/tabs/basic/index.mdx';
 
 <Basic />
 
-## Usage with Router
+## Usage with Router {/* #usage-with-router */}
 
 Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the URL. This is the most common pattern for tabs navigation.
 
@@ -52,7 +52,7 @@ Ionic has guides on best practices for routing patterns with tabs. Check out the
 
 :::
 
-## Programmatically Selecting Tabs
+## Programmatically Selecting Tabs {/* #programmatically-selecting-tabs */}
 
 Tabs can be selected programmatically using the `select` method. This is useful when tab changes need to be triggered from application logic, such as in response to a button click or after completing a form. The following example demonstrates using a button to call the `select` method to navigate to a different tab.
 
@@ -60,9 +60,9 @@ import SelectMethod from '@site/static/usage/v10/tabs/select-method/index.mdx';
 
 <SelectMethod />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### TabsCustomEvent
+### TabsCustomEvent {/* #tabscustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -73,26 +73,26 @@ interface TabsCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

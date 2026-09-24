@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v10/checkbox/basic/index.mdx';
 
 <Basic />
 
-## Label Placement
+## Label Placement {/* #label-placement */}
 
 Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
@@ -37,7 +37,7 @@ import LabelPlacement from '@site/static/usage/v10/checkbox/label-placement/inde
 
 <LabelPlacement />
 
-## Alignment
+## Alignment {/* #alignment */}
 
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
@@ -51,7 +51,7 @@ import Alignment from '@site/static/usage/v10/checkbox/alignment/index.mdx';
 
 <Alignment />
 
-## Justification
+## Justification {/* #justification */}
 
 Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
@@ -65,13 +65,13 @@ import Justify from '@site/static/usage/v10/checkbox/justify/index.mdx';
 
 :::
 
-## Indeterminate Checkboxes
+## Indeterminate Checkboxes {/* #indeterminate-checkboxes */}
 
 import Indeterminate from '@site/static/usage/v10/checkbox/indeterminate/index.mdx';
 
 <Indeterminate />
 
-## Links inside of Labels
+## Links inside of Labels {/* #links-inside-of-labels */}
 
 Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
 
@@ -79,7 +79,7 @@ import LabelLink from '@site/static/usage/v10/checkbox/label-link/index.mdx';
 
 <LabelLink />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 Helper and error text can be used inside of a checkbox with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-checkbox`. This ensures errors are not shown before the user has a chance to enter data.
 
@@ -89,17 +89,17 @@ import HelperError from '@site/static/usage/v10/checkbox/helper-error/index.mdx'
 
 <HelperError />
 
-## Theming
+## Theming {/* #theming */}
 
-### CSS Custom Properties
+### CSS Custom Properties {/* #css-custom-properties */}
 
 import CSSProps from '@site/static/usage/v10/checkbox/theming/css-properties/index.mdx';
 
 <CSSProps />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### CheckboxChangeEventDetail
+### CheckboxChangeEventDetail {/* #checkboxchangeeventdetail */}
 
 ```typescript
 interface CheckboxChangeEventDetail<T = any> {
@@ -108,7 +108,7 @@ interface CheckboxChangeEventDetail<T = any> {
 }
 ```
 
-### CheckboxCustomEvent
+### CheckboxCustomEvent {/* #checkboxcustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -119,26 +119,26 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties-1 */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

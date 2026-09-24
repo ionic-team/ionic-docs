@@ -15,7 +15,7 @@ This guide covers how the page life cycle works in an app built with Ionic and A
 
 ![Flowchart illustrating the Ionic page life cycle events and their sequence.](/img/guides/lifecycle/ioniclifecycle.png 'Ionic Lifecycle Diagram')
 
-## Angular Life Cycle Events
+## Angular Life Cycle Events {/* #angular-life-cycle-events */}
 
 Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
 
@@ -36,7 +36,7 @@ On **Angular 18 through 21** this only affects you if you set `OnPush` on those 
 
 :::
 
-## Ionic Page Events
+## Ionic Page Events {/* #ionic-page-events */}
 
 In addition to the Angular life cycle events, Ionic Angular provides a few additional events that you can use:
 
@@ -55,7 +55,7 @@ For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called dir
 
 ![Animated GIF showing Ionic page life cycle events in a console log as a page transition occurs.](/img/guides/lifecycle/ioniclifecycle.gif 'Ionic Lifecycle Animation')
 
-## How Ionic Handles the Life of a Page
+## How Ionic Handles the Life of a Page {/* #how-ionic-handles-the-life-of-a-page */}
 
 Ionic has its router outlet, called `<ion-router-outlet />`. This outlet extends Angular's `<router-outlet />` with some additional functionality to enable better experiences for mobile devices.
 
@@ -70,7 +70,7 @@ Because of this special handling, the `ngOnInit` and `ngOnDestroy` methods might
 
 `ngOnInit` will only fire each time the page is freshly created, but not when navigated back to the page. For instance, navigating between each page in a tabs interface will only call each page's `ngOnInit` method once, but not on subsequent visits. `ngOnDestroy` will only fire when a page "popped".
 
-## Route Guards
+## Route Guards {/* #route-guards */}
 
 In Ionic 3, there were a couple of additional life cycle methods that were useful to control when a page could be entered (`ionViewCanEnter`) and left (`ionViewCanLeave`). These could be used to protect pages from unauthorized users and to keep a user on a page when you don't want them to leave (like during a form fill).
 
@@ -97,7 +97,7 @@ To use this guard, add it to the appropriate param in the route definition:
 
 For more info on how to use route guards, go to Angular's [router documentation](https://angular.io/guide/router).
 
-## Guidance for Each Life Cycle Method
+## Guidance for Each Life Cycle Method {/* #guidance-for-each-life-cycle-method */}
 
 Below are some tips on use cases for each of the life cycle events.
 
