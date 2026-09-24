@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.
 
-## Inline Toasts (Recommended)
+## Inline Toasts (Recommended) {/* #inline-toasts-recommended */}
 
 `ion-toast` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the toast.
 
@@ -34,7 +34,7 @@ import InlineToastTriggerExample from '@site/static/usage/v9/toast/inline/basic/
 
 <InlineToastTriggerExample />
 
-### Using `isOpen​`
+### Using `isOpen​` {/* #using-isopen */}
 
 The `isOpen` property on `ion-toast` allows developers to control the presentation state of the toast from their application state. This means when `isOpen` is set to `true` the toast will be presented and when `isOpen` is set to `false` the toast will be dismissed.
 
@@ -44,13 +44,13 @@ import InlineToastIsOpenExample from '@site/static/usage/v9/toast/inline/is-open
 
 <InlineToastIsOpenExample />
 
-## Controller Toasts
+## Controller Toasts {/* #controller-toasts */}
 
 import ControllerExample from '@site/static/usage/v9/toast/presenting/controller/index.mdx';
 
 <ControllerExample />
 
-## Dismissing
+## Dismissing {/* #dismissing */}
 
 Toasts are intended to be subtle notifications and should not interrupt the user. As a result, user interaction should not be required to dismiss the toast.
 
@@ -64,11 +64,11 @@ import ButtonsPlayground from '@site/static/usage/v9/toast/buttons/index.mdx';
 
 <ButtonsPlayground />
 
-## Positioning
+## Positioning {/* #positioning */}
 
 Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
 
-### Relative Positioning
+### Relative Positioning {/* #relative-positioning */}
 
 If a toast is presented alongside navigation elements such as a header, footer, or [FAB](./fab.mdx), the toast may overlap these elements by default. This can be fixed using the `positionAnchor` property, which takes either an element reference or an ID. The toast will be positioned relative to the chosen element, appearing below it when using `position="top"` or above it when using `position="bottom"`. When using `position="middle"`, the `positionAnchor` property is ignored.
 
@@ -76,7 +76,7 @@ import PositionAnchor from '@site/static/usage/v9/toast/position-anchor/index.md
 
 <PositionAnchor />
 
-## Swipe to Dismiss
+## Swipe to Dismiss {/* #swipe-to-dismiss */}
 
 Toasts can be swiped to dismiss by using the `swipeGesture` property. This feature is position-aware, meaning the direction that users need to swipe will change based on the value of the `position` property. Additionally, the distance users need to swipe may be impacted by the `positionAnchor` property.
 
@@ -84,7 +84,7 @@ import SwipeGesture from '@site/static/usage/v9/toast/swipe-gesture/index.mdx';
 
 <SwipeGesture />
 
-## Layout
+## Layout {/* #layout */}
 
 Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
 
@@ -92,7 +92,7 @@ import StackedPlayground from '@site/static/usage/v9/toast/layout/index.mdx';
 
 <StackedPlayground />
 
-## Icons
+## Icons {/* #icons */}
 
 An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.mdx) instead.
 
@@ -100,23 +100,23 @@ import IconPlayground from '@site/static/usage/v9/toast/icon/index.mdx';
 
 <IconPlayground />
 
-## Theming
+## Theming {/* #theming */}
 
 import ThemingPlayground from '@site/static/usage/v9/toast/theming/index.mdx';
 
 <ThemingPlayground />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Focus Management
+### Focus Management {/* #focus-management */}
 
 Toasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.
 
-### Screen Readers
+### Screen Readers {/* #screen-readers */}
 
 Toasts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the toast is being used in an app.
 
-#### Role
+#### Role {/* #role */}
 
 `ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced when the toast is presented.
 
@@ -124,7 +124,7 @@ Toasts set aria properties in order to be [accessible](../reference/glossary#a11
 
 Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
 
-#### Toast Buttons Description
+#### Toast Buttons Description {/* #toast-buttons-description */}
 
 Buttons containing text will be read by a screen reader when they are interacted with. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
@@ -204,7 +204,7 @@ const toast = await toastController.create({
 
 </Tabs>
 
-### Tips
+### Tips {/* #tips */}
 
 While this is not a complete list, here are some guidelines to follow when using toasts.
 
@@ -216,9 +216,9 @@ While this is not a complete list, here are some guidelines to follow when using
 
 - Avoid showing a toast with buttons from inside another overlay such as a [modal](./modal). Modals and other overlays implement [focus trapping](./modal#focus-trapping) that will prevent screen readers from moving focus to the toast to complete the actions. This may be confusing for users since the toast will still be announced by screen readers. This is true even if alternative ways of completing the actions associated with each button are implemented. Consider creating a [live region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) within the focus-trapped modal instead of using a toast.
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### ToastButton
+### ToastButton {/* #toastbutton */}
 
 ```typescript
 interface ToastButton {
@@ -231,7 +231,7 @@ interface ToastButton {
 }
 ```
 
-### ToastOptions
+### ToastOptions {/* #toastoptions */}
 
 ```typescript
 interface ToastOptions {
@@ -256,26 +256,26 @@ interface ToastOptions {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

@@ -13,7 +13,7 @@ sidebar_label: Lifecycle
 
 This guide discusses how to use the Ionic Lifecycle events in an Ionic React application.
 
-## Ionic Lifecycle Methods
+## Ionic Lifecycle Methods {/* #ionic-lifecycle-methods */}
 
 Ionic provides a few lifecycle methods that you can use in your apps:
 
@@ -28,7 +28,7 @@ These lifecycles are only called on components directly mapped by a router. This
 
 The way you access these methods varies based on if you are using class-based components or functional components. We cover both methods below.
 
-## Lifecycle Methods in Class-Based Components
+## Lifecycle Methods in Class-Based Components {/* #lifecycle-methods-in-class-based-components */}
 
 to use the Ionic Lifecycle methods in a class-based component, you must wrap your component with the `withIonLifeCycle` higher order component (HOC) like so:
 
@@ -82,7 +82,7 @@ class HomePage extends React.Component {
 export default withIonLifeCycle(HomePage);
 ```
 
-## Lifecycle Methods in Functional Components
+## Lifecycle Methods in Functional Components {/* #lifecycle-methods-in-functional-components */}
 
 Ionic React exports hooks for each of the lifecycle methods that you can use in your functional components. Each of the hooks takes the method you want called when the event fires.
 
@@ -147,11 +147,11 @@ useIonViewDidEnter(() => {
 }, [data]);
 ```
 
-## React LifeCycle Methods
+## React LifeCycle Methods {/* #react-lifecycle-methods */}
 
 All the lifecycle methods in React (`componentDidMount`, `componentWillUnmount`, etc..) are available for you to use as well. However, since Ionic React manages the lifetime of a page, certain events might not fire when you expect them to. For instance, `componentDidMount` fires the first time a page is displayed, but if you navigate away from the page Ionic might keep the page around in the DOM, and a subsequent visit to the page might not call `componentDidMount` again. This scenario is the main reason the Ionic lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
 
-## Guidance for Each LifeCycle Method
+## Guidance for Each LifeCycle Method {/* #guidance-for-each-lifecycle-method */}
 
 Below are some tips on use cases for each of the life cycle events.
 
@@ -160,7 +160,7 @@ Below are some tips on use cases for each of the life cycle events.
 - `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from data sources. Since `componentWillUnmount` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
 - `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
 
-## Passing state between pages
+## Passing state between pages {/* #passing-state-between-pages */}
 
 Since Ionic React manages the lifetime of a page, state on previous pages may update as users navigate your application. This can impact state that is determined using `useEffect` from React or `useLocation` from React Router. For example, if `PageA` calls `useLocation`, the state of `useLocation` will change when the user navigates from `PageA` to `PageB`.
 

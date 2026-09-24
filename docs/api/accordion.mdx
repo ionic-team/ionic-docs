@@ -23,13 +23,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Accordions provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information. All `ion-accordion` components should be grouped inside `ion-accordion-group` components.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v10/accordion/basic/index.mdx';
 
 <Basic />
 
-## Toggle Accordions
+## Toggle Accordions {/* #toggle-accordions */}
 
 Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions.
 
@@ -37,7 +37,7 @@ import Toggle from '@site/static/usage/v10/accordion/toggle/index.mdx';
 
 <Toggle />
 
-## Listen for Accordion State Changes
+## Listen for Accordion State Changes {/* #listen-for-accordion-state-changes */}
 
 :::caution
 
@@ -53,7 +53,7 @@ import ListenChanges from '@site/static/usage/v10/accordion/listen-changes/index
 
 <ListenChanges />
 
-## Multiple Accordions
+## Multiple Accordions {/* #multiple-accordions */}
 
 Developers can allow multiple accordions to be open at once with the `multiple` property.
 
@@ -61,9 +61,9 @@ import Multiple from '@site/static/usage/v10/accordion/multiple/index.mdx';
 
 <Multiple />
 
-## Disabling Accordions
+## Disabling Accordions {/* #disabling-accordions */}
 
-### Individual Accordion
+### Individual Accordion {/* #individual-accordion */}
 
 Individual accordions can be disabled with the `disabled` property on `ion-accordion`.
 
@@ -71,7 +71,7 @@ import DisableIndividual from '@site/static/usage/v10/accordion/disable/individu
 
 <DisableIndividual />
 
-### Accordion Group
+### Accordion Group {/* #accordion-group */}
 
 The accordion group can be disabled with the `disabled` property on `ion-accordion-group`.
 
@@ -79,9 +79,9 @@ import DisableGroup from '@site/static/usage/v10/accordion/disable/group/index.m
 
 <DisableGroup />
 
-## Readonly Accordions
+## Readonly Accordions {/* #readonly-accordions */}
 
-### Individual Accordion
+### Individual Accordion {/* #individual-accordion-1 */}
 
 Individual accordions can be disabled with the `readonly` property on `ion-accordion`.
 
@@ -89,7 +89,7 @@ import ReadonlyIndividual from '@site/static/usage/v10/accordion/readonly/indivi
 
 <ReadonlyIndividual />
 
-### Accordion Group
+### Accordion Group {/* #accordion-group-1 */}
 
 The accordion group can be disabled with the `readonly` property on `ion-accordion-group`.
 
@@ -97,21 +97,21 @@ import ReadonlyGroup from '@site/static/usage/v10/accordion/readonly/group/index
 
 <ReadonlyGroup />
 
-## Anatomy
+## Anatomy {/* #anatomy */}
 
-### Header
+### Header {/* #header */}
 
 The `header` slot is used as the toggle that will expand or collapse your accordion. We recommend you use an `ion-item` here to take advantage of the accessibility and theming functionalities.
 
 When using `ion-item` in the `header` slot, the `ion-item`'s `button` prop is set to `true` and the `detail` prop is set to `false`. In addition, we will also automatically add a toggle icon to the `ion-item`. This icon will automatically be rotated when you expand or collapse the accordion. Refer to [Customizing Icons](#icons) for more information.
 
-### Content
+### Content {/* #content */}
 
 The `content` slot is used as the part of the accordion that is revealed or hidden depending on the state of your accordion. You can place anything here except for another `ion-content` instance as only one instance of `ion-content` should be added per page.
 
-## Customization
+## Customization {/* #customization */}
 
-### Expansion Styles
+### Expansion Styles {/* #expansion-styles */}
 
 There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`.
 
@@ -121,7 +121,7 @@ import ExpansionStyles from '@site/static/usage/v10/accordion/customization/expa
 
 <ExpansionStyles />
 
-### Advanced Expansion Styles
+### Advanced Expansion Styles {/* #advanced-expansion-styles */}
 
 You can customize the expansion behavior by styling based on the accordion's state. There are four state classes applied to `ion-accordion`. Styling using these classes can allow you to create advanced state transitions:
 
@@ -145,7 +145,7 @@ import AdvancedExpansionStyles from '@site/static/usage/v10/accordion/customizat
 
 <AdvancedExpansionStyles />
 
-### Icons
+### Icons {/* #icons */}
 
 When using an `ion-item` in the `header` slot, we automatically add an `ion-icon`. The type of icon used can be controlled by the `toggleIcon` property, and the slot it is added to can be controlled with the `toggleIconSlot` property.
 
@@ -157,7 +157,7 @@ import Icons from '@site/static/usage/v10/accordion/customization/icons/index.md
 
 <Icons />
 
-### Theming
+### Theming {/* #theming */}
 
 Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
 
@@ -165,9 +165,9 @@ import Theming from '@site/static/usage/v10/accordion/customization/theming/inde
 
 <Theming />
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
-### Animations
+### Animations {/* #animations */}
 
 By default, animations are enabled when expanding or collapsing an accordion item. Animations will be automatically disabled when the `prefers-reduced-motion` media query is supported and set to `reduce`. For browsers that do not support this, animations can be disabled by setting the `animated` config in your Ionic Framework app.
 
@@ -175,7 +175,7 @@ import AccessibilityAnimations from '@site/static/usage/v10/accordion/accessibil
 
 <AccessibilityAnimations />
 
-### Keyboard Interactions
+### Keyboard Interactions {/* #keyboard-interactions */}
 
 When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
 
@@ -189,9 +189,9 @@ When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard sup
 | <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header.                                                                                                     |
 | <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header.                                                                                                      |
 
-## Performance
+## Performance {/* #performance */}
 
-### Animations
+### Animations {/* #animations-1 */}
 
 The accordion animation works by knowing the height of the `content` slot when the animation starts. The accordion expects that this height will remain consistent throughout the animation. As a result, developers should avoid performing any operation that may change the height of the content during the animation.
 
@@ -203,26 +203,26 @@ For example, lazily loading images may cause layout shifts as they load. As the 
 
 3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

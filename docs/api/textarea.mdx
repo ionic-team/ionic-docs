@@ -27,13 +27,13 @@ Unlike the native textarea element, the Ionic textarea does not support loading 
 
 The textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import BasicPlayground from '@site/static/usage/v10/textarea/basic/index.mdx';
 
 <BasicPlayground />
 
-## Labels
+## Labels {/* #labels */}
 
 Labels should be used to describe the textarea. They can be used visually, and they will also be read out by screen readers when the user is focused on the textarea. This makes it easy for the user to understand the intent of the textarea. Textarea has several ways to assign a label:
 
@@ -41,7 +41,7 @@ Labels should be used to describe the textarea. They can be used visually, and t
 - `label` slot: used for custom HTML labels (experimental)
 - `aria-label`: used to provide a label for screen readers but adds no visible label
 
-### Label Placement
+### Label Placement {/* #label-placement */}
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
@@ -49,7 +49,7 @@ import LabelPlacement from '@site/static/usage/v10/textarea/label-placement/inde
 
 <LabelPlacement />
 
-### Label Slot (experimental)
+### Label Slot (experimental) {/* #label-slot-experimental */}
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
@@ -59,7 +59,7 @@ import LabelSlot from '@site/static/usage/v10/textarea/label-slot/index.mdx';
 
 <LabelSlot />
 
-### No Visible Label
+### No Visible Label {/* #no-visible-label */}
 
 If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
 
@@ -67,7 +67,7 @@ import NoVisibleLabel from '@site/static/usage/v10/textarea/no-visible-label/ind
 
 <NoVisibleLabel />
 
-## Filled Textareas
+## Filled Textareas {/* #filled-textareas */}
 
 Material Design offers filled styles for a textarea. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
 
@@ -83,7 +83,7 @@ import Fill from '@site/static/usage/v10/textarea/fill/index.mdx';
 
 <Fill />
 
-## Helper & Error Text
+## Helper & Error Text {/* #helper--error-text */}
 
 Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-textarea`. This ensures errors are not shown before the user has a chance to enter data.
 
@@ -93,7 +93,7 @@ import HelperError from '@site/static/usage/v10/textarea/helper-error/index.mdx'
 
 <HelperError />
 
-## Textarea Counter
+## Textarea Counter {/* #textarea-counter */}
 
 The textarea counter is text that displays under a textarea to notify the user of how many characters have been entered out of the total that the textarea will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
@@ -101,7 +101,7 @@ import Counter from '@site/static/usage/v10/textarea/counter/index.mdx';
 
 <Counter />
 
-## Autogrow
+## Autogrow {/* #autogrow */}
 
 When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
 
@@ -109,7 +109,7 @@ import AutogrowPlayground from '@site/static/usage/v10/textarea/autogrow/index.m
 
 <AutogrowPlayground />
 
-## Clear on Edit
+## Clear on Edit {/* #clear-on-edit */}
 
 Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
 
@@ -117,7 +117,7 @@ import ClearOnEditPlayground from '@site/static/usage/v10/textarea/clear-on-edit
 
 <ClearOnEditPlayground />
 
-## Start and End Slots (experimental)
+## Start and End Slots (experimental) {/* #start-and-end-slots-experimental */}
 
 The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the textarea.
 
@@ -135,15 +135,15 @@ import StartEndSlots from '@site/static/usage/v10/textarea/start-end-slots/index
 
 <StartEndSlots />
 
-## Theming
+## Theming {/* #theming */}
 
 import ThemingPlayground from '@site/static/usage/v10/textarea/theming/index.mdx';
 
 <ThemingPlayground />
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### TextareaChangeEventDetail
+### TextareaChangeEventDetail {/* #textareachangeeventdetail */}
 
 ```typescript
 interface TextareaChangeEventDetail {
@@ -151,7 +151,7 @@ interface TextareaChangeEventDetail {
 }
 ```
 
-### TextareaCustomEvent
+### TextareaCustomEvent {/* #textareacustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -162,26 +162,26 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

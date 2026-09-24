@@ -10,7 +10,7 @@ title: Runtime Issues
   />
 </head>
 
-## Blank App
+## Blank App {/* #blank-app */}
 
 :::note
 
@@ -42,7 +42,7 @@ Alternatively, a project could be updated to use the latest release of the `@ang
 
 This will automatically include the polyfills for older browsers that need them.
 
-## Directive Not Working
+## Directive Not Working {/* #directive-not-working */}
 
 :::note
 
@@ -85,7 +85,7 @@ class MyDir {
 class MyPage { }
 ```
 
-## Click Delays
+## Click Delays {/* #click-delays */}
 
 :::note
 
@@ -107,7 +107,7 @@ add the `tappable` attribute to your element.
 <div tappable (click)="doClick()">I am clickable!</div>
 ```
 
-## Angular Change Detection
+## Angular Change Detection {/* #angular-change-detection */}
 
 :::note
 
@@ -151,7 +151,7 @@ This flag is automatically included when creating an Ionic app via the Ionic CLI
 
 :::
 
-## Cordova plugins not working in the browser
+## Cordova plugins not working in the browser {/* #cordova-plugins-not-working-in-the-browser */}
 
 At some point in your development you may, try to call Cordova plugin, but get a
 warning:
@@ -175,7 +175,7 @@ EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 
 If this happens, test the plugin on a real device or simulator.
 
-## Multiple instances of a provider
+## Multiple instances of a provider {/* #multiple-instances-of-a-provider */}
 
 If you inject a provider in every component because you want it available to all
 of them you will end up with multiple instances of the provider. You should

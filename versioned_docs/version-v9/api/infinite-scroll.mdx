@@ -23,13 +23,13 @@ The Infinite Scroll component calls an action to be performed when the user scro
 
 The expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.
 
-## Basic Usage
+## Basic Usage {/* #basic-usage */}
 
 import Basic from '@site/static/usage/v9/infinite-scroll/basic/index.mdx';
 
 <Basic />
 
-## Loading Text and Spinner
+## Loading Text and Spinner {/* #loading-text-and-spinner */}
 
 The `ion-infinite-scroll-content` is responsible for the visual display of the infinite scroll interaction. By default this component changes its look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. Both the spinner and loading text can be customized by setting properties on the `ion-infinite-scroll-content` component.
 
@@ -37,7 +37,7 @@ import InfiniteScrollContent from '@site/static/usage/v9/infinite-scroll/infinit
 
 <InfiniteScrollContent />
 
-## Custom Content
+## Custom Content {/* #custom-content */}
 
 Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
 
@@ -45,7 +45,7 @@ import CustomContent from '@site/static/usage/v9/infinite-scroll/custom-infinite
 
 <CustomContent />
 
-## Usage with Virtual Scroll
+## Usage with Virtual Scroll {/* #usage-with-virtual-scroll */}
 
 Infinite scroll requires a scroll container. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
 
@@ -66,7 +66,7 @@ Infinite scroll requires a scroll container. When using a virtual scrolling solu
 
 :::
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
 Developers should assign the `role="feed"` attribute to the scrollable list of items that are added to or removed from as the user scrolls.
 
@@ -90,9 +90,9 @@ For example, when rendering a collection of items in an `ion-list`:
 
 Please refer to the [ARIA: feed role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) documentation for additional information.
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### InfiniteScrollCustomEvent
+### InfiniteScrollCustomEvent {/* #infinitescrollcustomevent */}
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
 
@@ -102,26 +102,26 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## Properties {/* #properties */}
 
 <Props />
 
-## Events
+## Events {/* #events */}
 
 <Events />
 
-## Methods
+## Methods {/* #methods */}
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow Parts {/* #css-shadow-parts */}
 
 <Parts />
 
-## CSS Custom Properties
+## CSS Custom Properties {/* #css-custom-properties */}
 
 <CustomProps />
 
-## Slots
+## Slots {/* #slots */}
 
 <Slots />

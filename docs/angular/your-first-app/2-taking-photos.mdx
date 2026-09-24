@@ -13,7 +13,7 @@ sidebar_label: Taking Photos
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](/native/camera.mdx). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
-## Photo Service
+## Photo Service {/* #photo-service */}
 
 All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
 
@@ -143,7 +143,7 @@ _(Your selfie is probably much better than mine)_
 
 After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
 
-## Displaying Photos
+## Displaying Photos {/* #displaying-photos */}
 
 To define the data structure for our photo metadata, create a new interface named `UserPhoto`. Add this interface at the very bottom of the `photo.service.ts` file, immediately after the `PhotoService` class definition:
 

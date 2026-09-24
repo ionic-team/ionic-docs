@@ -45,7 +45,16 @@ module.exports = {
       ja: { label: '日本語' },
     },
   },
-  onBrokenLinks: 'warn',
+  /**
+   * A broken link or anchor fails the build instead of warning, so a stale
+   * cross-reference cannot reach production unnoticed.
+   *
+   * `build:preview` passes `--locale en`, so a pull request preview only
+   * ever checks English. A regression in a translated locale surfaces in
+   * the production build, which builds every locale.
+   */
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
   future: {
     v4: {
       /**
@@ -404,8 +413,13 @@ module.exports = {
       'docusaurus-plugin-copy-page-button',
       {
         injectButton: false,
+        // docusaurus-plugin-llms-txt writes the markdown twins instead, reusing
+        // this package's converter after repairing the HTML it is given.
+        // Turning both on would have the two race for the same files.
+        generateMarkdownRoutes: false,
       },
     ],
+    path.resolve(__dirname, 'plugins', 'docusaurus-plugin-llms-txt'),
   ],
   customFields: {},
   themes: [],
