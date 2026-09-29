@@ -43,6 +43,7 @@ fortawesome
 frontmatter
 fullscreen
 geolocation
+headerless
 iconset
 interactives
 isopen
@@ -53,6 +54,8 @@ jsdelivr
 keyframes
 keytool
 lifecycles
+llms
+llmstxt
 localstorage
 mobileweb
 phablet
