@@ -1,0 +1,174 @@
+# Measures how much memory a full production build needs and compares it
+# against the capacity of the Vercel build machine the docs are running on.
+#
+# Run this before a release. Adding a documentation version is what moves the
+# number, so this answers "do we need a bigger build machine before we ship?"
+# while there is still time to change it.
+#
+# Preview deployments only build English, so they never exercise the Japanese
+# locale and cannot catch this. This workflow builds both.
+
+name: 'Docs Build Memory Check'
+
+on:
+  workflow_dispatch:
+    inputs:
+      machine:
+        description: 'Which Vercel build machine type is ionic-docs on? (Project Settings > Build and Deployment > Build Machine)'
+        required: true
+        type: choice
+        default: Standard
+        options:
+          - Standard
+          - Enhanced
+          - Turbo
+          - Elastic
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    name: 📏 Measure Production Build Memory
+    # Must be Linux. `/usr/bin/time -v` is GNU specific, and Vercel builds on
+    # Linux, so the numbers are comparable.
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Must match the major Vercel builds on, or the measurement is taken on a
+      # different engine than production. `engines.node` in package.json is
+      # ">=20.0.0", which overrides the Project Settings version and resolves to
+      # the latest 24.x per Vercel's mapping table:
+      # https://vercel.com/docs/functions/runtimes/node-js/node-js-versions
+      - name: ⚙️ Use Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+
+      - name: 🕸️ Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: 🏗️ Build All Locales
+        # Named so the report step can read whether the build actually
+        # finished, since it runs even when this one fails.
+        id: build
+        env:
+          # `npm run build` resolves to build:${VERCEL_ENV:-preview}, and
+          # build:preview is English only. Without this the job would measure
+          # the half that already fits and would never catch the problem.
+          VERCEL_ENV: production
+          # scripts/release-notes.mjs exits non-zero in CI without a token.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # prebuild runs `crowdin upload` when this is non-empty, which pushes
+          # source strings to Crowdin. This job only measures memory and must
+          # never publish, so it is pinned empty rather than relying on the
+          # secret not being exposed to this workflow.
+          CROWDIN_PERSONAL_TOKEN: ''
+        run: /usr/bin/time -v -o build-memory.log npm run build
+        shell: bash
+
+      # Kept even when the build fails. GNU time writes its report before the
+      # command's exit status is known, so a build killed for running out of
+      # memory still leaves its peak in the log, which is the case where the
+      # number matters most.
+      - name: 📤 Upload Measurement Log
+        if: always() && steps.build.outcome != 'skipped'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: build-memory-log
+          path: build-memory.log
+          if-no-files-found: warn
+
+      - name: 📊 Report Against Machine Capacity
+        if: always() && steps.build.outcome != 'skipped'
+        env:
+          MACHINE: ${{ inputs.machine }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+        run: |
+          set -euo pipefail
+
+          PEAK_KB=$(awk '/Maximum resident set size/ { print $NF }' build-memory.log)
+          if [ -z "$PEAK_KB" ]; then
+            echo "::error::Could not read peak memory from build-memory.log"
+            exit 1
+          fi
+          PEAK_GB=$(awk -v kb="$PEAK_KB" 'BEGIN { printf "%.2f", kb / 1048576 }')
+
+          # A build must stay well below a machine's advertised size, for two
+          # reasons. Vercel's own processes need part of that memory, so the
+          # nominal figure is not all available: the build that failed during
+          # the v9 release measured about 8.2 GB and was killed on a nominally
+          # 8 GB machine. And identical builds vary between runs, measured at
+          # 7.86 GB and 8.42 GB on the same input.
+          #
+          # This margin is a judgment call, not a number published by Vercel.
+          # It only becomes load bearing when the build comes within a couple
+          # of GB of a tier boundary.
+          THRESHOLD_PCT=75
+
+          # The fixed Vercel machines and their memory in GB, smallest first.
+          # Both the recommendation and the capacity lookup below read this, so
+          # a tier is only ever corrected or added in one place.
+          TIERS="Standard:8 Enhanced:16 Turbo:60"
+
+          # Smallest tier this build fits on under the threshold. Empty when
+          # none of them do.
+          RECOMMENDED=$(awk -v tiers="$TIERS" -v peak="$PEAK_GB" -v t="$THRESHOLD_PCT" 'BEGIN {
+            count = split(tiers, list, " ")
+            for (i = 1; i <= count; i++) {
+              split(list[i], tier, ":")
+              if (peak / tier[2] * 100 <= t) { print tier[1]; exit }
+            }
+          }')
+
+          # A build that was cut short still leaves a peak in the log, but that
+          # figure is where it stopped, not what it needed. Report it and say so
+          # rather than letting it look like a pass.
+          if [ "$BUILD_OUTCOME" != "success" ]; then
+            echo "::warning title=Build did not finish::The build exited without completing. Peak memory reached ${PEAK_GB} GB before it stopped. If it was killed for running out of memory, that figure is the machine's ceiling rather than what the build actually needs."
+            exit 0
+          fi
+
+          # Elastic has no fixed capacity to check against. It sizes each build
+          # from recent successful builds, so when earlier builds were killed
+          # before recording what they needed it can assign a machine smaller
+          # than the build requires. Report the size, but make no pass or fail
+          # claim.
+          if [ "$MACHINE" = "Elastic" ]; then
+            if [ -n "$RECOMMENDED" ]; then
+              ADVICE="Otherwise switch to ${RECOMMENDED}, which this ${PEAK_GB} GB build fits on."
+            else
+              ADVICE="This ${PEAK_GB} GB build does not fit any fixed machine, so it needs attention whichever one Elastic picks."
+            fi
+            echo "::warning title=Check the machine Elastic will assign::Elastic sizes each build from recent successful builds, so there is no fixed capacity to check against. Confirm what it will assign under Project Settings > Build and Deployment > Build Machine, where it names the machine your next deployment will use. ${ADVICE}"
+            exit 0
+          fi
+
+          CAPACITY=$(awk -v tiers="$TIERS" -v m="$MACHINE" 'BEGIN {
+            count = split(tiers, list, " ")
+            for (i = 1; i <= count; i++) {
+              split(list[i], tier, ":")
+              if (tier[1] == m) { print tier[2]; exit }
+            }
+          }')
+          if [ -z "$CAPACITY" ]; then
+            echo "::error::No capacity recorded for machine type ${MACHINE}. Add it to TIERS above."
+            exit 1
+          fi
+
+          if awk -v cap="$CAPACITY" -v peak="$PEAK_GB" -v t="$THRESHOLD_PCT" 'BEGIN {
+            exit (peak / cap * 100 > t) ? 1 : 0
+          }'; then
+            echo "::notice title=Success! No action needed::Build peaks at ${PEAK_GB} GB, so it should have no issues on the ${MACHINE} machine."
+            exit 0
+          fi
+
+          if [ -n "$RECOMMENDED" ]; then
+            echo "::error title=Move to ${RECOMMENDED} before releasing::Build peaks at ${PEAK_GB} GB, too close to the ${CAPACITY} GB ceiling of the ${MACHINE} machine. Vercel needs part of that memory for its own processes, so the build cannot use all of it."
+          else
+            echo "::error title=No machine is large enough::Build peaks at ${PEAK_GB} GB, too close to the ceiling of every machine available, including the largest. The build itself has to get smaller."
+          fi
+          exit 1
+        shell: bash
