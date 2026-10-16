@@ -69,7 +69,7 @@ interface UseIonRouterResult {
   forward: (routerAnimation?: AnimationBuilder) => void;
   navigate: (
     location: string | Location,
-    routerDirection?: 'forward' | 'back' | 'root',
+    routerDirection?: 'forward' | 'back' | 'root' | 'none',
     routerAction?: 'push' | 'pop' | 'replace',
     routerAnimation?: AnimationBuilder
   ) => void;
@@ -80,7 +80,7 @@ useIonRouter(): UseIonRouterResult;
 
 - The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`.
 
-- The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
+- The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'none', 'replace', animation)`. It swaps the current page for the new one and keeps the pages beneath it, so the back button still returns to the previous page. No transition plays unless an `animation` is passed. To clear the navigation stack instead, call `ionRouter.navigate(location, 'root', 'replace', animation)`.
 
 Refer to the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
 
