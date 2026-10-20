@@ -77,8 +77,12 @@ interface RouterCustomEvent extends CustomEvent {
 
 ## Usage {/* #usage */}
 
+The last route is a [catch-all route](route.mdx#catch-all-routes) that renders `page-not-found` for any URL that no other route matches.
+
 ```html
 <ion-router>
+  <ion-route-redirect from="/" to="/schedule"></ion-route-redirect>
+
   <ion-route component="page-tabs">
     <ion-route url="/schedule" component="tab-schedule">
       <ion-route component="page-schedule"></ion-route>
@@ -100,6 +104,7 @@ interface RouterCustomEvent extends CustomEvent {
   <ion-route url="/account" component="page-account"></ion-route>
   <ion-route url="/signup" component="page-signup"></ion-route>
   <ion-route url="/support" component="page-support"></ion-route>
+  <ion-route url="*" component="page-not-found"></ion-route>
 </ion-router>
 ```
 

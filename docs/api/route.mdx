@@ -30,6 +30,109 @@ Note: this component should only be used with vanilla and Stencil JavaScript pro
 
 :::
 
+## Catch-all Routes {/* #catch-all-routes */}
+
+:::note
+
+Catch-all routes are supported starting in Ionic v9.1. In earlier versions, `url="/:any"` can be used to catch paths whose first segment does not match another route. Unknown paths below a route that does match, such as `/admin/settings`, still render that route.
+
+:::
+
+A `url` that ends in `*` is a catch-all route. It matches any remaining path, which is useful for showing a "not found" page. The part of the path matched by `*` is passed to the component as the `pathMatch` property, without a leading `/`.
+
+```html
+<ion-router>
+  <ion-route url="/" component="page-home"></ion-route>
+  <ion-route url="/admin" component="page-admin"></ion-route>
+  <ion-route url="/admin/users/:id" component="page-admin-user"></ion-route>
+  <ion-route url="/admin/*" component="page-admin-not-found"></ion-route>
+  <ion-route url="*" component="page-not-found"></ion-route>
+</ion-router>
+```
+
+With these routes:
+
+- `/admin` renders `page-admin`.
+- `/admin/users/1` renders `page-admin-user`.
+- `/admin/settings` renders `page-admin-not-found` with `pathMatch` set to `settings`.
+- `/admin/users/1/edit` renders `page-admin-not-found` with `pathMatch` set to `users/1/edit`.
+- `/settings` renders `page-not-found` with `pathMatch` set to `settings`.
+
+The component reads `pathMatch` like any other property:
+
+<Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'stencil', label: 'Stencil' }]}>
+
+<TabItem value="javascript">
+
+```javascript
+customElements.define(
+  'page-not-found',
+  class extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `
+        <ion-content>
+          <p>No page found at /${this.pathMatch}</p>
+        </ion-content>
+      `;
+    }
+  }
+);
+```
+
+</TabItem>
+
+<TabItem value="stencil">
+
+```typescript
+import { Component, Prop, h } from '@stencil/core';
+
+@Component({
+  tag: 'page-not-found',
+})
+export class PageNotFound {
+  @Prop() pathMatch?: string;
+
+  render() {
+    return (
+      <ion-content>
+        <p>No page found at /{this.pathMatch}</p>
+      </ion-content>
+    );
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+### Matching Priority {/* #matching-priority */}
+
+Without a catch-all, a route that has a `url` and no child routes also matches paths that have extra segments after its `url`. Routes with an empty `url`, such as `/` or a default child route, only match exactly. If the catch-all routes above were removed, `/admin/settings` would render `page-admin`. A catch-all route always wins over these partial matches.
+
+When a catch-all route and a route without a catch-all both match the whole path, the route with more fixed segments wins. A fixed segment is one that is not a parameter, such as `admin`. If they have the same number, the route without the catch-all wins. For example, for `/admin/users`, `/admin/*` wins over `/:section/:id`, but loses to `/admin/:id`.
+
+When more than one catch-all route matches, the one with the most fixed segments wins. Segments from parent routes count toward this total, so a catch-all route nested inside another route can handle unknown paths below it.
+
+Redirects run before routes are matched. A redirect from `*` applies to every path, so `<ion-route-redirect from="*">` takes precedence over `<ion-route url="*">`.
+
+### Caveats {/* #caveats */}
+
+A catch-all route also matches its own prefix, so `/admin/*` matches `/admin` with `pathMatch` set to an empty string. This differs from [`ion-route-redirect`](route-redirect.mdx), where `from="/admin/*"` does not match `/admin`.
+
+A `*` is only treated as a wildcard when it is the last segment of the `url`. On a route with child routes, the `*` is ignored and the route matches as if its `url` did not end in `*`.
+
+The router sets `pathMatch` on catch-all routes and overwrites any value passed in `componentProps`, so do not pass it there.
+
+If the `component` of a catch-all route is a tab in `ion-tabs`, the tab does not receive `pathMatch`. Instead, nest the catch-all route as a child of the tab's route so it renders in that tab's `ion-router-outlet`:
+
+```html
+<ion-route url="/docs" component="tab-docs">
+  <ion-route component="page-docs"></ion-route>
+  <ion-route url="*" component="page-docs-not-found"></ion-route>
+</ion-route>
+```
+
 ## Navigation Hooks {/* #navigation-hooks */}
 
 Navigation hooks can be used to perform tasks or act as navigation guards. Hooks are used by providing functions to the `beforeEnter` and `beforeLeave` properties on each `ion-route`. Returning `true` allows navigation to proceed, while returning `false` causes it to be cancelled. Returning an object of type `NavigationHookOptions` allows you to redirect navigation to another page.
