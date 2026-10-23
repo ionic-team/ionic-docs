@@ -6,7 +6,31 @@ description: Learn how to set up unit tests for an Ionic React application.
 
 # Unit Testing Setup
 
-Ionic requires a few additional steps to set up unit tests. If you are using an Ionic starter project, React Testing Library and jest-dom are already installed and `src/setupTests.ts` is already configured; you only need to initialize Ionic React as described below.
+Ionic requires a few additional steps to set up unit tests. If you are using an Ionic starter project, Vitest, React Testing Library, and jest-dom are already installed and `src/setupTests.ts` is already configured; you only need to initialize Ionic React as described below.
+
+### Install Vitest {/* #install-vitest */}
+
+[Vitest](https://vitest.dev) runs the tests. It uses [jsdom](https://github.com/jsdom/jsdom) to provide a browser-like environment for the components.
+
+```bash
+npm install --save-dev vitest jsdom
+```
+
+Then configure Vitest in `vite.config.ts` to use jsdom and load `src/setupTests.ts` before the tests run:
+
+```ts title="vite.config.ts"
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.ts',
+    include: ['src/**/*.test.{ts,tsx}'],
+  },
+});
+```
 
 ### Install React Testing Library {/* #install-react-testing-library */}
 

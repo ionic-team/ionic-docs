@@ -155,7 +155,7 @@ export function usePhotoGallery(): {
       quality: 100,
     });
 
-    const fileName = Date.now() + '.jpeg';
+    const fileName = new Date().getTime() + '.jpeg';
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 

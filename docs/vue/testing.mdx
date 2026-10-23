@@ -10,7 +10,20 @@ title: Testing
   />
 </head>
 
-This document provides an overview of how to test an application built with `@ionic/vue`. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [Vue Test Utils](https://test-utils.vuejs.org), and for end-to-end testing with [Playwright](https://playwright.dev). Unit tests live in `tests/unit` and run with `npm run test:unit`, and end-to-end tests live in `tests/e2e` and run with `npm run test:e2e`.
+This document provides an overview of how to test an application built with `@ionic/vue`. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [Vue Test Utils](https://test-utils.vuejs.org), and for end-to-end testing with [Playwright](https://playwright.dev). Unit tests live in `tests/unit` and end-to-end tests live in `tests/e2e`.
+
+The generated `package.json` includes scripts for running them:
+
+| Script                    | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `npm test`                | Runs the unit tests once, then the end-to-end tests.         |
+| `npm run test:unit`       | Runs the unit tests once.                                    |
+| `npm run test:unit:watch` | Runs the unit tests and re-runs them when files change.      |
+| `npm run test:e2e`        | Runs the end-to-end tests, starting the dev server for them. |
+
+:::note
+Playwright downloads its browsers separately from the npm package. Run `npx playwright install` once before running the end-to-end tests for the first time.
+:::
 
 ## Unit Testing {/* #unit-testing */}
 

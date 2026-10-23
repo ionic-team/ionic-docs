@@ -379,11 +379,44 @@ Ionic Vue projects are created with TypeScript by default, but you can easily co
 npm uninstall --save typescript @ionic/eslint-config @vue/eslint-config-typescript vue-tsc
 ```
 
-2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, `vite.config.ts`, `playwright.config.ts`, and files in the `tests` directory.
+2. Change the extension of all `.ts` files to `.js`, except `src/vite-env.d.ts`, which is deleted in a later step. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, `vite.config.ts`, `playwright.config.ts`, and files in the `tests` directory.
 
 3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
-4. In `eslint.config.js`, remove the `@ionic/eslint-config` and `@vue/eslint-config-typescript` imports, the `...ionic` entry, and the `'@typescript-eslint/no-explicit-any': 'off'` rule. Replace the `defineConfigWithVueTs(...)` call with the configs passed to it, removing `vueTsConfigs.recommended` and spreading `pluginVue.configs['flat/essential']`.
+4. Replace the contents of `eslint.config.js` with the following, which removes the TypeScript and `@ionic/eslint-config` configuration:
+
+```js title="eslint.config.js"
+import js from '@eslint/js';
+import pluginVue from 'eslint-plugin-vue';
+import globals from 'globals';
+
+export default [
+  {
+    ignores: ['dist/**', 'android/**', 'ios/**', 'playwright-report/**', 'test-results/**', 'blob-report/**'],
+  },
+  js.configs.recommended,
+  ...pluginVue.configs['flat/essential'],
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+      },
+    },
+    rules: {
+      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'vue/no-deprecated-slot-attribute': 'off',
+    },
+  },
+  {
+    files: ['tests/unit/**/*.spec.{js,ts}'],
+    languageOptions: {
+      globals: globals.vitest,
+    },
+  },
+];
+```
 
 5. Remove the `RouteRecordRaw[]` type annotation and the import of `RouteRecordRaw` from `src/router/index.js`.
 
@@ -391,7 +424,9 @@ npm uninstall --save typescript @ionic/eslint-config @vue/eslint-config-typescri
 
 7. Delete `tsconfig.json`, `tsconfig.node.json`, and `src/vite-env.d.ts`.
 
-8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
+8. In `package.json`, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
+
+9. In `package.json`, change the prettier script from `"prettier": "prettier \"**/*.{ts,vue}\""` to `"prettier": "prettier \"**/*.{js,vue}\""` so that `npm run lint` checks the formatting of the `.js` files.
 
 ## Explore More {/* #explore-more */}
 

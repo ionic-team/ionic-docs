@@ -186,9 +186,6 @@ export const usePhotoGallery = (): {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
     const base64Data = await base64FromPath(photo.webPath!);
 
     const savedFile = await Filesystem.writeFile({
@@ -294,9 +291,6 @@ export const usePhotoGallery = (): {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath!);
-    const blob = await response.blob();
     const base64Data = await base64FromPath(photo.webPath!);
 
     const savedFile = await Filesystem.writeFile({
