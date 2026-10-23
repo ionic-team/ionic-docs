@@ -32,7 +32,7 @@ The route redirect has two configurable properties:
 - `from`
 - `to`
 
-It redirects "from" a URL "to" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL, unless `from` ends in `*`. A `from` that ends in `*` matches any path below it, but not the path itself, so `/admin/*` matches `/admin/posts` but not `/admin`.
+It redirects "from" a URL "to" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL, unless `from` contains a `*`. A `*` matches the rest of the path from that segment on, as long as the path has at least as many segments as `from`, so `/admin/*` matches `/admin/posts` but not `/admin`.
 
 To render a "not found" page for unknown paths instead of redirecting, use a [catch-all route](route.mdx#catch-all-routes).
 

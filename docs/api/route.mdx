@@ -52,11 +52,13 @@ A `url` that ends in `*` is a catch-all route. It matches any remaining path, wh
 
 With these routes:
 
-- `/admin` renders `page-admin`.
-- `/admin/users/1` renders `page-admin-user`.
-- `/admin/settings` renders `page-admin-not-found` with `pathMatch` set to `settings`.
-- `/admin/users/1/edit` renders `page-admin-not-found` with `pathMatch` set to `users/1/edit`.
-- `/settings` renders `page-not-found` with `pathMatch` set to `settings`.
+| Path                  | Renders                | `pathMatch`    |
+| --------------------- | ---------------------- | -------------- |
+| `/admin`              | `page-admin`           |                |
+| `/admin/users/1`      | `page-admin-user`      |                |
+| `/admin/settings`     | `page-admin-not-found` | `settings`     |
+| `/admin/users/1/edit` | `page-admin-not-found` | `users/1/edit` |
+| `/settings`           | `page-not-found`       | `settings`     |
 
 The component reads `pathMatch` like any other property:
 
@@ -108,9 +110,19 @@ export class PageNotFound {
 
 ### Matching Priority {/* #matching-priority */}
 
-Without a catch-all, a route that has a `url` and no child routes also matches paths that have extra segments after its `url`. Routes with an empty `url`, such as `/` or a default child route, only match exactly. If the catch-all routes above were removed, `/admin/settings` would render `page-admin`. A catch-all route always wins over these partial matches.
+Without a catch-all, a route that has a `url` and no child routes also matches paths that have extra segments after its `url`. Routes with an empty `url`, such as `/` or a default child route, only match exactly. When a catch-all route matches the path, routes that only match by ignoring extra segments are no longer considered, even if another route wins.
 
-When a catch-all route and a route without a catch-all both match the whole path, the route with more fixed segments wins. A fixed segment is one that is not a parameter, such as `admin`. If they have the same number, the route without the catch-all wins. For example, for `/admin/users`, `/admin/*` wins over `/:section/:id`, but loses to `/admin/:id`.
+When a catch-all route and a route without a catch-all both match the whole path, the route with more fixed segments wins. A fixed segment is one that is not a parameter, such as `admin`. If they have the same number, the route without the catch-all wins.
+
+Using the routes from the example above:
+
+| Path                  | Without catch-alls | With catch-alls        | Why                                                                                           |
+| --------------------- | ------------------ | ---------------------- | --------------------------------------------------------------------------------------------- |
+| `/admin`              | `page-admin`       | `page-admin`           | `/admin` and `/admin/*` both have one fixed segment, so the route without the catch-all wins. |
+| `/admin/users/1`      | `page-admin-user`  | `page-admin-user`      | `/admin/users/:id` has more fixed segments than `/admin/*`.                                   |
+| `/admin/settings`     | `page-admin`       | `page-admin-not-found` | `page-admin` only matched by ignoring `settings`, so the catch-all wins.                      |
+| `/admin/users/1/edit` | `page-admin-user`  | `page-admin-not-found` | `page-admin-user` only matched by ignoring `edit`, so the catch-all wins.                     |
+| `/settings`           | No match           | `page-not-found`       | No other route matches.                                                                       |
 
 When more than one catch-all route matches, the one with the most fixed segments wins. Segments from parent routes count toward this total, so a catch-all route nested inside another route can handle unknown paths below it.
 
