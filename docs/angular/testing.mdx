@@ -6,11 +6,27 @@ title: Testing
   <title>Angular Unit and End-to-End Testing for Ionic App Components</title>
   <meta
     name="description"
-    content="Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components."
+    content="Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components."
   />
 </head>
 
-When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application. This is the same setup that is used by the Angular CLI. Refer to the [Angular Testing Guide](https://angular.io/guide/testing) for detailed information on testing Angular applications.
+When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application:
+
+- Unit tests run with [Vitest](https://vitest.dev) through the Angular CLI's `@angular/build:unit-test` builder, in a [jsdom](https://github.com/jsdom/jsdom) environment. Refer to the [Angular Testing Guide](https://angular.dev/guide/testing) for detailed information on testing Angular applications.
+- End-to-end tests run with [Playwright](https://playwright.dev) against the app, which Playwright starts with `npm start`.
+
+The generated `package.json` includes scripts for running them:
+
+| Script                    | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `npm test`                | Runs the unit tests once, then the end-to-end tests.         |
+| `npm run test:unit`       | Runs the unit tests once.                                    |
+| `npm run test:unit:watch` | Runs the unit tests and re-runs them when files change.      |
+| `npm run test:e2e`        | Runs the end-to-end tests, starting the dev server for them. |
+
+:::note
+Playwright downloads its browsers separately from the npm package. Run `npx playwright install` once before running the end-to-end tests for the first time.
+:::
 
 ## Testing Principles {/* #testing-principles */}
 
@@ -28,25 +44,25 @@ Well-written unit tests are structured such that the unit of code and the featur
 
 Since unit tests exercise the code in isolation, they are fast, robust, and allow for a high degree of code coverage.
 
+Vitest's test functions (`describe`, `it`, `expect`, `beforeEach`, `vi`, and so on) are available as globals in spec files, so they do not need to be imported. Global setup for the unit tests goes in `src/test-setup.ts`, which already polyfills `window.matchMedia` for jsdom because Ionic needs it. The Vitest configuration that the builder uses is in `vitest.config.mts`.
+
 ### Using Mocks {/* #using-mocks */}
 
-Unit tests exercise a code module in isolation. To facilitate this, we recommend using Jasmine (https://jasmine.github.io/). Jasmine creates mock objects (which Jasmine calls "spies") to take the place of dependencies while testing. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
+Unit tests exercise a code module in isolation. To facilitate this, Vitest can create mock functions to take the place of dependencies while testing. When a mock is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
 
-Using mocks also allows the test to query the mock to determine if it was called and how it was called via the `toHaveBeenCalled*` set of functions. Tests should be as specific as possible with these functions, favoring calls to `toHaveBeenCalledTimes` over calls to `toHaveBeenCalled` when testing that a method has been called. That is `expect(mock.foo).toHaveBeenCalledTimes(1)` is better than `expect(mock.foo).toHaveBeenCalled()`. The opposite advice should be followed when testing that something has not been called (`expect(mock.foo).not.toHaveBeenCalled()`).
+Using mocks also allows the test to query the mock to determine if it was called and how it was called via the `toHaveBeenCalled*` set of functions. Tests should be as specific as possible with these functions, favoring calls to `toHaveBeenCalledTimes` over calls to `toHaveBeenCalled` when testing that a method has been called. That is, `expect(mock.foo).toHaveBeenCalledTimes(1)` is better than `expect(mock.foo).toHaveBeenCalled()`. The opposite advice should be followed when testing that something has not been called (`expect(mock.foo).not.toHaveBeenCalled()`).
 
-There are two common ways to create mock objects in Jasmine. Mock objects can be constructed from scratch using `jasmine.createSpy` and `jasmine.createSpyObj` or spies can be installed onto existing objects using `spyOn()` and `spyOnProperty()`.
+There are two common ways to create mocks in Vitest. Mock functions can be created from scratch using `vi.fn()`, or spies can be installed onto existing objects using `vi.spyOn()`. Refer to Vitest's [Mocking guide](https://vitest.dev/guide/mocking) for more details.
 
-#### Using `jasmine.createSpy` and `jasmine.createSpyObj` {/* #using-jasminecreatespy-and-jasminecreatespyobj */}
+#### Using `vi.fn()` {/* #using-vi-fn */}
 
-`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. The disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
+`vi.fn()` creates a stand-alone mock function. Combining several of them into an object creates a full mock object from scratch, which can be provided in place of a real dependency. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. The disadvantage of this approach is that it allows the creation of objects that may not match the real objects.
 
-`jasmine.createSpy` is similar but it creates a stand-alone mock function.
+#### Using `vi.spyOn()` {/* #using-vi-spyon */}
 
-#### Using `spyOn()` and `spyOnProperty()` {/* #using-spyon-and-spyonproperty */}
+`vi.spyOn()` installs the spy on an existing object. The advantage of using this technique is that if an attempt is made to spy on a method that does not exist on the object, an exception is raised. This prevents the test from mocking methods that do not exist. The disadvantage is that the test needs a fully formed object to begin with, which may increase the amount of test setup required.
 
-`spyOn()` installs the spy on an existing object. The advantage of using this technique is that if an attempt is made to spy on a method that does not exist on the object, an exception is raised. This prevents the test from mocking methods that do not exist. The disadvantage is that the test needs a fully formed object to begin with, which may increase the amount of test setup required.
-
-`spyOnProperty()` is similar with the difference being that it spies on a property and not a method.
+`vi.spyOn()` can also spy on a getter or setter by passing `'get'` or `'set'` as its third argument.
 
 ### General Testing Structure {/* #general-testing-structure */}
 
@@ -54,35 +70,62 @@ Unit tests are contained in `spec` files with one `spec` file per entity (compon
 
 The `spec` files themselves contain a single `describe` call that defines that overall test. Nested within it are other `describe` calls that define major areas of functionality. Each `describe` call can contain setup and teardown code (generally handled via `beforeEach` and `afterEach` calls), more `describe` calls forming a hierarchical breakdown of functionality, and `it` calls which define individual test cases.
 
-The `describe` and `it` calls also contain a descriptive text label. In well-formed tests, the `describe` and `it` calls combine with their labels to perform proper phrases and the full label for each test case, formed by combining the `describe` and `it` labels, creates a full sentence.
+The `describe` and `it` calls also contain a descriptive text label. In well-formed tests, the `describe` and `it` calls combine with their labels to form proper phrases and the full label for each test case, formed by combining the `describe` and `it` labels, creates a full sentence.
 
 For example:
 
-```tsx
+```ts
 describe('Calculation', () => {
   describe('divide', () => {
-    it('calculates 4 / 2 properly' () => {});
-    it('cowardly refuses to divide by zero' () => {});
-    ...
+    it('calculates 4 / 2 properly', () => {});
+    it('cowardly refuses to divide by zero', () => {});
+    // ...
   });
 
   describe('multiply', () => {
-    ...
+    // ...
   });
 });
 ```
 
-The outer `describe` call states that the `Calculation` service is being tested, the inner `describe` calls state exactly what functionality is being tested, and the `it` calls state what the test cases are. When run the full label for each test case is a sentence that makes sense (Calculation divide cowardly refuses to divide by zero).
+The outer `describe` call states that the `Calculation` service is being tested, the inner `describe` calls state exactly what functionality is being tested, and the `it` calls state what the test cases are. When run, the full label for each test case is a sentence that makes sense (Calculation divide cowardly refuses to divide by zero).
 
 ### Pages and Components {/* #pages-and-components */}
 
-Pages are just Angular components. Thus, pages and components are both tested using [Angular's Component Testing](https://angular.io/guide/testing#component-test-basics) guidelines.
+Pages are just Angular components. Thus, pages and components are both tested using [Angular's Component Testing](https://angular.dev/guide/testing/components-basics) guidelines.
 
-Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
+Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created with `ionic generate page`, the spec that is generated looks like this:
 
-```tsx
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+```ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LoginPage } from './login.page';
+
+describe('LoginPage', () => {
+  let component: LoginPage;
+  let fixture: ComponentFixture<LoginPage>;
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(LoginPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+```
+
+The files that `ionic generate page` creates do not pass the project's lint rules yet. Run `npm run lint:fix` to fix their imports, then add code to the page's empty `ngOnInit()` method or remove it along with `implements OnInit`.
+
+When doing component class testing, the component object is accessed using the component object defined via `component = fixture.componentInstance;`. This is an instance of the component class. When doing DOM testing, the `fixture.nativeElement` property is used. This is the actual `HTMLElement` for the component, which allows the test to use standard HTML API methods such as `HTMLElement.querySelector` in order to examine the DOM.
+
+If the page or component needs providers, such as a router for a page that contains links, configure them with `TestBed.configureTestingModule` before creating the component:
+
+```ts
+import type { ComponentFixture } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 
@@ -92,8 +135,8 @@ describe('TabsPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TabsPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [TabsPage],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TabsPage);
@@ -107,15 +150,15 @@ describe('TabsPage', () => {
 });
 ```
 
-When doing component class testing, the component object is accessed using the component object defined via `component = fixture.componentInstance;`. This is an instance of the component class. When doing DOM testing, the `fixture.nativeElement` property is used. This is the actual `HTMLElement` for the component, which allows the test to use standard HTML API methods such as `HTMLElement.querySelector` in order to examine the DOM.
-
 ### Waiting for Components {/* #waiting-for-components */}
 
-When testing Ionic components, use the `componentOnReady` helper exported from `@ionic/core` rather than calling `el.componentOnReady()` directly. The `el.componentOnReady()` method only exists on lazy-loaded elements and calling it directly throws an error on custom-element builds, which is what standalone projects use. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists. Otherwise it waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
+When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/angular` uses Stencil's custom elements build, where that method does not exist on the element; it only exists in apps that use the lazy-loaded build from `@ionic/angular/lazy`. The helper handles both. It awaits the element's own `componentOnReady()` promise when that exists, and otherwise waits one animation frame, giving the component's inner contents a chance to render. Wait for the callback before asserting against the rendered DOM or running accessibility tests.
 
-```tsx
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+```ts
+import type { ComponentFixture } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { componentOnReady } from '@ionic/core';
+
 import { HomePage } from './home.page';
 
 describe('HomePage', () => {
@@ -143,107 +186,111 @@ Services often fall into one of two broad categories: utility services that perf
 
 ### Basic Service Testing {/* #basic-service-testing */}
 
-The suggested way to test most services is to instantiate the service and manually inject mocks for any dependency the service has. This way, the code can be tested in isolation.
+The suggested way to test most services is to provide mocks for any dependency the service has, then get the service from Angular's `TestBed`. This way, the code can be tested in isolation.
 
-Let's say that there is a service with a method that takes an array of timecards and calculates net pay. Let's also assume that the tax calculations are handled via another service that the current service depends on. This payroll service could be tested as such:
+Let's say that there is a service with a method that takes an array of timecards and calculates net pay. Let's also assume that the tax calculations are handled via another service that the current service depends on, which it gets with `inject(TaxService)`. This payroll service could be tested as such:
 
-```tsx
-import { PayrollService } from './payroll.service';
-
-describe('PayrollService', () => {
-  let service: PayrollService;
-  let taxServiceSpy;
-
-   beforeEach(() => {
-     taxServiceSpy = jasmine.createSpyObj('TaxService', {
-       federalIncomeTax: 0,
-       stateIncomeTax: 0,
-       socialSecurity: 0,
-       medicare: 0
-     });
-     service = new PayrollService(taxServiceSpy);
-   });
-
-   describe('net pay calculations', () => {
-     ...
-   });
-});
-```
-
-This allows the test to control the values returned by the various tax calculations via mock setup such as `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`. This allows the "net pay" tests to be independent of the tax calculation logic. When the tax codes change, only the tax service related code and tests need to change. The tests for the net pay can continue to operate as they are since these tests do not care how the tax is calculated, just that the value is applied properly.
-
-The scaffolding that is used when a service is generated via `ionic g service name` uses Angular's testing utilities and sets up a testing module. Doing so is not strictly necessary. That code may be left in, however, allowing the service to be built manually or injected as such:
-
-```tsx
-import { TestBed, inject } from '@angular/core/testing';
+```ts
+import { TestBed } from '@angular/core/testing';
+import type { Mock } from 'vitest';
 
 import { PayrollService } from './payroll.service';
 import { TaxService } from './tax.service';
 
-describe('PayrolService', () => {
-  let taxServiceSpy;
+describe('PayrollService', () => {
+  let service: PayrollService;
+  let taxServiceMock: { [K in keyof TaxService]: Mock };
 
   beforeEach(() => {
-    taxServiceSpy = jasmine.createSpyObj('TaxService', {
-      federalIncomeTax: 0,
-      stateIncomeTax: 0,
-      socialSecurity: 0,
-      medicare: 0,
-    });
+    taxServiceMock = {
+      federalIncomeTax: vi.fn().mockReturnValue(0),
+      stateIncomeTax: vi.fn().mockReturnValue(0),
+      socialSecurity: vi.fn().mockReturnValue(0),
+      medicare: vi.fn().mockReturnValue(0),
+    };
+
     TestBed.configureTestingModule({
-      providers: [PayrollService, { provide: TaxService, useValue: taxServiceSpy }],
+      providers: [{ provide: TaxService, useValue: taxServiceMock }],
     });
+    service = TestBed.inject(PayrollService);
   });
 
-  it('does some test where it is injected', inject([PayrollService], (service: PayrollService) => {
-    expect(service).toBeTruthy();
-  }));
+  describe('net pay calculations', () => {
+    it('subtracts the federal income tax from the gross pay', () => {
+      taxServiceMock.federalIncomeTax.mockReturnValue(73.24);
 
-  it('does some test where it is manually built', () => {
-    const service = new PayrollService(taxServiceSpy);
-    expect(service).toBeTruthy();
+      expect(service.netPay([{ hours: 40, rate: 10 }])).toBeCloseTo(326.76);
+      expect(taxServiceMock.federalIncomeTax).toHaveBeenCalledTimes(1);
+      expect(taxServiceMock.federalIncomeTax).toHaveBeenCalledWith(400);
+    });
+  });
+});
+```
+
+This allows the test to control the values returned by the various tax calculations via mock setup such as `taxServiceMock.federalIncomeTax.mockReturnValue(73.24)`. This allows the "net pay" tests to be independent of the tax calculation logic. When the tax codes change, only the tax service related code and tests need to change. The tests for the net pay can continue to operate as they are since these tests do not care how the tax is calculated, just that the value is applied properly.
+
+To keep the real tax service and only replace one of its methods, get both services from the `TestBed` and spy on the method instead. This works without listing any providers because both services are `@Injectable({ providedIn: 'root' })`, which is how `ionic generate service` creates them:
+
+```ts
+import { TestBed } from '@angular/core/testing';
+
+import { PayrollService } from './payroll.service';
+import { TaxService } from './tax.service';
+
+describe('PayrollService', () => {
+  let service: PayrollService;
+  let taxService: TaxService;
+
+  beforeEach(() => {
+    service = TestBed.inject(PayrollService);
+    taxService = TestBed.inject(TaxService);
+  });
+
+  it('uses the federal income tax from the tax service', () => {
+    vi.spyOn(taxService, 'federalIncomeTax').mockReturnValue(73.24);
+
+    service.netPay([{ hours: 40, rate: 10 }]);
+
+    expect(taxService.federalIncomeTax).toHaveBeenCalledTimes(1);
   });
 });
 ```
 
 #### Testing HTTP Data Services {/* #testing-http-data-services */}
 
-Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please refer to Angular's [Angular's Testing HTTP requests](https://angular.io/guide/http#testing-http-requests) guide.
+Most services that perform HTTP operations will use Angular's `HttpClient` service in order to perform those operations. For such tests, it is suggested to provide `HttpClient` with `provideHttpClient()` and replace its backend with `provideHttpClientTesting()`. The test then uses `HttpTestingController` to check the requests that were made and to respond to them. For detailed documentation, please refer to Angular's [Testing HTTP requests](https://angular.dev/guide/http/testing) guide.
 
 This basic setup for such a test looks like this:
 
-```tsx
-import { HttpBackend, HttpClient } from '@angular/common/http';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
-import { TestBed, inject } from '@angular/core/testing';
+```ts
+import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { IssTrackingDataService } from './iss-tracking-data.service';
 
 describe('IssTrackingDataService', () => {
-  let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
-  let issTrackingDataService: IssTrackingDataService;
+  let service: IssTrackingDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [IssTrackingDataService],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
 
-    httpClient = TestBed.get(HttpClient);
-    httpTestingController = TestBed.get(HttpTestingController);
-    issTrackingDataService = new IssTrackingDataService(httpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
+    service = TestBed.inject(IssTrackingDataService);
   });
 
-  it('exists', inject([IssTrackingDataService], (service: IssTrackingDataService) => {
-    expect(service).toBeTruthy();
-  }));
+  afterEach(() => {
+    httpTestingController.verify();
+  });
 
   describe('location', () => {
     it('gets the location of the ISS now', () => {
-      issTrackingDataService.location().subscribe((x) => {
-        expect(x).toEqual({ longitude: -138.1719, latitude: 44.4423 });
-      });
+      let location: unknown;
+      service.location().subscribe((value) => (location = value));
+
       const req = httpTestingController.expectOne('http://api.open-notify.org/iss-now.json');
       expect(req.request.method).toEqual('GET');
       req.flush({
@@ -251,7 +298,8 @@ describe('IssTrackingDataService', () => {
         timestamp: 1525950644,
         message: 'success',
       });
-      httpTestingController.verify();
+
+      expect(location).toEqual({ longitude: -138.1719, latitude: 44.4423 });
     });
   });
 });
@@ -263,10 +311,10 @@ A pipe is like a service with a specifically defined interface. It is a class th
 
 As a simple example, let's consider a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
 
-```tsx
-import { NamePipe } from './name.pipe';
+```ts
+import type { Person } from '../models/person';
 
-import { Person } from '../../models/person';
+import { NamePipe } from './name.pipe';
 
 describe('NamePipe', () => {
   let pipe: NamePipe;
@@ -282,27 +330,23 @@ describe('NamePipe', () => {
     };
   });
 
-  it('exists', () => {
-    expect(pipe).toBeTruthy();
-  });
-
   it('formats a full name properly', () => {
-    expect(pipe.transform(testPerson)).toBeEqual('Adams, Douglas N.');
+    expect(pipe.transform(testPerson)).toBe('Adams, Douglas N.');
   });
 
   it('handles having no middle initial', () => {
     delete testPerson.middleInitial;
-    expect(pipe.transform(testPerson)).toBeEqual('Adams, Douglas');
+    expect(pipe.transform(testPerson)).toBe('Adams, Douglas');
   });
 
   it('handles having no first name', () => {
     delete testPerson.firstName;
-    expect(pipe.transform(testPerson)).toBeEqual('Adams N.');
+    expect(pipe.transform(testPerson)).toBe('Adams N.');
   });
 
   it('handles having no last name', () => {
     delete testPerson.lastName;
-    expect(pipe.transform(testPerson)).toBeEqual('Douglas N.');
+    expect(pipe.transform(testPerson)).toBe('Douglas N.');
   });
 });
 ```
@@ -313,215 +357,102 @@ It is also beneficial to exercise the pipe via DOM testing in the components and
 
 End-to-end testing is used to verify that an application works as a whole and often includes a connection to live data. Whereas unit tests focus on code units in isolation and thus allow for low-level testing of the application logic, end-to-end tests focus on various user stories or usage scenarios, providing high-level testing of the overall flow of data through the application. Whereas unit tests try to uncover problems with an application's logic, end-to-end tests try to uncover problems that occur when those individual units are used together. End-to-end tests uncover problems with the overall architecture of the application.
 
-Since end-to-end tests exercise user stories and cover the application as a whole rather than individual code modules, end-to-end tests exist in their own application in the project apart from the code for the main application itself. Most end-to-end tests operate by automating common user interactions with the application and examining the DOM to determine the results of those interactions.
+Since end-to-end tests exercise user stories and cover the application as a whole rather than individual code modules, they run in a real browser against the running application. Most end-to-end tests operate by automating common user interactions with the application and examining the DOM to determine the results of those interactions.
 
 ### Test Structure {/* #test-structure */}
 
-When an `@ionic/angular` application is generated, a default end-to-end test application is generated in the `e2e` folder. This application uses <a href="">Protractor</a> to control the browser and <a href="">Jasmine</a> to structure and execute the tests. The application initially consists of four files:
+When an `@ionic/angular` application is generated, it is set up to run end-to-end tests with [Playwright](https://playwright.dev). The setup consists of:
 
-- `protractor.conf.js` - the Protractor configuration file
-- `tsconfig.e2e.json` - specific TypeScript configuration for the testing application
-- `src/app.po.ts` - a page object containing methods that navigate the application, query elements in the DOM, and manipulate elements on the page
-- `src/app.e2e-spec.ts` - a testing script
+- `playwright.config.ts` - the Playwright configuration file. It starts the app with `npm start` before the tests run and emulates a mobile device (a Pixel 7) in Chromium.
+- `e2e/app.spec.ts` - a testing script that loads the app and checks its first page.
+
+Refer to Playwright's [Writing tests](https://playwright.dev/docs/writing-tests) guide for an introduction to the test API.
 
 #### Page Objects {/* #page-objects */}
 
 End-to-end tests operate by automating common user interactions with the application, waiting for the application to respond, and examining the DOM to determine the results of the interaction. This involves a lot of DOM manipulation and examination. If this were all done manually, the tests would be very brittle and difficult to read and maintain.
 
-Page objects encapsulate the HTML for a single page in a TypeScript class, providing an API that the test scripts use to interact with the application. The encapsulation of the DOM manipulation logic in page objects makes the tests more readable and far easier to reason about, lowering the maintenance costs of the test. Creating well-crafted page objects is the key to creating high quality and maintainable end-to-end tests.
+Page objects encapsulate the HTML for a single page in a TypeScript class, providing an API that the test scripts use to interact with the application. The encapsulation of the DOM manipulation logic in page objects makes the tests more readable and far easier to reason about, lowering the maintenance costs of the test. Creating well-crafted page objects is the key to creating high quality and maintainable end-to-end tests. Refer to Playwright's [Page object models](https://playwright.dev/docs/pom) guide for more details.
 
-##### Base Page Object {/* #base-page-object */}
+Playwright's [locators](https://playwright.dev/docs/locators) wait for elements automatically, so a page object can mostly return locators and leave the waiting to the assertions that use them.
 
-A lot of tests rely on actions such as waiting for a page to be visible, entering text into an input, and clicking a button. The methods used to do this remain consistent with only the CSS selectors used to get the appropriate DOM element changing. Therefore it makes sense to abstract this logic into a base class that can be used by the other page objects.
+Here is an example page object for the tabs in an app created from the `tabs` starter:
 
-Here is an example that implements a few basic methods that all page objects will need to support.
+```ts title="e2e/page-objects/tabs.po.ts"
+import type { Locator, Page } from '@playwright/test';
 
-```tsx
-import { browser, by, element, ExpectedConditions } from 'protractor';
+export class TabsPage {
+  constructor(private readonly page: Page) {}
 
-export class PageObjectBase {
-  private path: string;
-  protected tag: string;
-
-  constructor(tag: string, path: string) {
-    this.tag = tag;
-    this.path = path;
+  async load(): Promise<void> {
+    await this.page.goto('/');
   }
 
-  load() {
-    return browser.get(this.path);
+  // Only match the title of the page that is showing.
+  title(): Locator {
+    return this.page.locator('ion-title').filter({ visible: true }).first();
   }
 
-  rootElement() {
-    return element(by.css(this.tag));
+  tabButton(name: string): Locator {
+    return this.page.getByRole('tab', { name });
   }
 
-  waitUntilInvisible() {
-    browser.wait(ExpectedConditions.invisibilityOf(this.rootElement()), 3000);
-  }
-
-  waitUntilPresent() {
-    browser.wait(ExpectedConditions.presenceOf(this.rootElement()), 3000);
-  }
-
-  waitUntilNotPresent() {
-    browser.wait(ExpectedConditions.not(ExpectedConditions.presenceOf(this.rootElement())), 3000);
-  }
-
-  waitUntilVisible() {
-    browser.wait(ExpectedConditions.visibilityOf(this.rootElement()), 3000);
-  }
-
-  getTitle() {
-    return element(by.css(`${this.tag} ion-title`)).getText();
-  }
-
-  protected enterInputText(sel: string, text: string) {
-    const el = element(by.css(`${this.tag} ${sel}`));
-    const inp = el.element(by.css('input'));
-    inp.sendKeys(text);
-  }
-
-  protected enterTextareaText(sel: string, text: string) {
-    const el = element(by.css(`${this.tag} ${sel}`));
-    const inp = el.element(by.css('textarea'));
-    inp.sendKeys(text);
-  }
-
-  protected clickButton(sel: string) {
-    const el = element(by.css(`${this.tag} ${sel}`));
-    browser.wait(ExpectedConditions.elementToBeClickable(el));
-    el.click();
+  async selectTab(name: string): Promise<void> {
+    await this.tabButton(name).click();
   }
 }
 ```
 
-##### Per-Page Abstractions {/* #per-page-abstractions */}
-
-Each page in the application will have its own page object class that abstracts the elements on that page. If a base page object class is used, creating the page object involves mostly creating custom methods for elements that are specific to that page. Often, these custom elements take advantage of methods in the base class in order to perform the work that is required.
-
-Here is an example page object for a simple but typical login page. Notice that many of the methods, such as `enterEMail()`, call methods in the base class that perform the bulk of the work.
-
-```tsx
-import { browser, by, element, ExpectedConditions } from 'protractor';
-import { PageObjectBase } from './base.po';
-
-export class LoginPage extends PageObjectBase {
-  constructor() {
-    super('app-login', '/login');
-  }
-
-  waitForError() {
-    browser.wait(ExpectedConditions.presenceOf(element(by.css('.error'))), 3000);
-  }
-
-  getErrorMessage() {
-    return element(by.css('.error')).getText();
-  }
-
-  enterEMail(email: string) {
-    this.enterInputText('#email-input', email);
-  }
-
-  enterPassword(password: string) {
-    this.enterInputText('#password-input', password);
-  }
-
-  clickSignIn() {
-    this.clickButton('#signin-button');
-  }
-}
-```
+:::note
+Ionic keeps pages in the navigation stack, and tabs that have been visited, in the DOM after navigating away from them, hiding them instead of removing them. Use `filter({ visible: true })` when the same element, such as `ion-title`, can appear on more than one page.
+:::
 
 #### Testing Scripts {/* #testing-scripts */}
 
-Similar to unit tests, end-to-end test scripts consist of nested `describe()` and `it()` functions. In the case of end-to-end tests, the `describe()` functions generally denote specific scenarios with the `it()` functions denoting specific behaviors that should be exhibited by the application as actions are performed within that scenario.
+Similar to unit tests, end-to-end test scripts consist of nested `test.describe()` and `test()` functions. In the case of end-to-end tests, the `test.describe()` functions generally denote specific scenarios with the `test()` functions denoting specific behaviors that should be exhibited by the application as actions are performed within that scenario.
 
-Also similar to unit tests, the labels used in the `describe()` and `it()` functions should make sense both with the "describe" or "it" and when concatenated together to form the complete test case.
+Also similar to unit tests, the labels used in the `test.describe()` and `test()` functions should make sense when concatenated together to form the complete test case.
 
-Here is a sample end-to-end test script that exercises some typical login scenarios.
+Here is a sample end-to-end test script that uses the page object above to exercise the tab navigation:
 
-```tsx
-import { AppPage } from '../page-objects/pages/app.po';
-import { AboutPage } from '../page-objects/pages/about.po';
-import { CustomersPage } from '../page-objects/pages/customers.po';
-import { LoginPage } from '../page-objects/pages/login.po';
-import { MenuPage } from '../page-objects/pages/menu.po';
-import { TasksPage } from '../page-objects/pages/tasks.po';
+```ts title="e2e/tabs.spec.ts"
+import { expect, test } from '@playwright/test';
 
-describe('Login', () => {
-  const about = new AboutPage();
-  const app = new AppPage();
-  const customers = new CustomersPage();
-  const login = new LoginPage();
-  const menu = new MenuPage();
-  const tasks = new TasksPage();
+import { TabsPage } from './page-objects/tabs.po';
 
-  beforeEach(() => {
-    app.load();
+test.describe('Tabs', () => {
+  let tabs: TabsPage;
+
+  test.beforeEach(async ({ page }) => {
+    tabs = new TabsPage(page);
+    await tabs.load();
   });
 
-  describe('before logged in', () => {
-    it('displays the login screen', () => {
-      expect(login.rootElement().isDisplayed()).toEqual(true);
+  test.describe('on first load', () => {
+    test('shows the first tab', async ({ page }) => {
+      await expect(page).toHaveURL(/\/tabs\/tab1$/);
+      await expect(tabs.title()).toHaveText('Tab 1');
     });
 
-    it('allows in-app navigation to about', () => {
-      menu.clickAbout();
-      about.waitUntilVisible();
-      login.waitUntilInvisible();
-    });
-
-    it('does not allow in-app navigation to tasks', () => {
-      menu.clickTasks();
-      app.waitForPageNavigation();
-      expect(login.rootElement().isDisplayed()).toEqual(true);
-    });
-
-    it('does not allow in-app navigation to customers', () => {
-      menu.clickCustomers();
-      app.waitForPageNavigation();
-      expect(login.rootElement().isDisplayed()).toEqual(true);
-    });
-
-    it('displays an error message if the login fails', () => {
-      login.enterEMail('test@test.com');
-      login.enterPassword('bogus');
-      login.clickSignIn();
-      login.waitForError();
-      expect(login.getErrorMessage()).toEqual('The password is invalid or the user does not have a password.');
-    });
-
-    it('navigates to the tasks page if the login succeeds', () => {
-      login.enterEMail('test@test.com');
-      login.enterPassword('testtest');
-      login.clickSignIn();
-      tasks.waitUntilVisible();
+    test('marks the first tab as selected', async () => {
+      await expect(tabs.tabButton('Tab 1')).toHaveAttribute('aria-selected', 'true');
     });
   });
 
-  describe('once logged in', () => {
-    beforeEach(() => {
-      tasks.waitUntilVisible();
+  test.describe('when switching tabs', () => {
+    test('navigates to the selected tab', async ({ page }) => {
+      await tabs.selectTab('Tab 2');
+
+      await expect(page).toHaveURL(/\/tabs\/tab2$/);
+      await expect(tabs.title()).toHaveText('Tab 2');
     });
 
-    it('allows navigation to the customers page', () => {
-      menu.clickCustomers();
-      customers.waitUntilVisible();
-      tasks.waitUntilInvisible();
-    });
+    test('navigates back to a previous tab', async ({ page }) => {
+      await tabs.selectTab('Tab 3');
+      await tabs.selectTab('Tab 1');
 
-    it('allows navigation to the about page', () => {
-      menu.clickAbout();
-      about.waitUntilVisible();
-      tasks.waitUntilInvisible();
-    });
-
-    it('allows navigation back to the tasks page', () => {
-      menu.clickAbout();
-      tasks.waitUntilInvisible();
-      menu.clickTasks();
-      tasks.waitUntilVisible();
+      await expect(page).toHaveURL(/\/tabs\/tab1$/);
+      await expect(tabs.title()).toHaveText('Tab 1');
     });
   });
 });
@@ -533,28 +464,27 @@ The default configuration uses the same `environment.ts` file that is used for d
 
 #### Testing Environment {/* #testing-environment */}
 
-Setting up a testing environment involves creating a new environment file that uses a dedicated testing backend, updating the `angular.json` file to use that environment, and modifying the `e2e` script in the `package.json` to specify the `test` environment.
+Setting up a testing environment involves creating a new environment file that uses a dedicated testing backend, updating the `angular.json` file to use that environment, and modifying the `webServer` command in `playwright.config.ts` to serve the app with it.
 
 ##### Create the `environment.e2e.ts` File {/* #create-the-environmente2ets-file */}
 
 The Angular `environment.ts` and `environment.prod.ts` files are often used to store information such as the base URL for the application's backend data services. Create an `environment.e2e.ts` that provides the same information, only connecting to backend services that are dedicated to testing rather than the development or production backend services. Here is an example:
 
-```tsx
+```ts title="src/environments/environment.e2e.ts"
 export const environment = {
   production: false,
-  databaseURL: 'https://e2e-test-api.my-great-app.com',
-  projectId: 'my-great-app-e2e',
+  apiUrl: 'https://e2e-test-api.my-great-app.com',
 };
 ```
 
 ##### Modify the `angular.json` File {/* #modify-the-angularjson-file */}
 
-The `angular.json` file needs to be modified to use this file. This is a layered process. Follow the XPaths listed below to add the configuration that is required.
+The `angular.json` file needs to be modified to use this file. Follow the paths listed below to add the configuration that is required.
 
-Add a configuration at `/projects/app/architect/build/configurations` called `test` that does the file replacement:
+Add a configuration at `projects.app.architect.build.configurations` called `e2e` that does the file replacement:
 
 ```json
-"test": {
+"e2e": {
   "fileReplacements": [
     {
       "replace": "src/environments/environment.ts",
@@ -564,58 +494,53 @@ Add a configuration at `/projects/app/architect/build/configurations` called `te
 }
 ```
 
-Add a configuration at `/projects/app/architect/serve/configurations` called `test` that points the browser target at the `test` build configuration that was defined above.
+Add a configuration at `projects.app.architect.serve.configurations` called `e2e` that points the build target at the `development` build configuration combined with the `e2e` build configuration defined above:
 
 ```json
-"test": {
-  "browserTarget": "app:build:test"
+"e2e": {
+  "buildTarget": "app:build:development,e2e"
 }
 ```
 
-Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `test` that does points the dev server target at the `test` serve configuration defined above.
+##### Modify the `playwright.config.ts` File {/* #modify-the-playwrightconfigts-file */}
 
-```json
-"test": {
-  "devServerTarget": "app:serve:test"
-}
-```
+Modify `playwright.config.ts` so that `npm run test:e2e` serves the app with the `e2e` configuration. Serve it on a different port than the default `4200`, so Playwright never reuses a development server that is already running, which would send the tests to the development backend:
 
-##### Modify the `package.json` File {/* #modify-the-packagejson-file */}
+```ts title="playwright.config.ts"
+const baseURL = 'http://localhost:4300';
 
-Modify the `package.json` file so that `npm run e2e` uses the `test` configuration.
-
-```json
-"scripts": {
-  "e2e": "ng e2e --configuration=test",
-  "lint": "ng lint",
-  "ng": "ng",
-  "start": "ng serve",
-  "test": "ng test",
-  "test:dev": "ng test --browsers=ChromeHeadlessCI",
-  "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI"
-},
+export default defineConfig({
+  // ...existing config...
+  webServer: {
+    command: 'npm start -- --configuration=e2e --port 4300',
+    url: baseURL,
+    reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
+  },
+});
 ```
 
 #### Test Cleanup {/* #test-cleanup */}
 
-If the end-to-end tests modify data in any way it is helpful to reset the data to a known state once the test completes. One way to do that is to:
+If the end-to-end tests modify data in any way, it is helpful to reset the data to a known state once the tests complete. One way to do that is to:
 
 1. Create an endpoint that performs the cleanup.
-1. Add a `onCleanUp()` function to the `config` object exported by the `protractor.conf.js` file.
+1. Add a [global teardown](https://playwright.dev/docs/test-global-setup-teardown) file that calls the endpoint, and point the `globalTeardown` option in `playwright.config.ts` at it.
 
 Here is an example:
 
-```javascript
-onCleanUp() {
-  const axios = require('axios');
-  return axios
-    .post(
-      'https://e2e-test-api.my-great-app.com/purgeDatabase',
-      {}
-    )
-    .then(res => {
-      console.log(res.data);
-    })
-    .catch(err => console.log(err));
+```ts title="e2e/global-teardown.ts"
+async function globalTeardown(): Promise<void> {
+  const response = await fetch('https://e2e-test-api.my-great-app.com/purgeDatabase', { method: 'POST' });
+  console.log(await response.text());
 }
+
+export default globalTeardown;
+```
+
+```ts title="playwright.config.ts"
+export default defineConfig({
+  // ...existing config...
+  globalTeardown: './e2e/global-teardown.ts',
+});
 ```
