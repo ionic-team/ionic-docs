@@ -46,14 +46,17 @@ Prefer to register your components globally once? We have you covered. Our [Buil
 
 The slots that are used in Ionic Vue are [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots), which are different than the slots used in Vue 2. Unfortunately, the APIs for both are very similar, and your linter is likely getting the two confused.
 
-All Ionic Vue starters ship with this rule turned off, but you can do it yourself by adding the following to your `.eslintrc.js` file:
+All Ionic Vue starters ship with this rule turned off, but you can do it yourself by adding the following to your `eslint.config.js` file:
 
 ```js
-module.exports = {
-  rules: {
-    'vue/no-deprecated-slot-attribute': 'off',
+export default [
+  // ...existing config...
+  {
+    rules: {
+      'vue/no-deprecated-slot-attribute': 'off',
+    },
   },
-};
+];
 ```
 
 If you are using VSCode and have the Vetur plugin installed, you are likely getting this warning because of Vetur, not ESLint. By default, Vetur loads the default Vue 3 linting rules and ignores any custom ESLint rules.

@@ -97,10 +97,11 @@ Routes are defined in `router/index.ts`:
 
 ```ts title="src/router/index.ts"
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+
 import HomePage from '../views/HomePage.vue';
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -240,7 +241,7 @@ import NewPage from '../views/NewPage.vue';
 Then, add its route in the `routes` array:
 
 ```ts title="src/router/index.ts"
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -375,24 +376,22 @@ Ionic Vue projects are created with TypeScript by default, but you can easily co
 1. Remove the TypeScript dependencies:
 
 ```shell
-npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
+npm uninstall --save typescript @ionic/eslint-config @vue/eslint-config-typescript vue-tsc
 ```
 
-2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, and files in the `tests` directory.
+2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, `vite.config.ts`, `playwright.config.ts`, and files in the `tests` directory.
 
 3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
-4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: 'off'` from `.eslintrc.js`.
+4. In `eslint.config.js`, remove the `@ionic/eslint-config` and `@vue/eslint-config-typescript` imports, the `...ionic` entry, and the `'@typescript-eslint/no-explicit-any': 'off'` rule. Replace the `defineConfigWithVueTs(...)` call with the configs passed to it, removing `vueTsConfigs.recommended` and spreading `pluginVue.configs['flat/essential']`.
 
-5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
+5. Remove the `RouteRecordRaw[]` type annotation and the import of `RouteRecordRaw` from `src/router/index.js`.
 
 6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
-7. Delete `tsconfig.json` and `vite-env.d.ts`.
+7. Delete `tsconfig.json`, `tsconfig.node.json`, and `src/vite-env.d.ts`.
 
 8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
-
-9. Install terser `npm i -D terser`.
 
 ## Explore More {/* #explore-more */}
 

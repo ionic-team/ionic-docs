@@ -20,7 +20,10 @@ Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](/nat
 Open `usePhotoGallery.ts` and begin by defining a constant variable that will act as the key for the store.
 
 ```ts
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   const photos = ref<UserPhoto[]>([]);
 
   // CHANGE: Add a key for photo storage
@@ -33,14 +36,18 @@ export const usePhotoGallery = () => {
 Next, at the end of the `usePhotoGallery()` method, add a call to the `cachePhotos` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
-import { ref } from 'vue';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 // CHANGE: Add import
 import { Preferences } from '@capacitor/preferences';
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   // ...existing code...
 
   // CHANGE: Add `cachePhotos()` method
@@ -52,8 +59,8 @@ export const usePhotoGallery = () => {
   };
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 ```
@@ -63,22 +70,26 @@ Next, use the Vue [watch method](https://vuejs.org/api/reactivity-core.html#watc
 Add the call to the `watch()` method above the return statement in `usePhotoGallery()`.
 
 ```ts
-// CHANGE: Update import
-import { ref, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+import type { Ref } from 'vue';
+// CHANGE: Update import
+import { ref, watch } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   // ...existing code...
 
   // CHANGE: Add call to `watch` with `photos` array and `cachePhotos` method
   watch(photos, cachePhotos);
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 ```
@@ -86,7 +97,10 @@ export const usePhotoGallery = () => {
 With the photo array data saved, create a new method in the `usePhotoGallery()` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
 
 ```ts
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   // ...existing code...
 
   // CHANGE: Add `loadSaved()` method
@@ -98,8 +112,8 @@ export const usePhotoGallery = () => {
   watch(photos, cachePhotos);
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 ```
@@ -107,7 +121,10 @@ export const usePhotoGallery = () => {
 On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method.
 
 ```ts
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   // ...existing code...
 
   // CHANGE: Update `loadSaved()` method
@@ -130,8 +147,8 @@ export const usePhotoGallery = () => {
   watch(photos, cachePhotos);
 
   return {
-    photos,
     addNewToGallery,
+    photos,
   };
 };
 ```
@@ -139,13 +156,17 @@ export const usePhotoGallery = () => {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { ref, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+import type { Ref } from 'vue';
+import { ref, watch } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   const photos = ref<UserPhoto[]>([]);
 
   const PHOTO_STORAGE = 'photos';
@@ -242,14 +263,18 @@ Our `usePhotoGallery()` can now load the saved images, but we'll need to update 
 Update `usePhotoGallery.ts` to look like the following:
 
 ```ts
-// CHANGE: Update import
-import { ref, watch, onMounted } from 'vue';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+import type { Ref } from 'vue';
+// CHANGE: Update import
+import { ref, onMounted, watch } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   const photos = ref<UserPhoto[]>([]);
 
   const PHOTO_STORAGE = 'photos';

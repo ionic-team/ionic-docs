@@ -6,35 +6,55 @@ description: Learn how to set up unit tests for an Ionic React application.
 
 # Unit Testing Setup
 
-Ionic requires a few additional steps to set up unit tests. If you are using an Ionic starter project, these steps have already been completed for you.
+Ionic requires a few additional steps to set up unit tests. If you are using an Ionic starter project, React Testing Library and jest-dom are already installed and `src/setupTests.ts` is already configured; you only need to initialize Ionic React as described below.
 
 ### Install React Testing Library {/* #install-react-testing-library */}
 
 React Testing Library is a set of utilities that make it easier to test React components. It's used to interact with components and test their behavior.
 
 ```bash
-npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install --save-dev @testing-library/react @testing-library/dom @testing-library/jest-dom
+```
+
+To simulate user interactions with [`user-event`](./best-practices.mdx#use-user-event-for-user-interactions), install it as well. It is not included in Ionic starter projects:
+
+```bash
+npm install --save-dev @testing-library/user-event
 ```
 
 ### Initialize Ionic React {/* #initialize-ionic-react */}
 
 Ionic React requires the `setupIonicReact` function to be called before any tests are run. Failing to do so will result in mode-based classes and platform behaviors not being applied to your components.
 
-In `src/setupTest.ts`, add the following code:
+In `src/setupTests.ts`, add the following code:
 
 ```diff
-import '@testing-library/jest-dom/extend-expect';
-
+// Adds jest-dom's DOM matchers (toBeInTheDocument, toHaveTextContent, ...) to Vitest's expect.
+import '@testing-library/jest-dom/vitest';
 + import { setupIonicReact } from '@ionic/react';
+import { cleanup } from '@testing-library/react';
+import { afterEach } from 'vitest';
 
 + setupIonicReact();
++
+// Testing Library only cleans up automatically when Vitest globals are enabled.
+afterEach(() => {
+  cleanup();
+});
 
-// Mock matchmedia
-window.matchMedia = window.matchMedia || function () {
-  return {
-    matches: false,
-    addListener: function () { },
-    removeListener: function () { }
+// jsdom doesn't implement matchMedia, which Ionic uses for platform and dark mode checks.
+window.matchMedia =
+  window.matchMedia ||
+  function (query: string): MediaQueryList {
+    return {
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: () => undefined,
+      removeListener: () => undefined,
+      addEventListener: () => undefined,
+      removeEventListener: () => undefined,
+      dispatchEvent: () => false,
+    };
   };
-};
 ```

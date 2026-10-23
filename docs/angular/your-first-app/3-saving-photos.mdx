@@ -47,7 +47,8 @@ We can use this new method immediately in `addNewToGallery()`.
 
 ```ts
 import { Injectable, signal } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root',
@@ -56,7 +57,7 @@ export class PhotoService {
   public photos = signal<UserPhoto[]>([]);
 
   // CHANGE: Update the `addNewToGallery()` method
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
@@ -93,7 +94,7 @@ Then, pass the data to the Filesystem's `writeFile` method. Recall that we displ
 Create a new helper method, `base64FromPath()`, to implement the necessary logic for running on the web:
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 // CHANGE: Add import
@@ -164,7 +165,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 export class PhotoService {
   public photos = signal<UserPhoto[]>([]);
 
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
