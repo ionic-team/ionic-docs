@@ -61,8 +61,9 @@ private async savePicture(photo: Photo) {
   if (this.platform.is('hybrid')) {
     // Read the file into base64 format
     const file = await Filesystem.readFile({
-      path: photo.path!
+      path: photo.path!,
     });
+
     base64Data = file.data;
   } else {
     base64Data = await this.base64FromPath(photo.webPath!);
@@ -73,7 +74,7 @@ private async savePicture(photo: Photo) {
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
-    directory: Directory.Data
+    directory: Directory.Data,
   });
 
   // Use webPath to display the new image instead of base64 since it's
@@ -91,11 +92,11 @@ When running on mobile, set `filepath` to the result of the `writeFile()` operat
 import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+// CHANGE: Add import
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
-// Change: Add import
-import { Capacitor } from '@capacitor/core';
 
 // ...existing code...
 ```
@@ -106,11 +107,13 @@ Then update `savePicture()` to look like the following:
 // CHANGE: Update `savePicture()` method
 private async savePicture(photo: Photo) {
   let base64Data: string | Blob;
+
   // "hybrid" will detect mobile - iOS or Android
   if (this.platform.is('hybrid')) {
     const file = await Filesystem.readFile({
       path: photo.path!,
     });
+
     base64Data = file.data;
   } else {
     base64Data = await this.base64FromPath(photo.webPath!);
@@ -146,7 +149,7 @@ Next, add a new bit of logic in the `loadSaved()` method. On mobile, we can dire
 
 ```ts
 // CHANGE: Update `loadSaved()` method
-public async loadSaved() {
+public async loadSaved(): Promise<void> {
   const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
   const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
@@ -154,13 +157,13 @@ public async loadSaved() {
   // If running on the web...
   if (!this.platform.is('hybrid')) {
     for (const photo of photos) {
-      const file = await Filesystem.readFile({
-          path: photo.filepath,
-          directory: Directory.Data
+      const readFile = await Filesystem.readFile({
+        path: photo.filepath,
+        directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 
@@ -171,16 +174,16 @@ public async loadSaved() {
 
 Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS.
 
-`photos.service.ts` should now look like this:
+`photo.service.ts` should now look like this:
 
 ```ts
 import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
-import { Capacitor } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root',
@@ -192,7 +195,7 @@ export class PhotoService {
 
   private platform = inject(Platform);
 
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
@@ -266,7 +269,7 @@ export class PhotoService {
     });
   }
 
-  public async loadSaved() {
+  public async loadSaved(): Promise<void> {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
@@ -274,12 +277,13 @@ export class PhotoService {
     // If running on the web...
     if (!this.platform.is('hybrid')) {
       for (const photo of photos) {
-        const file = await Filesystem.readFile({
+        const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
         });
+
         // Web platform only: Load the photo as base64 data
-        photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
       }
     }
 

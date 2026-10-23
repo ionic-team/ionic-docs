@@ -20,7 +20,10 @@ Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](/nat
 Open `usePhotoGallery.ts` and begin by defining a constant variable that will act as the key for the store.
 
 ```ts
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  photos: UserPhoto[];
+} {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
   // CHANGE: Add a key for photo storage
   const PHOTO_STORAGE = 'photos';
@@ -32,14 +35,17 @@ export function usePhotoGallery() {
 Next, at the end of the `addNewToGallery()` method, add a call to the `Preferences.set()` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
-import { useState } from 'react';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 // CHANGE: Add import
 import { Preferences } from '@capacitor/preferences';
+import { useState } from 'react';
 
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  photos: UserPhoto[];
+} {
   // ...existing code...
 
   const addNewToGallery = async () => {
@@ -61,14 +67,17 @@ export function usePhotoGallery() {
 With the photo array data saved, create a new method in the `usePhotoGallery()` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
 
 ```ts
-// CHANGE: Update import
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+// CHANGE: Update import
+import { useState, useEffect } from 'react';
 
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  photos: UserPhoto[];
+} {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const PHOTO_STORAGE = 'photos';
@@ -93,7 +102,10 @@ The second parameter, the empty dependency array (`[]`), is what tells React to 
 On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method.
 
 ```ts
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  photos: UserPhoto[];
+} {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const PHOTO_STORAGE = 'photos';
@@ -126,13 +138,16 @@ export function usePhotoGallery() {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
+import { useState, useEffect } from 'react';
 
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  photos: UserPhoto[];
+} {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const PHOTO_STORAGE = 'photos';
@@ -164,7 +179,7 @@ export function usePhotoGallery() {
       quality: 100,
     });
 
-    const fileName = Date.now() + '.jpeg';
+    const fileName = new Date().getTime() + '.jpeg';
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 

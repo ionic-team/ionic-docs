@@ -10,7 +10,8 @@ In your test template when rendering with React Testing Library, you must wrap y
 
 ```tsx title="Example.test.tsx"
 import { IonApp } from '@ionic/react';
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
+import { test } from 'vitest';
 
 import Example from './Example';
 
@@ -30,8 +31,9 @@ React Testing Library recommends using the `user-event` library for simulating u
 
 ```tsx title="Example.test.tsx"
 import { IonApp } from '@ionic/react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { test } from 'vitest';
 
 import Example from './Example';
 
@@ -55,9 +57,10 @@ For more information on `user-event`, refer to the [user-event documentation](ht
 When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/react` uses Stencil's custom elements build, where that method does not exist on the element. The helper waits one animation frame instead, giving the component's inner contents a chance to render.
 
 ```tsx
+import { componentOnReady } from '@ionic/core';
 import { IonApp } from '@ionic/react';
 import { render } from '@testing-library/react';
-import { componentOnReady } from '@ionic/core';
+import { expect, test } from 'vitest';
 
 import Example from './Example';
 

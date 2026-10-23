@@ -10,7 +10,20 @@ title: Testing
   />
 </head>
 
-This document provides an overview of how to test an application built with `@ionic/vue`. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [Vue Test Utils](https://test-utils.vuejs.org), and for end-to-end testing with [Cypress](https://www.cypress.io).
+This document provides an overview of how to test an application built with `@ionic/vue`. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [Vue Test Utils](https://test-utils.vuejs.org), and for end-to-end testing with [Playwright](https://playwright.dev). Unit tests live in `tests/unit` and end-to-end tests live in `tests/e2e`.
+
+The generated `package.json` includes scripts for running them:
+
+| Script                    | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `npm test`                | Runs the unit tests once, then the end-to-end tests.         |
+| `npm run test:unit`       | Runs the unit tests once.                                    |
+| `npm run test:unit:watch` | Runs the unit tests and re-runs them when files change.      |
+| `npm run test:e2e`        | Runs the end-to-end tests, starting the dev server for them. |
+
+:::note
+Playwright downloads its browsers separately from the npm package. Run `npx playwright install` once before running the end-to-end tests for the first time.
+:::
 
 ## Unit Testing {/* #unit-testing */}
 
@@ -19,8 +32,9 @@ This document provides an overview of how to test an application built with `@io
 When you need to wait for an Ionic component to render before asserting against its DOM, use the `componentOnReady` helper exported from `@ionic/core`. Do not call `el.componentOnReady()` directly. `@ionic/vue` uses Stencil's custom elements build, where that method does not exist on the element. The helper waits one animation frame instead, giving the component's inner contents a chance to render.
 
 ```ts
-import { mount } from '@vue/test-utils';
 import { componentOnReady } from '@ionic/core';
+import { mount } from '@vue/test-utils';
+import { expect, test } from 'vitest';
 
 import Example from './Example.vue';
 

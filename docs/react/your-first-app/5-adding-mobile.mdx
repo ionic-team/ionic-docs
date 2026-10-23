@@ -22,13 +22,15 @@ Import the Ionic [Platform API](../platform.mdx) into `usePhotoGallery.ts`, whic
 Add `isPlatform` to the imports at the top of the file to use the `isPlatform` method. `Capacitor` is also imported to help with file paths on mobile devices.
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+// CHANGE: Add import
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 // CHANGE: Add import
 import { isPlatform } from '@ionic/react';
-import { Capacitor } from '@capacitor/core';
+import { useState, useEffect } from 'react';
 
 // ...existing code...
 ```
@@ -107,15 +109,18 @@ Our Photo Gallery now consists of one codebase that runs on the web, Android, an
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/react';
-import { Capacitor } from '@capacitor/core';
+import { useState, useEffect } from 'react';
 
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  photos: UserPhoto[];
+} {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const PHOTO_STORAGE = 'photos';
@@ -150,7 +155,7 @@ export function usePhotoGallery() {
       quality: 100,
     });
 
-    const fileName = Date.now() + '.jpeg';
+    const fileName = new Date().getTime() + '.jpeg';
     // Save the picture and add it to photo collection
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 

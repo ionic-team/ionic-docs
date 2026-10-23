@@ -112,7 +112,7 @@ This sets up the root of your application, using Ionic's `ion-app` and `ion-rout
 Routes are defined in `app.routes.ts`:
 
 ```ts title="src/app/app.routes.ts"
-import { Routes } from '@angular/router';
+import type { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -382,7 +382,7 @@ export class NewPage implements OnInit {
 
   ngOnInit() {}
 
-  scrollToBottom = () => {
+  scrollToBottom = (): void => {
     this.content.scrollToBottom(300);
   };
 }
