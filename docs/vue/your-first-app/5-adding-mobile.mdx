@@ -43,7 +43,7 @@ Update `savePicture()` to look like the following:
 ```ts
 // CHANGE: Update the `savePicture()` method
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-  let base64Data: string;
+  let base64Data: string | Blob;
 
   // CHANGE: Add platform check
   // "hybrid" will detect mobile - iOS or Android
@@ -51,7 +51,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     const file = await Filesystem.readFile({
       path: photo.path!,
     });
-    base64Data = typeof file.data === 'string' ? file.data : await file.data.text();
+    base64Data = file.data;
   } else {
     base64Data = await base64FromPath(photo.webPath!);
   }
@@ -92,7 +92,7 @@ Then update `savePicture()` to look like the following:
 ```ts
 // CHANGE: Update `savePicture()` method
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-  let base64Data: string;
+  let base64Data: string | Blob;
 
   // CHANGE: Add platform check
   // "hybrid" will detect mobile - iOS or Android
@@ -100,7 +100,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     const file = await Filesystem.readFile({
       path: photo.path!,
     });
-    base64Data = typeof file.data === 'string' ? file.data : await file.data.text();
+    base64Data = file.data;
   } else {
     base64Data = await base64FromPath(photo.webPath!);
   }
@@ -192,13 +192,13 @@ export const usePhotoGallery = (): {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    let base64Data: string;
+    let base64Data: string | Blob;
     // "hybrid" will detect mobile - iOS or Android
     if (isPlatform('hybrid')) {
       const file = await Filesystem.readFile({
         path: photo.path!,
       });
-      base64Data = typeof file.data === 'string' ? file.data : await file.data.text();
+      base64Data = file.data;
     } else {
       base64Data = await base64FromPath(photo.webPath!);
     }
