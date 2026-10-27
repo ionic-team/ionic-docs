@@ -10,7 +10,20 @@ This document provides an overview of how to test an application built with `@io
 
 ## Introduction {/* #introduction */}
 
-Testing is an important part of the development process, and it helps to ensure that an application is working as intended. In `@ionic/react`, testing is done using a combination of tools and libraries, including Jest or Vitest, React Testing Library, Playwright or Cypress.
+Testing is an important part of the development process, and it helps to ensure that an application is working as intended. Applications generated with the Ionic CLI are set up for unit testing with [Vitest](https://vitest.dev) and [React Testing Library](https://testing-library.com), and for end-to-end testing with [Playwright](https://playwright.dev). Unit tests live next to the code they test in `src` and end-to-end tests live in `e2e`.
+
+The generated `package.json` includes scripts for running them:
+
+| Script                    | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `npm test`                | Runs the unit tests once, then the end-to-end tests.         |
+| `npm run test:unit`       | Runs the unit tests once.                                    |
+| `npm run test:unit:watch` | Runs the unit tests and re-runs them when files change.      |
+| `npm run test:e2e`        | Runs the end-to-end tests, starting the dev server for them. |
+
+:::note
+Playwright downloads its browsers separately from the npm package. Run `npx playwright install` once before running the end-to-end tests for the first time.
+:::
 
 ## Types of Tests {/* #types-of-tests */}
 
@@ -18,4 +31,4 @@ There are two types of tests that can be written:
 
 **Unit Tests**: Unit tests are used to test individual functions and components in isolation. [Jest](https://jestjs.io), [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com) are commonly used for unit testing.
 
-**Integration Tests**: Integration tests are used to test how different components work together. [Cypress](https://www.cypress.io) or [Playwright](https://playwright.dev) are commonly used for integration testing.
+**End-to-end Tests**: End-to-end tests are used to test how different components work together in the running application. [Playwright](https://playwright.dev) and [Cypress](https://www.cypress.io) are commonly used for end-to-end testing.

@@ -38,15 +38,21 @@ With Live Reload running and the app open on your device, let’s implement phot
 In `usePhotoGallery.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we delete the actual photo file itself using the Filesystem API.
 
 ```ts
-import { ref, watch, onMounted } from 'vue';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/vue';
-import { Capacitor } from '@capacitor/core';
+import type { Ref } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+  // CHANGE: Add `deletePhoto()` to the return type
+  deletePhoto: (photo: UserPhoto) => Promise<void>;
+} => {
   // ...existing code...
 
   // CHANGE: Add `deletePhoto()` method
@@ -66,8 +72,8 @@ export const usePhotoGallery = () => {
   watch(photos, cachePhotos);
 
   return {
-    photos,
     addNewToGallery,
+    photos,
     // CHANGE: Add `deletePhoto()` to the return statement
     deletePhoto,
   };
@@ -79,7 +85,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, in `Tab2Page.vue`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `usePhotoGallery.deletePicture()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
+Next, in `Tab2Page.vue`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `deletePhoto()` from `usePhotoGallery()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```vue
 <!-- ...existing code... -->
@@ -97,6 +103,9 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
   actionSheetController,
 } from '@ionic/vue';
 
@@ -154,7 +163,7 @@ Wrap each image in a `<button>` element with a click handler. When the app user 
 
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="(photo, index) in photos" :key="index">
+          <ion-col size="6" :key="photo.filepath" v-for="(photo, index) in photos">
             <!-- CHANGE: Wrap the image in a button element and add a click event listener -->
             <button @click="showActionSheet(photo)">
               <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />

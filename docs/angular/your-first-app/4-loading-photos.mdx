@@ -33,7 +33,7 @@ export class PhotoService {
 Next, at the end of the `addNewToGallery()` method, add a call to `Preferences.set()` to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -47,12 +47,12 @@ export class PhotoService {
   // ...existing code...
 
   // CHANGE: Update `addNewToGallery()` method
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
 
     const savedImageFile = await this.savePicture(capturedPhoto);
@@ -82,7 +82,7 @@ export class PhotoService {
   // ...existing code...
 
   // CHANGE: Add the method to load the photo data
-  public async loadSaved() {
+  public async loadSaved(): Promise<void> {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos.set((photoList ? JSON.parse(photoList) : []) as UserPhoto[]);
@@ -97,7 +97,7 @@ export class PhotoService {
   // ...existing code...
 
   // CHANGE: Update the `loadSaved()` method
-  public async loadSaved() {
+  public async loadSaved(): Promise<void> {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
@@ -105,13 +105,13 @@ export class PhotoService {
     // CHANGE: Display the photo by reading into base64 format
     for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
-      const file = await Filesystem.readFile({
+      const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
 
     // CHANGE: Set the signal so the gallery view updates
@@ -137,12 +137,12 @@ export class PhotoService {
 
   private PHOTO_STORAGE: string = 'photos';
 
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
 
     // Save the picture and add it to photo collection
@@ -192,20 +192,20 @@ export class PhotoService {
     });
   }
 
-  public async loadSaved() {
+  public async loadSaved(): Promise<void> {
     // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     const photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
     for (const photo of photos) {
       // Read each saved photo's data from the Filesystem
-      const file = await Filesystem.readFile({
+      const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
       // Web platform only: Load the photo as base64 data
-      photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
+      photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
 
     this.photos.set(photos);
@@ -223,7 +223,8 @@ Our `PhotoService` can now load the saved images, but we'll need to update `tab2
 Update `tab2.page.ts` to look like the following:
 
 ```ts
-import { Component, OnInit, inject } from '@angular/core';
+import type { OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
@@ -238,6 +239,7 @@ import {
 } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { camera } from 'ionicons/icons';
+
 import { PhotoService } from '../services/photo.service';
 
 @Component({
@@ -254,11 +256,11 @@ export class Tab2Page implements OnInit {
   }
 
   // CHANGE: Add call to `loadSaved()` when navigating to the Photos tab
-  async ngOnInit() {
+  async ngOnInit(): Promise<void> {
     await this.photoService.loadSaved();
   }
 
-  addPhotoToGallery() {
+  addPhotoToGallery(): void {
     this.photoService.addNewToGallery();
   }
 }

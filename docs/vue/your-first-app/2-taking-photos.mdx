@@ -24,13 +24,15 @@ Next, define a new method, `usePhotoGallery()`, that will contain the core logic
 ```ts
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+} => {
   const addNewToGallery = async () => {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
   };
 
@@ -94,7 +96,9 @@ After taking a photo, it disappears right away. We need to display it within our
 To define the data structure for our photo metadata, create a new interface named `UserPhoto`. Add this interface at the very bottom of the `usePhotoGallery.ts` file, immediately after the `usePhotoGallery()` method definition.
 
 ```ts
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+} => {
   // ...existing code...
 };
 
@@ -108,7 +112,9 @@ export interface UserPhoto {
 Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. Make it a reactive variable using Vue's [ref method](https://vuejs.org/api/reactivity-core.html#ref).
 
 ```ts
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+} => {
   // CHANGE: Add the `photos` array
   const photos = ref<UserPhoto[]>([]);
 
@@ -116,22 +122,27 @@ export const usePhotoGallery = () => {
 };
 ```
 
-Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `userPhotoGallery()` return statement with the `photos` array.
+Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, add the `photos` array to the `usePhotoGallery()` return type and return statement.
 
 ```ts
-// CHANGE: Add import
-import { ref } from 'vue';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+// CHANGE: Add imports
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  // CHANGE: Add `photos` to the return type
+  photos: Ref<UserPhoto[]>;
+} => {
   const photos = ref<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
 
     // CHANGE: Create the `fileName` with current timestamp
@@ -157,18 +168,22 @@ export const usePhotoGallery = () => {
 `usePhotoGallery.ts` should now look like this:
 
 ```ts
-import { ref } from 'vue';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  addNewToGallery: () => Promise<void>;
+  photos: Ref<UserPhoto[]>;
+} => {
   const photos = ref<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
 
     const fileName = Date.now() + '.jpeg';
@@ -230,7 +245,7 @@ Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid componen
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
+import { camera } from 'ionicons/icons';
 import {
   IonPage,
   IonHeader,
