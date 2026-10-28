@@ -103,6 +103,16 @@ import States from '@site/static/usage/v9/input-otp/states/index.mdx';
 
 <States />
 
+## Helper & Error Text {/* #helper--error-text */}
+
+Helper and error text can be displayed under the input boxes with the `helperText` and `errorText` properties. The error text isn't displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-input-otp`, so errors aren't shown before the user has a chance to enter a code.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the classes need to be added manually based on your own validation.
+
+import HelperError from '@site/static/usage/v9/input-otp/helper-error/index.mdx';
+
+<HelperError />
+
 ## Pattern {/* #pattern */}
 
 The `pattern` property enables custom validation using regular expressions. It accepts a [string regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) or [unicode regular expression](https://www.regular-expressions.info/unicode.html) to validate allowed characters. The `pattern` must match the entire value, not just a subset. Default patterns:
@@ -150,6 +160,20 @@ import CSSProps from '@site/static/usage/v9/input-otp/theming/css-properties/ind
 <CSSProps />
 
 ## Accessibility {/* #accessibility */}
+
+### Labels {/* #labels */}
+
+Each input box is announced with its position, such as "Input 1 of 4". When `aria-label` is set on `ion-input-otp`, it's added to the start of each name, such as "PIN, 1 of 4". An element referenced with `aria-labelledby` works the same way.
+
+The `inputLabelFormatter` property can be used to translate the names. It receives the 0-based `index` of the box and the total `length`, and its return value is used as the full name of the box.
+
+```javascript
+inputOtp.inputLabelFormatter = (index, length) => `Ziffer ${index + 1} von ${length}`;
+```
+
+### Focus Indicator {/* #focus-indicator */}
+
+The focused input box is indicated by its border color. Set `--highlight-color-focused` to change this color, or `--highlight-color-valid` and `--highlight-color-invalid` to change it when the input has a validation state. If you change these colors, adjust `--border-color`, which styles the unfocused boxes, so the focused box still stands out.
 
 ### Keyboard Interactions {/* #keyboard-interactions */}
 
