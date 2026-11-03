@@ -10,24 +10,22 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInputOtp } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonInputOtp } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const inputOtp = ref();
+const inputOtp = ref();
 
-  const validate = (event) => {
-    const value = event.detail.value ?? '';
+const validate = (event) => {
+  const value = event.detail.value ?? '';
 
-    inputOtp.value.$el.classList.remove('ion-valid');
-    inputOtp.value.$el.classList.remove('ion-invalid');
+  inputOtp.value.$el.classList.remove('ion-valid');
+  inputOtp.value.$el.classList.remove('ion-invalid');
 
-    value.length === 4
-      ? inputOtp.value.$el.classList.add('ion-valid')
-      : inputOtp.value.$el.classList.add('ion-invalid');
-  };
+  value.length === 4 ? inputOtp.value.$el.classList.add('ion-valid') : inputOtp.value.$el.classList.add('ion-invalid');
+};
 
-  const markTouched = () => {
-    inputOtp.value.$el.classList.add('ion-touched');
-  };
+const markTouched = () => {
+  inputOtp.value.$el.classList.add('ion-touched');
+};
 </script>
 ```
