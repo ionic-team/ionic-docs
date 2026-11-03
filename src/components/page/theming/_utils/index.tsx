@@ -13,7 +13,8 @@ export const generateColor = (value: string): GeneratedColorVariable => {
   const contrast = color.contrast();
   const tint = color.tint();
   const shade = color.shade();
-  const formattedValue = value.startsWith('#') ? value : `#${value}`;
+  // Bare hex such as `0054e9` gets its `#`; `rgb()` and `hsl()` values pass through.
+  const formattedValue = /^[0-9a-f]+$/i.test(value) ? `#${value}` : value;
 
   return {
     value: formattedValue,
