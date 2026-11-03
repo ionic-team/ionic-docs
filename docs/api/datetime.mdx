@@ -41,11 +41,14 @@ import ShowAdjacentDays from '@site/static/usage/v10/datetime/show-adjacent-days
 
 import MultipleDateSelection from '@site/static/usage/v10/datetime/multiple/index.mdx';
 
+import Range from '@site/static/usage/v10/datetime/range/index.mdx';
+
 import GlobalTheming from '@site/static/usage/v10/datetime/styling/global-theming/index.mdx';
 import CalendarHeaderStyling from '@site/static/usage/v10/datetime/styling/calendar-header/index.mdx';
 import CalendarDaysStyling from '@site/static/usage/v10/datetime/styling/calendar-days/index.mdx';
 import DatetimeHeaderStyling from '@site/static/usage/v10/datetime/styling/datetime-header/index.mdx';
 import WheelStyling from '@site/static/usage/v10/datetime/styling/wheel-styling/index.mdx';
+import RangeStyling from '@site/static/usage/v10/datetime/styling/range/index.mdx';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -279,7 +282,7 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 ## Multiple Date Selection {/* #multiple-date-selection */}
 
-If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+If the `selectionMode` property is set to `"multiple"`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
 
 :::note
 
@@ -288,6 +291,20 @@ This property is only supported when using `presentation="date"` and `preferWhee
 :::
 
 <MultipleDateSelection />
+
+## Range Selection {/* #range-selection */}
+
+If the `selectionMode` property is set to `"range"`, users can select a range of dates from the calendar picker. The selected range is returned as an array of two ISO 8601 date strings: `[start, end]`. Tapping a date sets the start of the range, and tapping another date sets the end.
+
+The `startDateLabel` and `endDateLabel` properties can be used to customize the labels shown for the start and end dates in the datetime header.
+
+:::note
+
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+
+:::
+
+<Range />
 
 ## Titles {/* #titles */}
 
@@ -408,6 +425,12 @@ The example below selects the day 2 days ago, unless that day is in the previous
 The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
 
 <WheelStyling />
+
+### Range Selection {/* #range-selection-styling */}
+
+When `selectionMode="range"` is used, the selected range can be styled using the `--range-background` CSS custom property and the `range-start`, `range-end`, `range-selection`, and `range-track` CSS shadow parts.
+
+<RangeStyling />
 
 ## Time Zones {/* #time-zones */}
 

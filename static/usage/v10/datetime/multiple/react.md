@@ -10,7 +10,7 @@ function Example() {
     datetime.current.value = ['2022-06-03', '2022-06-13', '2022-06-29'];
   }, []);
 
-  return <IonDatetime ref={datetime} presentation="date" multiple={true}></IonDatetime>;
+  return <IonDatetime ref={datetime} presentation="date" selectionMode="multiple"></IonDatetime>;
 }
 export default Example;
 ```
