@@ -310,18 +310,17 @@ document.addEventListener('ionBackButton', (event: BackButtonEvent) => {
 <TabItem value="angular">
 
 ```tsx
-import { Optional } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular/lazy';
 import { App } from '@capacitor/app';
 
 ...
 
-constructor(
-  private platform: Platform,
-  @Optional() private routerOutlet?: IonRouterOutlet
-) {
+@ViewChild(IonRouterOutlet, { static: true }) routerOutlet?: IonRouterOutlet;
+
+constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(-1, () => {
-    if (!this.routerOutlet.canGoBack()) {
+    if (this.routerOutlet && !this.routerOutlet.canGoBack()) {
       App.exitApp();
     }
   });
@@ -332,18 +331,17 @@ constructor(
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Optional } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 
 ...
 
-constructor(
-  private platform: Platform,
-  @Optional() private routerOutlet?: IonRouterOutlet
-) {
+@ViewChild(IonRouterOutlet, { static: true }) routerOutlet?: IonRouterOutlet;
+
+constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(-1, () => {
-    if (!this.routerOutlet.canGoBack()) {
+    if (this.routerOutlet && !this.routerOutlet.canGoBack()) {
       App.exitApp();
     }
   });
@@ -391,6 +389,8 @@ useBackButton(-1, () => {
 この例は、ユーザがハードウェアの戻るボタンを押したときにアプリケーションが終了し、ナビゲーションスタックに何も残っていないことを示しています。アプリを終了する前に確認ダイアログを表示することも可能です。
 
 アプリケーションを終了する前に、ユーザーがルート・ページにあるかどうかを確認することをお勧めします。開発者は、Ionic Angular の `IonRouterOutlet` で`canGoBack` 、 Ionic React および Ionic Vue の `IonRouter` で `canGoBack` メソッドを使用できます。
+
+In Ionic Angular, `IonRouterOutlet` can only be injected into components rendered inside the outlet. The component whose template contains `ion-router-outlet`, such as `AppComponent`, should query it with `@ViewChild`, as demonstrated in the example above.
 
 ## 内部フレームワークハンドラ {/* #internal-framework-handlers */}
 

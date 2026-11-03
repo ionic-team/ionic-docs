@@ -111,8 +111,8 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 // CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
 
 // CHANGE: Call the element loader before the `bootstrapApplication` call
 defineCustomElements(window);
@@ -191,11 +191,11 @@ ionic serve
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Photo Gallery</ion-title>
+    <ion-title> Photo Gallery </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Photo Gallery</ion-title>
@@ -237,6 +237,31 @@ ionic serve
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+```
+
+Then open `src/app/tabs/tabs.page.ts` and register the `images` icon in place of `ellipse`, so the new icon can display:
+
+```ts
+import { Component, EnvironmentInjector, inject } from '@angular/core';
+import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+// CHANGE: Update import
+import { triangle, images, square } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-tabs',
+  templateUrl: 'tabs.page.html',
+  styleUrls: ['tabs.page.scss'],
+  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
+})
+export class TabsPage {
+  public environmentInjector = inject(EnvironmentInjector);
+
+  constructor() {
+    // CHANGE: Register the `images` icon instead of `ellipse`
+    addIcons({ triangle, images, square });
+  }
+}
 ```
 
 これは、Ionic でできるすべての素晴らしいことの始まりに過ぎません。次に、Web でカメラ撮影機能を実装し、その後 iOS と Android 用にビルドします。

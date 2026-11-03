@@ -59,20 +59,6 @@
       "matchFileNames": ["static/code/stackblitz/**/vue/package.json"]
     },
     {
-      "matchPackageNames": ["vite"],
-      "allowedVersions": "^7.0.0",
-      "matchFileNames": [
-        "static/code/stackblitz/**/html/package.json",
-        "static/code/stackblitz/**/react/package.json",
-        "static/code/stackblitz/**/vue/package.json"
-      ]
-    },
-    {
-      "matchPackageNames": ["@vitejs/plugin-react"],
-      "allowedVersions": "^5.0.0",
-      "matchFileNames": ["static/code/stackblitz/**/react/package.json"]
-    },
-    {
       "description": "Ionic 8 supports React Router 5.",
       "matchPackageNames": ["react-router", "react-router-dom"],
       "allowedVersions": "^5.0.0",
