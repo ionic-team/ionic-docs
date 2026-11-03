@@ -18,6 +18,22 @@
       ion-datetime::part(range-end) {
         background: rgb(235, 68, 90);
       }
+
+      ion-datetime::part(range-start) {
+        border-radius: 32px 0 0 32px;
+      }
+
+      ion-datetime::part(range-end) {
+        border-radius: 0 32px 32px 0;
+      }
+
+      ion-datetime::part(range-start range-end) {
+        border-radius: 50%;
+      }
+
+      ion-datetime::part(range-track)::before {
+        height: 24px;
+      }
     </style>
   </head>
 
