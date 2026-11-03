@@ -31,10 +31,11 @@ Vue Router を使ったルーティングで知っていることはすべて Io
 
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+
 import HomePage from '@/views/Home.vue';
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
@@ -57,7 +58,7 @@ export default router;
 最初ロードされたパスに別のパスを設定したい場合はどうすればよいでしょうか。これには、ルータリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように機能しますが、いくつかの異なるキーが含まれています。
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -77,7 +78,7 @@ const routes: Array<RouteRecordRaw> = [
 これは素晴らしいことですが、実際にルートにナビゲートするにはどうすればよいのでしょうか。これには、 `router-link` プロパティを使用できます。新しいルーティング設定を作成します:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -185,7 +186,7 @@ If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/
 現在の route の設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるように route を設定できます。
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -278,7 +279,7 @@ A common point of confusion when setting up routing is deciding between shared U
 共有 URL は、ルートが共通の URL の一部を持つルート設定です。共有 URL 設定の例を次に示します:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/dashboard',
     component: DashboardMainPage,
@@ -297,7 +298,7 @@ const routes: Array<RouteRecordRaw> = [
 Nested Routes は、ルートが他のルートの子としてリストされるルート設定です。ネストされたルート設定の例を次に示します:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/dashboard/:id',
     component: DashboardRouterOutlet,
@@ -330,7 +331,7 @@ const routes: Array<RouteRecordRaw> = [
 タブを扱う際、Ionic Vue はどのビューがどのタブに属しているかを認識する方法が必要です。ここで役立つのが `IonTabs` コンポーネントですが、そのルーティング設定を見てみましょう：
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/tabs/tab1',
@@ -410,7 +411,7 @@ Ionic は開発者がモバイルアプリを作るのを助けることに重�
 When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/tabs/tab1',
@@ -530,7 +531,7 @@ For example usages, please refer to our [Utility Functions](utility-functions#us
 元のルーティング例を拡張して、URL パラメータをどのように使えるか示しましょう。コンポーネントがルーターへの直接参照を必要としないよう、URL パラメータは [props として渡すこと](https://router.vuejs.org/guide/essentials/passing-props.html) を推奨します。これにより、コンポーネントを再利用したり、単独でテストしたりするのが容易になります。
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',

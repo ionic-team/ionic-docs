@@ -110,7 +110,7 @@ And its template in `app.component.html`:
 Routes are defined in `app.routes.ts`:
 
 ```ts title="src/app/app.routes.ts"
-import { Routes } from '@angular/router';
+import type { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -376,7 +376,7 @@ export class NewPage implements OnInit {
 
   ngOnInit() {}
 
-  scrollToBottom = () => {
+  scrollToBottom = (): void => {
     this.content.scrollToBottom(300);
   };
 }
@@ -435,9 +435,7 @@ ionic cap open android
 </DocsCard>
 
 <DocsCard header="Capacitorドキュメント" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>
-    Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
-  </p>
+  Capacitorを使用してネイティブデバイス機能にアクセスし、アプリをiOS、Android、Webにデプロイする方法を探索します。
 </DocsCard>
 
 </DocsCards>
