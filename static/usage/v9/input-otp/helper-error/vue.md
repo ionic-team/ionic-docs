@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input-otp
     ref="inputOtp"
