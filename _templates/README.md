@@ -19,6 +19,8 @@ The CSS option will add extra files if you need to include custom CSS in your pl
 
 If you need a component for multiple versions of Ionic Framework, you (currently) need to run the generator once for each version.
 
+If the version you pick is not published to npm yet, such as the next major on a major branch, the generated `demo.html` loads the latest published version from the CDN instead, since the CDN has nothing to serve for an unpublished version. The demo renders, but APIs new in that version do not work in it until the version is published. The generator also adds a `TODO(FW-XXXX)` comment above the CDN links. Replace `FW-XXXX` with the ticket that tracks the update, and create one if it does not exist yet.
+
 ## Usage
 
 Once you've generated your playground, you need to add it to the main markdown file in the docs (e.g. [docs/api/button.mdx](../docs/api/button.mdx)) by doing something similar to the following example:
