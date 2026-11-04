@@ -1,4 +1,5 @@
 import Link from '@docusaurus/Link';
+import Heading from '@theme/Heading';
 import clsx from 'clsx';
 import React from 'react';
 import releases from './release-notes.json';
@@ -49,9 +50,9 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
             <div className={styles['release-info']}>
               <div className={styles['release-header']}>
                 <Link to={`https://github.com/ionic-team/ionic-framework/releases/v${release.version}`}>
-                  <h2>
+                  <Heading as="h2">
                     <span className={styles['release-version']}>{release.version}</span>
-                  </h2>
+                  </Heading>
                 </Link>
                 <span className={styles['release-badge']}>{release.type}</span>
                 {index === 0 ? (
@@ -61,7 +62,7 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
                 ) : null}
               </div>
               <div className={styles['release-published']}>
-                <h3>{release.published_at}</h3>
+                <Heading as="h3">{release.published_at}</Heading>
               </div>
               <div
                 dangerouslySetInnerHTML={{
