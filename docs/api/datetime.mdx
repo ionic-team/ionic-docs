@@ -294,9 +294,9 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 ## Range Selection {/* #range-selection */}
 
-If the `selectionMode` property is set to `"range"`, users can select a range of dates from the calendar picker. The selected range is returned as an array of two ISO 8601 date strings: `[start, end]`. Tapping a date sets the start of the range, and tapping another date sets the end.
+If the `selectionMode` property is set to `"range"`, a range of dates can be selected from the calendar picker. Clicking a date sets the start of the range, and clicking another date sets the end. The `value` is an array of two ISO 8601 strings, `[start, end]`. A range can't include a disabled date, so clicking a date past one starts a new range instead.
 
-The `startDateLabel` and `endDateLabel` properties can be used to customize the labels shown for the start and end dates in the datetime header.
+The `startDateLabel` and `endDateLabel` properties customize the placeholder text in the header when `showDefaultTitle` is enabled, and the labels screen readers announce on the start and end days. Set them to translate these labels.
 
 :::note
 
