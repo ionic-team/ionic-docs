@@ -65,9 +65,9 @@ jobs:
           exit 1
         fi
     - uses: ./.github/workflows/actions/check-translations
-    # Vercel builds on Linux, where imports are case-sensitive. An import with
-    # the wrong casing passes every check above, including on the macOS and
-    # Windows runners, and only fails when the site is built here.
+    # Vercel builds on Linux, where imports are case-sensitive. No other check
+    # resolves the imports in doc pages, so an import with the wrong casing only
+    # fails when the site is built.
     - name: 🏗️ Build
       run: |
         npm run generate-markdown
