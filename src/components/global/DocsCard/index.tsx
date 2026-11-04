@@ -17,7 +17,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 function DocsCard(props: Props): ReactNode {
   const isStatic = typeof props.href === 'undefined';
-  const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
   const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;
   const hoverIcon = props.hoverIcon || props.icon;
 
@@ -61,16 +60,6 @@ function DocsCard(props: Props): ReactNode {
     return (
       <docs-card class={className}>
         <div className={clsx(styles.card, 'docs-card')}>{content}</div>
-      </docs-card>
-    );
-  }
-
-  if (isOutbound) {
-    return (
-      <docs-card class={className}>
-        <a className={clsx(styles.card, 'docs-card')} href={props.href} target="_blank">
-          {content}
-        </a>
       </docs-card>
     );
   }

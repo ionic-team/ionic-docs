@@ -19,7 +19,7 @@ import './best-practice-figure.css';
 
  Custom HTML can also be passed to any of the text properties by using curly braces:
 
- text={<>My text with a <a href="#">link</a></>}
+ text={<>My text with a <Link to="/api/note">link</Link></>}
 
  Markdown such as backticks will not be processed when using curly braces.
  The <code> tag can be used instead:

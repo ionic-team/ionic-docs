@@ -9,6 +9,7 @@ import Parts from '@ionic-internal/component-api/v9/item/parts.mdx';
 import CustomProps from '@ionic-internal/component-api/v9/item/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v9/item/slots.mdx';
 
+import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BestPracticeFigure from '@components/global/BestPracticeFigure';
 import Tabs from '@theme/Tabs';
@@ -78,8 +79,8 @@ The text content type includes form control labels or other visible text. This t
   text={
     <>
       If you find that you need a few more sentences to clarify the item's purpose, consider moving the additional
-      sentences to a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list. Adding the item to its own
-      list makes it clear which item the text is associated with.
+      sentences to a <Link to="/api/note">Note</Link> at the bottom of the list. Adding the item to its own list makes
+      it clear which item the text is associated with.
     </>
   }
   doText="Move long text outside of the list"
@@ -165,15 +166,14 @@ Developers should avoid creating [nested interactives](https://dequeuniversity.c
 <BestPracticeFigure
   text={
     <>
-      Actions can be added by using the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component. Actions can
-      also be placed directly inside of the Item without the use of Item Sliding, but this should be limited to no more
-      than 2 actions.
+      Actions can be added by using the <Link to="/api/item-sliding">Item Sliding</Link> component. Actions can also be
+      placed directly inside of the Item without the use of Item Sliding, but this should be limited to no more than 2
+      actions.
     </>
   }
   doText={
     <>
-      Use an <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> to reveal multiple actions by swiping on the
-      Item.
+      Use an <Link to="/api/item-sliding">Item Sliding</Link> to reveal multiple actions by swiping on the Item.
     </>
   }
   doNotText="Don't put more than 2 actions within an Item."
@@ -206,8 +206,8 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
     <>
       Metadata such as helper text or character counts should not be used on form controls in list views. If such
       metadata is needed, the form control should be placed outside of a list.{' '}
-      <a href={useBaseUrl('api/input#filled-inputs')}>Filled Inputs</a> are a great way of visually defining the input
-      container outside of a list.
+      <Link to="/api/input#filled-inputs">Filled Inputs</Link> are a great way of visually defining the input container
+      outside of a list.
     </>
   }
   doText="Place inputs with metadata outside of the list."
@@ -229,8 +229,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
 <BestPracticeFigure
   text={
     <>
-      Alternatively, the metadata can be placed in a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the
-      list.
+      Alternatively, the metadata can be placed in a <Link to="/api/note">Note</Link> at the bottom of the list.
     </>
   }
   doText="Place metadata for inputs at the end of a list."
@@ -253,7 +252,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   text={
     <>
       Items should typically have no more than two controls. If you need more controls, consider adding the additional
-      controls in a <a href={useBaseUrl('api/modal')}>Modal</a> that is accessible from the item.
+      controls in a <Link to="/api/modal">Modal</Link> that is accessible from the item.
     </>
   }
   doText="Move additional controls to a submenu accessible from the item."
