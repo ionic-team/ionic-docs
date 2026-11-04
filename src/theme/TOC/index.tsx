@@ -10,9 +10,11 @@
 import React, { useState, useEffect, type ReactNode } from 'react';
 import TOC from '@theme-original/TOC';
 import type { Props } from '@theme/TOC';
+import Heading from '@theme/Heading';
 
 import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
+import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
@@ -37,13 +39,13 @@ export default function TOCWrapper(props: TOCProps): ReactNode {
 
   return (
     <div className="toc-wrapper">
-      <h2>Contents</h2>
+      <Heading as="h2">Contents</Heading>
       <TOC {...props} />
       <EditThisPage editUrl={metadata.editUrl} />
       {activeAd && (
         <div className="internal-ad">
-          <a
-            href={activeAd.ad_url.url}
+          <Link
+            to={activeAd.ad_url.url}
             target={activeAd.ad_url.target}
             // onClick={e => trackClick(activeAd.ad_id, e)}
           >
@@ -60,7 +62,7 @@ export default function TOCWrapper(props: TOCProps): ReactNode {
               <p>{activeAd.ad_image.alt}</p>
             </picture>
             <PrismicRichText field={activeAd.ad_copy} />
-          </a>
+          </Link>
         </div>
       )}
     </div>

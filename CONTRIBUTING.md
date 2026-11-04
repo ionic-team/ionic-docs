@@ -166,6 +166,17 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 
 You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.
 
+### Links and Headings
+
+Use Markdown for links and headings whenever possible. When you need JSX, such as inside a component prop or in `src/`, use the Docusaurus components instead of raw HTML:
+
+- [`<Link>`](https://docusaurus.io/docs/docusaurus-core#link) from `@docusaurus/Link` instead of `<a>`. It handles the base URL and locale, and opens external URLs in a new tab with `rel="noopener noreferrer"`.
+- [`<Heading>`](https://docusaurus.io/docs/api/misc/@docusaurus/eslint-plugin/prefer-docusaurus-heading) from `@theme/Heading` instead of `<h2>` to `<h6>`.
+
+The build only checks links and anchors that go through Markdown or these components. A raw `<a href>` to a page that doesn't exist builds without errors, and a raw heading's `id` can't be used as a link target.
+
+Markup inside code samples is exempt, since it's example code rather than part of the page.
+
 ### Reference Content
 
 The Markdown in `docs/` does not only contain manually written markdown files:

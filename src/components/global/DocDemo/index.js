@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 
 import './demo.css';
 
@@ -57,9 +58,9 @@ const DocDemo = (props) => {
   );
 
   const sourceLink = (
-    <a href={props.source} className="docs-demo-source" target="_blank" title="Demo Source">
+    <Link to={props.source} className="docs-demo-source" title="Demo Source">
       View Source
-    </a>
+    </Link>
   );
 
   const device = (
