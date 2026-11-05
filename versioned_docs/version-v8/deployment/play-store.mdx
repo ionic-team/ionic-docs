@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 If you are using Capacitor, you can additionally refer to the Capacitor documentation for [Deploying to Google Play](https://capacitorjs.com/docs/android/deploying-to-google-play).
 
-## Generating a release build of an app
+## Generating a release build of an app {/* #generating-a-release-build-of-an-app */}
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
@@ -48,7 +48,7 @@ An Ionic app will have preset default values in this file but this can be change
 </TabItem>
 </Tabs>
 
-## Signing an APK
+## Signing an APK {/* #signing-an-apk */}
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
@@ -60,11 +60,11 @@ To create an AAB binary locally using Android Studio:
 
 For complete details, [view the Android documentation](https://developer.android.com/studio/publish/app-signing).
 
-### Google Play Signing
+### Google Play Signing {/* #google-play-signing */}
 
 If you haven't made the switch to Android app bundles yet, you will need to opt into Play App Signing in the Google Play Console to be able to publish them.
 
-#### New Apps
+#### New Apps {/* #new-apps */}
 
 First, create a new app in the Google Play Console. In order to enable app signing, you'll need to navigate to the new release screen, on one of the Production, Open testing, closed testing, or internal testing pages.
 Select the Create new release button (it doesn't matter which release type, since you don't have to actually go through with creating a new release right now):
@@ -82,7 +82,7 @@ Next, select the **Export and upload a key from Java Keystore** option. This is 
 Follow the instructions on the screen to generate the Keystore and you can use the same Keystore file to sign your app in the Appflow dashboard as well. If you need any help generating the Keystore file, refer to our [Android certificates documentation](https://ionic.io/docs/appflow/package/credentials#android-certificates).
 Once the generated zip file has been uploaded, you're all set! Build an AAB binary signed with the keystore file then upload it to Google Play.
 
-#### Existing Apps
+#### Existing Apps {/* #existing-apps */}
 
 As of now, existing apps aren't required to use the AAB format, but you can still enroll them using Play App signing.
 
@@ -132,7 +132,7 @@ This generates a final release binary called HelloWorld.apk that can be accepted
 </TabItem>
 </Tabs>
 
-## Submitting an app to the Google Play Store
+## Submitting an app to the Google Play Store {/* #submitting-an-app-to-the-google-play-store */}
 
 Now that a release AAB/APK has been generated, a Play Store listing can be written and the AAB/APK can be uploaded.
 
@@ -151,7 +151,7 @@ Once a developer account has been created, go ahead and click the `Create an App
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release AAB/APK that was generated and publish the app.
 
-## Updating an app
+## Updating an app {/* #updating-an-app */}
 
 As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Appflow's Live Update feature. Using Live Updates, changes can be pushed directly to users from the Appflow dashboard, without submitting changes to the Play Store. Learn more about [Live Updates](https://ionic.io/docs/appflow/deploy/intro).
 

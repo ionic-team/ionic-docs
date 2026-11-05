@@ -15,7 +15,7 @@ import CodeColor from '@components/page/theming/CodeColor';
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
 
-## `theme-color` Meta
+## `theme-color` Meta {/* #theme-color-meta */}
 
 The `theme-color` value for a meta tag indicates a color that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
 
@@ -52,11 +52,11 @@ Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if b
 
 For more information, refer to the [MDN theme-color documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color).
 
-## Global Variables
+## Global Variables {/* #global-variables */}
 
 While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
 
-### Application Variables
+### Application Variables {/* #application-variables */}
 
 | Name                        | Description                                                                                          |
 | --------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -70,7 +70,7 @@ While the application and stepped variables in the themes section are useful for
 | `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.mdx#padding)                  |
 | `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
 
-### Grid Variables
+### Grid Variables {/* #grid-variables */}
 
 | Name                           | Description                                    |
 | ------------------------------ | ---------------------------------------------- |
@@ -86,9 +86,9 @@ While the application and stepped variables in the themes section are useful for
 | `--ion-grid-column-padding-lg` | Padding of the grid columns for lg breakpoints |
 | `--ion-grid-column-padding-xl` | Padding of the grid columns for xl breakpoints |
 
-## Known Limitations with Variables
+## Known Limitations with Variables {/* #known-limitations-with-variables */}
 
-### The Alpha Problem
+### The Alpha Problem {/* #the-alpha-problem */}
 
 There is not yet full [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility) for alpha use of a hex color. The [`rgba()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()>) function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
 
@@ -137,7 +137,7 @@ body {
 }
 ```
 
-### Variables in Media Queries
+### Variables in Media Queries {/* #variables-in-media-queries */}
 
 CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) are not currently supported, but there are open drafts to add [custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) and [custom environment variables](https://drafts.csswg.org/css-env-1/) that would solve this problem! However, with the current state of support, the following will **not** work:
 
@@ -151,7 +151,7 @@ CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CS
 }
 ```
 
-### Modifying CSS Color Variables
+### Modifying CSS Color Variables {/* #modifying-css-color-variables */}
 
 While it is possible to easily alter a color in Sass using its built-in functions, it is currently not as easy to modify colors set in CSS Variables. This can be accomplished in CSS by splitting the [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) channels and modifying each value, but it is complex and has missing functionality.
 
@@ -186,7 +186,7 @@ This is normally not a problem, but when an application needs to have dynamic th
 
 There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
 
-## Safe Area Padding
+## Safe Area Padding {/* #safe-area-padding */}
 
 The safe area of a display is the section that is not covered by the device's notch, status bar, or other elements that are part of the device's UI and not the app's. The dimensions of the safe area are different across devices and orientations (portrait or landscape).
 

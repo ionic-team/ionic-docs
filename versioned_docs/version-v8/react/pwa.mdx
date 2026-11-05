@@ -11,7 +11,7 @@ sidebar_label: Progressive Web Apps
   />
 </head>
 
-## Making your React app a PWA with Vite
+## Making your React app a PWA with Vite {/* #making-your-react-app-a-pwa-with-vite */}
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Application Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
 
@@ -39,7 +39,7 @@ For more information on configuring the Vite PWA Plugin, refer to the [Vite PWA 
 
 Refer to the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
 
-## Making your React app a PWA with Create React App
+## Making your React app a PWA with Create React App {/* #making-your-react-app-a-pwa-with-create-react-app */}
 
 :::note
 
@@ -85,15 +85,15 @@ Features like Service Workers and many JavaScript APIs (such as geolocation) req
 
 :::
 
-### Service Worker configuration
+### Service Worker configuration {/* #service-worker-configuration */}
 
 By default, CRA/React Scripts come with a preconfigured Service Worker setup based on [Workbox's Webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). This utilizes a cache-first strategy, meaning that your app will load from a cache, even if the network returns a newer version of the app.
 
 Because of the nature of CRA/React Scripts, the configuration for this is internal to React Scripts, meaning that it cannot be customized without ejecting from React Scripts. Currently, the Ionic CLI does not support an ejected React App, so if this action is taken, you'll need to use npm/yarn scripts instead of the Ionic CLI.
 
-### Deploying
+### Deploying {/* #deploying */}
 
-#### Firebase
+#### Firebase {/* #firebase */}
 
 Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 
