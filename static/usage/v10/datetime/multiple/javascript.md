@@ -1,5 +1,5 @@
 ```html
-<ion-datetime presentation="date" multiple="true"></ion-datetime>
+<ion-datetime presentation="date" selection-mode="multiple"></ion-datetime>
 
 <script>
   const datetime = document.querySelector('ion-datetime');

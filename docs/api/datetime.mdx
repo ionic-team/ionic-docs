@@ -41,11 +41,14 @@ import ShowAdjacentDays from '@site/static/usage/v10/datetime/show-adjacent-days
 
 import MultipleDateSelection from '@site/static/usage/v10/datetime/multiple/index.mdx';
 
+import Range from '@site/static/usage/v10/datetime/range/index.mdx';
+
 import GlobalTheming from '@site/static/usage/v10/datetime/styling/global-theming/index.mdx';
 import CalendarHeaderStyling from '@site/static/usage/v10/datetime/styling/calendar-header/index.mdx';
 import CalendarDaysStyling from '@site/static/usage/v10/datetime/styling/calendar-days/index.mdx';
 import DatetimeHeaderStyling from '@site/static/usage/v10/datetime/styling/datetime-header/index.mdx';
 import WheelStyling from '@site/static/usage/v10/datetime/styling/wheel-styling/index.mdx';
+import RangeStyling from '@site/static/usage/v10/datetime/styling/range/index.mdx';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -279,7 +282,7 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 ## Multiple Date Selection {/* #multiple-date-selection */}
 
-If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+If the `selectionMode` property is set to `"multiple"`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it. The `multiple` property is deprecated in favor of `selectionMode="multiple"`.
 
 :::note
 
@@ -288,6 +291,20 @@ This property is only supported when using `presentation="date"` and `preferWhee
 :::
 
 <MultipleDateSelection />
+
+## Range Selection {/* #range-selection */}
+
+If the `selectionMode` property is set to `"range"`, a range of dates can be selected from the calendar picker. Clicking a date sets the start of the range, and clicking a later date sets the end. If the second click falls before the start, a new range begins from that date. Once both dates are set, clicking a date on or after the start moves the end of the range. The `value` is an array of ISO 8601 strings representing the range: `[start, end]` for a complete range or `[start]` for a partial one. The `value` and `ionChange` event only update once both dates are picked. When `showDefaultButtons` is enabled, the confirm button stays disabled until the range is complete. A range can't include a disabled date, so clicking a date past one starts a new range instead.
+
+The `startDateLabel` and `endDateLabel` properties customize the placeholder text in the header when `showDefaultTitle` is enabled, and the labels screen readers announce on the start and end days. Set them to translate these labels.
+
+:::note
+
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+
+:::
+
+<Range />
 
 ## Titles {/* #titles */}
 
@@ -408,6 +425,12 @@ The example below selects the day 2 days ago, unless that day is in the previous
 The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
 
 <WheelStyling />
+
+### Range Selection {/* #range-selection-styling */}
+
+The range selection in a grid-style `ion-datetime` is made up of the start and end days and the track that connects them. It can be styled through a combination of shadow parts and CSS variables.
+
+<RangeStyling />
 
 ## Time Zones {/* #time-zones */}
 
