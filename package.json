@@ -14,7 +14,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "eslint": "eslint src docs versioned_docs",
+    "eslint": "eslint src docs versioned_docs --cache",
     "generate-markdown": "node scripts/native.mjs && node scripts/cli.mjs && node scripts/release-notes.mjs",
     "heading-ids": "docusaurus write-heading-ids . \"docs/**/*.mdx\" \"!docs/native/**\" \"!docs/cli/commands/**\" --syntax mdx-comment",
     "lint": "npm run prettier -- --write",

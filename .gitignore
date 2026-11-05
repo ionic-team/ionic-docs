@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+.eslintcache
 src/components/page/reference/ReleaseNotes/release-notes.json
 
 # Misc
