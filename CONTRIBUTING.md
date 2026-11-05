@@ -175,7 +175,11 @@ Use Markdown for links and headings whenever possible. When you need JSX, such a
 
 The build only checks links and anchors that go through Markdown or these components. A raw `<a href>` to a page that doesn't exist builds without errors, and a raw heading's `id` can't be used as a link target.
 
-Markup inside code samples is exempt, since it's example code rather than part of the page.
+Markup inside code samples is exempt, since it's example code rather than part of the page. CI fails on a raw `<a>` or heading anywhere else. To check before pushing, run:
+
+```
+npm run eslint
+```
 
 ### Reference Content
 
