@@ -13,7 +13,7 @@ sidebar_label: Injection Tokens
 
 Ionic provides Angular injection tokens that allow you to access Ionic elements through Angular's dependency injection system. This provides a more Angular-idiomatic way to interact with Ionic components programmatically.
 
-## Benefits
+## Benefits {/* #benefits */}
 
 Using injection tokens provides several advantages:
 
@@ -22,13 +22,13 @@ Using injection tokens provides several advantages:
 - **Simplified Code**: Eliminates the need for `ViewChild` queries or manual element references
 - **Better Testing**: Easier to mock and test components that use injection tokens
 
-## IonModalToken
+## IonModalToken {/* #ionmodaltoken */}
 
 The `IonModalToken` injection token allows you to inject a reference to the current modal element directly into your Angular components. This is particularly useful when you need to programmatically control modal behavior, listen to modal events, or access modal properties.
 
 Starting in `@ionic/angular` v8.7.0, you can use this injection token to streamline modal interactions in your Angular applications.
 
-### Basic Usage
+### Basic Usage {/* #basic-usage */}
 
 To use the `IonModalToken`, inject it into your component's constructor:
 
@@ -60,7 +60,7 @@ export class ModalComponent {
 }
 ```
 
-### Listening to Modal Events
+### Listening to Modal Events {/* #listening-to-modal-events */}
 
 You can use the injected modal reference to listen to modal lifecycle events:
 
@@ -102,7 +102,7 @@ export class ModalComponent implements OnInit {
 }
 ```
 
-### Accessing Modal Properties
+### Accessing Modal Properties {/* #accessing-modal-properties */}
 
 The injected modal reference provides access to all modal properties and methods:
 
@@ -143,7 +143,7 @@ export class ModalComponent implements OnInit {
 }
 ```
 
-### Opening a Modal with Injection Token Content
+### Opening a Modal with Injection Token Content {/* #opening-a-modal-with-injection-token-content */}
 
 When opening a modal that uses the injection token, you can pass the component directly to the modal controller:
 

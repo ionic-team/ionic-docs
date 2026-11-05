@@ -10,13 +10,13 @@ title: Configuration
   />
 </head>
 
-## Files
+## Files {/* #files */}
 
 Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
 
 The CLI provides commands for setting and printing config values from project config files and the global CLI config file. Run `ionic config --help` or refer to the documentation for usage of [`ionic config get`](/cli/commands/config-get.mdx) and [`ionic config set`](/cli/commands/config-set.mdx).
 
-### Project Configuration File
+### Project Configuration File {/* #project-configuration-file */}
 
 Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
 
@@ -47,7 +47,7 @@ Each Ionic project has a project configuration file, usually at the project's ro
 }
 ```
 
-## Environment Variables
+## Environment Variables {/* #environment-variables */}
 
 The CLI will look for the following environment variables:
 
@@ -55,7 +55,7 @@ The CLI will look for the following environment variables:
 - `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. Refer to [Using a Proxy](using-a-proxy.mdx).
 - `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
-## Flags
+## Flags {/* #flags */}
 
 CLI flags are global options that alter the behavior of a CLI command.
 
@@ -65,7 +65,7 @@ CLI flags are global options that alter the behavior of a CLI command.
 - `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
 - `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
-## Hooks
+## Hooks {/* #hooks */}
 
 The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
 
@@ -115,7 +115,7 @@ module.exports = function (ctx) {
 };
 ```
 
-## Multi-app Projects
+## Multi-app Projects {/* #multi-app-projects */}
 
 <small>_Available in CLI 6.2.0+_</small>
 
@@ -129,7 +129,7 @@ If you're using Angular, please refer to [the Angular monorepo guide](https://gi
 
 :::
 
-### Setup Steps
+### Setup Steps {/* #setup-steps */}
 
 1. Create a directory and initialize a monorepo (refer to [Project Structure](#project-structure) for full details).
 1. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. Refer to [Config File](#config-file) for full details.
@@ -140,7 +140,7 @@ If you're using Angular, please refer to [the Angular monorepo guide](https://gi
 
 1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (refer to [Adding an App](#adding-an-app) for full details).
 
-### Project Structure
+### Project Structure {/* #project-structure */}
 
 In a multi-app project, project structure is flexible. The only requirement is a multi-app `ionic.config.json` file at the root of the repository.
 
@@ -155,7 +155,7 @@ ionic.config.json
 package.json
 ```
 
-### Config File
+### Config File {/* #config-file */}
 
 In a multi-app project, apps share a single `ionic.config.json` file at the root of the repository instead of each app having their own. The multi-app config file contains the configuration for each app by nesting configuration objects in a `projects` object. A default app can be specified using `defaultProject`.
 
@@ -187,11 +187,11 @@ When a multi-app project is detected, the Ionic CLI will operate under the conte
 1. If the CLI detects it is being run within a project path, configured with the `root` key, it will select the matched project. For example, using the CLI within the `apps/myOtherApp/src` directory will select the `myOtherApp` project.
 1. If a `defaultProject` is specified in `ionic.config.json`, it will select the specified project when the above criteria is not met.
 
-### Adding an App
+### Adding an App {/* #adding-an-app */}
 
 Apps can be registered in a multi-app project either by using `ionic start` to create new apps or `ionic init` to initialize existing apps.
 
-#### Using `ionic start`
+#### Using `ionic start` {/* #using-ionic-start */}
 
 If a multi-app project is detected during `ionic start`, the CLI will add the app configuration to the root `ionic.config.json` file instead of creating a project-specific one.
 
@@ -202,7 +202,7 @@ $ cd apps/
 $ ionic start "My New App" --no-deps
 ```
 
-#### Using `ionic init`
+#### Using `ionic init` {/* #using-ionic-init */}
 
 If an app was created in a way other than `ionic start`, for example by using a prebuilt template, use `ionic init` to register the existing app with the multi-app project.
 
@@ -217,15 +217,15 @@ $ cd apps/existing-app/
 $ ionic init
 ```
 
-## Advanced Configuration
+## Advanced Configuration {/* #advanced-configuration */}
 
-### Overriding the Build
+### Overriding the Build {/* #overriding-the-build */}
 
 Normally, the CLI runs a hard-coded set of commands based on the project type. For example, the standard web asset build for Angular projects is `ng run app:build`. The web asset build can be overridden and `ionic build` can continue to be used by utilizing the `ionic:build` [npm script](https://docs.npmjs.com/misc/scripts). Similarly, the dev server can be overridden by using the `ionic:serve` npm script.
 
 Pay close attention to the flags supplied to the script by the Ionic CLI. Irregularities may occur if options are not respected, especially for livereload on devices.
 
-### Command Options
+### Command Options {/* #command-options */}
 
 Command options can be expressed with environment variables. They are normally set with `--opt=value` syntax. The naming of these environment variables follows a pattern: start with `IONIC_CMDOPTS_`, add the command name (replacing any spaces with underscores), add the option name (replacing any hyphens with underscores), and then uppercase everything. Boolean flags (command-line options that don't take a value) can be set to `1` or `0`. Strip the `--no-` prefix in boolean flags, if it exists (`--no-open` in ionic serve can be expressed with `IONIC_CMDOPTS_SERVE_OPEN=0`, for example).
 
@@ -240,6 +240,6 @@ $ export IONIC_CMDOPTS_CORDOVA_RUN_HOST=0.0.0.0
 
 If these variables are set in the environment, `ionic cordova build ios` will use new defaults for its options.
 
-### Telemetry
+### Telemetry {/* #telemetry */}
 
 The CLI sends usage data to Ionic to create a better experience. To disable this functionality, run `ionic config set -g telemetry false`.

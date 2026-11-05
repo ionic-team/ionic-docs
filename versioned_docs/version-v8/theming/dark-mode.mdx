@@ -15,11 +15,11 @@ import TabItem from '@theme/TabItem';
 
 Ionic makes it easy to change the palettes of your app, including supporting dark color schemes. Dark mode is a display setting that changes all of an app's views to a dark palette. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
 
-## Enabling Dark Palette
+## Enabling Dark Palette {/* #enabling-dark-palette */}
 
 There are three provided ways to enable the dark palette in an app: **always**, based on **system** settings, or by using a CSS **class**.
 
-### Always
+### Always {/* #always */}
 
 The default palette provided with Ionic Framework is a light palette, consisting of a light background and dark text. However, the default palette can be changed to the dark palette by importing the following stylesheet in the appropriate files:
 
@@ -70,7 +70,7 @@ Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette
 
 :::
 
-### System
+### System {/* #system */}
 
 The system approach to enable dark mode involves checking the system settings for the user's preferred color scheme. This is the default when starting a new Ionic Framework app. Importing the following stylesheet in the appropriate file will automatically retrieve the user's preference from the system settings and apply the dark palette when dark mode is preferred:
 
@@ -127,7 +127,7 @@ Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette
 
 :::
 
-### CSS Class
+### CSS Class {/* #css-class */}
 
 While the previous approaches are excellent for enabling the dark palette through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the dark palette conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a dark palette class file. This file applies the dark palette when a specific class is added to an app. Importing the following stylesheet into the appropriate file will provide the necessary styles for using the dark palette with the class:
 
@@ -184,7 +184,7 @@ The `.ion-palette-dark` class **must** be added to the `html` element in order t
 
 :::
 
-## Adjusting System UI Components
+## Adjusting System UI Components {/* #adjusting-system-ui-components */}
 
 When developing a dark palette, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. Refer to the [browser compatibility for color-scheme](https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme) for details on cross browser support.
 
@@ -218,7 +218,7 @@ For developers looking to customize the theme color under the status bar in Safa
 
 :::
 
-## Ionic Dark Palette
+## Ionic Dark Palette {/* #ionic-dark-palette */}
 
 Ionic has a recommended dark palette that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the dark palette file with the corresponding name.
 

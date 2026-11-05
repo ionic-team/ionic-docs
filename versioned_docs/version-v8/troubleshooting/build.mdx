@@ -10,9 +10,9 @@ title: Build Errors
   />
 </head>
 
-## Common mistakes
+## Common mistakes {/* #common-mistakes */}
 
-### Forgetting Parentheses on a Decorator
+### Forgetting Parentheses on a Decorator {/* #forgetting-parentheses-on-a-decorator */}
 
 Decorators should have parentheses `()` after an annotation. Some examples include: `@Injectable()`, `@Optional()`, `@Input()`, etc.
 
@@ -27,9 +27,9 @@ class MyDirective {
 }
 ```
 
-## Common Errors
+## Common Errors {/* #common-errors */}
 
-### Cannot Resolve all Parameters
+### Cannot Resolve all Parameters {/* #cannot-resolve-all-parameters */}
 
 ```shell
 Cannot resolve all parameters for 'YourClass'(?). Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
@@ -77,7 +77,7 @@ class MyIcon {
 }
 ```
 
-### No provider for ParamType
+### No provider for ParamType {/* #no-provider-for-paramtype */}
 
 ```shell
 No provider for ParamType! (MyClass -> ParamType)
@@ -168,7 +168,7 @@ class MyDir {
 }
 ```
 
-### Can't bind to 'propertyName' since it isn't a known property
+### Can't bind to 'propertyName' since it isn't a known property {/* #cant-bind-to-propertyname-since-it-isnt-a-known-property */}
 
 ```shell
 Can't bind to 'propertyName' since it isn't a known property of the 'elementName' element and there are no matching directives with a corresponding property
@@ -181,7 +181,7 @@ This happens when you try and bind a property on an element that doesn't have th
 <div [foo]="bar"></div>
 ```
 
-### No provider for ControlContainer
+### No provider for ControlContainer {/* #no-provider-for-controlcontainer */}
 
 ```shell
 No provider for ControlContainer! (NgControlName -> ControlContainer)
@@ -198,7 +198,7 @@ This error is a more specific version of the `No provider` error above. It happe
 })
 ```
 
-### No Component Factory Found
+### No Component Factory Found {/* #no-component-factory-found */}
 
 ```shell
 No component factory found for <component name>

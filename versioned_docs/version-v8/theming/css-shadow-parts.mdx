@@ -12,7 +12,7 @@ title: CSS Shadow Parts
 
 CSS Shadow Parts allow developers to style CSS properties on an element inside of a shadow tree. This is extremely useful in customizing Ionic Framework [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) components.
 
-## Why Shadow Parts?
+## Why Shadow Parts? {/* #why-shadow-parts */}
 
 Ionic Framework is a distributed set of [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). Web Components follow the [Shadow DOM specification](https://w3c.github.io/webcomponents/spec/shadow/) in order to encapsulate styles and markup.
 
@@ -45,11 +45,11 @@ ion-select .select-placeholder {
 
 So how do we solve this? [CSS Shadow Parts](#shadow-parts-explained)!
 
-## Shadow Parts Explained
+## Shadow Parts Explained {/* #shadow-parts-explained */}
 
 Shadow parts allow developers to style inside a shadow tree, from outside of that shadow tree. In order to do so, the [part must be exposed](#exposing-a-part) and then it can be styled by using [::part](#how-part-works).
 
-### Exposing a part
+### Exposing a part {/* #exposing-a-part */}
 
 When creating a Shadow DOM component, a part can be added to an element inside of a shadow tree by assigning a `part` attribute on the element. This is added to the component in Ionic Framework and requires no action from an end user.
 
@@ -67,7 +67,7 @@ The above shows two parts: `placeholder` and `icon`. Refer to the [select docume
 
 With these parts exposed, the element can now be styled directly using [::part](#how-part-works).
 
-### How ::part works
+### How ::part works {/* #how-part-works */}
 
 The [`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) pseudo-element allows developers to select elements inside of a shadow tree that have been exposed via a part attribute.
 
@@ -105,7 +105,7 @@ There are some known limitations with [vendor prefixed pseudo-elements](#vendor-
 
 :::
 
-## Ionic Framework Parts
+## Ionic Framework Parts {/* #ionic-framework-parts */}
 
 All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, refer to the [Component documentation](../components.mdx).
 
@@ -121,13 +121,13 @@ We welcome recommendations for additional parts. Please create a [new GitHub iss
 
 :::
 
-## Known Limitations
+## Known Limitations {/* #known-limitations */}
 
-### Browser Support
+### Browser Support {/* #browser-support */}
 
 CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](../theming/css-variables.mdx) for styling.
 
-### Vendor Prefixed Pseudo-Elements
+### Vendor Prefixed Pseudo-Elements {/* #vendor-prefixed-pseudo-elements */}
 
 Pseudo-elements that are [vendor prefixed](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
 
@@ -140,7 +140,7 @@ my-component::part(scroll)::-webkit-scrollbar {
 
 Refer to [this issue on GitHub](https://github.com/w3c/csswg-drafts/issues/4530) for more information.
 
-### Structural Pseudo-Classes
+### Structural Pseudo-Classes {/* #structural-pseudo-classes */}
 
 Most pseudo-classes are supported with parts, however, [structural pseudo-classes](https://www.w3.org/TR/selectors-4/#structural-pseudos) are not. An example of structural pseudo-classes that do not work is below.
 
@@ -156,7 +156,7 @@ my-component::part(container):last-child {
 }
 ```
 
-### Chaining Parts
+### Chaining Parts {/* #chaining-parts */}
 
 The `::part()` pseudo-element can not match additional `::part()`s.
 
