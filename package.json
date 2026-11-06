@@ -14,6 +14,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
+    "eslint": "eslint src docs versioned_docs --cache",
     "generate-markdown": "node scripts/native.mjs && node scripts/cli.mjs && node scripts/release-notes.mjs",
     "heading-ids": "docusaurus write-heading-ids . \"docs/**/*.mdx\" \"!docs/native/**\" \"!docs/cli/commands/**\" --syntax mdx-comment",
     "lint": "npm run prettier -- --write",
@@ -65,16 +66,25 @@
     "semver": "^7.8.5"
   },
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^3.10.2",
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/tsconfig": "^3.10.2",
     "@docusaurus/types": "^3.10.2",
     "@ionic/prettier-config": "^4.0.0",
     "@types/react": "^19.2.18",
+    "@typescript-eslint/parser": "^8.72.1",
     "cspell": "^10.0.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-mdx": "^3.9.1",
     "hygen": "^6.2.11",
     "prettier": "^3.9.6",
     "typescript": "^5.9.3",
     "vitest": "^5.0.0"
+  },
+  "overrides": {
+    "@docusaurus/eslint-plugin": {
+      "@typescript-eslint/utils": "^8.71.0"
+    }
   },
   "allowScripts": {
     "@parcel/watcher": false,
