@@ -26,7 +26,7 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "swizzle": "docusaurus swizzle",
-    "spellcheck": "cspell --no-progress --gitignore \"**/*.{md,mdx}\""
+    "spellcheck": "cspell --no-progress --cache --gitignore \"**/*.{md,mdx}\""
   },
   "browserslist": {
     "production": [
@@ -56,7 +56,6 @@
     "docusaurus-plugin-copy-page-button": "^0.8.4",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.6",
-    "fs-extra": "^11.4.0",
     "modern-normalize": "^3.0.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.8",
@@ -86,5 +85,11 @@
     "@docusaurus/eslint-plugin": {
       "@typescript-eslint/utils": "^8.71.0"
     }
+  },
+  "allowScripts": {
+    "@parcel/watcher": false,
+    "@swc/core": false,
+    "core-js": false,
+    "fsevents": false
   }
 }

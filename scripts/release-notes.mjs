@@ -1,4 +1,4 @@
-import pkg from 'fs-extra';
+import { writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { compare } from 'semver';
 import { URL, fileURLToPath } from 'url';
@@ -91,11 +91,14 @@ function getVersionType(version) {
   return type;
 }
 
+function writeJson(data) {
+  writeFileSync(OUTPUT_PATH, `${JSON.stringify(data, null, 2)}\n`);
+}
+
 async function run() {
-  const { outputJson } = pkg;
   try {
     const releases = await getReleases();
-    outputJson(OUTPUT_PATH, releases, { spaces: 2 });
+    writeJson(releases);
     console.log(`🚀 Release Notes Generated`);
   } catch (error) {
     // Only fail the build in CI environments and the preview
@@ -106,7 +109,7 @@ async function run() {
       process.exit(1);
     }
     console.warn(`\n⚠️  Release Notes Failed\n  ⇢ ${error.message}`);
-    outputJson(OUTPUT_PATH, [], { spaces: 2 });
+    writeJson([]);
   }
 }
 

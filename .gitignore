@@ -8,6 +8,7 @@
 .docusaurus
 .cache-loader
 .eslintcache
+.cspellcache
 src/components/page/reference/ReleaseNotes/release-notes.json
 
 # Misc
