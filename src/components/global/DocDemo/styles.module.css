@@ -1,19 +1,13 @@
-docs-demo {
-  display: block;
-}
-
-.docs-demo-device {
+.device {
   --device-padding: 1rem;
   --device-width: 344px;
   --device-height: 704px;
   --device-frame-width: 12px;
 
   padding: var(--device-padding);
-  /* position: sticky; */
-  /* top: 0; */
 }
 
-.docs-demo-mode-toggle {
+.modeToggle {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -28,7 +22,7 @@ docs-demo {
   border-radius: 18px;
 }
 
-.docs-demo-mode-toggle button {
+.modeToggle button {
   background-color: transparent;
   border: none;
   border-radius: 16px;
@@ -36,7 +30,6 @@ docs-demo {
   color: #5b708b;
 
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: 11px;
   letter-spacing: -0.02em;
   width: calc(50% - 2px);
@@ -46,12 +39,12 @@ docs-demo {
   transition: 200ms background-color ease, 200ms color ease;
 }
 
-.docs-demo-mode-toggle button:focus,
-.docs-demo-mode-toggle button:active {
+.modeToggle button:focus,
+.modeToggle button:active {
   outline: none;
 }
 
-.docs-demo-mode-toggle button.is-selected {
+.modeToggle button.selected {
   background-color: white;
   color: black;
 
@@ -59,7 +52,7 @@ docs-demo {
   box-shadow: 0px 2px 3px rgba(0, 16, 46, 0.15);
 }
 
-.docs-demo-device > figure {
+.device > figure {
   margin: 0;
 
   background-size: contain;
@@ -77,7 +70,7 @@ docs-demo {
   z-index: 1;
 }
 
-.docs-demo-device > figure > iframe {
+.device > figure > iframe {
   position: absolute;
 
   top: 0;
@@ -92,32 +85,33 @@ docs-demo {
 
   overflow: hidden;
 
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  /* Clips the iframe to its rounded corners, which border-radius alone does not do in Chromium. */
+  mask-image: radial-gradient(white, black);
 
   z-index: 1;
 }
 
-.docs-demo-device.ios figure {
+.device.ios figure {
   background-image: url('./iphone-device-skin.png');
 
   border-radius: 54px;
 }
 
-.docs-demo-device.ios > figure > iframe {
+.device.ios > figure > iframe {
   border-radius: 38px;
 }
 
-.docs-demo-device.md figure {
+.device.md figure {
   background-image: url('./android-device-skin.png');
 
   border-radius: 44px;
 }
 
-.docs-demo-device.md > figure > iframe {
+.device.md > figure > iframe {
   border-radius: 32px;
 }
 
-.docs-demo-device.ios figure:after {
+.device.ios figure:after {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   bottom: 18px;
@@ -131,7 +125,7 @@ docs-demo {
   z-index: 1;
 }
 
-.docs-demo-device__ios-notch {
+.iosNotch {
   display: none;
   fill: #090a0d;
   left: 50%;
@@ -142,16 +136,16 @@ docs-demo {
   z-index: 2;
 }
 
-.docs-demo-device.ios .docs-demo-device__ios-notch,
-.docs-demo-device.ios figure:after {
+.device.ios .iosNotch,
+.device.ios figure:after {
   display: block;
 }
 
-.docs-demo-device__md-bar {
+.mdBar {
   display: none;
 }
 
-.docs-demo-device.md .docs-demo-device__md-bar {
+.device.md .mdBar {
   display: block;
   fill: rgba(125, 125, 125, 0.3);
   padding: 0.5rem 2.2rem;
@@ -165,7 +159,7 @@ docs-demo {
  * View Source Button
  */
 
-.docs-demo-source {
+.source {
   align-items: center;
   display: flex;
   font-size: 13px;

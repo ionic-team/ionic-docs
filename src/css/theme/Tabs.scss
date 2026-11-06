@@ -43,10 +43,10 @@ html[data-theme='dark'] {
 
     &:hover {
       background-color: inherit;
+    }
 
-      &:not(.tabs__item--active) {
-        opacity: 0.7;
-      }
+    &:hover:not(.tabs__item--active) {
+      opacity: 0.7;
     }
   }
 }

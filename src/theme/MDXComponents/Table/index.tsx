@@ -4,6 +4,8 @@
 
 import React, { type ComponentProps, type ReactElement, type ReactNode } from 'react';
 
+import styles from './styles.module.css';
+
 /** One `<th>` or `<td>`, the deepest level this component reaches into. */
 type Cell = ReactElement<{ children?: ReactNode }>;
 
@@ -22,7 +24,7 @@ export default function MDXTable({
   const hasTheadValue = !Array.isArray(tableHeadings) || tableHeadings.every(({ props }) => props.children);
 
   return (
-    <div className="table-wrapper">
+    <div className={styles.tableWrapper}>
       <table {...props} children={hasTheadValue ? children : children.slice(1)} />
     </div>
   );

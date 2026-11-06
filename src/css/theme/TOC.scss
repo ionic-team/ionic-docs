@@ -1,0 +1,26 @@
+html[data-theme='light'] {
+  --toc-separator-c: var(--c-indigo-20);
+  --ifm-toc-link-color: var(--c-indigo-80);
+}
+
+html[data-theme='dark'] {
+  --toc-separator-c: var(--c-carbon-90);
+  --ifm-toc-link-color: var(--c-carbon-0);
+}
+
+//overrides
+#__docusaurus {
+  .theme-doc-toc-desktop {
+    position: static;
+    top: initial;
+    overflow: hidden;
+
+    max-height: initial;
+
+    padding-block-end: 1.25rem;
+
+    border-block-end: 1px solid var(--toc-separator-c);
+
+    line-height: 1.4;
+  }
+}

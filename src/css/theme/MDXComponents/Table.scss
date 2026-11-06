@@ -10,10 +10,6 @@ html[data-theme='dark'] {
   --ifm-table-stripe-background: var(--ifm-table-background);
 }
 
-.table-wrapper {
-  overflow-x: auto;
-}
-
 table,
 tr,
 td,
@@ -42,24 +38,4 @@ th {
 th,
 td {
   line-height: 1.6;
-}
-
-thead th:empty {
-  display: none;
-}
-
-.reference-table {
-  display: inline-table;
-}
-
-.reference-table th h3 {
-  margin: 0;
-}
-
-.reference-table p {
-  margin: 0;
-}
-
-.reference-table p + p {
-  margin-top: 2em;
 }

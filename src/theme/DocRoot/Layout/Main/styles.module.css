@@ -1,0 +1,10 @@
+.mainWrapper {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* Let the docs content use the full width next to the sidebar. */
+.mainWrapper > main,
+.mainWrapper > main > :global(.container) {
+  max-width: initial;
+}

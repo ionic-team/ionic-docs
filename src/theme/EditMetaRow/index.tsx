@@ -24,7 +24,6 @@ import type {Props} from '@theme/EditMetaRow';
 
 import LastUpdated from '@theme/LastUpdated';
 
-import globalStyles from '@docusaurus/theme-classic/lib/theme/EditMetaRow/styles.module.css';
 import styles from './styles.module.css';
 
 export default function EditMetaRow({
@@ -50,7 +49,7 @@ export default function EditMetaRow({
     <div className={clsx('row', className)}>
       {/* CUSTOM CODE — "Edit this page | Copy page" as peer links on one row */}
       <div
-        className={clsx('col', globalStyles.noPrint, styles.editMetaActions)}>
+        className={clsx('col', styles.noPrint, styles.editMetaActions)}>
         {editUrl && <EditThisPage editUrl={editUrl} />}
         <CopyPageButton
           markdownUrl={markdownUrl}
@@ -63,7 +62,7 @@ export default function EditMetaRow({
       {/* CUSTOM CODE END */}
       {/* CUSTOM CODE — wrap the whole column in the conditional, not just its contents */}
       {(lastUpdatedAt || lastUpdatedBy) && (
-        <div className={clsx('col', globalStyles.lastUpdated)}>
+        <div className={clsx('col', styles.lastUpdated)}>
           <LastUpdated
             lastUpdatedAt={lastUpdatedAt}
             lastUpdatedBy={lastUpdatedBy}

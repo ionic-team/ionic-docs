@@ -12,7 +12,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   hoverIcon?: string;
   iconset?: string;
   img?: string;
-  size?: 'md' | 'lg';
 }
 
 function DocsCard(props: Props): ReactNode {
@@ -53,20 +52,19 @@ function DocsCard(props: Props): ReactNode {
   const className = clsx(props.className, {
     'Card-with-image': typeof props.img !== 'undefined',
     'Card-without-image': typeof props.img === 'undefined',
-    'Card-size-lg': props.size === 'lg',
   });
 
   if (isStatic) {
     return (
       <docs-card class={className}>
-        <div className={clsx(styles.card, 'docs-card')}>{content}</div>
+        <div className={styles.card}>{content}</div>
       </docs-card>
     );
   }
 
   return (
     <docs-card class={className}>
-      <Link to={props.href} className={clsx(styles.card, 'docs-card')}>
+      <Link to={props.href} className={styles.card}>
         {content}
       </Link>
     </docs-card>

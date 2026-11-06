@@ -1,6 +1,6 @@
 //overrides
 #__docusaurus {
-  [class*='backToTopButton_'] {
+  .theme-back-to-top-button {
     &::after {
       mask: var(--ifm-menu-link-sublist-icon) 50% / 1rem 0.75rem no-repeat;
     }

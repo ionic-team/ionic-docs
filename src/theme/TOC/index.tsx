@@ -19,6 +19,8 @@ import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 
+import styles from './styles.module.css';
+
 interface TOCProps extends Props {
   editUrl: string;
 }
@@ -38,12 +40,12 @@ export default function TOCWrapper(props: TOCProps): ReactNode {
   if (isEmpty) return null;
 
   return (
-    <div className="toc-wrapper">
+    <div className={styles.tocWrapper}>
       <Heading as="h2">Contents</Heading>
       <TOC {...props} />
       <EditThisPage editUrl={metadata.editUrl} />
       {activeAd && (
-        <div className="internal-ad">
+        <div className={styles.internalAd}>
           <Link
             to={activeAd.ad_url.url}
             target={activeAd.ad_url.target}
