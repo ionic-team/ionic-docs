@@ -1,13 +1,9 @@
 html[data-theme='light'] {
-  --markdown-toc-title-c: var(--c-indigo-60);
-  --markdown-toc-list-item-c: var(--c-indigo-70);
   --markdown-text-intro-c: var(--c-carbon-80);
   --markdown-bold-c: var(--c-carbon-100);
 }
 
 html[data-theme='dark'] {
-  --markdown-toc-title-c: #fff;
-  --markdown-toc-list-item-c: #fff;
   --markdown-text-intro-c: var(--c-indigo-40);
   --markdown-bold-c: #fff;
 }
@@ -38,11 +34,6 @@ html[data-theme='dark'] {
   }
   pre code {
     font-size: 0.813rem;
-  }
-
-  .encapsulation-pill {
-    position: absolute;
-    top: 0;
   }
 
   > * {
@@ -90,57 +81,15 @@ html[data-theme='dark'] {
     margin-block-start: 1rem;
   }
 
-  //intro paragraphs
-  > header + p {
+  // The first two paragraphs after the title are the intro
+  > header + p,
+  > header + p + p {
     color: var(--markdown-text-intro-c);
     font-size: 1.25rem;
 
     > strong,
     > b {
       color: var(--markdown-bold-c);
-    }
-
-    + p {
-      color: var(--markdown-text-intro-c);
-      font-size: 1.25rem;
-
-      > strong,
-      > b {
-        color: var(--markdown-bold-c);
-      }
-    }
-  }
-
-  .table-of-contents {
-    margin-block-end: 3rem;
-
-    list-style: none;
-    padding: 0;
-
-    &__title {
-      color: var(--markdown-toc-title-c);
-      margin-block-end: 1.5rem;
-
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 0.625rem;
-      line-height: 0.75rem;
-      letter-spacing: 0.08em;
-    }
-
-    li {
-      color: var(--markdown-toc-list-item-c);
-      font-size: 0.75rem;
-      line-height: 0.875rem;
-      margin: 0;
-
-      a {
-        color: inherit;
-      }
-
-      + li {
-        margin-block-start: 0.75rem;
-      }
     }
   }
 }

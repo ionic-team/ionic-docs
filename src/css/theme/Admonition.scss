@@ -65,17 +65,13 @@ html[data-theme='dark'] {
     }
   }
 
-  [class^='admonitionContent_'] {
-    p {
-      a {
-        color: var(--admonition-link-c);
-        text-decoration: underline;
-      }
+  [class^='admonitionContent_'] p a {
+    color: var(--admonition-link-c);
+    text-decoration: underline;
+  }
 
-      code {
-        background: var(--admonition-code-c-bg);
-      }
-    }
+  [class^='admonitionContent_'] p code {
+    background: var(--admonition-code-c-bg);
   }
 
   &::before {

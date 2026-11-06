@@ -5,31 +5,28 @@
 
     &__item {
       padding: 1rem var(--ifm-navbar-padding-horizontal);
-
-      .menu__list {
-        .separator {
-          display: none;
-        }
-        .icon-link {
-          display: none;
-        }
-      }
     }
 
-    &__brand {
-      .navbar__brand {
-        display: flex;
-      }
+    &__item .menu__list .separator {
+      display: none;
+    }
 
-      .navbar__logo {
-        display: block;
-        height: auto;
+    &__item .menu__list .icon-link {
+      display: none;
+    }
 
-        img {
-          display: block;
-          height: auto;
-        }
-      }
+    &__brand .navbar__brand {
+      display: flex;
+    }
+
+    &__brand .navbar__logo {
+      display: block;
+      height: auto;
+    }
+
+    &__brand .navbar__logo img {
+      display: block;
+      height: auto;
     }
 
     .cta {

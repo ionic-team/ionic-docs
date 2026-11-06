@@ -10,9 +10,11 @@ import Main from '@theme-original/DocRoot/Layout/Main';
 import Navbar from '@theme/Navbar';
 import type { Props } from '@theme/DocRoot/Layout/Main';
 
+import styles from './styles.module.css';
+
 export default function MainWrapper(props: Props): ReactNode {
   return (
-    <div>
+    <div className={styles.mainWrapper}>
       <Navbar />
       <Main {...props} />
     </div>

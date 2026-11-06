@@ -3,7 +3,7 @@
  * but gives it no appearance, so all of it lives here.
  */
 
-.tooltip__root {
+.root {
   z-index: 9999;
   max-width: min(350px, calc(100vw - 10px));
   pointer-events: none;

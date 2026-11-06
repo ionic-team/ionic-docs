@@ -29,7 +29,7 @@ html[data-theme='dark'] {
   --ifm-menu-color-background-hover: transparent;
 }
 
-//overrides
+// overrides
 #__docusaurus {
   .theme-doc-sidebar-container {
     background: var(--token-primary-bg-c);
@@ -42,18 +42,6 @@ html[data-theme='dark'] {
     height: 100vh;
 
     border-inline-end: 1px solid var(--sidebar-border-c);
-
-    [class^='sidebarViewport'] {
-      // Targets the logo
-      > a {
-        display: flex;
-        align-items: center;
-        height: var(--ifm-navbar-height);
-  
-        padding-inline-start: var(--sidebar-spacing-horizontal);
-        padding-inline-end: var(--sidebar-spacing-horizontal);
-      }
-    }
   }
 
   [class^='sidebar_'] {
@@ -88,32 +76,28 @@ html[data-theme='dark'] {
     will-change: initial !important;
 
     margin-top: 0;
+  }
 
-    .menu__list {
-      .menu__link--sublist {
-        margin-inline-start: calc(-1 * (var(--dropdown-icon-width) + var(--dropdown-icon-gap)));
+  .menu__list .menu__list .menu__link--sublist {
+    margin-inline-start: calc(-1 * (var(--dropdown-icon-width) + var(--dropdown-icon-gap)));
 
-        &::after {
-          // The chevron icon will have less opacity when it's not on the first level.
-          opacity: 0.6;
-        }
-      }
+    &::after {
+      // The chevron icon will have less opacity when it's not on the first level.
+      opacity: 0.6;
     }
+  }
 
-    &-item {
-      &:not(:first-child) {
-        margin-block-start: 0;
-      }
-      .menu__list {
-        .menu__link {
-          padding-inline-start: calc(var(--dropdown-icon-width) + var(--dropdown-icon-gap));
-        }
-      }
-      &-collapsible {
-        // This allows the item to be clickable across the entire width of the sidebar.
-        display: block;
-      }
-    }
+  .menu__list-item:not(:first-child) {
+    margin-block-start: 0;
+  }
+
+  .menu__list-item .menu__list .menu__link {
+    padding-inline-start: calc(var(--dropdown-icon-width) + var(--dropdown-icon-gap));
+  }
+
+  .menu__list-item-collapsible {
+    // This allows the item to be clickable across the entire width of the sidebar.
+    display: block;
   }
 
   .theme-doc-sidebar-item-category-level-1 > .menu__list > .menu__list-item:last-of-type {
@@ -140,12 +124,10 @@ html[data-theme='dark'] {
       background: initial;
     }
 
-    &:not(.menu__link--active):not(.menu__link--sublist) {
-      &:hover,
-      &:active,
-      &:focus {
-        opacity: 0.7;
-      }
+    &:not(.menu__link--active):not(.menu__link--sublist):hover,
+    &:not(.menu__link--active):not(.menu__link--sublist):active,
+    &:not(.menu__link--active):not(.menu__link--sublist):focus {
+      opacity: 0.7;
     }
   }
 
@@ -159,7 +141,7 @@ html[data-theme='dark'] {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
-  
+
     &::after {
       background: var(--ifm-menu-link-sublist-icon) center / var(--dropdown-icon-width) var(--dropdown-icon-height);
       background-repeat: no-repeat;
@@ -176,15 +158,11 @@ html[data-theme='dark'] {
     }
   }
 
-  .theme-doc-sidebar-item-category-level-1 {
-    & > .menu__list-item-collapsible {
-      .menu__link {
-        color: var(--sidebar-category-c);
-  
-        font-weight: 600;
-        font-size: 0.938rem;
-        line-height: 100%;
-      }
-    }
+  .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link {
+    color: var(--sidebar-category-c);
+
+    font-weight: 600;
+    font-size: 0.938rem;
+    line-height: 100%;
   }
 }

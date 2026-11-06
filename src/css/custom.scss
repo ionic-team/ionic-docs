@@ -1,27 +1,26 @@
-/* stylelint-disable docusaurus/copyright-header */
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global styles, loaded through `customCss` in docusaurus.config.js.
+ *
+ * This file holds the Infima variable overrides and the base element styles.
+ * Overrides for theme components live in `theme/`, one file per component,
+ * named after the component in `@docusaurus/theme-classic`. Components we
+ * swizzle keep their styles next to them in `src/theme`.
  */
 
-/* You can override the default Infima variables here. */
-
-@use './components/admonition';
-@use './components/back-to-top-button';
-@use './components/code';
-@use './components/doc-item';
-@use './components/doc-root';
-@use './components/doc-sidebar';
-@use './components/edit-this-page';
-@use './components/markdown';
-@use './components/navbar';
-@use './components/navbar-sidebar';
-@use './components/pagination';
-@use './components/search';
-@use './components/table';
-@use './components/tabs';
-@use './components/toc';
+@use './theme/Admonition';
+@use './theme/AnnouncementBar';
+@use './theme/BackToTopButton';
+@use './theme/CodeBlock';
+@use './theme/DocSidebar';
+@use './theme/EditThisPage';
+@use './theme/DocItem/Content';
+@use './theme/Navbar';
+@use './theme/Navbar/MobileSidebar';
+@use './theme/DocPaginator';
+@use './theme/SearchBar';
+@use './theme/MDXComponents/Table';
+@use './theme/Tabs';
+@use './theme/TOC';
 
 :root {
   --ifm-background-color: var(--token-primary-bg-c);
@@ -58,7 +57,6 @@ html[data-theme='light'] {
   --ifm-heading-color: var(--c-carbon-100);
   --ifm-secondary-heading-color: var(--c-carbon-300);
 
-  --ifm-code-background: var(--c-indigo-10);
   --ifm-font-color-base: var(--c-carbon-90);
   --ifm-info-color-bg: var(--c-carbon-90);
 }
@@ -110,29 +108,12 @@ a {
   }
 }
 
-body {
-  margin: 0;
-}
-
-.theme-doc-version-badge {
-  display: none;
-}
-
-ion-grid {
-  margin: 1em 0;
-}
-
 figure {
   margin: 0;
 }
 
 figure > * {
   display: block;
-  margin: 0 auto;
-}
-
-figure.device {
-  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -150,83 +131,8 @@ iframe {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.git-link {
-  &::before {
-    content: '';
-    height: 1em;
-    width: 1em;
-    display: inline-block;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 100% 100%;
-    mask-image: url(../../static/icons/code-branch.svg);
-    vertical-align: -0.1em;
-    margin-inline-end: 5px;
-  }
-}
-
-.cordova-ee-card {
-  max-width: 100%;
-}
-
-.cordova-ee-img {
-  width: 50px;
-  float: left;
-  margin-right: 20px;
-}
-
-.native-ee-detail {
-  float: right;
-  cursor: pointer;
-}
-
-.cordova-ee-card p {
-  margin: 1rem 0 0;
-}
-
-// OS Announcement Bar
-[class*='announcementBar_'] {
-  --docusaurus-announcement-bar-height: 3.5rem;
-
-  background: linear-gradient(90deg, #440f14, #5e1219 15%, #000 35%, #000 45%, #5e1219 85%, #440f14);
-
-  &:hover,
-  &:focus,
-  &:active {
-    strong {
-      color: var(--c-red-50);
-    }
-  }
-}
-
-[class*='announcementBarContent_'] {
-  padding: 0;
-
-  > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--docusaurus-announcement-bar-height);
-
-    letter-spacing: 0.01em !important;
-    text-decoration: none !important;
-
-    color: #fff !important;
-
-    font-size: 1.04rem;
-    font-weight: 500;
-
-    strong {
-      font-weight: 500;
-
-      color: var(--c-red-70);
-
-      transition: color 0.2s ease-out;
-    }
-  }
-}
-
+// Its markdown sets these as plain class names instead of
+// importing a CSS module, so only global rules can match them.
 .install-button {
   background-color: var(--ifm-info-color-bg);
   border: 2px solid var(--ifm-font-color-base);

@@ -17,8 +17,7 @@ import IconLanguage from '@theme/Icon/Language';
 import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
 import type {Props} from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 
-import styles from '@docusaurus/theme-classic/lib/theme/NavbarItem/LocaleDropdownNavbarItem/styles.module.css';
-import customStyles from './styles.module.css';
+import styles from './styles.module.css';
 
 function useLocaleDropdownUtils() {
   const {
@@ -129,7 +128,7 @@ export default function LocaleDropdownNavbarItem({
         <>
           <IconLanguage className={styles.iconLanguage} />
           {/* CUSTOM CODE - added span in order to hide the text */}
-          <span className={customStyles.localeVisuallyHidden}>
+          <span className={styles.localeVisuallyHidden}>
             {dropdownLabel}
           </span>
         </>
