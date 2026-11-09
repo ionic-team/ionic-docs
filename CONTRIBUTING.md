@@ -8,12 +8,17 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 
 - [Development Workflow](#development-workflow)
   - [Previewing Changes](#previewing-changes)
+  - [Checking Links](#checking-links)
   - [Linting Documentation](#linting-documentation)
   - [Spell Check](#spell-check)
+  - [Heading IDs](#heading-ids)
 - [Using VS Code on Windows](#using-vs-code-on-windows)
 - [Project Structure](#project-structure)
   - [Directories](#directories)
 - [Authoring Content](#authoring-content)
+  - [Admonitions](#admonitions)
+  - [Links and Headings](#links-and-headings)
+  - [Playgrounds](#playgrounds)
   - [Reference Content](#reference-content)
 - [Translation](#translation)
 - [Reporting Issues](#reporting-issues)
@@ -28,16 +33,16 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 
 ### Previewing Changes
 
-In order to run the documentation locally, install the dependencies and run the development server:
+In order to run the documentation locally, use Node.js 24 or later, install the dependencies and run the development server:
 
 ```sh
-npm install
+npm ci
 npm start
 ```
 
 #### GitHub Token
 
-The documentation build requires a GitHub Personal Access Token to fetch Ionic Framework release notes. The build will still work locally without it (release notes will be empty), but it's required for Vercel preview and production builds.
+The documentation build requires a GitHub Personal Access Token to fetch Ionic Framework release notes. The build still works locally without it, with an empty release notes page, but Vercel preview and production builds fail without it.
 
 **Local Development:**
 
@@ -69,7 +74,17 @@ The documentation build requires a GitHub Personal Access Token to fetch Ionic F
 
 3. Redeploy the project for the token to take effect
 
-Without the token, the build will fail with an error message indicating the token is missing.
+If the token is missing, Vercel builds fail with `GITHUB_TOKEN environment variable is required.`
+
+### Checking Links
+
+The development server does not check for broken links or anchors. Only a build does, and it fails on any it finds. Build the site before pushing a change that adds or moves links or headings:
+
+```sh
+npm run build:preview
+```
+
+This builds the English site only, the same build as a Vercel preview.
 
 ### Linting Documentation
 
@@ -107,7 +122,7 @@ npm run spellcheck
   ```mdx
   {/* cspell:disable */}
 
-  <p>Everything inside of these comments will be ignored by the spell checkr. Proofread your own words carefully.</p>
+  <p>Everything inside of these comments will be ignored by the spell checker. Proofread your own words carefully.</p>
 
   {/* cspell:enable */}
   ```
@@ -124,11 +139,25 @@ Comments disabling the next line or entire sections of documentation are useful 
 
 In general, we should try to avoid ignoring words unless they are technical terms that are used throughout the documentation and wouldn't necessarily make sense formatted as code.
 
+### Heading IDs
+
+Every heading in `docs/` needs an explicit ID, so that renaming the heading doesn't change its anchor and break links to it:
+
+```mdx
+## Basic Usage {/* #basic-usage */}
+```
+
+Run the following command to add IDs to any new headings, and then push the changes. CI fails if a heading is missing one.
+
+```
+npm run heading-ids
+```
+
 ---
 
 ## Using VS Code on Windows
 
-The Ionic docs were originally built in a Mac-based environment, so Mac-focused linting rules apply when committing changes. To contribute on Windows, do the following:
+Prettier expects LF line endings, and CI fails if `npm run lint` changes any file. To contribute on Windows, do the following:
 
 - Configure VS Code to read/save files using line breaks (LF) instead of carriage returns (CRLF). Set it globally by navigating to: Settings -> Text Editor -> Files -> Eol. Set to `\n`.
 - Check that the Git setting `core.autocrlf` is set to `false`: run `git config -l | grep autocrlf`. Switch it to false using: `git config --global core.autocrlf false`.
@@ -140,14 +169,19 @@ Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The c
 
 ### Directories
 
+- `_templates/` - templates used by `npm run playground:new`
+- `docs/` - content of the current version of the docs
+- `plugins/` - local Docusaurus plugins, such as the one that generates the component API pages
 - `scripts/` - build scripts used to generate markdown or json files
-- `src/` - source code and content of the docs
+- `src/` - source code of the site
   - `components/` - components used across the site
     - `global/` - components used globally
     - `page/` - components used on a single page or in a limited scope
   - `styles/` - global styles and variables
     - `components/` - styles split out into the components they target
+  - `theme/` - Docusaurus theme components that have been swizzled
 - `static/`
+  - `code/` - StackBlitz project templates used by the playgrounds
   - `demos/` - self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
   - `usage/` - playgrounds that can be created by running `npm run playground:new` [(docs)](_templates/README.md#new-playground-template)
 - `versioned_docs/` - versions of the docs created by the docusaurus versioning command
@@ -158,13 +192,31 @@ Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The c
 The content of the Ionic docs is written as [Markdown](https://commonmark.org/) in `docs/`. Each Markdown file corresponds to a route unless explicitly changed in the frontmatter.
 
 ```
-/docs/                  =>  src/pages/index.md
-/docs/intro/cli         =>  src/pages/intro/cli.md
-/docs/theming/advanced  =>  src/pages/theming/advanced.md
-/docs/theming           =>  src/pages/theming.md
+/docs                   =>  docs/index.mdx
+/docs/intro/cli         =>  docs/intro/cli.mdx
+/docs/theming/basics    =>  docs/theming/basics.mdx
+/docs/v8/intro/cli      =>  versioned_docs/version-v8/intro/cli.mdx
 ```
 
-You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.
+`/docs` maps to `docs/index.mdx` through `slug: /` in its frontmatter. Older versions live in `versioned_docs/` and are served under their version, such as `/docs/v8/`.
+
+Versions listed in [`versions.json`](versions.json) are actively maintained. If your change also applies to one of them, make the same change in its `versioned_docs/version-<name>/` folder. Versions listed in [`versionsArchived.json`](versionsArchived.json) are frozen deployments that are no longer built, so changes to their folders never reach the site.
+
+Markdown links resolve within their own version, but JSX paths such as `<Link to>` and `useBaseUrl` do not. In an older version, prefix them with the version, such as `<Link to="/v8/api/note">`.
+
+You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files). In your pull request, please explain what was missing from or inaccurate about the content.
+
+### Admonitions
+
+Give an admonition a title with square brackets. The older `:::note My Title` form renders as plain text with no build error, so CI fails on it:
+
+```mdx
+:::note[My Title]
+
+Content
+
+:::
+```
 
 ### Links and Headings
 
@@ -181,13 +233,39 @@ Markup inside code samples is exempt, since it's example code rather than part o
 npm run eslint
 ```
 
+### Playgrounds
+
+A playground is the interactive example on a component page. It shows a live demo that switches between iOS and Material Design modes, the code for JavaScript, Angular, React and Vue, and a button to open the example in StackBlitz.
+
+Each playground is a folder in `static/usage/<version>/<component>/<example>/`:
+
+- `demo.html`: the live demo, so update it along with the framework code
+- `javascript.md`, `react.md`, `vue.md` and `angular/`: the code shown for each framework
+- `index.mdx`: renders the `Playground` component with those files
+
+Run the following command to generate a playground, and then import its `index.mdx` into the page:
+
+```
+npm run playground:new
+```
+
+```mdx
+import Basic from '@site/static/usage/v9/button/basic/index.mdx';
+
+<Basic />
+```
+
+For the generator's prompts, refer to the [playground template docs](_templates/README.md#new-playground-template). For the `Playground` options, refer to its [README](src/components/global/Playground/README.md).
+
 ### Reference Content
 
 The Markdown in `docs/` does not only contain manually written markdown files:
 
-- Paths matching `/docs/api/*` are built from the [Ionic Framework](https://github.com/ionic-team/ionic) source code
-- Paths matching `/docs/native/*` are built from the [Ionic Native](https://github.com/ionic-team/ionic-native) source code
+- The properties, events, methods, and other API tables on `/docs/api/*` pages are built from the [Ionic Framework](https://github.com/ionic-team/ionic-framework) source code
+- Paths matching `/docs/native/*` are built from the [Capacitor plugins](https://github.com/ionic-team/capacitor-plugins) READMEs
 - Paths matching `/docs/cli/commands/*` are built from the [Ionic CLI](https://github.com/ionic-team/ionic-cli) source code
+
+The `native/` and `cli/commands/` pages are generated when you run `npm start` or build the site, and they are not committed. To change them, edit the plugin's README in [capacitor-plugins](https://github.com/ionic-team/capacitor-plugins) or the command's source in [ionic-cli](https://github.com/ionic-team/ionic-cli).
 
 ## Translation
 
@@ -199,7 +277,7 @@ _Please submit translation issues to the Crowdin page and not the Ionic Docs Git
 
 <!-- cspell:disable-next-line -->
 
-The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
+The Japanese translation of the docs were built by an independent team, led by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
 
 ## Reporting Issues
 
@@ -210,7 +288,7 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 - Steps to reproduce
 - Expected behavior
 - OS and browser versions
-- If possible, a demo repo or CodePen/CodeSandbox
+- If possible, a demo repo or StackBlitz
 
 > [!NOTE]
 > Some [reference content](#reference-content) is pulled from other Ionic repos. In that case, please submit your issue on the docs repo with a link to the repo where the content lives.
@@ -220,6 +298,10 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 ## Pull Request Guidelines
 
 When submitting pull requests, please keep the scope of your change contained to a single feature or bug. When in doubt, err on the side of smaller pull requests. If your pull request is a new feature, we would recommend opening an issue first to come to an agreement about the feature before putting in significant time.
+
+Title your pull request in the [Conventional Commits](https://www.conventionalcommits.org/) format, such as `docs(button): add an icon-only example`. Pull requests are squash merged, so the title becomes the commit message on `main`.
+
+Each pull request gets a Vercel preview deployment. Use it to check your change on the built site.
 
 ---
 
