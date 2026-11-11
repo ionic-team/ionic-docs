@@ -18,7 +18,6 @@
 @use './theme/Navbar/MobileSidebar';
 @use './theme/DocPaginator';
 @use './theme/SearchBar';
-@use './theme/MDXComponents/Table';
 @use './theme/Tabs';
 @use './theme/TOC';
 
@@ -32,6 +31,7 @@
   --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI emoji';
   --ifm-font-family-monospace: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  --ifm-table-stripe-background: var(--ifm-table-background);
 
   --ifm-menu-link-sublist-icon: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');
 
@@ -59,6 +59,7 @@ html[data-theme='light'] {
 
   --ifm-font-color-base: var(--c-carbon-90);
   --ifm-info-color-bg: var(--c-carbon-90);
+  --ifm-table-border-color: var(--c-indigo-30);
 }
 
 html[data-theme='dark'] {
@@ -83,6 +84,7 @@ html[data-theme='dark'] {
   --ifm-info-color-bg: var(--c-carbon-10);
 
   --ifm-menu-link-sublist-icon-filter: invert(100%);
+  --ifm-table-border-color: var(--c-gray-90);
 }
 
 html {
@@ -131,8 +133,38 @@ iframe {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-// Its markdown sets these as plain class names instead of
-// importing a CSS module, so only global rules can match them.
+// Styled as base elements rather than in MDXComponents/Table, because some
+// tables never go through that component, such as the one in
+// LayeredColorsSelect and the JSX tables in css-utilities.mdx.
+table,
+tr,
+td,
+th {
+  border-collapse: collapse;
+}
+
+table {
+  display: table;
+  border-radius: 8px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: inset 0 0 0 1px var(--ifm-table-border-color);
+}
+
+table thead tr {
+  border-width: 1px;
+}
+
+th {
+  text-align: start;
+}
+
+th,
+td {
+  line-height: 1.6;
+}
+
+// docs/intro/vscode-extension.mdx and its v8 copy set these as plain
+// class names, so only global rules can match them.
 .install-button {
   background-color: var(--ifm-info-color-bg);
   border: 2px solid var(--ifm-font-color-base);
