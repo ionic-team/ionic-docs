@@ -20,7 +20,7 @@ import Footer from '@theme/Footer';
 import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type {Props} from '@theme/Layout';
-import styles from '@docusaurus/theme-classic/src/theme/Layout/styles.module.css';
+import styles from './styles.module.css';
 
 export default function Layout(props: Props): ReactNode {
   const {

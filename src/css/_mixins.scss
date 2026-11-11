@@ -5,8 +5,8 @@
 ///
 /// `$url` has to be passed by the caller rather than resolved here, because the
 /// two places this is used resolve relative paths differently. Sass inlines the
-/// partials under `components/` into `custom.scss`, so their paths are relative
-/// to `src/styles/`, while a `.module.scss` is compiled where it sits and its
+/// partials under `theme/` into `custom.scss`, so their paths are relative
+/// to `src/css/`, while a `.module.scss` is compiled where it sits and its
 /// paths are relative to its own directory.
 @mixin icon-mask($url, $size: 12px) {
   content: '';

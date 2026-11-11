@@ -20,7 +20,6 @@ html[data-theme='dark'] {
 :not(pre) > code {
   position: relative;
   margin-block-start: -0.125rem;
-  background-color: inherit;
   vertical-align: baseline;
 
   background-color: var(--code-block-bg-c);
@@ -33,7 +32,7 @@ code {
 
 // Overrides
 #__docusaurus {
-  [class*='codeBlockContainer_'] {
+  .theme-code-block {
     --prism-background-color: var(--code-block-bg-c);
 
     box-shadow: none;
@@ -72,15 +71,6 @@ pre[class*='language-'] {
   /* border: .3em solid hsl(30, 20%, 40%); */
   border-radius: 0.5em;
   /* box-shadow: 1px 1px .5em black inset; */
-}
-
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-  padding: 0.15em 0.2em 0.05em;
-  border-radius: 0.3em;
-  border: 0.13em solid hsl(30, 20%, 40%);
-  box-shadow: 1px 1px 0.3em -0.1em black inset;
-  white-space: normal;
 }
 
 /* Tomorrow Comment */

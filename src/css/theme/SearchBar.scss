@@ -11,10 +11,8 @@ html[data-theme='light'] {
 
   --search-keys-border-c: var(--c-indigo-20);
 
-  .DocSearch-Button {
-    &:hover {
-      --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-indigo-50);
-    }
+  .DocSearch-Button:hover {
+    --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-indigo-50);
   }
 }
 
@@ -23,14 +21,12 @@ html[data-theme='dark'] {
 
   --search-keys-border-c: var(--c-gray-80);
 
-  .DocSearch-Button {
-    &:hover {
-      --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-gray-70);
-    }
+  .DocSearch-Button:hover {
+    --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-gray-70);
   }
 }
 
-//overrides
+// overrides
 #__docusaurus {
   [class^='navbarSearchContainer_'] {
     flex-grow: 1;
@@ -63,26 +59,26 @@ html[data-theme='dark'] {
       padding: 0.125rem;
       border: 1px solid var(--search-keys-border-c);
       border-radius: 6px;
+    }
 
-      .DocSearch-Button-Key {
-        position: static;
-        margin-inline-end: 0;
-        padding-block-end: 0;
+    .DocSearch-Button-Keys .DocSearch-Button-Key {
+      position: static;
+      margin-inline-end: 0;
+      padding-block-end: 0;
 
-        width: auto;
-        // DocSearch sizes these keys at 24px with its own font; keep them
-        // sized to the surrounding text so the keys stay inside the field.
-        height: 18px;
+      width: auto;
+      // DocSearch sizes these keys at 24px with its own font; keep them
+      // sized to the surrounding text so the keys stay inside the field.
+      height: 18px;
 
-        color: var(--c-indigo-50);
-        border-radius: 0;
+      color: var(--c-indigo-50);
+      border-radius: 0;
 
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: 400;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 400;
 
-        border: none;
-      }
+      border: none;
     }
 
     .DocSearch-Search-Icon {

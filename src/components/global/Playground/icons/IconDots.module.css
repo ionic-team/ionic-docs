@@ -1,16 +1,16 @@
-.icon__dots {
+.dots {
   position: relative;
 
   width: 50px;
   height: 50px;
 }
 
-.icon__dots circle {
+.dots circle {
   stroke-width: 0;
   fill: currentColor;
 }
 
-.icon__dots svg {
+.dots svg {
   position: absolute;
 
   top: 0;
@@ -24,19 +24,19 @@
   animation: spinner-dots 1s linear infinite;
 }
 
-.icon__dots svg:nth-of-type(1) {
+.dots svg:nth-of-type(1) {
   left: 14px;
   animation-delay: 0ms;
   animation-duration: 750ms;
 }
 
-.icon__dots svg:nth-of-type(2) {
+.dots svg:nth-of-type(2) {
   left: 0px;
   animation-delay: -110ms;
   animation-duration: 750ms;
 }
 
-.icon__dots svg:nth-of-type(3) {
+.dots svg:nth-of-type(3) {
   left: -14px;
   animation-delay: -220ms;
   animation-duration: 750ms;
