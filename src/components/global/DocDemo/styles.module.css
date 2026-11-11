@@ -85,7 +85,11 @@
 
   overflow: hidden;
 
-  /* Clips the iframe to its rounded corners, which border-radius alone does not do in Chromium. */
+  /*
+   * Clips the iframe to its rounded corners, which border-radius alone
+   * does not do in Chromium. Safari clips them either way, so check in
+   * Chrome before removing it.
+   */
   mask-image: radial-gradient(white, black);
 
   z-index: 1;
