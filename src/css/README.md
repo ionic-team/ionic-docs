@@ -4,7 +4,7 @@
 
 The `theme` folder overrides markup rendered by `@docusaurus/theme-classic`. Each file is named after the component it styles, following the theme's own paths, for example `theme/Navbar/MobileSidebar.scss` for `@theme/Navbar/MobileSidebar`. `custom.scss` brings them in with the Sass `@use` rule.
 
-Markup rendered by our own swizzled components keeps its styles next to the component in [src/theme](/src/theme), the same way Docusaurus does. A wrapped component still renders upstream's markup inside it, so overrides for that markup stay in `theme/`. For example, `TOC` is wrapped: the wrapper's own classes live in `src/theme/TOC/styles.module.css`, and the overrides for upstream's table of contents live in `theme/TOC.scss`. Refer to [src/theme/README.md](/src/theme/README.md).
+Markup rendered by our own swizzled components keeps its styles next to the component in [src/theme](/src/theme), the same way Docusaurus does. A wrapped component's module can also style the upstream markup it renders, scoped under the wrapper's class, when the rule only applies inside that wrapper. For example, `src/theme/TOC/styles.module.css` styles the Edit this page link only where the TOC renders it, while `theme/EditThisPage.scss` styles the link everywhere. Refer to [src/theme/README.md](/src/theme/README.md).
 
 ## Writing an override
 
@@ -36,7 +36,7 @@ Global variables can be overridden at root like this:
 
 `#__docusaurus` is the root element the site renders into, so nesting a rule under it matches the same elements but adds an ID's specificity. Use it when a rule overrides a property the theme or Infima already sets on that element. Their rules often tie with ours, and a tie goes to whichever stylesheet loads last, which can differ between dev and production builds. The ID makes ours win either way.
 
-Leave it out for variables, for elements the theme does not style, and in our own CSS modules, whose classes nothing else competes with. Once a rule carries the ID, anything that later overrides it needs the ID too, so add it only where there is a conflict.
+Leave it out for variables, for elements the theme does not style, and in our own CSS modules. A module class on an element that also has an Infima class, such as `row` or `col`, still ties with Infima's rule, so nest it under `:global(#__docusaurus)` if the losing value would matter. Once a rule carries the ID, anything that later overrides it needs the ID too, so add it only where there is a conflict.
 
 ```scss
 // The theme's rule: .sidebar_abc { padding: 0.5rem; }  specificity 0,1,0

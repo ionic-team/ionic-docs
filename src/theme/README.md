@@ -14,7 +14,7 @@ All code updates should be marked with comments to allow more seamless version u
 Where a component's styles live depends on who renders the markup:
 
 - **Ejected:** the markup is ours, so its styles live next to it. Keep a copy of upstream's `styles.module.css`, the same file `docusaurus swizzle --eject` creates, and add our rules between `/* CUSTOM CODE */` and `/* CUSTOM CODE END */`, leaving upstream's rules as they are.
-- **Wrapped:** the wrapper's own markup is styled in its own `styles.module.css`. The upstream markup it renders inside stays upstream's, so overrides for it go in [src/css/theme](/src/css/theme).
+- **Wrapped:** the wrapper's own markup is styled in its own `styles.module.css`. Rules for the upstream markup it renders can go there too, scoped under the wrapper's class with `:global()`, when they only apply inside the wrapper. Overrides that apply wherever upstream renders that markup go in [src/css/theme](/src/css/theme).
 - **Not swizzled:** overrides go in [src/css/theme](/src/css/theme).
 
 When a component that already has a file in `src/css/theme` gets swizzled, wrapping it leaves that file in place. Ejecting it moves the file's rules into the ejected copy's `styles.module.css` and removes the file along with its `@use` in `custom.scss`.
