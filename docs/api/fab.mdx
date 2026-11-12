@@ -89,6 +89,18 @@ import ButtonSizing from '@site/static/usage/v9/fab/button-sizing/index.mdx';
 
 <ButtonSizing />
 
+## Animation {/* #animation */}
+
+By default, the main fab button rotates and scales between its content and the close icon when a fab list opens. Setting the `animated` property of a fab button to `false` turns off its transitions. Each fab button has its own transitions, so set `animated` on the buttons in the fab list too. Setting the `animated` [global config](/developing/config.mdx#global-config) to `false` turns off the transitions for every fab button in the app. In `md` mode, the ripple effect still plays when a fab button's `animated` property is `false`, but the global config turns it off too.
+
+When the user has turned on reduced motion in their operating system, the content and close icon fade instead of rotating and scaling. The button's other state transitions, such as background and shadow changes, are turned off, and the button doesn't grow while pressed in `ios` mode.
+
+In the following example, the fab on the left uses the default transitions, and the fab on the right sets `animated` to `false` on every fab button.
+
+import Animation from '@site/static/usage/v9/fab/animation/index.mdx';
+
+<Animation />
+
 ## Theming {/* #theming */}
 
 ### Colors {/* #colors */}
