@@ -14,7 +14,7 @@ This guide covers some of the more common issues you may run into when developin
 
 Have an issue that you think should be covered here? [Let us know!](https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=)
 
-## Failed to resolve component
+## Failed to resolve component {/* #failed-to-resolve-component */}
 
 ```shell
 [Vue warn]: Failed to resolve component: ion-button
@@ -38,7 +38,7 @@ import { IonButton } from '@ionic/vue';
 
 Prefer to register your components globally once? We have you covered. Our [Build Options Guide](/vue/build-options.mdx#global-component-registration) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
 
-## Slot attributes are deprecated
+## Slot attributes are deprecated {/* #slot-attributes-are-deprecated */}
 
 ```shell
 `slot` attributes are deprecated  vue/no-deprecated-slot-attribute
@@ -60,7 +60,7 @@ If you are using VSCode and have the Vetur plugin installed, you are likely gett
 
 To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. Refer to the [Vetur Linting Guide](https://vuejs.github.io/vetur/guide/linting-error.html#linting) for more information.
 
-## Method on component is not a function
+## Method on component is not a function {/* #method-on-component-is-not-a-function */}
 
 In order to access a method on an Ionic Framework component in Vue, you will need to access the underlying Web Component instance first:
 
@@ -76,7 +76,7 @@ In other framework integrations such as Ionic React, this is not needed as any `
 
 Refer to the [Quickstart Guide](/vue/quickstart.mdx#call-component-methods) for more information.
 
-## Page transitions are not working
+## Page transitions are not working {/* #page-transitions-are-not-working */}
 
 In order for page transitions to work correctly, each page must have an `ion-page` component at the root:
 
@@ -99,7 +99,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 
 Refer to the [IonPage documentation](navigation.mdx#ionpage) for more information.
 
-## Ionic events bound in JavaScript are not firing
+## Ionic events bound in JavaScript are not firing {/* #ionic-events-bound-in-javascript-are-not-firing */}
 
 When creating event listeners in JavaScript (i.e. `addEventListener`), event names should be written as kebab-case:
 
@@ -117,7 +117,7 @@ await modal.present();
 
 This is done to align with how developers bind events in their Vue templates by using kebab-case: https://vuejs.org/guide/essentials/component-basics.html#case-insensitivity
 
-## Blank white screen in Capacitor native build
+## Blank white screen in Capacitor native build {/* #blank-white-screen-in-capacitor-native-build */}
 
 If your app runs correctly in the browser but shows a blank white screen when launched in a Capacitor iOS or Android build, the most common cause is a non-default `base` in `vite.config.js` (or `publicPath` in `vue.config.js` for legacy Vue CLI projects).
 
