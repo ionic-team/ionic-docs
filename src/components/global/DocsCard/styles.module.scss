@@ -43,7 +43,7 @@ docs-card {
     box-shadow: var(--docs-card-shadow);
     text-decoration: none;
 
-    :global(.Card-icon-hover) {
+    .iconHover {
       opacity: 1;
     }
   }
@@ -55,88 +55,86 @@ docs-card {
   color: inherit;
 }
 
-:global {
-  .Card-with-image {
-    grid-row: span 2;
-  }
+.withImage {
+  grid-row: span 2;
+}
 
-  .Card-without-image {
-    font-size: 12px;
-  }
+.withoutImage {
+  font-size: 12px;
+}
 
-  .Card-container {
-    padding: 1.5rem;
-  }
+.container {
+  padding: 1.5rem;
+}
 
-  .Card-image {
-    width: 100%;
-    height: auto;
-  }
+.image {
+  width: 100%;
+  height: auto;
+}
 
-  .Card-icon {
-    width: 48px;
-    height: 48px;
+.icon {
+  width: 48px;
+  height: 48px;
 
-    margin-bottom: 1.2em;
+  margin-bottom: 1.2em;
 
-    border-radius: 50%;
-    object-fit: contain;
-  }
+  border-radius: 50%;
+  object-fit: contain;
+}
 
-  .Card-icon-default {
-    transition: opacity 150ms ease-out;
-  }
+.iconDefault {
+  transition: opacity 150ms ease-out;
+}
 
-  .Card-icon-hover {
-    top: 0;
-    position: absolute;
+.iconHover {
+  top: 0;
+  position: absolute;
 
-    opacity: 0;
+  opacity: 0;
 
-    transition: opacity 150ms ease-out;
-  }
+  transition: opacity 150ms ease-out;
+}
 
-  .Card-icon-row {
-    position: relative;
-    display: flex;
-    gap: 8px;
-  }
+.iconRow {
+  position: relative;
+  display: flex;
+  gap: 8px;
+}
 
-  .Card-plus-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 48px;
-    color: var(--docs-card-border-c);
-    font-size: 22px;
-    font-weight: 600;
-  }
+.plusIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 48px;
+  color: var(--docs-card-border-c);
+  font-size: 22px;
+  font-weight: 600;
+}
 
-  .Card-content > *:first-child {
-    margin-top: 0;
-  }
+.content > *:first-child {
+  margin-top: 0;
+}
 
-  .Card-content > *:last-child {
-    margin-bottom: 0;
-  }
+.content > *:last-child {
+  margin-bottom: 0;
+}
 
-  .Card-content > * {
-    margin: 0 0 0.65em;
-  }
+.content > * {
+  margin: 0 0 0.65em;
+}
 
-  .Card-content p {
-    font-size: 0.75rem;
-  }
+.content p {
+  font-size: 0.75rem;
+}
 
-  .Card-header {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 0.45em;
-    font-weight: 600;
-  }
+.header {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.45em;
+  font-weight: 600;
+}
 
-  .Card-without-image .Card-header {
-    margin-bottom: 0.3em;
-  }
+.withoutImage .header {
+  margin-bottom: 0.3em;
 }

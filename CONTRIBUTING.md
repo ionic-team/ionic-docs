@@ -88,7 +88,7 @@ This builds the English site only, the same build as a Vercel preview.
 
 ### Linting Documentation
 
-This repository uses [Prettier](https://prettier.io/), an opinionated code formatter, in order to keep consistent formatting throughout the documentation. Run the following command to automatically fix all formatting, and then push any changes:
+This repository uses [ESLint](https://eslint.org/) to catch markup the build cannot check, such as raw links and headings and misaligned JSDoc comments, and [Prettier](https://prettier.io/), an opinionated code formatter, to keep consistent formatting throughout the documentation. Run the following command to report ESLint errors and automatically fix all formatting, and then push any changes:
 
 ```
 npm run lint
@@ -230,7 +230,7 @@ The build only checks links and anchors that go through Markdown or these compon
 Markup inside code samples is exempt, since it's example code rather than part of the page. CI fails on a raw `<a>` or heading anywhere else. To check before pushing, run:
 
 ```
-npm run eslint
+npm run lint
 ```
 
 ### Playgrounds

@@ -1,5 +1,6 @@
 import docusaurus from '@docusaurus/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import jsdoc from 'eslint-plugin-jsdoc';
 import * as mdx from 'eslint-plugin-mdx';
 
 import versions from './versions.json' with { type: 'json' };
@@ -37,6 +38,18 @@ export default [
     },
     plugins: { '@docusaurus': docusaurus },
     rules,
+  },
+  {
+    // Keeps every line of a JSDoc block starting with an aligned ` * `.
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    // An ejected swizzle that disables a rule from a plugin this repo does not install.
+    ignores: ['src/theme/prism-include-languages.ts'],
+    languageOptions: { parser: tsParser },
+    plugins: { jsdoc },
+    rules: {
+      'jsdoc/check-alignment': 'error',
+      'jsdoc/require-asterisk-prefix': 'error',
+    },
   },
   {
     ...mdx.flat,

@@ -16,26 +16,26 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 function DocsCard(props: Props): ReactNode {
   const isStatic = typeof props.href === 'undefined';
-  const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;
+  const header = props.header === 'undefined' ? null : <header className={styles.header}>{props.header}</header>;
   const hoverIcon = props.hoverIcon || props.icon;
 
   const content = (
     <>
-      {props.img && <img src={useBaseUrl(props.img)} className="Card-image" />}
-      <div className="Card-container">
+      {props.img && <img src={useBaseUrl(props.img)} className={styles.image} />}
+      <div className={styles.container}>
         {(props.icon || hoverIcon) && (
-          <div className="Card-icon-row">
-            {props.icon && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />}
-            {hoverIcon && <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover" />}
+          <div className={styles.iconRow}>
+            {props.icon && <img src={useBaseUrl(props.icon)} className={clsx(styles.icon, styles.iconDefault)} />}
+            {hoverIcon && <img src={useBaseUrl(hoverIcon)} className={clsx(styles.icon, styles.iconHover)} />}
           </div>
         )}
         {props.iconset && (
-          <div className="Card-icon-row">
+          <div className={styles.iconRow}>
             {props.iconset.split(',').map((icon, index, array) => (
               <React.Fragment key={index}>
-                <img src={useBaseUrl(icon)} className="Card-icon Card-icon-default" />
+                <img src={useBaseUrl(icon)} className={clsx(styles.icon, styles.iconDefault)} />
                 {index < array.length - 1 && (
-                  <div className="Card-plus-icon">
+                  <div className={styles.plusIcon}>
                     <span>+</span>
                   </div>
                 )}
@@ -44,15 +44,12 @@ function DocsCard(props: Props): ReactNode {
           </div>
         )}
         {props.header && header}
-        <div className="Card-content">{props.children}</div>
+        <div className={styles.content}>{props.children}</div>
       </div>
     </>
   );
 
-  const className = clsx(props.className, {
-    'Card-with-image': typeof props.img !== 'undefined',
-    'Card-without-image': typeof props.img === 'undefined',
-  });
+  const className = clsx(props.className, typeof props.img !== 'undefined' ? styles.withImage : styles.withoutImage);
 
   if (isStatic) {
     return (
