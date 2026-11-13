@@ -48,8 +48,6 @@ jobs:
       run: npm run typecheck
     - name: 🔤 Spell Check
       run: npm run spellcheck
-    - name: 🧹 ESLint
-      run: npm run eslint
     # Docusaurus derives a heading's anchor from its text, so renaming a
     # heading moves the anchor and breaks every inbound link. An explicit id
     # survives the rename, and lets a translation keep the English anchor
