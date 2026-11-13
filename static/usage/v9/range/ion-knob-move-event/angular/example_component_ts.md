@@ -1,6 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
-import { IonRange, RangeCustomEvent } from '@ionic/angular';
+import { IonRange, RangeKnobMoveEndCustomEvent, RangeKnobMoveStartCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -9,12 +9,14 @@ import { IonRange, RangeCustomEvent } from '@ionic/angular';
   imports: [IonRange],
 })
 export class ExampleComponent {
-  onIonKnobMoveStart(event: RangeCustomEvent) {
-    console.log('ionKnobMoveStart:', event.detail.value);
+  onIonKnobMoveStart(event: RangeKnobMoveStartCustomEvent) {
+    const { knob, position, value } = event.detail;
+    console.log('ionKnobMoveStart:', knob, position, value);
   }
 
-  onIonKnobMoveEnd(event: RangeCustomEvent) {
-    console.log('ionKnobMoveEnd:', event.detail.value);
+  onIonKnobMoveEnd(event: RangeKnobMoveEndCustomEvent) {
+    const { knob, position, value } = event.detail;
+    console.log('ionKnobMoveEnd:', knob, position, value);
   }
 }
 ```
