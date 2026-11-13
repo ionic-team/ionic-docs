@@ -107,7 +107,9 @@ import IonChangeEvent from '@site/static/usage/v9/range/ion-change-event/index.m
 
 ### Using `ionKnobMoveStart` and `ionKnobMoveEnd` {/* #using-ionknobmovestart-and-ionknobmoveend */}
 
-The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
+The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit a detail with the current `value` and work in combination with the `dualKnobs` property.
+
+The event detail also includes which knob moved, using the same static identity and dynamic position described in [CSS Shadow Parts](#css-shadow-parts). The `knob` property is the knob's static identity, `'A'` or `'B'`, and does not change if the knobs cross. The `position` property is whether that knob holds the `'lower'` or `'upper'` value. For `ionKnobMoveStart` it is the position before the knob moves, and for `ionKnobMoveEnd` it is the position after, so a knob dragged past the other knob reports `'lower'` on start and `'upper'` on end. A Range without `dualKnobs` always reports a `knob` of `'A'` and a `position` of `'lower'`.
 
 import IonKnobMoveEvent from '@site/static/usage/v9/range/ion-knob-move-event/index.mdx';
 
@@ -148,6 +150,8 @@ interface RangeChangeEventDetail {
 ```typescript
 interface RangeKnobMoveStartEventDetail {
   value: RangeValue;
+  knob: RangeKnobName;
+  position: RangeKnobPosition;
 }
 ```
 
@@ -156,6 +160,8 @@ interface RangeKnobMoveStartEventDetail {
 ```typescript
 interface RangeKnobMoveEndEventDetail {
   value: RangeValue;
+  knob: RangeKnobName;
+  position: RangeKnobPosition;
 }
 ```
 
@@ -170,12 +176,46 @@ interface RangeCustomEvent extends CustomEvent {
 }
 ```
 
+### RangeKnobMoveStartCustomEvent {/* #rangeknobmovestartcustomevent */}
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with the `ionKnobMoveStart` event.
+
+```typescript
+interface RangeKnobMoveStartCustomEvent extends CustomEvent {
+  detail: RangeKnobMoveStartEventDetail;
+  target: HTMLIonRangeElement;
+}
+```
+
+### RangeKnobMoveEndCustomEvent {/* #rangeknobmoveendcustomevent */}
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with the `ionKnobMoveEnd` event.
+
+```typescript
+interface RangeKnobMoveEndCustomEvent extends CustomEvent {
+  detail: RangeKnobMoveEndEventDetail;
+  target: HTMLIonRangeElement;
+}
+```
+
 ## Types {/* #types */}
 
 ### RangeValue {/* #rangevalue */}
 
 ```typescript
 type RangeValue = number | { lower: number; upper: number };
+```
+
+### RangeKnobName {/* #rangeknobname */}
+
+```typescript
+type RangeKnobName = 'A' | 'B';
+```
+
+### RangeKnobPosition {/* #rangeknobposition */}
+
+```typescript
+type RangeKnobPosition = 'lower' | 'upper';
 ```
 
 ## Properties {/* #properties */}
