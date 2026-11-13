@@ -5,7 +5,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonHeader collapse="fade">
+      <IonHeader scrollEffect="fade">
         <IonToolbar>
           <IonTitle>Header</IonTitle>
         </IonToolbar>

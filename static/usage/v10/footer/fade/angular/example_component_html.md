@@ -59,7 +59,7 @@
     pair of nostrils. The dolphin uses these nostrils for breathing when it surfaces.
   </p>
 </ion-content>
-<ion-footer collapse="fade">
+<ion-footer scrollEffect="fade">
   <ion-toolbar>
     <ion-title>Footer</ion-title>
   </ion-toolbar>

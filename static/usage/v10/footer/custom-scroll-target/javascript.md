@@ -61,7 +61,7 @@
     </p>
   </div>
 </ion-content>
-<ion-footer collapse="fade">
+<ion-footer scroll-effect="fade">
   <ion-toolbar>
     <ion-title>Footer</ion-title>
   </ion-toolbar>

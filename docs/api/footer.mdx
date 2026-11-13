@@ -37,7 +37,7 @@ import Translucent from '@site/static/usage/v10/footer/translucent/index.mdx';
 
 ## Fade Footer {/* #fade-footer */}
 
-Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the footer to `"fade"`. When the content is scrolled to the end, the background and border on the footer will fade away. This effect will only apply when the mode is `"ios"`.
+Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `scrollEffect` property on the footer to `"fade"`. When the content is scrolled to the end, the background and border on the footer will fade away.
 
 import Fade from '@site/static/usage/v10/footer/fade/index.mdx';
 
@@ -50,6 +50,16 @@ A fade footer requires a scroll container to work properly. When using a virtual
 import CustomScrollTarget from '@site/static/usage/v10/footer/custom-scroll-target/index.mdx';
 
 <CustomScrollTarget />
+
+## Hide Footer {/* #hide-footer */}
+
+The footer can slide out of view as the content is scrolled down, giving the content more room, and slide back in as soon as the content is scrolled up. This can be achieved by setting the `scrollEffect` property on the footer to `"hide"`.
+
+When the footer contains a [tab bar](./tab-bar.mdx), set `scrollEffect` on the footer rather than the tab bar so the whole footer hides together.
+
+import Hide from '@site/static/usage/v10/footer/hide/index.mdx';
+
+<Hide />
 
 ## Borders {/* #borders */}
 
