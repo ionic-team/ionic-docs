@@ -65,7 +65,7 @@ function Example() {
           opens to reveal a pair of nostrils. The dolphin uses these nostrils for breathing when it surfaces.
         </p>
       </IonContent>
-      <IonFooter collapse="fade">
+      <IonFooter scrollEffect="fade">
         <IonToolbar>
           <IonTitle>Footer</IonTitle>
         </IonToolbar>

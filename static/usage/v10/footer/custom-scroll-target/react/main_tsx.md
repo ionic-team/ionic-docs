@@ -71,7 +71,7 @@ function Example() {
           </p>
         </div>
       </IonContent>
-      <IonFooter collapse="fade">
+      <IonFooter scrollEffect="fade">
         <IonToolbar>
           <IonTitle>Footer</IonTitle>
         </IonToolbar>

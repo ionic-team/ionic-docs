@@ -158,7 +158,7 @@ Open `/src/app/tab2/tab2.page.html`. It contains:
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header scrollEffect="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
@@ -168,7 +168,7 @@ Open `/src/app/tab2/tab2.page.html`. It contains:
 </ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.mdx#collapsible-large-titles) support). Rename both `ion-title` elements to:
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to [Collapsible Large Title](../api/title.mdx#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-header [translucent]="true">
@@ -179,7 +179,7 @@ Open `/src/app/tab2/tab2.page.html`. It contains:
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header scrollEffect="condense">
     <ion-toolbar>
       <!-- CHANGE: Update title -->
       <ion-title size="large">Photo Gallery</ion-title>
@@ -200,7 +200,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 </ion-header>
 
 <ion-content>
-  <ion-header collapse="condense">
+  <ion-header scrollEffect="condense">
     <ion-toolbar>
       <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>

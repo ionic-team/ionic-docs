@@ -47,3 +47,18 @@ Coercion also moves from Stencil to Angular, which changes the result for number
 - A sheet `ion-modal` shows the drag handle unless `handle` is exactly `false`.
 
 Both values reach inputs routinely, from the `async` pipe before its first emission and from form control values, so coercing them would silently change which of those branches runs.
+
+## Recommended Changes {/* #recommended-changes */}
+
+The following changes are not required to update to Ionic 10, as your application will continue to work. However, we recommend making them now, since the deprecated APIs will be removed in a future major version.
+
+### Header and Footer {/* #header-and-footer */}
+
+The `collapse` property on `ion-header` and `ion-footer` is deprecated. Use `scrollEffect` instead, which takes the same values:
+
+```diff
+- <ion-header collapse="condense">
++ <ion-header scroll-effect="condense">
+```
+
+This is not a direct rename. `collapse` only applies when the mode is `ios`, while `scrollEffect` applies in every mode. After switching, the [condensed header](../api/header.mdx#condensed-header), [fade header](../api/header.mdx#fade-header), and [fade footer](../api/footer.mdx#fade-footer) effects also apply in `md`. For example, a page with a condensed header shows the large title in `md`, where it was previously hidden.

@@ -5,7 +5,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header scrollEffect="condense">
     <ion-toolbar>
       <ion-title size="large">Header</ion-title>
     </ion-toolbar>

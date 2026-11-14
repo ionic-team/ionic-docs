@@ -1,5 +1,5 @@
 ```html
-<ion-header collapse="fade">
+<ion-header scroll-effect="fade">
   <ion-toolbar>
     <ion-title>Header</ion-title>
   </ion-toolbar>

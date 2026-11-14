@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonHeader collapse="fade">
+      <IonHeader scrollEffect="fade">
         <IonToolbar>
           <IonTitle>Header</IonTitle>
         </IonToolbar>

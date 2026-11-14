@@ -13,7 +13,7 @@ function Example() {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen={true}>
-        <IonHeader collapse="condense">
+        <IonHeader scrollEffect="condense">
           <IonToolbar>
             <IonTitle size="large">Title</IonTitle>
           </IonToolbar>

@@ -155,7 +155,7 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
+        <IonHeader scrollEffect="condense">
           <IonToolbar>
             <IonTitle size="large">Tab 2</IonTitle>
           </IonToolbar>
@@ -169,7 +169,7 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.mdx#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
+`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to [Collapsible Large Title](../api/title.mdx#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
 
 ```tsx
 <IonPage>
@@ -180,7 +180,7 @@ export default Tab2;
     </IonToolbar>
   </IonHeader>
   <IonContent>
-    <IonHeader collapse="condense">
+    <IonHeader scrollEffect="condense">
       <IonToolbar>
         {/* CHANGE: Update title */}
         <IonTitle size="large">Photo Gallery</IonTitle>
@@ -212,7 +212,7 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
+        <IonHeader scrollEffect="condense">
           <IonToolbar>
             <IonTitle size="large">Photo Gallery</IonTitle>
           </IonToolbar>
