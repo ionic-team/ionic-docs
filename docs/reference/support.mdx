@@ -22,7 +22,8 @@ The current status of each Ionic Framework version is:
 
 | Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
 | :-----: | :------------: | :----------: | :--------------: | :---------------: |
-|   V9    |   **Active**   | Aug 19, 2026 |       TBD        |        TBD        |
+|   V10   |   **Active**   |     TBD      |       TBD        |        TBD        |
+|   V9    |  Maintenance   | Aug 19, 2026 |       TBD        |        TBD        |
 |   V8    |  Maintenance   | Apr 17, 2024 |   Feb 19, 2027   |   Aug 19, 2027    |
 |   V7    | End of Support | Mar 29, 2023 |   Oct 17, 2024   |   Apr 17, 2025    |
 |   V6    | End of Support | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
@@ -45,6 +46,7 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
+|    v10    |           v18           |          v22.x          |  5.4+[^4]  |
 |    v9     |           v18           |          v22.x          |  5.4+[^4]  |
 |    v8     |           v16           |        v20.x[^3]        |   4.9.3+   |
 |    v7     |           v14           |        v17.x[^2]        |    4.6+    |
@@ -71,6 +73,7 @@ Note that later versions of Ionic do not support iOS 13; refer to the [mobile su
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
+|    v10    |          v18+          |  5.4+[^4]  |
 |    v9     |          v18+          |  5.4+[^4]  |
 |    v8     |          v17+          |    3.7+    |
 |    v7     |          v17+          |    3.7+    |
@@ -82,6 +85,7 @@ Note that later versions of Ionic do not support iOS 13; refer to the [mobile su
 
 | Framework | Required Vue Version | TypeScript |
 | :-------: | :------------------: | :--------: |
+|    v10    |        v3.5+         |    3.9+    |
 |    v9     |        v3.5+         |    3.9+    |
 |    v8     |       v3.0.6+        |    3.9+    |
 |    v7     |       v3.0.6+        |    3.9+    |
@@ -92,6 +96,7 @@ Note that later versions of Ionic do not support iOS 13; refer to the [mobile su
 
 | Framework | Required Vue Router Version |
 | :-------: | :-------------------------: |
+|    v10    |             v5+             |
 |    v9     |             v5+             |
 |    v8     |             v4+             |
 |    v7     |             v4+             |
@@ -100,17 +105,17 @@ Note that later versions of Ionic do not support iOS 13; refer to the [mobile su
 
 ### Native Bridges {/* #native-bridges */}
 
-|   Framework    |               Cordova                |        Capacitor         |
-| :------------: | :----------------------------------: | :----------------------: |
-|  V9: Angular   | cordova-android 8.X, cordova-ios 5.X |           7.X+           |
-|   V9: React    |            Not supported             |           7.x+           |
-|    V9: Vue     |            Not supported             |           7.X+           |
-| V5-V8: Angular | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
-|  V5-V8: React  |            Not supported             |           2.x+           |
-|   V5-V8: Vue   |            Not supported             |           2.X+           |
-|  V4: Angular   | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
-|   V4: React    |            Not supported             |           2.x+           |
-|       V3       | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
+|    Framework    |               Cordova                |        Capacitor         |
+| :-------------: | :----------------------------------: | :----------------------: |
+| V9-V10: Angular | cordova-android 8.X, cordova-ios 5.X |           7.X+           |
+|  V9-V10: React  |            Not supported             |           7.x+           |
+|   V9-V10: Vue   |            Not supported             |           7.X+           |
+| V5-V8: Angular  | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
+|  V5-V8: React   |            Not supported             |           2.x+           |
+|   V5-V8: Vue    |            Not supported             |           2.X+           |
+|   V4: Angular   | cordova-android 8.X, cordova-ios 5.X |           2.X+           |
+|    V4: React    |            Not supported             |           2.x+           |
+|       V3        | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
 
 - As iOS and Android (and related tools) are updated, you can expect more updates for Cordova and Capacitor, so it is recommended to stay on the latest version(s) of Cordova and Capacitor.
 - Starting with Ionic v9, Capacitor 7 is the minimum officially supported version. Earlier versions of Ionic ran on Capacitor 2 and later.
