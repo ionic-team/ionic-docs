@@ -6,7 +6,7 @@
 
 :::
 
-## Installation
+## Installation {/* #installation */}
 
 To setup the virtual scroller, first install `vue-virtual-scroller`:
 
@@ -25,11 +25,11 @@ From here, we need to import the virtual scroller's CSS into our app. In `main.t
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
 ```
 
-## Registering Virtual Scroll Components
+## Registering Virtual Scroll Components {/* #registering-virtual-scroll-components */}
 
 Now that we have the package installed and the CSS imported, we can either import all virtual scroll components or only import the components we want to use. This guide will show how to do both.
 
-### Installing all Components
+### Installing all Components {/* #installing-all-components */}
 
 To install all virtual scroll components for use your app, add the following import to `main.ts`:
 
@@ -51,7 +51,7 @@ Installing all components may result in unused virtual scroll components being a
 
 :::
 
-### Installing Specific Components
+### Installing Specific Components {/* #installing-specific-components */}
 
 To install specific virtual scroll components for use in your app, import the component you want to use in `main.ts`. In this example, we will be using the `RecycleScroller` component:
 
@@ -67,7 +67,7 @@ app.component('RecycleScroller', RecycleScroller);
 
 After doing this, we will be able to use the `RecycleScroller` component in our app.
 
-## Usage
+## Usage {/* #usage */}
 
 This example will use the `RecycleScroller` component which only renders the visible items in your list. Other components such as `DynamicScroller` can be used when you do not know the size of the items in advance.
 
@@ -111,7 +111,7 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 }
 ```
 
-## Usage with Ionic Components
+## Usage with Ionic Components {/* #usage-with-ionic-components */}
 
 Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
 
@@ -129,6 +129,6 @@ For example:
 </template>
 ```
 
-## Further Reading
+## Further Reading {/* #further-reading */}
 
 This guide only covers a small portion of what `vue-virtual-scroller` is capable of. For more details, please refer to the [vue-virtual-scroller documentation](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md).
