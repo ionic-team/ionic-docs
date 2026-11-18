@@ -227,7 +227,7 @@ Use Markdown for links and headings whenever possible. When you need JSX, such a
 - [`<Link>`](https://docusaurus.io/docs/docusaurus-core#link) from `@docusaurus/Link` instead of `<a>`. It handles the base URL and locale, and opens external URLs in a new tab with `rel="noopener noreferrer"`.
 - [`<Heading>`](https://docusaurus.io/docs/api/misc/@docusaurus/eslint-plugin/prefer-docusaurus-heading) from `@theme/Heading` instead of `<h2>` to `<h6>`.
 
-Link to another doc by its relative file path, with the extension, such as `[Accordion](./accordion.mdx)` or `[Config](../developing/config.mdx)`. Docusaurus resolves it to the page in the same version, the build fails if the file doesn't exist, and editors can follow it to the file. A JSX prop such as `href` skips that step, so use the URL path without `/docs` or an extension instead: `/api/accordion`, or `/v8/api/accordion` on a v8 page.
+Link to another doc by its relative file path, with the extension, such as `[Accordion](./accordion.mdx)` or `[Config](../developing/config.mdx)`. Docusaurus resolves it to the page in the same version, the build fails if the file doesn't exist, and editors can follow it to the file. A JSX prop such as `href` skips that step, so use the URL path without `/docs` or an extension instead: `/api/accordion`, or `/v8/api/accordion` on a v8 page. `npm run lint` flags a link in either form that doesn't follow this.
 
 The build only checks links and anchors that go through Markdown or these components. A raw `<a href>` to a page that doesn't exist builds without errors, and a raw heading's `id` can't be used as a link target.
 
