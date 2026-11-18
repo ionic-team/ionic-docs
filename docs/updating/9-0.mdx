@@ -535,11 +535,11 @@ Replace `ion-img` with a native `<img>` tag. Add `loading="lazy"` for lazy loadi
 
 The native `<img>` element does not emit Ionic's custom events. Use the standard DOM events instead:
 
-| `ion-img` event  | Native `<img>` replacement                                                                                                                                                                                                                                                                                                 |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ion-img` event | Native `<img>` replacement |
+| --- | --- |
 | `ionImgWillLoad` | No native equivalent. This fired when the image scrolled into view and lazy loading began. With native `loading="lazy"` the browser handles this internally. To know when an image is about to enter the viewport, use an [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver). |
-| `ionImgDidLoad`  | [`load`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/load_event)¹                                                                                                                                                                                                                                         |
-| `ionError`       | [`error`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/error_event)¹                                                                                                                                                                                                                                       |
+| `ionImgDidLoad` | [`load`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/load_event)¹ |
+| `ionError` | [`error`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/error_event)¹ |
 
 ¹ Native `load` and `error` do not bubble, while the Ionic events did. If you used event delegation (one listener on a parent), listen on each `<img>` instead, or use the capture phase: `parent.addEventListener('load', handler, true)`.
 

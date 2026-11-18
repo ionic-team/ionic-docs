@@ -37,16 +37,16 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 
 ## Options
 
-| Option              | Description                                                                                                                                        |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `size`              | Height of the demo: `xsmall`, `small` (default), `medium`, `large`, `xlarge`, or any CSS height such as `300px`.                                   |
-| `mode`              | Locks the demo to `ios` or `md` and disables the button for the other mode.                                                                        |
-| `devicePreview`     | Renders the demo inside a device frame. Refer to [Device Frame](#show-example-within-a-device-frame-iphonepixel-5).                                |
-| `showConsole`       | Shows a console below the demo with anything the demo logs through `console.log`, `console.warn`, or `console.error`.                              |
+| Option | Description |
+| --- | --- |
+| `size` | Height of the demo: `xsmall`, `small` (default), `medium`, `large`, `xlarge`, or any CSS height such as `300px`. |
+| `mode` | Locks the demo to `ios` or `md` and disables the button for the other mode. |
+| `devicePreview` | Renders the demo inside a device frame. Refer to [Device Frame](#show-example-within-a-device-frame-iphonepixel-5). |
+| `showConsole` | Shows a console below the demo with anything the demo logs through `console.log`, `console.warn`, or `console.error`. |
 | `includeIonContent` | Wraps the StackBlitz example in `ion-app` and `ion-content`. Defaults to `true`. Refer to [Ejecting](#ejecting-from-ionappioncontent-boilerplate). |
-| `defaultFramework`  | Framework tab to select when the reader has not picked one. Defaults to Angular when available.                                                    |
-| `title`             | Title of the generated StackBlitz project.                                                                                                         |
-| `description`       | Description of the generated StackBlitz project.                                                                                                   |
+| `defaultFramework` | Framework tab to select when the reader has not picked one. Defaults to Angular when available. |
+| `title` | Title of the generated StackBlitz project. |
+| `description` | Description of the generated StackBlitz project. |
 
 ## Show example within a device frame (iPhone/Pixel 5)
 
