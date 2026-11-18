@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content>
     <ion-fab slot="fixed" vertical="top" horizontal="start">
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
-  import { add, colorPalette, document, globe } from 'ionicons/icons';
+import { IonContent, IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
+import { add, colorPalette, document, globe } from 'ionicons/icons';
 </script>
 ```
