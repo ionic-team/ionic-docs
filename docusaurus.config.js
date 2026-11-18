@@ -27,10 +27,11 @@ const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
  * containing the version name at index 0 and
  * the archive url at index 1.
  */
-const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).slice(0, 5);
 
 const BASE_URL = '/docs';
 
+/** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: 'Ionic Framework',
   tagline:
@@ -85,8 +86,6 @@ module.exports = {
     },
   },
   favicon: 'img/meta/favicon-96x96.png',
-  organizationName: 'ionic-team',
-  projectName: 'ionic-docs',
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -101,12 +100,8 @@ module.exports = {
               return 'https://crowdin.com/project/ionic-docs';
             }
             let match;
-            // Anchored on the extension so an `.mdx` page cannot match the `.md` branch and
-            // produce a link to a file that no longer exists. The api pages carry whichever
-            // extension the source uses; the cli and native pages are generated and stay `.md`.
-            if ((match = docPath.match(/api\/(.*)\.(mdx?)$/)) != null) {
-              return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.${match[2]}`;
-            }
+            // The cli and native pages are generated from other repos, so they link to
+            // their source there.
             if ((match = docPath.match(/cli\/commands\/(.*)\.mdx?$/)) != null) {
               return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
                 '-',
@@ -129,7 +124,6 @@ module.exports = {
             '**/__tests__/**',
           ],
           lastVersion: 'current',
-          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
               label: 'v9',
@@ -159,13 +153,10 @@ module.exports = {
         '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
       isCloseable: false,
     },
+    // Docusaurus outputs it as `og:image` and `twitter:image`, and sets
+    // `twitter:card` to `summary_large_image`.
+    image: 'https://ionicframework.com/docs/img/meta/open-graph.png',
     metadata: [
-      { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
-      { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
       {
         name: 'twitter:domain',
         content: 'ionicframework.com',
@@ -183,11 +174,11 @@ module.exports = {
         content: '1321836767955949',
       },
       {
-        name: 'og:type',
+        property: 'og:type',
         content: 'website',
       },
       {
-        name: 'og:site_name',
+        property: 'og:site_name',
         content: 'Ionic Framework Docs',
       },
     ],
@@ -258,7 +249,6 @@ module.exports = {
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
-          // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           dropdownActiveClassDisabled: true,
         },
         {
@@ -396,7 +386,7 @@ module.exports = {
         },
       },
     ],
-    function (context, options) {
+    function () {
       return {
         name: 'ionic-docs-ads',
         async loadContent() {
@@ -408,7 +398,7 @@ module.exports = {
 
           return await client.getByType('docs_ad');
         },
-        async contentLoaded({ content, actions: { setGlobalData, addRoute } }) {
+        async contentLoaded({ content, actions: { setGlobalData } }) {
           return setGlobalData({ prismicAds: content.results });
         },
       };
@@ -431,6 +421,4 @@ module.exports = {
     ],
     path.resolve(__dirname, 'plugins', 'docusaurus-plugin-llms-txt'),
   ],
-  customFields: {},
-  themes: [],
 };

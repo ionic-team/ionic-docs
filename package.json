@@ -12,7 +12,6 @@
     "build:production": "docusaurus build",
     "clear": "docusaurus clear",
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
-    "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "generate-markdown": "node scripts/native.mjs && node scripts/cli.mjs && node scripts/release-notes.mjs",
     "heading-ids": "docusaurus write-heading-ids . \"docs/**/*.mdx\" \"!docs/native/**\" \"!docs/cli/commands/**\" --syntax mdx-comment",
