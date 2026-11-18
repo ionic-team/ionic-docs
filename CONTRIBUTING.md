@@ -227,6 +227,8 @@ Use Markdown for links and headings whenever possible. When you need JSX, such a
 - [`<Link>`](https://docusaurus.io/docs/docusaurus-core#link) from `@docusaurus/Link` instead of `<a>`. It handles the base URL and locale, and opens external URLs in a new tab with `rel="noopener noreferrer"`.
 - [`<Heading>`](https://docusaurus.io/docs/api/misc/@docusaurus/eslint-plugin/prefer-docusaurus-heading) from `@theme/Heading` instead of `<h2>` to `<h6>`.
 
+Link to another doc by its file path from the docs folder, with the extension, such as `[Accordion](/api/accordion.mdx)`. Docusaurus resolves it to the page in the same version and locale, and the build fails if the file doesn't exist. A JSX prop such as `href` skips that step, so use the URL path without `/docs` or an extension instead: `/api/accordion`, or `/v8/api/accordion` on a v8 page.
+
 The build only checks links and anchors that go through Markdown or these components. A raw `<a href>` to a page that doesn't exist builds without errors, and a raw heading's `id` can't be used as a link target.
 
 Markup inside code samples is exempt, since it's example code rather than part of the page. CI fails on a raw `<a>` or heading anywhere else. To check before pushing, run:

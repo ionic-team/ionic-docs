@@ -6,7 +6,7 @@ title: Updating to v9
 
 :::note
 
-This guide assumes that you have already updated your app to the latest version of Ionic 8. Make sure you have followed the [Upgrading to Ionic 8 Guide](./8-0) before starting this guide.
+This guide assumes that you have already updated your app to the latest version of Ionic 8. Make sure you have followed the [Upgrading to Ionic 8 Guide](/updating/8-0.mdx) before starting this guide.
 
 :::
 
@@ -501,7 +501,7 @@ Apps on `moduleResolution: "node"` (classic) and webpack 4 keep resolving throug
 
 ### Browser Support {/* #browser-support */}
 
-The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
+The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](/reference/browser-support.mdx) to ensure you are deploying apps to supported browsers.
 
 If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
 
@@ -608,8 +608,8 @@ Update your selectors to account for these structural changes:
 
 The `ion-picker-legacy` and `ion-picker-legacy-column` components have been removed.
 
-- Replace `ion-picker-legacy` with `ion-picker`, and `ion-picker-legacy-column` with `ion-picker-column`. Since `ion-picker` renders inline instead of as an overlay, present it inside an `ion-modal` to keep the previous experience. Review the [Picker in Modal documentation](../api/picker.mdx#picker-in-modal) for more information.
-- Remove any usages of `pickerController`. If using React, remove any usages of the `useIonPicker` hook. These controller-based APIs have been removed. Use the [Picker](../api/picker.mdx) component instead.
+- Replace `ion-picker-legacy` with `ion-picker`, and `ion-picker-legacy-column` with `ion-picker-column`. Since `ion-picker` renders inline instead of as an overlay, present it inside an `ion-modal` to keep the previous experience. Review the [Picker in Modal documentation](/api/picker.mdx#picker-in-modal) for more information.
+- Remove any usages of `pickerController`. If using React, remove any usages of the `useIonPicker` hook. These controller-based APIs have been removed. Use the [Picker](/api/picker.mdx) component instead.
 - Remove any usages of the `PickerOptions`, `PickerButton`, `PickerColumn`, and `PickerColumnOption` type exports. These types were associated with the legacy picker and have been removed.
 
 ### Modal {/* #modal */}
@@ -650,7 +650,7 @@ If you relied on `ion-nav` to update the URL, use `ion-router-outlet` for URL-ba
 + <ion-router-outlet></ion-router-outlet>
 ```
 
-An `ion-nav` can still be nested inside a routed page for local, URL-less stack navigation. It manages its own stack via `root` and `ion-nav-link`, and the URL never changes as you push and pop. For a complete, working example, refer to [Using ion-nav within a Routed Page](../api/router.mdx#using-ion-nav-within-a-routed-page).
+An `ion-nav` can still be nested inside a routed page for local, URL-less stack navigation. It manages its own stack via `root` and `ion-nav-link`, and the URL never changes as you push and pop. For a complete, working example, refer to [Using ion-nav within a Routed Page](/api/router.mdx#using-ion-nav-within-a-routed-page).
 
 ### Router Outlet {/* #router-outlet */}
 

@@ -232,7 +232,7 @@ export interface UserPhoto {
 }
 ```
 
-Next, switch to `tab2.page.html` to display the images. We'll add a [Grid component](../../api/grid.mdx) so the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `PhotoService`'s `photos` signal with the built-in [`@for`](https://angular.dev/guide/templates/control-flow#for-block-repeaters) block - calling `photoService.photos()` reads the signal's current value. For each item, add an `<img>` element and set its `src` property to the photo's path.
+Next, switch to `tab2.page.html` to display the images. We'll add a [Grid component](/api/grid.mdx) so the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `PhotoService`'s `photos` signal with the built-in [`@for`](https://angular.dev/guide/templates/control-flow#for-block-repeaters) block - calling `photoService.photos()` reads the signal's current value. For each item, add an `<img>` element and set its `src` property to the photo's path.
 
 ```html
 <ion-header [translucent]="true">

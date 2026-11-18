@@ -89,7 +89,7 @@ import MultipleSelectionExample from '@site/static/usage/v8/select/basic/multipl
 
 ## Interfaces {/* #interfaces */}
 
-By default, select uses [ion-alert](alert.mdx) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.mdx), [ion-popover](popover.mdx), or [ion-modal](modal.mdx) by passing `action-sheet`, `popover`, or `modal`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+By default, select uses [ion-alert](/api/alert.mdx) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](/api/action-sheet.mdx), [ion-popover](/api/popover.mdx), or [ion-modal](/api/modal.mdx) by passing `action-sheet`, `popover`, or `modal`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
 
 ### Alert {/* #alert */}
 
@@ -181,7 +181,7 @@ import ButtonTextExample from '@site/static/usage/v8/select/customization/button
 
 Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
 
-Refer to the [ion-alert docs](alert.mdx), [ion-action-sheet docs](action-sheet.mdx), [ion-popover docs](popover.mdx), and [ion-modal docs](modal.mdx) for the properties that each interface accepts.
+Refer to the [ion-alert docs](/api/alert.mdx), [ion-action-sheet docs](/api/action-sheet.mdx), [ion-popover docs](/api/popover.mdx), and [ion-modal docs](/api/modal.mdx) for the properties that each interface accepts.
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
@@ -195,9 +195,9 @@ The `start` and `end` slots can be used to place icons, buttons, or prefix/suffi
 
 :::note
 
-In most cases, [Icon](./icon.mdx) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+In most cases, [Icon](/api/icon.mdx) components placed in these slots should have `aria-hidden="true"`. Refer to the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
 
-If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.mdx). This ensures that the content can be tabbed to.
+If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](/api/button.mdx). This ensures that the content can be tabbed to.
 
 :::
 
@@ -223,12 +223,12 @@ import StylingSelectExample from '@site/static/usage/v8/select/customization/sty
 
 Customizing the interface dialog should be done by following the styling sections (CSS shadow parts, CSS custom properties, and slots) in that interface's documentation:
 
-- [Alert](alert.mdx#css-shadow-parts)
-- [Action Sheet](action-sheet.mdx#css-shadow-parts)
-- [Popover](popover.mdx#css-shadow-parts)
-- [Modal](modal.mdx#css-shadow-parts)
+- [Alert](/api/alert.mdx#css-shadow-parts)
+- [Action Sheet](/api/action-sheet.mdx#css-shadow-parts)
+- [Popover](/api/popover.mdx#css-shadow-parts)
+- [Modal](/api/modal.mdx#css-shadow-parts)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, refer to the [Select Options documentation](select-option.mdx) for usage examples of customizing options.
+However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, refer to the [Select Options documentation](/api/select-option.mdx) for usage examples of customizing options.
 
 ### Custom Toggle Icons {/* #custom-toggle-icons */}
 
