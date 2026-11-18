@@ -15,8 +15,8 @@
     "@angular/platform-browser": "^22.0.0",
     "@angular/platform-browser-dynamic": "^22.0.0",
     "@angular/router": "^22.0.0",
-    "@ionic/angular": "9.0.13-dev.11795197602.11ba74b4",
-    "@ionic/core": "9.0.13-dev.11795197602.11ba74b4",
+    "@ionic/angular": "9.0.12-dev.11795023599.110c163a",
+    "@ionic/core": "9.0.12-dev.11795023599.110c163a",
     "ionicons": "8.1.0",
     "rxjs": "^7.8.1",
     "tslib": "^2.5.0"

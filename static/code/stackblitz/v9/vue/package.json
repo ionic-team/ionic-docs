@@ -8,8 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ionic/vue": "9.0.13-dev.11795197602.11ba74b4",
-    "@ionic/vue-router": "9.0.13-dev.11795197602.11ba74b4",
+    "@ionic/vue": "9.0.12-dev.11795023599.110c163a",
+    "@ionic/vue-router": "9.0.12-dev.11795023599.110c163a",
     "vue": "^3.2.25",
     "vue-router": "5.4.0"
   },
