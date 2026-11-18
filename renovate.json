@@ -10,6 +10,13 @@
   "schedule": ["* 6-10 * * 1-5"],
   "semanticCommits": "enabled",
   "rebaseWhen": "never",
+  "platformAutomerge": false,
+  "lockFileMaintenance": {
+    "description": "Refreshes package-lock.json on the 1st of each month, 6-10am ET, so indirect dependencies stay current within their ranges.",
+    "enabled": true,
+    "automerge": true,
+    "schedule": ["* 6-10 1 * *"]
+  },
   "includePaths": [
     "package.json",
     "static/code/stackblitz/**/*/package.json", 
@@ -135,6 +142,24 @@
       "matchPackageNames": ["typescript"],
       "allowedVersions": "<6.0.0",
       "matchFileNames": ["package.json"]
+    },
+    {
+      "description": "Automerge minor and patch updates to the site and its workflows once CI passes. Majors and 0.x packages, where a minor can break, still need review. The StackBlitz samples are left out because CI does not install or build them.",
+      "matchFileNames": ["package.json", ".github/workflows/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "description": "A Docusaurus update can change how pages render without failing the build, so it still needs review.",
+      "matchPackageNames": ["@docusaurus/**"],
+      "automerge": false
+    },
+    {
+      "description": "CI does not install the StackBlitz samples, so lockfile maintenance leaves their lockfiles alone.",
+      "matchFileNames": ["static/code/stackblitz/**"],
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "enabled": false
     }
   ]
 }
