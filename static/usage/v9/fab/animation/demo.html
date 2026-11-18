@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fab</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@9.0.11-dev.11794501674.16819717/dist/ionic/ionic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core@9.0.11-dev.11794501674.16819717/css/ionic.bundle.css"
+    />
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-content>
+        <ion-fab slot="fixed" vertical="top" horizontal="start">
+          <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="bottom">
+            <ion-fab-button>
+              <ion-icon name="document"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="color-palette"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="globe"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+
+        <ion-fab slot="fixed" vertical="top" horizontal="end">
+          <ion-fab-button animated="false">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="bottom">
+            <ion-fab-button animated="false">
+              <ion-icon name="document"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button animated="false">
+              <ion-icon name="color-palette"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button animated="false">
+              <ion-icon name="globe"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>
