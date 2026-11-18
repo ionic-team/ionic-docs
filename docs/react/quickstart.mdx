@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 Welcome! This guide will walk you through the basics of Ionic React development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic React before building your first real app.
 
-If you're looking for a high-level overview of what Ionic React is and how it fits into the React ecosystem, refer to the [Ionic React Overview](/react/overview.mdx).
+If you're looking for a high-level overview of what Ionic React is and how it fits into the React ecosystem, refer to the [Ionic React Overview](./overview.mdx).
 
 ## Prerequisites {/* #prerequisites */}
 
@@ -31,7 +31,7 @@ If you don't have Node.js and npm, [download Node.js](https://nodejs.org/en/down
 
 ## Create a Project with the Ionic CLI {/* #create-a-project-with-the-ionic-cli */}
 
-First, install the latest [Ionic CLI](/cli.mdx):
+First, install the latest [Ionic CLI](../cli.mdx):
 
 ```shell
 npm install -g @ionic/cli
@@ -151,17 +151,17 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/api/title.mdx#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](../api/title.mdx#collapsible-large-titles) that displays on iOS devices when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip[Learn More]
 
-For detailed information about Ionic layout components, refer to the [Header](/api/header.mdx), [Toolbar](/api/toolbar.mdx), [Title](/api/title.mdx), and [Content](/api/content.mdx) documentation.
+For detailed information about Ionic layout components, refer to the [Header](../api/header.mdx), [Toolbar](../api/toolbar.mdx), [Title](../api/title.mdx), and [Content](../api/content.mdx) documentation.
 
 :::
 
 ## Add an Ionic Component {/* #add-an-ionic-component */}
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/api/button.mdx) at the end of the `IonContent` in `Home.tsx`:
+You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](../api/button.mdx) at the end of the `IonContent` in `Home.tsx`:
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -219,7 +219,7 @@ const New: React.FC = () => {
 export default New;
 ```
 
-This creates a page with a [Back Button](/api/back-button.mdx) in the [Toolbar](/api/toolbar.mdx). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+This creates a page with a [Back Button](../api/back-button.mdx) in the [Toolbar](../api/toolbar.mdx). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
 :::warning
 
@@ -253,7 +253,7 @@ Once that is done, update the button in `Home.tsx`:
 
 :::info
 
-Navigating can also be performed programmatically using the `useIonRouter` hook. See the [React Navigation documentation](/react/utility-functions.mdx#useionrouter) for more information.
+Navigating can also be performed programmatically using the `useIonRouter` hook. See the [React Navigation documentation](./utility-functions.mdx#useionrouter) for more information.
 
 :::
 
@@ -277,7 +277,7 @@ Then, include them inside of the `IonContent`:
 
 Note that we are passing the imported SVG reference, **not** the icon name as a string.
 
-For more information, refer to the [Icon documentation](/api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, refer to the [Icon documentation](../api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods {/* #call-component-methods */}
 
@@ -342,7 +342,7 @@ To call methods on Ionic components:
 
 This pattern is necessary because React refs store the component instance in the `.current` property.
 
-You can find available methods for each component in the [Methods](/api/content.mdx#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](../api/content.mdx#methods) section of their API documentation.
 
 ## Run on a Device {/* #run-on-a-device */}
 

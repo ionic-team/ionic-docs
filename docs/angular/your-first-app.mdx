@@ -30,9 +30,9 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 
 Highlights include:
 
-- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](/components.mdx).
+- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](../components.mdx).
 - Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](/native/camera.mdx), [Filesystem](/native/filesystem.mdx), and [Preferences](/native/preferences.mdx) APIs.
+- Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.mdx), [Filesystem](../native/filesystem.mdx), and [Preferences](../native/preferences.mdx) APIs.
 
 Find the [complete app code](https://github.com/ionic-team/tutorial-photo-gallery-angular) referenced in this guide on GitHub.
 
@@ -64,7 +64,7 @@ npm install -g @ionic/cli native-run cordova-res
 
 The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
 
-Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](/developing/tips.mdx#resolving-permission-errors) for more information.
+Consider setting up npm to operate globally without elevated permissions. Refer to [Resolving Permission Errors](../developing/tips.mdx#resolving-permission-errors) for more information.
 
 :::
 
@@ -98,7 +98,7 @@ npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 
 ### PWA Elements {/* #pwa-elements */}
 
-Some Capacitor plugins, including the [Camera API](/native/camera.mdx), provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+Some Capacitor plugins, including the [Camera API](../native/camera.mdx), provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
 
 It's a separate dependency, so install it next:
 
@@ -168,7 +168,7 @@ Open `/src/app/tab2/tab2.page.html`. It contains:
 </ion-content>
 ```
 
-`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](/api/title.mdx#collapsible-large-titles) support). Rename both `ion-title` elements to:
+`ion-header` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.mdx#collapsible-large-titles) support). Rename both `ion-title` elements to:
 
 ```html
 <ion-header [translucent]="true">
@@ -190,7 +190,7 @@ Open `/src/app/tab2/tab2.page.html`. It contains:
 </ion-content>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](/api/fab.mdx) (FAB) to the bottom of the page and set the camera image as the icon.
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab.mdx) (FAB) to the bottom of the page and set the camera image as the icon.
 
 ```html
 <ion-header [translucent]="true">
