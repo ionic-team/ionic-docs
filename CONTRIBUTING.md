@@ -102,7 +102,8 @@ This repository uses [cspell](https://cspell.org/), a spell checker for code, to
 npm run spellcheck
 ```
 
-> [!NOTE] Any spelling errors will need to be fixed manually. There are various ways to ignore words or sections that were flagged erroneously. These are listed below.
+> [!NOTE]
+> Any spelling errors will need to be fixed manually. There are various ways to ignore words or sections that were flagged erroneously. These are listed below.
 
 #### Ignoring words
 
@@ -126,7 +127,9 @@ npm run spellcheck
   {/* cspell:enable */}
   ```
 
-> [!IMPORTANT] You need to have line breaks between the `cspell` comments and any HTML elements, otherwise the build will error with `Module build failed`.
+> [!IMPORTANT]
+> You need to have line breaks between the `cspell` comments and any HTML elements,
+> otherwise the build will error with `Module build failed`.
 
 #### Tips
 
@@ -289,7 +292,8 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 - OS and browser versions
 - If possible, a demo repo or StackBlitz
 
-> [!NOTE] Some [reference content](#reference-content) is pulled from other Ionic repos. In that case, please submit your issue on the docs repo with a link to the repo where the content lives.
+> [!NOTE]
+> Some [reference content](#reference-content) is pulled from other Ionic repos. In that case, please submit your issue on the docs repo with a link to the repo where the content lives.
 
 ---
 
@@ -423,7 +427,8 @@ Everything from here on refers to `<archiving>`:
 
 Removed versions keep their authored `versioned_docs/` and `versioned_sidebars/` content, so they can be rebuilt anytime by adding them back to `versions.json`. Their `native/` and `cli/commands/` pages are generated rather than committed, so a rebuild also needs the version back in the write lists from step 10. Without it those sections build empty.
 
-> [!NOTE] Ionic v3 and v4 use other build tools and are not managed here.
+> [!NOTE]
+> Ionic v3 and v4 use other build tools and are not managed here.
 
 ---
 

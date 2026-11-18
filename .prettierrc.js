@@ -12,6 +12,8 @@ module.exports = {
     ...ionicConfig.overrides,
     {
       files: ['*.md', '*.mdx'],
+      // GitHub alerts such as `> [!NOTE]` need the marker on its own line.
+      excludeFiles: ['CONTRIBUTING.md'],
       options: { proseWrap: 'never' },
     },
   ],
