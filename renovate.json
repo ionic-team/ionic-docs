@@ -12,10 +12,10 @@
   "rebaseWhen": "never",
   "platformAutomerge": false,
   "lockFileMaintenance": {
-    "description": "Refreshes package-lock.json on the 1st of each month, 6-10am ET, so indirect dependencies stay current within their ranges.",
+    "description": "Refreshes package-lock.json weekly, so indirect dependencies stay current within their ranges. It runs before 4am ET on Mondays so it lands before the weekday updates instead of competing with them.",
     "enabled": true,
     "automerge": true,
-    "schedule": ["* 6-10 1 * *"]
+    "schedule": ["before 4am on monday"]
   },
   "includePaths": [
     "package.json",
