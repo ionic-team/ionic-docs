@@ -260,7 +260,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              href: 'https://ionicframework.com/community',
+              href: 'https://ionic.io/community',
               label: 'Community Hub',
               target: '_blank',
               rel: null,
@@ -278,14 +278,14 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://blog.ionicframework.com/',
+              href: 'https://ionic.io/blog',
               label: 'Blog',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://twitter.com/ionicframework',
-              label: 'Twitter',
+              href: 'https://x.com/ionicframework',
+              label: 'X',
               target: '_blank',
               rel: null,
             },
@@ -297,7 +297,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              href: 'https://ionicframework.com/support',
+              href: 'https://ionic.io/support',
               label: 'Help Center',
               target: '_blank',
               rel: null,
@@ -309,7 +309,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://ionicframework.com/advisory',
+              href: 'https://ionic.io/advisory',
               label: 'Enterprise Advisory',
               target: '_blank',
               rel: null,
@@ -337,10 +337,10 @@ module.exports = {
           className: 'icon-link language navbar__item',
         },
         {
-          href: 'https://twitter.com/Ionicframework',
+          href: 'https://x.com/ionicframework',
           position: 'right',
-          className: 'icon-link icon-link-mask icon-link-twitter',
-          'aria-label': 'Twitter',
+          className: 'icon-link icon-link-mask icon-link-x',
+          'aria-label': 'X',
           target: '_blank',
         },
         {
