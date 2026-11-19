@@ -45,7 +45,6 @@ const ColorGenerator = (props: ComponentProps<'section'>) => {
           const { tint, shade, value } = color;
           const nameCap = name[0].toUpperCase() + name.substring(1);
 
-          const formattedValue = value.charAt(0) === '#' ? value : '#' + value;
           const isOpen = activeColor === name ? true : false;
 
           return (
@@ -56,13 +55,13 @@ const ColorGenerator = (props: ComponentProps<'section'>) => {
             >
               <div className={styles.titleRow}>
                 <div className={styles.titleRowStart}>
-                  <ColorDot color={formattedValue} />
+                  <ColorDot color={value} />
                   {nameCap}
                 </div>
                 <div className={styles.titleRowEnd}>
                   <ColorInput
                     onClick={(event) => event.stopPropagation()}
-                    color={formattedValue}
+                    color={value}
                     setColor={(color) =>
                       setColors((colors) => {
                         colors[name] = generateColor(color);

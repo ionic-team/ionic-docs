@@ -72,8 +72,8 @@ Next, in `Tab2Page.vue`, import the `usePhotoGallery()` method and destructure i
 </template>
 
 <script setup lang="ts">
-import { camera } from 'ionicons/icons';
 import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { camera } from 'ionicons/icons';
 
 // CHANGE: Add `usePhotoGallery` import
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
@@ -245,7 +245,6 @@ Next, switch to `Tab2Page.vue` to display the images. We'll add a [Grid componen
 </template>
 
 <script setup lang="ts">
-import { camera } from 'ionicons/icons';
 import {
   IonPage,
   IonHeader,
@@ -259,6 +258,7 @@ import {
   IonRow,
   IonCol,
 } from '@ionic/vue';
+import { camera } from 'ionicons/icons';
 
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 

@@ -1,5 +1,7 @@
 import React, { type ComponentProps, type ReactNode } from 'react';
 
+import Link from '@docusaurus/Link';
+import Heading from '@theme/Heading';
 import sidebars from '@site/sidebars';
 import clsx from 'clsx';
 
@@ -11,14 +13,14 @@ function APIList({ sidebar, ...props }: ComponentProps<'div'> & { sidebar?: unkn
 
         return (
           <>
-            <h4>{section.label}</h4>
+            <Heading as="h4">{section.label}</Heading>
             <ul>
               {section.items.map((item) => {
                 return (
                   item &&
                   item.replace && (
                     <li>
-                      <a href={item}>{item.replace('api/', '')}</a>
+                      <Link to={`/${item}`}>{item.replace('api/', '')}</Link>
                     </li>
                   )
                 );

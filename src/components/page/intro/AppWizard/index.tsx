@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import React, { type ComponentProps } from 'react';
 
 import styles from './index.module.scss';
@@ -15,9 +16,9 @@ export default function AppWizard(props: ComponentProps<'div'>) {
         </p>
       </div>
       <div>
-        <a href="https://ionicframework.com/start" className="wizard-button">
+        <Link to="https://ionicframework.com/start" className="wizard-button">
           ウィザードを開く
-        </a>
+        </Link>
       </div>
     </div>
   );

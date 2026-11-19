@@ -92,8 +92,6 @@ Next, in `Tab2Page.vue`, implement the `showActionSheet()` method. We're adding 
 
 <script setup lang="ts">
 // CHANGE: Update import
-import { camera, trash, close } from 'ionicons/icons';
-// CHANGE: Update import
 import {
   IonPage,
   IonHeader,
@@ -108,6 +106,8 @@ import {
   IonCol,
   actionSheetController,
 } from '@ionic/vue';
+// CHANGE: Update import
+import { camera, trash, close } from 'ionicons/icons';
 
 // CHANGE: Add `UserPhoto` type import
 import type { UserPhoto } from '@/composables/usePhotoGallery';
