@@ -18,7 +18,7 @@ Welcome! This guide will walk you through the basics of Ionic Angular developmen
 
 If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, refer to the [Ionic Angular Overview](overview).
 
-## Prerequisites
+## Prerequisites {/* #prerequisites */}
 
 Before you begin, make sure you have Node.js and npm installed on your machine.
 You can check by running:
@@ -30,7 +30,7 @@ npm -v
 
 If you don't have Node.js and npm, [download Node.js](https://nodejs.org/en/download) (which includes npm).
 
-## Create a Project with the Ionic CLI
+## Create a Project with the Ionic CLI {/* #create-a-project-with-the-ionic-cli */}
 
 First, install the latest [Ionic CLI](../cli):
 
@@ -53,7 +53,7 @@ After running `ionic serve`, your project will open in the browser.
 
 ![Screenshot of the Ionic Angular Home page](/img/guides/quickstart/home-page.png 'Ionic Angular Home Component')
 
-## Explore the Project Structure
+## Explore the Project Structure {/* #explore-the-project-structure */}
 
 Your new app's directory will look like this:
 
@@ -79,7 +79,7 @@ All file paths in the examples below are relative to the project root directory.
 
 Let's walk through these files to understand the app's structure.
 
-## View the App Component
+## View the App Component {/* #view-the-app-component */}
 
 The root of your app is defined in `app.component.ts`:
 
@@ -107,7 +107,7 @@ And its template in `app.component.html`:
 
 This sets up the root of your application, using Ionic's `ion-app` and `ion-router-outlet` components. The router outlet is where your pages will be displayed.
 
-## View Routes
+## View Routes {/* #view-routes */}
 
 Routes are defined in `app.routes.ts`:
 
@@ -129,7 +129,7 @@ export const routes: Routes = [
 
 When you visit the root URL (`/`), the `HomePage` component will be loaded.
 
-## View the Home Page
+## View the Home Page {/* #view-the-home-page */}
 
 The Home page component, defined in `home.page.ts`, imports the Ionic components it uses:
 
@@ -182,7 +182,7 @@ For detailed information about Ionic layout components, refer to the [Header](/a
 
 :::
 
-## Add an Ionic Component
+## Add an Ionic Component {/* #add-an-ionic-component */}
 
 You can enhance your Home page with more Ionic UI components. For example, add a [Button](/api/button.mdx) at the end of the `ion-content`:
 
@@ -205,7 +205,7 @@ import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/a
 })
 ```
 
-## Add a New Page
+## Add a New Page {/* #add-a-new-page */}
 
 To add a new page, generate it with the CLI:
 
@@ -241,7 +241,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar 
 
 The `ion-back-button` will automatically handle navigation back to the previous page, or to `/` if there is no history.
 
-## Navigate to the New Page
+## Navigate to the New Page {/* #navigate-to-the-new-page */}
 
 To navigate to the new page, update the button in `home.page.html`:
 
@@ -266,7 +266,7 @@ Navigating can also be performed using Angular's Router service. Refer to the [A
 
 :::
 
-## Add Icons to the New Page
+## Add Icons to the New Page {/* #add-icons-to-the-new-page */}
 
 Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `new.page.html`:
 
@@ -309,7 +309,7 @@ Alternatively, you can register icons in `app.component.ts` to use them througho
 
 For more information, refer to the [Icon documentation](/api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
-## Call Component Methods
+## Call Component Methods {/* #call-component-methods */}
 
 Let's add a button that can scroll the content area to the bottom.
 
@@ -395,7 +395,7 @@ To call methods on Ionic components:
 
 You can find available methods for each component in the [Methods](/api/content.mdx#methods) section of their API documentation.
 
-## Run on a Device
+## Run on a Device {/* #run-on-a-device */}
 
 Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
 
@@ -414,7 +414,7 @@ ionic cap open android
 
 Refer to [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
 
-## Explore More
+## Explore More {/* #explore-more */}
 
 This guide covered the basics of creating an Ionic Angular app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
 

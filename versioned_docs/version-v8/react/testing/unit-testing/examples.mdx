@@ -6,11 +6,11 @@ description: Learn how to test an Ionic React application. This document provide
 
 # Examples
 
-## Testing a modal presented from a trigger
+## Testing a modal presented from a trigger {/* #testing-a-modal-presented-from-a-trigger */}
 
 This example shows how to test a modal that is presented from a trigger. The modal is presented when the user clicks a button.
 
-### Example component
+### Example component {/* #example-component */}
 
 ```tsx title="src/Example.tsx"
 import { IonButton, IonModal } from '@ionic/react';
@@ -25,7 +25,7 @@ export default function Example() {
 }
 ```
 
-### Testing the modal
+### Testing the modal {/* #testing-the-modal */}
 
 ```tsx title="src/Example.test.tsx"
 import { IonApp } from '@ionic/react';
@@ -49,11 +49,11 @@ test('button presents a modal when clicked', async () => {
 });
 ```
 
-## Testing a modal presented from useIonModal
+## Testing a modal presented from useIonModal {/* #testing-a-modal-presented-from-useionmodal */}
 
 This example shows how to test a modal that is presented using the `useIonModal` hook. The modal is presented when the user clicks a button.
 
-### Example component
+### Example component {/* #example-component-1 */}
 
 ```tsx title="src/Example.tsx"
 import { IonContent, useIonModal, IonHeader, IonToolbar, IonTitle, IonButton, IonPage } from '@ionic/react';
@@ -87,7 +87,7 @@ const Example: React.FC = () => {
 export default Example;
 ```
 
-### Testing the modal
+### Testing the modal {/* #testing-the-modal-1 */}
 
 ```tsx title="src/Example.test.tsx"
 import { IonApp } from '@ionic/react';

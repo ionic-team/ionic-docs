@@ -23,7 +23,7 @@ import {
   FloatingPortal,
 } from '@floating-ui/react';
 
-import './tooltip.css';
+import styles from './styles.module.css';
 
 interface TooltipProps {
   content: ReactNode;
@@ -62,8 +62,8 @@ export default function Tooltip({ content, children }: TooltipProps): ReactNode 
       {cloneElement(children, getReferenceProps({ ...children.props, ref: referenceRef }))}
       {isMounted && (
         <FloatingPortal>
-          <div ref={refs.setFloating} className="tooltip__root" style={floatingStyles} {...getFloatingProps()}>
-            <div className="tooltip" style={transitionStyles}>
+          <div ref={refs.setFloating} className={styles.root} style={floatingStyles} {...getFloatingProps()}>
+            <div className={styles.tooltip} style={transitionStyles}>
               {content}
             </div>
           </div>
