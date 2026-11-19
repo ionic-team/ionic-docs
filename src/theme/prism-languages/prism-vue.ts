@@ -16,7 +16,10 @@
   // Highlight Vue directives (v-if, :prop, @click, #slot) as keywords. They
   // have to be matched inside the tag, since the tag token consumes its
   // attributes before any top-level rule can see them.
-  Prism.languages.insertBefore(
+  const vueTag = (Prism.languages.vue as Record<string, Prism.TokenObject>).tag;
+  // `insertBefore` looks the grammar up as `root[inside]`, so the tag's
+  // grammar is wrapped to reach it.
+  vueTag.inside = Prism.languages.insertBefore(
     'inside',
     'attr-name',
     {
@@ -26,7 +29,7 @@
         alias: 'keyword',
       },
     },
-    Prism.languages.vue.tag
+    { inside: vueTag.inside ?? {} }
   );
 
   Prism.languages.insertBefore('vue', 'comment', {
