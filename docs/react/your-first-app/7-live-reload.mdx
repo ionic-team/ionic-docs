@@ -38,15 +38,20 @@ With Live Reload running and the app open on your device, let’s implement phot
 In `usePhotoGallery.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we delete the actual photo file itself using the Filesystem API.
 
 ```ts
-import { useState, useEffect } from 'react';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/react';
-import { Capacitor } from '@capacitor/core';
+import { useState, useEffect } from 'react';
 
-export function usePhotoGallery() {
+export function usePhotoGallery(): {
+  addNewToGallery: () => Promise<void>;
+  // CHANGE: Add `deletePhoto()` to the return type
+  deletePhoto: (photo: UserPhoto) => Promise<void>;
+  photos: UserPhoto[];
+} {
   // ...existing code...
 
   // CHANGE: Add `deletePhoto()` method
@@ -68,10 +73,10 @@ export function usePhotoGallery() {
   };
 
   return {
-    photos,
     addNewToGallery,
     // CHANGE: Add `deletePhoto()` to the return statement
     deletePhoto,
+    photos,
   };
 }
 
@@ -84,10 +89,6 @@ export interface UserPhoto {
 Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```tsx
-// CHANGE: Add import
-import { useState } from 'react';
-// CHANGE: Update import
-import { camera, trash, close } from 'ionicons/icons';
 // CHANGE: Update import
 import {
   IonContent,
@@ -103,6 +104,11 @@ import {
   IonCol,
   IonActionSheet,
 } from '@ionic/react';
+// CHANGE: Update import
+import { camera, trash, close } from 'ionicons/icons';
+// CHANGE: Add import
+import { useState } from 'react';
+
 // CHANGE: Add import
 import type { UserPhoto } from '../hooks/usePhotoGallery';
 import { usePhotoGallery } from '../hooks/usePhotoGallery';

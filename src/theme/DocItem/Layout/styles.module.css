@@ -1,0 +1,65 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.docItemContainer header + *,
+.docItemContainer article > *:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 997px) {
+  .docItemCol {
+    max-width: 75% !important;
+  }
+}
+
+/* CUSTOM CODE */
+.docItemCol {
+  max-width: initial;
+  min-width: 0;
+}
+
+@media (min-width: 997px) {
+  .docItemCol {
+    max-width: initial !important;
+  }
+}
+
+.docItemContainer {
+  max-width: var(--doc-item-container-width, 42rem);
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.docItemRow {
+  flex-wrap: nowrap;
+}
+
+.docItemRow > :global(.col) {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+/*
+ * The docs demo is hidden on mobile and tablet. It is the only thing in its
+ * column, so the column is hidden too, or it would leave a blank gap.
+ */
+@media (max-width: 1364px) {
+  .docItemRow > .docDemoCol {
+    display: none;
+  }
+}
+
+.docDemoWrapper > * {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  margin-block-start: 5rem;
+  padding-block-end: 32px;
+  overflow-y: auto;
+}
+/* CUSTOM CODE END */

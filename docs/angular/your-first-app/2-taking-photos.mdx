@@ -45,12 +45,12 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 })
 export class PhotoService {
   // CHANGE: Add the gallery method
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
   }
 }
@@ -78,6 +78,7 @@ import {
 // CHANGE: Register the camera icon used by the FAB
 import { addIcons } from 'ionicons';
 import { camera } from 'ionicons/icons';
+
 // CHANGE: Import the PhotoService
 import { PhotoService } from '../services/photo.service';
 
@@ -98,7 +99,7 @@ export class Tab2Page {
   }
 
   // CHANGE: Add `addPhotoToGallery()` method
-  addPhotoToGallery() {
+  addPhotoToGallery(): void {
     this.photoService.addNewToGallery();
   }
 }
@@ -166,7 +167,7 @@ export class PhotoService {
   // CHANGE: Add the `photos` signal
   public photos = signal<UserPhoto[]>([]);
 
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // ...existing code...
   }
 }
@@ -176,12 +177,12 @@ Over in the `addNewToGallery` method, add the newly captured photo to the beginn
 
 ```ts
 // CHANGE: Update `addNewToGallery()` method
-public async addNewToGallery() {
+public async addNewToGallery(): Promise<void> {
   // Take a photo
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri,
-    source: CameraSource.Camera,
-    quality: 100
+    resultType: CameraResultType.Uri, // file-based data; provides best performance
+    source: CameraSource.Camera, // automatically take a new photo with the camera
+    quality: 100, // highest quality (0 to 100)
   });
 
   // CHANGE: Add the new photo to the front of the photos signal
@@ -207,12 +208,12 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 export class PhotoService {
   public photos = signal<UserPhoto[]>([]);
 
-  public async addNewToGallery() {
+  public async addNewToGallery(): Promise<void> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
-      source: CameraSource.Camera,
-      quality: 100,
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100, // highest quality (0 to 100)
     });
 
     this.photos.update((photos) => [

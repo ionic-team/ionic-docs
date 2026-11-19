@@ -314,18 +314,17 @@ document.addEventListener('ionBackButton', (event: BackButtonEvent) => {
 <TabItem value="angular">
 
 ```tsx
-import { Optional } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular/lazy';
 import { App } from '@capacitor/app';
 
 ...
 
-constructor(
-  private platform: Platform,
-  @Optional() private routerOutlet?: IonRouterOutlet
-) {
+@ViewChild(IonRouterOutlet, { static: true }) routerOutlet?: IonRouterOutlet;
+
+constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(-1, () => {
-    if (!this.routerOutlet.canGoBack()) {
+    if (this.routerOutlet && !this.routerOutlet.canGoBack()) {
       App.exitApp();
     }
   });
@@ -336,18 +335,17 @@ constructor(
 <TabItem value="angular-standalone">
 
 ```tsx
-import { Optional } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 
 ...
 
-constructor(
-  private platform: Platform,
-  @Optional() private routerOutlet?: IonRouterOutlet
-) {
+@ViewChild(IonRouterOutlet, { static: true }) routerOutlet?: IonRouterOutlet;
+
+constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(-1, () => {
-    if (!this.routerOutlet.canGoBack()) {
+    if (this.routerOutlet && !this.routerOutlet.canGoBack()) {
       App.exitApp();
     }
   });
@@ -395,6 +393,8 @@ useBackButton(-1, () => {
 This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
 
 It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React and Ionic Vue.
+
+In Ionic Angular, `IonRouterOutlet` can only be injected into components rendered inside the outlet. The component whose template contains `ion-router-outlet`, such as `AppComponent`, should query it with `@ViewChild`, as demonstrated in the example above.
 
 ## Internal Framework Handlers {/* #internal-framework-handlers */}
 

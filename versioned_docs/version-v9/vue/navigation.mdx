@@ -31,10 +31,11 @@ Here is a sample routing configuration that defines a single route to the "/home
 
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+
 import HomePage from '@/views/Home.vue';
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
@@ -57,7 +58,7 @@ On the app's initial load, the app will render the `HomePage` component as that 
 What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but just includes some different keys:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -77,7 +78,7 @@ In our redirect, we look for the index path of our app. Then if we load that, we
 This is all great, but how does one actually navigate to a route? For this, we can use the `router-link` property. Let's create a new routing setup:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -187,7 +188,7 @@ A key characteristic of `router.go()` is that it expects your application histor
 The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
@@ -280,7 +281,7 @@ A common point of confusion when setting up routing is deciding between shared U
 Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/dashboard',
     component: DashboardMainPage,
@@ -299,7 +300,7 @@ The above routes are considered "shared" because they reuse the `dashboard` piec
 Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/dashboard/:id',
     component: DashboardRouterOutlet,
@@ -332,7 +333,7 @@ There are very few use cases in which nested routes make sense in mobile applica
 When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's examine the routing setup for this:
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/tabs/tab1',
@@ -412,7 +413,7 @@ Since Ionic is focused on helping developers build mobile apps, the tabs in Ioni
 When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/tabs/tab1',
@@ -532,7 +533,7 @@ For example usages, please refer to our [Utility Functions](utility-functions#us
 Let's expand upon our original routing example to show how we can use URL parameters. We recommend [passing URL parameters as props](https://router.vuejs.org/guide/essentials/passing-props.html) so that the component does not need a direct reference to the router, which makes it easier to reuse and test in isolation.
 
 ```tsx
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',

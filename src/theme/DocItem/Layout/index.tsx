@@ -7,6 +7,7 @@
  *
  * Reason for overriding:
  * - Add a phone demo to the right of the page, e.g. /docs
+ * - Remove the version badge and the mobile table of contents, which the site never shows
  */
 
 import React, {type ReactNode} from 'react';
@@ -15,14 +16,13 @@ import {useWindowSize} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
-import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
 import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import ContentVisibility from '@theme/ContentVisibility';
 import type {Props} from '@theme/DocItem/Layout';
-import styles from '@docusaurus/theme-classic/lib/theme/DocItem/Layout/styles.module.css';
+import styles from './styles.module.css';
 
 // CUSTOM CODE
 import Head from '@docusaurus/Head';
@@ -90,13 +90,13 @@ export default function DocItemLayout({children, ...props}: Props): ReactNode {
       {/* The banner is rendered per version based on the versions config on docusaurus.config.js */}
       <DocVersionBanner />
       {/* ------- CUSTOM CODE END -------- */}
-      <div className="row">
+      {/* CUSTOM CODE - add docItemRow */}
+      <div className={clsx('row', styles.docItemRow)}>
         <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
           <ContentVisibility metadata={metadata} />
           <div className={styles.docItemContainer}>
             <article>
-              <DocVersionBadge />
-              {docTOC.mobile}
+              {/* CUSTOM CODE - remove <DocVersionBadge /> and {docTOC.mobile} */}
               <DocItemContent>{children}</DocItemContent>
               <DocItemFooter />
             </article>
@@ -106,8 +106,8 @@ export default function DocItemLayout({children, ...props}: Props): ReactNode {
         {/* ------- CUSTOM CODE -------- */}
         {/* Ideally this would only render if there is a demoUrl and the it's a mobile device. However,the `windowSize` does not provide a tablet so we have to hide it through CSS. */}
         {demoUrl && (
-          <div className="col col--4">
-            <div className="doc-demo-wrapper">
+          <div className={clsx('col col--4', styles.docDemoCol)}>
+            <div className={styles.docDemoWrapper}>
               <DocDemo url={demoUrl} source={demoSourceUrl} />
             </div>
           </div>

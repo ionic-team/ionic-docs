@@ -280,6 +280,19 @@ describe('buildTwin', () => {
     expect(markdown).toContain('Ionic is a toolkit.');
   });
 
+  it('labels the encapsulation pill so it cannot run into the first sentence', () => {
+    const markdown = buildTwin({
+      html: page(
+        '<h1>ion-accordion</h1><a class="encapsulation-pill encapsulationPill_x" href="/docs/reference/glossary#shadow">shadow</a>' +
+          '<p>Accordions provide collapsible sections.</p>'
+      ),
+      pageUrl: 'https://ionicframework.com/docs/api/accordion',
+      staticDir: 'static',
+    });
+
+    expect(markdown).toContain('**Encapsulation**: [shadow](/docs/reference/glossary#shadow)');
+  });
+
   it('points a link at the target twin when the target has one', () => {
     const markdown = buildTwin({
       html: page('<h1>T</h1><p>See <a href="/docs/theming/basics">theming</a> and <a href="/docs/nope">nope</a>.</p>'),

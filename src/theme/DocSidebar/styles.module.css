@@ -1,0 +1,6 @@
+.logo {
+  display: flex;
+  align-items: center;
+  height: var(--ifm-navbar-height);
+  padding-inline: var(--sidebar-spacing-horizontal);
+}

@@ -41,10 +41,10 @@ In `photo.service.ts`, add the `deletePhoto()` method. The selected photo is rem
 import { Injectable, inject, signal } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
-import { Capacitor } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root',
@@ -53,7 +53,7 @@ export class PhotoService {
   // ...existing code...
 
   // CHANGE: Add `deletePhoto()` method
-  public async deletePhoto(photo: UserPhoto, position: number) {
+  public async deletePhoto(photo: UserPhoto, position: number): Promise<void> {
     // Remove this photo from the photos signal
     this.photos.update((photos) => photos.filter((_, index) => index !== position));
 
@@ -82,7 +82,8 @@ export interface UserPhoto {
 Next, in `tab2.page.ts`, implement the `showActionSheet()` method. We're adding two options: "Delete", which calls `PhotoService.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
 
 ```ts
-import { Component, OnInit, inject } from '@angular/core';
+import type { OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
@@ -100,7 +101,8 @@ import {
 import { addIcons } from 'ionicons';
 // CHANGE: Register the `trash` and `close` icons used by the action sheet
 import { camera, trash, close } from 'ionicons/icons';
-// Change: Add import
+
+// CHANGE: Add import
 import type { UserPhoto } from '../services/photo.service';
 import { PhotoService } from '../services/photo.service';
 
@@ -120,16 +122,16 @@ export class Tab2Page implements OnInit {
     addIcons({ camera, trash, close });
   }
 
-  async ngOnInit() {
+  async ngOnInit(): Promise<void> {
     await this.photoService.loadSaved();
   }
 
-  addPhotoToGallery() {
+  addPhotoToGallery(): void {
     this.photoService.addNewToGallery();
   }
 
   // CHANGE: Add `showActionSheet()` method
-  public async showActionSheet(photo: UserPhoto, position: number) {
+  public async showActionSheet(photo: UserPhoto, position: number): Promise<void> {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',
       buttons: [

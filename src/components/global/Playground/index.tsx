@@ -9,6 +9,7 @@ import React, {
   useState,
 } from 'react';
 
+import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
@@ -871,12 +872,10 @@ export default function Playground({
               </button>
             </Tooltip>
             <Tooltip content="Report an issue">
-              <a
+              <Link
                 className="playground__icon-button"
-                href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
+                to="https://github.com/ionic-team/ionic-docs/issues/new/choose"
                 aria-label="Report an issue"
-                target="_blank"
-                rel="noreferrer"
               >
                 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path
@@ -884,7 +883,7 @@ export default function Playground({
                     fill="#73849A"
                   />
                 </svg>
-              </a>
+              </Link>
             </Tooltip>
           </div>
         </div>

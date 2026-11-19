@@ -10,7 +10,7 @@ title: CORS Errors
   />
 </head>
 
-## What is CORS?
+## What is CORS? {/* #what-is-cors */}
 
 **Cross-Origin Resource Sharing (CORS)** is a mechanism that browsers and webviews — like the ones powering Capacitor and Cordova — use to restrict HTTP and HTTPS requests made from scripts to resources in a different origin for security reasons, mainly to protect your user's data and prevent attacks that would compromise your app.
 
@@ -28,9 +28,9 @@ XMLHttpRequest cannot load https://api.example.com. No 'Access-Control-Allow-Ori
 
 :::
 
-## How does CORS work
+## How does CORS work {/* #how-does-cors-work */}
 
-### Request with preflight
+### Request with preflight {/* #request-with-preflight */}
 
 By default, when a web app tries to make a cross-origin request the browser sends a **preflight request** before the actual request. This preflight request is needed in order to know if the external resource supports CORS and if the actual request can be sent safely, since it may impact user data.
 
@@ -86,7 +86,7 @@ If the returned origin and method don't match the ones from the actual request, 
 
 In our example, since the API expects JSON, all `POST` requests will have a `Content-Type: application/json` header and always be preflighted.
 
-### Simple requests
+### Simple requests {/* #simple-requests */}
 
 Some requests are always considered safe to send and don't need a preflight if they meet all of the following conditions:
 
@@ -112,9 +112,9 @@ Some requests are always considered safe to send and don't need a preflight if t
 
 In our example API, `GET` requests don't need to be preflighted because no JSON data is being sent, and so the app doesn't need to use the `Content-Type: application/json` header. They will always be simple requests.
 
-## CORS Headers
+## CORS Headers {/* #cors-headers */}
 
-### Server Headers (Response)
+### Server Headers (Response) {/* #server-headers-response */}
 
 | Header                           | Value             | Description                                                                                                                                                                                |
 | -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -125,26 +125,26 @@ In our example API, `GET` requests don't need to be preflighted because no JSON 
 | Access-Control-Expose-Headers    | `headers`         | Specifies the headers that the browser is allowed to access.                                                                                                                               |
 | Access-Control-Max-Age           | `seconds`         | Indicates how long the results of a preflight request can be cached.                                                                                                                       |
 
-### Browser Headers (Request)
+### Browser Headers (Request) {/* #browser-headers-request */}
 
 The browser automatically sends the appropriate headers for CORS in every request to the server, including the preflight requests. Please note that the headers below are for reference only, and **should not be set in your app code** (the browser will ignore them).
 
-#### All Requests
+#### All Requests {/* #all-requests */}
 
 | Header     | Value    | Description                          |
 | ---------- | -------- | ------------------------------------ |
 | **Origin** | `origin` | Indicates the origin of the request. |
 
-#### Preflight Requests
+#### Preflight Requests {/* #preflight-requests */}
 
 | Header                            | Value     | Description                                                                                       |
 | --------------------------------- | --------- | ------------------------------------------------------------------------------------------------- |
 | **Access-Control-Request-Method** | `method`  | Used to let the server know what method will be used when the actual request is made.             |
 | Access-Control-Request-Headers    | `headers` | Used to let the server know what non-simple headers will be used when the actual request is made. |
 
-## Solutions for CORS Errors
+## Solutions for CORS Errors {/* #solutions-for-cors-errors */}
 
-### A. Enabling CORS in a server you control
+### A. Enabling CORS in a server you control {/* #a-enabling-cors-in-a-server-you-control */}
 
 The correct and easiest solution is to enable CORS by returning the [right response headers](#server-headers-response) from the web server or backend and responding to preflight requests, as it allows to keep using `XMLHttpRequest`, `fetch`, or abstractions like `HttpClient` in Angular.
 
@@ -154,7 +154,7 @@ Please note that all of the `Access-Control-Allow-*` headers have to be sent fro
 
 Here are some of the origins your Ionic app may be served from:
 
-#### Capacitor
+#### Capacitor {/* #capacitor */}
 
 | Platform | Origin                  |
 | -------- | ----------------------- |
@@ -163,7 +163,7 @@ Here are some of the origins your Ionic app may be served from:
 
 Replace `localhost` with your own hostname if you have changed the default in the Capacitor config.
 
-#### Ionic WebView 3.x plugin on Cordova
+#### Ionic WebView 3.x plugin on Cordova {/* #ionic-webview-3x-plugin-on-cordova */}
 
 | Platform | Origin              |
 | -------- | ------------------- |
@@ -172,7 +172,7 @@ Replace `localhost` with your own hostname if you have changed the default in th
 
 Replace `localhost` with your own hostname if you have changed the default in the plugin config.
 
-#### Ionic WebView 2.x plugin on Cordova
+#### Ionic WebView 2.x plugin on Cordova {/* #ionic-webview-2x-plugin-on-cordova */}
 
 | Platform | Origin                  |
 | -------- | ----------------------- |
@@ -181,7 +181,7 @@ Replace `localhost` with your own hostname if you have changed the default in th
 
 Replace port `8080` with your own if you have changed the default in the plugin config.
 
-#### Local development in the browser
+#### Local development in the browser {/* #local-development-in-the-browser */}
 
 | Command                       | Origin                                                   |
 | ----------------------------- | -------------------------------------------------------- |
@@ -232,19 +232,19 @@ app.listen(3000, () => {
 });
 ```
 
-### B. Working around CORS in a server you can't control
+### B. Working around CORS in a server you can't control {/* #b-working-around-cors-in-a-server-you-cant-control */}
 
-#### Don't leak your keys!
+#### Don't leak your keys! {/* #dont-leak-your-keys */}
 
 If you are trying to connect to a 3rd-party API, first check in its documentation that is safe to use it directly from the app (client-side) and that it won't leak any secret/private keys or credentials, as they can be read in clear text in Javascript code. Many APIs don't support CORS on purpose, in order to force developers to use them in the server and protect important information or keys.
 
-#### 1. Native-only apps (iOS/Android)
+#### 1. Native-only apps (iOS/Android) {/* #1-native-only-apps-iosandroid */}
 
-##### Capacitor Applications (Recommended)
+##### Capacitor Applications (Recommended) {/* #capacitor-applications-recommended */}
 
 For Capacitor applications, use the [Capacitor HTTP API](https://capacitorjs.com/docs/apis/http). This API patches `fetch` and `XMLHttpRequest` to use native libraries. Please note that if you also deploy the application to a web-based context such as PWA or the local development server (via `ionic serve` for example) you still need to implement CORS for those scenarios.
 
-##### Legacy Cordova Applications
+##### Legacy Cordova Applications {/* #legacy-cordova-applications */}
 
 For legacy Cordova applications, use the [HTTP plugin with the Awesome Cordova Plugins wrapper](https://danielsogl.gitbook.io/awesome-cordova-plugins/http). Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
 
@@ -280,7 +280,7 @@ export class HomePage {
 }
 ```
 
-#### 2. Native + PWAs
+#### 2. Native + PWAs {/* #2-native--pwas */}
 
 Send the requests through an HTTP/HTTPS proxy that bypasses them to the external resources and adds the necessary CORS headers to the responses. This proxy must be trusted or under your control, as it will be intercepting most traffic made by the app.
 
@@ -288,7 +288,7 @@ Also, keep in mind that the browser or webview will not receive the original HTT
 
 Check [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) for a Node.js CORS proxy that can be deployed in your own server. Using free hosted CORS proxies in production is not recommended.
 
-### C. Disabling CORS or browser web security
+### C. Disabling CORS or browser web security {/* #c-disabling-cors-or-browser-web-security */}
 
 Please be aware that CORS exists for a reason (security of user data and to prevent attacks against your app). **It's not possible or advisable to try to disable CORS**.
 
@@ -296,7 +296,7 @@ Older webviews like `UIWebView` on iOS don't enforce CORS but are deprecated and
 
 If you are developing a PWA or testing in the browser, using the `--disable-web-security` flag in Google Chrome or an extension to disable CORS is a really bad idea. You will be exposed to all kind of attacks, you can't ask your users to take the risk, and your app won't work once in production.
 
-##### Sources
+##### Sources {/* #sources */}
 
 - [CORS Errors in Ionic Apps](https://fdezromero.com/cors-errors-in-ionic-apps)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)

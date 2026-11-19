@@ -39,10 +39,6 @@
   padding: 0 8px;
 }
 
-.tabNavItemHidden {
-  display: none;
-}
-
 .tabNavItem {
   position: sticky;
   /* Places the nav item above the tab item  */
@@ -68,8 +64,4 @@
   border: 0;
   cursor: pointer;
   color: var(--tab-nav-btn-color);
-}
-
-.tabs__nav-button--hidden {
-  display: none;
 }

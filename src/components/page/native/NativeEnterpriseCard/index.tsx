@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
 import React, { type ComponentProps } from 'react';
@@ -6,11 +7,7 @@ import styles from './index.module.scss';
 
 export default function NativeEnterpriseCard(props: ComponentProps<'a'>) {
   return (
-    <a
-      className={clsx(props.className, styles.nativeEnterprise)}
-      href="https://ionic.io/enterprise-sdk"
-      target="_blank"
-    >
+    <Link className={clsx(props.className, styles.nativeEnterprise)} to="https://ionic.io/enterprise-sdk">
       <div className="image-wrapper">
         <img src={useBaseUrl('/img/native/native-enterprise@2x.png')} width="476" height="228" />
       </div>
@@ -22,6 +19,6 @@ export default function NativeEnterpriseCard(props: ComponentProps<'a'>) {
           enterprise-grade apps.
         </p>
       </div>
-    </a>
+    </Link>
   );
 }

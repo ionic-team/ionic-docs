@@ -16,9 +16,9 @@ For a **complete list of breaking changes** from Ionic 5 to Ionic 6, please refe
 
 :::
 
-## Getting Started
+## Getting Started {/* #getting-started */}
 
-### Angular
+### Angular {/* #angular */}
 
 1. Ionic 6 supports Angular 12+. Update to the latest version of Angular by following the [Angular Update Guide](https://update.angular.io/).
 2. Update to the latest version of Ionic 6:
@@ -36,7 +36,7 @@ npm install @ionic/angular@6 @ionic/angular-server@6
 3. Remove any usage of `Config.set()`. Instead, set your config in `IonicModule.forRoot()`. Refer to the [Angular Config Documentation](../developing/config) for more examples.
 4. Remove any usage of the `setupConfig` function previously exported from `@ionic/angular`. Set your config in `IonicModule.forRoot()` instead.
 
-### React
+### React {/* #react */}
 
 1. Ionic 6 supports React 17+. Update to the latest version of React:
 
@@ -107,7 +107,7 @@ import { menuController } from '@ionic/core';
 import { menuController } from '@ionic/core/components';
 ```
 
-### Vue
+### Vue {/* #vue */}
 
 1. Ionic 6 supports Vue 3.0.6+. Update to the latest version of Vue:
 
@@ -300,7 +300,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-### Core
+### Core {/* #core */}
 
 1. Update to the latest version of Ionic 6:
 
@@ -308,9 +308,9 @@ const routes: Array<RouteRecordRaw> = [
 npm install @ionic/core@6
 ```
 
-## Updating Your Code
+## Updating Your Code {/* #updating-your-code */}
 
-### Datetime
+### Datetime {/* #datetime */}
 
 1. Remove any usages of the `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month names, day names, and time displayed inside of the component according to the language and region set on the device. Refer to the [ion-datetime Localization Documentation](../api/datetime#localization) for more information.
 
@@ -328,15 +328,15 @@ Refer to the [Datetime Migration Sample Application](https://github.com/ionic-te
 
 :::
 
-### Icon
+### Icon {/* #icon */}
 
 Ionic 6 now ships with Ionicons 6. Review the [Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) and make any necessary changes.
 
-### Input
+### Input {/* #input */}
 
 Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
 
-### Modal
+### Modal {/* #modal */}
 
 `ion-modal` now uses the Shadow DOM. Update any styles targeting the internals of `ion-modal` to use either the [ion-modal CSS Variables](../api/modal#css-custom-properties) or the [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts):
 
@@ -364,7 +364,7 @@ ion-modal::part(backdrop) {
 }
 ```
 
-### Popover
+### Popover {/* #popover */}
 
 `ion-popover` now uses the Shadow DOM. Update any styles targeting the internals of `ion-popover` to use either [ion-popover CSS Variables](../api/popover#css-custom-properties) or the [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts):
 
@@ -400,19 +400,19 @@ ion-popover::part(content) {
 }
 ```
 
-### Radio
+### Radio {/* #radio */}
 
 Remove any usage of the `RadioChangeEventDetail` interface.
 
-### Select
+### Select {/* #select */}
 
 Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
 
-### Textarea
+### Textarea {/* #textarea */}
 
 Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
 
-### Browser Support
+### Browser Support {/* #browser-support */}
 
 The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
 
@@ -426,7 +426,7 @@ Safari >=13
 iOS >=13
 ```
 
-### Testing
+### Testing {/* #testing */}
 
 Ionic 6 now ships as ES Modules. ES Modules are supported in all major browsers and bring developer experience and code maintenance improvements. Developers testing with Jest will need to update their Jest configuration as Jest does not have full support for ES Modules as of Jest 27.
 
@@ -473,7 +473,7 @@ If you are still running into issues, here are a couple things to try:
 
 2. If you have a `browserslist/test` field in `package.json` file, make sure it is set to `current node`.
 
-## Need Help Upgrading?
+## Need Help Upgrading? {/* #need-help-upgrading */}
 
 Be sure to review the [Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING_ARCHIVE/v6.md). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that required user action are listed on this page.
 
