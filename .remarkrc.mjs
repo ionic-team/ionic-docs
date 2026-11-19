@@ -15,9 +15,10 @@ const pathOf = (url) => url.split(/[?#]/)[0];
  * it. Without the extension it is a URL that Docusaurus cannot map to a file,
  * and a leading `/` is read from the repo root by editors and GitHub.
  *
- * A JSX `href` never goes through that resolver, so it must be an absolute URL
- * path without the extension, such as `/api/accordion`. A relative `href`
- * resolves against the page's URL instead.
+ * A JSX `href` or `to` never goes through that resolver, so it must be an
+ * absolute URL path without the extension, such as `/api/accordion`. A relative
+ * one resolves against the page's URL instead, and on an older version's page
+ * one without the version prefix, such as `/v8/`, leads to the current docs.
  */
 const checkMarkdownLink = (url) => {
   if (url === '' || NOT_A_PAGE_LINK.test(url)) return null;
@@ -32,17 +33,26 @@ const checkMarkdownLink = (url) => {
   return `\`${url}\` is a URL, not a file. Link to the doc's relative file path with its extension, such as \`./accordion.mdx\`, so the build checks the page exists in this version.`;
 };
 
-const checkJsxHref = (url) => {
+// `version` is the older version a page belongs to, such as `v8`, or undefined
+// for the current docs.
+const checkJsxLink = (url, version) => {
   if (url === '' || NOT_A_PAGE_LINK.test(url)) return null;
   const path = pathOf(url);
+  const example = version ? `/${version}/api/accordion` : '/api/accordion';
   if (/\.mdx?$/.test(path)) {
-    return `A JSX \`href\` is a URL, not a file. Drop the extension from \`${url}\`, such as \`/api/accordion\`.`;
+    return `A JSX link is a URL, not a file. Drop the extension from \`${url}\`, such as \`${example}\`.`;
   }
   if (!path.startsWith('/')) {
-    return `Make \`${url}\` an absolute URL path, such as \`/api/accordion\`, or \`/v8/api/accordion\` on a v8 page. A relative \`href\` resolves against the page's URL.`;
+    return `Make \`${url}\` an absolute URL path, such as \`${example}\`. A relative link resolves against the page's URL.`;
+  }
+  if (version && !new RegExp(`^/${version}(/|$)`).test(path)) {
+    return `Start \`${url}\` with \`/${version}/\`, such as \`${example}\`. Without it, the link leads to the current docs.`;
   }
   return null;
 };
+
+// Matches both separators, since the lint also runs on Windows.
+const versionOf = (filePath) => filePath.match(/[\\/]versioned_docs[\\/]version-([^\\/]+)[\\/]/)?.[1];
 
 function docLinks() {
   return (tree, file) => {
@@ -51,14 +61,15 @@ function docLinks() {
       message.source = 'ionic-docs';
       message.ruleId = 'doc-links';
     };
+    const version = versionOf(file.path);
     const visit = (node) => {
       if (node.type === 'link' || node.type === 'definition') {
         const reason = checkMarkdownLink(node.url);
         if (reason) report(reason, node);
       } else if (node.type === 'mdxJsxFlowElement' || node.type === 'mdxJsxTextElement') {
         for (const attribute of node.attributes) {
-          if (attribute.name !== 'href' || typeof attribute.value !== 'string') continue;
-          const reason = checkJsxHref(attribute.value);
+          if (!['href', 'to'].includes(attribute.name) || typeof attribute.value !== 'string') continue;
+          const reason = checkJsxLink(attribute.value, version);
           if (reason) report(reason, node);
         }
       }
