@@ -218,6 +218,8 @@ Content
 :::
 ```
 
+Keep the blank lines after the opening marker, before the closing `:::`, and after it. `npm run lint` puts each paragraph on one line, so without them it merges the markers into the surrounding text and the admonition renders as plain text.
+
 ### Links and Headings
 
 Use Markdown for links and headings whenever possible. When you need JSX, such as inside a component prop or in `src/`, use the Docusaurus components instead of raw HTML:
