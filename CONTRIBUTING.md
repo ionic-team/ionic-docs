@@ -200,6 +200,10 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 
 `/docs` maps to `docs/index.mdx` through `slug: /` in its frontmatter. Older versions live in `versioned_docs/` and are served under their version, such as `/docs/v8/`.
 
+Every page needs a `description` in its frontmatter. Docusaurus uses it for the meta description, link previews, and llms.txt, and `npm run lint` flags a page without one. Files and folders whose names start with `_` are not pages, so use that prefix for a file that other pages only import, such as `developing/config/_global.mdx`.
+
+The frontmatter `title` names the page everywhere: its heading, the sidebar, cards, and link previews. To show a longer title only in search results and the browser tab, put it in `<head>`, such as `<head><title>ion-button: Style Buttons with Custom CSS Properties</title></head>`. A description in `<head>` has no such use, since Docusaurus only reads it from the frontmatter.
+
 Versions listed in [`versions.json`](versions.json) are actively maintained. If your change also applies to one of them, make the same change in its `versioned_docs/version-<name>/` folder. Versions listed in [`versionsArchived.json`](versionsArchived.json) are frozen deployments that are no longer built, so changes to their folders never reach the site.
 
 Markdown links resolve within their own version, but JSX paths such as `<Link to>` and `useBaseUrl` do not. In an older version, prefix them with the version, such as `<Link to="/v8/api/note">`.

@@ -118,7 +118,16 @@ module.exports = {
             }
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
-          exclude: ['README.md'],
+          // Setting exclude replaces Docusaurus's defaults, so they are repeated
+          // here. They keep files and folders starting with `_`, which other
+          // pages import, from also being built as pages.
+          exclude: [
+            'README.md',
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
           lastVersion: 'current',
           /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {

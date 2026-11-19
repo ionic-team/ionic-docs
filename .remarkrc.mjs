@@ -3,6 +3,10 @@
  * `mdx/remark` rule in `eslint.config.mjs`.
  */
 
+import path from 'node:path';
+
+import remarkFrontmatter from 'remark-frontmatter';
+
 // Schemes such as https: and mailto:, in-page anchors, and protocol-relative URLs.
 const NOT_A_PAGE_LINK = /^([a-z][a-z\d+.-]*:|#|\/\/)/i;
 
@@ -79,6 +83,56 @@ function docLinks() {
   };
 }
 
+/**
+ * Every page needs a `description` in its frontmatter. Docusaurus uses it for
+ * the meta description, link previews, and llms.txt. Without it, Docusaurus
+ * builds one from the opening text of the page, which can pick up an import, a
+ * heading id comment, or the first line of a code sample.
+ *
+ * A `<meta name="description">` in `<head>` only sets the meta tag, so it does
+ * not count. Docusaurus skips files and folders starting with `_`, so those
+ * partials are not pages and need no description.
+ */
+function pageDescription() {
+  return (tree, file) => {
+    const report = (reason, place) => {
+      const message = file.message(reason, place);
+      message.source = 'ionic-docs';
+      message.ruleId = 'page-description';
+    };
+    // Only the path inside the repo counts, so a checkout under a `_` folder,
+    // such as a self-hosted runner's `_work/`, is still checked.
+    const repoPath = file.path ? path.relative(file.cwd, file.path) : '';
+    if (repoPath.split(/[\\/]/).some((segment) => segment.startsWith('_'))) return;
+
+    const frontmatter = tree.children[0]?.type === 'yaml' ? tree.children[0].value : '';
+    // An empty quoted string, such as `description: ''`, is no description.
+    if (!/^description:[ \t]*(?!(['"])\1[ \t]*$)\S/m.test(frontmatter)) {
+      report(
+        'Add a `description` to the frontmatter. Without it, Docusaurus builds one from the opening text of the page.',
+        { line: 1, column: 1 }
+      );
+    }
+
+    for (const node of tree.children) {
+      // Also matches `<Head>` from `@docusaurus/Head`.
+      if (node.type !== 'mdxJsxFlowElement' || node.name?.toLowerCase() !== 'head') continue;
+      for (const child of node.children) {
+        const isDescription = child.name === 'meta' && child.attributes?.some((a) => a.name === 'name' && a.value === 'description');
+        if (isDescription) {
+          report(
+            'Move this description to the frontmatter `description`. Docusaurus does not read it from `<head>`, so link previews and llms.txt use the opening text of the page instead.',
+            child
+          );
+        }
+      }
+    }
+  };
+}
+
 export default {
-  plugins: [docLinks],
+  // remark-frontmatter parses the frontmatter as YAML, as Docusaurus does.
+  // Without it, the lint reads it as Markdown, and a `<` in a description
+  // becomes an unclosed JSX tag.
+  plugins: [remarkFrontmatter, docLinks, pageDescription],
 };

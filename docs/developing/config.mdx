@@ -1,5 +1,6 @@
 ---
 title: Config
+description: 'Ionic Config changes component properties across an app, such as the mode, tab button layout, and animations, globally or per platform.'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,7 +14,7 @@ The available config keys can be found in the [`IonicConfig`](#ionicconfig) inte
 
 The following example disables ripple effects and default the mode to Material Design:
 
-import GlobalExample from '@site/docs/developing/config/global/index.mdx';
+import GlobalExample from '@site/docs/developing/config/_global.mdx';
 
 <GlobalExample />
 
@@ -21,7 +22,7 @@ import GlobalExample from '@site/docs/developing/config/global/index.mdx';
 
 Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-import PerComponentExample from '@site/docs/developing/config/per-component/index.mdx';
+import PerComponentExample from '@site/docs/developing/config/_per-component.mdx';
 
 <PerComponentExample />
 
@@ -31,7 +32,7 @@ Ionic Config can also be set on a per-platform basis. For example, this allows y
 
 In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
 
-import PerPlatformExample from '@site/docs/developing/config/per-platform/index.mdx';
+import PerPlatformExample from '@site/docs/developing/config/_per-platform.mdx';
 
 <PerPlatformExample />
 
@@ -39,7 +40,7 @@ import PerPlatformExample from '@site/docs/developing/config/per-platform/index.
 
 The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
-import PerPlatformFallbackExample from '@site/docs/developing/config/per-platform-overrides/index.mdx';
+import PerPlatformFallbackExample from '@site/docs/developing/config/_per-platform-overrides.mdx';
 
 <PerPlatformFallbackExample />
 
@@ -47,7 +48,7 @@ import PerPlatformFallbackExample from '@site/docs/developing/config/per-platfor
 
 This final example allows you to accumulate a config object based upon different platform requirements.
 
-import PerPlatformOverridesExample from '@site/docs/developing/config/per-platform-fallback/index.mdx';
+import PerPlatformOverridesExample from '@site/docs/developing/config/_per-platform-fallback.mdx';
 
 <PerPlatformOverridesExample />
 
