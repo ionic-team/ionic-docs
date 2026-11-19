@@ -80,9 +80,10 @@ Let's walk through these files to understand the app's structure.
 The root of your app is defined in `App.tsx`:
 
 ```tsx title="src/App.tsx"
-import { Route, Navigate } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { Navigate, Route } from 'react-router-dom';
+
 import Home from './pages/Home';
 
 // ..CSS imports...
@@ -124,6 +125,7 @@ The Home page component, defined in `Home.tsx`, imports the Ionic components and
 
 ```tsx title="src/pages/Home.tsx"
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
@@ -303,9 +305,21 @@ Update `New.tsx` to add a `ref` on `IonContent` and a button and some items afte
 Then, add the imports for the additional components and define the `scrollToBottom` function:
 
 ```tsx title="src/pages/New.tsx"
-import { useRef } from 'react';
-import { IonButton, IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import {
+  IonButton,
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
 import { heart, logoIonic } from 'ionicons/icons';
+import { useRef } from 'react';
 
 const New: React.FC = () => {
   const content = useRef<HTMLIonContentElement>(null);

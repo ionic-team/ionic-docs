@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-## Requirements
+## Requirements {/* #requirements */}
 
 Submitting an App to the iOS App store requires a few things:
 
@@ -25,7 +25,7 @@ Submitting an App to the iOS App store requires a few things:
 
 Follow the [Apple Developer Program enrollment instructions](https://developer.apple.com/programs/) to get started.
 
-## Generating a release build
+## Generating a release build {/* #generating-a-release-build */}
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
@@ -92,7 +92,7 @@ You can also have a release build generated automatically by using the `--releas
 </TabItem>
 </Tabs>
 
-## Generating Signing Certs
+## Generating Signing Certs {/* #generating-signing-certs */}
 
 Generating certificates for iOS is a bit of an involved process, so be sure to check [Apple's official documentation](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) on what certificates are and how to generate them.
 
@@ -102,7 +102,7 @@ There are two types of certificates that matter here, Development, and Distribut
 
 Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
 
-## Signing the App in Xcode
+## Signing the App in Xcode {/* #signing-the-app-in-xcode */}
 
 After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
 
@@ -113,7 +113,7 @@ There should be a place to select the team followed by some more information on 
 
 If the upload is successful the app should be listed under 'Activities' on [iTunes Connect](https://itunesconnect.apple.com) or listed under 'Apps' on [App Store Connect](https://appstoreconnect.apple.com/). From there, the app can be published to TestFlight, or it can be sent to Apple for approval for the App Store.
 
-## Updating an app
+## Updating an app {/* #updating-an-app */}
 
 As an app grows, it will need to be updated with new features and fixes.
 An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's [live update feature](https://ionic.io/docs/appflow/deploy/intro).

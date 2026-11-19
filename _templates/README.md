@@ -11,17 +11,20 @@ Some helpful docs links for updating/creating templates:
 
 ## Generation
 
-To create a new playground, run `npm run playground:new`. This will walk you through some prompts to decide what files for the generator to create for the playground, and what their paths should be.
+To create a new playground, run `npm run playground:new`. This will walk you through some prompts to decide what files for the generator to create for the playground, and what their paths should be:
 
-The path defaults to `basic`. If there is already a basic playground, you'll want to input a different path for the playground.
-
-The CSS option will add extra files if you need to include custom CSS in your playground.
+- **Component or guide:** a component playground goes under the component's name, such as `button`. Any other playground goes under a guide section, such as `animations`, and starts with an `ion-card`.
+- **Path:** the folder for the playground under that name, such as `basic` or `theming/colors`. Use `basic` for a component's first playground.
+- **Version:** the Ionic Framework version the playground is for.
+- **CSS:** adds extra files if you need to include custom CSS in your playground.
 
 If you need a component for multiple versions of Ionic Framework, you (currently) need to run the generator once for each version.
 
+If the version you pick is not published to npm yet, such as the next major on a major branch, the generated `demo.html` loads the latest published version from the CDN instead, since the CDN has nothing to serve for an unpublished version. The demo renders, but APIs new in that version do not work in it until the version is published. The generator also adds a `TODO(FW-XXXX)` comment above the CDN links. Replace `FW-XXXX` with the ticket that tracks the update, and create one if it does not exist yet.
+
 ## Usage
 
-Once you've generated your playground, you need to add it to the main markdown file in the docs (e.g. [docs/api/button.mdx](../docs/api/button.mdx)) by doing something similar to the following example:
+Once you've generated your playground, you need to add it to the main markdown file in the docs (e.g. [docs/api/button.mdx](../docs/api/button.mdx)). The generator prints the snippet to paste when it finishes, which looks similar to the following example:
 
 ```
 ## Feature

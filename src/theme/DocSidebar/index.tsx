@@ -13,6 +13,8 @@ import type { Props } from '@theme/DocSidebar';
 
 import Logo from '@theme-original/Logo';
 
+import styles from './styles.module.css';
+
 export default function DocSidebarWrapper(props: Props): ReactNode {
   const location = useLocation();
 
@@ -27,7 +29,7 @@ export default function DocSidebarWrapper(props: Props): ReactNode {
 
   return (
     <>
-      <Logo />
+      <Logo className={styles.logo} />
       <DocSidebar {...props} />
     </>
   );

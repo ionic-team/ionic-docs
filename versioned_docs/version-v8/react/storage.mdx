@@ -21,18 +21,18 @@ Some storage options involve third-party plugins or products. In such cases, we 
 
 Here are some common use cases and solutions:
 
-## Local Application Settings and Data
+## Local Application Settings and Data {/* #local-application-settings-and-data */}
 
 Many applications need to locally store settings as well as other lightweight key/value data. The [Capacitor Preferences](https://capacitorjs.com/docs/apis/preferences) plugin is specifically designed to handle these scenarios.
 
-## Relational Data Storage (Mobile Only)
+## Relational Data Storage (Mobile Only) {/* #relational-data-storage-mobile-only */}
 
 Some applications, especially those following an offline-first methodology, may require locally storing high volumes of complex relational data. For such scenarios, a SQLite plugin may be used. The most common SQLite plugin offerings are:
 
 - [Cordova SQLite Storage](https://github.com/storesafe/cordova-sqlite-storage) (a [convenience wrapper](https://danielsogl.gitbook.io/awesome-cordova-plugins/sqlite) also exists for this plugin to aid in implementation)
 - [Capacitor Community SQLite Plugin](https://github.com/capacitor-community/sqlite)
 
-## Non-Relational High Volume Data Storage (Mobile and Web)
+## Non-Relational High Volume Data Storage (Mobile and Web) {/* #non-relational-high-volume-data-storage-mobile-and-web */}
 
 For applications that need to store a high volume of data as well as operate on both web and mobile, a potential solution is to create a key/value pair data storage service that uses [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) on the web and one of the previously mentioned SQLite plugins on mobile.
 
@@ -42,7 +42,7 @@ Here a sample of how this can be accomplished:
 - [Mobile Service](https://github.com/ionic-enterprise/tutorials-and-demos-react/blob/main/demos/sqlcipher-kv-pair/src/utils/mobile-kv-store.ts)
 - [Web Service](https://github.com/ionic-enterprise/tutorials-and-demos-react/blob/main/demos/sqlcipher-kv-pair/src/utils/web-kv-store.ts)
 
-## Other Options
+## Other Options {/* #other-options */}
 
 Other storage options that provide local as well as cloud-based storage that work well within Capacitor applications also exist and may integrate well with your application.
 

@@ -9,6 +9,7 @@ import { Color } from '../_utils/color';
 
 import { generateSteppedColors } from '../_utils/index';
 import clsx from 'clsx';
+import Heading from '@theme/Heading';
 import styles from './index.module.scss';
 
 export default function ColorGenerator(props: ComponentProps<'div'> & { useTextAndBackgroundStepColors?: boolean }) {
@@ -29,10 +30,10 @@ export default function ColorGenerator(props: ComponentProps<'div'> & { useTextA
     <div className={clsx(props.className, 'stepped-color-generator')}>
       <div className={clsx(styles.inputRows)}>
         <ColorDot color={backgroundColor} />
-        <h3>Background</h3>
+        <Heading as="h3">Background</Heading>
         <ColorInput color={backgroundColor} setColor={setBackgroundColor} />
         <ColorDot color={textColor} />
-        <h3>Text</h3>
+        <Heading as="h3">Text</Heading>
         <ColorInput color={textColor} setColor={setTextColor} />
       </div>
       <pre className={clsx(styles.codePre)}>

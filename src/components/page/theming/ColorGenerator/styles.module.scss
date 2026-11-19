@@ -3,17 +3,6 @@
   flex-direction: column;
 }
 
-.preview-column {
-  max-width: 480px;
-  min-height: 700px;
-}
-
-.selector-column {
-  max-width: 600px;
-  height: 100%;
-  overflow-y: scroll;
-}
-
 .titleRow {
   display: flex;
   align-items: center;
@@ -55,15 +44,6 @@
 
 .selectColors li {
   list-style-type: none;
-}
-
-.swatch {
-  display: block;
-  width: 24px;
-  height: 24px;
-  border-radius: 24px;
-  margin-right: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .item {
