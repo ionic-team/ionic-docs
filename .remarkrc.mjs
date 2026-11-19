@@ -3,6 +3,8 @@
  * `mdx/remark` rule in `eslint.config.mjs`.
  */
 
+import path from 'node:path';
+
 import remarkFrontmatter from 'remark-frontmatter';
 
 // Schemes such as https: and mailto:, in-page anchors, and protocol-relative URLs.
@@ -98,10 +100,14 @@ function pageDescription() {
       message.source = 'ionic-docs';
       message.ruleId = 'page-description';
     };
-    if (file.path?.split(/[\\/]/).some((segment) => segment.startsWith('_'))) return;
+    // Only the path inside the repo counts, so a checkout under a `_` folder,
+    // such as a self-hosted runner's `_work/`, is still checked.
+    const repoPath = file.path ? path.relative(file.cwd, file.path) : '';
+    if (repoPath.split(/[\\/]/).some((segment) => segment.startsWith('_'))) return;
 
     const frontmatter = tree.children[0]?.type === 'yaml' ? tree.children[0].value : '';
-    if (!/^description:\s*\S/m.test(frontmatter)) {
+    // An empty quoted string, such as `description: ''`, is no description.
+    if (!/^description:[ \t]*(?!(['"])\1[ \t]*$)\S/m.test(frontmatter)) {
       report(
         'Add a `description` to the frontmatter. Without it, Docusaurus builds one from the opening text of the page.',
         { line: 1, column: 1 }
@@ -109,7 +115,8 @@ function pageDescription() {
     }
 
     for (const node of tree.children) {
-      if (node.type !== 'mdxJsxFlowElement' || node.name !== 'head') continue;
+      // Also matches `<Head>` from `@docusaurus/Head`.
+      if (node.type !== 'mdxJsxFlowElement' || node.name?.toLowerCase() !== 'head') continue;
       for (const child of node.children) {
         const isDescription = child.name === 'meta' && child.attributes?.some((a) => a.name === 'name' && a.value === 'description');
         if (isDescription) {
