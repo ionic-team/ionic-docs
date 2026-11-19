@@ -6,7 +6,7 @@ title: Updating to v6
 
 :::note
 
-This guide assumes that you have already updated your app to the latest version of Ionic 5. Make sure you have followed the [Updating to Ionic 5 Guide](./5-0) before starting this guide.
+This guide assumes that you have already updated your app to the latest version of Ionic 5. Make sure you have followed the [Updating to Ionic 5 Guide](./5-0.mdx) before starting this guide.
 
 :::
 
@@ -33,7 +33,7 @@ If you are using Ionic Angular Server, be sure to update that as well:
 npm install @ionic/angular@6 @ionic/angular-server@6
 ```
 
-3. Remove any usage of `Config.set()`. Instead, set your config in `IonicModule.forRoot()`. Refer to the [Angular Config Documentation](../developing/config) for more examples.
+3. Remove any usage of `Config.set()`. Instead, set your config in `IonicModule.forRoot()`. Refer to the [Angular Config Documentation](../developing/config.mdx) for more examples.
 4. Remove any usage of the `setupConfig` function previously exported from `@ionic/angular`. Set your config in `IonicModule.forRoot()` instead.
 
 ### React {/* #react */}
@@ -91,7 +91,7 @@ Developers must import and call `setupIonicReact` even if they are not setting c
 
 :::
 
-Refer to the [React Config Documentation](../developing/config) for more examples.
+Refer to the [React Config Documentation](../developing/config.mdx) for more examples.
 
 5. Update all controller imports from `@ionic/core` to `@ionic/core/components`. As an example, here is a migration for `menuController`:
 
@@ -153,7 +153,7 @@ module.exports = {
 
 Refer to the [Testing section below](#testing) for more information.
 
-5. Remove any usage of the `setupConfig` function previously exported from `@ionic/vue`. Set your config when installing the `IonicVue` plugin instead. Refer to the [Vue Config Documentation](../developing/config) for more examples.
+5. Remove any usage of the `setupConfig` function previously exported from `@ionic/vue`. Set your config when installing the `IonicVue` plugin instead. Refer to the [Vue Config Documentation](../developing/config.mdx) for more examples.
 
 6. Rename the `IonRouter` type for `useIonRouter` to `UseIonRouterResult`.
 
@@ -312,15 +312,15 @@ npm install @ionic/core@6
 
 ### Datetime {/* #datetime */}
 
-1. Remove any usages of the `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month names, day names, and time displayed inside of the component according to the language and region set on the device. Refer to the [ion-datetime Localization Documentation](../api/datetime#localization) for more information.
+1. Remove any usages of the `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month names, day names, and time displayed inside of the component according to the language and region set on the device. Refer to the [ion-datetime Localization Documentation](../api/datetime.mdx#localization) for more information.
 
 2. Remove any usages of the `text` and `placeholder` CSS Shadow Parts.
 
 3. Remove any usages of the `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, and `--placeholder-color` CSS Variables. To customize the padding on `ion-datetime`, you can use any of the `padding` CSS properties.
 
-4. Remove any usage of the `open` method. To present the datetime in an overlay, place it inside of an `ion-modal` or an `ion-popover` component. Refer to the [ion-datetime Usage Examples](/api/datetime.mdx#basic-usage) for more information.
+4. Remove any usage of the `open` method. To present the datetime in an overlay, place it inside of an `ion-modal` or an `ion-popover` component. Refer to the [ion-datetime Usage Examples](../api/datetime.mdx#basic-usage) for more information.
 
-5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). Refer to the [ion-datetime Parsing Dates Documentation](/api/datetime.mdx#parsing-date-values) for examples.
+5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). Refer to the [ion-datetime Parsing Dates Documentation](../api/datetime.mdx#parsing-date-values) for examples.
 
 :::note
 
@@ -338,7 +338,7 @@ Ensure `null` is not passed in as a value to the `placeholder` property. We reco
 
 ### Modal {/* #modal */}
 
-`ion-modal` now uses the Shadow DOM. Update any styles targeting the internals of `ion-modal` to use either the [ion-modal CSS Variables](../api/modal#css-custom-properties) or the [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts):
+`ion-modal` now uses the Shadow DOM. Update any styles targeting the internals of `ion-modal` to use either the [ion-modal CSS Variables](../api/modal.mdx#css-custom-properties) or the [ion-modal CSS Shadow Parts](../api/modal.mdx#css-shadow-parts):
 
 **Before**
 
@@ -366,7 +366,7 @@ ion-modal::part(backdrop) {
 
 ### Popover {/* #popover */}
 
-`ion-popover` now uses the Shadow DOM. Update any styles targeting the internals of `ion-popover` to use either [ion-popover CSS Variables](../api/popover#css-custom-properties) or the [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts):
+`ion-popover` now uses the Shadow DOM. Update any styles targeting the internals of `ion-popover` to use either [ion-popover CSS Variables](../api/popover.mdx#css-custom-properties) or the [ion-popover CSS Shadow Parts](../api/popover.mdx#css-shadow-parts):
 
 **Before**
 
@@ -414,7 +414,7 @@ Ensure `null` is not passed in as a value to the `placeholder` property. We reco
 
 ### Browser Support {/* #browser-support */}
 
-The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
+The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support.mdx) to ensure you are deploying apps to supported browsers.
 
 If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
 

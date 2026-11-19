@@ -80,7 +80,8 @@ module.exports = {
   },
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      // A Markdown link to a file that doesn't exist, such as after a rename.
+      onBrokenMarkdownLinks: 'throw',
     },
   },
   favicon: 'img/meta/favicon-96x96.png',
