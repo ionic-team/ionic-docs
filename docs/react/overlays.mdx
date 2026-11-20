@@ -49,7 +49,7 @@ showAlert({
 });
 ```
 
-Overlay hooks that display additional custom components as part of their markup, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), take in a couple of additional parameters when initializing their hooks. The first parameter is the component you want your overlay to display, and the second is an object of additional props you want to pass into the component when it gets constructed:
+Overlay hooks that display additional custom components as part of their markup, such as [modals](../api/modal.mdx) and [popovers](../api/popover.mdx), take in a couple of additional parameters when initializing their hooks. The first parameter is the component you want your overlay to display, and the second is an object of additional props you want to pass into the component when it gets constructed:
 
 ```tsx
 const [present, dismiss] = useIonModal(({ name }: { name: string }) => <div>Hello {name}.</div>, {
@@ -79,7 +79,7 @@ Above, the `showAlert` boolean is a piece of state provided from your applicatio
 
 When the overlay is dismissed, it is important to tie into the `onDidDismiss` callback and set your state variable to indicate that the overlay is no longer presenting. Ionic React looks for changes to the `isOpen` prop to determine if the overlay should be displayed or not.
 
-For overlays that display custom components, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), you provide the component as a child to the overlay component:
+For overlays that display custom components, such as [modals](../api/modal.mdx) and [popovers](../api/popover.mdx), you provide the component as a child to the overlay component:
 
 ```tsx
 <IonModal isOpen={showModal}>
@@ -97,10 +97,10 @@ The Overlay Components are still a valid way of displaying overlays and are in n
 
 For full docs and usage examples for both the hook and component approach, visit the docs page for each of the overlays in Ionic:
 
-- [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
-- [Alert](https://ionicframework.com/docs/api/alert)
-- [Loading](https://ionicframework.com/docs/api/loading)
-- [Modal](https://ionicframework.com/docs/api/modal)
-- [Picker](https://ionicframework.com/docs/api/picker)
-- [Popover](https://ionicframework.com/docs/api/popover)
-- [Toast](https://ionicframework.com/docs/api/toast)
+- [Action Sheet](../api/action-sheet.mdx)
+- [Alert](../api/alert.mdx)
+- [Loading](../api/loading.mdx)
+- [Modal](../api/modal.mdx)
+- [Picker](../api/picker.mdx)
+- [Popover](../api/popover.mdx)
+- [Toast](../api/toast.mdx)
