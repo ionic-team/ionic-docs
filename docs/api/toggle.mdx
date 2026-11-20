@@ -37,6 +37,16 @@ import OnOff from '@site/static/usage/v9/toggle/on-off/index.mdx';
 
 <OnOff />
 
+### Custom On / Off Icons {/* #custom-on--off-icons */}
+
+The icons shown when on/off labels are enabled can be set to any [Ionicon](https://ionic.io/ionicons) or the `src` of an SVG file using the `checkedIcon` and `uncheckedIcon` properties. To change the icons for every toggle in an app, use the `toggleCheckedIcon` and `toggleUncheckedIcon` [global config](/developing/config.mdx#ionicconfig) options. A property set on a toggle takes priority over the global config.
+
+Custom icons are hidden from assistive technology, so the toggle's label needs to describe the setting on its own. Pick icons that keep the checked and unchecked states visually distinct.
+
+import OnOffIcons from '@site/static/usage/v9/toggle/on-off-icons/index.mdx';
+
+<OnOffIcons />
+
 ## Toggles in a List {/* #toggles-in-a-list */}
 
 Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
