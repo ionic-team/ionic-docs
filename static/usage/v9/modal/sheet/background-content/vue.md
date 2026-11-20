@@ -1,10 +1,10 @@
-```html
+```vue
 <style>
-  .counter__section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.counter__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 </style>
 
 <template>
@@ -18,7 +18,7 @@
 
     <div class="counter__section">
       <ion-button id="decrement" @click="count--">-</ion-button>
-      <p>{{count}}</p>
+      <p>{{ count }}</p>
       <ion-button id="increment" @click="count++">+</ion-button>
     </div>
 
@@ -77,21 +77,21 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-    IonItem,
-    IonList,
-    IonAvatar,
-    IonLabel,
-    IonSearchbar,
-  } from '@ionic/vue';
-  import { ref } from 'vue';
+import {
+  IonButton,
+  IonModal,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonItem,
+  IonList,
+  IonAvatar,
+  IonLabel,
+  IonSearchbar,
+} from '@ionic/vue';
+import { ref } from 'vue';
 
-  const count = ref(0);
+const count = ref(0);
 </script>
 ```

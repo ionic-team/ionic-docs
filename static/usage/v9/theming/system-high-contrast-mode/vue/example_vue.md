@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -46,22 +46,22 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonBackButton,
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonRange,
-    IonText,
-    IonToggle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/vue';
+import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
 </script>
 ```

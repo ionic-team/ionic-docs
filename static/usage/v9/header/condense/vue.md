@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header :translucent="true">
     <ion-toolbar>
@@ -76,6 +76,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -31,21 +31,21 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
-  import { caretDownSharp } from 'ionicons/icons';
+import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
+import { caretDownSharp } from 'ionicons/icons';
 </script>
 
 <style>
-  ion-select.always-flip::part(icon) {
-    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+ion-select.always-flip::part(icon) {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  ion-select.always-flip.select-expanded::part(icon) {
-    transform: rotate(180deg);
-  }
+ion-select.always-flip.select-expanded::part(icon) {
+  transform: rotate(180deg);
+}
 
-  ion-select.never-flip::part(icon) {
-    transform: none;
-  }
+ion-select.never-flip::part(icon) {
+  transform: none;
+}
 </style>
 ```

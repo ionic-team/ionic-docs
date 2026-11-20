@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -18,50 +18,50 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonRefresher,
-    IonRefresherContent,
-    IonTitle,
-    IonToolbar,
-    RefresherCustomEvent,
-  } from '@ionic/vue';
+import {
+  IonContent,
+  IonHeader,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherCustomEvent,
+} from '@ionic/vue';
 
-  const handleRefresh = (event: RefresherCustomEvent) => {
-    setTimeout(() => {
-      // Any calls to load data go here
-      event.target.complete();
-    }, 2000);
-  };
+const handleRefresh = (event: RefresherCustomEvent) => {
+  setTimeout(() => {
+    // Any calls to load data go here
+    event.target.complete();
+  }, 2000);
+};
 </script>
 
 <style scoped>
-  .ion-content-scroll-host {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-  }
+.ion-content-scroll-host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
 
-  .ion-content-scroll-host::before,
-  .ion-content-scroll-host::after {
-    position: absolute;
+.ion-content-scroll-host::before,
+.ion-content-scroll-host::after {
+  position: absolute;
 
-    width: 1px;
-    height: 1px;
+  width: 1px;
+  height: 1px;
 
-    content: '';
-  }
+  content: '';
+}
 
-  .ion-content-scroll-host::before {
-    bottom: -1px;
-  }
+.ion-content-scroll-host::before {
+  bottom: -1px;
+}
 
-  .ion-content-scroll-host::after {
-    top: -1px;
-  }
+.ion-content-scroll-host::after {
+  top: -1px;
+}
 </style>
 ```

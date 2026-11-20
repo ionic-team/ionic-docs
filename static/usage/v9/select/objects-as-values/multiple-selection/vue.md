@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -16,40 +16,40 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
+import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
 
-  const foods = [
-    {
-      id: 1,
-      name: 'Apples',
-      type: 'fruit',
-    },
-    {
-      id: 2,
-      name: 'Carrots',
-      type: 'vegetable',
-    },
-    {
-      id: 3,
-      name: 'Cupcakes',
-      type: 'dessert',
-    },
-  ];
+const foods = [
+  {
+    id: 1,
+    name: 'Apples',
+    type: 'fruit',
+  },
+  {
+    id: 2,
+    name: 'Carrots',
+    type: 'vegetable',
+  },
+  {
+    id: 3,
+    name: 'Cupcakes',
+    type: 'dessert',
+  },
+];
 
-  const compareWith = (o1, o2) => {
-    if (!o1 || !o2) {
-      return o1 === o2;
-    }
+const compareWith = (o1, o2) => {
+  if (!o1 || !o2) {
+    return o1 === o2;
+  }
 
-    if (Array.isArray(o2)) {
-      return o2.some((o) => o.id === o1.id);
-    }
+  if (Array.isArray(o2)) {
+    return o2.some((o) => o.id === o1.id);
+  }
 
-    return o1.id === o2.id;
-  };
+  return o1.id === o2.id;
+};
 
-  const handleChange = (event) => {
-    console.log('Current value:', JSON.stringify(event.detail.value));
-  };
+const handleChange = (event) => {
+  console.log('Current value:', JSON.stringify(event.detail.value));
+};
 </script>
 ```

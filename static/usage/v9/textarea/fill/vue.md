@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-textarea label="Solid textarea" label-placement="floating" fill="solid" placeholder="Enter text"></ion-textarea>
 
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonTextarea } from '@ionic/vue';
+import { IonTextarea } from '@ionic/vue';
 </script>
 ```

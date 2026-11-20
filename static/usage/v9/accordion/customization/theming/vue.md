@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-accordion-group expand="inset">
     <ion-accordion value="first">
@@ -23,31 +23,31 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
-  import { caretDownCircle } from 'ionicons/icons';
+import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
+import { caretDownCircle } from 'ionicons/icons';
 </script>
 
 <style>
-  :root {
-    --ion-color-rose: #fecdd3;
-    --ion-color-rose-rgb: 254, 205, 211;
-    --ion-color-rose-contrast: #000000;
-    --ion-color-rose-contrast-rgb: 0, 0, 0;
-    --ion-color-rose-shade: #e0b4ba;
-    --ion-color-rose-tint: #fed2d7;
-  }
+:root {
+  --ion-color-rose: #fecdd3;
+  --ion-color-rose-rgb: 254, 205, 211;
+  --ion-color-rose-contrast: #000000;
+  --ion-color-rose-contrast-rgb: 0, 0, 0;
+  --ion-color-rose-shade: #e0b4ba;
+  --ion-color-rose-tint: #fed2d7;
+}
 
-  .ion-color-rose {
-    --ion-color-base: var(--ion-color-rose);
-    --ion-color-base-rgb: var(--ion-color-rose-rgb);
-    --ion-color-contrast: var(--ion-color-rose-contrast);
-    --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
-    --ion-color-shade: var(--ion-color-rose-shade);
-    --ion-color-tint: var(--ion-color-rose-tint);
-  }
+.ion-color-rose {
+  --ion-color-base: var(--ion-color-rose);
+  --ion-color-base-rgb: var(--ion-color-rose-rgb);
+  --ion-color-contrast: var(--ion-color-rose-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+  --ion-color-shade: var(--ion-color-rose-shade);
+  --ion-color-tint: var(--ion-color-rose-tint);
+}
 
-  div[slot='content'] {
-    background: rgba(var(--ion-color-rose-rgb), 0.25);
-  }
+div[slot='content'] {
+  background: rgba(var(--ion-color-rose-rgb), 0.25);
+}
 </style>
 ```

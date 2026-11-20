@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-split-pane when="xs" content-id="main">
     <ion-menu content-id="main">
@@ -22,15 +22,15 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonMenu, IonSplitPane, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonMenu, IonSplitPane, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-split-pane {
-    --side-width: 350px;
-    --side-max-width: 350px;
+ion-split-pane {
+  --side-width: 350px;
+  --side-max-width: 350px;
 
-    --border: 1px dashed #b3baff;
-  }
+  --border: 1px dashed #b3baff;
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -16,45 +16,45 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonInput, IonItem, IonList } from '@ionic/vue';
-  import { maskito as vMaskito } from '@maskito/vue';
-  import { maskitoTransform } from '@maskito/core';
+import { ref } from 'vue';
+import { IonInput, IonItem, IonList } from '@ionic/vue';
+import { maskito as vMaskito } from '@maskito/vue';
+import { maskitoTransform } from '@maskito/core';
 
-  const cardOptions = {
-    mask: [
-      ...Array(4).fill(/\d/),
-      ' ',
-      ...Array(4).fill(/\d/),
-      ' ',
-      ...Array(4).fill(/\d/),
-      ' ',
-      ...Array(4).fill(/\d/),
-      ' ',
-      ...Array(3).fill(/\d/),
-    ],
-    elementPredicate: (el: HTMLIonInputElement) => {
-      return new Promise((resolve) => {
-        requestAnimationFrame(async () => {
-          const input = await el.getInputElement();
-          resolve(input);
-        });
+const cardOptions = {
+  mask: [
+    ...Array(4).fill(/\d/),
+    ' ',
+    ...Array(4).fill(/\d/),
+    ' ',
+    ...Array(4).fill(/\d/),
+    ' ',
+    ...Array(4).fill(/\d/),
+    ' ',
+    ...Array(3).fill(/\d/),
+  ],
+  elementPredicate: (el: HTMLIonInputElement) => {
+    return new Promise((resolve) => {
+      requestAnimationFrame(async () => {
+        const input = await el.getInputElement();
+        resolve(input);
       });
-    },
-  };
+    });
+  },
+};
 
-  const phoneOptions = {
-    mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    elementPredicate: (el: HTMLIonInputElement) => {
-      return new Promise((resolve) => {
-        requestAnimationFrame(async () => {
-          const input = await el.getInputElement();
-          resolve(input);
-        });
+const phoneOptions = {
+  mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+  elementPredicate: (el: HTMLIonInputElement) => {
+    return new Promise((resolve) => {
+      requestAnimationFrame(async () => {
+        const input = await el.getInputElement();
+        resolve(input);
       });
-    },
-  };
-  // If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
-  const myPhoneNumber = ref(maskitoTransform('5555551212', phoneOptions));
+    });
+  },
+};
+// If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+const myPhoneNumber = ref(maskitoTransform('5555551212', phoneOptions));
 </script>
 ```

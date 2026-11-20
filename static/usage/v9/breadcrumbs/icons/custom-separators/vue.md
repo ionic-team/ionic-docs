@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-breadcrumbs>
     <ion-breadcrumb href="#home">
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs, IonIcon } from '@ionic/vue';
-  import { arrowForwardCircle } from 'ionicons/icons';
+import { IonBreadcrumb, IonBreadcrumbs, IonIcon } from '@ionic/vue';
+import { arrowForwardCircle } from 'ionicons/icons';
 </script>
 ```

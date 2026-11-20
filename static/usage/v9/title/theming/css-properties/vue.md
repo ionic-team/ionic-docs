@@ -1,17 +1,17 @@
-```html
+```vue
 <style>
-  ion-title.title-large {
-    color: #c897d8;
-    font-size: 30px;
-  }
+ion-title.title-large {
+  color: #c897d8;
+  font-size: 30px;
+}
 
-  ion-title {
-    --color: #000;
-  }
+ion-title {
+  --color: #000;
+}
 
-  ion-toolbar {
-    --background: #c897d8;
-  }
+ion-toolbar {
+  --background: #c897d8;
+}
 </style>
 <template>
   <ion-header :translucent="true">
@@ -52,6 +52,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem } from '@ionic/vue';
+import { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem } from '@ionic/vue';
 </script>
 ```

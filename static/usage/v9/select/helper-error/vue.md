@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <form @submit.prevent="submit">
     <ion-select
@@ -23,29 +23,29 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonSelect, IonSelectOption, IonButton, SelectCustomEvent } from '@ionic/vue';
+import { ref } from 'vue';
+import { IonSelect, IonSelectOption, IonButton, SelectCustomEvent } from '@ionic/vue';
 
-  const favFruit = ref('');
-  const isTouched = ref(false);
-  const isValid = ref<boolean | undefined>();
+const favFruit = ref('');
+const isTouched = ref(false);
+const isValid = ref<boolean | undefined>();
 
-  const validateSelect = (event: SelectCustomEvent<{ value: string }>) => {
-    isValid.value = event.detail.value ? true : false;
-  };
+const validateSelect = (event: SelectCustomEvent<{ value: string }>) => {
+  isValid.value = event.detail.value ? true : false;
+};
 
-  const markTouched = () => {
-    isTouched.value = true;
-  };
+const markTouched = () => {
+  isTouched.value = true;
+};
 
-  const onIonBlur = () => {
-    markTouched();
-    validateSelect({ detail: { value: favFruit.value } } as SelectCustomEvent<{ value: string }>);
-  };
+const onIonBlur = () => {
+  markTouched();
+  validateSelect({ detail: { value: favFruit.value } } as SelectCustomEvent<{ value: string }>);
+};
 
-  const submit = () => {
-    markTouched();
-    validateSelect({ detail: { value: favFruit.value } } as SelectCustomEvent<{ value: string }>);
-  };
+const submit = () => {
+  markTouched();
+  validateSelect({ detail: { value: favFruit.value } } as SelectCustomEvent<{ value: string }>);
+};
 </script>
 ```

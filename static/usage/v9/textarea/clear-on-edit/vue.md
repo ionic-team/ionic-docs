@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-textarea
     placeholder="Enter text, leave the textarea, come back, and type to clear"
@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonTextarea } from '@ionic/vue';
+import { IonTextarea } from '@ionic/vue';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -46,30 +46,30 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
+import { IonItem, IonLabel, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
 
-  const customAlertOptions = {
-    header: 'Pizza Toppings',
-    subHeader: 'Select your favorite topping',
-    message: 'Choose only one',
-    translucent: true,
-  };
+const customAlertOptions = {
+  header: 'Pizza Toppings',
+  subHeader: 'Select your favorite topping',
+  message: 'Choose only one',
+  translucent: true,
+};
 
-  const customPopoverOptions = {
-    header: 'Hair Color',
-    subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color',
-  };
+const customPopoverOptions = {
+  header: 'Hair Color',
+  subHeader: 'Select your hair color',
+  message: 'Only select your dominant hair color',
+};
 
-  const customActionSheetOptions = {
-    header: 'Colors',
-    subHeader: 'Select your favorite color',
-  };
+const customActionSheetOptions = {
+  header: 'Colors',
+  subHeader: 'Select your favorite color',
+};
 
-  const customModalOptions = {
-    header: 'Favorite Candy',
-    breakpoints: [0, 0.5],
-    initialBreakpoint: 0.5,
-  };
+const customModalOptions = {
+  header: 'Favorite Candy',
+  breakpoints: [0, 0.5],
+  initialBreakpoint: 0.5,
+};
 </script>
 ```

@@ -1,11 +1,11 @@
-```html
+```vue
 <style scoped>
-  .example-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 </style>
 
 <template>
@@ -22,6 +22,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage } from '@ionic/vue';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage } from '@ionic/vue';
 </script>
 ```

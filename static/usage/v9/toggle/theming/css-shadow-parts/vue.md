@@ -1,45 +1,45 @@
-```html
+```vue
 <template>
   <ion-toggle aria-label="Enable Notifications"></ion-toggle>
   <ion-toggle :checked="true" aria-label="Enable Notifications"></ion-toggle>
 </template>
 
 <script setup lang="ts">
-  import { IonToggle } from '@ionic/vue';
+import { IonToggle } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-toggle {
-    padding: 12px;
+ion-toggle {
+  padding: 12px;
 
-    --handle-width: 25px;
-    --handle-height: 27px;
-    --handle-max-height: auto;
-    --handle-spacing: 6px;
+  --handle-width: 25px;
+  --handle-height: 27px;
+  --handle-max-height: auto;
+  --handle-spacing: 6px;
 
-    contain: none;
-  }
+  contain: none;
+}
 
-  ion-toggle::part(track),
-  ion-toggle.toggle-checked::part(track) {
-    height: 10px;
-    width: 65px;
+ion-toggle::part(track),
+ion-toggle.toggle-checked::part(track) {
+  height: 10px;
+  width: 65px;
 
-    background: #ddd;
+  background: #ddd;
 
-    /* Required for iOS handle to overflow the height of the track */
-    overflow: visible;
-  }
+  /* Required for iOS handle to overflow the height of the track */
+  overflow: visible;
+}
 
-  ion-toggle::part(handle) {
-    background: #eb7769;
+ion-toggle::part(handle) {
+  background: #eb7769;
 
-    border-radius: 4px;
-    box-shadow: none;
-  }
+  border-radius: 4px;
+  box-shadow: none;
+}
 
-  ion-toggle.toggle-checked::part(handle) {
-    background: #95c34e;
-  }
+ion-toggle.toggle-checked::part(handle) {
+  background: #95c34e;
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <div>Before Collapse = 2</div>
   <ion-breadcrumbs :max-items="4" :items-before-collapse="2">
@@ -42,6 +42,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
+import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
 </script>
 ```

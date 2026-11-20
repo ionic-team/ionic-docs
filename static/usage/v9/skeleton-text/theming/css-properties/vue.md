@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-list-header>
@@ -24,14 +24,14 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel, IonList, IonListHeader, IonSkeletonText, IonThumbnail } from '@ionic/vue';
+import { IonItem, IonLabel, IonList, IonListHeader, IonSkeletonText, IonThumbnail } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-skeleton-text {
-    --border-radius: 9999px;
-    --background: rgba(188, 0, 255, 0.065);
-    --background-rgb: 188, 0, 255;
-  }
+ion-skeleton-text {
+  --border-radius: 9999px;
+  --background: rgba(188, 0, 255, 0.065);
+  --background-rgb: 188, 0, 255;
+}
 </style>
 ```

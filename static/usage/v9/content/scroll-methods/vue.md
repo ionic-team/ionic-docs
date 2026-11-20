@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content ref="content" class="ion-padding">
     <h1>Click on the buttons to scroll the content.</h1>
@@ -56,21 +56,21 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonButton, IonContent } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const content = ref();
+const content = ref();
 
-  const scrollToBottom = () => {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the bottom instead of instantly
-    content.value.$el.scrollToBottom(500);
-  };
+const scrollToBottom = () => {
+  // Passing a duration to the method makes it so the scroll slowly
+  // goes to the bottom instead of instantly
+  content.value.$el.scrollToBottom(500);
+};
 
-  const scrollToTop = () => {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the top instead of instantly
-    content.value.$el.scrollToTop(500);
-  };
+const scrollToTop = () => {
+  // Passing a duration to the method makes it so the scroll slowly
+  // goes to the top instead of instantly
+  content.value.$el.scrollToTop(500);
+};
 </script>
 ```

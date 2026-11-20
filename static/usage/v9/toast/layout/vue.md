@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button id="open-inline-toast">Open Baseline Layout Toast</ion-button>
   <ion-button id="open-stacked-toast">Open Stacked Layout Toast</ion-button>
@@ -18,12 +18,12 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonToast } from '@ionic/vue';
+import { IonButton, IonToast } from '@ionic/vue';
 
-  const toastButtons = [
-    {
-      text: 'Action With Long Text',
-    },
-  ];
+const toastButtons = [
+  {
+    text: 'Action With Long Text',
+  },
+];
 </script>
 ```

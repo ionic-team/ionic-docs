@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-searchbar placeholder="Default"></ion-searchbar>
   <ion-searchbar color="primary" placeholder="Primary"></ion-searchbar>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonSearchbar } from '@ionic/vue';
+import { IonSearchbar } from '@ionic/vue';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-range aria-label="Temperature">
     <ion-icon slot="start" :icon="snowOutline"></ion-icon>
@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonRange, IonIcon } from '@ionic/vue';
-  import { snowOutline, sunnyOutline } from 'ionicons/icons';
+import { IonRange, IonIcon } from '@ionic/vue';
+import { snowOutline, sunnyOutline } from 'ionicons/icons';
 </script>
 ```

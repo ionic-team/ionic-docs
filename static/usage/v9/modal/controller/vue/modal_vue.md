@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -19,22 +19,22 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    IonButtons,
-    IonButton,
-    IonItem,
-    IonInput,
-    modalController,
-  } from '@ionic/vue';
-  import { ref } from 'vue';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonButtons,
+  IonButton,
+  IonItem,
+  IonInput,
+  modalController,
+} from '@ionic/vue';
+import { ref } from 'vue';
 
-  const name = ref();
+const name = ref();
 
-  const cancel = () => modalController.dismiss(null, 'cancel');
-  const confirm = () => modalController.dismiss(name.value, 'confirm');
+const cancel = () => modalController.dismiss(null, 'cancel');
+const confirm = () => modalController.dismiss(name.value, 'confirm');
 </script>
 ```

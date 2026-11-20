@@ -1,16 +1,16 @@
-```html
+```vue
 <style>
-  .block {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.block {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  ion-modal {
-    --height: auto;
-  }
+ion-modal {
+  --height: auto;
+}
 </style>
 
 <template>
@@ -29,6 +29,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
+import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
 </script>
 ```

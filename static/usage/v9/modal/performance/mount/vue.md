@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -22,11 +22,11 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const modal = ref();
+const modal = ref();
 
-  const close = () => modal.value.$el.dismiss();
+const close = () => modal.value.$el.dismiss();
 </script>
 ```

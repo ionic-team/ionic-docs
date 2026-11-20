@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-note>Default Note</ion-note>
   <ion-note color="primary">Primary Note</ion-note>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonNote } from '@ionic/vue';
+import { IonNote } from '@ionic/vue';
 </script>
 ```

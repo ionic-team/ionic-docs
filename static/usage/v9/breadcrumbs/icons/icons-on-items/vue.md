@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-label>Icons at Start</ion-label>
   <ion-breadcrumbs>
@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel } from '@ionic/vue';
-  import { camera, film, flash, home } from 'ionicons/icons';
+import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel } from '@ionic/vue';
+import { camera, film, flash, home } from 'ionicons/icons';
 </script>
 ```

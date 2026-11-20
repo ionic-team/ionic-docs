@@ -1,14 +1,14 @@
-```html
+```vue
 <style>
-  ion-modal {
-    --height: auto;
+ion-modal {
+  --height: auto;
 
-    align-items: end;
-  }
+  align-items: end;
+}
 
-  ion-picker {
-    margin-bottom: var(--ion-safe-area-bottom);
-  }
+ion-picker {
+  margin-bottom: var(--ion-safe-area-bottom);
+}
 </style>
 
 <template>
@@ -35,28 +35,28 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonModal,
-    IonToolbar,
-    IonButtons,
-    IonButton,
-    IonPicker,
-    IonPickerColumn,
-    IonPickerColumnOption,
-  } from '@ionic/vue';
+import {
+  IonModal,
+  IonToolbar,
+  IonButtons,
+  IonButton,
+  IonPicker,
+  IonPickerColumn,
+  IonPickerColumnOption,
+} from '@ionic/vue';
 
-  import { ref } from 'vue';
+import { ref } from 'vue';
 
-  let currentValue = 'javascript';
+let currentValue = 'javascript';
 
-  const modal = ref(null);
+const modal = ref(null);
 
-  const onIonChange = (event: CustomEvent) => {
-    currentValue = event.detail.value;
-  };
+const onIonChange = (event: CustomEvent) => {
+  currentValue = event.detail.value;
+};
 
-  const onDidDismiss = (event: CustomEvent) => {
-    console.log('didDismiss', JSON.stringify(event.detail));
-  };
+const onDidDismiss = (event: CustomEvent) => {
+  console.log('didDismiss', JSON.stringify(event.detail));
+};
 </script>
 ```

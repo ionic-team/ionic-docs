@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -18,98 +18,98 @@
   <ion-content color="light" class="ion-padding">
     <ion-list id="modal-list" :inset="true">
       <ion-item v-for="item in filteredItems" :key="item.value">
-        <ion-checkbox :value="item.value" :checked="isChecked(item.value)" @ionChange="checkboxChange($event)"
-          >{{ item.text }}</ion-checkbox
-        >
+        <ion-checkbox :value="item.value" :checked="isChecked(item.value)" @ionChange="checkboxChange($event)">{{
+          item.text
+        }}</ion-checkbox>
       </ion-item>
     </ion-list>
   </ion-content>
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButton,
-    IonButtons,
-    IonCheckbox,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonList,
-    IonTitle,
-    IonSearchbar,
-    IonToolbar,
-  } from '@ionic/vue';
-  import type { CheckboxCustomEvent, SearchbarCustomEvent } from '@ionic/vue';
-  import { ref } from 'vue';
+import {
+  IonButton,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonList,
+  IonTitle,
+  IonSearchbar,
+  IonToolbar,
+} from '@ionic/vue';
+import type { CheckboxCustomEvent, SearchbarCustomEvent } from '@ionic/vue';
+import { ref } from 'vue';
 
-  interface Props {
-    items: Array<any>;
-    selectedItems: Array<any>;
-    title?: string;
-  }
+interface Props {
+  items: Array<any>;
+  selectedItems: Array<any>;
+  title?: string;
+}
 
-  const props = withDefaults(defineProps<Props>(), {
-    title: 'Select Items',
-  });
+const props = withDefaults(defineProps<Props>(), {
+  title: 'Select Items',
+});
 
-  const emit = defineEmits<{
-    'selection-cancel': [];
-    'selection-change': [value: any[]];
-  }>();
+const emit = defineEmits<{
+  'selection-cancel': [];
+  'selection-change': [value: any[]];
+}>();
 
-  const filteredItems = ref([...props.items]);
-  const workingSelectedValues = ref([...props.selectedItems]);
+const filteredItems = ref([...props.items]);
+const workingSelectedValues = ref([...props.selectedItems]);
 
-  const isChecked = (value: string) => {
-    return workingSelectedValues.value.find((item) => item === value) !== undefined;
-  };
+const isChecked = (value: string) => {
+  return workingSelectedValues.value.find((item) => item === value) !== undefined;
+};
 
-  const cancelChanges = () => {
-    emit('selection-cancel');
-  };
+const cancelChanges = () => {
+  emit('selection-cancel');
+};
 
-  const confirmChanges = () => {
-    emit('selection-change', workingSelectedValues.value);
-  };
+const confirmChanges = () => {
+  emit('selection-change', workingSelectedValues.value);
+};
 
-  const searchbarInput = (event: SearchbarCustomEvent) => {
-    filterList(event.target.value);
-  };
+const searchbarInput = (event: SearchbarCustomEvent) => {
+  filterList(event.target.value);
+};
 
+/**
+ * Update the rendered view with
+ * the provided search query. If no
+ * query is provided, all data
+ * will be rendered.
+ */
+const filterList = (searchQuery: string | undefined) => {
   /**
-   * Update the rendered view with
-   * the provided search query. If no
-   * query is provided, all data
-   * will be rendered.
+   * If no search query is defined,
+   * return all options.
    */
-  const filterList = (searchQuery: string | undefined) => {
+  if (searchQuery === undefined) {
+    filteredItems.value = [...props.items];
+  } else {
     /**
-     * If no search query is defined,
-     * return all options.
+     * Otherwise, normalize the search
+     * query and check to see which items
+     * contain the search query as a substring.
      */
-    if (searchQuery === undefined) {
-      filteredItems.value = [...props.items];
-    } else {
-      /**
-       * Otherwise, normalize the search
-       * query and check to see which items
-       * contain the search query as a substring.
-       */
-      const normalizedQuery = searchQuery.toLowerCase();
-      filteredItems.value = props.items.filter((item) => {
-        return item.text.toLowerCase().includes(normalizedQuery);
-      });
-    }
-  };
+    const normalizedQuery = searchQuery.toLowerCase();
+    filteredItems.value = props.items.filter((item) => {
+      return item.text.toLowerCase().includes(normalizedQuery);
+    });
+  }
+};
 
-  const checkboxChange = (event: CheckboxCustomEvent) => {
-    const { checked, value } = event.detail;
+const checkboxChange = (event: CheckboxCustomEvent) => {
+  const { checked, value } = event.detail;
 
-    if (checked) {
-      workingSelectedValues.value = [...workingSelectedValues.value, value];
-    } else {
-      workingSelectedValues.value = workingSelectedValues.value.filter((item) => item !== value);
-    }
-  };
+  if (checked) {
+    workingSelectedValues.value = [...workingSelectedValues.value, value];
+  } else {
+    workingSelectedValues.value = workingSelectedValues.value.filter((item) => item !== value);
+  }
+};
 </script>
 ```

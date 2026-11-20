@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input-otp length="2" color="primary"> Primary </ion-input-otp>
   <ion-input-otp length="2" color="secondary"> Secondary </ion-input-otp>
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInputOtp } from '@ionic/vue';
+import { IonInputOtp } from '@ionic/vue';
 </script>
 ```

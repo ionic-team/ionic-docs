@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header class="ion-no-border">
     <ion-toolbar>
@@ -54,59 +54,59 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonBackButton,
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonRange,
-    IonText,
-    IonToggle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import type { ToggleCustomEvent } from '@ionic/vue';
-  import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
-  import { ref } from 'vue';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/vue';
+import type { ToggleCustomEvent } from '@ionic/vue';
+import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
+import { ref } from 'vue';
 
-  const paletteToggle = ref(false);
+const paletteToggle = ref(false);
 
-  // Use matchMedia to check the user preference
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+// Use matchMedia to check the user preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  // Add or remove the "ion-palette-dark" class on the html element
-  const toggleDarkPalette = (shouldAdd) => {
-    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
-  };
+// Add or remove the "ion-palette-dark" class on the html element
+const toggleDarkPalette = (shouldAdd) => {
+  document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
+};
 
-  // Check/uncheck the toggle and update the palette based on isDark
-  const initializeDarkPalette = (isDark) => {
-    paletteToggle.value = isDark;
-    toggleDarkPalette(isDark);
-  };
+// Check/uncheck the toggle and update the palette based on isDark
+const initializeDarkPalette = (isDark) => {
+  paletteToggle.value = isDark;
+  toggleDarkPalette(isDark);
+};
 
-  // Initialize the dark palette based on the initial
-  // value of the prefers-color-scheme media query
-  initializeDarkPalette(prefersDark.matches);
+// Initialize the dark palette based on the initial
+// value of the prefers-color-scheme media query
+initializeDarkPalette(prefersDark.matches);
 
-  // Listen for changes to the prefers-color-scheme media query
-  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
+// Listen for changes to the prefers-color-scheme media query
+prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
 
-  // Listen for the toggle check/uncheck to toggle the dark palette
-  const toggleChange = (event: ToggleCustomEvent) => {
-    toggleDarkPalette(event.detail.checked);
-  };
+// Listen for the toggle check/uncheck to toggle the dark palette
+const toggleChange = (event: ToggleCustomEvent) => {
+  toggleDarkPalette(event.detail.checked);
+};
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
-  ion-item {
-    --transition: none;
-  }
+/* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+ion-item {
+  --transition: none;
+}
 </style>
 ```

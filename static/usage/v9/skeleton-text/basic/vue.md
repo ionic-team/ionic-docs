@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list v-if="loaded">
     <ion-list-header>Albums</ion-list-header>
@@ -40,20 +40,20 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButton,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonSkeletonText,
-    IonThumbnail,
-  } from '@ionic/vue';
-  import { musicalNotes } from 'ionicons/icons';
-  import { ref } from 'vue';
+import {
+  IonButton,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonSkeletonText,
+  IonThumbnail,
+} from '@ionic/vue';
+import { musicalNotes } from 'ionicons/icons';
+import { ref } from 'vue';
 
-  const loaded = ref(false);
-  const setLoaded = (state: boolean) => (loaded.value = state);
+const loaded = ref(false);
+const setLoaded = (state: boolean) => (loaded.value = state);
 </script>
 ```

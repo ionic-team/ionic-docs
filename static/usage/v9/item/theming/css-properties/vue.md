@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item button detail lines="full">
     <ion-label>Custom Item</ion-label>
@@ -14,25 +14,25 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel } from '@ionic/vue';
+import { IonItem, IonLabel } from '@ionic/vue';
 </script>
 
 <style>
-  ion-item {
-    --background: #19422d;
-    --color: #fff;
+ion-item {
+  --background: #19422d;
+  --color: #fff;
 
-    --border-color: #fff;
-    --border-style: dashed;
-    --border-width: 2px;
+  --border-color: #fff;
+  --border-style: dashed;
+  --border-width: 2px;
 
-    --border-radius: 20px;
+  --border-radius: 20px;
 
-    --ripple-color: purple;
+  --ripple-color: purple;
 
-    --detail-icon-color: white;
-    --detail-icon-opacity: 1;
-    --detail-icon-font-size: 20px;
-  }
+  --detail-icon-color: white;
+  --detail-icon-opacity: 1;
+  --detail-icon-font-size: 20px;
+}
 </style>
 ```

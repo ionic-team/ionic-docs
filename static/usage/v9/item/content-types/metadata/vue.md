@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -91,60 +91,60 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonNote,
-    IonText,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { chevronForward, listCircle } from 'ionicons/icons';
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonNote,
+  IonText,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import { chevronForward, listCircle } from 'ionicons/icons';
 </script>
 
 <style scoped>
-  .unread-indicator {
-    background: var(--ion-color-primary);
+.unread-indicator {
+  background: var(--ion-color-primary);
 
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 
-    border-radius: 100%;
+  border-radius: 100%;
 
-    position: absolute;
+  position: absolute;
 
-    inset-inline-start: 12px;
-    top: 12px;
-  }
+  inset-inline-start: 12px;
+  top: 12px;
+}
 
-  .metadata-end-wrapper {
-    position: absolute;
+.metadata-end-wrapper {
+  position: absolute;
 
-    top: 10px;
-    inset-inline-end: 10px;
+  top: 10px;
+  inset-inline-end: 10px;
 
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+}
 
-  ion-label strong {
-    display: block;
+ion-label strong {
+  display: block;
 
-    max-width: calc(100% - 60px);
+  max-width: calc(100% - 60px);
 
-    overflow: hidden;
+  overflow: hidden;
 
-    text-overflow: ellipsis;
-  }
+  text-overflow: ellipsis;
+}
 
-  ion-label ion-note {
-    font-size: 0.9rem;
-  }
+ion-label ion-note {
+  font-size: 0.9rem;
+}
 </style>
 ```

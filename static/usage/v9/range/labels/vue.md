@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-range label-placement="start" label="Label at the Start"></ion-range>
 
@@ -16,6 +16,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonRange } from '@ionic/vue';
+import { IonRange } from '@ionic/vue';
 </script>
 ```

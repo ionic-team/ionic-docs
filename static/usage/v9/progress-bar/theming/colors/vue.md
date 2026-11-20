@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-progress-bar type="indeterminate" color="primary"></ion-progress-bar>
   <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonProgressBar } from '@ionic/vue';
+import { IonProgressBar } from '@ionic/vue';
 </script>
 ```

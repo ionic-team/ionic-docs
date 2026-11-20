@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -17,19 +17,19 @@
 </template>
 
 <script setup lang="ts">
-  import { markRaw } from 'vue';
-  import {
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    IonContent,
-    IonNavLink,
-    IonButton,
-    IonButtons,
-    IonBackButton,
-  } from '@ionic/vue';
-  import PageThree from './PageThree.vue';
+import { markRaw } from 'vue';
+import {
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonContent,
+  IonNavLink,
+  IonButton,
+  IonButtons,
+  IonBackButton,
+} from '@ionic/vue';
+import PageThree from './PageThree.vue';
 
-  const component = markRaw(PageThree);
+const component = markRaw(PageThree);
 </script>
 ```

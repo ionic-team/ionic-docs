@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-grid :fixed="true">
     <ion-row>
@@ -10,25 +10,25 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+import { IonCol, IonGrid, IonRow } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-grid {
-    --ion-grid-width: 50%;
+ion-grid {
+  --ion-grid-width: 50%;
 
-    --ion-grid-width-xs: 50%;
-    --ion-grid-width-sm: 288px;
-    --ion-grid-width-md: 384px;
-    --ion-grid-width-lg: 480px;
-    --ion-grid-width-xl: 570px;
-  }
+  --ion-grid-width-xs: 50%;
+  --ion-grid-width-sm: 288px;
+  --ion-grid-width-md: 384px;
+  --ion-grid-width-lg: 480px;
+  --ion-grid-width-xl: 570px;
+}
 
-  ion-col {
-    background-color: #135d54;
-    border: solid 1px #fff;
-    color: #fff;
-    text-align: center;
-  }
+ion-col {
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+  text-align: center;
+}
 </style>
 ```

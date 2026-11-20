@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content>
     <ion-button id="open-popover">Open Popover</ion-button>
@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonPopover } from '@ionic/vue';
+import { IonButton, IonContent, IonPopover } from '@ionic/vue';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content>
     <ion-list>
@@ -16,32 +16,32 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonInfiniteScroll,
-    IonInfiniteScrollContent,
-    IonList,
-    IonItem,
-    IonAvatar,
-    IonLabel,
-    InfiniteScrollCustomEvent,
-  } from '@ionic/vue';
-  import { reactive } from 'vue';
+import {
+  IonContent,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonList,
+  IonItem,
+  IonAvatar,
+  IonLabel,
+  InfiniteScrollCustomEvent,
+} from '@ionic/vue';
+import { reactive } from 'vue';
 
-  const items = reactive([]);
+const items = reactive([]);
 
-  const generateItems = () => {
-    const count = items.length + 1;
-    for (let i = 0; i < 50; i++) {
-      items.push(`Item ${count + i}`);
-    }
-  };
+const generateItems = () => {
+  const count = items.length + 1;
+  for (let i = 0; i < 50; i++) {
+    items.push(`Item ${count + i}`);
+  }
+};
 
-  const ionInfinite = (event: InfiniteScrollCustomEvent) => {
-    generateItems();
-    setTimeout(() => event.target.complete(), 500);
-  };
-
+const ionInfinite = (event: InfiniteScrollCustomEvent) => {
   generateItems();
+  setTimeout(() => event.target.complete(), 500);
+};
+
+generateItems();
 </script>
 ```

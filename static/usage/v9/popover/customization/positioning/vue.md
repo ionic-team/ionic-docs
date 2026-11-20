@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <div class="container">
     <ion-button id="top-center">Side=Top, Alignment=Center</ion-button>
@@ -24,19 +24,19 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonPopover } from '@ionic/vue';
+import { IonButton, IonContent, IonPopover } from '@ionic/vue';
 </script>
 
 <style>
-  ion-popover {
-    --width: 80px;
-  }
+ion-popover {
+  --width: 80px;
+}
 
-  .container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 80px;
-  }
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 80px;
+}
 </style>
 ```

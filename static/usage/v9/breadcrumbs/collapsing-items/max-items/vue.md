@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-breadcrumbs :max-items="4">
     <ion-breadcrumb href="#home">Home</ion-breadcrumb>
@@ -11,6 +11,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
+import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
 </script>
 ```

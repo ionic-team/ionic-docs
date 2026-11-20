@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <b
     >Column 1 has <code>push</code> set to <code>"4"</code> and column 2 has <code>pull</code> set to
@@ -40,15 +40,15 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+import { IonCol, IonGrid, IonRow } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-col {
-    background-color: #135d54;
-    border: solid 1px #fff;
-    color: #fff;
-    text-align: center;
-  }
+ion-col {
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+  text-align: center;
+}
 </style>
 ```

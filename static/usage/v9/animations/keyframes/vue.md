@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-card ref="cardEl">
     <ion-card-content>Card</ion-card-content>
@@ -9,35 +9,35 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonCard, IonCardContent, createAnimation } from '@ionic/vue';
-  import type { Animation } from '@ionic/vue';
-  import { ref, onMounted } from 'vue';
+import { IonButton, IonCard, IonCardContent, createAnimation } from '@ionic/vue';
+import type { Animation } from '@ionic/vue';
+import { ref, onMounted } from 'vue';
 
-  const cardEl = ref(null);
+const cardEl = ref(null);
 
-  let animation: Animation;
+let animation: Animation;
 
-  onMounted(() => {
-    animation = createAnimation()
-      .addElement(cardEl.value.$el)
-      .duration(3000)
-      .iterations(Infinity)
-      .keyframes([
-        { offset: 0, width: '80px' },
-        { offset: 0.72, width: 'var(--width)' },
-        { offset: 1, width: '240px' },
-      ]);
-  });
+onMounted(() => {
+  animation = createAnimation()
+    .addElement(cardEl.value.$el)
+    .duration(3000)
+    .iterations(Infinity)
+    .keyframes([
+      { offset: 0, width: '80px' },
+      { offset: 0.72, width: 'var(--width)' },
+      { offset: 1, width: '240px' },
+    ]);
+});
 
-  const play = () => animation.play();
-  const pause = () => animation.pause();
-  const stop = () => animation.stop();
+const play = () => animation.play();
+const pause = () => animation.pause();
+const stop = () => animation.stop();
 </script>
 
 <style>
-  ion-card {
-    width: 80px;
-    --width: 160px;
-  }
+ion-card {
+  width: 80px;
+  --width: 160px;
+}
 </style>
 ```

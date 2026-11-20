@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item>
     <ion-avatar slot="start">
@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAvatar, IonItem, IonLabel } from '@ionic/vue';
+import { IonAvatar, IonItem, IonLabel } from '@ionic/vue';
 </script>
 ```

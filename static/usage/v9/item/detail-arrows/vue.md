@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item detail="true">
     <ion-label>
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel } from '@ionic/vue';
-  import { caretForwardOutline } from 'ionicons/icons';
+import { IonItem, IonLabel } from '@ionic/vue';
+import { caretForwardOutline } from 'ionicons/icons';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item-sliding>
@@ -121,7 +121,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList } from '@ionic/vue';
-  import { archive, heart, trash } from 'ionicons/icons';
+import { IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList } from '@ionic/vue';
+import { archive, heart, trash } from 'ionicons/icons';
 </script>
 ```

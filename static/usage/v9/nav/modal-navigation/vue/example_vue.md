@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -26,34 +26,34 @@
 </template>
 
 <script setup lang="ts">
-  import { nextTick, ref } from 'vue';
-  import {
-    IonNav,
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonButton,
-    IonModal,
-    IonButtons,
-  } from '@ionic/vue';
-  import PageOne from './PageOne.vue';
+import { nextTick, ref } from 'vue';
+import {
+  IonNav,
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButton,
+  IonModal,
+  IonButtons,
+} from '@ionic/vue';
+import PageOne from './PageOne.vue';
 
-  const modal = ref();
-  const nav = ref();
+const modal = ref();
+const nav = ref();
 
-  const dismiss = () => {
-    modal.value.$el.dismiss();
-  };
+const dismiss = () => {
+  modal.value.$el.dismiss();
+};
 
-  const onWillPresent = async () => {
-    // Need to wait two ticks before the ref is set
-    await nextTick();
-    await nextTick();
+const onWillPresent = async () => {
+  // Need to wait two ticks before the ref is set
+  await nextTick();
+  await nextTick();
 
-    const navEl = nav.value.$el;
-    navEl.setRoot(PageOne, { nav: navEl });
-  };
+  const navEl = nav.value.$el;
+  navEl.setRoot(PageOne, { nav: navEl });
+};
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-radio-group allow-empty-selection="true" value="turtles">
     <ion-radio value="dogs">Dogs</ion-radio><br />
@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonRadio, IonRadioGroup } from '@ionic/vue';
 </script>
 ```

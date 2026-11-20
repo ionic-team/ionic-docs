@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -36,36 +36,36 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButtons,
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-    IonItem,
-    IonInput,
-  } from '@ionic/vue';
-  import { OverlayEventDetail } from '@ionic/core/components';
-  import { ref } from 'vue';
+import {
+  IonButtons,
+  IonButton,
+  IonModal,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonItem,
+  IonInput,
+} from '@ionic/vue';
+import { OverlayEventDetail } from '@ionic/core/components';
+import { ref } from 'vue';
 
-  const message = ref('This modal example uses triggers to automatically open a modal when the button is clicked.');
+const message = ref('This modal example uses triggers to automatically open a modal when the button is clicked.');
 
-  const modal = ref();
-  const input = ref();
+const modal = ref();
+const input = ref();
 
-  const cancel = () => modal.value.$el.dismiss(null, 'cancel');
+const cancel = () => modal.value.$el.dismiss(null, 'cancel');
 
-  const confirm = () => {
-    const name = input.value.$el.value;
-    modal.value.$el.dismiss(name, 'confirm');
-  };
+const confirm = () => {
+  const name = input.value.$el.value;
+  modal.value.$el.dismiss(name, 'confirm');
+};
 
-  const onWillDismiss = (event: CustomEvent<OverlayEventDetail>) => {
-    if (event.detail.role === 'confirm') {
-      message.value = `Hello, ${event.detail.data}!`;
-    }
-  };
+const onWillDismiss = (event: CustomEvent<OverlayEventDetail>) => {
+  if (event.detail.role === 'confirm') {
+    message.value = `Hello, ${event.detail.data}!`;
+  }
+};
 </script>
 ```

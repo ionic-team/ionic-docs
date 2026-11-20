@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-toggle label-placement="start">Label at the Start</ion-toggle><br /><br />
   <ion-toggle label-placement="end">Label at the End</ion-toggle><br /><br />
@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonToggle } from '@ionic/vue';
+import { IonToggle } from '@ionic/vue';
 </script>
 ```

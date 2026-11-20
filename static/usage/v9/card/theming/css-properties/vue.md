@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-card>
     <ion-card-header>
@@ -13,21 +13,21 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-card {
-    --background: #000;
-    --color: #9efff0;
-  }
+ion-card {
+  --background: #000;
+  --color: #9efff0;
+}
 
-  ion-card-title {
-    --color: #52ffe4;
-  }
+ion-card-title {
+  --color: #52ffe4;
+}
 
-  ion-card-subtitle {
-    --color: #d1fff8;
-  }
+ion-card-subtitle {
+  --color: #d1fff8;
+}
 </style>
 ```
