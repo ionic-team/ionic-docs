@@ -177,8 +177,8 @@ Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The c
   - `components/` - components used across the site
     - `global/` - components used globally
     - `page/` - components used on a single page or in a limited scope
-  - `styles/` - global styles and variables
-    - `components/` - styles split out into the components they target
+  - `css/` - global styles, refer to its [README](src/css/README.md)
+    - `theme/` - overrides for the markup Docusaurus's theme renders
   - `theme/` - Docusaurus theme components that have been swizzled
 - `static/`
   - `code/` - StackBlitz project templates used by the playgrounds
