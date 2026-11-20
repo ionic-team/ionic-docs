@@ -7,7 +7,7 @@ function PageThree({ nav }: { nav: HTMLIonNavElement }) {
   const navigateToRoot = () => nav.popToRoot();
 
   return (
-    <IonContent class="ion-padding">
+    <IonContent className="ion-padding">
       <h1>Page Three</h1>
       <IonButton onClick={navigateBack}>Go Back</IonButton>
       <IonButton onClick={navigateToRoot}>Go to Root</IonButton>

@@ -8,7 +8,7 @@ function PageTwo({ nav }: { nav: HTMLIonNavElement }) {
   const navigateToPageThree = () => nav.push(PageThree, { nav });
 
   return (
-    <IonContent class="ion-padding">
+    <IonContent className="ion-padding">
       <h1>Page Two</h1>
       <IonButton onClick={navigateToPageThree}>Go to Page Three</IonButton>
     </IonContent>

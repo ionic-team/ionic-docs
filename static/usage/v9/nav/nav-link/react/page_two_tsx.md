@@ -24,7 +24,7 @@ function PageTwo() {
           <IonTitle>Page Two</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent className="ion-padding">
         <h1>Page Two</h1>
         <IonNavLink routerDirection="forward" component={() => <PageThree />}>
           <IonButton>Go to Page Three</IonButton>

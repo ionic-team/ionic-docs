@@ -17,7 +17,7 @@ function Example() {
       </IonItem>
 
       <IonItem>
-        <IonLabel class="ion-text-wrap">
+        <IonLabel className="ion-text-wrap">
           Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </IonLabel>
