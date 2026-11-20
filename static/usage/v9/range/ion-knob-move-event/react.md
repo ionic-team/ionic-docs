@@ -6,8 +6,17 @@ function Example() {
   return (
     <IonRange
       aria-label="Range with knob events"
-      onIonKnobMoveStart={({ detail }) => console.log('ionKnobMoveStart:', detail.value)}
-      onIonKnobMoveEnd={({ detail }) => console.log('ionKnobMoveEnd:', detail.value)}
+      dualKnobs={true}
+      value={{
+        lower: 20,
+        upper: 80,
+      }}
+      onIonKnobMoveStart={({ detail }) =>
+        console.log('ionKnobMoveStart:', detail.knob, detail.position, JSON.stringify(detail.value))
+      }
+      onIonKnobMoveEnd={({ detail }) =>
+        console.log('ionKnobMoveEnd:', detail.knob, detail.position, JSON.stringify(detail.value))
+      }
     ></IonRange>
   );
 }
