@@ -63,7 +63,7 @@ html[data-theme='light'] {
 }
 
 html[data-theme='dark'] {
-  --token-primary-bg-c: #03060b;
+  --token-primary-bg-c: var(--c-carbon-100);
   --token-secondary-bg-c: #13171c;
 
   --ifm-link-color: var(--c-blue-70);
