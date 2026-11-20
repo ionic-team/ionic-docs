@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-img
     src="https://docs-demo.ionic.io/assets/madison.jpg"
@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonImg } from '@ionic/vue';
+import { IonImg } from '@ionic/vue';
 </script>
 ```

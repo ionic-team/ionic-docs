@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content class="ion-padding">
     <h1>Scroll the content and notice that the fixed button does not scroll.</h1>
@@ -55,13 +55,13 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent } from '@ionic/vue';
+import { IonButton, IonContent } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-button[slot='fixed'] {
-    top: 50%;
-    right: 20px;
-  }
+ion-button[slot='fixed'] {
+  top: 50%;
+  right: 20px;
+}
 </style>
 ```

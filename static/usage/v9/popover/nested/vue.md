@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button id="popover-button">Open Menu</ion-button>
   <ion-popover trigger="popover-button" :dismiss-on-select="true">
@@ -21,6 +21,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonItem, IonList, IonPopover } from '@ionic/vue';
+import { IonButton, IonItem, IonList, IonPopover } from '@ionic/vue';
 </script>
 ```

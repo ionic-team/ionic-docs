@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content color="primary" class="ion-padding">
     <h1>Primary content</h1>
@@ -39,6 +39,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent } from '@ionic/vue';
+import { IonContent } from '@ionic/vue';
 </script>
 ```

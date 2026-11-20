@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content class="ion-padding">
     <ion-button id="open-toast">Open Toast</ion-button>
@@ -18,6 +18,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonFooter, IonTitle, IonToast, IonToolbar } from '@ionic/vue';
+import { IonButton, IonContent, IonFooter, IonTitle, IonToast, IonToolbar } from '@ionic/vue';
 </script>
 ```

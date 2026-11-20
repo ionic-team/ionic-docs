@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-datetime ref="datetime">
     <ion-buttons slot="buttons">
@@ -10,12 +10,12 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButtons, IonButton, IonDatetime } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonButtons, IonButton, IonDatetime } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const datetime = ref();
-  const reset = () => datetime.value.$el.reset();
-  const cancel = () => datetime.value.$el.cancel();
-  const confirm = () => datetime.value.$el.confirm();
+const datetime = ref();
+const reset = () => datetime.value.$el.reset();
+const cancel = () => datetime.value.$el.cancel();
+const confirm = () => datetime.value.$el.confirm();
 </script>
 ```

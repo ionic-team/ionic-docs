@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-fab slot="fixed" horizontal="center" vertical="center">
     <ion-fab-button color="secondary">
@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
-  import { add, chevronBack, chevronDown, chevronForward, chevronUp } from 'ionicons/icons';
+import { IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
+import { add, chevronBack, chevronDown, chevronForward, chevronUp } from 'ionicons/icons';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-fab slot="fixed" vertical="top" horizontal="center">
     <ion-fab-button>
@@ -8,25 +8,25 @@
 </template>
 
 <script setup lang="ts">
-  import { IonFab, IonFabButton, IonIcon } from '@ionic/vue';
-  import { add } from 'ionicons/icons';
+import { IonFab, IonFabButton, IonIcon } from '@ionic/vue';
+import { add } from 'ionicons/icons';
 </script>
 
 <style>
-  :root {
-    /**
+:root {
+  /**
    * Setting the variables for DEMO purposes only.
    * Values will be set automatically when building an iOS or Android app.
    */
-    --ion-safe-area-top: 20px;
-    --ion-safe-area-bottom: 20px;
-  }
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 20px;
+}
 </style>
 
 <style scoped>
-  ion-fab {
-    margin-top: var(--ion-safe-area-top, 0);
-    margin-bottom: var(--ion-safe-area-bottom, 0);
-  }
+ion-fab {
+  margin-top: var(--ion-safe-area-top, 0);
+  margin-bottom: var(--ion-safe-area-bottom, 0);
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button>Default</ion-button>
   <ion-button class="ion-text-wrap" style="max-width: 400px"
@@ -8,6 +8,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton } from '@ionic/vue';
+import { IonButton } from '@ionic/vue';
 </script>
 ```

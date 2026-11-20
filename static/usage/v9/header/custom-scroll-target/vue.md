@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header collapse="fade">
     <ion-toolbar>
@@ -70,18 +70,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <style scoped>
-  .ion-content-scroll-host {
-    position: absolute;
-    top: 0;
-    left: 0;
+.ion-content-scroll-host {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-  }
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
 </style>
 ```

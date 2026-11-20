@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-card>
     <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
@@ -14,6 +14,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
 </script>
 ```

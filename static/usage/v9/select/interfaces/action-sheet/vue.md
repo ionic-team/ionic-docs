@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonList, IonItem, IonSelect, IonSelectOption } from '@ionic/vue';
+import { IonList, IonItem, IonSelect, IonSelectOption } from '@ionic/vue';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-page ref="page">
     <ion-header>
@@ -30,18 +30,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const page = ref(null);
-  const modal = ref(null);
+const page = ref(null);
+const modal = ref(null);
 
-  function dismiss() {
-    modal.value.$el.dismiss();
-  }
+function dismiss() {
+  modal.value.$el.dismiss();
+}
 
-  async function canDismiss(data?: any, role?: string) {
-    return role !== 'gesture';
-  }
+async function canDismiss(data?: any, role?: string) {
+  return role !== 'gesture';
+}
 </script>
 ```

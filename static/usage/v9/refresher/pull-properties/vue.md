@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -16,21 +16,21 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonRefresher,
-    IonRefresherContent,
-    IonTitle,
-    IonToolbar,
-    RefresherCustomEvent,
-  } from '@ionic/vue';
+import {
+  IonContent,
+  IonHeader,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherCustomEvent,
+} from '@ionic/vue';
 
-  const handleRefresh = (event: RefresherCustomEvent) => {
-    setTimeout(() => {
-      // Any calls to load data go here
-      event.target.complete();
-    }, 2000);
-  };
+const handleRefresh = (event: RefresherCustomEvent) => {
+  setTimeout(() => {
+    // Any calls to load data go here
+    event.target.complete();
+  }, 2000);
+};
 </script>
 ```

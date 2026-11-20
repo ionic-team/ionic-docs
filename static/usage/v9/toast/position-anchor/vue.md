@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header id="header">
     <ion-toolbar>
@@ -34,6 +34,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonFooter, IonHeader, IonTitle, IonToast, IonToolbar } from '@ionic/vue';
+import { IonButton, IonContent, IonFooter, IonHeader, IonTitle, IonToast, IonToolbar } from '@ionic/vue';
 </script>
 ```

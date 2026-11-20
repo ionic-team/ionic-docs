@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content class="ion-padding">
     <h1>Page Two</h1>
@@ -7,18 +7,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonButton } from '@ionic/vue';
-  import PageThree from './PageThree.vue';
+import { IonContent, IonButton } from '@ionic/vue';
+import PageThree from './PageThree.vue';
 
-  interface Props {
-    nav: any;
-  }
+interface Props {
+  nav: any;
+}
 
-  const props = defineProps<Props>();
+const props = defineProps<Props>();
 
-  const navigateToPageThree = () => {
-    const { nav } = props;
-    nav.push(PageThree, { nav });
-  };
+const navigateToPageThree = () => {
+  const { nav } = props;
+  nav.push(PageThree, { nav });
+};
 </script>
 ```

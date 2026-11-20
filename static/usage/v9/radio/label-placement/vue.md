@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-radio-group value="start">
     <ion-radio value="start" label-placement="start">Label at the Start</ion-radio>
@@ -24,6 +24,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonRadio, IonRadioGroup } from '@ionic/vue';
 </script>
 ```

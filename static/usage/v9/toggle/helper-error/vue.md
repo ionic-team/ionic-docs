@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-toggle
     v-model="wifi"
@@ -17,16 +17,16 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonToggle, IonButton, ToggleCustomEvent } from '@ionic/vue';
+import { ref } from 'vue';
+import { IonToggle, IonButton, ToggleCustomEvent } from '@ionic/vue';
 
-  const wifi = ref(true);
-  const isTouched = ref(false);
-  const isValid = ref<boolean | undefined>();
+const wifi = ref(true);
+const isTouched = ref(false);
+const isValid = ref<boolean | undefined>();
 
-  const validateToggle = (event: ToggleCustomEvent<{ checked: boolean }>) => {
-    isTouched.value = true;
-    isValid.value = event.detail.checked;
-  };
+const validateToggle = (event: ToggleCustomEvent<{ checked: boolean }>) => {
+  isTouched.value = true;
+  isValid.value = event.detail.checked;
+};
 </script>
 ```

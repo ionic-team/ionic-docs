@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-text color="primary">
     <h1>H1: The quick brown fox jumps over the lazy dog</h1>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonIcon, IonText } from '@ionic/vue';
-  import { warning } from 'ionicons/icons';
+import { IonIcon, IonText } from '@ionic/vue';
+import { warning } from 'ionicons/icons';
 </script>
 ```

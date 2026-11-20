@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -18,18 +18,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
+import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
 
-  const handleChange = (event) => {
-    console.log('ionChange fired with value: ' + event.detail.value);
-  };
+const handleChange = (event) => {
+  console.log('ionChange fired with value: ' + event.detail.value);
+};
 
-  const handleCancel = () => {
-    console.log('ionCancel fired');
-  };
+const handleCancel = () => {
+  console.log('ionCancel fired');
+};
 
-  const handleDismiss = () => {
-    console.log('ionDismiss fired');
-  };
+const handleDismiss = () => {
+  console.log('ionDismiss fired');
+};
 </script>
 ```

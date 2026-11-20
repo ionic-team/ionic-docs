@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -85,7 +85,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/vue';
-  import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, search, personCircle, star } from 'ionicons/icons';
+import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/vue';
+import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, search, personCircle, star } from 'ionicons/icons';
 </script>
 ```

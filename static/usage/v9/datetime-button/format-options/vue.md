@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
@@ -13,18 +13,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
+import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
 
-  const formatOptions = {
-    date: {
-      weekday: 'short',
-      month: 'long',
-      day: '2-digit',
-    },
-    time: {
-      hour: '2-digit',
-      minute: '2-digit',
-    },
-  };
+const formatOptions = {
+  date: {
+    weekday: 'short',
+    month: 'long',
+    day: '2-digit',
+  },
+  time: {
+    hour: '2-digit',
+    minute: '2-digit',
+  },
+};
 </script>
 ```

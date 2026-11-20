@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -23,29 +23,29 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButtons,
-    IonButton,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-    IonList,
-    IonItem,
-    IonCheckbox,
-    IonNote,
-  } from '@ionic/vue';
+import {
+  IonButtons,
+  IonButton,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonList,
+  IonItem,
+  IonCheckbox,
+  IonNote,
+} from '@ionic/vue';
 
-  const props = defineProps(['modal']);
-  const emit = defineEmits(['dismissChange']);
+const props = defineProps(['modal']);
+const emit = defineEmits(['dismissChange']);
 
-  const dismiss = () => {
-    props.modal.$el.dismiss();
-  };
+const dismiss = () => {
+  props.modal.$el.dismiss();
+};
 
-  const checkboxChanged = (event) => {
-    const checked = event.detail.checked;
-    emit('dismissChange', checked);
-  };
+const checkboxChanged = (event) => {
+  const checked = event.detail.checked;
+  emit('dismissChange', checked);
+};
 </script>
 ```

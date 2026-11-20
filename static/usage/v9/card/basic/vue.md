@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-card>
     <ion-card-header>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
 </script>
 ```

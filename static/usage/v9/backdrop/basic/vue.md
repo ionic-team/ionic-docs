@@ -1,9 +1,9 @@
-```html
+```vue
 <style>
-  ion-backdrop {
-    background: var(--ion-color-dark);
-    opacity: 0.3;
-  }
+ion-backdrop {
+  background: var(--ion-color-dark);
+  opacity: 0.3;
+}
 </style>
 
 <template>
@@ -23,15 +23,6 @@
   </div>
 </template>
 <script setup lang="ts">
-  import {
-    IonBackdrop,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonItem,
-    IonCheckbox,
-    IonButton,
-  } from '@ionic/vue';
+import { IonBackdrop, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonCheckbox, IonButton } from '@ionic/vue';
 </script>
 ```

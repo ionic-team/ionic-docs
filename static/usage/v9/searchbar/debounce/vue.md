@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-searchbar :debounce="1000" @ionInput="handleInput($event)"></ion-searchbar>
 
@@ -10,26 +10,26 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonList, IonSearchbar } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonItem, IonList, IonSearchbar } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const data = [
-    'Amsterdam',
-    'Buenos Aires',
-    'Cairo',
-    'Geneva',
-    'Hong Kong',
-    'Istanbul',
-    'London',
-    'Madrid',
-    'New York',
-    'Panama City',
-  ];
-  const results = ref(data);
+const data = [
+  'Amsterdam',
+  'Buenos Aires',
+  'Cairo',
+  'Geneva',
+  'Hong Kong',
+  'Istanbul',
+  'London',
+  'Madrid',
+  'New York',
+  'Panama City',
+];
+const results = ref(data);
 
-  const handleInput = (event) => {
-    const query = event.target.value.toLowerCase();
-    results.value = data.filter((d) => d.toLowerCase().indexOf(query) > -1);
-  };
+const handleInput = (event) => {
+  const query = event.target.value.toLowerCase();
+  results.value = data.filter((d) => d.toLowerCase().indexOf(query) > -1);
+};
 </script>
 ```

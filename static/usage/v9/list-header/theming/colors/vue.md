@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list-header>
     <ion-label>Default</ion-label>
@@ -33,6 +33,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonLabel, IonListHeader } from '@ionic/vue';
+import { IonLabel, IonListHeader } from '@ionic/vue';
 </script>
 ```

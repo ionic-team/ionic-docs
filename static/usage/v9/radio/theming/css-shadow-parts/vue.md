@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-radio-group value="custom-checked">
     <ion-radio value="custom" aria-label="Custom checkbox"></ion-radio>
@@ -7,39 +7,39 @@
 </template>
 
 <script setup lang="ts">
-  import { IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonRadio, IonRadioGroup } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-radio::part(container) {
-    width: 30px;
-    height: 30px;
+ion-radio::part(container) {
+  width: 30px;
+  height: 30px;
 
-    border-radius: 8px;
-    border: 2px solid #ddd;
-  }
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
 
-  ion-radio::part(mark) {
-    background: none;
-    transition: none;
-    transform: none;
-    border-radius: 0;
-  }
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
 
-  ion-radio.radio-checked::part(container) {
-    background: #6815ec;
-    border-color: transparent;
-  }
+ion-radio.radio-checked::part(container) {
+  background: #6815ec;
+  border-color: transparent;
+}
 
-  ion-radio.radio-checked::part(mark) {
-    width: 6px;
-    height: 10px;
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
 
-    border-width: 0px 2px 2px 0px;
-    border-style: solid;
-    border-color: #fff;
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
 
-    transform: rotate(45deg);
-  }
+  transform: rotate(45deg);
+}
 </style>
 ```

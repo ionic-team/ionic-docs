@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -15,9 +15,9 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonHeader, IonNavLink, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import PageTwo from './PageTwo.vue';
+import { IonButton, IonContent, IonHeader, IonNavLink, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import PageTwo from './PageTwo.vue';
 
-  const component = PageTwo;
+const component = PageTwo;
 </script>
 ```

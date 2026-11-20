@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-segment :scrollable="true" value="heart">
     <ion-segment-button value="home">
@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonIcon, IonSegment, IonSegmentButton } from '@ionic/vue';
-  import { home, heart, pin, star, call, globe, basket, barbell, trash, person } from 'ionicons/icons';
+import { IonIcon, IonSegment, IonSegmentButton } from '@ionic/vue';
+import { home, heart, pin, star, call, globe, basket, barbell, trash, person } from 'ionicons/icons';
 </script>
 ```

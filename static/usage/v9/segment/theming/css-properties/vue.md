@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-segment value="custom">
     <ion-segment-button value="custom">
@@ -11,12 +11,12 @@
 </template>
 
 <script setup lang="ts">
-  import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
+import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
 </script>
 
 <style>
-  ion-segment {
-    --background: #54dc98;
-  }
+ion-segment {
+  --background: #54dc98;
+}
 </style>
 ```

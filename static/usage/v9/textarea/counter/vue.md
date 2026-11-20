@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-textarea label="Default counter" label-placement="floating" :counter="true" maxlength="20"></ion-textarea>
 
@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-  import { IonTextarea } from '@ionic/vue';
+import { IonTextarea } from '@ionic/vue';
 
-  const customFormatter = (inputLength, maxLength) => {
-    return `${maxLength - inputLength} characters remaining`;
-  };
+const customFormatter = (inputLength, maxLength) => {
+  return `${maxLength - inputLength} characters remaining`;
+};
 </script>
 ```

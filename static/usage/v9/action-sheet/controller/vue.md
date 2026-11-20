@@ -1,39 +1,39 @@
-```html
+```vue
 <template>
   <ion-button @click="presentActionSheet">Open</ion-button>
 </template>
 
 <script setup lang="ts">
-  import { IonButton, actionSheetController } from '@ionic/vue';
+import { IonButton, actionSheetController } from '@ionic/vue';
 
-  const presentActionSheet = async () => {
-    const actionSheet = await actionSheetController.create({
-      header: 'Actions',
-      buttons: [
-        {
-          text: 'Delete',
-          role: 'destructive',
-          data: {
-            action: 'delete',
-          },
+const presentActionSheet = async () => {
+  const actionSheet = await actionSheetController.create({
+    header: 'Actions',
+    buttons: [
+      {
+        text: 'Delete',
+        role: 'destructive',
+        data: {
+          action: 'delete',
         },
-        {
-          text: 'Share',
-          data: {
-            action: 'share',
-          },
+      },
+      {
+        text: 'Share',
+        data: {
+          action: 'share',
         },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          data: {
-            action: 'cancel',
-          },
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        data: {
+          action: 'cancel',
         },
-      ],
-    });
+      },
+    ],
+  });
 
-    await actionSheet.present();
-  };
+  await actionSheet.present();
+};
 </script>
 ```

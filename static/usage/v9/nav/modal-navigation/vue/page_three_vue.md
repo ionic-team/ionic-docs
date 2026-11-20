@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content class="ion-padding">
     <h1>Page Three</h1>
@@ -8,22 +8,22 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonButton } from '@ionic/vue';
+import { IonContent, IonButton } from '@ionic/vue';
 
-  interface Props {
-    nav: any;
-  }
+interface Props {
+  nav: any;
+}
 
-  const props = defineProps<Props>();
+const props = defineProps<Props>();
 
-  const navigateBack = () => {
-    const { nav } = props;
-    nav.pop();
-  };
+const navigateBack = () => {
+  const { nav } = props;
+  nav.pop();
+};
 
-  const navigateToRoot = () => {
-    const { nav } = props;
-    nav.popToRoot();
-  };
+const navigateToRoot = () => {
+  const { nav } = props;
+  nav.popToRoot();
+};
 </script>
 ```

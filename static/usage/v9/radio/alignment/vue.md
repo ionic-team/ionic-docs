@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-radio-group value="start">
@@ -16,6 +16,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/vue';
 </script>
 ```

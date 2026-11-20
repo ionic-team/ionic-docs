@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content class="ion-padding">
     <h1>Heading 1</h1>
@@ -13,16 +13,16 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent } from '@ionic/vue';
+import { IonContent } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-content::part(background) {
-    background: #d31373;
-  }
+ion-content::part(background) {
+  background: #d31373;
+}
 
-  ion-content::part(scroll) {
-    color: #fff;
-  }
+ion-content::part(scroll) {
+  color: #fff;
+}
 </style>
 ```

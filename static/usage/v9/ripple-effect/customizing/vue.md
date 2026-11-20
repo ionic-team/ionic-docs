@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <div class="wrapper">
     <b>Click on a shape to see the ripple</b>
@@ -16,51 +16,51 @@
 </template>
 
 <script setup lang="ts">
-  import { IonRippleEffect } from '@ionic/vue';
+import { IonRippleEffect } from '@ionic/vue';
 </script>
 
 <style scoped>
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
 
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 
-    height: 170px;
-    width: 400px;
+  height: 170px;
+  width: 400px;
 
-    margin: 0 auto;
-  }
+  margin: 0 auto;
+}
 
-  b {
-    width: 100%;
-  }
+b {
+  width: 100%;
+}
 
-  .ripple-parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ripple-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
 
-    user-select: none;
+  user-select: none;
 
-    width: 100%;
-    height: 50px;
-    border-radius: 8px;
-  }
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+}
 
-  .custom-parent {
-    color: #de1e7e;
-  }
+.custom-parent {
+  color: #de1e7e;
+}
 
-  .custom-ripple {
-    color: #501ace;
-  }
+.custom-ripple {
+  color: #501ace;
+}
 </style>
 ```

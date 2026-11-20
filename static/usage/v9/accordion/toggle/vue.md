@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-accordion-group ref="accordionGroup">
     <ion-accordion value="first">
@@ -25,22 +25,22 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const accordionGroup = ref(null);
+const accordionGroup = ref(null);
 
-  const toggleAccordion = () => {
-    if (!accordionGroup.value) {
-      return;
-    }
-    const nativeEl = accordionGroup.value.$el;
+const toggleAccordion = () => {
+  if (!accordionGroup.value) {
+    return;
+  }
+  const nativeEl = accordionGroup.value.$el;
 
-    if (nativeEl.value === 'second') {
-      nativeEl.value = undefined;
-    } else {
-      nativeEl.value = 'second';
-    }
-  };
+  if (nativeEl.value === 'second') {
+    nativeEl.value = undefined;
+  } else {
+    nativeEl.value = 'second';
+  }
+};
 </script>
 ```

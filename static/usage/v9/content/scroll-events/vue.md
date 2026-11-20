@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <!-- Scroll events are disabled by default for content for performance reasons, enable them to listen to them -->
   <ion-content
@@ -59,18 +59,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent } from '@ionic/vue';
+import { IonContent } from '@ionic/vue';
 
-  const handleScrollStart = () => {
-    console.log('scroll start');
-  };
+const handleScrollStart = () => {
+  console.log('scroll start');
+};
 
-  const handleScroll = (event: CustomEvent) => {
-    console.log('scroll', JSON.stringify(event.detail));
-  };
+const handleScroll = (event: CustomEvent) => {
+  console.log('scroll', JSON.stringify(event.detail));
+};
 
-  const handleScrollEnd = () => {
-    console.log('scroll end');
-  };
+const handleScrollEnd = () => {
+  console.log('scroll end');
+};
 </script>
 ```

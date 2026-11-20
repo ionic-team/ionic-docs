@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item href="#">
     <ion-label>Anchor Item</ion-label>
@@ -18,6 +18,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel } from '@ionic/vue';
+import { IonItem, IonLabel } from '@ionic/vue';
 </script>
 ```

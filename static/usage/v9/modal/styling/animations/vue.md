@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -60,49 +60,49 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    createAnimation,
-    IonButtons,
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-    IonItem,
-    IonList,
-    IonAvatar,
-    IonLabel,
-  } from '@ionic/vue';
-  import { ref } from 'vue';
+import {
+  createAnimation,
+  IonButtons,
+  IonButton,
+  IonModal,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonItem,
+  IonList,
+  IonAvatar,
+  IonLabel,
+} from '@ionic/vue';
+import { ref } from 'vue';
 
-  const modal = ref();
+const modal = ref();
 
-  const dismiss = () => modal.value.$el.dismiss();
+const dismiss = () => modal.value.$el.dismiss();
 
-  const enterAnimation = (baseEl: HTMLElement) => {
-    const root = baseEl.shadowRoot;
+const enterAnimation = (baseEl: HTMLElement) => {
+  const root = baseEl.shadowRoot;
 
-    const backdropAnimation = createAnimation()
-      .addElement(root.querySelector('ion-backdrop'))
-      .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
+  const backdropAnimation = createAnimation()
+    .addElement(root.querySelector('ion-backdrop'))
+    .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
-    const wrapperAnimation = createAnimation()
-      .addElement(root.querySelector('.modal-wrapper'))
-      .keyframes([
-        { offset: 0, opacity: '0', transform: 'scale(0)' },
-        { offset: 1, opacity: '0.99', transform: 'scale(1)' },
-      ]);
+  const wrapperAnimation = createAnimation()
+    .addElement(root.querySelector('.modal-wrapper'))
+    .keyframes([
+      { offset: 0, opacity: '0', transform: 'scale(0)' },
+      { offset: 1, opacity: '0.99', transform: 'scale(1)' },
+    ]);
 
-    return createAnimation()
-      .addElement(baseEl)
-      .easing('ease-out')
-      .duration(500)
-      .addAnimation([backdropAnimation, wrapperAnimation]);
-  };
+  return createAnimation()
+    .addElement(baseEl)
+    .easing('ease-out')
+    .duration(500)
+    .addAnimation([backdropAnimation, wrapperAnimation]);
+};
 
-  const leaveAnimation = (baseEl) => {
-    return enterAnimation(baseEl).direction('reverse');
-  };
+const leaveAnimation = (baseEl) => {
+  return enterAnimation(baseEl).direction('reverse');
+};
 </script>
 ```
