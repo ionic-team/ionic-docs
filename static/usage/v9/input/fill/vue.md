@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input label="Solid input" label-placement="floating" fill="solid" placeholder="Enter text"></ion-input>
 
@@ -8,6 +8,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput } from '@ionic/vue';
+import { IonInput } from '@ionic/vue';
 </script>
 ```

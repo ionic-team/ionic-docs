@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button id="buttonToFocus" fill="outline">Button</ion-button>
 
@@ -13,15 +13,15 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonButton, IonRadio, IonRadioGroup } from '@ionic/vue';
 
-  const focusElement = (id) => {
-    const el = document.querySelector(id);
+const focusElement = (id) => {
+  const el = document.querySelector(id);
 
-    const app = el.closest('ion-app');
-    if (app) {
-      app.setFocus([el]);
-    }
-  };
+  const app = el.closest('ion-app');
+  if (app) {
+    app.setFocus([el]);
+  }
+};
 </script>
 ```

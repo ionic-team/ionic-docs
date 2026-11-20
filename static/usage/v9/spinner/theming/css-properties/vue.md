@@ -1,15 +1,15 @@
-```html
+```vue
 <template>
   <ion-spinner></ion-spinner>
 </template>
 
 <script setup lang="ts">
-  import { IonSpinner } from '@ionic/vue';
+import { IonSpinner } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-spinner {
-    --color: #54dc98;
-  }
+ion-spinner {
+  --color: #54dc98;
+}
 </style>
 ```

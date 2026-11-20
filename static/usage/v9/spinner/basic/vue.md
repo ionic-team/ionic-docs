@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item>
     <ion-label>Default</ion-label>
@@ -52,6 +52,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel, IonSpinner } from '@ionic/vue';
+import { IonItem, IonLabel, IonSpinner } from '@ionic/vue';
 </script>
 ```

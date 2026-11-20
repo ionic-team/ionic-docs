@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-card ref="card">
     <ion-card-content>Double click me to move the card.</ion-card-content>
@@ -6,52 +6,52 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCard, IonCardContent, createGesture } from '@ionic/vue';
-  import { onMounted, ref } from 'vue';
+import { IonCard, IonCardContent, createGesture } from '@ionic/vue';
+import { onMounted, ref } from 'vue';
 
-  const DOUBLE_CLICK_THRESHOLD = 500;
-  const card = ref();
+const DOUBLE_CLICK_THRESHOLD = 500;
+const card = ref();
 
-  let lastOnStart = 0;
-  let currentOffset = 0;
+let lastOnStart = 0;
+let currentOffset = 0;
 
-  onMounted(() => {
-    const gesture = createGesture({
-      el: card.value.$el,
-      threshold: 0,
-      onStart,
-      gestureName: 'double-click',
-    });
-
-    gesture.enable();
+onMounted(() => {
+  const gesture = createGesture({
+    el: card.value.$el,
+    threshold: 0,
+    onStart,
+    gestureName: 'double-click',
   });
 
-  const onStart = () => {
-    const now = Date.now();
+  gesture.enable();
+});
 
-    if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
-      card.value.$el.style.setProperty('transform', getNewTransform());
-      lastOnStart = 0;
-    } else {
-      lastOnStart = now;
-    }
-  };
+const onStart = () => {
+  const now = Date.now();
 
-  const getNewTransform = () => {
-    if (currentOffset >= 100) {
-      currentOffset = 0;
-    } else {
-      currentOffset += 20;
-    }
+  if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
+    card.value.$el.style.setProperty('transform', getNewTransform());
+    lastOnStart = 0;
+  } else {
+    lastOnStart = now;
+  }
+};
 
-    return `translateX(${currentOffset}px)`;
-  };
+const getNewTransform = () => {
+  if (currentOffset >= 100) {
+    currentOffset = 0;
+  } else {
+    currentOffset += 20;
+  }
+
+  return `translateX(${currentOffset}px)`;
+};
 </script>
 
 <style scoped>
-  ion-card {
-    transform: translateX(0);
-    user-select: none;
-  }
+ion-card {
+  transform: translateX(0);
+  user-select: none;
+}
 </style>
 ```

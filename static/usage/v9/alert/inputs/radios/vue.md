@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button id="present-alert">Click Me</ion-button>
   <ion-alert
@@ -10,25 +10,25 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAlert, IonButton } from '@ionic/vue';
+import { IonAlert, IonButton } from '@ionic/vue';
 
-  const alertButtons = ['OK'];
-  const alertInputs = [
-    {
-      label: 'Red',
-      type: 'radio',
-      value: 'red',
-    },
-    {
-      label: 'Blue',
-      type: 'radio',
-      value: 'blue',
-    },
-    {
-      label: 'Green',
-      type: 'radio',
-      value: 'green',
-    },
-  ];
+const alertButtons = ['OK'];
+const alertInputs = [
+  {
+    label: 'Red',
+    type: 'radio',
+    value: 'red',
+  },
+  {
+    label: 'Blue',
+    type: 'radio',
+    value: 'blue',
+  },
+  {
+    label: 'Green',
+    type: 'radio',
+    value: 'green',
+  },
+];
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-searchbar show-cancel-button="focus" placeholder="Show on Focus"></ion-searchbar>
   <ion-searchbar show-cancel-button="always" placeholder="Always Show"></ion-searchbar>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonSearchbar } from '@ionic/vue';
-  import { trash } from 'ionicons/icons';
+import { IonSearchbar } from '@ionic/vue';
+import { trash } from 'ionicons/icons';
 </script>
 ```

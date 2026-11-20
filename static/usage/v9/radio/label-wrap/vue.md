@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-radio-group value="truncated">
@@ -18,16 +18,16 @@
 </template>
 
 <script setup lang="ts">
-  import { IonList, IonItem, IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonList, IonItem, IonRadio, IonRadioGroup } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-list {
-    width: 250px;
-  }
+ion-list {
+  width: 250px;
+}
 
-  ion-radio.wrapped::part(label) {
-    white-space: normal;
-  }
+ion-radio.wrapped::part(label) {
+  white-space: normal;
+}
 </style>
 ```

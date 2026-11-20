@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAvatar, IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue';
-  import { airplane, bluetooth, call, wifi } from 'ionicons/icons';
+import { IonAvatar, IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue';
+import { airplane, bluetooth, call, wifi } from 'ionicons/icons';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-segment>
     <ion-segment-button value="first" content-id="first">
@@ -19,27 +19,27 @@
 </template>
 
 <style>
-  ion-segment-view {
-    height: 150px;
-  }
+ion-segment-view {
+  height: 150px;
+}
 
-  ion-segment-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  ion-segment-content:nth-of-type(1) {
-    background: lightpink;
-  }
-  ion-segment-content:nth-of-type(2) {
-    background: lightblue;
-  }
-  ion-segment-content:nth-of-type(3) {
-    background: lightgreen;
-  }
+ion-segment-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ion-segment-content:nth-of-type(1) {
+  background: lightpink;
+}
+ion-segment-content:nth-of-type(2) {
+  background: lightblue;
+}
+ion-segment-content:nth-of-type(3) {
+  background: lightgreen;
+}
 </style>
 
 <script setup lang="ts">
-  import { IonLabel, IonSegment, IonSegmentButton, IonSegmentContent, IonSegmentView } from '@ionic/vue';
+import { IonLabel, IonSegment, IonSegmentButton, IonSegmentContent, IonSegmentView } from '@ionic/vue';
 </script>
 ```

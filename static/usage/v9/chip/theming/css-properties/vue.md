@@ -1,9 +1,9 @@
-```html
+```vue
 <style>
-  ion-chip {
-    --background: #00213f;
-    --color: #adefd1;
-  }
+ion-chip {
+  --background: #00213f;
+  --color: #adefd1;
+}
 </style>
 
 <template>
@@ -11,6 +11,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonChip } from '@ionic/vue';
+import { IonChip } from '@ionic/vue';
 </script>
 ```

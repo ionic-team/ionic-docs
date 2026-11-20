@@ -1,9 +1,9 @@
-```html
+```vue
 <style>
-  ion-thumbnail {
-    --size: 140px;
-    --border-radius: 14px;
-  }
+ion-thumbnail {
+  --size: 140px;
+  --border-radius: 14px;
+}
 </style>
 
 <template>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonThumbnail } from '@ionic/vue';
+import { IonThumbnail } from '@ionic/vue';
 </script>
 ```

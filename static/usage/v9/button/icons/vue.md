@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button size="small">
     <ion-icon slot="icon-only" :ios="logoApple" :md="settingsSharp"></ion-icon>
@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonIcon } from '@ionic/vue';
-  import { heart, logoApple, settingsSharp, star } from 'ionicons/icons';
+import { IonButton, IonIcon } from '@ionic/vue';
+import { heart, logoApple, settingsSharp, star } from 'ionicons/icons';
 </script>
 ```

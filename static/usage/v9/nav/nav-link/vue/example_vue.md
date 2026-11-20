@@ -1,13 +1,13 @@
-```html
+```vue
 <template>
   <ion-nav :root="component"></ion-nav>
 </template>
 
 <script setup lang="ts">
-  import { markRaw } from 'vue';
-  import { IonNav } from '@ionic/vue';
-  import PageOne from './PageOne.vue';
+import { markRaw } from 'vue';
+import { IonNav } from '@ionic/vue';
+import PageOne from './PageOne.vue';
 
-  const component = markRaw(PageOne);
+const component = markRaw(PageOne);
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-select label="Solid select" label-placement="floating" fill="solid">
     <ion-select-option value="apple">Apple</ion-select-option>
@@ -16,6 +16,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonSelect, IonSelectOption } from '@ionic/vue';
+import { IonSelect, IonSelectOption } from '@ionic/vue';
 </script>
 ```

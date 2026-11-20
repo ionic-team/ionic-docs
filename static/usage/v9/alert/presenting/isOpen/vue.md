@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button @click="setOpen(true)">Click Me</ion-button>
   <ion-alert
@@ -12,14 +12,14 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonAlert, IonButton } from '@ionic/vue';
+import { ref } from 'vue';
+import { IonAlert, IonButton } from '@ionic/vue';
 
-  const isOpen = ref(false);
-  const alertButtons = ['Action'];
+const isOpen = ref(false);
+const alertButtons = ['Action'];
 
-  const setOpen = (state: boolean) => {
-    isOpen.value = state;
-  };
+const setOpen = (state: boolean) => {
+  isOpen.value = state;
+};
 </script>
 ```

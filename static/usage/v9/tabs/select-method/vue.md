@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-tabs ref="tabs">
     <ion-tab tab="home">
@@ -75,39 +75,39 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import {
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonPage,
-    IonTab,
-    IonTabs,
-    IonTabBar,
-    IonTabButton,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { playCircle, radio, library, search } from 'ionicons/icons';
+import { ref } from 'vue';
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonPage,
+  IonTab,
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import { playCircle, radio, library, search } from 'ionicons/icons';
 
-  const tabs = ref();
+const tabs = ref();
 
-  const selectRadio = () => {
-    tabs.value.$el.select('radio');
-  };
+const selectRadio = () => {
+  tabs.value.$el.select('radio');
+};
 </script>
 
 <style scoped>
-  /* This style is for demonstration purposes only. */
-  /* It's not required for the tabs to function. */
-  .example-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: 10px;
-  }
+/* This style is for demonstration purposes only. */
+/* It's not required for the tabs to function. */
+.example-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-chip>
     <ion-avatar>
@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAvatar, IonChip, IonLabel } from '@ionic/vue';
+import { IonAvatar, IonChip, IonLabel } from '@ionic/vue';
 </script>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-breadcrumbs :max-items="4" @ionCollapsedClick="presentPopover($event)">
     <ion-breadcrumb href="#home">Home</ion-breadcrumb>
@@ -24,18 +24,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/vue';
-  import { ref } from 'vue';
-  import Popover from './Popover.vue';
+import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/vue';
+import { ref } from 'vue';
+import Popover from './Popover.vue';
 
-  const popoverOpen = ref(false);
-  const collapsedBreadcrumbs = ref([]);
-  const event = ref(null);
+const popoverOpen = ref(false);
+const collapsedBreadcrumbs = ref([]);
+const event = ref(null);
 
-  const presentPopover = (e: Event) => {
-    collapsedBreadcrumbs.value = (e as CustomEvent).detail.collapsedBreadcrumbs;
-    event.value = e;
-    popoverOpen.value = true;
-  };
+const presentPopover = (e: Event) => {
+  collapsedBreadcrumbs.value = (e as CustomEvent).detail.collapsedBreadcrumbs;
+  event.value = e;
+  popoverOpen.value = true;
+};
 </script>
 ```

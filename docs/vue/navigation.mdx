@@ -95,7 +95,7 @@ const routes: RouteRecordRaw[] = [
 
 Say we start on the `home` route, and we want to add a button that takes us to the `detail` route. We can do this using the following HTML to navigate to the `detail` route:
 
-```html
+```vue
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
@@ -128,7 +128,7 @@ The `router-direction` attribute accepts values of `"forward"`, `"back"`, or `"r
 
 The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. Refer to the [Animations documentation](../utilities/animations.mdx) for more information on using animations in Ionic Vue.
 
-```html
+```vue
 <ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">Click Me</ion-button>
 ```
 

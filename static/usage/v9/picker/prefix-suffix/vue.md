@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-picker>
     <ion-picker-column :value="1">
@@ -15,6 +15,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonPicker, IonPickerColumn, IonPickerColumnOption } from '@ionic/vue';
+import { IonPicker, IonPickerColumn, IonPickerColumnOption } from '@ionic/vue';
 </script>
 ```

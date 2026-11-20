@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <b>Column 1 has <code>size</code> set to <code>"auto"</code></b>
   <ion-grid>
@@ -35,19 +35,19 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCol, IonGrid, IonInput, IonRow } from '@ionic/vue';
+import { IonCol, IonGrid, IonInput, IonRow } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-col {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    background-color: #135d54;
-    border: solid 1px #fff;
-    color: #fff;
-  }
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+}
 </style>
 ```

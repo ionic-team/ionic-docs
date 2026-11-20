@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <form @submit.prevent="submit">
     <ion-radio-group
@@ -21,20 +21,20 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonRadioGroup, IonRadio, IonButton, RadioGroupCustomEvent } from '@ionic/vue';
+import { ref } from 'vue';
+import { IonRadioGroup, IonRadio, IonButton, RadioGroupCustomEvent } from '@ionic/vue';
 
-  const favFruit = ref('');
-  const isTouched = ref(false);
-  const isValid = ref<boolean | undefined>();
+const favFruit = ref('');
+const isTouched = ref(false);
+const isValid = ref<boolean | undefined>();
 
-  const validateRadioGroup = (event: RadioGroupCustomEvent<{ value: string }>) => {
-    isTouched.value = true;
-    isValid.value = event.detail.value ? true : false;
-  };
+const validateRadioGroup = (event: RadioGroupCustomEvent<{ value: string }>) => {
+  isTouched.value = true;
+  isValid.value = event.detail.value ? true : false;
+};
 
-  const submit = () => {
-    validateRadioGroup({ detail: { value: favFruit.value } } as RadioGroupCustomEvent<{ value: string }>);
-  };
+const submit = () => {
+  validateRadioGroup({ detail: { value: favFruit.value } } as RadioGroupCustomEvent<{ value: string }>);
+};
 </script>
 ```

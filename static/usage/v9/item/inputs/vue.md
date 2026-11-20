@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item>
     <ion-input label="Default Input" placeholder="Enter text"></ion-input>
@@ -44,15 +44,6 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonCheckbox,
-    IonInput,
-    IonItem,
-    IonLabel,
-    IonRange,
-    IonSelect,
-    IonSelectOption,
-    IonToggle,
-  } from '@ionic/vue';
+import { IonCheckbox, IonInput, IonItem, IonLabel, IonRange, IonSelect, IonSelectOption, IonToggle } from '@ionic/vue';
 </script>
 ```

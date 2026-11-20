@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item>
     <ion-thumbnail slot="start">
@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonLabel, IonThumbnail } from '@ionic/vue';
+import { IonItem, IonLabel, IonThumbnail } from '@ionic/vue';
 </script>
 ```

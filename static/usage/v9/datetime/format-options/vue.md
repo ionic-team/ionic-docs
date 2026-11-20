@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-datetime value="2023-11-02T01:22:00" :format-options="formatOptions">
     <span slot="title">Select Date</span>
@@ -6,11 +6,11 @@
 </template>
 
 <script setup lang="ts">
-  import { IonDatetime } from '@ionic/vue';
+import { IonDatetime } from '@ionic/vue';
 
-  const formatOptions = {
-    time: { hour: '2-digit', minute: '2-digit' },
-    date: { day: '2-digit', month: 'long' },
-  };
+const formatOptions = {
+  time: { hour: '2-digit', minute: '2-digit' },
+  date: { day: '2-digit', month: 'long' },
+};
 </script>
 ```

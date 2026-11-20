@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header class="ion-no-border">
     <ion-toolbar>
@@ -46,29 +46,29 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonBackButton,
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonRange,
-    IonText,
-    IonToggle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/vue';
+import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
-  ion-item {
-    --transition: none;
-  }
+/* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+ion-item {
+  --transition: none;
+}
 </style>
 ```

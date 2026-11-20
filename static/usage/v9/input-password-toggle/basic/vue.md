@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input type="password" label="Password" value="NeverGonnaGiveYouUp">
     <ion-input-password-toggle slot="end"></ion-input-password-toggle>
@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput, IonInputPasswordToggle } from '@ionic/vue';
+import { IonInput, IonInputPasswordToggle } from '@ionic/vue';
 </script>
 ```

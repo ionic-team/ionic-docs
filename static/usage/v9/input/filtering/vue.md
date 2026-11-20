@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -13,27 +13,27 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput, IonItem, IonList } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonInput, IonItem, IonList } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const ionInputEl = ref();
-  const inputModel = ref('');
-  const onInput = (event) => {
-    const value = event.target!.value;
+const ionInputEl = ref();
+const inputModel = ref('');
+const onInput = (event) => {
+  const value = event.target!.value;
 
-    // Removes non alphanumeric characters
-    const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
+  // Removes non alphanumeric characters
+  const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
 
-    /**
-     * Update both the state variable and
-     * the component to keep them in sync.
-     */
-    inputModel.value = filteredValue;
+  /**
+   * Update both the state variable and
+   * the component to keep them in sync.
+   */
+  inputModel.value = filteredValue;
 
-    const inputCmp = ionInputEl.value;
-    if (inputCmp !== undefined) {
-      inputCmp.$el.value = filteredValue;
-    }
-  };
+  const inputCmp = ionInputEl.value;
+  if (inputCmp !== undefined) {
+    inputCmp.$el.value = filteredValue;
+  }
+};
 </script>
 ```

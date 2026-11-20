@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <b>No change for xs breakpoint, push 1st column & pull 2nd column for sm and up</b>
   <ion-grid>
@@ -32,15 +32,15 @@
 </template>
 
 <script setup lang="ts">
-  import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+import { IonCol, IonGrid, IonRow } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-col {
-    background-color: #135d54;
-    border: solid 1px #fff;
-    color: #fff;
-    text-align: center;
-  }
+ion-col {
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+  text-align: center;
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
@@ -8,6 +8,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
+import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
 </script>
 ```
