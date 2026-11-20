@@ -10,9 +10,9 @@ import remarkFrontmatter from 'remark-frontmatter';
 // Schemes such as https: and mailto:, in-page anchors, and protocol-relative URLs.
 const NOT_A_PAGE_LINK = /^([a-z][a-z\d+.-]*:|#|\/\/)/i;
 
-// A page on this site by its full URL. Archived versions such as `/docs/v3/`
-// are not built from this repo, so they stay full URLs.
-const DOCS_SITE_URL = /^https?:\/\/(www\.)?ionicframework\.com\/docs(?!\/v\d+(\/|$))(\/|$|[?#])/i;
+// A page on this site by its full URL. A versioned URL such as `/docs/v3/` or
+// `/docs/v8/` opens that version rather than the current one, so it is allowed.
+const DOCS_SITE_URL = /^https?:\/\/(www\.)?ionicframework\.com\/docs(?!\/v\d+(\/|$|[?#]))(\/|$|[?#])/i;
 
 const pathOf = (url) => url.split(/[?#]/)[0];
 
