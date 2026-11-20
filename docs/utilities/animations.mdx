@@ -1,5 +1,6 @@
 ---
 title: Animations
+description: 'Ionic apps use Web Animations API to build and run animations. Learn how this utility lets developers build complex animations in a platform agnostic manner.'
 ---
 
 import Codepen from '@components/global/Codepen';
@@ -8,10 +9,6 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Animations: Web Animations API to Build and Run on Ionic Apps</title>
-  <meta
-    name="description"
-    content="Ionic apps use Web Animations API to build and run animations. Learn how this utility lets developers build complex animations in a platform agnostic manner."
-  />
 </head>
 
 ## Overview {/* #overview */}
@@ -212,7 +209,7 @@ import Chain from '@site/static/usage/v10/animations/chain/index.mdx';
 
 ## Gesture Animations {/* #gesture-animations */}
 
-Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](gestures.mdx).
+Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](./gestures.mdx).
 
 In the following example we are creating a track along which we can drag the card element. Our `animation` object will take care of moving the card element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
 
@@ -331,37 +328,37 @@ interface AnimationPlayOptions {
 
 ### Methods {/* #methods */}
 
-| Name                                                                                                                 | Description                                                                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`                                                  | Group one or more animations together to be controlled by a parent animation.                                                                                                                |
-| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                                      | Add one or more elements to the animation.                                                                                                                                                   |
-| `afterAddClass(className: string \| string[]): Animation`                                                            | Add a class or array of classes to be added to all elements in an animation after the animation ends.                                                                                        |
-| `afterAddRead(readFn: (): void): Animation`                                                                          | Add a function that performs a DOM read to be run after the animation ends.                                                                                                                  |
-| `afterAddWrite(writeFn: (): void): Animation`                                                                        | Add a function that performs a DOM write to be run after the animation ends.                                                                                                                 |
-| `afterClearStyles(propertyNames: string[]): Animation`                                                               | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends.                                                                |
-| `afterRemoveClass(className: string \| string[]): Animation`                                                         | Add a class or an array of classes to be removed from all elements in an animation after the animation ends.                                                                                 |
-| `afterStyles(styles: { [property: string]: any }): Animation`                                                        | Add an object of styles to be applied to all elements in an animation after the animation ends.                                                                                              |
-| `beforeAddClass(className: string \| string[]): Animation`                                                           | Add a class or array of classes to be added to all elements in an animation before the animation starts.                                                                                     |
-| `beforeAddRead(readFn: (): void): Animation`                                                                         | Add a function that performs a DOM read to be run before the animation starts.                                                                                                               |
-| `beforeAddWrite(writeFn: (): void): Animation`                                                                       | Add a function that performs a DOM write to be run before the animation starts.                                                                                                              |
-| `beforeClearStyles(propertyNames: string[]): Animation`                                                              | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts.                                                             |
-| `beforeRemoveClass(className: string \| string[]): Animation`                                                        | Add a class or an array of classes to be removed from all elements in an animation before the animation starts.                                                                              |
-| `beforeStyles(styles: { [property: string]: any }): Animation`                                                       | Add an object of styles to be applied to all elements in an animation before the animation starts.                                                                                           |
-| `direction(direction?: AnimationDirection): Animation`                                                               | Set the direction the animation should play in.                                                                                                                                              |
-| `delay(delay?: number): Animation`                                                                                   | Set the delay for the start of the animation in milliseconds.                                                                                                                                |
-| `destroy(clearStyleSheets?: boolean): Animation`                                                                     | Destroy the animation and clear all elements, child animations, and keyframes.                                                                                                               |
-| `duration(duration?: number): Animation`                                                                             | Set the duration of the animation in milliseconds.                                                                                                                                           |
-| `easing(easing?: string): Animation`                                                                                 | Set the easing of the animation in milliseconds. Refer to [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
-| `from(property: string, value: any): Animation`                                                                      | Set the start styles of the animation.                                                                                                                                                       |
-| `fromTo(property: string, fromValue: any, toValue: any): Animation`                                                  | Set the start and end styles of the animation.                                                                                                                                               |
-| `fill(fill?: AnimationFill): Animation`                                                                              | Set how the animation applies styles to its elements before and after the animation's execution.                                                                                             |
-| `iterations(iterations: number): Animation`                                                                          | Set the number of times the animation cycle should be played before stopping.                                                                                                                |
-| `keyframes(keyframes: any[]): Animation`                                                                             | Set the keyframes for an animation.                                                                                                                                                          |
-| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending.                                                                                                                                          |
-| `pause(): Animation`                                                                                                 | Pause the animation.                                                                                                                                                                         |
-| `play(opts?: AnimationPlayOptions): Promise<void>`                                                                   | Play the animation.                                                                                                                                                                          |
-| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation`                                                | Stop seeking through an animation.                                                                                                                                                           |
-| `progressStart(forceLinearEasing?: boolean, step?: number): Animation`                                               | Begin seeking through an animation.                                                                                                                                                          |
-| `progressStep(step: number): Animation`                                                                              | Seek through an animation.                                                                                                                                                                   |
-| `stop(): Animation`                                                                                                  | Stop the animation and reset all elements to their initial state.                                                                                                                            |
-| `to(property: string, value: any): Animation`                                                                        | Set the end styles of the animation.                                                                                                                                                         |
+| Name | Description |
+| --- | --- |
+| `addAnimation(animationToAdd: Animation \| Animation[]): Animation` | Group one or more animations together to be controlled by a parent animation. |
+| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation` | Add one or more elements to the animation. |
+| `afterAddClass(className: string \| string[]): Animation` | Add a class or array of classes to be added to all elements in an animation after the animation ends. |
+| `afterAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run after the animation ends. |
+| `afterAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run after the animation ends. |
+| `afterClearStyles(propertyNames: string[]): Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends. |
+| `afterRemoveClass(className: string \| string[]): Animation` | Add a class or an array of classes to be removed from all elements in an animation after the animation ends. |
+| `afterStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation after the animation ends. |
+| `beforeAddClass(className: string \| string[]): Animation` | Add a class or array of classes to be added to all elements in an animation before the animation starts. |
+| `beforeAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run before the animation starts. |
+| `beforeAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run before the animation starts. |
+| `beforeClearStyles(propertyNames: string[]): Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts. |
+| `beforeRemoveClass(className: string \| string[]): Animation` | Add a class or an array of classes to be removed from all elements in an animation before the animation starts. |
+| `beforeStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation before the animation starts. |
+| `direction(direction?: AnimationDirection): Animation` | Set the direction the animation should play in. |
+| `delay(delay?: number): Animation` | Set the delay for the start of the animation in milliseconds. |
+| `destroy(clearStyleSheets?: boolean): Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
+| `duration(duration?: number): Animation` | Set the duration of the animation in milliseconds. |
+| `easing(easing?: string): Animation` | Set the easing of the animation in milliseconds. Refer to [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
+| `from(property: string, value: any): Animation` | Set the start styles of the animation. |
+| `fromTo(property: string, fromValue: any, toValue: any): Animation` | Set the start and end styles of the animation. |
+| `fill(fill?: AnimationFill): Animation` | Set how the animation applies styles to its elements before and after the animation's execution. |
+| `iterations(iterations: number): Animation` | Set the number of times the animation cycle should be played before stopping. |
+| `keyframes(keyframes: any[]): Animation` | Set the keyframes for an animation. |
+| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending. |
+| `pause(): Animation` | Pause the animation. |
+| `play(opts?: AnimationPlayOptions): Promise<void>` | Play the animation. |
+| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation` | Stop seeking through an animation. |
+| `progressStart(forceLinearEasing?: boolean, step?: number): Animation` | Begin seeking through an animation. |
+| `progressStep(step: number): Animation` | Seek through an animation. |
+| `stop(): Animation` | Stop the animation and reset all elements to their initial state. |
+| `to(property: string, value: any): Animation` | Set the end styles of the animation. |

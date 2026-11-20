@@ -146,9 +146,9 @@ html[data-theme='dark'] {
         width: 17px;
       }
 
-      .icon-link-twitter::before {
-        mask-image: url("../../static/logos/twitter.svg");
-        width: 19px;
+      .icon-link-x::before {
+        mask-image: url("../../static/logos/x.svg");
+        width: 16px;
       }
 
       .icon-link-discord::before {
@@ -176,7 +176,7 @@ html[data-theme='dark'] {
         order: 4;
       }
 
-      .icon-link-twitter {
+      .icon-link-x {
         order: 5;
       }
 

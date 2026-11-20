@@ -27,10 +27,11 @@ const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
  * containing the version name at index 0 and
  * the archive url at index 1.
  */
-const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
+const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).slice(0, 5);
 
 const BASE_URL = '/docs';
 
+/** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: 'Ionic Framework',
   tagline:
@@ -80,12 +81,11 @@ module.exports = {
   },
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      // A Markdown link to a file that doesn't exist, such as after a rename.
+      onBrokenMarkdownLinks: 'throw',
     },
   },
   favicon: 'img/meta/favicon-96x96.png',
-  organizationName: 'ionic-team',
-  projectName: 'ionic-docs',
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -100,12 +100,8 @@ module.exports = {
               return 'https://crowdin.com/project/ionic-docs';
             }
             let match;
-            // Anchored on the extension so an `.mdx` page cannot match the `.md` branch and
-            // produce a link to a file that no longer exists. The api pages carry whichever
-            // extension the source uses; the cli and native pages are generated and stay `.md`.
-            if ((match = docPath.match(/api\/(.*)\.(mdx?)$/)) != null) {
-              return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.${match[2]}`;
-            }
+            // The cli and native pages are generated from other repos, so they link to
+            // their source there.
             if ((match = docPath.match(/cli\/commands\/(.*)\.mdx?$/)) != null) {
               return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
                 '-',
@@ -117,9 +113,17 @@ module.exports = {
             }
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
-          exclude: ['README.md'],
+          // Setting exclude replaces Docusaurus's defaults, so they are repeated
+          // here. They keep files and folders starting with `_`, which other
+          // pages import, from also being built as pages.
+          exclude: [
+            'README.md',
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
           lastVersion: 'current',
-          /** @type {import('@docusaurus/plugin-content-docs').VersionOptions} */
           versions: {
             current: {
               label: 'v10',
@@ -149,13 +153,10 @@ module.exports = {
         '<a href="https://www.outsystems.com/?utm_source=ionic&utm_medium=referral&utm_campaign=ionic-referral&utm_term=none&utm_content=other&utm_campaignteam=digital-mktg&utm_partner=none" target="_blank" rel="noopener"><span>An <strong>OutSystems</strong> Company →</span></a>',
       isCloseable: false,
     },
+    // Docusaurus outputs it as `og:image` and `twitter:image`, and sets
+    // `twitter:card` to `summary_large_image`.
+    image: 'https://ionicframework.com/docs/img/meta/open-graph.png',
     metadata: [
-      { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
-      { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
       {
         name: 'twitter:domain',
         content: 'ionicframework.com',
@@ -173,11 +174,11 @@ module.exports = {
         content: '1321836767955949',
       },
       {
-        name: 'og:type',
+        property: 'og:type',
         content: 'website',
       },
       {
-        name: 'og:site_name',
+        property: 'og:site_name',
         content: 'Ionic Framework Docs',
       },
     ],
@@ -248,7 +249,6 @@ module.exports = {
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
-          // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           dropdownActiveClassDisabled: true,
         },
         {
@@ -260,7 +260,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              href: 'https://ionicframework.com/community',
+              href: 'https://ionic.io/community',
               label: 'Community Hub',
               target: '_blank',
               rel: null,
@@ -278,14 +278,14 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://blog.ionicframework.com/',
+              href: 'https://ionic.io/blog',
               label: 'Blog',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://twitter.com/ionicframework',
-              label: 'Twitter',
+              href: 'https://x.com/ionicframework',
+              label: 'X',
               target: '_blank',
               rel: null,
             },
@@ -297,7 +297,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              href: 'https://ionicframework.com/support',
+              href: 'https://ionic.io/support',
               label: 'Help Center',
               target: '_blank',
               rel: null,
@@ -309,7 +309,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://ionicframework.com/advisory',
+              href: 'https://ionic.io/advisory',
               label: 'Enterprise Advisory',
               target: '_blank',
               rel: null,
@@ -337,10 +337,10 @@ module.exports = {
           className: 'icon-link language navbar__item',
         },
         {
-          href: 'https://twitter.com/Ionicframework',
+          href: 'https://x.com/ionicframework',
           position: 'right',
-          className: 'icon-link icon-link-mask icon-link-twitter',
-          'aria-label': 'Twitter',
+          className: 'icon-link icon-link-mask icon-link-x',
+          'aria-label': 'X',
           target: '_blank',
         },
         {
@@ -363,7 +363,7 @@ module.exports = {
       theme: { plain: {}, styles: [] },
       // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
       // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
-      additionalLanguages: ['shell-session', 'http', 'diff', 'json'],
+      additionalLanguages: ['shell-session', 'http', 'diff', 'json', 'scss'],
     },
     algolia: {
       appId: 'O9QSL985BS',
@@ -386,7 +386,7 @@ module.exports = {
         },
       },
     ],
-    function (context, options) {
+    function () {
       return {
         name: 'ionic-docs-ads',
         async loadContent() {
@@ -398,7 +398,7 @@ module.exports = {
 
           return await client.getByType('docs_ad');
         },
-        async contentLoaded({ content, actions: { setGlobalData, addRoute } }) {
+        async contentLoaded({ content, actions: { setGlobalData } }) {
           return setGlobalData({ prismicAds: content.results });
         },
       };
@@ -421,6 +421,4 @@ module.exports = {
     ],
     path.resolve(__dirname, 'plugins', 'docusaurus-plugin-llms-txt'),
   ],
-  customFields: {},
-  themes: [],
 };

@@ -1,13 +1,10 @@
 ---
 title: Runtime Issues
+description: 'There are many causes of app runtime issues. Read how to solve issues such as a blank app, plugins not working, Angular change detection, and more with Ionic.'
 ---
 
 <head>
   <title>Solve App Runtime Issues: Blank App, Plugins Not Working, etc.</title>
-  <meta
-    name="description"
-    content="There are many causes of app runtime issues. Read how to solve issues such as a blank app, plugins not working, Angular change detection, and more with Ionic."
-  />
 </head>
 
 ## Blank App {/* #blank-app */}
@@ -93,15 +90,9 @@ Why is there a delay on my click event?
 
 :::
 
-In general, we recommend only adding `(click)` events to elements that are
-normally clickable. This includes `<button>` and `<a>` elements. This improves
-accessibility as a screen reader will be able to tell that the element is
-clickable.
+In general, we recommend only adding `(click)` events to elements that are normally clickable. This includes `<button>` and `<a>` elements. This improves accessibility as a screen reader will be able to tell that the element is clickable.
 
-However, you may need to add a `(click)` event to an element that is not
-normally clickable. When you do this you may experience a `300ms` delay from the
-time you click the element to the event firing. To remove this delay, you can
-add the `tappable` attribute to your element.
+However, you may need to add a `(click)` event to an element that is not normally clickable. When you do this you may experience a `300ms` delay from the time you click the element to the event firing. To remove this delay, you can add the `tappable` attribute to your element.
 
 ```html
 <div tappable (click)="doClick()">I am clickable!</div>
@@ -115,23 +106,17 @@ Why does Angular change detection run very frequently when my components are ini
 
 :::
 
-Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/)
-which helps it determine when to run change detection.
+Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/) which helps it determine when to run change detection.
 
-As of zone.js `0.8.27`, certain APIs for Web Components also cause change
-detection to run. This can have the undesirable side effect of your app
-slowing down when a large number of components are initializing.
+As of zone.js `0.8.27`, certain APIs for Web Components also cause change detection to run. This can have the undesirable side effect of your app slowing down when a large number of components are initializing.
 
-To prevent this from happening, the zone.js flag that manages this portion of
-change detection can be disabled. In the `src` directory of your application,
-create a file called `zone-flags.ts`. Place the following code into the file:
+To prevent this from happening, the zone.js flag that manages this portion of change detection can be disabled. In the `src` directory of your application, create a file called `zone-flags.ts`. Place the following code into the file:
 
 ```tsx
 (window as any).__Zone_disable_customElements = true;
 ```
 
-The `zone-flags.ts` file then needs to be imported into your application's
-`polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
+The `zone-flags.ts` file then needs to be imported into your application's `polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
 
 ```tsx
 ...
@@ -142,8 +127,7 @@ import 'zone.js/dist/zone'; // Included with Angular CLI
 ...
 ```
 
-This change will only affect applications that depend on zone.js `0.8.27` or
-newer. Older versions will not be affected by this change.
+This change will only affect applications that depend on zone.js `0.8.27` or newer. Older versions will not be affected by this change.
 
 :::note
 
@@ -153,8 +137,7 @@ This flag is automatically included when creating an Ionic app via the Ionic CLI
 
 ## Cordova plugins not working in the browser {/* #cordova-plugins-not-working-in-the-browser */}
 
-At some point in your development you may, try to call Cordova plugin, but get a
-warning:
+At some point in your development you may, try to call Cordova plugin, but get a warning:
 
 ```shell
 [Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
@@ -162,11 +145,9 @@ available. Make sure to include cordova.js or run in a device/simulator
 (app.bundle.js, line 83388)
 ```
 
-This happens when you try to call a native plugin, but Cordova isn't available.
-Thankfully, Ionic Native will print out a nice warning, instead of an error.
+This happens when you try to call a native plugin, but Cordova isn't available. Thankfully, Ionic Native will print out a nice warning, instead of an error.
 
-In other cases where the plugin is not being used through Ionic Native, plugins
-can print a much more obscure warning.
+In other cases where the plugin is not being used through Ionic Native, plugins can print a much more obscure warning.
 
 ```shell
 EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
@@ -177,10 +158,7 @@ If this happens, test the plugin on a real device or simulator.
 
 ## Multiple instances of a provider {/* #multiple-instances-of-a-provider */}
 
-If you inject a provider in every component because you want it available to all
-of them you will end up with multiple instances of the provider. You should
-inject the provider once in the parent component if you want it to be available
-to the child components.
+If you inject a provider in every component because you want it available to all of them you will end up with multiple instances of the provider. You should inject the provider once in the parent component if you want it to be available to the child components.
 
 ```tsx
 let id = 0;
@@ -221,7 +199,7 @@ class MyApp {
 
 ## Accessing `this` in a function callback returns `undefined` {/* #accessing-this */}
 
-Certain components, such as [counterFormatter on ion-input](../api/input#prop-counter-formatter) and [pinFormatter on ion-range](/api/range.mdx#prop-pin-formatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
+Certain components, such as [counterFormatter on ion-input](../api/input.mdx#prop-counter-formatter) and [pinFormatter on ion-range](../api/range.mdx#prop-pin-formatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
 
 The first way to bind `this` is to use the `bind()` method on a function instance. If you want to pass a callback called `counterFormatterFn`, then you would write `counterFormatterFn.bind(this)`.
 

@@ -1,5 +1,6 @@
 ---
 title: Migrating from ion-slides to Swiper.js
+description: 'Read this guide to learn how to get Swiper.js for Angular set up in your Ionic Framework application for a modern touch slider component.'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,10 +8,6 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Set Up Swiper.js for Angular Slides [Example] | Ionic</title>
-  <meta
-    name="description"
-    content="Read this guide to learn how to get Swiper.js for Angular set up in your Ionic Framework application for a modern touch slider component."
-  />
 </head>
 
 :::warning[Looking for `ion-slides`?]
@@ -224,11 +221,11 @@ To set these options as properties directly on `<swiper-container>` we would do 
 
 Below is a full list of property changes when going from `ion-slides` to Swiper Element:
 
-| Name    | Notes                                                                                                                                   |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| options | Set each option as a property directly on the `<swiper-container>` component.                                                           |
-| mode    | For different styles based upon the mode, you can target the slides with `.ios swiper-container` or `.md swiper-container` in your CSS. |
-| pager   | Use the `pagination` property instead.                                                                                                  |
+| Name | Notes |
+| --- | --- |
+| options | Set each option as a property directly on the `<swiper-container>` component. |
+| mode | For different styles based upon the mode, you can target the slides with `.ios swiper-container` or `.md swiper-container` in your CSS. |
+| pager | Use the `pagination` property instead. |
 
 :::note
 

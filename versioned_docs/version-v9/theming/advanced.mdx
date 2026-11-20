@@ -1,5 +1,6 @@
 ---
 title: Advanced Theming
+description: 'CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming.'
 sidebar_label: Advanced
 ---
 
@@ -7,10 +8,6 @@ import CodeColor from '@components/page/theming/CodeColor';
 
 <head>
   <title>Advanced Theming: Quickly Customize App Colors using CSS | Ionic</title>
-  <meta
-    name="description"
-    content="CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming."
-  />
 </head>
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
@@ -34,8 +31,8 @@ The example below demonstrates how to use `theme-color` to style the browser int
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
-| Light Mode                                                                                                         | Dark Mode                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Light Mode | Dark Mode |
+| --- | --- |
 | ![The light mode theme color in a browser interface.](/img/theming/theme-color-light.png 'Light Mode Theme Color') | ![The dark mode theme color in a browser interface.](/img/theming/theme-color-dark.png 'Dark Mode Theme Color') |
 
 The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
@@ -58,16 +55,16 @@ While the application and stepped variables in the themes section are useful for
 
 ### Application Variables {/* #application-variables */}
 
-| Name                        | Description                                                                                          |
-| --------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `--ion-font-family`         | Font family of the app                                                                               |
-| `--ion-statusbar-padding`   | Statusbar padding top of the app                                                                     |
-| `--ion-safe-area-top`       | Adjust the safe area inset top of the app                                                            |
-| `--ion-safe-area-right`     | Adjust the safe area inset right of the app                                                          |
-| `--ion-safe-area-bottom`    | Adjust the safe area inset bottom of the app                                                         |
-| `--ion-safe-area-left`      | Adjust the safe area inset left of the app                                                           |
-| `--ion-margin`              | Adjust the margin of the [Margin attributes](../layout/css-utilities.mdx#margin)                     |
-| `--ion-padding`             | Adjust the padding of the [Padding attributes](../layout/css-utilities.mdx#padding)                  |
+| Name | Description |
+| --- | --- |
+| `--ion-font-family` | Font family of the app |
+| `--ion-statusbar-padding` | Statusbar padding top of the app |
+| `--ion-safe-area-top` | Adjust the safe area inset top of the app |
+| `--ion-safe-area-right` | Adjust the safe area inset right of the app |
+| `--ion-safe-area-bottom` | Adjust the safe area inset bottom of the app |
+| `--ion-safe-area-left` | Adjust the safe area inset left of the app |
+| `--ion-margin` | Adjust the margin of the [Margin attributes](../layout/css-utilities.mdx#margin) |
+| `--ion-padding` | Adjust the padding of the [Padding attributes](../layout/css-utilities.mdx#padding) |
 | `--ion-placeholder-opacity` | Adjust the opacity of the placeholders used in the input, textarea, searchbar, and select components |
 
 ### Grid Variables {/* #grid-variables */}
@@ -111,7 +108,7 @@ There is not yet full [browser support](https://developer.mozilla.org/en-US/docs
 
 :::note
 
-Refer to the [CSS Variables](css-variables.mdx) section for more information on how to get and set CSS variables.
+Refer to the [CSS Variables](./css-variables.mdx) section for more information on how to get and set CSS variables.
 
 :::
 
@@ -182,7 +179,7 @@ After running through the Sass compiler, the colors will have the following valu
 
 However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
 
-This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](colors.mdx#layered-colors), and it is also why [stepped colors](themes.mdx#stepped-colors) are necessary for theming.
+This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](./colors.mdx#layered-colors), and it is also why [stepped colors](./themes.mdx#stepped-colors) are necessary for theming.
 
 There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
 
@@ -192,8 +189,8 @@ The safe area of a display is the section that is not covered by the device's no
 
 For example, below are screenshots of an iPhone 14 Pro Max. The red section is the safe area, and the white sections are places where the app's content would be covered up.
 
-| Portrait                                                                       | Landscape                                                                        |
-| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| Portrait | Landscape |
+| --- | --- |
 | <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
 
 To accommodate this, Ionic automatically adds padding to certain components. For example, the first `ion-toolbar` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.

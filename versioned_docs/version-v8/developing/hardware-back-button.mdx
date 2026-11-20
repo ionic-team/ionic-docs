@@ -1,5 +1,6 @@
 ---
 title: Hardware Back Button
+description: 'The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications.'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,10 +8,6 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Hardware Back Button for Capacitor & Cordova on Android Devices</title>
-  <meta
-    name="description"
-    content="The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications."
-  />
 </head>
 
 The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous view exists in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
@@ -33,12 +30,12 @@ There are situations where you might want to have multiple handlers fired. Each 
 
 The table below shows how hardware back button support varies by environment.
 
-| Environment | Status                                                                                                    |
-| ----------- | --------------------------------------------------------------------------------------------------------- |
-| Capacitor   | Supported only when the `@capacitor/app` package is installed.                                            |
-| Cordova     | Supported                                                                                                 |
-| Browser     | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
-| PWA         | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+| Environment | Status |
+| --- | --- |
+| Capacitor | Supported only when the `@capacitor/app` package is installed. |
+| Cordova | Supported |
+| Browser | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
+| PWA | Supported only when `experimentalCloseWatcher` is `true` and the platform supports the Close Watcher API. |
 
 ### Hardware Back Button in a Browser or a PWA {/* #hardware-back-button-in-a-browser-or-a-pwa */}
 
@@ -400,8 +397,8 @@ In Ionic Angular, `IonRouterOutlet` can only be injected into components rendere
 
 The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
 
-| Handler    | Priority | Propagates | Description                                                                                                                 |
-| ---------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, and `ion-picker`. |
-| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                      |
-| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                       |
+| Handler | Priority | Propagates | Description |
+| --- | --- | --- | --- |
+| Overlays | 100 | No | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, and `ion-picker`. |
+| Menu | 99 | No | Applies to `ion-menu`. |
+| Navigation | 0 | Yes | Applies to routing navigation (i.e. Angular Routing). |

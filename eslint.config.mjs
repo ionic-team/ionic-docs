@@ -56,6 +56,12 @@ export default [
     // Code samples are page content, not markup, so they are not linted.
     files: docsDirs.map((dir) => `${dir}/**/*.mdx`),
     plugins: { ...mdx.flat.plugins, '@docusaurus': docusaurus },
-    rules: { ...mdx.flat.rules, ...rules },
+    rules: {
+      ...mdx.flat.rules,
+      ...rules,
+      // Runs the remark plugins in .remarkrc.mjs. The preset only warns, which
+      // does not fail the lint.
+      'mdx/remark': 'error',
+    },
   },
 ];

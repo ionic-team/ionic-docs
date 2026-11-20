@@ -1,5 +1,6 @@
 ---
 title: 'ion-item'
+description: "ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more."
 ---
 
 import Props from '@ionic-internal/component-api/v8/item/props.mdx';
@@ -15,21 +16,17 @@ import BestPracticeFigure from '@components/global/BestPracticeFigure';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
-  <meta
-    name="description"
-    content="ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [List](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
+Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [List](./list.mdx) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
 ## Basic Usage {/* #basic-usage */}
 
-Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](/layout/css-utilities.mdx) for more classes that can be added to an item to transform the text.
+Items left align text and wrap when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-nowrap` in the below example. Refer to the [CSS Utilities Documentation](../layout/css-utilities.mdx) for more classes that can be added to an item to transform the text.
 
 import Basic from '@site/static/usage/v8/item/basic/index.mdx';
 
@@ -41,7 +38,7 @@ While items in a list take many forms, they typically support 5 different conten
 
 ### Supporting Visuals {/* #supporting-visuals */}
 
-Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the item, it is typically hidden from screen readers using `aria-hidden="true"`.
+Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar.mdx), [Icons](./icon.mdx), and [Thumbnails](./thumbnail.mdx). Since this content is not required to understand the intent of the item, it is typically hidden from screen readers using `aria-hidden="true"`.
 
 If a visual is required to interact with the item, such as an icon button, then the visual is an [action](#actions) not a supporting visual.
 
@@ -101,7 +98,7 @@ In the example below, we are creating a list with different types of text. The "
 
 The "Allow Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
 
-Below that list is another list containing a textarea with a [Note](./note) containing long text underneath. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
+Below that list is another list containing a textarea with a [Note](./note.mdx) containing long text underneath. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
 
 import Text from '@site/static/usage/v8/item/content-types/text/index.mdx';
 
@@ -109,7 +106,7 @@ import Text from '@site/static/usage/v8/item/content-types/text/index.mdx';
 
 ### Metadata {/* #metadata */}
 
-Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
+Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge.mdx) or [Note](./note.mdx) are great ways of showing metadata.
 
 <BestPracticeFigure
   text="Limit the amount of metadata you include to only the most relevant information."
@@ -147,7 +144,7 @@ Metadata provides additional context for an item such as status text or counts. 
   }
 />
 
-In the example below, we are creating two lists with different kinds of metadata. The first list uses [Note](./note) to show how many tasks are in each to-do list.
+In the example below, we are creating two lists with different kinds of metadata. The first list uses [Note](./note.mdx) to show how many tasks are in each to-do list.
 
 The second list mimics the iOS Mail app to show an inbox. This list makes use of custom metadata including an "unread message" indicator in the "start" slot as well as a timestamp and custom detail icon in the "end" slot. The "unread message" indicator is highlighted in blue to draw the user's attention to the unread messages, while the timestamp is more subtle.
 
@@ -337,10 +334,10 @@ import CSSProps from '@site/static/usage/v8/item/theming/css-properties/index.md
 
 The following guidelines will help ensure your list items are easy to understand and use.
 
-1. Items should only be used inside of [Lists](./list).
+1. Items should only be used inside of [Lists](./list.mdx).
 2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
 3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
-4. Use [content types](#content-types) correctly. The Item component is designed to be a row in a [List](./list) and should not be used as a general purpose container.
+4. Use [content types](#content-types) correctly. The Item component is designed to be a row in a [List](./list.mdx) and should not be used as a general purpose container.
 
 ## Accessibility {/* #accessibility */}
 
@@ -361,10 +358,10 @@ An `<ion-item>` has the following keyboard interactions when any of these condit
 
 When an `<ion-item>` renders a native `<button>` element, the keyboard interactions follow the same pattern as the [button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role#keyboard_interactions):
 
-| Key              | Description                                                                                                                           |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Key | Description |
+| --- | --- |
 | <kbd>Enter</kbd> | Activates the item, triggering its `click` event. If the item is within a form and has `type` set to `"submit"`, it submits the form. |
-| <kbd>Space</kbd> | Activates the item, triggering its `click` event. Does not submit the form, even if the item `type` is `"submit"`.                    |
+| <kbd>Space</kbd> | Activates the item, triggering its `click` event. Does not submit the form, even if the item `type` is `"submit"`. |
 
 #### Anchor {/* #anchor */}
 

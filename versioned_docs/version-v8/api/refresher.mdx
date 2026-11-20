@@ -1,5 +1,6 @@
 ---
 title: 'ion-refresher'
+description: 'ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data.'
 ---
 
 import Props from '@ionic-internal/component-api/v8/refresher/props.mdx';
@@ -11,10 +12,6 @@ import Slots from '@ionic-internal/component-api/v8/refresher/slots.mdx';
 
 <head>
   <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>
-  <meta
-    name="description"
-    content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -41,7 +38,7 @@ import PullProperties from '@site/static/usage/v8/refresher/pull-properties/inde
 
 ## Custom Refresher Content {/* #custom-refresher-content */}
 
-The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
+The default icon, spinner, and text can be customized on the [refresher content](./refresher-content.mdx) based on whether the state of the refresher is `pulling` or `refreshing`.
 
 Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
 
@@ -59,7 +56,7 @@ The native refresher uses a `circular` spinner for Material Design, while iOS us
 
 Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. Refer to [Properties](#properties) for more information on unsupported properties.
 
-The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. Refer to the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
+The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. Refer to the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner.mdx) documentation for accepted values.
 
 ## Usage with Virtual Scroll {/* #usage-with-virtual-scroll */}
 

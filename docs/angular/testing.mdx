@@ -1,13 +1,10 @@
 ---
 title: Testing
+description: 'Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components.'
 ---
 
 <head>
   <title>Angular Unit and End-to-End Testing for Ionic App Components</title>
-  <meta
-    name="description"
-    content="Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components."
-  />
 </head>
 
 When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application:
@@ -25,7 +22,9 @@ The generated `package.json` includes scripts for running them:
 | `npm run test:e2e`        | Runs the end-to-end tests, starting the dev server for them. |
 
 :::note
+
 Playwright downloads its browsers separately from the npm package. Run `npx playwright install` once before running the end-to-end tests for the first time.
+
 :::
 
 ## Testing Principles {/* #testing-principles */}
@@ -404,7 +403,9 @@ export class TabsPage {
 ```
 
 :::note
+
 Ionic keeps pages in the navigation stack, and tabs that have been visited, in the DOM after navigating away from them, hiding them instead of removing them. Use `filter({ visible: true })` when the same element, such as `ion-title`, can appear on more than one page.
+
 :::
 
 #### Testing Scripts {/* #testing-scripts */}

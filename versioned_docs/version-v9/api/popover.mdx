@@ -1,5 +1,6 @@
 ---
 title: 'ion-popover'
+description: 'ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices.'
 ---
 
 import Props from '@ionic-internal/component-api/v9/popover/props.mdx';
@@ -11,10 +12,6 @@ import Slots from '@ionic-internal/component-api/v9/popover/slots.mdx';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
-  <meta
-    name="description"
-    content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -214,14 +211,14 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 `ion-popover` has full arrow key support for navigating between `ion-item` elements with the `button` property. The most common use case for this is as a dropdown menu. In addition to the basic keyboard support, the following table details arrow key support for dropdown menus:
 
-| Key                                                           | Description                                                                               |
-| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| <kbd>ArrowUp</kbd>                                            | Moves focus to the previous focusable element.                                            |
-| <kbd>ArrowDown</kbd>                                          | Moves focus to the next focusable element.                                                |
-| <kbd>Home</kbd>                                               | Moves focus to the first focusable element.                                               |
-| <kbd>End</kbd>                                                | Moves focus to the last focusable element.                                                |
-| <kbd>ArrowLeft</kbd>                                          | When used in a child popover, closes the popover and returns focus to the parent popover. |
-| <kbd>Space</kbd>, <kbd>Enter</kbd>, and <kbd>ArrowRight</kbd> | When focusing a trigger element, opens the associated popover.                            |
+| Key | Description |
+| --- | --- |
+| <kbd>ArrowUp</kbd> | Moves focus to the previous focusable element. |
+| <kbd>ArrowDown</kbd> | Moves focus to the next focusable element. |
+| <kbd>Home</kbd> | Moves focus to the first focusable element. |
+| <kbd>End</kbd> | Moves focus to the last focusable element. |
+| <kbd>ArrowLeft</kbd> | When used in a child popover, closes the popover and returns focus to the parent popover. |
+| <kbd>Space</kbd>, <kbd>Enter</kbd>, and <kbd>ArrowRight</kbd> | When focusing a trigger element, opens the associated popover. |
 
 ## Performance {/* #performance */}
 
