@@ -13,7 +13,7 @@ Ionic Config は、アプリ全体でコンポーネントのプロパティを�
 
 次の例では、リップル効果を無効にし、モードを Material Design にデフォルト設定します：
 
-import GlobalExample from '@site/docs/developing/config/global/index.mdx';
+import GlobalExample from './config/_global.mdx';
 
 <GlobalExample />
 
@@ -21,7 +21,7 @@ import GlobalExample from '@site/docs/developing/config/global/index.mdx';
 
 Ionic Config はリアクティブではありません。コンポーネントがレンダリングされた後に設定の値を更新しても、以前の値のままになります。リアクティブな値が必要な場合は、設定を更新する代わりに、コンポーネントのプロパティを使用することをお勧めします。
 
-import PerComponentExample from '@site/docs/developing/config/per-component/index.mdx';
+import PerComponentExample from './config/_per-component.mdx';
 
 <PerComponentExample />
 
@@ -31,7 +31,7 @@ Ionic Config は、プラットフォームごとに設定することもでき�
 
 次の例では、モバイル Web ブラウザでアプリが実行されている場合にのみ、Ionic アプリのすべてのアニメーションを無効にしています。
 
-import PerPlatformExample from '@site/docs/developing/config/per-platform/index.mdx';
+import PerPlatformExample from './config/_per-platform.mdx';
 
 <PerPlatformExample />
 
@@ -39,7 +39,7 @@ import PerPlatformExample from '@site/docs/developing/config/per-platform/index.
 
 次の例では、プラットフォームに基づいて完全に異なる設定を設定でき、プラットフォームが一致しない場合はデフォルト設定にフォールバックします：
 
-import PerPlatformFallbackExample from '@site/docs/developing/config/per-platform-overrides/index.mdx';
+import PerPlatformFallbackExample from './config/_per-platform-fallback.mdx';
 
 <PerPlatformFallbackExample />
 
@@ -47,7 +47,7 @@ import PerPlatformFallbackExample from '@site/docs/developing/config/per-platfor
 
 この最後の例では、異なるプラットフォーム要件に基づいて設定オブジェクトを累積できます。
 
-import PerPlatformOverridesExample from '@site/docs/developing/config/per-platform-fallback/index.mdx';
+import PerPlatformOverridesExample from './config/_per-platform-overrides.mdx';
 
 <PerPlatformOverridesExample />
 
