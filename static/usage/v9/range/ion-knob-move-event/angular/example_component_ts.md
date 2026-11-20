@@ -11,12 +11,12 @@ import { IonRange, RangeKnobMoveEndCustomEvent, RangeKnobMoveStartCustomEvent } 
 export class ExampleComponent {
   onIonKnobMoveStart(event: RangeKnobMoveStartCustomEvent) {
     const { knob, position, value } = event.detail;
-    console.log('ionKnobMoveStart:', knob, position, value);
+    console.log('ionKnobMoveStart:', knob, position, JSON.stringify(value));
   }
 
   onIonKnobMoveEnd(event: RangeKnobMoveEndCustomEvent) {
     const { knob, position, value } = event.detail;
-    console.log('ionKnobMoveEnd:', knob, position, value);
+    console.log('ionKnobMoveEnd:', knob, position, JSON.stringify(value));
   }
 }
 ```

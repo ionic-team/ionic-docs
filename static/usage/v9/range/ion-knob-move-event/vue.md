@@ -13,11 +13,11 @@
   import { IonRange } from '@ionic/vue';
 
   const onIonKnobMoveStart = ({ detail }) => {
-    console.log('ionKnobMoveStart:', detail.knob, detail.position, detail.value);
+    console.log('ionKnobMoveStart:', detail.knob, detail.position, JSON.stringify(detail.value));
   };
 
   const onIonKnobMoveEnd = ({ detail }) => {
-    console.log('ionKnobMoveEnd:', detail.knob, detail.position, detail.value);
+    console.log('ionKnobMoveEnd:', detail.knob, detail.position, JSON.stringify(detail.value));
   };
 </script>
 ```

@@ -11,8 +11,12 @@ function Example() {
         lower: 20,
         upper: 80,
       }}
-      onIonKnobMoveStart={({ detail }) => console.log('ionKnobMoveStart:', detail.knob, detail.position, detail.value)}
-      onIonKnobMoveEnd={({ detail }) => console.log('ionKnobMoveEnd:', detail.knob, detail.position, detail.value)}
+      onIonKnobMoveStart={({ detail }) =>
+        console.log('ionKnobMoveStart:', detail.knob, detail.position, JSON.stringify(detail.value))
+      }
+      onIonKnobMoveEnd={({ detail }) =>
+        console.log('ionKnobMoveEnd:', detail.knob, detail.position, JSON.stringify(detail.value))
+      }
     ></IonRange>
   );
 }
