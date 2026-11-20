@@ -1,14 +1,11 @@
 ---
 title: Ionic Page Life Cycle
+description: 'This guide covers how the page life cycle works in an Ionic app built with Angular. Learn how Ionic embraces life cycle events provided by Angular components.'
 sidebar_label: Lifecycle
 ---
 
 <head>
   <title>Angular Page Component Life Cycle - App Events Documentation</title>
-  <meta
-    name="description"
-    content="This guide covers how the page life cycle works in an Ionic app built with Angular. Learn how Ionic embraces life cycle events provided by Angular components."
-  />
 </head>
 
 This guide covers how the page life cycle works in an app built with Ionic and Angular.
@@ -19,10 +16,10 @@ This guide covers how the page life cycle works in an app built with Ionic and A
 
 Ionic embraces the life cycle events provided by Angular. The two Angular events you will find using the most are:
 
-| Event Name    | Description                                                                                                                                                 |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ngOnInit`    | Fired once during component initialization. This event can be used to initialize local members and make calls into services that only need to be done once. |
-| `ngOnDestroy` | Fired right before Angular destroys the view. Useful for cleanup like unsubscribing from observables.                                                       |
+| Event Name | Description |
+| --- | --- |
+| `ngOnInit` | Fired once during component initialization. This event can be used to initialize local members and make calls into services that only need to be done once. |
+| `ngOnDestroy` | Fired right before Angular destroys the view. Useful for cleanup like unsubscribing from observables. |
 
 For more info on the Angular Component Life Cycle events, visit their [component lifecycle docs](https://angular.io/guide/lifecycle-hooks).
 

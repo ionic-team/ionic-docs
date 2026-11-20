@@ -1,14 +1,11 @@
 ---
 title: Ionic Angular Quickstart
+description: 'Ionic Angular Quickstart covers the basics of Angular and Ionic, including any Ionic-specific features. Learn how to build Angular apps using the Ionic CLI.'
 sidebar_label: Quickstart
 ---
 
 <head>
   <title>Ionic Angular Quickstart Using Ionic CLI: Angular Basics</title>
-  <meta
-    name="description"
-    content="Ionic Angular Quickstart covers the basics of Angular and Ionic, including any Ionic-specific features. Learn how to build Angular apps using the Ionic CLI."
-  />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
@@ -16,12 +13,11 @@ import DocsCards from '@components/global/DocsCards';
 
 Welcome! This guide will walk you through the basics of Ionic Angular development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Angular before building your first real app.
 
-If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, refer to the [Ionic Angular Overview](overview).
+If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, refer to the [Ionic Angular Overview](./overview.mdx).
 
 ## Prerequisites {/* #prerequisites */}
 
-Before you begin, make sure you have Node.js and npm installed on your machine.
-You can check by running:
+Before you begin, make sure you have Node.js and npm installed on your machine. You can check by running:
 
 ```shell
 node -v
@@ -32,7 +28,7 @@ If you don't have Node.js and npm, [download Node.js](https://nodejs.org/en/down
 
 ## Create a Project with the Ionic CLI {/* #create-a-project-with-the-ionic-cli */}
 
-First, install the latest [Ionic CLI](../cli):
+First, install the latest [Ionic CLI](../cli.mdx):
 
 ```shell
 npm install -g @ionic/cli
@@ -174,17 +170,17 @@ And the template, in the `home.page.html` file, uses those components:
 </ion-content>
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/api/title.mdx#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](../api/title.mdx#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
 
 :::tip[Learn More]
 
-For detailed information about Ionic layout components, refer to the [Header](/api/header.mdx), [Toolbar](/api/toolbar.mdx), [Title](/api/title.mdx), and [Content](/api/content.mdx) documentation.
+For detailed information about Ionic layout components, refer to the [Header](../api/header.mdx), [Toolbar](../api/toolbar.mdx), [Title](../api/title.mdx), and [Content](../api/content.mdx) documentation.
 
 :::
 
 ## Add an Ionic Component {/* #add-an-ionic-component */}
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/api/button.mdx) at the end of the `ion-content`:
+You can enhance your Home page with more Ionic UI components. For example, add a [Button](../api/button.mdx) at the end of the `ion-content`:
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -215,7 +211,7 @@ ionic generate page new
 
 A route will be automatically added to `app.routes.ts`.
 
-In `new.page.html`, you can add a [Back Button](/api/back-button.mdx) to the [Toolbar](/api/toolbar.mdx):
+In `new.page.html`, you can add a [Back Button](../api/back-button.mdx) to the [Toolbar](../api/toolbar.mdx):
 
 ```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
@@ -262,7 +258,7 @@ import { RouterLink } from '@angular/router';
 
 :::info
 
-Navigating can also be performed using Angular's Router service. Refer to the [Angular Navigation documentation](/angular/navigation.mdx#navigating-to-different-routes) for more information.
+Navigating can also be performed using Angular's Router service. Refer to the [Angular Navigation documentation](./navigation.mdx#navigating-to-different-routes) for more information.
 
 :::
 
@@ -307,7 +303,7 @@ export class NewPage implements OnInit {
 
 Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
 
-For more information, refer to the [Icon documentation](/api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
+For more information, refer to the [Icon documentation](../api/icon.mdx) and the [Ionicons documentation](https://ionic.io/ionicons/).
 
 ## Call Component Methods {/* #call-component-methods */}
 
@@ -393,7 +389,7 @@ To call methods on Ionic components:
 1. Create a `ViewChild` reference for the component
 2. Call the method directly on the component instance
 
-You can find available methods for each component in the [Methods](/api/content.mdx#methods) section of their API documentation.
+You can find available methods for each component in the [Methods](../api/content.mdx#methods) section of their API documentation.
 
 ## Run on a Device {/* #run-on-a-device */}
 
@@ -420,7 +416,7 @@ This guide covered the basics of creating an Ionic Angular app, adding navigatio
 
 <DocsCards>
 
-<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
+<DocsCard header="Build Your First App" href="/angular/your-first-app" icon="/icons/component-content-icon.png">
   <p>Build a real Photo Gallery app with Ionic Angular and native device features.</p>
 </DocsCard>
 
@@ -428,7 +424,7 @@ This guide covered the basics of creating an Ionic Angular app, adding navigatio
   <p>Learn more about Angular's core concepts, tools, and best practices from the official Angular documentation.</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
+<DocsCard header="Navigation" href="/angular/navigation" icon="/icons/component-navigation-icon.png">
   <p>Discover how to handle routing and navigation in Ionic Angular apps using the Angular Router.</p>
 </DocsCard>
 

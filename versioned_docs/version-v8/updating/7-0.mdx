@@ -1,12 +1,13 @@
 ---
 title: Updating to v7
+description: 'Update an Ionic 6 app to Ionic 7, with the package updates for each framework and the breaking changes to review in your code.'
 ---
 
 # Updating from Ionic 6 to 7
 
 :::note
 
-This guide assumes that you have already updated your app to the latest version of Ionic 6. Make sure you have followed the [Upgrading to Ionic 6 Guide](./6-0) before starting this guide.
+This guide assumes that you have already updated your app to the latest version of Ionic 6. Make sure you have followed the [Upgrading to Ionic 6 Guide](./6-0.mdx) before starting this guide.
 
 :::
 
@@ -81,7 +82,7 @@ npm install @ionic/core@7
 
 ### Browser Support {/* #browser-support */}
 
-The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
+The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support.mdx) to ensure you are deploying apps to supported browsers.
 
 If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
 
@@ -113,7 +114,7 @@ iOS >=14
 
 ### Modal {/* #modal */}
 
-1. Remove any usage of the `swipeToClose` property. Card modals are swipeable by default, so you can remove `swipeToClose` if you want your card modal to remain swipeable. Use the [canDismiss](https://ionicframework.com/docs/api/modal#preventing-a-modal-from-dismissing) property if you want to prevent a modal from dismissing.
+1. Remove any usage of the `swipeToClose` property. Card modals are swipeable by default, so you can remove `swipeToClose` if you want your card modal to remain swipeable. Use the [canDismiss](../api/modal.mdx#preventing-a-modal-from-dismissing) property if you want to prevent a modal from dismissing.
 2. Remove any code that sets the `canDismiss` property to `undefined`. The `canDismiss` property now defaults to `true`, so this code is no longer needed.
 
 ### Picker {/* #picker */}
@@ -132,9 +133,7 @@ iOS >=14
 
 1. Remove `ion-slides`, `ion-slide`, and any associated types. These components have been removed in favor of using Swiper.js directly. The guides below contain more information about this migration:
 
-[Angular Migration Guide](https://ionicframework.com/docs/angular/slides)<br />
-[React Migration Guide](https://ionicframework.com/docs/react/slides)<br />
-[Vue Migration Guide](https://ionicframework.com/docs/vue/slides)
+[Angular Migration Guide](../angular/slides.mdx)<br /> [React Migration Guide](../react/slides.mdx)<br /> [Vue Migration Guide](../vue/slides.mdx)
 
 ### Textarea {/* #textarea */}
 
@@ -148,9 +147,7 @@ iOS >=14
 
 1. Remove `ion-virtual-scroll` and any associated types. This component has been removed in favor of using virtual scroll solutions provided by JavaScript Frameworks. The guides below contain more information about this migration:
 
-[Angular Migration Guide](https://ionicframework.com/docs/angular/virtual-scroll)<br />
-[React Migration Guide](https://ionicframework.com/docs/react/virtual-scroll)<br />
-[Vue Migration Guide](https://ionicframework.com/docs/vue/virtual-scroll)
+[Angular Migration Guide](../angular/virtual-scroll.mdx)<br /> [React Migration Guide](../react/virtual-scroll.mdx)<br /> [Vue Migration Guide](../vue/virtual-scroll.mdx)
 
 ## Need Help Upgrading? {/* #need-help-upgrading */}
 

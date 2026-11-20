@@ -1,5 +1,6 @@
 ---
 title: Managing Focus
+description: 'Learn how to manage focus in Ionic applications using the setFocus API instead of the autofocus attribute.'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,15 +8,11 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Managing Focus</title>
-  <meta
-    name="description"
-    content="Learn how to manage focus in Ionic applications using the setFocus API instead of the autofocus attribute."
-  />
 </head>
 
 ## Manual Focus Management {/* #manual-focus-management */}
 
-Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
+Ionic provides a `setFocus` API on components such as [Input](../api/input.mdx), [Searchbar](../api/searchbar.mdx), and [Textarea](../api/textarea.mdx) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
 
 - The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
 - The `didPresent` lifecycle event for overlays when an overlay is presented.
@@ -245,7 +242,7 @@ export default Home;
 
 By default, Single Page Applications have no built-in way of informing screen readers that the active view has changed in a browser or webview. This means that users who rely on assistive technology do not always know if a navigation event occurred.
 
-Developers who enable the [focusManagerPriority config](./config#ionicconfig) can delegate focus management to Ionic during page transitions. When enabled, Ionic will move focus to the correct element as specified in the config option. This will inform screen readers that a navigation event occurred.
+Developers who enable the [focusManagerPriority config](./config.mdx#ionicconfig) can delegate focus management to Ionic during page transitions. When enabled, Ionic will move focus to the correct element as specified in the config option. This will inform screen readers that a navigation event occurred.
 
 ### Types {/* #types */}
 
@@ -257,15 +254,15 @@ type FocusManagerPriority = 'content' | 'heading' | 'banner';
 
 The following table explains what each content type represents:
 
-| Type      | Description                   | Ionic Component           | Semantic HTML Equivalent                                                     | Landmark Equivalent                                                                                                                                                                                                   |
-| --------- | ----------------------------- | ------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `content` | The main portion of the view. | [Content](../api/content) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)     | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)                                                                                                                      |
-| `heading` | The title of the view.        | [Title](../api/title)     | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)         | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) with [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
-| `banner`  | The header of the view.       | [Header](../api/header)   | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
+| Type | Description | Ionic Component | Semantic HTML Equivalent | Landmark Equivalent |
+| --- | --- | --- | --- | --- |
+| `content` | The main portion of the view. | [Content](../api/content.mdx) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) |
+| `heading` | The title of the view. | [Title](../api/title.mdx) | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1) | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) with [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
+| `banner` | The header of the view. | [Header](../api/header.mdx) | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role) |
 
 :::important
 
-Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title) on each view. Since multiple [Title](../api/title) components can be used in a single view, Ionic does not automatically assign these attributes.
+Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title.mdx) on each view. Since multiple [Title](../api/title.mdx) components can be used in a single view, Ionic does not automatically assign these attributes.
 
 :::
 

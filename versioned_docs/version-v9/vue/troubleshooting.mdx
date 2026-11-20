@@ -1,13 +1,10 @@
 ---
 title: Troubleshooting
+description: 'This troubleshooting guide covers some of the more common issues you may run into when developing apps with Ionic Vue. Read to learn more about troubleshooting.'
 ---
 
 <head>
   <title>Ionic Troubleshooting Guide: Common Vue App Development Issues</title>
-  <meta
-    name="description"
-    content="This troubleshooting guide covers some of the more common issues you may run into when developing apps with Ionic Vue. Read to learn more about troubleshooting."
-  />
 </head>
 
 This guide covers some of the more common issues you may run into when developing with Ionic Vue.
@@ -36,7 +33,7 @@ import { IonButton } from '@ionic/vue';
 </script>
 ```
 
-Prefer to register your components globally once? We have you covered. Our [Build Options Guide](/vue/build-options.mdx#global-component-registration) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
+Prefer to register your components globally once? We have you covered. Our [Build Options Guide](./build-options.mdx#global-component-registration) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
 
 ## Slot attributes are deprecated {/* #slot-attributes-are-deprecated */}
 
@@ -77,7 +74,7 @@ ionContentRef.value.scrollToBottom();
 
 In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
 
-Refer to the [Quickstart Guide](/vue/quickstart.mdx#call-component-methods) for more information.
+Refer to the [Quickstart Guide](./quickstart.mdx#call-component-methods) for more information.
 
 ## Page transitions are not working {/* #page-transitions-are-not-working */}
 
@@ -100,7 +97,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 </script>
 ```
 
-Refer to the [IonPage documentation](navigation.mdx#ionpage) for more information.
+Refer to the [IonPage documentation](./navigation.mdx#ionpage) for more information.
 
 ## Ionic events bound in JavaScript are not firing {/* #ionic-events-bound-in-javascript-are-not-firing */}
 

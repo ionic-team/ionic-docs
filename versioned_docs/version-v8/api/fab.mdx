@@ -1,5 +1,6 @@
 ---
 title: 'ion-fab'
+description: 'Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework.'
 ---
 
 import Props from '@ionic-internal/component-api/v8/fab/props.mdx';
@@ -11,17 +12,13 @@ import Slots from '@ionic-internal/component-api/v8/fab/slots.mdx';
 
 <head>
   <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>
-  <meta
-    name="description"
-    content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Fabs are container elements that contain one or more [fab buttons](./fab-button). They should be placed in a fixed position that does not scroll with the content. Fabs should have one main fab button. Fabs can also contain one or more [fab lists](./fab-list) which contain related buttons that show when the main fab button is clicked.
+Fabs are container elements that contain one or more [fab buttons](./fab-button.mdx). They should be placed in a fixed position that does not scroll with the content. Fabs should have one main fab button. Fabs can also contain one or more [fab lists](./fab-list.mdx) which contain related buttons that show when the main fab button is clicked.
 
 ## Basic Usage {/* #basic-usage */}
 
@@ -31,7 +28,7 @@ import BasicUsage from '@site/static/usage/v8/fab/basic/index.mdx';
 
 ## List Side {/* #list-side */}
 
-The `side` property of the [fab list](./fab-list) component controls where it appears relative to the main fab button. A single fab can have multiple fab lists as long as they all have different values for `side`.
+The `side` property of the [fab list](./fab-list.mdx) component controls where it appears relative to the main fab button. A single fab can have multiple fab lists as long as they all have different values for `side`.
 
 import ListSide from '@site/static/usage/v8/fab/list-side/index.mdx';
 
@@ -39,7 +36,7 @@ import ListSide from '@site/static/usage/v8/fab/list-side/index.mdx';
 
 ## Positioning {/* #positioning */}
 
-In order to place the fab in a fixed position, it should be assigned to the `fixed` slot of the outer [content](./content) component. Use the `vertical` and `horizontal` props to control the alignment of the fab in the viewport. The `edge` prop will cause the fab button to overlap with the app's header or footer.
+In order to place the fab in a fixed position, it should be assigned to the `fixed` slot of the outer [content](./content.mdx) component. Use the `vertical` and `horizontal` props to control the alignment of the fab in the viewport. The `edge` prop will cause the fab button to overlap with the app's header or footer.
 
 import Positioning from '@site/static/usage/v8/fab/positioning/index.mdx';
 
@@ -47,7 +44,7 @@ import Positioning from '@site/static/usage/v8/fab/positioning/index.mdx';
 
 ### Safe Area {/* #safe-area */}
 
-If there is no `ion-header` or `ion-footer` component, the fab may be covered by a device's notch, status bar, or other device UI. In these cases, the [safe area](/theming/advanced.mdx#safe-area-padding) on the top and bottom is not taken into account. This can be adjusted by using the [`--ion-safe-area-(dir)` variables](/theming/advanced.mdx#application-variables).
+If there is no `ion-header` or `ion-footer` component, the fab may be covered by a device's notch, status bar, or other device UI. In these cases, the [safe area](../theming/advanced.mdx#safe-area-padding) on the top and bottom is not taken into account. This can be adjusted by using the [`--ion-safe-area-(dir)` variables](../theming/advanced.mdx#application-variables).
 
 When using a fab with `vertical` set to `"top"` without an `ion-header`, the top margin needs to be set:
 
@@ -75,7 +72,7 @@ import SafeArea from '@site/static/usage/v8/fab/safe-area/index.mdx';
 
 In scenarios where a view contains many interactive elements, such as an infinitely-scrolling list, it may be challenging for users to navigate to the Floating Action Button (FAB) if it is placed below all the items in the DOM.
 
-By setting the `fixedSlotPlacement` property on [Content](./content) to `before`, the FAB will be placed before the main content in the DOM. This ensures that the FAB receives keyboard focus before other interactive elements receive focus, making it easier for users to access the FAB.
+By setting the `fixedSlotPlacement` property on [Content](./content.mdx) to `before`, the FAB will be placed before the main content in the DOM. This ensures that the FAB receives keyboard focus before other interactive elements receive focus, making it easier for users to access the FAB.
 
 import BeforeContent from '@site/static/usage/v8/fab/before-content/index.mdx';
 

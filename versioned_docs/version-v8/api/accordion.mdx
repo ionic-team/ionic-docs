@@ -1,5 +1,6 @@
 ---
 title: 'ion-accordion'
+description: 'Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and explore examples.'
 ---
 
 import Props from '@ionic-internal/component-api/v8/accordion/props.mdx';
@@ -11,10 +12,6 @@ import Slots from '@ionic-internal/component-api/v8/accordion/slots.mdx';
 
 <head>
   <title>ion-accordion: Accordion Components: How to Build & Examples</title>
-  <meta
-    name="description"
-    content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and explore examples."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -41,7 +38,7 @@ import Toggle from '@site/static/usage/v8/accordion/toggle/index.mdx';
 
 :::caution
 
-Most `ionChange` events emitted by other components such as [Input](./input) and [Textarea](./textarea) bubble. As a result, these events will bubble up and cause your `ionChange` listener on the Accordion Group to fire if the associated components are used inside of an Accordion.
+Most `ionChange` events emitted by other components such as [Input](./input.mdx) and [Textarea](./textarea.mdx) bubble. As a result, these events will bubble up and cause your `ionChange` listener on the Accordion Group to fire if the associated components are used inside of an Accordion.
 
 When using other components that emit `ionChange` inside of Accordion it is recommended to have the `ionChange` callback on Accordion Group check the `target` key on the event passed to the callback to verify that `ionChange` is coming from the Accordion Group and not any descendants.
 
@@ -159,7 +156,7 @@ import Icons from '@site/static/usage/v8/accordion/customization/icons/index.mdx
 
 ### Theming {/* #theming */}
 
-Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
+Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item.mdx#css-custom-properties) and [ion-item Shadow Parts](./item.mdx#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
 
 import Theming from '@site/static/usage/v8/accordion/customization/theming/index.mdx';
 
@@ -179,15 +176,15 @@ import AccessibilityAnimations from '@site/static/usage/v8/accordion/accessibili
 
 When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
 
-| Key                                  | Description                                                                                                                                                                          |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <kbd>Space</kbd> or <kbd>Enter</kbd> | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component.                                                                |
-| <kbd>Tab</kbd>                       | Moves focus to the next focusable element.                                                                                                                                           |
-| <kbd>Shift</kbd> + <kbd>Tab</kbd>    | Moves focus to the previous focusable element.                                                                                                                                       |
-| <kbd>Down Arrow</kbd>                | - When focus is on an accordion header, moves focus to the next accordion header. <br />- When focus is on the last accordion header, moves focus to the first accordion header.     |
-| <kbd>Up Arrow</kbd>                  | - When focus is on an accordion header, moves focus to the previous accordion header. <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
-| <kbd>Home</kbd>                      | When focus is on an accordion header, moves focus to the first accordion header.                                                                                                     |
-| <kbd>End</kbd>                       | When focus is on an accordion header, moves focus to the last accordion header.                                                                                                      |
+| Key | Description |
+| --- | --- |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component. |
+| <kbd>Tab</kbd> | Moves focus to the next focusable element. |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd> | Moves focus to the previous focusable element. |
+| <kbd>Down Arrow</kbd> | - When focus is on an accordion header, moves focus to the next accordion header. <br />- When focus is on the last accordion header, moves focus to the first accordion header. |
+| <kbd>Up Arrow</kbd> | - When focus is on an accordion header, moves focus to the previous accordion header. <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
+| <kbd>Home</kbd> | When focus is on an accordion header, moves focus to the first accordion header. |
+| <kbd>End</kbd> | When focus is on an accordion header, moves focus to the last accordion header. |
 
 ## Performance {/* #performance */}
 
@@ -195,13 +192,13 @@ When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard sup
 
 The accordion animation works by knowing the height of the `content` slot when the animation starts. The accordion expects that this height will remain consistent throughout the animation. As a result, developers should avoid performing any operation that may change the height of the content during the animation.
 
-For example, using [ion-img](./img) may cause layout shifts as it lazily loads images. This means that as the animation plays, `ion-img` will load the image data, and the dimensions of `ion-img` will change to account for the loaded image data. This can result in the height of the `content` slot changing. Developers have a few options for avoiding this:
+For example, using [ion-img](./img.mdx) may cause layout shifts as it lazily loads images. This means that as the animation plays, `ion-img` will load the image data, and the dimensions of `ion-img` will change to account for the loaded image data. This can result in the height of the `content` slot changing. Developers have a few options for avoiding this:
 
 1. Use an `img` element without any lazy loading. `ion-img` always uses lazy loading, but `img` does not use lazy loading by default. This is the simplest option and works well if you have small images that do not significantly benefit from lazy loading.
 
 2. Set a minimum width and height on `ion-img`. If you need to use lazy loading and know the dimensions of the images ahead of time (such as if you are loading icons of the same size), you can set the `ion-img` to have a minimum width or height using CSS. This gives developers the benefit of lazy loading while avoiding layout shifts. This works when using an `img` element with `loading="lazy"` too!
 
-3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
+3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group.mdx).
 
 ## Properties {/* #properties */}
 

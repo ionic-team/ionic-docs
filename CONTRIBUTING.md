@@ -200,6 +200,10 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 
 `/docs` maps to `docs/index.mdx` through `slug: /` in its frontmatter. Older versions live in `versioned_docs/` and are served under their version, such as `/docs/v8/`.
 
+Every page needs a `description` in its frontmatter. Docusaurus uses it for the meta description, link previews, and llms.txt, and `npm run lint` flags a page without one. Files and folders whose names start with `_` are not pages, so use that prefix for a file that other pages only import, such as `developing/config/_global.mdx`.
+
+The frontmatter `title` names the page everywhere: its heading, the sidebar, cards, and link previews. To show a longer title only in search results and the browser tab, put it in `<head>`, such as `<head><title>ion-button: Style Buttons with Custom CSS Properties</title></head>`. A description in `<head>` has no such use, since Docusaurus only reads it from the frontmatter.
+
 Versions listed in [`versions.json`](versions.json) are actively maintained. If your change also applies to one of them, make the same change in its `versioned_docs/version-<name>/` folder. Versions listed in [`versionsArchived.json`](versionsArchived.json) are frozen deployments that are no longer built, so changes to their folders never reach the site.
 
 Markdown links resolve within their own version, but JSX paths such as `<Link to>` and `useBaseUrl` do not. In an older version, prefix them with the version, such as `<Link to="/v8/api/note">`.
@@ -218,12 +222,16 @@ Content
 :::
 ```
 
+Keep the blank lines after the opening marker, before the closing `:::`, and after it. `npm run lint` puts each paragraph on one line, so without them it merges the markers into the surrounding text and the admonition renders as plain text.
+
 ### Links and Headings
 
 Use Markdown for links and headings whenever possible. When you need JSX, such as inside a component prop or in `src/`, use the Docusaurus components instead of raw HTML:
 
 - [`<Link>`](https://docusaurus.io/docs/docusaurus-core#link) from `@docusaurus/Link` instead of `<a>`. It handles the base URL and locale, and opens external URLs in a new tab with `rel="noopener noreferrer"`.
 - [`<Heading>`](https://docusaurus.io/docs/api/misc/@docusaurus/eslint-plugin/prefer-docusaurus-heading) from `@theme/Heading` instead of `<h2>` to `<h6>`.
+
+Link to another doc by its relative file path, with the extension, such as `[Accordion](./accordion.mdx)` or `[Config](../developing/config.mdx)`. Docusaurus resolves it to the page in the same version, the build fails if the file doesn't exist, and editors can follow it to the file. A JSX prop such as `href` skips that step, so use the URL path without `/docs` or an extension instead: `/api/accordion`, or `/v8/api/accordion` on a v8 page. `npm run lint` flags a link in either form that doesn't follow this.
 
 The build only checks links and anchors that go through Markdown or these components. A raw `<a href>` to a page that doesn't exist builds without errors, and a raw heading's `id` can't be used as a link target.
 

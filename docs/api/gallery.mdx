@@ -1,5 +1,6 @@
 ---
 title: 'ion-gallery'
+description: 'The gallery arranges images, cards, and other content in responsive uniform or masonry layouts with configurable column counts and masonry ordering modes.'
 ---
 
 import Props from '@ionic-internal/component-api/v10/gallery/props.mdx';
@@ -11,10 +12,6 @@ import Slots from '@ionic-internal/component-api/v10/gallery/slots.mdx';
 
 <head>
   <title>ion-gallery: Responsive Uniform and Masonry Gallery Layouts</title>
-  <meta
-    name="description"
-    content="The gallery arranges images, cards, and other content in responsive uniform or masonry layouts with configurable column counts and masonry ordering modes."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -64,6 +61,7 @@ import MasonryBestFit from '@site/static/usage/v10/gallery/masonry-best-fit/inde
 An `img` placed directly inside a Gallery Item is given default styles to ensure consistent rendering. These styles make images fill their cell while preserving their aspect ratio and keeping them centered.
 
 :::tip
+
 Images wrapped in another element (for example, inside a `figure`) do not receive these defaults. Apply the same styles to the nested `img` if you want matching behavior, for example:
 
 ```css
@@ -114,7 +112,9 @@ Whether provided as a single value or as a value inside a breakpoint map, each g
 If no value is provided, or if an invalid value is used, the Gallery falls back to its default gap value. The default value is `16px`.
 
 :::tip
+
 Use the `gap` property to space items apart rather than CSS margins. Margins set on item content are reset so they cannot disrupt the layout calculations, so they will not produce the spacing you expect. Use `gap` for the space _between_ items, and `padding` on your content to inset it _within_ an item.
+
 :::
 
 import Gap from '@site/static/usage/v10/gallery/gap/index.mdx';

@@ -1,5 +1,6 @@
 ---
 title: 'ion-segment'
+description: 'ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage.'
 ---
 
 import Props from '@ionic-internal/component-api/v10/segment/props.mdx';
@@ -11,10 +12,6 @@ import Slots from '@ionic-internal/component-api/v10/segment/slots.mdx';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
-  <meta
-    name="description"
-    content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -27,7 +24,7 @@ Their functionality is similar to tabs, where selecting one will deselect all ot
 
 ## Basic Usage {/* #basic-usage */}
 
-Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
+Segments consist of [segment buttons](./segment-button.mdx) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
 
 import Basic from '@site/static/usage/v10/segment/basic/index.mdx';
 
@@ -44,15 +41,14 @@ import Scrollable from '@site/static/usage/v10/segment/scrollable/index.mdx';
 ## Segments in Toolbars {/* #segments-in-toolbars */}
 
 {/* Reuse the playground from the Toolbar directory */}
+
 import Toolbar from '@site/static/usage/v10/toolbar/segments/index.mdx';
 
 <Toolbar />
 
 ## Swipeable Segments {/* #swipeable-segments */}
 
-Each [segment button](./segment-button.mdx) can be associated with a [segment content](./segment-content.mdx) element that will be displayed
-when the segment is active. With this approach, each segment's content can be swiped or scrolled between and the segment will be updated
-to reflect the currently visible content.
+Each [segment button](./segment-button.mdx) can be associated with a [segment content](./segment-content.mdx) element that will be displayed when the segment is active. With this approach, each segment's content can be swiped or scrolled between and the segment will be updated to reflect the currently visible content.
 
 :::warning
 

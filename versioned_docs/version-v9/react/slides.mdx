@@ -1,13 +1,10 @@
 ---
 title: Migrating From IonSlides to Swiper.js
+description: 'We recommend Swiper.js if you need a modern touch slider component. Get Swiper for React set up in your application and learn how to migrate from IonSlides.'
 ---
 
 <head>
   <title>Set Up Swiper.js for React Slides [Example] | Ionic</title>
-  <meta
-    name="description"
-    content="We recommend Swiper.js if you need a modern touch slider component. Get Swiper for React set up in your application and learn how to migrate from IonSlides."
-  />
 </head>
 
 :::warning[Looking for `IonSlides`?]
@@ -358,12 +355,12 @@ const MyComponent: React.FC = () => {
 
 Below is a full list of property changes when going from `IonSlides` to Swiper React:
 
-| Name      | Notes                                                                                                                 |
-| --------- | --------------------------------------------------------------------------------------------------------------------- |
-| options   | Set each option as a property directly on the `<Swiper>` component.                                                   |
-| mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
+| Name | Notes |
+| --- | --- |
+| options | Set each option as a property directly on the `<Swiper>` component. |
+| mode | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
+| pager | Use the `pagination` property instead. Requires installation of the Pagination module. |
+| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
 
 :::note
 

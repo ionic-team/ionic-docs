@@ -1,13 +1,10 @@
 ---
 title: Migrating From ion-slides to Swiper.js
+description: 'Our Slides guide teaches how to get Swiper for Vue set up in Ionic apps. It has any info needed to move from ion-slides to the official Swiper Vue integration.'
 ---
 
 <head>
   <title>Vue Slides Guide: How to Get Swiper for Vue on Ionic Apps</title>
-  <meta
-    name="description"
-    content="Our Slides guide teaches how to get Swiper for Vue set up in Ionic apps. It has any info needed to move from ion-slides to the official Swiper Vue integration."
-  />
 </head>
 
 :::warning[Looking for `ion-slides`?]
@@ -296,12 +293,12 @@ To migrate, we would move these options out of the `options` object and onto the
 
 Below is a full list of property changes when going from `ion-slides` to Swiper Vue:
 
-| Name      | Notes                                                                                                                 |
-| --------- | --------------------------------------------------------------------------------------------------------------------- |
-| options   | Set each option as a property directly on the `<swiper>` component.                                                   |
-| mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
+| Name | Notes |
+| --- | --- |
+| options | Set each option as a property directly on the `<swiper>` component. |
+| mode | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
+| pager | Use the `pagination` property instead. Requires installation of the Pagination module. |
+| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
 
 :::note
 

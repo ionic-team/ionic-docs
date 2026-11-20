@@ -1,12 +1,13 @@
 ---
 title: Updating to v8
+description: 'Update an Ionic 7 app to Ionic 8, with the package updates for each framework and the breaking changes to review in your code.'
 ---
 
 # Updating from Ionic 7 to 8
 
 :::note
 
-This guide assumes that you have already updated your app to the latest version of Ionic 7. Make sure you have followed the [Upgrading to Ionic 7 Guide](./7-0) before starting this guide.
+This guide assumes that you have already updated your app to the latest version of Ionic 7. Make sure you have followed the [Upgrading to Ionic 7 Guide](./7-0.mdx) before starting this guide.
 
 :::
 
@@ -132,7 +133,7 @@ The dark palette is now applied to the `:root` selector instead of the `body` se
 
 While migrating to include the new dark palette files is unlikely to cause breaking changes, these new selectors can lead to unexpected overrides if custom CSS variables are being set on the `body` element. We recommend updating any instances where global application variables are set to target the `:root` selector instead.
 
-For more information on the new dark palette files, refer to the [Dark Mode documentation](../theming/dark-mode).
+For more information on the new dark palette files, refer to the [Dark Mode documentation](../theming/dark-mode.mdx).
 
 ### Step Color Tokens {/* #step-color-tokens */}
 
@@ -168,7 +169,7 @@ button { color: var(--ion-color-step-400); }
 button { color: var(--ion-text-color-step-600); /* 1000 - 400 = 600 */ }
 ```
 
-The [stepped color generator](../theming/themes#stepped-color-generator) has been updated to generate text and background color stepped variables.
+The [stepped color generator](../theming/themes.mdx#stepped-color-generator) has been updated to generate text and background color stepped variables.
 
 ### Dynamic Font {/* #dynamic-font */}
 
@@ -180,7 +181,7 @@ Developers who had previously chosen dynamic font scaling by activating it in th
 
 Developers who want to disable dynamic font scaling can set `--ion-dynamic-font: initial;` in their global stylesheets. However, this is not recommended because it may introduce accessibility challenges for users who depend on enlarged font sizes.
 
-For more information on the dynamic font, refer to the [Dynamic Font Scaling documentation](../layout/dynamic-font-scaling).
+For more information on the dynamic font, refer to the [Dynamic Font Scaling documentation](../layout/dynamic-font-scaling.mdx).
 
 ### (Angular Only) `angular.json` CSS import order {/* #angular-only-angularjson-css-import-order */}
 
@@ -204,7 +205,7 @@ We recommend importing the `src/global.scss` file first instead:
 
 ### Browser Support {/* #browser-support */}
 
-The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
+The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support.mdx) to ensure you are deploying apps to supported browsers.
 
 If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
 
@@ -239,7 +240,7 @@ iOS >=15
 
 ### Picker {/* #picker */}
 
-1. Ionic 8 now ships with an inline `ion-picker` component. Developers who wish to continue using the legacy picker should update any `ion-picker` usages to `ion-picker-legacy`. The `pickerController` import remains unchanged. Note that the `ion-picker-legacy` component will be removed in an upcoming major release of Ionic. Refer to the [Picker documentation](../api/picker) for usage information.
+1. Ionic 8 now ships with an inline `ion-picker` component. Developers who wish to continue using the legacy picker should update any `ion-picker` usages to `ion-picker-legacy`. The `pickerController` import remains unchanged. Note that the `ion-picker-legacy` component will be removed in an upcoming major release of Ionic. Refer to the [Picker documentation](../api/picker.mdx) for usage information.
 
 ### Toast {/* #toast */}
 

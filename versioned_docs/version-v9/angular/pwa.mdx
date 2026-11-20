@@ -1,22 +1,18 @@
 ---
 title: Progressive Web Apps in Angular
+description: "When Making an Angular app a Progressive Web App, the two main requirements are a Service Worker and a Web Manifest. Read to learn more in Ionic's PWA tutorial."
 sidebar_label: Progressive Web Apps
 ---
 
 <head>
   <title>Make Progressive Web Apps (PWA) in Angular - Ionic Tutorial</title>
-  <meta
-    name="description"
-    content="When Making an Angular app a Progressive Web App, the two main requirements are a Service Worker and a Web Manifest. Read to learn more in Ionic's PWA tutorial."
-  />
 </head>
 
 ## Making your Angular app a PWA {/* #making-your-angular-app-a-pwa */}
 
 The two main requirements of a PWA are a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) and a [Web Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/). While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app.
-To add this package to the app, run:
+The `@angular/pwa` package will automatically add a service worker and an app manifest to the app. To add this package to the app, run:
 
 ```shell
 ng add @angular/pwa

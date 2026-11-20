@@ -1,5 +1,6 @@
 ---
 title: Themes
+description: 'Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes.'
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
@@ -7,10 +8,6 @@ import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerato
 
 <head>
   <title>Ionic App Themes | Change Default App Background Themes & Colors</title>
-  <meta
-    name="description"
-    content="Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes."
-  />
 </head>
 
 Ionic provides several global variables that are used throughout components to change the default theme of an entire application. [Application Colors](#application-colors) are useful to change the look of most of the Ionic components, and [Stepped Colors](#stepped-colors) are used as variations in some of the Ionic components.
@@ -19,7 +16,7 @@ Ionic provides several global variables that are used throughout components to c
 
 The application colors are used in multiple places in Ionic. These are useful for easily creating dark palettes or themes that match a brand.
 
-It is important to note that the background and text color variables also require a rgb variable to be set in [rgb format](https://developer.mozilla.org/en-US/docs/Glossary/RGB). Refer to [The Alpha Problem](advanced.mdx#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
+It is important to note that the background and text color variables also require a rgb variable to be set in [rgb format](https://developer.mozilla.org/en-US/docs/Glossary/RGB). Refer to [The Alpha Problem](./advanced.mdx#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
 
 | Name                                       | Description                                          |
 | ------------------------------------------ | ---------------------------------------------------- |
@@ -58,7 +55,7 @@ While updating the background (`--ion-background-color`) and text (`--ion-text-c
 
 In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor color="#404040">#404040</CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor color="#f2f2f2">#f2f2f2</CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-Ionic provides separate step colors for text and background colors so they can be updated separately. This is useful for components that use both text and background stepped colors and allows us to effectively implement the [high contrast palette](./high-contrast-mode).
+Ionic provides separate step colors for text and background colors so they can be updated separately. This is useful for components that use both text and background stepped colors and allows us to effectively implement the [high contrast palette](./high-contrast-mode.mdx).
 
 By default, the Ionic text stepped colors start at the default text color value <CodeColor color="#000000">#000000</CodeColor> and mix with the background color value <CodeColor color="#ffffff">#ffffff</CodeColor> using an increasing percentage. The Ionic background stepped colors start at the default background color value <CodeColor color="#ffffff">#ffffff</CodeColor> and mix with the text color value <CodeColor color="#000000">#000000</CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 

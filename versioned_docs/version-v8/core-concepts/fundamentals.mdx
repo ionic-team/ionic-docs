@@ -1,14 +1,11 @@
 ---
 title: Core Concepts
+description: 'For those new to Ionic app development, a high-level understanding of the core concepts and tools behind the project helps. Read to learn more about Ionic API.'
 sidebar_label: Fundamentals
 ---
 
 <head>
   <title>App Development Core Concepts and Tools - Ionic Framework API</title>
-  <meta
-    name="description"
-    content="For those new to Ionic app development, a high-level understanding of the core concepts and tools behind the project helps. Read to learn more about Ionic API."
-  />
 </head>
 
 For those completely new to Ionic app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we'll cover the basics of what Ionic Framework is, and how it works.
@@ -25,8 +22,7 @@ By making subtle design changes between the platforms, users are provided with a
 
 ## Navigation {/* #navigation */}
 
-Traditional web apps use a linear history, meaning that the user navigates forward to a page and can hit the back button to navigate back.
-An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack.
+Traditional web apps use a linear history, meaning that the user navigates forward to a page and can hit the back button to navigate back. An example of this is clicking around Wikipedia where the user is going forward and backward on the browser's linear history stack.
 
 In contrast, mobile apps often utilize parallel, "non-linear" navigation. For example, a tabbed interface can have separate navigation stacks for each tab, making sure the user never loses their place as they navigate and switch between tabs.
 
@@ -38,7 +34,7 @@ For apps that are built with Angular and `@ionic/angular`, we recommend using th
 
 An amazing feature of apps built with web technologies (such as Ionic apps!) is that it can run on virtually any platform: desktop computers, phones, tablets, cars, refrigerators, and more! The same code base for Ionic apps can work on many platforms because it is based on web standards and common APIs that are shared across these platforms. That said, Ionic Framework is designed and tested for mobile platforms. Refer to [Browser Support](../reference/browser-support.mdx#mobile-platforms) for the platforms it officially supports.
 
-One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide [Web Views](webview.mdx) which render any Ionic app, while still allowing for _full_ Native SDK access.
+One of the most common use cases for Ionic is to build an app which can be downloaded from both the [App Store](https://www.apple.com/ios/app-store/) and [Play Store](https://play.google.com/). Both iOS and Android software development kits (SDKs) provide [Web Views](./webview.mdx) which render any Ionic app, while still allowing for _full_ Native SDK access.
 
 Projects such as [Capacitor](https://capacitorjs.com/) and [Cordova](https://cordova.apache.org/) are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more.
 
@@ -54,7 +50,7 @@ Developers can use standard events such as `click` as they normally would. Howev
 
 ## Properties {/* #properties */}
 
-Properties are JavaScript properties that can be set on Ionic components to configure their behavior and appearance. Properties are defined in each component's [API documentation](/api.mdx) page.
+Properties are JavaScript properties that can be set on Ionic components to configure their behavior and appearance. Properties are defined in each component's [API documentation](../api.mdx) page.
 
 ### Reactive Properties {/* #reactive-properties */}
 
@@ -76,4 +72,4 @@ Virtual properties are designed for one-time configuration during component init
 
 The `mode` property is a virtual property that determines which platform styles to use for a component. It can be set at the component level or globally through the app configuration. In both cases, it's set once during initialization and doesn't change during the component's lifecycle.
 
-For more information on Ionic modes, read the [Platform Styles documentation](/theming/platform-styles.mdx).
+For more information on Ionic modes, read the [Platform Styles documentation](../theming/platform-styles.mdx).

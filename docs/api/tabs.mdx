@@ -1,5 +1,6 @@
 ---
 title: 'ion-tabs'
+description: 'Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps.'
 ---
 
 import Props from '@ionic-internal/component-api/v10/tabs/props.mdx';
@@ -11,18 +12,13 @@ import Slots from '@ionic-internal/component-api/v10/tabs/slots.mdx';
 
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
-  <meta
-    name="description"
-    content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](tab.mdx) components.
+Tabs are a top level navigation component to implement a tab-based navigation. The component is a container of individual [Tab](./tab.mdx) components.
 
 The `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.
 
@@ -48,7 +44,7 @@ import Router from '@site/static/usage/v10/tabs/router/index.mdx';
 
 :::tip[Best Practices]
 
-Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
+Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](../angular/navigation.mdx#working-with-tabs), [React](../react/navigation.mdx#working-with-tabs), and [Vue](../vue/navigation.mdx#working-with-tabs) for additional information.
 
 :::
 

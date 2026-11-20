@@ -1,5 +1,6 @@
 ---
 title: 'ion-datetime'
+description: "Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values."
 ---
 
 import Props from '@ionic-internal/component-api/v10/datetime/props.mdx';
@@ -52,10 +53,6 @@ import RangeStyling from '@site/static/usage/v10/datetime/styling/range/index.md
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
-  <meta
-    name="description"
-    content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values."
-  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -66,21 +63,13 @@ Datetimes present a calendar interface and time wheel, making it easy for users 
 
 ## Overview {/* #overview */}
 
-Historically, handling datetime values within JavaScript, or even within HTML
-inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
-notoriously difficult to correctly parse apart datetime strings or to format
-datetime values. Even worse is how different browsers and JavaScript versions
-parse various datetime strings differently, especially per locale.
+Historically, handling datetime values within JavaScript, or even within HTML inputs, has always been a challenge. Specifically, JavaScript's `Date` object is notoriously difficult to correctly parse apart datetime strings or to format datetime values. Even worse is how different browsers and JavaScript versions parse various datetime strings differently, especially per locale.
 
-Fortunately, Ionic Framework's datetime input has been designed so developers can avoid
-the common pitfalls, allowing developers to easily manipulate datetime values and give the user a simple datetime picker for a great user experience.
+Fortunately, Ionic Framework's datetime input has been designed so developers can avoid the common pitfalls, allowing developers to easily manipulate datetime values and give the user a simple datetime picker for a great user experience.
 
 ### ISO 8601 Datetime Format: `YYYY-MM-DDTHH:mmZ` {/* #iso-8601-datetime-format-yyyy-mm-ddthhmmz */}
 
-Ionic Framework uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)
-for its value. The value is simply a string, rather than using JavaScript's
-`Date` object. Using the ISO datetime format makes it easy to serialize
-and parse within JSON objects and databases.
+Ionic Framework uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) for its value. The value is simply a string, rather than using JavaScript's `Date` object. Using the ISO datetime format makes it easy to serialize and parse within JSON objects and databases.
 
 Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
@@ -94,11 +83,7 @@ Below are some examples of ISO 8601 formats that can be used with `ion-datetime`
 | Timezone Offset | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00` |
 | Hour and Minute | `HH:mm`                  | `13:47`                     |
 
-Note that the year is always four-digits, milliseconds (if it's added) is always
-three-digits, and all others are always two-digits. So the number representing
-January always has a leading zero, such as `01`. Additionally, the hour is
-always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
-`1pm`, and `23` means `11pm`.
+Note that the year is always four-digits, milliseconds (if it's added) is always three-digits, and all others are always two-digits. So the number representing January always has a leading zero, such as `01`. Additionally, the hour is always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means `1pm`, and `23` means `11pm`.
 
 :::note
 
@@ -112,7 +97,7 @@ While seconds, milliseconds, and time zone can be specified using the ISO 8601 d
 
 ## Usage with Datetime Button {/* #usage-with-datetime-button */}
 
-If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
+If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button.mdx). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
 ## Setting Values Asynchronously {/* #setting-values-asynchronously */}
 
@@ -138,8 +123,7 @@ The following example allows minutes to be selected in increments of 15. It also
 
 ### Advanced Date Constraints {/* #advanced-date-constraints */}
 
-With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string.
-The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
+With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
 The following example shows how to disable all weekend dates. For more advanced date manipulation, we recommend using a date utility such as `date-fns`.
 
@@ -169,12 +153,12 @@ The time label is not automatically localized. Refer to [Time Label](#time-label
 
 There are 4 primary hour cycle types:
 
-| Hour cycle type | Description                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------------------- |
-| `'h12'`         | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
-| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00.     |
-| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am.  |
-| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00.     |
+| Hour cycle type | Description |
+| --- | --- |
+| `'h12'` | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h23'` | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
+| `'h11'` | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
+| `'h24'` | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
 
 :::note
 
@@ -356,7 +340,7 @@ Developers can provide their own buttons for advanced custom behavior.
 
 Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
 
-When specifying colors, any valid CSS color format can be used. This includes hex codes, `rgba`, [color variables](../theming/colors), etc.
+When specifying colors, any valid CSS color format can be used. This includes hex codes, `rgba`, [color variables](../theming/colors.mdx), etc.
 
 To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
 
@@ -382,7 +366,7 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 ### Global Theming {/* #global-theming */}
 
-Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
+Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors.mdx#new-color-creator) and the [Stepped Color Generator](../theming/themes.mdx#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
@@ -481,15 +465,7 @@ See https://date-fns.org/docs/format for a list of all the valid format tokens.
 
 ## Advanced Datetime Validation and Manipulation {/* #advanced-datetime-validation-and-manipulation */}
 
-The datetime picker provides the simplicity of selecting an exact format, and
-persists the datetime values as a string using the standardized [ISO 8601
-datetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important
-to note that `ion-datetime` does not attempt to solve all situations when
-validating and manipulating datetime values. If datetime values need to be
-parsed from a certain format, or manipulated (such as adding 5 days to a date,
-subtracting 30 minutes, etc.), or even formatting data to a specific locale,
-then we highly recommend using [date-fns](https://date-fns.org) to work with
-dates in JavaScript.
+The datetime picker provides the simplicity of selecting an exact format, and persists the datetime values as a string using the standardized [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important to note that `ion-datetime` does not attempt to solve all situations when validating and manipulating datetime values. If datetime values need to be parsed from a certain format, or manipulated (such as adding 5 days to a date, subtracting 30 minutes, etc.), or even formatting data to a specific locale, then we highly recommend using [date-fns](https://date-fns.org) to work with dates in JavaScript.
 
 ## Accessibility {/* #accessibility */}
 
@@ -520,7 +496,7 @@ dates in JavaScript.
 
 #### Time, Month, and Year Wheels {/* #time-month-and-year-wheels */}
 
-The wheel picker in Datetime uses [Picker](./picker) internally. Refer to [Picker Accessibility](./picker#accessibility) for more information on accessibility features with the wheel picker.
+The wheel picker in Datetime uses [Picker](./picker.mdx) internally. Refer to [Picker Accessibility](./picker.mdx#accessibility) for more information on accessibility features with the wheel picker.
 
 ## Interfaces {/* #interfaces */}
 

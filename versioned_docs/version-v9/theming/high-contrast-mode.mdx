@@ -1,5 +1,6 @@
 ---
 title: High Contrast Mode
+description: 'Developers are adding high contrast mode CSS on native applications to support their user preferences. Read to learn more about high contrast color schemes for Ionic apps.'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,10 +8,6 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>High Contrast Mode to Increase Color Contrast</title>
-  <meta
-    name="description"
-    content="Developers are adding high contrast mode CSS on native applications to support their user preferences. Read to learn more about high contrast color schemes for Ionic apps."
-  />
 </head>
 
 Ionic offers palettes with increased contrast for users with low vision. These palettes work by amplifying the contrast between foreground content, such as text, and background content, such as UI components. Ionic provides both light and dark variants for achieving high contrast.
@@ -131,8 +128,7 @@ import SystemHighContrastMode from '@site/static/usage/v9/theming/system-high-co
 
 :::caution
 
-The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.mdx#corecss), and the
-high contrast dark palette must be imported after `dark.system.css`. Otherwise, the standard contrast palette will take priority.
+The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.mdx#corecss), and the high contrast dark palette must be imported after `dark.system.css`. Otherwise, the standard contrast palette will take priority.
 
 :::
 
@@ -193,9 +189,7 @@ import ClassHighContrastMode from '@site/static/usage/v9/theming/class-high-cont
 
 :::caution
 
-The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.mdx#corecss),
-and the high contrast dark palette must be imported after `dark.class.css`. Otherwise, the standard contrast palette will take
-priority.
+The high contrast light palette must be imported after [core.css](../layout/global-stylesheets.mdx#corecss), and the high contrast dark palette must be imported after `dark.class.css`. Otherwise, the standard contrast palette will take priority.
 
 :::
 
@@ -209,7 +203,7 @@ The `.ion-palette-high-contrast` class **must** be added to the `html` element i
 
 Ionic has a recommended high contrast palette that can be enabled in three different ways: [always](#always), based on [system](#system) settings, or by using a [CSS class](#css-class). Each of these methods involves importing the high contrast palette file with the corresponding name.
 
-The theme variables are set by importing the relevant high contrast palette file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](themes.mdx) section.
+The theme variables are set by importing the relevant high contrast palette file and do not need to be copied into an app. For more information on the variables being changed, including additional variables for further customization, refer to the [Themes](./themes.mdx) section.
 
 The following provides details on how to customize the high contrast palette depending on how it was applied in an application.
 
@@ -221,7 +215,7 @@ The **always** high contrast palette can be accessed by importing `high-contrast
 
 The **always** high contrast palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.mdx) for all [modes](platform-styles.mdx#ionic-modes) to complement a high contrast palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+1. Sets the [Ionic colors](./colors.mdx) for all [modes](./platform-styles.mdx#ionic-modes) to complement a high contrast palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
 2. Setting variables for the high contrast palette on `ios` devices using the `:root.ios` selector.
 3. Setting variables for the high contrast palette on `md` devices using the `:root.md` selector.
 
@@ -233,7 +227,7 @@ The **system** high contrast palette can be accessed by importing `high-contrast
 
 The **system** high contrast palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.mdx) for all [modes](platform-styles.mdx#ionic-modes) to complement a high contrast palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
+1. Sets the [Ionic colors](./colors.mdx) for all [modes](./platform-styles.mdx#ionic-modes) to complement a high contrast palette in the `:root` selector. The [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector is identical to the selector `html`, except that its [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) is higher.
 2. Setting variables for the high contrast palette on `ios` devices using the `:root.ios` selector.
 3. Setting variables for the high contrast palette on `md` devices using the `:root.md` selector.
 4. Only applies these variables when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`.
@@ -246,7 +240,7 @@ The **class** high contrast palette can be accessed by importing `high-contrast.
 
 The **class** high contrast palette behaves in the following ways:
 
-1. Sets the [Ionic colors](colors.mdx) for all [modes](platform-styles.mdx#ionic-modes) to complement a high contrast palette in the `.ion-palette-high-contrast` selector. The `.ion-palette-high-contrast` class must be added to the `html` element in an app.
+1. Sets the [Ionic colors](./colors.mdx) for all [modes](./platform-styles.mdx#ionic-modes) to complement a high contrast palette in the `.ion-palette-high-contrast` selector. The `.ion-palette-high-contrast` class must be added to the `html` element in an app.
 2. Setting variables for the high contrast palette on `ios` devices using the `.ion-palette-high-contrast.ios` selector.
 3. Setting variables for the high contrast palette on `md` devices using the `.ion-palette-high-contrast.md` selector.
 
