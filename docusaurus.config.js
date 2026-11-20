@@ -363,7 +363,7 @@ module.exports = {
       theme: { plain: {}, styles: [] },
       // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
       // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
-      additionalLanguages: ['shell-session', 'http', 'diff', 'json'],
+      additionalLanguages: ['shell-session', 'http', 'diff', 'json', 'scss'],
     },
     algolia: {
       appId: 'O9QSL985BS',
