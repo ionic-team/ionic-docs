@@ -10,6 +10,10 @@ import remarkFrontmatter from 'remark-frontmatter';
 // Schemes such as https: and mailto:, in-page anchors, and protocol-relative URLs.
 const NOT_A_PAGE_LINK = /^([a-z][a-z\d+.-]*:|#|\/\/)/i;
 
+// A page on this site by its full URL. Archived versions such as `/docs/v3/`
+// are not built from this repo, so they stay full URLs.
+const DOCS_SITE_URL = /^https?:\/\/(www\.)?ionicframework\.com\/docs(?!\/v\d+(\/|$))(\/|$|[?#])/i;
+
 const pathOf = (url) => url.split(/[?#]/)[0];
 
 /**
@@ -17,7 +21,9 @@ const pathOf = (url) => url.split(/[?#]/)[0];
  * such as `./accordion.mdx`. Docusaurus resolves it to the page in the same
  * version and fails the build if the file is missing, and editors can follow
  * it. Without the extension it is a URL that Docusaurus cannot map to a file,
- * and a leading `/` is read from the repo root by editors and GitHub.
+ * and a leading `/` is read from the repo root by editors and GitHub. A full
+ * `ionicframework.com/docs` URL always opens the current version, so a reader
+ * on an older version lands on the wrong page.
  *
  * A JSX `href` or `to` never goes through that resolver, so it must be an
  * absolute URL path without the extension, such as `/api/accordion`. A relative
@@ -25,6 +31,9 @@ const pathOf = (url) => url.split(/[?#]/)[0];
  * one without the version prefix, such as `/v8/`, leads to the current docs.
  */
 const checkMarkdownLink = (url) => {
+  if (DOCS_SITE_URL.test(url) && !/\.[a-z\d]+$/i.test(pathOf(url).replace(/\/$/, ''))) {
+    return `Link to \`${url}\` by the doc's relative file path, such as \`../api/modal.mdx\`. A full URL always opens the current version.`;
+  }
   if (url === '' || NOT_A_PAGE_LINK.test(url)) return null;
   const path = pathOf(url);
   if (/\.mdx?$/.test(path)) {
