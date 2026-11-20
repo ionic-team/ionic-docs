@@ -104,7 +104,7 @@ function AppTypeahead(props: TypeaheadProps) {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent color="light" class="ion-padding">
+      <IonContent color="light" className="ion-padding">
         <IonList id="modal-list" inset={true}>
           {filteredItems.map((item) => (
             <IonItem key={item.value}>

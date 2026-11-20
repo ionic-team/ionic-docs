@@ -15,7 +15,7 @@ function Example() {
     <>
       <IonButton onClick={openPopover}>Click Me</IonButton>
       <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
-        <IonContent class="ion-padding">Hello World!</IonContent>
+        <IonContent className="ion-padding">Hello World!</IonContent>
       </IonPopover>
     </>
   );

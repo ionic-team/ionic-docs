@@ -6,7 +6,7 @@ function Example() {
     <IonContent>
       <IonButton id="open-popover">Open Popover</IonButton>
       <IonPopover keepContentsMounted={true} trigger="open-popover">
-        <IonContent class="ion-padding">This content was mounted as soon as the popover was created.</IonContent>
+        <IonContent className="ion-padding">This content was mounted as soon as the popover was created.</IonContent>
       </IonPopover>
     </IonContent>
   );

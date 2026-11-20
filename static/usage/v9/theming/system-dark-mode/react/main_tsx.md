@@ -24,7 +24,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonHeader class="ion-no-border">
+      <IonHeader className="ion-no-border">
         <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>

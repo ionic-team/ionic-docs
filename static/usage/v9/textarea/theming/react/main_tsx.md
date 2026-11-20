@@ -9,7 +9,7 @@ function Example() {
     <IonTextarea
       aria-label="Custom textarea"
       placeholder="Type something here"
-      class="custom"
+      className="custom"
       helperText="Helper text"
       counter={true}
       maxlength={100}

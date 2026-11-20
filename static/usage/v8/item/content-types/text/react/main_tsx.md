@@ -46,7 +46,7 @@ function Example() {
           </IonItem>
         </IonList>
 
-        <IonNote color="medium" class="ion-margin-horizontal">
+        <IonNote color="medium" className="ion-margin-horizontal">
           Your comments will be kept anonymous and will only be used to improve the reliability of our products.
         </IonNote>
       </IonContent>
