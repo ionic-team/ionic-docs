@@ -60,7 +60,7 @@ function Example() {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent class="ion-padding">
+      <IonContent className="ion-padding">
         <IonRefresher
           id="refresher"
           slot="fixed"

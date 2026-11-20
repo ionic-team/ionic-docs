@@ -22,7 +22,7 @@ function Example() {
       onIonScrollStart={handleScrollStart}
       onIonScroll={handleScroll}
       onIonScrollEnd={handleScrollEnd}
-      class="ion-padding"
+      className="ion-padding"
     >
       <h1>Scroll to fire the scroll events and view them in the console.</h1>
 

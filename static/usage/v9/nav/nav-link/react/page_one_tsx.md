@@ -12,7 +12,7 @@ function PageOne() {
           <IonTitle>Page One</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent className="ion-padding">
         <h1>Page One</h1>
         <IonNavLink routerDirection="forward" component={() => <PageTwo />}>
           <IonButton>Go to Page Two</IonButton>
