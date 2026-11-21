@@ -14,10 +14,7 @@ function Example() {
           <IonCol>2</IonCol>
           <IonCol>3</IonCol>
           <IonCol>
-            4 <br />
-            # <br />
-            # <br />
-            # <br />
+            4 <br /># <br /># <br /># <br />
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -29,10 +26,7 @@ function Example() {
           <IonCol>2</IonCol>
           <IonCol>3</IonCol>
           <IonCol>
-            4 <br />
-            # <br />
-            # <br />
-            # <br />
+            4 <br /># <br /># <br /># <br />
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -44,10 +38,7 @@ function Example() {
           <IonCol>2</IonCol>
           <IonCol>3</IonCol>
           <IonCol>
-            4 <br />
-            # <br />
-            # <br />
-            # <br />
+            4 <br /># <br /># <br /># <br />
           </IonCol>
         </IonRow>
       </IonGrid>
