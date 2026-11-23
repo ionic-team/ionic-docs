@@ -1,0 +1,190 @@
+---
+title: Haptics
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<head>
+  <title>Haptics: Customize Touch Feedback in Ionic Components</title>
+  <meta
+    name="description"
+    content="Ionic components play haptics as touch feedback. Read to learn how to listen for the ionHaptic event to replace, skip, or play your own haptics."
+  />
+</head>
+
+Haptics are the small vibrations a device plays as touch feedback. Some Ionic components play a haptic during a gesture, such as when a toggle is switched or an item is reordered. This guide shows how to listen for those haptics so your app can replace them, skip them, or play its own.
+
+## Overview {/* #overview */}
+
+Ionic plays haptics through the [Capacitor Haptics plugin](../native/haptics.mdx) when it is installed. Each time a component would play a haptic, it dispatches an `ionHaptic` event first. The event bubbles, so a single listener on `document` receives the events from every component.
+
+The event is dispatched even when no haptic plays, such as when the `@capacitor/haptics` package is not installed, the app runs in a browser without vibration support, or `haptics` is `false` in the [IonicConfig](./config.mdx). Setting `haptics: false` and listening for `ionHaptic` lets an app replace every built-in haptic with its own.
+
+Calling `preventDefault()` on the event skips the built-in haptic for that event only.
+
+## Components {/* #components */}
+
+The table below shows which components dispatch `ionHaptic` and when.
+
+| Component           | When                                                                               | `detail.type`                                        |
+| ------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `ion-action-sheet`  | Pressing and dragging across buttons in `ios` mode, when the buttons do not scroll | `selectionStart`, `selectionChanged`, `selectionEnd` |
+| `ion-alert`         | Pressing and dragging across buttons in `ios` mode                                 | `selectionStart`, `selectionChanged`, `selectionEnd` |
+| `ion-picker-column` | Scrolling the column on iOS                                                        | `selectionStart`, `selectionChanged`, `selectionEnd` |
+| `ion-refresher`     | Pulling far enough to refresh with the native iOS refresher                        | `impact`                                             |
+| `ion-reorder-group` | Dragging an item to reorder it                                                     | `selectionStart`, `selectionChanged`, `selectionEnd` |
+| `ion-toggle`        | Dragging the toggle, or tapping it on iOS                                          | `selection`                                          |
+
+Some components use these components internally. `ion-datetime` renders `ion-picker-column` inside its shadow root, so a listener outside the datetime receives `ion-datetime` as `event.target`. Use `event.composedPath()[0]` to get the inner component. `ion-select` opens an `ion-alert` or `ion-action-sheet`, so the event comes from that overlay instead of the select.
+
+## Event Detail {/* #event-detail */}
+
+The `detail` of the event describes the haptic Ionic would play. Its `type` matches the [Capacitor Haptics](../native/haptics.mdx) method Ionic would call, except `selection`, which has no matching method.
+
+| `detail.type`      | Extra properties                                           | Description                                                                                      |
+| ------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `selection`        |                                                            | A one-time selection change. Ionic plays this as a light `impact`.                               |
+| `selectionStart`   |                                                            | A gesture that changes the selection has started.                                                |
+| `selectionChanged` |                                                            | The selection changed during a gesture.                                                          |
+| `selectionEnd`     |                                                            | The gesture has ended.                                                                           |
+| `impact`           | `style`: `'LIGHT'`, `'MEDIUM'`, or `'HEAVY'`               | A collision between user interface elements.                                                     |
+| `notification`     | `notificationType`: `'SUCCESS'`, `'WARNING'`, or `'ERROR'` | A task has succeeded, produced a warning, or failed. No built-in component dispatches this type. |
+
+### Gestures {/* #gestures */}
+
+A gesture dispatches `selectionStart`, then one `selectionChanged` for each change, then `selectionEnd`. In `ion-action-sheet` and `ion-alert`, `selectionStart` is dispatched only when the press begins on a button. A press that begins elsewhere dispatches `selectionChanged` and `selectionEnd` without a `selectionStart`. The haptic engine only plays `selectionChanged` after a `selectionStart`, so canceling `selectionStart` also silences the rest of that gesture.
+
+`selectionEnd` plays nothing. It releases the haptic engine for the next gesture, so Ionic always runs it, and canceling it has no effect.
+
+## Basic Usage {/* #basic-usage */}
+
+The examples below listen for every `ionHaptic` event and log what Ionic would play.
+
+````mdx-code-block
+<Tabs
+  groupId="framework"
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]
+}>
+<TabItem value="javascript">
+
+```javascript
+document.addEventListener('ionHaptic', (event) => {
+  console.log(event.target.tagName, event.detail);
+});
+```
+</TabItem>
+<TabItem value="angular">
+
+```tsx
+import { Component, HostListener } from '@angular/core';
+import type { HapticEvent } from '@ionic/angular/lazy';
+
+@Component({
+  ...
+})
+export class AppComponent {
+  @HostListener('document:ionHaptic', ['$event'])
+  onHaptic(event: HapticEvent) {
+    console.log((event.target as HTMLElement).tagName, event.detail);
+  }
+}
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Component, HostListener } from '@angular/core';
+import type { HapticEvent } from '@ionic/angular';
+
+@Component({
+  ...
+})
+export class AppComponent {
+  @HostListener('document:ionHaptic', ['$event'])
+  onHaptic(event: HapticEvent) {
+    console.log((event.target as HTMLElement).tagName, event.detail);
+  }
+}
+```
+</TabItem>
+<TabItem value="react">
+
+```tsx
+import { useEffect } from 'react';
+import type { HapticEvent } from '@ionic/react';
+
+...
+
+useEffect(() => {
+  const onHaptic = (event: Event) => {
+    const { detail, target } = event as HapticEvent;
+    console.log((target as HTMLElement).tagName, detail);
+  };
+
+  document.addEventListener('ionHaptic', onHaptic);
+  return () => document.removeEventListener('ionHaptic', onHaptic);
+}, []);
+```
+</TabItem>
+<TabItem value="vue">
+
+```typescript
+import { onMounted, onUnmounted } from 'vue';
+import type { HapticEvent } from '@ionic/vue';
+
+...
+
+const onHaptic = (event: Event) => {
+  const { detail, target } = event as HapticEvent;
+  console.log((target as HTMLElement).tagName, detail);
+};
+
+onMounted(() => document.addEventListener('ionHaptic', onHaptic));
+onUnmounted(() => document.removeEventListener('ionHaptic', onHaptic));
+```
+</TabItem>
+</Tabs>
+````
+
+:::note
+
+`ionHaptic` is not listed in the Events table of each component, so the framework event bindings do not know about it. In Vue, `@ionHaptic` on an Ionic component does not work. Add the listener with `addEventListener` instead, like the Vue example in [Basic Usage](#basic-usage).
+
+:::
+
+## Replacing a Haptic {/* #replacing-a-haptic */}
+
+Call `preventDefault()` to skip the built-in haptic, then play your own. The example below plays a medium impact instead of the light one Ionic plays when a toggle is switched.
+
+```javascript
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
+
+document.addEventListener('ionHaptic', (event) => {
+  if (event.target.tagName === 'ION-TOGGLE' && event.detail.type === 'selection') {
+    event.preventDefault();
+    Haptics.impact({ style: ImpactStyle.Medium });
+  }
+});
+```
+
+## Skipping a Gesture {/* #skipping-a-gesture */}
+
+Canceling `selectionStart` silences the whole gesture. The example below turns off haptics for reordering while keeping them everywhere else.
+
+```javascript
+document.addEventListener('ionHaptic', (event) => {
+  if (event.target.tagName === 'ION-REORDER-GROUP' && event.detail.type === 'selectionStart') {
+    event.preventDefault();
+  }
+});
+```
+
+To turn off every built-in haptic, set `haptics: false` in the [IonicConfig](./config.mdx) instead.

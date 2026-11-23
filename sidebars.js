@@ -24,6 +24,7 @@ module.exports = {
         'developing/android',
         'developing/tips',
         'developing/hardware-back-button',
+        'developing/haptics',
         'developing/keyboard',
         'developing/config',
         'developing/managing-focus',
