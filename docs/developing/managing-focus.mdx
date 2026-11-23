@@ -108,17 +108,17 @@ export default Home;
 </template>
 
 <script setup lang="ts">
-  import { IonInput, IonPage, onIonViewDidEnter } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonInput, IonPage, onIonViewDidEnter } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const input = ref();
-  onIonViewDidEnter(() => {
-    requestAnimationFrame(() => {
-      // requestAnimationFrame is currently required due to:
-      // https://github.com/ionic-team/ionic-framework/issues/24434
-      input.value.$el.setFocus();
-    });
+const input = ref();
+onIonViewDidEnter(() => {
+  requestAnimationFrame(() => {
+    // requestAnimationFrame is currently required due to:
+    // https://github.com/ionic-team/ionic-framework/issues/24434
+    input.value.$el.setFocus();
   });
+});
 </script>
 ```
 
@@ -223,14 +223,14 @@ export default Home;
 </template>
 
 <script setup lang="ts">
-  import { IonInput, IonModal } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonInput, IonModal } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const input = ref();
+const input = ref();
 
-  function onDidPresent() {
-    input.value.$el.setFocus();
-  }
+function onDidPresent() {
+  input.value.$el.setFocus();
+}
 </script>
 ```
 
