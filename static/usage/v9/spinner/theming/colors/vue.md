@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-spinner></ion-spinner>
   <ion-spinner color="primary"></ion-spinner>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonSpinner } from '@ionic/vue';
+import { IonSpinner } from '@ionic/vue';
 </script>
 ```

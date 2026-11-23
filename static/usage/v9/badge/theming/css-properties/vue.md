@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -9,15 +9,15 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBadge, IonItem, IonLabel, IonList } from '@ionic/vue';
+import { IonBadge, IonItem, IonLabel, IonList } from '@ionic/vue';
 </script>
 
 <style>
-  ion-badge {
-    --background: purple;
-    --color: white;
-    --padding-end: 20px;
-    --padding-start: 20px;
-  }
+ion-badge {
+  --background: purple;
+  --color: white;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
 </style>
 ```

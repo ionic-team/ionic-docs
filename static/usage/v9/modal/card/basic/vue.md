@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-page ref="page">
     <ion-header>
@@ -64,32 +64,32 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButtons,
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-    IonItem,
-    IonList,
-    IonAvatar,
-    IonLabel,
-    IonPage,
-  } from '@ionic/vue';
-  import { ref, onMounted } from 'vue';
+import {
+  IonButtons,
+  IonButton,
+  IonModal,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonItem,
+  IonList,
+  IonAvatar,
+  IonLabel,
+  IonPage,
+} from '@ionic/vue';
+import { ref, onMounted } from 'vue';
 
-  const presentingElement = ref(null);
-  const page = ref();
-  const modal = ref();
+const presentingElement = ref(null);
+const page = ref();
+const modal = ref();
 
-  const dismiss = () => {
-    modal.value.$el.dismiss();
-  };
+const dismiss = () => {
+  modal.value.$el.dismiss();
+};
 
-  onMounted(() => {
-    presentingElement.value = page.value.$el;
-  });
+onMounted(() => {
+  presentingElement.value = page.value.$el;
+});
 </script>
 ```

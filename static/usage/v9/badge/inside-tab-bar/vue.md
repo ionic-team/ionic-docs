@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-tab-bar color="light">
     <ion-tab-button tab="1">
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBadge, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/vue';
-  import { heart, calendar, musicalNote } from 'ionicons/icons';
+import { IonBadge, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/vue';
+import { heart, calendar, musicalNote } from 'ionicons/icons';
 </script>
 ```

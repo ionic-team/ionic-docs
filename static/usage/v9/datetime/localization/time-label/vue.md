@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-datetime locale="es-ES">
     <span slot="time-label">Tiempo</span>
@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonDatetime } from '@ionic/vue';
+import { IonDatetime } from '@ionic/vue';
 </script>
 ```

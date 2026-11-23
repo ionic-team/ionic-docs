@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -24,68 +24,68 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonRefresher,
-    IonRefresherContent,
-    IonTitle,
-    IonToolbar,
-    RefresherCustomEvent,
-  } from '@ionic/vue';
-  import { ref } from 'vue';
-  import { ellipse } from 'ionicons/icons';
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherCustomEvent,
+} from '@ionic/vue';
+import { ref } from 'vue';
+import { ellipse } from 'ionicons/icons';
 
-  const names = [
-    'Burt Bear',
-    'Charlie Cheetah',
-    'Donald Duck',
-    'Eva Eagle',
-    'Ellie Elephant',
-    'Gino Giraffe',
-    'Isabella Iguana',
-    'Karl Kitten',
-    'Lionel Lion',
-    'Molly Mouse',
-    'Paul Puppy',
-    'Rachel Rabbit',
-    'Ted Turtle',
-  ];
-  const items = ref([]);
+const names = [
+  'Burt Bear',
+  'Charlie Cheetah',
+  'Donald Duck',
+  'Eva Eagle',
+  'Ellie Elephant',
+  'Gino Giraffe',
+  'Isabella Iguana',
+  'Karl Kitten',
+  'Lionel Lion',
+  'Molly Mouse',
+  'Paul Puppy',
+  'Rachel Rabbit',
+  'Ted Turtle',
+];
+const items = ref([]);
 
-  const chooseRandomName = () => {
-    return names[Math.floor(Math.random() * names.length)];
-  };
+const chooseRandomName = () => {
+  return names[Math.floor(Math.random() * names.length)];
+};
 
-  const addItems = (count, unread = false) => {
-    for (let i = 0; i < count; i++) {
-      items.value.unshift({ name: chooseRandomName(), unread });
-    }
-  };
+const addItems = (count, unread = false) => {
+  for (let i = 0; i < count; i++) {
+    items.value.unshift({ name: chooseRandomName(), unread });
+  }
+};
 
-  addItems(5);
+addItems(5);
 
-  const handleRefresh = (event: RefresherCustomEvent) => {
-    setTimeout(() => {
-      addItems(3, true);
-      event.target.complete();
-    }, 2000);
-  };
+const handleRefresh = (event: RefresherCustomEvent) => {
+  setTimeout(() => {
+    addItems(3, true);
+    event.target.complete();
+  }, 2000);
+};
 </script>
 
 <style scoped>
-  ion-item {
-    --padding-start: 8px;
-  }
+ion-item {
+  --padding-start: 8px;
+}
 
-  ion-icon {
-    font-size: 12px;
-    align-self: start;
-    margin: 15px 8px;
-  }
+ion-icon {
+  font-size: 12px;
+  align-self: start;
+  margin: 15px 8px;
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-menu :type="menuType" content-id="main-content">
     <ion-header>
@@ -47,21 +47,21 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonMenu,
-    IonMenuToggle,
-    IonPage,
-    IonRadio,
-    IonRadioGroup,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import { ref } from 'vue';
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonMenu,
+  IonMenuToggle,
+  IonPage,
+  IonRadio,
+  IonRadioGroup,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import { ref } from 'vue';
 
-  const menuType = ref('overlay');
+const menuType = ref('overlay');
 </script>
 ```

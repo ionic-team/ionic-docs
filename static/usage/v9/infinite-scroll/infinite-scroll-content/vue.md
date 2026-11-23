@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content>
     <ion-list>
@@ -19,21 +19,21 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonInfiniteScroll,
-    IonInfiniteScrollContent,
-    IonList,
-    IonItem,
-    IonAvatar,
-    IonLabel,
-  } from '@ionic/vue';
-  import { reactive } from 'vue';
+import {
+  IonContent,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonList,
+  IonItem,
+  IonAvatar,
+  IonLabel,
+} from '@ionic/vue';
+import { reactive } from 'vue';
 
-  const items = reactive([]);
+const items = reactive([]);
 
-  for (let i = 1; i < 51; i++) {
-    items.push(`Item ${i}`);
-  }
+for (let i = 1; i < 51; i++) {
+  items.push(`Item ${i}`);
+}
 </script>
 ```

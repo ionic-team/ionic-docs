@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-toggle aria-label="Primary toggle" color="primary" :checked="true"></ion-toggle>
   <ion-toggle aria-label="Secondary toggle" color="secondary" :checked="true"></ion-toggle>
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonToggle } from '@ionic/vue';
+import { IonToggle } from '@ionic/vue';
 </script>
 ```

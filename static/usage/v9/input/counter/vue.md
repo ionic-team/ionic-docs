@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input label="Default counter" label-placement="floating" :counter="true" :maxlength="20"></ion-input>
 
@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput } from '@ionic/vue';
+import { IonInput } from '@ionic/vue';
 
-  const customFormatter = (inputLength, maxLength) => {
-    return `${maxLength - inputLength} characters remaining`;
-  };
+const customFormatter = (inputLength, maxLength) => {
+  return `${maxLength - inputLength} characters remaining`;
+};
 </script>
 ```

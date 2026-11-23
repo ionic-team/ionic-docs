@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button id="auto-trigger">Size=Auto</ion-button>
   <ion-popover trigger="auto-trigger" size="auto">
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonPopover } from '@ionic/vue';
+import { IonButton, IonPopover } from '@ionic/vue';
 </script>
 ```

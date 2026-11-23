@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -59,78 +59,78 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonBackButton,
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonRange,
-    IonText,
-    IonToggle,
-    IonToolbar,
-  } from '@ionic/vue';
-  import type { ToggleCustomEvent } from '@ionic/vue';
-  import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
-  import { ref } from 'vue';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/vue';
+import type { ToggleCustomEvent } from '@ionic/vue';
+import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
+import { ref } from 'vue';
 
-  const darkPaletteToggle = ref(false);
-  const highContrastPaletteToggle = ref(false);
+const darkPaletteToggle = ref(false);
+const highContrastPaletteToggle = ref(false);
 
-  // Use matchMedia to check the user preference
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
+// Use matchMedia to check the user preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
 
-  // Add or remove the "ion-palette-dark" class on the html element
-  const toggleDarkPalette = (shouldAdd) => {
-    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
-  };
+// Add or remove the "ion-palette-dark" class on the html element
+const toggleDarkPalette = (shouldAdd) => {
+  document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
+};
 
-  // Add or remove the "ion-palette-high-contrast" class on the html element
-  const toggleHighContrastPalette = (shouldAdd) => {
-    document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
-  };
+// Add or remove the "ion-palette-high-contrast" class on the html element
+const toggleHighContrastPalette = (shouldAdd) => {
+  document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
+};
 
-  // Check/uncheck the toggle and update the palettes
-  const initializeDarkPalette = (isDark) => {
-    darkPaletteToggle.value = isDark;
-    toggleDarkPalette(isDark);
-  };
+// Check/uncheck the toggle and update the palettes
+const initializeDarkPalette = (isDark) => {
+  darkPaletteToggle.value = isDark;
+  toggleDarkPalette(isDark);
+};
 
-  const initializeHighContrastPalette = (isHighContrast) => {
-    highContrastPaletteToggle.value = isHighContrast;
-    toggleHighContrastPalette(isHighContrast);
-  };
+const initializeHighContrastPalette = (isHighContrast) => {
+  highContrastPaletteToggle.value = isHighContrast;
+  toggleHighContrastPalette(isHighContrast);
+};
 
-  // Initialize the dark palette based on the initial
-  // value of the media queries
-  initializeDarkPalette(prefersDark.matches);
-  initializeHighContrastPalette(prefersHighContrast.matches);
+// Initialize the dark palette based on the initial
+// value of the media queries
+initializeDarkPalette(prefersDark.matches);
+initializeHighContrastPalette(prefersHighContrast.matches);
 
-  // Listen for changes to the media queries
-  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
-  prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
+// Listen for changes to the media queries
+prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
+prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
 
-  // Listen for the toggle check/uncheck to toggle the dark palette
-  const darkChange = (event: ToggleCustomEvent) => {
-    toggleDarkPalette(event.detail.checked);
-  };
+// Listen for the toggle check/uncheck to toggle the dark palette
+const darkChange = (event: ToggleCustomEvent) => {
+  toggleDarkPalette(event.detail.checked);
+};
 
-  // Listen for the toggle check/uncheck to toggle the high contrast palette
-  const highContrastChange = (event: ToggleCustomEvent) => {
-    toggleHighContrastPalette(event.detail.checked);
-  };
+// Listen for the toggle check/uncheck to toggle the high contrast palette
+const highContrastChange = (event: ToggleCustomEvent) => {
+  toggleHighContrastPalette(event.detail.checked);
+};
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
-  ion-item {
-    --transition: none;
-  }
+/* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+ion-item {
+  --transition: none;
+}
 </style>
 ```

@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
@@ -13,47 +13,47 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { IonIcon, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/vue';
-  import { caretDown, ellipse, warning } from 'ionicons/icons';
+import { ref } from 'vue';
+import { IonIcon, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/vue';
+import { caretDown, ellipse, warning } from 'ionicons/icons';
 
-  const items = ref([
-    { label: 'Buy groceries', icon: warning, color: 'warning' },
-    { label: 'Call the bank', icon: warning, color: 'warning' },
-    { label: 'Finish project report', icon: ellipse, color: 'light' },
-    { label: 'Book flight tickets', icon: ellipse, color: 'light' },
-    { label: 'Read a book', icon: caretDown, color: 'secondary' },
-  ]);
+const items = ref([
+  { label: 'Buy groceries', icon: warning, color: 'warning' },
+  { label: 'Call the bank', icon: warning, color: 'warning' },
+  { label: 'Finish project report', icon: ellipse, color: 'light' },
+  { label: 'Book flight tickets', icon: ellipse, color: 'light' },
+  { label: 'Read a book', icon: caretDown, color: 'secondary' },
+]);
 
-  const iconMap = ref(new Map<string, HTMLElement>());
+const iconMap = ref(new Map<string, HTMLElement>());
 
-  function setIconRef(el: HTMLElement | null, label: string) {
-    if (el) {
-      iconMap.value.set(label, el);
-    } else {
-      iconMap.value.delete(label);
-    }
+function setIconRef(el: HTMLElement | null, label: string) {
+  if (el) {
+    iconMap.value.set(label, el);
+  } else {
+    iconMap.value.delete(label);
   }
+}
 
-  function handleReorderStart() {
-    console.log('Reorder started');
+function handleReorderStart() {
+  console.log('Reorder started');
 
-    // Hide the icons when the reorder starts
-    iconMap.value.forEach((icon) => {
-      icon.$el.style.opacity = '0';
-    });
-  }
+  // Hide the icons when the reorder starts
+  iconMap.value.forEach((icon) => {
+    icon.$el.style.opacity = '0';
+  });
+}
 
-  function handleReorderEnd(event: ReorderEndCustomEvent) {
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+function handleReorderEnd(event: ReorderEndCustomEvent) {
+  console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
-    // Show the icons again
-    iconMap.value.forEach((icon) => {
-      icon.$el.style.opacity = '1';
-    });
+  // Show the icons again
+  iconMap.value.forEach((icon) => {
+    icon.$el.style.opacity = '1';
+  });
 
-    // Finish the reorder and update the items data
-    items.value = event.detail.complete(items.value);
-  }
+  // Finish the reorder and update the items data
+  items.value = event.detail.complete(items.value);
+}
 </script>
 ```

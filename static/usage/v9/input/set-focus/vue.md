@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-item>
@@ -11,13 +11,13 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput, IonItem, IonList, IonButton } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonInput, IonItem, IonList, IonButton } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const input = ref();
+const input = ref();
 
-  function setFocus() {
-    input.value.$el.setFocus();
-  }
+function setFocus() {
+  input.value.$el.setFocus();
+}
 </script>
 ```

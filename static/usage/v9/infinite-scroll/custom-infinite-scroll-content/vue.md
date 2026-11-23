@@ -1,15 +1,15 @@
-```html
+```vue
 <style>
-  svg {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-  }
+svg {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
 
-  .infinite-scroll-content {
-    text-align: center;
-    padding: 20px 0;
-  }
+.infinite-scroll-content {
+  text-align: center;
+  padding: 20px 0;
+}
 </style>
 
 <template>
@@ -82,13 +82,13 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonInfiniteScroll, IonList, IonItem, IonAvatar, IonLabel } from '@ionic/vue';
-  import { reactive } from 'vue';
+import { IonContent, IonInfiniteScroll, IonList, IonItem, IonAvatar, IonLabel } from '@ionic/vue';
+import { reactive } from 'vue';
 
-  const items = reactive([]);
+const items = reactive([]);
 
-  for (let i = 1; i < 51; i++) {
-    items.push(`Item ${i}`);
-  }
+for (let i = 1; i < 51; i++) {
+  items.push(`Item ${i}`);
+}
 </script>
 ```

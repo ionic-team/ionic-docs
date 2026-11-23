@@ -8,14 +8,14 @@ to: "<%= `static/usage/v${version}/${name}/${path}/vue.md` %>"
 </template>
 
 <script setup lang="ts">
-  import { <%= pascalComponent %> } from '@ionic/vue';
+import { <%= pascalComponent %> } from '@ionic/vue';
 </script>
 <% if (css){ -%>
 
 <style scoped>
-  <%= component %> {
-    /* styles go here */
-  }
+<%= component %> {
+  /* styles go here */
+}
 </style>
 <% } -%>
 ```

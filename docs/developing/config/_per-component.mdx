@@ -167,20 +167,20 @@ createApp(App).use(IonicVue, {
 
 **Recommended**
 
-```html
+```vue
 <template>
-  <ion-back-button [text]="backButtonText"></ion-back-button>
+  <ion-back-button :text="backButtonText"></ion-back-button>
 </template>
 
 <script setup lang="ts">
-  import { IonBackButton } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonBackButton } from '@ionic/vue';
+import { ref } from 'vue';
 
-  /**
-   * The back button text can be updated
-   * anytime the locale changes.
-   */
-  const backButtonText = ref('Go Back');
+/**
+ * The back button text can be updated
+ * anytime the locale changes.
+ */
+const backButtonText = ref('Go Back');
 </script>
 ```
 

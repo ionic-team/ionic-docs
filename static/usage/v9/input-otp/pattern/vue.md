@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input-otp pattern="[1-4]" value="123"> Numbers 1-4 only </ion-input-otp>
   <ion-input-otp type="text" pattern="." value="!@#"> All characters allowed </ion-input-otp>
@@ -11,6 +11,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInputOtp } from '@ionic/vue';
+import { IonInputOtp } from '@ionic/vue';
 </script>
 ```

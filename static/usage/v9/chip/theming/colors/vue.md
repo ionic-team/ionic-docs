@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-chip>Default</ion-chip>
   <ion-chip color="primary">Primary</ion-chip>
@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonChip } from '@ionic/vue';
+import { IonChip } from '@ionic/vue';
 </script>
 ```

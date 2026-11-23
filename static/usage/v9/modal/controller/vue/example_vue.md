@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-page>
     <ion-header>
@@ -14,24 +14,24 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, modalController } from '@ionic/vue';
-  import Modal from './Modal.vue';
-  import { ref } from 'vue';
+import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, modalController } from '@ionic/vue';
+import Modal from './Modal.vue';
+import { ref } from 'vue';
 
-  const message = ref('This modal example uses the modalController to present and dismiss modals.');
+const message = ref('This modal example uses the modalController to present and dismiss modals.');
 
-  const openModal = async () => {
-    const modal = await modalController.create({
-      component: Modal,
-    });
+const openModal = async () => {
+  const modal = await modalController.create({
+    component: Modal,
+  });
 
-    modal.present();
+  modal.present();
 
-    const { data, role } = await modal.onWillDismiss();
+  const { data, role } = await modal.onWillDismiss();
 
-    if (role === 'confirm') {
-      message.value = `Hello, ${data}!`;
-    }
-  };
+  if (role === 'confirm') {
+    message.value = `Hello, ${data}!`;
+  }
+};
 </script>
 ```

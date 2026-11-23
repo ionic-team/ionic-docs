@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -17,12 +17,12 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonHeader, IonToolbar, IonContent, IonTitle, IonToast } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonButton, IonHeader, IonToolbar, IonContent, IonTitle, IonToast } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const isOpen = ref(false);
-  const setOpen = (state: boolean) => {
-    isOpen.value = state;
-  };
+const isOpen = ref(false);
+const setOpen = (state: boolean) => {
+  isOpen.value = state;
+};
 </script>
 ```

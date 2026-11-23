@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-button id="click-trigger">Left-Click Me</ion-button>
   <ion-popover trigger="click-trigger" trigger-action="click">
@@ -17,6 +17,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButton, IonContent, IonPopover } from '@ionic/vue';
+import { IonButton, IonContent, IonPopover } from '@ionic/vue';
 </script>
 ```

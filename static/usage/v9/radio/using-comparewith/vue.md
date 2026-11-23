@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list>
     <ion-radio-group :compareWith="compareWith" @ionChange="handleChange($event)">
@@ -10,32 +10,32 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/vue';
+import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/vue';
 
-  const foods = [
-    {
-      id: 1,
-      name: 'Apples',
-      type: 'fruit',
-    },
-    {
-      id: 2,
-      name: 'Carrots',
-      type: 'vegetable',
-    },
-    {
-      id: 3,
-      name: 'Cupcakes',
-      type: 'dessert',
-    },
-  ];
+const foods = [
+  {
+    id: 1,
+    name: 'Apples',
+    type: 'fruit',
+  },
+  {
+    id: 2,
+    name: 'Carrots',
+    type: 'vegetable',
+  },
+  {
+    id: 3,
+    name: 'Cupcakes',
+    type: 'dessert',
+  },
+];
 
-  const compareWith = (o1, o2) => {
-    return o1.id === o2.id;
-  };
+const compareWith = (o1, o2) => {
+  return o1.id === o2.id;
+};
 
-  const handleChange = (event) => {
-    console.log('Current value:', JSON.stringify(event.detail.value));
-  };
+const handleChange = (event) => {
+  console.log('Current value:', JSON.stringify(event.detail.value));
+};
 </script>
 ```

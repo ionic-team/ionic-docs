@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input aria-label="Primary input" color="primary" placeholder="Primary input"></ion-input>
   <ion-input aria-label="Secondary input" color="secondary" placeholder="Secondary input"></ion-input>
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput } from '@ionic/vue';
+import { IonInput } from '@ionic/vue';
 </script>
 ```

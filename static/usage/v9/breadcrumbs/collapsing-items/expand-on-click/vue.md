@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-breadcrumbs :max-items="maxBreadcrumbs" @ionCollapsedClick="expandBreadcrumbs()">
     <ion-breadcrumb href="#home">Home</ion-breadcrumb>
@@ -11,13 +11,13 @@
 </template>
 
 <script setup lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
-  import { ref } from 'vue';
+import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/vue';
+import { ref } from 'vue';
 
-  const maxBreadcrumbs = ref(4);
+const maxBreadcrumbs = ref(4);
 
-  const expandBreadcrumbs = () => {
-    maxBreadcrumbs.value = undefined;
-  };
+const expandBreadcrumbs = () => {
+  maxBreadcrumbs.value = undefined;
+};
 </script>
 ```

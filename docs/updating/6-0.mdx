@@ -164,7 +164,7 @@ Refer to the [Testing section below](#testing) for more information.
 
 **Before**
 
-```html
+```vue
 <ion-modal
   :is-open="modalOpenRef"
   @onWillPresent="onModalWillPresentHandler"
@@ -178,7 +178,7 @@ Refer to the [Testing section below](#testing) for more information.
 
 **After**
 
-```html
+```vue
 <ion-modal
   :is-open="modalOpenRef"
   @willPresent="onModalWillPresentHandler"
@@ -200,26 +200,26 @@ This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `io
 
 **Before**
 
-```html
+```vue
 <ion-tabs>
   <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
 </ion-tabs>
 
 <script setup lang="ts">
-  import { IonTabs, IonTabBar } from '@ionic/vue';
+import { IonTabs, IonTabBar } from '@ionic/vue';
 </script>
 ```
 
 **After**
 
-```html
+```vue
 <ion-tabs>
   <ion-router-outlet></ion-router-outlet>
   <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
 </ion-tabs>
 
 <script setup lang="ts">
-  import { IonTabs, IonTabBar, IonRouterOutlet } from '@ionic/vue';
+import { IonTabs, IonTabBar, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 

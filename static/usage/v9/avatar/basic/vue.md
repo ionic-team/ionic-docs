@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-avatar>
     <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAvatar } from '@ionic/vue';
+import { IonAvatar } from '@ionic/vue';
 </script>
 ```

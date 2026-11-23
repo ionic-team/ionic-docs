@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-list-header>
     <ion-label>Custom List Header</ion-label>
@@ -6,17 +6,17 @@
 </template>
 
 <script setup lang="ts">
-  import { IonLabel, IonListHeader } from '@ionic/vue';
+import { IonLabel, IonListHeader } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-list-header {
-    --background: #19422d;
-    --color: #fff;
+ion-list-header {
+  --background: #19422d;
+  --color: #fff;
 
-    --border-width: 0 0 4px 0;
-    --border-color: #f24aec;
-    --border-style: double;
-  }
+  --border-width: 0 0 4px 0;
+  --border-color: #f24aec;
+  --border-style: double;
+}
 </style>
 ```

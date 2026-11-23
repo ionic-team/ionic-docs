@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-item-divider>
     <ion-label>Default</ion-label>
@@ -33,6 +33,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonItemDivider, IonLabel } from '@ionic/vue';
+import { IonItemDivider, IonLabel } from '@ionic/vue';
 </script>
 ```

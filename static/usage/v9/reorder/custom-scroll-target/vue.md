@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-content :scroll-y="false">
     <div class="ion-content-scroll-host">
@@ -36,37 +36,29 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonContent,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonReorder,
-    IonReorderGroup,
-    ReorderEndCustomEvent,
-  } from '@ionic/vue';
+import { IonContent, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/vue';
 
-  const handleReorderEnd = (event: ReorderEndCustomEvent) => {
-    // The `from` and `to` properties contain the index of the item
-    // when the drag started and ended, respectively
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+const handleReorderEnd = (event: ReorderEndCustomEvent) => {
+  // The `from` and `to` properties contain the index of the item
+  // when the drag started and ended, respectively
+  console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. This method can also be called directly
-    // by the reorder group.
-    event.detail.complete();
-  };
+  // Finish the reorder and position the item in the DOM based on
+  // where the gesture ended. This method can also be called directly
+  // by the reorder group.
+  event.detail.complete();
+};
 </script>
 
 <style scoped>
-  .ion-content-scroll-host {
-    position: absolute;
-    top: 0;
-    left: 0;
+.ion-content-scroll-host {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-  }
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
 </style>
 ```

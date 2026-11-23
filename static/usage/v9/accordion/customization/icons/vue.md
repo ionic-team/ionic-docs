@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-accordion-group>
     <ion-accordion value="first" :toggle-icon="caretDownCircle" toggle-icon-slot="start">
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
-  import { caretDownCircle } from 'ionicons/icons';
+import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
+import { caretDownCircle } from 'ionicons/icons';
 </script>
 ```

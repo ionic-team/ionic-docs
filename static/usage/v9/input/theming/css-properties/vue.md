@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-input
     aria-label="Custom input"
@@ -11,27 +11,27 @@
 </template>
 
 <script setup lang="ts">
-  import { IonInput } from '@ionic/vue';
+import { IonInput } from '@ionic/vue';
 </script>
 
 <style>
-  ion-input.custom {
-    --background: #373737;
-    --color: #fff;
-    --placeholder-color: #ddd;
-    --placeholder-opacity: 0.8;
+ion-input.custom {
+  --background: #373737;
+  --color: #fff;
+  --placeholder-color: #ddd;
+  --placeholder-opacity: 0.8;
 
-    --padding-bottom: 10px;
-    --padding-end: 10px;
-    --padding-start: 10px;
-    --padding-top: 10px;
-  }
+  --padding-bottom: 10px;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --padding-top: 10px;
+}
 
-  ion-input.custom.ios .input-bottom .helper-text,
-  ion-input.custom.ios .input-bottom .counter,
-  ion-input.custom.md .input-bottom .helper-text,
-  ion-input.custom.md .input-bottom .counter {
-    color: var(--ion-color-primary);
-  }
+ion-input.custom.ios .input-bottom .helper-text,
+ion-input.custom.ios .input-bottom .counter,
+ion-input.custom.md .input-bottom .helper-text,
+ion-input.custom.md .input-bottom .counter {
+  color: var(--ion-color-primary);
+}
 </style>
 ```

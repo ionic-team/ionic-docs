@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-header>
     <ion-toolbar>
@@ -60,14 +60,14 @@
 </template>
 
 <script setup lang="ts">
-  import { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/vue';
-  import {
-    chevronDownCircle,
-    chevronForwardCircle,
-    chevronUpCircle,
-    colorPalette,
-    document,
-    globe,
-  } from 'ionicons/icons';
+import { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/vue';
+import {
+  chevronDownCircle,
+  chevronForwardCircle,
+  chevronUpCircle,
+  colorPalette,
+  document,
+  globe,
+} from 'ionicons/icons';
 </script>
 ```

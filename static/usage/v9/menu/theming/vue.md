@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-menu content-id="main-content">
     <ion-header>
@@ -22,18 +22,18 @@
 </template>
 
 <script setup lang="ts">
-  import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <style scoped>
-  ion-menu::part(backdrop) {
-    background-color: rgba(255, 0, 255, 0.5);
-  }
+ion-menu::part(backdrop) {
+  background-color: rgba(255, 0, 255, 0.5);
+}
 
-  ion-menu::part(container) {
-    border-radius: 0 20px 20px 0;
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
 
-    box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
-  }
+  box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
+}
 </style>
 ```

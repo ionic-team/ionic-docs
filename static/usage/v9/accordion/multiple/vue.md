@@ -1,4 +1,4 @@
-```html
+```vue
 <template>
   <ion-accordion-group :multiple="true" :value="['first', 'third']">
     <ion-accordion value="first">
@@ -23,6 +23,6 @@
 </template>
 
 <script setup lang="ts">
-  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
+import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
 </script>
 ```

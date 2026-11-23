@@ -1,12 +1,12 @@
-```html
+```vue
 <style>
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    flex-direction: column;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
 </style>
 
 <template>
@@ -23,33 +23,33 @@
 </template>
 
 <script setup lang="ts">
-  import { IonActionSheet, IonButton } from '@ionic/vue';
+import { IonActionSheet, IonButton } from '@ionic/vue';
 
-  const actionSheetButtons = [
-    {
-      text: 'Delete',
-      role: 'destructive',
-      data: {
-        action: 'delete',
-      },
+const actionSheetButtons = [
+  {
+    text: 'Delete',
+    role: 'destructive',
+    data: {
+      action: 'delete',
     },
-    {
-      text: 'Share',
-      data: {
-        action: 'share',
-      },
+  },
+  {
+    text: 'Share',
+    data: {
+      action: 'share',
     },
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      data: {
-        action: 'cancel',
-      },
+  },
+  {
+    text: 'Cancel',
+    role: 'cancel',
+    data: {
+      action: 'cancel',
     },
-  ];
+  },
+];
 
-  const logResult = (event: CustomEvent) => {
-    console.log(JSON.stringify(event.detail, null, 2));
-  };
+const logResult = (event: CustomEvent) => {
+  console.log(JSON.stringify(event.detail, null, 2));
+};
 </script>
 ```
