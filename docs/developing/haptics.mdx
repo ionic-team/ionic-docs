@@ -17,7 +17,7 @@ Haptics are the small vibrations a device plays as touch feedback. Some Ionic co
 
 ## Overview {/* #overview */}
 
-Ionic plays haptics through the [Capacitor Haptics plugin](../native/haptics.md) when it is installed. Each time a component would play a haptic, it dispatches an `ionHaptic` event first. The event bubbles, so a single listener on `document` receives the events from every component.
+Ionic plays haptics through the [Capacitor Haptics plugin](../native/haptics.mdx) when it is installed. Each time a component would play a haptic, it dispatches an `ionHaptic` event first. The event bubbles, so a single listener on `document` receives the events from every component.
 
 The event is dispatched even when no haptic plays, such as when the `@capacitor/haptics` package is not installed, the app runs in a browser without vibration support, or `haptics` is `false` in the [IonicConfig](./config.mdx). Setting `haptics: false` and listening for `ionHaptic` lets an app replace every built-in haptic with its own.
 
@@ -40,7 +40,7 @@ Some components use these components internally. `ion-datetime` renders `ion-pic
 
 ## Event Detail {/* #event-detail */}
 
-The `detail` of the event describes the haptic Ionic would play. Its `type` matches the [Capacitor Haptics](../native/haptics.md) method Ionic would call, except `selection`, which has no matching method.
+The `detail` of the event describes the haptic Ionic would play. Its `type` matches the [Capacitor Haptics](../native/haptics.mdx) method Ionic would call, except `selection`, which has no matching method.
 
 | `detail.type`      | Extra properties                                           | Description                                                                                      |
 | ------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
