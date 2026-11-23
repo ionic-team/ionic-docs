@@ -83,7 +83,7 @@ import LabelLink from '@site/static/usage/v9/checkbox/label-link/index.mdx';
 
 Helper and error text can be used inside of a checkbox with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-checkbox`. This ensures errors are not shown before the user has a chance to enter data.
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+In Angular, this is done automatically through form validation. Starting in Ionic v9.1, this also works with [signal forms](https://angular.dev/guide/forms/signals/overview) using `[formField]`. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
 import HelperError from '@site/static/usage/v9/checkbox/helper-error/index.mdx';
 
