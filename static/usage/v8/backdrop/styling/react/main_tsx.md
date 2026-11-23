@@ -24,7 +24,7 @@ function Example() {
       </div>
       <div id="box">
         <IonCheckbox color="light"></IonCheckbox>
-        <IonButton class="ion-margin-start" color="light">
+        <IonButton className="ion-margin-start" color="light">
           Clickable
         </IonButton>
       </div>

@@ -31,7 +31,7 @@ function Example() {
           <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent className="ion-padding">
         <IonButton id="open-custom-dialog" expand="block">
           Open Custom Dialog
         </IonButton>

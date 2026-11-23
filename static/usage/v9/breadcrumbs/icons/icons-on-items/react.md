@@ -26,7 +26,7 @@ function Example() {
         </IonBreadcrumb>
       </IonBreadcrumbs>
 
-      <IonLabel class="ion-margin-top">Icons at End</IonLabel>
+      <IonLabel className="ion-margin-top">Icons at End</IonLabel>
       <IonBreadcrumbs>
         <IonBreadcrumb href="#home">
           Home

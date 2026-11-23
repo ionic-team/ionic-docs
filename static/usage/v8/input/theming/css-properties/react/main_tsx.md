@@ -9,7 +9,7 @@ function Example() {
     <IonInput
       aria-label="Custom input"
       placeholder="Custom input"
-      class="custom"
+      className="custom"
       helperText="Helper text"
       counter={true}
       maxlength={20}

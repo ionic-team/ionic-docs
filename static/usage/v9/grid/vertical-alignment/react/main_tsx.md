@@ -9,7 +9,7 @@ function Example() {
     <>
       <b>Columns aligned at the top</b>
       <IonGrid>
-        <IonRow class="ion-align-items-start">
+        <IonRow className="ion-align-items-start">
           <IonCol>1</IonCol>
           <IonCol>2</IonCol>
           <IonCol>3</IonCol>
@@ -21,7 +21,7 @@ function Example() {
 
       <b>Columns aligned at the center</b>
       <IonGrid>
-        <IonRow class="ion-align-items-center">
+        <IonRow className="ion-align-items-center">
           <IonCol>1</IonCol>
           <IonCol>2</IonCol>
           <IonCol>3</IonCol>
@@ -33,7 +33,7 @@ function Example() {
 
       <b>Columns aligned at the bottom</b>
       <IonGrid>
-        <IonRow class="ion-align-items-end">
+        <IonRow className="ion-align-items-end">
           <IonCol>1</IonCol>
           <IonCol>2</IonCol>
           <IonCol>3</IonCol>
