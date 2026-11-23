@@ -10,11 +10,11 @@ Markup rendered by our own swizzled components keeps its styles next to the comp
 
 `customCss` loads `tokens.css` from `@ionic-internal/ionic-ds`, Ionic's design system package, before `custom.scss`, so its custom properties work in every stylesheet, CSS modules included. The site uses its color scales and `--shadow-0`, not its type, spacing, or radius tokens.
 
-- Each color is a scale from `0`, the lightest, to `100`, the darkest, such as `--c-indigo-50` or `--c-blue-70`. Indigo, carbon, and gray step by 10, the other colors by 5.
+- Each color is a scale that gets darker as the number goes up, such as `--c-indigo-50` or `--c-blue-70`. Indigo, carbon, and gray run from `0` to `100`, the other colors from `0` to `200`, all in steps of 10.
 - A token has the same value in both themes, so a dark style uses a different step under `html[data-theme='dark']` instead of redefining the token.
 - Use a token only when its value is exactly the color you need. A near match changes how the page renders, so keep the hard-coded value instead.
 
-The values are in [tokens.css](/node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css), once dependencies are installed.
+The values are in [tokens.css](https://unpkg.com/@ionic-internal/ionic-ds@8/dist/tokens/tokens.css), also at `node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css` once dependencies are installed.
 
 ## Writing an override
 
