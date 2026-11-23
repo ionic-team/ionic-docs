@@ -1,6 +1,6 @@
 /* Dark theme overrides */
 [data-theme="dark"] .tabNav {
-  --tab-nav-btn-background: rgb(34, 45, 58);
+  --tab-nav-btn-background: var(--c-carbon-90);
   --tab-nav-btn-color: var(--c-carbon-20);
 }
 

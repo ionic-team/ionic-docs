@@ -1,17 +1,17 @@
 .release-notes {
   margin-block-start: 4rem;
 
-  --accent-color: #0054e9;
+  --accent-color: var(--c-blue-100);
   --accent-color-rgb: 0, 84, 233;
-  --accent-color-100: #4d8dff;
+  --accent-color-100: var(--c-blue-70);
   --accent-color-200: #639cff;
-  --accent-color-300: #4d8dff;
-  --accent-color-400: #7cabff;
-  --accent-color-500: #97bdff;
-  --accent-color-600: #b2ceff;
-  --accent-color-700: #cddfff;
-  --accent-color-800: #e3edff;
-  --accent-color-900: #f0f6ff;
+  --accent-color-300: var(--c-blue-70);
+  --accent-color-400: var(--c-blue-50);
+  --accent-color-500: var(--c-blue-40);
+  --accent-color-600: var(--c-blue-30);
+  --accent-color-700: var(--c-blue-20);
+  --accent-color-800: var(--c-blue-10);
+  --accent-color-900: var(--c-blue-0);
   --background: var(--token-primary-bg-c);
   --color: var(--ifm-font-color-base);
   --code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
@@ -104,8 +104,8 @@
   text-transform: uppercase;
 
   background: transparent;
-  color: #b2becd;
-  border: 1px solid #b2becd;
+  color: var(--c-indigo-50);
+  border: 1px solid var(--c-indigo-50);
   border-radius: 14px;
   height: 24px;
   padding: 2px 8px;
@@ -125,8 +125,8 @@
 }
 
 .release-note-minor .release-badge {
-  background: #b2becd;
-  border-color: #b2becd;
+  background: var(--c-indigo-50);
+  border-color: var(--c-indigo-50);
   color: var(--background, #fff);
 }
 

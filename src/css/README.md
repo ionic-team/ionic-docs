@@ -6,6 +6,16 @@ The `theme` folder overrides markup rendered by `@docusaurus/theme-classic`. Eac
 
 Markup rendered by our own swizzled components keeps its styles next to the component in [src/theme](/src/theme), the same way Docusaurus does. A wrapped component's module can also style the upstream markup it renders, scoped under the wrapper's class, when the rule only applies inside that wrapper. For example, `src/theme/TOC/styles.module.css` styles the Edit this page link only where the TOC renders it, while `theme/EditThisPage.scss` styles the link everywhere. Refer to [src/theme/README.md](/src/theme/README.md).
 
+## Colors from ionic-ds
+
+`customCss` loads `tokens.css` from `@ionic-internal/ionic-ds`, Ionic's design system package, before `custom.scss`, so its custom properties work in every stylesheet, CSS modules included. The site uses its color scales and `--shadow-0`, not its type, spacing, or radius tokens.
+
+- Each color is a scale that gets darker as the number goes up, such as `--c-indigo-50` or `--c-blue-70`. Indigo, carbon, and gray run from `0` to `100`, the other colors from `0` to `200`, all in steps of 10.
+- A token has the same value in both themes, so a dark style uses a different step under `html[data-theme='dark']` instead of redefining the token.
+- Use a token only when its value is exactly the color you need. A near match changes how the page renders, so keep the hard-coded value instead.
+
+The values are in [tokens.css](https://unpkg.com/@ionic-internal/ionic-ds@8/dist/tokens/tokens.css), also at `node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css` once dependencies are installed.
+
 ## Writing an override
 
 Start each file with its themed variables, then the overrides.
