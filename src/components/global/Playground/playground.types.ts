@@ -1,11 +1,18 @@
 import type { ReactElement } from 'react';
+import type { Framework } from '@site/src/utils/frameworks';
 
-export enum UsageTarget {
-  JavaScript = 'javascript',
-  Angular = 'angular',
-  React = 'react',
-  Vue = 'vue',
-}
+/**
+ * The frameworks a playground can show code for. Each value is one of the shared
+ * framework values, so picking one here selects it in the docs' framework tabs.
+ */
+export const UsageTarget = {
+  JavaScript: 'javascript',
+  Angular: 'angular',
+  React: 'react',
+  Vue: 'vue',
+} as const satisfies Record<string, Framework>;
+
+export type UsageTarget = (typeof UsageTarget)[keyof typeof UsageTarget];
 
 export enum Mode {
   iOS = 'ios',
@@ -34,13 +41,13 @@ export type CodeSnippets = Partial<Record<UsageTarget, ReactElement | Record<str
  * without annotations and `event.detail` is checked.
  *
  * `console` is dispatched by the demo page inside the playground iframe, so it is
- * listened for on that frame's `contentWindow`. The other two are dispatched on the
- * page's own window to keep playgrounds on a page in sync.
+ * listened for on that frame's `contentWindow`. `playground-event-updated` is
+ * dispatched on the page's own window to keep the mode of playgrounds on a page in
+ * sync.
  */
 declare global {
   interface WindowEventMap {
     console: CustomEvent<ConsoleItem>;
     'playground-event-updated': CustomEvent<Mode>;
-    'playground-usage-target-updated': CustomEvent<UsageTarget>;
   }
 }
