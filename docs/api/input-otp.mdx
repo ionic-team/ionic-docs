@@ -107,7 +107,7 @@ import States from '@site/static/usage/v9/input-otp/states/index.mdx';
 
 Helper and error text can be displayed under the input boxes with the `helperText` and `errorText` properties. The error text isn't displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-input-otp`, so errors aren't shown before the user has a chance to enter a code.
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the classes need to be added manually based on your own validation.
+In Angular, this is done automatically through form validation. Starting in Ionic v9.1, this also works with [signal forms](https://angular.dev/guide/forms/signals/overview) using `[formField]`. In JavaScript, React and Vue, the classes need to be added manually based on your own validation.
 
 import HelperError from '@site/static/usage/v9/input-otp/helper-error/index.mdx';
 
