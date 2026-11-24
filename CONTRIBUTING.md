@@ -18,6 +18,7 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 - [Authoring Content](#authoring-content)
   - [Admonitions](#admonitions)
   - [Links and Headings](#links-and-headings)
+  - [Framework Tabs](#framework-tabs)
   - [Playgrounds](#playgrounds)
   - [Reference Content](#reference-content)
 - [Translation](#translation)
@@ -240,6 +241,22 @@ Markup inside code samples is exempt, since it's example code rather than part o
 ```
 npm run lint
 ```
+
+### Framework Tabs
+
+To show a sample once per framework, use `<FrameworkTabs>`. Give each `<TabItem>` only its `value`, such as `angular`, `react`, or `vue`:
+
+```mdx
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
+import TabItem from '@theme/TabItem';
+
+<FrameworkTabs>
+  <TabItem value="angular">…</TabItem>
+  <TabItem value="react">…</TabItem>
+</FrameworkTabs>
+```
+
+The labels come from `src/utils/frameworks.ts`, and the tabs are sorted alphabetically by label. Picking a framework selects it in every framework tab and playground on the site. A tab outside that list, such as Stencil, needs its own `label`. `npm run lint` fails on a `<Tabs groupId="framework">`.
 
 ### Playgrounds
 

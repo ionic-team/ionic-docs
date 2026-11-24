@@ -139,9 +139,45 @@ function pageDescription() {
   };
 }
 
+/**
+ * Framework tabs must use `<FrameworkTabs>`, which takes each tab's label and
+ * the tab order from `src/utils/frameworks.ts`. A `<Tabs groupId="framework">`
+ * with its own `values` lets pages drift apart in spelling and order.
+ *
+ * A Tabs inside an `mdx-code-block` fence is a code node to remark, so the
+ * fence's text is searched as well.
+ */
+const FRAMEWORK_TABS_IN_CODE = /<Tabs\b[^>]*\bgroupId=["']framework["']/;
+
+function frameworkTabs() {
+  return (tree, file) => {
+    const report = (node) => {
+      const message = file.message(
+        'Use `<FrameworkTabs>` instead of `<Tabs groupId="framework">`. It takes the labels and order from `src/utils/frameworks.ts`, so every page shows the frameworks the same way.',
+        node
+      );
+      message.source = 'ionic-docs';
+      message.ruleId = 'framework-tabs';
+    };
+    const visit = (node) => {
+      if (node.type === 'code' && node.lang === 'mdx-code-block' && FRAMEWORK_TABS_IN_CODE.test(node.value)) {
+        report(node);
+      } else if (
+        node.type === 'mdxJsxFlowElement' &&
+        node.name === 'Tabs' &&
+        node.attributes.some((a) => a.name === 'groupId' && a.value === 'framework')
+      ) {
+        report(node);
+      }
+      node.children?.forEach(visit);
+    };
+    visit(tree);
+  };
+}
+
 export default {
   // remark-frontmatter parses the frontmatter as YAML, as Docusaurus does.
   // Without it, the lint reads it as Markdown, and a `<` in a description
   // becomes an unclosed JSX tag.
-  plugins: [remarkFrontmatter, docLinks, pageDescription],
+  plugins: [remarkFrontmatter, docLinks, pageDescription, frameworkTabs],
 };
