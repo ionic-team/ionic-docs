@@ -17,3 +17,66 @@
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
 }
+
+/// The pill shared by every tab and toggle button on the site: Docusaurus tabs,
+/// framework tabs and playground switchers, and the playground's mode buttons.
+/// Add `toggle-button-selected` to the selected one.
+///
+/// `$dark` selects dark mode. A `.module.scss` has to pass it wrapped in
+/// `:global()`, or CSS modules would rename it.
+@mixin toggle-button($dark: "html[data-theme='dark']") {
+  --toggle-button-color: var(--c-indigo-90);
+  --toggle-button-selected-color: var(--c-blue-90);
+  --toggle-button-selected-background: var(--c-blue-10);
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 10px;
+
+  color: var(--toggle-button-color);
+  background-color: transparent;
+  border: none;
+  border-radius: 100px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+
+  #{$dark} & {
+    --toggle-button-color: var(--c-carbon-20);
+    --toggle-button-selected-color: #fff;
+    --toggle-button-selected-background: var(--c-carbon-70);
+  }
+
+  // Reserves the width of the bold selected label, so selecting one doesn't
+  // shift the ones after it. Reads the label from a `data-text` attribute.
+  &::after {
+    content: attr(data-text);
+    font-weight: 500;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    visibility: hidden;
+
+    height: 0;
+  }
+
+  @media speech {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@mixin toggle-button-selected {
+  background-color: var(--toggle-button-selected-background);
+  color: var(--toggle-button-selected-color);
+  font-weight: 500;
+}

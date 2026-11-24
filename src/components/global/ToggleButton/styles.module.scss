@@ -1,0 +1,14 @@
+@use '../../../css/mixins';
+
+.button {
+  @include mixins.toggle-button(':global(html[data-theme="dark"])');
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.selected {
+  @include mixins.toggle-button-selected;
+}

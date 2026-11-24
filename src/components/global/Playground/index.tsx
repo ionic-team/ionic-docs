@@ -1,100 +1,42 @@
-import React, {
-  ForwardedRef,
-  type ReactElement,
-  type ReactNode,
-  forwardRef,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+/**
+ * The interactive example on a component page: a live demo above the code that
+ * builds it, for each framework.
+ *
+ * The toolbar switches the framework, shared with the docs' framework tabs, and
+ * the iOS or MD mode, kept in sync with every playground on the page. It also
+ * opens the example in StackBlitz, copies the code, resets the demo, and links
+ * to a new issue.
+ *
+ * The demo is the example's `demo.html`, loaded once per mode in two iframes so
+ * switching modes doesn't reload it. The iframes only load once the playground
+ * scrolls into view, and receive the site's dark mode as a message. The console,
+ * when shown, lists what the demo logs.
+ *
+ * The code is the rendered MDX for the selected framework, with a tab per file
+ * for a multi-file example. StackBlitz gets the code from those rendered blocks.
+ *
+ * For the props and how to write a playground, refer to the README.
+ */
+
+import React, { type ReactElement, type ReactNode, useEffect, useRef, useState } from 'react';
 
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { useColorMode, useStorageSlot } from '@docusaurus/theme-common';
+import { useColorMode } from '@docusaurus/theme-common';
 import { CodeSnippets, ConsoleItem, Mode, UsageTarget } from './playground.types';
-import { type Framework, FRAMEWORK_GROUP_ID, getFrameworkLabel } from '@site/src/utils/frameworks';
+import { FRAMEWORKS, useFrameworkChoice } from '@site/src/utils/frameworks';
 
 import Tooltip from '../Tooltip';
+import ToggleButton from '../ToggleButton';
+import FrameworkSwitcher from '../FrameworkSwitcher';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '../PlaygroundTabs/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
-import { useScrollPositionBlocker } from '@docusaurus/theme-common/internal';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-
-const ControlButton = forwardRef(
-  (
-    {
-      isSelected,
-      handleClick,
-      title,
-      label,
-      disabled,
-    }: {
-      isSelected: boolean;
-      handleClick: () => void;
-      title: string;
-      label: string;
-      disabled?: boolean;
-    },
-    ref: ForwardedRef<HTMLButtonElement>
-  ) => {
-    const controlButton = (
-      <button
-        title={disabled ? undefined : title}
-        disabled={disabled}
-        className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
-        onClick={handleClick}
-        data-text={label}
-        ref={ref}
-      >
-        {label}
-      </button>
-    );
-    if (disabled) {
-      return (
-        <Tooltip content={`Unavailable for ${label}`}>
-          {/* Disabled elements do not emit pointer events, so the wrapper is what triggers the tooltip. */}
-          <div>{controlButton}</div>
-        </Tooltip>
-      );
-    }
-    return controlButton;
-  }
-);
-
-const CodeBlockButton = ({
-  language,
-  usageTarget,
-  setAndSaveUsageTarget,
-  disabled,
-}: {
-  language: keyof typeof UsageTarget;
-  usageTarget: UsageTarget;
-  setAndSaveUsageTarget: (target: UsageTarget, tab: HTMLElement | null) => void;
-  disabled: boolean;
-}) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const langValue = UsageTarget[language];
-  const label = getFrameworkLabel(langValue);
-
-  return (
-    <ControlButton
-      isSelected={usageTarget === langValue}
-      handleClick={() => {
-        setAndSaveUsageTarget(langValue, buttonRef.current);
-      }}
-      title={`Show ${label} code`}
-      label={label}
-      disabled={disabled}
-      ref={buttonRef}
-    />
-  );
-};
 
 type MdxContent = () => ReactNode;
 
@@ -237,8 +179,6 @@ export default function Playground({
   const frameMD = useRef<HTMLIFrameElement | null>(null);
   const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
-  const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
-
   const getDefaultMode = () => {
     /**
      * If a custom mode was specified, use that.
@@ -261,26 +201,17 @@ export default function Playground({
   };
 
   /**
-   * The framework is shared with the docs' framework tabs, which store the
-   * reader's choice under the same key. Picking a framework in either one
-   * updates the other, and the choice is kept across page loads.
+   * The framework is shared with the docs' framework tabs. Picking a framework
+   * in either one updates the other, and the choice is kept across page loads.
    */
-  const [storedFramework, frameworkStorage] = useStorageSlot(FRAMEWORK_STORAGE_KEY);
+  const { selected: pickedFramework, select: selectFramework } = useFrameworkChoice(Object.keys(code));
 
   const getUsageTarget = (): UsageTarget => {
     /**
-     * The docs tabs have an Angular (Standalone) tab, which the playground
-     * shows as Angular.
-     */
-    const storedTarget = (
-      storedFramework === ANGULAR_STANDALONE_TAB ? UsageTarget.Angular : storedFramework
-    ) as UsageTarget | null;
-
-    /**
      * If the reader has picked a framework and there is code for it, use that.
      */
-    if (storedTarget && code[storedTarget] !== undefined) {
-      return storedTarget;
+    if (pickedFramework) {
+      return pickedFramework as UsageTarget;
     }
 
     /**
@@ -347,30 +278,6 @@ export default function Playground({
         })
       );
     }
-  };
-
-  const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement | null) => {
-    /**
-     * This prevents the scroll position from jumping around if
-     * there is a playground or tabs above this one with code that
-     * changes in length between frameworks.
-     *
-     * Note that we don't need this when changing the mode because
-     * the two mode iframes are always the same height.
-     */
-    if (tab) {
-      blockElementScrollPositionUntilNextRender(tab);
-    }
-
-    /**
-     * Angular (Standalone) in the docs tabs already shows Angular here,
-     * so keep it rather than switching those tabs to Angular.
-     */
-    if (target === UsageTarget.Angular && storedFramework === ANGULAR_STANDALONE_TAB) {
-      return;
-    }
-
-    frameworkStorage.set(target);
   };
 
   /**
@@ -746,43 +653,38 @@ export default function Playground({
     );
   }
 
-  const sortedUsageTargets = useMemo(() => (Object.keys(UsageTarget) as (keyof typeof UsageTarget)[]).sort(), []);
+  /**
+   * Every framework a playground supports, in the shared order. One without
+   * code is shown disabled.
+   */
+  const usageTargets: readonly string[] = Object.values(UsageTarget);
+  const frameworkOptions = FRAMEWORKS.filter((framework) => usageTargets.includes(framework.value)).map(
+    (framework) => ({
+      value: framework.value,
+      label: framework.label,
+      disabled: code[framework.value as UsageTarget] === undefined,
+    })
+  );
 
   return (
     <div className="playground" ref={hostRef}>
       <div className={`playground__container ${showConsole ? 'playground__container--has-console' : ''}`}>
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {sortedUsageTargets.map((lang) => {
-              /**
-               * If code was not passed for this target
-               * then we should disable the button.
-               */
-              const langValue = UsageTarget[lang];
-              const hasCode = code[langValue] !== undefined;
-              return (
-                <CodeBlockButton
-                  key={`code-block-${lang}`}
-                  language={lang}
-                  usageTarget={usageTarget}
-                  setAndSaveUsageTarget={setAndSaveUsageTarget}
-                  disabled={!hasCode}
-                />
-              );
-            })}
+            <FrameworkSwitcher options={frameworkOptions} selected={usageTarget} onSelect={selectFramework} />
           </div>
           <div className="playground__control-group">
-            <ControlButton
-              disabled={mode && mode === 'md'}
-              isSelected={isIOS}
-              handleClick={() => setAndSaveMode(Mode.iOS)}
+            <ToggleButton
+              disabled={mode === 'md'}
+              selected={isIOS}
+              onClick={() => setAndSaveMode(Mode.iOS)}
               title="iOS mode"
               label="iOS"
             />
-            <ControlButton
-              disabled={mode && mode === 'ios'}
-              isSelected={isMD}
-              handleClick={() => setAndSaveMode(Mode.MD)}
+            <ToggleButton
+              disabled={mode === 'ios'}
+              selected={isMD}
+              onClick={() => setAndSaveMode(Mode.MD)}
               title="MD mode"
               label="MD"
             />
@@ -985,10 +887,5 @@ const isFrameReady = (frame: HTMLIFrameElement | null) => {
   return (frame.contentWindow as any).demoReady === true;
 };
 
-/**
- * The key Docusaurus stores the selected tab under for the docs' framework tabs.
- */
-const FRAMEWORK_STORAGE_KEY = `docusaurus.tab.${FRAMEWORK_GROUP_ID}`;
-const ANGULAR_STANDALONE_TAB: Framework = 'angular-standalone';
 const MODE_STORAGE_KEY = 'playground_mode';
 const MODE_UPDATED_EVENT = 'playground-event-updated';

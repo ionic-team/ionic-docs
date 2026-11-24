@@ -1,9 +1,5 @@
 /* Dark theme overrides */
 [data-theme="dark"] .playground {
-  --playground-btn-color: var(--c-carbon-20);
-  --playground-btn-selected-color: #fff;
-  --playground-btn-selected-background: var(--c-carbon-70);
-
   --playground-btn-icon-color: var(--c-carbon-20);
   --playground-btn-icon-hover-background: rgba(67, 79, 93, 0.5);
 
@@ -26,9 +22,6 @@
 
 .playground {
   /**
-   * @prop --playground-btn-color The text color of the button in the toolbar.
-   * @prop --playground-btn-selected-color The text color of the button in the toolbar when selected.
-   * @prop --playground-btn-selected-background The background color of the button in the toolbar when selected.
    * @prop --playground-btn-icon-color The text color of the button icon in the toolbar.
    * @prop --playground-btn-icon-hover-background The background color of the button icon in the toolbar when hovered.
    * @prop --playground-separator-color The color of the separator/border in the toolbar.
@@ -44,9 +37,6 @@
    * @prop --playground-console-error-color The text color of error items in the console UI.
    * @prop --playground-console-error-separator-color The color of the top and bottom separator/border for error items in the console UI.
    */
-  --playground-btn-color: var(--c-indigo-90);
-  --playground-btn-selected-color: var(--c-blue-90);
-  --playground-btn-selected-background: var(--c-blue-10);
   --playground-btn-icon-hover-background: var(--c-indigo-20);
   --playground-btn-icon-color: var(--c-indigo-80);
   --playground-separator-color: var(--c-indigo-30);
@@ -121,7 +111,7 @@
   border-left: 1px solid var(--playground-separator-color);
 }
 
-.playground__control-group .playground__control-button:last-child {
+.playground__control-group:not(.playground__control-group--end) > :last-child {
   margin-right: 12px;
 }
 
@@ -129,55 +119,6 @@
   margin-left: auto;
   display: flex;
   gap: 4px;
-}
-
-.playground__control-button {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 10px;
-
-  color: var(--playground-btn-color);
-  background-color: transparent;
-  border: none;
-  border-radius: 100px;
-
-  font-size: 12px;
-
-  appearance: none;
-  cursor: pointer;
-  transition: background-color .2s, color .2s;
-}
-
-.playground__control-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* fix layout shifting when button is bolded on select */
-/* has the same text as the button, but bolded in advance to nudge the width */
-.playground__control-button::after {
-  content: attr(data-text);
-  font-weight: 500;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-  visibility: hidden;
-
-  height: 0;
-}
-
-@media speech {
-  .playground__control-button::after {
-    display: none;
-  }
-}
-
-.playground__control-button--selected {
-  background-color: var(--playground-btn-selected-background);
-  color: var(--playground-btn-selected-color);
-  font-weight: 500;
 }
 
 /* Icon buttons at the end of the toolbar */
@@ -331,8 +272,6 @@
 .playground .tabs {
   background: var(--playground-tabs-background);
 
-  --ifm-tabs-spacing: 0;
-
   /**
    * This fixes an issue in WebKit that causes the
    * border radius to not be respected when hovering
@@ -352,11 +291,25 @@
 .playground .tabs__item {
   color: var(--playground-tab-btn-color);
   font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0;
   display: inline-flex;
   align-items: center;
+  border: 1px solid transparent;
   border-radius: 0;
+  padding-block-start: calc(var(--ifm-tabs-padding-vertical) - 1px);
   white-space: nowrap;
   height: 40px;
+  transition: border-color 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.playground .tabs__item:hover {
+  background-color: inherit;
+}
+
+.playground .tabs__item:hover:not(.tabs__item--active) {
+  opacity: 0.7;
 }
 
 .playground .tabs__item:last-child {
