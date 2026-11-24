@@ -4,6 +4,7 @@ description: 'Developers are adding high contrast mode CSS on native application
 ---
 
 import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -24,7 +25,7 @@ There are three provided ways to enable the high contrast palette in an app: **a
 
 The high contrast palette can be enabled by importing the following stylesheet in the appropriate files. This approach will enable the high contrast palette regardless of the system settings for contrast preference.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -59,7 +60,7 @@ import '@ionic/vue/css/palettes/high-contrast.always.css'; // Light palette
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 The high contrast dark palette can be applied by importing `high-contrast-dark.always.css` instead of `high-contrast.always.css`.
 
@@ -75,7 +76,7 @@ The system approach to enabling high contrast mode involves checking the system 
 
 The following example shows how to include both the high contrast light palette as well as the high contrast dark palette. The system's dark mode preference will be checked to show either the light or dark variant of the high contrast palette.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -110,7 +111,7 @@ import '@ionic/vue/css/palettes/high-contrast-dark.system.css';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 This approach activates the high contrast palette when the [CSS media query for `prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) is `more`. The `prefers-contrast` media query is supported by [all modern browsers](https://caniuse.com/?search=prefers-contrast). If support for an older browser is required, we recommend using the [CSS class](#css-class) approach.
 
@@ -136,7 +137,7 @@ The high contrast light palette must be imported after [core.css](../layout/glob
 
 While the previous approaches are excellent for enabling the high contrast palette through file imports alone, there are scenarios where you may need more control over where it is applied. In cases where you need to apply the high contrast palette conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a high contrast palette class file. This file applies the high contrast palette when a specific class is added to an app. Importing the following stylesheets into the appropriate file will provide the necessary styles for using the high contrast palette with the class:
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -171,7 +172,7 @@ import '@ionic/vue/css/palettes/high-contrast-dark.class.css';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 This approach activates the high contrast palette when the `.ion-palette-high-contrast` class is set on the `html` element. This class must be applied by the developer. This can be combined with the [`.ion-palette-dark` class](./dark-mode.mdx#css-class) to conditionally apply the high contrast dark palette.
 

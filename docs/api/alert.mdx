@@ -3,7 +3,7 @@ title: 'ion-alert'
 description: "ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 import Props from '@ionic-internal/component-api/v9/alert/props.mdx';
@@ -127,7 +127,7 @@ If the `header` property is defined for the Alert, the `aria-labelledby` attribu
 
 It is strongly recommended that your Alert have a `message`, as well as either a `header` or `subHeader`, in order to align with the ARIA spec. If you choose not to include a `header` or `subHeader`, an alternative is to provide a descriptive `aria-label` using the `htmlAttributes` property.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -181,7 +181,7 @@ const alert = await alertController.create({
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
@@ -189,7 +189,7 @@ All ARIA attributes can be manually overwritten by defining custom values in the
 
 Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -263,7 +263,7 @@ const alert = await alertController.create({
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ## Interfaces {/* #interfaces */}
 

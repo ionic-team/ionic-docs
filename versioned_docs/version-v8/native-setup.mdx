@@ -6,7 +6,7 @@ hide_table_of_contents: true
 slug: /native/setup
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -36,16 +36,7 @@ Once installed, plugins can be imported into a component and you can call the na
 Using the [Camera plugin](./native/camera.mdx) as an example, first install it:
 
 ````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'vue', label: 'Vue' },
-    { value: 'react', label: 'React' },
-  ]
-}>
+<FrameworkTabs defaultValue="javascript">
 <TabItem value="javascript">
 
 ```javascript
@@ -137,5 +128,5 @@ export function CameraComponent() {
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 ````

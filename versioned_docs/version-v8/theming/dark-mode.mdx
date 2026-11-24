@@ -4,6 +4,7 @@ description: 'Developers are adding dark mode CSS on native applications to supp
 ---
 
 import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -20,7 +21,7 @@ There are three provided ways to enable the dark palette in an app: **always**, 
 
 The default palette provided with Ionic Framework is a light palette, consisting of a light background and dark text. However, the default palette can be changed to the dark palette by importing the following stylesheet in the appropriate files:
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -51,7 +52,7 @@ import '@ionic/vue/css/palettes/dark.always.css';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 This sets the [application colors](./themes.mdx#application-colors) and [stepped colors](./themes.mdx#stepped-colors) on the [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) selector.
 
@@ -71,7 +72,7 @@ Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette
 
 The system approach to enable dark mode involves checking the system settings for the user's preferred color scheme. This is the default when starting a new Ionic Framework app. Importing the following stylesheet in the appropriate file will automatically retrieve the user's preference from the system settings and apply the dark palette when dark mode is preferred:
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -102,7 +103,7 @@ import '@ionic/vue/css/palettes/dark.system.css';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 This sets the [application colors](./themes.mdx#application-colors) and [stepped colors](./themes.mdx#stepped-colors) when the [CSS media query for `prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is `dark`. The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). If support for older browser is required, we recommend using the [CSS class](#css-class) approach.
 
@@ -128,7 +129,7 @@ Avoid targeting the `.ios` or `.md` selectors to override the Ionic dark palette
 
 While the previous approaches are excellent for enabling the dark palette through file imports alone, there are scenarios where you may need more control over its application. In cases where you need to apply the dark palette conditionally, such as through a toggle, or if you want to extend the functionality based on system settings, we provide a dark palette class file. This file applies the dark palette when a specific class is added to an app. Importing the following stylesheet into the appropriate file will provide the necessary styles for using the dark palette with the class:
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -159,7 +160,7 @@ import '@ionic/vue/css/palettes/dark.class.css';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 This sets the [application colors](./themes.mdx#application-colors) and [stepped colors](./themes.mdx#stepped-colors) on the `.ion-palette-dark` selector, which must be applied to the app by the developer.
 

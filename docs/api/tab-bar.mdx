@@ -3,7 +3,7 @@ title: 'ion-tab-bar'
 description: 'The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 import Props from '@ionic-internal/component-api/v9/tab-bar/props.mdx';
@@ -25,7 +25,7 @@ The tab bar is a UI component that contains a set of [tab buttons](./tab-button.
 
 ## Usage {/* #usage */}
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -131,7 +131,7 @@ import { call, person, settings } from 'ionicons/icons';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ## Badges in Tab Buttons {/* #badges-in-tab-buttons */}
 

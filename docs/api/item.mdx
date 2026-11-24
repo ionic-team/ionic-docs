@@ -13,7 +13,7 @@ import Slots from '@ionic-internal/component-api/v9/item/slots.mdx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BestPracticeFigure from '@components/global/BestPracticeFigure';
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -286,7 +286,7 @@ import Clickable from '@site/static/usage/v9/item/clickable/index.mdx';
 
 Items support client-side navigation using the `routerLink` property. Setting `routerLink` renders the item as an anchor and navigates to the specified route when tapped. The `routerDirection` property controls the transition animation direction, and `routerAnimation` accepts a custom animation builder.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -382,7 +382,7 @@ import { IonItem, IonLabel, IonList } from '@ionic/vue';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ## Detail Arrows {/* #detail-arrows */}
 

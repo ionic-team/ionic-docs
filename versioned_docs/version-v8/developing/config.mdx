@@ -3,7 +3,7 @@ title: Config
 description: 'Ionic Config changes component properties across an app, such as the mode, tab button layout, and animations, globally or per platform.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
@@ -73,14 +73,7 @@ Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 
 #### Examples {/* #examples */}
 
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-  ]}
->
+<FrameworkTabs defaultValue="angular">
 <TabItem value="angular">
 
 ```ts
@@ -109,7 +102,7 @@ class AppComponent {
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 
 ### getBoolean {/* #getboolean */}
 
@@ -120,14 +113,7 @@ class AppComponent {
 
 #### Examples {/* #examples-1 */}
 
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-  ]}
->
+<FrameworkTabs defaultValue="angular">
 <TabItem value="angular">
 
 ```ts
@@ -156,7 +142,7 @@ class AppComponent {
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 
 ### getNumber {/* #getnumber */}
 

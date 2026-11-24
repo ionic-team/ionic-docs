@@ -3,7 +3,7 @@ title: 'ion-tab-button'
 description: 'ion-tab-button is placed inside of an ion-tab-bar. It sets the layout of its icon and label, and connects to an ion-tab.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 import Props from '@ionic-internal/component-api/v9/tab-button/props.mdx';
@@ -23,7 +23,7 @@ Refer to the [tabs documentation](./tabs.mdx) for more details on configuring ta
 
 ## Usage {/* #usage */}
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -181,7 +181,7 @@ import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ## Properties {/* #properties */}
 

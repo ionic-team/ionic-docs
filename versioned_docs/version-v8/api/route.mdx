@@ -3,7 +3,7 @@ title: 'ion-route'
 description: 'The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 import Props from '@ionic-internal/component-api/v8/route/props.mdx';
@@ -44,7 +44,7 @@ interface NavigationHookOptions {
 
 ## Usage {/* #usage */}
 
-<Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="javascript">
 
 <TabItem value="javascript">
 
@@ -111,7 +111,7 @@ const confirmDiscardChanges = async () => {
 
 </TabItem>
 
-<TabItem value="stencil">
+<TabItem value="stencil" label="Stencil">
 
 ```typescript
 import { Component, h } from '@stencil/core';
@@ -242,7 +242,7 @@ const confirmDiscardChanges = async () => {
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ## Properties {/* #properties */}
 

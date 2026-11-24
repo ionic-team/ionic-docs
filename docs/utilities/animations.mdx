@@ -4,7 +4,7 @@ description: 'Ionic apps use Web Animations API to build and run animations. Lea
 ---
 
 import Codepen from '@components/global/Codepen';
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -22,18 +22,7 @@ Ionic Animations, on the other hand, uses the [Web Animations API](https://devel
 ## Installation {/* #installation */}
 
 ````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'typescript', label: 'TypeScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
+<FrameworkTabs defaultValue="javascript">
 <TabItem value="javascript">
 
 Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
@@ -51,7 +40,7 @@ const animation = createAnimation()
 
 ```
 </TabItem>
-<TabItem value="typescript">
+<TabItem value="typescript" label="TypeScript">
 
 Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
 
@@ -150,7 +139,7 @@ const animation = createAnimation()
 
 ```
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 ````
 
 ## Basic Animations {/* #basic-animations */}

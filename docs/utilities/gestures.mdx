@@ -4,7 +4,7 @@ description: 'Ionic Gestures is a utility that allows developers to build custom
 ---
 
 import Codepen from '@components/global/Codepen';
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -20,17 +20,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 ## Installation {/* #installation */}
 
 ````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
+<FrameworkTabs defaultValue="javascript">
 <TabItem value="javascript">
 
 Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
@@ -49,7 +39,7 @@ const gesture = createGesture({
 
 ```
 </TabItem>
-<TabItem value="typescript">
+<TabItem value="typescript" label="TypeScript">
 
 Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
 
@@ -154,7 +144,7 @@ const gesture = createGesture({
 
 ```
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 ````
 
 ## Basic Gestures {/* #basic-gestures */}

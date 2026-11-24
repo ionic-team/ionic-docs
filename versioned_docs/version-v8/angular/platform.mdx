@@ -3,7 +3,7 @@ title: Platform
 description: 'Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -14,14 +14,7 @@ The Platform service can be used to get information about your current device. Y
 
 ## Usage {/* #usage */}
 
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-  ]}
->
+<FrameworkTabs defaultValue="angular">
 <TabItem value="angular">
 
 ```tsx
@@ -50,7 +43,7 @@ export class MyPage {
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 
 ## Methods {/* #methods */}
 

@@ -3,7 +3,7 @@ title: Migrating from ion-slides to Swiper.js
 description: 'Read this guide to learn how to get Swiper.js for Angular set up in your Ionic Framework application for a modern touch slider component.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -141,14 +141,7 @@ It is recommended to review the [properties](https://github.com/ionic-team/ionic
 
 We can install the `IonicSlides` module by importing and passing it to the `modules` property of `swiper-container` as an array:
 
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-  ]}
->
+<FrameworkTabs defaultValue="angular">
 <TabItem value="angular">
 
 ```typescript
@@ -181,7 +174,7 @@ export class HomePage {
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 
 ```html
 <!-- home.page.html -->
