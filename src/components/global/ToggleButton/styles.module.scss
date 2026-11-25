@@ -4,6 +4,10 @@
   @include mixins.toggle-button(':global(html[data-theme="dark"])');
 }
 
+.button:focus-visible {
+  @include mixins.focus-ring;
+}
+
 .button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
