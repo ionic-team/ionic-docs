@@ -80,11 +80,12 @@ test.describe('file tabs', () => {
       'src/app/child.component.html',
       'src/app/child.component.ts',
     ]);
-    await expect(playground.locator('#playground_angular_src_app_example_component_html')).toBeVisible();
+    const panels = playground.getByRole('tabpanel', { includeHidden: true });
+    await expect(panels.nth(0)).toBeVisible();
 
     await fileTabs.getByRole('tab', { name: 'src/app/child.component.ts' }).click();
-    await expect(playground.locator('#playground_angular_src_app_child_component_ts')).toBeVisible();
-    await expect(playground.locator('#playground_angular_src_app_example_component_html')).toBeHidden();
+    await expect(panels.nth(3)).toBeVisible();
+    await expect(panels.nth(0)).toBeHidden();
   });
 
   test('select the first file after switching frameworks', async ({ page }) => {
@@ -98,7 +99,7 @@ test.describe('file tabs', () => {
       'aria-selected',
       'true'
     );
-    await expect(playground.locator('#playground_vue_src_components_Example_vue')).toBeVisible();
+    await expect(playground.getByRole('tabpanel', { includeHidden: true }).nth(0)).toBeVisible();
   });
 
   test('move focus with the arrow keys and select with Enter', async ({ page }) => {
@@ -128,8 +129,7 @@ test('StackBlitz receives every file of a multi-file example', async ({ page, co
   const playground = await openChildStatePlayground(page);
   await expect(playground.locator('.playground__tabs')).toBeVisible();
 
-  // The StackBlitz button is the first icon button, and has no accessible name to find it by.
-  await playground.locator('.playground__control-group--end button').first().click();
+  await playground.getByRole('button', { name: 'Open in StackBlitz' }).click();
   const form = await request;
 
   for (const [file, source] of [
@@ -151,6 +151,8 @@ test.describe('mode', () => {
     const last = playgrounds.last();
 
     await first.getByRole('button', { name: 'MD', exact: true }).click();
+    await expect(first.getByRole('button', { name: 'MD', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await expect(first.getByRole('button', { name: 'iOS', exact: true })).toHaveAttribute('aria-pressed', 'false');
     await expect(first.locator('iframe[src*="ionic:mode=md"]')).toBeVisible();
     await expect(first.locator('iframe[src*="ionic:mode=ios"]')).toBeHidden();
 
@@ -183,4 +185,23 @@ test.describe('mode', () => {
     await page.keyboard.press('Tab');
     await expect(playground.getByRole('button', { name: 'MD', exact: true })).toBeFocused();
   });
+});
+
+test('the demo follows the site theme, including after a reset', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('theme', 'dark'));
+  // `docusaurus serve` redirects `demo.html` to a clean URL without the base path, which loads the home page instead.
+  await page.route('**/demo.html*', (route) =>
+    route.fulfill({ path: `build${new URL(route.request().url()).pathname.replace(/^\/docs/, '')}` })
+  );
+  await page.goto('api/alert');
+  const playground = page.locator('.playground').first();
+  const demo = playground.frameLocator('iframe[src*="ionic:mode=ios"]').locator('html');
+
+  await expect(demo).toHaveClass(/ion-theme-dark/);
+
+  // Marks the demo, so the check below waits for the reloaded one.
+  await demo.evaluate((html) => html.setAttribute('data-before-reset', ''));
+  await playground.getByRole('button', { name: 'Reset demo' }).click();
+  await expect(demo).not.toHaveAttribute('data-before-reset');
+  await expect(demo).toHaveClass(/ion-theme-dark/);
 });
