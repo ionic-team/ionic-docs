@@ -1,16 +1,7 @@
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]}
->
+<FrameworkTabs defaultValue="angular">
 <TabItem value="angular">
 
 ```ts title="app.module.ts"
@@ -117,4 +108,4 @@ createApp(App).use(IonicVue, getConfig());
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>

@@ -3,7 +3,7 @@ title: 'ion-action-sheet'
 description: 'Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 import Props from '@ionic-internal/component-api/v8/action-sheet/props.mdx';
@@ -109,7 +109,7 @@ Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-
 
 It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -159,13 +159,13 @@ const actionSheet = await actionSheetController.create({
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 #### Action Sheet Buttons Description {/* #action-sheet-buttons-description */}
 
 Buttons containing text will be read by a screen reader. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -239,7 +239,7 @@ const actionSheet = await actionSheetController.create({
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ## Interfaces {/* #interfaces */}
 

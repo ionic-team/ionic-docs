@@ -3,7 +3,7 @@ title: Managing Focus
 description: 'Learn how to manage focus in Ionic applications using the setFocus API instead of the autofocus attribute.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 <head>
@@ -43,15 +43,7 @@ import Basic from '@site/static/usage/v8/input/set-focus/index.mdx';
 Developers can use the `ionViewDidEnter` lifecycle event to set focus to an element when a page is entered.
 
 ````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -122,7 +114,7 @@ export default Home;
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 ````
 
 ### Overlays {/* #overlays */}
@@ -130,16 +122,7 @@ export default Home;
 Developers can use the `didPresent` lifecycle event to set focus to an element when an overlay is presented.
 
 ````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'Javascript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
+<FrameworkTabs defaultValue="javascript">
 
 <TabItem value="javascript">
 
@@ -233,7 +216,7 @@ export default Home;
 ```
 
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 ````
 
 ## Assistive Technology Focus Management {/* #assistive-technology-focus-management */}

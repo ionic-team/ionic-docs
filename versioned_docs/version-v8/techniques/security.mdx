@@ -7,7 +7,7 @@ description: "View Ionic's security info for sanitizing user input, ejecting fro
   <title>Security for Angular, React, and Vue Apps - Ionic Framework</title>
 </head>
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 ## Sanitizing User Input {/* #sanitizing-user-input */}
@@ -91,16 +91,7 @@ Refer to [Enabling Custom HTML Parsing](#enabling-custom-html-parsing-via-innerh
 #### Usage {/* #usage */}
 
 ````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="angular"
-  values={[
-    { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'react', label: 'React' },
-  ]
-}>
+<FrameworkTabs defaultValue="angular">
 <TabItem value="angular">
 
 ```tsx
@@ -180,7 +171,7 @@ export const ToastExample: React.FC = () => {
 };
 ```
 </TabItem>
-</Tabs>
+</FrameworkTabs>
 ````
 
 ## Content Security Policies (CSP) {/* #content-security-policies-csp */}

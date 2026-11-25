@@ -3,7 +3,7 @@ title: 'ion-toast'
 description: 'ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction.'
 ---
 
-import Tabs from '@theme/Tabs';
+import FrameworkTabs from '@site/src/components/global/FrameworkTabs';
 import TabItem from '@theme/TabItem';
 
 import Props from '@ionic-internal/component-api/v9/toast/props.mdx';
@@ -125,7 +125,7 @@ Since toasts are intended to be subtle notification, `aria-live` should never be
 
 Buttons containing text will be read by a screen reader when they are interacted with. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<FrameworkTabs defaultValue="angular">
 
 <TabItem value="angular">
 
@@ -199,7 +199,7 @@ const toast = await toastController.create({
 
 </TabItem>
 
-</Tabs>
+</FrameworkTabs>
 
 ### Tips {/* #tips */}
 

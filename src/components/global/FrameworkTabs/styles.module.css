@@ -1,0 +1,18 @@
+/* Matches the spacing of Docusaurus's tabs. */
+.container {
+  margin-bottom: var(--ifm-leading);
+}
+
+/* Scrolls sideways on narrow screens, as the playground toolbar does. */
+.switcher {
+  overflow-x: auto;
+}
+
+/* Matches the gap between Docusaurus's tabs and their panels in `src/css/theme/Tabs.scss`. */
+.panel {
+  margin-top: 0.75rem;
+}
+
+.panel > :last-child {
+  margin-bottom: 0;
+}
