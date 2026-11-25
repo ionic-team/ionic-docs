@@ -1,5 +1,6 @@
 ---
 title: Haptics
+description: 'Ionic components play haptics as touch feedback. Read to learn how to listen for the ionHaptic event to replace, skip, or play your own haptics.'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,10 +8,6 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Haptics: Customize Touch Feedback in Ionic Components</title>
-  <meta
-    name="description"
-    content="Ionic components play haptics as touch feedback. Read to learn how to listen for the ionHaptic event to replace, skip, or play your own haptics."
-  />
 </head>
 
 Haptics are the small vibrations a device plays as touch feedback. Some Ionic components play a haptic during a gesture, such as when a toggle is switched or an item is reordered. This guide shows how to listen for those haptics so your app can replace them, skip them, or play its own.
@@ -53,7 +50,7 @@ The `detail` of the event describes the haptic Ionic would play. Its `type` matc
 
 ### Gestures {/* #gestures */}
 
-A gesture dispatches `selectionStart`, then one `selectionChanged` for each change, then `selectionEnd`. In `ion-action-sheet` and `ion-alert`, `selectionStart` is dispatched only when the press begins on a button. A press that begins elsewhere dispatches `selectionChanged` and `selectionEnd` without a `selectionStart`. The haptic engine only plays `selectionChanged` after a `selectionStart`, so canceling `selectionStart` also silences the rest of that gesture.
+A gesture dispatches `selectionStart`, then one `selectionChanged` for each change, then `selectionEnd`. In `ion-action-sheet` and `ion-alert`, `selectionStart` is dispatched only when the press begins on a button. A press that begins elsewhere dispatches only `selectionEnd`, plus a `selectionChanged` for each button it slides onto. The haptic engine only plays `selectionChanged` after a `selectionStart`, so canceling `selectionStart` also silences the rest of that gesture.
 
 `selectionEnd` plays nothing. It releases the haptic engine for the next gesture, so Ionic always runs it, and canceling it has no effect.
 
@@ -156,7 +153,7 @@ onUnmounted(() => document.removeEventListener('ionHaptic', onHaptic));
 
 :::note
 
-`ionHaptic` is not listed in the Events table of each component, so the framework event bindings do not know about it. In Vue, `@ionHaptic` on an Ionic component does not work. Add the listener with `addEventListener` instead, like the Vue example in [Basic Usage](#basic-usage).
+`ionHaptic` is not a component event, so it is not in any component's Events table and the framework bindings do not know about it. In Vue, `@ionHaptic` on an Ionic component does not work. Add the listener with `addEventListener` instead, like the Vue example in [Basic Usage](#basic-usage).
 
 :::
 
