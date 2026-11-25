@@ -13,8 +13,9 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { useColorMode } from '@docusaurus/theme-common';
+import { useColorMode, useStorageSlot } from '@docusaurus/theme-common';
 import { CodeSnippets, ConsoleItem, Mode, UsageTarget } from './playground.types';
+import { type Framework, FRAMEWORK_GROUP_ID, getFrameworkLabel } from '@site/src/utils/frameworks';
 
 import Tooltip from '../Tooltip';
 import PlaygroundTabs from '../PlaygroundTabs';
@@ -79,6 +80,7 @@ const CodeBlockButton = ({
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const langValue = UsageTarget[language];
+  const label = getFrameworkLabel(langValue);
 
   return (
     <ControlButton
@@ -86,8 +88,8 @@ const CodeBlockButton = ({
       handleClick={() => {
         setAndSaveUsageTarget(langValue, buttonRef.current);
       }}
-      title={`Show ${language} code`}
-      label={language}
+      title={`Show ${label} code`}
+      label={label}
       disabled={disabled}
       ref={buttonRef}
     />
@@ -258,28 +260,38 @@ export default function Playground({
     return Mode.iOS;
   };
 
-  const getDefaultUsageTarget = () => {
+  /**
+   * The framework is shared with the docs' framework tabs, which store the
+   * reader's choice under the same key. Picking a framework in either one
+   * updates the other, and the choice is kept across page loads.
+   */
+  const [storedFramework, frameworkStorage] = useStorageSlot(FRAMEWORK_STORAGE_KEY);
+
+  const getUsageTarget = (): UsageTarget => {
     /**
-     * If a default framework was specified and code exists for it, use that.
+     * The docs tabs have an Angular (Standalone) tab, which the playground
+     * shows as Angular.
+     */
+    const storedTarget = (
+      storedFramework === ANGULAR_STANDALONE_TAB ? UsageTarget.Angular : storedFramework
+    ) as UsageTarget | null;
+
+    /**
+     * If the reader has picked a framework and there is code for it, use that.
+     */
+    if (storedTarget && code[storedTarget] !== undefined) {
+      return storedTarget;
+    }
+
+    /**
+     * Otherwise, use the default framework if code exists for it.
      */
     if (defaultFramework && code[defaultFramework] !== undefined) {
       return defaultFramework;
     }
 
     /**
-     * If there is a saved target from previously clicking the
-     * framework buttons, and there is code for it, use that.
-     */
-    if (isBrowser) {
-      const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY) as UsageTarget | null;
-      if (storedTarget && code[storedTarget] !== undefined) {
-        return storedTarget;
-      }
-    }
-
-    /**
-     * If there is no saved target, and Angular code is available,
-     * default to that.
+     * Otherwise, default to Angular when it is available.
      */
     if (code[UsageTarget.Angular] !== undefined) {
       return UsageTarget.Angular;
@@ -297,7 +309,7 @@ export default function Playground({
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
+  const usageTarget = getUsageTarget();
   const [ionicMode, setIonicMode] = useState(getDefaultMode());
   const [codeSnippets, setCodeSnippets] = useState<CodeSnippets>({});
   const [renderIframes, setRenderIframes] = useState(false);
@@ -338,33 +350,27 @@ export default function Playground({
   };
 
   const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement | null) => {
-    setUsageTarget(target);
-
-    if (isBrowser) {
-      localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
-
-      /**
-       * This prevents the scroll position from jumping around if
-       * there is a playground above this one with code that changes
-       * in length between frameworks.
-       *
-       * Note that we don't need this when changing the mode because
-       * the two mode iframes are always the same height.
-       */
-      if (tab) {
-        blockElementScrollPositionUntilNextRender(tab);
-      }
-
-      /**
-       * Tell other playgrounds on the page that the framework
-       * has updated, so they can sync up if they're in view.
-       */
-      window.dispatchEvent(
-        new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
-          detail: target,
-        })
-      );
+    /**
+     * This prevents the scroll position from jumping around if
+     * there is a playground or tabs above this one with code that
+     * changes in length between frameworks.
+     *
+     * Note that we don't need this when changing the mode because
+     * the two mode iframes are always the same height.
+     */
+    if (tab) {
+      blockElementScrollPositionUntilNextRender(tab);
     }
+
+    /**
+     * Angular (Standalone) in the docs tabs already shows Angular here,
+     * so keep it rather than switching those tabs to Angular.
+     */
+    if (target === UsageTarget.Angular && storedFramework === ANGULAR_STANDALONE_TAB) {
+      return;
+    }
+
+    frameworkStorage.set(target);
   };
 
   /**
@@ -493,16 +499,9 @@ export default function Playground({
         if (!event.isIntersecting) return;
 
         /**
-         * Load the stored mode and/or usage target, if present
-         * from previously being toggled. Skip the usage target
-         * reset when defaultFramework is set, since the initial
-         * value is already correct and user tab clicks should
-         * be preserved.
+         * Load the stored mode, if present from previously being toggled.
          */
         setIonicMode(getDefaultMode());
-        if (!defaultFramework) {
-          setUsageTarget(getDefaultUsageTarget());
-        }
 
         /**
          * If the iframes weren't already loaded, load them now.
@@ -524,16 +523,9 @@ export default function Playground({
     }
   };
 
-  const handleUsageTargetUpdated = (e: WindowEventMap['playground-usage-target-updated']) => {
-    const usageTarget = e.detail;
-    if (Object.values(UsageTarget).includes(usageTarget)) {
-      setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
-    }
-  };
-
   /**
    * When this playground is in view, listen for any other playgrounds
-   * on the page to switch their framework or mode, so this one can
+   * on the page to switch their mode, so this one can
    * sync up to the same setting. This is needed because if the
    * playground is already in view, the IntersectionObserver doesn't
    * fire until the playground is scrolled off and back on the screen.
@@ -554,12 +546,10 @@ export default function Playground({
   useEffect(() => {
     if (isBrowser && isInView) {
       window.addEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
-      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
     }
 
     return () => {
       window.removeEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
-      window.removeEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
     };
   }, [isBrowser, isInView]);
 
@@ -995,7 +985,10 @@ const isFrameReady = (frame: HTMLIFrameElement | null) => {
   return (frame.contentWindow as any).demoReady === true;
 };
 
-const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
+/**
+ * The key Docusaurus stores the selected tab under for the docs' framework tabs.
+ */
+const FRAMEWORK_STORAGE_KEY = `docusaurus.tab.${FRAMEWORK_GROUP_ID}`;
+const ANGULAR_STANDALONE_TAB: Framework = 'angular-standalone';
 const MODE_STORAGE_KEY = 'playground_mode';
-const USAGE_TARGET_UPDATED_EVENT = 'playground-usage-target-updated';
 const MODE_UPDATED_EVENT = 'playground-event-updated';

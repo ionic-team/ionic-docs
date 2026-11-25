@@ -44,7 +44,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 | `devicePreview` | Renders the demo inside a device frame. Refer to [Device Frame](#show-example-within-a-device-frame-iphonepixel-5). |
 | `showConsole` | Shows a console below the demo with anything the demo logs through `console.log`, `console.warn`, or `console.error`. |
 | `includeIonContent` | Wraps the StackBlitz example in `ion-app` and `ion-content`. Defaults to `true`. Refer to [Ejecting](#ejecting-from-ionappioncontent-boilerplate). |
-| `defaultFramework` | Framework tab to select when the reader has not picked one. Defaults to Angular when available. |
+| `defaultFramework` | Framework tab to select when the reader has not picked one. The pick is shared with the docs' `<Tabs groupId="framework">`, so choosing a framework in either one selects it in the other. Defaults to Angular when available. |
 | `title` | Title of the generated StackBlitz project. |
 | `description` | Description of the generated StackBlitz project. |
 
