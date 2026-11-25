@@ -58,7 +58,7 @@ export default function FrameworkSwitcher({ options, selected, onSelect, classNa
 
   const select = (index: number) => {
     const { value } = options[index];
-  
+
     if (value !== selected) {
       keepInPlace(buttons.current[index], () => onSelect(value));
     }
