@@ -18,7 +18,7 @@
  * For the props and how to write a playground, refer to the README.
  */
 
-import React, { type ReactElement, type ReactNode, useEffect, useRef, useState } from 'react';
+import React, { type FocusEvent, type ReactElement, type ReactNode, useEffect, useRef, useState } from 'react';
 
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -31,10 +31,10 @@ import { FRAMEWORKS, useFrameworkChoice } from '@site/src/utils/frameworks';
 import Tooltip from '../Tooltip';
 import ToggleButton from '../ToggleButton';
 import FrameworkSwitcher from '../FrameworkSwitcher';
-import PlaygroundTabs from '../PlaygroundTabs';
-import TabItem from '../PlaygroundTabs/TabItem';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
+import { IconDots } from './icons';
 
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
@@ -567,20 +567,22 @@ export default function Playground({
     return `playground_${usageTarget}_${fileNameId}`;
   }
 
-  function getFileIcon(fileName: string) {
+  /**
+   * The file type that picks a tab's icon in `playground.css`. Docusaurus tab
+   * labels are text only, so the icon is drawn by CSS rather than rendered here.
+   */
+  function getFileType(fileName: string) {
     const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
     switch (extension) {
       case 'ts':
       case 'tsx':
-        return <IconTs />;
+        return 'ts';
       case 'html':
-        return <IconHtml />;
       case 'vue':
-        return <IconVue />;
       case 'css':
-        return <IconCss />;
+        return extension;
       default:
-        return <IconDefault />;
+        return undefined;
     }
   }
 
@@ -600,19 +602,24 @@ export default function Playground({
       }
       const fileSnippets = snippets as Record<string, ReactElement>;
       return (
-        <PlaygroundTabs groupId={usageTarget} className="playground__tabs">
+        // Each framework has its own files, so remounting on a switch selects its first file.
+        <Tabs key={usageTarget} className="playground__tabs">
           {Object.keys(fileSnippets).map((fileName) => (
             <TabItem
-              className="playground__tab-item"
               value={fileName}
               label={fileName}
               key={fileName}
-              icon={getFileIcon(fileName)}
+              attributes={{
+                'data-file-type': getFileType(fileName),
+                // The browser only partly scrolls a focused tab into view, which can leave it cut off.
+                onFocus: (event: FocusEvent<HTMLLIElement>) =>
+                  event.currentTarget.scrollIntoView({ block: 'nearest', inline: 'nearest' }),
+              }}
             >
               <div id={getCodeSnippetId(usageTarget, fileName)}>{fileSnippets[fileName]}</div>
             </TabItem>
           ))}
-        </PlaygroundTabs>
+        </Tabs>
       );
     }
   }
