@@ -11,6 +11,12 @@
 .cspellcache
 src/components/page/reference/ReleaseNotes/release-notes.json
 
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
 # Misc
 .DS_Store
 .env.local

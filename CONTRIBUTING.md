@@ -87,6 +87,18 @@ npm run build:preview
 
 This builds the English site only, the same build as a Vercel preview.
 
+### Browser Tests
+
+[Playwright](https://playwright.dev/) tests in `e2e/` check the playgrounds and framework tabs in a browser. They run against the built site, so build it first:
+
+```sh
+npm run build:preview
+npx playwright install chromium
+npm run test:e2e
+```
+
+A failed run opens the HTML report. Run `npx playwright show-report` to open it after any run.
+
 ### Linting Documentation
 
 This repository uses [ESLint](https://eslint.org/) to catch markup the build cannot check, such as raw links and headings and misaligned JSDoc comments, and [Prettier](https://prettier.io/), an opinionated code formatter, to keep consistent formatting throughout the documentation. Run the following command to report ESLint errors and automatically fix all formatting, and then push any changes:

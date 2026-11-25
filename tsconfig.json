@@ -29,10 +29,10 @@
     "strict": true
   },
   /*
-   * `src` holds every TypeScript file in the project, and `index.d.ts` declares the
-   * `*.module.scss` imports those files rely on. Listing them explicitly also restores
-   * TypeScript's default excludes, notably `node_modules`, which the previous
-   * `exclude`-only config silently overrode.
+   * `src`, `e2e` and the Playwright config hold every TypeScript file in the project,
+   * and `index.d.ts` declares the `*.module.scss` imports those files rely on. Listing
+   * them explicitly also restores TypeScript's default excludes, notably `node_modules`,
+   * which the previous `exclude`-only config silently overrode.
    */
-  "include": ["src", "index.d.ts"]
+  "include": ["src", "e2e", "playwright.config.ts", "index.d.ts"]
 }

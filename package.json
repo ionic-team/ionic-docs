@@ -22,6 +22,7 @@
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md,mdx}\" --cache",
     "start": "docusaurus start",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "swizzle": "docusaurus swizzle",
     "spellcheck": "cspell --no-progress --cache --gitignore \"**/*.{md,mdx}\""
@@ -69,6 +70,7 @@
     "@docusaurus/tsconfig": "^3.10.2",
     "@docusaurus/types": "^3.10.2",
     "@ionic/prettier-config": "^4.0.0",
+    "@playwright/test": "^1.65.1",
     "@types/react": "^19.2.18",
     "@typescript-eslint/parser": "^8.72.1",
     "cspell": "^10.0.1",
