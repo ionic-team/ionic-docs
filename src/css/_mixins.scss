@@ -80,3 +80,10 @@
   color: var(--toggle-button-selected-color);
   font-weight: 500;
 }
+
+/// The keyboard focus ring on every tab and toggle button. It sits inside the
+/// element, because tab lists scroll sideways and would clip a ring outside it.
+@mixin focus-ring {
+  outline: 2px solid var(--ifm-link-color);
+  outline-offset: -2px;
+}

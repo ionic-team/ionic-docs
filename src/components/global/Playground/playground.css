@@ -282,10 +282,22 @@
    */
   border-radius: 16px 16px 0px 0px;
   transform: translateZ(0);
+
+  /* Keeps a tab the keyboard scrolls to clear of the rounded corners, so its focus ring isn't cut off. */
+  scroll-padding-inline: 16px;
 }
 
-.playground .tabs-nav {
-  margin-block-start: 0px !important;
+/*
+ * The first and last tabs can sit under the bar's rounded corners, which would cut
+ * off their focus ring. The first one takes the corner's shape, and the last one
+ * leaves room after it so it never reaches the corner.
+ */
+.playground .tabs__item:first-child {
+  border-top-left-radius: 16px;
+}
+
+.playground .tabs__item:last-child {
+  margin-right: 16px;
 }
 
 .playground .tabs__item {
@@ -312,13 +324,30 @@
   opacity: 0.7;
 }
 
-.playground .tabs__item:last-child {
-  margin-right: 40px;
+/* The file's icon, picked by the `data-file-type` that `getFileType` sets. */
+.playground .tabs__item::before {
+  content: '';
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px;
+  background: url('./icons/file-default.svg') center / contain no-repeat;
 }
 
-.playground__tab-item.hidden {
-  height: 0px;
-  overflow: hidden;
+.playground .tabs__item[data-file-type='css']::before {
+  background-image: url('./icons/file-css.svg');
+}
+
+.playground .tabs__item[data-file-type='html']::before {
+  background-image: url('./icons/file-html.svg');
+}
+
+.playground .tabs__item[data-file-type='ts']::before {
+  background-image: url('./icons/file-ts.svg');
+}
+
+.playground .tabs__item[data-file-type='vue']::before {
+  background-image: url('./icons/file-vue.svg');
 }
 
 .playground .tabs__item:not(.tabs__item--active) {

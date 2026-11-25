@@ -33,6 +33,11 @@ html[data-theme='dark'] {
   }
 }
 
+// Every tab, including the playground's file tabs, shows the same focus ring.
+.tabs__item:focus-visible {
+  @include mixins.focus-ring;
+}
+
 .tabs-container > div {
   margin-block-start: 0.75rem !important;
 }
