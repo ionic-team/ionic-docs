@@ -1,10 +1,3 @@
-const linkElement = document.createElement('link');
-
-linkElement.rel = 'stylesheet';
-linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@8/css/palettes/dark.class.css';
-
-document.head.appendChild(linkElement);
-
 /**
  * Wait for the initial HTML document to be
  * loaded and parsed before adding the message
@@ -12,6 +5,21 @@ document.head.appendChild(linkElement);
  * listener will fire before the body is ready.
  */
 window.addEventListener('DOMContentLoaded', () => {
+  /**
+   * The dark palette goes right after ionic.bundle.css, the order an app
+   * imports them in. Before it, the bundle's default colors win; after the
+   * demo's own styles, it overrides them. Demos that load a palette of
+   * their own, such as the theming demos, are left to it.
+   */
+  if (!document.querySelector('link[href*="/css/palettes/"]')) {
+    const linkElement = document.createElement('link');
+
+    linkElement.rel = 'stylesheet';
+    linkElement.href = 'https://cdn.jsdelivr.net/npm/@ionic/core@8/css/palettes/dark.class.css';
+
+    document.querySelector('link[href*="ionic.bundle.css"]').after(linkElement);
+  }
+
   /**
    * The parent Playground component will
    * dispatch messages whenever the theme on
@@ -23,9 +31,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const { data } = event;
 
     if (data.darkMode) {
-      document.documentElement.classList.add('ion-theme-dark');
+      document.documentElement.classList.add('ion-palette-dark');
     } else {
-      document.documentElement.classList.remove('ion-theme-dark');
+      document.documentElement.classList.remove('ion-palette-dark');
     }
   });
 
